@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Run`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Run`, which is used to create a run.
+//
+// A run belongs to an experiment and can be associated with a workload. A run can also represent a single code execution.
 type Run interface {
 	alicloudroscdkcore.Resource
 	IRun

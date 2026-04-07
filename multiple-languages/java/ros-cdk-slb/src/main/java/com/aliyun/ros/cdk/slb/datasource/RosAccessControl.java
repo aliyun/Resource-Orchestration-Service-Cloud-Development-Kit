@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::AccessControl</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::AccessControl</code>, which is used to query the configurations of an access control list (ACL).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.497Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.233Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosAccessControl")
 public class RosAccessControl extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::EIPSegment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.895Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPSegment")
 public class EIPSegment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IEIPSegment {
 
@@ -217,6 +217,77 @@ public class EIPSegment extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
+         * Property isp: The line type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
+         * <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+         * Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+         * India (Jakarta), and Thailand (Bangkok).</li>
+         * </ul>
+         * <p>
+         * For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+         * see <a href="~~32321~~">EIP Line Type</a>.
+         * <p>
+         * If you are a single-bandwidth whitelist user, you can also choose:
+         * <p>
+         * <ul>
+         * <li><strong>ChinaTelecom</strong>: China Telecom</li>
+         * <li><strong>ChinaUnicom</strong>: China Unicom</li>
+         * <li><strong>ChinaMobile</strong>: China Mobile</li>
+         * <li><strong>ChinaTelecom_L2</strong>: China Telecom L2</li>
+         * <li><strong>ChinaUnicom_L2</strong>: China Unicom L2</li>
+         * <li><strong>ChinaMobile_L2</strong>: China Mobile L2</li>
+         * </ul>
+         * <p>
+         * If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+         * <p>
+         * @return {@code this}
+         * @param isp Property isp: The line type. This parameter is required.
+         */
+        public Builder isp(final java.lang.String isp) {
+            this.props.isp(isp);
+            return this;
+        }
+        /**
+         * Property isp: The line type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
+         * <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+         * Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+         * India (Jakarta), and Thailand (Bangkok).</li>
+         * </ul>
+         * <p>
+         * For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+         * see <a href="~~32321~~">EIP Line Type</a>.
+         * <p>
+         * If you are a single-bandwidth whitelist user, you can also choose:
+         * <p>
+         * <ul>
+         * <li><strong>ChinaTelecom</strong>: China Telecom</li>
+         * <li><strong>ChinaUnicom</strong>: China Unicom</li>
+         * <li><strong>ChinaMobile</strong>: China Mobile</li>
+         * <li><strong>ChinaTelecom_L2</strong>: China Telecom L2</li>
+         * <li><strong>ChinaUnicom_L2</strong>: China Unicom L2</li>
+         * <li><strong>ChinaMobile_L2</strong>: China Mobile L2</li>
+         * </ul>
+         * <p>
+         * If you are a Hangzhou Finance Cloud user, this field is required with value: <strong>BGP_FinanceCloud</strong>.
+         * <p>
+         * @return {@code this}
+         * @param isp Property isp: The line type. This parameter is required.
+         */
+        public Builder isp(final com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.props.isp(isp);
+            return this;
+        }
+
+        /**
          * Property netmode: The network type.
          * <p>
          * Valid values:
@@ -271,6 +342,27 @@ public class EIPSegment extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * Property zone: The zone of the contiguous EIP group.
+         * <p>
+         * @return {@code this}
+         * @param zone Property zone: The zone of the contiguous EIP group. This parameter is required.
+         */
+        public Builder zone(final java.lang.String zone) {
+            this.props.zone(zone);
+            return this;
+        }
+        /**
+         * Property zone: The zone of the contiguous EIP group.
+         * <p>
+         * @return {@code this}
+         * @param zone Property zone: The zone of the contiguous EIP group. This parameter is required.
+         */
+        public Builder zone(final com.aliyun.ros.cdk.core.IResolvable zone) {
+            this.props.zone(zone);
             return this;
         }
 

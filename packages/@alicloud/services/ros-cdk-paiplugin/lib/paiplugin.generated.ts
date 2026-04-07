@@ -29,9 +29,9 @@ export interface RosCampaignProps {
 function RosCampaignPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosCampaignProps"');
 }
 
@@ -55,7 +55,7 @@ function rosCampaignPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Campaign`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Campaign`, which is used to create an operational activity.
  * @Note This class does not contain additional functions, so it is recommended to use the `Campaign` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-campaign
  */
@@ -192,10 +192,10 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('project', ros.validateString)(properties.project));
-    errors.collect(ros.propertyValidator('table', ros.validateString)(properties.table));
     errors.collect(ros.propertyValidator('inferenceJobId', ros.validateString)(properties.inferenceJobId));
-    errors.collect(ros.propertyValidator('filter', ros.validateString)(properties.filter));
+    errors.collect(ros.propertyValidator('table', ros.validateString)(properties.table));
     errors.collect(ros.propertyValidator('column', ros.validateString)(properties.column));
+    errors.collect(ros.propertyValidator('filter', ros.validateString)(properties.filter));
     errors.collect(ros.propertyValidator('phoneNumber', ros.validateString)(properties.phoneNumber));
     errors.collect(ros.propertyValidator('text', ros.validateString)(properties.text));
     errors.collect(ros.propertyValidator('algorithm', ros.validateString)(properties.algorithm));
@@ -208,9 +208,9 @@ function RosGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('source', ros.validateNumber)(properties.source));
-    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosGroupProps"');
 }
 
@@ -244,7 +244,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Group`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Group`, which is used to create a user group.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-group
  */
@@ -455,10 +455,10 @@ function RosInferenceJobPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dataPath', ros.requiredValidator)(properties.dataPath));
     errors.collect(ros.propertyValidator('dataPath', ros.validateString)(properties.dataPath));
-    errors.collect(ros.propertyValidator('trainingJobId', ros.requiredValidator)(properties.trainingJobId));
-    errors.collect(ros.propertyValidator('trainingJobId', ros.validateString)(properties.trainingJobId));
     errors.collect(ros.propertyValidator('campaignId', ros.requiredValidator)(properties.campaignId));
     errors.collect(ros.propertyValidator('campaignId', ros.validateString)(properties.campaignId));
+    errors.collect(ros.propertyValidator('trainingJobId', ros.requiredValidator)(properties.trainingJobId));
+    errors.collect(ros.propertyValidator('trainingJobId', ros.validateString)(properties.trainingJobId));
     errors.collect(ros.propertyValidator('targetPath', ros.requiredValidator)(properties.targetPath));
     errors.collect(ros.propertyValidator('targetPath', ros.validateString)(properties.targetPath));
     errors.collect(ros.propertyValidator('userConfig', ros.requiredValidator)(properties.userConfig));
@@ -466,9 +466,9 @@ function RosInferenceJobPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('algorithm', ros.requiredValidator)(properties.algorithm));
     errors.collect(ros.propertyValidator('algorithm', ros.validateString)(properties.algorithm));
     errors.collect(ros.propertyValidator('waitForInferenceFinish', ros.validateBoolean)(properties.waitForInferenceFinish));
-    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosInferenceJobProps"');
 }
 
@@ -499,7 +499,7 @@ function rosInferenceJobPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
  * @Note This class does not contain additional functions, so it is recommended to use the `InferenceJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-inferencejob
  */
@@ -661,7 +661,7 @@ function rosSignaturePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Signature`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Signature`, which is used to register a signature.
  * @Note This class does not contain additional functions, so it is recommended to use the `Signature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-signature
  */
@@ -832,7 +832,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Template`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Template`, which is used to create a template.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-template
  */
@@ -1002,9 +1002,9 @@ function RosTrainingJobPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('algorithm', ros.requiredValidator)(properties.algorithm));
     errors.collect(ros.propertyValidator('algorithm', ros.validateString)(properties.algorithm));
     errors.collect(ros.propertyValidator('waitForTrainingFinish', ros.validateBoolean)(properties.waitForTrainingFinish));
-    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosTrainingJobProps"');
 }
 
@@ -1033,7 +1033,7 @@ function rosTrainingJobPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::TrainingJob`, which is used to create a training job.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrainingJob` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-trainingjob
  */

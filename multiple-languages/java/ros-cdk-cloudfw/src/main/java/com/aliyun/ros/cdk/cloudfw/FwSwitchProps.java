@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.719Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.FwSwitchProps")
 @software.amazon.jsii.Jsii.Proxy(FwSwitchProps.Jsii$Proxy.class)
 public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,6 +16,20 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
      * <strong>Note</strong>: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpaddrList() {
+        return null;
+    }
+
+    /**
+     * Property ipVersion: The IP version number.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpVersion() {
+        return null;
+    }
+
+    /**
+     * Property memberUid: The member unique identifier.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getMemberUid() {
         return null;
     }
 
@@ -63,6 +77,8 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<FwSwitchProps> {
         java.lang.Object ipaddrList;
+        java.lang.Object ipVersion;
+        java.lang.Object memberUid;
         java.lang.Object regionList;
         java.lang.Object resourceTypeList;
 
@@ -85,6 +101,46 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder ipaddrList(com.aliyun.ros.cdk.core.IResolvable ipaddrList) {
             this.ipaddrList = ipaddrList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FwSwitchProps#getIpVersion}
+         * @param ipVersion Property ipVersion: The IP version number.
+         * @return {@code this}
+         */
+        public Builder ipVersion(java.lang.String ipVersion) {
+            this.ipVersion = ipVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FwSwitchProps#getIpVersion}
+         * @param ipVersion Property ipVersion: The IP version number.
+         * @return {@code this}
+         */
+        public Builder ipVersion(com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.ipVersion = ipVersion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FwSwitchProps#getMemberUid}
+         * @param memberUid Property memberUid: The member unique identifier.
+         * @return {@code this}
+         */
+        public Builder memberUid(java.lang.String memberUid) {
+            this.memberUid = memberUid;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FwSwitchProps#getMemberUid}
+         * @param memberUid Property memberUid: The member unique identifier.
+         * @return {@code this}
+         */
+        public Builder memberUid(com.aliyun.ros.cdk.core.IResolvable memberUid) {
+            this.memberUid = memberUid;
             return this;
         }
 
@@ -179,6 +235,8 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements FwSwitchProps {
         private final java.lang.Object ipaddrList;
+        private final java.lang.Object ipVersion;
+        private final java.lang.Object memberUid;
         private final java.lang.Object regionList;
         private final java.lang.Object resourceTypeList;
 
@@ -189,6 +247,8 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.ipaddrList = software.amazon.jsii.Kernel.get(this, "ipaddrList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipVersion = software.amazon.jsii.Kernel.get(this, "ipVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.memberUid = software.amazon.jsii.Kernel.get(this, "memberUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.regionList = software.amazon.jsii.Kernel.get(this, "regionList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceTypeList = software.amazon.jsii.Kernel.get(this, "resourceTypeList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -199,6 +259,8 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.ipaddrList = builder.ipaddrList;
+            this.ipVersion = builder.ipVersion;
+            this.memberUid = builder.memberUid;
             this.regionList = builder.regionList;
             this.resourceTypeList = builder.resourceTypeList;
         }
@@ -206,6 +268,16 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getIpaddrList() {
             return this.ipaddrList;
+        }
+
+        @Override
+        public final java.lang.Object getIpVersion() {
+            return this.ipVersion;
+        }
+
+        @Override
+        public final java.lang.Object getMemberUid() {
+            return this.memberUid;
         }
 
         @Override
@@ -226,6 +298,12 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
 
             if (this.getIpaddrList() != null) {
                 data.set("ipaddrList", om.valueToTree(this.getIpaddrList()));
+            }
+            if (this.getIpVersion() != null) {
+                data.set("ipVersion", om.valueToTree(this.getIpVersion()));
+            }
+            if (this.getMemberUid() != null) {
+                data.set("memberUid", om.valueToTree(this.getMemberUid()));
             }
             if (this.getRegionList() != null) {
                 data.set("regionList", om.valueToTree(this.getRegionList()));
@@ -252,6 +330,8 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
             FwSwitchProps.Jsii$Proxy that = (FwSwitchProps.Jsii$Proxy) o;
 
             if (this.ipaddrList != null ? !this.ipaddrList.equals(that.ipaddrList) : that.ipaddrList != null) return false;
+            if (this.ipVersion != null ? !this.ipVersion.equals(that.ipVersion) : that.ipVersion != null) return false;
+            if (this.memberUid != null ? !this.memberUid.equals(that.memberUid) : that.memberUid != null) return false;
             if (this.regionList != null ? !this.regionList.equals(that.regionList) : that.regionList != null) return false;
             return this.resourceTypeList != null ? this.resourceTypeList.equals(that.resourceTypeList) : that.resourceTypeList == null;
         }
@@ -259,6 +339,8 @@ public interface FwSwitchProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.ipaddrList != null ? this.ipaddrList.hashCode() : 0;
+            result = 31 * result + (this.ipVersion != null ? this.ipVersion.hashCode() : 0);
+            result = 31 * result + (this.memberUid != null ? this.memberUid.hashCode() : 0);
             result = 31 * result + (this.regionList != null ? this.regionList.hashCode() : 0);
             result = 31 * result + (this.resourceTypeList != null ? this.resourceTypeList.hashCode() : 0);
             return result;

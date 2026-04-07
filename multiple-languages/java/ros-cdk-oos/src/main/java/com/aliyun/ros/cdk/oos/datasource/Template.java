@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OOS::Template</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OOS::Template</code>The , which type is used to query the details of a single template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.260Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.Template")
 public class Template extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.datasource.ITemplate {
 

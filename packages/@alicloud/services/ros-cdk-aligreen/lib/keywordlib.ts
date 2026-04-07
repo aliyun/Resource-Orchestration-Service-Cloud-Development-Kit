@@ -15,7 +15,7 @@ export interface KeywordLibProps {
     readonly keywordLibName: string | ros.IResolvable;
 
     /**
-     * Property resourceType: The moderation scenario to which the text library applies. Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+     * Property resourceType: The moderation scenario to which the text library applies. Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
      */
     readonly resourceType: string | ros.IResolvable;
 
@@ -103,7 +103,7 @@ export interface IKeywordLib extends ros.IResource {
     readonly attrResourceType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::KeywordLib`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::KeywordLib`, which is used to create a custom text library.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKeywordLib`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-keywordlib
  */

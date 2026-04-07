@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalSecurityIPGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalSecurityIPGroup`, which is used to create a global IP whitelist template.
 type RosGlobalSecurityIPGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrGlobalSecurityGroupId() alicloudroscdkcore.IResolvable

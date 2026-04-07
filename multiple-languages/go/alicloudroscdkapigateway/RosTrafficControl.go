@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.
 type RosTrafficControl interface {
 	alicloudroscdkcore.RosResource
 	ApiDefault() interface{}

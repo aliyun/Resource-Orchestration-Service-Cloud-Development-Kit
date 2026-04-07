@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Policy`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Policy`, which is used to create a policy.
 type Policy interface {
 	alicloudroscdkcore.Resource
 	IPolicy

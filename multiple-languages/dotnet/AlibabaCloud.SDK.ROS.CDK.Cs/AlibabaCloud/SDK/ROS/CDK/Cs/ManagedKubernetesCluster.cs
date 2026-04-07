@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cs
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`The , which type creates ACK managed clusters.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosManagedKubernetesCluster`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster

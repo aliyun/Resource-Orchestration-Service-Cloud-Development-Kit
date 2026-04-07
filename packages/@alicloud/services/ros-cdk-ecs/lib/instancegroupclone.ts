@@ -360,17 +360,12 @@ export interface IInstanceGroupClone extends ros.IResource {
     readonly attrPublicIps: ros.IResolvable | string;
 
     /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    readonly attrRelatedOrderIds: ros.IResolvable | string;
-
-    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     readonly attrZoneIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceGroupClone`Use , which to clone a group of ECS instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceGroupClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
@@ -421,11 +416,6 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
     public readonly attrPublicIps: ros.IResolvable | string;
 
     /**
-     * Attribute RelatedOrderIds: The related order id list of created ecs instances
-     */
-    public readonly attrRelatedOrderIds: ros.IResolvable | string;
-
-    /**
      * Attribute ZoneIds: Zone id of created instances.
      */
     public readonly attrZoneIds: ros.IResolvable | string;
@@ -450,8 +440,8 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
             systemDiskEncryptAlgorithm: props.systemDiskEncryptAlgorithm,
             ramRoleName: props.ramRoleName,
             imageId: props.imageId,
-            imageOptions: props.imageOptions,
             systemDiskDiskName: props.systemDiskDiskName,
+            imageOptions: props.imageOptions,
             tags: props.tags,
             systemDiskStorageClusterId: props.systemDiskStorageClusterId,
             backendServerWeight: props.backendServerWeight === undefined || props.backendServerWeight === null ? 100 : props.backendServerWeight,
@@ -463,14 +453,14 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
             launchTemplateId: props.launchTemplateId,
             deletionProtection: props.deletionProtection,
             securityGroupIds: props.securityGroupIds,
-            instanceName: props.instanceName,
             deploymentSetId: props.deploymentSetId,
+            instanceName: props.instanceName,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
             uniqueSuffix: props.uniqueSuffix === undefined || props.uniqueSuffix === null ? false : props.uniqueSuffix,
-            securityOptions: props.securityOptions,
             launchTemplateVersion: props.launchTemplateVersion,
-            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
+            securityOptions: props.securityOptions,
             autoReleaseTime: props.autoReleaseTime,
+            periodUnit: props.periodUnit === undefined || props.periodUnit === null ? 'Month' : props.periodUnit,
             description: props.description,
             diskMappings: props.diskMappings,
             autoRenew: props.autoRenew === undefined || props.autoRenew === null ? 'False' : props.autoRenew,
@@ -482,8 +472,8 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
             spotPriceLimit: props.spotPriceLimit,
             hostNames: props.hostNames,
             spotStrategy: props.spotStrategy,
-            passwordInherit: props.passwordInherit,
             password: props.password,
+            passwordInherit: props.passwordInherit,
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             keyPairName: props.keyPairName,
             zoneId: props.zoneId,
@@ -494,8 +484,8 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
             eniMappings: props.eniMappings,
             systemDiskBurstingEnabled: props.systemDiskBurstingEnabled,
             networkOptions: props.networkOptions,
-            networkInterfaceQueueNumber: props.networkInterfaceQueueNumber,
             internetMaxBandwidthIn: props.internetMaxBandwidthIn === undefined || props.internetMaxBandwidthIn === null ? 200 : props.internetMaxBandwidthIn,
+            networkInterfaceQueueNumber: props.networkInterfaceQueueNumber,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceGroupClone;
         this.attrHostNames = rosInstanceGroupClone.attrHostNames;
@@ -506,7 +496,6 @@ export class InstanceGroupClone extends ros.Resource implements IInstanceGroupCl
         this.attrOrderId = rosInstanceGroupClone.attrOrderId;
         this.attrPrivateIps = rosInstanceGroupClone.attrPrivateIps;
         this.attrPublicIps = rosInstanceGroupClone.attrPublicIps;
-        this.attrRelatedOrderIds = rosInstanceGroupClone.attrRelatedOrderIds;
         this.attrZoneIds = rosInstanceGroupClone.attrZoneIds;
     }
 }

@@ -9,9 +9,15 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.
 type RosAddressBook interface {
 	alicloudroscdkcore.RosResource
+	AckClusterConnectorId() interface{}
+	SetAckClusterConnectorId(val interface{})
+	AckLabels() interface{}
+	SetAckLabels(val interface{})
+	AckNamespaces() interface{}
+	SetAckNamespaces(val interface{})
 	AddressList() interface{}
 	SetAddressList(val interface{})
 	AttrGroupUuid() alicloudroscdkcore.IResolvable
@@ -183,6 +189,36 @@ type RosAddressBook interface {
 // The jsii proxy struct for RosAddressBook
 type jsiiProxy_RosAddressBook struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosAddressBook) AckClusterConnectorId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ackClusterConnectorId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAddressBook) AckLabels() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ackLabels",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAddressBook) AckNamespaces() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ackNamespaces",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosAddressBook) AddressList() interface{} {
@@ -400,6 +436,39 @@ func NewRosAddressBook_Override(r RosAddressBook, scope alicloudroscdkcore.Const
 		"@alicloud/ros-cdk-cloudfw.RosAddressBook",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosAddressBook)SetAckClusterConnectorId(val interface{}) {
+	if err := j.validateSetAckClusterConnectorIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ackClusterConnectorId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAddressBook)SetAckLabels(val interface{}) {
+	if err := j.validateSetAckLabelsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ackLabels",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosAddressBook)SetAckNamespaces(val interface{}) {
+	if err := j.validateSetAckNamespacesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ackNamespaces",
+		val,
 	)
 }
 

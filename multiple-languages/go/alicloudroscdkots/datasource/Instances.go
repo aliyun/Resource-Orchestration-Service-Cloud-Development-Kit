@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::OTS::Instances`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::OTS::Instances`, which is used to query Tablestore instances.
 type Instances interface {
 	alicloudroscdkcore.Resource
 	IInstances

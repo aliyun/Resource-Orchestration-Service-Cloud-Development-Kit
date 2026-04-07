@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.865Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpNetworkProps")
 @software.amazon.jsii.Jsii.Proxy(BgpNetworkProps.Jsii$Proxy.class)
 public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,13 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getRouterId();
 
     /**
+     * Property vpcId: The ID of the VPC.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link BgpNetworkProps}
      */
     static Builder builder() {
@@ -32,6 +39,7 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<BgpNetworkProps> {
         java.lang.Object dstCidrBlock;
         java.lang.Object routerId;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link BgpNetworkProps#getDstCidrBlock}
@@ -74,6 +82,26 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link BgpNetworkProps#getVpcId}
+         * @param vpcId Property vpcId: The ID of the VPC.
+         * @return {@code this}
+         */
+        public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link BgpNetworkProps#getVpcId}
+         * @param vpcId Property vpcId: The ID of the VPC.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link BgpNetworkProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -91,6 +119,7 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BgpNetworkProps {
         private final java.lang.Object dstCidrBlock;
         private final java.lang.Object routerId;
+        private final java.lang.Object vpcId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -100,6 +129,7 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.dstCidrBlock = software.amazon.jsii.Kernel.get(this, "dstCidrBlock", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -109,6 +139,7 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.dstCidrBlock = java.util.Objects.requireNonNull(builder.dstCidrBlock, "dstCidrBlock is required");
             this.routerId = java.util.Objects.requireNonNull(builder.routerId, "routerId is required");
+            this.vpcId = builder.vpcId;
         }
 
         @Override
@@ -122,6 +153,11 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getVpcId() {
+            return this.vpcId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -129,6 +165,9 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
 
             data.set("dstCidrBlock", om.valueToTree(this.getDstCidrBlock()));
             data.set("routerId", om.valueToTree(this.getRouterId()));
+            if (this.getVpcId() != null) {
+                data.set("vpcId", om.valueToTree(this.getVpcId()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.BgpNetworkProps"));
@@ -148,13 +187,15 @@ public interface BgpNetworkProps extends software.amazon.jsii.JsiiSerializable {
             BgpNetworkProps.Jsii$Proxy that = (BgpNetworkProps.Jsii$Proxy) o;
 
             if (!dstCidrBlock.equals(that.dstCidrBlock)) return false;
-            return this.routerId.equals(that.routerId);
+            if (!routerId.equals(that.routerId)) return false;
+            return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.dstCidrBlock.hashCode();
             result = 31 * result + (this.routerId.hashCode());
+            result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;
         }
     }

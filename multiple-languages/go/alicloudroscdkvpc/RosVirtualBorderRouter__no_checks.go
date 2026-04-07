@@ -84,6 +84,10 @@ func validateRosVirtualBorderRouter_IsRosResourceParameters(construct alicloudro
 	return nil
 }
 
+func (j *jsiiProxy_RosVirtualBorderRouter) validateSetBandwidthParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVirtualBorderRouter) validateSetCircuitCodeParameters(val interface{}) error {
 	return nil
 }
@@ -113,6 +117,10 @@ func (j *jsiiProxy_RosVirtualBorderRouter) validateSetPeeringSubnetMaskParameter
 }
 
 func (j *jsiiProxy_RosVirtualBorderRouter) validateSetPhysicalConnectionIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVirtualBorderRouter) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
 

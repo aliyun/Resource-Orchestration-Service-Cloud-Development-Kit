@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`You can use the , which resource to create a scaling group.
+//
+// A scaling group is a collection of ECS instances that are used for the same application scenario. A scaling group does not take effect immediately after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group. After the scaling group is enabled, it can trigger scaling activities and execute scaling rules.
 type RosScalingGroup interface {
 	alicloudroscdkcore.RosResource
 	AllocationStrategy() interface{}

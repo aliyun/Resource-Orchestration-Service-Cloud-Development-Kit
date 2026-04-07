@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::DeployRevision</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::DeployRevision</code>The , which type is used to create a deployment.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.537Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.192Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosDeployRevision")
 public class RosDeployRevision extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -75,6 +75,24 @@ public class RosDeployRevision extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDeployResourceType() {
+        return software.amazon.jsii.Kernel.get(this, "deployResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDeployResourceType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "deployResourceType", value);
+    }
+
+    /**
+     */
+    public void setDeployResourceType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "deployResourceType", value);
     }
 
     /**
@@ -213,6 +231,23 @@ public class RosDeployRevision extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
             this.props.applicationName(applicationName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param deployResourceType This parameter is required.
+         */
+        public Builder deployResourceType(final java.lang.String deployResourceType) {
+            this.props.deployResourceType(deployResourceType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param deployResourceType This parameter is required.
+         */
+        public Builder deployResourceType(final com.aliyun.ros.cdk.core.IResolvable deployResourceType) {
+            this.props.deployResourceType(deployResourceType);
             return this;
         }
 

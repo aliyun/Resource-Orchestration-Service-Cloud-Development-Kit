@@ -22,7 +22,7 @@ export interface IVirtualCapacityReservation extends ros.IResource {
     readonly props: VirtualCapacityReservationProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::VirtualCapacityReservation`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::VirtualCapacityReservation`The , which resource type creates a capacity reservation task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVirtualCapacityReservation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-virtualcapacityreservation
  */

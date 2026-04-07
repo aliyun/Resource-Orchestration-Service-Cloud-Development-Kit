@@ -51,6 +51,7 @@ function RosConfigurationsPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('dataId', ros.validateString)(properties.dataId));
     errors.collect(ros.propertyValidator('namespaceId', ros.requiredValidator)(properties.namespaceId));
     errors.collect(ros.propertyValidator('namespaceId', ros.validateString)(properties.namespaceId));
+    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -58,7 +59,6 @@ function RosConfigurationsPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('appName', ros.validateString)(properties.appName));
     return errors.wrap('supplied properties not correct for "RosConfigurationsProps"');
 }
 
@@ -85,7 +85,7 @@ function rosConfigurationsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Configurations`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Configurations`, which is used to query the information about configurations.
  * @Note This class does not contain additional functions, so it is recommended to use the `Configurations` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-configurations
  */
@@ -223,7 +223,7 @@ function rosNamespacesPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Namespaces`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ACM::Namespaces`, which is used to query namespaces.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-acm-namespaces
  */

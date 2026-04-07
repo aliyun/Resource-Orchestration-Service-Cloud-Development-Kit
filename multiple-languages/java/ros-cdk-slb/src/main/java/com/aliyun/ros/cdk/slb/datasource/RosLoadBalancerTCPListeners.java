@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::LoadBalancerTCPListeners</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::LoadBalancerTCPListeners</code>, which is used to query Classic Load Balancer (CLB) listeners.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.505Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.241Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosLoadBalancerTCPListeners")
 public class RosLoadBalancerTCPListeners extends com.aliyun.ros.cdk.core.RosResource {
 

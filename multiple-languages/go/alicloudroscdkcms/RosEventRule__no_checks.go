@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosEventRule) validateSetRuleNameParameters(val interface{}) 
 	return nil
 }
 
+func (j *jsiiProxy_RosEventRule) validateSetSilenceTimeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosEventRule) validateSetStateParameters(val interface{}) error {
 	return nil
 }

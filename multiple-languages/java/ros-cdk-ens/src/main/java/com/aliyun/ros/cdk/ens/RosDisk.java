@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::Disk</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ENS::Disk</code>, which is used to create a pay-as-you-go or subscription data disk.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.367Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.833Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosDisk")
 public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -169,6 +169,24 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceBillingCycle() {
+        return software.amazon.jsii.Kernel.get(this, "instanceBillingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceBillingCycle(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceBillingCycle", value);
+    }
+
+    /**
+     */
+    public void setInstanceBillingCycle(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceBillingCycle", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
         return software.amazon.jsii.Kernel.get(this, "kmsKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -328,6 +346,23 @@ public class RosDisk extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder encrypted(final com.aliyun.ros.cdk.core.IResolvable encrypted) {
             this.props.encrypted(encrypted);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param instanceBillingCycle This parameter is required.
+         */
+        public Builder instanceBillingCycle(final java.lang.String instanceBillingCycle) {
+            this.props.instanceBillingCycle(instanceBillingCycle);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceBillingCycle This parameter is required.
+         */
+        public Builder instanceBillingCycle(final com.aliyun.ros.cdk.core.IResolvable instanceBillingCycle) {
+            this.props.instanceBillingCycle(instanceBillingCycle);
             return this;
         }
 

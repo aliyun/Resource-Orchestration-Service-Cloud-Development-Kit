@@ -86,7 +86,7 @@ function rosCenBandwidthLimitPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the bandwidth for cross-region interconnection in a bandwidth plan.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthLimit` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
  */
@@ -337,7 +337,7 @@ function rosCenBandwidthPackagePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances that reside in different regions.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
@@ -582,7 +582,7 @@ function rosCenBandwidthPackageAssociationPropsToRosTemplate(properties: any, en
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthPackageAssociation`, which is used to associate a bandwidth plan with a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenBandwidthPackageAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackageassociation
  */
@@ -714,7 +714,7 @@ function rosCenInstancePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstance`, which is used to create a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
@@ -930,7 +930,7 @@ function rosCenInstanceAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
  */
@@ -1277,7 +1277,7 @@ function rosCenRouteMapPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteMap`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteMap`, which is used to create a routing policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteMap` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenroutemap
  */
@@ -1608,9 +1608,9 @@ function RosCenRouteServicePropsValidator(properties: any): ros.ValidationResult
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('conflictIgnore', ros.validateBoolean)(properties.conflictIgnore));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('hostRegionId', ros.requiredValidator)(properties.hostRegionId));
     errors.collect(ros.propertyValidator('hostRegionId', ros.validateString)(properties.hostRegionId));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('accessRegionId', ros.requiredValidator)(properties.accessRegionId));
@@ -1647,7 +1647,7 @@ function rosCenRouteServicePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteService`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenRouteService`, which is used to access an Alibaba Cloud service.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
@@ -1837,7 +1837,7 @@ function rosCenVbrHealthCheckPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenVbrHealthCheck`, which is used to enable the health check feature or modify the health check configurations for a virtual border router (VBR).
  * @Note This class does not contain additional functions, so it is recommended to use the `CenVbrHealthCheck` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenvbrhealthcheck
  */
@@ -2045,7 +2045,7 @@ function rosChildInstanceRouteEntryToAttachmentPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`, which is used to add a route to a network instance that is connected to an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChildInstanceRouteEntryToAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */
@@ -2242,7 +2242,6 @@ function RosFlowlogPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('logStoreName', ros.validateString)(properties.logStoreName));
-    errors.collect(ros.propertyValidator('logFormatString', ros.validateString)(properties.logFormatString));
     if(properties.projectName && (Array.isArray(properties.projectName) || (typeof properties.projectName) === 'string')) {
         errors.collect(ros.propertyValidator('projectName', ros.validateLength)({
             data: properties.projectName.length,
@@ -2251,6 +2250,7 @@ function RosFlowlogPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('logFormatString', ros.validateString)(properties.logFormatString));
     errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
@@ -2301,7 +2301,7 @@ function rosFlowlogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::Flowlog`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::Flowlog`The , which type creates a flow log.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flowlog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-flowlog
  */
@@ -2551,6 +2551,452 @@ function rosFlowlogTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosInterRegionTrafficQosPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-interregiontrafficqospolicy
+ */
+export interface RosInterRegionTrafficQosPolicyProps {
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the inter-region connection.
+     */
+    readonly transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    readonly transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property bandwidthGuaranteeMode: The allocation mode of the guaranteed bandwidth. You can specify an absolute bandwidth value or a bandwidth percentage. Valid values: 
+     *  * byBandwidth: allocates an absolute bandwidth value for the QoS queue. 
+     *  * byBandwidthPercent (default): allocates a bandwidth percentage for the OoS queue.
+     */
+    readonly bandwidthGuaranteeMode?: string | ros.IResolvable;
+
+    /**
+     * @Property interRegionTrafficQosPolicyDescription: The description of the QoS policy. This parameter is optional. If you enter a description, it must be 1 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly interRegionTrafficQosPolicyDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property interRegionTrafficQosPolicyName: The name of the QoS policy. The name can be empty or 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly interRegionTrafficQosPolicyName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInterRegionTrafficQosPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInterRegionTrafficQosPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInterRegionTrafficQosPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.requiredValidator)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    if(properties.interRegionTrafficQosPolicyName && (Array.isArray(properties.interRegionTrafficQosPolicyName) || (typeof properties.interRegionTrafficQosPolicyName) === 'string')) {
+        errors.collect(ros.propertyValidator('interRegionTrafficQosPolicyName', ros.validateLength)({
+            data: properties.interRegionTrafficQosPolicyName.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('interRegionTrafficQosPolicyName', ros.validateString)(properties.interRegionTrafficQosPolicyName));
+    if(properties.interRegionTrafficQosPolicyDescription && (Array.isArray(properties.interRegionTrafficQosPolicyDescription) || (typeof properties.interRegionTrafficQosPolicyDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('interRegionTrafficQosPolicyDescription', ros.validateLength)({
+            data: properties.interRegionTrafficQosPolicyDescription.length,
+            min: 1,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('interRegionTrafficQosPolicyDescription', ros.validateString)(properties.interRegionTrafficQosPolicyDescription));
+    if(properties.bandwidthGuaranteeMode && (typeof properties.bandwidthGuaranteeMode) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidthGuaranteeMode', ros.validateAllowedValues)({
+          data: properties.bandwidthGuaranteeMode,
+          allowedValues: ["byBandwidth","byBandwidthPercent"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('bandwidthGuaranteeMode', ros.validateString)(properties.bandwidthGuaranteeMode));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.requiredValidator)(properties.transitRouterId));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    return errors.wrap('supplied properties not correct for "RosInterRegionTrafficQosPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::InterRegionTrafficQosPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInterRegionTrafficQosPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::InterRegionTrafficQosPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosInterRegionTrafficQosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInterRegionTrafficQosPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'BandwidthGuaranteeMode': ros.stringToRosTemplate(properties.bandwidthGuaranteeMode),
+      'InterRegionTrafficQosPolicyDescription': ros.stringToRosTemplate(properties.interRegionTrafficQosPolicyDescription),
+      'InterRegionTrafficQosPolicyName': ros.stringToRosTemplate(properties.interRegionTrafficQosPolicyName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::InterRegionTrafficQosPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InterRegionTrafficQosPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-interregiontrafficqospolicy
+ */
+export class RosInterRegionTrafficQosPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::InterRegionTrafficQosPolicy";
+
+    /**
+     * @Attribute BandwidthGuaranteeMode: The allocation mode of the guaranteed bandwidth.
+     */
+    public readonly attrBandwidthGuaranteeMode: ros.IResolvable;
+
+    /**
+     * @Attribute InterRegionTrafficQosPolicyDescription: The description of the QoS policy.
+     */
+    public readonly attrInterRegionTrafficQosPolicyDescription: ros.IResolvable;
+
+    /**
+     * @Attribute InterRegionTrafficQosPolicyId: The ID of the QoS policy.
+     */
+    public readonly attrInterRegionTrafficQosPolicyId: ros.IResolvable;
+
+    /**
+     * @Attribute InterRegionTrafficQosPolicyName: The name of the QoS policy.
+     */
+    public readonly attrInterRegionTrafficQosPolicyName: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The ID of the inter-region connection.
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: The ID of the transit router.
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the inter-region connection.
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    public transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property bandwidthGuaranteeMode: The allocation mode of the guaranteed bandwidth. You can specify an absolute bandwidth value or a bandwidth percentage. Valid values: 
+     *  * byBandwidth: allocates an absolute bandwidth value for the QoS queue. 
+     *  * byBandwidthPercent (default): allocates a bandwidth percentage for the OoS queue.
+     */
+    public bandwidthGuaranteeMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property interRegionTrafficQosPolicyDescription: The description of the QoS policy. This parameter is optional. If you enter a description, it must be 1 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    public interRegionTrafficQosPolicyDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property interRegionTrafficQosPolicyName: The name of the QoS policy. The name can be empty or 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    public interRegionTrafficQosPolicyName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInterRegionTrafficQosPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInterRegionTrafficQosPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBandwidthGuaranteeMode = this.getAtt('BandwidthGuaranteeMode');
+        this.attrInterRegionTrafficQosPolicyDescription = this.getAtt('InterRegionTrafficQosPolicyDescription');
+        this.attrInterRegionTrafficQosPolicyId = this.getAtt('InterRegionTrafficQosPolicyId');
+        this.attrInterRegionTrafficQosPolicyName = this.getAtt('InterRegionTrafficQosPolicyName');
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+        this.transitRouterId = props.transitRouterId;
+        this.bandwidthGuaranteeMode = props.bandwidthGuaranteeMode;
+        this.interRegionTrafficQosPolicyDescription = props.interRegionTrafficQosPolicyDescription;
+        this.interRegionTrafficQosPolicyName = props.interRegionTrafficQosPolicyName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+            transitRouterId: this.transitRouterId,
+            bandwidthGuaranteeMode: this.bandwidthGuaranteeMode,
+            interRegionTrafficQosPolicyDescription: this.interRegionTrafficQosPolicyDescription,
+            interRegionTrafficQosPolicyName: this.interRegionTrafficQosPolicyName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInterRegionTrafficQosPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosInterRegionTrafficQosQueue`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-interregiontrafficqosqueue
+ */
+export interface RosInterRegionTrafficQosQueueProps {
+
+    /**
+     * @Property dscps: The DSCP value of the traffic packet to be matched in the current queue, ranging from 0 to 63.
+     */
+    readonly dscps: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property trafficQosPolicyId: The ID of the QoS policy.
+     */
+    readonly trafficQosPolicyId: string | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: The maximum absolute bandwidth value that can be allocated to the queue. Unit: Mbit\/s. 
+     *  * The value specifies an absolute bandwidth. For example, a value of 20 specifies that the queue can consume at most 20 Mbit\/s of bandwidth. 
+     *  * The sum of the bandwidth values specified for all queues that belong to the same inter-region connection cannot exceed the maximum bandwidth of the inter-region connection.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
+     * @Property interRegionTrafficQosQueueDescription: The description of the queue. This parameter is optional. If you enter a description, it must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly interRegionTrafficQosQueueDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property interRegionTrafficQosQueueName: The name of the queue. The name can be empty or 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    readonly interRegionTrafficQosQueueName?: string | ros.IResolvable;
+
+    /**
+     * @Property remainBandwidthPercent: The maximum percentage of inter-region bandwidth that can be allocated to the queue. 
+     *  * Unit: percentage. For example, a value of 20 specifies that the queue can consume at most 20% of inter-region bandwidth. 
+     *  * The sum of the percentage values specified for all queues that belong to the same inter-region connection cannot exceed 100%.
+     */
+    readonly remainBandwidthPercent?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosInterRegionTrafficQosQueueProps`
+ *
+ * @param properties - the TypeScript properties of a `RosInterRegionTrafficQosQueueProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosInterRegionTrafficQosQueuePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.remainBandwidthPercent && (typeof properties.remainBandwidthPercent) !== 'object') {
+        errors.collect(ros.propertyValidator('remainBandwidthPercent', ros.validateRange)({
+            data: properties.remainBandwidthPercent,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('remainBandwidthPercent', ros.validateNumber)(properties.remainBandwidthPercent));
+    errors.collect(ros.propertyValidator('dscps', ros.requiredValidator)(properties.dscps));
+    if(properties.dscps && (Array.isArray(properties.dscps) || (typeof properties.dscps) === 'string')) {
+        errors.collect(ros.propertyValidator('dscps', ros.validateLength)({
+            data: properties.dscps.length,
+            min: 0,
+            max: 63,
+          }));
+    }
+    errors.collect(ros.propertyValidator('dscps', ros.listValidator(ros.validateNumber))(properties.dscps));
+    if(properties.interRegionTrafficQosQueueName && (Array.isArray(properties.interRegionTrafficQosQueueName) || (typeof properties.interRegionTrafficQosQueueName) === 'string')) {
+        errors.collect(ros.propertyValidator('interRegionTrafficQosQueueName', ros.validateLength)({
+            data: properties.interRegionTrafficQosQueueName.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('interRegionTrafficQosQueueName', ros.validateString)(properties.interRegionTrafficQosQueueName));
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('trafficQosPolicyId', ros.requiredValidator)(properties.trafficQosPolicyId));
+    errors.collect(ros.propertyValidator('trafficQosPolicyId', ros.validateString)(properties.trafficQosPolicyId));
+    if(properties.interRegionTrafficQosQueueDescription && (Array.isArray(properties.interRegionTrafficQosQueueDescription) || (typeof properties.interRegionTrafficQosQueueDescription) === 'string')) {
+        errors.collect(ros.propertyValidator('interRegionTrafficQosQueueDescription', ros.validateLength)({
+            data: properties.interRegionTrafficQosQueueDescription.length,
+            min: 1,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('interRegionTrafficQosQueueDescription', ros.validateString)(properties.interRegionTrafficQosQueueDescription));
+    return errors.wrap('supplied properties not correct for "RosInterRegionTrafficQosQueueProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::InterRegionTrafficQosQueue` resource
+ *
+ * @param properties - the TypeScript properties of a `RosInterRegionTrafficQosQueueProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::InterRegionTrafficQosQueue` resource.
+ */
+// @ts-ignore TS6133
+function rosInterRegionTrafficQosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosInterRegionTrafficQosQueuePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Dscps': ros.listMapper(ros.numberToRosTemplate)(properties.dscps),
+      'TrafficQosPolicyId': ros.stringToRosTemplate(properties.trafficQosPolicyId),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
+      'InterRegionTrafficQosQueueDescription': ros.stringToRosTemplate(properties.interRegionTrafficQosQueueDescription),
+      'InterRegionTrafficQosQueueName': ros.stringToRosTemplate(properties.interRegionTrafficQosQueueName),
+      'RemainBandwidthPercent': ros.numberToRosTemplate(properties.remainBandwidthPercent),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::InterRegionTrafficQosQueue`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `InterRegionTrafficQosQueue` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-interregiontrafficqosqueue
+ */
+export class RosInterRegionTrafficQosQueue extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::InterRegionTrafficQosQueue";
+
+    /**
+     * @Attribute Bandwidth: The maximum absolute bandwidth value that can be allocated to the queue. Unit: Mbit/s.
+     */
+    public readonly attrBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute Dscps: The DSCP value of the traffic packet to be matched in the current queue.
+     */
+    public readonly attrDscps: ros.IResolvable;
+
+    /**
+     * @Attribute EffectiveBandwidth: The actual bandwidth value of the current queue.
+     */
+    public readonly attrEffectiveBandwidth: ros.IResolvable;
+
+    /**
+     * @Attribute InterRegionTrafficQosQueueDescription: The description of the queue.
+     */
+    public readonly attrInterRegionTrafficQosQueueDescription: ros.IResolvable;
+
+    /**
+     * @Attribute InterRegionTrafficQosQueueId: The ID of the queue.
+     */
+    public readonly attrInterRegionTrafficQosQueueId: ros.IResolvable;
+
+    /**
+     * @Attribute InterRegionTrafficQosQueueName: The name of the queue.
+     */
+    public readonly attrInterRegionTrafficQosQueueName: ros.IResolvable;
+
+    /**
+     * @Attribute RemainBandwidthPercent: The maximum percentage of inter-region bandwidth that can be allocated to the queue.
+     */
+    public readonly attrRemainBandwidthPercent: ros.IResolvable;
+
+    /**
+     * @Attribute TrafficQosPolicyId: The ID of the QoS policy.
+     */
+    public readonly attrTrafficQosPolicyId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dscps: The DSCP value of the traffic packet to be matched in the current queue, ranging from 0 to 63.
+     */
+    public dscps: Array<number | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property trafficQosPolicyId: The ID of the QoS policy.
+     */
+    public trafficQosPolicyId: string | ros.IResolvable;
+
+    /**
+     * @Property bandwidth: The maximum absolute bandwidth value that can be allocated to the queue. Unit: Mbit\/s. 
+     *  * The value specifies an absolute bandwidth. For example, a value of 20 specifies that the queue can consume at most 20 Mbit\/s of bandwidth. 
+     *  * The sum of the bandwidth values specified for all queues that belong to the same inter-region connection cannot exceed the maximum bandwidth of the inter-region connection.
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property interRegionTrafficQosQueueDescription: The description of the queue. This parameter is optional. If you enter a description, it must be 1 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
+     */
+    public interRegionTrafficQosQueueDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property interRegionTrafficQosQueueName: The name of the queue. The name can be empty or 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/.
+     */
+    public interRegionTrafficQosQueueName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property remainBandwidthPercent: The maximum percentage of inter-region bandwidth that can be allocated to the queue. 
+     *  * Unit: percentage. For example, a value of 20 specifies that the queue can consume at most 20% of inter-region bandwidth. 
+     *  * The sum of the percentage values specified for all queues that belong to the same inter-region connection cannot exceed 100%.
+     */
+    public remainBandwidthPercent: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosInterRegionTrafficQosQueueProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosInterRegionTrafficQosQueue.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBandwidth = this.getAtt('Bandwidth');
+        this.attrDscps = this.getAtt('Dscps');
+        this.attrEffectiveBandwidth = this.getAtt('EffectiveBandwidth');
+        this.attrInterRegionTrafficQosQueueDescription = this.getAtt('InterRegionTrafficQosQueueDescription');
+        this.attrInterRegionTrafficQosQueueId = this.getAtt('InterRegionTrafficQosQueueId');
+        this.attrInterRegionTrafficQosQueueName = this.getAtt('InterRegionTrafficQosQueueName');
+        this.attrRemainBandwidthPercent = this.getAtt('RemainBandwidthPercent');
+        this.attrTrafficQosPolicyId = this.getAtt('TrafficQosPolicyId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dscps = props.dscps;
+        this.trafficQosPolicyId = props.trafficQosPolicyId;
+        this.bandwidth = props.bandwidth;
+        this.interRegionTrafficQosQueueDescription = props.interRegionTrafficQosQueueDescription;
+        this.interRegionTrafficQosQueueName = props.interRegionTrafficQosQueueName;
+        this.remainBandwidthPercent = props.remainBandwidthPercent;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dscps: this.dscps,
+            trafficQosPolicyId: this.trafficQosPolicyId,
+            bandwidth: this.bandwidth,
+            interRegionTrafficQosQueueDescription: this.interRegionTrafficQosQueueDescription,
+            interRegionTrafficQosQueueName: this.interRegionTrafficQosQueueName,
+            remainBandwidthPercent: this.remainBandwidthPercent,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosInterRegionTrafficQosQueuePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosRouteEntry`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
@@ -2642,7 +3088,7 @@ function rosRouteEntryPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::RouteEntry`, which is used to advertise a route of an attached virtual private cloud (VPC) or virtual border router (VBR) to a Cloud Enterprise Network (CEN) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-routeentry
  */
@@ -2778,7 +3224,7 @@ function rosTransitRouterPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouter`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouter`, which is used to create an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouter
  */
@@ -2876,6 +3322,523 @@ export class RosTransitRouter extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosTransitRouterCidr`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutercidr
+ */
+export interface RosTransitRouterCidrProps {
+
+    /**
+     * @Property cidr: The CIDR block of the transit router.
+     */
+    readonly cidr: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    readonly transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The new description of the transit router CIDR block.
+     * The description must be 1 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/. You can also leave this parameter empty.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property publishCidrRoute: Specifies whether to allow the system to automatically add a route that points to the CIDR block to the route table of the transit router.
+     * * true (default)
+     *  If you set the value to true, after you create a VPN attachment on a private VPN gateway and enable route learning for the VPN attachment, the system automatically adds the following route to the route table of the transit router that is in route learning relationship with the VPN attachment:
+     *  A blackhole route whose destination CIDR block is the transit router CIDR block, which refers to the CIDR block from which gateway IP addresses are allocated to the IPsec-VPN connection. The blackhole route is advertised only to the route tables of virtual border routers (VBRs) connected to the transit router.
+     * * false.
+     */
+    readonly publishCidrRoute?: boolean | ros.IResolvable;
+
+    /**
+     * @Property transitRouterCidrName: The new name of the transit router CIDR block.
+     * The name must be 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/. You can also leave this parameter empty.
+     */
+    readonly transitRouterCidrName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterCidrProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterCidrProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterCidrPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.transitRouterCidrName && (Array.isArray(properties.transitRouterCidrName) || (typeof properties.transitRouterCidrName) === 'string')) {
+        errors.collect(ros.propertyValidator('transitRouterCidrName', ros.validateLength)({
+            data: properties.transitRouterCidrName.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('transitRouterCidrName', ros.validateString)(properties.transitRouterCidrName));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: 1,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('cidr', ros.requiredValidator)(properties.cidr));
+    errors.collect(ros.propertyValidator('cidr', ros.validateString)(properties.cidr));
+    errors.collect(ros.propertyValidator('publishCidrRoute', ros.validateBoolean)(properties.publishCidrRoute));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.requiredValidator)(properties.transitRouterId));
+    errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterCidrProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterCidr` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterCidrProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterCidr` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterCidrPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterCidrPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Cidr': ros.stringToRosTemplate(properties.cidr),
+      'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'PublishCidrRoute': ros.booleanToRosTemplate(properties.publishCidrRoute),
+      'TransitRouterCidrName': ros.stringToRosTemplate(properties.transitRouterCidrName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterCidr`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterCidr` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutercidr
+ */
+export class RosTransitRouterCidr extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterCidr";
+
+    /**
+     * @Attribute Cidr: The CIDR block of the transit router.
+     */
+    public readonly attrCidr: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The new description of the transit router CIDR block.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute Family: The type of the CIDR block.
+     */
+    public readonly attrFamily: ros.IResolvable;
+
+    /**
+     * @Attribute PublishCidrRoute: Specifies whether to allow the system to automatically add a route that points to the CIDR block to the route table of the transit router.
+     */
+    public readonly attrPublishCidrRoute: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterCidrId: The ID of the CIDR block.
+     */
+    public readonly attrTransitRouterCidrId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterCidrName: The new name of the transit router CIDR block.
+     */
+    public readonly attrTransitRouterCidrName: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterId: The ID of the transit router.
+     */
+    public readonly attrTransitRouterId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cidr: The CIDR block of the transit router.
+     */
+    public cidr: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterId: The ID of the transit router.
+     */
+    public transitRouterId: string | ros.IResolvable;
+
+    /**
+     * @Property description: The new description of the transit router CIDR block.
+     * The description must be 1 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/. You can also leave this parameter empty.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property publishCidrRoute: Specifies whether to allow the system to automatically add a route that points to the CIDR block to the route table of the transit router.
+     * * true (default)
+     *  If you set the value to true, after you create a VPN attachment on a private VPN gateway and enable route learning for the VPN attachment, the system automatically adds the following route to the route table of the transit router that is in route learning relationship with the VPN attachment:
+     *  A blackhole route whose destination CIDR block is the transit router CIDR block, which refers to the CIDR block from which gateway IP addresses are allocated to the IPsec-VPN connection. The blackhole route is advertised only to the route tables of virtual border routers (VBRs) connected to the transit router.
+     * * false.
+     */
+    public publishCidrRoute: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property transitRouterCidrName: The new name of the transit router CIDR block.
+     * The name must be 1 to 128 characters in length, and cannot start with http:\/\/ or https:\/\/. You can also leave this parameter empty.
+     */
+    public transitRouterCidrName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterCidrProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterCidr.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCidr = this.getAtt('Cidr');
+        this.attrDescription = this.getAtt('Description');
+        this.attrFamily = this.getAtt('Family');
+        this.attrPublishCidrRoute = this.getAtt('PublishCidrRoute');
+        this.attrTransitRouterCidrId = this.getAtt('TransitRouterCidrId');
+        this.attrTransitRouterCidrName = this.getAtt('TransitRouterCidrName');
+        this.attrTransitRouterId = this.getAtt('TransitRouterId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cidr = props.cidr;
+        this.transitRouterId = props.transitRouterId;
+        this.description = props.description;
+        this.publishCidrRoute = props.publishCidrRoute;
+        this.transitRouterCidrName = props.transitRouterCidrName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cidr: this.cidr,
+            transitRouterId: this.transitRouterId,
+            description: this.description,
+            publishCidrRoute: this.publishCidrRoute,
+            transitRouterCidrName: this.transitRouterCidrName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterCidrPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosTransitRouterGrantAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutergrantattachment
+ */
+export interface RosTransitRouterGrantAttachmentProps {
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     */
+    readonly cenId: string | ros.IResolvable;
+
+    /**
+     * @Property cenOwnerId: The Alibaba Cloud account ID (main account ID) of the CEN instance owner.
+     */
+    readonly cenOwnerId: number | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the network instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The type of the network instance. Valid values:
+     * - VPC: Virtual Private Cloud instance.
+     * - ExpressConnect: Virtual Border Router (VBR) instance.
+     * - VPN: IPsec connection.
+     * - ECR: ECR instance.
+     */
+    readonly instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property orderType: The billing method for the network instance. Valid values:
+     * - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
+     * - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+     */
+    readonly orderType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterGrantAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterGrantAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterGrantAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.orderType && (typeof properties.orderType) !== 'object') {
+        errors.collect(ros.propertyValidator('orderType', ros.validateAllowedValues)({
+          data: properties.orderType,
+          allowedValues: ["PayByCenOwner","PayByResourceOwner"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('orderType', ros.validateString)(properties.orderType));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('cenOwnerId', ros.requiredValidator)(properties.cenOwnerId));
+    errors.collect(ros.propertyValidator('cenOwnerId', ros.validateNumber)(properties.cenOwnerId));
+    errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
+    errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('instanceType', ros.requiredValidator)(properties.instanceType));
+    if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
+          data: properties.instanceType,
+          allowedValues: ["VPC","ExpressConnect","VPN","ECR"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterGrantAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterGrantAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterGrantAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterGrantAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterGrantAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterGrantAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CenId': ros.stringToRosTemplate(properties.cenId),
+      'CenOwnerId': ros.numberToRosTemplate(properties.cenOwnerId),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'OrderType': ros.stringToRosTemplate(properties.orderType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`The , which resource grants a transit router permissions on a network instance.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterGrantAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutergrantattachment
+ */
+export class RosTransitRouterGrantAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterGrantAttachment";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+     */
+    public cenId: string | ros.IResolvable;
+
+    /**
+     * @Property cenOwnerId: The Alibaba Cloud account ID (main account ID) of the CEN instance owner.
+     */
+    public cenOwnerId: number | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the network instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property instanceType: The type of the network instance. Valid values:
+     * - VPC: Virtual Private Cloud instance.
+     * - ExpressConnect: Virtual Border Router (VBR) instance.
+     * - VPN: IPsec connection.
+     * - ECR: ECR instance.
+     */
+    public instanceType: string | ros.IResolvable;
+
+    /**
+     * @Property orderType: The billing method for the network instance. Valid values:
+     * - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
+     * - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+     */
+    public orderType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterGrantAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterGrantAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cenId = props.cenId;
+        this.cenOwnerId = props.cenOwnerId;
+        this.instanceId = props.instanceId;
+        this.instanceType = props.instanceType;
+        this.orderType = props.orderType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cenId: this.cenId,
+            cenOwnerId: this.cenOwnerId,
+            instanceId: this.instanceId,
+            instanceType: this.instanceType,
+            orderType: this.orderType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterGrantAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosTransitRouterMulticastDomainAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutermulticastdomainassociation
+ */
+export interface RosTransitRouterMulticastDomainAssociationProps {
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the VPC connection.
+     */
+    readonly transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterMulticastDomainId: The ID of the multicast domain.
+     */
+    readonly transitRouterMulticastDomainId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosTransitRouterMulticastDomainAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterMulticastDomainAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosTransitRouterMulticastDomainAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.requiredValidator)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('transitRouterMulticastDomainId', ros.requiredValidator)(properties.transitRouterMulticastDomainId));
+    errors.collect(ros.propertyValidator('transitRouterMulticastDomainId', ros.validateString)(properties.transitRouterMulticastDomainId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    return errors.wrap('supplied properties not correct for "RosTransitRouterMulticastDomainAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterMulticastDomainAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosTransitRouterMulticastDomainAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CEN::TransitRouterMulticastDomainAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosTransitRouterMulticastDomainAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosTransitRouterMulticastDomainAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'TransitRouterAttachmentId': ros.stringToRosTemplate(properties.transitRouterAttachmentId),
+      'TransitRouterMulticastDomainId': ros.stringToRosTemplate(properties.transitRouterMulticastDomainId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterMulticastDomainAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterMulticastDomainAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutermulticastdomainassociation
+ */
+export class RosTransitRouterMulticastDomainAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterMulticastDomainAssociation";
+
+    /**
+     * @Attribute TransitRouterAttachmentId: The ID of the VPC connection.
+     */
+    public readonly attrTransitRouterAttachmentId: ros.IResolvable;
+
+    /**
+     * @Attribute TransitRouterMulticastDomainId: The ID of the multicast domain.
+     */
+    public readonly attrTransitRouterMulticastDomainId: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchId: The ID of the VSwitch.
+     */
+    public readonly attrVSwitchId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property transitRouterAttachmentId: The ID of the VPC connection.
+     */
+    public transitRouterAttachmentId: string | ros.IResolvable;
+
+    /**
+     * @Property transitRouterMulticastDomainId: The ID of the multicast domain.
+     */
+    public transitRouterMulticastDomainId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosTransitRouterMulticastDomainAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosTransitRouterMulticastDomainAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
+        this.attrTransitRouterMulticastDomainId = this.getAtt('TransitRouterMulticastDomainId');
+        this.attrVSwitchId = this.getAtt('VSwitchId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.transitRouterAttachmentId = props.transitRouterAttachmentId;
+        this.transitRouterMulticastDomainId = props.transitRouterMulticastDomainId;
+        this.vSwitchId = props.vSwitchId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            transitRouterAttachmentId: this.transitRouterAttachmentId,
+            transitRouterMulticastDomainId: this.transitRouterMulticastDomainId,
+            vSwitchId: this.vSwitchId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosTransitRouterMulticastDomainAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosTransitRouterPeerAttachment`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
@@ -2926,9 +3889,24 @@ export interface RosTransitRouterPeerAttachmentProps {
     readonly defaultLinkType?: string | ros.IResolvable;
 
     /**
+     * @Property deletionForce: Whether to force delete the peer attachment.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * @Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
      */
     readonly peerTransitRouterRegionId?: string | ros.IResolvable;
+
+    /**
+     * @Property routeTableAssociationEnabled: Whether to enable the association of route tables
+     */
+    readonly routeTableAssociationEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+     */
+    readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
 
     /**
      * @Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
@@ -2963,6 +3941,21 @@ export interface RosTransitRouterPeerAttachmentProps {
 function RosTransitRouterPeerAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.transitRouterAttachmentName && (Array.isArray(properties.transitRouterAttachmentName) || (typeof properties.transitRouterAttachmentName) === 'string')) {
+        errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateLength)({
+            data: properties.transitRouterAttachmentName.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
+    if(properties.defaultLinkType && (typeof properties.defaultLinkType) !== 'object') {
+        errors.collect(ros.propertyValidator('defaultLinkType', ros.validateAllowedValues)({
+          data: properties.defaultLinkType,
+          allowedValues: ["Platinum","Gold"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('defaultLinkType', ros.validateString)(properties.defaultLinkType));
     errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
     if(properties.bandwidthType && (typeof properties.bandwidthType) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidthType', ros.validateAllowedValues)({
@@ -2971,6 +3964,9 @@ function RosTransitRouterPeerAttachmentPropsValidator(properties: any): ros.Vali
         }));
     }
     errors.collect(ros.propertyValidator('bandwidthType', ros.validateString)(properties.bandwidthType));
+    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateBoolean)(properties.routeTableAssociationEnabled));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateBoolean)(properties.routeTablePropagationEnabled));
     if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
             data: properties.bandwidth,
@@ -2980,32 +3976,9 @@ function RosTransitRouterPeerAttachmentPropsValidator(properties: any): ros.Vali
     }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
-    if(properties.transitRouterAttachmentName && (Array.isArray(properties.transitRouterAttachmentName) || (typeof properties.transitRouterAttachmentName) === 'string')) {
-        errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateLength)({
-            data: properties.transitRouterAttachmentName.length,
-            min: undefined,
-            max: 128,
-          }));
-    }
-    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
     errors.collect(ros.propertyValidator('peerTransitRouterId', ros.requiredValidator)(properties.peerTransitRouterId));
     errors.collect(ros.propertyValidator('peerTransitRouterId', ros.validateString)(properties.peerTransitRouterId));
-    if(properties.defaultLinkType && (typeof properties.defaultLinkType) !== 'object') {
-        errors.collect(ros.propertyValidator('defaultLinkType', ros.validateAllowedValues)({
-          data: properties.defaultLinkType,
-          allowedValues: ["Platinum","Gold"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('defaultLinkType', ros.validateString)(properties.defaultLinkType));
     errors.collect(ros.propertyValidator('cenBandwidthPackageId', ros.validateString)(properties.cenBandwidthPackageId));
-    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
-        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
-            data: properties.tags.length,
-            min: 1,
-            max: 20,
-          }));
-    }
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTransitRouterPeerAttachment_TagsPropertyValidator))(properties.tags));
     if(properties.transitRouterAttachmentDescription && (Array.isArray(properties.transitRouterAttachmentDescription) || (typeof properties.transitRouterAttachmentDescription) === 'string')) {
         errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateLength)({
             data: properties.transitRouterAttachmentDescription.length,
@@ -3014,6 +3987,14 @@ function RosTransitRouterPeerAttachmentPropsValidator(properties: any): ros.Vali
           }));
     }
     errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: 1,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTransitRouterPeerAttachment_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
     errors.collect(ros.propertyValidator('peerTransitRouterRegionId', ros.validateString)(properties.peerTransitRouterRegionId));
     return errors.wrap('supplied properties not correct for "RosTransitRouterPeerAttachmentProps"');
@@ -3040,7 +4021,10 @@ function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enabl
       'CenBandwidthPackageId': ros.stringToRosTemplate(properties.cenBandwidthPackageId),
       'CenId': ros.stringToRosTemplate(properties.cenId),
       'DefaultLinkType': ros.stringToRosTemplate(properties.defaultLinkType),
+      'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
       'PeerTransitRouterRegionId': ros.stringToRosTemplate(properties.peerTransitRouterRegionId),
+      'RouteTableAssociationEnabled': ros.booleanToRosTemplate(properties.routeTableAssociationEnabled),
+      'RouteTablePropagationEnabled': ros.booleanToRosTemplate(properties.routeTablePropagationEnabled),
       'Tags': ros.listMapper(rosTransitRouterPeerAttachmentTagsPropertyToRosTemplate)(properties.tags),
       'TransitRouterAttachmentDescription': ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
       'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
@@ -3049,7 +4033,7 @@ function rosTransitRouterPeerAttachmentPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`The , which type creates an inter-region connection for an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterPeerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
@@ -3112,9 +4096,24 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
     public defaultLinkType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property deletionForce: Whether to force delete the peer attachment.
+     */
+    public deletionForce: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
      */
     public peerTransitRouterRegionId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTableAssociationEnabled: Whether to enable the association of route tables
+     */
+    public routeTableAssociationEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+     */
+    public routeTablePropagationEnabled: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
@@ -3155,7 +4154,10 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
         this.cenBandwidthPackageId = props.cenBandwidthPackageId;
         this.cenId = props.cenId;
         this.defaultLinkType = props.defaultLinkType;
+        this.deletionForce = props.deletionForce;
         this.peerTransitRouterRegionId = props.peerTransitRouterRegionId;
+        this.routeTableAssociationEnabled = props.routeTableAssociationEnabled;
+        this.routeTablePropagationEnabled = props.routeTablePropagationEnabled;
         this.tags = props.tags;
         this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
@@ -3172,7 +4174,10 @@ export class RosTransitRouterPeerAttachment extends ros.RosResource {
             cenBandwidthPackageId: this.cenBandwidthPackageId,
             cenId: this.cenId,
             defaultLinkType: this.defaultLinkType,
+            deletionForce: this.deletionForce,
             peerTransitRouterRegionId: this.peerTransitRouterRegionId,
+            routeTableAssociationEnabled: this.routeTableAssociationEnabled,
+            routeTablePropagationEnabled: this.routeTablePropagationEnabled,
             tags: this.tags,
             transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
             transitRouterAttachmentName: this.transitRouterAttachmentName,
@@ -3315,7 +4320,7 @@ function rosTransitRouterRouteEntryPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteEntry`, which is used to add routes to a route table of an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteEntry` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterrouteentry
  */
@@ -3499,7 +4504,7 @@ function rosTransitRouterRouteTablePropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`, which is used to create a custom route table for an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetable
  */
@@ -3644,7 +4649,7 @@ function rosTransitRouterRouteTableAssociationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`, which is used to create an associated forwarding correlation.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTableAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociation
  */
@@ -3743,10 +4748,10 @@ export interface RosTransitRouterRouteTableAssociationReplacementProps {
 function RosTransitRouterRouteTableAssociationReplacementPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.requiredValidator)(properties.transitRouterRouteTableId));
-    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.validateString)(properties.transitRouterRouteTableId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.requiredValidator)(properties.transitRouterAttachmentId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentId', ros.validateString)(properties.transitRouterAttachmentId));
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.requiredValidator)(properties.transitRouterRouteTableId));
+    errors.collect(ros.propertyValidator('transitRouterRouteTableId', ros.validateString)(properties.transitRouterRouteTableId));
     return errors.wrap('supplied properties not correct for "RosTransitRouterRouteTableAssociationReplacementProps"');
 }
 
@@ -3770,7 +4775,7 @@ function rosTransitRouterRouteTableAssociationReplacementPropsToRosTemplate(prop
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`The , which resource replaces the transit router route table associated with a network instance connection.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTableAssociationReplacement` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetableassociationreplacement
  */
@@ -3878,7 +4883,7 @@ function rosTransitRouterRouteTablePropagationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`, which is used to create a route learning correlation.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTablePropagation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetablepropagation
  */
@@ -4038,7 +5043,7 @@ function rosTransitRouterVbrAttachmentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVbrAttachment`, which is used to create a virtual border router (VBR) connection on an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVbrAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervbrattachment
  */
@@ -4188,12 +5193,12 @@ export class RosTransitRouterVbrAttachment extends ros.RosResource {
 export interface RosTransitRouterVpcAttachmentProps {
 
     /**
-     * @Property vpcId: VpcId
+     * @Property vpcId: The ID of the VPC.
      */
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * @Property zoneMappings: ZoneMappingss
+     * @Property zoneMappings: The zone mappings for the VPC.
      */
     readonly zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -4203,7 +5208,12 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly autoCreateVpcRoute?: boolean | ros.IResolvable;
 
     /**
-     * @Property cenId: CenId
+     * @Property autoPublishRouteEnabled: Whether to automatically publish routes.
+     */
+    readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
      */
     readonly cenId?: string | ros.IResolvable;
 
@@ -4228,22 +5238,27 @@ export interface RosTransitRouterVpcAttachmentProps {
     readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
 
     /**
-     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * @Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
-     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     * @Property transitRouterAttachmentName: The name of the transit router VPC attachment.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
     /**
-     * @Property transitRouterId: TransitRouterId
+     * @Property transitRouterId: The ID of the transit router.
      */
     readonly transitRouterId?: string | ros.IResolvable;
 
     /**
-     * @Property vpcOwnerId: VpcOwnerId
+     * @Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+     */
+    readonly transitRouterVpcAttachmentOptions?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property vpcOwnerId: The owner ID of the VPC.
      */
     readonly vpcOwnerId?: number | ros.IResolvable;
 }
@@ -4258,6 +5273,19 @@ export interface RosTransitRouterVpcAttachmentProps {
 function RosTransitRouterVpcAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
+    errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
+    if(properties.zoneMappings && (Array.isArray(properties.zoneMappings) || (typeof properties.zoneMappings) === 'string')) {
+        errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
+            data: properties.zoneMappings.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosTransitRouterVpcAttachment_ZoneMappingsPropertyValidator))(properties.zoneMappings));
+    errors.collect(ros.propertyValidator('vpcOwnerId', ros.validateNumber)(properties.vpcOwnerId));
+    errors.collect(ros.propertyValidator('transitRouterVpcAttachmentOptions', ros.hashValidator(ros.validateAny))(properties.transitRouterVpcAttachmentOptions));
+    errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
     errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateBoolean)(properties.routeTableAssociationEnabled));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('autoCreateVpcRoute', ros.validateBoolean)(properties.autoCreateVpcRoute));
@@ -4272,17 +5300,6 @@ function RosTransitRouterVpcAttachmentPropsValidator(properties: any): ros.Valid
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateBoolean)(properties.routeTablePropagationEnabled));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
-    errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
-    errors.collect(ros.propertyValidator('zoneMappings', ros.requiredValidator)(properties.zoneMappings));
-    if(properties.zoneMappings && (Array.isArray(properties.zoneMappings) || (typeof properties.zoneMappings) === 'string')) {
-        errors.collect(ros.propertyValidator('zoneMappings', ros.validateLength)({
-            data: properties.zoneMappings.length,
-            min: undefined,
-            max: 3,
-          }));
-    }
-    errors.collect(ros.propertyValidator('zoneMappings', ros.listValidator(RosTransitRouterVpcAttachment_ZoneMappingsPropertyValidator))(properties.zoneMappings));
-    errors.collect(ros.propertyValidator('vpcOwnerId', ros.validateNumber)(properties.vpcOwnerId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
     errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
     return errors.wrap('supplied properties not correct for "RosTransitRouterVpcAttachmentProps"');
@@ -4305,6 +5322,7 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'ZoneMappings': ros.listMapper(rosTransitRouterVpcAttachmentZoneMappingsPropertyToRosTemplate)(properties.zoneMappings),
       'AutoCreateVpcRoute': ros.booleanToRosTemplate(properties.autoCreateVpcRoute),
+      'AutoPublishRouteEnabled': ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
       'CenId': ros.stringToRosTemplate(properties.cenId),
       'ChargeType': ros.stringToRosTemplate(properties.chargeType),
       'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
@@ -4313,12 +5331,13 @@ function rosTransitRouterVpcAttachmentPropsToRosTemplate(properties: any, enable
       'TransitRouterAttachmentDescription': ros.stringToRosTemplate(properties.transitRouterAttachmentDescription),
       'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
       'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
+      'TransitRouterVPCAttachmentOptions': ros.hashMapper(ros.objectToRosTemplate)(properties.transitRouterVpcAttachmentOptions),
       'VpcOwnerId': ros.numberToRosTemplate(properties.vpcOwnerId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpcAttachment`, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpcAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
@@ -4329,47 +5348,42 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CEN::TransitRouterVpcAttachment";
 
     /**
-     * @Attribute CenId: CenId
+     * @Attribute CenId: CEN ID
      */
     public readonly attrCenId: ros.IResolvable;
 
     /**
-     * @Attribute ClientToken: ClientToken
-     */
-    public readonly attrClientToken: ros.IResolvable;
-
-    /**
-     * @Attribute ResourceType: ResourceType
+     * @Attribute ResourceType: Resource Type
      */
     public readonly attrResourceType: ros.IResolvable;
 
     /**
-     * @Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * @Attribute TransitRouterAttachmentDescription: Attachment Description
      */
     public readonly attrTransitRouterAttachmentDescription: ros.IResolvable;
 
     /**
-     * @Attribute TransitRouterAttachmentId: The first ID of the resource
+     * @Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
      */
     public readonly attrTransitRouterAttachmentId: ros.IResolvable;
 
     /**
-     * @Attribute TransitRouterAttachmentName: TransitRouterAttachmentName
+     * @Attribute TransitRouterAttachmentName: Attachment Name
      */
     public readonly attrTransitRouterAttachmentName: ros.IResolvable;
 
     /**
-     * @Attribute TransitRouterId: TransitRouterId
+     * @Attribute TransitRouterId: Transit Router ID
      */
     public readonly attrTransitRouterId: ros.IResolvable;
 
     /**
-     * @Attribute VpcId: VpcId
+     * @Attribute VpcId: VPC ID
      */
     public readonly attrVpcId: ros.IResolvable;
 
     /**
-     * @Attribute VpcOwnerId: VpcOwnerId
+     * @Attribute VpcOwnerId: VPC Owner ID
      */
     public readonly attrVpcOwnerId: ros.IResolvable;
 
@@ -4377,12 +5391,12 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
 
 
     /**
-     * @Property vpcId: VpcId
+     * @Property vpcId: The ID of the VPC.
      */
     public vpcId: string | ros.IResolvable;
 
     /**
-     * @Property zoneMappings: ZoneMappingss
+     * @Property zoneMappings: The zone mappings for the VPC.
      */
     public zoneMappings: Array<RosTransitRouterVpcAttachment.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -4392,7 +5406,12 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public autoCreateVpcRoute: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property cenId: CenId
+     * @Property autoPublishRouteEnabled: Whether to automatically publish routes.
+     */
+    public autoPublishRouteEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
      */
     public cenId: string | ros.IResolvable | undefined;
 
@@ -4417,22 +5436,27 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     public routeTablePropagationEnabled: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+     * @Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
      */
     public transitRouterAttachmentDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterAttachmentName: TransitRouterAttachmentName
+     * @Property transitRouterAttachmentName: The name of the transit router VPC attachment.
      */
     public transitRouterAttachmentName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property transitRouterId: TransitRouterId
+     * @Property transitRouterId: The ID of the transit router.
      */
     public transitRouterId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vpcOwnerId: VpcOwnerId
+     * @Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+     */
+    public transitRouterVpcAttachmentOptions: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcOwnerId: The owner ID of the VPC.
      */
     public vpcOwnerId: number | ros.IResolvable | undefined;
 
@@ -4444,7 +5468,6 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosTransitRouterVpcAttachmentProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosTransitRouterVpcAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrCenId = this.getAtt('CenId');
-        this.attrClientToken = this.getAtt('ClientToken');
         this.attrResourceType = this.getAtt('ResourceType');
         this.attrTransitRouterAttachmentDescription = this.getAtt('TransitRouterAttachmentDescription');
         this.attrTransitRouterAttachmentId = this.getAtt('TransitRouterAttachmentId');
@@ -4457,6 +5480,7 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
         this.vpcId = props.vpcId;
         this.zoneMappings = props.zoneMappings;
         this.autoCreateVpcRoute = props.autoCreateVpcRoute;
+        this.autoPublishRouteEnabled = props.autoPublishRouteEnabled;
         this.cenId = props.cenId;
         this.chargeType = props.chargeType;
         this.deletionForce = props.deletionForce;
@@ -4465,6 +5489,7 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
         this.transitRouterAttachmentDescription = props.transitRouterAttachmentDescription;
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
         this.transitRouterId = props.transitRouterId;
+        this.transitRouterVpcAttachmentOptions = props.transitRouterVpcAttachmentOptions;
         this.vpcOwnerId = props.vpcOwnerId;
     }
 
@@ -4474,6 +5499,7 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
             vpcId: this.vpcId,
             zoneMappings: this.zoneMappings,
             autoCreateVpcRoute: this.autoCreateVpcRoute,
+            autoPublishRouteEnabled: this.autoPublishRouteEnabled,
             cenId: this.cenId,
             chargeType: this.chargeType,
             deletionForce: this.deletionForce,
@@ -4482,6 +5508,7 @@ export class RosTransitRouterVpcAttachment extends ros.RosResource {
             transitRouterAttachmentDescription: this.transitRouterAttachmentDescription,
             transitRouterAttachmentName: this.transitRouterAttachmentName,
             transitRouterId: this.transitRouterId,
+            transitRouterVpcAttachmentOptions: this.transitRouterVpcAttachmentOptions,
             vpcOwnerId: this.vpcOwnerId,
         };
     }
@@ -4496,11 +5523,11 @@ export namespace RosTransitRouterVpcAttachment {
      */
     export interface ZoneMappingsProperty {
         /**
-         * @Property zoneId: ZoneId
+         * @Property zoneId: The ID of the zone.
          */
         readonly zoneId: string | ros.IResolvable;
         /**
-         * @Property vSwitchId: VSwitchId
+         * @Property vSwitchId: The ID of the vSwitch.
          */
         readonly vSwitchId: string | ros.IResolvable;
     }
@@ -4551,11 +5578,6 @@ export interface RosTransitRouterVpnAttachmentProps {
     readonly vpnId: string | ros.IResolvable;
 
     /**
-     * @Property zoneId: Availability zone ID in the current region.
-     */
-    readonly zoneId: string | ros.IResolvable;
-
-    /**
      * @Property autoPublishRouteEnabled: Whether to allow forwarding router instances to automatically publish route entries to IPsec connections. Default is true.
      */
     readonly autoPublishRouteEnabled?: boolean | ros.IResolvable;
@@ -4604,6 +5626,11 @@ export interface RosTransitRouterVpnAttachmentProps {
      * @Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
      */
     readonly vpnOwnerId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: Availability zone ID in the current region.
+     */
+    readonly zoneId?: string | ros.IResolvable;
 }
 
 /**
@@ -4617,14 +5644,14 @@ function RosTransitRouterVpnAttachmentPropsValidator(properties: any): ros.Valid
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('autoPublishRouteEnabled', ros.validateBoolean)(properties.autoPublishRouteEnabled));
-    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateBoolean)(properties.routeTableAssociationEnabled));
     errors.collect(ros.propertyValidator('vpnOwnerId', ros.validateString)(properties.vpnOwnerId));
+    errors.collect(ros.propertyValidator('routeTableAssociationEnabled', ros.validateBoolean)(properties.routeTableAssociationEnabled));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('routeTablePropagationEnabled', ros.validateBoolean)(properties.routeTablePropagationEnabled));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
     errors.collect(ros.propertyValidator('transitRouterAttachmentName', ros.validateString)(properties.transitRouterAttachmentName));
+    errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -4633,7 +5660,6 @@ function RosTransitRouterVpnAttachmentPropsValidator(properties: any): ros.Valid
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTransitRouterVpnAttachment_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('transitRouterAttachmentDescription', ros.validateString)(properties.transitRouterAttachmentDescription));
     errors.collect(ros.propertyValidator('transitRouterId', ros.validateString)(properties.transitRouterId));
     errors.collect(ros.propertyValidator('vpnId', ros.requiredValidator)(properties.vpnId));
     errors.collect(ros.propertyValidator('vpnId', ros.validateString)(properties.vpnId));
@@ -4655,7 +5681,6 @@ function rosTransitRouterVpnAttachmentPropsToRosTemplate(properties: any, enable
     }
     return {
       'VpnId': ros.stringToRosTemplate(properties.vpnId),
-      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
       'AutoPublishRouteEnabled': ros.booleanToRosTemplate(properties.autoPublishRouteEnabled),
       'CenId': ros.stringToRosTemplate(properties.cenId),
       'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
@@ -4666,11 +5691,12 @@ function rosTransitRouterVpnAttachmentPropsToRosTemplate(properties: any, enable
       'TransitRouterAttachmentName': ros.stringToRosTemplate(properties.transitRouterAttachmentName),
       'TransitRouterId': ros.stringToRosTemplate(properties.transitRouterId),
       'VpnOwnerId': ros.stringToRosTemplate(properties.vpnOwnerId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN connection.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterVpnAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */
@@ -4692,11 +5718,6 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
      * @Property vpnId: IPsec connection ID
      */
     public vpnId: string | ros.IResolvable;
-
-    /**
-     * @Property zoneId: Availability zone ID in the current region.
-     */
-    public zoneId: string | ros.IResolvable;
 
     /**
      * @Property autoPublishRouteEnabled: Whether to allow forwarding router instances to automatically publish route entries to IPsec connections. Default is true.
@@ -4749,6 +5770,11 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
     public vpnOwnerId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property zoneId: Availability zone ID in the current region.
+     */
+    public zoneId: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -4759,7 +5785,6 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.vpnId = props.vpnId;
-        this.zoneId = props.zoneId;
         this.autoPublishRouteEnabled = props.autoPublishRouteEnabled;
         this.cenId = props.cenId;
         this.deletionForce = props.deletionForce;
@@ -4770,13 +5795,13 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
         this.transitRouterAttachmentName = props.transitRouterAttachmentName;
         this.transitRouterId = props.transitRouterId;
         this.vpnOwnerId = props.vpnOwnerId;
+        this.zoneId = props.zoneId;
     }
 
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
             vpnId: this.vpnId,
-            zoneId: this.zoneId,
             autoPublishRouteEnabled: this.autoPublishRouteEnabled,
             cenId: this.cenId,
             deletionForce: this.deletionForce,
@@ -4787,6 +5812,7 @@ export class RosTransitRouterVpnAttachment extends ros.RosResource {
             transitRouterAttachmentName: this.transitRouterAttachmentName,
             transitRouterId: this.transitRouterId,
             vpnOwnerId: this.vpnOwnerId,
+            zoneId: this.zoneId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

@@ -87,7 +87,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Rule`, which is used to add a forwarding rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-rule
  */
@@ -329,7 +329,7 @@ function rosSyncEcsHostPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`, which is used to create a hostname synchronization task.
  * @Note This class does not contain additional functions, so it is recommended to use the `SyncEcsHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-syncecshost
  */
@@ -508,7 +508,7 @@ function rosUserVpcAuthorizationPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::UserVpcAuthorization`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::UserVpcAuthorization`, which is used to associate virtual private clouds (VPCs) across accounts.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserVpcAuthorization` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
  */
@@ -665,6 +665,13 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('proxyPattern', ros.validateString)(properties.proxyPattern));
+    if(properties.dnsGroup && (typeof properties.dnsGroup) !== 'object') {
+        errors.collect(ros.propertyValidator('dnsGroup', ros.validateAllowedValues)({
+          data: properties.dnsGroup,
+          allowedValues: ["NORMAL_ZONE","FAST_ZONE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dnsGroup', ros.validateString)(properties.dnsGroup));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -673,13 +680,6 @@ function RosZonePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosZone_TagsPropertyValidator))(properties.tags));
-    if(properties.dnsGroup && (typeof properties.dnsGroup) !== 'object') {
-        errors.collect(ros.propertyValidator('dnsGroup', ros.validateAllowedValues)({
-          data: properties.dnsGroup,
-          allowedValues: ["NORMAL_ZONE","FAST_ZONE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('dnsGroup', ros.validateString)(properties.dnsGroup));
     if(properties.remark && (Array.isArray(properties.remark) || (typeof properties.remark) === 'string')) {
         errors.collect(ros.propertyValidator('remark', ros.validateLength)({
             data: properties.remark.length,
@@ -722,7 +722,7 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Zone`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a built-in authoritative zone.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
@@ -998,7 +998,7 @@ function rosZoneRecordPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneRecord`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
  * @Note This class does not contain additional functions, so it is recommended to use the `ZoneRecord` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */
@@ -1160,7 +1160,7 @@ function rosZoneVpcBinderPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneVpcBinder`, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
  * @Note This class does not contain additional functions, so it is recommended to use the `ZoneVpcBinder` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonevpcbinder
  */

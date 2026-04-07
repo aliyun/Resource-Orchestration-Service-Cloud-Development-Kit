@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::BandwidthPackageAcceleratorAddition</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::BandwidthPackageAcceleratorAddition</code>, which is used to bind a bandwidth plan to a global acceleration instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BandwidthPackageAcceleratorAddition")
 public class BandwidthPackageAcceleratorAddition extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.IBandwidthPackageAcceleratorAddition {
 

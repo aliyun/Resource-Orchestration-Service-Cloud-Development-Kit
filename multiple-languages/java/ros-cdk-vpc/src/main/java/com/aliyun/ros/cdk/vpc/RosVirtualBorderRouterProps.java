@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.119Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVirtualBorderRouterProps")
 @software.amazon.jsii.Jsii.Proxy(RosVirtualBorderRouterProps.Jsii$Proxy.class)
 public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,12 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCircuitCode() {
         return null;
     }
@@ -45,6 +51,12 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -63,9 +75,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
         java.lang.Object peeringSubnetMask;
         java.lang.Object physicalConnectionId;
         java.lang.Object vlanId;
+        java.lang.Object bandwidth;
         java.lang.Object circuitCode;
         java.lang.Object description;
         java.lang.Object name;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link RosVirtualBorderRouterProps#getLocalGatewayIp}
@@ -168,6 +182,26 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosVirtualBorderRouterProps#getBandwidth}
+         * @param bandwidth the value to be set.
+         * @return {@code this}
+         */
+        public Builder bandwidth(java.lang.Number bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVirtualBorderRouterProps#getBandwidth}
+         * @param bandwidth the value to be set.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVirtualBorderRouterProps#getCircuitCode}
          * @param circuitCode the value to be set.
          * @return {@code this}
@@ -228,6 +262,26 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
         }
 
         /**
+         * Sets the value of {@link RosVirtualBorderRouterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVirtualBorderRouterProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVirtualBorderRouterProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -248,9 +302,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
         private final java.lang.Object peeringSubnetMask;
         private final java.lang.Object physicalConnectionId;
         private final java.lang.Object vlanId;
+        private final java.lang.Object bandwidth;
         private final java.lang.Object circuitCode;
         private final java.lang.Object description;
         private final java.lang.Object name;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -263,9 +319,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
             this.peeringSubnetMask = software.amazon.jsii.Kernel.get(this, "peeringSubnetMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.physicalConnectionId = software.amazon.jsii.Kernel.get(this, "physicalConnectionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vlanId = software.amazon.jsii.Kernel.get(this, "vlanId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.circuitCode = software.amazon.jsii.Kernel.get(this, "circuitCode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -278,9 +336,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
             this.peeringSubnetMask = java.util.Objects.requireNonNull(builder.peeringSubnetMask, "peeringSubnetMask is required");
             this.physicalConnectionId = java.util.Objects.requireNonNull(builder.physicalConnectionId, "physicalConnectionId is required");
             this.vlanId = java.util.Objects.requireNonNull(builder.vlanId, "vlanId is required");
+            this.bandwidth = builder.bandwidth;
             this.circuitCode = builder.circuitCode;
             this.description = builder.description;
             this.name = builder.name;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -309,6 +369,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getBandwidth() {
+            return this.bandwidth;
+        }
+
+        @Override
         public final java.lang.Object getCircuitCode() {
             return this.circuitCode;
         }
@@ -324,6 +389,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -334,6 +404,9 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
             data.set("peeringSubnetMask", om.valueToTree(this.getPeeringSubnetMask()));
             data.set("physicalConnectionId", om.valueToTree(this.getPhysicalConnectionId()));
             data.set("vlanId", om.valueToTree(this.getVlanId()));
+            if (this.getBandwidth() != null) {
+                data.set("bandwidth", om.valueToTree(this.getBandwidth()));
+            }
             if (this.getCircuitCode() != null) {
                 data.set("circuitCode", om.valueToTree(this.getCircuitCode()));
             }
@@ -342,6 +415,9 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
             }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -366,9 +442,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
             if (!peeringSubnetMask.equals(that.peeringSubnetMask)) return false;
             if (!physicalConnectionId.equals(that.physicalConnectionId)) return false;
             if (!vlanId.equals(that.vlanId)) return false;
+            if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
             if (this.circuitCode != null ? !this.circuitCode.equals(that.circuitCode) : that.circuitCode != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.name != null ? this.name.equals(that.name) : that.name == null;
+            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -378,9 +456,11 @@ public interface RosVirtualBorderRouterProps extends software.amazon.jsii.JsiiSe
             result = 31 * result + (this.peeringSubnetMask.hashCode());
             result = 31 * result + (this.physicalConnectionId.hashCode());
             result = 31 * result + (this.vlanId.hashCode());
+            result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
             result = 31 * result + (this.circuitCode != null ? this.circuitCode.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

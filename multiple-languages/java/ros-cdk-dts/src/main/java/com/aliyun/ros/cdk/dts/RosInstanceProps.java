@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.764Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.127Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -67,6 +67,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFeeType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInsightModule() {
         return null;
     }
 
@@ -145,6 +151,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object destinationRegion;
         java.lang.Object du;
         java.lang.Object feeType;
+        java.lang.Object insightModule;
         java.lang.Object jobId;
         java.lang.Object maxDu;
         java.lang.Object minDu;
@@ -376,6 +383,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getInsightModule}
+         * @param insightModule the value to be set.
+         * @return {@code this}
+         */
+        public Builder insightModule(java.lang.Boolean insightModule) {
+            this.insightModule = insightModule;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getInsightModule}
+         * @param insightModule the value to be set.
+         * @return {@code this}
+         */
+        public Builder insightModule(com.aliyun.ros.cdk.core.IResolvable insightModule) {
+            this.insightModule = insightModule;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getJobId}
          * @param jobId the value to be set.
          * @return {@code this}
@@ -582,6 +609,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object destinationRegion;
         private final java.lang.Object du;
         private final java.lang.Object feeType;
+        private final java.lang.Object insightModule;
         private final java.lang.Object jobId;
         private final java.lang.Object maxDu;
         private final java.lang.Object minDu;
@@ -609,6 +637,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.destinationRegion = software.amazon.jsii.Kernel.get(this, "destinationRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.du = software.amazon.jsii.Kernel.get(this, "du", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.feeType = software.amazon.jsii.Kernel.get(this, "feeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.insightModule = software.amazon.jsii.Kernel.get(this, "insightModule", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.jobId = software.amazon.jsii.Kernel.get(this, "jobId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.maxDu = software.amazon.jsii.Kernel.get(this, "maxDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.minDu = software.amazon.jsii.Kernel.get(this, "minDu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -636,6 +665,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.destinationRegion = builder.destinationRegion;
             this.du = builder.du;
             this.feeType = builder.feeType;
+            this.insightModule = builder.insightModule;
             this.jobId = builder.jobId;
             this.maxDu = builder.maxDu;
             this.minDu = builder.minDu;
@@ -700,6 +730,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getFeeType() {
             return this.feeType;
+        }
+
+        @Override
+        public final java.lang.Object getInsightModule() {
+            return this.insightModule;
         }
 
         @Override
@@ -780,6 +815,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getFeeType() != null) {
                 data.set("feeType", om.valueToTree(this.getFeeType()));
             }
+            if (this.getInsightModule() != null) {
+                data.set("insightModule", om.valueToTree(this.getInsightModule()));
+            }
             if (this.getJobId() != null) {
                 data.set("jobId", om.valueToTree(this.getJobId()));
             }
@@ -836,6 +874,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.destinationRegion != null ? !this.destinationRegion.equals(that.destinationRegion) : that.destinationRegion != null) return false;
             if (this.du != null ? !this.du.equals(that.du) : that.du != null) return false;
             if (this.feeType != null ? !this.feeType.equals(that.feeType) : that.feeType != null) return false;
+            if (this.insightModule != null ? !this.insightModule.equals(that.insightModule) : that.insightModule != null) return false;
             if (this.jobId != null ? !this.jobId.equals(that.jobId) : that.jobId != null) return false;
             if (this.maxDu != null ? !this.maxDu.equals(that.maxDu) : that.maxDu != null) return false;
             if (this.minDu != null ? !this.minDu.equals(that.minDu) : that.minDu != null) return false;
@@ -860,6 +899,7 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.destinationRegion != null ? this.destinationRegion.hashCode() : 0);
             result = 31 * result + (this.du != null ? this.du.hashCode() : 0);
             result = 31 * result + (this.feeType != null ? this.feeType.hashCode() : 0);
+            result = 31 * result + (this.insightModule != null ? this.insightModule.hashCode() : 0);
             result = 31 * result + (this.jobId != null ? this.jobId.hashCode() : 0);
             result = 31 * result + (this.maxDu != null ? this.maxDu.hashCode() : 0);
             result = 31 * result + (this.minDu != null ? this.minDu.hashCode() : 0);

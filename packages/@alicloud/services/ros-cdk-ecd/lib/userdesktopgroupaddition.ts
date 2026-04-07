@@ -37,7 +37,7 @@ export interface IUserDesktopGroupAddition extends ros.IResource {
     readonly attrEndUserIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`, which is used grant the permissions on a cloud computer pool to users.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserDesktopGroupAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-userdesktopgroupaddition
  */

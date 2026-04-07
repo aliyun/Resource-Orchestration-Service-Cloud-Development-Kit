@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
 type RosResourceCleaner interface {
 	alicloudroscdkcore.RosResource
 	Action() interface{}

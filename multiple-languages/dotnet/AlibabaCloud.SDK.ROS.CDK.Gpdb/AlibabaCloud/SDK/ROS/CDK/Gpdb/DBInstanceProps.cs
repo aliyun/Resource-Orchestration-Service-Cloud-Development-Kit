@@ -158,6 +158,71 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        private object? _backupId;
+
+        /// <summary>Property backupId: Backup set ID.</summary>
+        /// <remarks>
+        /// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "backupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? BackupId
+        {
+            get => _backupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _backupId = value;
+            }
+        }
+
+        private object? _cacheStorageSize;
+
+        /// <summary>Property cacheStorageSize: Cache storage size.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "cacheStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? CacheStorageSize
+        {
+            get => _cacheStorageSize;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _cacheStorageSize = value;
+            }
+        }
+
         private object? _createSampleData;
 
         /// <summary>Property createSampleData: Whether to load the sample data set after the instance is created.</summary>
@@ -412,6 +477,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        private object? _enableSsl;
+
+        /// <summary>Property enableSsl: Whether to enable SSL encryption.</summary>
+        /// <remarks>
+        /// Valid values: true: Enable SSL encryption. false (default): Do not enable SSL encryption.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableSsl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableSsl
+        {
+            get => _enableSsl;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableSsl = value;
+            }
+        }
+
         private object? _encryptionKey;
 
         /// <summary>Property encryptionKey: If the EncryptionType parameter is set to CloudDisk, you must specify this parameter to the encryption key that is in the same region with the disks that is specified by the EncryptionType parameter.</summary>
@@ -573,6 +672,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                     }
                 }
                 _instanceSpec = value;
+            }
+        }
+
+        private object? _masterAiSpec;
+
+        /// <summary>Property masterAiSpec: If you need to change the Master node to MasterAI node, specify this parameter.</summary>
+        /// <remarks>
+        /// This parameter cannot be specified at the same time as MasterCU. Only some regions and availability zones support changing the Master node to MasterAI node. Only Basic edition instances of AnalyticDB PostgreSQL 7.0 support MasterAI nodes. You can query all possible values of this parameter on the Master node reconfiguration sales page.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "masterAiSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? MasterAiSpec
+        {
+            get => _masterAiSpec;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _masterAiSpec = value;
             }
         }
 
@@ -1158,6 +1291,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                     }
                 }
                 _serverlessResource = value;
+            }
+        }
+
+        private object? _srcDbInstanceName;
+
+        /// <summary>Property srcDbInstanceName: Clone source instance ID.</summary>
+        /// <remarks>
+        /// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "srcDbInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? SrcDbInstanceName
+        {
+            get => _srcDbInstanceName;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _srcDbInstanceName = value;
             }
         }
 

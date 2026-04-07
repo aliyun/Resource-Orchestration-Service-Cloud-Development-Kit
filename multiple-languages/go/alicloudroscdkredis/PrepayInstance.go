@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription Tair (Redis OSS-compatible) instance.
 type PrepayInstance interface {
 	alicloudroscdkcore.Resource
 	IPrepayInstance

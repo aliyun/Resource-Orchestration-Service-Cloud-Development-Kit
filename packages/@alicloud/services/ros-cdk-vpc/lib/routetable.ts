@@ -15,6 +15,11 @@ export interface RouteTableProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
+     * Property associateType: The type of the route table.
+     */
+    readonly associateType?: string | ros.IResolvable;
+
+    /**
      * Property description: The description of the route table.
      * The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.
      */
@@ -64,7 +69,7 @@ export interface IRouteTable extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRouteTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
@@ -114,6 +119,7 @@ export class RouteTable extends ros.Resource implements IRouteTable {
         const rosRouteTable = new RosRouteTable(this, id,  {
             description: props.description,
             vpcId: props.vpcId,
+            associateType: props.associateType,
             routeTableName: props.routeTableName,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

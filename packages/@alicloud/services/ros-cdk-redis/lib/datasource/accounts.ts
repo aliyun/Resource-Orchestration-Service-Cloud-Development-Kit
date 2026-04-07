@@ -79,8 +79,8 @@ export class Accounts extends ros.Resource implements IAccounts {
 
         const rosAccounts = new RosAccounts(this, id,  {
             instanceId: props.instanceId,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             accountName: props.accountName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccounts;
         this.attrAccountNames = rosAccounts.attrAccountNames;

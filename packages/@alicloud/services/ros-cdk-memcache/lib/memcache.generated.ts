@@ -153,11 +153,11 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateString)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('couponNo', ros.validateString)(properties.couponNo));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('config', ros.validateString)(properties.config));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateString)(properties.autoRenew));
     errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
@@ -165,6 +165,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
     errors.collect(ros.propertyValidator('autoUseCoupon', ros.validateString)(properties.autoUseCoupon));
+    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
           data: properties.chargeType,
@@ -172,9 +173,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
-    errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
-    errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -215,7 +215,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */
@@ -586,7 +586,7 @@ function rosWhitelistPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Whitelist`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Memcache::Whitelist`, which is used to create a Whitelist.
  * @Note This class does not contain additional functions, so it is recommended to use the `Whitelist` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-whitelist
  */

@@ -35,6 +35,11 @@ export interface VcoRouteEntryProps {
      * Property description: Descriptive information for the destination routing entry.
      */
     readonly description?: string | ros.IResolvable;
+
+    /**
+     * Property overlayMode: The tunnel protocol. Valid value: **Ipsec** (default), which indicates the IPsec tunnel protocol.
+     */
+    readonly overlayMode?: string | ros.IResolvable;
 }
 
 /**
@@ -79,6 +84,7 @@ export class VcoRouteEntry extends ros.Resource implements IVcoRouteEntry {
         const rosVcoRouteEntry = new RosVcoRouteEntry(this, id,  {
             description: props.description,
             routeDest: props.routeDest,
+            overlayMode: props.overlayMode,
             nextHop: props.nextHop,
             vpnConnectionId: props.vpnConnectionId,
             weight: props.weight,

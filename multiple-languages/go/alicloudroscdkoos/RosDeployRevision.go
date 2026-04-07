@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DeployRevision`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DeployRevision`The , which type is used to create a deployment.
 type RosDeployRevision interface {
 	alicloudroscdkcore.RosResource
 	ApplicationName() interface{}
@@ -19,6 +19,8 @@ type RosDeployRevision interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DeployResourceType() interface{}
+	SetDeployResourceType(val interface{})
 	Description() interface{}
 	SetDescription(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -209,6 +211,16 @@ func (j *jsiiProxy_RosDeployRevision) CreationStack() *[]*string {
 	return returns
 }
 
+func (j *jsiiProxy_RosDeployRevision) DeployResourceType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deployResourceType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDeployRevision) Description() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -374,6 +386,17 @@ func (j *jsiiProxy_RosDeployRevision)SetApplicationName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"applicationName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDeployRevision)SetDeployResourceType(val interface{}) {
+	if err := j.validateSetDeployResourceTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deployResourceType",
 		val,
 	)
 }

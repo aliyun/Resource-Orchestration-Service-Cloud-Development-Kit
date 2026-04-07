@@ -3,6 +3,353 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosEnvironment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-environment
+ */
+export interface RosEnvironmentProps {
+
+    /**
+     * @Property environmentId: The first ID of the resource.
+     */
+    readonly environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnvironmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvironmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosEnvironmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ARMS::Environment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ARMS::Environment` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvironmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnvironmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Environment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Environment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-environment
+ */
+export class RosEnvironment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ARMS::Environment";
+
+    /**
+     * @Attribute BindResourceId: The id or vpcId of the bound container instance.
+     */
+    public readonly attrBindResourceId: ros.IResolvable;
+
+    /**
+     * @Attribute BindResourceType: Binding resource type.
+     */
+    public readonly attrBindResourceType: ros.IResolvable;
+
+    /**
+     * @Attribute BindVpcCidr: The network segment of the bound vpc.
+     */
+    public readonly attrBindVpcCidr: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentId: The first ID of the resource.
+     */
+    public readonly attrEnvironmentId: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentName: The name of the resource.
+     */
+    public readonly attrEnvironmentName: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentSubType: Subtype of environment.
+     */
+    public readonly attrEnvironmentSubType: ros.IResolvable;
+
+    /**
+     * @Attribute EnvironmentType: Type of environment.
+     */
+    public readonly attrEnvironmentType: ros.IResolvable;
+
+    /**
+     * @Attribute FeePackage: Paid package.
+     */
+    public readonly attrFeePackage: ros.IResolvable;
+
+    /**
+     * @Attribute GrafanaDatasourceUid: The uid of the Grafana data source.
+     */
+    public readonly attrGrafanaDatasourceUid: ros.IResolvable;
+
+    /**
+     * @Attribute GrafanaFolderUid: Binding Grafana directory uid.
+     */
+    public readonly attrGrafanaFolderUid: ros.IResolvable;
+
+    /**
+     * @Attribute ManagedType: Hosting type.
+     */
+    public readonly attrManagedType: ros.IResolvable;
+
+    /**
+     * @Attribute PrometheusInstanceId: The ID of the prometheus instance.
+     */
+    public readonly attrPrometheusInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag of the resource.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute UserId: User ID.
+     */
+    public readonly attrUserId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property environmentId: The first ID of the resource.
+     */
+    public environmentId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnvironmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnvironment.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBindResourceId = this.getAtt('BindResourceId');
+        this.attrBindResourceType = this.getAtt('BindResourceType');
+        this.attrBindVpcCidr = this.getAtt('BindVpcCidr');
+        this.attrEnvironmentId = this.getAtt('EnvironmentId');
+        this.attrEnvironmentName = this.getAtt('EnvironmentName');
+        this.attrEnvironmentSubType = this.getAtt('EnvironmentSubType');
+        this.attrEnvironmentType = this.getAtt('EnvironmentType');
+        this.attrFeePackage = this.getAtt('FeePackage');
+        this.attrGrafanaDatasourceUid = this.getAtt('GrafanaDatasourceUid');
+        this.attrGrafanaFolderUid = this.getAtt('GrafanaFolderUid');
+        this.attrManagedType = this.getAtt('ManagedType');
+        this.attrPrometheusInstanceId = this.getAtt('PrometheusInstanceId');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrTags = this.getAtt('Tags');
+        this.attrUserId = this.getAtt('UserId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.environmentId = props.environmentId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            environmentId: this.environmentId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnvironmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnvironments`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-environments
+ */
+export interface RosEnvironmentsProps {
+
+    /**
+     * @Property environmentType: Type of environment.
+     */
+    readonly environmentType?: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnvironmentsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnvironmentsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.environmentType && (typeof properties.environmentType) !== 'object') {
+        errors.collect(ros.propertyValidator('environmentType', ros.validateAllowedValues)({
+          data: properties.environmentType,
+          allowedValues: ["ECS","CS","Cloud"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('environmentType', ros.validateString)(properties.environmentType));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosEnvironmentsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ARMS::Environments` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnvironmentsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ARMS::Environments` resource.
+ */
+// @ts-ignore TS6133
+function rosEnvironmentsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnvironmentsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'EnvironmentType': ros.stringToRosTemplate(properties.environmentType),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Environments`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Environments` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-environments
+ */
+export class RosEnvironments extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ARMS::Environments";
+
+    /**
+     * @Attribute EnvironmentIds: The list of environment IDs.
+     */
+    public readonly attrEnvironmentIds: ros.IResolvable;
+
+    /**
+     * @Attribute Environments: The list of environments.
+     */
+    public readonly attrEnvironments: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property environmentType: Type of environment.
+     */
+    public environmentType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnvironmentsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnvironments.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrEnvironmentIds = this.getAtt('EnvironmentIds');
+        this.attrEnvironments = this.getAtt('Environments');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.environmentType = props.environmentType;
+        this.refreshOptions = props.refreshOptions;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            environmentType: this.environmentType,
+            refreshOptions: this.refreshOptions,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnvironmentsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosGrafanaWorkspace`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspace
  */
@@ -64,7 +411,7 @@ function rosGrafanaWorkspacePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`, which is used to query the information about a Grafana workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspace
  */
@@ -224,7 +571,7 @@ function rosGrafanaWorkspacesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`, which is used to query the information about Grafana workspaces.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces
  */
@@ -348,7 +695,7 @@ function rosPrometheisPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheis`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheis`, which is used to query Prometheus instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Prometheis` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
@@ -473,7 +820,7 @@ function rosPrometheusPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheus`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheus`, which is used to query the information about a Prometheus instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Prometheus` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheus
  */
@@ -657,7 +1004,7 @@ function rosPrometheusAuthTokenPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`, which is used to query an authentication token for read and write over the Internet.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrometheusAuthToken` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusauthtoken
  */
@@ -775,7 +1122,7 @@ function rosPrometheusUrlPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusUrl`, which is used to query all URLs of a cluster, including the URLs for remote read, remote write, Pushgateway, and Grafana.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrometheusUrl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheusurl
  */
@@ -966,7 +1313,7 @@ function rosSyntheticTaskPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTask`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTask`, which is used to query the information about a scheduled synthetic monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `SyntheticTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-synthetictask
  */
@@ -1150,7 +1497,7 @@ function rosSyntheticTasksPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTasks`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::SyntheticTasks`, which is used to query scheduled synthetic monitoring tasks.
  * @Note This class does not contain additional functions, so it is recommended to use the `SyntheticTasks` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-synthetictasks
  */
@@ -1275,7 +1622,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`, which is used to query the information about an application monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapp
  */
@@ -1417,7 +1764,7 @@ function rosXTraceAppsPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApps`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApps`, which is used to query all the application monitoring tasks in a region.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapps
  */

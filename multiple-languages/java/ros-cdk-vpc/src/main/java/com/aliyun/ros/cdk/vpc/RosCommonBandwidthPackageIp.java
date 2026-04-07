@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::CommonBandwidthPackageIp</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::CommonBandwidthPackageIp</code>The , which resource adds one or more EIPs to a shared bandwidth instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.034Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.972Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosCommonBandwidthPackageIp")
 public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -136,6 +136,13 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
         }
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIpType() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link EipsProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -149,6 +156,7 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
         public static final class Builder implements software.amazon.jsii.Builder<EipsProperty> {
             java.lang.Object allocationId;
             java.lang.Object bandwidth;
+            java.lang.Object ipType;
 
             /**
              * Sets the value of {@link EipsProperty#getAllocationId}
@@ -195,6 +203,28 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
             }
 
             /**
+             * Sets the value of {@link EipsProperty#getIpType}
+             * @param ipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ipType(java.lang.String ipType) {
+                this.ipType = ipType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link EipsProperty#getIpType}
+             * @param ipType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder ipType(com.aliyun.ros.cdk.core.IResolvable ipType) {
+                this.ipType = ipType;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link EipsProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -214,6 +244,7 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
         final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements EipsProperty {
             private final java.lang.Object allocationId;
             private final java.lang.Object bandwidth;
+            private final java.lang.Object ipType;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -223,6 +254,7 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
                 super(objRef);
                 this.allocationId = software.amazon.jsii.Kernel.get(this, "allocationId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.ipType = software.amazon.jsii.Kernel.get(this, "ipType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -232,6 +264,7 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.allocationId = java.util.Objects.requireNonNull(builder.allocationId, "allocationId is required");
                 this.bandwidth = builder.bandwidth;
+                this.ipType = builder.ipType;
             }
 
             @Override
@@ -245,6 +278,11 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
             }
 
             @Override
+            public final java.lang.Object getIpType() {
+                return this.ipType;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -253,6 +291,9 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
                 data.set("allocationId", om.valueToTree(this.getAllocationId()));
                 if (this.getBandwidth() != null) {
                     data.set("bandwidth", om.valueToTree(this.getBandwidth()));
+                }
+                if (this.getIpType() != null) {
+                    data.set("ipType", om.valueToTree(this.getIpType()));
                 }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -273,13 +314,15 @@ public class RosCommonBandwidthPackageIp extends com.aliyun.ros.cdk.core.RosReso
                 EipsProperty.Jsii$Proxy that = (EipsProperty.Jsii$Proxy) o;
 
                 if (!allocationId.equals(that.allocationId)) return false;
-                return this.bandwidth != null ? this.bandwidth.equals(that.bandwidth) : that.bandwidth == null;
+                if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
+                return this.ipType != null ? this.ipType.equals(that.ipType) : that.ipType == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.allocationId.hashCode();
                 result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
+                result = 31 * result + (this.ipType != null ? this.ipType.hashCode() : 0);
                 return result;
             }
         }

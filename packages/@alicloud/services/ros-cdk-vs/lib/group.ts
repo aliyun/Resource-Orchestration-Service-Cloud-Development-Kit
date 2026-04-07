@@ -139,8 +139,8 @@ export class Group extends ros.Resource implements IGroup {
         const rosGroup = new RosGroup(this, id,  {
             app: props.app,
             inProtocol: props.inProtocol,
-            callback: props.callback,
             description: props.description,
+            callback: props.callback,
             playDomain: props.playDomain,
             enabled: props.enabled,
             region: props.region,

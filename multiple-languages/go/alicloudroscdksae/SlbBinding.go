@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::SlbBinding`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::SlbBinding`, which is used to bind an SLB instance to an application.
 type SlbBinding interface {
 	alicloudroscdkcore.Resource
 	ISlbBinding

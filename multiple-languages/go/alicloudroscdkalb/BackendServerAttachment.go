@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::BackendServerAttachment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::BackendServerAttachment`Use , which to add backend servers to a server group.
 type BackendServerAttachment interface {
 	alicloudroscdkcore.Resource
 	IBackendServerAttachment

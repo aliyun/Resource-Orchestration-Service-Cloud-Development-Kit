@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthCheckHostParameters(
 	return nil
 }
 
+func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthCheckHttpVersionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthCheckIntervalParameters(val interface{}) error {
 	return nil
 }
@@ -125,6 +129,10 @@ func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthCheckTimeoutParamete
 }
 
 func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthyThresholdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHealthCheckTemplate) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
 

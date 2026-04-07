@@ -52,7 +52,7 @@ export interface IApplicationDeployment extends ros.IResource {
     readonly attrTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ApplicationDeployment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ApplicationDeployment`, which is used to deploy an application.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplicationDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-applicationdeployment
  */
@@ -82,8 +82,8 @@ export class ApplicationDeployment extends ros.Resource implements IApplicationD
         const rosApplicationDeployment = new RosApplicationDeployment(this, id,  {
             type: props.type,
             clusterId: props.clusterId,
-            values: props.values,
             chartUrl: props.chartUrl,
+            values: props.values,
             namespace: props.namespace,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

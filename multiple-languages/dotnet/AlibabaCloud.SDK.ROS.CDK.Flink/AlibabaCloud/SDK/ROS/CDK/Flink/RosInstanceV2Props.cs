@@ -176,6 +176,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
             }
         }
 
+        private object? _architectureType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: architectureType: The architecture type, the value of the value is as follows: X86, ARM
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "architectureType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ArchitectureType
+        {
+            get => _architectureType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _architectureType = value;
+            }
+        }
+
         private object? _autoRenew;
 
         /// <remarks>
@@ -264,6 +297,106 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
                     }
                 }
                 _duration = value;
+            }
+        }
+
+        private object? _haResourceSpec;
+
+        /// <remarks>
+        /// <strong>Property</strong>: haResourceSpec: HA resource specifications.
+        /// When ChargeType is configured as PRE, the resource specification parameters must be filled.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "haResourceSpec", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-flink.RosInstanceV2.HaResourceSpecProperty\"}]}}", isOptional: true)]
+        public object? HaResourceSpec
+        {
+            get => _haResourceSpec;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Flink.RosInstanceV2.IHaResourceSpecProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Flink.RosInstanceV2.IHaResourceSpecProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _haResourceSpec = value;
+            }
+        }
+
+        private object? _haVSwitchIds;
+
+        /// <remarks>
+        /// <strong>Property</strong>: haVSwitchIds: HA VSwitch IDs.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "haVSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? HaVSwitchIds
+        {
+            get => _haVSwitchIds;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case object[] cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: object[], {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _haVSwitchIds = value;
+            }
+        }
+
+        private object? _monitorType;
+
+        /// <remarks>
+        /// <strong>Property</strong>: monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "monitorType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? MonitorType
+        {
+            get => _monitorType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _monitorType = value;
             }
         }
 

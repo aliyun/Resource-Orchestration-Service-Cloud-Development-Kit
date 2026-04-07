@@ -129,7 +129,7 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHost`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHost`, which is used to create a host in a dedicated cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
  */
@@ -433,6 +433,170 @@ function rosDedicatedHostTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosDedicatedHostAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostaccount
+ */
+export interface RosDedicatedHostAccountProps {
+
+    /**
+     * @Property accountName: The name of the account.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the account.
+     */
+    readonly accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostId: The ID of the dedicated host.
+     */
+    readonly dedicatedHostId: string | ros.IResolvable;
+
+    /**
+     * @Property accountType: The type of the account.
+     */
+    readonly accountType?: string | ros.IResolvable;
+
+    /**
+     * @Property bastionInstanceId: The ID of the bastion instance.
+     */
+    readonly bastionInstanceId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDedicatedHostAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDedicatedHostAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dedicatedHostId', ros.requiredValidator)(properties.dedicatedHostId));
+    errors.collect(ros.propertyValidator('dedicatedHostId', ros.validateString)(properties.dedicatedHostId));
+    errors.collect(ros.propertyValidator('bastionInstanceId', ros.validateString)(properties.bastionInstanceId));
+    if(properties.accountType && (typeof properties.accountType) !== 'object') {
+        errors.collect(ros.propertyValidator('accountType', ros.validateAllowedValues)({
+          data: properties.accountType,
+          allowedValues: ["Normal","Admin"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    if(properties.accountName && (Array.isArray(properties.accountName) || (typeof properties.accountName) === 'string')) {
+        errors.collect(ros.propertyValidator('accountName', ros.validateLength)({
+            data: properties.accountName.length,
+            min: 2,
+            max: 16,
+          }));
+    }
+    if(properties.accountName && (typeof properties.accountName) !== 'object') {
+        errors.collect(ros.propertyValidator('accountName', ros.validateAllowedPattern)({
+          data: properties.accountName,
+          reg: /^[a-z][a-z0-9_]{0,14}[a-z0-9]$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    return errors.wrap('supplied properties not correct for "RosDedicatedHostAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CDDC::DedicatedHostAccount` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDedicatedHostAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CDDC::DedicatedHostAccount` resource.
+ */
+// @ts-ignore TS6133
+function rosDedicatedHostAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDedicatedHostAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'AccountPassword': ros.stringToRosTemplate(properties.accountPassword),
+      'DedicatedHostId': ros.stringToRosTemplate(properties.dedicatedHostId),
+      'AccountType': ros.stringToRosTemplate(properties.accountType),
+      'BastionInstanceId': ros.stringToRosTemplate(properties.bastionInstanceId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostAccount`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostAccount` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostaccount
+ */
+export class RosDedicatedHostAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CDDC::DedicatedHostAccount";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: The name of the account.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property accountPassword: The password of the account.
+     */
+    public accountPassword: string | ros.IResolvable;
+
+    /**
+     * @Property dedicatedHostId: The ID of the dedicated host.
+     */
+    public dedicatedHostId: string | ros.IResolvable;
+
+    /**
+     * @Property accountType: The type of the account.
+     */
+    public accountType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property bastionInstanceId: The ID of the bastion instance.
+     */
+    public bastionInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDedicatedHostAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDedicatedHostAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.accountPassword = props.accountPassword;
+        this.dedicatedHostId = props.dedicatedHostId;
+        this.accountType = props.accountType;
+        this.bastionInstanceId = props.bastionInstanceId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            accountPassword: this.accountPassword,
+            dedicatedHostId: this.dedicatedHostId,
+            accountType: this.accountType,
+            bastionInstanceId: this.bastionInstanceId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDedicatedHostAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDedicatedHostGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
  */
@@ -535,7 +699,7 @@ function rosDedicatedHostGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`, which is used to create a dedicated cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
  */
@@ -945,10 +1109,10 @@ function RosMyBasePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('keyPairName', ros.validateString)(properties.keyPairName));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('ecsClassList', ros.requiredValidator)(properties.ecsClassList));
     if(properties.ecsClassList && (Array.isArray(properties.ecsClassList) || (typeof properties.ecsClassList) === 'string')) {
         errors.collect(ros.propertyValidator('ecsClassList', ros.validateLength)({
@@ -991,9 +1155,9 @@ function RosMyBasePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('internetMaxBandwidthOut', ros.validateNumber)(properties.internetMaxBandwidthOut));
+    errors.collect(ros.propertyValidator('osPassword', ros.validateString)(properties.osPassword));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('osPassword', ros.validateString)(properties.osPassword));
     return errors.wrap('supplied properties not correct for "RosMyBaseProps"');
 }
 
@@ -1040,7 +1204,7 @@ function rosMyBasePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::MyBase`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::MyBase`, which is used to create a host in a Proprietary MyBase dedicated cluster in ApsaraDB for MyBase.
  * @Note This class does not contain additional functions, so it is recommended to use the `MyBase` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */

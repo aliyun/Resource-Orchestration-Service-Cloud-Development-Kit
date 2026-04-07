@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * Represents a <code>NetworkOptimization</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.545Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.028Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.INetworkOptimization")
 @software.amazon.jsii.Jsii.Proxy(INetworkOptimization.Jsii$Proxy.class)
 public interface INetworkOptimization extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -67,7 +67,7 @@ public interface INetworkOptimization extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrSmartRouting();
 
     /**
-     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+     * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrUploadMaxFilesize();
 
@@ -207,7 +207,7 @@ public interface INetworkOptimization extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
-         * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+         * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrUploadMaxFilesize() {
@@ -354,7 +354,7 @@ public interface INetworkOptimization extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
-         * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+         * Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrUploadMaxFilesize() {

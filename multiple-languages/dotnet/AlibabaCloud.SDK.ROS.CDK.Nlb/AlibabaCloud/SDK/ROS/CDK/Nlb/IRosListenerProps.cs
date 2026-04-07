@@ -12,7 +12,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
     public interface IRosListenerProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: listenerProtocol: undefined
+        /// <strong>Property</strong>: listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
+        /// </remarks>
+        [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object ListenerPort
+        {
+            get;
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: listenerProtocol: Listening protocol. Values: TCP, UDP, or TCPSSL.
         /// </remarks>
         [JsiiProperty(name: "listenerProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ListenerProtocol
@@ -25,15 +34,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         /// </remarks>
         [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object LoadBalancerId
-        {
-            get;
-        }
-
-        /// <remarks>
-        /// <strong>Property</strong>: serverGroupId: ID of the ServerGroup
-        /// </remarks>
-        [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object ServerGroupId
         {
             get;
         }
@@ -169,19 +169,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
-        /// </remarks>
-        [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
-        object? ListenerPort
-        {
-            get
-            {
-                return null;
-            }
-        }
-
-        /// <remarks>
         /// <strong>Property</strong>: mss: Max length of the TCP packet
         /// </remarks>
         [JsiiProperty(name: "mss", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -247,6 +234,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: serverGroupId: ID of the ServerGroup
+        /// </remarks>
+        [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServerGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: serverGroupTuples: Multi-server group list.
+        /// When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+        /// When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+        /// </remarks>
+        [JsiiProperty(name: "serverGroupTuples", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosListener.ServerGroupTuplesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ServerGroupTuples
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: startPort: StartPort of the portRange
         /// </remarks>
         [JsiiProperty(name: "startPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -284,7 +299,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: listenerProtocol: undefined
+            /// <strong>Property</strong>: listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
+            /// </remarks>
+            [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object ListenerPort
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: listenerProtocol: Listening protocol. Values: TCP, UDP, or TCPSSL.
             /// </remarks>
             [JsiiProperty(name: "listenerProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ListenerProtocol
@@ -297,15 +321,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             /// </remarks>
             [JsiiProperty(name: "loadBalancerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object LoadBalancerId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: serverGroupId: ID of the ServerGroup
-            /// </remarks>
-            [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object ServerGroupId
             {
                 get => GetInstanceProperty<object>()!;
             }
@@ -411,16 +426,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
-            /// </remarks>
-            [JsiiOptional]
-            [JsiiProperty(name: "listenerPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
-            public object? ListenerPort
-            {
-                get => GetInstanceProperty<object?>();
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: mss: Max length of the TCP packet
             /// </remarks>
             [JsiiOptional]
@@ -466,6 +471,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             [JsiiOptional]
             [JsiiProperty(name: "securityPolicyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityPolicyId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupId: ID of the ServerGroup
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serverGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ServerGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: serverGroupTuples: Multi-server group list.
+            /// When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+            /// When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "serverGroupTuples", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-nlb.RosListener.ServerGroupTuplesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? ServerGroupTuples
             {
                 get => GetInstanceProperty<object?>();
             }

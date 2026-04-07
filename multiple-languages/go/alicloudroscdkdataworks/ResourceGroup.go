@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DataWorks::ResourceGroup`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DataWorks::ResourceGroup`, which is used to create a serverless resource group.
 type ResourceGroup interface {
 	alicloudroscdkcore.Resource
 	IResourceGroup

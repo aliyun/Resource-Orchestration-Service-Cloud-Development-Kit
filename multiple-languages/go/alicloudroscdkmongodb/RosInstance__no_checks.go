@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosInstance) validateSetAccountPasswordParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetAuditPolicyOptionsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetAutoRenewParameters(val interface{}) error {
 	return nil
 }
@@ -96,11 +100,19 @@ func (j *jsiiProxy_RosInstance) validateSetBackupIdParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetBackupPolicyOptionsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetBusinessInfoParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosInstance) validateSetChargeTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetClusterIdParameters(val interface{}) error {
 	return nil
 }
 
@@ -120,11 +132,23 @@ func (j *jsiiProxy_RosInstance) validateSetDbInstanceDescriptionParameters(val i
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetDbInstanceReleaseProtectionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetDbInstanceStorageParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosInstance) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetEncryptedParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetEncryptionKeyParameters(val interface{}) error {
 	return nil
 }
 
@@ -144,6 +168,10 @@ func (j *jsiiProxy_RosInstance) validateSetPrivateConnectionsParameters(val inte
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetProvisionedIopsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetReadonlyReplicasParameters(val interface{}) error {
 	return nil
 }
@@ -160,6 +188,10 @@ func (j *jsiiProxy_RosInstance) validateSetRestoreTimeParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetRestoreTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetSecondaryZoneIdParameters(val interface{}) error {
 	return nil
 }
@@ -173,6 +205,14 @@ func (j *jsiiProxy_RosInstance) validateSetSecurityIpArrayParameters(val interfa
 }
 
 func (j *jsiiProxy_RosInstance) validateSetSrcDbInstanceIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetSrcRegionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstance) validateSetSslOptionsParameters(val interface{}) error {
 	return nil
 }
 

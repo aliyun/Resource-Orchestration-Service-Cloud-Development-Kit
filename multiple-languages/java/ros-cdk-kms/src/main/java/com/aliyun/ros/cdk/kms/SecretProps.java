@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.906Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.577Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.SecretProps")
 @software.amazon.jsii.Jsii.Proxy(SecretProps.Jsii$Proxy.class)
 public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
@@ -88,6 +88,36 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property policy: The specific content of the credential policy in JSON format.
+     * <p>
+     * Maximum length is 32768 bytes.
+     * If this parameter is not specified, the default credential policy is used.
+     * The policy content includes:
+     * <p>
+     * <ul>
+     * <li>Version: The version of the policy. Currently, only version 1 is supported.</li>
+     * <li>Statement: A list of statements, each containing:
+     * <p>
+     * <ul>
+     * <li>Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _/+=.&#64;-.</li>
+     * <li>Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.</li>
+     * <li>Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.</li>
+     * <li>Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.</li>
+     * <li>Condition (optional): Conditions that limit when the policy is effective. Format: <code>"Condition": {"condition operator": {"condition key": "condition value"}}</code>. See documentation for details.</li>
+     * </ul></li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+     * <p>
+     * </blockquote>
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getPolicy() {
+        return null;
+    }
+
+    /**
      * Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it.
      * <p>
      * Default value: 30
@@ -132,6 +162,15 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property tags: Tags to attach to secret.
+     * <p>
+     * Max support 20 tags to add during create secret. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.kms.RosSecret.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * Property versionStages: The stage labels that mark the secret version.
      * <p>
      * ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
@@ -159,10 +198,12 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object encryptionKeyId;
         java.lang.Object extendedConfig;
         java.lang.Object forceDeleteWithoutRecovery;
+        java.lang.Object policy;
         java.lang.Object recoveryWindowInDays;
         java.lang.Object rotationInterval;
         java.lang.Object secretDataType;
         java.lang.Object secretType;
+        java.util.List<com.aliyun.ros.cdk.kms.RosSecret.TagsProperty> tags;
         java.lang.Object versionStages;
 
         /**
@@ -374,6 +415,70 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link SecretProps#getPolicy}
+         * @param policy Property policy: The specific content of the credential policy in JSON format.
+         *               Maximum length is 32768 bytes.
+         *               If this parameter is not specified, the default credential policy is used.
+         *               The policy content includes:
+         *               <p>
+         *               <ul>
+         *               <li>Version: The version of the policy. Currently, only version 1 is supported.</li>
+         *               <li>Statement: A list of statements, each containing:
+         *               <p>
+         *               <ul>
+         *               <li>Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _/+=.&#64;-.</li>
+         *               <li>Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.</li>
+         *               <li>Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.</li>
+         *               <li>Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.</li>
+         *               <li>Condition (optional): Conditions that limit when the policy is effective. Format: <code>"Condition": {"condition operator": {"condition key": "condition value"}}</code>. See documentation for details.</li>
+         *               </ul></li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+         *               <p>
+         *               </blockquote>
+         * @return {@code this}
+         */
+        public Builder policy(com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link SecretProps#getPolicy}
+         * @param policy Property policy: The specific content of the credential policy in JSON format.
+         *               Maximum length is 32768 bytes.
+         *               If this parameter is not specified, the default credential policy is used.
+         *               The policy content includes:
+         *               <p>
+         *               <ul>
+         *               <li>Version: The version of the policy. Currently, only version 1 is supported.</li>
+         *               <li>Statement: A list of statements, each containing:
+         *               <p>
+         *               <ul>
+         *               <li>Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _/+=.&#64;-.</li>
+         *               <li>Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.</li>
+         *               <li>Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.</li>
+         *               <li>Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.</li>
+         *               <li>Condition (optional): Conditions that limit when the policy is effective. Format: <code>"Condition": {"condition operator": {"condition key": "condition value"}}</code>. See documentation for details.</li>
+         *               </ul></li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+         *               <p>
+         *               </blockquote>
+         * @return {@code this}
+         */
+        public Builder policy(java.util.Map<java.lang.String, ? extends java.lang.Object> policy) {
+            this.policy = policy;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecretProps#getRecoveryWindowInDays}
          * @param recoveryWindowInDays Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it.
          *                             Default value: 30
@@ -478,6 +583,18 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link SecretProps#getTags}
+         * @param tags Property tags: Tags to attach to secret.
+         *             Max support 20 tags to add during create secret. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.kms.RosSecret.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.kms.RosSecret.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link SecretProps#getVersionStages}
          * @param versionStages Property versionStages: The stage labels that mark the secret version.
          *                      ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
@@ -524,10 +641,12 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object encryptionKeyId;
         private final java.lang.Object extendedConfig;
         private final java.lang.Object forceDeleteWithoutRecovery;
+        private final java.lang.Object policy;
         private final java.lang.Object recoveryWindowInDays;
         private final java.lang.Object rotationInterval;
         private final java.lang.Object secretDataType;
         private final java.lang.Object secretType;
+        private final java.util.List<com.aliyun.ros.cdk.kms.RosSecret.TagsProperty> tags;
         private final java.lang.Object versionStages;
 
         /**
@@ -545,16 +664,19 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
             this.encryptionKeyId = software.amazon.jsii.Kernel.get(this, "encryptionKeyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.extendedConfig = software.amazon.jsii.Kernel.get(this, "extendedConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.forceDeleteWithoutRecovery = software.amazon.jsii.Kernel.get(this, "forceDeleteWithoutRecovery", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.recoveryWindowInDays = software.amazon.jsii.Kernel.get(this, "recoveryWindowInDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rotationInterval = software.amazon.jsii.Kernel.get(this, "rotationInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secretDataType = software.amazon.jsii.Kernel.get(this, "secretDataType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secretType = software.amazon.jsii.Kernel.get(this, "secretType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.kms.RosSecret.TagsProperty.class)));
             this.versionStages = software.amazon.jsii.Kernel.get(this, "versionStages", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.secretData = java.util.Objects.requireNonNull(builder.secretData, "secretData is required");
@@ -566,10 +688,12 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
             this.encryptionKeyId = builder.encryptionKeyId;
             this.extendedConfig = builder.extendedConfig;
             this.forceDeleteWithoutRecovery = builder.forceDeleteWithoutRecovery;
+            this.policy = builder.policy;
             this.recoveryWindowInDays = builder.recoveryWindowInDays;
             this.rotationInterval = builder.rotationInterval;
             this.secretDataType = builder.secretDataType;
             this.secretType = builder.secretType;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.kms.RosSecret.TagsProperty>)builder.tags;
             this.versionStages = builder.versionStages;
         }
 
@@ -619,6 +743,11 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getPolicy() {
+            return this.policy;
+        }
+
+        @Override
         public final java.lang.Object getRecoveryWindowInDays() {
             return this.recoveryWindowInDays;
         }
@@ -636,6 +765,11 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getSecretType() {
             return this.secretType;
+        }
+
+        @Override
+        public final java.util.List<com.aliyun.ros.cdk.kms.RosSecret.TagsProperty> getTags() {
+            return this.tags;
         }
 
         @Override
@@ -670,6 +804,9 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getForceDeleteWithoutRecovery() != null) {
                 data.set("forceDeleteWithoutRecovery", om.valueToTree(this.getForceDeleteWithoutRecovery()));
             }
+            if (this.getPolicy() != null) {
+                data.set("policy", om.valueToTree(this.getPolicy()));
+            }
             if (this.getRecoveryWindowInDays() != null) {
                 data.set("recoveryWindowInDays", om.valueToTree(this.getRecoveryWindowInDays()));
             }
@@ -681,6 +818,9 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getSecretType() != null) {
                 data.set("secretType", om.valueToTree(this.getSecretType()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
             if (this.getVersionStages() != null) {
                 data.set("versionStages", om.valueToTree(this.getVersionStages()));
@@ -712,10 +852,12 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
             if (this.encryptionKeyId != null ? !this.encryptionKeyId.equals(that.encryptionKeyId) : that.encryptionKeyId != null) return false;
             if (this.extendedConfig != null ? !this.extendedConfig.equals(that.extendedConfig) : that.extendedConfig != null) return false;
             if (this.forceDeleteWithoutRecovery != null ? !this.forceDeleteWithoutRecovery.equals(that.forceDeleteWithoutRecovery) : that.forceDeleteWithoutRecovery != null) return false;
+            if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
             if (this.recoveryWindowInDays != null ? !this.recoveryWindowInDays.equals(that.recoveryWindowInDays) : that.recoveryWindowInDays != null) return false;
             if (this.rotationInterval != null ? !this.rotationInterval.equals(that.rotationInterval) : that.rotationInterval != null) return false;
             if (this.secretDataType != null ? !this.secretDataType.equals(that.secretDataType) : that.secretDataType != null) return false;
             if (this.secretType != null ? !this.secretType.equals(that.secretType) : that.secretType != null) return false;
+            if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.versionStages != null ? this.versionStages.equals(that.versionStages) : that.versionStages == null;
         }
 
@@ -730,10 +872,12 @@ public interface SecretProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.encryptionKeyId != null ? this.encryptionKeyId.hashCode() : 0);
             result = 31 * result + (this.extendedConfig != null ? this.extendedConfig.hashCode() : 0);
             result = 31 * result + (this.forceDeleteWithoutRecovery != null ? this.forceDeleteWithoutRecovery.hashCode() : 0);
+            result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
             result = 31 * result + (this.recoveryWindowInDays != null ? this.recoveryWindowInDays.hashCode() : 0);
             result = 31 * result + (this.rotationInterval != null ? this.rotationInterval.hashCode() : 0);
             result = 31 * result + (this.secretDataType != null ? this.secretDataType.hashCode() : 0);
             result = 31 * result + (this.secretType != null ? this.secretType.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.versionStages != null ? this.versionStages.hashCode() : 0);
             return result;
         }

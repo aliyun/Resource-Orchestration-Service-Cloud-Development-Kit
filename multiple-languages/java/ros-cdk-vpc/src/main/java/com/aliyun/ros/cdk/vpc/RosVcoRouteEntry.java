@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::VcoRouteEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.148Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.116Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVcoRouteEntry")
 public class RosVcoRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -150,6 +150,24 @@ public class RosVcoRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getOverlayMode() {
+        return software.amazon.jsii.Kernel.get(this, "overlayMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setOverlayMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "overlayMode", value);
+    }
+
+    /**
+     */
+    public void setOverlayMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "overlayMode", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.vpc.RosVcoRouteEntry}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.RosVcoRouteEntry> {
@@ -257,6 +275,23 @@ public class RosVcoRouteEntry extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param overlayMode This parameter is required.
+         */
+        public Builder overlayMode(final java.lang.String overlayMode) {
+            this.props.overlayMode(overlayMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param overlayMode This parameter is required.
+         */
+        public Builder overlayMode(final com.aliyun.ros.cdk.core.IResolvable overlayMode) {
+            this.props.overlayMode(overlayMode);
             return this;
         }
 

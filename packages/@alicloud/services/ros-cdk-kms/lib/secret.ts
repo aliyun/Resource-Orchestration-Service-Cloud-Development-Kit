@@ -64,6 +64,21 @@ export interface SecretProps {
     readonly forceDeleteWithoutRecovery?: boolean | ros.IResolvable;
 
     /**
+     * Property policy: The specific content of the credential policy in JSON format. Maximum length is 32768 bytes.
+     * If this parameter is not specified, the default credential policy is used.
+     * The policy content includes:
+     * - Version: The version of the policy. Currently, only version 1 is supported.
+     * - Statement: A list of statements, each containing:
+     *   - Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _\/+=.@-.
+     *   - Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.
+     *   - Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.
+     *   - Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.
+     *   - Condition (optional): Conditions that limit when the policy is effective. Format: `"Condition": {"condition operator": {"condition key": "condition value"}}`. See documentation for details.
+     * > After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+     */
+    readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30
      */
     readonly recoveryWindowInDays?: number | ros.IResolvable;
@@ -92,6 +107,11 @@ export interface SecretProps {
     readonly secretType?: string | ros.IResolvable;
 
     /**
+     * Property tags: Tags to attach to secret. Max support 20 tags to add during create secret. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSecret.TagsProperty[];
+
+    /**
      * Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
      */
     readonly versionStages?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -114,7 +134,7 @@ export interface ISecret extends ros.IResource {
     readonly attrSecretName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecret`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
@@ -148,9 +168,10 @@ export class Secret extends ros.Resource implements ISecret {
 
         const rosSecret = new RosSecret(this, id,  {
             versionId: props.versionId,
+            policy: props.policy,
             description: props.description,
-            rotationInterval: props.rotationInterval,
             secretType: props.secretType,
+            rotationInterval: props.rotationInterval,
             secretDataType: props.secretDataType,
             dkmsInstanceId: props.dkmsInstanceId,
             versionStages: props.versionStages,
@@ -158,9 +179,10 @@ export class Secret extends ros.Resource implements ISecret {
             enableAutomaticRotation: props.enableAutomaticRotation,
             extendedConfig: props.extendedConfig,
             secretData: props.secretData,
+            tags: props.tags,
             encryptionKeyId: props.encryptionKeyId,
-            recoveryWindowInDays: props.recoveryWindowInDays === undefined || props.recoveryWindowInDays === null ? 30 : props.recoveryWindowInDays,
             forceDeleteWithoutRecovery: props.forceDeleteWithoutRecovery === undefined || props.forceDeleteWithoutRecovery === null ? false : props.forceDeleteWithoutRecovery,
+            recoveryWindowInDays: props.recoveryWindowInDays === undefined || props.recoveryWindowInDays === null ? 30 : props.recoveryWindowInDays,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSecret;
         this.attrArn = rosSecret.attrArn;

@@ -87,7 +87,7 @@ export interface LogtailConfigProps {
      *         "preserve": true,
      *         "preserveDepth": 1,
      *         "priority": 0,
-     *         "quote": "\u0001",
+     *         "quote": "",
      *         "sendRateExpire": 0,
      *         "sensitive_keys": [],
      *         "separator": ",,,",
@@ -133,7 +133,7 @@ export interface ILogtailConfig extends ros.IResource {
     readonly attrLogtailConfigName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::LogtailConfig`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogtailConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
@@ -171,8 +171,8 @@ export class LogtailConfig extends ros.Resource implements ILogtailConfig {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosLogtailConfig = new RosLogtailConfig(this, id,  {
-            logtailConfigName: props.logtailConfigName,
             logstoreName: props.logstoreName,
+            logtailConfigName: props.logtailConfigName,
             projectName: props.projectName,
             rawConfigData: props.rawConfigData,
             cloneFrom: props.cloneFrom,

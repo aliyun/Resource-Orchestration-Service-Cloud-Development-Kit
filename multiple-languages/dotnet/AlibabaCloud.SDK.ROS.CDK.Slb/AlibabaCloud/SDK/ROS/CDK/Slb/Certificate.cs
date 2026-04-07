@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance.</summary>
     /// <remarks>
+    /// Server certificates and certificate authority (CA) certificates are supported.
+    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCertificate`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
     /// </remarks>

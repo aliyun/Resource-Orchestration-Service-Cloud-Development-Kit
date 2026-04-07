@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>The , which resource type adds access control policies to specified VPC firewall policy groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.450Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicy")
 public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -325,6 +325,24 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
      */
     public void setDestPortType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "destPortType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDomainResolveType() {
+        return software.amazon.jsii.Kernel.get(this, "domainResolveType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDomainResolveType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "domainResolveType", value);
+    }
+
+    /**
+     */
+    public void setDomainResolveType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "domainResolveType", value);
     }
 
     /**
@@ -784,6 +802,23 @@ public class RosVpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.RosReso
          */
         public Builder destPortType(final com.aliyun.ros.cdk.core.IResolvable destPortType) {
             this.props.destPortType(destPortType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param domainResolveType This parameter is required.
+         */
+        public Builder domainResolveType(final java.lang.String domainResolveType) {
+            this.props.domainResolveType(domainResolveType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param domainResolveType This parameter is required.
+         */
+        public Builder domainResolveType(final com.aliyun.ros.cdk.core.IResolvable domainResolveType) {
+            this.props.domainResolveType(domainResolveType);
             return this;
         }
 

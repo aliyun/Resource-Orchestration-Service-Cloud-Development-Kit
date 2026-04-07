@@ -104,6 +104,10 @@ func (j *jsiiProxy_RosDisk) validateSetEnsRegionIdParameters(val interface{}) er
 	return nil
 }
 
+func (j *jsiiProxy_RosDisk) validateSetInstanceBillingCycleParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDisk) validateSetInstanceChargeTypeParameters(val interface{}) error {
 	return nil
 }

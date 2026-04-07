@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::DBInstance</code>Use the , which resource to create an AnalyticDB for PostgreSQL instance in reserved storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.031Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosDBInstance")
 public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -173,6 +173,42 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackupId() {
+        return software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBackupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "backupId", value);
+    }
+
+    /**
+     */
+    public void setBackupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCacheStorageSize() {
+        return software.amazon.jsii.Kernel.get(this, "cacheStorageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCacheStorageSize(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "cacheStorageSize", value);
+    }
+
+    /**
+     */
+    public void setCacheStorageSize(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cacheStorageSize", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getCreateSampleData() {
         return software.amazon.jsii.Kernel.get(this, "createSampleData", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -299,6 +335,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEnableSsl() {
+        return software.amazon.jsii.Kernel.get(this, "enableSsl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEnableSsl(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "enableSsl", value);
+    }
+
+    /**
+     */
+    public void setEnableSsl(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "enableSsl", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKey() {
         return software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -367,6 +421,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInstanceSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "instanceSpec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMasterAiSpec() {
+        return software.amazon.jsii.Kernel.get(this, "masterAiSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMasterAiSpec(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "masterAiSpec", value);
+    }
+
+    /**
+     */
+    public void setMasterAiSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "masterAiSpec", value);
     }
 
     /**
@@ -619,6 +691,24 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setServerlessResource(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "serverlessResource", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "srcDbInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSrcDbInstanceName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "srcDbInstanceName", value);
+    }
+
+    /**
+     */
+    public void setSrcDbInstanceName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "srcDbInstanceName", value);
     }
 
     /**
@@ -1151,6 +1241,40 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param backupId This parameter is required.
+         */
+        public Builder backupId(final java.lang.String backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param backupId This parameter is required.
+         */
+        public Builder backupId(final com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param cacheStorageSize This parameter is required.
+         */
+        public Builder cacheStorageSize(final java.lang.String cacheStorageSize) {
+            this.props.cacheStorageSize(cacheStorageSize);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cacheStorageSize This parameter is required.
+         */
+        public Builder cacheStorageSize(final com.aliyun.ros.cdk.core.IResolvable cacheStorageSize) {
+            this.props.cacheStorageSize(cacheStorageSize);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param createSampleData This parameter is required.
          */
         public Builder createSampleData(final java.lang.Boolean createSampleData) {
@@ -1270,6 +1394,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param enableSsl This parameter is required.
+         */
+        public Builder enableSsl(final java.lang.Boolean enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param enableSsl This parameter is required.
+         */
+        public Builder enableSsl(final com.aliyun.ros.cdk.core.IResolvable enableSsl) {
+            this.props.enableSsl(enableSsl);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param encryptionKey This parameter is required.
          */
         public Builder encryptionKey(final java.lang.String encryptionKey) {
@@ -1333,6 +1474,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder instanceSpec(final com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
             this.props.instanceSpec(instanceSpec);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param masterAiSpec This parameter is required.
+         */
+        public Builder masterAiSpec(final java.lang.String masterAiSpec) {
+            this.props.masterAiSpec(masterAiSpec);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param masterAiSpec This parameter is required.
+         */
+        public Builder masterAiSpec(final com.aliyun.ros.cdk.core.IResolvable masterAiSpec) {
+            this.props.masterAiSpec(masterAiSpec);
             return this;
         }
 
@@ -1571,6 +1729,23 @@ public class RosDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder serverlessResource(final com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
             this.props.serverlessResource(serverlessResource);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param srcDbInstanceName This parameter is required.
+         */
+        public Builder srcDbInstanceName(final java.lang.String srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param srcDbInstanceName This parameter is required.
+         */
+        public Builder srcDbInstanceName(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
             return this;
         }
 

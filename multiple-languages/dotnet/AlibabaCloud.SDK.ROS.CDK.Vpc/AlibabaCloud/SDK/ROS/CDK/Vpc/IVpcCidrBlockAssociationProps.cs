@@ -43,6 +43,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask.</summary>
+        /// <remarks>
+        /// Note When adding an additional IPv6 network segment to the VPC from the specified IPAM address pool, at least one of Ipv6CidrBlock or Ipv6CidrMask must be specified.
+        /// </remarks>
+        [JsiiProperty(name: "ipv6CidrMask", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv6CidrMask
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property ipv6Isp: The type of the IPv6 CIDR block.</summary>
         /// <remarks>
         /// Valid values:
@@ -145,6 +159,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "iPv6CidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? IPv6CidrBlock
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask.</summary>
+            /// <remarks>
+            /// Note When adding an additional IPv6 network segment to the VPC from the specified IPAM address pool, at least one of Ipv6CidrBlock or Ipv6CidrMask must be specified.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv6CidrMask", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv6CidrMask
             {
                 get => GetInstanceProperty<object?>();
             }

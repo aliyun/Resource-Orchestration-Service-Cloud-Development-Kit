@@ -20,6 +20,16 @@ export interface NatGatewayProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
+     * Property accessMode: Reverse access mode to the VPC NAT gateway.
+     */
+    readonly accessMode?: RosNatGateway.AccessModeProperty | ros.IResolvable;
+
+    /**
+     * Property availabilityMode: The availability mode of the NAT gateway. Valid values: CrossAZ, SingleAZ
+     */
+    readonly availabilityMode?: string | ros.IResolvable;
+
+    /**
      * Property deletionForce: Whether force delete the relative snat and dnat entries in the net gateway and unbind eips. Default value is false.
      */
     readonly deletionForce?: boolean | ros.IResolvable;
@@ -63,9 +73,19 @@ export interface NatGatewayProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
+     * Property ipv4Prefix: The IPv4 prefix.
+     */
+    readonly ipv4Prefix?: string | ros.IResolvable;
+
+    /**
      * Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
      */
     readonly natGatewayName?: string | ros.IResolvable;
+
+    /**
+     * Property natIp: The NAT IP address.
+     */
+    readonly natIp?: string | ros.IResolvable;
 
     /**
      * Property natType: The type of the NAT gateway. Valid values:
@@ -79,6 +99,11 @@ export interface NatGatewayProps {
      * Intranet: VPC NAT gateway.
      */
     readonly networkType?: string | ros.IResolvable;
+
+    /**
+     * Property privateLinkEnabled: Whether to support private network connection.
+     */
+    readonly privateLinkEnabled?: boolean | ros.IResolvable;
 
     /**
      * Property securityProtectionEnabled: Specifies whether to enable the firewall feature. Default: False
@@ -113,7 +138,7 @@ export interface INatGateway extends ros.IResource {
     readonly attrSNatTableId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatGateway`The , which resource type creates a NAT Gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatGateway`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natgateway
  */
@@ -156,14 +181,19 @@ export class NatGateway extends ros.Resource implements INatGateway {
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             eipBindMode: props.eipBindMode,
             vSwitchId: props.vSwitchId,
+            privateLinkEnabled: props.privateLinkEnabled,
             securityProtectionEnabled: props.securityProtectionEnabled,
             deletionProtection: props.deletionProtection === undefined || props.deletionProtection === null ? false : props.deletionProtection,
             natType: props.natType === undefined || props.natType === null ? 'Enhanced' : props.natType,
             internetChargeType: props.internetChargeType,
+            natIp: props.natIp,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
             vpcId: props.vpcId,
             networkType: props.networkType,
+            availabilityMode: props.availabilityMode,
             icmpReplyEnabled: props.icmpReplyEnabled,
+            accessMode: props.accessMode,
+            ipv4Prefix: props.ipv4Prefix,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNatGateway;

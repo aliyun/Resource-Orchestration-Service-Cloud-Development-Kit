@@ -89,6 +89,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
             }
         }
 
+        /// <summary>Property tags: Tags to attach to swas.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create swas. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-swas.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        AlibabaCloud.SDK.ROS.CDK.Swas.RosInstance.ITagsProperty[]? Tags
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `Instance`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instance
@@ -167,6 +181,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
             public object? DataDiskSize
             {
                 get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tags: Tags to attach to swas.</summary>
+            /// <remarks>
+            /// Max support 20 tags to add during create swas. Each tag with two properties Key and Value, and Key is required.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-swas.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+            public AlibabaCloud.SDK.ROS.CDK.Swas.RosInstance.ITagsProperty[]? Tags
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Swas.RosInstance.ITagsProperty[]?>();
             }
         }
     }

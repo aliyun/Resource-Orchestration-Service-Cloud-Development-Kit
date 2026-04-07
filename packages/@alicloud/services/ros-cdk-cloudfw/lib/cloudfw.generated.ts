@@ -19,13 +19,26 @@ export interface RosAddressBookProps {
     readonly groupName: string | ros.IResolvable;
 
     /**
-     * @Property groupType: Type the address book, the optional values ​​are:
-     * ip: IP Address Book
-     * domain: domain name address book
-     * port: Port Address Book
-     * tag: ECS label address book
+     * @Property groupType: Type of the address book.
      */
     readonly groupType: string | ros.IResolvable;
+
+    /**
+     * @Property ackClusterConnectorId: ACK cluster connector ID. Batch query ACK cluster connector list.
+     */
+    readonly ackClusterConnectorId?: string | ros.IResolvable;
+
+    /**
+     * @Property ackLabels: ACK cluster container group label list.
+     * 
+     * > Up to 10.
+     */
+    readonly ackLabels?: Array<RosAddressBook.AckLabelsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property ackNamespaces: ACK cluster container group namespace list. Up to 10.
+     */
+    readonly ackNamespaces?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property addressList: Address list of the address book, between multiple addresses separated by commas.
@@ -54,7 +67,7 @@ export interface RosAddressBookProps {
     /**
      * @Property tagRelation: The relationship between the labels to be matched more ECS.
      * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
      */
     readonly tagRelation?: string | ros.IResolvable;
 }
@@ -91,10 +104,18 @@ function RosAddressBookPropsValidator(properties: any): ros.ValidationResult {
     if(properties.groupType && (typeof properties.groupType) !== 'object') {
         errors.collect(ros.propertyValidator('groupType', ros.validateAllowedValues)({
           data: properties.groupType,
-          allowedValues: ["domain","ip","port","tag"],
+          allowedValues: ["domain","ip","port","tag","ackLabel","ipv6","ackNamespace"],
         }));
     }
     errors.collect(ros.propertyValidator('groupType', ros.validateString)(properties.groupType));
+    if(properties.ackNamespaces && (Array.isArray(properties.ackNamespaces) || (typeof properties.ackNamespaces) === 'string')) {
+        errors.collect(ros.propertyValidator('ackNamespaces', ros.validateLength)({
+            data: properties.ackNamespaces.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ackNamespaces', ros.listValidator(ros.validateString))(properties.ackNamespaces));
     if(properties.tagList && (Array.isArray(properties.tagList) || (typeof properties.tagList) === 'string')) {
         errors.collect(ros.propertyValidator('tagList', ros.validateLength)({
             data: properties.tagList.length,
@@ -112,6 +133,15 @@ function RosAddressBookPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
     errors.collect(ros.propertyValidator('autoAddTagEcs', ros.validateBoolean)(properties.autoAddTagEcs));
     errors.collect(ros.propertyValidator('addressList', ros.validateString)(properties.addressList));
+    if(properties.ackLabels && (Array.isArray(properties.ackLabels) || (typeof properties.ackLabels) === 'string')) {
+        errors.collect(ros.propertyValidator('ackLabels', ros.validateLength)({
+            data: properties.ackLabels.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('ackLabels', ros.listValidator(RosAddressBook_AckLabelsPropertyValidator))(properties.ackLabels));
+    errors.collect(ros.propertyValidator('ackClusterConnectorId', ros.validateString)(properties.ackClusterConnectorId));
     return errors.wrap('supplied properties not correct for "RosAddressBookProps"');
 }
 
@@ -132,6 +162,9 @@ function rosAddressBookPropsToRosTemplate(properties: any, enableResourcePropert
       'Description': ros.stringToRosTemplate(properties.description),
       'GroupName': ros.stringToRosTemplate(properties.groupName),
       'GroupType': ros.stringToRosTemplate(properties.groupType),
+      'AckClusterConnectorId': ros.stringToRosTemplate(properties.ackClusterConnectorId),
+      'AckLabels': ros.listMapper(rosAddressBookAckLabelsPropertyToRosTemplate)(properties.ackLabels),
+      'AckNamespaces': ros.listMapper(ros.stringToRosTemplate)(properties.ackNamespaces),
       'AddressList': ros.stringToRosTemplate(properties.addressList),
       'AutoAddTagEcs': ros.booleanToRosTemplate(properties.autoAddTagEcs),
       'RegionId': ros.stringToRosTemplate(properties.regionId),
@@ -141,7 +174,7 @@ function rosAddressBookPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.
  * @Note This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
@@ -170,13 +203,26 @@ export class RosAddressBook extends ros.RosResource {
     public groupName: string | ros.IResolvable;
 
     /**
-     * @Property groupType: Type the address book, the optional values ​​are:
-     * ip: IP Address Book
-     * domain: domain name address book
-     * port: Port Address Book
-     * tag: ECS label address book
+     * @Property groupType: Type of the address book.
      */
     public groupType: string | ros.IResolvable;
+
+    /**
+     * @Property ackClusterConnectorId: ACK cluster connector ID. Batch query ACK cluster connector list.
+     */
+    public ackClusterConnectorId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ackLabels: ACK cluster container group label list.
+     * 
+     * > Up to 10.
+     */
+    public ackLabels: Array<RosAddressBook.AckLabelsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ackNamespaces: ACK cluster container group namespace list. Up to 10.
+     */
+    public ackNamespaces: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property addressList: Address list of the address book, between multiple addresses separated by commas.
@@ -205,7 +251,7 @@ export class RosAddressBook extends ros.RosResource {
     /**
      * @Property tagRelation: The relationship between the labels to be matched more ECS.
      * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
      */
     public tagRelation: string | ros.IResolvable | undefined;
 
@@ -222,6 +268,9 @@ export class RosAddressBook extends ros.RosResource {
         this.description = props.description;
         this.groupName = props.groupName;
         this.groupType = props.groupType;
+        this.ackClusterConnectorId = props.ackClusterConnectorId;
+        this.ackLabels = props.ackLabels;
+        this.ackNamespaces = props.ackNamespaces;
         this.addressList = props.addressList;
         this.autoAddTagEcs = props.autoAddTagEcs;
         this.regionId = props.regionId;
@@ -235,6 +284,9 @@ export class RosAddressBook extends ros.RosResource {
             description: this.description,
             groupName: this.groupName,
             groupType: this.groupType,
+            ackClusterConnectorId: this.ackClusterConnectorId,
+            ackLabels: this.ackLabels,
+            ackNamespaces: this.ackNamespaces,
             addressList: this.addressList,
             autoAddTagEcs: this.autoAddTagEcs,
             regionId: this.regionId,
@@ -245,6 +297,53 @@ export class RosAddressBook extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAddressBookPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosAddressBook {
+    /**
+     * @stability external
+     */
+    export interface AckLabelsProperty {
+        /**
+         * @Property value: Value of ACK cluster container group label.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Key of ACK cluster container group label.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AckLabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AckLabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAddressBook_AckLabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "AckLabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::AddressBook.AckLabels` resource
+ *
+ * @param properties - the TypeScript properties of a `AckLabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CLOUDFW::AddressBook.AckLabels` resource.
+ */
+// @ts-ignore TS6133
+function rosAddressBookAckLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAddressBook_AckLabelsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 export namespace RosAddressBook {
@@ -339,7 +438,7 @@ function rosAllFwSwitchPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AllFwSwitch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AllFwSwitch`, which is used to enable all firewalls.
  * @Note This class does not contain additional functions, so it is recommended to use the `AllFwSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-allfwswitch
  */
@@ -673,6 +772,13 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('domainResolveType', ros.validateString)(properties.domainResolveType));
+    if(properties.repeatType && (typeof properties.repeatType) !== 'object') {
+        errors.collect(ros.propertyValidator('repeatType', ros.validateAllowedValues)({
+          data: properties.repeatType,
+          allowedValues: ["Permanent","None","Daily","Weekly","Monthly"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('repeatType', ros.validateString)(properties.repeatType));
     if(properties.repeatDays && (Array.isArray(properties.repeatDays) || (typeof properties.repeatDays) === 'string')) {
         errors.collect(ros.propertyValidator('repeatDays', ros.validateLength)({
             data: properties.repeatDays.length,
@@ -681,13 +787,6 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateNumber))(properties.repeatDays));
-    if(properties.repeatType && (typeof properties.repeatType) !== 'object') {
-        errors.collect(ros.propertyValidator('repeatType', ros.validateAllowedValues)({
-          data: properties.repeatType,
-          allowedValues: ["Permanent","None","Daily","Weekly","Monthly"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('repeatType', ros.validateString)(properties.repeatType));
     if(properties.regionId && (typeof properties.regionId) !== 'object') {
         errors.collect(ros.propertyValidator('regionId', ros.validateAllowedValues)({
           data: properties.regionId,
@@ -696,7 +795,6 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
     errors.collect(ros.propertyValidator('repeatStartTime', ros.validateString)(properties.repeatStartTime));
-    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
     errors.collect(ros.propertyValidator('newOrder', ros.requiredValidator)(properties.newOrder));
     if(properties.newOrder && (typeof properties.newOrder) !== 'object') {
         errors.collect(ros.propertyValidator('newOrder', ros.validateRange)({
@@ -706,6 +804,7 @@ function RosControlPolicyPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('newOrder', ros.validateNumber)(properties.newOrder));
+    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
     errors.collect(ros.propertyValidator('destPortGroup', ros.validateString)(properties.destPortGroup));
     return errors.wrap('supplied properties not correct for "RosControlPolicyProps"');
 }
@@ -752,7 +851,7 @@ function rosControlPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `ControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
@@ -1022,6 +1121,16 @@ export interface RosFwSwitchProps {
     readonly ipaddrList?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property ipVersion: The IP version number.
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property memberUid: The member unique identifier.
+     */
+    readonly memberUid?: string | ros.IResolvable;
+
+    /**
      * @Property regionList: The region list.
      * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
      */
@@ -1063,6 +1172,8 @@ function RosFwSwitchPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('ipaddrList', ros.listValidator(ros.validateAny))(properties.ipaddrList));
+    errors.collect(ros.propertyValidator('memberUid', ros.validateString)(properties.memberUid));
+    errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
     if(properties.resourceTypeList && (Array.isArray(properties.resourceTypeList) || (typeof properties.resourceTypeList) === 'string')) {
         errors.collect(ros.propertyValidator('resourceTypeList', ros.validateLength)({
             data: properties.resourceTypeList.length,
@@ -1097,13 +1208,15 @@ function rosFwSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCo
     }
     return {
       'IpaddrList': ros.listMapper(ros.objectToRosTemplate)(properties.ipaddrList),
+      'IpVersion': ros.stringToRosTemplate(properties.ipVersion),
+      'MemberUid': ros.stringToRosTemplate(properties.memberUid),
       'RegionList': ros.listMapper(ros.objectToRosTemplate)(properties.regionList),
       'ResourceTypeList': ros.listMapper(ros.objectToRosTemplate)(properties.resourceTypeList),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`, which is used to enable a firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `FwSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
  */
@@ -1121,6 +1234,16 @@ export class RosFwSwitch extends ros.RosResource {
      * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
      */
     public ipaddrList: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property ipVersion: The IP version number.
+     */
+    public ipVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property memberUid: The member unique identifier.
+     */
+    public memberUid: string | ros.IResolvable | undefined;
 
     /**
      * @Property regionList: The region list.
@@ -1155,6 +1278,8 @@ export class RosFwSwitch extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.ipaddrList = props.ipaddrList;
+        this.ipVersion = props.ipVersion;
+        this.memberUid = props.memberUid;
         this.regionList = props.regionList;
         this.resourceTypeList = props.resourceTypeList;
     }
@@ -1163,6 +1288,8 @@ export class RosFwSwitch extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             ipaddrList: this.ipaddrList,
+            ipVersion: this.ipVersion,
+            memberUid: this.memberUid,
             regionList: this.regionList,
             resourceTypeList: this.resourceTypeList,
         };
@@ -1321,6 +1448,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('natBandwidth', ros.validateNumber)(properties.natBandwidth));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.ipNum && (typeof properties.ipNum) !== 'object') {
         errors.collect(ros.propertyValidator('ipNum', ros.validateRange)({
             data: properties.ipNum,
@@ -1329,7 +1457,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('ipNum', ros.validateNumber)(properties.ipNum));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -1364,7 +1491,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('vpcFirewallNum', ros.validateNumber)(properties.vpcFirewallNum));
     errors.collect(ros.propertyValidator('accountNum', ros.validateNumber)(properties.accountNum));
-    errors.collect(ros.propertyValidator('multiAccountManagement', ros.validateBoolean)(properties.multiAccountManagement));
     if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
         errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
             data: properties.bandwidth,
@@ -1373,6 +1499,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
+    errors.collect(ros.propertyValidator('multiAccountManagement', ros.validateBoolean)(properties.multiAccountManagement));
     if(properties.spec && (typeof properties.spec) !== 'object') {
         errors.collect(ros.propertyValidator('spec', ros.validateAllowedValues)({
           data: properties.spec,
@@ -1426,7 +1553,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create a Cloud Firewall instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-instance
  */
@@ -1790,7 +1917,6 @@ function RosNatFirewallControlPolicyPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
-    errors.collect(ros.propertyValidator('destPort', ros.validateNumber)(properties.destPort));
     errors.collect(ros.propertyValidator('applicationNameList', ros.requiredValidator)(properties.applicationNameList));
     if(properties.applicationNameList && (Array.isArray(properties.applicationNameList) || (typeof properties.applicationNameList) === 'string')) {
         errors.collect(ros.propertyValidator('applicationNameList', ros.validateLength)({
@@ -1800,6 +1926,7 @@ function RosNatFirewallControlPolicyPropsValidator(properties: any): ros.Validat
           }));
     }
     errors.collect(ros.propertyValidator('applicationNameList', ros.listValidator(ros.validateString))(properties.applicationNameList));
+    errors.collect(ros.propertyValidator('destPort', ros.validateNumber)(properties.destPort));
     errors.collect(ros.propertyValidator('startTime', ros.validateString)(properties.startTime));
     errors.collect(ros.propertyValidator('aclAction', ros.requiredValidator)(properties.aclAction));
     if(properties.aclAction && (typeof properties.aclAction) !== 'object') {
@@ -1850,7 +1977,6 @@ function RosNatFirewallControlPolicyPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('domainResolveType', ros.validateNumber)(properties.domainResolveType));
-    errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateAny))(properties.repeatDays));
     if(properties.repeatType && (typeof properties.repeatType) !== 'object') {
         errors.collect(ros.propertyValidator('repeatType', ros.validateAllowedValues)({
           data: properties.repeatType,
@@ -1858,12 +1984,13 @@ function RosNatFirewallControlPolicyPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('repeatType', ros.validateString)(properties.repeatType));
+    errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateAny))(properties.repeatDays));
     errors.collect(ros.propertyValidator('repeatStartTime', ros.validateString)(properties.repeatStartTime));
     errors.collect(ros.propertyValidator('natGatewayId', ros.requiredValidator)(properties.natGatewayId));
     errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
-    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
     errors.collect(ros.propertyValidator('newOrder', ros.requiredValidator)(properties.newOrder));
     errors.collect(ros.propertyValidator('newOrder', ros.validateNumber)(properties.newOrder));
+    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
     errors.collect(ros.propertyValidator('destPortGroup', ros.validateString)(properties.destPortGroup));
     return errors.wrap('supplied properties not correct for "RosNatFirewallControlPolicyProps"');
 }
@@ -1909,7 +2036,7 @@ function rosNatFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatFirewallControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
  */
@@ -2314,7 +2441,7 @@ function rosTrFirewallPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`, which is used to create a virtual private cloud (VPC) firewall for a transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewall` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewall
  */
@@ -2561,7 +2688,7 @@ function rosTrFirewallRoutePolicyPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`, which is used to create a routing policy for a virtual private cloud (VPC) firewall of a transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewallRoutePolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewallroutepolicy
  */
@@ -2817,9 +2944,9 @@ export interface RosVpcFirewallCenProps {
 function RosVpcFirewallCenPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('memberUid', ros.validateString)(properties.memberUid));
     errors.collect(ros.propertyValidator('networkInstanceId', ros.requiredValidator)(properties.networkInstanceId));
     errors.collect(ros.propertyValidator('networkInstanceId', ros.validateString)(properties.networkInstanceId));
+    errors.collect(ros.propertyValidator('memberUid', ros.validateString)(properties.memberUid));
     errors.collect(ros.propertyValidator('firewallVSwitchCidrBlock', ros.validateString)(properties.firewallVSwitchCidrBlock));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('cenId', ros.requiredValidator)(properties.cenId));
@@ -2870,7 +2997,7 @@ function rosVpcFirewallCenPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`, which is used to create a virtual private cloud (VPC) firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallCen` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcen
  */
@@ -3053,6 +3180,8 @@ function RosVpcFirewallConfigurePropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('peerVpcRegion', ros.validateString)(properties.peerVpcRegion));
     errors.collect(ros.propertyValidator('localVpcRegion', ros.requiredValidator)(properties.localVpcRegion));
     errors.collect(ros.propertyValidator('localVpcRegion', ros.validateString)(properties.localVpcRegion));
+    errors.collect(ros.propertyValidator('vpcFirewallName', ros.requiredValidator)(properties.vpcFirewallName));
+    errors.collect(ros.propertyValidator('vpcFirewallName', ros.validateString)(properties.vpcFirewallName));
     errors.collect(ros.propertyValidator('localVpcCidrTableList', ros.requiredValidator)(properties.localVpcCidrTableList));
     if(properties.localVpcCidrTableList && (Array.isArray(properties.localVpcCidrTableList) || (typeof properties.localVpcCidrTableList) === 'string')) {
         errors.collect(ros.propertyValidator('localVpcCidrTableList', ros.validateLength)({
@@ -3062,8 +3191,6 @@ function RosVpcFirewallConfigurePropsValidator(properties: any): ros.ValidationR
           }));
     }
     errors.collect(ros.propertyValidator('localVpcCidrTableList', ros.listValidator(RosVpcFirewallConfigure_LocalVpcCidrTableListPropertyValidator))(properties.localVpcCidrTableList));
-    errors.collect(ros.propertyValidator('vpcFirewallName', ros.requiredValidator)(properties.vpcFirewallName));
-    errors.collect(ros.propertyValidator('vpcFirewallName', ros.validateString)(properties.vpcFirewallName));
     errors.collect(ros.propertyValidator('peerVpcCidrTableList', ros.requiredValidator)(properties.peerVpcCidrTableList));
     if(properties.peerVpcCidrTableList && (Array.isArray(properties.peerVpcCidrTableList) || (typeof properties.peerVpcCidrTableList) === 'string')) {
         errors.collect(ros.propertyValidator('peerVpcCidrTableList', ros.validateLength)({
@@ -3113,7 +3240,7 @@ function rosVpcFirewallConfigurePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`, which is used to create a virtual private cloud (VPC) firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallConfigure` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallconfigure
  */
@@ -3545,8 +3672,16 @@ export interface RosVpcFirewallControlPolicyProps {
     readonly destPortType?: string | ros.IResolvable;
 
     /**
+     * @Property domainResolveType: The domain resolution method of the access control policy. Valid values:
+     * - FQDN: Based on FQDN
+     * - DNS: Based on DNS dynamic resolution
+     * - FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution
+     */
+    readonly domainResolveType?: string | ros.IResolvable;
+
+    /**
      * @Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
      */
     readonly endTime?: number | ros.IResolvable;
 
@@ -3627,15 +3762,8 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
     errors.collect(ros.propertyValidator('destination', ros.validateString)(properties.destination));
     errors.collect(ros.propertyValidator('description', ros.requiredValidator)(properties.description));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    if(properties.applicationName && (typeof properties.applicationName) !== 'object') {
-        errors.collect(ros.propertyValidator('applicationName', ros.validateAllowedValues)({
-          data: properties.applicationName,
-          allowedValues: ["ANY","FTP","HTTP","HTTPS","MySQL","SMTP","SMTPS","RDP","VNC","SSH","Redis","MQTT","MongoDB","Memcache","SSL"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
-    errors.collect(ros.propertyValidator('endTime', ros.validateNumber)(properties.endTime));
     errors.collect(ros.propertyValidator('memberUid', ros.validateString)(properties.memberUid));
+    errors.collect(ros.propertyValidator('endTime', ros.validateNumber)(properties.endTime));
     errors.collect(ros.propertyValidator('sourceType', ros.requiredValidator)(properties.sourceType));
     if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
         errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
@@ -3645,6 +3773,48 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
     errors.collect(ros.propertyValidator('destPort', ros.validateString)(properties.destPort));
+    errors.collect(ros.propertyValidator('destinationType', ros.requiredValidator)(properties.destinationType));
+    if(properties.destinationType && (typeof properties.destinationType) !== 'object') {
+        errors.collect(ros.propertyValidator('destinationType', ros.validateAllowedValues)({
+          data: properties.destinationType,
+          allowedValues: ["domain","group","net"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('destinationType', ros.validateString)(properties.destinationType));
+    errors.collect(ros.propertyValidator('source', ros.requiredValidator)(properties.source));
+    errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
+    if(properties.destPortType && (typeof properties.destPortType) !== 'object') {
+        errors.collect(ros.propertyValidator('destPortType', ros.validateAllowedValues)({
+          data: properties.destPortType,
+          allowedValues: ["group","port"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('destPortType', ros.validateString)(properties.destPortType));
+    errors.collect(ros.propertyValidator('proto', ros.requiredValidator)(properties.proto));
+    if(properties.proto && (typeof properties.proto) !== 'object') {
+        errors.collect(ros.propertyValidator('proto', ros.validateAllowedValues)({
+          data: properties.proto,
+          allowedValues: ["ANY","TCP","UDP","ICMP"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('proto', ros.validateString)(properties.proto));
+    if(properties.repeatDays && (Array.isArray(properties.repeatDays) || (typeof properties.repeatDays) === 'string')) {
+        errors.collect(ros.propertyValidator('repeatDays', ros.validateLength)({
+            data: properties.repeatDays.length,
+            min: 1,
+            max: 31,
+          }));
+    }
+    errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateNumber))(properties.repeatDays));
+    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
+    errors.collect(ros.propertyValidator('destPortGroup', ros.validateString)(properties.destPortGroup));
+    if(properties.applicationName && (typeof properties.applicationName) !== 'object') {
+        errors.collect(ros.propertyValidator('applicationName', ros.validateAllowedValues)({
+          data: properties.applicationName,
+          allowedValues: ["ANY","FTP","HTTP","HTTPS","MySQL","SMTP","SMTPS","RDP","VNC","SSH","Redis","MQTT","MongoDB","Memcache","SSL"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
     if(properties.applicationNameList && (Array.isArray(properties.applicationNameList) || (typeof properties.applicationNameList) === 'string')) {
         errors.collect(ros.propertyValidator('applicationNameList', ros.validateLength)({
             data: properties.applicationNameList.length,
@@ -3669,42 +3839,16 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('lang', ros.validateString)(properties.lang));
-    errors.collect(ros.propertyValidator('destinationType', ros.requiredValidator)(properties.destinationType));
-    if(properties.destinationType && (typeof properties.destinationType) !== 'object') {
-        errors.collect(ros.propertyValidator('destinationType', ros.validateAllowedValues)({
-          data: properties.destinationType,
-          allowedValues: ["domain","group","net"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('destinationType', ros.validateString)(properties.destinationType));
     errors.collect(ros.propertyValidator('vpcFirewallId', ros.requiredValidator)(properties.vpcFirewallId));
     errors.collect(ros.propertyValidator('vpcFirewallId', ros.validateString)(properties.vpcFirewallId));
-    errors.collect(ros.propertyValidator('source', ros.requiredValidator)(properties.source));
-    errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
-    if(properties.destPortType && (typeof properties.destPortType) !== 'object') {
-        errors.collect(ros.propertyValidator('destPortType', ros.validateAllowedValues)({
-          data: properties.destPortType,
-          allowedValues: ["group","port"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('destPortType', ros.validateString)(properties.destPortType));
-    errors.collect(ros.propertyValidator('proto', ros.requiredValidator)(properties.proto));
-    if(properties.proto && (typeof properties.proto) !== 'object') {
-        errors.collect(ros.propertyValidator('proto', ros.validateAllowedValues)({
-          data: properties.proto,
-          allowedValues: ["ANY","TCP","UDP","ICMP"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('proto', ros.validateString)(properties.proto));
     errors.collect(ros.propertyValidator('repeatEndTime', ros.validateString)(properties.repeatEndTime));
-    if(properties.repeatDays && (Array.isArray(properties.repeatDays) || (typeof properties.repeatDays) === 'string')) {
-        errors.collect(ros.propertyValidator('repeatDays', ros.validateLength)({
-            data: properties.repeatDays.length,
-            min: 1,
-            max: 31,
-          }));
+    if(properties.domainResolveType && (typeof properties.domainResolveType) !== 'object') {
+        errors.collect(ros.propertyValidator('domainResolveType', ros.validateAllowedValues)({
+          data: properties.domainResolveType,
+          allowedValues: ["FQDN","DNS","FQDN_AND_DNS"],
+        }));
     }
-    errors.collect(ros.propertyValidator('repeatDays', ros.listValidator(ros.validateNumber))(properties.repeatDays));
+    errors.collect(ros.propertyValidator('domainResolveType', ros.validateString)(properties.domainResolveType));
     if(properties.repeatType && (typeof properties.repeatType) !== 'object') {
         errors.collect(ros.propertyValidator('repeatType', ros.validateAllowedValues)({
           data: properties.repeatType,
@@ -3720,10 +3864,8 @@ function RosVpcFirewallControlPolicyPropsValidator(properties: any): ros.Validat
     }
     errors.collect(ros.propertyValidator('regionId', ros.validateString)(properties.regionId));
     errors.collect(ros.propertyValidator('repeatStartTime', ros.validateString)(properties.repeatStartTime));
-    errors.collect(ros.propertyValidator('release', ros.validateBoolean)(properties.release));
     errors.collect(ros.propertyValidator('newOrder', ros.requiredValidator)(properties.newOrder));
     errors.collect(ros.propertyValidator('newOrder', ros.validateString)(properties.newOrder));
-    errors.collect(ros.propertyValidator('destPortGroup', ros.validateString)(properties.destPortGroup));
     return errors.wrap('supplied properties not correct for "RosVpcFirewallControlPolicyProps"');
 }
 
@@ -3755,6 +3897,7 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
       'DestPort': ros.stringToRosTemplate(properties.destPort),
       'DestPortGroup': ros.stringToRosTemplate(properties.destPortGroup),
       'DestPortType': ros.stringToRosTemplate(properties.destPortType),
+      'DomainResolveType': ros.stringToRosTemplate(properties.domainResolveType),
       'EndTime': ros.numberToRosTemplate(properties.endTime),
       'Lang': ros.stringToRosTemplate(properties.lang),
       'MemberUid': ros.stringToRosTemplate(properties.memberUid),
@@ -3769,7 +3912,7 @@ function rosVpcFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`The , which resource type adds access control policies to specified VPC firewall policy groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
@@ -3902,8 +4045,16 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
     public destPortType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property domainResolveType: The domain resolution method of the access control policy. Valid values:
+     * - FQDN: Based on FQDN
+     * - DNS: Based on DNS dynamic resolution
+     * - FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution
+     */
+    public domainResolveType: string | ros.IResolvable | undefined;
+
+    /**
      * @Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
      */
     public endTime: number | ros.IResolvable | undefined;
 
@@ -3993,6 +4144,7 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
         this.destPort = props.destPort;
         this.destPortGroup = props.destPortGroup;
         this.destPortType = props.destPortType;
+        this.domainResolveType = props.domainResolveType;
         this.endTime = props.endTime;
         this.lang = props.lang;
         this.memberUid = props.memberUid;
@@ -4022,6 +4174,7 @@ export class RosVpcFirewallControlPolicy extends ros.RosResource {
             destPort: this.destPort,
             destPortGroup: this.destPortGroup,
             destPortType: this.destPortType,
+            domainResolveType: this.domainResolveType,
             endTime: this.endTime,
             lang: this.lang,
             memberUid: this.memberUid,

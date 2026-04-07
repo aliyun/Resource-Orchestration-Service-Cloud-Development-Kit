@@ -9,10 +9,16 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.
 type ApplicationGroupDeployment interface {
 	alicloudroscdkcore.Resource
 	IApplicationGroupDeployment
+	// Attribute ApplicationName: The name of the application.
+	AttrApplicationName() interface{}
+	// Attribute ExecutionId: The execution ID of the application group deployment.
+	AttrExecutionId() interface{}
+	// Attribute Name: The name of the application group.
+	AttrName() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -106,6 +112,36 @@ type ApplicationGroupDeployment interface {
 type jsiiProxy_ApplicationGroupDeployment struct {
 	internal.Type__alicloudroscdkcoreResource
 	jsiiProxy_IApplicationGroupDeployment
+}
+
+func (j *jsiiProxy_ApplicationGroupDeployment) AttrApplicationName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrApplicationName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApplicationGroupDeployment) AttrExecutionId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrExecutionId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ApplicationGroupDeployment) AttrName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrName",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_ApplicationGroupDeployment) EnableResourcePropertyConstraint() *bool {

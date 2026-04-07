@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosVpcPeerConnection) validateSetAcceptingVpcIdParameters(val
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcPeerConnection) validateSetBandwidthParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcPeerConnection) validateSetDeletionForceParameters(val interface{}) error {
 	return nil
 }
@@ -108,7 +112,15 @@ func (j *jsiiProxy_RosVpcPeerConnection) validateSetEnableResourcePropertyConstr
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcPeerConnection) validateSetLinkTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcPeerConnection) validateSetNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpcPeerConnection) validateSetResourceGroupIdParameters(val interface{}) error {
 	return nil
 }
 

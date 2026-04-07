@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
 type RosResourceShare interface {
 	alicloudroscdkcore.RosResource
 	AllowExternalTargets() interface{}

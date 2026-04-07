@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::ConsumerGroup</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DTS::ConsumerGroup</code>, which is used to create a consumer group for a change tracking instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.760Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.124Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.RosConsumerGroup")
 public class RosConsumerGroup extends com.aliyun.ros.cdk.core.RosResource {
 

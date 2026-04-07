@@ -95,7 +95,7 @@ export interface IDatasetVersion extends ros.IResource {
     readonly attrVersionName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::DatasetVersion`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::DatasetVersion`, which is used to create a dataset version.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatasetVersion`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-datasetversion
  */
@@ -125,9 +125,9 @@ export class DatasetVersion extends ros.Resource implements IDatasetVersion {
         const rosDatasetVersion = new RosDatasetVersion(this, id,  {
             options: props.options,
             description: props.description,
+            dataSourceType: props.dataSourceType,
             sourceType: props.sourceType,
             sourceId: props.sourceId,
-            dataSourceType: props.dataSourceType,
             dataSize: props.dataSize,
             dataCount: props.dataCount,
             labels: props.labels,

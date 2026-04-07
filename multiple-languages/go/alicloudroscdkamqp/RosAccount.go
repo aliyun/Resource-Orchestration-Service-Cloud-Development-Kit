@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Account`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Account`The , which type creates username and password for ApsaraMQ for RabbitMQ.
 type RosAccount interface {
 	alicloudroscdkcore.RosResource
 	AccountAccessKey() interface{}

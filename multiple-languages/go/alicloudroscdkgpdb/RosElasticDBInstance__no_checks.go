@@ -84,6 +84,10 @@ func validateRosElasticDBInstance_IsRosResourceParameters(construct alicloudrosc
 	return nil
 }
 
+func (j *jsiiProxy_RosElasticDBInstance) validateSetBackupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosElasticDBInstance) validateSetDbInstanceCategoryParameters(val interface{}) error {
 	return nil
 }
@@ -145,6 +149,10 @@ func (j *jsiiProxy_RosElasticDBInstance) validateSetSegNodeNumParameters(val int
 }
 
 func (j *jsiiProxy_RosElasticDBInstance) validateSetSegStorageTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosElasticDBInstance) validateSetSrcDbInstanceNameParameters(val interface{}) error {
 	return nil
 }
 

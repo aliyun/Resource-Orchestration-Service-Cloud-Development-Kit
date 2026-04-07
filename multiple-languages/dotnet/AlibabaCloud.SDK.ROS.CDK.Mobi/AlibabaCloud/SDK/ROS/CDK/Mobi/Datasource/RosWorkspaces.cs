@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mobi.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::MOBI::Workspaces`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::MOBI::Workspaces`, which is used to query workspaces.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Workspaces` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mobi-workspaces

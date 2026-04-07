@@ -1,5 +1,6 @@
 @alicloud/ros-cdk-mps.IMediaWorkflow=com.aliyun.ros.cdk.mps.IMediaWorkflow
 @alicloud/ros-cdk-mps.IPipeline=com.aliyun.ros.cdk.mps.IPipeline
+@alicloud/ros-cdk-mps.ITranscodeJob=com.aliyun.ros.cdk.mps.ITranscodeJob
 @alicloud/ros-cdk-mps.MediaWorkflow=com.aliyun.ros.cdk.mps.MediaWorkflow
 @alicloud/ros-cdk-mps.MediaWorkflowProps=com.aliyun.ros.cdk.mps.MediaWorkflowProps
 @alicloud/ros-cdk-mps.Pipeline=com.aliyun.ros.cdk.mps.Pipeline
@@ -9,3 +10,7 @@
 @alicloud/ros-cdk-mps.RosPipeline=com.aliyun.ros.cdk.mps.RosPipeline
 @alicloud/ros-cdk-mps.RosPipeline.NotifyConfigProperty=com.aliyun.ros.cdk.mps.RosPipeline$NotifyConfigProperty
 @alicloud/ros-cdk-mps.RosPipelineProps=com.aliyun.ros.cdk.mps.RosPipelineProps
+@alicloud/ros-cdk-mps.RosTranscodeJob=com.aliyun.ros.cdk.mps.RosTranscodeJob
+@alicloud/ros-cdk-mps.RosTranscodeJobProps=com.aliyun.ros.cdk.mps.RosTranscodeJobProps
+@alicloud/ros-cdk-mps.TranscodeJob=com.aliyun.ros.cdk.mps.TranscodeJob
+@alicloud/ros-cdk-mps.TranscodeJobProps=com.aliyun.ros.cdk.mps.TranscodeJobProps

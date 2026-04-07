@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CLOUDFW::AddressBook`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CLOUDFW::AddressBook`, which is used to query the information about an address book for access control in Cloud Firewall.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudfw-addressbook

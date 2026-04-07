@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcPeerConnection`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
 type RosVpcPeerConnection interface {
 	alicloudroscdkcore.RosResource
 	AcceptingAliUid() interface{}
@@ -19,6 +19,8 @@ type RosVpcPeerConnection interface {
 	AcceptingVpcId() interface{}
 	SetAcceptingVpcId(val interface{})
 	AttrInstanceId() alicloudroscdkcore.IResolvable
+	Bandwidth() interface{}
+	SetBandwidth(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -29,6 +31,8 @@ type RosVpcPeerConnection interface {
 	SetDescription(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	LinkType() interface{}
+	SetLinkType(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -48,6 +52,8 @@ type RosVpcPeerConnection interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -223,6 +229,16 @@ func (j *jsiiProxy_RosVpcPeerConnection) AttrInstanceId() alicloudroscdkcore.IRe
 	return returns
 }
 
+func (j *jsiiProxy_RosVpcPeerConnection) Bandwidth() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bandwidth",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpcPeerConnection) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -263,6 +279,16 @@ func (j *jsiiProxy_RosVpcPeerConnection) EnableResourcePropertyConstraint() *boo
 	return returns
 }
 
+func (j *jsiiProxy_RosVpcPeerConnection) LinkType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"linkType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpcPeerConnection) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -298,6 +324,16 @@ func (j *jsiiProxy_RosVpcPeerConnection) Ref() *string {
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcPeerConnection) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -424,6 +460,17 @@ func (j *jsiiProxy_RosVpcPeerConnection)SetAcceptingVpcId(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosVpcPeerConnection)SetBandwidth(val interface{}) {
+	if err := j.validateSetBandwidthParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"bandwidth",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosVpcPeerConnection)SetDeletionForce(val interface{}) {
 	if err := j.validateSetDeletionForceParameters(val); err != nil {
 		panic(err)
@@ -457,6 +504,17 @@ func (j *jsiiProxy_RosVpcPeerConnection)SetEnableResourcePropertyConstraint(val 
 	)
 }
 
+func (j *jsiiProxy_RosVpcPeerConnection)SetLinkType(val interface{}) {
+	if err := j.validateSetLinkTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"linkType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosVpcPeerConnection)SetName(val interface{}) {
 	if err := j.validateSetNameParameters(val); err != nil {
 		panic(err)
@@ -464,6 +522,17 @@ func (j *jsiiProxy_RosVpcPeerConnection)SetName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcPeerConnection)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
 		val,
 	)
 }

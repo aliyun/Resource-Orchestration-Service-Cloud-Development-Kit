@@ -1,3 +1,7 @@
+@alicloud/ros-cdk-oos.ApplicationConnection=com.aliyun.ros.cdk.oos.ApplicationConnection
+@alicloud/ros-cdk-oos.ApplicationConnectionBind=com.aliyun.ros.cdk.oos.ApplicationConnectionBind
+@alicloud/ros-cdk-oos.ApplicationConnectionBindProps=com.aliyun.ros.cdk.oos.ApplicationConnectionBindProps
+@alicloud/ros-cdk-oos.ApplicationConnectionProps=com.aliyun.ros.cdk.oos.ApplicationConnectionProps
 @alicloud/ros-cdk-oos.ApplicationGroupDeployment=com.aliyun.ros.cdk.oos.ApplicationGroupDeployment
 @alicloud/ros-cdk-oos.ApplicationGroupDeploymentProps=com.aliyun.ros.cdk.oos.ApplicationGroupDeploymentProps
 @alicloud/ros-cdk-oos.DefaultPatchBaseline=com.aliyun.ros.cdk.oos.DefaultPatchBaseline
@@ -6,6 +10,8 @@
 @alicloud/ros-cdk-oos.DeployRevisionProps=com.aliyun.ros.cdk.oos.DeployRevisionProps
 @alicloud/ros-cdk-oos.Execution=com.aliyun.ros.cdk.oos.Execution
 @alicloud/ros-cdk-oos.ExecutionProps=com.aliyun.ros.cdk.oos.ExecutionProps
+@alicloud/ros-cdk-oos.IApplicationConnection=com.aliyun.ros.cdk.oos.IApplicationConnection
+@alicloud/ros-cdk-oos.IApplicationConnectionBind=com.aliyun.ros.cdk.oos.IApplicationConnectionBind
 @alicloud/ros-cdk-oos.IApplicationGroupDeployment=com.aliyun.ros.cdk.oos.IApplicationGroupDeployment
 @alicloud/ros-cdk-oos.IDefaultPatchBaseline=com.aliyun.ros.cdk.oos.IDefaultPatchBaseline
 @alicloud/ros-cdk-oos.IDeployRevision=com.aliyun.ros.cdk.oos.IDeployRevision
@@ -20,6 +26,11 @@
 @alicloud/ros-cdk-oos.ParameterProps=com.aliyun.ros.cdk.oos.ParameterProps
 @alicloud/ros-cdk-oos.PatchBaseline=com.aliyun.ros.cdk.oos.PatchBaseline
 @alicloud/ros-cdk-oos.PatchBaselineProps=com.aliyun.ros.cdk.oos.PatchBaselineProps
+@alicloud/ros-cdk-oos.RosApplicationConnection=com.aliyun.ros.cdk.oos.RosApplicationConnection
+@alicloud/ros-cdk-oos.RosApplicationConnection.EnvVarsProperty=com.aliyun.ros.cdk.oos.RosApplicationConnection$EnvVarsProperty
+@alicloud/ros-cdk-oos.RosApplicationConnectionBind=com.aliyun.ros.cdk.oos.RosApplicationConnectionBind
+@alicloud/ros-cdk-oos.RosApplicationConnectionBindProps=com.aliyun.ros.cdk.oos.RosApplicationConnectionBindProps
+@alicloud/ros-cdk-oos.RosApplicationConnectionProps=com.aliyun.ros.cdk.oos.RosApplicationConnectionProps
 @alicloud/ros-cdk-oos.RosApplicationGroupDeployment=com.aliyun.ros.cdk.oos.RosApplicationGroupDeployment
 @alicloud/ros-cdk-oos.RosApplicationGroupDeploymentProps=com.aliyun.ros.cdk.oos.RosApplicationGroupDeploymentProps
 @alicloud/ros-cdk-oos.RosDefaultPatchBaseline=com.aliyun.ros.cdk.oos.RosDefaultPatchBaseline

@@ -481,7 +481,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrPrimaryEndpointIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`The , which resource type creates a PolarDB cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
@@ -575,15 +575,15 @@ export class DBCluster extends ros.Resource implements IDBCluster {
 
         const rosDBCluster = new RosDBCluster(this, id,  {
             defaultTimeZone: props.defaultTimeZone,
-            gdnId: props.gdnId,
             resourceGroupId: props.resourceGroupId,
+            gdnId: props.gdnId,
             storagePayType: props.storagePayType,
             backupRetentionPolicyOnClusterDeletion: props.backupRetentionPolicyOnClusterDeletion,
             looseXEngine: props.looseXEngine,
             dbType: props.dbType,
             storageAutoScale: props.storageAutoScale,
-            proxyClass: props.proxyClass,
             dbVersion: props.dbVersion,
+            proxyClass: props.proxyClass,
             sslEnabled: props.sslEnabled,
             dbMinorVersion: props.dbMinorVersion,
             dbClusterParameters: props.dbClusterParameters,
@@ -592,8 +592,8 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             storageType: props.storageType,
             architecture: props.architecture,
             vSwitchId: props.vSwitchId,
-            renewalStatus: props.renewalStatus === undefined || props.renewalStatus === null ? 'Normal' : props.renewalStatus,
             dbClusterDescription: props.dbClusterDescription,
+            renewalStatus: props.renewalStatus === undefined || props.renewalStatus === null ? 'Normal' : props.renewalStatus,
             period: props.period,
             payType: props.payType,
             deletionProtection: props.deletionProtection,
@@ -613,18 +613,18 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             clusterNetworkType: props.clusterNetworkType === undefined || props.clusterNetworkType === null ? 'VPC' : props.clusterNetworkType,
             securityIpList: props.securityIpList,
             maintainTime: props.maintainTime,
-            standbyAz: props.standbyAz,
             lowerCaseTableNames: props.lowerCaseTableNames,
+            standbyAz: props.standbyAz,
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             zoneId: props.zoneId,
-            coldStorageOption: props.coldStorageOption,
             scaleRoNumMax: props.scaleRoNumMax,
+            coldStorageOption: props.coldStorageOption,
             looseXEngineUseMemoryPct: props.looseXEngineUseMemoryPct,
             scaleMax: props.scaleMax,
             creationCategory: props.creationCategory,
             strictConsistency: props.strictConsistency,
-            dbNodeClass: props.dbNodeClass,
             creationOption: props.creationOption === undefined || props.creationOption === null ? 'Normal' : props.creationOption,
+            dbNodeClass: props.dbNodeClass,
             parameterGroupId: props.parameterGroupId,
             storageSpace: props.storageSpace,
             serverlessType: props.serverlessType,

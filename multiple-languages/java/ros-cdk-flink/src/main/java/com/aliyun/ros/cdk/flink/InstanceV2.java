@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.flink;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::InstanceV2</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::InstanceV2</code>The , which resource creates a fully managed Flink workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.110Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.712Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.InstanceV2")
 public class InstanceV2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.flink.IInstanceV2 {
 
@@ -241,6 +241,27 @@ public class InstanceV2 extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
+         * Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.
+         * <p>
+         * @return {@code this}
+         * @param architectureType Property architectureType: The architecture type, the value of the value is as follows: X86, ARM. This parameter is required.
+         */
+        public Builder architectureType(final java.lang.String architectureType) {
+            this.props.architectureType(architectureType);
+            return this;
+        }
+        /**
+         * Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.
+         * <p>
+         * @return {@code this}
+         * @param architectureType Property architectureType: The architecture type, the value of the value is as follows: X86, ARM. This parameter is required.
+         */
+        public Builder architectureType(final com.aliyun.ros.cdk.core.IResolvable architectureType) {
+            this.props.architectureType(architectureType);
+            return this;
+        }
+
+        /**
          * Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
          * <p>
          * false: Manual renewal.
@@ -291,6 +312,73 @@ public class InstanceV2 extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
             this.props.duration(duration);
+            return this;
+        }
+
+        /**
+         * Property haResourceSpec: HA resource specifications.
+         * <p>
+         * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * <p>
+         * @return {@code this}
+         * @param haResourceSpec Property haResourceSpec: HA resource specifications. This parameter is required.
+         */
+        public Builder haResourceSpec(final com.aliyun.ros.cdk.core.IResolvable haResourceSpec) {
+            this.props.haResourceSpec(haResourceSpec);
+            return this;
+        }
+        /**
+         * Property haResourceSpec: HA resource specifications.
+         * <p>
+         * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * <p>
+         * @return {@code this}
+         * @param haResourceSpec Property haResourceSpec: HA resource specifications. This parameter is required.
+         */
+        public Builder haResourceSpec(final com.aliyun.ros.cdk.flink.RosInstanceV2.HaResourceSpecProperty haResourceSpec) {
+            this.props.haResourceSpec(haResourceSpec);
+            return this;
+        }
+
+        /**
+         * Property haVSwitchIds: HA VSwitch IDs.
+         * <p>
+         * @return {@code this}
+         * @param haVSwitchIds Property haVSwitchIds: HA VSwitch IDs. This parameter is required.
+         */
+        public Builder haVSwitchIds(final java.util.List<? extends java.lang.Object> haVSwitchIds) {
+            this.props.haVSwitchIds(haVSwitchIds);
+            return this;
+        }
+        /**
+         * Property haVSwitchIds: HA VSwitch IDs.
+         * <p>
+         * @return {@code this}
+         * @param haVSwitchIds Property haVSwitchIds: HA VSwitch IDs. This parameter is required.
+         */
+        public Builder haVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable haVSwitchIds) {
+            this.props.haVSwitchIds(haVSwitchIds);
+            return this;
+        }
+
+        /**
+         * Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS.
+         * <p>
+         * @return {@code this}
+         * @param monitorType Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS. This parameter is required.
+         */
+        public Builder monitorType(final java.lang.String monitorType) {
+            this.props.monitorType(monitorType);
+            return this;
+        }
+        /**
+         * Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS.
+         * <p>
+         * @return {@code this}
+         * @param monitorType Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS. This parameter is required.
+         */
+        public Builder monitorType(final com.aliyun.ros.cdk.core.IResolvable monitorType) {
+            this.props.monitorType(monitorType);
             return this;
         }
 

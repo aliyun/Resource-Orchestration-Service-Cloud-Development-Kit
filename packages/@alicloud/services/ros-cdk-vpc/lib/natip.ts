@@ -36,6 +36,18 @@ export interface NatIpProps {
     readonly natIpName: string | ros.IResolvable;
 
     /**
+     * Property ipv4Prefix: The IPv4 prefix of the IP address range to be created.
+     * The IPv4 prefix must be within the reserved CIDR block of the switch where the NAT gateway is deployed, and the reserved CIDR block must not be occupied. The prefix length must be \/28.
+     */
+    readonly ipv4Prefix?: string | ros.IResolvable;
+
+    /**
+     * Property ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate.
+     * Randomly allocated from the unassigned reserved CIDR blocks of the switch where the NAT gateway is deployed. Valid values: 1 to 10.
+     */
+    readonly ipv4PrefixCount?: number | ros.IResolvable;
+
+    /**
      * Property natIp: The NAT IP address that you want to create.
      * If you do not specify an IP address, the system selects a random IP address from the
      * specified CIDR block.
@@ -65,7 +77,7 @@ export interface INatIp extends ros.IResource {
     readonly attrNatIpId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIp`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIp`, which is used to create a NAT IP address.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatIp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
@@ -101,9 +113,11 @@ export class NatIp extends ros.Resource implements INatIp {
             natIp: props.natIp,
             natIpCidr: props.natIpCidr,
             natIpCidrId: props.natIpCidrId,
+            ipv4PrefixCount: props.ipv4PrefixCount,
             natIpDescription: props.natIpDescription,
             natIpName: props.natIpName,
             natGatewayId: props.natGatewayId,
+            ipv4Prefix: props.ipv4Prefix,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosNatIp;
         this.attrNatIp = rosNatIp.attrNatIp;

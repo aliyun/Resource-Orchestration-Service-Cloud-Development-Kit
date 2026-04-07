@@ -9,10 +9,14 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EdsUser::User`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
 type RosUser interface {
 	alicloudroscdkcore.RosResource
 	AttrEndUserId() alicloudroscdkcore.IResolvable
+	AutoLockTime() interface{}
+	SetAutoLockTime(val interface{})
+	BusinessChannel() interface{}
+	SetBusinessChannel(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -23,6 +27,8 @@ type RosUser interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	EndUserId() interface{}
 	SetEndUserId(val interface{})
+	IsLocalAdmin() interface{}
+	SetIsLocalAdmin(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -41,8 +47,12 @@ type RosUser interface {
 	SetOwnerType(val interface{})
 	Password() interface{}
 	SetPassword(val interface{})
+	PasswordExpireDays() interface{}
+	SetPasswordExpireDays(val interface{})
 	Phone() interface{}
 	SetPhone(val interface{})
+	RealNickName() interface{}
+	SetRealNickName(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -193,6 +203,26 @@ func (j *jsiiProxy_RosUser) AttrEndUserId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
+func (j *jsiiProxy_RosUser) AutoLockTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoLockTime",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosUser) BusinessChannel() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"businessChannel",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosUser) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -228,6 +258,16 @@ func (j *jsiiProxy_RosUser) EndUserId() interface{} {
 	_jsii_.Get(
 		j,
 		"endUserId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosUser) IsLocalAdmin() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isLocalAdmin",
 		&returns,
 	)
 	return returns
@@ -283,11 +323,31 @@ func (j *jsiiProxy_RosUser) Password() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosUser) PasswordExpireDays() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"passwordExpireDays",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosUser) Phone() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"phone",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosUser) RealNickName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"realNickName",
 		&returns,
 	)
 	return returns
@@ -391,6 +451,28 @@ func NewRosUser_Override(r RosUser, scope alicloudroscdkcore.Construct, id *stri
 	)
 }
 
+func (j *jsiiProxy_RosUser)SetAutoLockTime(val interface{}) {
+	if err := j.validateSetAutoLockTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoLockTime",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosUser)SetBusinessChannel(val interface{}) {
+	if err := j.validateSetBusinessChannelParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"businessChannel",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosUser)SetEmail(val interface{}) {
 	if err := j.validateSetEmailParameters(val); err != nil {
 		panic(err)
@@ -420,6 +502,17 @@ func (j *jsiiProxy_RosUser)SetEndUserId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"endUserId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosUser)SetIsLocalAdmin(val interface{}) {
+	if err := j.validateSetIsLocalAdminParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"isLocalAdmin",
 		val,
 	)
 }
@@ -457,6 +550,17 @@ func (j *jsiiProxy_RosUser)SetPassword(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosUser)SetPasswordExpireDays(val interface{}) {
+	if err := j.validateSetPasswordExpireDaysParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"passwordExpireDays",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosUser)SetPhone(val interface{}) {
 	if err := j.validateSetPhoneParameters(val); err != nil {
 		panic(err)
@@ -464,6 +568,17 @@ func (j *jsiiProxy_RosUser)SetPhone(val interface{}) {
 	_jsii_.Set(
 		j,
 		"phone",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosUser)SetRealNickName(val interface{}) {
+	if err := j.validateSetRealNickNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"realNickName",
 		val,
 	)
 }

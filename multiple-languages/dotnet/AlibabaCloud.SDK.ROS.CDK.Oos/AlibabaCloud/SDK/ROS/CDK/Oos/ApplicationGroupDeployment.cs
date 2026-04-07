@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplicationGroupDeployment`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
@@ -35,6 +35,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         [System.ComponentModel.EditorBrowsable(System.ComponentModel.EditorBrowsableState.Never)]
         protected ApplicationGroupDeployment(DeputyProps props): base(props)
         {
+        }
+
+        /// <summary>Attribute ApplicationName: The name of the application.</summary>
+        [JsiiProperty(name: "attrApplicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrApplicationName
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute ExecutionId: The execution ID of the application group deployment.</summary>
+        [JsiiProperty(name: "attrExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrExecutionId
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute Name: The name of the application group.</summary>
+        [JsiiProperty(name: "attrName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrName
+        {
+            get => GetInstanceProperty<object>()!;
         }
 
         [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-oos.ApplicationGroupDeploymentProps\"}")]

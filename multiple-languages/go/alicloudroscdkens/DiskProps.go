@@ -29,6 +29,8 @@ type DiskProps struct {
 	// true
 	// false (default): no.
 	Encrypted interface{} `field:"optional" json:"encrypted" yaml:"encrypted"`
+	// Property instanceBillingCycle: The billing cycle of the instance.
+	InstanceBillingCycle interface{} `field:"optional" json:"instanceBillingCycle" yaml:"instanceBillingCycle"`
 	// Property kmsKeyId: The ID of the Key Management Service (KMS) key that is used by the cloud disk.
 	//
 	// Note If you set the Encrypted parameter to true, the default service key is used when the KMSKeyId parameter is empty.

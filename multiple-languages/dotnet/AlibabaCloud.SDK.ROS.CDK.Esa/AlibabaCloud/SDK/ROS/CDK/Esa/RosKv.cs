@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Esa
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Kv`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Kv`Use the , which resource type to set a single key-value pair in a KV bucket.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Kv` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kv
@@ -166,7 +166,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
+        /// <strong>Property</strong>: expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000). If the content is larger than 2 MB, call [PutKvWithHighCapacity] https:\/\/www.alibabacloud.com\/help\/en\/doc-detail\/2850486.html.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "expiration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

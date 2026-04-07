@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Cluster`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Cluster`, which is used to create a cluster for an order in exclusive mode.
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	ICluster

@@ -219,7 +219,7 @@ export interface IContainerGroup extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContainerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
@@ -297,8 +297,8 @@ export class ContainerGroup extends ros.Resource implements IContainerGroup {
             memory: props.memory,
             initContainer: props.initContainer,
             cpu: props.cpu,
-            eipInstanceId: props.eipInstanceId,
             containerGroupName: props.containerGroupName,
+            eipInstanceId: props.eipInstanceId,
             container: props.container,
             imageSnapshotId: props.imageSnapshotId,
             ramRoleName: props.ramRoleName,
@@ -313,8 +313,8 @@ export class ContainerGroup extends ros.Resource implements IContainerGroup {
             hostAliase: props.hostAliase,
             zoneId: props.zoneId,
             terminationGracePeriodSeconds: props.terminationGracePeriodSeconds,
-            vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
+            vSwitchId: props.vSwitchId,
             slsEnable: props.slsEnable,
             restartPolicy: props.restartPolicy,
             volume: props.volume,

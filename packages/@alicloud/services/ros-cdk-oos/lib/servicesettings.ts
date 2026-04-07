@@ -47,7 +47,7 @@ export interface IServiceSettings extends ros.IResource {
     readonly props: ServiceSettingsProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ServiceSettings`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ServiceSettings`, which is used to configure service settings.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceSettings`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings
  */
@@ -72,8 +72,8 @@ export class ServiceSettings extends ros.Resource implements IServiceSettings {
         const rosServiceSettings = new RosServiceSettings(this, id,  {
             deliverySlsEnabled: props.deliverySlsEnabled,
             deliveryOssKeyPrefix: props.deliveryOssKeyPrefix,
-            deliveryOssBucketName: props.deliveryOssBucketName,
             deliveryOssEnabled: props.deliveryOssEnabled,
+            deliveryOssBucketName: props.deliveryOssBucketName,
             rdcEnterpriseId: props.rdcEnterpriseId,
             deliverySlsProjectName: props.deliverySlsProjectName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

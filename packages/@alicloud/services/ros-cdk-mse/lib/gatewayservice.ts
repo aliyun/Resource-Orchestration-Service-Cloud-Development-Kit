@@ -111,7 +111,7 @@ export interface IGatewayService extends ros.IResource {
     readonly attrServiceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayService`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayService`The , which resource is used to import a service into a gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGatewayService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayservice
  */
@@ -146,11 +146,11 @@ export class GatewayService extends ros.Resource implements IGatewayService {
         const rosGatewayService = new RosGatewayService(this, id,  {
             groupName: props.groupName,
             servicePort: props.servicePort,
-            fcVersion: props.fcVersion,
             tlsSetting: props.tlsSetting,
+            fcVersion: props.fcVersion,
             saeAppId: props.saeAppId,
-            sourceId: props.sourceId,
             sourceType: props.sourceType,
+            sourceId: props.sourceId,
             ips: props.ips,
             namespace: props.namespace,
             name: props.name,

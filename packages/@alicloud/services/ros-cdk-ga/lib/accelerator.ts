@@ -122,7 +122,7 @@ export interface IAccelerator extends ros.IResource {
     readonly attrSpec: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Accelerator`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccelerator`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
@@ -199,8 +199,8 @@ export class Accelerator extends ros.Resource implements IAccelerator {
             acceleratorName: props.acceleratorName,
             resourceGroupId: props.resourceGroupId,
             autoUseCoupon: props.autoUseCoupon,
-            instanceChargeType: props.instanceChargeType,
             pricingCycle: props.pricingCycle,
+            instanceChargeType: props.instanceChargeType,
             enableCrossBorder: props.enableCrossBorder === undefined || props.enableCrossBorder === null ? false : props.enableCrossBorder,
             duration: props.duration,
             autoPay: props.autoPay === undefined || props.autoPay === null ? true : props.autoPay,

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Imm
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::IMM::Project2`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::IMM::Project2`, which is used to create a project of the new Intelligent Media Management (IMM) version.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Project2` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project2

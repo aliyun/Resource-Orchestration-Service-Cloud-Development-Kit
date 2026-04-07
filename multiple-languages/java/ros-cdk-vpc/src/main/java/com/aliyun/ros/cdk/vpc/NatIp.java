@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::NatIp</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::NatIp</code>, which is used to create a NAT IP address.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.999Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.934Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatIp")
 public class NatIp extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.INatIp {
 
@@ -214,6 +214,56 @@ public class NatIp extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
          */
         public Builder natIpName(final com.aliyun.ros.cdk.core.IResolvable natIpName) {
             this.props.natIpName(natIpName);
+            return this;
+        }
+
+        /**
+         * Property ipv4Prefix: The IPv4 prefix of the IP address range to be created.
+         * <p>
+         * The IPv4 prefix must be within the reserved CIDR block of the switch where the NAT gateway is deployed, and the reserved CIDR block must not be occupied. The prefix length must be /28.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefix Property ipv4Prefix: The IPv4 prefix of the IP address range to be created. This parameter is required.
+         */
+        public Builder ipv4Prefix(final java.lang.String ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+        /**
+         * Property ipv4Prefix: The IPv4 prefix of the IP address range to be created.
+         * <p>
+         * The IPv4 prefix must be within the reserved CIDR block of the switch where the NAT gateway is deployed, and the reserved CIDR block must not be occupied. The prefix length must be /28.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefix Property ipv4Prefix: The IPv4 prefix of the IP address range to be created. This parameter is required.
+         */
+        public Builder ipv4Prefix(final com.aliyun.ros.cdk.core.IResolvable ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+
+        /**
+         * Property ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate.
+         * <p>
+         * Randomly allocated from the unassigned reserved CIDR blocks of the switch where the NAT gateway is deployed. Valid values: 1 to 10.
+         * <p>
+         * @return {@code this}
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate. This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final java.lang.Number ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
+            return this;
+        }
+        /**
+         * Property ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate.
+         * <p>
+         * Randomly allocated from the unassigned reserved CIDR blocks of the switch where the NAT gateway is deployed. Valid values: 1 to 10.
+         * <p>
+         * @return {@code this}
+         * @param ipv4PrefixCount Property ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate. This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
             return this;
         }
 

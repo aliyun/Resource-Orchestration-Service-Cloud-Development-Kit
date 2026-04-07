@@ -8,5 +8,6 @@ type RosContactGroupProps struct {
 	ContactGroupName interface{} `field:"required" json:"contactGroupName" yaml:"contactGroupName"`
 	ContactNames interface{} `field:"required" json:"contactNames" yaml:"contactNames"`
 	Describe interface{} `field:"required" json:"describe" yaml:"describe"`
+	EnableSubscribed interface{} `field:"optional" json:"enableSubscribed" yaml:"enableSubscribed"`
 }
 

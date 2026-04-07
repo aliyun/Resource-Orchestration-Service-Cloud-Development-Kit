@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Page`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::Page`The , which type is used to create a custom response page.
 type Page interface {
 	alicloudroscdkcore.Resource
 	IPage

@@ -9,6 +9,8 @@ type RosDBInstanceProps struct {
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
 	AiNodeSpecInfos interface{} `field:"optional" json:"aiNodeSpecInfos" yaml:"aiNodeSpecInfos"`
+	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
+	CacheStorageSize interface{} `field:"optional" json:"cacheStorageSize" yaml:"cacheStorageSize"`
 	CreateSampleData interface{} `field:"optional" json:"createSampleData" yaml:"createSampleData"`
 	DbInstanceCategory interface{} `field:"optional" json:"dbInstanceCategory" yaml:"dbInstanceCategory"`
 	DbInstanceClass interface{} `field:"optional" json:"dbInstanceClass" yaml:"dbInstanceClass"`
@@ -16,10 +18,12 @@ type RosDBInstanceProps struct {
 	DbInstanceGroupCount interface{} `field:"optional" json:"dbInstanceGroupCount" yaml:"dbInstanceGroupCount"`
 	DbInstanceMode interface{} `field:"optional" json:"dbInstanceMode" yaml:"dbInstanceMode"`
 	DeployMode interface{} `field:"optional" json:"deployMode" yaml:"deployMode"`
+	EnableSsl interface{} `field:"optional" json:"enableSsl" yaml:"enableSsl"`
 	EncryptionKey interface{} `field:"optional" json:"encryptionKey" yaml:"encryptionKey"`
 	EncryptionType interface{} `field:"optional" json:"encryptionType" yaml:"encryptionType"`
 	IdleTime interface{} `field:"optional" json:"idleTime" yaml:"idleTime"`
 	InstanceSpec interface{} `field:"optional" json:"instanceSpec" yaml:"instanceSpec"`
+	MasterAiSpec interface{} `field:"optional" json:"masterAiSpec" yaml:"masterAiSpec"`
 	MasterCu interface{} `field:"optional" json:"masterCu" yaml:"masterCu"`
 	MasterNodeNum interface{} `field:"optional" json:"masterNodeNum" yaml:"masterNodeNum"`
 	PayType interface{} `field:"optional" json:"payType" yaml:"payType"`
@@ -34,6 +38,7 @@ type RosDBInstanceProps struct {
 	SegStorageType interface{} `field:"optional" json:"segStorageType" yaml:"segStorageType"`
 	ServerlessMode interface{} `field:"optional" json:"serverlessMode" yaml:"serverlessMode"`
 	ServerlessResource interface{} `field:"optional" json:"serverlessResource" yaml:"serverlessResource"`
+	SrcDbInstanceName interface{} `field:"optional" json:"srcDbInstanceName" yaml:"srcDbInstanceName"`
 	StandbyVSwitchId interface{} `field:"optional" json:"standbyVSwitchId" yaml:"standbyVSwitchId"`
 	StandbyZoneId interface{} `field:"optional" json:"standbyZoneId" yaml:"standbyZoneId"`
 	StorageSize interface{} `field:"optional" json:"storageSize" yaml:"storageSize"`

@@ -135,7 +135,7 @@ export interface IDatabase extends ros.IResource {
     readonly attrState: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DMS::Database`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DMS::Database`The , which data source queries the details of a specific database.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dms-database
  */

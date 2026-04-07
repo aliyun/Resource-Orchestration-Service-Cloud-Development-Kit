@@ -15,6 +15,8 @@ type Ipv6GatewayProps struct {
 	//
 	// Length of 2 to 128 characters, beginning with a letter or Chinese, can contain numbers, dot, underscore (_) and dash (-), but not at http (.): \/\/ or with https: \/\/ .
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	// Property resourceGroupId: The ID of the resource group to which the IPv6 gateway belongs.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property spec: Specifications IPv6 gateway, the value: Small (default): Free.
 	//
 	// Medium: Enterprise Edition.

@@ -29,6 +29,11 @@ export interface InstanceProps {
     readonly accountPassword?: string | ros.IResolvable;
 
     /**
+     * Property auditPolicyOptions: Audit policy options.
+     */
+    readonly auditPolicyOptions?: RosInstance.AuditPolicyOptionsProperty | ros.IResolvable;
+
+    /**
      * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
@@ -39,6 +44,11 @@ export interface InstanceProps {
     readonly backupId?: string | ros.IResolvable;
 
     /**
+     * Property backupPolicyOptions: Backup policy options.
+     */
+    readonly backupPolicyOptions?: RosInstance.BackupPolicyOptionsProperty | ros.IResolvable;
+
+    /**
      * Property businessInfo: The business information. It is an additional parameter.
      */
     readonly businessInfo?: string | ros.IResolvable;
@@ -47,6 +57,11 @@ export interface InstanceProps {
      * Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
      */
     readonly chargeType?: string | ros.IResolvable;
+
+    /**
+     * Property clusterId: The dedicated cluster ID.
+     */
+    readonly clusterId?: string | ros.IResolvable;
 
     /**
      * Property couponNo: The coupon code. Default value:youhuiquan_promotion_option_id_for_blank.
@@ -62,6 +77,23 @@ export interface InstanceProps {
      * Property dbInstanceDescription: Description of created database instance.
      */
     readonly dbInstanceDescription?: string | ros.IResolvable;
+
+    /**
+     * Property dbInstanceReleaseProtection: Enables instance release protection. Values:
+     * - true: Enabled.
+     * - false: Not enabled.
+     */
+    readonly dbInstanceReleaseProtection?: boolean | ros.IResolvable;
+
+    /**
+     * Property encrypted: Whether to enable cloud disk encryption.
+     */
+    readonly encrypted?: boolean | ros.IResolvable;
+
+    /**
+     * Property encryptionKey: Custom key ID.
+     */
+    readonly encryptionKey?: string | ros.IResolvable;
 
     /**
      * Property engineVersion: Database instance version.
@@ -86,6 +118,11 @@ export interface InstanceProps {
     readonly privateConnections?: RosInstance.PrivateConnectionsProperty | ros.IResolvable;
 
     /**
+     * Property provisionedIops: Provisioned IOPS. The value range is 0 to 50000.
+     */
+    readonly provisionedIops?: number | ros.IResolvable;
+
+    /**
      * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
      */
     readonly readonlyReplicas?: number | ros.IResolvable;
@@ -104,6 +141,15 @@ export interface InstanceProps {
      * Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
      */
     readonly restoreTime?: string | ros.IResolvable;
+
+    /**
+     * Property restoreType: Backup recovery instance.
+     * - 0: Restore instance to specified backup set
+     * - 1: Restore instance to specified point in time
+     * - 2: Restore released instance to specified backup set
+     * - 3: Restore instance to specified backup set
+     */
+    readonly restoreType?: number | ros.IResolvable;
 
     /**
      * Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.
@@ -127,6 +173,18 @@ export interface InstanceProps {
      * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
      */
     readonly srcDbInstanceId?: string | ros.IResolvable;
+
+    /**
+     * Property srcRegion: The source instance region.
+     * 
+     * >- When the backup recovery type is 2 or 3, this parameter is required.
+     */
+    readonly srcRegion?: string | ros.IResolvable;
+
+    /**
+     * Property sslOptions: SSL options.
+     */
+    readonly sslOptions?: RosInstance.SSLOptionsProperty | ros.IResolvable;
 
     /**
      * Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
@@ -213,7 +271,7 @@ export interface IInstance extends ros.IResource {
     readonly attrReplicaSetName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::Instance`The , which type creates or clones a MongoDB replica set instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
  */
@@ -332,29 +390,39 @@ export class Instance extends ros.Resource implements IInstance {
             businessInfo: props.businessInfo,
             resourceGroupId: props.resourceGroupId,
             hiddenZoneId: props.hiddenZoneId,
+            encrypted: props.encrypted,
             autoRenew: props.autoRenew,
             securityIpArray: props.securityIpArray,
             backupId: props.backupId,
+            encryptionKey: props.encryptionKey,
+            sslOptions: props.sslOptions,
             storageEngine: props.storageEngine === undefined || props.storageEngine === null ? 'WiredTiger' : props.storageEngine,
+            auditPolicyOptions: props.auditPolicyOptions,
             restoreTime: props.restoreTime,
             privateConnections: props.privateConnections,
             dbInstanceStorage: props.dbInstanceStorage,
-            tags: props.tags,
+            restoreType: props.restoreType,
             dbInstanceDescription: props.dbInstanceDescription,
+            tags: props.tags,
             couponNo: props.couponNo,
+            dbInstanceReleaseProtection: props.dbInstanceReleaseProtection,
             tdeStatus: props.tdeStatus,
-            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '7.0' : props.engineVersion,
             storageType: props.storageType,
-            readonlyReplicas: props.readonlyReplicas,
-            replicationFactor: props.replicationFactor,
+            engineVersion: props.engineVersion === undefined || props.engineVersion === null ? '7.0' : props.engineVersion,
             zoneId: props.zoneId,
+            replicationFactor: props.replicationFactor,
+            readonlyReplicas: props.readonlyReplicas,
             dbInstanceClass: props.dbInstanceClass,
+            clusterId: props.clusterId,
             vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             vpcPasswordFree: props.vpcPasswordFree,
+            provisionedIops: props.provisionedIops,
             secondaryZoneId: props.secondaryZoneId,
+            backupPolicyOptions: props.backupPolicyOptions,
             accountPassword: props.accountPassword,
+            srcRegion: props.srcRegion,
             vpcId: props.vpcId,
             chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             databaseNames: props.databaseNames,

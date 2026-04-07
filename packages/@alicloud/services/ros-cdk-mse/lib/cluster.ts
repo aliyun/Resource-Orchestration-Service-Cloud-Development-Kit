@@ -313,7 +313,7 @@ export interface ICluster extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`Use , which to create a cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -506,16 +506,16 @@ export class Cluster extends ros.Resource implements ICluster {
             connectionType: props.connectionType,
             resourceGroupId: props.resourceGroupId,
             aclEntryList: props.aclEntryList,
-            clusterSpecification: props.clusterSpecification,
             vSwitchId: props.vSwitchId,
+            clusterSpecification: props.clusterSpecification,
             securityGroupType: props.securityGroupType,
             clusterType: props.clusterType,
             clusterAliasName: props.clusterAliasName,
             instanceCount: props.instanceCount,
             vpcId: props.vpcId,
             requestPars: props.requestPars,
-            chargeType: props.chargeType,
             pubNetworkFlow: props.pubNetworkFlow,
+            chargeType: props.chargeType,
             netType: props.netType,
             eipEnabled: props.eipEnabled,
             tags: props.tags,

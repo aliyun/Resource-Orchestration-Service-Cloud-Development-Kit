@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object _vpcId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vpcId: VpcId
+        /// <strong>Property</strong>: vpcId: The ID of the VPC.
         /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VpcId
@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object _zoneMappings;
 
         /// <remarks>
-        /// <strong>Property</strong>: zoneMappings: ZoneMappingss
+        /// <strong>Property</strong>: zoneMappings: The zone mappings for the VPC.
         /// </remarks>
         [JsiiProperty(name: "zoneMappings", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cen.RosTransitRouterVpcAttachment.ZoneMappingsProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public object ZoneMappings
@@ -127,10 +127,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
+        private object? _autoPublishRouteEnabled;
+
+        /// <remarks>
+        /// <strong>Property</strong>: autoPublishRouteEnabled: Whether to automatically publish routes.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoPublishRouteEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoPublishRouteEnabled
+        {
+            get => _autoPublishRouteEnabled;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoPublishRouteEnabled = value;
+            }
+        }
+
         private object? _cenId;
 
         /// <remarks>
-        /// <strong>Property</strong>: cenId: CenId
+        /// <strong>Property</strong>: cenId: The ID of the Cloud Enterprise Network (CEN) instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cenId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -295,7 +328,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _transitRouterAttachmentDescription;
 
         /// <remarks>
-        /// <strong>Property</strong>: transitRouterAttachmentDescription: TransitRouterAttachmentDescription
+        /// <strong>Property</strong>: transitRouterAttachmentDescription: The description of the transit router VPC attachment.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -328,7 +361,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _transitRouterAttachmentName;
 
         /// <remarks>
-        /// <strong>Property</strong>: transitRouterAttachmentName: TransitRouterAttachmentName
+        /// <strong>Property</strong>: transitRouterAttachmentName: The name of the transit router VPC attachment.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -361,7 +394,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _transitRouterId;
 
         /// <remarks>
-        /// <strong>Property</strong>: transitRouterId: TransitRouterId
+        /// <strong>Property</strong>: transitRouterId: The ID of the transit router.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "transitRouterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -391,10 +424,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
+        private object? _transitRouterVpcAttachmentOptions;
+
+        /// <remarks>
+        /// <strong>Property</strong>: transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "transitRouterVpcAttachmentOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        public object? TransitRouterVpcAttachmentOptions
+        {
+            get => _transitRouterVpcAttachmentOptions;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, object> cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, System.Collections.Generic.IDictionary<string, object>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _transitRouterVpcAttachmentOptions = value;
+            }
+        }
+
         private object? _vpcOwnerId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vpcOwnerId: VpcOwnerId
+        /// <strong>Property</strong>: vpcOwnerId: The owner ID of the VPC.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vpcOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

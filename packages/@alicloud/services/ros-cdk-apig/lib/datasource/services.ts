@@ -50,7 +50,7 @@ export interface IServices extends ros.IResource {
     readonly attrServices: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Services`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Services`, which is used to query services.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServices`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-services
  */

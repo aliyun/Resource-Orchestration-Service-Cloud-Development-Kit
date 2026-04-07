@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`The , which resource type creates a NAS file system.
 type RosFileSystem interface {
 	alicloudroscdkcore.RosResource
 	AttrFileSystemId() alicloudroscdkcore.IResolvable

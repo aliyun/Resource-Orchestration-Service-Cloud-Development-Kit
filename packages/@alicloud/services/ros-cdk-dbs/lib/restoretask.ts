@@ -141,7 +141,7 @@ export interface IRestoreTask extends ros.IResource {
     readonly attrRestoreTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::RestoreTask`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::RestoreTask`, which is used to create a restoration task of Data Disaster Recovery.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRestoreTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
@@ -169,8 +169,8 @@ export class RestoreTask extends ros.Resource implements IRestoreTask {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRestoreTask = new RosRestoreTask(this, id,  {
-            startTask: props.startTask === undefined || props.startTask === null ? true : props.startTask,
             restoreDir: props.restoreDir,
+            startTask: props.startTask === undefined || props.startTask === null ? true : props.startTask,
             duplicateConflict: props.duplicateConflict,
             restoreHome: props.restoreHome,
             destinationEndpointPassword: props.destinationEndpointPassword,

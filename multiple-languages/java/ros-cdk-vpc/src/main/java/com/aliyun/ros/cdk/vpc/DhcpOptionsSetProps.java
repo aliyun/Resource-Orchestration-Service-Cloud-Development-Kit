@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.790Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.DhcpOptionsSetProps")
 @software.amazon.jsii.Jsii.Proxy(DhcpOptionsSetProps.Jsii$Proxy.class)
 public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializable {
@@ -45,6 +45,41 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+     * <p>
+     * <ul>
+     * <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
+     * <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+     * </ul>
+     * <p>
+     * When specifying parameter values, you must include the unit.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6LeaseTime() {
+        return null;
+    }
+
+    /**
+     * Property leaseTime: The lease time of the IPv4 DHCP options set.
+     * <p>
+     * <ul>
+     * <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>87600h</strong>.</li>
+     * <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>3650d</strong>.</li>
+     * </ul>
+     * <p>
+     * When specifying parameter values, you must include the unit.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLeaseTime() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link DhcpOptionsSetProps}
      */
     static Builder builder() {
@@ -58,6 +93,9 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object dhcpOptionsSetName;
         java.lang.Object domainName;
         java.lang.Object domainNameServers;
+        java.lang.Object ipv6LeaseTime;
+        java.lang.Object leaseTime;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link DhcpOptionsSetProps#getDhcpOptionsSetDescription}
@@ -146,6 +184,90 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link DhcpOptionsSetProps#getIpv6LeaseTime}
+         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+         *                      <ul>
+         *                      <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
+         *                      <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+         *                      </ul>
+         *                      <p>
+         *                      When specifying parameter values, you must include the unit.
+         * @return {@code this}
+         */
+        public Builder ipv6LeaseTime(java.lang.String ipv6LeaseTime) {
+            this.ipv6LeaseTime = ipv6LeaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DhcpOptionsSetProps#getIpv6LeaseTime}
+         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+         *                      <ul>
+         *                      <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
+         *                      <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+         *                      </ul>
+         *                      <p>
+         *                      When specifying parameter values, you must include the unit.
+         * @return {@code this}
+         */
+        public Builder ipv6LeaseTime(com.aliyun.ros.cdk.core.IResolvable ipv6LeaseTime) {
+            this.ipv6LeaseTime = ipv6LeaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DhcpOptionsSetProps#getLeaseTime}
+         * @param leaseTime Property leaseTime: The lease time of the IPv4 DHCP options set.
+         *                  <ul>
+         *                  <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>87600h</strong>.</li>
+         *                  <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>3650d</strong>.</li>
+         *                  </ul>
+         *                  <p>
+         *                  When specifying parameter values, you must include the unit.
+         * @return {@code this}
+         */
+        public Builder leaseTime(java.lang.String leaseTime) {
+            this.leaseTime = leaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DhcpOptionsSetProps#getLeaseTime}
+         * @param leaseTime Property leaseTime: The lease time of the IPv4 DHCP options set.
+         *                  <ul>
+         *                  <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>87600h</strong>.</li>
+         *                  <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>3650d</strong>.</li>
+         *                  </ul>
+         *                  <p>
+         *                  When specifying parameter values, you must include the unit.
+         * @return {@code this}
+         */
+        public Builder leaseTime(com.aliyun.ros.cdk.core.IResolvable leaseTime) {
+            this.leaseTime = leaseTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DhcpOptionsSetProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DhcpOptionsSetProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link DhcpOptionsSetProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -165,6 +287,9 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object dhcpOptionsSetName;
         private final java.lang.Object domainName;
         private final java.lang.Object domainNameServers;
+        private final java.lang.Object ipv6LeaseTime;
+        private final java.lang.Object leaseTime;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -176,6 +301,9 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
             this.dhcpOptionsSetName = software.amazon.jsii.Kernel.get(this, "dhcpOptionsSetName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domainName = software.amazon.jsii.Kernel.get(this, "domainName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domainNameServers = software.amazon.jsii.Kernel.get(this, "domainNameServers", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv6LeaseTime = software.amazon.jsii.Kernel.get(this, "ipv6LeaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.leaseTime = software.amazon.jsii.Kernel.get(this, "leaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -187,6 +315,9 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
             this.dhcpOptionsSetName = builder.dhcpOptionsSetName;
             this.domainName = builder.domainName;
             this.domainNameServers = builder.domainNameServers;
+            this.ipv6LeaseTime = builder.ipv6LeaseTime;
+            this.leaseTime = builder.leaseTime;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -210,6 +341,21 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getIpv6LeaseTime() {
+            return this.ipv6LeaseTime;
+        }
+
+        @Override
+        public final java.lang.Object getLeaseTime() {
+            return this.leaseTime;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -226,6 +372,15 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
             }
             if (this.getDomainNameServers() != null) {
                 data.set("domainNameServers", om.valueToTree(this.getDomainNameServers()));
+            }
+            if (this.getIpv6LeaseTime() != null) {
+                data.set("ipv6LeaseTime", om.valueToTree(this.getIpv6LeaseTime()));
+            }
+            if (this.getLeaseTime() != null) {
+                data.set("leaseTime", om.valueToTree(this.getLeaseTime()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -248,7 +403,10 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
             if (this.dhcpOptionsSetDescription != null ? !this.dhcpOptionsSetDescription.equals(that.dhcpOptionsSetDescription) : that.dhcpOptionsSetDescription != null) return false;
             if (this.dhcpOptionsSetName != null ? !this.dhcpOptionsSetName.equals(that.dhcpOptionsSetName) : that.dhcpOptionsSetName != null) return false;
             if (this.domainName != null ? !this.domainName.equals(that.domainName) : that.domainName != null) return false;
-            return this.domainNameServers != null ? this.domainNameServers.equals(that.domainNameServers) : that.domainNameServers == null;
+            if (this.domainNameServers != null ? !this.domainNameServers.equals(that.domainNameServers) : that.domainNameServers != null) return false;
+            if (this.ipv6LeaseTime != null ? !this.ipv6LeaseTime.equals(that.ipv6LeaseTime) : that.ipv6LeaseTime != null) return false;
+            if (this.leaseTime != null ? !this.leaseTime.equals(that.leaseTime) : that.leaseTime != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -257,6 +415,9 @@ public interface DhcpOptionsSetProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.dhcpOptionsSetName != null ? this.dhcpOptionsSetName.hashCode() : 0);
             result = 31 * result + (this.domainName != null ? this.domainName.hashCode() : 0);
             result = 31 * result + (this.domainNameServers != null ? this.domainNameServers.hashCode() : 0);
+            result = 31 * result + (this.ipv6LeaseTime != null ? this.ipv6LeaseTime.hashCode() : 0);
+            result = 31 * result + (this.leaseTime != null ? this.leaseTime.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

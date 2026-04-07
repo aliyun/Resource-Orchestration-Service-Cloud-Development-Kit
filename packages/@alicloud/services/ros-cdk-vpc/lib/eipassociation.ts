@@ -52,7 +52,7 @@ export interface IEIPAssociation extends ros.IResource {
     readonly attrEipAddress: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPAssociation`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPAssociation`Use , which to associate an Elastic IP Address (EIP) with a cloud service instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEIPAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipassociation
  */
@@ -87,8 +87,8 @@ export class EIPAssociation extends ros.Resource implements IEIPAssociation {
         const rosEIPAssociation = new RosEIPAssociation(this, id,  {
             privateIpAddress: props.privateIpAddress,
             instanceId: props.instanceId,
-            mode: props.mode,
             allocationId: props.allocationId,
+            mode: props.mode,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEIPAssociation;
         this.attrAllocationId = rosEIPAssociation.attrAllocationId;

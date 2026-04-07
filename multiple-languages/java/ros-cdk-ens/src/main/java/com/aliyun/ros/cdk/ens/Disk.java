@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Disk</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Disk</code>, which is used to create a pay-as-you-go or subscription data disk.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.323Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.787Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.Disk")
 public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ens.IDisk {
 
@@ -258,6 +258,27 @@ public class Disk extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
          */
         public Builder encrypted(final com.aliyun.ros.cdk.core.IResolvable encrypted) {
             this.props.encrypted(encrypted);
+            return this;
+        }
+
+        /**
+         * Property instanceBillingCycle: The billing cycle of the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceBillingCycle Property instanceBillingCycle: The billing cycle of the instance. This parameter is required.
+         */
+        public Builder instanceBillingCycle(final java.lang.String instanceBillingCycle) {
+            this.props.instanceBillingCycle(instanceBillingCycle);
+            return this;
+        }
+        /**
+         * Property instanceBillingCycle: The billing cycle of the instance.
+         * <p>
+         * @return {@code this}
+         * @param instanceBillingCycle Property instanceBillingCycle: The billing cycle of the instance. This parameter is required.
+         */
+        public Builder instanceBillingCycle(final com.aliyun.ros.cdk.core.IResolvable instanceBillingCycle) {
+            this.props.instanceBillingCycle(instanceBillingCycle);
             return this;
         }
 

@@ -113,7 +113,7 @@ export interface IScheduledTask extends ros.IResource {
     readonly attrScheduledTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScheduledTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
@@ -145,14 +145,14 @@ export class ScheduledTask extends ros.Resource implements IScheduledTask {
             description: props.description,
             scalingGroupId: props.scalingGroupId,
             recurrenceType: props.recurrenceType,
-            desiredCapacity: props.desiredCapacity,
             scheduledTaskName: props.scheduledTaskName,
+            desiredCapacity: props.desiredCapacity,
             maxValue: props.maxValue,
             launchExpirationTime: props.launchExpirationTime,
             minValue: props.minValue,
             scheduledAction: props.scheduledAction,
-            recurrenceEndTime: props.recurrenceEndTime,
             recurrenceValue: props.recurrenceValue,
+            recurrenceEndTime: props.recurrenceEndTime,
             taskEnabled: props.taskEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosScheduledTask;

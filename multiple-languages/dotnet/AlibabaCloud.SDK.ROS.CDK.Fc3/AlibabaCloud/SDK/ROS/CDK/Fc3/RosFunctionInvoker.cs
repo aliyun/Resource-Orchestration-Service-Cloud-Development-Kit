@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc3
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::FunctionInvoker`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::FunctionInvoker`The , which resource type invokes a function in Function Compute (FC) 3.0.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `FunctionInvoker` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-functioninvoker

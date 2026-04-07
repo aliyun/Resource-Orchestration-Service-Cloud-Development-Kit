@@ -97,10 +97,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property payType: The payment type.</summary>
+        [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PayType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property period: The billing period.</summary>
+        [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Period
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property storageSize: Storage space size, unit GB, default 1GB.</summary>
         [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? StorageSize
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property usedTime: The subscription period of the instance.</summary>
+        /// <remarks>
+        /// Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+        /// </remarks>
+        [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? UsedTime
         {
             get
             {
@@ -202,10 +238,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property payType: The payment type.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PayType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property period: The billing period.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Period
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property storageSize: Storage space size, unit GB, default 1GB.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? StorageSize
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property usedTime: The subscription period of the instance.</summary>
+            /// <remarks>
+            /// Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? UsedTime
             {
                 get => GetInstanceProperty<object?>();
             }

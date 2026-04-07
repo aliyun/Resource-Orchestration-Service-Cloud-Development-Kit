@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosResourceGroup) validateSetNameParameters(val interface{}) 
 	return nil
 }
 
+func (j *jsiiProxy_RosResourceGroup) validateSetTagsParameters(val *[]*RosResourceGroup_TagsProperty) error {
+	return nil
+}
+
 func validateNewRosResourceGroupParameters(scope alicloudroscdkcore.Construct, id *string, props *RosResourceGroupProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

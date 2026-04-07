@@ -100,11 +100,19 @@ func (j *jsiiProxy_RosEIPSegment) validateSetInternetChargeTypeParameters(val in
 	return nil
 }
 
+func (j *jsiiProxy_RosEIPSegment) validateSetIspParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosEIPSegment) validateSetNetmodeParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosEIPSegment) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEIPSegment) validateSetZoneParameters(val interface{}) error {
 	return nil
 }
 

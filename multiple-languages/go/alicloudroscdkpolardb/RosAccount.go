@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Account`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Account`The , which resource type creates accounts for PolarDB databases.
 type RosAccount interface {
 	alicloudroscdkcore.RosResource
 	AccountDescription() interface{}

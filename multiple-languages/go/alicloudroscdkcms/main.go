@@ -1045,6 +1045,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "describe", GoGetter: "Describe"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
+			_jsii_.MemberProperty{JsiiProperty: "enableSubscribed", GoGetter: "EnableSubscribed"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
@@ -1184,6 +1185,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
 			_jsii_.MemberProperty{JsiiProperty: "ruleName", GoGetter: "RuleName"},
+			_jsii_.MemberProperty{JsiiProperty: "silenceTime", GoGetter: "SilenceTime"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberProperty{JsiiProperty: "state", GoGetter: "State"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
@@ -1201,6 +1203,10 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cms.RosEventRule.EventPatternProperty",
 		reflect.TypeOf((*RosEventRule_EventPatternProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cms.RosEventRule.KeywordFilterProperty",
+		reflect.TypeOf((*RosEventRule_KeywordFilterProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cms.RosEventRuleProps",
@@ -1235,6 +1241,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "openApiParameters", GoGetter: "OpenApiParameters"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
 			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
@@ -1271,6 +1278,10 @@ func init() {
 		reflect.TypeOf((*RosEventRuleTargets_MnsParametersProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cms.RosEventRuleTargets.OpenApiParametersProperty",
+		reflect.TypeOf((*RosEventRuleTargets_OpenApiParametersProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cms.RosEventRuleTargets.SlsParametersProperty",
 		reflect.TypeOf((*RosEventRuleTargets_SlsParametersProperty)(nil)).Elem(),
 	)
@@ -1299,12 +1310,14 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "attrRuleId", GoGetter: "AttrRuleId"},
 			_jsii_.MemberProperty{JsiiProperty: "category", GoGetter: "Category"},
+			_jsii_.MemberProperty{JsiiProperty: "contactGroups", GoGetter: "ContactGroups"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
 			_jsii_.MemberProperty{JsiiProperty: "dimensions", GoGetter: "Dimensions"},
 			_jsii_.MemberProperty{JsiiProperty: "effectiveInterval", GoGetter: "EffectiveInterval"},
 			_jsii_.MemberProperty{JsiiProperty: "emailSubject", GoGetter: "EmailSubject"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "escalations", GoGetter: "Escalations"},
+			_jsii_.MemberProperty{JsiiProperty: "extraDimensionJson", GoGetter: "ExtraDimensionJson"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
@@ -1314,11 +1327,13 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "metricName", GoGetter: "MetricName"},
 			_jsii_.MemberProperty{JsiiProperty: "namespace", GoGetter: "Namespace"},
+			_jsii_.MemberProperty{JsiiProperty: "noDataPolicy", GoGetter: "NoDataPolicy"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberProperty{JsiiProperty: "noEffectiveInterval", GoGetter: "NoEffectiveInterval"},
 			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
+			_jsii_.MemberProperty{JsiiProperty: "options", GoGetter: "Options"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
 			_jsii_.MemberProperty{JsiiProperty: "period", GoGetter: "Period"},
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},

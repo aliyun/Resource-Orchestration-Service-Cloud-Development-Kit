@@ -63,7 +63,7 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`, which is used to create an alias for a Customer Master Key (CMK).
  * @Note This class does not contain additional functions, so it is recommended to use the `Alias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */
@@ -206,7 +206,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('vpcNum', ros.validateNumber)(properties.vpcNum));
-    errors.collect(ros.propertyValidator('log', ros.validateBoolean)(properties.log));
     if(properties.keyNum && (typeof properties.keyNum) !== 'object') {
         errors.collect(ros.propertyValidator('keyNum', ros.validateRange)({
             data: properties.keyNum,
@@ -215,6 +214,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('keyNum', ros.validateNumber)(properties.keyNum));
+    errors.collect(ros.propertyValidator('log', ros.validateBoolean)(properties.log));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -223,6 +223,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('connection', RosInstance_ConnectionPropertyValidator)(properties.connection));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,6,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.renewPeriod && (typeof properties.renewPeriod) !== 'object') {
         errors.collect(ros.propertyValidator('renewPeriod', ros.validateRange)({
             data: properties.renewPeriod,
@@ -231,21 +238,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('renewPeriod', ros.validateNumber)(properties.renewPeriod));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,6,12,24,36],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    if(properties.secretNum && (typeof properties.secretNum) !== 'object') {
-        errors.collect(ros.propertyValidator('secretNum', ros.validateRange)({
-            data: properties.secretNum,
-            min: 0,
-            max: 100000,
-          }));
-    }
-    errors.collect(ros.propertyValidator('secretNum', ros.validateNumber)(properties.secretNum));
     errors.collect(ros.propertyValidator('productVersion', ros.requiredValidator)(properties.productVersion));
     if(properties.productVersion && (typeof properties.productVersion) !== 'object') {
         errors.collect(ros.propertyValidator('productVersion', ros.validateAllowedValues)({
@@ -254,6 +246,14 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('productVersion', ros.validateString)(properties.productVersion));
+    if(properties.secretNum && (typeof properties.secretNum) !== 'object') {
+        errors.collect(ros.propertyValidator('secretNum', ros.validateRange)({
+            data: properties.secretNum,
+            min: 0,
+            max: 100000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('secretNum', ros.validateNumber)(properties.secretNum));
     if(properties.logStorage && (typeof properties.logStorage) !== 'object') {
         errors.collect(ros.propertyValidator('logStorage', ros.validateRange)({
             data: properties.logStorage,
@@ -317,7 +317,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Instance`, which is used to create a Key Management Service (KMS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
  */
@@ -588,6 +588,11 @@ export interface RosKeyProps {
      * @Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
      */
     readonly rotationInterval?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to key. Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosKey.TagsProperty[];
 }
 
 /**
@@ -611,7 +616,6 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('rotationInterval', ros.validateString)(properties.rotationInterval));
-    errors.collect(ros.propertyValidator('enableAutomaticRotation', ros.validateBoolean)(properties.enableAutomaticRotation));
     if(properties.pendingWindowInDays && (typeof properties.pendingWindowInDays) !== 'object') {
         errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateRange)({
             data: properties.pendingWindowInDays,
@@ -620,11 +624,20 @@ function RosKeyPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('pendingWindowInDays', ros.validateNumber)(properties.pendingWindowInDays));
+    errors.collect(ros.propertyValidator('enableAutomaticRotation', ros.validateBoolean)(properties.enableAutomaticRotation));
     errors.collect(ros.propertyValidator('keySpec', ros.validateString)(properties.keySpec));
-    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
     errors.collect(ros.propertyValidator('keyUsage', ros.validateString)(properties.keyUsage));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
     errors.collect(ros.propertyValidator('dkmsInstanceId', ros.validateString)(properties.dkmsInstanceId));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosKey_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosKeyProps"');
 }
 
@@ -653,11 +666,12 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
       'Policy': ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
       'ProtectionLevel': ros.stringToRosTemplate(properties.protectionLevel),
       'RotationInterval': ros.stringToRosTemplate(properties.rotationInterval),
+      'Tags': ros.listMapper(rosKeyTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`The , which resource creates a master key.
  * @Note This class does not contain additional functions, so it is recommended to use the `Key` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
@@ -736,6 +750,11 @@ export class RosKey extends ros.RosResource {
     public rotationInterval: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to key. Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosKey.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -756,6 +775,7 @@ export class RosKey extends ros.RosResource {
         this.policy = props.policy;
         this.protectionLevel = props.protectionLevel;
         this.rotationInterval = props.rotationInterval;
+        this.tags = props.tags;
     }
 
 
@@ -772,11 +792,60 @@ export class RosKey extends ros.RosResource {
             policy: this.policy,
             protectionLevel: this.protectionLevel,
             rotationInterval: this.rotationInterval,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosKeyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosKey {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosKey_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KMS::Key.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KMS::Key.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosKeyTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosKey_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -860,7 +929,7 @@ function rosNetworkRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::NetworkRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::NetworkRule`, which is used to create a network access rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-networkrule
  */
@@ -1037,7 +1106,7 @@ function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Policy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Policy`, which is used to create a permission policy to configure the keys and secrets that applications are allowed to access.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy
  */
@@ -1263,6 +1332,21 @@ export interface RosSecretProps {
     readonly forceDeleteWithoutRecovery?: boolean | ros.IResolvable;
 
     /**
+     * @Property policy: The specific content of the credential policy in JSON format. Maximum length is 32768 bytes.
+     * If this parameter is not specified, the default credential policy is used.
+     * The policy content includes:
+     * - Version: The version of the policy. Currently, only version 1 is supported.
+     * - Statement: A list of statements, each containing:
+     *   - Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _\/+=.@-.
+     *   - Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.
+     *   - Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.
+     *   - Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.
+     *   - Condition (optional): Conditions that limit when the policy is effective. Format: `"Condition": {"condition operator": {"condition key": "condition value"}}`. See documentation for details.
+     * > After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+     */
+    readonly policy?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * @Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30
      */
     readonly recoveryWindowInDays?: number | ros.IResolvable;
@@ -1291,6 +1375,11 @@ export interface RosSecretProps {
     readonly secretType?: string | ros.IResolvable;
 
     /**
+     * @Property tags: Tags to attach to secret. Max support 20 tags to add during create secret. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosSecret.TagsProperty[];
+
+    /**
      * @Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
      */
     readonly versionStages?: Array<string | ros.IResolvable> | ros.IResolvable;
@@ -1308,9 +1397,10 @@ function RosSecretPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('versionId', ros.requiredValidator)(properties.versionId));
     errors.collect(ros.propertyValidator('versionId', ros.validateString)(properties.versionId));
+    errors.collect(ros.propertyValidator('policy', ros.hashValidator(ros.validateAny))(properties.policy));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('rotationInterval', ros.validateString)(properties.rotationInterval));
     errors.collect(ros.propertyValidator('secretType', ros.validateString)(properties.secretType));
+    errors.collect(ros.propertyValidator('rotationInterval', ros.validateString)(properties.rotationInterval));
     if(properties.secretDataType && (typeof properties.secretDataType) !== 'object') {
         errors.collect(ros.propertyValidator('secretDataType', ros.validateAllowedValues)({
           data: properties.secretDataType,
@@ -1333,9 +1423,17 @@ function RosSecretPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('extendedConfig', ros.hashValidator(ros.validateAny))(properties.extendedConfig));
     errors.collect(ros.propertyValidator('secretData', ros.requiredValidator)(properties.secretData));
     errors.collect(ros.propertyValidator('secretData', ros.validateString)(properties.secretData));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosSecret_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('encryptionKeyId', ros.validateString)(properties.encryptionKeyId));
-    errors.collect(ros.propertyValidator('recoveryWindowInDays', ros.validateNumber)(properties.recoveryWindowInDays));
     errors.collect(ros.propertyValidator('forceDeleteWithoutRecovery', ros.validateBoolean)(properties.forceDeleteWithoutRecovery));
+    errors.collect(ros.propertyValidator('recoveryWindowInDays', ros.validateNumber)(properties.recoveryWindowInDays));
     return errors.wrap('supplied properties not correct for "RosSecretProps"');
 }
 
@@ -1362,16 +1460,18 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
       'EncryptionKeyId': ros.stringToRosTemplate(properties.encryptionKeyId),
       'ExtendedConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.extendedConfig),
       'ForceDeleteWithoutRecovery': ros.booleanToRosTemplate(properties.forceDeleteWithoutRecovery),
+      'Policy': ros.hashMapper(ros.objectToRosTemplate)(properties.policy),
       'RecoveryWindowInDays': ros.numberToRosTemplate(properties.recoveryWindowInDays),
       'RotationInterval': ros.stringToRosTemplate(properties.rotationInterval),
       'SecretDataType': ros.stringToRosTemplate(properties.secretDataType),
       'SecretType': ros.stringToRosTemplate(properties.secretType),
+      'Tags': ros.listMapper(rosSecretTagsPropertyToRosTemplate)(properties.tags),
       'VersionStages': ros.listMapper(ros.stringToRosTemplate)(properties.versionStages),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */
@@ -1449,6 +1549,21 @@ export class RosSecret extends ros.RosResource {
     public forceDeleteWithoutRecovery: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property policy: The specific content of the credential policy in JSON format. Maximum length is 32768 bytes.
+     * If this parameter is not specified, the default credential policy is used.
+     * The policy content includes:
+     * - Version: The version of the policy. Currently, only version 1 is supported.
+     * - Statement: A list of statements, each containing:
+     *   - Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _\/+=.@-.
+     *   - Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.
+     *   - Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.
+     *   - Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.
+     *   - Condition (optional): Conditions that limit when the policy is effective. Format: `"Condition": {"condition operator": {"condition key": "condition value"}}`. See documentation for details.
+     * > After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+     */
+    public policy: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
      * @Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it. Default value: 30
      */
     public recoveryWindowInDays: number | ros.IResolvable | undefined;
@@ -1477,6 +1592,11 @@ export class RosSecret extends ros.RosResource {
     public secretType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to secret. Max support 20 tags to add during create secret. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosSecret.TagsProperty[] | undefined;
+
+    /**
      * @Property versionStages: The stage labels that mark the secret version. ACSCurrent will be marked as DefaultIf you do not specify it, Secrets Manager marks it with "ACSCurrent".
      */
     public versionStages: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
@@ -1501,10 +1621,12 @@ export class RosSecret extends ros.RosResource {
         this.encryptionKeyId = props.encryptionKeyId;
         this.extendedConfig = props.extendedConfig;
         this.forceDeleteWithoutRecovery = props.forceDeleteWithoutRecovery;
+        this.policy = props.policy;
         this.recoveryWindowInDays = props.recoveryWindowInDays;
         this.rotationInterval = props.rotationInterval;
         this.secretDataType = props.secretDataType;
         this.secretType = props.secretType;
+        this.tags = props.tags;
         this.versionStages = props.versionStages;
     }
 
@@ -1520,14 +1642,64 @@ export class RosSecret extends ros.RosResource {
             encryptionKeyId: this.encryptionKeyId,
             extendedConfig: this.extendedConfig,
             forceDeleteWithoutRecovery: this.forceDeleteWithoutRecovery,
+            policy: this.policy,
             recoveryWindowInDays: this.recoveryWindowInDays,
             rotationInterval: this.rotationInterval,
             secretDataType: this.secretDataType,
             secretType: this.secretType,
+            tags: this.tags,
             versionStages: this.versionStages,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSecretPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosSecret {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosSecret_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::KMS::Secret.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::KMS::Secret.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosSecretTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosSecret_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }

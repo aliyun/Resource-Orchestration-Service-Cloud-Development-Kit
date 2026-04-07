@@ -39,6 +39,8 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -46,8 +48,6 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
-    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosAccountProps"');
 }
 
@@ -72,7 +72,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Account`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Account`, which is used to query an account in an ApsaraDB for Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-account
  */
@@ -201,6 +201,7 @@ function RosAccountsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -208,7 +209,6 @@ function RosAccountsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosAccountsProps"');
 }
 
@@ -365,7 +365,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instance`, which is used to query the information about a Tair (Redis OSS-compatible) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instance
  */
@@ -742,8 +742,8 @@ function RosInstanceClassesPropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    errors.collect(ros.propertyValidator('nodeId', ros.validateString)(properties.nodeId));
     errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
+    errors.collect(ros.propertyValidator('nodeId', ros.validateString)(properties.nodeId));
     errors.collect(ros.propertyValidator('acceptLanguage', ros.validateString)(properties.acceptLanguage));
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
@@ -784,7 +784,7 @@ function rosInstanceClassesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::InstanceClasses`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::InstanceClasses`, which is used to query Tair (Redis OSS-compatible) instance types.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceClasses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instanceclasses
  */
@@ -1071,6 +1071,8 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('architectureType', ros.validateString)(properties.architectureType));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.editionType && (typeof properties.editionType) !== 'object') {
         errors.collect(ros.propertyValidator('editionType', ros.validateAllowedValues)({
           data: properties.editionType,
@@ -1078,8 +1080,6 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('editionType', ros.validateString)(properties.editionType));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     if(properties.expired && (typeof properties.expired) !== 'object') {
@@ -1127,6 +1127,7 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('globalInstance', ros.validateString)(properties.globalInstance));
+    errors.collect(ros.propertyValidator('instanceIds', ros.validateString)(properties.instanceIds));
     if(properties.instanceType && (typeof properties.instanceType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceType', ros.validateAllowedValues)({
           data: properties.instanceType,
@@ -1134,7 +1135,6 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
-    errors.collect(ros.propertyValidator('instanceIds', ros.validateString)(properties.instanceIds));
     return errors.wrap('supplied properties not correct for "RosInstancesProps"');
 }
 
@@ -1174,7 +1174,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::REDIS::Instances`, which is used to query the information about Tair (Redis OSS-compatible) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-redis-instances
  */

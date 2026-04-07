@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::FullNatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.903Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.822Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.FullNatEntry")
 public class FullNatEntry extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IFullNatEntry {
 
@@ -271,6 +271,27 @@ public class FullNatEntry extends com.aliyun.ros.cdk.core.Resource implements co
          */
         public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
+
+        /**
+         * Property accessDomain: The domain name of the backend for FULLNAT address translation.
+         * <p>
+         * @return {@code this}
+         * @param accessDomain Property accessDomain: The domain name of the backend for FULLNAT address translation. This parameter is required.
+         */
+        public Builder accessDomain(final java.lang.String accessDomain) {
+            this.props.accessDomain(accessDomain);
+            return this;
+        }
+        /**
+         * Property accessDomain: The domain name of the backend for FULLNAT address translation.
+         * <p>
+         * @return {@code this}
+         * @param accessDomain Property accessDomain: The domain name of the backend for FULLNAT address translation. This parameter is required.
+         */
+        public Builder accessDomain(final com.aliyun.ros.cdk.core.IResolvable accessDomain) {
+            this.props.accessDomain(accessDomain);
             return this;
         }
 

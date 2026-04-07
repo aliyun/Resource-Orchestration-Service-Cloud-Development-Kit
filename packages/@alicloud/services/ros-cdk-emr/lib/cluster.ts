@@ -266,7 +266,7 @@ export interface ICluster extends ros.IResource {
     readonly attrMasterNodePubIps: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::Cluster`, which is used to create an E-MapReduce (EMR) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-cluster
  */
@@ -315,15 +315,15 @@ export class Cluster extends ros.Resource implements ICluster {
 
         const rosCluster = new RosCluster(this, id,  {
             bootstrapAction: props.bootstrapAction,
-            resourceGroupId: props.resourceGroupId,
             securityGroupName: props.securityGroupName,
+            resourceGroupId: props.resourceGroupId,
             config: props.config,
             clickHouseConf: props.clickHouseConf,
             autoRenew: props.autoRenew,
             hostGroup: props.hostGroup,
             userInfo: props.userInfo,
-            highAvailabilityEnable: props.highAvailabilityEnable,
             name: props.name,
+            highAvailabilityEnable: props.highAvailabilityEnable,
             optionSoftWareList: props.optionSoftWareList,
             masterPwd: props.masterPwd,
             sshEnable: props.sshEnable,
@@ -342,8 +342,8 @@ export class Cluster extends ros.Resource implements ICluster {
             securityGroupId: props.securityGroupId,
             machineType: props.machineType,
             depositType: props.depositType,
-            metaStoreType: props.metaStoreType,
             period: props.period,
+            metaStoreType: props.metaStoreType,
             emrVer: props.emrVer,
             clusterType: props.clusterType,
             easEnable: props.easEnable,

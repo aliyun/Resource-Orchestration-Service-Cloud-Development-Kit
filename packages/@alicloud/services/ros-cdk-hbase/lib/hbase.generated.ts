@@ -172,8 +172,8 @@ export interface RosClusterProps {
 function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('coldStorageSize', ros.validateNumber)(properties.coldStorageSize));
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
         errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
@@ -182,15 +182,14 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('nodeCount', ros.requiredValidator)(properties.nodeCount));
     errors.collect(ros.propertyValidator('nodeCount', ros.validateNumber)(properties.nodeCount));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -199,6 +198,7 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('masterInstanceType', ros.validateString)(properties.masterInstanceType));
     if(properties.diskType && (typeof properties.diskType) !== 'object') {
         errors.collect(ros.propertyValidator('diskType', ros.validateAllowedValues)({
@@ -275,7 +275,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
@@ -751,8 +751,6 @@ function RosMultiZoneClusterPropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('arbiterZoneId', ros.requiredValidator)(properties.arbiterZoneId));
     errors.collect(ros.propertyValidator('arbiterZoneId', ros.validateString)(properties.arbiterZoneId));
     errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
-    errors.collect(ros.propertyValidator('primaryZoneId', ros.requiredValidator)(properties.primaryZoneId));
-    errors.collect(ros.propertyValidator('primaryZoneId', ros.validateString)(properties.primaryZoneId));
     errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
     if(properties.engineVersion && (typeof properties.engineVersion) !== 'object') {
         errors.collect(ros.propertyValidator('engineVersion', ros.validateAllowedValues)({
@@ -761,6 +759,8 @@ function RosMultiZoneClusterPropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('primaryZoneId', ros.requiredValidator)(properties.primaryZoneId));
+    errors.collect(ros.propertyValidator('primaryZoneId', ros.validateString)(properties.primaryZoneId));
     errors.collect(ros.propertyValidator('multiZoneCombination', ros.requiredValidator)(properties.multiZoneCombination));
     errors.collect(ros.propertyValidator('multiZoneCombination', ros.validateString)(properties.multiZoneCombination));
     errors.collect(ros.propertyValidator('coreNodeCount', ros.requiredValidator)(properties.coreNodeCount));
@@ -854,7 +854,7 @@ function rosMultiZoneClusterPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::MultiZoneCluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::MultiZoneCluster`, which is used to create an ApsaraDB for HBase cluster that resides in multiple zones.
  * @Note This class does not contain additional functions, so it is recommended to use the `MultiZoneCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */

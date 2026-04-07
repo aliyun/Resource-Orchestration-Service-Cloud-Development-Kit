@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Database`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::Database`The , which resource type creates a database in an RDS instance.
 type Database interface {
 	alicloudroscdkcore.Resource
 	IDatabase

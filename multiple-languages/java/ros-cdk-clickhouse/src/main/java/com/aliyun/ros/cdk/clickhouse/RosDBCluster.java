@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.clickhouse;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ClickHouse::DBCluster</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ClickHouse::DBCluster</code>, which is used to create an ApsaraDB for ClickHouse cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.312Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.622Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.RosDBCluster")
 public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -493,6 +493,42 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchBak() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchBak", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVSwitchBak(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchBak", value);
+    }
+
+    /**
+     */
+    public void setVSwitchBak(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchBak", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchBak2() {
+        return software.amazon.jsii.Kernel.get(this, "vSwitchBak2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVSwitchBak2(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchBak2", value);
+    }
+
+    /**
+     */
+    public void setVSwitchBak2(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vSwitchBak2", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -511,6 +547,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZondIdBak2() {
+        return software.amazon.jsii.Kernel.get(this, "zondIdBak2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZondIdBak2(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zondIdBak2", value);
+    }
+
+    /**
+     */
+    public void setZondIdBak2(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zondIdBak2", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -525,6 +579,24 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getZoneIdBak() {
+        return software.amazon.jsii.Kernel.get(this, "zoneIdBak", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setZoneIdBak(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "zoneIdBak", value);
+    }
+
+    /**
+     */
+    public void setZoneIdBak(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "zoneIdBak", value);
     }
 
     /**
@@ -793,6 +865,40 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param vSwitchBak This parameter is required.
+         */
+        public Builder vSwitchBak(final java.lang.String vSwitchBak) {
+            this.props.vSwitchBak(vSwitchBak);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vSwitchBak This parameter is required.
+         */
+        public Builder vSwitchBak(final com.aliyun.ros.cdk.core.IResolvable vSwitchBak) {
+            this.props.vSwitchBak(vSwitchBak);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vSwitchBak2 This parameter is required.
+         */
+        public Builder vSwitchBak2(final java.lang.String vSwitchBak2) {
+            this.props.vSwitchBak2(vSwitchBak2);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vSwitchBak2 This parameter is required.
+         */
+        public Builder vSwitchBak2(final com.aliyun.ros.cdk.core.IResolvable vSwitchBak2) {
+            this.props.vSwitchBak2(vSwitchBak2);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param vSwitchId This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
@@ -810,6 +916,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param zondIdBak2 This parameter is required.
+         */
+        public Builder zondIdBak2(final java.lang.String zondIdBak2) {
+            this.props.zondIdBak2(zondIdBak2);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zondIdBak2 This parameter is required.
+         */
+        public Builder zondIdBak2(final com.aliyun.ros.cdk.core.IResolvable zondIdBak2) {
+            this.props.zondIdBak2(zondIdBak2);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param zoneId This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
@@ -822,6 +945,23 @@ public class RosDBCluster extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param zoneIdBak This parameter is required.
+         */
+        public Builder zoneIdBak(final java.lang.String zoneIdBak) {
+            this.props.zoneIdBak(zoneIdBak);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param zoneIdBak This parameter is required.
+         */
+        public Builder zoneIdBak(final com.aliyun.ros.cdk.core.IResolvable zoneIdBak) {
+            this.props.zoneIdBak(zoneIdBak);
             return this;
         }
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.esa;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::ImageTransform</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::ImageTransform</code>You can use the , which resource type to add an image transform configuration for a website.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.581Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.093Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.ImageTransform")
 public class ImageTransform extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.esa.IImageTransform {
 

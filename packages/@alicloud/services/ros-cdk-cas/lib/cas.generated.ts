@@ -78,7 +78,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::Certificate`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::Certificate`, which is used to add a certificate.
  * @Note This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-certificate
  */
@@ -222,13 +222,6 @@ function RosOrderPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('domainType', ros.validateString)(properties.domainType));
-    if(properties.service && (typeof properties.service) !== 'object') {
-        errors.collect(ros.propertyValidator('service', ros.validateAllowedValues)({
-          data: properties.service,
-          allowedValues: ["VipProduct","NoNeed","ExpeditedProduct","DeployProduct","SM2DeployProduct"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('service', ros.validateString)(properties.service));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateRange)({
             data: properties.period,
@@ -245,6 +238,13 @@ function RosOrderPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('certType', ros.validateString)(properties.certType));
+    if(properties.service && (typeof properties.service) !== 'object') {
+        errors.collect(ros.propertyValidator('service', ros.validateAllowedValues)({
+          data: properties.service,
+          allowedValues: ["VipProduct","NoNeed","ExpeditedProduct","DeployProduct","SM2DeployProduct"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('service', ros.validateString)(properties.service));
     errors.collect(ros.propertyValidator('certBrand', ros.requiredValidator)(properties.certBrand));
     if(properties.certBrand && (typeof properties.certBrand) !== 'object') {
         errors.collect(ros.propertyValidator('certBrand', ros.validateAllowedValues)({
@@ -280,7 +280,7 @@ function rosOrderPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::Order`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::Order`, which is used to create a certificate order.
  * @Note This class does not contain additional functions, so it is recommended to use the `Order` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-order
  */
@@ -472,6 +472,7 @@ function RosSslCertificatePropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('domains', ros.listValidator(ros.validateString))(properties.domains));
     errors.collect(ros.propertyValidator('companyName', ros.validateString)(properties.companyName));
+    errors.collect(ros.propertyValidator('csr', ros.validateString)(properties.csr));
     if(properties.domainType && (typeof properties.domainType) !== 'object') {
         errors.collect(ros.propertyValidator('domainType', ros.validateAllowedValues)({
           data: properties.domainType,
@@ -480,9 +481,8 @@ function RosSslCertificatePropsValidator(properties: any): ros.ValidationResult 
     }
     errors.collect(ros.propertyValidator('domainType', ros.validateString)(properties.domainType));
     errors.collect(ros.propertyValidator('email', ros.validateString)(properties.email));
-    errors.collect(ros.propertyValidator('csr', ros.validateString)(properties.csr));
-    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
     errors.collect(ros.propertyValidator('productCode', ros.validateString)(properties.productCode));
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
     errors.collect(ros.propertyValidator('phone', ros.validateString)(properties.phone));
     if(properties.certType && (typeof properties.certType) !== 'object') {
         errors.collect(ros.propertyValidator('certType', ros.validateAllowedValues)({
@@ -537,7 +537,7 @@ function rosSslCertificatePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::SslCertificate`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::SslCertificate`, which is used to create an SSL certificate.
  * @Note This class does not contain additional functions, so it is recommended to use the `SslCertificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-sslcertificate
  */

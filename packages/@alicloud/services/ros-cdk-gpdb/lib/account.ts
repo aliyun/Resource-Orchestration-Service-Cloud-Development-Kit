@@ -38,6 +38,11 @@ export interface AccountProps {
      * Property accountDescription: The description of the privileged account.
      */
     readonly accountDescription?: string | ros.IResolvable;
+
+    /**
+     * Property accountType: Default value is Super, which creates a privileged account. When the parameter is Normal, it creates a normal account.
+     */
+    readonly accountType?: string | ros.IResolvable;
 }
 
 /**
@@ -57,7 +62,7 @@ export interface IAccount extends ros.IResource {
     readonly attrDbInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::Account`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::Account`, which is used to create a database account for an AnalyticDB for PostgreSQL instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
  */
@@ -92,8 +97,9 @@ export class Account extends ros.Resource implements IAccount {
         const rosAccount = new RosAccount(this, id,  {
             accountDescription: props.accountDescription,
             dbInstanceId: props.dbInstanceId,
-            accountPassword: props.accountPassword,
+            accountType: props.accountType === undefined || props.accountType === null ? 'Super' : props.accountType,
             accountName: props.accountName,
+            accountPassword: props.accountPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccount;
         this.attrAccountName = rosAccount.attrAccountName;

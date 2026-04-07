@@ -28,6 +28,12 @@ export interface SnatEntryProps {
     readonly eipAffinity?: number | ros.IResolvable;
 
     /**
+     * Property networkInterfaceId: The ID of the elastic network interface.
+     * The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+     */
+    readonly networkInterfaceId?: string | ros.IResolvable;
+
+    /**
      * Property snatEntryName: he name of the SNAT rule is 2-128 characters long and must start with a letter or Chinese, but cannot begin with HTTP:\/\/ or https:\/\/.
      */
     readonly snatEntryName?: string | ros.IResolvable;
@@ -55,7 +61,7 @@ export interface ISnatEntry extends ros.IResource {
     readonly attrSnatEntryIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`The , which resource is used to add an SNAT entry to an SNAT table.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnatEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-snatentry
  */
@@ -84,10 +90,11 @@ export class SnatEntry extends ros.Resource implements ISnatEntry {
 
         const rosSnatEntry = new RosSnatEntry(this, id,  {
             eipAffinity: props.eipAffinity,
-            snatEntryName: props.snatEntryName,
             sourceVSwitchIds: props.sourceVSwitchIds,
+            snatEntryName: props.snatEntryName,
             sourceCidr: props.sourceCidr,
             snatIp: props.snatIp,
+            networkInterfaceId: props.networkInterfaceId,
             snatTableId: props.snatTableId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSnatEntry;

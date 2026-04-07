@@ -82,6 +82,11 @@ export interface GroupMetricRuleProps {
     readonly ruleName: string | ros.IResolvable;
 
     /**
+     * Property contactGroups: The alert contact groups.
+     */
+    readonly contactGroups?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property dimensions: The expended resource dimensions.
      */
     readonly dimensions?: string | ros.IResolvable;
@@ -97,14 +102,38 @@ export interface GroupMetricRuleProps {
     readonly emailSubject?: string | ros.IResolvable;
 
     /**
+     * Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+     * 
+     * Format: a collection of key:value pairs, for example, `port:80` or `\/dev\/xvda:d-m5e6yphgzn3aprwu****`.
+     * 
+     * When the first-level dimension of the alert rule is `{"instanceId":"i-m5e1qg6uo38rztr4****"}`, its secondary dimension is the disk `{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}`.
+     */
+    readonly extraDimensionJson?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * Property interval: The detection period of alerts.
      */
     readonly interval?: number | ros.IResolvable;
 
     /**
+     * Property noDataPolicy: The handling method when there is no monitoring data. Valid values:
+     * - KEEP_LAST_STATE (default): No action is taken.
+     * - INSUFFICIENT_DATA: Alert content is "No Data".
+     * - OK: Normal.
+     */
+    readonly noDataPolicy?: string | ros.IResolvable;
+
+    /**
      * Property noEffectiveInterval: The period when the alert rule is ineffective.
      */
     readonly noEffectiveInterval?: string | ros.IResolvable;
+
+    /**
+     * Property options: The advanced settings.
+     * 
+     * Format: `{"key1":"value1","key2":"value2"}`, for example, `{"NotSendOK":true}`, indicating whether to send alert recovery notifications. The key is `NotSendOK`, and the value is `true` (do not send) or `false` (send by default).
+     */
+    readonly options?: string | ros.IResolvable;
 
     /**
      * Property period: The aggregation period. Unite: second.
@@ -135,7 +164,7 @@ export interface IGroupMetricRule extends ros.IResource {
     readonly attrRuleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::GroupMetricRule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::GroupMetricRule`The , which resource creates an alert rule for an application group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroupMetricRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
@@ -165,16 +194,20 @@ export class GroupMetricRule extends ros.Resource implements IGroupMetricRule {
         const rosGroupMetricRule = new RosGroupMetricRule(this, id,  {
             noEffectiveInterval: props.noEffectiveInterval,
             silenceTime: props.silenceTime,
+            contactGroups: props.contactGroups,
+            options: props.options,
             category: props.category,
             ruleId: props.ruleId,
             dimensions: props.dimensions,
             period: props.period,
             effectiveInterval: props.effectiveInterval,
+            noDataPolicy: props.noDataPolicy,
             namespace: props.namespace,
             groupId: props.groupId,
             metricName: props.metricName,
-            escalations: props.escalations,
+            extraDimensionJson: props.extraDimensionJson,
             emailSubject: props.emailSubject,
+            escalations: props.escalations,
             webhook: props.webhook,
             ruleName: props.ruleName,
             interval: props.interval,

@@ -74,7 +74,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character.</summary>
+        /// <summary>Property ipsecServerName: The value must be 1 to 100 characters in length and start with a letter or Chinese character.</summary>
         /// <remarks>
         /// It can contain digits, underscores (_), and hyphens (-).
         /// </remarks>
@@ -181,7 +181,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character.</summary>
+            /// <summary>Property ipsecServerName: The value must be 1 to 100 characters in length and start with a letter or Chinese character.</summary>
             /// <remarks>
             /// It can contain digits, underscores (_), and hyphens (-).
             /// </remarks>

@@ -65,7 +65,7 @@ export interface IAccessControl extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControl`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::AccessControl`, which is used to query the configurations of an access control list (ACL).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessControl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrol
  */

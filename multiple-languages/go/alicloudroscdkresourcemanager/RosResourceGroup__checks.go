@@ -283,6 +283,16 @@ func (j *jsiiProxy_RosResourceGroup) validateSetNameParameters(val interface{}) 
 	return nil
 }
 
+func (j *jsiiProxy_RosResourceGroup) validateSetTagsParameters(val *[]*RosResourceGroup_TagsProperty) error {
+	for idx_97dfc6, v := range *val {
+		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+			return err
+		}
+	}
+
+	return nil
+}
+
 func validateNewRosResourceGroupParameters(scope alicloudroscdkcore.Construct, id *string, props *RosResourceGroupProps, enableResourcePropertyConstraint *bool) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

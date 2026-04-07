@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerApp`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerApp`Use the , which resource type to create an edge container application.
 type RosEdgeContainerApp interface {
 	alicloudroscdkcore.RosResource
 	AttrAppStatus() alicloudroscdkcore.IResolvable

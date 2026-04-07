@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Secret</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Secret</code>, which is used to create a secret and store the initial version of the secret.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.904Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.574Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Secret")
 public class Secret extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.ISecret {
 
@@ -349,6 +349,73 @@ public class Secret extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
+         * Property policy: The specific content of the credential policy in JSON format.
+         * <p>
+         * Maximum length is 32768 bytes.
+         * If this parameter is not specified, the default credential policy is used.
+         * The policy content includes:
+         * <p>
+         * <ul>
+         * <li>Version: The version of the policy. Currently, only version 1 is supported.</li>
+         * <li>Statement: A list of statements, each containing:
+         * <p>
+         * <ul>
+         * <li>Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _/+=.&#64;-.</li>
+         * <li>Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.</li>
+         * <li>Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.</li>
+         * <li>Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.</li>
+         * <li>Condition (optional): Conditions that limit when the policy is effective. Format: <code>"Condition": {"condition operator": {"condition key": "condition value"}}</code>. See documentation for details.</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param policy Property policy: The specific content of the credential policy in JSON format. This parameter is required.
+         */
+        public Builder policy(final com.aliyun.ros.cdk.core.IResolvable policy) {
+            this.props.policy(policy);
+            return this;
+        }
+        /**
+         * Property policy: The specific content of the credential policy in JSON format.
+         * <p>
+         * Maximum length is 32768 bytes.
+         * If this parameter is not specified, the default credential policy is used.
+         * The policy content includes:
+         * <p>
+         * <ul>
+         * <li>Version: The version of the policy. Currently, only version 1 is supported.</li>
+         * <li>Statement: A list of statements, each containing:
+         * <p>
+         * <ul>
+         * <li>Sid (optional): A custom statement identifier. Up to 128 characters, including letters, digits, and _/+=.&#64;-.</li>
+         * <li>Effect (required): Whether the statement allows or denies permissions. Valid values: Allow, Deny.</li>
+         * <li>Principal (required): The entity to which the permissions are granted. Can be the current Alibaba Cloud account, RAM users or roles under the current or other accounts.</li>
+         * <li>Action (required): The API actions allowed or denied. Must start with "kms:". For valid actions, see   - Resource (required): Must be "*", representing this KMS secret.</li>
+         * <li>Condition (optional): Conditions that limit when the policy is effective. Format: <code>"Condition": {"condition operator": {"condition key": "condition value"}}</code>. See documentation for details.</li>
+         * </ul></li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * After granting permissions to RAM users or roles under another Alibaba Cloud account, you must also use RAM to authorize that user or role to use this secret.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param policy Property policy: The specific content of the credential policy in JSON format. This parameter is required.
+         */
+        public Builder policy(final java.util.Map<java.lang.String, ? extends java.lang.Object> policy) {
+            this.props.policy(policy);
+            return this;
+        }
+
+        /**
          * Property recoveryWindowInDays: Specifies the recovery period of the secret if you do not forcibly delete it.
          * <p>
          * Default value: 30
@@ -461,6 +528,19 @@ public class Secret extends com.aliyun.ros.cdk.core.Resource implements com.aliy
          */
         public Builder secretType(final com.aliyun.ros.cdk.core.IResolvable secretType) {
             this.props.secretType(secretType);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to secret.
+         * <p>
+         * Max support 20 tags to add during create secret. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to secret. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.kms.RosSecret.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

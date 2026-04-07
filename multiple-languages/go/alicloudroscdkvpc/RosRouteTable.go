@@ -9,9 +9,11 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::RouteTable`, which is used to create a custom route table.
 type RosRouteTable interface {
 	alicloudroscdkcore.RosResource
+	AssociateType() interface{}
+	SetAssociateType(val interface{})
 	AttrRouteTableId() alicloudroscdkcore.IResolvable
 	AttrRouteTableName() alicloudroscdkcore.IResolvable
 	AttrRouteTableType() alicloudroscdkcore.IResolvable
@@ -179,6 +181,16 @@ type RosRouteTable interface {
 // The jsii proxy struct for RosRouteTable
 type jsiiProxy_RosRouteTable struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosRouteTable) AssociateType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"associateType",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosRouteTable) AttrRouteTableId() alicloudroscdkcore.IResolvable {
@@ -396,6 +408,17 @@ func NewRosRouteTable_Override(r RosRouteTable, scope alicloudroscdkcore.Constru
 		"@alicloud/ros-cdk-vpc.RosRouteTable",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosRouteTable)SetAssociateType(val interface{}) {
+	if err := j.validateSetAssociateTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"associateType",
+		val,
 	)
 }
 

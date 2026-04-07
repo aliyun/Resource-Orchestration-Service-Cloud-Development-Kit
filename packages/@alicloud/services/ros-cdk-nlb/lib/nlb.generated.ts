@@ -64,7 +64,7 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::BackendServerAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::BackendServerAttachment`, which is used to add backend servers to a Network Load Balancer (NLB) server group.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-backendserverattachment
  */
@@ -230,7 +230,12 @@ function rosBackendServerAttachmentServersPropertyToRosTemplate(properties: any)
 export interface RosListenerProps {
 
     /**
-     * @Property listenerProtocol: undefined
+     * @Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
+     */
+    readonly listenerPort: number | ros.IResolvable;
+
+    /**
+     * @Property listenerProtocol: Listening protocol. Values: TCP, UDP, or TCPSSL.
      */
     readonly listenerProtocol: string | ros.IResolvable;
 
@@ -238,11 +243,6 @@ export interface RosListenerProps {
      * @Property loadBalancerId: ID of the LoadBalancer
      */
     readonly loadBalancerId: string | ros.IResolvable;
-
-    /**
-     * @Property serverGroupId: ID of the ServerGroup
-     */
-    readonly serverGroupId: string | ros.IResolvable;
 
     /**
      * @Property alpnEnabled: undefined
@@ -295,11 +295,6 @@ export interface RosListenerProps {
     readonly listenerDescription?: string | ros.IResolvable;
 
     /**
-     * @Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
-     */
-    readonly listenerPort?: number | ros.IResolvable;
-
-    /**
      * @Property mss: Max length of the TCP packet
      */
     readonly mss?: number | ros.IResolvable;
@@ -325,6 +320,18 @@ export interface RosListenerProps {
     readonly securityPolicyId?: string | ros.IResolvable;
 
     /**
+     * @Property serverGroupId: ID of the ServerGroup
+     */
+    readonly serverGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property serverGroupTuples: Multi-server group list.
+     * When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+     * When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+     */
+    readonly serverGroupTuples?: Array<RosListener.ServerGroupTuplesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property startPort: StartPort of the portRange
      */
     readonly startPort?: number | ros.IResolvable;
@@ -346,6 +353,7 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('caEnabled', ros.validateBoolean)(properties.caEnabled));
+    errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
     if(properties.listenerPort && (typeof properties.listenerPort) !== 'object') {
         errors.collect(ros.propertyValidator('listenerPort', ros.validateRange)({
             data: properties.listenerPort,
@@ -370,7 +378,6 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('cps', ros.validateNumber)(properties.cps));
-    errors.collect(ros.propertyValidator('serverGroupId', ros.requiredValidator)(properties.serverGroupId));
     errors.collect(ros.propertyValidator('serverGroupId', ros.validateString)(properties.serverGroupId));
     if(properties.idleTimeout && (typeof properties.idleTimeout) !== 'object') {
         errors.collect(ros.propertyValidator('idleTimeout', ros.validateRange)({
@@ -380,25 +387,27 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('idleTimeout', ros.validateNumber)(properties.idleTimeout));
-    errors.collect(ros.propertyValidator('proxyProtocolV2Config', RosListener_ProxyProtocolV2ConfigPropertyValidator)(properties.proxyProtocolV2Config));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.requiredValidator)(properties.loadBalancerId));
     errors.collect(ros.propertyValidator('loadBalancerId', ros.validateString)(properties.loadBalancerId));
+    errors.collect(ros.propertyValidator('proxyProtocolV2Config', RosListener_ProxyProtocolV2ConfigPropertyValidator)(properties.proxyProtocolV2Config));
+    errors.collect(ros.propertyValidator('listenerProtocol', ros.requiredValidator)(properties.listenerProtocol));
+    errors.collect(ros.propertyValidator('listenerProtocol', ros.validateString)(properties.listenerProtocol));
     if(properties.mss && (typeof properties.mss) !== 'object') {
         errors.collect(ros.propertyValidator('mss', ros.validateRange)({
             data: properties.mss,
             min: 0,
-            max: 65535,
+            max: 1500,
           }));
     }
     errors.collect(ros.propertyValidator('mss', ros.validateNumber)(properties.mss));
-    errors.collect(ros.propertyValidator('listenerProtocol', ros.requiredValidator)(properties.listenerProtocol));
-    if(properties.listenerProtocol && (typeof properties.listenerProtocol) !== 'object') {
-        errors.collect(ros.propertyValidator('listenerProtocol', ros.validateAllowedValues)({
-          data: properties.listenerProtocol,
-          allowedValues: ["TCP","UDP","TCPSSL"],
-        }));
+    if(properties.serverGroupTuples && (Array.isArray(properties.serverGroupTuples) || (typeof properties.serverGroupTuples) === 'string')) {
+        errors.collect(ros.propertyValidator('serverGroupTuples', ros.validateLength)({
+            data: properties.serverGroupTuples.length,
+            min: 0,
+            max: 5,
+          }));
     }
-    errors.collect(ros.propertyValidator('listenerProtocol', ros.validateString)(properties.listenerProtocol));
+    errors.collect(ros.propertyValidator('serverGroupTuples', ros.listValidator(RosListener_ServerGroupTuplesPropertyValidator))(properties.serverGroupTuples));
     errors.collect(ros.propertyValidator('securityPolicyId', ros.validateString)(properties.securityPolicyId));
     if(properties.listenerDescription && (Array.isArray(properties.listenerDescription) || (typeof properties.listenerDescription) === 'string')) {
         errors.collect(ros.propertyValidator('listenerDescription', ros.validateLength)({
@@ -408,6 +417,12 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('listenerDescription', ros.validateString)(properties.listenerDescription));
+    if(properties.alpnPolicy && (typeof properties.alpnPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('alpnPolicy', ros.validateAllowedValues)({
+          data: properties.alpnPolicy,
+          allowedValues: ["HTTP1Only","HTTP2Only","HTTP2Optional","HTTP2Preferred"],
+        }));
+    }
     errors.collect(ros.propertyValidator('alpnPolicy', ros.validateString)(properties.alpnPolicy));
     if(properties.caCertificateIds && (Array.isArray(properties.caCertificateIds) || (typeof properties.caCertificateIds) === 'string')) {
         errors.collect(ros.propertyValidator('caCertificateIds', ros.validateLength)({
@@ -462,9 +477,9 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
         RosListenerPropsValidator(properties).assertSuccess();
     }
     return {
+      'ListenerPort': ros.numberToRosTemplate(properties.listenerPort),
       'ListenerProtocol': ros.stringToRosTemplate(properties.listenerProtocol),
       'LoadBalancerId': ros.stringToRosTemplate(properties.loadBalancerId),
-      'ServerGroupId': ros.stringToRosTemplate(properties.serverGroupId),
       'AlpnEnabled': ros.booleanToRosTemplate(properties.alpnEnabled),
       'AlpnPolicy': ros.stringToRosTemplate(properties.alpnPolicy),
       'CaCertificateIds': ros.listMapper(ros.stringToRosTemplate)(properties.caCertificateIds),
@@ -475,19 +490,20 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       'EndPort': ros.numberToRosTemplate(properties.endPort),
       'IdleTimeout': ros.numberToRosTemplate(properties.idleTimeout),
       'ListenerDescription': ros.stringToRosTemplate(properties.listenerDescription),
-      'ListenerPort': ros.numberToRosTemplate(properties.listenerPort),
       'Mss': ros.numberToRosTemplate(properties.mss),
       'ProxyProtocolEnabled': ros.booleanToRosTemplate(properties.proxyProtocolEnabled),
       'ProxyProtocolV2Config': rosListenerProxyProtocolV2ConfigPropertyToRosTemplate(properties.proxyProtocolV2Config),
       'SecSensorEnabled': ros.booleanToRosTemplate(properties.secSensorEnabled),
       'SecurityPolicyId': ros.stringToRosTemplate(properties.securityPolicyId),
+      'ServerGroupId': ros.stringToRosTemplate(properties.serverGroupId),
+      'ServerGroupTuples': ros.listMapper(rosListenerServerGroupTuplesPropertyToRosTemplate)(properties.serverGroupTuples),
       'StartPort': ros.numberToRosTemplate(properties.startPort),
       'Tags': ros.listMapper(rosListenerTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::Listener`Use the , which resource type to create a listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
@@ -511,7 +527,12 @@ export class RosListener extends ros.RosResource {
 
 
     /**
-     * @Property listenerProtocol: undefined
+     * @Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
+     */
+    public listenerPort: number | ros.IResolvable;
+
+    /**
+     * @Property listenerProtocol: Listening protocol. Values: TCP, UDP, or TCPSSL.
      */
     public listenerProtocol: string | ros.IResolvable;
 
@@ -519,11 +540,6 @@ export class RosListener extends ros.RosResource {
      * @Property loadBalancerId: ID of the LoadBalancer
      */
     public loadBalancerId: string | ros.IResolvable;
-
-    /**
-     * @Property serverGroupId: ID of the ServerGroup
-     */
-    public serverGroupId: string | ros.IResolvable;
 
     /**
      * @Property alpnEnabled: undefined
@@ -576,11 +592,6 @@ export class RosListener extends ros.RosResource {
     public listenerDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
-     */
-    public listenerPort: number | ros.IResolvable | undefined;
-
-    /**
      * @Property mss: Max length of the TCP packet
      */
     public mss: number | ros.IResolvable | undefined;
@@ -606,6 +617,18 @@ export class RosListener extends ros.RosResource {
     public securityPolicyId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property serverGroupId: ID of the ServerGroup
+     */
+    public serverGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property serverGroupTuples: Multi-server group list.
+     * When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+     * When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+     */
+    public serverGroupTuples: Array<RosListener.ServerGroupTuplesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property startPort: StartPort of the portRange
      */
     public startPort: number | ros.IResolvable | undefined;
@@ -626,9 +649,9 @@ export class RosListener extends ros.RosResource {
         this.attrListenerPort = this.getAtt('ListenerPort');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.listenerPort = props.listenerPort;
         this.listenerProtocol = props.listenerProtocol;
         this.loadBalancerId = props.loadBalancerId;
-        this.serverGroupId = props.serverGroupId;
         this.alpnEnabled = props.alpnEnabled;
         this.alpnPolicy = props.alpnPolicy;
         this.caCertificateIds = props.caCertificateIds;
@@ -639,12 +662,13 @@ export class RosListener extends ros.RosResource {
         this.endPort = props.endPort;
         this.idleTimeout = props.idleTimeout;
         this.listenerDescription = props.listenerDescription;
-        this.listenerPort = props.listenerPort;
         this.mss = props.mss;
         this.proxyProtocolEnabled = props.proxyProtocolEnabled;
         this.proxyProtocolV2Config = props.proxyProtocolV2Config;
         this.secSensorEnabled = props.secSensorEnabled;
         this.securityPolicyId = props.securityPolicyId;
+        this.serverGroupId = props.serverGroupId;
+        this.serverGroupTuples = props.serverGroupTuples;
         this.startPort = props.startPort;
         this.tags = props.tags;
     }
@@ -652,9 +676,9 @@ export class RosListener extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            listenerPort: this.listenerPort,
             listenerProtocol: this.listenerProtocol,
             loadBalancerId: this.loadBalancerId,
-            serverGroupId: this.serverGroupId,
             alpnEnabled: this.alpnEnabled,
             alpnPolicy: this.alpnPolicy,
             caCertificateIds: this.caCertificateIds,
@@ -665,12 +689,13 @@ export class RosListener extends ros.RosResource {
             endPort: this.endPort,
             idleTimeout: this.idleTimeout,
             listenerDescription: this.listenerDescription,
-            listenerPort: this.listenerPort,
             mss: this.mss,
             proxyProtocolEnabled: this.proxyProtocolEnabled,
             proxyProtocolV2Config: this.proxyProtocolV2Config,
             secSensorEnabled: this.secSensorEnabled,
             securityPolicyId: this.securityPolicyId,
+            serverGroupId: this.serverGroupId,
+            serverGroupTuples: this.serverGroupTuples,
             startPort: this.startPort,
             tags: this.tags,
         };
@@ -730,6 +755,60 @@ function rosListenerProxyProtocolV2ConfigPropertyToRosTemplate(properties: any):
       'Ppv2VpcIdEnabled': ros.booleanToRosTemplate(properties.ppv2VpcIdEnabled),
       'Ppv2PrivateLinkEpsIdEnabled': ros.booleanToRosTemplate(properties.ppv2PrivateLinkEpsIdEnabled),
       'Ppv2PrivateLinkEpIdEnabled': ros.booleanToRosTemplate(properties.ppv2PrivateLinkEpIdEnabled),
+    };
+}
+
+export namespace RosListener {
+    /**
+     * @stability external
+     */
+    export interface ServerGroupTuplesProperty {
+        /**
+         * @Property serverGroupId: ID of the ServerGroup.
+         */
+        readonly serverGroupId?: string | ros.IResolvable;
+        /**
+         * @Property weight: Weight of the ServerGroup.
+         */
+        readonly weight?: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ServerGroupTuplesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ServerGroupTuplesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosListener_ServerGroupTuplesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('serverGroupId', ros.validateString)(properties.serverGroupId));
+    if(properties.weight && (typeof properties.weight) !== 'object') {
+        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
+            data: properties.weight,
+            min: 0,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
+    return errors.wrap('supplied properties not correct for "ServerGroupTuplesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::NLB::Listener.ServerGroupTuples` resource
+ *
+ * @param properties - the TypeScript properties of a `ServerGroupTuplesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::NLB::Listener.ServerGroupTuples` resource.
+ */
+// @ts-ignore TS6133
+function rosListenerServerGroupTuplesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosListener_ServerGroupTuplesPropertyValidator(properties).assertSuccess();
+    return {
+      'ServerGroupId': ros.stringToRosTemplate(properties.serverGroupId),
+      'Weight': ros.numberToRosTemplate(properties.weight),
     };
 }
 
@@ -893,9 +972,9 @@ function RosLoadBalancerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('crossZoneEnabled', ros.validateBoolean)(properties.crossZoneEnabled));
     errors.collect(ros.propertyValidator('loadBalancerType', ros.validateString)(properties.loadBalancerType));
     errors.collect(ros.propertyValidator('loadBalancerName', ros.validateString)(properties.loadBalancerName));
-    errors.collect(ros.propertyValidator('deletionProtectionConfig', RosLoadBalancer_DeletionProtectionConfigPropertyValidator)(properties.deletionProtectionConfig));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('deletionProtectionConfig', RosLoadBalancer_DeletionProtectionConfigPropertyValidator)(properties.deletionProtectionConfig));
     errors.collect(ros.propertyValidator('trafficAffinityEnabled', ros.validateBoolean)(properties.trafficAffinityEnabled));
     errors.collect(ros.propertyValidator('bandwidthPackageId', ros.validateString)(properties.bandwidthPackageId));
     errors.collect(ros.propertyValidator('addressType', ros.requiredValidator)(properties.addressType));
@@ -949,7 +1028,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
@@ -1525,7 +1604,7 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
@@ -1670,7 +1749,7 @@ function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */
@@ -1916,7 +1995,6 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('servers', ros.listValidator(RosServerGroup_ServersPropertyValidator))(properties.servers));
-    errors.collect(ros.propertyValidator('preserveClientIpEnabled', ros.validateBoolean)(properties.preserveClientIpEnabled));
     if(properties.serverGroupType && (typeof properties.serverGroupType) !== 'object') {
         errors.collect(ros.propertyValidator('serverGroupType', ros.validateAllowedValues)({
           data: properties.serverGroupType,
@@ -1924,6 +2002,7 @@ function RosServerGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('serverGroupType', ros.validateString)(properties.serverGroupType));
+    errors.collect(ros.propertyValidator('preserveClientIpEnabled', ros.validateBoolean)(properties.preserveClientIpEnabled));
     errors.collect(ros.propertyValidator('persistenceEnabled', ros.validateBoolean)(properties.persistenceEnabled));
     errors.collect(ros.propertyValidator('connectionDrainEnabled', ros.validateBoolean)(properties.connectionDrainEnabled));
     if(properties.connectionDrainTimeout && (typeof properties.connectionDrainTimeout) !== 'object') {
@@ -2000,7 +2079,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */
@@ -2164,25 +2243,25 @@ export namespace RosServerGroup {
          */
         readonly healthCheckInterval?: number | ros.IResolvable;
         /**
-         * @Property healthCheckUrl: Url for health check
-         */
-        readonly healthCheckUrl?: string | ros.IResolvable;
-        /**
          * @Property healthCheckConnectPort: Port of health check
          */
         readonly healthCheckConnectPort?: number | ros.IResolvable;
+        /**
+         * @Property healthCheckUrl: Url for health check
+         */
+        readonly healthCheckUrl?: string | ros.IResolvable;
         /**
          * @Property unhealthyThreshold: Determine the health check status of the backend server from success to fail.
          */
         readonly unhealthyThreshold?: number | ros.IResolvable;
         /**
-         * @Property httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
-         */
-        readonly httpCheckMethod?: string | ros.IResolvable;
-        /**
          * @Property healthyThreshold: Determine the health check status of the backend server from fail to success.
          */
         readonly healthyThreshold?: number | ros.IResolvable;
+        /**
+         * @Property httpCheckMethod: When the health check protocol is http or https type, the selected health check detection method
+         */
+        readonly httpCheckMethod?: string | ros.IResolvable;
         /**
          * @Property healthCheckConnectTimeout: Maximum timeout for each health check response
          */
@@ -2223,7 +2302,6 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
           }));
     }
     errors.collect(ros.propertyValidator('healthCheckInterval', ros.validateNumber)(properties.healthCheckInterval));
-    errors.collect(ros.propertyValidator('healthCheckUrl', ros.validateString)(properties.healthCheckUrl));
     if(properties.healthCheckConnectPort && (typeof properties.healthCheckConnectPort) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckConnectPort', ros.validateRange)({
             data: properties.healthCheckConnectPort,
@@ -2232,6 +2310,7 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
           }));
     }
     errors.collect(ros.propertyValidator('healthCheckConnectPort', ros.validateNumber)(properties.healthCheckConnectPort));
+    errors.collect(ros.propertyValidator('healthCheckUrl', ros.validateString)(properties.healthCheckUrl));
     if(properties.unhealthyThreshold && (typeof properties.unhealthyThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateRange)({
             data: properties.unhealthyThreshold,
@@ -2240,7 +2319,6 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
           }));
     }
     errors.collect(ros.propertyValidator('unhealthyThreshold', ros.validateNumber)(properties.unhealthyThreshold));
-    errors.collect(ros.propertyValidator('httpCheckMethod', ros.validateString)(properties.httpCheckMethod));
     if(properties.healthyThreshold && (typeof properties.healthyThreshold) !== 'object') {
         errors.collect(ros.propertyValidator('healthyThreshold', ros.validateRange)({
             data: properties.healthyThreshold,
@@ -2249,6 +2327,7 @@ function RosServerGroup_HealthCheckConfigPropertyValidator(properties: any): ros
           }));
     }
     errors.collect(ros.propertyValidator('healthyThreshold', ros.validateNumber)(properties.healthyThreshold));
+    errors.collect(ros.propertyValidator('httpCheckMethod', ros.validateString)(properties.httpCheckMethod));
     if(properties.healthCheckConnectTimeout && (typeof properties.healthCheckConnectTimeout) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckConnectTimeout', ros.validateRange)({
             data: properties.healthCheckConnectTimeout,
@@ -2283,11 +2362,11 @@ function rosServerGroupHealthCheckConfigPropertyToRosTemplate(properties: any): 
     RosServerGroup_HealthCheckConfigPropertyValidator(properties).assertSuccess();
     return {
       'HealthCheckInterval': ros.numberToRosTemplate(properties.healthCheckInterval),
-      'HealthCheckUrl': ros.stringToRosTemplate(properties.healthCheckUrl),
       'HealthCheckConnectPort': ros.numberToRosTemplate(properties.healthCheckConnectPort),
+      'HealthCheckUrl': ros.stringToRosTemplate(properties.healthCheckUrl),
       'UnhealthyThreshold': ros.numberToRosTemplate(properties.unhealthyThreshold),
-      'HttpCheckMethod': ros.stringToRosTemplate(properties.httpCheckMethod),
       'HealthyThreshold': ros.numberToRosTemplate(properties.healthyThreshold),
+      'HttpCheckMethod': ros.stringToRosTemplate(properties.httpCheckMethod),
       'HealthCheckConnectTimeout': ros.numberToRosTemplate(properties.healthCheckConnectTimeout),
       'HealthCheckDomain': ros.stringToRosTemplate(properties.healthCheckDomain),
       'HealthCheckEnabled': ros.booleanToRosTemplate(properties.healthCheckEnabled),
@@ -2310,15 +2389,15 @@ export namespace RosServerGroup {
          */
         readonly serverType: string | ros.IResolvable;
         /**
-         * @Property description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (\/), at signs (@), underscores (_), and hyphens (-).
-         */
-        readonly description?: string | ros.IResolvable;
-        /**
          * @Property serverId: The ID of the server. You can specify at most 40 server IDs in each call.
      * If the server group type is **Instance**, set the ServerId parameter to the ID of an Elastic Compute Service (ECS) instance, an elastic network interface (ENI), or an elastic container instance. These backend servers are specified by **Ecs**, **Eni**, or **Eci**.
      * If the server group type is **Ip**, set the ServerId parameter to an IP address.
          */
         readonly serverId: string | ros.IResolvable;
+        /**
+         * @Property description: The description of the servers. The description must be 2 to 256 characters in length, and can contain letters, digits, commas (,), periods (.), semicolons (;), forward slashes (\/), at signs (@), underscores (_), and hyphens (-).
+         */
+        readonly description?: string | ros.IResolvable;
         /**
          * @Property serverIp: The IP address of the server. If the server group type is **Ip**, ServerId is taken as the value of this parameter.
          */
@@ -2353,9 +2432,9 @@ function RosServerGroup_ServersPropertyValidator(properties: any): ros.Validatio
         }));
     }
     errors.collect(ros.propertyValidator('serverType', ros.validateString)(properties.serverType));
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
@@ -2389,8 +2468,8 @@ function rosServerGroupServersPropertyToRosTemplate(properties: any): any {
     RosServerGroup_ServersPropertyValidator(properties).assertSuccess();
     return {
       'ServerType': ros.stringToRosTemplate(properties.serverType),
-      'Description': ros.stringToRosTemplate(properties.description),
       'ServerId': ros.stringToRosTemplate(properties.serverId),
+      'Description': ros.stringToRosTemplate(properties.description),
       'ServerIp': ros.stringToRosTemplate(properties.serverIp),
       'Port': ros.numberToRosTemplate(properties.port),
       'Weight': ros.numberToRosTemplate(properties.weight),

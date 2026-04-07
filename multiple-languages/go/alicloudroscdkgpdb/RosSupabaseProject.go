@@ -9,12 +9,15 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.
 type RosSupabaseProject interface {
 	alicloudroscdkcore.RosResource
 	AccountPassword() interface{}
 	SetAccountPassword(val interface{})
+	AttrApiKeys() alicloudroscdkcore.IResolvable
+	AttrPrivateConnectUrl() alicloudroscdkcore.IResolvable
 	AttrProjectId() alicloudroscdkcore.IResolvable
+	AttrPublicConnectUrl() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -35,6 +38,10 @@ type RosSupabaseProject interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	PayType() interface{}
+	SetPayType(val interface{})
+	Period() interface{}
+	SetPeriod(val interface{})
 	ProjectName() interface{}
 	SetProjectName(val interface{})
 	ProjectSpec() interface{}
@@ -62,6 +69,8 @@ type RosSupabaseProject interface {
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	UsedTime() interface{}
+	SetUsedTime(val interface{})
 	VpcId() interface{}
 	SetVpcId(val interface{})
 	VSwitchId() interface{}
@@ -197,11 +206,41 @@ func (j *jsiiProxy_RosSupabaseProject) AccountPassword() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosSupabaseProject) AttrApiKeys() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrApiKeys",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSupabaseProject) AttrPrivateConnectUrl() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrPrivateConnectUrl",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSupabaseProject) AttrProjectId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
 		j,
 		"attrProjectId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSupabaseProject) AttrPublicConnectUrl() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrPublicConnectUrl",
 		&returns,
 	)
 	return returns
@@ -252,6 +291,26 @@ func (j *jsiiProxy_RosSupabaseProject) Node() alicloudroscdkcore.ConstructNode {
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSupabaseProject) PayType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"payType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSupabaseProject) Period() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"period",
 		&returns,
 	)
 	return returns
@@ -357,6 +416,16 @@ func (j *jsiiProxy_RosSupabaseProject) UpdatedProperites() *map[string]interface
 	return returns
 }
 
+func (j *jsiiProxy_RosSupabaseProject) UsedTime() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"usedTime",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSupabaseProject) VpcId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -448,6 +517,28 @@ func (j *jsiiProxy_RosSupabaseProject)SetEnableResourcePropertyConstraint(val *b
 	)
 }
 
+func (j *jsiiProxy_RosSupabaseProject)SetPayType(val interface{}) {
+	if err := j.validateSetPayTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"payType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSupabaseProject)SetPeriod(val interface{}) {
+	if err := j.validateSetPeriodParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"period",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosSupabaseProject)SetProjectName(val interface{}) {
 	if err := j.validateSetProjectNameParameters(val); err != nil {
 		panic(err)
@@ -488,6 +579,17 @@ func (j *jsiiProxy_RosSupabaseProject)SetStorageSize(val interface{}) {
 	_jsii_.Set(
 		j,
 		"storageSize",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSupabaseProject)SetUsedTime(val interface{}) {
+	if err := j.validateSetUsedTimeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"usedTime",
 		val,
 	)
 }

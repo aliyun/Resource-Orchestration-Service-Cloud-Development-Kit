@@ -10,8 +10,6 @@ type ResourceMetricRuleProps struct {
 	// The alert notifications are sent to the contacts that belong to the alert contact group.
 	// Note: An alert contact group can contain one or more alert contacts. For information about how to create alert contacts and alert contact groups, see PutContact and PutContactGroup.
 	ContactGroups interface{} `field:"required" json:"contactGroups" yaml:"contactGroups"`
-	// Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-	Escalations interface{} `field:"required" json:"escalations" yaml:"escalations"`
 	// Property metricName: The name of the metric.
 	//
 	// For information about how to query the name of a metric, see Appendix 1: Metrics.
@@ -39,6 +37,8 @@ type ResourceMetricRuleProps struct {
 	EffectiveInterval interface{} `field:"optional" json:"effectiveInterval" yaml:"effectiveInterval"`
 	// Property emailSubject: The subject of the alert notification email.
 	EmailSubject interface{} `field:"optional" json:"emailSubject" yaml:"emailSubject"`
+	// Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+	Escalations interface{} `field:"optional" json:"escalations" yaml:"escalations"`
 	// Property interval: The interval at which the alert is triggered.
 	//
 	// Unit: seconds.

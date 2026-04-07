@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::ElasticDBInstance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::ElasticDBInstance</code>, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.436Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.054Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosElasticDBInstance")
 public class RosElasticDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -211,6 +211,24 @@ public class RosElasticDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackupId() {
+        return software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBackupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "backupId", value);
+    }
+
+    /**
+     */
+    public void setBackupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backupId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceCategory() {
         return software.amazon.jsii.Kernel.get(this, "dbInstanceCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -405,6 +423,24 @@ public class RosElasticDBInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityIpList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityIpList", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceName() {
+        return software.amazon.jsii.Kernel.get(this, "srcDbInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSrcDbInstanceName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "srcDbInstanceName", value);
+    }
+
+    /**
+     */
+    public void setSrcDbInstanceName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "srcDbInstanceName", value);
     }
 
     /**
@@ -752,6 +788,23 @@ public class RosElasticDBInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param backupId This parameter is required.
+         */
+        public Builder backupId(final java.lang.String backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param backupId This parameter is required.
+         */
+        public Builder backupId(final com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.props.backupId(backupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param dbInstanceCategory This parameter is required.
          */
         public Builder dbInstanceCategory(final java.lang.String dbInstanceCategory) {
@@ -934,6 +987,23 @@ public class RosElasticDBInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param srcDbInstanceName This parameter is required.
+         */
+        public Builder srcDbInstanceName(final java.lang.String srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param srcDbInstanceName This parameter is required.
+         */
+        public Builder srcDbInstanceName(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceName) {
+            this.props.srcDbInstanceName(srcDbInstanceName);
             return this;
         }
 

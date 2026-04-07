@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ens.datasource;
 /**
  * Represents a <code>Image</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.390Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.856Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.datasource.IImage")
 @software.amazon.jsii.Jsii.Proxy(IImage.Jsii$Proxy.class)
 public interface IImage extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::Logstore</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::Logstore</code>, which is used to create a Logstore in a Simple Log Service (SLS) project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.568Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.321Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.Logstore")
 public class Logstore extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sls.ILogstore {
 
@@ -384,7 +384,7 @@ public class Logstore extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property ttl: The lifecycle of log in the logstore in days.
          * <p>
-         * Allowed Values: 1-3600, default to 30.
+         * Allowed Values: 1-3650, default to 30.
          * <p>
          * @return {@code this}
          * @param ttl Property ttl: The lifecycle of log in the logstore in days. This parameter is required.
@@ -396,7 +396,7 @@ public class Logstore extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property ttl: The lifecycle of log in the logstore in days.
          * <p>
-         * Allowed Values: 1-3600, default to 30.
+         * Allowed Values: 1-3650, default to 30.
          * <p>
          * @return {@code this}
          * @param ttl Property ttl: The lifecycle of log in the logstore in days. This parameter is required.

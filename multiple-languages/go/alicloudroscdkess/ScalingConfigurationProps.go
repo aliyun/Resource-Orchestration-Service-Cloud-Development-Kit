@@ -59,7 +59,7 @@ type ScalingConfigurationProps struct {
 	//
 	// The description must be 2 to 256 characters in length. The description can contain letters and cannot start with http:\/\/ or https:\/\/.
 	InstanceDescription interface{} `field:"optional" json:"instanceDescription" yaml:"instanceDescription"`
-	// Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+	// Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
 	InstanceId interface{} `field:"optional" json:"instanceId" yaml:"instanceId"`
 	// Property instanceName: The name of the instance launched from the current scaling configuration.
 	InstanceName interface{} `field:"optional" json:"instanceName" yaml:"instanceName"`

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ehpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EHPC::Users</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EHPC::Users</code>, which is used to add one or more users to a specified cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.182Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.621Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.RosUsers")
 public class RosUsers extends com.aliyun.ros.cdk.core.RosResource {
 

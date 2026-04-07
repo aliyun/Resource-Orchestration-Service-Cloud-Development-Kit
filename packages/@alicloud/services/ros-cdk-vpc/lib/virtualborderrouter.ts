@@ -42,6 +42,13 @@ export interface VirtualBorderRouterProps {
     readonly vlanId: number | ros.IResolvable;
 
     /**
+     * Property bandwidth: The bandwidth of the VBR instance, in Mbps.
+     * - When creating a VBR instance for a dedicated leased line, the values are 50, 100, 200, 300, 400, 500, 1000, 2048, 5120, 8192, 10240, 20480, 40960, 50120, 61440 and 102400.
+     * - When creating a VBR instance for a shared leased line, no configuration is required, and the bandwidth of the VBR is the shared leased line bandwidth set when creating the shared physical connection.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
      * Property circuitCode: The circuit code provided by the Internet service provider (ISP) for the physical
      * connection.
      * Note Only the owner of the physical connection can set this parameter.
@@ -61,6 +68,11 @@ export interface VirtualBorderRouterProps {
      * underscores (_), and hyphens (-). The name cannot start with http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -133,11 +145,13 @@ export class VirtualBorderRouter extends ros.Resource implements IVirtualBorderR
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVirtualBorderRouter = new RosVirtualBorderRouter(this, id,  {
-            peerGatewayIp: props.peerGatewayIp,
             localGatewayIp: props.localGatewayIp,
+            peerGatewayIp: props.peerGatewayIp,
             description: props.description,
+            resourceGroupId: props.resourceGroupId,
             circuitCode: props.circuitCode,
             physicalConnectionId: props.physicalConnectionId,
+            bandwidth: props.bandwidth,
             peeringSubnetMask: props.peeringSubnetMask,
             vlanId: props.vlanId,
             name: props.name,

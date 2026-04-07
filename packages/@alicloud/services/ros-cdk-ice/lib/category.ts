@@ -51,7 +51,7 @@ export interface ICategory extends ros.IResource {
     readonly attrParentId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::Category`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::Category`, which is used to create a media asset category.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCategory`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-category
  */

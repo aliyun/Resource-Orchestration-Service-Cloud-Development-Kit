@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::RouteTable</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::RouteTable</code>, which is used to create a custom route table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.104Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.069Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouteTable")
 public class RosRouteTable extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -99,6 +99,24 @@ public class RosRouteTable extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setVpcId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vpcId", java.util.Objects.requireNonNull(value, "vpcId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAssociateType() {
+        return software.amazon.jsii.Kernel.get(this, "associateType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAssociateType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "associateType", value);
+    }
+
+    /**
+     */
+    public void setAssociateType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "associateType", value);
     }
 
     /**
@@ -357,6 +375,23 @@ public class RosRouteTable extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param associateType This parameter is required.
+         */
+        public Builder associateType(final java.lang.String associateType) {
+            this.props.associateType(associateType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param associateType This parameter is required.
+         */
+        public Builder associateType(final com.aliyun.ros.cdk.core.IResolvable associateType) {
+            this.props.associateType(associateType);
             return this;
         }
 

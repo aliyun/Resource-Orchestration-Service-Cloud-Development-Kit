@@ -64,7 +64,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Rule`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Rule`, which is used to query the information about a forwarding rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rule
  */
@@ -224,7 +224,7 @@ function rosRulesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Rules`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Rules`, which is used to query forwarding rules.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-rules
  */
@@ -349,7 +349,7 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zone`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zone`, which is used to query the information about a built-in authoritative zone.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zone
  */
@@ -514,6 +514,11 @@ export interface RosZonesProps {
      * @Property resourceGroupId: ResourceGroupId
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC that is associated with the zone.
+     */
+    readonly vpcId?: string | ros.IResolvable;
 }
 
 /**
@@ -527,6 +532,7 @@ function RosZonesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -553,11 +559,12 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
     return {
       'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zones`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zones`, which is used to query built-in authoritative zones.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */
@@ -594,6 +601,11 @@ export class RosZones extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property vpcId: The ID of the VPC that is associated with the zone.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -606,6 +618,7 @@ export class RosZones extends ros.RosResource {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
+        this.vpcId = props.vpcId;
     }
 
 
@@ -613,6 +626,7 @@ export class RosZones extends ros.RosResource {
         return {
             refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
+            vpcId: this.vpcId,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {

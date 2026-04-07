@@ -9,6 +9,7 @@ type RosEventRuleTargetsProps struct {
 	ContactParameters interface{} `field:"optional" json:"contactParameters" yaml:"contactParameters"`
 	FcParameters interface{} `field:"optional" json:"fcParameters" yaml:"fcParameters"`
 	MnsParameters interface{} `field:"optional" json:"mnsParameters" yaml:"mnsParameters"`
+	OpenApiParameters interface{} `field:"optional" json:"openApiParameters" yaml:"openApiParameters"`
 	SlsParameters interface{} `field:"optional" json:"slsParameters" yaml:"slsParameters"`
 	WebhookParameters interface{} `field:"optional" json:"webhookParameters" yaml:"webhookParameters"`
 }

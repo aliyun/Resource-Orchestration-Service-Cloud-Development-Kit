@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::UpgradeVersion`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::UpgradeVersion`, which is used to upgrade the major version of a Tair (Redis OSS-compatible) instance.
 type UpgradeVersion interface {
 	alicloudroscdkcore.Resource
 	IUpgradeVersion

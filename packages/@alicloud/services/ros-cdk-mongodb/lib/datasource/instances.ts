@@ -131,7 +131,7 @@ export interface IInstances extends ros.IResource {
     readonly attrInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::MONGODB::Instances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MONGODB::Instances`, which is used to query the information about ApsaraDB for MongoDB instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mongodb-instances
  */
@@ -177,8 +177,8 @@ export class Instances extends ros.Resource implements IInstances {
             connectionDomain: props.connectionDomain,
             vpcId: props.vpcId,
             dbInstanceId: props.dbInstanceId,
-            chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             networkType: props.networkType,
+            chargeType: props.chargeType === undefined || props.chargeType === null ? 'PostPaid' : props.chargeType,
             dbInstanceDescription: props.dbInstanceDescription,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

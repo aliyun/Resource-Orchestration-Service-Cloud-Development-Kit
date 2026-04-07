@@ -197,6 +197,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _instanceId;
+
+        /// <remarks>
+        /// <strong>Property</strong>: instanceId: The instance ID of the requested EIP.
+        ///
+        /// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InstanceId
+        {
+            get => _instanceId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _instanceId = value;
+            }
+        }
+
         private object? _internetChargeType;
 
         /// <remarks>
@@ -227,6 +262,41 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _internetChargeType = value;
+            }
+        }
+
+        private object? _ipAddress;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipAddress: The IP address of the requested EIP.
+        ///
+        /// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? IpAddress
+        {
+            get => _ipAddress;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ipAddress = value;
             }
         }
 

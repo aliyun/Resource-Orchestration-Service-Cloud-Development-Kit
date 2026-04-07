@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kms
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Policy`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Policy`, which is used to create a permission policy to configure the keys and secrets that applications are allowed to access.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy

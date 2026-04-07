@@ -103,6 +103,11 @@ export interface InstanceProps {
     readonly feeType?: string | ros.IResolvable;
 
     /**
+     * Property insightModule: Whether to enable the insight module.
+     */
+    readonly insightModule?: boolean | ros.IResolvable;
+
+    /**
      * Property jobId: The ID of the task.
      * **Note**: If this parameter is specified, you do not need to specify the SourceRegion, DestinationRegion, SourceEndpointEngineName, or DestinationEndpointEngineName parameter. Even if these parameters are specified, the value of the JobId parameter takes precedence.
      */
@@ -196,7 +201,7 @@ export interface IInstance extends ros.IResource {
     readonly attrJobId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::Instance`Use the , which resource to create a new DTS instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
  */
@@ -229,8 +234,8 @@ export class Instance extends ros.Resource implements IInstance {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance = new RosInstance(this, id,  {
-            resourceGroupId: props.resourceGroupId,
             feeType: props.feeType,
+            resourceGroupId: props.resourceGroupId,
             computeUnit: props.computeUnit,
             period: props.period,
             destinationRegion: props.destinationRegion,
@@ -238,12 +243,13 @@ export class Instance extends ros.Resource implements IInstance {
             sourceEndpointEngineName: props.sourceEndpointEngineName,
             payType: props.payType,
             autoPay: props.autoPay,
-            destinationEndpointEngineName: props.destinationEndpointEngineName,
             sourceRegion: props.sourceRegion,
+            destinationEndpointEngineName: props.destinationEndpointEngineName,
             minDu: props.minDu,
             du: props.du,
             type: props.type,
             databaseCount: props.databaseCount,
+            insightModule: props.insightModule,
             usedTime: props.usedTime,
             autoStart: props.autoStart,
             jobId: props.jobId,

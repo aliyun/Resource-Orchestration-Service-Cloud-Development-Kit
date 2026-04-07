@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.waf3;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf3-tgw
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.599Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.596Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf3.$Module.class, fqn = "@alicloud/ros-cdk-waf3.RosTGWProps")
 @software.amazon.jsii.Jsii.Proxy(RosTGWProps.Jsii$Proxy.class)
 public interface RosTGWProps extends software.amazon.jsii.JsiiSerializable {

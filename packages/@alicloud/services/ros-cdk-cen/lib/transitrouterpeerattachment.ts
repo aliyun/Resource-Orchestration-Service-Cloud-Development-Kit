@@ -54,9 +54,24 @@ export interface TransitRouterPeerAttachmentProps {
     readonly defaultLinkType?: string | ros.IResolvable;
 
     /**
+     * Property deletionForce: Whether to force delete the peer attachment.
+     */
+    readonly deletionForce?: boolean | ros.IResolvable;
+
+    /**
      * Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
      */
     readonly peerTransitRouterRegionId?: string | ros.IResolvable;
+
+    /**
+     * Property routeTableAssociationEnabled: Whether to enable the association of route tables
+     */
+    readonly routeTableAssociationEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+     */
+    readonly routeTablePropagationEnabled?: boolean | ros.IResolvable;
 
     /**
      * Property tags: The list of tags in the form of key\/value pairs. You can define a maximum of 20 tags.
@@ -93,7 +108,7 @@ export interface ITransitRouterPeerAttachment extends ros.IResource {
     readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterPeerAttachment`The , which type creates an inter-region connection for an Enterprise Edition transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterPeerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
@@ -121,16 +136,19 @@ export class TransitRouterPeerAttachment extends ros.Resource implements ITransi
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosTransitRouterPeerAttachment = new RosTransitRouterPeerAttachment(this, id,  {
+            transitRouterAttachmentName: props.transitRouterAttachmentName,
+            defaultLinkType: props.defaultLinkType,
             autoPublishRouteEnabled: props.autoPublishRouteEnabled,
             bandwidthType: props.bandwidthType,
+            routeTableAssociationEnabled: props.routeTableAssociationEnabled,
+            deletionForce: props.deletionForce,
+            routeTablePropagationEnabled: props.routeTablePropagationEnabled,
             bandwidth: props.bandwidth,
             cenId: props.cenId,
-            transitRouterAttachmentName: props.transitRouterAttachmentName,
             peerTransitRouterId: props.peerTransitRouterId,
-            defaultLinkType: props.defaultLinkType,
             cenBandwidthPackageId: props.cenBandwidthPackageId,
-            tags: props.tags,
             transitRouterAttachmentDescription: props.transitRouterAttachmentDescription,
+            tags: props.tags,
             transitRouterId: props.transitRouterId,
             peerTransitRouterRegionId: props.peerTransitRouterRegionId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

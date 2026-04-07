@@ -132,6 +132,10 @@ func (j *jsiiProxy_RosKey) validateSetRotationIntervalParameters(val interface{}
 	return nil
 }
 
+func (j *jsiiProxy_RosKey) validateSetTagsParameters(val *[]*RosKey_TagsProperty) error {
+	return nil
+}
+
 func validateNewRosKeyParameters(scope alicloudroscdkcore.Construct, id *string, props *RosKeyProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

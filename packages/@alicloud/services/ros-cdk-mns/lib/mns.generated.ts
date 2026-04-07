@@ -159,7 +159,7 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Queue`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a Simple Message Queue (formerly MNS) (SMQ) queue. A queue is a destination address where messages are stored. Queues can be classified into standard and delayed queues.
  * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */
@@ -473,14 +473,6 @@ function RosSubscriptionPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('notifyContentFormat', ros.validateString)(properties.notifyContentFormat));
-    if(properties.filterTag && (Array.isArray(properties.filterTag) || (typeof properties.filterTag) === 'string')) {
-        errors.collect(ros.propertyValidator('filterTag', ros.validateLength)({
-            data: properties.filterTag.length,
-            min: undefined,
-            max: 16,
-          }));
-    }
-    errors.collect(ros.propertyValidator('filterTag', ros.validateString)(properties.filterTag));
     errors.collect(ros.propertyValidator('subscriptionName', ros.requiredValidator)(properties.subscriptionName));
     if(properties.subscriptionName && (Array.isArray(properties.subscriptionName) || (typeof properties.subscriptionName) === 'string')) {
         errors.collect(ros.propertyValidator('subscriptionName', ros.validateLength)({
@@ -490,6 +482,14 @@ function RosSubscriptionPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('subscriptionName', ros.validateString)(properties.subscriptionName));
+    if(properties.filterTag && (Array.isArray(properties.filterTag) || (typeof properties.filterTag) === 'string')) {
+        errors.collect(ros.propertyValidator('filterTag', ros.validateLength)({
+            data: properties.filterTag.length,
+            min: undefined,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('filterTag', ros.validateString)(properties.filterTag));
     errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
     if(properties.topicName && (Array.isArray(properties.topicName) || (typeof properties.topicName) === 'string')) {
         errors.collect(ros.propertyValidator('topicName', ros.validateLength)({
@@ -528,7 +528,7 @@ function rosSubscriptionPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to describe a subscription relationship, including the subscribed topic and the endpoint that the subscriber uses to receive messages.
  * @Note This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
@@ -748,7 +748,6 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosTopic_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('loggingEnabled', ros.validateBoolean)(properties.loggingEnabled));
     errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
     if(properties.topicName && (Array.isArray(properties.topicName) || (typeof properties.topicName) === 'string')) {
         errors.collect(ros.propertyValidator('topicName', ros.validateLength)({
@@ -758,6 +757,7 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
+    errors.collect(ros.propertyValidator('loggingEnabled', ros.validateBoolean)(properties.loggingEnabled));
     return errors.wrap('supplied properties not correct for "RosTopicProps"');
 }
 
@@ -783,7 +783,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Topic`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Topic`, which is used to create a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
  */

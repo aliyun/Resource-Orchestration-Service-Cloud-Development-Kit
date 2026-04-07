@@ -3,6 +3,238 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAcl`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-acl
+ */
+export interface RosAclProps {
+
+    /**
+     * @Property actions: The type of operation authorized.
+     */
+    readonly actions: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property decision: The decision result of the authorization. Valid values:
+     * * Deny: Access is denied.
+     * * Allow: Allow access.
+     */
+    readonly decision: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the RocketMQ instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceName: The name of the resource on which you want to grant permissions.
+     */
+    readonly resourceName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The type of the resource on which you want to grant permissions. Valid values:
+     * * Group: consumer Group.
+     * * Topic: Topic.
+     */
+    readonly resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property username: The username of the account.
+     */
+    readonly username: string | ros.IResolvable;
+
+    /**
+     * @Property ipWhitelists: The IP addresses in the whitelist.
+     */
+    readonly ipWhitelists?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAclProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAclProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAclPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('username', ros.requiredValidator)(properties.username));
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('actions', ros.requiredValidator)(properties.actions));
+    errors.collect(ros.propertyValidator('actions', ros.listValidator(ros.validateString))(properties.actions));
+    errors.collect(ros.propertyValidator('resourceName', ros.requiredValidator)(properties.resourceName));
+    errors.collect(ros.propertyValidator('resourceName', ros.validateString)(properties.resourceName));
+    errors.collect(ros.propertyValidator('ipWhitelists', ros.listValidator(ros.validateString))(properties.ipWhitelists));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["Group","Topic"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('decision', ros.requiredValidator)(properties.decision));
+    if(properties.decision && (typeof properties.decision) !== 'object') {
+        errors.collect(ros.propertyValidator('decision', ros.validateAllowedValues)({
+          data: properties.decision,
+          allowedValues: ["Deny","Allow"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('decision', ros.validateString)(properties.decision));
+    return errors.wrap('supplied properties not correct for "RosAclProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROCKETMQ5::Acl` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAclProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROCKETMQ5::Acl` resource.
+ */
+// @ts-ignore TS6133
+function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAclPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Actions': ros.listMapper(ros.stringToRosTemplate)(properties.actions),
+      'Decision': ros.stringToRosTemplate(properties.decision),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'ResourceName': ros.stringToRosTemplate(properties.resourceName),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'IpWhitelists': ros.listMapper(ros.stringToRosTemplate)(properties.ipWhitelists),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Acl`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-acl
+ */
+export class RosAcl extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ5::Acl";
+
+    /**
+     * @Attribute Actions: The type of operation authorized.
+     */
+    public readonly attrActions: ros.IResolvable;
+
+    /**
+     * @Attribute Decision: The decision result of the authorization.
+     */
+    public readonly attrDecision: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceId: The ID of the RocketMQ instance.
+     */
+    public readonly attrInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute IpWhitelists: The IP addresses in the whitelist.
+     */
+    public readonly attrIpWhitelists: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceName: The name of the resource on which you want to grant permissions.
+     */
+    public readonly attrResourceName: ros.IResolvable;
+
+    /**
+     * @Attribute Username: The username of the account.
+     */
+    public readonly attrUsername: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property actions: The type of operation authorized.
+     */
+    public actions: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property decision: The decision result of the authorization. Valid values:
+     * * Deny: Access is denied.
+     * * Allow: Allow access.
+     */
+    public decision: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the RocketMQ instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceName: The name of the resource on which you want to grant permissions.
+     */
+    public resourceName: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The type of the resource on which you want to grant permissions. Valid values:
+     * * Group: consumer Group.
+     * * Topic: Topic.
+     */
+    public resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property username: The username of the account.
+     */
+    public username: string | ros.IResolvable;
+
+    /**
+     * @Property ipWhitelists: The IP addresses in the whitelist.
+     */
+    public ipWhitelists: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAclProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAcl.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrActions = this.getAtt('Actions');
+        this.attrDecision = this.getAtt('Decision');
+        this.attrInstanceId = this.getAtt('InstanceId');
+        this.attrIpWhitelists = this.getAtt('IpWhitelists');
+        this.attrResourceName = this.getAtt('ResourceName');
+        this.attrUsername = this.getAtt('Username');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.actions = props.actions;
+        this.decision = props.decision;
+        this.instanceId = props.instanceId;
+        this.resourceName = props.resourceName;
+        this.resourceType = props.resourceType;
+        this.username = props.username;
+        this.ipWhitelists = props.ipWhitelists;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            actions: this.actions,
+            decision: this.decision,
+            instanceId: this.instanceId,
+            resourceName: this.resourceName,
+            resourceType: this.resourceType,
+            username: this.username,
+            ipWhitelists: this.ipWhitelists,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAclPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosConsumerGroup`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
@@ -102,7 +334,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::ConsumerGroup`, which is used to create a consumer group in ApsaraMQ for RocketMQ 5.0.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-consumergroup
  */
@@ -391,7 +623,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if(properties.seriesCode && (typeof properties.seriesCode) !== 'object') {
         errors.collect(ros.propertyValidator('seriesCode', ros.validateAllowedValues)({
           data: properties.seriesCode,
-          allowedValues: ["standard","professional","ultimate"],
+          allowedValues: ["standard","professional","ultimate","dedicated","shared"],
         }));
     }
     errors.collect(ros.propertyValidator('seriesCode', ros.validateString)(properties.seriesCode));
@@ -445,7 +677,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`The , which resource type creates an ApsaraMQ for RocketMQ 5.0 instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */
@@ -606,13 +838,13 @@ export namespace RosInstance {
          */
         readonly flowOutType?: string | ros.IResolvable;
         /**
-         * @Property ipWhitelist: Public network access whitelist address segment.
-         */
-        readonly ipWhitelist?: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property internetSpec: Whether to enable public network access.
          */
         readonly internetSpec: string | ros.IResolvable;
+        /**
+         * @Property ipWhitelist: Public network access whitelist address segment.
+         */
+        readonly ipWhitelist?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property flowOutBandwidth: Public network bandwidth specification. Unit: Mb\/s.
      * It needs to be filled in only when the billing type of the public network is billed by fixed bandwidth.
@@ -631,7 +863,6 @@ function RosInstance_InternetInfoPropertyValidator(properties: any): ros.Validat
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('flowOutType', ros.validateString)(properties.flowOutType));
-    errors.collect(ros.propertyValidator('ipWhitelist', ros.listValidator(ros.validateString))(properties.ipWhitelist));
     errors.collect(ros.propertyValidator('internetSpec', ros.requiredValidator)(properties.internetSpec));
     if(properties.internetSpec && (typeof properties.internetSpec) !== 'object') {
         errors.collect(ros.propertyValidator('internetSpec', ros.validateAllowedValues)({
@@ -640,6 +871,7 @@ function RosInstance_InternetInfoPropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('internetSpec', ros.validateString)(properties.internetSpec));
+    errors.collect(ros.propertyValidator('ipWhitelist', ros.listValidator(ros.validateString))(properties.ipWhitelist));
     if(properties.flowOutBandwidth && (typeof properties.flowOutBandwidth) !== 'object') {
         errors.collect(ros.propertyValidator('flowOutBandwidth', ros.validateRange)({
             data: properties.flowOutBandwidth,
@@ -664,8 +896,8 @@ function rosInstanceInternetInfoPropertyToRosTemplate(properties: any): any {
     RosInstance_InternetInfoPropertyValidator(properties).assertSuccess();
     return {
       'FlowOutType': ros.stringToRosTemplate(properties.flowOutType),
-      'IpWhitelist': ros.listMapper(ros.stringToRosTemplate)(properties.ipWhitelist),
       'InternetSpec': ros.stringToRosTemplate(properties.internetSpec),
+      'IpWhitelist': ros.listMapper(ros.stringToRosTemplate)(properties.ipWhitelist),
       'FlowOutBandwidth': ros.numberToRosTemplate(properties.flowOutBandwidth),
     };
 }
@@ -684,6 +916,10 @@ export namespace RosInstance {
          */
         readonly messageRetentionTime?: number | ros.IResolvable;
         /**
+         * @Property provisionedCapacity: The provisioned capacity.
+         */
+        readonly provisionedCapacity?: number | ros.IResolvable;
+        /**
          * @Property autoScaling: Whether to enable out-of-spec burst resiliency.
      * After the elastic burst capability is enabled, the message queue RocketMQ allows the instance to exceed the TPS limited by the basic specification within a certain range, and the part exceeding the basic specification requires additional elastic specification fees.
          */
@@ -692,6 +928,10 @@ export namespace RosInstance {
          * @Property msgProcessSpec: Message processing specification.
          */
         readonly msgProcessSpec: string | ros.IResolvable;
+        /**
+         * @Property capacityType: The type of capacity.
+         */
+        readonly capacityType?: string | ros.IResolvable;
     }
 }
 /**
@@ -713,9 +953,17 @@ function RosInstance_ProductInfoPropertyValidator(properties: any): ros.Validati
     }
     errors.collect(ros.propertyValidator('sendReceiveRatio', ros.validateNumber)(properties.sendReceiveRatio));
     errors.collect(ros.propertyValidator('messageRetentionTime', ros.validateNumber)(properties.messageRetentionTime));
+    errors.collect(ros.propertyValidator('provisionedCapacity', ros.validateNumber)(properties.provisionedCapacity));
     errors.collect(ros.propertyValidator('autoScaling', ros.validateBoolean)(properties.autoScaling));
     errors.collect(ros.propertyValidator('msgProcessSpec', ros.requiredValidator)(properties.msgProcessSpec));
     errors.collect(ros.propertyValidator('msgProcessSpec', ros.validateString)(properties.msgProcessSpec));
+    if(properties.capacityType && (typeof properties.capacityType) !== 'object') {
+        errors.collect(ros.propertyValidator('capacityType', ros.validateAllowedValues)({
+          data: properties.capacityType,
+          allowedValues: ["provisioned","ondemand"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('capacityType', ros.validateString)(properties.capacityType));
     return errors.wrap('supplied properties not correct for "ProductInfoProperty"');
 }
 
@@ -733,8 +981,10 @@ function rosInstanceProductInfoPropertyToRosTemplate(properties: any): any {
     return {
       'SendReceiveRatio': ros.numberToRosTemplate(properties.sendReceiveRatio),
       'MessageRetentionTime': ros.numberToRosTemplate(properties.messageRetentionTime),
+      'ProvisionedCapacity': ros.numberToRosTemplate(properties.provisionedCapacity),
       'AutoScaling': ros.booleanToRosTemplate(properties.autoScaling),
       'MsgProcessSpec': ros.stringToRosTemplate(properties.msgProcessSpec),
+      'CapacityType': ros.stringToRosTemplate(properties.capacityType),
     };
 }
 
@@ -860,14 +1110,6 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('messageType', ros.validateString)(properties.messageType));
-    if(properties.remark && (Array.isArray(properties.remark) || (typeof properties.remark) === 'string')) {
-        errors.collect(ros.propertyValidator('remark', ros.validateLength)({
-            data: properties.remark.length,
-            min: undefined,
-            max: 128,
-          }));
-    }
-    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
     if(properties.topicName && (Array.isArray(properties.topicName) || (typeof properties.topicName) === 'string')) {
         errors.collect(ros.propertyValidator('topicName', ros.validateLength)({
@@ -877,6 +1119,14 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
+    if(properties.remark && (Array.isArray(properties.remark) || (typeof properties.remark) === 'string')) {
+        errors.collect(ros.propertyValidator('remark', ros.validateLength)({
+            data: properties.remark.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     return errors.wrap('supplied properties not correct for "RosTopicProps"');
 }
 
@@ -902,7 +1152,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Topic`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Topic`, which is used to create a topic for a Message Queue for Apache RocketMQ V5.0 instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-topic
  */

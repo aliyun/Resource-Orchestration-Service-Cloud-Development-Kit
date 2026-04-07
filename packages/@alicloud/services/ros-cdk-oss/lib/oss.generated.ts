@@ -139,8 +139,8 @@ function RosBucketPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('bucketName', ros.requiredValidator)(properties.bucketName));
     errors.collect(ros.propertyValidator('bucketName', ros.validateString)(properties.bucketName));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('loggingConfiguration', RosBucket_LoggingConfigurationPropertyValidator)(properties.loggingConfiguration));
     errors.collect(ros.propertyValidator('websiteConfigurationV2', RosBucket_WebsiteConfigurationV2PropertyValidator)(properties.websiteConfigurationV2));
+    errors.collect(ros.propertyValidator('loggingConfiguration', RosBucket_LoggingConfigurationPropertyValidator)(properties.loggingConfiguration));
     errors.collect(ros.propertyValidator('refererConfiguration', RosBucket_RefererConfigurationPropertyValidator)(properties.refererConfiguration));
     errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosBucketProps"');
@@ -181,7 +181,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`The , which resource type creates an OSS bucket.
  * @Note This class does not contain additional functions, so it is recommended to use the `Bucket` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
@@ -650,15 +650,15 @@ export namespace RosBucket {
      */
     export interface ExpirationProperty {
         /**
+         * @Property createdBeforeDate: undefined
+         */
+        readonly createdBeforeDate?: string | ros.IResolvable;
+        /**
          * @Property expiredObjectDeleteMarker: Specifies whether expired delete tags should be removed automatically. The values are as follows:
      * - true: This means that the expiration delete flag is automatically removed. When set to true, specifying Days or CreatedBeforeDate is not supported.
      * - false: This indicates that the expiration delete marker will not be automatically removed. When false, either Days or CreatedBeforeDate must be specified.
          */
         readonly expiredObjectDeleteMarker?: boolean | ros.IResolvable;
-        /**
-         * @Property createdBeforeDate: undefined
-         */
-        readonly createdBeforeDate?: string | ros.IResolvable;
         /**
          * @Property days: undefined
          */
@@ -675,8 +675,8 @@ export namespace RosBucket {
 function RosBucket_ExpirationPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('expiredObjectDeleteMarker', ros.validateBoolean)(properties.expiredObjectDeleteMarker));
     errors.collect(ros.propertyValidator('createdBeforeDate', ros.validateString)(properties.createdBeforeDate));
+    errors.collect(ros.propertyValidator('expiredObjectDeleteMarker', ros.validateBoolean)(properties.expiredObjectDeleteMarker));
     errors.collect(ros.propertyValidator('days', ros.validateNumber)(properties.days));
     return errors.wrap('supplied properties not correct for "ExpirationProperty"');
 }
@@ -693,8 +693,8 @@ function rosBucketExpirationPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosBucket_ExpirationPropertyValidator(properties).assertSuccess();
     return {
-      'ExpiredObjectDeleteMarker': ros.booleanToRosTemplate(properties.expiredObjectDeleteMarker),
       'CreatedBeforeDate': ros.stringToRosTemplate(properties.createdBeforeDate),
+      'ExpiredObjectDeleteMarker': ros.booleanToRosTemplate(properties.expiredObjectDeleteMarker),
       'Days': ros.numberToRosTemplate(properties.days),
     };
 }
@@ -1380,22 +1380,22 @@ export namespace RosBucket {
          */
         readonly filter?: RosBucket.FilterProperty | ros.IResolvable;
         /**
+         * @Property expiration: undefined
+         */
+        readonly expiration?: RosBucket.ExpirationProperty | ros.IResolvable;
+        /**
          * @Property transition: The change of the storage class of objects that match the lifecycle rule when the objects expire.
      * In the child properties, you can only choose one between Days and CreatedBeforeDate.
          */
         readonly transition?: Array<RosBucket.TransitionProperty | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property expiration: undefined
+         * @Property id: undefined
          */
-        readonly expiration?: RosBucket.ExpirationProperty | ros.IResolvable;
+        readonly id?: string | ros.IResolvable;
         /**
          * @Property prefix: undefined
          */
         readonly prefix: string | ros.IResolvable;
-        /**
-         * @Property id: undefined
-         */
-        readonly id?: string | ros.IResolvable;
     }
 }
 /**
@@ -1417,6 +1417,7 @@ function RosBucket_RulePropertyValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('abortMultipartUpload', RosBucket_AbortMultipartUploadPropertyValidator)(properties.abortMultipartUpload));
     errors.collect(ros.propertyValidator('filter', RosBucket_FilterPropertyValidator)(properties.filter));
+    errors.collect(ros.propertyValidator('expiration', RosBucket_ExpirationPropertyValidator)(properties.expiration));
     if(properties.transition && (Array.isArray(properties.transition) || (typeof properties.transition) === 'string')) {
         errors.collect(ros.propertyValidator('transition', ros.validateLength)({
             data: properties.transition.length,
@@ -1425,10 +1426,9 @@ function RosBucket_RulePropertyValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('transition', ros.listValidator(RosBucket_TransitionPropertyValidator))(properties.transition));
-    errors.collect(ros.propertyValidator('expiration', RosBucket_ExpirationPropertyValidator)(properties.expiration));
+    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
     errors.collect(ros.propertyValidator('prefix', ros.requiredValidator)(properties.prefix));
     errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
-    errors.collect(ros.propertyValidator('id', ros.validateString)(properties.id));
     return errors.wrap('supplied properties not correct for "RuleProperty"');
 }
 
@@ -1447,10 +1447,10 @@ function rosBucketRulePropertyToRosTemplate(properties: any): any {
       'Status': ros.stringToRosTemplate(properties.status),
       'AbortMultipartUpload': rosBucketAbortMultipartUploadPropertyToRosTemplate(properties.abortMultipartUpload),
       'Filter': rosBucketFilterPropertyToRosTemplate(properties.filter),
-      'Transition': ros.listMapper(rosBucketTransitionPropertyToRosTemplate)(properties.transition),
       'Expiration': rosBucketExpirationPropertyToRosTemplate(properties.expiration),
-      'Prefix': ros.stringToRosTemplate(properties.prefix),
+      'Transition': ros.listMapper(rosBucketTransitionPropertyToRosTemplate)(properties.transition),
       'ID': ros.stringToRosTemplate(properties.id),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
     };
 }
 
@@ -1764,6 +1764,708 @@ function rosBucketWebsiteConfigurationV2PropertyToRosTemplate(properties: any): 
 }
 
 /**
+ * Properties for defining a `RosBucketAccessMonitor`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketaccessmonitor
+ */
+export interface RosBucketAccessMonitorProps {
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketAccessMonitorProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketAccessMonitorProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketAccessMonitorPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    return errors.wrap('supplied properties not correct for "RosBucketAccessMonitorProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketAccessMonitor` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketAccessMonitorProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketAccessMonitor` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketAccessMonitorPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketAccessMonitorPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketAccessMonitor`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketAccessMonitor` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketaccessmonitor
+ */
+export class RosBucketAccessMonitor extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketAccessMonitor";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketAccessMonitorProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketAccessMonitor.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucket = props.bucket;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucket: this.bucket,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketAccessMonitorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosBucketCnameToken`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketcnametoken
+ */
+export interface RosBucketCnameTokenProps {
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property domain: The custom domain.
+     */
+    readonly domain: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketCnameTokenProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketCnameTokenProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketCnameTokenPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    return errors.wrap('supplied properties not correct for "RosBucketCnameTokenProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketCnameToken` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketCnameTokenProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketCnameToken` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketCnameTokenPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketCnameTokenPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'Domain': ros.stringToRosTemplate(properties.domain),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketCnameToken`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketCnameToken` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketcnametoken
+ */
+export class RosBucketCnameToken extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketCnameToken";
+
+    /**
+     * @Attribute Bucket: The name of the bucket.
+     */
+    public readonly attrBucket: ros.IResolvable;
+
+    /**
+     * @Attribute Domain: The custom domain.
+     */
+    public readonly attrDomain: ros.IResolvable;
+
+    /**
+     * @Attribute ExpireTime: Token Expiration Time.
+     */
+    public readonly attrExpireTime: ros.IResolvable;
+
+    /**
+     * @Attribute Token: Token used to verify domain ownership.
+     */
+    public readonly attrToken: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property domain: The custom domain.
+     */
+    public domain: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketCnameTokenProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketCnameToken.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBucket = this.getAtt('Bucket');
+        this.attrDomain = this.getAtt('Domain');
+        this.attrExpireTime = this.getAtt('ExpireTime');
+        this.attrToken = this.getAtt('Token');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucket = props.bucket;
+        this.domain = props.domain;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucket: this.bucket,
+            domain: this.domain,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketCnameTokenPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosBucketLogging`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketlogging
+ */
+export interface RosBucketLoggingProps {
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property targetBucket: The bucket that stores access logs.
+     */
+    readonly targetBucket: string | ros.IResolvable;
+
+    /**
+     * @Property loggingRole: Authorization role used for bucket logging.
+     */
+    readonly loggingRole?: string | ros.IResolvable;
+
+    /**
+     * @Property targetPrefix: The prefix of the saved log objects. This element can be left empty.
+     */
+    readonly targetPrefix?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketLoggingProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketLoggingProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketLoggingPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('loggingRole', ros.validateString)(properties.loggingRole));
+    errors.collect(ros.propertyValidator('targetPrefix', ros.validateString)(properties.targetPrefix));
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('targetBucket', ros.requiredValidator)(properties.targetBucket));
+    errors.collect(ros.propertyValidator('targetBucket', ros.validateString)(properties.targetBucket));
+    return errors.wrap('supplied properties not correct for "RosBucketLoggingProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketLogging` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketLoggingProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketLogging` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketLoggingPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketLoggingPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'TargetBucket': ros.stringToRosTemplate(properties.targetBucket),
+      'LoggingRole': ros.stringToRosTemplate(properties.loggingRole),
+      'TargetPrefix': ros.stringToRosTemplate(properties.targetPrefix),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketLogging`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketLogging` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketlogging
+ */
+export class RosBucketLogging extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketLogging";
+
+    /**
+     * @Attribute LoggingRole: Authorization role used for bucket logging.
+     */
+    public readonly attrLoggingRole: ros.IResolvable;
+
+    /**
+     * @Attribute TargetBucket: The bucket that stores access logs.
+     */
+    public readonly attrTargetBucket: ros.IResolvable;
+
+    /**
+     * @Attribute TargetPrefix: The prefix of the saved log objects. This element can be left empty.
+     */
+    public readonly attrTargetPrefix: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property targetBucket: The bucket that stores access logs.
+     */
+    public targetBucket: string | ros.IResolvable;
+
+    /**
+     * @Property loggingRole: Authorization role used for bucket logging.
+     */
+    public loggingRole: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property targetPrefix: The prefix of the saved log objects. This element can be left empty.
+     */
+    public targetPrefix: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketLoggingProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketLogging.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrLoggingRole = this.getAtt('LoggingRole');
+        this.attrTargetBucket = this.getAtt('TargetBucket');
+        this.attrTargetPrefix = this.getAtt('TargetPrefix');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucket = props.bucket;
+        this.targetBucket = props.targetBucket;
+        this.loggingRole = props.loggingRole;
+        this.targetPrefix = props.targetPrefix;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucket: this.bucket,
+            targetBucket: this.targetBucket,
+            loggingRole: this.loggingRole,
+            targetPrefix: this.targetPrefix,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketLoggingPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosBucketOverwriteConfig`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketoverwriteconfig
+ */
+export interface RosBucketOverwriteConfigProps {
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property rule: Forbid overwrite rule.
+     */
+    readonly rule?: Array<RosBucketOverwriteConfig.RuleProperty | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketOverwriteConfigProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketOverwriteConfigProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketOverwriteConfigPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    if(properties.rule && (Array.isArray(properties.rule) || (typeof properties.rule) === 'string')) {
+        errors.collect(ros.propertyValidator('rule', ros.validateLength)({
+            data: properties.rule.length,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('rule', ros.listValidator(RosBucketOverwriteConfig_RulePropertyValidator))(properties.rule));
+    return errors.wrap('supplied properties not correct for "RosBucketOverwriteConfigProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketOverwriteConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketOverwriteConfigProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketOverwriteConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketOverwriteConfigPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketOverwriteConfigPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'Rule': ros.listMapper(rosBucketOverwriteConfigRulePropertyToRosTemplate)(properties.rule),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketOverwriteConfig`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketOverwriteConfig` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketoverwriteconfig
+ */
+export class RosBucketOverwriteConfig extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketOverwriteConfig";
+
+    /**
+     * @Attribute Rule: Forbid overwrite rule.
+     */
+    public readonly attrRule: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property rule: Forbid overwrite rule.
+     */
+    public rule: Array<RosBucketOverwriteConfig.RuleProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketOverwriteConfigProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketOverwriteConfig.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrRule = this.getAtt('Rule');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucket = props.bucket;
+        this.rule = props.rule;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucket: this.bucket,
+            rule: this.rule,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketOverwriteConfigPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosBucketOverwriteConfig {
+    /**
+     * @stability external
+     */
+    export interface PrincipalsProperty {
+        /**
+         * @Property principal: Authorized subject. Supports the input of primary accounts, sub-accounts, or roles. Invalid setting if the value is empty.
+         */
+        readonly principal?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PrincipalsProperty`
+ *
+ * @param properties - the TypeScript properties of a `PrincipalsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketOverwriteConfig_PrincipalsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.principal && (Array.isArray(properties.principal) || (typeof properties.principal) === 'string')) {
+        errors.collect(ros.propertyValidator('principal', ros.validateLength)({
+            data: properties.principal.length,
+            min: 0,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('principal', ros.listValidator(ros.validateString))(properties.principal));
+    return errors.wrap('supplied properties not correct for "PrincipalsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketOverwriteConfig.Principals` resource
+ *
+ * @param properties - the TypeScript properties of a `PrincipalsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketOverwriteConfig.Principals` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketOverwriteConfigPrincipalsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketOverwriteConfig_PrincipalsPropertyValidator(properties).assertSuccess();
+    return {
+      'Principal': ros.listMapper(ros.stringToRosTemplate)(properties.principal),
+    };
+}
+
+export namespace RosBucketOverwriteConfig {
+    /**
+     * @stability external
+     */
+    export interface RuleProperty {
+        /**
+         * @Property action: The operation type. Currently, only "forbid" is supported.
+         */
+        readonly action?: string | ros.IResolvable;
+        /**
+         * @Property suffix: The suffix of the Object name, which is used to filter objects to be processed.
+         */
+        readonly suffix?: string | ros.IResolvable;
+        /**
+         * @Property principals: A collection of authorized principals. The usage is similar to that of the Principal of the Bucket Policy. You can enter the primary account, sub-account, or role. If this parameter is empty or not configured, overwriting is not allowed for objects that meet the preceding and suffix conditions.
+         */
+        readonly principals?: RosBucketOverwriteConfig.PrincipalsProperty | ros.IResolvable;
+        /**
+         * @Property prefix: The prefix of the Object name, which is used to filter objects to be processed.
+         */
+        readonly prefix?: string | ros.IResolvable;
+        /**
+         * @Property identity: Rule ID.
+         */
+        readonly identity?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `RuleProperty`
+ *
+ * @param properties - the TypeScript properties of a `RuleProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketOverwriteConfig_RulePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.action && (typeof properties.action) !== 'object') {
+        errors.collect(ros.propertyValidator('action', ros.validateAllowedValues)({
+          data: properties.action,
+          allowedValues: ["forbid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
+    errors.collect(ros.propertyValidator('suffix', ros.validateString)(properties.suffix));
+    errors.collect(ros.propertyValidator('principals', RosBucketOverwriteConfig_PrincipalsPropertyValidator)(properties.principals));
+    errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
+    return errors.wrap('supplied properties not correct for "RuleProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketOverwriteConfig.Rule` resource
+ *
+ * @param properties - the TypeScript properties of a `RuleProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketOverwriteConfig.Rule` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketOverwriteConfigRulePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosBucketOverwriteConfig_RulePropertyValidator(properties).assertSuccess();
+    return {
+      'Action': ros.stringToRosTemplate(properties.action),
+      'Suffix': ros.stringToRosTemplate(properties.suffix),
+      'Principals': rosBucketOverwriteConfigPrincipalsPropertyToRosTemplate(properties.principals),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
+      'Id': ros.stringToRosTemplate(properties.identity),
+    };
+}
+
+/**
+ * Properties for defining a `RosBucketPublicAccessBlock`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketpublicaccessblock
+ */
+export interface RosBucketPublicAccessBlockProps {
+
+    /**
+     * @Property blockPublicAccess: Whether AlibabaCloud OSS should block public bucket policies and ACL for this bucket.
+     */
+    readonly blockPublicAccess: boolean | ros.IResolvable;
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketPublicAccessBlockProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketPublicAccessBlockProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketPublicAccessBlockPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('blockPublicAccess', ros.requiredValidator)(properties.blockPublicAccess));
+    errors.collect(ros.propertyValidator('blockPublicAccess', ros.validateBoolean)(properties.blockPublicAccess));
+    return errors.wrap('supplied properties not correct for "RosBucketPublicAccessBlockProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketPublicAccessBlock` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketPublicAccessBlockProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketPublicAccessBlock` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketPublicAccessBlockPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketPublicAccessBlockPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BlockPublicAccess': ros.booleanToRosTemplate(properties.blockPublicAccess),
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketPublicAccessBlock`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketPublicAccessBlock` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketpublicaccessblock
+ */
+export class RosBucketPublicAccessBlock extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketPublicAccessBlock";
+
+    /**
+     * @Attribute BlockPublicAccess: Whether AlibabaCloud OSS should block public bucket policies and ACL for this bucket.
+     */
+    public readonly attrBlockPublicAccess: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property blockPublicAccess: Whether AlibabaCloud OSS should block public bucket policies and ACL for this bucket.
+     */
+    public blockPublicAccess: boolean | ros.IResolvable;
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketPublicAccessBlockProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketPublicAccessBlock.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBlockPublicAccess = this.getAtt('BlockPublicAccess');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.blockPublicAccess = props.blockPublicAccess;
+        this.bucket = props.bucket;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            blockPublicAccess: this.blockPublicAccess,
+            bucket: this.bucket,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketPublicAccessBlockPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosBucketReplication`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketreplication
  */
@@ -1817,7 +2519,7 @@ function rosBucketReplicationPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketReplication`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketReplication`The , which is used to specify data replication rules for an OSS bucket.
  * @Note This class does not contain additional functions, so it is recommended to use the `BucketReplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketreplication
  */
@@ -2248,6 +2950,306 @@ function rosBucketReplicationSseKmsEncryptedObjectsPropertyToRosTemplate(propert
 }
 
 /**
+ * Properties for defining a `RosBucketStyle`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketstyle
+ */
+export interface RosBucketStyleProps {
+
+    /**
+     * @Property bucket: Storage space to which the picture style belongs.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property content: The Image style content can contain single or multiple image processing parameters.
+     */
+    readonly content: string | ros.IResolvable;
+
+    /**
+     * @Property styleName: Image Style Name.
+     */
+    readonly styleName: string | ros.IResolvable;
+
+    /**
+     * @Property category: Style category, valid values: image, document, video.
+     */
+    readonly category?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketStyleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketStyleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketStylePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.category && (typeof properties.category) !== 'object') {
+        errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
+          data: properties.category,
+          allowedValues: ["document","video","image"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('styleName', ros.requiredValidator)(properties.styleName));
+    errors.collect(ros.propertyValidator('styleName', ros.validateString)(properties.styleName));
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('content', ros.requiredValidator)(properties.content));
+    errors.collect(ros.propertyValidator('content', ros.validateString)(properties.content));
+    return errors.wrap('supplied properties not correct for "RosBucketStyleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketStyle` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketStyleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketStyle` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketStylePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketStylePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'Content': ros.stringToRosTemplate(properties.content),
+      'StyleName': ros.stringToRosTemplate(properties.styleName),
+      'Category': ros.stringToRosTemplate(properties.category),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketStyle`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketStyle` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketstyle
+ */
+export class RosBucketStyle extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketStyle";
+
+    /**
+     * @Attribute Category: Style category, valid values: image, document, video.
+     */
+    public readonly attrCategory: ros.IResolvable;
+
+    /**
+     * @Attribute Content: The Image style content can contain single or multiple image processing parameters.
+     */
+    public readonly attrContent: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Image Style Creation Time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute LastModifyTime: Last modification time of Image style.
+     */
+    public readonly attrLastModifyTime: ros.IResolvable;
+
+    /**
+     * @Attribute StyleName: Image Style Name.
+     */
+    public readonly attrStyleName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucket: Storage space to which the picture style belongs.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property content: The Image style content can contain single or multiple image processing parameters.
+     */
+    public content: string | ros.IResolvable;
+
+    /**
+     * @Property styleName: Image Style Name.
+     */
+    public styleName: string | ros.IResolvable;
+
+    /**
+     * @Property category: Style category, valid values: image, document, video.
+     */
+    public category: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketStyleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketStyle.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCategory = this.getAtt('Category');
+        this.attrContent = this.getAtt('Content');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrLastModifyTime = this.getAtt('LastModifyTime');
+        this.attrStyleName = this.getAtt('StyleName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucket = props.bucket;
+        this.content = props.content;
+        this.styleName = props.styleName;
+        this.category = props.category;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucket: this.bucket,
+            content: this.content,
+            styleName: this.styleName,
+            category: this.category,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketStylePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosBucketWorm`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketworm
+ */
+export interface RosBucketWormProps {
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    readonly bucket: string | ros.IResolvable;
+
+    /**
+     * @Property retentionPeriodInDays: The specified number of days to retain the Object.
+     */
+    readonly retentionPeriodInDays: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBucketWormProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBucketWormProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBucketWormPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('bucket', ros.requiredValidator)(properties.bucket));
+    errors.collect(ros.propertyValidator('bucket', ros.validateString)(properties.bucket));
+    errors.collect(ros.propertyValidator('retentionPeriodInDays', ros.requiredValidator)(properties.retentionPeriodInDays));
+    if(properties.retentionPeriodInDays && (typeof properties.retentionPeriodInDays) !== 'object') {
+        errors.collect(ros.propertyValidator('retentionPeriodInDays', ros.validateRange)({
+            data: properties.retentionPeriodInDays,
+            min: 1,
+            max: 25567,
+          }));
+    }
+    errors.collect(ros.propertyValidator('retentionPeriodInDays', ros.validateNumber)(properties.retentionPeriodInDays));
+    return errors.wrap('supplied properties not correct for "RosBucketWormProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketWorm` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBucketWormProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OSS::BucketWorm` resource.
+ */
+// @ts-ignore TS6133
+function rosBucketWormPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBucketWormPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Bucket': ros.stringToRosTemplate(properties.bucket),
+      'RetentionPeriodInDays': ros.numberToRosTemplate(properties.retentionPeriodInDays),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketWorm`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BucketWorm` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketworm
+ */
+export class RosBucketWorm extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::OSS::BucketWorm";
+
+    /**
+     * @Attribute CreateTime: The creation time of the resource.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute ExpirationDate: Retention Policy Expiration Time.
+     */
+    public readonly attrExpirationDate: ros.IResolvable;
+
+    /**
+     * @Attribute RetentionPeriodInDays: The specified number of days to retain the Object.
+     */
+    public readonly attrRetentionPeriodInDays: ros.IResolvable;
+
+    /**
+     * @Attribute WormId: The ID of the retention policy.
+     */
+    public readonly attrWormId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property bucket: The name of the bucket.
+     */
+    public bucket: string | ros.IResolvable;
+
+    /**
+     * @Property retentionPeriodInDays: The specified number of days to retain the Object.
+     */
+    public retentionPeriodInDays: number | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBucketWormProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBucketWorm.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrExpirationDate = this.getAtt('ExpirationDate');
+        this.attrRetentionPeriodInDays = this.getAtt('RetentionPeriodInDays');
+        this.attrWormId = this.getAtt('WormId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bucket = props.bucket;
+        this.retentionPeriodInDays = props.retentionPeriodInDays;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            bucket: this.bucket,
+            retentionPeriodInDays: this.retentionPeriodInDays,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBucketWormPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDirectory`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
@@ -2314,7 +3316,7 @@ function rosDirectoryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Directory`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Directory`, which is used to create a directory for a specified bucket.
  * @Note This class does not contain additional functions, so it is recommended to use the `Directory` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
@@ -2442,7 +3444,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */
@@ -2570,7 +3572,7 @@ function rosObjectAclPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.
  * @Note This class does not contain additional functions, so it is recommended to use the `ObjectAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl
  */
@@ -2678,7 +3680,7 @@ function rosWebsitePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Website`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Website`, which is used to configure static website hosting and redirection rules for an Object Storage Service (OSS) bucket.
  * @Note This class does not contain additional functions, so it is recommended to use the `Website` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-website
  */

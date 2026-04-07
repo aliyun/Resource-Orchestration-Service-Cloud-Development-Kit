@@ -179,6 +179,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
         }
 
+        private object? _autoMode;
+
+        /// <remarks>
+        /// <strong>Property</strong>: autoMode: Whether to enable auto scaling.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoMode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AutoModeProperty\"}]}}", isOptional: true)]
+        public object? AutoMode
+        {
+            get => _autoMode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster.IAutoModeProperty cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Cs.RosManagedKubernetesCluster.IAutoModeProperty).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoMode = value;
+            }
+        }
+
         private object? _cloudMonitorFlags;
 
         /// <remarks>
@@ -287,7 +320,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         private object? _controlPlaneLogComponents;
 
         /// <remarks>
-        /// <strong>Property</strong>: controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+        /// <strong>Property</strong>: controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "controlPlaneLogComponents", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

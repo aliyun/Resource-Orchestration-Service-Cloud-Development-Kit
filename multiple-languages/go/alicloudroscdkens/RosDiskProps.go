@@ -11,6 +11,7 @@ type RosDiskProps struct {
 	Size interface{} `field:"required" json:"size" yaml:"size"`
 	DiskName interface{} `field:"optional" json:"diskName" yaml:"diskName"`
 	Encrypted interface{} `field:"optional" json:"encrypted" yaml:"encrypted"`
+	InstanceBillingCycle interface{} `field:"optional" json:"instanceBillingCycle" yaml:"instanceBillingCycle"`
 	KmsKeyId interface{} `field:"optional" json:"kmsKeyId" yaml:"kmsKeyId"`
 	SnapshotId interface{} `field:"optional" json:"snapshotId" yaml:"snapshotId"`
 }

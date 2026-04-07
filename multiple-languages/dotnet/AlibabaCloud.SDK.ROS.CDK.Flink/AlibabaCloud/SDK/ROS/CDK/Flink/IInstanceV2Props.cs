@@ -52,6 +52,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
             get;
         }
 
+        /// <summary>Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.</summary>
+        [JsiiProperty(name: "architectureType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ArchitectureType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.</summary>
         /// <remarks>
         /// false: Manual renewal.
@@ -75,6 +86,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
         [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Duration
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property haResourceSpec: HA resource specifications.</summary>
+        /// <remarks>
+        /// When ChargeType is configured as PRE, the resource specification parameters must be filled.
+        /// </remarks>
+        [JsiiProperty(name: "haResourceSpec", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-flink.RosInstanceV2.HaResourceSpecProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HaResourceSpec
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property haVSwitchIds: HA VSwitch IDs.</summary>
+        [JsiiProperty(name: "haVSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HaVSwitchIds
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS.</summary>
+        [JsiiProperty(name: "monitorType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? MonitorType
         {
             get
             {
@@ -181,6 +228,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "architectureType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ArchitectureType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.</summary>
             /// <remarks>
             /// false: Manual renewal.
@@ -201,6 +256,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
             [JsiiOptional]
             [JsiiProperty(name: "duration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Duration
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property haResourceSpec: HA resource specifications.</summary>
+            /// <remarks>
+            /// When ChargeType is configured as PRE, the resource specification parameters must be filled.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "haResourceSpec", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-flink.RosInstanceV2.HaResourceSpecProperty\"}]}}", isOptional: true)]
+            public object? HaResourceSpec
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property haVSwitchIds: HA VSwitch IDs.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "haVSwitchIds", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HaVSwitchIds
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "monitorType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? MonitorType
             {
                 get => GetInstanceProperty<object?>();
             }

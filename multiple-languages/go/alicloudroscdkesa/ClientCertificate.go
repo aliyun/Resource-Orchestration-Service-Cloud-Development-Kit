@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ClientCertificate`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ClientCertificate`The , which type is used to create a client certificate.
 type ClientCertificate interface {
 	alicloudroscdkcore.Resource
 	IClientCertificate

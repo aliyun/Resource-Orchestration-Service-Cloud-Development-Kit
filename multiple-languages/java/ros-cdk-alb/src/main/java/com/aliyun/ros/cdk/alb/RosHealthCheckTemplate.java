@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::HealthCheckTemplate</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ALB::HealthCheckTemplate</code>The , which resource type creates a health check template.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.053Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.220Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RosHealthCheckTemplate")
 public class RosHealthCheckTemplate extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -149,6 +149,24 @@ public class RosHealthCheckTemplate extends com.aliyun.ros.cdk.core.RosResource 
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckHttpVersion() {
+        return software.amazon.jsii.Kernel.get(this, "healthCheckHttpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHealthCheckHttpVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckHttpVersion", value);
+    }
+
+    /**
+     */
+    public void setHealthCheckHttpVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "healthCheckHttpVersion", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckInterval() {
         return software.amazon.jsii.Kernel.get(this, "healthCheckInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -253,6 +271,24 @@ public class RosHealthCheckTemplate extends com.aliyun.ros.cdk.core.RosResource 
      */
     public void setHealthyThreshold(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "healthyThreshold", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
     }
 
     /**
@@ -369,6 +405,23 @@ public class RosHealthCheckTemplate extends com.aliyun.ros.cdk.core.RosResource 
 
         /**
          * @return {@code this}
+         * @param healthCheckHttpVersion This parameter is required.
+         */
+        public Builder healthCheckHttpVersion(final java.lang.String healthCheckHttpVersion) {
+            this.props.healthCheckHttpVersion(healthCheckHttpVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param healthCheckHttpVersion This parameter is required.
+         */
+        public Builder healthCheckHttpVersion(final com.aliyun.ros.cdk.core.IResolvable healthCheckHttpVersion) {
+            this.props.healthCheckHttpVersion(healthCheckHttpVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param healthCheckInterval This parameter is required.
          */
         public Builder healthCheckInterval(final java.lang.Number healthCheckInterval) {
@@ -466,6 +519,23 @@ public class RosHealthCheckTemplate extends com.aliyun.ros.cdk.core.RosResource 
          */
         public Builder healthyThreshold(final com.aliyun.ros.cdk.core.IResolvable healthyThreshold) {
             this.props.healthyThreshold(healthyThreshold);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

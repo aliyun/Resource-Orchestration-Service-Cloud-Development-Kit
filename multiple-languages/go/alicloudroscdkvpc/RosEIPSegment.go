@@ -26,6 +26,8 @@ type RosEIPSegment interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	InternetChargeType() interface{}
 	SetInternetChargeType(val interface{})
+	Isp() interface{}
+	SetIsp(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -61,6 +63,8 @@ type RosEIPSegment interface {
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	Zone() interface{}
+	SetZone(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -250,6 +254,16 @@ func (j *jsiiProxy_RosEIPSegment) InternetChargeType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosEIPSegment) Isp() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"isp",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosEIPSegment) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -350,6 +364,16 @@ func (j *jsiiProxy_RosEIPSegment) UpdatedProperites() *map[string]interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosEIPSegment) Zone() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"zone",
+		&returns,
+	)
+	return returns
+}
+
 
 func NewRosEIPSegment(scope alicloudroscdkcore.Construct, id *string, props *RosEIPSegmentProps, enableResourcePropertyConstraint *bool) RosEIPSegment {
 	_init_.Initialize()
@@ -422,6 +446,17 @@ func (j *jsiiProxy_RosEIPSegment)SetInternetChargeType(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosEIPSegment)SetIsp(val interface{}) {
+	if err := j.validateSetIspParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"isp",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosEIPSegment)SetNetmode(val interface{}) {
 	if err := j.validateSetNetmodeParameters(val); err != nil {
 		panic(err)
@@ -440,6 +475,17 @@ func (j *jsiiProxy_RosEIPSegment)SetResourceGroupId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEIPSegment)SetZone(val interface{}) {
+	if err := j.validateSetZoneParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"zone",
 		val,
 	)
 }

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Esa
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESA::OriginPool`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESA::OriginPool`The , which type creates an origin address pool.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOriginPool`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-originpool

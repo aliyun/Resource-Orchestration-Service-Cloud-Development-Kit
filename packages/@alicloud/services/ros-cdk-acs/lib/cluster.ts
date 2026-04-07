@@ -230,7 +230,7 @@ export interface ICluster extends ros.IResource {
     readonly attrWorkerRamRoleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACS::Cluster`The , which resource creates a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-cluster
  */
@@ -312,8 +312,8 @@ export class Cluster extends ros.Resource implements ICluster {
             resourceGroupId: props.resourceGroupId,
             addons: props.addons,
             podVSwitchIds: props.podVSwitchIds,
-            loggingType: props.loggingType,
             ipStack: props.ipStack,
+            loggingType: props.loggingType,
             name: props.name,
             loadBalancerSpec: props.loadBalancerSpec,
             isEnterpriseSecurityGroup: props.isEnterpriseSecurityGroup,

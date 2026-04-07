@@ -1,0 +1,13 @@
+export * from './accessstrategy';
+export * from './addresspool';
+export * from './cachedomain';
+export * from './customline';
+export * from './domain';
+export * from './domainattachment';
+export * from './domaingroup';
+export * from './domainrecord';
+export * from './instance';
+export * from './monitorconfig';
+export * from './recoveryplan';
+export * from './dns.generated';
+export * as datasource from './datasource';

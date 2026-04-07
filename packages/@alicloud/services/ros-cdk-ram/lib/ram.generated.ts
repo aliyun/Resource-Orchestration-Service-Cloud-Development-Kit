@@ -48,7 +48,7 @@ function rosAccessKeyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`The , which resource type retrieves a specified RAM user’s AccessKey ID, AccessKey secret, and AccessKey status.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessKey` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
@@ -153,7 +153,7 @@ function rosAppSecretPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
  * @Note This class does not contain additional functions, so it is recommended to use the `AppSecret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
  */
@@ -299,7 +299,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
-    errors.collect(ros.propertyValidator('isMultiTenant', ros.validateBoolean)(properties.isMultiTenant));
+    errors.collect(ros.propertyValidator('redirectUris', ros.listValidator(ros.validateString))(properties.redirectUris));
     if(properties.accessTokenValidity && (typeof properties.accessTokenValidity) !== 'object') {
         errors.collect(ros.propertyValidator('accessTokenValidity', ros.validateRange)({
             data: properties.accessTokenValidity,
@@ -308,7 +308,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('accessTokenValidity', ros.validateNumber)(properties.accessTokenValidity));
-    errors.collect(ros.propertyValidator('redirectUris', ros.listValidator(ros.validateString))(properties.redirectUris));
+    errors.collect(ros.propertyValidator('isMultiTenant', ros.validateBoolean)(properties.isMultiTenant));
     if(properties.refreshTokenValidity && (typeof properties.refreshTokenValidity) !== 'object') {
         errors.collect(ros.propertyValidator('refreshTokenValidity', ros.validateRange)({
             data: properties.refreshTokenValidity,
@@ -359,7 +359,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`, which is used to create an application.
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
  */
@@ -558,7 +558,7 @@ function rosAttachPolicyToGroupPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToGroup`, which is used to attach a policy to a user group.
  * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytogroup
  */
@@ -693,7 +693,7 @@ function rosAttachPolicyToRolePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`, which is used to attach a policy to a specified role.
  * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToRole` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytorole
  */
@@ -816,7 +816,7 @@ function rosAttachPolicyToUserPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`, which is used to grant permissions to a specified user.
  * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
@@ -921,11 +921,11 @@ export interface RosGroupProps {
 function RosGroupPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
     errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
-    errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
-    errors.collect(ros.propertyValidator('policyAttachments', RosGroup_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
     errors.collect(ros.propertyValidator('policies', ros.listValidator(RosGroup_PoliciesPropertyValidator))(properties.policies));
+    errors.collect(ros.propertyValidator('policyAttachments', RosGroup_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.comments && (Array.isArray(properties.comments) || (typeof properties.comments) === 'string')) {
         errors.collect(ros.propertyValidator('comments', ros.validateLength)({
@@ -962,7 +962,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Group`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Group`, which is used to create a Resource Access Management (RAM) user group.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-group
  */
@@ -1385,7 +1385,7 @@ function rosLoginProfilePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`, which is used to create logon configurations for a Resource Access Management (RAM) user.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoginProfile` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
  */
@@ -1583,7 +1583,7 @@ function rosManagedPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`, which is used to create a Resource Access Management (RAM) policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
@@ -1926,7 +1926,7 @@ function rosOIDCProviderPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::OIDCProvider`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::OIDCProvider`, which is used to create an OpenID Connect (OIDC) identity provider (IdP).
  * @Note This class does not contain additional functions, so it is recommended to use the `OIDCProvider` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-oidcprovider
  */
@@ -2078,7 +2078,7 @@ function rosRamAccountAliasPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`, which is used to create an alias for an Alibaba Cloud account.
  * @Note This class does not contain additional functions, so it is recommended to use the `RamAccountAlias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
@@ -2179,6 +2179,11 @@ export interface RosRoleProps {
      * @Property policyAttachments: System and custom policy names to attach.
      */
     readonly policyAttachments?: RosRole.PolicyAttachmentsProperty | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to role. Max support 20 tags to add during create role. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosRole.TagsProperty[];
 }
 
 /**
@@ -2211,10 +2216,18 @@ function RosRolePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('policies', ros.listValidator(RosRole_PoliciesPropertyValidator))(properties.policies));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('policyAttachments', RosRole_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', ros.requiredValidator)(properties.assumeRolePolicyDocument));
     errors.collect(ros.propertyValidator('assumeRolePolicyDocument', RosRole_AssumeRolePolicyDocumentPropertyValidator)(properties.assumeRolePolicyDocument));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosRole_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosRoleProps"');
 }
 
@@ -2240,11 +2253,12 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
       'MaxSessionDuration': ros.numberToRosTemplate(properties.maxSessionDuration),
       'Policies': ros.listMapper(rosRolePoliciesPropertyToRosTemplate)(properties.policies),
       'PolicyAttachments': rosRolePolicyAttachmentsPropertyToRosTemplate(properties.policyAttachments),
+      'Tags': ros.listMapper(rosRoleTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`The , which resource creates a RAM role.
  * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
@@ -2318,6 +2332,11 @@ export class RosRole extends ros.RosResource {
     public policyAttachments: RosRole.PolicyAttachmentsProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to role. Max support 20 tags to add during create role. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosRole.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -2337,6 +2356,7 @@ export class RosRole extends ros.RosResource {
         this.maxSessionDuration = props.maxSessionDuration;
         this.policies = props.policies;
         this.policyAttachments = props.policyAttachments;
+        this.tags = props.tags;
     }
 
 
@@ -2350,6 +2370,7 @@ export class RosRole extends ros.RosResource {
             maxSessionDuration: this.maxSessionDuration,
             policies: this.policies,
             policyAttachments: this.policyAttachments,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -2412,13 +2433,13 @@ export namespace RosRole {
      */
     export interface ConditionProperty {
         /**
-         * @Property numericNotEquals: undefined
-         */
-        readonly numericNotEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
-        /**
          * @Property stringEquals: undefined
          */
         readonly stringEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property numericNotEquals: undefined
+         */
+        readonly numericNotEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
          * @Property stringLike: undefined
          */
@@ -2448,13 +2469,13 @@ export namespace RosRole {
          */
         readonly dateLessThanEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
-         * @Property dateGreaterThanEquals: undefined
-         */
-        readonly dateGreaterThanEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
-        /**
          * @Property numericEquals: undefined
          */
         readonly numericEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property dateGreaterThanEquals: undefined
+         */
+        readonly dateGreaterThanEquals?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
          * @Property dateLessThan: undefined
          */
@@ -2507,8 +2528,8 @@ export namespace RosRole {
 function RosRole_ConditionPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('numericNotEquals', ros.hashValidator(ros.validateAny))(properties.numericNotEquals));
     errors.collect(ros.propertyValidator('stringEquals', ros.hashValidator(ros.validateAny))(properties.stringEquals));
+    errors.collect(ros.propertyValidator('numericNotEquals', ros.hashValidator(ros.validateAny))(properties.numericNotEquals));
     errors.collect(ros.propertyValidator('stringLike', ros.hashValidator(ros.validateAny))(properties.stringLike));
     errors.collect(ros.propertyValidator('numericLessThanEquals', ros.hashValidator(ros.validateAny))(properties.numericLessThanEquals));
     errors.collect(ros.propertyValidator('stringNotEquals', ros.hashValidator(ros.validateAny))(properties.stringNotEquals));
@@ -2516,8 +2537,8 @@ function RosRole_ConditionPropertyValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('numericLessThan', ros.hashValidator(ros.validateAny))(properties.numericLessThan));
     errors.collect(ros.propertyValidator('numericGreaterThan', ros.hashValidator(ros.validateAny))(properties.numericGreaterThan));
     errors.collect(ros.propertyValidator('dateLessThanEquals', ros.hashValidator(ros.validateAny))(properties.dateLessThanEquals));
-    errors.collect(ros.propertyValidator('dateGreaterThanEquals', ros.hashValidator(ros.validateAny))(properties.dateGreaterThanEquals));
     errors.collect(ros.propertyValidator('numericEquals', ros.hashValidator(ros.validateAny))(properties.numericEquals));
+    errors.collect(ros.propertyValidator('dateGreaterThanEquals', ros.hashValidator(ros.validateAny))(properties.dateGreaterThanEquals));
     errors.collect(ros.propertyValidator('dateLessThan', ros.hashValidator(ros.validateAny))(properties.dateLessThan));
     errors.collect(ros.propertyValidator('dateNotEquals', ros.hashValidator(ros.validateAny))(properties.dateNotEquals));
     errors.collect(ros.propertyValidator('stringNotLike', ros.hashValidator(ros.validateAny))(properties.stringNotLike));
@@ -2543,8 +2564,8 @@ function rosRoleConditionPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosRole_ConditionPropertyValidator(properties).assertSuccess();
     return {
-      'NumericNotEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericNotEquals),
       'StringEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.stringEquals),
+      'NumericNotEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericNotEquals),
       'StringLike': ros.hashMapper(ros.objectToRosTemplate)(properties.stringLike),
       'NumericLessThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericLessThanEquals),
       'StringNotEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotEquals),
@@ -2552,8 +2573,8 @@ function rosRoleConditionPropertyToRosTemplate(properties: any): any {
       'NumericLessThan': ros.hashMapper(ros.objectToRosTemplate)(properties.numericLessThan),
       'NumericGreaterThan': ros.hashMapper(ros.objectToRosTemplate)(properties.numericGreaterThan),
       'DateLessThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThanEquals),
-      'DateGreaterThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateGreaterThanEquals),
       'NumericEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.numericEquals),
+      'DateGreaterThanEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateGreaterThanEquals),
       'DateLessThan': ros.hashMapper(ros.objectToRosTemplate)(properties.dateLessThan),
       'DateNotEquals': ros.hashMapper(ros.objectToRosTemplate)(properties.dateNotEquals),
       'StringNotLike': ros.hashMapper(ros.objectToRosTemplate)(properties.stringNotLike),
@@ -2926,6 +2947,54 @@ function rosRoleStatementPropertyToRosTemplate(properties: any): any {
     };
 }
 
+export namespace RosRole {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosRole_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::RAM::Role.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::RAM::Role.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosRoleTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosRole_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
 /**
  * Properties for defining a `RosSAMLProvider`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
@@ -3038,7 +3107,7 @@ function rosSAMLProviderPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SAMLProvider`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
  * @Note This class does not contain additional functions, so it is recommended to use the `SAMLProvider` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
@@ -3234,7 +3303,7 @@ function rosSecurityPreferencePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPreference` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-securitypreference
  */
@@ -3453,10 +3522,10 @@ function RosUserPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('userName', ros.requiredValidator)(properties.userName));
     errors.collect(ros.propertyValidator('userName', ros.validateString)(properties.userName));
-    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosUser_PoliciesPropertyValidator))(properties.policies));
     errors.collect(ros.propertyValidator('email', ros.validateString)(properties.email));
-    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
+    errors.collect(ros.propertyValidator('policies', ros.listValidator(RosUser_PoliciesPropertyValidator))(properties.policies));
     errors.collect(ros.propertyValidator('policyAttachments', RosUser_PolicyAttachmentsPropertyValidator)(properties.policyAttachments));
+    errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     if(properties.comments && (Array.isArray(properties.comments) || (typeof properties.comments) === 'string')) {
         errors.collect(ros.propertyValidator('comments', ros.validateLength)({
             data: properties.comments.length,
@@ -3500,7 +3569,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`The , which resource creates a RAM user.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */
@@ -3989,7 +4058,7 @@ function rosUserToGroupAdditionPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::UserToGroupAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::UserToGroupAddition`, which is used to add users to a RAM group.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserToGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-usertogroupaddition
  */

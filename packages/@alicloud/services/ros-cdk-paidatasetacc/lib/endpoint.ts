@@ -47,7 +47,7 @@ export interface IEndpoint extends ros.IResource {
     readonly attrEndpointId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`, which is used to create and register a mount target for a slot in Dataset Accelerator of Platform for AI (PAI).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEndpoint`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidatasetacc-endpoint
  */

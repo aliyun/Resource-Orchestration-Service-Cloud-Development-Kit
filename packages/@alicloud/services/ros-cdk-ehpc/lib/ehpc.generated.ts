@@ -228,7 +228,7 @@ function rosAutoScaleConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`, which is used to configure the auto scaling settings of a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoScaleConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
@@ -399,10 +399,6 @@ export namespace RosAutoScaleConfig {
      */
     export interface DataDisksProperty {
         /**
-         * @Property dataDiskKmsKeyId: The KMS key ID of the data disk.
-         */
-        readonly dataDiskKmsKeyId?: string | ros.IResolvable;
-        /**
          * @Property dataDiskPerformanceLevel: The performance level of the ESSD used as the data disk. The parameter takes effect only when the Queues.N.DataDisks.M.DataDiskCategory parameter is set to cloud_essd. Valid values:
      * PL0: A single ESSD can deliver up to 10,000 random read\/write IOPS.
      * PL1: A single ESSD can deliver up to 50,000 random read\/write IOPS.
@@ -412,13 +408,17 @@ export namespace RosAutoScaleConfig {
          */
         readonly dataDiskPerformanceLevel?: string | ros.IResolvable;
         /**
-         * @Property dataDiskEncrypted: Specifies whether to encrypt the data disk.
+         * @Property dataDiskKmsKeyId: The KMS key ID of the data disk.
          */
-        readonly dataDiskEncrypted?: boolean | ros.IResolvable;
+        readonly dataDiskKmsKeyId?: string | ros.IResolvable;
         /**
          * @Property dataDiskDeleteWithInstance: Specifies whether the data disk is released when the node is released.
          */
         readonly dataDiskDeleteWithInstance?: boolean | ros.IResolvable;
+        /**
+         * @Property dataDiskEncrypted: Specifies whether to encrypt the data disk.
+         */
+        readonly dataDiskEncrypted?: boolean | ros.IResolvable;
         /**
          * @Property dataDiskSize: The size of the data disk. Unit: GB.
      * Default value: 40
@@ -444,10 +444,10 @@ export namespace RosAutoScaleConfig {
 function RosAutoScaleConfig_DataDisksPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('dataDiskKmsKeyId', ros.validateString)(properties.dataDiskKmsKeyId));
     errors.collect(ros.propertyValidator('dataDiskPerformanceLevel', ros.validateString)(properties.dataDiskPerformanceLevel));
-    errors.collect(ros.propertyValidator('dataDiskEncrypted', ros.validateBoolean)(properties.dataDiskEncrypted));
+    errors.collect(ros.propertyValidator('dataDiskKmsKeyId', ros.validateString)(properties.dataDiskKmsKeyId));
     errors.collect(ros.propertyValidator('dataDiskDeleteWithInstance', ros.validateBoolean)(properties.dataDiskDeleteWithInstance));
+    errors.collect(ros.propertyValidator('dataDiskEncrypted', ros.validateBoolean)(properties.dataDiskEncrypted));
     if(properties.dataDiskSize && (typeof properties.dataDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('dataDiskSize', ros.validateRange)({
             data: properties.dataDiskSize,
@@ -472,10 +472,10 @@ function rosAutoScaleConfigDataDisksPropertyToRosTemplate(properties: any): any 
     if (!ros.canInspect(properties)) { return properties; }
     RosAutoScaleConfig_DataDisksPropertyValidator(properties).assertSuccess();
     return {
-      'DataDiskKMSKeyId': ros.stringToRosTemplate(properties.dataDiskKmsKeyId),
       'DataDiskPerformanceLevel': ros.stringToRosTemplate(properties.dataDiskPerformanceLevel),
-      'DataDiskEncrypted': ros.booleanToRosTemplate(properties.dataDiskEncrypted),
+      'DataDiskKMSKeyId': ros.stringToRosTemplate(properties.dataDiskKmsKeyId),
       'DataDiskDeleteWithInstance': ros.booleanToRosTemplate(properties.dataDiskDeleteWithInstance),
+      'DataDiskEncrypted': ros.booleanToRosTemplate(properties.dataDiskEncrypted),
       'DataDiskSize': ros.numberToRosTemplate(properties.dataDiskSize),
       'DataDiskCategory': ros.stringToRosTemplate(properties.dataDiskCategory),
     };
@@ -579,6 +579,10 @@ export namespace RosAutoScaleConfig {
          */
         readonly maxNodesInQueue?: number | ros.IResolvable;
         /**
+         * @Property dataDisks: undefined
+         */
+        readonly dataDisks?: Array<RosAutoScaleConfig.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        /**
          * @Property enableAutoGrow: Specifies whether the queue enables auto scale-out. Valid values:
      * true: enables auto scale-out.
      * false: disables auto scale-out
@@ -586,9 +590,12 @@ export namespace RosAutoScaleConfig {
          */
         readonly enableAutoGrow?: boolean | ros.IResolvable;
         /**
-         * @Property dataDisks: undefined
+         * @Property queueImageId: The image ID of the queue where scale-out is performed.
+     * If you set both Queues.N.QueueImageId and ImageId, Queues.N.QueueImageId prevails.
+     * If you set Queues.N.QueueImageId or ImageId, the parameter that you set takes effect.
+     * If you leave both Queues.N.QueueImageId and ImageId empty, the image that was specified when you created the cluster or the last time when you scaled out the cluster is used by default.
          */
-        readonly dataDisks?: Array<RosAutoScaleConfig.DataDisksProperty | ros.IResolvable> | ros.IResolvable;
+        readonly queueImageId?: string | ros.IResolvable;
         /**
          * @Property systemDiskSize: The size of the system disk specified for the compute nodes that are added in the queue. Unit: GB.
      * Default value: 40
@@ -603,13 +610,6 @@ export namespace RosAutoScaleConfig {
      * Default value: PL1
          */
         readonly systemDiskLevel?: string | ros.IResolvable;
-        /**
-         * @Property queueImageId: The image ID of the queue where scale-out is performed.
-     * If you set both Queues.N.QueueImageId and ImageId, Queues.N.QueueImageId prevails.
-     * If you set Queues.N.QueueImageId or ImageId, the parameter that you set takes effect.
-     * If you leave both Queues.N.QueueImageId and ImageId empty, the image that was specified when you created the cluster or the last time when you scaled out the cluster is used by default.
-         */
-        readonly queueImageId?: string | ros.IResolvable;
         /**
          * @Property minNodesPerCycle: The minimum number of compute nodes that can be added in each round of scale-out.
      * Default value: 1
@@ -636,13 +636,13 @@ export namespace RosAutoScaleConfig {
          */
         readonly systemDiskCategory?: string | ros.IResolvable;
         /**
-         * @Property hostNamePrefix: The hostname prefix of the host that is used to perform scale-out for the queue. You can manage compute nodes that have a specified hostname prefix.
-         */
-        readonly hostNamePrefix?: string | ros.IResolvable;
-        /**
          * @Property spotPriceLimit: The maximum hourly price of the compute nodes that are automatically added in the queue. The value can be accurate to three decimal places. The parameter takes effect only when Queues.N.SpotStrategy is set to SpotWithPriceLimit.
          */
         readonly spotPriceLimit?: number | ros.IResolvable;
+        /**
+         * @Property hostNamePrefix: The hostname prefix of the host that is used to perform scale-out for the queue. You can manage compute nodes that have a specified hostname prefix.
+         */
+        readonly hostNamePrefix?: string | ros.IResolvable;
         /**
          * @Property instanceTypes: undefined
          */
@@ -692,7 +692,6 @@ function RosAutoScaleConfig_QueuesPropertyValidator(properties: any): ros.Valida
           }));
     }
     errors.collect(ros.propertyValidator('maxNodesInQueue', ros.validateNumber)(properties.maxNodesInQueue));
-    errors.collect(ros.propertyValidator('enableAutoGrow', ros.validateBoolean)(properties.enableAutoGrow));
     if(properties.dataDisks && (Array.isArray(properties.dataDisks) || (typeof properties.dataDisks) === 'string')) {
         errors.collect(ros.propertyValidator('dataDisks', ros.validateLength)({
             data: properties.dataDisks.length,
@@ -701,6 +700,8 @@ function RosAutoScaleConfig_QueuesPropertyValidator(properties: any): ros.Valida
           }));
     }
     errors.collect(ros.propertyValidator('dataDisks', ros.listValidator(RosAutoScaleConfig_DataDisksPropertyValidator))(properties.dataDisks));
+    errors.collect(ros.propertyValidator('enableAutoGrow', ros.validateBoolean)(properties.enableAutoGrow));
+    errors.collect(ros.propertyValidator('queueImageId', ros.validateString)(properties.queueImageId));
     if(properties.systemDiskSize && (typeof properties.systemDiskSize) !== 'object') {
         errors.collect(ros.propertyValidator('systemDiskSize', ros.validateRange)({
             data: properties.systemDiskSize,
@@ -710,7 +711,6 @@ function RosAutoScaleConfig_QueuesPropertyValidator(properties: any): ros.Valida
     }
     errors.collect(ros.propertyValidator('systemDiskSize', ros.validateNumber)(properties.systemDiskSize));
     errors.collect(ros.propertyValidator('systemDiskLevel', ros.validateString)(properties.systemDiskLevel));
-    errors.collect(ros.propertyValidator('queueImageId', ros.validateString)(properties.queueImageId));
     if(properties.minNodesPerCycle && (typeof properties.minNodesPerCycle) !== 'object') {
         errors.collect(ros.propertyValidator('minNodesPerCycle', ros.validateRange)({
             data: properties.minNodesPerCycle,
@@ -729,8 +729,8 @@ function RosAutoScaleConfig_QueuesPropertyValidator(properties: any): ros.Valida
     errors.collect(ros.propertyValidator('maxNodesPerCycle', ros.validateNumber)(properties.maxNodesPerCycle));
     errors.collect(ros.propertyValidator('enableAutoShrink', ros.validateBoolean)(properties.enableAutoShrink));
     errors.collect(ros.propertyValidator('systemDiskCategory', ros.validateString)(properties.systemDiskCategory));
-    errors.collect(ros.propertyValidator('hostNamePrefix', ros.validateString)(properties.hostNamePrefix));
     errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    errors.collect(ros.propertyValidator('hostNamePrefix', ros.validateString)(properties.hostNamePrefix));
     if(properties.instanceTypes && (Array.isArray(properties.instanceTypes) || (typeof properties.instanceTypes) === 'string')) {
         errors.collect(ros.propertyValidator('instanceTypes', ros.validateLength)({
             data: properties.instanceTypes.length,
@@ -766,17 +766,17 @@ function rosAutoScaleConfigQueuesPropertyToRosTemplate(properties: any): any {
       'HostNameSuffix': ros.stringToRosTemplate(properties.hostNameSuffix),
       'MinNodesInQueue': ros.numberToRosTemplate(properties.minNodesInQueue),
       'MaxNodesInQueue': ros.numberToRosTemplate(properties.maxNodesInQueue),
-      'EnableAutoGrow': ros.booleanToRosTemplate(properties.enableAutoGrow),
       'DataDisks': ros.listMapper(rosAutoScaleConfigDataDisksPropertyToRosTemplate)(properties.dataDisks),
+      'EnableAutoGrow': ros.booleanToRosTemplate(properties.enableAutoGrow),
+      'QueueImageId': ros.stringToRosTemplate(properties.queueImageId),
       'SystemDiskSize': ros.numberToRosTemplate(properties.systemDiskSize),
       'SystemDiskLevel': ros.stringToRosTemplate(properties.systemDiskLevel),
-      'QueueImageId': ros.stringToRosTemplate(properties.queueImageId),
       'MinNodesPerCycle': ros.numberToRosTemplate(properties.minNodesPerCycle),
       'MaxNodesPerCycle': ros.numberToRosTemplate(properties.maxNodesPerCycle),
       'EnableAutoShrink': ros.booleanToRosTemplate(properties.enableAutoShrink),
       'SystemDiskCategory': ros.stringToRosTemplate(properties.systemDiskCategory),
-      'HostNamePrefix': ros.stringToRosTemplate(properties.hostNamePrefix),
       'SpotPriceLimit': ros.numberToRosTemplate(properties.spotPriceLimit),
+      'HostNamePrefix': ros.stringToRosTemplate(properties.hostNamePrefix),
       'InstanceTypes': ros.listMapper(rosAutoScaleConfigInstanceTypesPropertyToRosTemplate)(properties.instanceTypes),
       'InstanceType': ros.stringToRosTemplate(properties.instanceType),
       'QueueName': ros.stringToRosTemplate(properties.queueName),
@@ -1116,8 +1116,8 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('volumeProtocol', ros.validateString)(properties.volumeProtocol));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('computeEnableHt', ros.validateBoolean)(properties.computeEnableHt));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('withoutElasticIp', ros.validateBoolean)(properties.withoutElasticIp));
     errors.collect(ros.propertyValidator('systemDiskType', ros.validateString)(properties.systemDiskType));
     errors.collect(ros.propertyValidator('remoteVisEnable', ros.validateBoolean)(properties.remoteVisEnable));
@@ -1135,9 +1135,9 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('postInstallScript', ros.listValidator(RosCluster_PostInstallScriptPropertyValidator))(properties.postInstallScript));
     errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
-    errors.collect(ros.propertyValidator('isComputeEss', ros.validateBoolean)(properties.isComputeEss));
     errors.collect(ros.propertyValidator('ecsOrderLoginInstanceType', ros.requiredValidator)(properties.ecsOrderLoginInstanceType));
     errors.collect(ros.propertyValidator('ecsOrderLoginInstanceType', ros.validateString)(properties.ecsOrderLoginInstanceType));
+    errors.collect(ros.propertyValidator('isComputeEss', ros.validateBoolean)(properties.isComputeEss));
     errors.collect(ros.propertyValidator('jobQueue', ros.validateString)(properties.jobQueue));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
@@ -1329,7 +1329,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
@@ -1821,10 +1821,6 @@ export namespace RosCluster {
          */
         readonly volumeProtocol?: string | ros.IResolvable;
         /**
-         * @Property localDirectory: The local directory to which the additional file system is mounted.
-         */
-        readonly localDirectory: string | ros.IResolvable;
-        /**
          * @Property volumeId: The ID of the additional file system.
          */
         readonly volumeId: string | ros.IResolvable;
@@ -1832,6 +1828,10 @@ export namespace RosCluster {
          * @Property remoteDirectory: The remote directory to which the additional file system is mounted.
          */
         readonly remoteDirectory?: string | ros.IResolvable;
+        /**
+         * @Property localDirectory: The local directory to which the additional file system is mounted.
+         */
+        readonly localDirectory: string | ros.IResolvable;
         /**
          * @Property volumeType: The type of the additional shared storage. Only nas file systems are supported.
          */
@@ -1861,11 +1861,11 @@ function RosCluster_AdditionalVolumesPropertyValidator(properties: any): ros.Val
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('volumeProtocol', ros.validateString)(properties.volumeProtocol));
-    errors.collect(ros.propertyValidator('localDirectory', ros.requiredValidator)(properties.localDirectory));
-    errors.collect(ros.propertyValidator('localDirectory', ros.validateString)(properties.localDirectory));
     errors.collect(ros.propertyValidator('volumeId', ros.requiredValidator)(properties.volumeId));
     errors.collect(ros.propertyValidator('volumeId', ros.validateString)(properties.volumeId));
     errors.collect(ros.propertyValidator('remoteDirectory', ros.validateString)(properties.remoteDirectory));
+    errors.collect(ros.propertyValidator('localDirectory', ros.requiredValidator)(properties.localDirectory));
+    errors.collect(ros.propertyValidator('localDirectory', ros.validateString)(properties.localDirectory));
     errors.collect(ros.propertyValidator('volumeType', ros.validateString)(properties.volumeType));
     errors.collect(ros.propertyValidator('jobQueue', ros.validateString)(properties.jobQueue));
     errors.collect(ros.propertyValidator('volumeMountpoint', ros.requiredValidator)(properties.volumeMountpoint));
@@ -1887,9 +1887,9 @@ function rosClusterAdditionalVolumesPropertyToRosTemplate(properties: any): any 
     RosCluster_AdditionalVolumesPropertyValidator(properties).assertSuccess();
     return {
       'VolumeProtocol': ros.stringToRosTemplate(properties.volumeProtocol),
-      'LocalDirectory': ros.stringToRosTemplate(properties.localDirectory),
       'VolumeId': ros.stringToRosTemplate(properties.volumeId),
       'RemoteDirectory': ros.stringToRosTemplate(properties.remoteDirectory),
+      'LocalDirectory': ros.stringToRosTemplate(properties.localDirectory),
       'VolumeType': ros.stringToRosTemplate(properties.volumeType),
       'JobQueue': ros.stringToRosTemplate(properties.jobQueue),
       'VolumeMountpoint': ros.stringToRosTemplate(properties.volumeMountpoint),
@@ -2128,13 +2128,6 @@ function RosClusterV2PropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('additionalPackages', ros.listValidator(RosClusterV2_AdditionalPackagesPropertyValidator))(properties.additionalPackages));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    if(properties.clusterMode && (typeof properties.clusterMode) !== 'object') {
-        errors.collect(ros.propertyValidator('clusterMode', ros.validateAllowedValues)({
-          data: properties.clusterMode,
-          allowedValues: ["Integrated","Hybrid","Custom"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('clusterMode', ros.validateString)(properties.clusterMode));
     if(properties.clusterCategory && (typeof properties.clusterCategory) !== 'object') {
         errors.collect(ros.propertyValidator('clusterCategory', ros.validateAllowedValues)({
           data: properties.clusterCategory,
@@ -2142,9 +2135,16 @@ function RosClusterV2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('clusterCategory', ros.validateString)(properties.clusterCategory));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    if(properties.clusterMode && (typeof properties.clusterMode) !== 'object') {
+        errors.collect(ros.propertyValidator('clusterMode', ros.validateAllowedValues)({
+          data: properties.clusterMode,
+          allowedValues: ["Integrated","Hybrid","Custom"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('clusterMode', ros.validateString)(properties.clusterMode));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.addons && (Array.isArray(properties.addons) || (typeof properties.addons) === 'string')) {
         errors.collect(ros.propertyValidator('addons', ros.validateLength)({
             data: properties.addons.length,
@@ -2153,7 +2153,6 @@ function RosClusterV2PropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('addons', ros.listValidator(RosClusterV2_AddonsPropertyValidator))(properties.addons));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.maxCount && (typeof properties.maxCount) !== 'object') {
         errors.collect(ros.propertyValidator('maxCount', ros.validateRange)({
             data: properties.maxCount,
@@ -2162,6 +2161,7 @@ function RosClusterV2PropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('maxCount', ros.validateNumber)(properties.maxCount));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('clientVersion', ros.validateString)(properties.clientVersion));
     errors.collect(ros.propertyValidator('manager', RosClusterV2_ManagerPropertyValidator)(properties.manager));
     errors.collect(ros.propertyValidator('sharedStorages', ros.requiredValidator)(properties.sharedStorages));
@@ -2253,7 +2253,7 @@ function rosClusterV2PropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::ClusterV2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::ClusterV2`, which is used to create a cluster in Elastic High Performance Computing (E-HPC) of the new version.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
  */
@@ -3358,15 +3358,15 @@ export namespace RosClusterV2 {
          */
         readonly hostnamePrefix?: string | ros.IResolvable;
         /**
-         * @Property allocationStrategy: The allocation strategy of the queue.
-         */
-        readonly allocationStrategy?: string | ros.IResolvable;
-        /**
          * @Property enableScaleIn: Whether to enable automatic shrinkage. Valid values: 
      * - true: enables automatic shrinkage. 
      * - false: disables automatic shrinkage.
          */
         readonly enableScaleIn?: boolean | ros.IResolvable;
+        /**
+         * @Property allocationStrategy: The allocation strategy of the queue.
+         */
+        readonly allocationStrategy?: string | ros.IResolvable;
         /**
          * @Property maxCountPerCycle: The number of computing nodes that the queue can maximally expand in each scaling round.
          */
@@ -3449,8 +3449,8 @@ function RosClusterV2_QueuesPropertyValidator(properties: any): ros.ValidationRe
     }
     errors.collect(ros.propertyValidator('keepAliveNodes', ros.listValidator(ros.validateString))(properties.keepAliveNodes));
     errors.collect(ros.propertyValidator('hostnamePrefix', ros.validateString)(properties.hostnamePrefix));
-    errors.collect(ros.propertyValidator('allocationStrategy', ros.validateString)(properties.allocationStrategy));
     errors.collect(ros.propertyValidator('enableScaleIn', ros.validateBoolean)(properties.enableScaleIn));
+    errors.collect(ros.propertyValidator('allocationStrategy', ros.validateString)(properties.allocationStrategy));
     if(properties.maxCountPerCycle && (typeof properties.maxCountPerCycle) !== 'object') {
         errors.collect(ros.propertyValidator('maxCountPerCycle', ros.validateRange)({
             data: properties.maxCountPerCycle,
@@ -3508,8 +3508,8 @@ function rosClusterV2QueuesPropertyToRosTemplate(properties: any): any {
       'MaxCount': ros.numberToRosTemplate(properties.maxCount),
       'KeepAliveNodes': ros.listMapper(ros.stringToRosTemplate)(properties.keepAliveNodes),
       'HostnamePrefix': ros.stringToRosTemplate(properties.hostnamePrefix),
-      'AllocationStrategy': ros.stringToRosTemplate(properties.allocationStrategy),
       'EnableScaleIn': ros.booleanToRosTemplate(properties.enableScaleIn),
+      'AllocationStrategy': ros.stringToRosTemplate(properties.allocationStrategy),
       'MaxCountPerCycle': ros.numberToRosTemplate(properties.maxCountPerCycle),
       'HostnameSuffix': ros.stringToRosTemplate(properties.hostnameSuffix),
       'RamRole': ros.stringToRosTemplate(properties.ramRole),
@@ -3846,7 +3846,7 @@ function rosUsersPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Users`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Users`, which is used to add one or more users to a specified cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Users` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-users
  */
@@ -3907,6 +3907,11 @@ export namespace RosUsers {
          */
         readonly group: string | ros.IResolvable;
         /**
+         * @Property name: The name of the user that you want to add. The name must be 6 to 30 characters in length and can contain letters, digits, and periods (.). It must start with a letter. 
+     * Valid values of N: 1 to 100.
+         */
+        readonly name: string | ros.IResolvable;
+        /**
          * @Property password: The password of the Nth user. The password must be 8 to 30 characters in length and contain three of the following items:
      * - Uppercase letter
      * - Lowercase letter
@@ -3915,11 +3920,6 @@ export namespace RosUsers {
      * Valid values of N: 1 to 100.
          */
         readonly password: string | ros.IResolvable;
-        /**
-         * @Property name: The name of the user that you want to add. The name must be 6 to 30 characters in length and can contain letters, digits, and periods (.). It must start with a letter. 
-     * Valid values of N: 1 to 100.
-         */
-        readonly name: string | ros.IResolvable;
     }
 }
 /**
@@ -3934,10 +3934,10 @@ function RosUsers_UsersPropertyValidator(properties: any): ros.ValidationResult 
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('group', ros.requiredValidator)(properties.group));
     errors.collect(ros.propertyValidator('group', ros.validateString)(properties.group));
-    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     return errors.wrap('supplied properties not correct for "UsersProperty"');
 }
 
@@ -3954,7 +3954,7 @@ function rosUsersUsersPropertyToRosTemplate(properties: any): any {
     RosUsers_UsersPropertyValidator(properties).assertSuccess();
     return {
       'Group': ros.stringToRosTemplate(properties.group),
-      'Password': ros.stringToRosTemplate(properties.password),
       'Name': ros.stringToRosTemplate(properties.name),
+      'Password': ros.stringToRosTemplate(properties.password),
     };
 }

@@ -10,23 +10,21 @@ import (
 // Represents a `TransitRouterVpcAttachment`.
 type ITransitRouterVpcAttachment interface {
 	alicloudroscdkcore.IResource
-	// Attribute CenId: CenId.
+	// Attribute CenId: CEN ID.
 	AttrCenId() interface{}
-	// Attribute ClientToken: ClientToken.
-	AttrClientToken() interface{}
-	// Attribute ResourceType: ResourceType.
+	// Attribute ResourceType: Resource Type.
 	AttrResourceType() interface{}
-	// Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+	// Attribute TransitRouterAttachmentDescription: Attachment Description.
 	AttrTransitRouterAttachmentDescription() interface{}
-	// Attribute TransitRouterAttachmentId: The first ID of the resource.
+	// Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
 	AttrTransitRouterAttachmentId() interface{}
-	// Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
+	// Attribute TransitRouterAttachmentName: Attachment Name.
 	AttrTransitRouterAttachmentName() interface{}
-	// Attribute TransitRouterId: TransitRouterId.
+	// Attribute TransitRouterId: Transit Router ID.
 	AttrTransitRouterId() interface{}
-	// Attribute VpcId: VpcId.
+	// Attribute VpcId: VPC ID.
 	AttrVpcId() interface{}
-	// Attribute VpcOwnerId: VpcOwnerId.
+	// Attribute VpcOwnerId: VPC Owner ID.
 	AttrVpcOwnerId() interface{}
 	Props() *TransitRouterVpcAttachmentProps
 }
@@ -41,16 +39,6 @@ func (j *jsiiProxy_ITransitRouterVpcAttachment) AttrCenId() interface{} {
 	_jsii_.Get(
 		j,
 		"attrCenId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_ITransitRouterVpcAttachment) AttrClientToken() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrClientToken",
 		&returns,
 	)
 	return returns

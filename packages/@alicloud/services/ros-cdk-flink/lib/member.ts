@@ -42,7 +42,7 @@ export interface IMember extends ros.IResource {
     readonly attrMemberInfo: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Member`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Member`, which is used to grants authorization to a member.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMember`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-member
  */

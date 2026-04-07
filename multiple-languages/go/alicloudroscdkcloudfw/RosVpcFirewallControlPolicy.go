@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`The , which resource type adds access control policies to specified VPC firewall policy groups.
 type RosVpcFirewallControlPolicy interface {
 	alicloudroscdkcore.RosResource
 	AclAction() interface{}
@@ -35,6 +35,8 @@ type RosVpcFirewallControlPolicy interface {
 	SetDestPortGroup(val interface{})
 	DestPortType() interface{}
 	SetDestPortType(val interface{})
+	DomainResolveType() interface{}
+	SetDomainResolveType(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	EndTime() interface{}
@@ -322,6 +324,16 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) DestPortType() interface{} {
 	_jsii_.Get(
 		j,
 		"destPortType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) DomainResolveType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"domainResolveType",
 		&returns,
 	)
 	return returns
@@ -690,6 +702,17 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetDestPortType(val interface{}) 
 	_jsii_.Set(
 		j,
 		"destPortType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcFirewallControlPolicy)SetDomainResolveType(val interface{}) {
+	if err := j.validateSetDomainResolveTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"domainResolveType",
 		val,
 	)
 }

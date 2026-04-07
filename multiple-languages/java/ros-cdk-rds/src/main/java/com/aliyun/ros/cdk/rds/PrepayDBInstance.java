@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::PrepayDBInstance</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::PrepayDBInstance</code>, which is used to create subscription ApsaraDB RDS instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.503Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.163Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PrepayDBInstance")
 public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rds.IPrepayDBInstance {
 
@@ -1262,7 +1262,7 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.
          * <p>
-         * Default value: 60. Valid values: 6 to 100.
+         * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
          * <p>
          * @return {@code this}
          * @param logBackupLocalRetentionNumber Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. This parameter is required.
@@ -1274,7 +1274,7 @@ public class PrepayDBInstance extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.
          * <p>
-         * Default value: 60. Valid values: 6 to 100.
+         * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
          * <p>
          * @return {@code this}
          * @param logBackupLocalRetentionNumber Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. This parameter is required.

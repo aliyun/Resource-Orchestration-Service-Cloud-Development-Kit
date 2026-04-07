@@ -21,6 +21,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
             get;
         }
 
+        /// <summary>Property autoLockTime: The date when the account is automatically locked.</summary>
+        /// <remarks>
+        /// Format: yyyy-MM-dd HH:mm:ss.
+        /// </remarks>
+        [JsiiProperty(name: "autoLockTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoLockTime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property businessChannel: The channel.</summary>
+        [JsiiProperty(name: "businessChannel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BusinessChannel
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property email: The email address of the end user.</summary>
         /// <remarks>
         /// The email address is used to receive notifications about events such as desktop assignment. You must specify an email address or a mobile number to receive notifications.
@@ -28,6 +53,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
         [JsiiProperty(name: "email", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Email
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property isLocalAdmin: Whether to set this convenient account as a local administrator.</summary>
+        [JsiiProperty(name: "isLocalAdmin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IsLocalAdmin
         {
             get
             {
@@ -76,10 +112,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
             }
         }
 
-        /// <summary>Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).</summary>
+        /// <summary>Property passwordExpireDays: The default password is valid indefinitely.</summary>
+        /// <remarks>
+        /// This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+        ///
+        ///     This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+        /// </remarks>
+        [JsiiProperty(name: "passwordExpireDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? PasswordExpireDays
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property phone: Mobile numbers are not supported on the international site.</summary>
         [JsiiProperty(name: "phone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Phone
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property realNickName: The display name of the user.</summary>
+        [JsiiProperty(name: "realNickName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RealNickName
         {
             get
             {
@@ -119,6 +182,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property autoLockTime: The date when the account is automatically locked.</summary>
+            /// <remarks>
+            /// Format: yyyy-MM-dd HH:mm:ss.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoLockTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoLockTime
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property businessChannel: The channel.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "businessChannel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BusinessChannel
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property email: The email address of the end user.</summary>
             /// <remarks>
             /// The email address is used to receive notifications about events such as desktop assignment. You must specify an email address or a mobile number to receive notifications.
@@ -126,6 +208,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
             [JsiiOptional]
             [JsiiProperty(name: "email", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Email
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property isLocalAdmin: Whether to set this convenient account as a local administrator.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "isLocalAdmin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IsLocalAdmin
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -162,10 +252,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).</summary>
+            /// <summary>Property passwordExpireDays: The default password is valid indefinitely.</summary>
+            /// <remarks>
+            /// This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+            ///
+            ///     This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "passwordExpireDays", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? PasswordExpireDays
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property phone: Mobile numbers are not supported on the international site.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "phone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Phone
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property realNickName: The display name of the user.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "realNickName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RealNickName
             {
                 get => GetInstanceProperty<object?>();
             }

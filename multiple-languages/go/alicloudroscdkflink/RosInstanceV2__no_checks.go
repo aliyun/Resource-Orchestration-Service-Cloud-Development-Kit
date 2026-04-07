@@ -84,6 +84,10 @@ func validateRosInstanceV2_IsRosResourceParameters(construct alicloudroscdkcore.
 	return nil
 }
 
+func (j *jsiiProxy_RosInstanceV2) validateSetArchitectureTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstanceV2) validateSetAutoRenewParameters(val interface{}) error {
 	return nil
 }
@@ -100,7 +104,19 @@ func (j *jsiiProxy_RosInstanceV2) validateSetEnableResourcePropertyConstraintPar
 	return nil
 }
 
+func (j *jsiiProxy_RosInstanceV2) validateSetHaResourceSpecParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstanceV2) validateSetHaVSwitchIdsParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstanceV2) validateSetInstanceNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosInstanceV2) validateSetMonitorTypeParameters(val interface{}) error {
 	return nil
 }
 

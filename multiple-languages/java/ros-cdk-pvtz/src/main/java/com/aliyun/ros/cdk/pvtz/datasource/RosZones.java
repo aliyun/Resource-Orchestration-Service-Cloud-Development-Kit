@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PVTZ::Zones</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PVTZ::Zones</code>, which is used to query built-in authoritative zones.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.260Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.916Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.RosZones")
 public class RosZones extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -102,6 +102,24 @@ public class RosZones extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setVpcId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
+    }
+
+    /**
+     */
+    public void setVpcId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "vpcId", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.pvtz.datasource.RosZones}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.pvtz.datasource.RosZones> {
@@ -158,6 +176,23 @@ public class RosZones extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
             this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final java.lang.String vpcId) {
+            this.props.vpcId(vpcId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param vpcId This parameter is required.
+         */
+        public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.props.vpcId(vpcId);
             return this;
         }
 

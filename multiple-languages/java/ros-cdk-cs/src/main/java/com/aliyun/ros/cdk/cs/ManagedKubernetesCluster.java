@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedKubernetesCluster</code>The , which type creates ACK managed clusters.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.078Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.430Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedKubernetesCluster")
 public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IManagedKubernetesCluster {
 
@@ -290,6 +290,27 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource i
         }
 
         /**
+         * Property autoMode: Whether to enable auto scaling.
+         * <p>
+         * @return {@code this}
+         * @param autoMode Property autoMode: Whether to enable auto scaling. This parameter is required.
+         */
+        public Builder autoMode(final com.aliyun.ros.cdk.core.IResolvable autoMode) {
+            this.props.autoMode(autoMode);
+            return this;
+        }
+        /**
+         * Property autoMode: Whether to enable auto scaling.
+         * <p>
+         * @return {@code this}
+         * @param autoMode Property autoMode: Whether to enable auto scaling. This parameter is required.
+         */
+        public Builder autoMode(final com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.AutoModeProperty autoMode) {
+            this.props.autoMode(autoMode);
+            return this;
+        }
+
+        /**
          * Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
          * <p>
          * @return {@code this}
@@ -369,7 +390,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource i
         /**
          * Property controlPlaneLogComponents: List of target components for which logs need to be collected.
          * <p>
-         * Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         * Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
          * <p>
          * @return {@code this}
          * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected. This parameter is required.
@@ -381,7 +402,7 @@ public class ManagedKubernetesCluster extends com.aliyun.ros.cdk.core.Resource i
         /**
          * Property controlPlaneLogComponents: List of target components for which logs need to be collected.
          * <p>
-         * Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+         * Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
          * <p>
          * @return {@code this}
          * @param controlPlaneLogComponents Property controlPlaneLogComponents: List of target components for which logs need to be collected. This parameter is required.

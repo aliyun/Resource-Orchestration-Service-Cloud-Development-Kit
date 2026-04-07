@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.182Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.520Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.RosManagedKubernetesClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosManagedKubernetesClusterProps.Jsii$Proxy.class)
 public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,12 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddons() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoMode() {
         return null;
     }
 
@@ -282,6 +288,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         java.lang.Object vpcId;
         java.lang.Object vSwitchIds;
         java.lang.Object addons;
+        java.lang.Object autoMode;
         java.lang.Object cloudMonitorFlags;
         java.lang.Object clusterSpec;
         java.lang.Object containerCidr;
@@ -400,6 +407,26 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
          */
         public Builder addons(java.util.List<? extends java.lang.Object> addons) {
             this.addons = addons;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getAutoMode}
+         * @param autoMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoMode(com.aliyun.ros.cdk.core.IResolvable autoMode) {
+            this.autoMode = autoMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosManagedKubernetesClusterProps#getAutoMode}
+         * @param autoMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoMode(com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster.AutoModeProperty autoMode) {
+            this.autoMode = autoMode;
             return this;
         }
 
@@ -1214,6 +1241,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchIds;
         private final java.lang.Object addons;
+        private final java.lang.Object autoMode;
         private final java.lang.Object cloudMonitorFlags;
         private final java.lang.Object clusterSpec;
         private final java.lang.Object containerCidr;
@@ -1265,6 +1293,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchIds = software.amazon.jsii.Kernel.get(this, "vSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.addons = software.amazon.jsii.Kernel.get(this, "addons", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoMode = software.amazon.jsii.Kernel.get(this, "autoMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cloudMonitorFlags = software.amazon.jsii.Kernel.get(this, "cloudMonitorFlags", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.clusterSpec = software.amazon.jsii.Kernel.get(this, "clusterSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.containerCidr = software.amazon.jsii.Kernel.get(this, "containerCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1317,6 +1346,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchIds = java.util.Objects.requireNonNull(builder.vSwitchIds, "vSwitchIds is required");
             this.addons = builder.addons;
+            this.autoMode = builder.autoMode;
             this.cloudMonitorFlags = builder.cloudMonitorFlags;
             this.clusterSpec = builder.clusterSpec;
             this.containerCidr = builder.containerCidr;
@@ -1377,6 +1407,11 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
         @Override
         public final java.lang.Object getAddons() {
             return this.addons;
+        }
+
+        @Override
+        public final java.lang.Object getAutoMode() {
+            return this.autoMode;
         }
 
         @Override
@@ -1591,6 +1626,9 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (this.getAddons() != null) {
                 data.set("addons", om.valueToTree(this.getAddons()));
             }
+            if (this.getAutoMode() != null) {
+                data.set("autoMode", om.valueToTree(this.getAutoMode()));
+            }
             if (this.getCloudMonitorFlags() != null) {
                 data.set("cloudMonitorFlags", om.valueToTree(this.getCloudMonitorFlags()));
             }
@@ -1733,6 +1771,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchIds.equals(that.vSwitchIds)) return false;
             if (this.addons != null ? !this.addons.equals(that.addons) : that.addons != null) return false;
+            if (this.autoMode != null ? !this.autoMode.equals(that.autoMode) : that.autoMode != null) return false;
             if (this.cloudMonitorFlags != null ? !this.cloudMonitorFlags.equals(that.cloudMonitorFlags) : that.cloudMonitorFlags != null) return false;
             if (this.clusterSpec != null ? !this.clusterSpec.equals(that.clusterSpec) : that.clusterSpec != null) return false;
             if (this.containerCidr != null ? !this.containerCidr.equals(that.containerCidr) : that.containerCidr != null) return false;
@@ -1781,6 +1820,7 @@ public interface RosManagedKubernetesClusterProps extends software.amazon.jsii.J
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.vSwitchIds.hashCode());
             result = 31 * result + (this.addons != null ? this.addons.hashCode() : 0);
+            result = 31 * result + (this.autoMode != null ? this.autoMode.hashCode() : 0);
             result = 31 * result + (this.cloudMonitorFlags != null ? this.cloudMonitorFlags.hashCode() : 0);
             result = 31 * result + (this.clusterSpec != null ? this.clusterSpec.hashCode() : 0);
             result = 31 * result + (this.containerCidr != null ? this.containerCidr.hashCode() : 0);

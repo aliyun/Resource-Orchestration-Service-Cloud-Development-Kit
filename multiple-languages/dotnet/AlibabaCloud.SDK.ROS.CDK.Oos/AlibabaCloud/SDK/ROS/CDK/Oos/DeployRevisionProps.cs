@@ -43,6 +43,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
+        private object? _deployResourceType;
+
+        /// <summary>Property deployResourceType: The type of the deploy resource.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "deployResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DeployResourceType
+        {
+            get => _deployResourceType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _deployResourceType = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: The description of the revision.</summary>

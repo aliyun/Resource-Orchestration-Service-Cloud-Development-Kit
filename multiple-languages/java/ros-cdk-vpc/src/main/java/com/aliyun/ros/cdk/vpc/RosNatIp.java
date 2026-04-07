@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::NatIp</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::NatIp</code>, which is used to create a NAT IP address.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.091Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.032Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatIp")
 public class RosNatIp extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -139,6 +139,42 @@ public class RosNatIp extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv4Prefix() {
+        return software.amazon.jsii.Kernel.get(this, "ipv4Prefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv4Prefix(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipv4Prefix", value);
+    }
+
+    /**
+     */
+    public void setIpv4Prefix(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv4Prefix", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv4PrefixCount() {
+        return software.amazon.jsii.Kernel.get(this, "ipv4PrefixCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv4PrefixCount(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "ipv4PrefixCount", value);
+    }
+
+    /**
+     */
+    public void setIpv4PrefixCount(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv4PrefixCount", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNatIp() {
         return software.amazon.jsii.Kernel.get(this, "natIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -264,6 +300,40 @@ public class RosNatIp extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder natIpName(final com.aliyun.ros.cdk.core.IResolvable natIpName) {
             this.props.natIpName(natIpName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv4Prefix This parameter is required.
+         */
+        public Builder ipv4Prefix(final java.lang.String ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv4Prefix This parameter is required.
+         */
+        public Builder ipv4Prefix(final com.aliyun.ros.cdk.core.IResolvable ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv4PrefixCount This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final java.lang.Number ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv4PrefixCount This parameter is required.
+         */
+        public Builder ipv4PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv4PrefixCount) {
+            this.props.ipv4PrefixCount(ipv4PrefixCount);
             return this;
         }
 

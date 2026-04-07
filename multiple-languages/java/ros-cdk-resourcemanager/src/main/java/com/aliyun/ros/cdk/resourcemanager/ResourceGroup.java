@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.resourcemanager;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ResourceManager::ResourceGroup</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ResourceManager::ResourceGroup</code>The , which resource type creates a resource group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.837Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.ResourceGroup")
 public class ResourceGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.resourcemanager.IResourceGroup {
 
@@ -78,6 +78,14 @@ public class ResourceGroup extends com.aliyun.ros.cdk.core.Resource implements c
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrRegionStatuses() {
         return software.amazon.jsii.Kernel.get(this, "attrRegionStatuses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override
@@ -165,23 +173,36 @@ public class ResourceGroup extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property name: The unique identifier of the resource group.
+         * Property name: The name of the resource group.
          * <p>
          * @return {@code this}
-         * @param name Property name: The unique identifier of the resource group. This parameter is required.
+         * @param name Property name: The name of the resource group. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The unique identifier of the resource group.
+         * Property name: The name of the resource group.
          * <p>
          * @return {@code this}
-         * @param name Property name: The unique identifier of the resource group. This parameter is required.
+         * @param name Property name: The name of the resource group. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to resource group.
+         * <p>
+         * Max support 20 tags to add during create resource group. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to resource group. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

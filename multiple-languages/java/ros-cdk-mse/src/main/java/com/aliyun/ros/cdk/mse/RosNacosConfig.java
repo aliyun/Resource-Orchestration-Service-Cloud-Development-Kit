@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::NacosConfig</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::NacosConfig</code>, which is used to create a Nacos configuration.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.275Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.942Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosNacosConfig")
 public class RosNacosConfig extends com.aliyun.ros.cdk.core.RosResource {
 

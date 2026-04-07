@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::ClusterServiceConfigs`, which is used to create or modify the configurations of a specified service in a cluster.
 type RosClusterServiceConfigs interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterId() alicloudroscdkcore.IResolvable

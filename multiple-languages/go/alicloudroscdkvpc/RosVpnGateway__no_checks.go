@@ -128,6 +128,10 @@ func (j *jsiiProxy_RosVpnGateway) validateSetPeriodParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_RosVpnGateway) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpnGateway) validateSetSslConnectionsParameters(val interface{}) error {
 	return nil
 }

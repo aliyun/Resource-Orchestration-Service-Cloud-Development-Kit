@@ -366,6 +366,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "secSensorEnabled", GoGetter: "SecSensorEnabled"},
 			_jsii_.MemberProperty{JsiiProperty: "securityPolicyId", GoGetter: "SecurityPolicyId"},
 			_jsii_.MemberProperty{JsiiProperty: "serverGroupId", GoGetter: "ServerGroupId"},
+			_jsii_.MemberProperty{JsiiProperty: "serverGroupTuples", GoGetter: "ServerGroupTuples"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
 			_jsii_.MemberProperty{JsiiProperty: "startPort", GoGetter: "StartPort"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
@@ -384,6 +385,10 @@ func init() {
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-nlb.RosListener.ProxyProtocolV2ConfigProperty",
 		reflect.TypeOf((*RosListener_ProxyProtocolV2ConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-nlb.RosListener.ServerGroupTuplesProperty",
+		reflect.TypeOf((*RosListener_ServerGroupTuplesProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-nlb.RosListener.TagsProperty",

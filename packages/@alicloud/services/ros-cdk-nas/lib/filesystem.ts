@@ -111,7 +111,7 @@ export interface IFileSystem extends ros.IResource {
     readonly attrFileSystemId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::FileSystem`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::FileSystem`The , which resource type creates a NAS file system.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystem`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
@@ -139,16 +139,16 @@ export class FileSystem extends ros.Resource implements IFileSystem {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosFileSystem = new RosFileSystem(this, id,  {
-            description: props.description,
             storageType: props.storageType,
+            description: props.description,
             zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
             vSwitchId: props.vSwitchId,
             duration: props.duration,
             snapshotId: props.snapshotId,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            encryptType: props.encryptType,
             vpcId: props.vpcId,
+            encryptType: props.encryptType,
             capacity: props.capacity,
             protocolType: props.protocolType,
             chargeType: props.chargeType,

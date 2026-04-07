@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`, which is used to add a gateway.
 type RosGateway interface {
 	alicloudroscdkcore.RosResource
 	AttrBackupVSwitchId() alicloudroscdkcore.IResolvable

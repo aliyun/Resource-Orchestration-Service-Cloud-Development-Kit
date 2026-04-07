@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`The , which resource type creates an ApsaraMQ for RocketMQ 5.0 instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
@@ -842,11 +842,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: capacityType: The type of capacity.
+            /// </remarks>
+            [JsiiProperty(name: "capacityType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? CapacityType
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: messageRetentionTime: The message storage time. Unit: Hour.
             /// </remarks>
             [JsiiProperty(name: "messageRetentionTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? MessageRetentionTime
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: provisionedCapacity: The provisioned capacity.
+            /// </remarks>
+            [JsiiProperty(name: "provisionedCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? ProvisionedCapacity
             {
                 get
                 {
@@ -895,11 +921,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: capacityType: The type of capacity.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "capacityType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? CapacityType
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: messageRetentionTime: The message storage time. Unit: Hour.
                 /// </remarks>
                 [JsiiOptional]
                 [JsiiProperty(name: "messageRetentionTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? MessageRetentionTime
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: provisionedCapacity: The provisioned capacity.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "provisionedCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? ProvisionedCapacity
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -986,6 +1032,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                 }
             }
 
+            private object? _capacityType;
+
+            /// <remarks>
+            /// <strong>Property</strong>: capacityType: The type of capacity.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "capacityType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? CapacityType
+            {
+                get => _capacityType;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _capacityType = value;
+                }
+            }
+
             private object? _messageRetentionTime;
 
             /// <remarks>
@@ -1036,6 +1115,59 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
                         }
                     }
                     _messageRetentionTime = value;
+                }
+            }
+
+            private object? _provisionedCapacity;
+
+            /// <remarks>
+            /// <strong>Property</strong>: provisionedCapacity: The provisioned capacity.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "provisionedCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ProvisionedCapacity
+            {
+                get => _provisionedCapacity;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case double cast_cd4240:
+                                break;
+                            case byte cast_cd4240:
+                                break;
+                            case decimal cast_cd4240:
+                                break;
+                            case float cast_cd4240:
+                                break;
+                            case int cast_cd4240:
+                                break;
+                            case long cast_cd4240:
+                                break;
+                            case sbyte cast_cd4240:
+                                break;
+                            case short cast_cd4240:
+                                break;
+                            case uint cast_cd4240:
+                                break;
+                            case ulong cast_cd4240:
+                                break;
+                            case ushort cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _provisionedCapacity = value;
                 }
             }
 

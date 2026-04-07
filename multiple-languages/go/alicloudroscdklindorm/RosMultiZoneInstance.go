@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
 type RosMultiZoneInstance interface {
 	alicloudroscdkcore.RosResource
 	ArbiterVSwitchId() interface{}

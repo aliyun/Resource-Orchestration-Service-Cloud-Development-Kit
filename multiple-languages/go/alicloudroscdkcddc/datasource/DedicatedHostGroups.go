@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`, which is used to query the information about resources in dedicated clusters.
 type DedicatedHostGroups interface {
 	alicloudroscdkcore.Resource
 	IDedicatedHostGroups

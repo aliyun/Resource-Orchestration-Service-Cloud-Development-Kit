@@ -224,7 +224,7 @@ export interface IAutoProvisioningGroup extends ros.IResource {
     readonly attrAutoProvisioningGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAutoProvisioningGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
  */
@@ -274,8 +274,8 @@ export class AutoProvisioningGroup extends ros.Resource implements IAutoProvisio
             autoProvisioningGroupName: props.autoProvisioningGroupName,
             excessCapacityTerminationPolicy: props.excessCapacityTerminationPolicy,
             dataDiskConfig: props.dataDiskConfig,
-            launchTemplateConfig: props.launchTemplateConfig,
             launchTemplateId: props.launchTemplateId,
+            launchTemplateConfig: props.launchTemplateConfig,
             payAsYouGoTargetCapacity: props.payAsYouGoTargetCapacity,
             spotInstanceInterruptionBehavior: props.spotInstanceInterruptionBehavior,
             validUntil: props.validUntil,

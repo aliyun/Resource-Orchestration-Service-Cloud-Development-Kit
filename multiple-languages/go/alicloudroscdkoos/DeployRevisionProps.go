@@ -7,6 +7,8 @@ package alicloudroscdkoos
 type DeployRevisionProps struct {
 	// Property applicationName: The name of the application.
 	ApplicationName interface{} `field:"required" json:"applicationName" yaml:"applicationName"`
+	// Property deployResourceType: The type of the deploy resource.
+	DeployResourceType interface{} `field:"optional" json:"deployResourceType" yaml:"deployResourceType"`
 	// Property description: The description of the revision.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property hooks: The hook of the code to be deployed.

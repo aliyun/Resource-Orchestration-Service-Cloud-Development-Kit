@@ -77,7 +77,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ResourceManager::ResourceGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ResourceManager::ResourceGroup`, which is used to query the information about a resource group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-resourcemanager-resourcegroup
  */
@@ -245,13 +245,6 @@ function RosResourceGroupsPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
-    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
-        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
-          data: properties.refreshOptions,
-          allowedValues: ["Always","Never"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     if(properties.name && (Array.isArray(properties.name) || (typeof properties.name) === 'string')) {
         errors.collect(ros.propertyValidator('name', ros.validateLength)({
             data: properties.name.length,
@@ -260,6 +253,13 @@ function RosResourceGroupsPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
     return errors.wrap('supplied properties not correct for "RosResourceGroupsProps"');
 }
 

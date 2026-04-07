@@ -6,6 +6,8 @@
 @alicloud/ros-cdk-slb.BackendServerAttachmentProps=com.aliyun.ros.cdk.slb.BackendServerAttachmentProps
 @alicloud/ros-cdk-slb.BackendServerToVServerGroupAddition=com.aliyun.ros.cdk.slb.BackendServerToVServerGroupAddition
 @alicloud/ros-cdk-slb.BackendServerToVServerGroupAdditionProps=com.aliyun.ros.cdk.slb.BackendServerToVServerGroupAdditionProps
+@alicloud/ros-cdk-slb.CaCertificate=com.aliyun.ros.cdk.slb.CaCertificate
+@alicloud/ros-cdk-slb.CaCertificateProps=com.aliyun.ros.cdk.slb.CaCertificateProps
 @alicloud/ros-cdk-slb.Certificate=com.aliyun.ros.cdk.slb.Certificate
 @alicloud/ros-cdk-slb.CertificateProps=com.aliyun.ros.cdk.slb.CertificateProps
 @alicloud/ros-cdk-slb.DomainExtension=com.aliyun.ros.cdk.slb.DomainExtension
@@ -14,6 +16,7 @@
 @alicloud/ros-cdk-slb.IAccessLogsAddition=com.aliyun.ros.cdk.slb.IAccessLogsAddition
 @alicloud/ros-cdk-slb.IBackendServerAttachment=com.aliyun.ros.cdk.slb.IBackendServerAttachment
 @alicloud/ros-cdk-slb.IBackendServerToVServerGroupAddition=com.aliyun.ros.cdk.slb.IBackendServerToVServerGroupAddition
+@alicloud/ros-cdk-slb.ICaCertificate=com.aliyun.ros.cdk.slb.ICaCertificate
 @alicloud/ros-cdk-slb.ICertificate=com.aliyun.ros.cdk.slb.ICertificate
 @alicloud/ros-cdk-slb.IDomainExtension=com.aliyun.ros.cdk.slb.IDomainExtension
 @alicloud/ros-cdk-slb.IListener=com.aliyun.ros.cdk.slb.IListener
@@ -43,6 +46,9 @@
 @alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAddition=com.aliyun.ros.cdk.slb.RosBackendServerToVServerGroupAddition
 @alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAddition.BackendServersProperty=com.aliyun.ros.cdk.slb.RosBackendServerToVServerGroupAddition$BackendServersProperty
 @alicloud/ros-cdk-slb.RosBackendServerToVServerGroupAdditionProps=com.aliyun.ros.cdk.slb.RosBackendServerToVServerGroupAdditionProps
+@alicloud/ros-cdk-slb.RosCaCertificate=com.aliyun.ros.cdk.slb.RosCaCertificate
+@alicloud/ros-cdk-slb.RosCaCertificate.TagsProperty=com.aliyun.ros.cdk.slb.RosCaCertificate$TagsProperty
+@alicloud/ros-cdk-slb.RosCaCertificateProps=com.aliyun.ros.cdk.slb.RosCaCertificateProps
 @alicloud/ros-cdk-slb.RosCertificate=com.aliyun.ros.cdk.slb.RosCertificate
 @alicloud/ros-cdk-slb.RosCertificate.TagsProperty=com.aliyun.ros.cdk.slb.RosCertificate$TagsProperty
 @alicloud/ros-cdk-slb.RosCertificateProps=com.aliyun.ros.cdk.slb.RosCertificateProps

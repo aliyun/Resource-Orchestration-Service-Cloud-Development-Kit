@@ -27,6 +27,8 @@ type FullNatEntryProps struct {
 	NatIpPort interface{} `field:"required" json:"natIpPort" yaml:"natIpPort"`
 	// Property networkInterfaceId: The elastic network interface (ENI) ID.
 	NetworkInterfaceId interface{} `field:"required" json:"networkInterfaceId" yaml:"networkInterfaceId"`
+	// Property accessDomain: The domain name of the backend for FULLNAT address translation.
+	AccessDomain interface{} `field:"optional" json:"accessDomain" yaml:"accessDomain"`
 	// Property fullNatEntryDescription: The description of the FULLNAT entry.
 	//
 	// This parameter is optional. If you enter a description, the description must be 2 to 256 characters in length, and cannot start with http:\/\/ or https:\/\/.

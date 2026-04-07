@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mongodb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MONGODB::Instance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MONGODB::Instance</code>The , which type creates or clones a MongoDB replica set instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.613Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.618Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -145,6 +145,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAuditPolicyOptions() {
+        return software.amazon.jsii.Kernel.get(this, "auditPolicyOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAuditPolicyOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "auditPolicyOptions", value);
+    }
+
+    /**
+     */
+    public void setAuditPolicyOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.mongodb.RosInstance.AuditPolicyOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "auditPolicyOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -181,6 +199,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBackupPolicyOptions() {
+        return software.amazon.jsii.Kernel.get(this, "backupPolicyOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBackupPolicyOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "backupPolicyOptions", value);
+    }
+
+    /**
+     */
+    public void setBackupPolicyOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.mongodb.RosInstance.BackupPolicyOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "backupPolicyOptions", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getBusinessInfo() {
         return software.amazon.jsii.Kernel.get(this, "businessInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -213,6 +249,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "chargeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getClusterId() {
+        return software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setClusterId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "clusterId", value);
+    }
+
+    /**
+     */
+    public void setClusterId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "clusterId", value);
     }
 
     /**
@@ -267,6 +321,60 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDbInstanceDescription(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "dbInstanceDescription", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceReleaseProtection() {
+        return software.amazon.jsii.Kernel.get(this, "dbInstanceReleaseProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDbInstanceReleaseProtection(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceReleaseProtection", value);
+    }
+
+    /**
+     */
+    public void setDbInstanceReleaseProtection(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "dbInstanceReleaseProtection", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
+        return software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEncrypted(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "encrypted", value);
+    }
+
+    /**
+     */
+    public void setEncrypted(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "encrypted", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKey() {
+        return software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEncryptionKey(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionKey", value);
+    }
+
+    /**
+     */
+    public void setEncryptionKey(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "encryptionKey", value);
     }
 
     /**
@@ -343,6 +451,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
+        return software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setProvisionedIops(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "provisionedIops", value);
+    }
+
+    /**
+     */
+    public void setProvisionedIops(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "provisionedIops", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getReadonlyReplicas() {
         return software.amazon.jsii.Kernel.get(this, "readonlyReplicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -415,6 +541,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRestoreType() {
+        return software.amazon.jsii.Kernel.get(this, "restoreType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRestoreType(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "restoreType", value);
+    }
+
+    /**
+     */
+    public void setRestoreType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "restoreType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryZoneId() {
         return software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -483,6 +627,42 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSrcDbInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "srcDbInstanceId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSrcRegion() {
+        return software.amazon.jsii.Kernel.get(this, "srcRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSrcRegion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "srcRegion", value);
+    }
+
+    /**
+     */
+    public void setSrcRegion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "srcRegion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getSslOptions() {
+        return software.amazon.jsii.Kernel.get(this, "sslOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setSslOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "sslOptions", value);
+    }
+
+    /**
+     */
+    public void setSslOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.mongodb.RosInstance.SSLOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "sslOptions", value);
     }
 
     /**
@@ -621,6 +801,1206 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance.AuditPolicyOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(AuditPolicyOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AuditPolicyOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getAuditStatus();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getAuditLogSwitchSource() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServiceType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getStoragePeriod() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link AuditPolicyOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AuditPolicyOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AuditPolicyOptionsProperty> {
+            java.lang.Object auditStatus;
+            java.lang.Object auditLogSwitchSource;
+            java.lang.Object serviceType;
+            java.lang.Object storagePeriod;
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getAuditStatus}
+             * @param auditStatus the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder auditStatus(java.lang.String auditStatus) {
+                this.auditStatus = auditStatus;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getAuditStatus}
+             * @param auditStatus the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder auditStatus(com.aliyun.ros.cdk.core.IResolvable auditStatus) {
+                this.auditStatus = auditStatus;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getAuditLogSwitchSource}
+             * @param auditLogSwitchSource the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder auditLogSwitchSource(java.lang.String auditLogSwitchSource) {
+                this.auditLogSwitchSource = auditLogSwitchSource;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getAuditLogSwitchSource}
+             * @param auditLogSwitchSource the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder auditLogSwitchSource(com.aliyun.ros.cdk.core.IResolvable auditLogSwitchSource) {
+                this.auditLogSwitchSource = auditLogSwitchSource;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getServiceType}
+             * @param serviceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serviceType(java.lang.String serviceType) {
+                this.serviceType = serviceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getServiceType}
+             * @param serviceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serviceType(com.aliyun.ros.cdk.core.IResolvable serviceType) {
+                this.serviceType = serviceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getStoragePeriod}
+             * @param storagePeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storagePeriod(java.lang.Number storagePeriod) {
+                this.storagePeriod = storagePeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AuditPolicyOptionsProperty#getStoragePeriod}
+             * @param storagePeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder storagePeriod(com.aliyun.ros.cdk.core.IResolvable storagePeriod) {
+                this.storagePeriod = storagePeriod;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AuditPolicyOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AuditPolicyOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AuditPolicyOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AuditPolicyOptionsProperty {
+            private final java.lang.Object auditStatus;
+            private final java.lang.Object auditLogSwitchSource;
+            private final java.lang.Object serviceType;
+            private final java.lang.Object storagePeriod;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.auditStatus = software.amazon.jsii.Kernel.get(this, "auditStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.auditLogSwitchSource = software.amazon.jsii.Kernel.get(this, "auditLogSwitchSource", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.serviceType = software.amazon.jsii.Kernel.get(this, "serviceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.storagePeriod = software.amazon.jsii.Kernel.get(this, "storagePeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.auditStatus = java.util.Objects.requireNonNull(builder.auditStatus, "auditStatus is required");
+                this.auditLogSwitchSource = builder.auditLogSwitchSource;
+                this.serviceType = builder.serviceType;
+                this.storagePeriod = builder.storagePeriod;
+            }
+
+            @Override
+            public final java.lang.Object getAuditStatus() {
+                return this.auditStatus;
+            }
+
+            @Override
+            public final java.lang.Object getAuditLogSwitchSource() {
+                return this.auditLogSwitchSource;
+            }
+
+            @Override
+            public final java.lang.Object getServiceType() {
+                return this.serviceType;
+            }
+
+            @Override
+            public final java.lang.Object getStoragePeriod() {
+                return this.storagePeriod;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("auditStatus", om.valueToTree(this.getAuditStatus()));
+                if (this.getAuditLogSwitchSource() != null) {
+                    data.set("auditLogSwitchSource", om.valueToTree(this.getAuditLogSwitchSource()));
+                }
+                if (this.getServiceType() != null) {
+                    data.set("serviceType", om.valueToTree(this.getServiceType()));
+                }
+                if (this.getStoragePeriod() != null) {
+                    data.set("storagePeriod", om.valueToTree(this.getStoragePeriod()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mongodb.RosInstance.AuditPolicyOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AuditPolicyOptionsProperty.Jsii$Proxy that = (AuditPolicyOptionsProperty.Jsii$Proxy) o;
+
+                if (!auditStatus.equals(that.auditStatus)) return false;
+                if (this.auditLogSwitchSource != null ? !this.auditLogSwitchSource.equals(that.auditLogSwitchSource) : that.auditLogSwitchSource != null) return false;
+                if (this.serviceType != null ? !this.serviceType.equals(that.serviceType) : that.serviceType != null) return false;
+                return this.storagePeriod != null ? this.storagePeriod.equals(that.storagePeriod) : that.storagePeriod == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.auditStatus.hashCode();
+                result = 31 * result + (this.auditLogSwitchSource != null ? this.auditLogSwitchSource.hashCode() : 0);
+                result = 31 * result + (this.serviceType != null ? this.serviceType.hashCode() : 0);
+                result = 31 * result + (this.storagePeriod != null ? this.storagePeriod.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance.BackupPolicyOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(BackupPolicyOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface BackupPolicyOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getBackupInterval() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getBackupRetentionPeriod() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getBackupRetentionPolicyOnClusterDeletion() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCrossBackupPeriod() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCrossBackupType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCrossLogRetentionType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCrossLogRetentionValue() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCrossRetentionType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCrossRetentionValue() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getDestRegion() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableBackupLog() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getEnableCrossLogBackup() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getHighFrequencyBackupRetention() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getLogBackupRetentionPeriod() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPreferredBackupPeriod() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPreferredBackupTime() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getPreserveOneEachHour() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSnapshotBackupType() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSrcRegion() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link BackupPolicyOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link BackupPolicyOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<BackupPolicyOptionsProperty> {
+            java.lang.Object backupInterval;
+            java.lang.Object backupRetentionPeriod;
+            java.lang.Object backupRetentionPolicyOnClusterDeletion;
+            java.lang.Object crossBackupPeriod;
+            java.lang.Object crossBackupType;
+            java.lang.Object crossLogRetentionType;
+            java.lang.Object crossLogRetentionValue;
+            java.lang.Object crossRetentionType;
+            java.lang.Object crossRetentionValue;
+            java.lang.Object destRegion;
+            java.lang.Object enableBackupLog;
+            java.lang.Object enableCrossLogBackup;
+            java.lang.Object highFrequencyBackupRetention;
+            java.lang.Object instanceType;
+            java.lang.Object logBackupRetentionPeriod;
+            java.lang.Object preferredBackupPeriod;
+            java.lang.Object preferredBackupTime;
+            java.lang.Object preserveOneEachHour;
+            java.lang.Object snapshotBackupType;
+            java.lang.Object srcRegion;
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getBackupInterval}
+             * @param backupInterval the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder backupInterval(java.lang.Number backupInterval) {
+                this.backupInterval = backupInterval;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getBackupInterval}
+             * @param backupInterval the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder backupInterval(com.aliyun.ros.cdk.core.IResolvable backupInterval) {
+                this.backupInterval = backupInterval;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getBackupRetentionPeriod}
+             * @param backupRetentionPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder backupRetentionPeriod(java.lang.Number backupRetentionPeriod) {
+                this.backupRetentionPeriod = backupRetentionPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getBackupRetentionPeriod}
+             * @param backupRetentionPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder backupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable backupRetentionPeriod) {
+                this.backupRetentionPeriod = backupRetentionPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getBackupRetentionPolicyOnClusterDeletion}
+             * @param backupRetentionPolicyOnClusterDeletion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder backupRetentionPolicyOnClusterDeletion(java.lang.Number backupRetentionPolicyOnClusterDeletion) {
+                this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getBackupRetentionPolicyOnClusterDeletion}
+             * @param backupRetentionPolicyOnClusterDeletion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder backupRetentionPolicyOnClusterDeletion(com.aliyun.ros.cdk.core.IResolvable backupRetentionPolicyOnClusterDeletion) {
+                this.backupRetentionPolicyOnClusterDeletion = backupRetentionPolicyOnClusterDeletion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossBackupPeriod}
+             * @param crossBackupPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossBackupPeriod(java.lang.String crossBackupPeriod) {
+                this.crossBackupPeriod = crossBackupPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossBackupPeriod}
+             * @param crossBackupPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossBackupPeriod(com.aliyun.ros.cdk.core.IResolvable crossBackupPeriod) {
+                this.crossBackupPeriod = crossBackupPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossBackupType}
+             * @param crossBackupType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossBackupType(java.lang.String crossBackupType) {
+                this.crossBackupType = crossBackupType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossBackupType}
+             * @param crossBackupType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossBackupType(com.aliyun.ros.cdk.core.IResolvable crossBackupType) {
+                this.crossBackupType = crossBackupType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossLogRetentionType}
+             * @param crossLogRetentionType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossLogRetentionType(java.lang.String crossLogRetentionType) {
+                this.crossLogRetentionType = crossLogRetentionType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossLogRetentionType}
+             * @param crossLogRetentionType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossLogRetentionType(com.aliyun.ros.cdk.core.IResolvable crossLogRetentionType) {
+                this.crossLogRetentionType = crossLogRetentionType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossLogRetentionValue}
+             * @param crossLogRetentionValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossLogRetentionValue(java.lang.Number crossLogRetentionValue) {
+                this.crossLogRetentionValue = crossLogRetentionValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossLogRetentionValue}
+             * @param crossLogRetentionValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossLogRetentionValue(com.aliyun.ros.cdk.core.IResolvable crossLogRetentionValue) {
+                this.crossLogRetentionValue = crossLogRetentionValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossRetentionType}
+             * @param crossRetentionType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossRetentionType(java.lang.String crossRetentionType) {
+                this.crossRetentionType = crossRetentionType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossRetentionType}
+             * @param crossRetentionType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossRetentionType(com.aliyun.ros.cdk.core.IResolvable crossRetentionType) {
+                this.crossRetentionType = crossRetentionType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossRetentionValue}
+             * @param crossRetentionValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossRetentionValue(java.lang.Number crossRetentionValue) {
+                this.crossRetentionValue = crossRetentionValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getCrossRetentionValue}
+             * @param crossRetentionValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder crossRetentionValue(com.aliyun.ros.cdk.core.IResolvable crossRetentionValue) {
+                this.crossRetentionValue = crossRetentionValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getDestRegion}
+             * @param destRegion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destRegion(java.lang.String destRegion) {
+                this.destRegion = destRegion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getDestRegion}
+             * @param destRegion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder destRegion(com.aliyun.ros.cdk.core.IResolvable destRegion) {
+                this.destRegion = destRegion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getEnableBackupLog}
+             * @param enableBackupLog the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableBackupLog(java.lang.Number enableBackupLog) {
+                this.enableBackupLog = enableBackupLog;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getEnableBackupLog}
+             * @param enableBackupLog the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableBackupLog(com.aliyun.ros.cdk.core.IResolvable enableBackupLog) {
+                this.enableBackupLog = enableBackupLog;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getEnableCrossLogBackup}
+             * @param enableCrossLogBackup the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableCrossLogBackup(java.lang.Number enableCrossLogBackup) {
+                this.enableCrossLogBackup = enableCrossLogBackup;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getEnableCrossLogBackup}
+             * @param enableCrossLogBackup the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder enableCrossLogBackup(com.aliyun.ros.cdk.core.IResolvable enableCrossLogBackup) {
+                this.enableCrossLogBackup = enableCrossLogBackup;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getHighFrequencyBackupRetention}
+             * @param highFrequencyBackupRetention the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder highFrequencyBackupRetention(java.lang.Number highFrequencyBackupRetention) {
+                this.highFrequencyBackupRetention = highFrequencyBackupRetention;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getHighFrequencyBackupRetention}
+             * @param highFrequencyBackupRetention the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder highFrequencyBackupRetention(com.aliyun.ros.cdk.core.IResolvable highFrequencyBackupRetention) {
+                this.highFrequencyBackupRetention = highFrequencyBackupRetention;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getInstanceType}
+             * @param instanceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceType(java.lang.String instanceType) {
+                this.instanceType = instanceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getInstanceType}
+             * @param instanceType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
+                this.instanceType = instanceType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getLogBackupRetentionPeriod}
+             * @param logBackupRetentionPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logBackupRetentionPeriod(java.lang.Number logBackupRetentionPeriod) {
+                this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getLogBackupRetentionPeriod}
+             * @param logBackupRetentionPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder logBackupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable logBackupRetentionPeriod) {
+                this.logBackupRetentionPeriod = logBackupRetentionPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getPreferredBackupPeriod}
+             * @param preferredBackupPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preferredBackupPeriod(java.lang.String preferredBackupPeriod) {
+                this.preferredBackupPeriod = preferredBackupPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getPreferredBackupPeriod}
+             * @param preferredBackupPeriod the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preferredBackupPeriod(com.aliyun.ros.cdk.core.IResolvable preferredBackupPeriod) {
+                this.preferredBackupPeriod = preferredBackupPeriod;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getPreferredBackupTime}
+             * @param preferredBackupTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preferredBackupTime(java.lang.String preferredBackupTime) {
+                this.preferredBackupTime = preferredBackupTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getPreferredBackupTime}
+             * @param preferredBackupTime the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preferredBackupTime(com.aliyun.ros.cdk.core.IResolvable preferredBackupTime) {
+                this.preferredBackupTime = preferredBackupTime;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getPreserveOneEachHour}
+             * @param preserveOneEachHour the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preserveOneEachHour(java.lang.Boolean preserveOneEachHour) {
+                this.preserveOneEachHour = preserveOneEachHour;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getPreserveOneEachHour}
+             * @param preserveOneEachHour the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder preserveOneEachHour(com.aliyun.ros.cdk.core.IResolvable preserveOneEachHour) {
+                this.preserveOneEachHour = preserveOneEachHour;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getSnapshotBackupType}
+             * @param snapshotBackupType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder snapshotBackupType(java.lang.String snapshotBackupType) {
+                this.snapshotBackupType = snapshotBackupType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getSnapshotBackupType}
+             * @param snapshotBackupType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder snapshotBackupType(com.aliyun.ros.cdk.core.IResolvable snapshotBackupType) {
+                this.snapshotBackupType = snapshotBackupType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getSrcRegion}
+             * @param srcRegion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder srcRegion(java.lang.String srcRegion) {
+                this.srcRegion = srcRegion;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link BackupPolicyOptionsProperty#getSrcRegion}
+             * @param srcRegion the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder srcRegion(com.aliyun.ros.cdk.core.IResolvable srcRegion) {
+                this.srcRegion = srcRegion;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link BackupPolicyOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public BackupPolicyOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link BackupPolicyOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements BackupPolicyOptionsProperty {
+            private final java.lang.Object backupInterval;
+            private final java.lang.Object backupRetentionPeriod;
+            private final java.lang.Object backupRetentionPolicyOnClusterDeletion;
+            private final java.lang.Object crossBackupPeriod;
+            private final java.lang.Object crossBackupType;
+            private final java.lang.Object crossLogRetentionType;
+            private final java.lang.Object crossLogRetentionValue;
+            private final java.lang.Object crossRetentionType;
+            private final java.lang.Object crossRetentionValue;
+            private final java.lang.Object destRegion;
+            private final java.lang.Object enableBackupLog;
+            private final java.lang.Object enableCrossLogBackup;
+            private final java.lang.Object highFrequencyBackupRetention;
+            private final java.lang.Object instanceType;
+            private final java.lang.Object logBackupRetentionPeriod;
+            private final java.lang.Object preferredBackupPeriod;
+            private final java.lang.Object preferredBackupTime;
+            private final java.lang.Object preserveOneEachHour;
+            private final java.lang.Object snapshotBackupType;
+            private final java.lang.Object srcRegion;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.backupInterval = software.amazon.jsii.Kernel.get(this, "backupInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.backupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "backupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.backupRetentionPolicyOnClusterDeletion = software.amazon.jsii.Kernel.get(this, "backupRetentionPolicyOnClusterDeletion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.crossBackupPeriod = software.amazon.jsii.Kernel.get(this, "crossBackupPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.crossBackupType = software.amazon.jsii.Kernel.get(this, "crossBackupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.crossLogRetentionType = software.amazon.jsii.Kernel.get(this, "crossLogRetentionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.crossLogRetentionValue = software.amazon.jsii.Kernel.get(this, "crossLogRetentionValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.crossRetentionType = software.amazon.jsii.Kernel.get(this, "crossRetentionType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.crossRetentionValue = software.amazon.jsii.Kernel.get(this, "crossRetentionValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.destRegion = software.amazon.jsii.Kernel.get(this, "destRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableBackupLog = software.amazon.jsii.Kernel.get(this, "enableBackupLog", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.enableCrossLogBackup = software.amazon.jsii.Kernel.get(this, "enableCrossLogBackup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.highFrequencyBackupRetention = software.amazon.jsii.Kernel.get(this, "highFrequencyBackupRetention", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.instanceType = software.amazon.jsii.Kernel.get(this, "instanceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.logBackupRetentionPeriod = software.amazon.jsii.Kernel.get(this, "logBackupRetentionPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.preferredBackupPeriod = software.amazon.jsii.Kernel.get(this, "preferredBackupPeriod", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.preferredBackupTime = software.amazon.jsii.Kernel.get(this, "preferredBackupTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.preserveOneEachHour = software.amazon.jsii.Kernel.get(this, "preserveOneEachHour", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.snapshotBackupType = software.amazon.jsii.Kernel.get(this, "snapshotBackupType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.srcRegion = software.amazon.jsii.Kernel.get(this, "srcRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.backupInterval = builder.backupInterval;
+                this.backupRetentionPeriod = builder.backupRetentionPeriod;
+                this.backupRetentionPolicyOnClusterDeletion = builder.backupRetentionPolicyOnClusterDeletion;
+                this.crossBackupPeriod = builder.crossBackupPeriod;
+                this.crossBackupType = builder.crossBackupType;
+                this.crossLogRetentionType = builder.crossLogRetentionType;
+                this.crossLogRetentionValue = builder.crossLogRetentionValue;
+                this.crossRetentionType = builder.crossRetentionType;
+                this.crossRetentionValue = builder.crossRetentionValue;
+                this.destRegion = builder.destRegion;
+                this.enableBackupLog = builder.enableBackupLog;
+                this.enableCrossLogBackup = builder.enableCrossLogBackup;
+                this.highFrequencyBackupRetention = builder.highFrequencyBackupRetention;
+                this.instanceType = builder.instanceType;
+                this.logBackupRetentionPeriod = builder.logBackupRetentionPeriod;
+                this.preferredBackupPeriod = builder.preferredBackupPeriod;
+                this.preferredBackupTime = builder.preferredBackupTime;
+                this.preserveOneEachHour = builder.preserveOneEachHour;
+                this.snapshotBackupType = builder.snapshotBackupType;
+                this.srcRegion = builder.srcRegion;
+            }
+
+            @Override
+            public final java.lang.Object getBackupInterval() {
+                return this.backupInterval;
+            }
+
+            @Override
+            public final java.lang.Object getBackupRetentionPeriod() {
+                return this.backupRetentionPeriod;
+            }
+
+            @Override
+            public final java.lang.Object getBackupRetentionPolicyOnClusterDeletion() {
+                return this.backupRetentionPolicyOnClusterDeletion;
+            }
+
+            @Override
+            public final java.lang.Object getCrossBackupPeriod() {
+                return this.crossBackupPeriod;
+            }
+
+            @Override
+            public final java.lang.Object getCrossBackupType() {
+                return this.crossBackupType;
+            }
+
+            @Override
+            public final java.lang.Object getCrossLogRetentionType() {
+                return this.crossLogRetentionType;
+            }
+
+            @Override
+            public final java.lang.Object getCrossLogRetentionValue() {
+                return this.crossLogRetentionValue;
+            }
+
+            @Override
+            public final java.lang.Object getCrossRetentionType() {
+                return this.crossRetentionType;
+            }
+
+            @Override
+            public final java.lang.Object getCrossRetentionValue() {
+                return this.crossRetentionValue;
+            }
+
+            @Override
+            public final java.lang.Object getDestRegion() {
+                return this.destRegion;
+            }
+
+            @Override
+            public final java.lang.Object getEnableBackupLog() {
+                return this.enableBackupLog;
+            }
+
+            @Override
+            public final java.lang.Object getEnableCrossLogBackup() {
+                return this.enableCrossLogBackup;
+            }
+
+            @Override
+            public final java.lang.Object getHighFrequencyBackupRetention() {
+                return this.highFrequencyBackupRetention;
+            }
+
+            @Override
+            public final java.lang.Object getInstanceType() {
+                return this.instanceType;
+            }
+
+            @Override
+            public final java.lang.Object getLogBackupRetentionPeriod() {
+                return this.logBackupRetentionPeriod;
+            }
+
+            @Override
+            public final java.lang.Object getPreferredBackupPeriod() {
+                return this.preferredBackupPeriod;
+            }
+
+            @Override
+            public final java.lang.Object getPreferredBackupTime() {
+                return this.preferredBackupTime;
+            }
+
+            @Override
+            public final java.lang.Object getPreserveOneEachHour() {
+                return this.preserveOneEachHour;
+            }
+
+            @Override
+            public final java.lang.Object getSnapshotBackupType() {
+                return this.snapshotBackupType;
+            }
+
+            @Override
+            public final java.lang.Object getSrcRegion() {
+                return this.srcRegion;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getBackupInterval() != null) {
+                    data.set("backupInterval", om.valueToTree(this.getBackupInterval()));
+                }
+                if (this.getBackupRetentionPeriod() != null) {
+                    data.set("backupRetentionPeriod", om.valueToTree(this.getBackupRetentionPeriod()));
+                }
+                if (this.getBackupRetentionPolicyOnClusterDeletion() != null) {
+                    data.set("backupRetentionPolicyOnClusterDeletion", om.valueToTree(this.getBackupRetentionPolicyOnClusterDeletion()));
+                }
+                if (this.getCrossBackupPeriod() != null) {
+                    data.set("crossBackupPeriod", om.valueToTree(this.getCrossBackupPeriod()));
+                }
+                if (this.getCrossBackupType() != null) {
+                    data.set("crossBackupType", om.valueToTree(this.getCrossBackupType()));
+                }
+                if (this.getCrossLogRetentionType() != null) {
+                    data.set("crossLogRetentionType", om.valueToTree(this.getCrossLogRetentionType()));
+                }
+                if (this.getCrossLogRetentionValue() != null) {
+                    data.set("crossLogRetentionValue", om.valueToTree(this.getCrossLogRetentionValue()));
+                }
+                if (this.getCrossRetentionType() != null) {
+                    data.set("crossRetentionType", om.valueToTree(this.getCrossRetentionType()));
+                }
+                if (this.getCrossRetentionValue() != null) {
+                    data.set("crossRetentionValue", om.valueToTree(this.getCrossRetentionValue()));
+                }
+                if (this.getDestRegion() != null) {
+                    data.set("destRegion", om.valueToTree(this.getDestRegion()));
+                }
+                if (this.getEnableBackupLog() != null) {
+                    data.set("enableBackupLog", om.valueToTree(this.getEnableBackupLog()));
+                }
+                if (this.getEnableCrossLogBackup() != null) {
+                    data.set("enableCrossLogBackup", om.valueToTree(this.getEnableCrossLogBackup()));
+                }
+                if (this.getHighFrequencyBackupRetention() != null) {
+                    data.set("highFrequencyBackupRetention", om.valueToTree(this.getHighFrequencyBackupRetention()));
+                }
+                if (this.getInstanceType() != null) {
+                    data.set("instanceType", om.valueToTree(this.getInstanceType()));
+                }
+                if (this.getLogBackupRetentionPeriod() != null) {
+                    data.set("logBackupRetentionPeriod", om.valueToTree(this.getLogBackupRetentionPeriod()));
+                }
+                if (this.getPreferredBackupPeriod() != null) {
+                    data.set("preferredBackupPeriod", om.valueToTree(this.getPreferredBackupPeriod()));
+                }
+                if (this.getPreferredBackupTime() != null) {
+                    data.set("preferredBackupTime", om.valueToTree(this.getPreferredBackupTime()));
+                }
+                if (this.getPreserveOneEachHour() != null) {
+                    data.set("preserveOneEachHour", om.valueToTree(this.getPreserveOneEachHour()));
+                }
+                if (this.getSnapshotBackupType() != null) {
+                    data.set("snapshotBackupType", om.valueToTree(this.getSnapshotBackupType()));
+                }
+                if (this.getSrcRegion() != null) {
+                    data.set("srcRegion", om.valueToTree(this.getSrcRegion()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mongodb.RosInstance.BackupPolicyOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                BackupPolicyOptionsProperty.Jsii$Proxy that = (BackupPolicyOptionsProperty.Jsii$Proxy) o;
+
+                if (this.backupInterval != null ? !this.backupInterval.equals(that.backupInterval) : that.backupInterval != null) return false;
+                if (this.backupRetentionPeriod != null ? !this.backupRetentionPeriod.equals(that.backupRetentionPeriod) : that.backupRetentionPeriod != null) return false;
+                if (this.backupRetentionPolicyOnClusterDeletion != null ? !this.backupRetentionPolicyOnClusterDeletion.equals(that.backupRetentionPolicyOnClusterDeletion) : that.backupRetentionPolicyOnClusterDeletion != null) return false;
+                if (this.crossBackupPeriod != null ? !this.crossBackupPeriod.equals(that.crossBackupPeriod) : that.crossBackupPeriod != null) return false;
+                if (this.crossBackupType != null ? !this.crossBackupType.equals(that.crossBackupType) : that.crossBackupType != null) return false;
+                if (this.crossLogRetentionType != null ? !this.crossLogRetentionType.equals(that.crossLogRetentionType) : that.crossLogRetentionType != null) return false;
+                if (this.crossLogRetentionValue != null ? !this.crossLogRetentionValue.equals(that.crossLogRetentionValue) : that.crossLogRetentionValue != null) return false;
+                if (this.crossRetentionType != null ? !this.crossRetentionType.equals(that.crossRetentionType) : that.crossRetentionType != null) return false;
+                if (this.crossRetentionValue != null ? !this.crossRetentionValue.equals(that.crossRetentionValue) : that.crossRetentionValue != null) return false;
+                if (this.destRegion != null ? !this.destRegion.equals(that.destRegion) : that.destRegion != null) return false;
+                if (this.enableBackupLog != null ? !this.enableBackupLog.equals(that.enableBackupLog) : that.enableBackupLog != null) return false;
+                if (this.enableCrossLogBackup != null ? !this.enableCrossLogBackup.equals(that.enableCrossLogBackup) : that.enableCrossLogBackup != null) return false;
+                if (this.highFrequencyBackupRetention != null ? !this.highFrequencyBackupRetention.equals(that.highFrequencyBackupRetention) : that.highFrequencyBackupRetention != null) return false;
+                if (this.instanceType != null ? !this.instanceType.equals(that.instanceType) : that.instanceType != null) return false;
+                if (this.logBackupRetentionPeriod != null ? !this.logBackupRetentionPeriod.equals(that.logBackupRetentionPeriod) : that.logBackupRetentionPeriod != null) return false;
+                if (this.preferredBackupPeriod != null ? !this.preferredBackupPeriod.equals(that.preferredBackupPeriod) : that.preferredBackupPeriod != null) return false;
+                if (this.preferredBackupTime != null ? !this.preferredBackupTime.equals(that.preferredBackupTime) : that.preferredBackupTime != null) return false;
+                if (this.preserveOneEachHour != null ? !this.preserveOneEachHour.equals(that.preserveOneEachHour) : that.preserveOneEachHour != null) return false;
+                if (this.snapshotBackupType != null ? !this.snapshotBackupType.equals(that.snapshotBackupType) : that.snapshotBackupType != null) return false;
+                return this.srcRegion != null ? this.srcRegion.equals(that.srcRegion) : that.srcRegion == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.backupInterval != null ? this.backupInterval.hashCode() : 0;
+                result = 31 * result + (this.backupRetentionPeriod != null ? this.backupRetentionPeriod.hashCode() : 0);
+                result = 31 * result + (this.backupRetentionPolicyOnClusterDeletion != null ? this.backupRetentionPolicyOnClusterDeletion.hashCode() : 0);
+                result = 31 * result + (this.crossBackupPeriod != null ? this.crossBackupPeriod.hashCode() : 0);
+                result = 31 * result + (this.crossBackupType != null ? this.crossBackupType.hashCode() : 0);
+                result = 31 * result + (this.crossLogRetentionType != null ? this.crossLogRetentionType.hashCode() : 0);
+                result = 31 * result + (this.crossLogRetentionValue != null ? this.crossLogRetentionValue.hashCode() : 0);
+                result = 31 * result + (this.crossRetentionType != null ? this.crossRetentionType.hashCode() : 0);
+                result = 31 * result + (this.crossRetentionValue != null ? this.crossRetentionValue.hashCode() : 0);
+                result = 31 * result + (this.destRegion != null ? this.destRegion.hashCode() : 0);
+                result = 31 * result + (this.enableBackupLog != null ? this.enableBackupLog.hashCode() : 0);
+                result = 31 * result + (this.enableCrossLogBackup != null ? this.enableCrossLogBackup.hashCode() : 0);
+                result = 31 * result + (this.highFrequencyBackupRetention != null ? this.highFrequencyBackupRetention.hashCode() : 0);
+                result = 31 * result + (this.instanceType != null ? this.instanceType.hashCode() : 0);
+                result = 31 * result + (this.logBackupRetentionPeriod != null ? this.logBackupRetentionPeriod.hashCode() : 0);
+                result = 31 * result + (this.preferredBackupPeriod != null ? this.preferredBackupPeriod.hashCode() : 0);
+                result = 31 * result + (this.preferredBackupTime != null ? this.preferredBackupTime.hashCode() : 0);
+                result = 31 * result + (this.preserveOneEachHour != null ? this.preserveOneEachHour.hashCode() : 0);
+                result = 31 * result + (this.snapshotBackupType != null ? this.snapshotBackupType.hashCode() : 0);
+                result = 31 * result + (this.srcRegion != null ? this.srcRegion.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -917,6 +2297,217 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance.SSLOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(SSLOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface SSLOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getSslAction();
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getForceEncryption() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getSwitchMode() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link SSLOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link SSLOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<SSLOptionsProperty> {
+            java.lang.Object sslAction;
+            java.lang.Object forceEncryption;
+            java.lang.Object switchMode;
+
+            /**
+             * Sets the value of {@link SSLOptionsProperty#getSslAction}
+             * @param sslAction the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sslAction(java.lang.String sslAction) {
+                this.sslAction = sslAction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SSLOptionsProperty#getSslAction}
+             * @param sslAction the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder sslAction(com.aliyun.ros.cdk.core.IResolvable sslAction) {
+                this.sslAction = sslAction;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SSLOptionsProperty#getForceEncryption}
+             * @param forceEncryption the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder forceEncryption(java.lang.Number forceEncryption) {
+                this.forceEncryption = forceEncryption;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SSLOptionsProperty#getForceEncryption}
+             * @param forceEncryption the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder forceEncryption(com.aliyun.ros.cdk.core.IResolvable forceEncryption) {
+                this.forceEncryption = forceEncryption;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SSLOptionsProperty#getSwitchMode}
+             * @param switchMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder switchMode(java.lang.Number switchMode) {
+                this.switchMode = switchMode;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link SSLOptionsProperty#getSwitchMode}
+             * @param switchMode the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder switchMode(com.aliyun.ros.cdk.core.IResolvable switchMode) {
+                this.switchMode = switchMode;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link SSLOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public SSLOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link SSLOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements SSLOptionsProperty {
+            private final java.lang.Object sslAction;
+            private final java.lang.Object forceEncryption;
+            private final java.lang.Object switchMode;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.sslAction = software.amazon.jsii.Kernel.get(this, "sslAction", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.forceEncryption = software.amazon.jsii.Kernel.get(this, "forceEncryption", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.switchMode = software.amazon.jsii.Kernel.get(this, "switchMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.sslAction = java.util.Objects.requireNonNull(builder.sslAction, "sslAction is required");
+                this.forceEncryption = builder.forceEncryption;
+                this.switchMode = builder.switchMode;
+            }
+
+            @Override
+            public final java.lang.Object getSslAction() {
+                return this.sslAction;
+            }
+
+            @Override
+            public final java.lang.Object getForceEncryption() {
+                return this.forceEncryption;
+            }
+
+            @Override
+            public final java.lang.Object getSwitchMode() {
+                return this.switchMode;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("sslAction", om.valueToTree(this.getSslAction()));
+                if (this.getForceEncryption() != null) {
+                    data.set("forceEncryption", om.valueToTree(this.getForceEncryption()));
+                }
+                if (this.getSwitchMode() != null) {
+                    data.set("switchMode", om.valueToTree(this.getSwitchMode()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-mongodb.RosInstance.SSLOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                SSLOptionsProperty.Jsii$Proxy that = (SSLOptionsProperty.Jsii$Proxy) o;
+
+                if (!sslAction.equals(that.sslAction)) return false;
+                if (this.forceEncryption != null ? !this.forceEncryption.equals(that.forceEncryption) : that.forceEncryption != null) return false;
+                return this.switchMode != null ? this.switchMode.equals(that.switchMode) : that.switchMode == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.sslAction.hashCode();
+                result = 31 * result + (this.forceEncryption != null ? this.forceEncryption.hashCode() : 0);
+                result = 31 * result + (this.switchMode != null ? this.switchMode.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstance.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1163,6 +2754,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param auditPolicyOptions This parameter is required.
+         */
+        public Builder auditPolicyOptions(final com.aliyun.ros.cdk.core.IResolvable auditPolicyOptions) {
+            this.props.auditPolicyOptions(auditPolicyOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param auditPolicyOptions This parameter is required.
+         */
+        public Builder auditPolicyOptions(final com.aliyun.ros.cdk.mongodb.RosInstance.AuditPolicyOptionsProperty auditPolicyOptions) {
+            this.props.auditPolicyOptions(auditPolicyOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param autoRenew This parameter is required.
          */
         public Builder autoRenew(final java.lang.Boolean autoRenew) {
@@ -1197,6 +2805,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param backupPolicyOptions This parameter is required.
+         */
+        public Builder backupPolicyOptions(final com.aliyun.ros.cdk.core.IResolvable backupPolicyOptions) {
+            this.props.backupPolicyOptions(backupPolicyOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param backupPolicyOptions This parameter is required.
+         */
+        public Builder backupPolicyOptions(final com.aliyun.ros.cdk.mongodb.RosInstance.BackupPolicyOptionsProperty backupPolicyOptions) {
+            this.props.backupPolicyOptions(backupPolicyOptions);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param businessInfo This parameter is required.
          */
         public Builder businessInfo(final java.lang.String businessInfo) {
@@ -1226,6 +2851,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder chargeType(final com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.props.chargeType(chargeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param clusterId This parameter is required.
+         */
+        public Builder clusterId(final java.lang.String clusterId) {
+            this.props.clusterId(clusterId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param clusterId This parameter is required.
+         */
+        public Builder clusterId(final com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.props.clusterId(clusterId);
             return this;
         }
 
@@ -1277,6 +2919,57 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param dbInstanceReleaseProtection This parameter is required.
+         */
+        public Builder dbInstanceReleaseProtection(final java.lang.Boolean dbInstanceReleaseProtection) {
+            this.props.dbInstanceReleaseProtection(dbInstanceReleaseProtection);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param dbInstanceReleaseProtection This parameter is required.
+         */
+        public Builder dbInstanceReleaseProtection(final com.aliyun.ros.cdk.core.IResolvable dbInstanceReleaseProtection) {
+            this.props.dbInstanceReleaseProtection(dbInstanceReleaseProtection);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param encrypted This parameter is required.
+         */
+        public Builder encrypted(final java.lang.Boolean encrypted) {
+            this.props.encrypted(encrypted);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encrypted This parameter is required.
+         */
+        public Builder encrypted(final com.aliyun.ros.cdk.core.IResolvable encrypted) {
+            this.props.encrypted(encrypted);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param encryptionKey This parameter is required.
+         */
+        public Builder encryptionKey(final java.lang.String encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param encryptionKey This parameter is required.
+         */
+        public Builder encryptionKey(final com.aliyun.ros.cdk.core.IResolvable encryptionKey) {
+            this.props.encryptionKey(encryptionKey);
             return this;
         }
 
@@ -1350,6 +3043,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param provisionedIops This parameter is required.
+         */
+        public Builder provisionedIops(final java.lang.Number provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param provisionedIops This parameter is required.
+         */
+        public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.props.provisionedIops(provisionedIops);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param readonlyReplicas This parameter is required.
          */
         public Builder readonlyReplicas(final java.lang.Number readonlyReplicas) {
@@ -1418,6 +3128,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param restoreType This parameter is required.
+         */
+        public Builder restoreType(final java.lang.Number restoreType) {
+            this.props.restoreType(restoreType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param restoreType This parameter is required.
+         */
+        public Builder restoreType(final com.aliyun.ros.cdk.core.IResolvable restoreType) {
+            this.props.restoreType(restoreType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param secondaryZoneId This parameter is required.
          */
         public Builder secondaryZoneId(final java.lang.String secondaryZoneId) {
@@ -1481,6 +3208,40 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder srcDbInstanceId(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceId) {
             this.props.srcDbInstanceId(srcDbInstanceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param srcRegion This parameter is required.
+         */
+        public Builder srcRegion(final java.lang.String srcRegion) {
+            this.props.srcRegion(srcRegion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param srcRegion This parameter is required.
+         */
+        public Builder srcRegion(final com.aliyun.ros.cdk.core.IResolvable srcRegion) {
+            this.props.srcRegion(srcRegion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param sslOptions This parameter is required.
+         */
+        public Builder sslOptions(final com.aliyun.ros.cdk.core.IResolvable sslOptions) {
+            this.props.sslOptions(sslOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param sslOptions This parameter is required.
+         */
+        public Builder sslOptions(final com.aliyun.ros.cdk.mongodb.RosInstance.SSLOptionsProperty sslOptions) {
+            this.props.sslOptions(sslOptions);
             return this;
         }
 

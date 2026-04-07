@@ -191,7 +191,7 @@ export interface ISynchronizationJob2 extends ros.IResource {
     readonly attrDtsJobName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SynchronizationJob2`, which is used to configure a data synchronization task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSynchronizationJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-synchronizationjob2
  */
@@ -240,8 +240,8 @@ export class SynchronizationJob2 extends ros.Resource implements ISynchronizatio
             minDu: props.minDu,
             dbList: props.dbList,
             fileOssUrl: props.fileOssUrl,
-            dtsJobId: props.dtsJobId,
             dataInitialization: props.dataInitialization,
+            dtsJobId: props.dtsJobId,
             errorPhone: props.errorPhone,
             destSecondaryVswId: props.destSecondaryVswId,
             maxDu: props.maxDu,
@@ -253,8 +253,8 @@ export class SynchronizationJob2 extends ros.Resource implements ISynchronizatio
             dataCheckConfigure: props.dataCheckConfigure,
             dtsBisLabel: props.dtsBisLabel,
             checkpoint: props.checkpoint,
-            disasterRecoveryJob: props.disasterRecoveryJob,
             delayNotice: props.delayNotice,
+            disasterRecoveryJob: props.disasterRecoveryJob,
             destinationEndpoint: props.destinationEndpoint,
             sourceEndpoint: props.sourceEndpoint,
             structureInitialization: props.structureInitialization,

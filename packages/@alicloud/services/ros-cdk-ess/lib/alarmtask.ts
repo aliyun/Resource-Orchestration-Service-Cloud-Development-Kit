@@ -87,7 +87,7 @@ export interface IAlarmTask extends ros.IResource {
     readonly attrAlarmTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::AlarmTask`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::AlarmTask`, which is used to create a metric-based alarm task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlarmTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
@@ -119,8 +119,8 @@ export class AlarmTask extends ros.Resource implements IAlarmTask {
             description: props.description,
             scalingGroupId: props.scalingGroupId,
             metricType: props.metricType,
-            evaluationCount: props.evaluationCount,
             period: props.period,
+            evaluationCount: props.evaluationCount,
             dimensions: props.dimensions,
             statistics: props.statistics,
             name: props.name,

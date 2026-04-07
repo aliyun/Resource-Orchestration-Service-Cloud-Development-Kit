@@ -500,6 +500,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
             }
         }
 
+        private object? _insightModule;
+
+        /// <summary>Property insightModule: Whether to enable the insight module.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "insightModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? InsightModule
+        {
+            get => _insightModule;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _insightModule = value;
+            }
+        }
+
         private object? _jobId;
 
         /// <summary>Property jobId: The ID of the task.</summary>

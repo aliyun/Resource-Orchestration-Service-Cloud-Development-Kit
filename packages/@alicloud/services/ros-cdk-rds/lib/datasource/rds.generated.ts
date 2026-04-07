@@ -39,6 +39,7 @@ function RosAccountsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -46,7 +47,6 @@ function RosAccountsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosAccountsProps"');
 }
 
@@ -71,7 +71,7 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Accounts`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Accounts`, which is used to query the information about database accounts of an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
@@ -202,7 +202,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstance`, which is used to query an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstance
  */
@@ -838,9 +838,9 @@ function RosDBInstancesPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dedicatedHostId', ros.validateString)(properties.dedicatedHostId));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('dbInstanceStatus', ros.validateString)(properties.dbInstanceStatus));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('dbInstanceStatus', ros.validateString)(properties.dbInstanceStatus));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
@@ -851,7 +851,6 @@ function RosDBInstancesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbInstanceType', ros.validateString)(properties.dbInstanceType));
-    errors.collect(ros.propertyValidator('instanceLevel', ros.validateNumber)(properties.instanceLevel));
     if(properties.expired && (typeof properties.expired) !== 'object') {
         errors.collect(ros.propertyValidator('expired', ros.validateAllowedValues)({
           data: properties.expired,
@@ -859,6 +858,7 @@ function RosDBInstancesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('expired', ros.validateString)(properties.expired));
+    errors.collect(ros.propertyValidator('instanceLevel', ros.validateNumber)(properties.instanceLevel));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
@@ -941,7 +941,7 @@ function rosDBInstancesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstances`, which is used to query ApsaraDB RDS instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */
@@ -1219,7 +1219,7 @@ function rosDatabasesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Databases`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Databases`, which is used to query the information about databases on an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Databases` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-databases
  */
@@ -1366,6 +1366,7 @@ function RosZonesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dispenseMode', ros.validateString)(properties.dispenseMode));
+    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
@@ -1373,7 +1374,6 @@ function RosZonesPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
-    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.commodityCode && (typeof properties.commodityCode) !== 'object') {
         errors.collect(ros.propertyValidator('commodityCode', ros.validateAllowedValues)({
@@ -1425,7 +1425,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Zones`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Zones`, which is used to query the zones of an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-zones
  */

@@ -83,7 +83,7 @@ function rosEndpointPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDatasetAcc::Endpoint`, which is used to create and register a mount target for a slot in Dataset Accelerator of Platform for AI (PAI).
  * @Note This class does not contain additional functions, so it is recommended to use the `Endpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidatasetacc-endpoint
  */

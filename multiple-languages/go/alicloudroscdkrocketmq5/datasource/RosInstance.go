@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ5::Instance`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ5::Instance`, which is used to query the information about an instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrAccountInfo() alicloudroscdkcore.IResolvable

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpcPeerConnection</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpcPeerConnection</code>, which is used to create a peering connection between virtual private clouds (VPCs).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.258Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.252Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpcPeerConnection")
 public class VpcPeerConnection extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVpcPeerConnection {
 
@@ -224,6 +224,31 @@ public class VpcPeerConnection extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
+         * Property bandwidth: The bandwidth of the VPC peering connection.
+         * <p>
+         * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: The bandwidth of the VPC peering connection. This parameter is required.
+         */
+        public Builder bandwidth(final java.lang.Number bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
+        }
+        /**
+         * Property bandwidth: The bandwidth of the VPC peering connection.
+         * <p>
+         * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: The bandwidth of the VPC peering connection. This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
+        }
+
+        /**
          * Property deletionForce: Specifies whether to forcefully delete the VPC peering connection.
          * <p>
          * Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
@@ -276,6 +301,33 @@ public class VpcPeerConnection extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
+         * Property linkType: The link type.
+         * <p>
+         * Valid values: Platinum, Gold.
+         * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * <p>
+         * @return {@code this}
+         * @param linkType Property linkType: The link type. This parameter is required.
+         */
+        public Builder linkType(final java.lang.String linkType) {
+            this.props.linkType(linkType);
+            return this;
+        }
+        /**
+         * Property linkType: The link type.
+         * <p>
+         * Valid values: Platinum, Gold.
+         * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * <p>
+         * @return {@code this}
+         * @param linkType Property linkType: The link type. This parameter is required.
+         */
+        public Builder linkType(final com.aliyun.ros.cdk.core.IResolvable linkType) {
+            this.props.linkType(linkType);
+            return this;
+        }
+
+        /**
          * Property name: The name of the VPC peering connection.
          * <p>
          * The name must be 2 to 128 characters in length and can contain digits, underscores
@@ -299,6 +351,31 @@ public class VpcPeerConnection extends com.aliyun.ros.cdk.core.Resource implemen
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

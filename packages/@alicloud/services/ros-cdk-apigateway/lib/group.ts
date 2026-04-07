@@ -73,7 +73,7 @@ export interface IGroup extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Group`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
@@ -111,8 +111,8 @@ export class Group extends ros.Resource implements IGroup {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGroup = new RosGroup(this, id,  {
-            internetEnable: props.internetEnable,
             groupName: props.groupName,
+            internetEnable: props.internetEnable,
             description: props.description,
             instanceId: props.instanceId,
             vpcIntranetEnable: props.vpcIntranetEnable,

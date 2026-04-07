@@ -84,6 +84,10 @@ func validateRosRouteTable_IsRosResourceParameters(construct alicloudroscdkcore.
 	return nil
 }
 
+func (j *jsiiProxy_RosRouteTable) validateSetAssociateTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosRouteTable) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }

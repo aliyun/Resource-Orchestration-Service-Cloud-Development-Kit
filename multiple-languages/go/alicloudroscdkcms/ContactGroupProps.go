@@ -11,5 +11,7 @@ type ContactGroupProps struct {
 	ContactNames interface{} `field:"required" json:"contactNames" yaml:"contactNames"`
 	// Property describe: The description of the alert contact group.
 	Describe interface{} `field:"required" json:"describe" yaml:"describe"`
+	// Property enableSubscribed: Whether to enable the subscription feature.
+	EnableSubscribed interface{} `field:"optional" json:"enableSubscribed" yaml:"enableSubscribed"`
 }
 

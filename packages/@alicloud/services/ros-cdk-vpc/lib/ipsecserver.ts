@@ -41,7 +41,7 @@ export interface IpsecServerProps {
     readonly ipsecConfig?: RosIpsecServer.IpsecConfigProperty | ros.IResolvable;
 
     /**
-     * Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character. It can contain digits, underscores (_), and hyphens (-).
+     * Property ipsecServerName: The value must be 1 to 100 characters in length and start with a letter or Chinese character. It can contain digits, underscores (_), and hyphens (-).
      */
     readonly ipsecServerName?: string | ros.IResolvable;
 
@@ -73,7 +73,7 @@ export interface IIpsecServer extends ros.IResource {
     readonly attrIpsecServerName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpsecServer`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::IpsecServer`, which is used to create an IPsec-VPN server.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosIpsecServer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-ipsecserver
  */
@@ -112,8 +112,8 @@ export class IpsecServer extends ros.Resource implements IIpsecServer {
             vpnGatewayId: props.vpnGatewayId,
             ipsecConfig: props.ipsecConfig,
             psk: props.psk,
-            ikeConfig: props.ikeConfig,
             ipsecServerName: props.ipsecServerName,
+            ikeConfig: props.ikeConfig,
             pskEnabled: props.pskEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosIpsecServer;

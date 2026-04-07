@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Group`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAIPlugin::Group`, which is used to create a user group.
 type Group interface {
 	alicloudroscdkcore.Resource
 	IGroup

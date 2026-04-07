@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::DMS::Database`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::DMS::Database`The , which data source queries the details of a specific database.
 type RosDatabase interface {
 	alicloudroscdkcore.RosResource
 	AttrCatalogName() alicloudroscdkcore.IResolvable

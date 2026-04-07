@@ -846,7 +846,7 @@ function rosBgpPeerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeer`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeer`, which is used to query the information about a Border Gateway Protocol (BGP) peer in a region.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeer
  */
@@ -1112,7 +1112,7 @@ function rosBgpPeersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeers`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::BgpPeers`, which is used to query Border Gateway Protocol (BGP) peers in a region.
  * @Note This class does not contain additional functions, so it is recommended to use the `BgpPeers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-bgppeers
  */
@@ -1257,7 +1257,7 @@ function rosCommonBandwidthPackagePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackage`, which is used to query the information about an Internet Shared Bandwidth instance in a region.
  * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackage
  */
@@ -1547,7 +1547,7 @@ function rosCommonBandwidthPackagesPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CommonBandwidthPackages`, which is used to query the Internet Shared Bandwidth instances in a region.
  * @Note This class does not contain additional functions, so it is recommended to use the `CommonBandwidthPackages` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-commonbandwidthpackages
  */
@@ -1840,7 +1840,7 @@ function rosCustomerGatewaysPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateways`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateways`, which is used to query customer gateways.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomerGateways` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-customergateways
  */
@@ -2156,8 +2156,8 @@ function RosFlowLogsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('flowLogName', ros.validateString)(properties.flowLogName));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('logStoreName', ros.validateString)(properties.logStoreName));
-    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
@@ -2210,7 +2210,7 @@ function rosFlowLogsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLogs`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::FlowLogs`, which is used to query flow logs.
  * @Note This class does not contain additional functions, so it is recommended to use the `FlowLogs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-flowlogs
  */
@@ -2568,7 +2568,7 @@ function rosHaVipsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVips`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::HaVips`, which is used to query the high-availability virtual IP addresses (HAVIPs) in a specific region.
  * @Note This class does not contain additional functions, so it is recommended to use the `HaVips` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-havips
  */
@@ -3000,7 +3000,7 @@ function rosNatGatewayPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateway`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateway`, which is used to query the information about a NAT gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatGateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateway
  */
@@ -3375,12 +3375,12 @@ function RosNatGatewaysPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('networkType', ros.validateString)(properties.networkType));
-    errors.collect(ros.propertyValidator('natType', ros.validateString)(properties.natType));
     errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
+    errors.collect(ros.propertyValidator('natType', ros.validateString)(properties.natType));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
@@ -3420,7 +3420,7 @@ function rosNatGatewaysPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateways`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateways`, which is used to query NAT gateways.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatGateways` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
@@ -3615,7 +3615,7 @@ function rosNatIpCidrsPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatIpCidrs`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatIpCidrs`, which is used to query the CIDR blocks of a NAT gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatIpCidrs` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natipcidrs
  */
@@ -4116,7 +4116,7 @@ function rosPrefixListsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixLists`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::PrefixLists`, which is used to query prefix lists.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrefixLists` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-prefixlists
  */
@@ -4626,8 +4626,8 @@ export interface RosRouteEntriesProps {
 function RosRouteEntriesPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('nextHopType', ros.validateString)(properties.nextHopType));
     errors.collect(ros.propertyValidator('routeEntryId', ros.validateString)(properties.routeEntryId));
+    errors.collect(ros.propertyValidator('nextHopType', ros.validateString)(properties.nextHopType));
     errors.collect(ros.propertyValidator('routeTableId', ros.requiredValidator)(properties.routeTableId));
     errors.collect(ros.propertyValidator('routeTableId', ros.validateString)(properties.routeTableId));
     errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
@@ -4672,7 +4672,7 @@ function rosRouteEntriesPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteEntries`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::RouteEntries`, which is used to query routes.
  * @Note This class does not contain additional functions, so it is recommended to use the `RouteEntries` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-routeentries
  */
@@ -5932,7 +5932,7 @@ function rosVpcPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpc`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpc`, which is used to query the information about a virtual private cloud (VPC).
  * @Note This class does not contain additional functions, so it is recommended to use the `Vpc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpc
  */

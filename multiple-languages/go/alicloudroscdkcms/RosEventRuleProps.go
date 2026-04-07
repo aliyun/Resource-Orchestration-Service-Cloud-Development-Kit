@@ -10,6 +10,7 @@ type RosEventRuleProps struct {
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	EventType interface{} `field:"optional" json:"eventType" yaml:"eventType"`
 	GroupId interface{} `field:"optional" json:"groupId" yaml:"groupId"`
+	SilenceTime interface{} `field:"optional" json:"silenceTime" yaml:"silenceTime"`
 	State interface{} `field:"optional" json:"state" yaml:"state"`
 }
 

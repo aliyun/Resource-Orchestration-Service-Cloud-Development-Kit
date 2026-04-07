@@ -149,10 +149,10 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('kibanaNode', RosInstance_KibanaNodePropertyValidator)(properties.kibanaNode));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('enableKibanaPrivate', ros.validateBoolean)(properties.enableKibanaPrivate));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('publicWhitelist', ros.listValidator(ros.validateAny))(properties.publicWhitelist));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
@@ -201,15 +201,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Month","Year"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
-    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
-    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
     if(properties.zoneCount && (typeof properties.zoneCount) !== 'object') {
         errors.collect(ros.propertyValidator('zoneCount', ros.validateAllowedValues)({
           data: properties.zoneCount,
@@ -217,6 +208,15 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('zoneCount', ros.validateNumber)(properties.zoneCount));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosInstanceProps"');
 }
 
@@ -261,7 +261,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearch::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ElasticSearch::Instance`The , which resource is used to create an Elasticsearch instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
@@ -799,16 +799,16 @@ export namespace RosInstance {
          */
         readonly destructiveRequiresName?: boolean | ros.IResolvable;
         /**
-         * @Property otherConfigs: Other Configurations.
-         */
-        readonly otherConfigs?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
-        /**
          * @Property watcher: If you enable Watcher, you can use the X-Pack Watcher feature. 
      * You must clear the .watcher-history* index on a regular basis to free up disk space.
      * This parameter corresponds to the xpack.watcher.enabled configuration item in the YML file. 
      * The default value of this configuration item is false.
          */
         readonly watcher?: boolean | ros.IResolvable;
+        /**
+         * @Property otherConfigs: Other Configurations.
+         */
+        readonly otherConfigs?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
         /**
          * @Property auditLog: If you enable Audit Log Indexing, the system generates audit logs 
      * for the create, delete, modify, and search operations that are performed 
@@ -832,8 +832,8 @@ function RosInstance_YMLConfigPropertyValidator(properties: any): ros.Validation
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('createIndex', ros.validateString)(properties.createIndex));
     errors.collect(ros.propertyValidator('destructiveRequiresName', ros.validateBoolean)(properties.destructiveRequiresName));
-    errors.collect(ros.propertyValidator('otherConfigs', ros.hashValidator(ros.validateAny))(properties.otherConfigs));
     errors.collect(ros.propertyValidator('watcher', ros.validateBoolean)(properties.watcher));
+    errors.collect(ros.propertyValidator('otherConfigs', ros.hashValidator(ros.validateAny))(properties.otherConfigs));
     errors.collect(ros.propertyValidator('auditLog', ros.validateBoolean)(properties.auditLog));
     return errors.wrap('supplied properties not correct for "YMLConfigProperty"');
 }
@@ -852,8 +852,8 @@ function rosInstanceYMLConfigPropertyToRosTemplate(properties: any): any {
     return {
       'CreateIndex': ros.stringToRosTemplate(properties.createIndex),
       'DestructiveRequiresName': ros.booleanToRosTemplate(properties.destructiveRequiresName),
-      'OtherConfigs': ros.hashMapper(ros.objectToRosTemplate)(properties.otherConfigs),
       'Watcher': ros.booleanToRosTemplate(properties.watcher),
+      'OtherConfigs': ros.hashMapper(ros.objectToRosTemplate)(properties.otherConfigs),
       'AuditLog': ros.booleanToRosTemplate(properties.auditLog),
     };
 }

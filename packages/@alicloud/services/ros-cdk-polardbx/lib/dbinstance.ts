@@ -117,7 +117,7 @@ export interface IDBInstance extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::DBInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::DBInstance`, which is used to create a PolarDB for Xscale (PolarDB-X) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
  */
@@ -173,8 +173,8 @@ export class DBInstance extends ros.Resource implements IDBInstance {
             tertiaryZone: props.tertiaryZone,
             securityIpConfig: props.securityIpConfig,
             dbNodeCount: props.dbNodeCount,
-            usedTime: props.usedTime,
             primaryZone: props.primaryZone,
+            usedTime: props.usedTime,
             dbInstanceDescription: props.dbInstanceDescription,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDBInstance;

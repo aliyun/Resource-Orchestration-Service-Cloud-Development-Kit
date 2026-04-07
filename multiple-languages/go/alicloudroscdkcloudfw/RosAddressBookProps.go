@@ -8,6 +8,9 @@ type RosAddressBookProps struct {
 	Description interface{} `field:"required" json:"description" yaml:"description"`
 	GroupName interface{} `field:"required" json:"groupName" yaml:"groupName"`
 	GroupType interface{} `field:"required" json:"groupType" yaml:"groupType"`
+	AckClusterConnectorId interface{} `field:"optional" json:"ackClusterConnectorId" yaml:"ackClusterConnectorId"`
+	AckLabels interface{} `field:"optional" json:"ackLabels" yaml:"ackLabels"`
+	AckNamespaces interface{} `field:"optional" json:"ackNamespaces" yaml:"ackNamespaces"`
 	AddressList interface{} `field:"optional" json:"addressList" yaml:"addressList"`
 	AutoAddTagEcs interface{} `field:"optional" json:"autoAddTagEcs" yaml:"autoAddTagEcs"`
 	RegionId interface{} `field:"optional" json:"regionId" yaml:"regionId"`

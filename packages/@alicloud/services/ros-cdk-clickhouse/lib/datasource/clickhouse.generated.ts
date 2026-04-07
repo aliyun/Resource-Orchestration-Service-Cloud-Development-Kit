@@ -64,7 +64,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ClickHouse::DBCluster`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ClickHouse::DBCluster`, which is used to query the information about an ApsaraDB for ClickHouse cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbcluster
  */
@@ -429,7 +429,7 @@ function rosDBClustersPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ClickHouse::DBClusters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ClickHouse::DBClusters`, which is used to query the information about ApsaraDB for ClickHouse clusters.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-dbclusters
  */
@@ -496,5 +496,422 @@ export class RosDBClusters extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBClustersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnterpriseDBCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-enterprisedbcluster
+ */
+export interface RosEnterpriseDBClusterProps {
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnterpriseDBClusterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBClusterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosEnterpriseDBClusterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ClickHouse::EnterpriseDBCluster` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ClickHouse::EnterpriseDBCluster` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnterpriseDBClusterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ClickHouse::EnterpriseDBCluster`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnterpriseDBCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-enterprisedbcluster
+ */
+export class RosEnterpriseDBCluster extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ClickHouse::EnterpriseDBCluster";
+
+    /**
+     * @Attribute Category: Type, value description: enterprise: Enterprise Edition.
+     */
+    public readonly attrCategory: ros.IResolvable;
+
+    /**
+     * @Attribute ChargeType: The billing method. Enterprise Edition clusters use the pay-as-you-go billing method.
+     */
+    public readonly attrChargeType: ros.IResolvable;
+
+    /**
+     * @Attribute ComputingGroupIds: The list of computing group IDs.
+     */
+    public readonly attrComputingGroupIds: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: The creation time of the cluster.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute DBInstanceId: The cluster ID.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The cluster description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DisabledPorts: The specified database port is disabled. Multiple ports separated by commas (,) are supported.
+     */
+    public readonly attrDisabledPorts: ros.IResolvable;
+
+    /**
+     * @Attribute Endpoints: List of Endpoint details.
+     */
+    public readonly attrEndpoints: ros.IResolvable;
+
+    /**
+     * @Attribute Engine: The engine type.
+     */
+    public readonly attrEngine: ros.IResolvable;
+
+    /**
+     * @Attribute EngineMinorVersion: The minor version number of the cluster engine.
+     */
+    public readonly attrEngineMinorVersion: ros.IResolvable;
+
+    /**
+     * @Attribute EngineVersion: The engine version.
+     */
+    public readonly attrEngineVersion: ros.IResolvable;
+
+    /**
+     * @Attribute InstanceNetworkType: The network type of the instance.
+     */
+    public readonly attrInstanceNetworkType: ros.IResolvable;
+
+    /**
+     * @Attribute MaintainEndTime: The end time of the maintenance window.
+     */
+    public readonly attrMaintainEndTime: ros.IResolvable;
+
+    /**
+     * @Attribute MaintainStartTime: The maintainable time start time.
+     */
+    public readonly attrMaintainStartTime: ros.IResolvable;
+
+    /**
+     * @Attribute MultiZones: The information about the zones.
+     */
+    public readonly attrMultiZones: ros.IResolvable;
+
+    /**
+     * @Attribute NodeCount: The number of nodes. The value range is 2-16. Required when you use NodeScaleMin and NodeScaleMax to configure an elastic interval.
+     */
+    public readonly attrNodeCount: ros.IResolvable;
+
+    /**
+     * @Attribute NodeScaleMax: The maximum value of serverless node auto scaling.
+     */
+    public readonly attrNodeScaleMax: ros.IResolvable;
+
+    /**
+     * @Attribute NodeScaleMin: Minimum number of Serverless nodes for auto-scaling.
+     */
+    public readonly attrNodeScaleMin: ros.IResolvable;
+
+    /**
+     * @Attribute Nodes: The Node information.
+     */
+    public readonly attrNodes: ros.IResolvable;
+
+    /**
+     * @Attribute ObjectStoreSize: The size of the object storage space.
+     */
+    public readonly attrObjectStoreSize: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute ScaleMax: The maximum capacity for elastic scaling.
+     */
+    public readonly attrScaleMax: ros.IResolvable;
+
+    /**
+     * @Attribute ScaleMin: The minimum capacity for elastic scaling.
+     */
+    public readonly attrScaleMin: ros.IResolvable;
+
+    /**
+     * @Attribute StorageQuota: Storage Pre-purchased Capacity (GB).
+     */
+    public readonly attrStorageQuota: ros.IResolvable;
+
+    /**
+     * @Attribute StorageSize: The size of the storage space. Unit: GB.
+     */
+    public readonly attrStorageSize: ros.IResolvable;
+
+    /**
+     * @Attribute StorageType: The storage type.
+     */
+    public readonly attrStorageType: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The details of the tags.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    /**
+     * @Attribute VpcId: The VPC ID.
+     */
+    public readonly attrVpcId: ros.IResolvable;
+
+    /**
+     * @Attribute VswitchId: The VSwitch ID.
+     */
+    public readonly attrVswitchId: ros.IResolvable;
+
+    /**
+     * @Attribute ZoneId: The zone ID.
+     */
+    public readonly attrZoneId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnterpriseDBClusterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnterpriseDBCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCategory = this.getAtt('Category');
+        this.attrChargeType = this.getAtt('ChargeType');
+        this.attrComputingGroupIds = this.getAtt('ComputingGroupIds');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDisabledPorts = this.getAtt('DisabledPorts');
+        this.attrEndpoints = this.getAtt('Endpoints');
+        this.attrEngine = this.getAtt('Engine');
+        this.attrEngineMinorVersion = this.getAtt('EngineMinorVersion');
+        this.attrEngineVersion = this.getAtt('EngineVersion');
+        this.attrInstanceNetworkType = this.getAtt('InstanceNetworkType');
+        this.attrMaintainEndTime = this.getAtt('MaintainEndTime');
+        this.attrMaintainStartTime = this.getAtt('MaintainStartTime');
+        this.attrMultiZones = this.getAtt('MultiZones');
+        this.attrNodeCount = this.getAtt('NodeCount');
+        this.attrNodeScaleMax = this.getAtt('NodeScaleMax');
+        this.attrNodeScaleMin = this.getAtt('NodeScaleMin');
+        this.attrNodes = this.getAtt('Nodes');
+        this.attrObjectStoreSize = this.getAtt('ObjectStoreSize');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrScaleMax = this.getAtt('ScaleMax');
+        this.attrScaleMin = this.getAtt('ScaleMin');
+        this.attrStorageQuota = this.getAtt('StorageQuota');
+        this.attrStorageSize = this.getAtt('StorageSize');
+        this.attrStorageType = this.getAtt('StorageType');
+        this.attrTags = this.getAtt('Tags');
+        this.attrVpcId = this.getAtt('VpcId');
+        this.attrVswitchId = this.getAtt('VswitchId');
+        this.attrZoneId = this.getAtt('ZoneId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbInstanceId = props.dbInstanceId;
+        this.refreshOptions = props.refreshOptions;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbInstanceId: this.dbInstanceId,
+            refreshOptions: this.refreshOptions,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnterpriseDBClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnterpriseDBClusters`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-enterprisedbclusters
+ */
+export interface RosEnterpriseDBClustersProps {
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    readonly refreshOptions?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnterpriseDBClustersProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClustersProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBClustersPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
+        errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
+          data: properties.refreshOptions,
+          allowedValues: ["Always","Never"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
+    return errors.wrap('supplied properties not correct for "RosEnterpriseDBClustersProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `DATASOURCE::ClickHouse::EnterpriseDBClusters` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClustersProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `DATASOURCE::ClickHouse::EnterpriseDBClusters` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClustersPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnterpriseDBClustersPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ClickHouse::EnterpriseDBClusters`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnterpriseDBClusters` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-enterprisedbclusters
+ */
+export class RosEnterpriseDBClusters extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "DATASOURCE::ClickHouse::EnterpriseDBClusters";
+
+    /**
+     * @Attribute DBInstanceIds: The list of DB instance IDs.
+     */
+    public readonly attrDbInstanceIds: ros.IResolvable;
+
+    /**
+     * @Attribute EnterpriseDBClusters: The list of enterprise DB clusters.
+     */
+    public readonly attrEnterpriseDbClusters: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated. Valid values:
+     * - Never: Never refresh the datasource resource when the stack is updated.
+     * - Always: Always refresh the datasource resource when the stack is updated.
+     * Default is Never.
+     */
+    public refreshOptions: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnterpriseDBClustersProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnterpriseDBClusters.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDbInstanceIds = this.getAtt('DBInstanceIds');
+        this.attrEnterpriseDbClusters = this.getAtt('EnterpriseDBClusters');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.refreshOptions = props.refreshOptions;
+        this.resourceGroupId = props.resourceGroupId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            refreshOptions: this.refreshOptions,
+            resourceGroupId: this.resourceGroupId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnterpriseDBClustersPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

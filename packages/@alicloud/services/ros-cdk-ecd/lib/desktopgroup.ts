@@ -151,7 +151,7 @@ export interface IDesktopGroup extends ros.IResource {
     readonly attrDesktopGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::DesktopGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::DesktopGroup`, which is used to create a cloud computer pool.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDesktopGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktopgroup
  */
@@ -186,20 +186,20 @@ export class DesktopGroup extends ros.Resource implements IDesktopGroup {
             allowBufferCount: props.allowBufferCount,
             groupVersion: props.groupVersion,
             keepDuration: props.keepDuration,
-            idleDisconnectDuration: props.idleDisconnectDuration,
             maxDesktopsCount: props.maxDesktopsCount,
+            idleDisconnectDuration: props.idleDisconnectDuration,
             resetType: props.resetType,
             minDesktopsCount: props.minDesktopsCount,
-            comments: props.comments,
             policyGroupId: props.policyGroupId,
-            endUserIds: props.endUserIds,
+            comments: props.comments,
             period: props.period,
+            endUserIds: props.endUserIds,
             defaultInitDesktopCount: props.defaultInitDesktopCount,
             autoPay: props.autoPay,
             officeSiteId: props.officeSiteId,
             bundleId: props.bundleId,
-            stopDuration: props.stopDuration,
             chargeType: props.chargeType,
+            stopDuration: props.stopDuration,
             volumeEncryptionKey: props.volumeEncryptionKey,
             allowAutoSetup: props.allowAutoSetup,
             buyDesktopsCount: props.buyDesktopsCount,

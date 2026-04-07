@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Represents a <code>ResourceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.831Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.483Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.IResourceGroup")
 @software.amazon.jsii.Jsii.Proxy(IResourceGroup.Jsii$Proxy.class)
 public interface IResourceGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -32,6 +32,11 @@ public interface IResourceGroup extends software.amazon.jsii.JsiiSerializable, c
      * Attribute RegionStatuses: The status of the resource group in all regions.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrRegionStatuses();
+
+    /**
+     * Attribute ResourceGroupId: The ID of the resource group.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.ResourceGroupProps getProps();
 
@@ -115,6 +120,14 @@ public interface IResourceGroup extends software.amazon.jsii.JsiiSerializable, c
             return software.amazon.jsii.Kernel.get(this, "attrRegionStatuses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
+        /**
+         * Attribute ResourceGroupId: The ID of the resource group.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.resourcemanager.ResourceGroupProps getProps() {
             return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.resourcemanager.ResourceGroupProps.class));
@@ -196,6 +209,14 @@ public interface IResourceGroup extends software.amazon.jsii.JsiiSerializable, c
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrRegionStatuses() {
             return software.amazon.jsii.Kernel.get(this, "attrRegionStatuses", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ResourceGroupId: The ID of the resource group.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceGroupId() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

@@ -65,7 +65,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Account`The , which type creates username and password for ApsaraMQ for RabbitMQ.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-account
  */
@@ -199,10 +199,10 @@ export interface RosBindingProps {
 function RosBindingPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('argument', ros.requiredValidator)(properties.argument));
-    errors.collect(ros.propertyValidator('argument', ros.validateString)(properties.argument));
     errors.collect(ros.propertyValidator('sourceExchange', ros.requiredValidator)(properties.sourceExchange));
     errors.collect(ros.propertyValidator('sourceExchange', ros.validateString)(properties.sourceExchange));
+    errors.collect(ros.propertyValidator('argument', ros.requiredValidator)(properties.argument));
+    errors.collect(ros.propertyValidator('argument', ros.validateString)(properties.argument));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
     errors.collect(ros.propertyValidator('bindingKey', ros.requiredValidator)(properties.bindingKey));
@@ -247,7 +247,7 @@ function rosBindingPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or an exchange to an exchange.
  * @Note This class does not contain additional functions, so it is recommended to use the `Binding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
@@ -464,7 +464,7 @@ function rosExchangePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.
  * @Note This class does not contain additional functions, so it is recommended to use the `Exchange` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
@@ -692,13 +692,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('supportEip', ros.validateString)(properties.supportEip));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,6,12,24,36],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.storageSize && (typeof properties.storageSize) !== 'object') {
         errors.collect(ros.propertyValidator('storageSize', ros.validateRange)({
             data: properties.storageSize,
@@ -707,13 +700,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
-    if(properties.payType && (typeof properties.payType) !== 'object') {
-        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
-          data: properties.payType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,6,12,24,36],
         }));
     }
-    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     if(properties.queueCapacity && (typeof properties.queueCapacity) !== 'object') {
         errors.collect(ros.propertyValidator('queueCapacity', ros.validateRange)({
             data: properties.queueCapacity,
@@ -722,6 +715,14 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('queueCapacity', ros.validateNumber)(properties.queueCapacity));
+    if(properties.payType && (typeof properties.payType) !== 'object') {
+        errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
+          data: properties.payType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     if(properties.tracingStorageTime && (typeof properties.tracingStorageTime) !== 'object') {
         errors.collect(ros.propertyValidator('tracingStorageTime', ros.validateAllowedValues)({
           data: properties.tracingStorageTime,
@@ -729,7 +730,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('tracingStorageTime', ros.validateNumber)(properties.tracingStorageTime));
-    errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     if(properties.orderNum && (typeof properties.orderNum) !== 'object') {
         errors.collect(ros.propertyValidator('orderNum', ros.validateRange)({
             data: properties.orderNum,
@@ -793,7 +793,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Instance`, which is used to create an ApsaraMQ for RabbitMQ instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */
@@ -1048,8 +1048,8 @@ function RosQueuePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('deadLetterRoutingKey', ros.validateString)(properties.deadLetterRoutingKey));
     errors.collect(ros.propertyValidator('virtualHost', ros.requiredValidator)(properties.virtualHost));
     errors.collect(ros.propertyValidator('virtualHost', ros.validateString)(properties.virtualHost));
-    errors.collect(ros.propertyValidator('maxLength', ros.validateNumber)(properties.maxLength));
     errors.collect(ros.propertyValidator('autoDeleteState', ros.validateBoolean)(properties.autoDeleteState));
+    errors.collect(ros.propertyValidator('maxLength', ros.validateNumber)(properties.maxLength));
     errors.collect(ros.propertyValidator('queueName', ros.requiredValidator)(properties.queueName));
     if(properties.queueName && (Array.isArray(properties.queueName) || (typeof properties.queueName) === 'string')) {
         errors.collect(ros.propertyValidator('queueName', ros.validateLength)({
@@ -1093,7 +1093,7 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Queue`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
  * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
@@ -1282,7 +1282,7 @@ function rosVirtualHostPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::VirtualHost`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::VirtualHost`, which is used to create a vhost.
  * @Note This class does not contain additional functions, so it is recommended to use the `VirtualHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateways`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::CustomerGateways`, which is used to query customer gateways.
 type CustomerGateways interface {
 	alicloudroscdkcore.Resource
 	ICustomerGateways

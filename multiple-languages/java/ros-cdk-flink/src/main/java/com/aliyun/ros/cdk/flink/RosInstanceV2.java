@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.flink;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Flink::InstanceV2</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Flink::InstanceV2</code>The , which resource creates a fully managed Flink workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.123Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.738Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.RosInstanceV2")
 public class RosInstanceV2 extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -168,6 +168,24 @@ public class RosInstanceV2 extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getArchitectureType() {
+        return software.amazon.jsii.Kernel.get(this, "architectureType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setArchitectureType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "architectureType", value);
+    }
+
+    /**
+     */
+    public void setArchitectureType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "architectureType", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -200,6 +218,65 @@ public class RosInstanceV2 extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setDuration(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "duration", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHaResourceSpec() {
+        return software.amazon.jsii.Kernel.get(this, "haResourceSpec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHaResourceSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "haResourceSpec", value);
+    }
+
+    /**
+     */
+    public void setHaResourceSpec(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.flink.RosInstanceV2.HaResourceSpecProperty value) {
+        software.amazon.jsii.Kernel.set(this, "haResourceSpec", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHaVSwitchIds() {
+        return software.amazon.jsii.Kernel.get(this, "haVSwitchIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHaVSwitchIds(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "haVSwitchIds", value);
+    }
+
+    /**
+     */
+    public void setHaVSwitchIds(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "haVSwitchIds", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getMonitorType() {
+        return software.amazon.jsii.Kernel.get(this, "monitorType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setMonitorType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "monitorType", value);
+    }
+
+    /**
+     */
+    public void setMonitorType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "monitorType", value);
     }
 
     /**
@@ -272,6 +349,178 @@ public class RosInstanceV2 extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setUsePromotionCode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "usePromotionCode", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.RosInstanceV2.HaResourceSpecProperty")
+    @software.amazon.jsii.Jsii.Proxy(HaResourceSpecProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface HaResourceSpecProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getCpu() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getMemoryGb() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link HaResourceSpecProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link HaResourceSpecProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<HaResourceSpecProperty> {
+            java.lang.Object cpu;
+            java.lang.Object memoryGb;
+
+            /**
+             * Sets the value of {@link HaResourceSpecProperty#getCpu}
+             * @param cpu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpu(java.lang.Number cpu) {
+                this.cpu = cpu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HaResourceSpecProperty#getCpu}
+             * @param cpu the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder cpu(com.aliyun.ros.cdk.core.IResolvable cpu) {
+                this.cpu = cpu;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HaResourceSpecProperty#getMemoryGb}
+             * @param memoryGb the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memoryGb(java.lang.Number memoryGb) {
+                this.memoryGb = memoryGb;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link HaResourceSpecProperty#getMemoryGb}
+             * @param memoryGb the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder memoryGb(com.aliyun.ros.cdk.core.IResolvable memoryGb) {
+                this.memoryGb = memoryGb;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link HaResourceSpecProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public HaResourceSpecProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link HaResourceSpecProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements HaResourceSpecProperty {
+            private final java.lang.Object cpu;
+            private final java.lang.Object memoryGb;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.cpu = software.amazon.jsii.Kernel.get(this, "cpu", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.memoryGb = software.amazon.jsii.Kernel.get(this, "memoryGb", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.cpu = builder.cpu;
+                this.memoryGb = builder.memoryGb;
+            }
+
+            @Override
+            public final java.lang.Object getCpu() {
+                return this.cpu;
+            }
+
+            @Override
+            public final java.lang.Object getMemoryGb() {
+                return this.memoryGb;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getCpu() != null) {
+                    data.set("cpu", om.valueToTree(this.getCpu()));
+                }
+                if (this.getMemoryGb() != null) {
+                    data.set("memoryGb", om.valueToTree(this.getMemoryGb()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-flink.RosInstanceV2.HaResourceSpecProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                HaResourceSpecProperty.Jsii$Proxy that = (HaResourceSpecProperty.Jsii$Proxy) o;
+
+                if (this.cpu != null ? !this.cpu.equals(that.cpu) : that.cpu != null) return false;
+                return this.memoryGb != null ? this.memoryGb.equals(that.memoryGb) : that.memoryGb == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.cpu != null ? this.cpu.hashCode() : 0;
+                result = 31 * result + (this.memoryGb != null ? this.memoryGb.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -856,6 +1105,23 @@ public class RosInstanceV2 extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param architectureType This parameter is required.
+         */
+        public Builder architectureType(final java.lang.String architectureType) {
+            this.props.architectureType(architectureType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param architectureType This parameter is required.
+         */
+        public Builder architectureType(final com.aliyun.ros.cdk.core.IResolvable architectureType) {
+            this.props.architectureType(architectureType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param autoRenew This parameter is required.
          */
         public Builder autoRenew(final java.lang.Boolean autoRenew) {
@@ -885,6 +1151,57 @@ public class RosInstanceV2 extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
             this.props.duration(duration);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param haResourceSpec This parameter is required.
+         */
+        public Builder haResourceSpec(final com.aliyun.ros.cdk.core.IResolvable haResourceSpec) {
+            this.props.haResourceSpec(haResourceSpec);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param haResourceSpec This parameter is required.
+         */
+        public Builder haResourceSpec(final com.aliyun.ros.cdk.flink.RosInstanceV2.HaResourceSpecProperty haResourceSpec) {
+            this.props.haResourceSpec(haResourceSpec);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param haVSwitchIds This parameter is required.
+         */
+        public Builder haVSwitchIds(final java.util.List<? extends java.lang.Object> haVSwitchIds) {
+            this.props.haVSwitchIds(haVSwitchIds);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param haVSwitchIds This parameter is required.
+         */
+        public Builder haVSwitchIds(final com.aliyun.ros.cdk.core.IResolvable haVSwitchIds) {
+            this.props.haVSwitchIds(haVSwitchIds);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param monitorType This parameter is required.
+         */
+        public Builder monitorType(final java.lang.String monitorType) {
+            this.props.monitorType(monitorType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param monitorType This parameter is required.
+         */
+        public Builder monitorType(final com.aliyun.ros.cdk.core.IResolvable monitorType) {
+            this.props.monitorType(monitorType);
             return this;
         }
 

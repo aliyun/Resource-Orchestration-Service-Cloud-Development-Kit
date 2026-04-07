@@ -30,6 +30,11 @@ export interface EventRuleTargetsProps {
     readonly mnsParameters?: Array<RosEventRuleTargets.MnsParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property openApiParameters: API callback notification parameter list.
+     */
+    readonly openApiParameters?: Array<RosEventRuleTargets.OpenApiParametersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * Property slsParameters: SLS configuration.A maximum of 5 parameters.
      */
     readonly slsParameters?: Array<RosEventRuleTargets.SlsParametersProperty | ros.IResolvable> | ros.IResolvable;
@@ -47,7 +52,7 @@ export interface IEventRuleTargets extends ros.IResource {
     readonly props: EventRuleTargetsProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRuleTargets`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEventRuleTargets`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
@@ -70,6 +75,7 @@ export class EventRuleTargets extends ros.Resource implements IEventRuleTargets 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosEventRuleTargets = new RosEventRuleTargets(this, id,  {
+            openApiParameters: props.openApiParameters,
             contactParameters: props.contactParameters,
             slsParameters: props.slsParameters,
             webhookParameters: props.webhookParameters,

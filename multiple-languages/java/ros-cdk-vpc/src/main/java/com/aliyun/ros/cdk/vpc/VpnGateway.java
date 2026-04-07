@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpnGateway</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpnGateway</code>The , which resource creates a vpn gateway.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.268Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGateway")
 public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVpnGateway {
 
@@ -481,6 +481,41 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.
+         * <p>
+         * <ul>
+         * <li>If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.</li>
+         * <li>After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.</li>
+         * </ul>
+         * <p>
+         * If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.
+         * <p>
+         * <ul>
+         * <li>If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.</li>
+         * <li>After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.</li>
+         * </ul>
+         * <p>
+         * If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

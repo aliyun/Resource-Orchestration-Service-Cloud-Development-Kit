@@ -10,6 +10,8 @@
 @alicloud/ros-cdk-ecs.AutoSnapshotPolicyProps=com.aliyun.ros.cdk.ecs.AutoSnapshotPolicyProps
 @alicloud/ros-cdk-ecs.CapacityReservation=com.aliyun.ros.cdk.ecs.CapacityReservation
 @alicloud/ros-cdk-ecs.CapacityReservationProps=com.aliyun.ros.cdk.ecs.CapacityReservationProps
+@alicloud/ros-cdk-ecs.CloneDisks=com.aliyun.ros.cdk.ecs.CloneDisks
+@alicloud/ros-cdk-ecs.CloneDisksProps=com.aliyun.ros.cdk.ecs.CloneDisksProps
 @alicloud/ros-cdk-ecs.Command=com.aliyun.ros.cdk.ecs.Command
 @alicloud/ros-cdk-ecs.CommandProps=com.aliyun.ros.cdk.ecs.CommandProps
 @alicloud/ros-cdk-ecs.CopyImage=com.aliyun.ros.cdk.ecs.CopyImage
@@ -17,6 +19,8 @@
 @alicloud/ros-cdk-ecs.CustomImage=com.aliyun.ros.cdk.ecs.CustomImage
 @alicloud/ros-cdk-ecs.CustomImageProps=com.aliyun.ros.cdk.ecs.CustomImageProps
 @alicloud/ros-cdk-ecs.DedicatedHost=com.aliyun.ros.cdk.ecs.DedicatedHost
+@alicloud/ros-cdk-ecs.DedicatedHostCluster=com.aliyun.ros.cdk.ecs.DedicatedHostCluster
+@alicloud/ros-cdk-ecs.DedicatedHostClusterProps=com.aliyun.ros.cdk.ecs.DedicatedHostClusterProps
 @alicloud/ros-cdk-ecs.DedicatedHostProps=com.aliyun.ros.cdk.ecs.DedicatedHostProps
 @alicloud/ros-cdk-ecs.DeploymentSet=com.aliyun.ros.cdk.ecs.DeploymentSet
 @alicloud/ros-cdk-ecs.DeploymentSetProps=com.aliyun.ros.cdk.ecs.DeploymentSetProps
@@ -36,10 +40,12 @@
 @alicloud/ros-cdk-ecs.IAutoProvisioningGroup=com.aliyun.ros.cdk.ecs.IAutoProvisioningGroup
 @alicloud/ros-cdk-ecs.IAutoSnapshotPolicy=com.aliyun.ros.cdk.ecs.IAutoSnapshotPolicy
 @alicloud/ros-cdk-ecs.ICapacityReservation=com.aliyun.ros.cdk.ecs.ICapacityReservation
+@alicloud/ros-cdk-ecs.ICloneDisks=com.aliyun.ros.cdk.ecs.ICloneDisks
 @alicloud/ros-cdk-ecs.ICommand=com.aliyun.ros.cdk.ecs.ICommand
 @alicloud/ros-cdk-ecs.ICopyImage=com.aliyun.ros.cdk.ecs.ICopyImage
 @alicloud/ros-cdk-ecs.ICustomImage=com.aliyun.ros.cdk.ecs.ICustomImage
 @alicloud/ros-cdk-ecs.IDedicatedHost=com.aliyun.ros.cdk.ecs.IDedicatedHost
+@alicloud/ros-cdk-ecs.IDedicatedHostCluster=com.aliyun.ros.cdk.ecs.IDedicatedHostCluster
 @alicloud/ros-cdk-ecs.IDeploymentSet=com.aliyun.ros.cdk.ecs.IDeploymentSet
 @alicloud/ros-cdk-ecs.IDisk=com.aliyun.ros.cdk.ecs.IDisk
 @alicloud/ros-cdk-ecs.IDiskAttachment=com.aliyun.ros.cdk.ecs.IDiskAttachment
@@ -56,6 +62,7 @@
 @alicloud/ros-cdk-ecs.IInvocation=com.aliyun.ros.cdk.ecs.IInvocation
 @alicloud/ros-cdk-ecs.IJoinSecurityGroup=com.aliyun.ros.cdk.ecs.IJoinSecurityGroup
 @alicloud/ros-cdk-ecs.ILaunchTemplate=com.aliyun.ros.cdk.ecs.ILaunchTemplate
+@alicloud/ros-cdk-ecs.ILaunchTemplateVersion=com.aliyun.ros.cdk.ecs.ILaunchTemplateVersion
 @alicloud/ros-cdk-ecs.INetworkInterface=com.aliyun.ros.cdk.ecs.INetworkInterface
 @alicloud/ros-cdk-ecs.INetworkInterfaceAttachment=com.aliyun.ros.cdk.ecs.INetworkInterfaceAttachment
 @alicloud/ros-cdk-ecs.INetworkInterfacePermission=com.aliyun.ros.cdk.ecs.INetworkInterfacePermission
@@ -97,6 +104,8 @@
 @alicloud/ros-cdk-ecs.JoinSecurityGroupProps=com.aliyun.ros.cdk.ecs.JoinSecurityGroupProps
 @alicloud/ros-cdk-ecs.LaunchTemplate=com.aliyun.ros.cdk.ecs.LaunchTemplate
 @alicloud/ros-cdk-ecs.LaunchTemplateProps=com.aliyun.ros.cdk.ecs.LaunchTemplateProps
+@alicloud/ros-cdk-ecs.LaunchTemplateVersion=com.aliyun.ros.cdk.ecs.LaunchTemplateVersion
+@alicloud/ros-cdk-ecs.LaunchTemplateVersionProps=com.aliyun.ros.cdk.ecs.LaunchTemplateVersionProps
 @alicloud/ros-cdk-ecs.NetworkInterface=com.aliyun.ros.cdk.ecs.NetworkInterface
 @alicloud/ros-cdk-ecs.NetworkInterfaceAttachment=com.aliyun.ros.cdk.ecs.NetworkInterfaceAttachment
 @alicloud/ros-cdk-ecs.NetworkInterfaceAttachmentProps=com.aliyun.ros.cdk.ecs.NetworkInterfaceAttachmentProps
@@ -131,6 +140,9 @@
 @alicloud/ros-cdk-ecs.RosCapacityReservation.PrivatePoolOptionsProperty=com.aliyun.ros.cdk.ecs.RosCapacityReservation$PrivatePoolOptionsProperty
 @alicloud/ros-cdk-ecs.RosCapacityReservation.TagsProperty=com.aliyun.ros.cdk.ecs.RosCapacityReservation$TagsProperty
 @alicloud/ros-cdk-ecs.RosCapacityReservationProps=com.aliyun.ros.cdk.ecs.RosCapacityReservationProps
+@alicloud/ros-cdk-ecs.RosCloneDisks=com.aliyun.ros.cdk.ecs.RosCloneDisks
+@alicloud/ros-cdk-ecs.RosCloneDisks.TagsProperty=com.aliyun.ros.cdk.ecs.RosCloneDisks$TagsProperty
+@alicloud/ros-cdk-ecs.RosCloneDisksProps=com.aliyun.ros.cdk.ecs.RosCloneDisksProps
 @alicloud/ros-cdk-ecs.RosCommand=com.aliyun.ros.cdk.ecs.RosCommand
 @alicloud/ros-cdk-ecs.RosCommand.TagsProperty=com.aliyun.ros.cdk.ecs.RosCommand$TagsProperty
 @alicloud/ros-cdk-ecs.RosCommandProps=com.aliyun.ros.cdk.ecs.RosCommandProps
@@ -144,6 +156,9 @@
 @alicloud/ros-cdk-ecs.RosCustomImageProps=com.aliyun.ros.cdk.ecs.RosCustomImageProps
 @alicloud/ros-cdk-ecs.RosDedicatedHost=com.aliyun.ros.cdk.ecs.RosDedicatedHost
 @alicloud/ros-cdk-ecs.RosDedicatedHost.TagsProperty=com.aliyun.ros.cdk.ecs.RosDedicatedHost$TagsProperty
+@alicloud/ros-cdk-ecs.RosDedicatedHostCluster=com.aliyun.ros.cdk.ecs.RosDedicatedHostCluster
+@alicloud/ros-cdk-ecs.RosDedicatedHostCluster.TagsProperty=com.aliyun.ros.cdk.ecs.RosDedicatedHostCluster$TagsProperty
+@alicloud/ros-cdk-ecs.RosDedicatedHostClusterProps=com.aliyun.ros.cdk.ecs.RosDedicatedHostClusterProps
 @alicloud/ros-cdk-ecs.RosDedicatedHostProps=com.aliyun.ros.cdk.ecs.RosDedicatedHostProps
 @alicloud/ros-cdk-ecs.RosDeploymentSet=com.aliyun.ros.cdk.ecs.RosDeploymentSet
 @alicloud/ros-cdk-ecs.RosDeploymentSetProps=com.aliyun.ros.cdk.ecs.RosDeploymentSetProps
@@ -209,6 +224,12 @@
 @alicloud/ros-cdk-ecs.RosLaunchTemplate.TagsProperty=com.aliyun.ros.cdk.ecs.RosLaunchTemplate$TagsProperty
 @alicloud/ros-cdk-ecs.RosLaunchTemplate.TemplateTagsProperty=com.aliyun.ros.cdk.ecs.RosLaunchTemplate$TemplateTagsProperty
 @alicloud/ros-cdk-ecs.RosLaunchTemplateProps=com.aliyun.ros.cdk.ecs.RosLaunchTemplateProps
+@alicloud/ros-cdk-ecs.RosLaunchTemplateVersion=com.aliyun.ros.cdk.ecs.RosLaunchTemplateVersion
+@alicloud/ros-cdk-ecs.RosLaunchTemplateVersion.DataDisksProperty=com.aliyun.ros.cdk.ecs.RosLaunchTemplateVersion$DataDisksProperty
+@alicloud/ros-cdk-ecs.RosLaunchTemplateVersion.LaunchTemplateDataProperty=com.aliyun.ros.cdk.ecs.RosLaunchTemplateVersion$LaunchTemplateDataProperty
+@alicloud/ros-cdk-ecs.RosLaunchTemplateVersion.NetworkInterfacesProperty=com.aliyun.ros.cdk.ecs.RosLaunchTemplateVersion$NetworkInterfacesProperty
+@alicloud/ros-cdk-ecs.RosLaunchTemplateVersion.TagsProperty=com.aliyun.ros.cdk.ecs.RosLaunchTemplateVersion$TagsProperty
+@alicloud/ros-cdk-ecs.RosLaunchTemplateVersionProps=com.aliyun.ros.cdk.ecs.RosLaunchTemplateVersionProps
 @alicloud/ros-cdk-ecs.RosNetworkInterface=com.aliyun.ros.cdk.ecs.RosNetworkInterface
 @alicloud/ros-cdk-ecs.RosNetworkInterface.TagsProperty=com.aliyun.ros.cdk.ecs.RosNetworkInterface$TagsProperty
 @alicloud/ros-cdk-ecs.RosNetworkInterfaceAttachment=com.aliyun.ros.cdk.ecs.RosNetworkInterfaceAttachment

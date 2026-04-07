@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Alert`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Alert`, which is used to create an alert rule.
 type Alert interface {
 	alicloudroscdkcore.Resource
 	IAlert

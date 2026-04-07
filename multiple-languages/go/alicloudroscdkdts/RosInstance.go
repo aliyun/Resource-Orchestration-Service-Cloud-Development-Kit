@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`Use the , which resource to create a new DTS instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable
@@ -36,6 +36,8 @@ type RosInstance interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	FeeType() interface{}
 	SetFeeType(val interface{})
+	InsightModule() interface{}
+	SetInsightModule(val interface{})
 	InstanceClass() interface{}
 	SetInstanceClass(val interface{})
 	JobId() interface{}
@@ -325,6 +327,16 @@ func (j *jsiiProxy_RosInstance) FeeType() interface{} {
 	_jsii_.Get(
 		j,
 		"feeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstance) InsightModule() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"insightModule",
 		&returns,
 	)
 	return returns
@@ -653,6 +665,17 @@ func (j *jsiiProxy_RosInstance)SetFeeType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"feeType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetInsightModule(val interface{}) {
+	if err := j.validateSetInsightModuleParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"insightModule",
 		val,
 	)
 }

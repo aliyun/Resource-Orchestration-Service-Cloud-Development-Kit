@@ -32,7 +32,7 @@ export interface IAccessLogsAddition extends ros.IResource {
     readonly props: AccessLogsAdditionProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessLogsAddition`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::AccessLogsAddition`, which is used to configure an access log forwarding rule for a Classic Load Balancer (CLB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessLogsAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesslogsaddition
  */

@@ -20,13 +20,26 @@ export interface AddressBookProps {
     readonly groupName: string | ros.IResolvable;
 
     /**
-     * Property groupType: Type the address book, the optional values ​​are:
-     * ip: IP Address Book
-     * domain: domain name address book
-     * port: Port Address Book
-     * tag: ECS label address book
+     * Property groupType: Type of the address book.
      */
     readonly groupType: string | ros.IResolvable;
+
+    /**
+     * Property ackClusterConnectorId: ACK cluster connector ID. Batch query ACK cluster connector list.
+     */
+    readonly ackClusterConnectorId?: string | ros.IResolvable;
+
+    /**
+     * Property ackLabels: ACK cluster container group label list.
+     * 
+     * > Up to 10.
+     */
+    readonly ackLabels?: Array<RosAddressBook.AckLabelsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property ackNamespaces: ACK cluster container group namespace list. Up to 10.
+     */
+    readonly ackNamespaces?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property addressList: Address list of the address book, between multiple addresses separated by commas.
@@ -55,7 +68,7 @@ export interface AddressBookProps {
     /**
      * Property tagRelation: The relationship between the labels to be matched more ECS.
      * and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+     * or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
      */
     readonly tagRelation?: string | ros.IResolvable;
 }
@@ -72,7 +85,7 @@ export interface IAddressBook extends ros.IResource {
     readonly attrGroupUuid: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AddressBook`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AddressBook`The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAddressBook`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
  */
@@ -104,10 +117,13 @@ export class AddressBook extends ros.Resource implements IAddressBook {
             description: props.description,
             tagRelation: props.tagRelation,
             groupType: props.groupType,
+            ackNamespaces: props.ackNamespaces,
             tagList: props.tagList,
             regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
             autoAddTagEcs: props.autoAddTagEcs === undefined || props.autoAddTagEcs === null ? false : props.autoAddTagEcs,
             addressList: props.addressList,
+            ackLabels: props.ackLabels,
+            ackClusterConnectorId: props.ackClusterConnectorId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAddressBook;
         this.attrGroupUuid = rosAddressBook.attrGroupUuid;

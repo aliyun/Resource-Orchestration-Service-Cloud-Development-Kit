@@ -64,7 +64,7 @@ export interface IWorkspaceResourceMaxCompute extends ros.IResource {
     readonly attrResources: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`, which is used to associate MaxCompute resources with a workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceMaxCompute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
  */
@@ -107,8 +107,8 @@ export class WorkspaceResourceMaxCompute extends ros.Resource implements IWorksp
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosWorkspaceResourceMaxCompute = new RosWorkspaceResourceMaxCompute(this, id,  {
-            isDefault: props.isDefault,
             groupName: props.groupName,
+            isDefault: props.isDefault,
             workspaceId: props.workspaceId,
             option: props.option,
             resources: props.resources,

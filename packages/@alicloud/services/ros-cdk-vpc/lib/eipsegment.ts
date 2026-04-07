@@ -35,6 +35,28 @@ export interface EIPSegmentProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
+     * Property isp: The line type. Valid values:
+     * - **BGP** (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.
+     * - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+     *   Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+     *   India (Jakarta), and Thailand (Bangkok).
+     * 
+     * For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+     * see [EIP Line Type](~~32321~~).
+     * 
+     * If you are a single-bandwidth whitelist user, you can also choose:
+     * - **ChinaTelecom**: China Telecom
+     * - **ChinaUnicom**: China Unicom
+     * - **ChinaMobile**: China Mobile
+     * - **ChinaTelecom_L2**: China Telecom L2
+     * - **ChinaUnicom_L2**: China Unicom L2
+     * - **ChinaMobile_L2**: China Mobile L2
+     * 
+     * If you are a Hangzhou Finance Cloud user, this field is required with value: **BGP_FinanceCloud**.
+     */
+    readonly isp?: string | ros.IResolvable;
+
+    /**
      * Property netmode: The network type. Valid values:
      * public: the Internet. This is the default value. After contiguous EIPs are associated with
      * cloud resources, the cloud resources can access the Internet by using the EIPs.
@@ -49,6 +71,11 @@ export interface EIPSegmentProps {
      * Property resourceGroupId: The ID of the resource group to which the EIPs belong.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property zone: The zone of the contiguous EIP group.
+     */
+    readonly zone?: string | ros.IResolvable;
 }
 
 /**
@@ -104,7 +131,9 @@ export class EIPSegment extends ros.Resource implements IEIPSegment {
             eipMask: props.eipMask,
             resourceGroupId: props.resourceGroupId,
             netmode: props.netmode,
+            zone: props.zone,
             bandwidth: props.bandwidth,
+            isp: props.isp,
             internetChargeType: props.internetChargeType,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEIPSegment;

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`Use , which to create a server group.
 type RosServerGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable

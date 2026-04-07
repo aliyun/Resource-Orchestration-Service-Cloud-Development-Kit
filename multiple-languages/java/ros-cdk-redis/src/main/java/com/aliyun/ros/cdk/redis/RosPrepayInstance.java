@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::PrepayInstance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::PrepayInstance</code>, which is used to create a subscription Tair (Redis OSS-compatible) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.741Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.387Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosPrepayInstance")
 public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -976,7 +976,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionString() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link ClassicInnerConnectionProperty}
@@ -1017,7 +1019,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link ClassicInnerConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1028,7 +1030,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link ClassicInnerConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1074,7 +1076,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
-                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+                this.connectionString = builder.connectionString;
             }
 
             @Override
@@ -1094,7 +1096,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
-                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                if (this.getConnectionString() != null) {
+                    data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosPrepayInstance.ClassicInnerConnectionProperty"));
@@ -1114,13 +1118,13 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 ClassicInnerConnectionProperty.Jsii$Proxy that = (ClassicInnerConnectionProperty.Jsii$Proxy) o;
 
                 if (!connectionPort.equals(that.connectionPort)) return false;
-                return this.connectionString.equals(that.connectionString);
+                return this.connectionString != null ? this.connectionString.equals(that.connectionString) : that.connectionString == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.connectionPort.hashCode();
-                result = 31 * result + (this.connectionString.hashCode());
+                result = 31 * result + (this.connectionString != null ? this.connectionString.hashCode() : 0);
                 return result;
             }
         }
@@ -1398,7 +1402,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionString() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link DirectConnectionProperty}
@@ -1439,7 +1445,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link DirectConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1450,7 +1456,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link DirectConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1496,7 +1502,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
-                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+                this.connectionString = builder.connectionString;
             }
 
             @Override
@@ -1516,7 +1522,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
-                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                if (this.getConnectionString() != null) {
+                    data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosPrepayInstance.DirectConnectionProperty"));
@@ -1536,13 +1544,13 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 DirectConnectionProperty.Jsii$Proxy that = (DirectConnectionProperty.Jsii$Proxy) o;
 
                 if (!connectionPort.equals(that.connectionPort)) return false;
-                return this.connectionString.equals(that.connectionString);
+                return this.connectionString != null ? this.connectionString.equals(that.connectionString) : that.connectionString == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.connectionPort.hashCode();
-                result = 31 * result + (this.connectionString.hashCode());
+                result = 31 * result + (this.connectionString != null ? this.connectionString.hashCode() : 0);
                 return result;
             }
         }
@@ -1734,7 +1742,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionString() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link PublicConnectionProperty}
@@ -1775,7 +1785,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link PublicConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1786,7 +1796,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link PublicConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1832,7 +1842,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
-                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+                this.connectionString = builder.connectionString;
             }
 
             @Override
@@ -1852,7 +1862,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
-                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                if (this.getConnectionString() != null) {
+                    data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosPrepayInstance.PublicConnectionProperty"));
@@ -1872,13 +1884,13 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 PublicConnectionProperty.Jsii$Proxy that = (PublicConnectionProperty.Jsii$Proxy) o;
 
                 if (!connectionPort.equals(that.connectionPort)) return false;
-                return this.connectionString.equals(that.connectionString);
+                return this.connectionString != null ? this.connectionString.equals(that.connectionString) : that.connectionString == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.connectionPort.hashCode();
-                result = 31 * result + (this.connectionString.hashCode());
+                result = 31 * result + (this.connectionString != null ? this.connectionString.hashCode() : 0);
                 return result;
             }
         }
@@ -2281,7 +2293,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
         /**
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
-        @org.jetbrains.annotations.NotNull java.lang.Object getConnectionString();
+        default @org.jetbrains.annotations.Nullable java.lang.Object getConnectionString() {
+            return null;
+        }
 
         /**
          * @return a {@link Builder} of {@link VpcPrivateConnectionProperty}
@@ -2322,7 +2336,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link VpcPrivateConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2333,7 +2347,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
 
             /**
              * Sets the value of {@link VpcPrivateConnectionProperty#getConnectionString}
-             * @param connectionString the value to be set. This parameter is required.
+             * @param connectionString the value to be set.
              * @return {@code this}
              */
             @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -2379,7 +2393,7 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
             protected Jsii$Proxy(final Builder builder) {
                 super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
                 this.connectionPort = java.util.Objects.requireNonNull(builder.connectionPort, "connectionPort is required");
-                this.connectionString = java.util.Objects.requireNonNull(builder.connectionString, "connectionString is required");
+                this.connectionString = builder.connectionString;
             }
 
             @Override
@@ -2399,7 +2413,9 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
                 data.set("connectionPort", om.valueToTree(this.getConnectionPort()));
-                data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                if (this.getConnectionString() != null) {
+                    data.set("connectionString", om.valueToTree(this.getConnectionString()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-redis.RosPrepayInstance.VpcPrivateConnectionProperty"));
@@ -2419,13 +2435,13 @@ public class RosPrepayInstance extends com.aliyun.ros.cdk.core.RosResource {
                 VpcPrivateConnectionProperty.Jsii$Proxy that = (VpcPrivateConnectionProperty.Jsii$Proxy) o;
 
                 if (!connectionPort.equals(that.connectionPort)) return false;
-                return this.connectionString.equals(that.connectionString);
+                return this.connectionString != null ? this.connectionString.equals(that.connectionString) : that.connectionString == null;
             }
 
             @Override
             public final int hashCode() {
                 int result = this.connectionPort.hashCode();
-                result = 31 * result + (this.connectionString.hashCode());
+                result = 31 * result + (this.connectionString != null ? this.connectionString.hashCode() : 0);
                 return result;
             }
         }

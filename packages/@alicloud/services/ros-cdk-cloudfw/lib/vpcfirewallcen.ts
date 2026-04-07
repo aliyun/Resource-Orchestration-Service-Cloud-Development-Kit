@@ -74,7 +74,7 @@ export interface IVpcFirewallCen extends ros.IResource {
     readonly attrVpcFirewallId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallCen`, which is used to create a virtual private cloud (VPC) firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcFirewallCen`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcen
  */
@@ -102,8 +102,8 @@ export class VpcFirewallCen extends ros.Resource implements IVpcFirewallCen {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcFirewallCen = new RosVpcFirewallCen(this, id,  {
-            memberUid: props.memberUid,
             networkInstanceId: props.networkInstanceId,
+            memberUid: props.memberUid,
             firewallVSwitchCidrBlock: props.firewallVSwitchCidrBlock,
             vSwitchId: props.vSwitchId,
             cenId: props.cenId,

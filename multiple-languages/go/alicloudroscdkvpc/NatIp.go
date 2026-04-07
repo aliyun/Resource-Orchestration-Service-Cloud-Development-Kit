@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIp`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::NatIp`, which is used to create a NAT IP address.
 type NatIp interface {
 	alicloudroscdkcore.Resource
 	INatIp

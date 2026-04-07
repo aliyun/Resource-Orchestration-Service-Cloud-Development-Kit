@@ -23,6 +23,16 @@ export interface InstancePublicConnectionProps {
      * Property port: The port number of the instance.
      */
     readonly port: number | ros.IResolvable;
+
+    /**
+     * Property addressType: Network type. Valid values:
+     * 
+     * - **primary**: Primary address.
+     * - **cluster**: Cluster address, only multi-coordination node instances support creating cluster addresses.
+     * 
+     * > Default is primary address.
+     */
+    readonly addressType?: string | ros.IResolvable;
 }
 
 /**
@@ -42,7 +52,7 @@ export interface IInstancePublicConnection extends ros.IResource {
     readonly attrDbInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`, which is used to allocate a public connection string to an instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstancePublicConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
@@ -77,6 +87,7 @@ export class InstancePublicConnection extends ros.Resource implements IInstanceP
         const rosInstancePublicConnection = new RosInstancePublicConnection(this, id,  {
             dbInstanceId: props.dbInstanceId,
             port: props.port,
+            addressType: props.addressType,
             connectionStringPrefix: props.connectionStringPrefix,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstancePublicConnection;

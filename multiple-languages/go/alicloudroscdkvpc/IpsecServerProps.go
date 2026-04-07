@@ -23,7 +23,7 @@ type IpsecServerProps struct {
 	IkeConfig interface{} `field:"optional" json:"ikeConfig" yaml:"ikeConfig"`
 	// Property ipsecConfig: Negotiation parameter configuration in the second phase.
 	IpsecConfig interface{} `field:"optional" json:"ipsecConfig" yaml:"ipsecConfig"`
-	// Property ipsecServerName: The value must be 2 to 128 characters in length and start with a letter or Chinese character.
+	// Property ipsecServerName: The value must be 1 to 100 characters in length and start with a letter or Chinese character.
 	//
 	// It can contain digits, underscores (_), and hyphens (-).
 	IpsecServerName interface{} `field:"optional" json:"ipsecServerName" yaml:"ipsecServerName"`

@@ -7,5 +7,6 @@ package alicloudroscdkvpc
 type RosBgpNetworkProps struct {
 	DstCidrBlock interface{} `field:"required" json:"dstCidrBlock" yaml:"dstCidrBlock"`
 	RouterId interface{} `field:"required" json:"routerId" yaml:"routerId"`
+	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 }
 

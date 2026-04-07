@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VirtualBorderRouter</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.244Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VirtualBorderRouter")
 public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVirtualBorderRouter {
 
@@ -261,6 +261,37 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
+         * Property bandwidth: The bandwidth of the VBR instance, in Mbps.
+         * <p>
+         * <ul>
+         * <li>When creating a VBR instance for a dedicated leased line, the values are 50, 100, 200, 300, 400, 500, 1000, 2048, 5120, 8192, 10240, 20480, 40960, 50120, 61440 and 102400.</li>
+         * <li>When creating a VBR instance for a shared leased line, no configuration is required, and the bandwidth of the VBR is the shared leased line bandwidth set when creating the shared physical connection.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: The bandwidth of the VBR instance, in Mbps. This parameter is required.
+         */
+        public Builder bandwidth(final java.lang.Number bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
+        }
+        /**
+         * Property bandwidth: The bandwidth of the VBR instance, in Mbps.
+         * <p>
+         * <ul>
+         * <li>When creating a VBR instance for a dedicated leased line, the values are 50, 100, 200, 300, 400, 500, 1000, 2048, 5120, 8192, 10240, 20480, 40960, 50120, 61440 and 102400.</li>
+         * <li>When creating a VBR instance for a shared leased line, no configuration is required, and the bandwidth of the VBR is the shared leased line bandwidth set when creating the shared physical connection.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param bandwidth Property bandwidth: The bandwidth of the VBR instance, in Mbps. This parameter is required.
+         */
+        public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.props.bandwidth(bandwidth);
+            return this;
+        }
+
+        /**
          * Property circuitCode: The circuit code provided by the Internet service provider (ISP) for the physical connection.
          * <p>
          * Note Only the owner of the physical connection can set this parameter.
@@ -336,6 +367,27 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource implem
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

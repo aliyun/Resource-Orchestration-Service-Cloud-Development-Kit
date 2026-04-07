@@ -120,6 +120,10 @@ func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetDestPortTypeParameter
 	return nil
 }
 
+func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetDomainResolveTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpcFirewallControlPolicy) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }

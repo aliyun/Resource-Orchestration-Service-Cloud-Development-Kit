@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cr.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CR::Instance</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CR::Instance</code>, which is used to query the information about an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.002Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.354Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.datasource.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cr.datasource.IInstance {
 
@@ -65,7 +65,7 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
     }
 
     /**
-     * Attribute InstanceSpecification: InstanceSpecification.
+     * Attribute InstanceSpecification: The instance specification.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceSpecification() {

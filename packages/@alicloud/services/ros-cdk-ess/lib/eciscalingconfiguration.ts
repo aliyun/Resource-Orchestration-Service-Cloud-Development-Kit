@@ -284,7 +284,7 @@ export interface IEciScalingConfiguration extends ros.IResource {
     readonly attrScalingConfigurationId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::EciScalingConfiguration`, which is used to define a scaling configuration of the Elastic Container Instance type in Auto Scaling.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEciScalingConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-eciscalingconfiguration
  */
@@ -313,8 +313,8 @@ export class EciScalingConfiguration extends ros.Resource implements IEciScaling
 
         const rosEciScalingConfiguration = new RosEciScalingConfiguration(this, id,  {
             scalingConfigurationName: props.scalingConfigurationName,
-            ntpServers: props.ntpServers,
             resourceGroupId: props.resourceGroupId,
+            ntpServers: props.ntpServers,
             memory: props.memory,
             dnsConfigSearches: props.dnsConfigSearches,
             dataCachePl: props.dataCachePl,
@@ -324,21 +324,21 @@ export class EciScalingConfiguration extends ros.Resource implements IEciScaling
             ingressBandwidth: props.ingressBandwidth,
             imageSnapshotId: props.imageSnapshotId,
             dataCacheProvisionedIops: props.dataCacheProvisionedIops,
-            egressBandwidth: props.egressBandwidth,
-            volumes: props.volumes,
             ramRoleName: props.ramRoleName,
+            volumes: props.volumes,
+            egressBandwidth: props.egressBandwidth,
             autoMatchImageCache: props.autoMatchImageCache,
             dataCacheBucket: props.dataCacheBucket,
             ipv6AddressCount: props.ipv6AddressCount,
             dnsConfigOptions: props.dnsConfigOptions,
             spotPriceLimit: props.spotPriceLimit,
             instanceTypes: props.instanceTypes,
-            tags: props.tags,
             hostName: props.hostName,
+            tags: props.tags,
             spotStrategy: props.spotStrategy,
             dnsConfigNameServers: props.dnsConfigNameServers,
-            activeDeadlineSeconds: props.activeDeadlineSeconds,
             acrRegistryInfos: props.acrRegistryInfos,
+            activeDeadlineSeconds: props.activeDeadlineSeconds,
             initContainers: props.initContainers,
             loadBalancerWeight: props.loadBalancerWeight,
             cpuOptionsThreadsPerCore: props.cpuOptionsThreadsPerCore,

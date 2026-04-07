@@ -124,8 +124,16 @@ export interface VpcFirewallControlPolicyProps {
     readonly destPortType?: string | ros.IResolvable;
 
     /**
+     * Property domainResolveType: The domain resolution method of the access control policy. Valid values:
+     * - FQDN: Based on FQDN
+     * - DNS: Based on DNS dynamic resolution
+     * - FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution
+     */
+    readonly domainResolveType?: string | ros.IResolvable;
+
+    /**
      * Property endTime: The end time of the policy validity period for an access control policy. It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+     * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
      */
     readonly endTime?: number | ros.IResolvable;
 
@@ -204,7 +212,7 @@ export interface IVpcFirewallControlPolicy extends ros.IResource {
     readonly attrAclUuid: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallControlPolicy`The , which resource type adds access control policies to specified VPC firewall policy groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcFirewallControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
@@ -234,28 +242,29 @@ export class VpcFirewallControlPolicy extends ros.Resource implements IVpcFirewa
         const rosVpcFirewallControlPolicy = new RosVpcFirewallControlPolicy(this, id,  {
             destination: props.destination,
             description: props.description,
-            applicationName: props.applicationName,
-            endTime: props.endTime,
             memberUid: props.memberUid,
+            endTime: props.endTime,
             sourceType: props.sourceType,
             destPort: props.destPort,
+            destinationType: props.destinationType,
+            source: props.source,
+            destPortType: props.destPortType,
+            proto: props.proto,
+            repeatDays: props.repeatDays,
+            release: props.release,
+            destPortGroup: props.destPortGroup,
+            applicationName: props.applicationName,
             applicationNameList: props.applicationNameList,
             startTime: props.startTime,
             aclAction: props.aclAction,
             lang: props.lang,
-            destinationType: props.destinationType,
             vpcFirewallId: props.vpcFirewallId,
-            source: props.source,
-            destPortType: props.destPortType,
-            proto: props.proto,
             repeatEndTime: props.repeatEndTime,
-            repeatDays: props.repeatDays,
+            domainResolveType: props.domainResolveType,
             repeatType: props.repeatType,
             regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
             repeatStartTime: props.repeatStartTime,
-            release: props.release,
             newOrder: props.newOrder,
-            destPortGroup: props.destPortGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcFirewallControlPolicy;
         this.attrAclUuid = rosVpcFirewallControlPolicy.attrAclUuid;

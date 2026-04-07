@@ -3,15 +3,30 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * Represents a <code>SupabaseProject</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.415Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ISupabaseProject")
 @software.amazon.jsii.Jsii.Proxy(ISupabaseProject.Jsii$Proxy.class)
 public interface ISupabaseProject extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
 
     /**
+     * Attribute ApiKeys: API keys.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys();
+
+    /**
+     * Attribute PrivateConnectUrl: Private connection URL.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateConnectUrl();
+
+    /**
      * Attribute ProjectId: Supabase instance ID.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId();
+
+    /**
+     * Attribute PublicConnectUrl: Public connection URL.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicConnectUrl();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.gpdb.SupabaseProjectProps getProps();
 
@@ -56,11 +71,35 @@ public interface ISupabaseProject extends software.amazon.jsii.JsiiSerializable,
         }
 
         /**
+         * Attribute ApiKeys: API keys.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys() {
+            return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute PrivateConnectUrl: Private connection URL.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateConnectUrl() {
+            return software.amazon.jsii.Kernel.get(this, "attrPrivateConnectUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute ProjectId: Supabase instance ID.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId() {
             return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute PublicConnectUrl: Public connection URL.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicConnectUrl() {
+            return software.amazon.jsii.Kernel.get(this, "attrPublicConnectUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override
@@ -107,11 +146,35 @@ public interface ISupabaseProject extends software.amazon.jsii.JsiiSerializable,
         }
 
         /**
+         * Attribute ApiKeys: API keys.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys() {
+            return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute PrivateConnectUrl: Private connection URL.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPrivateConnectUrl() {
+            return software.amazon.jsii.Kernel.get(this, "attrPrivateConnectUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
          * Attribute ProjectId: Supabase instance ID.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrProjectId() {
             return software.amazon.jsii.Kernel.get(this, "attrProjectId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute PublicConnectUrl: Public connection URL.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrPublicConnectUrl() {
+            return software.amazon.jsii.Kernel.get(this, "attrPublicConnectUrl", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

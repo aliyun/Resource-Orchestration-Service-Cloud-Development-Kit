@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Member`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Member`, which is used to grants authorization to a member.
 type Member interface {
 	alicloudroscdkcore.Resource
 	IMember

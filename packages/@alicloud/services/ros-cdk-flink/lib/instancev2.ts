@@ -38,6 +38,11 @@ export interface InstanceV2Props {
     readonly vSwitchIds: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property architectureType: The architecture type, the value of the value is as follows: X86, ARM
+     */
+    readonly architectureType?: string | ros.IResolvable;
+
+    /**
      * Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
      * true: Automatic renewal.
      * false: Manual renewal.
@@ -51,6 +56,22 @@ export interface InstanceV2Props {
      * If PricingCycle is year, the valid range is 1 to 3
      */
     readonly duration?: number | ros.IResolvable;
+
+    /**
+     * Property haResourceSpec: HA resource specifications.
+     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     */
+    readonly haResourceSpec?: RosInstanceV2.HaResourceSpecProperty | ros.IResolvable;
+
+    /**
+     * Property haVSwitchIds: HA VSwitch IDs.
+     */
+    readonly haVSwitchIds?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * Property monitorType: The monitor type, the value of the value is as follows: TAIHAO, ARMS
+     */
+    readonly monitorType?: string | ros.IResolvable;
 
     /**
      * Property pricingCycle: The ordering cycle only supports ordering in the year and month.
@@ -98,7 +119,7 @@ export interface IInstanceV2 extends ros.IResource {
     readonly attrWorkspaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::InstanceV2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceV2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
  */
@@ -136,16 +157,20 @@ export class InstanceV2 extends ros.Resource implements IInstanceV2 {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstanceV2 = new RosInstanceV2(this, id,  {
-            instanceName: props.instanceName,
-            storage: props.storage,
-            vpcId: props.vpcId,
+            architectureType: props.architectureType,
+            monitorType: props.monitorType,
+            haResourceSpec: props.haResourceSpec,
             vSwitchIds: props.vSwitchIds,
             pricingCycle: props.pricingCycle,
-            chargeType: props.chargeType,
             autoRenew: props.autoRenew,
             promotionCode: props.promotionCode,
             resourceSpec: props.resourceSpec,
             duration: props.duration,
+            haVSwitchIds: props.haVSwitchIds,
+            instanceName: props.instanceName,
+            storage: props.storage,
+            vpcId: props.vpcId,
+            chargeType: props.chargeType,
             usePromotionCode: props.usePromotionCode,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstanceV2;

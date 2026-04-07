@@ -81,6 +81,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property instanceId: The instance ID of the requested EIP.</summary>
+        /// <remarks>
+        /// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+        /// </remarks>
+        [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? InstanceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property internetChargeType: The network charge type.</summary>
         /// <remarks>
         /// Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
@@ -88,6 +102,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? InternetChargeType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ipAddress: The IP address of the requested EIP.</summary>
+        /// <remarks>
+        /// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+        /// </remarks>
+        [JsiiProperty(name: "ipAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? IpAddress
         {
             get
             {
@@ -299,6 +327,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property instanceId: The instance ID of the requested EIP.</summary>
+            /// <remarks>
+            /// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? InstanceId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property internetChargeType: The network charge type.</summary>
             /// <remarks>
             /// Support 'PayByBandwidth' and 'PayByTraffic' only. Default is PayByBandwidth. PayByTraffic will charge by hour, PayByBandwidth will charge by day.
@@ -306,6 +345,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? InternetChargeType
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipAddress: The IP address of the requested EIP.</summary>
+            /// <remarks>
+            /// You must specify either IpAddress or InstanceId. If neither is specified, the system randomly allocates an EIP.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? IpAddress
             {
                 get => GetInstanceProperty<object?>();
             }

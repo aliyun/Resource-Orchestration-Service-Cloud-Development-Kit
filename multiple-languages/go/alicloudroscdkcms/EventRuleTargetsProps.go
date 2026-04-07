@@ -13,6 +13,8 @@ type EventRuleTargetsProps struct {
 	FcParameters interface{} `field:"optional" json:"fcParameters" yaml:"fcParameters"`
 	// Property mnsParameters: MNS configuration.A maximum of 5 parameters.
 	MnsParameters interface{} `field:"optional" json:"mnsParameters" yaml:"mnsParameters"`
+	// Property openApiParameters: API callback notification parameter list.
+	OpenApiParameters interface{} `field:"optional" json:"openApiParameters" yaml:"openApiParameters"`
 	// Property slsParameters: SLS configuration.A maximum of 5 parameters.
 	SlsParameters interface{} `field:"optional" json:"slsParameters" yaml:"slsParameters"`
 	// Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.

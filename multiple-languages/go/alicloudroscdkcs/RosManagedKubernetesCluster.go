@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`The , which type creates ACK managed clusters.
 type RosManagedKubernetesCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}
@@ -25,6 +25,8 @@ type RosManagedKubernetesCluster interface {
 	AttrScalingRuleId() alicloudroscdkcore.IResolvable
 	AttrTaskId() alicloudroscdkcore.IResolvable
 	AttrWorkerRamRoleName() alicloudroscdkcore.IResolvable
+	AutoMode() interface{}
+	SetAutoMode(val interface{})
 	CloudMonitorFlags() interface{}
 	SetCloudMonitorFlags(val interface{})
 	ClusterSpec() interface{}
@@ -382,6 +384,16 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) AttrWorkerRamRoleName() alicloud
 	_jsii_.Get(
 		j,
 		"attrWorkerRamRoleName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster) AutoMode() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"autoMode",
 		&returns,
 	)
 	return returns
@@ -952,6 +964,17 @@ func (j *jsiiProxy_RosManagedKubernetesCluster)SetAddons(val interface{}) {
 	_jsii_.Set(
 		j,
 		"addons",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosManagedKubernetesCluster)SetAutoMode(val interface{}) {
+	if err := j.validateSetAutoModeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"autoMode",
 		val,
 	)
 }

@@ -62,7 +62,7 @@ export interface IKvNamespace extends ros.IResource {
     readonly attrNamespaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::KvNamespace`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::KvNamespace`The , which resource is used to create a key-value (KV) namespace.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKvNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kvnamespace
  */

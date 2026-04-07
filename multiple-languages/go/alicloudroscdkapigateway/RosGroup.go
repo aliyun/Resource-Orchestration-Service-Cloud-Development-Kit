@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Group`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
 type RosGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrGroupId() alicloudroscdkcore.IResolvable

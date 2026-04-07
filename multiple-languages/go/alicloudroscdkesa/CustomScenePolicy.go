@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CustomScenePolicy`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CustomScenePolicy`The , which resource type is used to create scenario-specific policies.
 type CustomScenePolicy interface {
 	alicloudroscdkcore.Resource
 	ICustomScenePolicy

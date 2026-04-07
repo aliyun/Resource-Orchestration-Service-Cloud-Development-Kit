@@ -67,7 +67,7 @@ export interface IKubernetesClusters extends ros.IResource {
     readonly attrClusters: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`, which is used to query Container Service for Kubernetes (ACK) clusters.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKubernetesClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
  */
@@ -100,11 +100,11 @@ export class KubernetesClusters extends ros.Resource implements IKubernetesClust
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosKubernetesClusters = new RosKubernetesClusters(this, id,  {
-            clusterSpec: props.clusterSpec,
             clusterType: props.clusterType,
+            clusterSpec: props.clusterSpec,
             profile: props.profile,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             name: props.name,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKubernetesClusters;
         this.attrClusterIds = rosKubernetesClusters.attrClusterIds;

@@ -95,12 +95,6 @@ function RosAclPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('aclOperationTypes', ros.listValidator(ros.validateString))(properties.aclOperationTypes));
     errors.collect(ros.propertyValidator('username', ros.requiredValidator)(properties.username));
-    if(properties.username && (typeof properties.username) !== 'object') {
-        errors.collect(ros.propertyValidator('username', ros.validateAllowedPattern)({
-          data: properties.username,
-          reg: /^[a-zA-Z][a-zA-Z0-9_]{2,63}$/
-        }));
-    }
     errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     if(properties.instanceId && (Array.isArray(properties.instanceId) || (typeof properties.instanceId) === 'string')) {
@@ -164,7 +158,7 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Acl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Acl`, which is used to create an access control list (ACL).
  * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-acl
  */
@@ -367,7 +361,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`, which is used to create a consumer group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
  */
@@ -644,8 +638,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('deployOption', RosInstance_DeployOptionPropertyValidator)(properties.deployOption));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('ioMaxSpec', ros.validateString)(properties.ioMaxSpec));
-    errors.collect(ros.propertyValidator('serverlessConfig', RosInstance_ServerlessConfigPropertyValidator)(properties.serverlessConfig));
     errors.collect(ros.propertyValidator('diskSize', ros.validateNumber)(properties.diskSize));
+    errors.collect(ros.propertyValidator('serverlessConfig', RosInstance_ServerlessConfigPropertyValidator)(properties.serverlessConfig));
     errors.collect(ros.propertyValidator('topicQuota', ros.validateNumber)(properties.topicQuota));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
@@ -692,7 +686,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Instance`, which is used to create an ApsaraMQ for Kafka instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-instance
  */
@@ -995,13 +989,13 @@ export namespace RosInstance {
          */
         readonly username?: string | ros.IResolvable;
         /**
-         * @Property isForceSelectedZones: Whether to force deployment in the selected availability zone.
-         */
-        readonly isForceSelectedZones?: boolean | ros.IResolvable;
-        /**
          * @Property serviceVersion: The version of the Message Queue for Apache Kafka instance. For example: 0.10.2, 2.2.0 and etc.
          */
         readonly serviceVersion?: string | ros.IResolvable;
+        /**
+         * @Property isForceSelectedZones: Whether to force deployment in the selected availability zone.
+         */
+        readonly isForceSelectedZones?: boolean | ros.IResolvable;
         /**
          * @Property userPhoneNum: The phone number of the alert contact.
          */
@@ -1072,8 +1066,8 @@ function RosInstance_DeployOptionPropertyValidator(properties: any): ros.Validat
         }));
     }
     errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
-    errors.collect(ros.propertyValidator('isForceSelectedZones', ros.validateBoolean)(properties.isForceSelectedZones));
     errors.collect(ros.propertyValidator('serviceVersion', ros.validateString)(properties.serviceVersion));
+    errors.collect(ros.propertyValidator('isForceSelectedZones', ros.validateBoolean)(properties.isForceSelectedZones));
     errors.collect(ros.propertyValidator('userPhoneNum', ros.validateString)(properties.userPhoneNum));
     errors.collect(ros.propertyValidator('deployModule', ros.requiredValidator)(properties.deployModule));
     if(properties.deployModule && (typeof properties.deployModule) !== 'object') {
@@ -1119,8 +1113,8 @@ function rosInstanceDeployOptionPropertyToRosTemplate(properties: any): any {
       'CrossZone': ros.booleanToRosTemplate(properties.crossZone),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'Username': ros.stringToRosTemplate(properties.username),
-      'IsForceSelectedZones': ros.booleanToRosTemplate(properties.isForceSelectedZones),
       'ServiceVersion': ros.stringToRosTemplate(properties.serviceVersion),
+      'IsForceSelectedZones': ros.booleanToRosTemplate(properties.isForceSelectedZones),
       'UserPhoneNum': ros.stringToRosTemplate(properties.userPhoneNum),
       'DeployModule': ros.stringToRosTemplate(properties.deployModule),
       'Password': ros.stringToRosTemplate(properties.password),
@@ -1296,14 +1290,6 @@ function RosSaslUserPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('username', ros.requiredValidator)(properties.username));
-    if(properties.username && (typeof properties.username) !== 'object') {
-        errors.collect(ros.propertyValidator('username', ros.validateAllowedPattern)({
-          data: properties.username,
-          reg: /^[a-zA-Z][a-zA-Z0-9_]{2,63}$/
-        }));
-    }
-    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     if(properties.instanceId && (Array.isArray(properties.instanceId) || (typeof properties.instanceId) === 'string')) {
         errors.collect(ros.propertyValidator('instanceId', ros.validateLength)({
@@ -1313,6 +1299,14 @@ function RosSaslUserPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('username', ros.requiredValidator)(properties.username));
+    if(properties.username && (typeof properties.username) !== 'object') {
+        errors.collect(ros.propertyValidator('username', ros.validateAllowedPattern)({
+          data: properties.username,
+          reg: /^[a-zA-Z][a-zA-Z0-9_]{2,63}$/
+        }));
+    }
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
     if(properties.mechanism && (typeof properties.mechanism) !== 'object') {
         errors.collect(ros.propertyValidator('mechanism', ros.validateAllowedValues)({
           data: properties.mechanism,
@@ -1348,7 +1342,7 @@ function rosSaslUserPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`, which is used to create a Simple Authentication and Security Layer (SASL) user.
  * @Note This class does not contain additional functions, so it is recommended to use the `SaslUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-sasluser
  */
@@ -1593,7 +1587,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Topic`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Topic`, which is used to create a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */

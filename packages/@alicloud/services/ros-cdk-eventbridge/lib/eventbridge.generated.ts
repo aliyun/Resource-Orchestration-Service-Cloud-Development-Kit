@@ -51,9 +51,9 @@ export interface RosRuleProps {
 function RosRulePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('eventBusName', ros.requiredValidator)(properties.eventBusName));
     errors.collect(ros.propertyValidator('eventBusName', ros.validateString)(properties.eventBusName));
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
     errors.collect(ros.propertyValidator('filterPattern', ros.requiredValidator)(properties.filterPattern));
     errors.collect(ros.propertyValidator('filterPattern', ros.hashValidator(ros.validateAny))(properties.filterPattern));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
@@ -95,7 +95,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EventBridge::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EventBridge::Rule`, which is used to create an event rule for an event bus.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
  */
@@ -349,25 +349,25 @@ export namespace RosRule {
          */
         readonly errorsTolerance?: string | ros.IResolvable;
         /**
-         * @Property deadLetterQueue: The dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The dead-letter queue feature is supported by the following queue types: Message Queue for Apache RocketMQ, Message Service (MNS), Message Queue for Apache Kafka, and EventBridge.
-         */
-        readonly deadLetterQueue?: RosRule.DeadLetterQueueProperty | ros.IResolvable;
-        /**
          * @Property pushRetryStrategy: The retry policy that is used to push the event. Valid values: BACKOFF_RETRY: backoff retry. The request can be retried up to three times. The interval between two consecutive retries is a random value between 10 and 20 seconds. EXPONENTIAL_DECAY_RETRY: exponential decay retry. The request can be retried up to 176 times. The interval between two consecutive retries exponentially increases to 512 seconds, and the total retry time is one day. The specific retry intervals are 1, 2, 4, 8, 16, 32, 64, 128, 256, 512, 512, ..., and 512 seconds, including a maximum of one hundred and sixty-seven 512 seconds in total.
          */
         readonly pushRetryStrategy?: string | ros.IResolvable;
+        /**
+         * @Property deadLetterQueue: The dead-letter queue. Events that are not processed or whose maximum retries are exceeded are written to the dead-letter queue. The dead-letter queue feature is supported by the following queue types: Message Queue for Apache RocketMQ, Message Service (MNS), Message Queue for Apache Kafka, and EventBridge.
+         */
+        readonly deadLetterQueue?: RosRule.DeadLetterQueueProperty | ros.IResolvable;
         /**
          * @Property type: The type of the event target.
          */
         readonly type: string | ros.IResolvable;
         /**
-         * @Property concurrentConfig: Concurrency control configuration.
-         */
-        readonly concurrentConfig?: RosRule.ConcurrentConfigProperty | ros.IResolvable;
-        /**
          * @Property endpoint: The endpoint of the event target.
          */
         readonly endpoint: string | ros.IResolvable;
+        /**
+         * @Property concurrentConfig: Concurrency control configuration.
+         */
+        readonly concurrentConfig?: RosRule.ConcurrentConfigProperty | ros.IResolvable;
         /**
          * @Property paramList: The parameters that the event passes.
          */
@@ -395,13 +395,13 @@ function RosRule_TargetsPropertyValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('errorsTolerance', ros.validateString)(properties.errorsTolerance));
-    errors.collect(ros.propertyValidator('deadLetterQueue', RosRule_DeadLetterQueuePropertyValidator)(properties.deadLetterQueue));
     errors.collect(ros.propertyValidator('pushRetryStrategy', ros.validateString)(properties.pushRetryStrategy));
+    errors.collect(ros.propertyValidator('deadLetterQueue', RosRule_DeadLetterQueuePropertyValidator)(properties.deadLetterQueue));
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('concurrentConfig', RosRule_ConcurrentConfigPropertyValidator)(properties.concurrentConfig));
     errors.collect(ros.propertyValidator('endpoint', ros.requiredValidator)(properties.endpoint));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
+    errors.collect(ros.propertyValidator('concurrentConfig', RosRule_ConcurrentConfigPropertyValidator)(properties.concurrentConfig));
     errors.collect(ros.propertyValidator('paramList', ros.requiredValidator)(properties.paramList));
     if(properties.paramList && (Array.isArray(properties.paramList) || (typeof properties.paramList) === 'string')) {
         errors.collect(ros.propertyValidator('paramList', ros.validateLength)({
@@ -429,11 +429,11 @@ function rosRuleTargetsPropertyToRosTemplate(properties: any): any {
     RosRule_TargetsPropertyValidator(properties).assertSuccess();
     return {
       'ErrorsTolerance': ros.stringToRosTemplate(properties.errorsTolerance),
-      'DeadLetterQueue': rosRuleDeadLetterQueuePropertyToRosTemplate(properties.deadLetterQueue),
       'PushRetryStrategy': ros.stringToRosTemplate(properties.pushRetryStrategy),
+      'DeadLetterQueue': rosRuleDeadLetterQueuePropertyToRosTemplate(properties.deadLetterQueue),
       'Type': ros.stringToRosTemplate(properties.type),
-      'ConcurrentConfig': rosRuleConcurrentConfigPropertyToRosTemplate(properties.concurrentConfig),
       'Endpoint': ros.stringToRosTemplate(properties.endpoint),
+      'ConcurrentConfig': rosRuleConcurrentConfigPropertyToRosTemplate(properties.concurrentConfig),
       'ParamList': ros.listMapper(rosRuleParamListPropertyToRosTemplate)(properties.paramList),
       'Id': ros.stringToRosTemplate(properties.identity),
     };

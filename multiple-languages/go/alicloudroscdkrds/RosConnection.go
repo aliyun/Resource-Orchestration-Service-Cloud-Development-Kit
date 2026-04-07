@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Connection`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
 type RosConnection interface {
 	alicloudroscdkcore.RosResource
 	AttrBabelfishPort() alicloudroscdkcore.IResolvable

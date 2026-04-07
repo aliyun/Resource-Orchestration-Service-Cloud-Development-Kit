@@ -105,7 +105,7 @@ export interface IQueue extends ros.IResource {
     readonly attrQueueUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Queue`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Queue`, which is used to create a Simple Message Queue (formerly MNS) (SMQ) queue. A queue is a destination address where messages are stored. Queues can be classified into standard and delayed queues.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueue`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-queue
  */

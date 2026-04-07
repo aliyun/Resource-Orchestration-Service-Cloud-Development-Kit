@@ -7,5 +7,6 @@ package datasource
 type RosZonesProps struct {
 	RefreshOptions interface{} `field:"optional" json:"refreshOptions" yaml:"refreshOptions"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 }
 

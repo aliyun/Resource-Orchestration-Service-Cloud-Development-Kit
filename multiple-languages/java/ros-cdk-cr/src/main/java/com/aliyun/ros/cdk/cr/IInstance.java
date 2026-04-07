@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Represents a <code>Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.957Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.IInstance")
 @software.amazon.jsii.Jsii.Proxy(IInstance.Jsii$Proxy.class)
 public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -24,7 +24,7 @@ public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.al
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceName();
 
     /**
-     * Attribute InstanceSpecification: InstanceSpecification.
+     * Attribute InstanceSpecification: The instance specification.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceSpecification();
 
@@ -105,7 +105,7 @@ public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.al
         }
 
         /**
-         * Attribute InstanceSpecification: InstanceSpecification.
+         * Attribute InstanceSpecification: The instance specification.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceSpecification() {
@@ -196,7 +196,7 @@ public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.al
         }
 
         /**
-         * Attribute InstanceSpecification: InstanceSpecification.
+         * Attribute InstanceSpecification: The instance specification.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrInstanceSpecification() {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.resourcemanager;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.850Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.533Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.RosResourceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceGroupProps.Jsii$Proxy.class)
 public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -19,6 +19,12 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosResourceGroupProps}
      */
     static Builder builder() {
@@ -30,6 +36,7 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
     public static final class Builder implements software.amazon.jsii.Builder<RosResourceGroupProps> {
         java.lang.Object displayName;
         java.lang.Object name;
+        java.util.List<com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosResourceGroupProps#getDisplayName}
@@ -72,6 +79,17 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosResourceGroupProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosResourceGroupProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -89,6 +107,7 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosResourceGroupProps {
         private final java.lang.Object displayName;
         private final java.lang.Object name;
+        private final java.util.List<com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -98,15 +117,18 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
             super(objRef);
             this.displayName = software.amazon.jsii.Kernel.get(this, "displayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.displayName = java.util.Objects.requireNonNull(builder.displayName, "displayName is required");
             this.name = java.util.Objects.requireNonNull(builder.name, "name is required");
+            this.tags = (java.util.List<com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -120,6 +142,11 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.resourcemanager.RosResourceGroup.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -127,6 +154,9 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
 
             data.set("displayName", om.valueToTree(this.getDisplayName()));
             data.set("name", om.valueToTree(this.getName()));
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-resourcemanager.RosResourceGroupProps"));
@@ -146,13 +176,15 @@ public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializ
             RosResourceGroupProps.Jsii$Proxy that = (RosResourceGroupProps.Jsii$Proxy) o;
 
             if (!displayName.equals(that.displayName)) return false;
-            return this.name.equals(that.name);
+            if (!name.equals(that.name)) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.displayName.hashCode();
             result = 31 * result + (this.name.hashCode());
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

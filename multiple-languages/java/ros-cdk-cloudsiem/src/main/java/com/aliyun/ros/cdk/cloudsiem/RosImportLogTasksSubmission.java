@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsiem;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudSiem::ImportLogTasksSubmission</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudSiem::ImportLogTasksSubmission</code>, which is used to import and submit a log collection task.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.570Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.886Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.RosImportLogTasksSubmission")
 public class RosImportLogTasksSubmission extends com.aliyun.ros.cdk.core.RosResource {
 

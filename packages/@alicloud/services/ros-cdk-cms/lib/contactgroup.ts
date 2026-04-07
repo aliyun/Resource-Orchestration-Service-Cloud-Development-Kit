@@ -23,6 +23,11 @@ export interface ContactGroupProps {
      * Property describe: The description of the alert contact group.
      */
     readonly describe: string | ros.IResolvable;
+
+    /**
+     * Property enableSubscribed: Whether to enable the subscription feature.
+     */
+    readonly enableSubscribed?: boolean | ros.IResolvable;
 }
 
 /**
@@ -37,7 +42,7 @@ export interface IContactGroup extends ros.IResource {
     readonly attrContactGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ContactGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosContactGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
@@ -68,6 +73,7 @@ export class ContactGroup extends ros.Resource implements IContactGroup {
             describe: props.describe,
             contactGroupName: props.contactGroupName,
             contactNames: props.contactNames,
+            enableSubscribed: props.enableSubscribed,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosContactGroup;
         this.attrContactGroupName = rosContactGroup.attrContactGroupName;

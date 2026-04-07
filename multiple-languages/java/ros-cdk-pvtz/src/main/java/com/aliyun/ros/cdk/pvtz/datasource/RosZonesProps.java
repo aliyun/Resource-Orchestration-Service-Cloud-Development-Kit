@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pvtz.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.261Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.917Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.datasource.RosZonesProps")
 @software.amazon.jsii.Jsii.Proxy(RosZonesProps.Jsii$Proxy.class)
 public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosZonesProps}
      */
     static Builder builder() {
@@ -34,6 +40,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
     public static final class Builder implements software.amazon.jsii.Builder<RosZonesProps> {
         java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
+        java.lang.Object vpcId;
 
         /**
          * Sets the value of {@link RosZonesProps#getRefreshOptions}
@@ -76,6 +83,26 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosZonesProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(java.lang.String vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosZonesProps#getVpcId}
+         * @param vpcId the value to be set.
+         * @return {@code this}
+         */
+        public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
+            this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosZonesProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -93,6 +120,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosZonesProps {
         private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object vpcId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -102,6 +130,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             super(objRef);
             this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -111,6 +140,7 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
+            this.vpcId = builder.vpcId;
         }
 
         @Override
@@ -124,6 +154,11 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getVpcId() {
+            return this.vpcId;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -134,6 +169,9 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getVpcId() != null) {
+                data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -154,13 +192,15 @@ public interface RosZonesProps extends software.amazon.jsii.JsiiSerializable {
             RosZonesProps.Jsii$Proxy that = (RosZonesProps.Jsii$Proxy) o;
 
             if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
-            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.refreshOptions != null ? this.refreshOptions.hashCode() : 0;
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;
         }
     }

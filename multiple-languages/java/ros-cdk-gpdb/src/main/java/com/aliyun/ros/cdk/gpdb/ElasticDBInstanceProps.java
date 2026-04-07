@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.408Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ElasticDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(ElasticDBInstanceProps.Jsii$Proxy.class)
 public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -58,6 +58,15 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
      * operation to query the most recent zone list.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
+
+    /**
+     * Property backupId: Backup set ID.
+     * <p>
+     * You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupId() {
+        return null;
+    }
 
     /**
      * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
@@ -163,6 +172,15 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property srcDbInstanceName: Clone source instance ID.
+     * <p>
+     * You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceName() {
+        return null;
+    }
+
+    /**
      * Property tags: The list of instance tags in the form of key/value pairs.
      * <p>
      * You can define a maximum of 20 tags for instance.
@@ -199,6 +217,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object storageSize;
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
+        java.lang.Object backupId;
         java.lang.Object dbInstanceCategory;
         java.lang.Object dbInstanceDescription;
         java.lang.Object dbInstanceMode;
@@ -210,6 +229,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object periodUnit;
         java.lang.Object privateIpAddress;
         java.lang.Object securityIpList;
+        java.lang.Object srcDbInstanceName;
         java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> tags;
         java.lang.Object vpcId;
 
@@ -366,6 +386,28 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ElasticDBInstanceProps#getBackupId}
+         * @param backupId Property backupId: Backup set ID.
+         *                 You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+         * @return {@code this}
+         */
+        public Builder backupId(java.lang.String backupId) {
+            this.backupId = backupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ElasticDBInstanceProps#getBackupId}
+         * @param backupId Property backupId: Backup set ID.
+         *                 You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+         * @return {@code this}
+         */
+        public Builder backupId(com.aliyun.ros.cdk.core.IResolvable backupId) {
+            this.backupId = backupId;
             return this;
         }
 
@@ -622,6 +664,28 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link ElasticDBInstanceProps#getSrcDbInstanceName}
+         * @param srcDbInstanceName Property srcDbInstanceName: Clone source instance ID.
+         *                          You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+         * @return {@code this}
+         */
+        public Builder srcDbInstanceName(java.lang.String srcDbInstanceName) {
+            this.srcDbInstanceName = srcDbInstanceName;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ElasticDBInstanceProps#getSrcDbInstanceName}
+         * @param srcDbInstanceName Property srcDbInstanceName: Clone source instance ID.
+         *                          You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+         * @return {@code this}
+         */
+        public Builder srcDbInstanceName(com.aliyun.ros.cdk.core.IResolvable srcDbInstanceName) {
+            this.srcDbInstanceName = srcDbInstanceName;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link ElasticDBInstanceProps#getTags}
          * @param tags Property tags: The list of instance tags in the form of key/value pairs.
          *             You can define a maximum of 20 tags for instance.
@@ -682,6 +746,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object storageSize;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
+        private final java.lang.Object backupId;
         private final java.lang.Object dbInstanceCategory;
         private final java.lang.Object dbInstanceDescription;
         private final java.lang.Object dbInstanceMode;
@@ -693,6 +758,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object periodUnit;
         private final java.lang.Object privateIpAddress;
         private final java.lang.Object securityIpList;
+        private final java.lang.Object srcDbInstanceName;
         private final java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> tags;
         private final java.lang.Object vpcId;
 
@@ -709,6 +775,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.storageSize = software.amazon.jsii.Kernel.get(this, "storageSize", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupId = software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceCategory = software.amazon.jsii.Kernel.get(this, "dbInstanceCategory", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceMode = software.amazon.jsii.Kernel.get(this, "dbInstanceMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -720,6 +787,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.periodUnit = software.amazon.jsii.Kernel.get(this, "periodUnit", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateIpAddress = software.amazon.jsii.Kernel.get(this, "privateIpAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpList = software.amazon.jsii.Kernel.get(this, "securityIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcDbInstanceName = software.amazon.jsii.Kernel.get(this, "srcDbInstanceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty.class)));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -737,6 +805,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.storageSize = java.util.Objects.requireNonNull(builder.storageSize, "storageSize is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.backupId = builder.backupId;
             this.dbInstanceCategory = builder.dbInstanceCategory;
             this.dbInstanceDescription = builder.dbInstanceDescription;
             this.dbInstanceMode = builder.dbInstanceMode;
@@ -748,6 +817,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             this.periodUnit = builder.periodUnit;
             this.privateIpAddress = builder.privateIpAddress;
             this.securityIpList = builder.securityIpList;
+            this.srcDbInstanceName = builder.srcDbInstanceName;
             this.tags = (java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty>)builder.tags;
             this.vpcId = builder.vpcId;
         }
@@ -785,6 +855,11 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
+        }
+
+        @Override
+        public final java.lang.Object getBackupId() {
+            return this.backupId;
         }
 
         @Override
@@ -843,6 +918,11 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getSrcDbInstanceName() {
+            return this.srcDbInstanceName;
+        }
+
+        @Override
         public final java.util.List<com.aliyun.ros.cdk.gpdb.RosElasticDBInstance.TagsProperty> getTags() {
             return this.tags;
         }
@@ -865,6 +945,9 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             data.set("storageSize", om.valueToTree(this.getStorageSize()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             data.set("zoneId", om.valueToTree(this.getZoneId()));
+            if (this.getBackupId() != null) {
+                data.set("backupId", om.valueToTree(this.getBackupId()));
+            }
             if (this.getDbInstanceCategory() != null) {
                 data.set("dbInstanceCategory", om.valueToTree(this.getDbInstanceCategory()));
             }
@@ -898,6 +981,9 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             if (this.getSecurityIpList() != null) {
                 data.set("securityIpList", om.valueToTree(this.getSecurityIpList()));
             }
+            if (this.getSrcDbInstanceName() != null) {
+                data.set("srcDbInstanceName", om.valueToTree(this.getSrcDbInstanceName()));
+            }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
             }
@@ -929,6 +1015,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             if (!storageSize.equals(that.storageSize)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
+            if (this.backupId != null ? !this.backupId.equals(that.backupId) : that.backupId != null) return false;
             if (this.dbInstanceCategory != null ? !this.dbInstanceCategory.equals(that.dbInstanceCategory) : that.dbInstanceCategory != null) return false;
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
             if (this.dbInstanceMode != null ? !this.dbInstanceMode.equals(that.dbInstanceMode) : that.dbInstanceMode != null) return false;
@@ -940,6 +1027,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             if (this.periodUnit != null ? !this.periodUnit.equals(that.periodUnit) : that.periodUnit != null) return false;
             if (this.privateIpAddress != null ? !this.privateIpAddress.equals(that.privateIpAddress) : that.privateIpAddress != null) return false;
             if (this.securityIpList != null ? !this.securityIpList.equals(that.securityIpList) : that.securityIpList != null) return false;
+            if (this.srcDbInstanceName != null ? !this.srcDbInstanceName.equals(that.srcDbInstanceName) : that.srcDbInstanceName != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             return this.vpcId != null ? this.vpcId.equals(that.vpcId) : that.vpcId == null;
         }
@@ -953,6 +1041,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.storageSize.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
+            result = 31 * result + (this.backupId != null ? this.backupId.hashCode() : 0);
             result = 31 * result + (this.dbInstanceCategory != null ? this.dbInstanceCategory.hashCode() : 0);
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
             result = 31 * result + (this.dbInstanceMode != null ? this.dbInstanceMode.hashCode() : 0);
@@ -964,6 +1053,7 @@ public interface ElasticDBInstanceProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.periodUnit != null ? this.periodUnit.hashCode() : 0);
             result = 31 * result + (this.privateIpAddress != null ? this.privateIpAddress.hashCode() : 0);
             result = 31 * result + (this.securityIpList != null ? this.securityIpList.hashCode() : 0);
+            result = 31 * result + (this.srcDbInstanceName != null ? this.srcDbInstanceName.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             return result;

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Image`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Image`, which is used to create an image from an instance.
 type Image interface {
 	alicloudroscdkcore.Resource
 	IImage

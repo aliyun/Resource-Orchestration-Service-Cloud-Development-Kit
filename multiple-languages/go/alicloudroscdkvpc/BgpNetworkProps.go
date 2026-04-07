@@ -9,5 +9,7 @@ type BgpNetworkProps struct {
 	DstCidrBlock interface{} `field:"required" json:"dstCidrBlock" yaml:"dstCidrBlock"`
 	// Property routerId: The ID of the vRouter associated with the router interface.
 	RouterId interface{} `field:"required" json:"routerId" yaml:"routerId"`
+	// Property vpcId: The ID of the VPC.
+	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 }
 

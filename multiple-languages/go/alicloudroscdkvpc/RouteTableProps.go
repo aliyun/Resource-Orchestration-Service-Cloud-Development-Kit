@@ -7,6 +7,8 @@ package alicloudroscdkvpc
 type RouteTableProps struct {
 	// Property vpcId: The ID of the VPC to which the custom route table belongs.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
+	// Property associateType: The type of the route table.
+	AssociateType interface{} `field:"optional" json:"associateType" yaml:"associateType"`
 	// Property description: The description of the route table.
 	//
 	// The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:\/\/ or https:\/\/.

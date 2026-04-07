@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::ResourceMetricRule</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::ResourceMetricRule</code>, which is used to create a threshold-triggered alert rule for a metric of a resource.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.783Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosResourceMetricRule")
 public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -97,24 +97,6 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
     public void setEnableResourcePropertyConstraint(final @org.jetbrains.annotations.NotNull java.lang.Boolean value) {
         software.amazon.jsii.Kernel.set(this, "enableResourcePropertyConstraint", java.util.Objects.requireNonNull(value, "enableResourcePropertyConstraint is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getEscalations() {
-        return software.amazon.jsii.Kernel.get(this, "escalations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setEscalations(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "escalations", java.util.Objects.requireNonNull(value, "escalations is required"));
-    }
-
-    /**
-     */
-    public void setEscalations(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty value) {
-        software.amazon.jsii.Kernel.set(this, "escalations", java.util.Objects.requireNonNull(value, "escalations is required"));
     }
 
     /**
@@ -256,6 +238,24 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEmailSubject(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "emailSubject", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getEscalations() {
+        return software.amazon.jsii.Kernel.get(this, "escalations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setEscalations(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "escalations", value);
+    }
+
+    /**
+     */
+    public void setEscalations(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "escalations", value);
     }
 
     /**
@@ -1408,6 +1408,20 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
         @org.jetbrains.annotations.NotNull java.lang.Object getThreshold();
 
         /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getExpressionRaw() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getIdentity() {
+            return null;
+        }
+
+        /**
          * @return a {@link Builder} of {@link ExpressionListProperty}
          */
         @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -1424,6 +1438,8 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             java.lang.Object period;
             java.lang.Object statistics;
             java.lang.Object threshold;
+            java.lang.Object expressionRaw;
+            java.lang.Object identity;
 
             /**
              * Sets the value of {@link ExpressionListProperty#getComparisonOperator}
@@ -1536,6 +1552,50 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             /**
+             * Sets the value of {@link ExpressionListProperty#getExpressionRaw}
+             * @param expressionRaw the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder expressionRaw(java.lang.String expressionRaw) {
+                this.expressionRaw = expressionRaw;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ExpressionListProperty#getExpressionRaw}
+             * @param expressionRaw the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder expressionRaw(com.aliyun.ros.cdk.core.IResolvable expressionRaw) {
+                this.expressionRaw = expressionRaw;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ExpressionListProperty#getIdentity}
+             * @param identity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder identity(java.lang.String identity) {
+                this.identity = identity;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ExpressionListProperty#getIdentity}
+             * @param identity the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder identity(com.aliyun.ros.cdk.core.IResolvable identity) {
+                this.identity = identity;
+                return this;
+            }
+
+            /**
              * Builds the configured instance.
              * @return a new instance of {@link ExpressionListProperty}
              * @throws NullPointerException if any required attribute was not provided
@@ -1558,6 +1618,8 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             private final java.lang.Object period;
             private final java.lang.Object statistics;
             private final java.lang.Object threshold;
+            private final java.lang.Object expressionRaw;
+            private final java.lang.Object identity;
 
             /**
              * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -1570,6 +1632,8 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.statistics = software.amazon.jsii.Kernel.get(this, "statistics", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
                 this.threshold = software.amazon.jsii.Kernel.get(this, "threshold", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.expressionRaw = software.amazon.jsii.Kernel.get(this, "expressionRaw", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.identity = software.amazon.jsii.Kernel.get(this, "identity", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             }
 
             /**
@@ -1582,6 +1646,8 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
                 this.period = java.util.Objects.requireNonNull(builder.period, "period is required");
                 this.statistics = java.util.Objects.requireNonNull(builder.statistics, "statistics is required");
                 this.threshold = java.util.Objects.requireNonNull(builder.threshold, "threshold is required");
+                this.expressionRaw = builder.expressionRaw;
+                this.identity = builder.identity;
             }
 
             @Override
@@ -1610,6 +1676,16 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
             }
 
             @Override
+            public final java.lang.Object getExpressionRaw() {
+                return this.expressionRaw;
+            }
+
+            @Override
+            public final java.lang.Object getIdentity() {
+                return this.identity;
+            }
+
+            @Override
             @software.amazon.jsii.Internal
             public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
                 final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -1620,6 +1696,12 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
                 data.set("period", om.valueToTree(this.getPeriod()));
                 data.set("statistics", om.valueToTree(this.getStatistics()));
                 data.set("threshold", om.valueToTree(this.getThreshold()));
+                if (this.getExpressionRaw() != null) {
+                    data.set("expressionRaw", om.valueToTree(this.getExpressionRaw()));
+                }
+                if (this.getIdentity() != null) {
+                    data.set("identity", om.valueToTree(this.getIdentity()));
+                }
 
                 final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
                 struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cms.RosResourceMetricRule.ExpressionListProperty"));
@@ -1642,7 +1724,9 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
                 if (!metricName.equals(that.metricName)) return false;
                 if (!period.equals(that.period)) return false;
                 if (!statistics.equals(that.statistics)) return false;
-                return this.threshold.equals(that.threshold);
+                if (!threshold.equals(that.threshold)) return false;
+                if (this.expressionRaw != null ? !this.expressionRaw.equals(that.expressionRaw) : that.expressionRaw != null) return false;
+                return this.identity != null ? this.identity.equals(that.identity) : that.identity == null;
             }
 
             @Override
@@ -1652,6 +1736,8 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
                 result = 31 * result + (this.period.hashCode());
                 result = 31 * result + (this.statistics.hashCode());
                 result = 31 * result + (this.threshold.hashCode());
+                result = 31 * result + (this.expressionRaw != null ? this.expressionRaw.hashCode() : 0);
+                result = 31 * result + (this.identity != null ? this.identity.hashCode() : 0);
                 return result;
             }
         }
@@ -2600,23 +2686,6 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param escalations This parameter is required.
-         */
-        public Builder escalations(final com.aliyun.ros.cdk.core.IResolvable escalations) {
-            this.props.escalations(escalations);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param escalations This parameter is required.
-         */
-        public Builder escalations(final com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty escalations) {
-            this.props.escalations(escalations);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param metricName This parameter is required.
          */
         public Builder metricName(final java.lang.String metricName) {
@@ -2731,6 +2800,23 @@ public class RosResourceMetricRule extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder emailSubject(final com.aliyun.ros.cdk.core.IResolvable emailSubject) {
             this.props.emailSubject(emailSubject);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param escalations This parameter is required.
+         */
+        public Builder escalations(final com.aliyun.ros.cdk.core.IResolvable escalations) {
+            this.props.escalations(escalations);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param escalations This parameter is required.
+         */
+        public Builder escalations(final com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty escalations) {
+            this.props.escalations(escalations);
             return this;
         }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AddressBook`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::AddressBook`The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.
 type AddressBook interface {
 	alicloudroscdkcore.Resource
 	IAddressBook

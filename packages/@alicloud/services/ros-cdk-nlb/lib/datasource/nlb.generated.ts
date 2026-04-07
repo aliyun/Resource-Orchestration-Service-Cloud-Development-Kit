@@ -63,7 +63,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancer`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancer`The , which type is used to query the basic information of single Network Load Balancer (NLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancer
  */
@@ -341,6 +341,7 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('loadBalancerNames', ros.listValidator(ros.validateString))(properties.loadBalancerNames));
     errors.collect(ros.propertyValidator('addressIpVersion', ros.validateString)(properties.addressIpVersion));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.loadBalancerBussinessStatus && (typeof properties.loadBalancerBussinessStatus) !== 'object') {
         errors.collect(ros.propertyValidator('loadBalancerBussinessStatus', ros.validateAllowedValues)({
           data: properties.loadBalancerBussinessStatus,
@@ -348,7 +349,6 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('loadBalancerBussinessStatus', ros.validateString)(properties.loadBalancerBussinessStatus));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.vpcIds && (Array.isArray(properties.vpcIds) || (typeof properties.vpcIds) === 'string')) {
         errors.collect(ros.propertyValidator('vpcIds', ros.validateLength)({
@@ -429,7 +429,7 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`, which is used to query the basic information about created Network Load Balancer (NLB) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
  */

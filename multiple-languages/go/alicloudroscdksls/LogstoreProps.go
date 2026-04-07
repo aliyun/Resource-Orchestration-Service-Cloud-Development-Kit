@@ -53,7 +53,7 @@ type LogstoreProps struct {
 	ShardCount interface{} `field:"optional" json:"shardCount" yaml:"shardCount"`
 	// Property ttl: The lifecycle of log in the logstore in days.
 	//
-	// Allowed Values: 1-3600, default to 30.
+	// Allowed Values: 1-3650, default to 30.
 	Ttl interface{} `field:"optional" json:"ttl" yaml:"ttl"`
 }
 

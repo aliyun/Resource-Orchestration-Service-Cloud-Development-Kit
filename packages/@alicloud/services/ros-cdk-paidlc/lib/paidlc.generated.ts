@@ -179,7 +179,7 @@ function rosJobPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Job`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Job`, which is used to create a Machine Learning Platform for AI (PAI) job to run in a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Job` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
@@ -461,13 +461,13 @@ export namespace RosJob {
      */
     export interface JobSpecsProperty {
         /**
-         * @Property podCount: The count of pod.
-         */
-        readonly podCount: number | ros.IResolvable;
-        /**
          * @Property imageConfig: The configuration of image
          */
         readonly imageConfig?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property podCount: The count of pod.
+         */
+        readonly podCount: number | ros.IResolvable;
         /**
          * @Property useSpotInstance: Whether to use spot instance
          */
@@ -509,9 +509,9 @@ export namespace RosJob {
 function RosJob_JobSpecsPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('imageConfig', ros.hashValidator(ros.validateAny))(properties.imageConfig));
     errors.collect(ros.propertyValidator('podCount', ros.requiredValidator)(properties.podCount));
     errors.collect(ros.propertyValidator('podCount', ros.validateNumber)(properties.podCount));
-    errors.collect(ros.propertyValidator('imageConfig', ros.hashValidator(ros.validateAny))(properties.imageConfig));
     errors.collect(ros.propertyValidator('useSpotInstance', ros.requiredValidator)(properties.useSpotInstance));
     errors.collect(ros.propertyValidator('useSpotInstance', ros.validateBoolean)(properties.useSpotInstance));
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
@@ -537,8 +537,8 @@ function rosJobJobSpecsPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosJob_JobSpecsPropertyValidator(properties).assertSuccess();
     return {
-      'PodCount': ros.numberToRosTemplate(properties.podCount),
       'ImageConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.imageConfig),
+      'PodCount': ros.numberToRosTemplate(properties.podCount),
       'UseSpotInstance': ros.booleanToRosTemplate(properties.useSpotInstance),
       'Type': ros.stringToRosTemplate(properties.type),
       'EcsSpec': ros.stringToRosTemplate(properties.ecsSpec),
@@ -708,10 +708,10 @@ function RosTensorboardPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('maxRunningTimeMinutes', ros.validateNumber)(properties.maxRunningTimeMinutes));
     errors.collect(ros.propertyValidator('options', ros.validateString)(properties.options));
-    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('summaryPath', ros.validateString)(properties.summaryPath));
-    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
+    errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('sourceId', ros.validateString)(properties.sourceId));
     errors.collect(ros.propertyValidator('workspaceId', ros.requiredValidator)(properties.workspaceId));
     errors.collect(ros.propertyValidator('workspaceId', ros.validateString)(properties.workspaceId));
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
@@ -766,7 +766,7 @@ function rosTensorboardPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Tensorboard`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Tensorboard` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */

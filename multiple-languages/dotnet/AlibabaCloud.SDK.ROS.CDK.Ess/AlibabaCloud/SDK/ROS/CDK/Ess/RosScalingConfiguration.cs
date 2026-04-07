@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ScalingConfiguration` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
@@ -569,7 +569,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+        /// <strong>Property</strong>: instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2341,7 +2341,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <strong>Property</strong>: deleteWithInstance: Specifies whether to release the data disk when the instance to which the data disk is attached is released. Valid values:
             /// - **true**
             /// - **false**
-            /// This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd**, or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
+            /// This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd** or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
             /// Default value: **true**
             /// </remarks>
             [JsiiProperty(name: "deleteWithInstance", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -2551,7 +2551,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 /// <strong>Property</strong>: deleteWithInstance: Specifies whether to release the data disk when the instance to which the data disk is attached is released. Valid values:
                 /// - **true**
                 /// - **false**
-                /// This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd**, or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
+                /// This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd** or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
                 /// Default value: **true**
                 /// </remarks>
                 [JsiiOptional]
@@ -2839,7 +2839,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             /// <strong>Property</strong>: deleteWithInstance: Specifies whether to release the data disk when the instance to which the data disk is attached is released. Valid values:
             /// - **true**
             /// - **false**
-            /// This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd**, or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
+            /// This parameter is available only for independent disks whose value of **Category** is set to **cloud**, **cloud_efficiency**, **cloud_ssd** or **cloud_essd**. If you specify this parameter for other disks, an error is reported.
             /// Default value: **true**
             /// </remarks>
             [JsiiOptional]

@@ -26,5 +26,9 @@ type RoleProps struct {
 	Policies interface{} `field:"optional" json:"policies" yaml:"policies"`
 	// Property policyAttachments: System and custom policy names to attach.
 	PolicyAttachments interface{} `field:"optional" json:"policyAttachments" yaml:"policyAttachments"`
+	// Property tags: Tags to attach to role.
+	//
+	// Max support 20 tags to add during create role. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosRole_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

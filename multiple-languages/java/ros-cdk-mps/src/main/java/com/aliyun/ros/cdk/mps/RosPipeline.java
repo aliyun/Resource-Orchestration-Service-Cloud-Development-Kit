@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mps;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MPS::Pipeline</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MPS::Pipeline</code>, which is used to create an ApsaraVideo Media Processing (MPS) queue.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.160Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.826Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.RosPipeline")
 public class RosPipeline extends com.aliyun.ros.cdk.core.RosResource {
 

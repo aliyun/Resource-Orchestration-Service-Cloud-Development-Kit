@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
 type RosElasticDBInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable
@@ -17,6 +17,8 @@ type RosElasticDBInstance interface {
 	AttrDbInstanceId() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrPort() alicloudroscdkcore.IResolvable
+	BackupId() interface{}
+	SetBackupId(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -75,6 +77,8 @@ type RosElasticDBInstance interface {
 	SetSegNodeNum(val interface{})
 	SegStorageType() interface{}
 	SetSegStorageType(val interface{})
+	SrcDbInstanceName() interface{}
+	SetSrcDbInstanceName(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -258,6 +262,16 @@ func (j *jsiiProxy_RosElasticDBInstance) AttrPort() alicloudroscdkcore.IResolvab
 	_jsii_.Get(
 		j,
 		"attrPort",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosElasticDBInstance) BackupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"backupId",
 		&returns,
 	)
 	return returns
@@ -493,6 +507,16 @@ func (j *jsiiProxy_RosElasticDBInstance) SegStorageType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosElasticDBInstance) SrcDbInstanceName() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"srcDbInstanceName",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosElasticDBInstance) Stack() alicloudroscdkcore.Stack {
 	var returns alicloudroscdkcore.Stack
 	_jsii_.Get(
@@ -588,6 +612,17 @@ func NewRosElasticDBInstance_Override(r RosElasticDBInstance, scope alicloudrosc
 		"@alicloud/ros-cdk-gpdb.RosElasticDBInstance",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosElasticDBInstance)SetBackupId(val interface{}) {
+	if err := j.validateSetBackupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"backupId",
+		val,
 	)
 }
 
@@ -763,6 +798,17 @@ func (j *jsiiProxy_RosElasticDBInstance)SetSegStorageType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"segStorageType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosElasticDBInstance)SetSrcDbInstanceName(val interface{}) {
+	if err := j.validateSetSrcDbInstanceNameParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"srcDbInstanceName",
 		val,
 	)
 }

@@ -95,10 +95,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
+        /// <summary>Property deletionForce: Whether to force delete the peer attachment.</summary>
+        [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DeletionForce
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.</summary>
         [JsiiProperty(name: "peerTransitRouterRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PeerTransitRouterRegionId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property routeTableAssociationEnabled: Whether to enable the association of route tables.</summary>
+        [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RouteTableAssociationEnabled
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.</summary>
+        [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? RouteTablePropagationEnabled
         {
             get
             {
@@ -236,10 +269,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property deletionForce: Whether to force delete the peer attachment.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "deletionForce", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeletionForce
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "peerTransitRouterRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PeerTransitRouterRegionId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property routeTableAssociationEnabled: Whether to enable the association of route tables.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "routeTableAssociationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RouteTableAssociationEnabled
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "routeTablePropagationEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? RouteTablePropagationEnabled
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`, which is used to create a function.
+//
+// A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
 type RosFunction interface {
 	alicloudroscdkcore.RosResource
 	AsyncConfiguration() interface{}

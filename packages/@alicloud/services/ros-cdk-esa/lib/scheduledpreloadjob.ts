@@ -107,7 +107,7 @@ export interface IScheduledPreloadJob extends ros.IResource {
     readonly attrUrlSubmitted: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ScheduledPreloadJob`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ScheduledPreloadJob`The , which type is used to create a scheduled preload job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScheduledPreloadJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-scheduledpreloadjob
  */

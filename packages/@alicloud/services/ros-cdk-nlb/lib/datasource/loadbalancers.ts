@@ -90,7 +90,7 @@ export interface ILoadBalancers extends ros.IResource {
     readonly attrLoadBalancers: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::NLB::LoadBalancers`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::NLB::LoadBalancers`, which is used to query the basic information about created Network Load Balancer (NLB) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
  */
@@ -125,8 +125,8 @@ export class LoadBalancers extends ros.Resource implements ILoadBalancers {
         const rosLoadBalancers = new RosLoadBalancers(this, id,  {
             loadBalancerNames: props.loadBalancerNames,
             addressIpVersion: props.addressIpVersion,
-            loadBalancerBussinessStatus: props.loadBalancerBussinessStatus,
             zoneId: props.zoneId,
+            loadBalancerBussinessStatus: props.loadBalancerBussinessStatus,
             resourceGroupId: props.resourceGroupId,
             vpcIds: props.vpcIds,
             loadBalancerIds: props.loadBalancerIds,

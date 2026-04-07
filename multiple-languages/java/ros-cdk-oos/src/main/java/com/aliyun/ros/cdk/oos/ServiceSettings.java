@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::ServiceSettings</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::ServiceSettings</code>, which is used to configure service settings.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.555Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.209Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ServiceSettings")
 public class ServiceSettings extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IServiceSettings {
 

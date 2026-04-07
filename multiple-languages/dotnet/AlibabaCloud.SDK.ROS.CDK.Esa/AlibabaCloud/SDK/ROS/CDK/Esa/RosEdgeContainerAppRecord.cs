@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Esa
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`The , which type creates an associated domain name for an edge container application.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `EdgeContainerAppRecord` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-edgecontainerapprecord

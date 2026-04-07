@@ -87,7 +87,7 @@ export interface INatGateways extends ros.IResource {
     readonly attrNatGateways: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatGateways`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VPC::NatGateways`, which is used to query NAT gateways.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNatGateways`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-natgateways
  */
@@ -122,12 +122,12 @@ export class NatGateways extends ros.Resource implements INatGateways {
         const rosNatGateways = new RosNatGateways(this, id,  {
             status: props.status,
             vpcId: props.vpcId,
-            zoneId: props.zoneId,
             resourceGroupId: props.resourceGroupId,
+            zoneId: props.zoneId,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             networkType: props.networkType,
-            natType: props.natType,
             natGatewayId: props.natGatewayId,
+            natType: props.natType,
             name: props.name,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.875Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.556Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.KeyProps")
 @software.amazon.jsii.Jsii.Proxy(KeyProps.Jsii$Proxy.class)
 public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
@@ -111,6 +111,15 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property tags: Tags to attach to key.
+     * <p>
+     * Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.kms.RosKey.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link KeyProps}
      */
     static Builder builder() {
@@ -131,6 +140,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object policy;
         java.lang.Object protectionLevel;
         java.lang.Object rotationInterval;
+        java.util.List<com.aliyun.ros.cdk.kms.RosKey.TagsProperty> tags;
 
         /**
          * Sets the value of {@link KeyProps#getDeletionProtection}
@@ -381,6 +391,18 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link KeyProps#getTags}
+         * @param tags Property tags: Tags to attach to key.
+         *             Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.kms.RosKey.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.kms.RosKey.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link KeyProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -407,6 +429,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object policy;
         private final java.lang.Object protectionLevel;
         private final java.lang.Object rotationInterval;
+        private final java.util.List<com.aliyun.ros.cdk.kms.RosKey.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -425,11 +448,13 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             this.policy = software.amazon.jsii.Kernel.get(this, "policy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.protectionLevel = software.amazon.jsii.Kernel.get(this, "protectionLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.rotationInterval = software.amazon.jsii.Kernel.get(this, "rotationInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.kms.RosKey.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.deletionProtection = builder.deletionProtection;
@@ -443,6 +468,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             this.policy = builder.policy;
             this.protectionLevel = builder.protectionLevel;
             this.rotationInterval = builder.rotationInterval;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.kms.RosKey.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -501,6 +527,11 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.kms.RosKey.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -539,6 +570,9 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getRotationInterval() != null) {
                 data.set("rotationInterval", om.valueToTree(this.getRotationInterval()));
             }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-kms.KeyProps"));
@@ -567,7 +601,8 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             if (this.pendingWindowInDays != null ? !this.pendingWindowInDays.equals(that.pendingWindowInDays) : that.pendingWindowInDays != null) return false;
             if (this.policy != null ? !this.policy.equals(that.policy) : that.policy != null) return false;
             if (this.protectionLevel != null ? !this.protectionLevel.equals(that.protectionLevel) : that.protectionLevel != null) return false;
-            return this.rotationInterval != null ? this.rotationInterval.equals(that.rotationInterval) : that.rotationInterval == null;
+            if (this.rotationInterval != null ? !this.rotationInterval.equals(that.rotationInterval) : that.rotationInterval != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -583,6 +618,7 @@ public interface KeyProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.policy != null ? this.policy.hashCode() : 0);
             result = 31 * result + (this.protectionLevel != null ? this.protectionLevel.hashCode() : 0);
             result = 31 * result + (this.rotationInterval != null ? this.rotationInterval.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

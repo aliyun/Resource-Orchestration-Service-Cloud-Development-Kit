@@ -358,7 +358,7 @@ export interface IInstance extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Instance`The , which resource type creates an Elastic Compute Service (ECS) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instance
  */
@@ -542,8 +542,8 @@ export class Instance extends ros.Resource implements IInstance {
             systemDiskDescription: props.systemDiskDescription,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             ramRoleName: props.ramRoleName,
-            privatePoolOptions: props.privatePoolOptions,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
+            privatePoolOptions: props.privatePoolOptions,
             imageId: props.imageId,
             systemDiskDiskName: props.systemDiskDiskName,
             storageSetId: props.storageSetId,
@@ -554,11 +554,11 @@ export class Instance extends ros.Resource implements IInstance {
             period: props.period === undefined || props.period === null ? 1 : props.period,
             imageFamily: props.imageFamily,
             deletionProtection: props.deletionProtection,
-            httpEndpoint: props.httpEndpoint,
             securityGroupIds: props.securityGroupIds,
+            httpEndpoint: props.httpEndpoint,
             internetChargeType: props.internetChargeType === undefined || props.internetChargeType === null ? 'PayByTraffic' : props.internetChargeType,
-            spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
             instanceName: props.instanceName,
+            spotInterruptionBehavior: props.spotInterruptionBehavior === undefined || props.spotInterruptionBehavior === null ? 'Terminate' : props.spotInterruptionBehavior,
             deploymentSetId: props.deploymentSetId,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut === undefined || props.internetMaxBandwidthOut === null ? 1 : props.internetMaxBandwidthOut,
             vpcId: props.vpcId,
@@ -579,14 +579,14 @@ export class Instance extends ros.Resource implements IInstance {
             instanceType: props.instanceType,
             allocatePublicIp: props.allocatePublicIp === undefined || props.allocatePublicIp === null ? true : props.allocatePublicIp,
             spotStrategy: props.spotStrategy,
-            passwordInherit: props.passwordInherit,
             password: props.password,
+            passwordInherit: props.passwordInherit,
             autoRenewPeriod: props.autoRenewPeriod === undefined || props.autoRenewPeriod === null ? 1 : props.autoRenewPeriod,
             keyPairName: props.keyPairName,
             ioOptimized: props.ioOptimized === undefined || props.ioOptimized === null ? 'optimized' : props.ioOptimized,
             zoneId: props.zoneId,
-            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             hpcClusterId: props.hpcClusterId,
+            subscriptionDeletionForce: props.subscriptionDeletionForce === undefined || props.subscriptionDeletionForce === null ? false : props.subscriptionDeletionForce,
             securityGroupId: props.securityGroupId,
             deploymentSetGroupNo: props.deploymentSetGroupNo,
             systemDiskCategory: props.systemDiskCategory === undefined || props.systemDiskCategory === null ? 'cloud_efficiency' : props.systemDiskCategory,

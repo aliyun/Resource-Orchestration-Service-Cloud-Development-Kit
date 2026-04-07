@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
 type RosDataFlow interface {
 	alicloudroscdkcore.RosResource
 	AttrDataFlowId() alicloudroscdkcore.IResolvable

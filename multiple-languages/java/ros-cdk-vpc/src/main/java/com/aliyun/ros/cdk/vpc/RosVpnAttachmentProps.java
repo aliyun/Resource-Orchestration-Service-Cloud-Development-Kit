@@ -5,14 +5,10 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.161Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.133Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpnAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpnAttachmentProps.Jsii$Proxy.class)
 public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializable {
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getCustomerGatewayId();
 
     /**
      */
@@ -36,6 +32,12 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getCustomerGatewayId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEffectImmediately() {
         return null;
     }
@@ -49,6 +51,12 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableNatTraversal() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableTunnelsBgp() {
         return null;
     }
 
@@ -89,6 +97,24 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTunnelBandwidth() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTunnelOptionsSpecification() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosVpnAttachmentProps}
      */
     static Builder builder() {
@@ -98,40 +124,24 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosVpnAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosVpnAttachmentProps> {
-        java.lang.Object customerGatewayId;
         java.lang.Object localSubnet;
         java.lang.Object remoteSubnet;
         java.lang.Object autoConfigRoute;
         java.lang.Object bgpConfig;
+        java.lang.Object customerGatewayId;
         java.lang.Object effectImmediately;
         java.lang.Object enableDpd;
         java.lang.Object enableNatTraversal;
+        java.lang.Object enableTunnelsBgp;
         java.lang.Object healthCheckConfig;
         java.lang.Object ikeConfig;
         java.lang.Object ipsecConfig;
         java.lang.Object name;
         java.lang.Object networkType;
         java.lang.Object remoteCaCert;
-
-        /**
-         * Sets the value of {@link RosVpnAttachmentProps#getCustomerGatewayId}
-         * @param customerGatewayId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder customerGatewayId(java.lang.String customerGatewayId) {
-            this.customerGatewayId = customerGatewayId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosVpnAttachmentProps#getCustomerGatewayId}
-         * @param customerGatewayId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder customerGatewayId(com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
-            this.customerGatewayId = customerGatewayId;
-            return this;
-        }
+        java.lang.Object resourceGroupId;
+        java.lang.Object tunnelBandwidth;
+        java.lang.Object tunnelOptionsSpecification;
 
         /**
          * Sets the value of {@link RosVpnAttachmentProps#getLocalSubnet}
@@ -214,6 +224,26 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosVpnAttachmentProps#getCustomerGatewayId}
+         * @param customerGatewayId the value to be set.
+         * @return {@code this}
+         */
+        public Builder customerGatewayId(java.lang.String customerGatewayId) {
+            this.customerGatewayId = customerGatewayId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getCustomerGatewayId}
+         * @param customerGatewayId the value to be set.
+         * @return {@code this}
+         */
+        public Builder customerGatewayId(com.aliyun.ros.cdk.core.IResolvable customerGatewayId) {
+            this.customerGatewayId = customerGatewayId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpnAttachmentProps#getEffectImmediately}
          * @param effectImmediately the value to be set.
          * @return {@code this}
@@ -270,6 +300,26 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder enableNatTraversal(com.aliyun.ros.cdk.core.IResolvable enableNatTraversal) {
             this.enableNatTraversal = enableNatTraversal;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getEnableTunnelsBgp}
+         * @param enableTunnelsBgp the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableTunnelsBgp(java.lang.Boolean enableTunnelsBgp) {
+            this.enableTunnelsBgp = enableTunnelsBgp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getEnableTunnelsBgp}
+         * @param enableTunnelsBgp the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableTunnelsBgp(com.aliyun.ros.cdk.core.IResolvable enableTunnelsBgp) {
+            this.enableTunnelsBgp = enableTunnelsBgp;
             return this;
         }
 
@@ -394,6 +444,66 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
         }
 
         /**
+         * Sets the value of {@link RosVpnAttachmentProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getTunnelBandwidth}
+         * @param tunnelBandwidth the value to be set.
+         * @return {@code this}
+         */
+        public Builder tunnelBandwidth(java.lang.String tunnelBandwidth) {
+            this.tunnelBandwidth = tunnelBandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getTunnelBandwidth}
+         * @param tunnelBandwidth the value to be set.
+         * @return {@code this}
+         */
+        public Builder tunnelBandwidth(com.aliyun.ros.cdk.core.IResolvable tunnelBandwidth) {
+            this.tunnelBandwidth = tunnelBandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getTunnelOptionsSpecification}
+         * @param tunnelOptionsSpecification the value to be set.
+         * @return {@code this}
+         */
+        public Builder tunnelOptionsSpecification(com.aliyun.ros.cdk.core.IResolvable tunnelOptionsSpecification) {
+            this.tunnelOptionsSpecification = tunnelOptionsSpecification;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpnAttachmentProps#getTunnelOptionsSpecification}
+         * @param tunnelOptionsSpecification the value to be set.
+         * @return {@code this}
+         */
+        public Builder tunnelOptionsSpecification(java.util.List<? extends java.lang.Object> tunnelOptionsSpecification) {
+            this.tunnelOptionsSpecification = tunnelOptionsSpecification;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosVpnAttachmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -409,20 +519,24 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosVpnAttachmentProps {
-        private final java.lang.Object customerGatewayId;
         private final java.lang.Object localSubnet;
         private final java.lang.Object remoteSubnet;
         private final java.lang.Object autoConfigRoute;
         private final java.lang.Object bgpConfig;
+        private final java.lang.Object customerGatewayId;
         private final java.lang.Object effectImmediately;
         private final java.lang.Object enableDpd;
         private final java.lang.Object enableNatTraversal;
+        private final java.lang.Object enableTunnelsBgp;
         private final java.lang.Object healthCheckConfig;
         private final java.lang.Object ikeConfig;
         private final java.lang.Object ipsecConfig;
         private final java.lang.Object name;
         private final java.lang.Object networkType;
         private final java.lang.Object remoteCaCert;
+        private final java.lang.Object resourceGroupId;
+        private final java.lang.Object tunnelBandwidth;
+        private final java.lang.Object tunnelOptionsSpecification;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -430,20 +544,24 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.customerGatewayId = software.amazon.jsii.Kernel.get(this, "customerGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.localSubnet = software.amazon.jsii.Kernel.get(this, "localSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remoteSubnet = software.amazon.jsii.Kernel.get(this, "remoteSubnet", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoConfigRoute = software.amazon.jsii.Kernel.get(this, "autoConfigRoute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bgpConfig = software.amazon.jsii.Kernel.get(this, "bgpConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.customerGatewayId = software.amazon.jsii.Kernel.get(this, "customerGatewayId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.effectImmediately = software.amazon.jsii.Kernel.get(this, "effectImmediately", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableDpd = software.amazon.jsii.Kernel.get(this, "enableDpd", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.enableNatTraversal = software.amazon.jsii.Kernel.get(this, "enableNatTraversal", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableTunnelsBgp = software.amazon.jsii.Kernel.get(this, "enableTunnelsBgp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckConfig = software.amazon.jsii.Kernel.get(this, "healthCheckConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ikeConfig = software.amazon.jsii.Kernel.get(this, "ikeConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.ipsecConfig = software.amazon.jsii.Kernel.get(this, "ipsecConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.remoteCaCert = software.amazon.jsii.Kernel.get(this, "remoteCaCert", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tunnelBandwidth = software.amazon.jsii.Kernel.get(this, "tunnelBandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tunnelOptionsSpecification = software.amazon.jsii.Kernel.get(this, "tunnelOptionsSpecification", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -451,25 +569,24 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.customerGatewayId = java.util.Objects.requireNonNull(builder.customerGatewayId, "customerGatewayId is required");
             this.localSubnet = java.util.Objects.requireNonNull(builder.localSubnet, "localSubnet is required");
             this.remoteSubnet = java.util.Objects.requireNonNull(builder.remoteSubnet, "remoteSubnet is required");
             this.autoConfigRoute = builder.autoConfigRoute;
             this.bgpConfig = builder.bgpConfig;
+            this.customerGatewayId = builder.customerGatewayId;
             this.effectImmediately = builder.effectImmediately;
             this.enableDpd = builder.enableDpd;
             this.enableNatTraversal = builder.enableNatTraversal;
+            this.enableTunnelsBgp = builder.enableTunnelsBgp;
             this.healthCheckConfig = builder.healthCheckConfig;
             this.ikeConfig = builder.ikeConfig;
             this.ipsecConfig = builder.ipsecConfig;
             this.name = builder.name;
             this.networkType = builder.networkType;
             this.remoteCaCert = builder.remoteCaCert;
-        }
-
-        @Override
-        public final java.lang.Object getCustomerGatewayId() {
-            return this.customerGatewayId;
+            this.resourceGroupId = builder.resourceGroupId;
+            this.tunnelBandwidth = builder.tunnelBandwidth;
+            this.tunnelOptionsSpecification = builder.tunnelOptionsSpecification;
         }
 
         @Override
@@ -493,6 +610,11 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getCustomerGatewayId() {
+            return this.customerGatewayId;
+        }
+
+        @Override
         public final java.lang.Object getEffectImmediately() {
             return this.effectImmediately;
         }
@@ -505,6 +627,11 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
         @Override
         public final java.lang.Object getEnableNatTraversal() {
             return this.enableNatTraversal;
+        }
+
+        @Override
+        public final java.lang.Object getEnableTunnelsBgp() {
+            return this.enableTunnelsBgp;
         }
 
         @Override
@@ -538,12 +665,26 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getTunnelBandwidth() {
+            return this.tunnelBandwidth;
+        }
+
+        @Override
+        public final java.lang.Object getTunnelOptionsSpecification() {
+            return this.tunnelOptionsSpecification;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("customerGatewayId", om.valueToTree(this.getCustomerGatewayId()));
             data.set("localSubnet", om.valueToTree(this.getLocalSubnet()));
             data.set("remoteSubnet", om.valueToTree(this.getRemoteSubnet()));
             if (this.getAutoConfigRoute() != null) {
@@ -551,6 +692,9 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getBgpConfig() != null) {
                 data.set("bgpConfig", om.valueToTree(this.getBgpConfig()));
+            }
+            if (this.getCustomerGatewayId() != null) {
+                data.set("customerGatewayId", om.valueToTree(this.getCustomerGatewayId()));
             }
             if (this.getEffectImmediately() != null) {
                 data.set("effectImmediately", om.valueToTree(this.getEffectImmediately()));
@@ -560,6 +704,9 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
             }
             if (this.getEnableNatTraversal() != null) {
                 data.set("enableNatTraversal", om.valueToTree(this.getEnableNatTraversal()));
+            }
+            if (this.getEnableTunnelsBgp() != null) {
+                data.set("enableTunnelsBgp", om.valueToTree(this.getEnableTunnelsBgp()));
             }
             if (this.getHealthCheckConfig() != null) {
                 data.set("healthCheckConfig", om.valueToTree(this.getHealthCheckConfig()));
@@ -579,6 +726,15 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
             if (this.getRemoteCaCert() != null) {
                 data.set("remoteCaCert", om.valueToTree(this.getRemoteCaCert()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getTunnelBandwidth() != null) {
+                data.set("tunnelBandwidth", om.valueToTree(this.getTunnelBandwidth()));
+            }
+            if (this.getTunnelOptionsSpecification() != null) {
+                data.set("tunnelOptionsSpecification", om.valueToTree(this.getTunnelOptionsSpecification()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.RosVpnAttachmentProps"));
@@ -597,38 +753,46 @@ public interface RosVpnAttachmentProps extends software.amazon.jsii.JsiiSerializ
 
             RosVpnAttachmentProps.Jsii$Proxy that = (RosVpnAttachmentProps.Jsii$Proxy) o;
 
-            if (!customerGatewayId.equals(that.customerGatewayId)) return false;
             if (!localSubnet.equals(that.localSubnet)) return false;
             if (!remoteSubnet.equals(that.remoteSubnet)) return false;
             if (this.autoConfigRoute != null ? !this.autoConfigRoute.equals(that.autoConfigRoute) : that.autoConfigRoute != null) return false;
             if (this.bgpConfig != null ? !this.bgpConfig.equals(that.bgpConfig) : that.bgpConfig != null) return false;
+            if (this.customerGatewayId != null ? !this.customerGatewayId.equals(that.customerGatewayId) : that.customerGatewayId != null) return false;
             if (this.effectImmediately != null ? !this.effectImmediately.equals(that.effectImmediately) : that.effectImmediately != null) return false;
             if (this.enableDpd != null ? !this.enableDpd.equals(that.enableDpd) : that.enableDpd != null) return false;
             if (this.enableNatTraversal != null ? !this.enableNatTraversal.equals(that.enableNatTraversal) : that.enableNatTraversal != null) return false;
+            if (this.enableTunnelsBgp != null ? !this.enableTunnelsBgp.equals(that.enableTunnelsBgp) : that.enableTunnelsBgp != null) return false;
             if (this.healthCheckConfig != null ? !this.healthCheckConfig.equals(that.healthCheckConfig) : that.healthCheckConfig != null) return false;
             if (this.ikeConfig != null ? !this.ikeConfig.equals(that.ikeConfig) : that.ikeConfig != null) return false;
             if (this.ipsecConfig != null ? !this.ipsecConfig.equals(that.ipsecConfig) : that.ipsecConfig != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
-            return this.remoteCaCert != null ? this.remoteCaCert.equals(that.remoteCaCert) : that.remoteCaCert == null;
+            if (this.remoteCaCert != null ? !this.remoteCaCert.equals(that.remoteCaCert) : that.remoteCaCert != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            if (this.tunnelBandwidth != null ? !this.tunnelBandwidth.equals(that.tunnelBandwidth) : that.tunnelBandwidth != null) return false;
+            return this.tunnelOptionsSpecification != null ? this.tunnelOptionsSpecification.equals(that.tunnelOptionsSpecification) : that.tunnelOptionsSpecification == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.customerGatewayId.hashCode();
-            result = 31 * result + (this.localSubnet.hashCode());
+            int result = this.localSubnet.hashCode();
             result = 31 * result + (this.remoteSubnet.hashCode());
             result = 31 * result + (this.autoConfigRoute != null ? this.autoConfigRoute.hashCode() : 0);
             result = 31 * result + (this.bgpConfig != null ? this.bgpConfig.hashCode() : 0);
+            result = 31 * result + (this.customerGatewayId != null ? this.customerGatewayId.hashCode() : 0);
             result = 31 * result + (this.effectImmediately != null ? this.effectImmediately.hashCode() : 0);
             result = 31 * result + (this.enableDpd != null ? this.enableDpd.hashCode() : 0);
             result = 31 * result + (this.enableNatTraversal != null ? this.enableNatTraversal.hashCode() : 0);
+            result = 31 * result + (this.enableTunnelsBgp != null ? this.enableTunnelsBgp.hashCode() : 0);
             result = 31 * result + (this.healthCheckConfig != null ? this.healthCheckConfig.hashCode() : 0);
             result = 31 * result + (this.ikeConfig != null ? this.ikeConfig.hashCode() : 0);
             result = 31 * result + (this.ipsecConfig != null ? this.ipsecConfig.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.remoteCaCert != null ? this.remoteCaCert.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.tunnelBandwidth != null ? this.tunnelBandwidth.hashCode() : 0);
+            result = 31 * result + (this.tunnelOptionsSpecification != null ? this.tunnelOptionsSpecification.hashCode() : 0);
             return result;
         }
     }

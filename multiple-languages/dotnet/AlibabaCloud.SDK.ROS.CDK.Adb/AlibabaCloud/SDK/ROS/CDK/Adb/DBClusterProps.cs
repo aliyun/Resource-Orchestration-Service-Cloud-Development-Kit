@@ -429,6 +429,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
+        private object? _diskEncryption;
+
+        /// <summary>Property diskEncryption: Whether to enable cloud disk encryption. Value:.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>true: yes.</description>
+        /// <description>false: no.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "diskEncryption", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DiskEncryption
+        {
+            get => _diskEncryption;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _diskEncryption = value;
+            }
+        }
+
         private object? _elasticIoResource;
 
         /// <summary>Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.</summary>
@@ -480,6 +517,43 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
             }
         }
 
+        private object? _enableSsl;
+
+        /// <summary>Property enableSsl: Whether to enable SSL link encryption function, value:.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description><strong>true</strong>: open.</description>
+        /// <description><strong>false</strong>: close.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "enableSsl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EnableSsl
+        {
+            get => _enableSsl;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _enableSsl = value;
+            }
+        }
+
         private object? _executorCount;
 
         /// <summary>Property executorCount: ExecutorCount.</summary>
@@ -528,6 +602,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adb
                     }
                 }
                 _executorCount = value;
+            }
+        }
+
+        private object? _kmsId;
+
+        /// <summary>Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "kmsId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? KmsId
+        {
+            get => _kmsId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _kmsId = value;
             }
         }
 

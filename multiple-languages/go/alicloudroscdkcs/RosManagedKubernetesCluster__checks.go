@@ -295,6 +295,30 @@ func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetAddonsParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetAutoModeParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosManagedKubernetesCluster_AutoModeProperty:
+		val := val.(*RosManagedKubernetesCluster_AutoModeProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosManagedKubernetesCluster_AutoModeProperty:
+		val_ := val.(RosManagedKubernetesCluster_AutoModeProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosManagedKubernetesCluster_AutoModeProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosManagedKubernetesCluster) validateSetCloudMonitorFlagsParameters(val interface{}) error {
 	switch val.(type) {
 	case *bool:

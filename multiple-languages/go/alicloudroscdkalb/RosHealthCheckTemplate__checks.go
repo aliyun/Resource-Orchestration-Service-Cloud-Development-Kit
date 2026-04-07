@@ -363,6 +363,23 @@ func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthCheckHostParameters(
 	return nil
 }
 
+func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthCheckHttpVersionParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthCheckIntervalParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
@@ -599,6 +616,23 @@ func (j *jsiiProxy_RosHealthCheckTemplate) validateSetHealthyThresholdParameters
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosHealthCheckTemplate) validateSetResourceGroupIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 

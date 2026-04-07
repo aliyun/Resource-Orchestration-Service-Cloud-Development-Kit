@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.452Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.782Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosVpcFirewallControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcFirewallControlPolicyProps.Jsii$Proxy.class)
 public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -73,6 +73,12 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestPortType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDomainResolveType() {
         return null;
     }
 
@@ -160,6 +166,7 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         java.lang.Object destPort;
         java.lang.Object destPortGroup;
         java.lang.Object destPortType;
+        java.lang.Object domainResolveType;
         java.lang.Object endTime;
         java.lang.Object lang;
         java.lang.Object memberUid;
@@ -452,6 +459,26 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getDomainResolveType}
+         * @param domainResolveType the value to be set.
+         * @return {@code this}
+         */
+        public Builder domainResolveType(java.lang.String domainResolveType) {
+            this.domainResolveType = domainResolveType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosVpcFirewallControlPolicyProps#getDomainResolveType}
+         * @param domainResolveType the value to be set.
+         * @return {@code this}
+         */
+        public Builder domainResolveType(com.aliyun.ros.cdk.core.IResolvable domainResolveType) {
+            this.domainResolveType = domainResolveType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosVpcFirewallControlPolicyProps#getEndTime}
          * @param endTime the value to be set.
          * @return {@code this}
@@ -681,6 +708,7 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         private final java.lang.Object destPort;
         private final java.lang.Object destPortGroup;
         private final java.lang.Object destPortType;
+        private final java.lang.Object domainResolveType;
         private final java.lang.Object endTime;
         private final java.lang.Object lang;
         private final java.lang.Object memberUid;
@@ -712,6 +740,7 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             this.destPort = software.amazon.jsii.Kernel.get(this, "destPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destPortGroup = software.amazon.jsii.Kernel.get(this, "destPortGroup", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.destPortType = software.amazon.jsii.Kernel.get(this, "destPortType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.domainResolveType = software.amazon.jsii.Kernel.get(this, "domainResolveType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.endTime = software.amazon.jsii.Kernel.get(this, "endTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.lang = software.amazon.jsii.Kernel.get(this, "lang", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.memberUid = software.amazon.jsii.Kernel.get(this, "memberUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -743,6 +772,7 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             this.destPort = builder.destPort;
             this.destPortGroup = builder.destPortGroup;
             this.destPortType = builder.destPortType;
+            this.domainResolveType = builder.domainResolveType;
             this.endTime = builder.endTime;
             this.lang = builder.lang;
             this.memberUid = builder.memberUid;
@@ -826,6 +856,11 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getDomainResolveType() {
+            return this.domainResolveType;
+        }
+
+        @Override
         public final java.lang.Object getEndTime() {
             return this.endTime;
         }
@@ -905,6 +940,9 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             if (this.getDestPortType() != null) {
                 data.set("destPortType", om.valueToTree(this.getDestPortType()));
             }
+            if (this.getDomainResolveType() != null) {
+                data.set("domainResolveType", om.valueToTree(this.getDomainResolveType()));
+            }
             if (this.getEndTime() != null) {
                 data.set("endTime", om.valueToTree(this.getEndTime()));
             }
@@ -967,6 +1005,7 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             if (this.destPort != null ? !this.destPort.equals(that.destPort) : that.destPort != null) return false;
             if (this.destPortGroup != null ? !this.destPortGroup.equals(that.destPortGroup) : that.destPortGroup != null) return false;
             if (this.destPortType != null ? !this.destPortType.equals(that.destPortType) : that.destPortType != null) return false;
+            if (this.domainResolveType != null ? !this.domainResolveType.equals(that.domainResolveType) : that.domainResolveType != null) return false;
             if (this.endTime != null ? !this.endTime.equals(that.endTime) : that.endTime != null) return false;
             if (this.lang != null ? !this.lang.equals(that.lang) : that.lang != null) return false;
             if (this.memberUid != null ? !this.memberUid.equals(that.memberUid) : that.memberUid != null) return false;
@@ -995,6 +1034,7 @@ public interface RosVpcFirewallControlPolicyProps extends software.amazon.jsii.J
             result = 31 * result + (this.destPort != null ? this.destPort.hashCode() : 0);
             result = 31 * result + (this.destPortGroup != null ? this.destPortGroup.hashCode() : 0);
             result = 31 * result + (this.destPortType != null ? this.destPortType.hashCode() : 0);
+            result = 31 * result + (this.domainResolveType != null ? this.domainResolveType.hashCode() : 0);
             result = 31 * result + (this.endTime != null ? this.endTime.hashCode() : 0);
             result = 31 * result + (this.lang != null ? this.lang.hashCode() : 0);
             result = 31 * result + (this.memberUid != null ? this.memberUid.hashCode() : 0);

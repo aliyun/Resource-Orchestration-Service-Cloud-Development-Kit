@@ -102,14 +102,34 @@ export interface RosDBClusterProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
+     * @Property vSwitchBak: The ID of the secondary VSwitch.
+     */
+    readonly vSwitchBak?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchBak2: The ID of the third VSwitch.
+     */
+    readonly vSwitchBak2?: string | ros.IResolvable;
+
+    /**
      * @Property vSwitchId: VSwitchId
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
+     * @Property zondIdBak2: The ID of the third zone.
+     */
+    readonly zondIdBak2?: string | ros.IResolvable;
+
+    /**
      * @Property zoneId: ZoneId
      */
     readonly zoneId?: string | ros.IResolvable;
+
+    /**
+     * @Property zoneIdBak: The ID of the secondary zone.
+     */
+    readonly zoneIdBak?: string | ros.IResolvable;
 }
 
 /**
@@ -122,10 +142,10 @@ export interface RosDBClusterProps {
 function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('dbNodeStorageType', ros.requiredValidator)(properties.dbNodeStorageType));
-    errors.collect(ros.propertyValidator('dbNodeStorageType', ros.validateString)(properties.dbNodeStorageType));
     errors.collect(ros.propertyValidator('dbNodeStorage', ros.requiredValidator)(properties.dbNodeStorage));
     errors.collect(ros.propertyValidator('dbNodeStorage', ros.validateNumber)(properties.dbNodeStorage));
+    errors.collect(ros.propertyValidator('dbNodeStorageType', ros.requiredValidator)(properties.dbNodeStorageType));
+    errors.collect(ros.propertyValidator('dbNodeStorageType', ros.validateString)(properties.dbNodeStorageType));
     errors.collect(ros.propertyValidator('encryptionType', ros.validateString)(properties.encryptionType));
     errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
@@ -146,9 +166,12 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
+    errors.collect(ros.propertyValidator('vSwitchBak', ros.validateString)(properties.vSwitchBak));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
     errors.collect(ros.propertyValidator('dbClusterNetworkType', ros.requiredValidator)(properties.dbClusterNetworkType));
     errors.collect(ros.propertyValidator('dbClusterNetworkType', ros.validateString)(properties.dbClusterNetworkType));
+    errors.collect(ros.propertyValidator('zondIdBak2', ros.validateString)(properties.zondIdBak2));
+    errors.collect(ros.propertyValidator('zoneIdBak', ros.validateString)(properties.zoneIdBak));
     errors.collect(ros.propertyValidator('dbClusterType', ros.requiredValidator)(properties.dbClusterType));
     errors.collect(ros.propertyValidator('dbClusterType', ros.validateString)(properties.dbClusterType));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
@@ -171,6 +194,7 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('paymentType', ros.validateString)(properties.paymentType));
+    errors.collect(ros.propertyValidator('vSwitchBak2', ros.validateString)(properties.vSwitchBak2));
     return errors.wrap('supplied properties not correct for "RosDBClusterProps"');
 }
 
@@ -202,13 +226,17 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       'Period': ros.stringToRosTemplate(properties.period),
       'UsedTime': ros.numberToRosTemplate(properties.usedTime),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchBak': ros.stringToRosTemplate(properties.vSwitchBak),
+      'VSwitchBak2': ros.stringToRosTemplate(properties.vSwitchBak2),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZondIdBak2': ros.stringToRosTemplate(properties.zondIdBak2),
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'ZoneIdBak': ros.stringToRosTemplate(properties.zoneIdBak),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
  */
@@ -470,14 +498,34 @@ export class RosDBCluster extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property vSwitchBak: The ID of the secondary VSwitch.
+     */
+    public vSwitchBak: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchBak2: The ID of the third VSwitch.
+     */
+    public vSwitchBak2: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vSwitchId: VSwitchId
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property zondIdBak2: The ID of the third zone.
+     */
+    public zondIdBak2: string | ros.IResolvable | undefined;
+
+    /**
      * @Property zoneId: ZoneId
      */
     public zoneId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property zoneIdBak: The ID of the secondary zone.
+     */
+    public zoneIdBak: string | ros.IResolvable | undefined;
 
     /**
      * @param scope - scope in which this resource is defined
@@ -533,8 +581,12 @@ export class RosDBCluster extends ros.RosResource {
         this.period = props.period;
         this.usedTime = props.usedTime;
         this.vpcId = props.vpcId;
+        this.vSwitchBak = props.vSwitchBak;
+        this.vSwitchBak2 = props.vSwitchBak2;
         this.vSwitchId = props.vSwitchId;
+        this.zondIdBak2 = props.zondIdBak2;
         this.zoneId = props.zoneId;
+        this.zoneIdBak = props.zoneIdBak;
     }
 
 
@@ -554,12 +606,1134 @@ export class RosDBCluster extends ros.RosResource {
             period: this.period,
             usedTime: this.usedTime,
             vpcId: this.vpcId,
+            vSwitchBak: this.vSwitchBak,
+            vSwitchBak2: this.vSwitchBak2,
             vSwitchId: this.vSwitchId,
+            zondIdBak2: this.zondIdBak2,
             zoneId: this.zoneId,
+            zoneIdBak: this.zoneIdBak,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDBClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnterpriseDBCluster`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbcluster
+ */
+export interface RosEnterpriseDBClusterProps {
+
+    /**
+     * @Property engine: The engine type.
+     */
+    readonly engine: string | ros.IResolvable;
+
+    /**
+     * @Property nodeCount: The number of nodes.
+     */
+    readonly nodeCount: number | ros.IResolvable;
+
+    /**
+     * @Property nodeScaleMax: The maximum number of nodes for scaling.
+     */
+    readonly nodeScaleMax: number | ros.IResolvable;
+
+    /**
+     * @Property nodeScaleMin: The minimum number of nodes for scaling.
+     */
+    readonly nodeScaleMin: number | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    readonly vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    readonly vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The ID of the zone.
+     */
+    readonly zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property backupSetId: The ID of the backup set.
+     */
+    readonly backupSetId?: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceDescription: The description of the database instance.
+     */
+    readonly dbInstanceDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property dbTimeZone: The time zone of the database.
+     */
+    readonly dbTimeZone?: string | ros.IResolvable;
+
+    /**
+     * @Property deploySchema: The deployment schema.
+     */
+    readonly deploySchema?: string | ros.IResolvable;
+
+    /**
+     * @Property multiZone: Multi-zone configuration.
+     */
+    readonly multiZone?: Array<RosEnterpriseDBCluster.MultiZoneProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property publicConnectionSetting: The public connection setting.
+     */
+    readonly publicConnectionSetting?: RosEnterpriseDBCluster.PublicConnectionSettingProperty | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceDbInstanceId: The ID of the source database instance.
+     */
+    readonly sourceDbInstanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property storageQuota: The storage quota.
+     */
+    readonly storageQuota?: number | ros.IResolvable;
+
+    /**
+     * @Property storageType: The type of storage.
+     */
+    readonly storageType?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to clickhouse_enterprise_db. Max support 20 tags to add during create clickhouse_enterprise_db. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosEnterpriseDBCluster.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnterpriseDBClusterProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBClusterPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.multiZone && (Array.isArray(properties.multiZone) || (typeof properties.multiZone) === 'string')) {
+        errors.collect(ros.propertyValidator('multiZone', ros.validateLength)({
+            data: properties.multiZone.length,
+            min: 1,
+            max: 3,
+          }));
+    }
+    errors.collect(ros.propertyValidator('multiZone', ros.listValidator(RosEnterpriseDBCluster_MultiZonePropertyValidator))(properties.multiZone));
+    errors.collect(ros.propertyValidator('nodeScaleMin', ros.requiredValidator)(properties.nodeScaleMin));
+    if(properties.nodeScaleMin && (typeof properties.nodeScaleMin) !== 'object') {
+        errors.collect(ros.propertyValidator('nodeScaleMin', ros.validateRange)({
+            data: properties.nodeScaleMin,
+            min: 4,
+            max: 32,
+          }));
+    }
+    errors.collect(ros.propertyValidator('nodeScaleMin', ros.validateNumber)(properties.nodeScaleMin));
+    errors.collect(ros.propertyValidator('storageType', ros.validateString)(properties.storageType));
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('nodeCount', ros.requiredValidator)(properties.nodeCount));
+    if(properties.nodeCount && (typeof properties.nodeCount) !== 'object') {
+        errors.collect(ros.propertyValidator('nodeCount', ros.validateRange)({
+            data: properties.nodeCount,
+            min: 2,
+            max: 16,
+          }));
+    }
+    errors.collect(ros.propertyValidator('nodeCount', ros.validateNumber)(properties.nodeCount));
+    errors.collect(ros.propertyValidator('dbTimeZone', ros.validateString)(properties.dbTimeZone));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('sourceDbInstanceId', ros.validateString)(properties.sourceDbInstanceId));
+    errors.collect(ros.propertyValidator('backupSetId', ros.validateString)(properties.backupSetId));
+    if(properties.deploySchema && (typeof properties.deploySchema) !== 'object') {
+        errors.collect(ros.propertyValidator('deploySchema', ros.validateAllowedValues)({
+          data: properties.deploySchema,
+          allowedValues: ["single_az","multi_az"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('deploySchema', ros.validateString)(properties.deploySchema));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('nodeScaleMax', ros.requiredValidator)(properties.nodeScaleMax));
+    if(properties.nodeScaleMax && (typeof properties.nodeScaleMax) !== 'object') {
+        errors.collect(ros.propertyValidator('nodeScaleMax', ros.validateRange)({
+            data: properties.nodeScaleMax,
+            min: 4,
+            max: 32,
+          }));
+    }
+    errors.collect(ros.propertyValidator('nodeScaleMax', ros.validateNumber)(properties.nodeScaleMax));
+    errors.collect(ros.propertyValidator('publicConnectionSetting', RosEnterpriseDBCluster_PublicConnectionSettingPropertyValidator)(properties.publicConnectionSetting));
+    if(properties.storageQuota && (typeof properties.storageQuota) !== 'object') {
+        errors.collect(ros.propertyValidator('storageQuota', ros.validateRange)({
+            data: properties.storageQuota,
+            min: 0,
+            max: undefined,
+          }));
+    }
+    errors.collect(ros.propertyValidator('storageQuota', ros.validateNumber)(properties.storageQuota));
+    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
+    if(properties.engine && (typeof properties.engine) !== 'object') {
+        errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
+          data: properties.engine,
+          allowedValues: ["clickhouse"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEnterpriseDBCluster_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosEnterpriseDBClusterProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnterpriseDBClusterPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Engine': ros.stringToRosTemplate(properties.engine),
+      'NodeCount': ros.numberToRosTemplate(properties.nodeCount),
+      'NodeScaleMax': ros.numberToRosTemplate(properties.nodeScaleMax),
+      'NodeScaleMin': ros.numberToRosTemplate(properties.nodeScaleMin),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'BackupSetId': ros.stringToRosTemplate(properties.backupSetId),
+      'DBInstanceDescription': ros.stringToRosTemplate(properties.dbInstanceDescription),
+      'DBTimeZone': ros.stringToRosTemplate(properties.dbTimeZone),
+      'DeploySchema': ros.stringToRosTemplate(properties.deploySchema),
+      'MultiZone': ros.listMapper(rosEnterpriseDBClusterMultiZonePropertyToRosTemplate)(properties.multiZone),
+      'PublicConnectionSetting': rosEnterpriseDBClusterPublicConnectionSettingPropertyToRosTemplate(properties.publicConnectionSetting),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SourceDBInstanceId': ros.stringToRosTemplate(properties.sourceDbInstanceId),
+      'StorageQuota': ros.numberToRosTemplate(properties.storageQuota),
+      'StorageType': ros.stringToRosTemplate(properties.storageType),
+      'Tags': ros.listMapper(rosEnterpriseDBClusterTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::EnterpriseDBCluster`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnterpriseDBCluster` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbcluster
+ */
+export class RosEnterpriseDBCluster extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ClickHouse::EnterpriseDBCluster";
+
+    /**
+     * @Attribute DBInstanceId: The ID of the database instance.
+     */
+    public readonly attrDbInstanceId: ros.IResolvable;
+
+    /**
+     * @Attribute PrivateConnectionString: The private connection string.
+     */
+    public readonly attrPrivateConnectionString: ros.IResolvable;
+
+    /**
+     * @Attribute PublicConnectionString: The public connection string.
+     */
+    public readonly attrPublicConnectionString: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property engine: The engine type.
+     */
+    public engine: string | ros.IResolvable;
+
+    /**
+     * @Property nodeCount: The number of nodes.
+     */
+    public nodeCount: number | ros.IResolvable;
+
+    /**
+     * @Property nodeScaleMax: The maximum number of nodes for scaling.
+     */
+    public nodeScaleMax: number | ros.IResolvable;
+
+    /**
+     * @Property nodeScaleMin: The minimum number of nodes for scaling.
+     */
+    public nodeScaleMin: number | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The ID of the VPC.
+     */
+    public vpcId: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchId: The ID of the VSwitch.
+     */
+    public vSwitchId: string | ros.IResolvable;
+
+    /**
+     * @Property zoneId: The ID of the zone.
+     */
+    public zoneId: string | ros.IResolvable;
+
+    /**
+     * @Property backupSetId: The ID of the backup set.
+     */
+    public backupSetId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbInstanceDescription: The description of the database instance.
+     */
+    public dbInstanceDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dbTimeZone: The time zone of the database.
+     */
+    public dbTimeZone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property deploySchema: The deployment schema.
+     */
+    public deploySchema: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property multiZone: Multi-zone configuration.
+     */
+    public multiZone: Array<RosEnterpriseDBCluster.MultiZoneProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property publicConnectionSetting: The public connection setting.
+     */
+    public publicConnectionSetting: RosEnterpriseDBCluster.PublicConnectionSettingProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceDbInstanceId: The ID of the source database instance.
+     */
+    public sourceDbInstanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageQuota: The storage quota.
+     */
+    public storageQuota: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property storageType: The type of storage.
+     */
+    public storageType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to clickhouse_enterprise_db. Max support 20 tags to add during create clickhouse_enterprise_db. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosEnterpriseDBCluster.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnterpriseDBClusterProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnterpriseDBCluster.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDbInstanceId = this.getAtt('DBInstanceId');
+        this.attrPrivateConnectionString = this.getAtt('PrivateConnectionString');
+        this.attrPublicConnectionString = this.getAtt('PublicConnectionString');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.engine = props.engine;
+        this.nodeCount = props.nodeCount;
+        this.nodeScaleMax = props.nodeScaleMax;
+        this.nodeScaleMin = props.nodeScaleMin;
+        this.vpcId = props.vpcId;
+        this.vSwitchId = props.vSwitchId;
+        this.zoneId = props.zoneId;
+        this.backupSetId = props.backupSetId;
+        this.dbInstanceDescription = props.dbInstanceDescription;
+        this.dbTimeZone = props.dbTimeZone;
+        this.deploySchema = props.deploySchema;
+        this.multiZone = props.multiZone;
+        this.publicConnectionSetting = props.publicConnectionSetting;
+        this.resourceGroupId = props.resourceGroupId;
+        this.sourceDbInstanceId = props.sourceDbInstanceId;
+        this.storageQuota = props.storageQuota;
+        this.storageType = props.storageType;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            engine: this.engine,
+            nodeCount: this.nodeCount,
+            nodeScaleMax: this.nodeScaleMax,
+            nodeScaleMin: this.nodeScaleMin,
+            vpcId: this.vpcId,
+            vSwitchId: this.vSwitchId,
+            zoneId: this.zoneId,
+            backupSetId: this.backupSetId,
+            dbInstanceDescription: this.dbInstanceDescription,
+            dbTimeZone: this.dbTimeZone,
+            deploySchema: this.deploySchema,
+            multiZone: this.multiZone,
+            publicConnectionSetting: this.publicConnectionSetting,
+            resourceGroupId: this.resourceGroupId,
+            sourceDbInstanceId: this.sourceDbInstanceId,
+            storageQuota: this.storageQuota,
+            storageType: this.storageType,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnterpriseDBClusterPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosEnterpriseDBCluster {
+    /**
+     * @stability external
+     */
+    export interface MultiZoneProperty {
+        /**
+         * @Property zoneId: The zone ID in multi-zone configuration.
+         */
+        readonly zoneId: string | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: The VSwitch IDs in the zone.
+         */
+        readonly vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `MultiZoneProperty`
+ *
+ * @param properties - the TypeScript properties of a `MultiZoneProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBCluster_MultiZonePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.requiredValidator)(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    return errors.wrap('supplied properties not correct for "MultiZoneProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster.MultiZone` resource
+ *
+ * @param properties - the TypeScript properties of a `MultiZoneProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster.MultiZone` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterMultiZonePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEnterpriseDBCluster_MultiZonePropertyValidator(properties).assertSuccess();
+    return {
+      'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+    };
+}
+
+export namespace RosEnterpriseDBCluster {
+    /**
+     * @stability external
+     */
+    export interface PublicConnectionSettingProperty {
+        /**
+         * @Property connectionPrefix: The public connection string prefix.
+         */
+        readonly connectionPrefix: string | ros.IResolvable;
+        /**
+         * @Property enablePublicConnection: Enable the ClickHouse cluster.
+         */
+        readonly enablePublicConnection: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PublicConnectionSettingProperty`
+ *
+ * @param properties - the TypeScript properties of a `PublicConnectionSettingProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBCluster_PublicConnectionSettingPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionPrefix', ros.requiredValidator)(properties.connectionPrefix));
+    errors.collect(ros.propertyValidator('connectionPrefix', ros.validateString)(properties.connectionPrefix));
+    errors.collect(ros.propertyValidator('enablePublicConnection', ros.requiredValidator)(properties.enablePublicConnection));
+    errors.collect(ros.propertyValidator('enablePublicConnection', ros.validateBoolean)(properties.enablePublicConnection));
+    return errors.wrap('supplied properties not correct for "PublicConnectionSettingProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster.PublicConnectionSetting` resource
+ *
+ * @param properties - the TypeScript properties of a `PublicConnectionSettingProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster.PublicConnectionSetting` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterPublicConnectionSettingPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEnterpriseDBCluster_PublicConnectionSettingPropertyValidator(properties).assertSuccess();
+    return {
+      'ConnectionPrefix': ros.stringToRosTemplate(properties.connectionPrefix),
+      'EnablePublicConnection': ros.booleanToRosTemplate(properties.enablePublicConnection),
+    };
+}
+
+export namespace RosEnterpriseDBCluster {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBCluster_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBCluster.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEnterpriseDBCluster_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosEnterpriseDBClusterAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbclusteraccount
+ */
+export interface RosEnterpriseDBClusterAccountProps {
+
+    /**
+     * @Property account: The name of the database account.
+     */
+    readonly account: string | ros.IResolvable;
+
+    /**
+     * @Property accountType: The type of the database account. Valid values:
+     * - **NormalAccount**: Normal account number.
+     * - **SuperAccount**: The privileged account.
+     */
+    readonly accountType: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property password: Database account password. Set the following rules.
+     * - Consists of at least three of uppercase letters, lowercase letters, numbers, and special characters.
+     * - Oh-! @#$%^& *()_+-= is a special character.
+     * - Length is 8~32 characters.
+     */
+    readonly password: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the account.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property dmlAuthSetting: The information about permissions.
+     */
+    readonly dmlAuthSetting?: RosEnterpriseDBClusterAccount.DmlAuthSettingProperty | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnterpriseDBClusterAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBClusterAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('account', ros.requiredValidator)(properties.account));
+    errors.collect(ros.propertyValidator('account', ros.validateString)(properties.account));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('accountType', ros.requiredValidator)(properties.accountType));
+    if(properties.accountType && (typeof properties.accountType) !== 'object') {
+        errors.collect(ros.propertyValidator('accountType', ros.validateAllowedValues)({
+          data: properties.accountType,
+          allowedValues: ["NormalAccount","SuperAccount"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
+    errors.collect(ros.propertyValidator('dmlAuthSetting', RosEnterpriseDBClusterAccount_DmlAuthSettingPropertyValidator)(properties.dmlAuthSetting));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosEnterpriseDBClusterAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterAccount` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterAccount` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnterpriseDBClusterAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Account': ros.stringToRosTemplate(properties.account),
+      'AccountType': ros.stringToRosTemplate(properties.accountType),
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DmlAuthSetting': rosEnterpriseDBClusterAccountDmlAuthSettingPropertyToRosTemplate(properties.dmlAuthSetting),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::EnterpriseDBClusterAccount`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnterpriseDBClusterAccount` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbclusteraccount
+ */
+export class RosEnterpriseDBClusterAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ClickHouse::EnterpriseDBClusterAccount";
+
+    /**
+     * @Attribute Account: The name of the database account.
+     */
+    public readonly attrAccount: ros.IResolvable;
+
+    /**
+     * @Attribute AccountType: The type of the database account.
+     */
+    public readonly attrAccountType: ros.IResolvable;
+
+    /**
+     * @Attribute Description: The description of the account.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute DmlAuthSetting: The information about permissions.
+     */
+    public readonly attrDmlAuthSetting: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property account: The name of the database account.
+     */
+    public account: string | ros.IResolvable;
+
+    /**
+     * @Property accountType: The type of the database account. Valid values:
+     * - **NormalAccount**: Normal account number.
+     * - **SuperAccount**: The privileged account.
+     */
+    public accountType: string | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property password: Database account password. Set the following rules.
+     * - Consists of at least three of uppercase letters, lowercase letters, numbers, and special characters.
+     * - Oh-! @#$%^& *()_+-= is a special character.
+     * - Length is 8~32 characters.
+     */
+    public password: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the account.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property dmlAuthSetting: The information about permissions.
+     */
+    public dmlAuthSetting: RosEnterpriseDBClusterAccount.DmlAuthSettingProperty | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnterpriseDBClusterAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnterpriseDBClusterAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccount = this.getAtt('Account');
+        this.attrAccountType = this.getAtt('AccountType');
+        this.attrDescription = this.getAtt('Description');
+        this.attrDmlAuthSetting = this.getAtt('DmlAuthSetting');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.account = props.account;
+        this.accountType = props.accountType;
+        this.dbInstanceId = props.dbInstanceId;
+        this.password = props.password;
+        this.description = props.description;
+        this.dmlAuthSetting = props.dmlAuthSetting;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            account: this.account,
+            accountType: this.accountType,
+            dbInstanceId: this.dbInstanceId,
+            password: this.password,
+            description: this.description,
+            dmlAuthSetting: this.dmlAuthSetting,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnterpriseDBClusterAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosEnterpriseDBClusterAccount {
+    /**
+     * @stability external
+     */
+    export interface DmlAuthSettingProperty {
+        /**
+         * @Property ddlAuthority: Whether to grant the DDL permission to the database account. Value description:
+     * - **true**: allows DDL.
+     * - **false**: DDL is disabled.
+         */
+        readonly ddlAuthority: boolean | ros.IResolvable;
+        /**
+         * @Property dmlAuthority: Whether to grant the DML permission to the database account. The values are as follows:
+     * - **0**: Queries that allow reading, writing, and changing settings
+     * - **1**: Only queries for reading data are allowed.
+     * - **2**: allows queries to read data and change settings.
+         */
+        readonly dmlAuthority: number | ros.IResolvable;
+        /**
+         * @Property allowDictionaries: List of dictionaries that require authorization.
+         */
+        readonly allowDictionaries?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property allowDatabases: The list of databases that require authorization.
+         */
+        readonly allowDatabases?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DmlAuthSettingProperty`
+ *
+ * @param properties - the TypeScript properties of a `DmlAuthSettingProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBClusterAccount_DmlAuthSettingPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ddlAuthority', ros.requiredValidator)(properties.ddlAuthority));
+    errors.collect(ros.propertyValidator('ddlAuthority', ros.validateBoolean)(properties.ddlAuthority));
+    errors.collect(ros.propertyValidator('dmlAuthority', ros.requiredValidator)(properties.dmlAuthority));
+    if(properties.dmlAuthority && (typeof properties.dmlAuthority) !== 'object') {
+        errors.collect(ros.propertyValidator('dmlAuthority', ros.validateAllowedValues)({
+          data: properties.dmlAuthority,
+          allowedValues: [0,1,2],
+        }));
+    }
+    errors.collect(ros.propertyValidator('dmlAuthority', ros.validateNumber)(properties.dmlAuthority));
+    errors.collect(ros.propertyValidator('allowDictionaries', ros.listValidator(ros.validateString))(properties.allowDictionaries));
+    errors.collect(ros.propertyValidator('allowDatabases', ros.listValidator(ros.validateString))(properties.allowDatabases));
+    return errors.wrap('supplied properties not correct for "DmlAuthSettingProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterAccount.DmlAuthSetting` resource
+ *
+ * @param properties - the TypeScript properties of a `DmlAuthSettingProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterAccount.DmlAuthSetting` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterAccountDmlAuthSettingPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEnterpriseDBClusterAccount_DmlAuthSettingPropertyValidator(properties).assertSuccess();
+    return {
+      'DdlAuthority': ros.booleanToRosTemplate(properties.ddlAuthority),
+      'DmlAuthority': ros.numberToRosTemplate(properties.dmlAuthority),
+      'AllowDictionaries': ros.listMapper(ros.stringToRosTemplate)(properties.allowDictionaries),
+      'AllowDatabases': ros.listMapper(ros.stringToRosTemplate)(properties.allowDatabases),
+    };
+}
+
+/**
+ * Properties for defining a `RosEnterpriseDBClusterBackupPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbclusterbackuppolicy
+ */
+export interface RosEnterpriseDBClusterBackupPolicyProps {
+
+    /**
+     * @Property backupRetentionPeriod: The number of days for which you can retain the backup data.
+     */
+    readonly backupRetentionPeriod: number | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupPeriod: The backup cycle, which indicates the day of the week when the system regularly backs up data. Separate multiple dates with commas (,).
+     */
+    readonly preferredBackupPeriod: string | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupTime: The backup time window within which the backup task is performed. The time is displayed in UTC. For example, 12:00Z-13:00Z indicates that the backup time window ranges from 12:00 (UTC) to 13:00 (UTC).
+     */
+    readonly preferredBackupTime: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnterpriseDBClusterBackupPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterBackupPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBClusterBackupPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.requiredValidator)(properties.preferredBackupPeriod));
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.validateString)(properties.preferredBackupPeriod));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.requiredValidator)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('backupRetentionPeriod', ros.requiredValidator)(properties.backupRetentionPeriod));
+    errors.collect(ros.propertyValidator('backupRetentionPeriod', ros.validateNumber)(properties.backupRetentionPeriod));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    return errors.wrap('supplied properties not correct for "RosEnterpriseDBClusterBackupPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterBackupPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterBackupPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterBackupPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterBackupPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnterpriseDBClusterBackupPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'BackupRetentionPeriod': ros.numberToRosTemplate(properties.backupRetentionPeriod),
+      'DbInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'PreferredBackupPeriod': ros.stringToRosTemplate(properties.preferredBackupPeriod),
+      'PreferredBackupTime': ros.stringToRosTemplate(properties.preferredBackupTime),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::EnterpriseDBClusterBackupPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnterpriseDBClusterBackupPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbclusterbackuppolicy
+ */
+export class RosEnterpriseDBClusterBackupPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ClickHouse::EnterpriseDBClusterBackupPolicy";
+
+    /**
+     * @Attribute BackupRetentionPeriod: The number of days for which you can retain the backup data.
+     */
+    public readonly attrBackupRetentionPeriod: ros.IResolvable;
+
+    /**
+     * @Attribute BackupState: Backup switch.
+     */
+    public readonly attrBackupState: ros.IResolvable;
+
+    /**
+     * @Attribute PreferredBackupPeriod: The backup cycle.
+     */
+    public readonly attrPreferredBackupPeriod: ros.IResolvable;
+
+    /**
+     * @Attribute PreferredBackupTime: The backup time window within which the backup task is performed.
+     */
+    public readonly attrPreferredBackupTime: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property backupRetentionPeriod: The number of days for which you can retain the backup data.
+     */
+    public backupRetentionPeriod: number | ros.IResolvable;
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupPeriod: The backup cycle, which indicates the day of the week when the system regularly backs up data. Separate multiple dates with commas (,).
+     */
+    public preferredBackupPeriod: string | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupTime: The backup time window within which the backup task is performed. The time is displayed in UTC. For example, 12:00Z-13:00Z indicates that the backup time window ranges from 12:00 (UTC) to 13:00 (UTC).
+     */
+    public preferredBackupTime: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnterpriseDBClusterBackupPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnterpriseDBClusterBackupPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrBackupRetentionPeriod = this.getAtt('BackupRetentionPeriod');
+        this.attrBackupState = this.getAtt('BackupState');
+        this.attrPreferredBackupPeriod = this.getAtt('PreferredBackupPeriod');
+        this.attrPreferredBackupTime = this.getAtt('PreferredBackupTime');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.backupRetentionPeriod = props.backupRetentionPeriod;
+        this.dbInstanceId = props.dbInstanceId;
+        this.preferredBackupPeriod = props.preferredBackupPeriod;
+        this.preferredBackupTime = props.preferredBackupTime;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            backupRetentionPeriod: this.backupRetentionPeriod,
+            dbInstanceId: this.dbInstanceId,
+            preferredBackupPeriod: this.preferredBackupPeriod,
+            preferredBackupTime: this.preferredBackupTime,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnterpriseDBClusterBackupPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosEnterpriseDBClusterSecurityIP`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbclustersecurityip
+ */
+export interface RosEnterpriseDBClusterSecurityIPProps {
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: The name of the whitelist whose settings you want to modify.
+     */
+    readonly groupName: string | ros.IResolvable;
+
+    /**
+     * @Property securityIpList: The IP addresses and CIDR blocks in the whitelist.
+     */
+    readonly securityIpList: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosEnterpriseDBClusterSecurityIPProps`
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterSecurityIPProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosEnterpriseDBClusterSecurityIPPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('groupName', ros.requiredValidator)(properties.groupName));
+    errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('securityIpList', ros.requiredValidator)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    return errors.wrap('supplied properties not correct for "RosEnterpriseDBClusterSecurityIPProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterSecurityIP` resource
+ *
+ * @param properties - the TypeScript properties of a `RosEnterpriseDBClusterSecurityIPProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ClickHouse::EnterpriseDBClusterSecurityIP` resource.
+ */
+// @ts-ignore TS6133
+function rosEnterpriseDBClusterSecurityIPPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosEnterpriseDBClusterSecurityIPPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DbInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'SecurityIpList': ros.stringToRosTemplate(properties.securityIpList),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::EnterpriseDBClusterSecurityIP`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `EnterpriseDBClusterSecurityIP` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbclustersecurityip
+ */
+export class RosEnterpriseDBClusterSecurityIP extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ClickHouse::EnterpriseDBClusterSecurityIP";
+
+    /**
+     * @Attribute GroupName: The name of the whitelist whose settings you want to modify.
+     */
+    public readonly attrGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityIpList: The IP addresses and CIDR blocks in the whitelist.
+     */
+    public readonly attrSecurityIpList: ros.IResolvable;
+
+    /**
+     * @Attribute SecurityIpType: The type of IP address.
+     */
+    public readonly attrSecurityIpType: ros.IResolvable;
+
+    /**
+     * @Attribute WhitelistNetType: The network type of the whitelist.
+     */
+    public readonly attrWhitelistNetType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbInstanceId: The cluster ID.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property groupName: The name of the whitelist whose settings you want to modify.
+     */
+    public groupName: string | ros.IResolvable;
+
+    /**
+     * @Property securityIpList: The IP addresses and CIDR blocks in the whitelist.
+     */
+    public securityIpList: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosEnterpriseDBClusterSecurityIPProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosEnterpriseDBClusterSecurityIP.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGroupName = this.getAtt('GroupName');
+        this.attrSecurityIpList = this.getAtt('SecurityIpList');
+        this.attrSecurityIpType = this.getAtt('SecurityIpType');
+        this.attrWhitelistNetType = this.getAtt('WhitelistNetType');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbInstanceId = props.dbInstanceId;
+        this.groupName = props.groupName;
+        this.securityIpList = props.securityIpList;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbInstanceId: this.dbInstanceId,
+            groupName: this.groupName,
+            securityIpList: this.securityIpList,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosEnterpriseDBClusterSecurityIPPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 
@@ -707,7 +1881,7 @@ function rosSynDbPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::SynDb`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::SynDb`, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `SynDb` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-syndb
  */

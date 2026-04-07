@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterVpcAttachment</code>, which is used to create a virtual private cloud (VPC) connection on an Enterprise Edition transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.248Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.513Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachment")
 public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterVpcAttachment {
 
@@ -41,7 +41,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute CenId: CenId.
+     * Attribute CenId: CEN ID.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrCenId() {
@@ -49,15 +49,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute ClientToken: ClientToken.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrClientToken() {
-        return software.amazon.jsii.Kernel.get(this, "attrClientToken", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     * Attribute ResourceType: ResourceType.
+     * Attribute ResourceType: Resource Type.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
@@ -65,7 +57,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute TransitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+     * Attribute TransitRouterAttachmentDescription: Attachment Description.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentDescription() {
@@ -73,7 +65,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute TransitRouterAttachmentId: The first ID of the resource.
+     * Attribute TransitRouterAttachmentId: The ID of the transit router VPC attachment.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentId() {
@@ -81,7 +73,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute TransitRouterAttachmentName: TransitRouterAttachmentName.
+     * Attribute TransitRouterAttachmentName: Attachment Name.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterAttachmentName() {
@@ -89,7 +81,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute TransitRouterId: TransitRouterId.
+     * Attribute TransitRouterId: Transit Router ID.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrTransitRouterId() {
@@ -97,7 +89,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute VpcId: VpcId.
+     * Attribute VpcId: VPC ID.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcId() {
@@ -105,7 +97,7 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
     }
 
     /**
-     * Attribute VpcOwnerId: VpcOwnerId.
+     * Attribute VpcOwnerId: VPC Owner ID.
      */
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrVpcOwnerId() {
@@ -176,20 +168,20 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property vpcId: VpcId.
+         * Property vpcId: The ID of the VPC.
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: VpcId. This parameter is required.
+         * @param vpcId Property vpcId: The ID of the VPC. This parameter is required.
          */
         public Builder vpcId(final java.lang.String vpcId) {
             this.props.vpcId(vpcId);
             return this;
         }
         /**
-         * Property vpcId: VpcId.
+         * Property vpcId: The ID of the VPC.
          * <p>
          * @return {@code this}
-         * @param vpcId Property vpcId: VpcId. This parameter is required.
+         * @param vpcId Property vpcId: The ID of the VPC. This parameter is required.
          */
         public Builder vpcId(final com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.props.vpcId(vpcId);
@@ -197,20 +189,20 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property zoneMappings: ZoneMappingss.
+         * Property zoneMappings: The zone mappings for the VPC.
          * <p>
          * @return {@code this}
-         * @param zoneMappings Property zoneMappings: ZoneMappingss. This parameter is required.
+         * @param zoneMappings Property zoneMappings: The zone mappings for the VPC. This parameter is required.
          */
         public Builder zoneMappings(final com.aliyun.ros.cdk.core.IResolvable zoneMappings) {
             this.props.zoneMappings(zoneMappings);
             return this;
         }
         /**
-         * Property zoneMappings: ZoneMappingss.
+         * Property zoneMappings: The zone mappings for the VPC.
          * <p>
          * @return {@code this}
-         * @param zoneMappings Property zoneMappings: ZoneMappingss. This parameter is required.
+         * @param zoneMappings Property zoneMappings: The zone mappings for the VPC. This parameter is required.
          */
         public Builder zoneMappings(final java.util.List<? extends java.lang.Object> zoneMappings) {
             this.props.zoneMappings(zoneMappings);
@@ -239,20 +231,41 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property cenId: CenId.
+         * Property autoPublishRouteEnabled: Whether to automatically publish routes.
          * <p>
          * @return {@code this}
-         * @param cenId Property cenId: CenId. This parameter is required.
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to automatically publish routes. This parameter is required.
+         */
+        public Builder autoPublishRouteEnabled(final java.lang.Boolean autoPublishRouteEnabled) {
+            this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
+            return this;
+        }
+        /**
+         * Property autoPublishRouteEnabled: Whether to automatically publish routes.
+         * <p>
+         * @return {@code this}
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to automatically publish routes. This parameter is required.
+         */
+        public Builder autoPublishRouteEnabled(final com.aliyun.ros.cdk.core.IResolvable autoPublishRouteEnabled) {
+            this.props.autoPublishRouteEnabled(autoPublishRouteEnabled);
+            return this;
+        }
+
+        /**
+         * Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
+         * <p>
+         * @return {@code this}
+         * @param cenId Property cenId: The ID of the Cloud Enterprise Network (CEN) instance. This parameter is required.
          */
         public Builder cenId(final java.lang.String cenId) {
             this.props.cenId(cenId);
             return this;
         }
         /**
-         * Property cenId: CenId.
+         * Property cenId: The ID of the Cloud Enterprise Network (CEN) instance.
          * <p>
          * @return {@code this}
-         * @param cenId Property cenId: CenId. This parameter is required.
+         * @param cenId Property cenId: The ID of the Cloud Enterprise Network (CEN) instance. This parameter is required.
          */
         public Builder cenId(final com.aliyun.ros.cdk.core.IResolvable cenId) {
             this.props.cenId(cenId);
@@ -344,20 +357,20 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+         * Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription. This parameter is required.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the transit router VPC attachment. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final java.lang.String transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
             return this;
         }
         /**
-         * Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription.
+         * Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: TransitRouterAttachmentDescription. This parameter is required.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the transit router VPC attachment. This parameter is required.
          */
         public Builder transitRouterAttachmentDescription(final com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentDescription) {
             this.props.transitRouterAttachmentDescription(transitRouterAttachmentDescription);
@@ -365,20 +378,20 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property transitRouterAttachmentName: TransitRouterAttachmentName.
+         * Property transitRouterAttachmentName: The name of the transit router VPC attachment.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: TransitRouterAttachmentName. This parameter is required.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the transit router VPC attachment. This parameter is required.
          */
         public Builder transitRouterAttachmentName(final java.lang.String transitRouterAttachmentName) {
             this.props.transitRouterAttachmentName(transitRouterAttachmentName);
             return this;
         }
         /**
-         * Property transitRouterAttachmentName: TransitRouterAttachmentName.
+         * Property transitRouterAttachmentName: The name of the transit router VPC attachment.
          * <p>
          * @return {@code this}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: TransitRouterAttachmentName. This parameter is required.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the transit router VPC attachment. This parameter is required.
          */
         public Builder transitRouterAttachmentName(final com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentName) {
             this.props.transitRouterAttachmentName(transitRouterAttachmentName);
@@ -386,20 +399,20 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property transitRouterId: TransitRouterId.
+         * Property transitRouterId: The ID of the transit router.
          * <p>
          * @return {@code this}
-         * @param transitRouterId Property transitRouterId: TransitRouterId. This parameter is required.
+         * @param transitRouterId Property transitRouterId: The ID of the transit router. This parameter is required.
          */
         public Builder transitRouterId(final java.lang.String transitRouterId) {
             this.props.transitRouterId(transitRouterId);
             return this;
         }
         /**
-         * Property transitRouterId: TransitRouterId.
+         * Property transitRouterId: The ID of the transit router.
          * <p>
          * @return {@code this}
-         * @param transitRouterId Property transitRouterId: TransitRouterId. This parameter is required.
+         * @param transitRouterId Property transitRouterId: The ID of the transit router. This parameter is required.
          */
         public Builder transitRouterId(final com.aliyun.ros.cdk.core.IResolvable transitRouterId) {
             this.props.transitRouterId(transitRouterId);
@@ -407,20 +420,41 @@ public class TransitRouterVpcAttachment extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property vpcOwnerId: VpcOwnerId.
+         * Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
          * <p>
          * @return {@code this}
-         * @param vpcOwnerId Property vpcOwnerId: VpcOwnerId. This parameter is required.
+         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment. This parameter is required.
+         */
+        public Builder transitRouterVpcAttachmentOptions(final com.aliyun.ros.cdk.core.IResolvable transitRouterVpcAttachmentOptions) {
+            this.props.transitRouterVpcAttachmentOptions(transitRouterVpcAttachmentOptions);
+            return this;
+        }
+        /**
+         * Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+         * <p>
+         * @return {@code this}
+         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment. This parameter is required.
+         */
+        public Builder transitRouterVpcAttachmentOptions(final java.util.Map<java.lang.String, ? extends java.lang.Object> transitRouterVpcAttachmentOptions) {
+            this.props.transitRouterVpcAttachmentOptions(transitRouterVpcAttachmentOptions);
+            return this;
+        }
+
+        /**
+         * Property vpcOwnerId: The owner ID of the VPC.
+         * <p>
+         * @return {@code this}
+         * @param vpcOwnerId Property vpcOwnerId: The owner ID of the VPC. This parameter is required.
          */
         public Builder vpcOwnerId(final java.lang.Number vpcOwnerId) {
             this.props.vpcOwnerId(vpcOwnerId);
             return this;
         }
         /**
-         * Property vpcOwnerId: VpcOwnerId.
+         * Property vpcOwnerId: The owner ID of the VPC.
          * <p>
          * @return {@code this}
-         * @param vpcOwnerId Property vpcOwnerId: VpcOwnerId. This parameter is required.
+         * @param vpcOwnerId Property vpcOwnerId: The owner ID of the VPC. This parameter is required.
          */
         public Builder vpcOwnerId(final com.aliyun.ros.cdk.core.IResolvable vpcOwnerId) {
             this.props.vpcOwnerId(vpcOwnerId);

@@ -40,7 +40,7 @@ export interface ILoadBalancerTCPListeners extends ros.IResource {
     readonly attrLoadBalancerTcpListeners: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListeners`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListeners`, which is used to query Classic Load Balancer (CLB) listeners.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancerTCPListeners`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancertcplisteners
  */

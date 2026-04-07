@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcGatewayEndpoint`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcGatewayEndpoint`, which is used to create a gateway endpoint.
 type VpcGatewayEndpoint interface {
 	alicloudroscdkcore.Resource
 	IVpcGatewayEndpoint

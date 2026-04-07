@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.081Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.ResourceMetricRuleProps")
 @software.amazon.jsii.Jsii.Proxy(ResourceMetricRuleProps.Jsii$Proxy.class)
 public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,11 +17,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
      * Note: An alert contact group can contain one or more alert contacts. For information about how to create alert contacts and alert contact groups, see PutContact and PutContactGroup.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getContactGroups();
-
-    /**
-     * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getEscalations();
 
     /**
      * Property metricName: The name of the metric.
@@ -76,6 +71,13 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
      * Property emailSubject: The subject of the alert notification email.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEmailSubject() {
+        return null;
+    }
+
+    /**
+     * Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEscalations() {
         return null;
     }
 
@@ -187,7 +189,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
      */
     public static final class Builder implements software.amazon.jsii.Builder<ResourceMetricRuleProps> {
         java.lang.Object contactGroups;
-        java.lang.Object escalations;
         java.lang.Object metricName;
         java.lang.Object namespace;
         java.lang.Object resources;
@@ -195,6 +196,7 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object deletionForce;
         java.lang.Object effectiveInterval;
         java.lang.Object emailSubject;
+        java.lang.Object escalations;
         java.lang.Object interval;
         java.lang.Object labels;
         java.lang.Object noDataPolicy;
@@ -227,26 +229,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
          */
         public Builder contactGroups(java.util.List<? extends java.lang.Object> contactGroups) {
             this.contactGroups = contactGroups;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ResourceMetricRuleProps#getEscalations}
-         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder escalations(com.aliyun.ros.cdk.core.IResolvable escalations) {
-            this.escalations = escalations;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link ResourceMetricRuleProps#getEscalations}
-         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder escalations(com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty escalations) {
-            this.escalations = escalations;
             return this;
         }
 
@@ -403,6 +385,26 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
          */
         public Builder emailSubject(com.aliyun.ros.cdk.core.IResolvable emailSubject) {
             this.emailSubject = emailSubject;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourceMetricRuleProps#getEscalations}
+         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+         * @return {@code this}
+         */
+        public Builder escalations(com.aliyun.ros.cdk.core.IResolvable escalations) {
+            this.escalations = escalations;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ResourceMetricRuleProps#getEscalations}
+         * @param escalations Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+         * @return {@code this}
+         */
+        public Builder escalations(com.aliyun.ros.cdk.cms.RosResourceMetricRule.EscalationsProperty escalations) {
+            this.escalations = escalations;
             return this;
         }
 
@@ -663,7 +665,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ResourceMetricRuleProps {
         private final java.lang.Object contactGroups;
-        private final java.lang.Object escalations;
         private final java.lang.Object metricName;
         private final java.lang.Object namespace;
         private final java.lang.Object resources;
@@ -671,6 +672,7 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object deletionForce;
         private final java.lang.Object effectiveInterval;
         private final java.lang.Object emailSubject;
+        private final java.lang.Object escalations;
         private final java.lang.Object interval;
         private final java.lang.Object labels;
         private final java.lang.Object noDataPolicy;
@@ -689,7 +691,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.contactGroups = software.amazon.jsii.Kernel.get(this, "contactGroups", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.escalations = software.amazon.jsii.Kernel.get(this, "escalations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.metricName = software.amazon.jsii.Kernel.get(this, "metricName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.namespace = software.amazon.jsii.Kernel.get(this, "namespace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resources = software.amazon.jsii.Kernel.get(this, "resources", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -697,6 +698,7 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.effectiveInterval = software.amazon.jsii.Kernel.get(this, "effectiveInterval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.emailSubject = software.amazon.jsii.Kernel.get(this, "emailSubject", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.escalations = software.amazon.jsii.Kernel.get(this, "escalations", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.interval = software.amazon.jsii.Kernel.get(this, "interval", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.labels = software.amazon.jsii.Kernel.get(this, "labels", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.noDataPolicy = software.amazon.jsii.Kernel.get(this, "noDataPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -715,7 +717,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.contactGroups = java.util.Objects.requireNonNull(builder.contactGroups, "contactGroups is required");
-            this.escalations = java.util.Objects.requireNonNull(builder.escalations, "escalations is required");
             this.metricName = java.util.Objects.requireNonNull(builder.metricName, "metricName is required");
             this.namespace = java.util.Objects.requireNonNull(builder.namespace, "namespace is required");
             this.resources = java.util.Objects.requireNonNull(builder.resources, "resources is required");
@@ -723,6 +724,7 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
             this.deletionForce = builder.deletionForce;
             this.effectiveInterval = builder.effectiveInterval;
             this.emailSubject = builder.emailSubject;
+            this.escalations = builder.escalations;
             this.interval = builder.interval;
             this.labels = builder.labels;
             this.noDataPolicy = builder.noDataPolicy;
@@ -738,11 +740,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getContactGroups() {
             return this.contactGroups;
-        }
-
-        @Override
-        public final java.lang.Object getEscalations() {
-            return this.escalations;
         }
 
         @Override
@@ -778,6 +775,11 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final java.lang.Object getEmailSubject() {
             return this.emailSubject;
+        }
+
+        @Override
+        public final java.lang.Object getEscalations() {
+            return this.escalations;
         }
 
         @Override
@@ -837,7 +839,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("contactGroups", om.valueToTree(this.getContactGroups()));
-            data.set("escalations", om.valueToTree(this.getEscalations()));
             data.set("metricName", om.valueToTree(this.getMetricName()));
             data.set("namespace", om.valueToTree(this.getNamespace()));
             data.set("resources", om.valueToTree(this.getResources()));
@@ -852,6 +853,9 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
             }
             if (this.getEmailSubject() != null) {
                 data.set("emailSubject", om.valueToTree(this.getEmailSubject()));
+            }
+            if (this.getEscalations() != null) {
+                data.set("escalations", om.valueToTree(this.getEscalations()));
             }
             if (this.getInterval() != null) {
                 data.set("interval", om.valueToTree(this.getInterval()));
@@ -902,7 +906,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
             ResourceMetricRuleProps.Jsii$Proxy that = (ResourceMetricRuleProps.Jsii$Proxy) o;
 
             if (!contactGroups.equals(that.contactGroups)) return false;
-            if (!escalations.equals(that.escalations)) return false;
             if (!metricName.equals(that.metricName)) return false;
             if (!namespace.equals(that.namespace)) return false;
             if (!resources.equals(that.resources)) return false;
@@ -910,6 +913,7 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.effectiveInterval != null ? !this.effectiveInterval.equals(that.effectiveInterval) : that.effectiveInterval != null) return false;
             if (this.emailSubject != null ? !this.emailSubject.equals(that.emailSubject) : that.emailSubject != null) return false;
+            if (this.escalations != null ? !this.escalations.equals(that.escalations) : that.escalations != null) return false;
             if (this.interval != null ? !this.interval.equals(that.interval) : that.interval != null) return false;
             if (this.labels != null ? !this.labels.equals(that.labels) : that.labels != null) return false;
             if (this.noDataPolicy != null ? !this.noDataPolicy.equals(that.noDataPolicy) : that.noDataPolicy != null) return false;
@@ -925,7 +929,6 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
         @Override
         public final int hashCode() {
             int result = this.contactGroups.hashCode();
-            result = 31 * result + (this.escalations.hashCode());
             result = 31 * result + (this.metricName.hashCode());
             result = 31 * result + (this.namespace.hashCode());
             result = 31 * result + (this.resources.hashCode());
@@ -933,6 +936,7 @@ public interface ResourceMetricRuleProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.effectiveInterval != null ? this.effectiveInterval.hashCode() : 0);
             result = 31 * result + (this.emailSubject != null ? this.emailSubject.hashCode() : 0);
+            result = 31 * result + (this.escalations != null ? this.escalations.hashCode() : 0);
             result = 31 * result + (this.interval != null ? this.interval.hashCode() : 0);
             result = 31 * result + (this.labels != null ? this.labels.hashCode() : 0);
             result = 31 * result + (this.noDataPolicy != null ? this.noDataPolicy.hashCode() : 0);

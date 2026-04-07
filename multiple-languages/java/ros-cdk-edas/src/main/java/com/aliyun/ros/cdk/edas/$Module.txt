@@ -13,6 +13,8 @@
 @alicloud/ros-cdk-edas.IK8sApplication=com.aliyun.ros.cdk.edas.IK8sApplication
 @alicloud/ros-cdk-edas.IK8sCluster=com.aliyun.ros.cdk.edas.IK8sCluster
 @alicloud/ros-cdk-edas.IK8sSlbBinding=com.aliyun.ros.cdk.edas.IK8sSlbBinding
+@alicloud/ros-cdk-edas.ISwimmingLane=com.aliyun.ros.cdk.edas.ISwimmingLane
+@alicloud/ros-cdk-edas.ISwimmingLaneGroup=com.aliyun.ros.cdk.edas.ISwimmingLaneGroup
 @alicloud/ros-cdk-edas.IUserDefineRegion=com.aliyun.ros.cdk.edas.IUserDefineRegion
 @alicloud/ros-cdk-edas.K8sApplication=com.aliyun.ros.cdk.edas.K8sApplication
 @alicloud/ros-cdk-edas.K8sApplicationProps=com.aliyun.ros.cdk.edas.K8sApplicationProps
@@ -86,8 +88,16 @@
 @alicloud/ros-cdk-edas.RosK8sSlbBinding=com.aliyun.ros.cdk.edas.RosK8sSlbBinding
 @alicloud/ros-cdk-edas.RosK8sSlbBinding.ServicePortInfosProperty=com.aliyun.ros.cdk.edas.RosK8sSlbBinding$ServicePortInfosProperty
 @alicloud/ros-cdk-edas.RosK8sSlbBindingProps=com.aliyun.ros.cdk.edas.RosK8sSlbBindingProps
+@alicloud/ros-cdk-edas.RosSwimmingLane=com.aliyun.ros.cdk.edas.RosSwimmingLane
+@alicloud/ros-cdk-edas.RosSwimmingLaneGroup=com.aliyun.ros.cdk.edas.RosSwimmingLaneGroup
+@alicloud/ros-cdk-edas.RosSwimmingLaneGroupProps=com.aliyun.ros.cdk.edas.RosSwimmingLaneGroupProps
+@alicloud/ros-cdk-edas.RosSwimmingLaneProps=com.aliyun.ros.cdk.edas.RosSwimmingLaneProps
 @alicloud/ros-cdk-edas.RosUserDefineRegion=com.aliyun.ros.cdk.edas.RosUserDefineRegion
 @alicloud/ros-cdk-edas.RosUserDefineRegionProps=com.aliyun.ros.cdk.edas.RosUserDefineRegionProps
+@alicloud/ros-cdk-edas.SwimmingLane=com.aliyun.ros.cdk.edas.SwimmingLane
+@alicloud/ros-cdk-edas.SwimmingLaneGroup=com.aliyun.ros.cdk.edas.SwimmingLaneGroup
+@alicloud/ros-cdk-edas.SwimmingLaneGroupProps=com.aliyun.ros.cdk.edas.SwimmingLaneGroupProps
+@alicloud/ros-cdk-edas.SwimmingLaneProps=com.aliyun.ros.cdk.edas.SwimmingLaneProps
 @alicloud/ros-cdk-edas.UserDefineRegion=com.aliyun.ros.cdk.edas.UserDefineRegion
 @alicloud/ros-cdk-edas.UserDefineRegionProps=com.aliyun.ros.cdk.edas.UserDefineRegionProps
 @alicloud/ros-cdk-edas.datasource.Applications=com.aliyun.ros.cdk.edas.datasource.Applications

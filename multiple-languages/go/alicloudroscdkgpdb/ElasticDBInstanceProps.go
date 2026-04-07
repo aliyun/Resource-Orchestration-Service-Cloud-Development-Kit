@@ -33,6 +33,10 @@ type ElasticDBInstanceProps struct {
 	// You can call the DescribeRegions
 	// operation to query the most recent zone list.
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
+	// Property backupId: Backup set ID.
+	//
+	// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
 	// Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
 	//
 	// This parameter must be passed in to create a storage reservation mode instance.
@@ -81,6 +85,10 @@ type ElasticDBInstanceProps struct {
 	// Default value:
 	// 127.0.0.1.
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
+	// Property srcDbInstanceName: Clone source instance ID.
+	//
+	// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+	SrcDbInstanceName interface{} `field:"optional" json:"srcDbInstanceName" yaml:"srcDbInstanceName"`
 	// Property tags: The list of instance tags in the form of key\/value pairs.
 	//
 	// You can define a maximum of 20 tags for instance.

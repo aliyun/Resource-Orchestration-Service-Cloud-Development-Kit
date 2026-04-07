@@ -237,7 +237,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["EMAS","ARMS/SyntheticPost","Xtrace","DataWorks","FNF","FC","KMS","PAI","Config","HBR","IOT","ARMS","SAE","CloudStorageGateway","BatchCompute","BrainIndustrial","ARMS/PrometheusMonitor","IMM","CS","CR","NAS","CDN","PrivateZone","AHAS","TrafficMirror","CMS","ApiGateway","NLP","OSS","MNS","CDT","PrivateLink","TransitRouter","ARMS/Web","MaxCompute","SLS","VS","CloudSSO","DataHub","EDAS","DSC","RocketMQ","ControlPolicy","CDTCb","ARMS/App","DCDN","OTS","TrustedService/ROS"],
+          allowedValues: ["AHAS","ARMS","ARMS/App","ARMS/Web","ARMS/PrometheusMonitor","ARMS/SyntheticPost","ApiGateway","BatchCompute","BrainIndustrial","CloudStorageGateway","CMS","CR","CS","DataHub","DCDN","EDAS","EMAS","FC","FNF","MaxCompute","MNS","NAS","HBR","IMM","IOT","KMS","NLP","OSS","OTS","PrivateLink","PrivateZone","RocketMQ","SAE","SLS","TrafficMirror","VS","Xtrace","CDN","CDT","CDTCb","TransitRouter","PAI","Config","CloudSSO","ControlPolicy","DSC","DataWorks","TrustedService/ROS"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -263,7 +263,7 @@ function rosAutoEnableServicePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::AutoEnableService`, which is used to automatically activate an Alibaba Cloud service or feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `AutoEnableService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
@@ -454,7 +454,7 @@ function rosCustomResourcePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`, which lets you create a custom resource.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomResource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
@@ -732,13 +732,6 @@ export interface RosResourceCleanerProps {
 function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.failureOption && (typeof properties.failureOption) !== 'object') {
-        errors.collect(ros.propertyValidator('failureOption', ros.validateAllowedValues)({
-          data: properties.failureOption,
-          allowedValues: ["Normal","Fast"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('failureOption', ros.validateString)(properties.failureOption));
     if(properties.resourceFilters && (Array.isArray(properties.resourceFilters) || (typeof properties.resourceFilters) === 'string')) {
         errors.collect(ros.propertyValidator('resourceFilters', ros.validateLength)({
             data: properties.resourceFilters.length,
@@ -747,6 +740,13 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('resourceFilters', ros.listValidator(RosResourceCleaner_ResourceFiltersPropertyValidator))(properties.resourceFilters));
+    if(properties.failureOption && (typeof properties.failureOption) !== 'object') {
+        errors.collect(ros.propertyValidator('failureOption', ros.validateAllowedValues)({
+          data: properties.failureOption,
+          allowedValues: ["Normal","Fast"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('failureOption', ros.validateString)(properties.failureOption));
     errors.collect(ros.propertyValidator('action', ros.requiredValidator)(properties.action));
     if(properties.action && (typeof properties.action) !== 'object') {
         errors.collect(ros.propertyValidator('action', ros.validateAllowedValues)({
@@ -755,13 +755,6 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
-    if(properties.cleanUpAlgorithm && (typeof properties.cleanUpAlgorithm) !== 'object') {
-        errors.collect(ros.propertyValidator('cleanUpAlgorithm', ros.validateAllowedValues)({
-          data: properties.cleanUpAlgorithm,
-          allowedValues: ["ResourceDependency","ResourceTypeOrder"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('cleanUpAlgorithm', ros.validateString)(properties.cleanUpAlgorithm));
     if(properties.mode && (typeof properties.mode) !== 'object') {
         errors.collect(ros.propertyValidator('mode', ros.validateAllowedValues)({
           data: properties.mode,
@@ -769,6 +762,13 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('mode', ros.validateString)(properties.mode));
+    if(properties.cleanUpAlgorithm && (typeof properties.cleanUpAlgorithm) !== 'object') {
+        errors.collect(ros.propertyValidator('cleanUpAlgorithm', ros.validateAllowedValues)({
+          data: properties.cleanUpAlgorithm,
+          allowedValues: ["ResourceDependency","ResourceTypeOrder"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('cleanUpAlgorithm', ros.validateString)(properties.cleanUpAlgorithm));
     if(properties.cleanUpRetryCount && (typeof properties.cleanUpRetryCount) !== 'object') {
         errors.collect(ros.propertyValidator('cleanUpRetryCount', ros.validateRange)({
             data: properties.cleanUpRetryCount,
@@ -777,14 +777,6 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('cleanUpRetryCount', ros.validateNumber)(properties.cleanUpRetryCount));
-    if(properties.resourceTypeOrder && (Array.isArray(properties.resourceTypeOrder) || (typeof properties.resourceTypeOrder) === 'string')) {
-        errors.collect(ros.propertyValidator('resourceTypeOrder', ros.validateLength)({
-            data: properties.resourceTypeOrder.length,
-            min: 1,
-            max: 1000,
-          }));
-    }
-    errors.collect(ros.propertyValidator('resourceTypeOrder', ros.listValidator(ros.validateString))(properties.resourceTypeOrder));
     if(properties.resources && (Array.isArray(properties.resources) || (typeof properties.resources) === 'string')) {
         errors.collect(ros.propertyValidator('resources', ros.validateLength)({
             data: properties.resources.length,
@@ -793,6 +785,14 @@ function RosResourceCleanerPropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('resources', ros.listValidator(RosResourceCleaner_ResourcesPropertyValidator))(properties.resources));
+    if(properties.resourceTypeOrder && (Array.isArray(properties.resourceTypeOrder) || (typeof properties.resourceTypeOrder) === 'string')) {
+        errors.collect(ros.propertyValidator('resourceTypeOrder', ros.validateLength)({
+            data: properties.resourceTypeOrder.length,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resourceTypeOrder', ros.listValidator(ros.validateString))(properties.resourceTypeOrder));
     if(properties.cleanUpTimeout && (typeof properties.cleanUpTimeout) !== 'object') {
         errors.collect(ros.propertyValidator('cleanUpTimeout', ros.validateRange)({
             data: properties.cleanUpTimeout,
@@ -849,7 +849,7 @@ function rosResourceCleanerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceCleaner` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
@@ -1130,7 +1130,7 @@ function RosResourceCleaner_ExcludedResourcesPropertyValidator(properties: any):
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:Namespace","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DLF:Catalog","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DTS:MigrationInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","EBS:DiskReplicaGroup","EBS:DiskReplicaPair","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","ECS:SnapshotGroup","EDAS:Application","EDAS:Cluster","EDAS:UserDefineRegion","EHPC:Cluster","EMR:Cluster","EMR:Cluster2","EMR:FlowProject","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:Namespace","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DLF:Catalog","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DTS:MigrationInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","EBS:DiskReplicaGroup","EBS:DiskReplicaPair","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","ECS:SnapshotGroup","EDAS:Application","EDAS:Cluster","EDAS:UserDefineRegion","EHPC:Cluster","EMR:Cluster","EMR:Cluster2","EMR:FlowProject","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","ResourceManager:ResourceGroup","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1179,15 +1179,15 @@ export namespace RosResourceCleaner {
          */
         readonly resourceTypePatterns?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
-         * @Property resourceIds: Resource ID filtering.
-     * The relationship of each item is or.
-         */
-        readonly resourceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property regionIds: Region filtering.
      * The relationship of each item is or.
          */
         readonly regionIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property resourceIds: Resource ID filtering.
+     * The relationship of each item is or.
+         */
+        readonly resourceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property resourceGroupIds: Resource group filtering.
      * The relationship of each item is or.
@@ -1230,14 +1230,6 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
           }));
     }
     errors.collect(ros.propertyValidator('resourceTypePatterns', ros.listValidator(ros.validateString))(properties.resourceTypePatterns));
-    if(properties.resourceIds && (Array.isArray(properties.resourceIds) || (typeof properties.resourceIds) === 'string')) {
-        errors.collect(ros.propertyValidator('resourceIds', ros.validateLength)({
-            data: properties.resourceIds.length,
-            min: undefined,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('resourceIds', ros.listValidator(ros.validateString))(properties.resourceIds));
     if(properties.regionIds && (Array.isArray(properties.regionIds) || (typeof properties.regionIds) === 'string')) {
         errors.collect(ros.propertyValidator('regionIds', ros.validateLength)({
             data: properties.regionIds.length,
@@ -1246,6 +1238,14 @@ function RosResourceCleaner_ResourceFiltersPropertyValidator(properties: any): r
           }));
     }
     errors.collect(ros.propertyValidator('regionIds', ros.listValidator(ros.validateString))(properties.regionIds));
+    if(properties.resourceIds && (Array.isArray(properties.resourceIds) || (typeof properties.resourceIds) === 'string')) {
+        errors.collect(ros.propertyValidator('resourceIds', ros.validateLength)({
+            data: properties.resourceIds.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('resourceIds', ros.listValidator(ros.validateString))(properties.resourceIds));
     if(properties.resourceGroupIds && (Array.isArray(properties.resourceGroupIds) || (typeof properties.resourceGroupIds) === 'string')) {
         errors.collect(ros.propertyValidator('resourceGroupIds', ros.validateLength)({
             data: properties.resourceGroupIds.length,
@@ -1294,8 +1294,8 @@ function rosResourceCleanerResourceFiltersPropertyToRosTemplate(properties: any)
     return {
       'IncludeDeletionProtection': ros.booleanToRosTemplate(properties.includeDeletionProtection),
       'ResourceTypePatterns': ros.listMapper(ros.stringToRosTemplate)(properties.resourceTypePatterns),
-      'ResourceIds': ros.listMapper(ros.stringToRosTemplate)(properties.resourceIds),
       'RegionIds': ros.listMapper(ros.stringToRosTemplate)(properties.regionIds),
+      'ResourceIds': ros.listMapper(ros.stringToRosTemplate)(properties.resourceIds),
       'ResourceGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.resourceGroupIds),
       'Effect': ros.stringToRosTemplate(properties.effect),
       'ResourceNamePatterns': ros.listMapper(ros.stringToRosTemplate)(properties.resourceNamePatterns),
@@ -1346,7 +1346,7 @@ function RosResourceCleaner_ResourcesPropertyValidator(properties: any): ros.Val
     if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
         errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
           data: properties.resourceType,
-          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:Namespace","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DLF:Catalog","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DTS:MigrationInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","EBS:DiskReplicaGroup","EBS:DiskReplicaPair","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","ECS:SnapshotGroup","EDAS:Application","EDAS:Cluster","EDAS:UserDefineRegion","EHPC:Cluster","EMR:Cluster","EMR:Cluster2","EMR:FlowProject","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
+          allowedValues: ["ACM:Namespace","ACTIONTRAIL:Trail","ADB:DBCluster","ALB:Acl","ALB:HealthCheckTemplate","ALB:LoadBalancer","ALB:SecurityPolicy","ALB:ServerGroup","ARMS:AlertContact","ARMS:AlertContactGroup","ARMS:RetcodeApp","ASM:ServiceMesh","ApiGateway:App","ApiGateway:Group","ApiGateway:Instance","ApiGateway:LogConfig","ApiGateway:Plugin","ApiGateway:Signature","ApiGateway:TrafficControl","CAS:Certificate","CDDC:DedicatedHostGroup","CDN:Domain","CMS:Contact","CMS:ContactGroup","CMS:MetricRuleTemplate","CMS:MonitorGroup","CMS:Namespace","CMS:SiteMonitor","CR:Instance","CS:Cluster","ClickHouse:DBCluster","CloudPhone:InstanceGroup","DATAHUB:Project","DCDN:Domain","DFS:AccessGroup","DFS:FileSystem","DLF:Catalog","DNS:Domain","DNS:DomainGroup","DRDS:DrdsInstance","DTS:MigrationInstance","DirectMail:Domain","DirectMail:Ipfilter","EAIS:Instance","EBS:DiskReplicaGroup","EBS:DiskReplicaPair","ECD:Bundle","ECD:Desktop","ECD:SimpleOfficeSite","ECI:ContainerGroup","ECI:ImageCache","ECS:AutoProvisioningGroup","ECS:AutoSnapshotPolicy","ECS:Command","ECS:CustomImage","ECS:DedicatedHost","ECS:DeploymentSet","ECS:Disk","ECS:HpcCluster","ECS:Instance","ECS:LaunchTemplate","ECS:NetworkInterface","ECS:PrefixList","ECS:SSHKeyPair","ECS:SecurityGroup","ECS:Snapshot","ECS:SnapshotGroup","EDAS:Application","EDAS:Cluster","EDAS:UserDefineRegion","EHPC:Cluster","EMR:Cluster","EMR:Cluster2","EMR:FlowProject","ENS:Instance","ESS:AlarmTask","ESS:ScalingGroup","ESS:ScheduledTask","ElasticSearch:Instance","FC:Service","FNF:Flow","GPDB:DBInstance","HBR:DbVault","KAFKA:Instance","KMS:Key","KMS:Secret","MNS:Queue","MNS:Topic","MONGODB:Instance","MSE:Cluster","MSE:Gateway","Memcache:Instance","NAS:AccessGroup","NAS:FileSystem","NLB:LoadBalancer","NLB:ServerGroup","OOS:Execution","OOS:Parameter","OOS:PatchBaseline","OOS:SecretParameter","OOS:Template","OSS:Bucket","OTS:Instance","POLARDB:DBCluster","PVTZ:Zone","PrivateLink:VpcEndpoint","PrivateLink:VpcEndpointService","RAM:Group","RAM:ManagedPolicy","RAM:Role","RAM:SAMLProvider","RAM:User","RDS:DBInstance","REDIS:Instance","ROCKETMQ5:Instance","ROCKETMQ:Instance","ROS:ResourceType","ROS:Stack","ROS:StackGroup","ROS:Template","ROS:TemplateScratch","ResourceManager:ResourceGroup","SAE:Application","SAE:Namespace","SAG:ACL","SAG:Qos","SLB:AccessControl","SLB:Certificate","SLB:LoadBalancer","SLS:Project","SearchEngine:Instance","TSDB:HiTSDBInstance","VPC:AnycastEIP","VPC:CommonBandwidthPackage","VPC:DhcpOptionsSet","VPC:EIP","VPC:EIPSegment","VPC:FlowLog","VPC:HaVip","VPC:Ipv6Gateway","VPC:NatGateway","VPC:NetworkAcl","VPC:RouteTable","VPC:VPC","VPC:VSwitch","WAF:Domain"],
         }));
     }
     errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
@@ -1545,7 +1545,7 @@ function rosSleepPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`, which is used to delay the creation, deletion, update, and rollback of other resources.
  * @Note This class does not contain additional functions, so it is recommended to use the `Sleep` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
@@ -1693,7 +1693,6 @@ function RosStackPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('templateVersion', ros.validateString)(properties.templateVersion));
     errors.collect(ros.propertyValidator('templateBody', ros.hashValidator(ros.validateAny))(properties.templateBody));
-    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosStack_TagsPropertyValidator))(properties.tags));
     if(properties.templateId && (typeof properties.templateId) !== 'object') {
         errors.collect(ros.propertyValidator('templateId', ros.validateAllowedPattern)({
           data: properties.templateId,
@@ -1701,6 +1700,7 @@ function RosStackPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosStack_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosStackProps"');
 }
 
@@ -2001,7 +2001,7 @@ function rosStackGroupPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`, which is used to create a stack group.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
@@ -2249,9 +2249,9 @@ function RosStackInstancesPropsValidator(properties: any): ros.ValidationResult 
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('operationPreferences', RosStackInstances_OperationPreferencesPropertyValidator)(properties.operationPreferences));
     errors.collect(ros.propertyValidator('retainStacks', ros.validateBoolean)(properties.retainStacks));
+    errors.collect(ros.propertyValidator('accountIds', ros.listValidator(ros.validateString))(properties.accountIds));
     errors.collect(ros.propertyValidator('regionIds', ros.requiredValidator)(properties.regionIds));
     errors.collect(ros.propertyValidator('regionIds', ros.listValidator(ros.validateString))(properties.regionIds));
-    errors.collect(ros.propertyValidator('accountIds', ros.listValidator(ros.validateString))(properties.accountIds));
     errors.collect(ros.propertyValidator('parameterOverrides', ros.hashValidator(ros.validateAny))(properties.parameterOverrides));
     errors.collect(ros.propertyValidator('stackGroupName', ros.requiredValidator)(properties.stackGroupName));
     errors.collect(ros.propertyValidator('stackGroupName', ros.validateString)(properties.stackGroupName));

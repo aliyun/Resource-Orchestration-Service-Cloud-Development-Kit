@@ -14,9 +14,24 @@ export interface RosUserProps {
     readonly endUserId: string | ros.IResolvable;
 
     /**
+     * @Property autoLockTime: The date when the account is automatically locked. Format: yyyy-MM-dd HH:mm:ss.
+     */
+    readonly autoLockTime?: string | ros.IResolvable;
+
+    /**
+     * @Property businessChannel: The channel.
+     */
+    readonly businessChannel?: string | ros.IResolvable;
+
+    /**
      * @Property email: The email address of the end user. The email address is used to receive notifications about events such as desktop assignment. You must specify an email address or a mobile number to receive notifications.
      */
     readonly email?: string | ros.IResolvable;
+
+    /**
+     * @Property isLocalAdmin: Whether to set this convenient account as a local administrator.
+     */
+    readonly isLocalAdmin?: boolean | ros.IResolvable;
 
     /**
      * @Property orgId: The organization to which the end user belongs.
@@ -37,9 +52,21 @@ export interface RosUserProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).
+     * @Property passwordExpireDays: The default password is valid indefinitely. This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+     * 
+     * > This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+     */
+    readonly passwordExpireDays?: string | ros.IResolvable;
+
+    /**
+     * @Property phone: Mobile numbers are not supported on the international site.
      */
     readonly phone?: string | ros.IResolvable;
+
+    /**
+     * @Property realNickName: The display name of the user.
+     */
+    readonly realNickName?: string | ros.IResolvable;
 
     /**
      * @Property remark: The remarks of the end user.
@@ -68,9 +95,14 @@ function RosUserPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('endUserId', ros.requiredValidator)(properties.endUserId));
     errors.collect(ros.propertyValidator('endUserId', ros.validateString)(properties.endUserId));
     errors.collect(ros.propertyValidator('email', ros.validateString)(properties.email));
+    errors.collect(ros.propertyValidator('isLocalAdmin', ros.validateBoolean)(properties.isLocalAdmin));
     errors.collect(ros.propertyValidator('phone', ros.validateString)(properties.phone));
+    errors.collect(ros.propertyValidator('realNickName', ros.validateString)(properties.realNickName));
+    errors.collect(ros.propertyValidator('autoLockTime', ros.validateString)(properties.autoLockTime));
+    errors.collect(ros.propertyValidator('businessChannel', ros.validateString)(properties.businessChannel));
     errors.collect(ros.propertyValidator('remark', ros.validateString)(properties.remark));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('passwordExpireDays', ros.validateString)(properties.passwordExpireDays));
     return errors.wrap('supplied properties not correct for "RosUserProps"');
 }
 
@@ -89,17 +121,22 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
     }
     return {
       'EndUserId': ros.stringToRosTemplate(properties.endUserId),
+      'AutoLockTime': ros.stringToRosTemplate(properties.autoLockTime),
+      'BusinessChannel': ros.stringToRosTemplate(properties.businessChannel),
       'Email': ros.stringToRosTemplate(properties.email),
+      'IsLocalAdmin': ros.booleanToRosTemplate(properties.isLocalAdmin),
       'OrgId': ros.stringToRosTemplate(properties.orgId),
       'OwnerType': ros.stringToRosTemplate(properties.ownerType),
       'Password': ros.stringToRosTemplate(properties.password),
+      'PasswordExpireDays': ros.stringToRosTemplate(properties.passwordExpireDays),
       'Phone': ros.stringToRosTemplate(properties.phone),
+      'RealNickName': ros.stringToRosTemplate(properties.realNickName),
       'Remark': ros.stringToRosTemplate(properties.remark),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EdsUser::User`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EdsUser::User`, which is used to create a convenience user.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edsuser-user
  */
@@ -123,9 +160,24 @@ export class RosUser extends ros.RosResource {
     public endUserId: string | ros.IResolvable;
 
     /**
+     * @Property autoLockTime: The date when the account is automatically locked. Format: yyyy-MM-dd HH:mm:ss.
+     */
+    public autoLockTime: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property businessChannel: The channel.
+     */
+    public businessChannel: string | ros.IResolvable | undefined;
+
+    /**
      * @Property email: The email address of the end user. The email address is used to receive notifications about events such as desktop assignment. You must specify an email address or a mobile number to receive notifications.
      */
     public email: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property isLocalAdmin: Whether to set this convenient account as a local administrator.
+     */
+    public isLocalAdmin: boolean | ros.IResolvable | undefined;
 
     /**
      * @Property orgId: The organization to which the end user belongs.
@@ -146,9 +198,21 @@ export class RosUser extends ros.RosResource {
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).
+     * @Property passwordExpireDays: The default password is valid indefinitely. This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+     * 
+     * > This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+     */
+    public passwordExpireDays: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property phone: Mobile numbers are not supported on the international site.
      */
     public phone: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property realNickName: The display name of the user.
+     */
+    public realNickName: string | ros.IResolvable | undefined;
 
     /**
      * @Property remark: The remarks of the end user.
@@ -166,11 +230,16 @@ export class RosUser extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.endUserId = props.endUserId;
+        this.autoLockTime = props.autoLockTime;
+        this.businessChannel = props.businessChannel;
         this.email = props.email;
+        this.isLocalAdmin = props.isLocalAdmin;
         this.orgId = props.orgId;
         this.ownerType = props.ownerType;
         this.password = props.password;
+        this.passwordExpireDays = props.passwordExpireDays;
         this.phone = props.phone;
+        this.realNickName = props.realNickName;
         this.remark = props.remark;
     }
 
@@ -178,11 +247,16 @@ export class RosUser extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             endUserId: this.endUserId,
+            autoLockTime: this.autoLockTime,
+            businessChannel: this.businessChannel,
             email: this.email,
+            isLocalAdmin: this.isLocalAdmin,
             orgId: this.orgId,
             ownerType: this.ownerType,
             password: this.password,
+            passwordExpireDays: this.passwordExpireDays,
             phone: this.phone,
+            realNickName: this.realNickName,
             remark: this.remark,
         };
     }

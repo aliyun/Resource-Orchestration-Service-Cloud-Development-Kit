@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DedicatedBlockStorageCluster`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::EBS::DedicatedBlockStorageCluster`, which is used to query the information about a dedicated block storage cluster.
 type DedicatedBlockStorageCluster interface {
 	alicloudroscdkcore.Resource
 	IDedicatedBlockStorageCluster

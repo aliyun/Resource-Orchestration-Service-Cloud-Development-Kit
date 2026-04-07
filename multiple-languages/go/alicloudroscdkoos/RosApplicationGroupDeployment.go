@@ -9,11 +9,14 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.
 type RosApplicationGroupDeployment interface {
 	alicloudroscdkcore.RosResource
 	ApplicationName() interface{}
 	SetApplicationName(val interface{})
+	AttrApplicationName() alicloudroscdkcore.IResolvable
+	AttrExecutionId() alicloudroscdkcore.IResolvable
+	AttrName() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -181,6 +184,36 @@ func (j *jsiiProxy_RosApplicationGroupDeployment) ApplicationName() interface{} 
 	_jsii_.Get(
 		j,
 		"applicationName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApplicationGroupDeployment) AttrApplicationName() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrApplicationName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApplicationGroupDeployment) AttrExecutionId() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrExecutionId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosApplicationGroupDeployment) AttrName() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrName",
 		&returns,
 	)
 	return returns

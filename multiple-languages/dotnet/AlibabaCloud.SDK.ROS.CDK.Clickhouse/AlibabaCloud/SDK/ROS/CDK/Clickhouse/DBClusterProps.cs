@@ -541,6 +541,68 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
+        private object? _vSwitchBak;
+
+        /// <summary>Property vSwitchBak: The ID of the secondary VSwitch.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "vSwitchBak", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? VSwitchBak
+        {
+            get => _vSwitchBak;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _vSwitchBak = value;
+            }
+        }
+
+        private object? _vSwitchBak2;
+
+        /// <summary>Property vSwitchBak2: The ID of the third VSwitch.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "vSwitchBak2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? VSwitchBak2
+        {
+            get => _vSwitchBak2;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _vSwitchBak2 = value;
+            }
+        }
+
         private object? _vSwitchId;
 
         /// <summary>Property vSwitchId: VSwitchId.</summary>
@@ -572,6 +634,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
+        private object? _zondIdBak2;
+
+        /// <summary>Property zondIdBak2: The ID of the third zone.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "zondIdBak2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ZondIdBak2
+        {
+            get => _zondIdBak2;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _zondIdBak2 = value;
+            }
+        }
+
         private object? _zoneId;
 
         /// <summary>Property zoneId: ZoneId.</summary>
@@ -600,6 +693,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                     }
                 }
                 _zoneId = value;
+            }
+        }
+
+        private object? _zoneIdBak;
+
+        /// <summary>Property zoneIdBak: The ID of the secondary zone.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "zoneIdBak", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ZoneIdBak
+        {
+            get => _zoneIdBak;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _zoneIdBak = value;
             }
         }
     }

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Esa
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESA::WaitingRoom`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESA::WaitingRoom`The , which type is used to create a waiting room.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWaitingRoom`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-waitingroom

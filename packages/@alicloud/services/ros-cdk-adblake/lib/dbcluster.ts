@@ -191,7 +191,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::DBCluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::DBCluster`, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
@@ -229,8 +229,8 @@ export class DBCluster extends ros.Resource implements IDBCluster {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDBCluster = new RosDBCluster(this, id,  {
-            periodType: props.periodType,
             storageResource: props.storageResource,
+            periodType: props.periodType,
             restoreToTime: props.restoreToTime,
             resourceGroupId: props.resourceGroupId,
             productForm: props.productForm,
@@ -247,10 +247,10 @@ export class DBCluster extends ros.Resource implements IDBCluster {
             vpcId: props.vpcId,
             vSwitchId: props.vSwitchId,
             dbClusterDescription: props.dbClusterDescription,
-            secondaryVSwitchId: props.secondaryVSwitchId,
-            reservedNodeSize: props.reservedNodeSize,
             computeResource: props.computeResource,
             period: props.period,
+            reservedNodeSize: props.reservedNodeSize,
+            secondaryVSwitchId: props.secondaryVSwitchId,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             backupSetId: props.backupSetId,
             secondaryZoneId: props.secondaryZoneId,

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
 type RosSecret interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable
@@ -44,6 +44,8 @@ type RosSecret interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	Policy() interface{}
+	SetPolicy(val interface{})
 	RecoveryWindowInDays() interface{}
 	SetRecoveryWindowInDays(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -70,6 +72,8 @@ type RosSecret interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosSecret_TagsProperty
+	SetTags(val *[]*RosSecret_TagsProperty)
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -318,6 +322,16 @@ func (j *jsiiProxy_RosSecret) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosSecret) Policy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"policy",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSecret) RecoveryWindowInDays() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -423,6 +437,16 @@ func (j *jsiiProxy_RosSecret) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSecret) Tags() *[]*RosSecret_TagsProperty {
+	var returns *[]*RosSecret_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
 		&returns,
 	)
 	return returns
@@ -563,6 +587,17 @@ func (j *jsiiProxy_RosSecret)SetForceDeleteWithoutRecovery(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosSecret)SetPolicy(val interface{}) {
+	if err := j.validateSetPolicyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"policy",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosSecret)SetRecoveryWindowInDays(val interface{}) {
 	if err := j.validateSetRecoveryWindowInDaysParameters(val); err != nil {
 		panic(err)
@@ -625,6 +660,17 @@ func (j *jsiiProxy_RosSecret)SetSecretType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"secretType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSecret)SetTags(val *[]*RosSecret_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

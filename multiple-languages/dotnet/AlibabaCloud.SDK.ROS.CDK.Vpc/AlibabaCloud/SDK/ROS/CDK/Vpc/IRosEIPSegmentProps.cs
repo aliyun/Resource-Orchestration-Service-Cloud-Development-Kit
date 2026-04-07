@@ -57,6 +57,36 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: isp: The line type. Valid values:
+        /// - **BGP** (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.
+        /// - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+        /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+        /// India (Jakarta), and Thailand (Bangkok).
+        ///
+        /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+        /// see [EIP Line Type](~~32321~~).
+        ///
+        /// If you are a single-bandwidth whitelist user, you can also choose:
+        /// - **ChinaTelecom**: China Telecom
+        /// - **ChinaUnicom**: China Unicom
+        /// - **ChinaMobile**: China Mobile
+        /// - **ChinaTelecom_L2**: China Telecom L2
+        /// - **ChinaUnicom_L2**: China Unicom L2
+        /// - **ChinaMobile_L2**: China Mobile L2
+        ///
+        /// If you are a Hangzhou Finance Cloud user, this field is required with value: **BGP_FinanceCloud**.
+        /// </remarks>
+        [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Isp
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: netmode: The network type. Valid values:
         /// public: the Internet. This is the default value. After contiguous EIPs are associated with
         /// cloud resources, the cloud resources can access the Internet by using the EIPs.
@@ -81,6 +111,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: zone: The zone of the contiguous EIP group.
+        /// </remarks>
+        [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Zone
         {
             get
             {
@@ -139,6 +182,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: isp: The line type. Valid values:
+            /// - **BGP** (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.
+            /// - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
+            /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
+            /// India (Jakarta), and Thailand (Bangkok).
+            ///
+            /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
+            /// see [EIP Line Type](~~32321~~).
+            ///
+            /// If you are a single-bandwidth whitelist user, you can also choose:
+            /// - **ChinaTelecom**: China Telecom
+            /// - **ChinaUnicom**: China Unicom
+            /// - **ChinaMobile**: China Mobile
+            /// - **ChinaTelecom_L2**: China Telecom L2
+            /// - **ChinaUnicom_L2**: China Unicom L2
+            /// - **ChinaMobile_L2**: China Mobile L2
+            ///
+            /// If you are a Hangzhou Finance Cloud user, this field is required with value: **BGP_FinanceCloud**.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Isp
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: netmode: The network type. Valid values:
             /// public: the Internet. This is the default value. After contiguous EIPs are associated with
             /// cloud resources, the cloud resources can access the Internet by using the EIPs.
@@ -160,6 +230,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResourceGroupId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: zone: The zone of the contiguous EIP group.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Zone
             {
                 get => GetInstanceProperty<object?>();
             }

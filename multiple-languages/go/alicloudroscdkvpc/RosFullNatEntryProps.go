@@ -12,6 +12,7 @@ type RosFullNatEntryProps struct {
 	NatIp interface{} `field:"required" json:"natIp" yaml:"natIp"`
 	NatIpPort interface{} `field:"required" json:"natIpPort" yaml:"natIpPort"`
 	NetworkInterfaceId interface{} `field:"required" json:"networkInterfaceId" yaml:"networkInterfaceId"`
+	AccessDomain interface{} `field:"optional" json:"accessDomain" yaml:"accessDomain"`
 	FullNatEntryDescription interface{} `field:"optional" json:"fullNatEntryDescription" yaml:"fullNatEntryDescription"`
 	FullNatEntryName interface{} `field:"optional" json:"fullNatEntryName" yaml:"fullNatEntryName"`
 }

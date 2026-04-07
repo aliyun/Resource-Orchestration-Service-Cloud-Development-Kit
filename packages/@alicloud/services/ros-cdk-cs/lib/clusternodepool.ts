@@ -62,7 +62,7 @@ export interface IClusterNodePool extends ros.IResource {
     readonly attrNodePoolId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterNodePool`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterNodePool`The , which resource type creates a node pool for a cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterNodePool`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusternodepool
  */
@@ -94,8 +94,8 @@ export class ClusterNodePool extends ros.Resource implements IClusterNodePool {
             clusterId: props.clusterId,
             nodePoolInfo: props.nodePoolInfo,
             kubernetesConfig: props.kubernetesConfig,
-            count: props.count === undefined || props.count === null ? 0 : props.count,
             management: props.management,
+            count: props.count === undefined || props.count === null ? 0 : props.count,
             autoScaling: props.autoScaling,
             scalingGroup: props.scalingGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

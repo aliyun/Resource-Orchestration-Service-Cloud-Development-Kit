@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * Represents a <code>Table</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.698Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.ITable")
 @software.amazon.jsii.Jsii.Proxy(ITable.Jsii$Proxy.class)
 public interface ITable extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

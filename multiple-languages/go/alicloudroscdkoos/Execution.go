@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
 type Execution interface {
 	alicloudroscdkcore.Resource
 	IExecution

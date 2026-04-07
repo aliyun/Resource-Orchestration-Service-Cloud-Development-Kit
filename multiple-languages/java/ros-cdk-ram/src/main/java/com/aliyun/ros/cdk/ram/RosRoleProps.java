@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.350Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.016Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRoleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRoleProps.Jsii$Proxy.class)
 public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
@@ -55,6 +55,12 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.ram.RosRole.TagsProperty> getTags() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosRoleProps}
      */
     static Builder builder() {
@@ -72,6 +78,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object maxSessionDuration;
         java.lang.Object policies;
         java.lang.Object policyAttachments;
+        java.util.List<com.aliyun.ros.cdk.ram.RosRole.TagsProperty> tags;
 
         /**
          * Sets the value of {@link RosRoleProps#getAssumeRolePolicyDocument}
@@ -234,6 +241,17 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosRoleProps#getTags}
+         * @param tags the value to be set.
+         * @return {@code this}
+         */
+        @SuppressWarnings("unchecked")
+        public Builder tags(java.util.List<? extends com.aliyun.ros.cdk.ram.RosRole.TagsProperty> tags) {
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ram.RosRole.TagsProperty>)tags;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosRoleProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -257,6 +275,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object maxSessionDuration;
         private final java.lang.Object policies;
         private final java.lang.Object policyAttachments;
+        private final java.util.List<com.aliyun.ros.cdk.ram.RosRole.TagsProperty> tags;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -272,11 +291,13 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             this.maxSessionDuration = software.amazon.jsii.Kernel.get(this, "maxSessionDuration", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policies = software.amazon.jsii.Kernel.get(this, "policies", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.policyAttachments = software.amazon.jsii.Kernel.get(this, "policyAttachments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.ram.RosRole.TagsProperty.class)));
         }
 
         /**
          * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
          */
+        @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.assumeRolePolicyDocument = java.util.Objects.requireNonNull(builder.assumeRolePolicyDocument, "assumeRolePolicyDocument is required");
@@ -287,6 +308,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             this.maxSessionDuration = builder.maxSessionDuration;
             this.policies = builder.policies;
             this.policyAttachments = builder.policyAttachments;
+            this.tags = (java.util.List<com.aliyun.ros.cdk.ram.RosRole.TagsProperty>)builder.tags;
         }
 
         @Override
@@ -330,6 +352,11 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.util.List<com.aliyun.ros.cdk.ram.RosRole.TagsProperty> getTags() {
+            return this.tags;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -354,6 +381,9 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             }
             if (this.getPolicyAttachments() != null) {
                 data.set("policyAttachments", om.valueToTree(this.getPolicyAttachments()));
+            }
+            if (this.getTags() != null) {
+                data.set("tags", om.valueToTree(this.getTags()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -380,7 +410,8 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             if (this.ignoreExisting != null ? !this.ignoreExisting.equals(that.ignoreExisting) : that.ignoreExisting != null) return false;
             if (this.maxSessionDuration != null ? !this.maxSessionDuration.equals(that.maxSessionDuration) : that.maxSessionDuration != null) return false;
             if (this.policies != null ? !this.policies.equals(that.policies) : that.policies != null) return false;
-            return this.policyAttachments != null ? this.policyAttachments.equals(that.policyAttachments) : that.policyAttachments == null;
+            if (this.policyAttachments != null ? !this.policyAttachments.equals(that.policyAttachments) : that.policyAttachments != null) return false;
+            return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
@@ -393,6 +424,7 @@ public interface RosRoleProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.maxSessionDuration != null ? this.maxSessionDuration.hashCode() : 0);
             result = 31 * result + (this.policies != null ? this.policies.hashCode() : 0);
             result = 31 * result + (this.policyAttachments != null ? this.policyAttachments.hashCode() : 0);
+            result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;
         }
     }

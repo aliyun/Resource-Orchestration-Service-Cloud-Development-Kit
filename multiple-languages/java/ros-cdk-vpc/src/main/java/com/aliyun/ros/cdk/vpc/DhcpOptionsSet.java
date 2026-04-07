@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::DhcpOptionsSet</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::DhcpOptionsSet</code>, which is used to create Dynamic Host Configuration Protocol (DHCP) options sets.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.787Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.DhcpOptionsSet")
 public class DhcpOptionsSet extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IDhcpOptionsSet {
 
@@ -214,6 +214,97 @@ public class DhcpOptionsSet extends com.aliyun.ros.cdk.core.Resource implements 
          */
         public Builder domainNameServers(final java.util.List<? extends java.lang.Object> domainNameServers) {
             this.props().domainNameServers(domainNameServers);
+            return this;
+        }
+
+        /**
+         * Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+         * <p>
+         * <ul>
+         * <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
+         * <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+         * </ul>
+         * <p>
+         * When specifying parameter values, you must include the unit.
+         * <p>
+         * @return {@code this}
+         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set. This parameter is required.
+         */
+        public Builder ipv6LeaseTime(final java.lang.String ipv6LeaseTime) {
+            this.props().ipv6LeaseTime(ipv6LeaseTime);
+            return this;
+        }
+        /**
+         * Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.
+         * <p>
+         * <ul>
+         * <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</li>
+         * <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</li>
+         * </ul>
+         * <p>
+         * When specifying parameter values, you must include the unit.
+         * <p>
+         * @return {@code this}
+         * @param ipv6LeaseTime Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set. This parameter is required.
+         */
+        public Builder ipv6LeaseTime(final com.aliyun.ros.cdk.core.IResolvable ipv6LeaseTime) {
+            this.props().ipv6LeaseTime(ipv6LeaseTime);
+            return this;
+        }
+
+        /**
+         * Property leaseTime: The lease time of the IPv4 DHCP options set.
+         * <p>
+         * <ul>
+         * <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>87600h</strong>.</li>
+         * <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>3650d</strong>.</li>
+         * </ul>
+         * <p>
+         * When specifying parameter values, you must include the unit.
+         * <p>
+         * @return {@code this}
+         * @param leaseTime Property leaseTime: The lease time of the IPv4 DHCP options set. This parameter is required.
+         */
+        public Builder leaseTime(final java.lang.String leaseTime) {
+            this.props().leaseTime(leaseTime);
+            return this;
+        }
+        /**
+         * Property leaseTime: The lease time of the IPv4 DHCP options set.
+         * <p>
+         * <ul>
+         * <li>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>87600h</strong>.</li>
+         * <li>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>3650d</strong>.</li>
+         * </ul>
+         * <p>
+         * When specifying parameter values, you must include the unit.
+         * <p>
+         * @return {@code this}
+         * @param leaseTime Property leaseTime: The lease time of the IPv4 DHCP options set. This parameter is required.
+         */
+        public Builder leaseTime(final com.aliyun.ros.cdk.core.IResolvable leaseTime) {
+            this.props().leaseTime(leaseTime);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props().resourceGroupId(resourceGroupId);
             return this;
         }
 

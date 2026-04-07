@@ -87,12 +87,12 @@ function RosHostGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tagIds', ros.listValidator(ros.validateString))(properties.tagIds));
     errors.collect(ros.propertyValidator('ecsType', ros.validateString)(properties.ecsType));
     errors.collect(ros.propertyValidator('envId', ros.validateString)(properties.envId));
-    errors.collect(ros.propertyValidator('machineInfos', ros.listValidator(RosHostGroup_MachineInfosPropertyValidator))(properties.machineInfos));
     errors.collect(ros.propertyValidator('aliyunRegion', ros.validateString)(properties.aliyunRegion));
-    errors.collect(ros.propertyValidator('ecsLabelValue', ros.validateString)(properties.ecsLabelValue));
+    errors.collect(ros.propertyValidator('machineInfos', ros.listValidator(RosHostGroup_MachineInfosPropertyValidator))(properties.machineInfos));
     errors.collect(ros.propertyValidator('organizationId', ros.requiredValidator)(properties.organizationId));
     errors.collect(ros.propertyValidator('organizationId', ros.validateString)(properties.organizationId));
     errors.collect(ros.propertyValidator('ecsLabelKey', ros.validateString)(properties.ecsLabelKey));
+    errors.collect(ros.propertyValidator('ecsLabelValue', ros.validateString)(properties.ecsLabelValue));
     errors.collect(ros.propertyValidator('name', ros.requiredValidator)(properties.name));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosHostGroupProps"');
@@ -127,7 +127,7 @@ function rosHostGroupPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::HostGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::HostGroup`, which is used to create a host group.
  * @Note This class does not contain additional functions, so it is recommended to use the `HostGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup
  */
@@ -366,7 +366,7 @@ function rosPipelinePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`, which is used to create a pipeline. YAML-based pipelines are supported.
  * @Note This class does not contain additional functions, so it is recommended to use the `Pipeline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipeline
  */
@@ -500,7 +500,7 @@ function rosPipelineRelationsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRelations`, which is used to associate resources with a pipeline.
  * @Note This class does not contain additional functions, so it is recommended to use the `PipelineRelations` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerelations
  */
@@ -652,7 +652,7 @@ function rosPipelineRunPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRun`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::PipelineRun`, which is used to run a pipeline.
  * @Note This class does not contain additional functions, so it is recommended to use the `PipelineRun` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-pipelinerun
  */
@@ -801,7 +801,7 @@ function rosVariableGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::VariableGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::VariableGroup`, which is used to create a variable group.
  * @Note This class does not contain additional functions, so it is recommended to use the `VariableGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-variablegroup
  */

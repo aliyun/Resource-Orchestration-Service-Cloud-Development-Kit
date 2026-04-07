@@ -178,7 +178,7 @@ export interface IBucket extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OSS::Bucket`The , which resource type creates an OSS bucket.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBucket`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
@@ -350,8 +350,8 @@ export class Bucket extends ros.Resource implements IBucket {
             corsConfiguration: props.corsConfiguration,
             bucketName: props.bucketName,
             deletionForce: props.deletionForce === undefined || props.deletionForce === null ? false : props.deletionForce,
-            loggingConfiguration: props.loggingConfiguration,
             websiteConfigurationV2: props.websiteConfigurationV2,
+            loggingConfiguration: props.loggingConfiguration,
             refererConfiguration: props.refererConfiguration,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

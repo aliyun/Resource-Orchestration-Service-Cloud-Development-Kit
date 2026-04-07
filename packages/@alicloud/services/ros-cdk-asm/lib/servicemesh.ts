@@ -388,7 +388,7 @@ export interface IServiceMesh extends ros.IResource {
     readonly attrServiceMeshId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create a Service Mesh (ASM) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceMesh`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */
@@ -416,8 +416,8 @@ export class ServiceMesh extends ros.Resource implements IServiceMesh {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosServiceMesh = new RosServiceMesh(this, id,  {
-            excludeInboundPorts: props.excludeInboundPorts,
             opa: props.opa,
+            excludeInboundPorts: props.excludeInboundPorts,
             dubboFilterEnabled: props.dubboFilterEnabled,
             prometheusUrl: props.prometheusUrl,
             localityLoadBalancing: props.localityLoadBalancing,
@@ -428,8 +428,8 @@ export class ServiceMesh extends ros.Resource implements IServiceMesh {
             dnsProxyingEnabled: props.dnsProxyingEnabled,
             opaEnabled: props.opaEnabled,
             existingCaType: props.existingCaType,
-            excludeIpRanges: props.excludeIpRanges,
             vSwitches: props.vSwitches,
+            excludeIpRanges: props.excludeIpRanges,
             guestCluster: props.guestCluster,
             accessLogServiceEnabled: props.accessLogServiceEnabled,
             localityLbConf: props.localityLbConf,
@@ -438,11 +438,11 @@ export class ServiceMesh extends ros.Resource implements IServiceMesh {
             period: props.period,
             accessLogServiceHost: props.accessLogServiceHost,
             outboundTrafficPolicy: props.outboundTrafficPolicy,
-            playgroundScene: props.playgroundScene,
             edition: props.edition,
+            playgroundScene: props.playgroundScene,
             gatewayApiEnabled: props.gatewayApiEnabled,
-            vpcId: props.vpcId,
             includeIpRanges: props.includeIpRanges,
+            vpcId: props.vpcId,
             controlPlaneLogEnabled: props.controlPlaneLogEnabled,
             tracing: props.tracing,
             configSourceNacosId: props.configSourceNacosId,
@@ -454,8 +454,8 @@ export class ServiceMesh extends ros.Resource implements IServiceMesh {
             proxy: props.proxy,
             customizedPrometheus: props.customizedPrometheus,
             multiBufferPollDelay: props.multiBufferPollDelay,
-            mysqlFilterEnabled: props.mysqlFilterEnabled,
             enableSdsServer: props.enableSdsServer,
+            mysqlFilterEnabled: props.mysqlFilterEnabled,
             enableAmbient: props.enableAmbient,
             controlPlaneLogProject: props.controlPlaneLogProject,
             autoRenewPeriod: props.autoRenewPeriod,
@@ -464,25 +464,25 @@ export class ServiceMesh extends ros.Resource implements IServiceMesh {
             accessLogProject: props.accessLogProject,
             accessLogFormat: props.accessLogFormat,
             filterGatewayClusterConfig: props.filterGatewayClusterConfig,
+            apiServerPublicEip: props.apiServerPublicEip,
             accessLogFile: props.accessLogFile,
             clusterSpec: props.clusterSpec,
-            apiServerPublicEip: props.apiServerPublicEip,
             telemetry: props.telemetry,
             auditProject: props.auditProject,
             useExistingCa: props.useExistingCa,
             traceSampling: props.traceSampling,
             enableCrHistory: props.enableCrHistory,
             kialiEnabled: props.kialiEnabled,
-            webAssemblyFilterEnabled: props.webAssemblyFilterEnabled,
             existingRootCaKey: props.existingRootCaKey,
+            webAssemblyFilterEnabled: props.webAssemblyFilterEnabled,
             pilotPublicEip: props.pilotPublicEip,
             chargeType: props.chargeType,
             crAggregationEnabled: props.crAggregationEnabled,
             excludeOutboundPorts: props.excludeOutboundPorts,
             existingCaKey: props.existingCaKey,
+            customizedZipkin: props.customizedZipkin,
             enableAcmg: props.enableAcmg,
             existingCaCert: props.existingCaCert,
-            customizedZipkin: props.customizedZipkin,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosServiceMesh;
         this.attrServiceMeshId = rosServiceMesh.attrServiceMeshId;

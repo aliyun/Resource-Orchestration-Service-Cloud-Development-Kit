@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRule</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRule</code>, which is used to create or modify an event-triggered alert rule.
+ * <p>
+ * If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.014Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRule")
 public class EventRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IEventRule {
 
@@ -221,6 +223,27 @@ public class EventRule extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
             this.props.groupId(groupId);
+            return this;
+        }
+
+        /**
+         * Property silenceTime: Channel silence time in seconds.
+         * <p>
+         * @return {@code this}
+         * @param silenceTime Property silenceTime: Channel silence time in seconds. This parameter is required.
+         */
+        public Builder silenceTime(final java.lang.Number silenceTime) {
+            this.props.silenceTime(silenceTime);
+            return this;
+        }
+        /**
+         * Property silenceTime: Channel silence time in seconds.
+         * <p>
+         * @return {@code this}
+         * @param silenceTime Property silenceTime: Channel silence time in seconds. This parameter is required.
+         */
+        public Builder silenceTime(final com.aliyun.ros.cdk.core.IResolvable silenceTime) {
+            this.props.silenceTime(silenceTime);
             return this;
         }
 

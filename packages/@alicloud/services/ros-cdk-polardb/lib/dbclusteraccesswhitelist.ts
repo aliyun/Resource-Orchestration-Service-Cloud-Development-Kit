@@ -45,7 +45,7 @@ export interface IDBClusterAccessWhiteList extends ros.IResource {
     readonly attrDbClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`, which is used to modify the IP address whitelist that allows access to a PolarDB cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBClusterAccessWhiteList`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusteraccesswhitelist
  */

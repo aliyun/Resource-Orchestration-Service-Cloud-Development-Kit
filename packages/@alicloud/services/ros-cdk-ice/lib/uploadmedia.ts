@@ -101,7 +101,7 @@ Note The returned upload credential is a Base64-encoded value. You must decode t
     readonly attrUploadAuth: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::UploadMedia`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ICE::UploadMedia`, which is used to query the upload address and credential of a media asset.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUploadMedia`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-uploadmedia
  */

@@ -255,6 +255,52 @@ func (j *jsiiProxy_RosGroupMetricRule) validateSetCategoryParameters(val interfa
 	return nil
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) validateSetContactGroupsParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case *string:
+				// ok
+			case string:
+				// ok
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case *string:
+				// ok
+			case string:
+				// ok
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) validateSetDimensionsParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -335,6 +381,23 @@ func (j *jsiiProxy_RosGroupMetricRule) validateSetEscalationsParameters(val inte
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosGroupMetricRule_EscalationsProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosGroupMetricRule) validateSetExtraDimensionJsonParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *map[string]interface{}:
+		// ok
+	case map[string]interface{}:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *map[string]interface{}; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -458,7 +521,41 @@ func (j *jsiiProxy_RosGroupMetricRule) validateSetNamespaceParameters(val interf
 	return nil
 }
 
+func (j *jsiiProxy_RosGroupMetricRule) validateSetNoDataPolicyParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosGroupMetricRule) validateSetNoEffectiveIntervalParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosGroupMetricRule) validateSetOptionsParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok

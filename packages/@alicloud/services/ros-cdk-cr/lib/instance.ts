@@ -79,7 +79,7 @@ export interface IInstance extends ros.IResource {
     readonly attrInstanceName: ros.IResolvable | string;
 
     /**
-     * Attribute InstanceSpecification: InstanceSpecification.
+     * Attribute InstanceSpecification: The instance specification.
      */
     readonly attrInstanceSpecification: ros.IResolvable | string;
 
@@ -94,7 +94,7 @@ export interface IInstance extends ros.IResource {
     readonly attrResourceGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cr-instance
  */
@@ -120,7 +120,7 @@ export class Instance extends ros.Resource implements IInstance {
     public readonly attrInstanceName: ros.IResolvable | string;
 
     /**
-     * Attribute InstanceSpecification: InstanceSpecification.
+     * Attribute InstanceSpecification: The instance specification.
      */
     public readonly attrInstanceSpecification: ros.IResolvable | string;
 

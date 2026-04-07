@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcPeerConnection`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
 type VpcPeerConnection interface {
 	alicloudroscdkcore.Resource
 	IVpcPeerConnection

@@ -80,7 +80,7 @@ export interface IK8sSlbBinding extends ros.IResource {
     readonly attrLoadBalancerName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sSlbBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
@@ -132,8 +132,8 @@ export class K8sSlbBinding extends ros.Resource implements IK8sSlbBinding {
             appId: props.appId,
             clusterId: props.clusterId,
             scheduler: props.scheduler,
-            specification: props.specification,
             loadBalancerId: props.loadBalancerId,
+            specification: props.specification,
             servicePortInfos: props.servicePortInfos,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosK8sSlbBinding;

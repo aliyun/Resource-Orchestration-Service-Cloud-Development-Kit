@@ -525,12 +525,52 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
+        private object? _domainResolveType;
+
+        /// <summary>Property domainResolveType: The domain resolution method of the access control policy.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>FQDN: Based on FQDN</description>
+        /// <description>DNS: Based on DNS dynamic resolution</description>
+        /// <description>FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "domainResolveType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? DomainResolveType
+        {
+            get => _domainResolveType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _domainResolveType = value;
+            }
+        }
+
         private object? _endTime;
 
         /// <summary>Property endTime: The end time of the policy validity period for an access control policy.</summary>
         /// <remarks>
         /// It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-        /// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+        /// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "endTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -220,7 +220,7 @@ export interface IInstance2 extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DMS::Instance2`, which is used to register a database instance in new Data Management (DMS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance2
  */
@@ -258,32 +258,32 @@ export class Instance2 extends ros.Resource implements IInstance2 {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstance2 = new RosInstance2(this, id,  {
-            databasePassword: props.databasePassword,
             port: props.port,
+            databasePassword: props.databasePassword,
             safeRule: props.safeRule,
             exportTimeout: props.exportTimeout,
             envType: props.envType,
             dbaId: props.dbaId,
-            ecsRegion: props.ecsRegion,
-            instanceAlias: props.instanceAlias,
             networkType: props.networkType,
+            instanceAlias: props.instanceAlias,
+            ecsRegion: props.ecsRegion,
             enableSellTrust: props.enableSellTrust,
             instanceType: props.instanceType,
             enableSellSitd: props.enableSellSitd,
-            dataLinkName: props.dataLinkName,
             queryTimeout: props.queryTimeout,
+            dataLinkName: props.dataLinkName,
             templateId: props.templateId,
             instanceSource: props.instanceSource,
             enableSellStable: props.enableSellStable,
-            skipTest: props.skipTest,
-            host: props.host,
-            enableSellCommon: props.enableSellCommon,
             useSsl: props.useSsl,
+            enableSellCommon: props.enableSellCommon,
+            host: props.host,
+            skipTest: props.skipTest,
             templateType: props.templateType,
             ddlOnline: props.ddlOnline,
             tid: props.tid,
-            sid: props.sid,
             useDsql: props.useDsql,
+            sid: props.sid,
             ecsInstanceId: props.ecsInstanceId,
             vpcId: props.vpcId,
             databaseUser: props.databaseUser,

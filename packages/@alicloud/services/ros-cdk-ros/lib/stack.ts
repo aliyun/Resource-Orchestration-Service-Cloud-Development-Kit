@@ -89,8 +89,8 @@ export class Stack extends ros.Resource implements IStack {
             timeoutMins: props.timeoutMins === undefined || props.timeoutMins === null ? 60 : props.timeoutMins,
             templateVersion: props.templateVersion,
             templateBody: props.templateBody,
-            tags: props.tags,
             templateId: props.templateId,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosStack;
     }

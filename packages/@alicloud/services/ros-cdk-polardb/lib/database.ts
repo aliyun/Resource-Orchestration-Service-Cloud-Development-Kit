@@ -74,7 +74,7 @@ export interface IDatabase extends ros.IResource {
     readonly props: DatabaseProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Database`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Database`, which is used to create a database in a PolarDB cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */
@@ -101,8 +101,8 @@ export class Database extends ros.Resource implements IDatabase {
             accountPrivilege: props.accountPrivilege === undefined || props.accountPrivilege === null ? 'ReadWrite' : props.accountPrivilege,
             dbDescription: props.dbDescription,
             dbClusterId: props.dbClusterId,
-            collate: props.collate,
             dbName: props.dbName,
+            collate: props.collate,
             ctype: props.ctype,
             accountName: props.accountName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

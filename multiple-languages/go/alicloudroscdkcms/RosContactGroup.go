@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ContactGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
 type RosContactGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrContactGroupName() alicloudroscdkcore.IResolvable
@@ -25,6 +25,8 @@ type RosContactGroup interface {
 	SetDescribe(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	EnableSubscribed() interface{}
+	SetEnableSubscribed(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -235,6 +237,16 @@ func (j *jsiiProxy_RosContactGroup) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosContactGroup) EnableSubscribed() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableSubscribed",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosContactGroup) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -383,6 +395,17 @@ func (j *jsiiProxy_RosContactGroup)SetEnableResourcePropertyConstraint(val *bool
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosContactGroup)SetEnableSubscribed(val interface{}) {
+	if err := j.validateSetEnableSubscribedParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enableSubscribed",
 		val,
 	)
 }

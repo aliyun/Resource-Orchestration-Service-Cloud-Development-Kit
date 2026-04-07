@@ -71,7 +71,6 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('serviceType', ros.validateString)(properties.serviceType));
     errors.collect(ros.propertyValidator('queryStr', ros.validateString)(properties.queryStr));
-    errors.collect(ros.propertyValidator('supportEngine', ros.validateNumber)(properties.supportEngine));
     if(properties.instanceIds && (Array.isArray(properties.instanceIds) || (typeof properties.instanceIds) === 'string')) {
         errors.collect(ros.propertyValidator('instanceIds', ros.validateLength)({
             data: properties.instanceIds.length,
@@ -80,6 +79,7 @@ function RosInstancesPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('instanceIds', ros.listValidator(ros.validateString))(properties.instanceIds));
+    errors.collect(ros.propertyValidator('supportEngine', ros.validateNumber)(properties.supportEngine));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -123,7 +123,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::Lindorm::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::Lindorm::Instances`, which is used to query the information about Lindorm instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-lindorm-instances
  */

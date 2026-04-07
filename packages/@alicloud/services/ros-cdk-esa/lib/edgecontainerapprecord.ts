@@ -77,7 +77,7 @@ export interface IEdgeContainerAppRecord extends ros.IResource {
     readonly attrUpdateTime: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`The , which type creates an associated domain name for an edge container application.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEdgeContainerAppRecord`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-edgecontainerapprecord
  */

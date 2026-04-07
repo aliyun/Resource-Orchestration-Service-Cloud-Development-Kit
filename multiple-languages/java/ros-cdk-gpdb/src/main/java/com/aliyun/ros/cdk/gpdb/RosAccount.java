@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::Account</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::Account</code>, which is used to create a database account for an AnalyticDB for PostgreSQL instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.427Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.030Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosAccount")
 public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -138,6 +138,24 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccountType() {
+        return software.amazon.jsii.Kernel.get(this, "accountType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAccountType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "accountType", value);
+    }
+
+    /**
+     */
+    public void setAccountType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accountType", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.gpdb.RosAccount}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.gpdb.RosAccount> {
@@ -228,6 +246,23 @@ public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder accountDescription(final com.aliyun.ros.cdk.core.IResolvable accountDescription) {
             this.props.accountDescription(accountDescription);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param accountType This parameter is required.
+         */
+        public Builder accountType(final java.lang.String accountType) {
+            this.props.accountType(accountType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param accountType This parameter is required.
+         */
+        public Builder accountType(final com.aliyun.ros.cdk.core.IResolvable accountType) {
+            this.props.accountType(accountType);
             return this;
         }
 

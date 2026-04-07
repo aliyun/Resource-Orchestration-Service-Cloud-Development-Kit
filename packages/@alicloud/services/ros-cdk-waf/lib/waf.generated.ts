@@ -313,7 +313,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Domain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::Domain`, which is used to add a domain to Web Application Firewall (WAF).
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-domain
  */
@@ -1283,7 +1283,7 @@ function rosLogServiceEnablePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::LogServiceEnable`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::WAF::LogServiceEnable`, which is used to enable the log collection feature for a specific domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogServiceEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-waf-logserviceenable
  */

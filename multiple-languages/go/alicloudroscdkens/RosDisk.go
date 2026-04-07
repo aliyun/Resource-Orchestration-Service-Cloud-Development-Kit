@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
 type RosDisk interface {
 	alicloudroscdkcore.RosResource
 	AttrDiskId() alicloudroscdkcore.IResolvable
@@ -27,6 +27,8 @@ type RosDisk interface {
 	SetEncrypted(val interface{})
 	EnsRegionId() interface{}
 	SetEnsRegionId(val interface{})
+	InstanceBillingCycle() interface{}
+	SetInstanceBillingCycle(val interface{})
 	InstanceChargeType() interface{}
 	SetInstanceChargeType(val interface{})
 	KmsKeyId() interface{}
@@ -255,6 +257,16 @@ func (j *jsiiProxy_RosDisk) EnsRegionId() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDisk) InstanceBillingCycle() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"instanceBillingCycle",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDisk) InstanceChargeType() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -454,6 +466,17 @@ func (j *jsiiProxy_RosDisk)SetEnsRegionId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"ensRegionId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDisk)SetInstanceBillingCycle(val interface{}) {
+	if err := j.validateSetInstanceBillingCycleParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"instanceBillingCycle",
 		val,
 	)
 }

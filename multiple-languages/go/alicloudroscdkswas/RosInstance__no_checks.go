@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosInstance) validateSetPlanIdParameters(val interface{}) err
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetTagsParameters(val *[]*RosInstance_TagsProperty) error {
+	return nil
+}
+
 func validateNewRosInstanceParameters(scope alicloudroscdkcore.Construct, id *string, props *RosInstanceProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

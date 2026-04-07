@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpcCidrBlockAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.248Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.233Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpcCidrBlockAssociation")
 public class VpcCidrBlockAssociation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVpcCidrBlockAssociation {
 
@@ -175,6 +175,31 @@ public class VpcCidrBlockAssociation extends com.aliyun.ros.cdk.core.Resource im
          */
         public Builder iPv6CidrBlock(final com.aliyun.ros.cdk.core.IResolvable iPv6CidrBlock) {
             this.props.iPv6CidrBlock(iPv6CidrBlock);
+            return this;
+        }
+
+        /**
+         * Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask.
+         * <p>
+         * Note When adding an additional IPv6 network segment to the VPC from the specified IPAM address pool, at least one of Ipv6CidrBlock or Ipv6CidrMask must be specified.
+         * <p>
+         * @return {@code this}
+         * @param ipv6CidrMask Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask. This parameter is required.
+         */
+        public Builder ipv6CidrMask(final java.lang.Number ipv6CidrMask) {
+            this.props.ipv6CidrMask(ipv6CidrMask);
+            return this;
+        }
+        /**
+         * Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask.
+         * <p>
+         * Note When adding an additional IPv6 network segment to the VPC from the specified IPAM address pool, at least one of Ipv6CidrBlock or Ipv6CidrMask must be specified.
+         * <p>
+         * @return {@code this}
+         * @param ipv6CidrMask Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask. This parameter is required.
+         */
+        public Builder ipv6CidrMask(final com.aliyun.ros.cdk.core.IResolvable ipv6CidrMask) {
+            this.props.ipv6CidrMask(ipv6CidrMask);
             return this;
         }
 

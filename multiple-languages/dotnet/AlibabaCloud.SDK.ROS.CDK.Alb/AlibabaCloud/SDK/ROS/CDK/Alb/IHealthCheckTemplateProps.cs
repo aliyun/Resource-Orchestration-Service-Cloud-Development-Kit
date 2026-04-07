@@ -76,6 +76,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property healthCheckHttpVersion: The HTTP version for health check protocol.</summary>
+        /// <remarks>
+        /// Valid values: HTTP1.0 or HTTP1.1.
+        /// Default value: HTTP 1.1.
+        /// This parameter is available only when HealthCheckProtocol is set to HTTP or HTTPS.
+        /// </remarks>
+        [JsiiProperty(name: "healthCheckHttpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? HealthCheckHttpVersion
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property healthCheckInterval: The interval between two consecutive health checks.</summary>
         /// <remarks>
         /// Unit: seconds.
@@ -186,6 +202,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
         }
 
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property unhealthyThreshold: The number of times that a healthy backend server must consecutively fail health checks before it is declared unhealthy.</summary>
         /// <remarks>
         /// In this case, the health status is changed from success to fail.
@@ -265,6 +292,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiOptional]
             [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HealthCheckHost
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property healthCheckHttpVersion: The HTTP version for health check protocol.</summary>
+            /// <remarks>
+            /// Valid values: HTTP1.0 or HTTP1.1.
+            /// Default value: HTTP 1.1.
+            /// This parameter is available only when HealthCheckProtocol is set to HTTP or HTTPS.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "healthCheckHttpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? HealthCheckHttpVersion
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -357,6 +397,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             [JsiiOptional]
             [JsiiProperty(name: "healthyThreshold", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? HealthyThreshold
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

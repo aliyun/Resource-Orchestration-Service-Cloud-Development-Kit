@@ -129,7 +129,7 @@ export interface IRedirectRule extends ros.IResource {
     readonly attrType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::RedirectRule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::RedirectRule`The , which type is used to create a redirection configuration.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRedirectRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-redirectrule
  */
@@ -211,8 +211,8 @@ export class RedirectRule extends ros.Resource implements IRedirectRule {
             type: props.type,
             ruleEnable: props.ruleEnable,
             reserveQueryString: props.reserveQueryString,
-            rule: props.rule,
             targetUrl: props.targetUrl,
+            rule: props.rule,
             siteVersion: props.siteVersion,
             statusCode: props.statusCode,
             ruleName: props.ruleName,

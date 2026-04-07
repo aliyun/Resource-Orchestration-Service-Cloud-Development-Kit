@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`The , which resource type creates a resource group.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
@@ -68,6 +68,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Resourcemanager
         /// <summary>Attribute RegionStatuses: The status of the resource group in all regions.</summary>
         [JsiiProperty(name: "attrRegionStatuses", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrRegionStatuses
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
+        /// <summary>Attribute ResourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "attrResourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrResourceGroupId
         {
             get => GetInstanceProperty<object>()!;
         }

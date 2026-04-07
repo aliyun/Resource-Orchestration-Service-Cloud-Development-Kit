@@ -39,6 +39,8 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -46,8 +48,6 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
-    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosAccountProps"');
 }
 
@@ -72,7 +72,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::Account`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::Account`, which is used to query the information about an account of a Graph Database (GDB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-account
  */
@@ -185,6 +185,7 @@ function RosAccountsPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -192,7 +193,6 @@ function RosAccountsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
     return errors.wrap('supplied properties not correct for "RosAccountsProps"');
 }
 
@@ -217,7 +217,7 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::Accounts`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::Accounts`, which is used to query the information about accounts.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-accounts
  */
@@ -349,7 +349,7 @@ function rosDbInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`, which is used to query the information about an instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstance
  */
@@ -673,7 +673,7 @@ function rosDbInstancesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::GraphDatabase::DbInstances`, which is used to query the information about Graph Database (GDB) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-graphdatabase-dbinstances
  */

@@ -147,6 +147,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _autoRenew;
+
+        /// <summary>Property autoRenew: Specifies whether auto-renewal is enabled.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AutoRenew
+        {
+            get => _autoRenew;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _autoRenew = value;
+            }
+        }
+
         private object? _description;
 
         /// <summary>Property description: Custom description of the RouterInterface, [2, 256] characters.</summary>
@@ -178,6 +209,45 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _description = value;
+            }
+        }
+
+        private object? _fastLinkMode;
+
+        /// <summary>Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode.</summary>
+        /// <remarks>
+        /// Fast link mode allows the router interfaces between VBR and VPC ends to be automatically connected after they are created.
+        /// This parameter is valid only when the value of <strong>RouterType</strong> is <strong>VBR</strong> and the value of <strong>OppositeRouterType</strong> is <strong>VRouter</strong>.
+        ///
+        /// <list type="bullet">
+        /// <description>When the value of the <strong>FastLinkMode</strong> parameter is <strong>true</strong>, the value of the <strong>Role</strong> parameter must be <strong>InitiatingSide</strong>, and the <strong>AccessPointId</strong>, <strong>OppositeRouterType</strong>, <strong>OppsiteRouterId</strong>, and <strong>OppositeInterfaceOwnerId</strong> parameters are required.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "fastLinkMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? FastLinkMode
+        {
+            get => _fastLinkMode;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case bool cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: bool, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _fastLinkMode = value;
             }
         }
 
@@ -597,6 +667,37 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                     }
                 }
                 _pricingCycle = value;
+            }
+        }
+
+        private object? _resourceGroupId;
+
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? ResourceGroupId
+        {
+            get => _resourceGroupId;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _resourceGroupId = value;
             }
         }
 

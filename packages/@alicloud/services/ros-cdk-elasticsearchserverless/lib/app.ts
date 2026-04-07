@@ -92,7 +92,7 @@ export interface IApp extends ros.IResource {
     readonly attrUsername: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::App`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::App`, which is used to create an Elasticsearch serverless application.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-app
  */
@@ -152,8 +152,8 @@ export class App extends ros.Resource implements IApp {
             network: props.network,
             logProConfiguration: props.logProConfiguration,
             privateNetwork: props.privateNetwork,
-            scenario: props.scenario === undefined || props.scenario === null ? 'SEARCH' : props.scenario,
             appName: props.appName,
+            scenario: props.scenario === undefined || props.scenario === null ? 'SEARCH' : props.scenario,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApp;
         this.attrInstanceId = rosApp.attrInstanceId;

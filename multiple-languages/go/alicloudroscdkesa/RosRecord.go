@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Record`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Record`The , which type is used to create a DNS record.
 type RosRecord interface {
 	alicloudroscdkcore.RosResource
 	AttrAuthConf() alicloudroscdkcore.IResolvable

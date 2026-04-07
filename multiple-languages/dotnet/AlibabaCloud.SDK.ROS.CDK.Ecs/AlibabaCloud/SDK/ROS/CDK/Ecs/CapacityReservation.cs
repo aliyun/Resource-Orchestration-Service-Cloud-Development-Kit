@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CapacityReservation`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ECS::CapacityReservation`, which is used to create a capacity reservation.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCapacityReservation`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-capacityreservation

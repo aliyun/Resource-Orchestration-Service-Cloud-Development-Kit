@@ -64,6 +64,55 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</description>
+        /// <description>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</description>
+        /// </list>
+        ///
+        /// When specifying parameter values, you must include the unit.
+        /// </remarks>
+        [JsiiProperty(name: "ipv6LeaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Ipv6LeaseTime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property leaseTime: The lease time of the IPv4 DHCP options set.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>87600h</strong>.</description>
+        /// <description>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>3650d</strong>.</description>
+        /// </list>
+        ///
+        /// When specifying parameter values, you must include the unit.
+        /// </remarks>
+        [JsiiProperty(name: "leaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? LeaseTime
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `DhcpOptionsSet`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-dhcpoptionsset
@@ -112,6 +161,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "domainNameServers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? DomainNameServers
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</description>
+            /// <description>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</description>
+            /// </list>
+            ///
+            /// When specifying parameter values, you must include the unit.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ipv6LeaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Ipv6LeaseTime
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property leaseTime: The lease time of the IPv4 DHCP options set.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>87600h</strong>.</description>
+            /// <description>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>3650d</strong>.</description>
+            /// </list>
+            ///
+            /// When specifying parameter values, you must include the unit.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "leaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? LeaseTime
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group to which the DHCP options set belongs.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

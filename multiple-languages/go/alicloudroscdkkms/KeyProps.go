@@ -50,5 +50,9 @@ type KeyProps struct {
 	//
 	// The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
 	RotationInterval interface{} `field:"optional" json:"rotationInterval" yaml:"rotationInterval"`
+	// Property tags: Tags to attach to key.
+	//
+	// Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosKey_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

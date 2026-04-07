@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJob`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::DTS::SynchronizationJob`, which is used to query the execution information about a data synchronization task in Data Transmission Service (DTS).
 type RosSynchronizationJob interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

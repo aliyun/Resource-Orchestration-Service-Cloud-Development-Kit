@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPairs`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::KeyPairs`, which is used to query the information about key pairs.
 type RosKeyPairs interface {
 	alicloudroscdkcore.RosResource
 	AttrKeyPairNames() alicloudroscdkcore.IResolvable

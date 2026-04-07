@@ -193,7 +193,7 @@ export interface IInstance extends ros.IResource {
     readonly attrVersion: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearch::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearch::Instance`The , which resource is used to create an Elasticsearch instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearch-instance
  */
@@ -273,10 +273,10 @@ export class Instance extends ros.Resource implements IInstance {
         const rosInstance = new RosInstance(this, id,  {
             masterNode: props.masterNode,
             description: props.description,
+            zoneId: props.zoneId,
             kibanaNode: props.kibanaNode,
             resourceGroupId: props.resourceGroupId,
             enableKibanaPrivate: props.enableKibanaPrivate,
-            zoneId: props.zoneId,
             publicWhitelist: props.publicWhitelist,
             instanceChargeType: props.instanceChargeType === undefined || props.instanceChargeType === null ? 'PostPaid' : props.instanceChargeType,
             enableKibanaPublic: props.enableKibanaPublic,
@@ -291,9 +291,9 @@ export class Instance extends ros.Resource implements IInstance {
             ymlConfig: props.ymlConfig,
             deleteType: props.deleteType,
             tags: props.tags,
-            periodUnit: props.periodUnit,
-            password: props.password,
             zoneCount: props.zoneCount,
+            password: props.password,
+            periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;
         this.attrArn = rosInstance.attrArn;

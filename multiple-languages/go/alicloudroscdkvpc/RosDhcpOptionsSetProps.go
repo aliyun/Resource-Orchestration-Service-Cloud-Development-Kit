@@ -9,5 +9,8 @@ type RosDhcpOptionsSetProps struct {
 	DhcpOptionsSetName interface{} `field:"optional" json:"dhcpOptionsSetName" yaml:"dhcpOptionsSetName"`
 	DomainName interface{} `field:"optional" json:"domainName" yaml:"domainName"`
 	DomainNameServers interface{} `field:"optional" json:"domainNameServers" yaml:"domainNameServers"`
+	Ipv6LeaseTime interface{} `field:"optional" json:"ipv6LeaseTime" yaml:"ipv6LeaseTime"`
+	LeaseTime interface{} `field:"optional" json:"leaseTime" yaml:"leaseTime"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 }
 

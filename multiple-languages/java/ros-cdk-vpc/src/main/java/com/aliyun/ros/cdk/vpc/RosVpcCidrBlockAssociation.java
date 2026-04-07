@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::VpcCidrBlockAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.151Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.119Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosVpcCidrBlockAssociation")
 public class RosVpcCidrBlockAssociation extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -111,6 +111,24 @@ public class RosVpcCidrBlockAssociation extends com.aliyun.ros.cdk.core.RosResou
      */
     public void setIPv6CidrBlock(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "iPv6CidrBlock", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6CidrMask() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6CidrMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6CidrMask(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6CidrMask", value);
+    }
+
+    /**
+     */
+    public void setIpv6CidrMask(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6CidrMask", value);
     }
 
     /**
@@ -259,6 +277,23 @@ public class RosVpcCidrBlockAssociation extends com.aliyun.ros.cdk.core.RosResou
          */
         public Builder iPv6CidrBlock(final com.aliyun.ros.cdk.core.IResolvable iPv6CidrBlock) {
             this.props.iPv6CidrBlock(iPv6CidrBlock);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6CidrMask This parameter is required.
+         */
+        public Builder ipv6CidrMask(final java.lang.Number ipv6CidrMask) {
+            this.props.ipv6CidrMask(ipv6CidrMask);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6CidrMask This parameter is required.
+         */
+        public Builder ipv6CidrMask(final com.aliyun.ros.cdk.core.IResolvable ipv6CidrMask) {
+            this.props.ipv6CidrMask(ipv6CidrMask);
             return this;
         }
 

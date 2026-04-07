@@ -94,7 +94,7 @@ export interface ScalingConfigurationProps {
     readonly instanceDescription?: string | ros.IResolvable;
 
     /**
-     * Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+     * Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
     readonly instanceId?: string | ros.IResolvable;
 
@@ -384,7 +384,7 @@ export interface IScalingConfiguration extends ros.IResource {
     readonly attrScalingGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingConfiguration`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
@@ -417,34 +417,34 @@ export class ScalingConfiguration extends ros.Resource implements IScalingConfig
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosScalingConfiguration = new RosScalingConfiguration(this, id,  {
-            dedicatedHostId: props.dedicatedHostId,
             scalingConfigurationName: props.scalingConfigurationName,
+            dedicatedHostId: props.dedicatedHostId,
             resourceGroupId: props.resourceGroupId,
-            imageOptionsLoginAsNonRoot: props.imageOptionsLoginAsNonRoot,
             systemDiskDescription: props.systemDiskDescription,
+            imageOptionsLoginAsNonRoot: props.imageOptionsLoginAsNonRoot,
             memory: props.memory,
             systemDiskProvisionedIops: props.systemDiskProvisionedIops,
             cpu: props.cpu,
             systemDiskEncryptAlgorithm: props.systemDiskEncryptAlgorithm,
             ramRoleName: props.ramRoleName,
-            privatePoolOptions: props.privatePoolOptions,
             systemDiskPerformanceLevel: props.systemDiskPerformanceLevel,
+            privatePoolOptions: props.privatePoolOptions,
             imageId: props.imageId,
             systemDiskDiskName: props.systemDiskDiskName,
             hostName: props.hostName,
             loadBalancerWeight: props.loadBalancerWeight,
             instanceId: props.instanceId,
-            systemDiskKmsKeyId: props.systemDiskKmsKeyId,
             scalingGroupId: props.scalingGroupId,
+            systemDiskKmsKeyId: props.systemDiskKmsKeyId,
             imageFamily: props.imageFamily,
             securityGroupIds: props.securityGroupIds,
             internetChargeType: props.internetChargeType,
-            spotInterruptionBehavior: props.spotInterruptionBehavior,
-            instanceName: props.instanceName,
             deploymentSetId: props.deploymentSetId,
+            instanceName: props.instanceName,
+            spotInterruptionBehavior: props.spotInterruptionBehavior,
             internetMaxBandwidthOut: props.internetMaxBandwidthOut,
-            instancePatternInfos: props.instancePatternInfos,
             instanceTypeOverrides: props.instanceTypeOverrides,
+            instancePatternInfos: props.instancePatternInfos,
             affinity: props.affinity,
             securityEnhancementStrategy: props.securityEnhancementStrategy,
             tenancy: props.tenancy,

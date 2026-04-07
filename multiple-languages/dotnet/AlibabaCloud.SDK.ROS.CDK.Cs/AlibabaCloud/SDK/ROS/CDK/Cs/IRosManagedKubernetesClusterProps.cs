@@ -55,6 +55,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: autoMode: Whether to enable auto scaling.
+        /// </remarks>
+        [JsiiProperty(name: "autoMode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AutoModeProperty\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoMode
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: cloudMonitorFlags: Whether to install the cloud monitoring plugin:
         /// true: indicates installation
         /// false: Do not install
@@ -100,7 +113,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+        /// <strong>Property</strong>: controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
         /// </remarks>
         [JsiiProperty(name: "controlPlaneLogComponents", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -689,6 +702,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: autoMode: Whether to enable auto scaling.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoMode", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AutoModeProperty\"}]}}", isOptional: true)]
+            public object? AutoMode
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: cloudMonitorFlags: Whether to install the cloud monitoring plugin:
             /// true: indicates installation
             /// false: Do not install
@@ -725,7 +748,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+            /// <strong>Property</strong>: controlPlaneLogComponents: List of target components for which logs need to be collected. Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "controlPlaneLogComponents", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

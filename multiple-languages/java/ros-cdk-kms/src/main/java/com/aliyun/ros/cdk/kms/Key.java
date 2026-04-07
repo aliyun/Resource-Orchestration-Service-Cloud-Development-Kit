@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Key</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Key</code>The , which resource creates a master key.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.874Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Key")
 public class Key extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.IKey {
 
@@ -395,6 +395,19 @@ public class Key extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
          */
         public Builder rotationInterval(final com.aliyun.ros.cdk.core.IResolvable rotationInterval) {
             this.props().rotationInterval(rotationInterval);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to key.
+         * <p>
+         * Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to key. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.kms.RosKey.TagsProperty> tags) {
+            this.props().tags(tags);
             return this;
         }
 

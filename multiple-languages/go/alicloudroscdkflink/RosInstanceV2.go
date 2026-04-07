@@ -9,9 +9,11 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.
 type RosInstanceV2 interface {
 	alicloudroscdkcore.RosResource
+	ArchitectureType() interface{}
+	SetArchitectureType(val interface{})
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrWorkspaceId() alicloudroscdkcore.IResolvable
@@ -27,6 +29,10 @@ type RosInstanceV2 interface {
 	SetDuration(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	HaResourceSpec() interface{}
+	SetHaResourceSpec(val interface{})
+	HaVSwitchIds() interface{}
+	SetHaVSwitchIds(val interface{})
 	InstanceName() interface{}
 	SetInstanceName(val interface{})
 	// The logical ID for this stack element.
@@ -39,6 +45,8 @@ type RosInstanceV2 interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	MonitorType() interface{}
+	SetMonitorType(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
 	PricingCycle() interface{}
@@ -193,6 +201,16 @@ type jsiiProxy_RosInstanceV2 struct {
 	internal.Type__alicloudroscdkcoreRosResource
 }
 
+func (j *jsiiProxy_RosInstanceV2) ArchitectureType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"architectureType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstanceV2) AttrInstanceId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -273,6 +291,26 @@ func (j *jsiiProxy_RosInstanceV2) EnableResourcePropertyConstraint() *bool {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstanceV2) HaResourceSpec() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"haResourceSpec",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstanceV2) HaVSwitchIds() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"haVSwitchIds",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstanceV2) InstanceName() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -288,6 +326,16 @@ func (j *jsiiProxy_RosInstanceV2) LogicalId() *string {
 	_jsii_.Get(
 		j,
 		"logicalId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosInstanceV2) MonitorType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"monitorType",
 		&returns,
 	)
 	return returns
@@ -461,6 +509,17 @@ func NewRosInstanceV2_Override(r RosInstanceV2, scope alicloudroscdkcore.Constru
 	)
 }
 
+func (j *jsiiProxy_RosInstanceV2)SetArchitectureType(val interface{}) {
+	if err := j.validateSetArchitectureTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"architectureType",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstanceV2)SetAutoRenew(val interface{}) {
 	if err := j.validateSetAutoRenewParameters(val); err != nil {
 		panic(err)
@@ -505,6 +564,28 @@ func (j *jsiiProxy_RosInstanceV2)SetEnableResourcePropertyConstraint(val *bool) 
 	)
 }
 
+func (j *jsiiProxy_RosInstanceV2)SetHaResourceSpec(val interface{}) {
+	if err := j.validateSetHaResourceSpecParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"haResourceSpec",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstanceV2)SetHaVSwitchIds(val interface{}) {
+	if err := j.validateSetHaVSwitchIdsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"haVSwitchIds",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosInstanceV2)SetInstanceName(val interface{}) {
 	if err := j.validateSetInstanceNameParameters(val); err != nil {
 		panic(err)
@@ -512,6 +593,17 @@ func (j *jsiiProxy_RosInstanceV2)SetInstanceName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"instanceName",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstanceV2)SetMonitorType(val interface{}) {
+	if err := j.validateSetMonitorTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"monitorType",
 		val,
 	)
 }

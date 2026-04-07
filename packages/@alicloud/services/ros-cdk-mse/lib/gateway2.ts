@@ -176,7 +176,7 @@ export interface IGateway2 extends ros.IResource {
     readonly attrGatewayUniqueId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Gateway2`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Gateway2`The ALIYUN::MSE::Use Gateway2 resource type to create cloud-native gateway.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGateway2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway2
  */
@@ -220,12 +220,12 @@ export class Gateway2 extends ros.Resource implements IGateway2 {
             acceptLanguage: props.acceptLanguage,
             spec: props.spec,
             enableSls: props.enableSls,
-            xtraceRatio: props.xtraceRatio,
             nlbNetworkType: props.nlbNetworkType,
             clbNetworkType: props.clbNetworkType,
+            xtraceRatio: props.xtraceRatio,
+            zoneInfo: props.zoneInfo,
             mserVersion: props.mserVersion,
             tags: props.tags,
-            zoneInfo: props.zoneInfo,
             periodUnit: props.periodUnit,
             enableHardwareAcceleration: props.enableHardwareAcceleration,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

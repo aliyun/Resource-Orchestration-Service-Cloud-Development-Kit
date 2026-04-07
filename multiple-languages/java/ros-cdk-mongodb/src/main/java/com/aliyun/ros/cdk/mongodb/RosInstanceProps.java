@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mongodb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.627Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.623Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosInstanceProps.Jsii$Proxy.class)
 public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,6 +26,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAuditPolicyOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
@@ -38,6 +44,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBackupPolicyOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBusinessInfo() {
         return null;
     }
@@ -45,6 +57,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getChargeType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getClusterId() {
         return null;
     }
 
@@ -63,6 +81,24 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceReleaseProtection() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptionKey() {
         return null;
     }
 
@@ -92,6 +128,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReadonlyReplicas() {
         return null;
     }
@@ -116,6 +158,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreType() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryZoneId() {
         return null;
     }
@@ -135,6 +183,18 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSrcRegion() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSslOptions() {
         return null;
     }
 
@@ -199,25 +259,35 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object dbInstanceClass;
         java.lang.Object dbInstanceStorage;
         java.lang.Object accountPassword;
+        java.lang.Object auditPolicyOptions;
         java.lang.Object autoRenew;
         java.lang.Object backupId;
+        java.lang.Object backupPolicyOptions;
         java.lang.Object businessInfo;
         java.lang.Object chargeType;
+        java.lang.Object clusterId;
         java.lang.Object couponNo;
         java.lang.Object databaseNames;
         java.lang.Object dbInstanceDescription;
+        java.lang.Object dbInstanceReleaseProtection;
+        java.lang.Object encrypted;
+        java.lang.Object encryptionKey;
         java.lang.Object engineVersion;
         java.lang.Object hiddenZoneId;
         java.lang.Object period;
         java.lang.Object privateConnections;
+        java.lang.Object provisionedIops;
         java.lang.Object readonlyReplicas;
         java.lang.Object replicationFactor;
         java.lang.Object resourceGroupId;
         java.lang.Object restoreTime;
+        java.lang.Object restoreType;
         java.lang.Object secondaryZoneId;
         java.lang.Object securityGroupId;
         java.lang.Object securityIpArray;
         java.lang.Object srcDbInstanceId;
+        java.lang.Object srcRegion;
+        java.lang.Object sslOptions;
         java.lang.Object storageEngine;
         java.lang.Object storageType;
         java.util.List<com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty> tags;
@@ -288,6 +358,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getAuditPolicyOptions}
+         * @param auditPolicyOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder auditPolicyOptions(com.aliyun.ros.cdk.core.IResolvable auditPolicyOptions) {
+            this.auditPolicyOptions = auditPolicyOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getAuditPolicyOptions}
+         * @param auditPolicyOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder auditPolicyOptions(com.aliyun.ros.cdk.mongodb.RosInstance.AuditPolicyOptionsProperty auditPolicyOptions) {
+            this.auditPolicyOptions = auditPolicyOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getAutoRenew}
          * @param autoRenew the value to be set.
          * @return {@code this}
@@ -328,6 +418,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getBackupPolicyOptions}
+         * @param backupPolicyOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupPolicyOptions(com.aliyun.ros.cdk.core.IResolvable backupPolicyOptions) {
+            this.backupPolicyOptions = backupPolicyOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getBackupPolicyOptions}
+         * @param backupPolicyOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder backupPolicyOptions(com.aliyun.ros.cdk.mongodb.RosInstance.BackupPolicyOptionsProperty backupPolicyOptions) {
+            this.backupPolicyOptions = backupPolicyOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getBusinessInfo}
          * @param businessInfo the value to be set.
          * @return {@code this}
@@ -364,6 +474,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder chargeType(com.aliyun.ros.cdk.core.IResolvable chargeType) {
             this.chargeType = chargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getClusterId}
+         * @param clusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder clusterId(java.lang.String clusterId) {
+            this.clusterId = clusterId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getClusterId}
+         * @param clusterId the value to be set.
+         * @return {@code this}
+         */
+        public Builder clusterId(com.aliyun.ros.cdk.core.IResolvable clusterId) {
+            this.clusterId = clusterId;
             return this;
         }
 
@@ -424,6 +554,66 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder dbInstanceDescription(com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.dbInstanceDescription = dbInstanceDescription;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getDbInstanceReleaseProtection}
+         * @param dbInstanceReleaseProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceReleaseProtection(java.lang.Boolean dbInstanceReleaseProtection) {
+            this.dbInstanceReleaseProtection = dbInstanceReleaseProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getDbInstanceReleaseProtection}
+         * @param dbInstanceReleaseProtection the value to be set.
+         * @return {@code this}
+         */
+        public Builder dbInstanceReleaseProtection(com.aliyun.ros.cdk.core.IResolvable dbInstanceReleaseProtection) {
+            this.dbInstanceReleaseProtection = dbInstanceReleaseProtection;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEncrypted}
+         * @param encrypted the value to be set.
+         * @return {@code this}
+         */
+        public Builder encrypted(java.lang.Boolean encrypted) {
+            this.encrypted = encrypted;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEncrypted}
+         * @param encrypted the value to be set.
+         * @return {@code this}
+         */
+        public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {
+            this.encrypted = encrypted;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEncryptionKey}
+         * @param encryptionKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionKey(java.lang.String encryptionKey) {
+            this.encryptionKey = encryptionKey;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getEncryptionKey}
+         * @param encryptionKey the value to be set.
+         * @return {@code this}
+         */
+        public Builder encryptionKey(com.aliyun.ros.cdk.core.IResolvable encryptionKey) {
+            this.encryptionKey = encryptionKey;
             return this;
         }
 
@@ -508,6 +698,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getProvisionedIops}
+         * @param provisionedIops the value to be set.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(java.lang.Number provisionedIops) {
+            this.provisionedIops = provisionedIops;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getProvisionedIops}
+         * @param provisionedIops the value to be set.
+         * @return {@code this}
+         */
+        public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
+            this.provisionedIops = provisionedIops;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getReadonlyReplicas}
          * @param readonlyReplicas the value to be set.
          * @return {@code this}
@@ -588,6 +798,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosInstanceProps#getRestoreType}
+         * @param restoreType the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreType(java.lang.Number restoreType) {
+            this.restoreType = restoreType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getRestoreType}
+         * @param restoreType the value to be set.
+         * @return {@code this}
+         */
+        public Builder restoreType(com.aliyun.ros.cdk.core.IResolvable restoreType) {
+            this.restoreType = restoreType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosInstanceProps#getSecondaryZoneId}
          * @param secondaryZoneId the value to be set.
          * @return {@code this}
@@ -664,6 +894,46 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder srcDbInstanceId(com.aliyun.ros.cdk.core.IResolvable srcDbInstanceId) {
             this.srcDbInstanceId = srcDbInstanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSrcRegion}
+         * @param srcRegion the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcRegion(java.lang.String srcRegion) {
+            this.srcRegion = srcRegion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSrcRegion}
+         * @param srcRegion the value to be set.
+         * @return {@code this}
+         */
+        public Builder srcRegion(com.aliyun.ros.cdk.core.IResolvable srcRegion) {
+            this.srcRegion = srcRegion;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSslOptions}
+         * @param sslOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder sslOptions(com.aliyun.ros.cdk.core.IResolvable sslOptions) {
+            this.sslOptions = sslOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosInstanceProps#getSslOptions}
+         * @param sslOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder sslOptions(com.aliyun.ros.cdk.mongodb.RosInstance.SSLOptionsProperty sslOptions) {
+            this.sslOptions = sslOptions;
             return this;
         }
 
@@ -837,25 +1107,35 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object dbInstanceClass;
         private final java.lang.Object dbInstanceStorage;
         private final java.lang.Object accountPassword;
+        private final java.lang.Object auditPolicyOptions;
         private final java.lang.Object autoRenew;
         private final java.lang.Object backupId;
+        private final java.lang.Object backupPolicyOptions;
         private final java.lang.Object businessInfo;
         private final java.lang.Object chargeType;
+        private final java.lang.Object clusterId;
         private final java.lang.Object couponNo;
         private final java.lang.Object databaseNames;
         private final java.lang.Object dbInstanceDescription;
+        private final java.lang.Object dbInstanceReleaseProtection;
+        private final java.lang.Object encrypted;
+        private final java.lang.Object encryptionKey;
         private final java.lang.Object engineVersion;
         private final java.lang.Object hiddenZoneId;
         private final java.lang.Object period;
         private final java.lang.Object privateConnections;
+        private final java.lang.Object provisionedIops;
         private final java.lang.Object readonlyReplicas;
         private final java.lang.Object replicationFactor;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object restoreTime;
+        private final java.lang.Object restoreType;
         private final java.lang.Object secondaryZoneId;
         private final java.lang.Object securityGroupId;
         private final java.lang.Object securityIpArray;
         private final java.lang.Object srcDbInstanceId;
+        private final java.lang.Object srcRegion;
+        private final java.lang.Object sslOptions;
         private final java.lang.Object storageEngine;
         private final java.lang.Object storageType;
         private final java.util.List<com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty> tags;
@@ -874,25 +1154,35 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.dbInstanceClass = software.amazon.jsii.Kernel.get(this, "dbInstanceClass", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceStorage = software.amazon.jsii.Kernel.get(this, "dbInstanceStorage", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accountPassword = software.amazon.jsii.Kernel.get(this, "accountPassword", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.auditPolicyOptions = software.amazon.jsii.Kernel.get(this, "auditPolicyOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.backupId = software.amazon.jsii.Kernel.get(this, "backupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.backupPolicyOptions = software.amazon.jsii.Kernel.get(this, "backupPolicyOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.businessInfo = software.amazon.jsii.Kernel.get(this, "businessInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.clusterId = software.amazon.jsii.Kernel.get(this, "clusterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.couponNo = software.amazon.jsii.Kernel.get(this, "couponNo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.databaseNames = software.amazon.jsii.Kernel.get(this, "databaseNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.dbInstanceDescription = software.amazon.jsii.Kernel.get(this, "dbInstanceDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.dbInstanceReleaseProtection = software.amazon.jsii.Kernel.get(this, "dbInstanceReleaseProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encrypted = software.amazon.jsii.Kernel.get(this, "encrypted", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.encryptionKey = software.amazon.jsii.Kernel.get(this, "encryptionKey", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.engineVersion = software.amazon.jsii.Kernel.get(this, "engineVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.hiddenZoneId = software.amazon.jsii.Kernel.get(this, "hiddenZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.privateConnections = software.amazon.jsii.Kernel.get(this, "privateConnections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.provisionedIops = software.amazon.jsii.Kernel.get(this, "provisionedIops", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.readonlyReplicas = software.amazon.jsii.Kernel.get(this, "readonlyReplicas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.replicationFactor = software.amazon.jsii.Kernel.get(this, "replicationFactor", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.restoreTime = software.amazon.jsii.Kernel.get(this, "restoreTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.restoreType = software.amazon.jsii.Kernel.get(this, "restoreType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secondaryZoneId = software.amazon.jsii.Kernel.get(this, "secondaryZoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityGroupId = software.amazon.jsii.Kernel.get(this, "securityGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityIpArray = software.amazon.jsii.Kernel.get(this, "securityIpArray", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.srcDbInstanceId = software.amazon.jsii.Kernel.get(this, "srcDbInstanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.srcRegion = software.amazon.jsii.Kernel.get(this, "srcRegion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.sslOptions = software.amazon.jsii.Kernel.get(this, "sslOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageEngine = software.amazon.jsii.Kernel.get(this, "storageEngine", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.storageType = software.amazon.jsii.Kernel.get(this, "storageType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty.class)));
@@ -912,25 +1202,35 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             this.dbInstanceClass = java.util.Objects.requireNonNull(builder.dbInstanceClass, "dbInstanceClass is required");
             this.dbInstanceStorage = java.util.Objects.requireNonNull(builder.dbInstanceStorage, "dbInstanceStorage is required");
             this.accountPassword = builder.accountPassword;
+            this.auditPolicyOptions = builder.auditPolicyOptions;
             this.autoRenew = builder.autoRenew;
             this.backupId = builder.backupId;
+            this.backupPolicyOptions = builder.backupPolicyOptions;
             this.businessInfo = builder.businessInfo;
             this.chargeType = builder.chargeType;
+            this.clusterId = builder.clusterId;
             this.couponNo = builder.couponNo;
             this.databaseNames = builder.databaseNames;
             this.dbInstanceDescription = builder.dbInstanceDescription;
+            this.dbInstanceReleaseProtection = builder.dbInstanceReleaseProtection;
+            this.encrypted = builder.encrypted;
+            this.encryptionKey = builder.encryptionKey;
             this.engineVersion = builder.engineVersion;
             this.hiddenZoneId = builder.hiddenZoneId;
             this.period = builder.period;
             this.privateConnections = builder.privateConnections;
+            this.provisionedIops = builder.provisionedIops;
             this.readonlyReplicas = builder.readonlyReplicas;
             this.replicationFactor = builder.replicationFactor;
             this.resourceGroupId = builder.resourceGroupId;
             this.restoreTime = builder.restoreTime;
+            this.restoreType = builder.restoreType;
             this.secondaryZoneId = builder.secondaryZoneId;
             this.securityGroupId = builder.securityGroupId;
             this.securityIpArray = builder.securityIpArray;
             this.srcDbInstanceId = builder.srcDbInstanceId;
+            this.srcRegion = builder.srcRegion;
+            this.sslOptions = builder.sslOptions;
             this.storageEngine = builder.storageEngine;
             this.storageType = builder.storageType;
             this.tags = (java.util.List<com.aliyun.ros.cdk.mongodb.RosInstance.TagsProperty>)builder.tags;
@@ -957,6 +1257,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getAuditPolicyOptions() {
+            return this.auditPolicyOptions;
+        }
+
+        @Override
         public final java.lang.Object getAutoRenew() {
             return this.autoRenew;
         }
@@ -967,6 +1272,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getBackupPolicyOptions() {
+            return this.backupPolicyOptions;
+        }
+
+        @Override
         public final java.lang.Object getBusinessInfo() {
             return this.businessInfo;
         }
@@ -974,6 +1284,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getChargeType() {
             return this.chargeType;
+        }
+
+        @Override
+        public final java.lang.Object getClusterId() {
+            return this.clusterId;
         }
 
         @Override
@@ -989,6 +1304,21 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getDbInstanceDescription() {
             return this.dbInstanceDescription;
+        }
+
+        @Override
+        public final java.lang.Object getDbInstanceReleaseProtection() {
+            return this.dbInstanceReleaseProtection;
+        }
+
+        @Override
+        public final java.lang.Object getEncrypted() {
+            return this.encrypted;
+        }
+
+        @Override
+        public final java.lang.Object getEncryptionKey() {
+            return this.encryptionKey;
         }
 
         @Override
@@ -1012,6 +1342,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getProvisionedIops() {
+            return this.provisionedIops;
+        }
+
+        @Override
         public final java.lang.Object getReadonlyReplicas() {
             return this.readonlyReplicas;
         }
@@ -1032,6 +1367,11 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getRestoreType() {
+            return this.restoreType;
+        }
+
+        @Override
         public final java.lang.Object getSecondaryZoneId() {
             return this.secondaryZoneId;
         }
@@ -1049,6 +1389,16 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getSrcDbInstanceId() {
             return this.srcDbInstanceId;
+        }
+
+        @Override
+        public final java.lang.Object getSrcRegion() {
+            return this.srcRegion;
+        }
+
+        @Override
+        public final java.lang.Object getSslOptions() {
+            return this.sslOptions;
         }
 
         @Override
@@ -1102,17 +1452,26 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getAccountPassword() != null) {
                 data.set("accountPassword", om.valueToTree(this.getAccountPassword()));
             }
+            if (this.getAuditPolicyOptions() != null) {
+                data.set("auditPolicyOptions", om.valueToTree(this.getAuditPolicyOptions()));
+            }
             if (this.getAutoRenew() != null) {
                 data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
             }
             if (this.getBackupId() != null) {
                 data.set("backupId", om.valueToTree(this.getBackupId()));
             }
+            if (this.getBackupPolicyOptions() != null) {
+                data.set("backupPolicyOptions", om.valueToTree(this.getBackupPolicyOptions()));
+            }
             if (this.getBusinessInfo() != null) {
                 data.set("businessInfo", om.valueToTree(this.getBusinessInfo()));
             }
             if (this.getChargeType() != null) {
                 data.set("chargeType", om.valueToTree(this.getChargeType()));
+            }
+            if (this.getClusterId() != null) {
+                data.set("clusterId", om.valueToTree(this.getClusterId()));
             }
             if (this.getCouponNo() != null) {
                 data.set("couponNo", om.valueToTree(this.getCouponNo()));
@@ -1122,6 +1481,15 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getDbInstanceDescription() != null) {
                 data.set("dbInstanceDescription", om.valueToTree(this.getDbInstanceDescription()));
+            }
+            if (this.getDbInstanceReleaseProtection() != null) {
+                data.set("dbInstanceReleaseProtection", om.valueToTree(this.getDbInstanceReleaseProtection()));
+            }
+            if (this.getEncrypted() != null) {
+                data.set("encrypted", om.valueToTree(this.getEncrypted()));
+            }
+            if (this.getEncryptionKey() != null) {
+                data.set("encryptionKey", om.valueToTree(this.getEncryptionKey()));
             }
             if (this.getEngineVersion() != null) {
                 data.set("engineVersion", om.valueToTree(this.getEngineVersion()));
@@ -1135,6 +1503,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getPrivateConnections() != null) {
                 data.set("privateConnections", om.valueToTree(this.getPrivateConnections()));
             }
+            if (this.getProvisionedIops() != null) {
+                data.set("provisionedIops", om.valueToTree(this.getProvisionedIops()));
+            }
             if (this.getReadonlyReplicas() != null) {
                 data.set("readonlyReplicas", om.valueToTree(this.getReadonlyReplicas()));
             }
@@ -1147,6 +1518,9 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getRestoreTime() != null) {
                 data.set("restoreTime", om.valueToTree(this.getRestoreTime()));
             }
+            if (this.getRestoreType() != null) {
+                data.set("restoreType", om.valueToTree(this.getRestoreType()));
+            }
             if (this.getSecondaryZoneId() != null) {
                 data.set("secondaryZoneId", om.valueToTree(this.getSecondaryZoneId()));
             }
@@ -1158,6 +1532,12 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getSrcDbInstanceId() != null) {
                 data.set("srcDbInstanceId", om.valueToTree(this.getSrcDbInstanceId()));
+            }
+            if (this.getSrcRegion() != null) {
+                data.set("srcRegion", om.valueToTree(this.getSrcRegion()));
+            }
+            if (this.getSslOptions() != null) {
+                data.set("sslOptions", om.valueToTree(this.getSslOptions()));
             }
             if (this.getStorageEngine() != null) {
                 data.set("storageEngine", om.valueToTree(this.getStorageEngine()));
@@ -1204,25 +1584,35 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             if (!dbInstanceClass.equals(that.dbInstanceClass)) return false;
             if (!dbInstanceStorage.equals(that.dbInstanceStorage)) return false;
             if (this.accountPassword != null ? !this.accountPassword.equals(that.accountPassword) : that.accountPassword != null) return false;
+            if (this.auditPolicyOptions != null ? !this.auditPolicyOptions.equals(that.auditPolicyOptions) : that.auditPolicyOptions != null) return false;
             if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.backupId != null ? !this.backupId.equals(that.backupId) : that.backupId != null) return false;
+            if (this.backupPolicyOptions != null ? !this.backupPolicyOptions.equals(that.backupPolicyOptions) : that.backupPolicyOptions != null) return false;
             if (this.businessInfo != null ? !this.businessInfo.equals(that.businessInfo) : that.businessInfo != null) return false;
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
+            if (this.clusterId != null ? !this.clusterId.equals(that.clusterId) : that.clusterId != null) return false;
             if (this.couponNo != null ? !this.couponNo.equals(that.couponNo) : that.couponNo != null) return false;
             if (this.databaseNames != null ? !this.databaseNames.equals(that.databaseNames) : that.databaseNames != null) return false;
             if (this.dbInstanceDescription != null ? !this.dbInstanceDescription.equals(that.dbInstanceDescription) : that.dbInstanceDescription != null) return false;
+            if (this.dbInstanceReleaseProtection != null ? !this.dbInstanceReleaseProtection.equals(that.dbInstanceReleaseProtection) : that.dbInstanceReleaseProtection != null) return false;
+            if (this.encrypted != null ? !this.encrypted.equals(that.encrypted) : that.encrypted != null) return false;
+            if (this.encryptionKey != null ? !this.encryptionKey.equals(that.encryptionKey) : that.encryptionKey != null) return false;
             if (this.engineVersion != null ? !this.engineVersion.equals(that.engineVersion) : that.engineVersion != null) return false;
             if (this.hiddenZoneId != null ? !this.hiddenZoneId.equals(that.hiddenZoneId) : that.hiddenZoneId != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.privateConnections != null ? !this.privateConnections.equals(that.privateConnections) : that.privateConnections != null) return false;
+            if (this.provisionedIops != null ? !this.provisionedIops.equals(that.provisionedIops) : that.provisionedIops != null) return false;
             if (this.readonlyReplicas != null ? !this.readonlyReplicas.equals(that.readonlyReplicas) : that.readonlyReplicas != null) return false;
             if (this.replicationFactor != null ? !this.replicationFactor.equals(that.replicationFactor) : that.replicationFactor != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.restoreTime != null ? !this.restoreTime.equals(that.restoreTime) : that.restoreTime != null) return false;
+            if (this.restoreType != null ? !this.restoreType.equals(that.restoreType) : that.restoreType != null) return false;
             if (this.secondaryZoneId != null ? !this.secondaryZoneId.equals(that.secondaryZoneId) : that.secondaryZoneId != null) return false;
             if (this.securityGroupId != null ? !this.securityGroupId.equals(that.securityGroupId) : that.securityGroupId != null) return false;
             if (this.securityIpArray != null ? !this.securityIpArray.equals(that.securityIpArray) : that.securityIpArray != null) return false;
             if (this.srcDbInstanceId != null ? !this.srcDbInstanceId.equals(that.srcDbInstanceId) : that.srcDbInstanceId != null) return false;
+            if (this.srcRegion != null ? !this.srcRegion.equals(that.srcRegion) : that.srcRegion != null) return false;
+            if (this.sslOptions != null ? !this.sslOptions.equals(that.sslOptions) : that.sslOptions != null) return false;
             if (this.storageEngine != null ? !this.storageEngine.equals(that.storageEngine) : that.storageEngine != null) return false;
             if (this.storageType != null ? !this.storageType.equals(that.storageType) : that.storageType != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
@@ -1238,25 +1628,35 @@ public interface RosInstanceProps extends software.amazon.jsii.JsiiSerializable 
             int result = this.dbInstanceClass.hashCode();
             result = 31 * result + (this.dbInstanceStorage.hashCode());
             result = 31 * result + (this.accountPassword != null ? this.accountPassword.hashCode() : 0);
+            result = 31 * result + (this.auditPolicyOptions != null ? this.auditPolicyOptions.hashCode() : 0);
             result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.backupId != null ? this.backupId.hashCode() : 0);
+            result = 31 * result + (this.backupPolicyOptions != null ? this.backupPolicyOptions.hashCode() : 0);
             result = 31 * result + (this.businessInfo != null ? this.businessInfo.hashCode() : 0);
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
+            result = 31 * result + (this.clusterId != null ? this.clusterId.hashCode() : 0);
             result = 31 * result + (this.couponNo != null ? this.couponNo.hashCode() : 0);
             result = 31 * result + (this.databaseNames != null ? this.databaseNames.hashCode() : 0);
             result = 31 * result + (this.dbInstanceDescription != null ? this.dbInstanceDescription.hashCode() : 0);
+            result = 31 * result + (this.dbInstanceReleaseProtection != null ? this.dbInstanceReleaseProtection.hashCode() : 0);
+            result = 31 * result + (this.encrypted != null ? this.encrypted.hashCode() : 0);
+            result = 31 * result + (this.encryptionKey != null ? this.encryptionKey.hashCode() : 0);
             result = 31 * result + (this.engineVersion != null ? this.engineVersion.hashCode() : 0);
             result = 31 * result + (this.hiddenZoneId != null ? this.hiddenZoneId.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.privateConnections != null ? this.privateConnections.hashCode() : 0);
+            result = 31 * result + (this.provisionedIops != null ? this.provisionedIops.hashCode() : 0);
             result = 31 * result + (this.readonlyReplicas != null ? this.readonlyReplicas.hashCode() : 0);
             result = 31 * result + (this.replicationFactor != null ? this.replicationFactor.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.restoreTime != null ? this.restoreTime.hashCode() : 0);
+            result = 31 * result + (this.restoreType != null ? this.restoreType.hashCode() : 0);
             result = 31 * result + (this.secondaryZoneId != null ? this.secondaryZoneId.hashCode() : 0);
             result = 31 * result + (this.securityGroupId != null ? this.securityGroupId.hashCode() : 0);
             result = 31 * result + (this.securityIpArray != null ? this.securityIpArray.hashCode() : 0);
             result = 31 * result + (this.srcDbInstanceId != null ? this.srcDbInstanceId.hashCode() : 0);
+            result = 31 * result + (this.srcRegion != null ? this.srcRegion.hashCode() : 0);
+            result = 31 * result + (this.sslOptions != null ? this.sslOptions.hashCode() : 0);
             result = 31 * result + (this.storageEngine != null ? this.storageEngine.hashCode() : 0);
             result = 31 * result + (this.storageType != null ? this.storageType.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

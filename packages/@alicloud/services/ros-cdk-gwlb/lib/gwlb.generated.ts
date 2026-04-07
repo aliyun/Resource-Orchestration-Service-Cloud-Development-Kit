@@ -78,7 +78,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::Listener`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::Listener`, which type is used to create a listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gwlb-listener
  */
@@ -323,7 +323,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::LoadBalancer`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::LoadBalancer`The , which type is used to create a Gateway Load Balancer (GWLB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gwlb-loadbalancer
  */
@@ -694,7 +694,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::ServerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::ServerGroup`The , which type is used to create a server group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gwlb-servergroup
  */
@@ -1118,13 +1118,13 @@ export namespace RosServerGroup {
          */
         readonly serverId: string | ros.IResolvable;
         /**
-         * @Property port: The port used by the backend server
-         */
-        readonly port?: number | ros.IResolvable;
-        /**
          * @Property serverIp: Server ip.
          */
         readonly serverIp?: string | ros.IResolvable;
+        /**
+         * @Property port: The port used by the backend server
+         */
+        readonly port?: number | ros.IResolvable;
     }
 }
 /**
@@ -1147,6 +1147,7 @@ function RosServerGroup_ServersPropertyValidator(properties: any): ros.Validatio
     errors.collect(ros.propertyValidator('serverType', ros.validateString)(properties.serverType));
     errors.collect(ros.propertyValidator('serverId', ros.requiredValidator)(properties.serverId));
     errors.collect(ros.propertyValidator('serverId', ros.validateString)(properties.serverId));
+    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateAllowedValues)({
           data: properties.port,
@@ -1154,7 +1155,6 @@ function RosServerGroup_ServersPropertyValidator(properties: any): ros.Validatio
         }));
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
-    errors.collect(ros.propertyValidator('serverIp', ros.validateString)(properties.serverIp));
     return errors.wrap('supplied properties not correct for "ServersProperty"');
 }
 
@@ -1172,8 +1172,8 @@ function rosServerGroupServersPropertyToRosTemplate(properties: any): any {
     return {
       'ServerType': ros.stringToRosTemplate(properties.serverType),
       'ServerId': ros.stringToRosTemplate(properties.serverId),
-      'Port': ros.numberToRosTemplate(properties.port),
       'ServerIp': ros.stringToRosTemplate(properties.serverIp),
+      'Port': ros.numberToRosTemplate(properties.port),
     };
 }
 

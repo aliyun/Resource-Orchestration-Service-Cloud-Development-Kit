@@ -60,7 +60,7 @@ export interface IImageCaches extends ros.IResource {
     readonly attrImageCaches: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCaches`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCaches`, which is used to query multiple image caches at a time.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageCaches`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecaches
  */
@@ -94,8 +94,8 @@ export class ImageCaches extends ros.Resource implements IImageCaches {
 
         const rosImageCaches = new RosImageCaches(this, id,  {
             snapshotId: props.snapshotId,
-            imageCacheId: props.imageCacheId,
             resourceGroupId: props.resourceGroupId,
+            imageCacheId: props.imageCacheId,
             imageCacheName: props.imageCacheName,
             limit: props.limit,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,

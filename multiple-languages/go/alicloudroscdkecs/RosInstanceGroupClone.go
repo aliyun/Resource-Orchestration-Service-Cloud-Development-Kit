@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroupClone`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::InstanceGroupClone`Use , which to clone a group of ECS instances.
 type RosInstanceGroupClone interface {
 	alicloudroscdkcore.RosResource
 	AttrHostNames() alicloudroscdkcore.IResolvable
@@ -20,7 +20,6 @@ type RosInstanceGroupClone interface {
 	AttrOrderId() alicloudroscdkcore.IResolvable
 	AttrPrivateIps() alicloudroscdkcore.IResolvable
 	AttrPublicIps() alicloudroscdkcore.IResolvable
-	AttrRelatedOrderIds() alicloudroscdkcore.IResolvable
 	AttrZoneIds() alicloudroscdkcore.IResolvable
 	AutoReleaseTime() interface{}
 	SetAutoReleaseTime(val interface{})
@@ -359,16 +358,6 @@ func (j *jsiiProxy_RosInstanceGroupClone) AttrPublicIps() alicloudroscdkcore.IRe
 	_jsii_.Get(
 		j,
 		"attrPublicIps",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosInstanceGroupClone) AttrRelatedOrderIds() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
-	_jsii_.Get(
-		j,
-		"attrRelatedOrderIds",
 		&returns,
 	)
 	return returns

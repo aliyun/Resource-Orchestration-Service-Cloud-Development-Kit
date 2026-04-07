@@ -77,7 +77,7 @@ export interface IHostGroup extends ros.IResource {
     readonly attrHostGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DEVOPS::HostGroup`, which is used to create a host group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHostGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-devops-hostgroup
  */
@@ -110,11 +110,11 @@ export class HostGroup extends ros.Resource implements IHostGroup {
             tagIds: props.tagIds,
             ecsType: props.ecsType === undefined || props.ecsType === null ? 'ECS_ALIYUN' : props.ecsType,
             envId: props.envId,
-            machineInfos: props.machineInfos,
             aliyunRegion: props.aliyunRegion,
-            ecsLabelValue: props.ecsLabelValue,
+            machineInfos: props.machineInfos,
             organizationId: props.organizationId,
             ecsLabelKey: props.ecsLabelKey,
+            ecsLabelValue: props.ecsLabelValue,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosHostGroup;

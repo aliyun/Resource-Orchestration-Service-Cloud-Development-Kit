@@ -112,6 +112,10 @@ func (j *jsiiProxy_RosVpnAttachment) validateSetEnableResourcePropertyConstraint
 	return nil
 }
 
+func (j *jsiiProxy_RosVpnAttachment) validateSetEnableTunnelsBgpParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosVpnAttachment) validateSetHealthCheckConfigParameters(val interface{}) error {
 	return nil
 }
@@ -141,6 +145,18 @@ func (j *jsiiProxy_RosVpnAttachment) validateSetRemoteCaCertParameters(val inter
 }
 
 func (j *jsiiProxy_RosVpnAttachment) validateSetRemoteSubnetParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpnAttachment) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpnAttachment) validateSetTunnelBandwidthParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosVpnAttachment) validateSetTunnelOptionsSpecificationParameters(val interface{}) error {
 	return nil
 }
 

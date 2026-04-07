@@ -55,11 +55,13 @@
 @alicloud/ros-cdk-cms.RosDynamicTagGroupProps=com.aliyun.ros.cdk.cms.RosDynamicTagGroupProps
 @alicloud/ros-cdk-cms.RosEventRule=com.aliyun.ros.cdk.cms.RosEventRule
 @alicloud/ros-cdk-cms.RosEventRule.EventPatternProperty=com.aliyun.ros.cdk.cms.RosEventRule$EventPatternProperty
+@alicloud/ros-cdk-cms.RosEventRule.KeywordFilterProperty=com.aliyun.ros.cdk.cms.RosEventRule$KeywordFilterProperty
 @alicloud/ros-cdk-cms.RosEventRuleProps=com.aliyun.ros.cdk.cms.RosEventRuleProps
 @alicloud/ros-cdk-cms.RosEventRuleTargets=com.aliyun.ros.cdk.cms.RosEventRuleTargets
 @alicloud/ros-cdk-cms.RosEventRuleTargets.ContactParametersProperty=com.aliyun.ros.cdk.cms.RosEventRuleTargets$ContactParametersProperty
 @alicloud/ros-cdk-cms.RosEventRuleTargets.FcParametersProperty=com.aliyun.ros.cdk.cms.RosEventRuleTargets$FcParametersProperty
 @alicloud/ros-cdk-cms.RosEventRuleTargets.MnsParametersProperty=com.aliyun.ros.cdk.cms.RosEventRuleTargets$MnsParametersProperty
+@alicloud/ros-cdk-cms.RosEventRuleTargets.OpenApiParametersProperty=com.aliyun.ros.cdk.cms.RosEventRuleTargets$OpenApiParametersProperty
 @alicloud/ros-cdk-cms.RosEventRuleTargets.SlsParametersProperty=com.aliyun.ros.cdk.cms.RosEventRuleTargets$SlsParametersProperty
 @alicloud/ros-cdk-cms.RosEventRuleTargets.WebhookParametersProperty=com.aliyun.ros.cdk.cms.RosEventRuleTargets$WebhookParametersProperty
 @alicloud/ros-cdk-cms.RosEventRuleTargetsProps=com.aliyun.ros.cdk.cms.RosEventRuleTargetsProps

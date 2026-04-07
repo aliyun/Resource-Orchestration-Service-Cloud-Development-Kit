@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.260Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.254Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpcPeerConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(VpcPeerConnectionProps.Jsii$Proxy.class)
 public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSerializable {
@@ -49,6 +49,15 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property bandwidth: The bandwidth of the VPC peering connection.
+     * <p>
+     * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
+        return null;
+    }
+
+    /**
      * Property deletionForce: Specifies whether to forcefully delete the VPC peering connection.
      * <p>
      * Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
@@ -68,12 +77,31 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
+     * Property linkType: The link type.
+     * <p>
+     * Valid values: Platinum, Gold.
+     * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getLinkType() {
+        return null;
+    }
+
+    /**
      * Property name: The name of the VPC peering connection.
      * <p>
      * The name must be 2 to 128 characters in length and can contain digits, underscores
      * (_), and hyphens (-). It must start with a letter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
+        return null;
+    }
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     * <p>
+     * For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
     }
 
@@ -91,9 +119,12 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         java.lang.Object vpcId;
         java.lang.Object acceptingAliUid;
         java.lang.Object acceptingRegionId;
+        java.lang.Object bandwidth;
         java.lang.Object deletionForce;
         java.lang.Object description;
+        java.lang.Object linkType;
         java.lang.Object name;
+        java.lang.Object resourceGroupId;
 
         /**
          * Sets the value of {@link VpcPeerConnectionProps#getAcceptingVpcId}
@@ -200,6 +231,28 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link VpcPeerConnectionProps#getBandwidth}
+         * @param bandwidth Property bandwidth: The bandwidth of the VPC peering connection.
+         *                  If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * @return {@code this}
+         */
+        public Builder bandwidth(java.lang.Number bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcPeerConnectionProps#getBandwidth}
+         * @param bandwidth Property bandwidth: The bandwidth of the VPC peering connection.
+         *                  If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * @return {@code this}
+         */
+        public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
+            this.bandwidth = bandwidth;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpcPeerConnectionProps#getDeletionForce}
          * @param deletionForce Property deletionForce: Specifies whether to forcefully delete the VPC peering connection.
          *                      Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
@@ -246,6 +299,30 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link VpcPeerConnectionProps#getLinkType}
+         * @param linkType Property linkType: The link type.
+         *                 Valid values: Platinum, Gold.
+         *                 If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * @return {@code this}
+         */
+        public Builder linkType(java.lang.String linkType) {
+            this.linkType = linkType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcPeerConnectionProps#getLinkType}
+         * @param linkType Property linkType: The link type.
+         *                 Valid values: Platinum, Gold.
+         *                 If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+         * @return {@code this}
+         */
+        public Builder linkType(com.aliyun.ros.cdk.core.IResolvable linkType) {
+            this.linkType = linkType;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpcPeerConnectionProps#getName}
          * @param name Property name: The name of the VPC peering connection.
          *             The name must be 2 to 128 characters in length and can contain digits, underscores
@@ -270,6 +347,28 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link VpcPeerConnectionProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         *                        For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpcPeerConnectionProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
+         *                        For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link VpcPeerConnectionProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -289,9 +388,12 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         private final java.lang.Object vpcId;
         private final java.lang.Object acceptingAliUid;
         private final java.lang.Object acceptingRegionId;
+        private final java.lang.Object bandwidth;
         private final java.lang.Object deletionForce;
         private final java.lang.Object description;
+        private final java.lang.Object linkType;
         private final java.lang.Object name;
+        private final java.lang.Object resourceGroupId;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -303,9 +405,12 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.acceptingAliUid = software.amazon.jsii.Kernel.get(this, "acceptingAliUid", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.acceptingRegionId = software.amazon.jsii.Kernel.get(this, "acceptingRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.linkType = software.amazon.jsii.Kernel.get(this, "linkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -317,9 +422,12 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.acceptingAliUid = builder.acceptingAliUid;
             this.acceptingRegionId = builder.acceptingRegionId;
+            this.bandwidth = builder.bandwidth;
             this.deletionForce = builder.deletionForce;
             this.description = builder.description;
+            this.linkType = builder.linkType;
             this.name = builder.name;
+            this.resourceGroupId = builder.resourceGroupId;
         }
 
         @Override
@@ -343,6 +451,11 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getBandwidth() {
+            return this.bandwidth;
+        }
+
+        @Override
         public final java.lang.Object getDeletionForce() {
             return this.deletionForce;
         }
@@ -353,8 +466,18 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         }
 
         @Override
+        public final java.lang.Object getLinkType() {
+            return this.linkType;
+        }
+
+        @Override
         public final java.lang.Object getName() {
             return this.name;
+        }
+
+        @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
         }
 
         @Override
@@ -371,14 +494,23 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
             if (this.getAcceptingRegionId() != null) {
                 data.set("acceptingRegionId", om.valueToTree(this.getAcceptingRegionId()));
             }
+            if (this.getBandwidth() != null) {
+                data.set("bandwidth", om.valueToTree(this.getBandwidth()));
+            }
             if (this.getDeletionForce() != null) {
                 data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
             }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
+            if (this.getLinkType() != null) {
+                data.set("linkType", om.valueToTree(this.getLinkType()));
+            }
             if (this.getName() != null) {
                 data.set("name", om.valueToTree(this.getName()));
+            }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -402,9 +534,12 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
             if (!vpcId.equals(that.vpcId)) return false;
             if (this.acceptingAliUid != null ? !this.acceptingAliUid.equals(that.acceptingAliUid) : that.acceptingAliUid != null) return false;
             if (this.acceptingRegionId != null ? !this.acceptingRegionId.equals(that.acceptingRegionId) : that.acceptingRegionId != null) return false;
+            if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
-            return this.name != null ? this.name.equals(that.name) : that.name == null;
+            if (this.linkType != null ? !this.linkType.equals(that.linkType) : that.linkType != null) return false;
+            if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
+            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
         }
 
         @Override
@@ -413,9 +548,12 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.acceptingAliUid != null ? this.acceptingAliUid.hashCode() : 0);
             result = 31 * result + (this.acceptingRegionId != null ? this.acceptingRegionId.hashCode() : 0);
+            result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.linkType != null ? this.linkType.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;
         }
     }

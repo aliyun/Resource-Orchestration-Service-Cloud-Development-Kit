@@ -72,7 +72,7 @@ export interface IOssExternalStore extends ros.IResource {
     readonly attrProject: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::OssExternalStore`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::OssExternalStore`, which is used to create an Object Storage Service (OSS) external store.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOssExternalStore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexternalstore
  */
@@ -108,8 +108,8 @@ export class OssExternalStore extends ros.Resource implements IOssExternalStore 
             storeType: props.storeType,
             project: props.project,
             endpoint: props.endpoint,
-            bucket: props.bucket,
             accessId: props.accessId,
+            bucket: props.bucket,
             objects: props.objects,
             columns: props.columns,
             accessKey: props.accessKey,

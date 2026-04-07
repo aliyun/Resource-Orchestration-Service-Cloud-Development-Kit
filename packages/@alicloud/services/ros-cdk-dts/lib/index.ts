@@ -1,3 +1,4 @@
+export * from './consumerchannel';
 export * from './consumergroup';
 export * from './instance';
 export * from './migrationjob2';

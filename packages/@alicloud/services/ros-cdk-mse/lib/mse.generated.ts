@@ -156,9 +156,9 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('connectionType', ros.validateString)(properties.connectionType));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('aclEntryList', ros.listValidator(ros.validateString))(properties.aclEntryList));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('clusterSpecification', ros.requiredValidator)(properties.clusterSpecification));
     errors.collect(ros.propertyValidator('clusterSpecification', ros.validateString)(properties.clusterSpecification));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupType', ros.validateString)(properties.securityGroupType));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
@@ -174,13 +174,6 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instanceCount', ros.validateNumber)(properties.instanceCount));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('requestPars', ros.validateString)(properties.requestPars));
-    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
-        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
-          data: properties.chargeType,
-          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     if(properties.pubNetworkFlow && (typeof properties.pubNetworkFlow) !== 'object') {
         errors.collect(ros.propertyValidator('pubNetworkFlow', ros.validateRange)({
             data: properties.pubNetworkFlow,
@@ -189,6 +182,13 @@ function RosClusterPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('pubNetworkFlow', ros.validateNumber)(properties.pubNetworkFlow));
+    if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
+          data: properties.chargeType,
+          allowedValues: ["PayAsYouGo","PostPaid","PayOnDemand","Postpaid","PostPay","Postpay","POSTPAY","POST","Subscription","PrePaid","Prepaid","PrePay","Prepay","PREPAY","PRE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('netType', ros.requiredValidator)(properties.netType));
     if(properties.netType && (typeof properties.netType) !== 'object') {
         errors.collect(ros.propertyValidator('netType', ros.validateAllowedValues)({
@@ -245,7 +245,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`Use , which to create a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -760,7 +760,7 @@ function rosEngineNamespacePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`, which is used to create a namespace for an engine.
  * @Note This class does not contain additional functions, so it is recommended to use the `EngineNamespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
  */
@@ -939,7 +939,7 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`, which is used to add a gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
@@ -1304,14 +1304,6 @@ function RosGateway2PropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
     errors.collect(ros.propertyValidator('enableSls', ros.validateBoolean)(properties.enableSls));
-    if(properties.xtraceRatio && (typeof properties.xtraceRatio) !== 'object') {
-        errors.collect(ros.propertyValidator('xtraceRatio', ros.validateRange)({
-            data: properties.xtraceRatio,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('xtraceRatio', ros.validateNumber)(properties.xtraceRatio));
     if(properties.nlbNetworkType && (typeof properties.nlbNetworkType) !== 'object') {
         errors.collect(ros.propertyValidator('nlbNetworkType', ros.validateAllowedValues)({
           data: properties.nlbNetworkType,
@@ -1326,6 +1318,15 @@ function RosGateway2PropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('clbNetworkType', ros.validateString)(properties.clbNetworkType));
+    if(properties.xtraceRatio && (typeof properties.xtraceRatio) !== 'object') {
+        errors.collect(ros.propertyValidator('xtraceRatio', ros.validateRange)({
+            data: properties.xtraceRatio,
+            min: 1,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('xtraceRatio', ros.validateNumber)(properties.xtraceRatio));
+    errors.collect(ros.propertyValidator('zoneInfo', ros.listValidator(RosGateway2_ZoneInfoPropertyValidator))(properties.zoneInfo));
     if(properties.mserVersion && (typeof properties.mserVersion) !== 'object') {
         errors.collect(ros.propertyValidator('mserVersion', ros.validateAllowedValues)({
           data: properties.mserVersion,
@@ -1341,7 +1342,6 @@ function RosGateway2PropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosGateway2_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('zoneInfo', ros.listValidator(RosGateway2_ZoneInfoPropertyValidator))(properties.zoneInfo));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -1395,7 +1395,7 @@ function rosGateway2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway2`The ALIYUN::MSE::Use Gateway2 resource type to create cloud-native gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway2
  */
@@ -1805,8 +1805,8 @@ function RosGatewayDomainPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('http2', ros.validateString)(properties.http2));
     errors.collect(ros.propertyValidator('tlsMax', ros.validateString)(properties.tlsMax));
     errors.collect(ros.propertyValidator('mustHttps', ros.validateBoolean)(properties.mustHttps));
-    errors.collect(ros.propertyValidator('tlsMin', ros.validateString)(properties.tlsMin));
     errors.collect(ros.propertyValidator('certIdentifier', ros.validateString)(properties.certIdentifier));
+    errors.collect(ros.propertyValidator('tlsMin', ros.validateString)(properties.tlsMin));
     errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
         errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
@@ -1848,7 +1848,7 @@ function rosGatewayDomainPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayDomain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayDomain`You can use , which to add an associated domain to a gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `GatewayDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewaydomain
  */
@@ -2100,8 +2100,8 @@ export interface RosGatewayRouteProps {
 function RosGatewayRoutePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('policies', ros.validateString)(properties.policies));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('gatewayId', ros.validateNumber)(properties.gatewayId));
     if(properties.destinationType && (typeof properties.destinationType) !== 'object') {
         errors.collect(ros.propertyValidator('destinationType', ros.validateAllowedValues)({
@@ -2120,12 +2120,10 @@ function RosGatewayRoutePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('services', ros.listValidator(RosGatewayRoute_ServicesPropertyValidator))(properties.services));
-    errors.collect(ros.propertyValidator('domainIdList', ros.requiredValidator)(properties.domainIdList));
-    errors.collect(ros.propertyValidator('domainIdList', ros.listValidator(ros.validateString))(properties.domainIdList));
     errors.collect(ros.propertyValidator('gatewayUniqueId', ros.requiredValidator)(properties.gatewayUniqueId));
     errors.collect(ros.propertyValidator('gatewayUniqueId', ros.validateString)(properties.gatewayUniqueId));
-    errors.collect(ros.propertyValidator('domainId', ros.validateNumber)(properties.domainId));
-    errors.collect(ros.propertyValidator('routeType', ros.validateString)(properties.routeType));
+    errors.collect(ros.propertyValidator('domainIdList', ros.requiredValidator)(properties.domainIdList));
+    errors.collect(ros.propertyValidator('domainIdList', ros.listValidator(ros.validateString))(properties.domainIdList));
     if(properties.routeOrder && (typeof properties.routeOrder) !== 'object') {
         errors.collect(ros.propertyValidator('routeOrder', ros.validateRange)({
             data: properties.routeOrder,
@@ -2134,8 +2132,10 @@ function RosGatewayRoutePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('routeOrder', ros.validateNumber)(properties.routeOrder));
-    errors.collect(ros.propertyValidator('redirectJson', RosGatewayRoute_RedirectJSONPropertyValidator)(properties.redirectJson));
+    errors.collect(ros.propertyValidator('domainId', ros.validateNumber)(properties.domainId));
+    errors.collect(ros.propertyValidator('routeType', ros.validateString)(properties.routeType));
     errors.collect(ros.propertyValidator('directResponseJson', RosGatewayRoute_DirectResponseJSONPropertyValidator)(properties.directResponseJson));
+    errors.collect(ros.propertyValidator('redirectJson', RosGatewayRoute_RedirectJSONPropertyValidator)(properties.redirectJson));
     if(properties.fallbackServices && (Array.isArray(properties.fallbackServices) || (typeof properties.fallbackServices) === 'string')) {
         errors.collect(ros.propertyValidator('fallbackServices', ros.validateLength)({
             data: properties.fallbackServices.length,
@@ -2183,7 +2183,7 @@ function rosGatewayRoutePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayRoute`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayRoute`The , which resource is used to add a gateway route.
  * @Note This class does not contain additional functions, so it is recommended to use the `GatewayRoute` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayroute
  */
@@ -2346,13 +2346,13 @@ export namespace RosGatewayRoute {
      */
     export interface DirectResponseJSONProperty {
         /**
-         * @Property body: The body content to return for the mock response.
-         */
-        readonly body?: string | ros.IResolvable;
-        /**
          * @Property code: The HTTP status code to return for the mock response.
          */
         readonly code?: number | ros.IResolvable;
+        /**
+         * @Property body: The body content to return for the mock response.
+         */
+        readonly body?: string | ros.IResolvable;
     }
 }
 /**
@@ -2365,8 +2365,8 @@ export namespace RosGatewayRoute {
 function RosGatewayRoute_DirectResponseJSONPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('body', ros.validateString)(properties.body));
     errors.collect(ros.propertyValidator('code', ros.validateNumber)(properties.code));
+    errors.collect(ros.propertyValidator('body', ros.validateString)(properties.body));
     return errors.wrap('supplied properties not correct for "DirectResponseJSONProperty"');
 }
 
@@ -2382,8 +2382,8 @@ function rosGatewayRouteDirectResponseJSONPropertyToRosTemplate(properties: any)
     if (!ros.canInspect(properties)) { return properties; }
     RosGatewayRoute_DirectResponseJSONPropertyValidator(properties).assertSuccess();
     return {
-      'Body': ros.stringToRosTemplate(properties.body),
       'Code': ros.numberToRosTemplate(properties.code),
+      'Body': ros.stringToRosTemplate(properties.body),
     };
 }
 
@@ -2393,13 +2393,13 @@ export namespace RosGatewayRoute {
      */
     export interface FallbackServicesProperty {
         /**
-         * @Property agreementType: The protocol type of the fallback service.
-         */
-        readonly agreementType?: string | ros.IResolvable;
-        /**
          * @Property groupName: The group name of the fallback service.
          */
         readonly groupName?: string | ros.IResolvable;
+        /**
+         * @Property agreementType: The protocol type of the fallback service.
+         */
+        readonly agreementType?: string | ros.IResolvable;
         /**
          * @Property servicePort: The port of the fallback service.
          */
@@ -2421,13 +2421,13 @@ export namespace RosGatewayRoute {
          */
         readonly namespace?: string | ros.IResolvable;
         /**
-         * @Property name: The name of the fallback service.
-         */
-        readonly name?: string | ros.IResolvable;
-        /**
          * @Property serviceId: The ID of the fallback service.
          */
         readonly serviceId?: number | ros.IResolvable;
+        /**
+         * @Property name: The name of the fallback service.
+         */
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -2440,15 +2440,15 @@ export namespace RosGatewayRoute {
 function RosGatewayRoute_FallbackServicesPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('agreementType', ros.validateString)(properties.agreementType));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('agreementType', ros.validateString)(properties.agreementType));
     errors.collect(ros.propertyValidator('servicePort', ros.validateNumber)(properties.servicePort));
     errors.collect(ros.propertyValidator('percent', ros.validateNumber)(properties.percent));
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
     errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('serviceId', ros.validateNumber)(properties.serviceId));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "FallbackServicesProperty"');
 }
 
@@ -2464,15 +2464,15 @@ function rosGatewayRouteFallbackServicesPropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosGatewayRoute_FallbackServicesPropertyValidator(properties).assertSuccess();
     return {
-      'AgreementType': ros.stringToRosTemplate(properties.agreementType),
       'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'AgreementType': ros.stringToRosTemplate(properties.agreementType),
       'ServicePort': ros.numberToRosTemplate(properties.servicePort),
       'Percent': ros.numberToRosTemplate(properties.percent),
       'Version': ros.stringToRosTemplate(properties.version),
       'SourceType': ros.stringToRosTemplate(properties.sourceType),
       'Namespace': ros.stringToRosTemplate(properties.namespace),
-      'Name': ros.stringToRosTemplate(properties.name),
       'ServiceId': ros.numberToRosTemplate(properties.serviceId),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -2539,13 +2539,13 @@ export namespace RosGatewayRoute {
          */
         readonly dubboServiceName?: string | ros.IResolvable;
         /**
-         * @Property mothedMapList: List of Dubbo forwarding rules.
-         */
-        readonly mothedMapList?: Array<RosGatewayRoute.MothedMapListProperty | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property dubboServiceGroup: The group of the Dubbo service.
          */
         readonly dubboServiceGroup?: string | ros.IResolvable;
+        /**
+         * @Property mothedMapList: List of Dubbo forwarding rules.
+         */
+        readonly mothedMapList?: Array<RosGatewayRoute.MothedMapListProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property dubboServiceVersion: The version of the Dubbo service.
          */
@@ -2563,8 +2563,8 @@ function RosGatewayRoute_HttpDubboTranscoderPropertyValidator(properties: any): 
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('dubboServiceName', ros.validateString)(properties.dubboServiceName));
-    errors.collect(ros.propertyValidator('mothedMapList', ros.listValidator(RosGatewayRoute_MothedMapListPropertyValidator))(properties.mothedMapList));
     errors.collect(ros.propertyValidator('dubboServiceGroup', ros.validateString)(properties.dubboServiceGroup));
+    errors.collect(ros.propertyValidator('mothedMapList', ros.listValidator(RosGatewayRoute_MothedMapListPropertyValidator))(properties.mothedMapList));
     errors.collect(ros.propertyValidator('dubboServiceVersion', ros.validateString)(properties.dubboServiceVersion));
     return errors.wrap('supplied properties not correct for "HttpDubboTranscoderProperty"');
 }
@@ -2582,8 +2582,8 @@ function rosGatewayRouteHttpDubboTranscoderPropertyToRosTemplate(properties: any
     RosGatewayRoute_HttpDubboTranscoderPropertyValidator(properties).assertSuccess();
     return {
       'DubboServiceName': ros.stringToRosTemplate(properties.dubboServiceName),
-      'MothedMapList': ros.listMapper(rosGatewayRouteMothedMapListPropertyToRosTemplate)(properties.mothedMapList),
       'DubboServiceGroup': ros.stringToRosTemplate(properties.dubboServiceGroup),
+      'MothedMapList': ros.listMapper(rosGatewayRouteMothedMapListPropertyToRosTemplate)(properties.mothedMapList),
       'DubboServiceVersion': ros.stringToRosTemplate(properties.dubboServiceVersion),
     };
 }
@@ -2673,10 +2673,6 @@ export namespace RosGatewayRoute {
      */
     export interface ParamMapsListProperty {
         /**
-         * @Property mappingType: The type of the backend parameter.
-         */
-        readonly mappingType?: string | ros.IResolvable;
-        /**
          * @Property extractKeySpec: Position of input parameter. Valid values:
      * - ALL_QUERY_PARAMETER: Query parameters
      * - ALL_HEADER: Request headers
@@ -2684,6 +2680,10 @@ export namespace RosGatewayRoute {
      * - ALL_BODY: Request body
          */
         readonly extractKeySpec?: string | ros.IResolvable;
+        /**
+         * @Property mappingType: The type of the backend parameter.
+         */
+        readonly mappingType?: string | ros.IResolvable;
         /**
          * @Property extractKey: The key to extract from the input.
          */
@@ -2700,8 +2700,8 @@ export namespace RosGatewayRoute {
 function RosGatewayRoute_ParamMapsListPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('mappingType', ros.validateString)(properties.mappingType));
     errors.collect(ros.propertyValidator('extractKeySpec', ros.validateString)(properties.extractKeySpec));
+    errors.collect(ros.propertyValidator('mappingType', ros.validateString)(properties.mappingType));
     errors.collect(ros.propertyValidator('extractKey', ros.validateString)(properties.extractKey));
     return errors.wrap('supplied properties not correct for "ParamMapsListProperty"');
 }
@@ -2718,8 +2718,8 @@ function rosGatewayRouteParamMapsListPropertyToRosTemplate(properties: any): any
     if (!ros.canInspect(properties)) { return properties; }
     RosGatewayRoute_ParamMapsListPropertyValidator(properties).assertSuccess();
     return {
-      'MappingType': ros.stringToRosTemplate(properties.mappingType),
       'ExtractKeySpec': ros.stringToRosTemplate(properties.extractKeySpec),
+      'MappingType': ros.stringToRosTemplate(properties.mappingType),
       'ExtractKey': ros.stringToRosTemplate(properties.extractKey),
     };
 }
@@ -2972,13 +2972,13 @@ export namespace RosGatewayRoute {
      */
     export interface ServicesProperty {
         /**
-         * @Property agreementType: The protocol type of the service.
-         */
-        readonly agreementType?: string | ros.IResolvable;
-        /**
          * @Property groupName: The group name of the service.
          */
         readonly groupName?: string | ros.IResolvable;
+        /**
+         * @Property agreementType: The protocol type of the service.
+         */
+        readonly agreementType?: string | ros.IResolvable;
         /**
          * @Property servicePort: The port of the backend service.
          */
@@ -3004,13 +3004,13 @@ export namespace RosGatewayRoute {
          */
         readonly namespace?: string | ros.IResolvable;
         /**
-         * @Property name: The name of the service.
-         */
-        readonly name?: string | ros.IResolvable;
-        /**
          * @Property serviceId: The ID of the service.
          */
         readonly serviceId?: number | ros.IResolvable;
+        /**
+         * @Property name: The name of the service.
+         */
+        readonly name?: string | ros.IResolvable;
     }
 }
 /**
@@ -3023,16 +3023,16 @@ export namespace RosGatewayRoute {
 function RosGatewayRoute_ServicesPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('agreementType', ros.validateString)(properties.agreementType));
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
+    errors.collect(ros.propertyValidator('agreementType', ros.validateString)(properties.agreementType));
     errors.collect(ros.propertyValidator('servicePort', ros.validateNumber)(properties.servicePort));
     errors.collect(ros.propertyValidator('percent', ros.validateNumber)(properties.percent));
     errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
     errors.collect(ros.propertyValidator('httpDubboTranscoder', RosGatewayRoute_HttpDubboTranscoderPropertyValidator)(properties.httpDubboTranscoder));
     errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     errors.collect(ros.propertyValidator('serviceId', ros.validateNumber)(properties.serviceId));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "ServicesProperty"');
 }
 
@@ -3048,16 +3048,16 @@ function rosGatewayRouteServicesPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
     RosGatewayRoute_ServicesPropertyValidator(properties).assertSuccess();
     return {
-      'AgreementType': ros.stringToRosTemplate(properties.agreementType),
       'GroupName': ros.stringToRosTemplate(properties.groupName),
+      'AgreementType': ros.stringToRosTemplate(properties.agreementType),
       'ServicePort': ros.numberToRosTemplate(properties.servicePort),
       'Percent': ros.numberToRosTemplate(properties.percent),
       'Version': ros.stringToRosTemplate(properties.version),
       'SourceType': ros.stringToRosTemplate(properties.sourceType),
       'HttpDubboTranscoder': rosGatewayRouteHttpDubboTranscoderPropertyToRosTemplate(properties.httpDubboTranscoder),
       'Namespace': ros.stringToRosTemplate(properties.namespace),
-      'Name': ros.stringToRosTemplate(properties.name),
       'ServiceId': ros.numberToRosTemplate(properties.serviceId),
+      'Name': ros.stringToRosTemplate(properties.name),
     };
 }
 
@@ -3164,10 +3164,9 @@ function RosGatewayServicePropsValidator(properties: any): ros.ValidationResult 
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('groupName', ros.validateString)(properties.groupName));
     errors.collect(ros.propertyValidator('servicePort', ros.validateNumber)(properties.servicePort));
-    errors.collect(ros.propertyValidator('fcVersion', ros.validateString)(properties.fcVersion));
     errors.collect(ros.propertyValidator('tlsSetting', ros.hashValidator(ros.validateAny))(properties.tlsSetting));
+    errors.collect(ros.propertyValidator('fcVersion', ros.validateString)(properties.fcVersion));
     errors.collect(ros.propertyValidator('saeAppId', ros.validateString)(properties.saeAppId));
-    errors.collect(ros.propertyValidator('sourceId', ros.validateNumber)(properties.sourceId));
     errors.collect(ros.propertyValidator('sourceType', ros.requiredValidator)(properties.sourceType));
     if(properties.sourceType && (typeof properties.sourceType) !== 'object') {
         errors.collect(ros.propertyValidator('sourceType', ros.validateAllowedValues)({
@@ -3176,6 +3175,7 @@ function RosGatewayServicePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('sourceType', ros.validateString)(properties.sourceType));
+    errors.collect(ros.propertyValidator('sourceId', ros.validateNumber)(properties.sourceId));
     if(properties.ips && (Array.isArray(properties.ips) || (typeof properties.ips) === 'string')) {
         errors.collect(ros.propertyValidator('ips', ros.validateLength)({
             data: properties.ips.length,
@@ -3242,7 +3242,7 @@ function rosGatewayServicePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayService`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayService`The , which resource is used to import a service into a gateway.
  * @Note This class does not contain additional functions, so it is recommended to use the `GatewayService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayservice
  */
@@ -3513,7 +3513,7 @@ function rosNacosConfigPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosConfig`, which is used to create a Nacos configuration.
  * @Note This class does not contain additional functions, so it is recommended to use the `NacosConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
@@ -3701,7 +3701,7 @@ function rosNacosServicePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosService`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosService`, which is used to create a Nacos service.
  * @Note This class does not contain additional functions, so it is recommended to use the `NacosService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosservice
  */
@@ -3879,7 +3879,7 @@ function rosPluginConfigPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::PluginConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::PluginConfig`The , which resource creates a plugin configuration.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-pluginconfig
  */
@@ -4026,6 +4026,7 @@ function RosServiceSourcePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('gatewayUniqueId', ros.requiredValidator)(properties.gatewayUniqueId));
     errors.collect(ros.propertyValidator('gatewayUniqueId', ros.validateString)(properties.gatewayUniqueId));
     errors.collect(ros.propertyValidator('ingressOptions', RosServiceSource_IngressOptionsPropertyValidator)(properties.ingressOptions));
+    errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
     if(properties.groupList && (Array.isArray(properties.groupList) || (typeof properties.groupList) === 'string')) {
         errors.collect(ros.propertyValidator('groupList', ros.validateLength)({
             data: properties.groupList.length,
@@ -4034,7 +4035,6 @@ function RosServiceSourcePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('groupList', ros.listValidator(ros.validateAny))(properties.groupList));
-    errors.collect(ros.propertyValidator('address', ros.validateString)(properties.address));
     if(properties.pathList && (Array.isArray(properties.pathList) || (typeof properties.pathList) === 'string')) {
         errors.collect(ros.propertyValidator('pathList', ros.validateLength)({
             data: properties.pathList.length,
@@ -4047,7 +4047,7 @@ function RosServiceSourcePropsValidator(properties: any): ros.ValidationResult {
     if(properties.source && (typeof properties.source) !== 'object') {
         errors.collect(ros.propertyValidator('source', ros.validateAllowedValues)({
           data: properties.source,
-          allowedValues: ["K8S","MSE","MSE_ZK","EDAS","SAE"],
+          allowedValues: ["K8S","MSE","MSE_ZK","EDAS","SAE","SAE_K8S"],
         }));
     }
     errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
@@ -4081,7 +4081,7 @@ function rosServiceSourcePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::ServiceSource`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::ServiceSource`, which is used to create a Nacos service source.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceSource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-servicesource
  */
@@ -4254,4 +4254,148 @@ function rosServiceSourceIngressOptionsPropertyToRosTemplate(properties: any): a
       'WatchNamespace': ros.stringToRosTemplate(properties.watchNamespace),
       'EnableIngress': ros.stringToRosTemplate(properties.enableIngress),
     };
+}
+
+/**
+ * Properties for defining a `RosZnode`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-znode
+ */
+export interface RosZnodeProps {
+
+    /**
+     * @Property clusterId: The ID of the cluster.
+     */
+    readonly clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property path: The path of the znode.
+     */
+    readonly path: string | ros.IResolvable;
+
+    /**
+     * @Property data: The data of the znode.
+     */
+    readonly data?: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    readonly instanceId?: string | ros.IResolvable;
+
+    /**
+     * @Property type: The type of the znode.
+     */
+    readonly type?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosZnodeProps`
+ *
+ * @param properties - the TypeScript properties of a `RosZnodeProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosZnodePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('path', ros.requiredValidator)(properties.path));
+    errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('clusterId', ros.requiredValidator)(properties.clusterId));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('data', ros.validateString)(properties.data));
+    return errors.wrap('supplied properties not correct for "RosZnodeProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MSE::Znode` resource
+ *
+ * @param properties - the TypeScript properties of a `RosZnodeProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MSE::Znode` resource.
+ */
+// @ts-ignore TS6133
+function rosZnodePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosZnodePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'Path': ros.stringToRosTemplate(properties.path),
+      'Data': ros.stringToRosTemplate(properties.data),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Type': ros.stringToRosTemplate(properties.type),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Znode`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Znode` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-znode
+ */
+export class RosZnode extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MSE::Znode";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: The ID of the cluster.
+     */
+    public clusterId: string | ros.IResolvable;
+
+    /**
+     * @Property path: The path of the znode.
+     */
+    public path: string | ros.IResolvable;
+
+    /**
+     * @Property data: The data of the znode.
+     */
+    public data: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property instanceId: The ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: The type of the znode.
+     */
+    public type: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosZnodeProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosZnode.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.path = props.path;
+        this.data = props.data;
+        this.instanceId = props.instanceId;
+        this.type = props.type;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            path: this.path,
+            data: this.data,
+            instanceId: this.instanceId,
+            type: this.type,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosZnodePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
 }

@@ -38,7 +38,7 @@ type INetworkOptimization interface {
 	AttrSiteVersion() interface{}
 	// Attribute SmartRouting: Whether to enable smart routing service, default is disabled.
 	AttrSmartRouting() interface{}
-	// Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+	// Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
 	AttrUploadMaxFilesize() interface{}
 	// Attribute Websocket: Whether to enable Websocket, default is enabled.
 	AttrWebsocket() interface{}

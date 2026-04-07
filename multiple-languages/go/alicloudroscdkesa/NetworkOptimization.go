@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`The , which type is used to add network optimization configurations for a website.
 type NetworkOptimization interface {
 	alicloudroscdkcore.Resource
 	INetworkOptimization
@@ -41,7 +41,7 @@ type NetworkOptimization interface {
 	AttrSiteVersion() interface{}
 	// Attribute SmartRouting: Whether to enable smart routing service, default is disabled.
 	AttrSmartRouting() interface{}
-	// Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.
+	// Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.
 	AttrUploadMaxFilesize() interface{}
 	// Attribute Websocket: Whether to enable Websocket, default is enabled.
 	AttrWebsocket() interface{}

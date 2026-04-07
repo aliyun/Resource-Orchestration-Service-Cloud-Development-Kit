@@ -1,4 +1,5 @@
 export * from './account';
+export * from './backuppolicy';
 export * from './dbcluster';
 
 // ALIYUN::ADB Resources:

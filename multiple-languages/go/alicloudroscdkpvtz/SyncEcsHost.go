@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`, which is used to create a hostname synchronization task.
 type SyncEcsHost interface {
 	alicloudroscdkcore.Resource
 	ISyncEcsHost

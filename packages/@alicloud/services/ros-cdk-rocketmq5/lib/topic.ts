@@ -59,7 +59,7 @@ export interface ITopic extends ros.IResource {
     readonly attrTopicName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Topic`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Topic`, which is used to create a topic for a Message Queue for Apache RocketMQ V5.0 instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-topic
  */
@@ -99,8 +99,8 @@ export class Topic extends ros.Resource implements ITopic {
         const rosTopic = new RosTopic(this, id,  {
             instanceId: props.instanceId,
             messageType: props.messageType,
-            remark: props.remark,
             topicName: props.topicName,
+            remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;
         this.attrInstanceId = rosTopic.attrInstanceId;

@@ -84,6 +84,10 @@ func validateRosInstancePublicConnection_IsRosResourceParameters(construct alicl
 	return nil
 }
 
+func (j *jsiiProxy_RosInstancePublicConnection) validateSetAddressTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstancePublicConnection) validateSetConnectionStringPrefixParameters(val interface{}) error {
 	return nil
 }

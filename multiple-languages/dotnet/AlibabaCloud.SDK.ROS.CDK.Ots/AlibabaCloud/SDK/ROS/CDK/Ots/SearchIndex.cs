@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ots
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OTS::SearchIndex`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table.</summary>
     /// <remarks>
+    /// You can create multiple search indexes for a data table.
+    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSearchIndex`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
     /// </remarks>

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::Catalog`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::Catalog`The , which type creates a data catalog in Data Lake Formation.
 type Catalog interface {
 	alicloudroscdkcore.Resource
 	ICatalog

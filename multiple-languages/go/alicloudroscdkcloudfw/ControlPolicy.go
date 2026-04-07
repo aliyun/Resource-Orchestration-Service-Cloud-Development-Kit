@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
 type ControlPolicy interface {
 	alicloudroscdkcore.Resource
 	IControlPolicy

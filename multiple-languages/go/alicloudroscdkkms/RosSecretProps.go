@@ -14,10 +14,12 @@ type RosSecretProps struct {
 	EncryptionKeyId interface{} `field:"optional" json:"encryptionKeyId" yaml:"encryptionKeyId"`
 	ExtendedConfig interface{} `field:"optional" json:"extendedConfig" yaml:"extendedConfig"`
 	ForceDeleteWithoutRecovery interface{} `field:"optional" json:"forceDeleteWithoutRecovery" yaml:"forceDeleteWithoutRecovery"`
+	Policy interface{} `field:"optional" json:"policy" yaml:"policy"`
 	RecoveryWindowInDays interface{} `field:"optional" json:"recoveryWindowInDays" yaml:"recoveryWindowInDays"`
 	RotationInterval interface{} `field:"optional" json:"rotationInterval" yaml:"rotationInterval"`
 	SecretDataType interface{} `field:"optional" json:"secretDataType" yaml:"secretDataType"`
 	SecretType interface{} `field:"optional" json:"secretType" yaml:"secretType"`
+	Tags *[]*RosSecret_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	VersionStages interface{} `field:"optional" json:"versionStages" yaml:"versionStages"`
 }
 

@@ -4,6 +4,7 @@ package alicloudroscdkcms
 type RosEventRule_EventPatternProperty struct {
 	CustomFilters interface{} `field:"optional" json:"customFilters" yaml:"customFilters"`
 	EventTypeList interface{} `field:"optional" json:"eventTypeList" yaml:"eventTypeList"`
+	KeywordFilter interface{} `field:"optional" json:"keywordFilter" yaml:"keywordFilter"`
 	LevelList interface{} `field:"optional" json:"levelList" yaml:"levelList"`
 	NameList interface{} `field:"optional" json:"nameList" yaml:"nameList"`
 	Product interface{} `field:"optional" json:"product" yaml:"product"`

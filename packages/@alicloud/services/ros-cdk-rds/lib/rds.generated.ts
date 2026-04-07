@@ -46,10 +46,10 @@ function RosADInfoPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('adServerIpAddress', ros.requiredValidator)(properties.adServerIpAddress));
     errors.collect(ros.propertyValidator('adServerIpAddress', ros.validateString)(properties.adServerIpAddress));
-    errors.collect(ros.propertyValidator('addns', ros.requiredValidator)(properties.addns));
-    errors.collect(ros.propertyValidator('addns', ros.validateString)(properties.addns));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('addns', ros.requiredValidator)(properties.addns));
+    errors.collect(ros.propertyValidator('addns', ros.validateString)(properties.addns));
     errors.collect(ros.propertyValidator('adPassword', ros.requiredValidator)(properties.adPassword));
     errors.collect(ros.propertyValidator('adPassword', ros.validateString)(properties.adPassword));
     errors.collect(ros.propertyValidator('adAccountName', ros.requiredValidator)(properties.adAccountName));
@@ -80,7 +80,7 @@ function rosADInfoPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ADInfo`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ADInfo`, which is used to configure Active Directory Domain Services (AD DS).
  * @Note This class does not contain additional functions, so it is recommended to use the `ADInfo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-adinfo
  */
@@ -266,7 +266,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`, which creates accounts for managing databases.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */
@@ -394,10 +394,10 @@ export interface RosAccountPrivilegeProps {
 function RosAccountPrivilegePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('accountPrivilege', ros.requiredValidator)(properties.accountPrivilege));
-    errors.collect(ros.propertyValidator('accountPrivilege', ros.validateString)(properties.accountPrivilege));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('accountPrivilege', ros.requiredValidator)(properties.accountPrivilege));
+    errors.collect(ros.propertyValidator('accountPrivilege', ros.validateString)(properties.accountPrivilege));
     errors.collect(ros.propertyValidator('dbName', ros.requiredValidator)(properties.dbName));
     errors.collect(ros.propertyValidator('dbName', ros.validateString)(properties.dbName));
     errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
@@ -427,7 +427,7 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
@@ -583,7 +583,7 @@ function rosConnectionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Connection`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Connection`, which is used to apply for a public endpoint.
  * @Note This class does not contain additional functions, so it is recommended to use the `Connection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-connection
  */
@@ -944,7 +944,7 @@ export interface RosDBInstanceProps {
 
     /**
      * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
-     * Default value: 60. Valid values: 6 to 100.
+     * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
      */
     readonly logBackupLocalRetentionNumber?: number | ros.IResolvable;
 
@@ -1214,6 +1214,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbMappings', ros.listValidator(RosDBInstance_DBMappingsPropertyValidator))(properties.dbMappings));
+    errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
@@ -1221,8 +1222,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
-    errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
-    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
     if(properties.engine && (typeof properties.engine) !== 'object') {
         errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
@@ -1232,6 +1231,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     if(properties.ioAccelerationEnabled && (typeof properties.ioAccelerationEnabled) !== 'object') {
         errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateAllowedValues)({
           data: properties.ioAccelerationEnabled,
@@ -1265,6 +1265,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('archiveBackupKeepPolicy', ros.validateString)(properties.archiveBackupKeepPolicy));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.backupPolicyMode && (typeof properties.backupPolicyMode) !== 'object') {
         errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateAllowedValues)({
           data: properties.backupPolicyMode,
@@ -1272,7 +1273,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('backupPolicyMode', ros.validateString)(properties.backupPolicyMode));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -1288,7 +1288,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('localLogRetentionHours', ros.validateNumber)(properties.localLogRetentionHours));
-    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
@@ -1296,6 +1295,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     if(properties.highSpaceUsageProtection && (typeof properties.highSpaceUsageProtection) !== 'object') {
         errors.collect(ros.propertyValidator('highSpaceUsageProtection', ros.validateAllowedValues)({
           data: properties.highSpaceUsageProtection,
@@ -1312,6 +1312,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('masterUserPassword', ros.validateString)(properties.masterUserPassword));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslSetting && (typeof properties.sslSetting) !== 'object') {
         errors.collect(ros.propertyValidator('sslSetting', ros.validateAllowedValues)({
           data: properties.sslSetting,
@@ -1319,7 +1320,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('sslSetting', ros.validateString)(properties.sslSetting));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('masterUsername', ros.validateString)(properties.masterUsername));
     errors.collect(ros.propertyValidator('connectionMode', ros.validateString)(properties.connectionMode));
     if(properties.localLogRetentionSpace && (typeof properties.localLogRetentionSpace) !== 'object') {
@@ -1331,8 +1331,8 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateNumber)(properties.localLogRetentionSpace));
     errors.collect(ros.propertyValidator('storageUpperBound', ros.validateNumber)(properties.storageUpperBound));
-    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
     if(properties.dbInstanceNetType && (typeof properties.dbInstanceNetType) !== 'object') {
         errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateAllowedValues)({
@@ -1341,6 +1341,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateString)(properties.dbInstanceNetType));
+    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     if(properties.releasedKeepPolicy && (typeof properties.releasedKeepPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateAllowedValues)({
           data: properties.releasedKeepPolicy,
@@ -1348,14 +1349,13 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateString)(properties.releasedKeepPolicy));
-    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
     errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateString))(properties.preferredBackupPeriod));
     if(properties.logBackupLocalRetentionNumber && (typeof properties.logBackupLocalRetentionNumber) !== 'object') {
         errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateRange)({
             data: properties.logBackupLocalRetentionNumber,
-            min: 6,
+            min: -1,
             max: 100,
           }));
     }
@@ -1383,10 +1383,10 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
-    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.validateString)(properties.dbInstanceStorageType));
     if(properties.backUpCategory && (typeof properties.backUpCategory) !== 'object') {
         errors.collect(ros.propertyValidator('backUpCategory', ros.validateAllowedValues)({
@@ -1396,7 +1396,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
     errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
-    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
           data: properties.connectionStringType,
@@ -1404,6 +1403,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
           data: properties.masterUserType,
@@ -1412,7 +1412,6 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
     errors.collect(ros.propertyValidator('serverlessConfig', RosDBInstance_ServerlessConfigPropertyValidator)(properties.serverlessConfig));
-    errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     if(properties.sqlCollectorStatus && (typeof properties.sqlCollectorStatus) !== 'object') {
         errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateAllowedValues)({
           data: properties.sqlCollectorStatus,
@@ -1420,6 +1419,7 @@ function RosDBInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateString)(properties.sqlCollectorStatus));
+    errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     errors.collect(ros.propertyValidator('backupRetentionPeriod', ros.validateNumber)(properties.backupRetentionPeriod));
     return errors.wrap('supplied properties not correct for "RosDBInstanceProps"');
 }
@@ -1513,7 +1513,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstance`The , which type is used to create an ApsaraDB RDS database instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
@@ -1817,7 +1817,7 @@ export class RosDBInstance extends ros.RosResource {
 
     /**
      * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
-     * Default value: 60. Valid values: 6 to 100.
+     * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
      */
     public logBackupLocalRetentionNumber: number | ros.IResolvable | undefined;
 
@@ -2606,8 +2606,8 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
-    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     if(properties.port && (typeof properties.port) !== 'object') {
         errors.collect(ros.propertyValidator('port', ros.validateRange)({
@@ -2618,8 +2618,8 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     }
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
     errors.collect(ros.propertyValidator('backupId', ros.validateString)(properties.backupId));
-    errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     errors.collect(ros.propertyValidator('restoreTime', ros.validateString)(properties.restoreTime));
+    errors.collect(ros.propertyValidator('instanceNetworkType', ros.validateString)(properties.instanceNetworkType));
     errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateString))(properties.preferredBackupPeriod));
     errors.collect(ros.propertyValidator('dbNames', ros.validateString)(properties.dbNames));
     if(properties.slaveZoneIds && (Array.isArray(properties.slaveZoneIds) || (typeof properties.slaveZoneIds) === 'string')) {
@@ -2630,9 +2630,9 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('slaveZoneIds', ros.listValidator(ros.validateString))(properties.slaveZoneIds));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
     errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
-    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     if(properties.backupType && (typeof properties.backupType) !== 'object') {
         errors.collect(ros.propertyValidator('backupType', ros.validateAllowedValues)({
@@ -2642,6 +2642,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     }
     errors.collect(ros.propertyValidator('backupType', ros.validateString)(properties.backupType));
     errors.collect(ros.propertyValidator('dbMappings', ros.listValidator(RosDBInstanceClone_DBMappingsPropertyValidator))(properties.dbMappings));
+    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
@@ -2649,7 +2650,6 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
-    errors.collect(ros.propertyValidator('maintainTime', ros.validateString)(properties.maintainTime));
     errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
@@ -2662,9 +2662,9 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
     }
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -2688,7 +2688,6 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
-    errors.collect(ros.propertyValidator('restoreTable', ros.validateString)(properties.restoreTable));
     if(properties.masterUserPassword && (Array.isArray(properties.masterUserPassword) || (typeof properties.masterUserPassword) === 'string')) {
         errors.collect(ros.propertyValidator('masterUserPassword', ros.validateLength)({
             data: properties.masterUserPassword.length,
@@ -2697,6 +2696,7 @@ function RosDBInstanceClonePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('masterUserPassword', ros.validateString)(properties.masterUserPassword));
+    errors.collect(ros.propertyValidator('restoreTable', ros.validateString)(properties.restoreTable));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
           data: properties.masterUserType,
@@ -2790,7 +2790,7 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`, which is used to restore historical data of an instance to a new instance. The new instance is called the cloned instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
@@ -3442,7 +3442,7 @@ function rosDBInstanceParameterGroupPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`, which is used to modify the parameters of an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceParameterGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */
@@ -3607,7 +3607,7 @@ function rosDBInstanceSecurityIpsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceSecurityIps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
  */
@@ -3799,7 +3799,7 @@ function rosDBProxyPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBProxy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBProxy`, which is used to enable the database proxy feature for an ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBProxy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbproxy
  */
@@ -4055,7 +4055,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Database`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Database`The , which resource type creates a database in an RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
@@ -4266,7 +4266,7 @@ function rosMigrateTaskPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::MigrateTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::MigrateTask`, which is used to create a migration task to restore backup files from an Object Storage Service (OSS) bucket to an ApsaraDB RDS for SQL Server instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `MigrateTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-migratetask
  */
@@ -4490,7 +4490,7 @@ function rosPostgresExtensionsPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PostgresExtensions`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
  * @Note This class does not contain additional functions, so it is recommended to use the `PostgresExtensions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
  */
@@ -4862,7 +4862,7 @@ export interface RosPrepayDBInstanceProps {
 
     /**
      * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
-     * Default value: 60. Valid values: 6 to 100.
+     * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
      */
     readonly logBackupLocalRetentionNumber?: number | ros.IResolvable;
 
@@ -5121,6 +5121,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.requiredValidator)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbInstanceStorage', ros.validateNumber)(properties.dbInstanceStorage));
     errors.collect(ros.propertyValidator('dbMappings', ros.listValidator(RosPrepayDBInstance_DBMappingsPropertyValidator))(properties.dbMappings));
+    errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
     if(properties.connectionStringPrefix && (typeof properties.connectionStringPrefix) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateAllowedPattern)({
           data: properties.connectionStringPrefix,
@@ -5128,9 +5129,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringPrefix', ros.validateString)(properties.connectionStringPrefix));
-    errors.collect(ros.propertyValidator('multiAz', ros.validateBoolean)(properties.multiAz));
-    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
-    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
     errors.collect(ros.propertyValidator('engine', ros.requiredValidator)(properties.engine));
     if(properties.engine && (typeof properties.engine) !== 'object') {
         errors.collect(ros.propertyValidator('engine', ros.validateAllowedValues)({
@@ -5139,6 +5137,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('engine', ros.validateString)(properties.engine));
+    errors.collect(ros.propertyValidator('dbInstanceDescription', ros.validateString)(properties.dbInstanceDescription));
+    errors.collect(ros.propertyValidator('tags', ros.hashValidator(ros.validateAny))(properties.tags));
     if(properties.ioAccelerationEnabled && (typeof properties.ioAccelerationEnabled) !== 'object') {
         errors.collect(ros.propertyValidator('ioAccelerationEnabled', ros.validateAllowedValues)({
           data: properties.ioAccelerationEnabled,
@@ -5214,6 +5214,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
           }));
     }
     errors.collect(ros.propertyValidator('masterUserPassword', ros.validateString)(properties.masterUserPassword));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.sslSetting && (typeof properties.sslSetting) !== 'object') {
         errors.collect(ros.propertyValidator('sslSetting', ros.validateAllowedValues)({
           data: properties.sslSetting,
@@ -5221,7 +5222,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('sslSetting', ros.validateString)(properties.sslSetting));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('masterUsername', ros.validateString)(properties.masterUsername));
     errors.collect(ros.propertyValidator('connectionMode', ros.validateString)(properties.connectionMode));
     if(properties.localLogRetentionSpace && (typeof properties.localLogRetentionSpace) !== 'object') {
@@ -5233,8 +5233,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('localLogRetentionSpace', ros.validateNumber)(properties.localLogRetentionSpace));
     errors.collect(ros.propertyValidator('storageUpperBound', ros.validateNumber)(properties.storageUpperBound));
-    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForSlave', ros.validateString)(properties.targetDedicatedHostIdForSlave));
     if(properties.dbInstanceNetType && (typeof properties.dbInstanceNetType) !== 'object') {
         errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateAllowedValues)({
@@ -5243,6 +5243,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('dbInstanceNetType', ros.validateString)(properties.dbInstanceNetType));
+    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     if(properties.releasedKeepPolicy && (typeof properties.releasedKeepPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateAllowedValues)({
           data: properties.releasedKeepPolicy,
@@ -5250,14 +5251,13 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('releasedKeepPolicy', ros.validateString)(properties.releasedKeepPolicy));
-    errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('encryptionKey', ros.validateString)(properties.encryptionKey));
     errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateString))(properties.preferredBackupPeriod));
     if(properties.logBackupLocalRetentionNumber && (typeof properties.logBackupLocalRetentionNumber) !== 'object') {
         errors.collect(ros.propertyValidator('logBackupLocalRetentionNumber', ros.validateRange)({
             data: properties.logBackupLocalRetentionNumber,
-            min: 6,
+            min: -1,
             max: 100,
           }));
     }
@@ -5291,10 +5291,10 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('coldDataEnabled', ros.validateBoolean)(properties.coldDataEnabled));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForLog', ros.validateString)(properties.targetDedicatedHostIdForLog));
-    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('allocatePublicConnection', ros.validateBoolean)(properties.allocatePublicConnection));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     if(properties.quantity && (typeof properties.quantity) !== 'object') {
         errors.collect(ros.propertyValidator('quantity', ros.validateRange)({
             data: properties.quantity,
@@ -5313,7 +5313,6 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
     }
     errors.collect(ros.propertyValidator('backUpCategory', ros.validateString)(properties.backUpCategory));
     errors.collect(ros.propertyValidator('compressType', ros.validateNumber)(properties.compressType));
-    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.connectionStringType && (typeof properties.connectionStringType) !== 'object') {
         errors.collect(ros.propertyValidator('connectionStringType', ros.validateAllowedValues)({
           data: properties.connectionStringType,
@@ -5321,7 +5320,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('connectionStringType', ros.validateString)(properties.connectionStringType));
-    errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
+    errors.collect(ros.propertyValidator('logBackupFrequency', ros.validateString)(properties.logBackupFrequency));
     if(properties.masterUserType && (typeof properties.masterUserType) !== 'object') {
         errors.collect(ros.propertyValidator('masterUserType', ros.validateAllowedValues)({
           data: properties.masterUserType,
@@ -5329,8 +5328,8 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('masterUserType', ros.validateString)(properties.masterUserType));
+    errors.collect(ros.propertyValidator('couponCode', ros.validateString)(properties.couponCode));
     errors.collect(ros.propertyValidator('serverlessConfig', RosPrepayDBInstance_ServerlessConfigPropertyValidator)(properties.serverlessConfig));
-    errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     if(properties.sqlCollectorStatus && (typeof properties.sqlCollectorStatus) !== 'object') {
         errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateAllowedValues)({
           data: properties.sqlCollectorStatus,
@@ -5338,6 +5337,7 @@ function RosPrepayDBInstancePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('sqlCollectorStatus', ros.validateString)(properties.sqlCollectorStatus));
+    errors.collect(ros.propertyValidator('enableBackupLog', ros.validateBoolean)(properties.enableBackupLog));
     errors.collect(ros.propertyValidator('backupRetentionPeriod', ros.validateNumber)(properties.backupRetentionPeriod));
     return errors.wrap('supplied properties not correct for "RosPrepayDBInstanceProps"');
 }
@@ -5433,7 +5433,7 @@ function rosPrepayDBInstancePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PrepayDBInstance`, which is used to create subscription ApsaraDB RDS instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrepayDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-prepaydbinstance
  */
@@ -5760,7 +5760,7 @@ export class RosPrepayDBInstance extends ros.RosResource {
 
     /**
      * @Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance. 
-     * Default value: 60. Valid values: 6 to 100.
+     * Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
      */
     public logBackupLocalRetentionNumber: number | ros.IResolvable | undefined;
 
@@ -6413,6 +6413,9 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
     }
     errors.collect(ros.propertyValidator('periodType', ros.validateString)(properties.periodType));
     errors.collect(ros.propertyValidator('targetDedicatedHostIdForMaster', ros.validateString)(properties.targetDedicatedHostIdForMaster));
+    errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
+    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
     if(properties.category && (typeof properties.category) !== 'object') {
         errors.collect(ros.propertyValidator('category', ros.validateAllowedValues)({
           data: properties.category,
@@ -6420,18 +6423,15 @@ function RosReadOnlyDBInstancePropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
-    errors.collect(ros.propertyValidator('engineVersion', ros.requiredValidator)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
-    errors.collect(ros.propertyValidator('privateIpAddress', ros.validateString)(properties.privateIpAddress));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.requiredValidator)(properties.dbInstanceClass));
     errors.collect(ros.propertyValidator('dbInstanceClass', ros.validateString)(properties.dbInstanceClass));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('dedicatedHostGroupId', ros.validateString)(properties.dedicatedHostGroupId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -6495,7 +6495,7 @@ function rosReadOnlyDBInstancePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ReadOnlyDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */

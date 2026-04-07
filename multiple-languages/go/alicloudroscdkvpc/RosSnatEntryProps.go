@@ -8,6 +8,7 @@ type RosSnatEntryProps struct {
 	SnatIp interface{} `field:"required" json:"snatIp" yaml:"snatIp"`
 	SnatTableId interface{} `field:"required" json:"snatTableId" yaml:"snatTableId"`
 	EipAffinity interface{} `field:"optional" json:"eipAffinity" yaml:"eipAffinity"`
+	NetworkInterfaceId interface{} `field:"optional" json:"networkInterfaceId" yaml:"networkInterfaceId"`
 	SnatEntryName interface{} `field:"optional" json:"snatEntryName" yaml:"snatEntryName"`
 	SourceCidr interface{} `field:"optional" json:"sourceCidr" yaml:"sourceCidr"`
 	SourceVSwitchIds interface{} `field:"optional" json:"sourceVSwitchIds" yaml:"sourceVSwitchIds"`

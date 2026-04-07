@@ -5,12 +5,14 @@ package alicloudroscdknlb
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
 type ListenerProps struct {
-	// Property listenerProtocol: undefined.
+	// Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0.
+	ListenerPort interface{} `field:"required" json:"listenerPort" yaml:"listenerPort"`
+	// Property listenerProtocol: Listening protocol.
+	//
+	// Values: TCP, UDP, or TCPSSL.
 	ListenerProtocol interface{} `field:"required" json:"listenerProtocol" yaml:"listenerProtocol"`
 	// Property loadBalancerId: ID of the LoadBalancer.
 	LoadBalancerId interface{} `field:"required" json:"loadBalancerId" yaml:"loadBalancerId"`
-	// Property serverGroupId: ID of the ServerGroup.
-	ServerGroupId interface{} `field:"required" json:"serverGroupId" yaml:"serverGroupId"`
 	// Property alpnEnabled: undefined.
 	AlpnEnabled interface{} `field:"optional" json:"alpnEnabled" yaml:"alpnEnabled"`
 	// Property alpnPolicy: Proxy of alpn.
@@ -33,8 +35,6 @@ type ListenerProps struct {
 	IdleTimeout interface{} `field:"optional" json:"idleTimeout" yaml:"idleTimeout"`
 	// Property listenerDescription: Description of the listener, [2, 256] characters.
 	ListenerDescription interface{} `field:"optional" json:"listenerDescription" yaml:"listenerDescription"`
-	// Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0.
-	ListenerPort interface{} `field:"optional" json:"listenerPort" yaml:"listenerPort"`
 	// Property mss: Max length of the TCP packet.
 	Mss interface{} `field:"optional" json:"mss" yaml:"mss"`
 	// Property proxyProtocolEnabled: Whether to enable ppv2 function.
@@ -45,6 +45,13 @@ type ListenerProps struct {
 	SecSensorEnabled interface{} `field:"optional" json:"secSensorEnabled" yaml:"secSensorEnabled"`
 	// Property securityPolicyId: Only valid for TcpSSL protocol monitoring.
 	SecurityPolicyId interface{} `field:"optional" json:"securityPolicyId" yaml:"securityPolicyId"`
+	// Property serverGroupId: ID of the ServerGroup.
+	ServerGroupId interface{} `field:"optional" json:"serverGroupId" yaml:"serverGroupId"`
+	// Property serverGroupTuples: Multi-server group list.
+	//
+	// When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+	// When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+	ServerGroupTuples interface{} `field:"optional" json:"serverGroupTuples" yaml:"serverGroupTuples"`
 	// Property startPort: StartPort of the portRange.
 	StartPort interface{} `field:"optional" json:"startPort" yaml:"startPort"`
 	// Property tags: Tags to attach to instance.

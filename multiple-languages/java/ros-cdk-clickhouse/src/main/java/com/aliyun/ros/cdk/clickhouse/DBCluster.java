@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.clickhouse;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ClickHouse::DBCluster</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ClickHouse::DBCluster</code>, which is used to create an ApsaraDB for ClickHouse cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.299Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.584Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.clickhouse.IDBCluster {
 
@@ -718,6 +718,48 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
+         * Property vSwitchBak: The ID of the secondary VSwitch.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchBak Property vSwitchBak: The ID of the secondary VSwitch. This parameter is required.
+         */
+        public Builder vSwitchBak(final java.lang.String vSwitchBak) {
+            this.props.vSwitchBak(vSwitchBak);
+            return this;
+        }
+        /**
+         * Property vSwitchBak: The ID of the secondary VSwitch.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchBak Property vSwitchBak: The ID of the secondary VSwitch. This parameter is required.
+         */
+        public Builder vSwitchBak(final com.aliyun.ros.cdk.core.IResolvable vSwitchBak) {
+            this.props.vSwitchBak(vSwitchBak);
+            return this;
+        }
+
+        /**
+         * Property vSwitchBak2: The ID of the third VSwitch.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchBak2 Property vSwitchBak2: The ID of the third VSwitch. This parameter is required.
+         */
+        public Builder vSwitchBak2(final java.lang.String vSwitchBak2) {
+            this.props.vSwitchBak2(vSwitchBak2);
+            return this;
+        }
+        /**
+         * Property vSwitchBak2: The ID of the third VSwitch.
+         * <p>
+         * @return {@code this}
+         * @param vSwitchBak2 Property vSwitchBak2: The ID of the third VSwitch. This parameter is required.
+         */
+        public Builder vSwitchBak2(final com.aliyun.ros.cdk.core.IResolvable vSwitchBak2) {
+            this.props.vSwitchBak2(vSwitchBak2);
+            return this;
+        }
+
+        /**
          * Property vSwitchId: VSwitchId.
          * <p>
          * @return {@code this}
@@ -739,6 +781,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
+         * Property zondIdBak2: The ID of the third zone.
+         * <p>
+         * @return {@code this}
+         * @param zondIdBak2 Property zondIdBak2: The ID of the third zone. This parameter is required.
+         */
+        public Builder zondIdBak2(final java.lang.String zondIdBak2) {
+            this.props.zondIdBak2(zondIdBak2);
+            return this;
+        }
+        /**
+         * Property zondIdBak2: The ID of the third zone.
+         * <p>
+         * @return {@code this}
+         * @param zondIdBak2 Property zondIdBak2: The ID of the third zone. This parameter is required.
+         */
+        public Builder zondIdBak2(final com.aliyun.ros.cdk.core.IResolvable zondIdBak2) {
+            this.props.zondIdBak2(zondIdBak2);
+            return this;
+        }
+
+        /**
          * Property zoneId: ZoneId.
          * <p>
          * @return {@code this}
@@ -756,6 +819,27 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * Property zoneIdBak: The ID of the secondary zone.
+         * <p>
+         * @return {@code this}
+         * @param zoneIdBak Property zoneIdBak: The ID of the secondary zone. This parameter is required.
+         */
+        public Builder zoneIdBak(final java.lang.String zoneIdBak) {
+            this.props.zoneIdBak(zoneIdBak);
+            return this;
+        }
+        /**
+         * Property zoneIdBak: The ID of the secondary zone.
+         * <p>
+         * @return {@code this}
+         * @param zoneIdBak Property zoneIdBak: The ID of the secondary zone. This parameter is required.
+         */
+        public Builder zoneIdBak(final com.aliyun.ros.cdk.core.IResolvable zoneIdBak) {
+            this.props.zoneIdBak(zoneIdBak);
             return this;
         }
 

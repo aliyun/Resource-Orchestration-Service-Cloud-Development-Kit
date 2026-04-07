@@ -7,5 +7,7 @@ type RosResourceMetricRule_ExpressionListProperty struct {
 	Period interface{} `field:"required" json:"period" yaml:"period"`
 	Statistics interface{} `field:"required" json:"statistics" yaml:"statistics"`
 	Threshold interface{} `field:"required" json:"threshold" yaml:"threshold"`
+	ExpressionRaw interface{} `field:"optional" json:"expressionRaw" yaml:"expressionRaw"`
+	Identity interface{} `field:"optional" json:"identity" yaml:"identity"`
 }
 

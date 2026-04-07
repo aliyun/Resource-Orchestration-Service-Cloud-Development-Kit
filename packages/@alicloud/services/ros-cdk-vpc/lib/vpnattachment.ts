@@ -10,11 +10,6 @@ export { RosVpnAttachment as VpnAttachmentProperty };
 export interface VpnAttachmentProps {
 
     /**
-     * Property customerGatewayId: The ID of the user gateway.
-     */
-    readonly customerGatewayId: string | ros.IResolvable;
-
-    /**
      * Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.
      * Multiple network segments are separated by commas, for example: 192.168.1.0\/24, 192.168.2.0\/24.
      */
@@ -43,6 +38,11 @@ export interface VpnAttachmentProps {
     readonly bgpConfig?: RosVpnAttachment.BgpConfigProperty | ros.IResolvable;
 
     /**
+     * Property customerGatewayId: The ID of the user gateway.
+     */
+    readonly customerGatewayId?: string | ros.IResolvable;
+
+    /**
      * Property effectImmediately: Whether to delete the currently negotiated IPsec tunnel and re-initiate the negotiation. Value:
      * True: Negotiate immediately after the configuration is complete.
      * False (default): Negotiate when traffic enters.
@@ -62,6 +62,13 @@ export interface VpnAttachmentProps {
      * false
      */
     readonly enableNatTraversal?: boolean | ros.IResolvable;
+
+    /**
+     * Property enableTunnelsBgp: Support configuring this parameter when creating dual-tunnel mode IPsec-VPN connections.
+     * Whether to enable BGP function for the tunnel. Values: **true** or **false** (default value).
+     * > Before adding BGP configuration, it is recommended that you first understand the working mechanism and usage limitations of the BGP dynamic routing function. For more information, please see Configuring BGP Dynamic Routing.
+     */
+    readonly enableTunnelsBgp?: boolean | ros.IResolvable;
 
     /**
      * Property healthCheckConfig: Whether to enable the health check configuration.
@@ -95,6 +102,27 @@ export interface VpnAttachmentProps {
      * You can ignore this parameter when a standard VPN gateway is used to create the IPsec-VPN connection.
      */
     readonly remoteCaCert?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The resource group ID to which the IPsec connection belongs.
+     * - You can call the ListResourceGroups interface to query the resource group ID.
+     * - If you do not specify a resource group ID, the IPsec connection will belong to the default resource group after creation.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property tunnelBandwidth: Used to indicate the bandwidth specification of a single VPN tunnel, values:
+     * Standard (default value): Standard type, default bandwidth 1Gbps
+     * Large: Large type, default bandwidth 3Gbps
+     */
+    readonly tunnelBandwidth?: string | ros.IResolvable;
+
+    /**
+     * Property tunnelOptionsSpecification: Configuration of tunnels.
+     * - When creating dual-tunnel mode IPsec-VPN connections, you can configure parameters under **TunnelOptionsSpecification** array.
+     * - When creating dual-tunnel mode IPsec-VPN connections, you must add two tunnels for the IPsec-VPN connection simultaneously to ensure the IPsec-VPN connection has link redundancy capability. Only two tunnels are supported under an IPsec-VPN connection.
+     */
+    readonly tunnelOptionsSpecification?: Array<RosVpnAttachment.TunnelOptionsSpecificationProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -119,7 +147,7 @@ export interface IVpnAttachment extends ros.IResource {
     readonly attrVpnAttachmentId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnAttachment`, which is used to create an IPsec-VPN connection. After you create the IPsec-VPN connection, you can associate the IPsec-VPN connection with a transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnattachment
  */
@@ -159,14 +187,18 @@ export class VpnAttachment extends ros.Resource implements IVpnAttachment {
         const rosVpnAttachment = new RosVpnAttachment(this, id,  {
             localSubnet: props.localSubnet,
             customerGatewayId: props.customerGatewayId,
+            resourceGroupId: props.resourceGroupId,
+            enableTunnelsBgp: props.enableTunnelsBgp,
             autoConfigRoute: props.autoConfigRoute,
             name: props.name,
             effectImmediately: props.effectImmediately === undefined || props.effectImmediately === null ? false : props.effectImmediately,
             bgpConfig: props.bgpConfig,
+            tunnelOptionsSpecification: props.tunnelOptionsSpecification,
             remoteSubnet: props.remoteSubnet,
+            tunnelBandwidth: props.tunnelBandwidth,
             remoteCaCert: props.remoteCaCert,
-            ipsecConfig: props.ipsecConfig,
             networkType: props.networkType,
+            ipsecConfig: props.ipsecConfig,
             healthCheckConfig: props.healthCheckConfig,
             enableNatTraversal: props.enableNatTraversal,
             ikeConfig: props.ikeConfig,

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.734Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.089Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosContactGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosContactGroupProps.Jsii$Proxy.class)
 public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,6 +23,12 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getDescribe();
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSubscribed() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosContactGroupProps}
      */
     static Builder builder() {
@@ -35,6 +41,7 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
         java.lang.Object contactGroupName;
         java.lang.Object contactNames;
         java.lang.Object describe;
+        java.lang.Object enableSubscribed;
 
         /**
          * Sets the value of {@link RosContactGroupProps#getContactGroupName}
@@ -97,6 +104,26 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         /**
+         * Sets the value of {@link RosContactGroupProps#getEnableSubscribed}
+         * @param enableSubscribed the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableSubscribed(java.lang.Boolean enableSubscribed) {
+            this.enableSubscribed = enableSubscribed;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosContactGroupProps#getEnableSubscribed}
+         * @param enableSubscribed the value to be set.
+         * @return {@code this}
+         */
+        public Builder enableSubscribed(com.aliyun.ros.cdk.core.IResolvable enableSubscribed) {
+            this.enableSubscribed = enableSubscribed;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosContactGroupProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -115,6 +142,7 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
         private final java.lang.Object contactGroupName;
         private final java.lang.Object contactNames;
         private final java.lang.Object describe;
+        private final java.lang.Object enableSubscribed;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -125,6 +153,7 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
             this.contactGroupName = software.amazon.jsii.Kernel.get(this, "contactGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.contactNames = software.amazon.jsii.Kernel.get(this, "contactNames", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.describe = software.amazon.jsii.Kernel.get(this, "describe", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.enableSubscribed = software.amazon.jsii.Kernel.get(this, "enableSubscribed", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -135,6 +164,7 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
             this.contactGroupName = java.util.Objects.requireNonNull(builder.contactGroupName, "contactGroupName is required");
             this.contactNames = java.util.Objects.requireNonNull(builder.contactNames, "contactNames is required");
             this.describe = java.util.Objects.requireNonNull(builder.describe, "describe is required");
+            this.enableSubscribed = builder.enableSubscribed;
         }
 
         @Override
@@ -153,6 +183,11 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
         }
 
         @Override
+        public final java.lang.Object getEnableSubscribed() {
+            return this.enableSubscribed;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -161,6 +196,9 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
             data.set("contactGroupName", om.valueToTree(this.getContactGroupName()));
             data.set("contactNames", om.valueToTree(this.getContactNames()));
             data.set("describe", om.valueToTree(this.getDescribe()));
+            if (this.getEnableSubscribed() != null) {
+                data.set("enableSubscribed", om.valueToTree(this.getEnableSubscribed()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-cms.RosContactGroupProps"));
@@ -181,7 +219,8 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
 
             if (!contactGroupName.equals(that.contactGroupName)) return false;
             if (!contactNames.equals(that.contactNames)) return false;
-            return this.describe.equals(that.describe);
+            if (!describe.equals(that.describe)) return false;
+            return this.enableSubscribed != null ? this.enableSubscribed.equals(that.enableSubscribed) : that.enableSubscribed == null;
         }
 
         @Override
@@ -189,6 +228,7 @@ public interface RosContactGroupProps extends software.amazon.jsii.JsiiSerializa
             int result = this.contactGroupName.hashCode();
             result = 31 * result + (this.contactNames.hashCode());
             result = 31 * result + (this.describe.hashCode());
+            result = 31 * result + (this.enableSubscribed != null ? this.enableSubscribed.hashCode() : 0);
             return result;
         }
     }

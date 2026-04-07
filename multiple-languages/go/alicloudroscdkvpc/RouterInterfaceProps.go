@@ -22,10 +22,18 @@ type RouterInterfaceProps struct {
 	// true: Automatic payment is enabled. The payment is automatically made.
 	// Default: true.
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
+	// Property autoRenew: Specifies whether auto-renewal is enabled.
+	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	// Property description: Custom description of the RouterInterface, [2, 256] characters.
 	//
 	// Don't fill or empty, the default is empty.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode.
+	//
+	// Fast link mode allows the router interfaces between VBR and VPC ends to be automatically connected after they are created.
+	// This parameter is valid only when the value of **RouterType** is **VBR** and the value of **OppositeRouterType** is **VRouter**.
+	// - When the value of the **FastLinkMode** parameter is **true**, the value of the **Role** parameter must be **InitiatingSide**, and the **AccessPointId**, **OppositeRouterType**, **OppsiteRouterId**, and **OppositeInterfaceOwnerId** parameters are required.
+	FastLinkMode interface{} `field:"optional" json:"fastLinkMode" yaml:"fastLinkMode"`
 	// Property healthCheckSourceIp: Source IP address of the packet for leased line HealthCheck in leased line disaster tolerance and ECMP scenarios.
 	//
 	// It is valid only for a VRouter RouterInterface with a peer on a VBR. The source IP address must be in the VPC of the local VRouter and is not used. HealthCheckSourceIp and HealthCheckTargetIp parameters must be both specified or left unspecified.
@@ -68,6 +76,8 @@ type RouterInterfaceProps struct {
 	//
 	// It could be Month (default) or Year.
 	PricingCycle interface{} `field:"optional" json:"pricingCycle" yaml:"pricingCycle"`
+	// Property resourceGroupId: The ID of the resource group.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property routerType: Router type.
 	//
 	// Now support 'VRouter|VBR'.

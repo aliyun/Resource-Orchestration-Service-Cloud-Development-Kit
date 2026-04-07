@@ -80,6 +80,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get;
         }
 
+        /// <summary>Property backupId: Backup set ID.</summary>
+        /// <remarks>
+        /// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+        /// </remarks>
+        [JsiiProperty(name: "backupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BackupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.</summary>
         /// <remarks>
         /// This parameter must be passed in to create a storage reservation mode instance.
@@ -237,6 +251,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
+        /// <summary>Property srcDbInstanceName: Clone source instance ID.</summary>
+        /// <remarks>
+        /// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+        /// </remarks>
+        [JsiiProperty(name: "srcDbInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? SrcDbInstanceName
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property tags: The list of instance tags in the form of key\/value pairs.</summary>
         /// <remarks>
         /// You can define a maximum of 20 tags for instance.
@@ -345,6 +373,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             public object ZoneId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property backupId: Backup set ID.</summary>
+            /// <remarks>
+            /// You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "backupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BackupId
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.</summary>
@@ -467,6 +506,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityIpList
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property srcDbInstanceName: Clone source instance ID.</summary>
+            /// <remarks>
+            /// You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "srcDbInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? SrcDbInstanceName
             {
                 get => GetInstanceProperty<object?>();
             }

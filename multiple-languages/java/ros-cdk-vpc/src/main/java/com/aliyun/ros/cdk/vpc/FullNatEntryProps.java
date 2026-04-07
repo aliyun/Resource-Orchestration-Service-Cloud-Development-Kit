@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-fullnatentry
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.904Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.823Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.FullNatEntryProps")
 @software.amazon.jsii.Jsii.Proxy(FullNatEntryProps.Jsii$Proxy.class)
 public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,6 +54,13 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
+     * Property accessDomain: The domain name of the backend for FULLNAT address translation.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAccessDomain() {
+        return null;
+    }
+
+    /**
      * Property fullNatEntryDescription: The description of the FULLNAT entry.
      * <p>
      * This parameter is optional. If you enter a description, the description must be 2 to 256 characters in length, and cannot start with http:// or https://.
@@ -88,6 +95,7 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object natIp;
         java.lang.Object natIpPort;
         java.lang.Object networkInterfaceId;
+        java.lang.Object accessDomain;
         java.lang.Object fullNatEntryDescription;
         java.lang.Object fullNatEntryName;
 
@@ -242,6 +250,26 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link FullNatEntryProps#getAccessDomain}
+         * @param accessDomain Property accessDomain: The domain name of the backend for FULLNAT address translation.
+         * @return {@code this}
+         */
+        public Builder accessDomain(java.lang.String accessDomain) {
+            this.accessDomain = accessDomain;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link FullNatEntryProps#getAccessDomain}
+         * @param accessDomain Property accessDomain: The domain name of the backend for FULLNAT address translation.
+         * @return {@code this}
+         */
+        public Builder accessDomain(com.aliyun.ros.cdk.core.IResolvable accessDomain) {
+            this.accessDomain = accessDomain;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link FullNatEntryProps#getFullNatEntryDescription}
          * @param fullNatEntryDescription Property fullNatEntryDescription: The description of the FULLNAT entry.
          *                                This parameter is optional. If you enter a description, the description must be 2 to 256 characters in length, and cannot start with http:// or https://.
@@ -308,6 +336,7 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object natIp;
         private final java.lang.Object natIpPort;
         private final java.lang.Object networkInterfaceId;
+        private final java.lang.Object accessDomain;
         private final java.lang.Object fullNatEntryDescription;
         private final java.lang.Object fullNatEntryName;
 
@@ -324,6 +353,7 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
             this.natIp = software.amazon.jsii.Kernel.get(this, "natIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natIpPort = software.amazon.jsii.Kernel.get(this, "natIpPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkInterfaceId = software.amazon.jsii.Kernel.get(this, "networkInterfaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.accessDomain = software.amazon.jsii.Kernel.get(this, "accessDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fullNatEntryDescription = software.amazon.jsii.Kernel.get(this, "fullNatEntryDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.fullNatEntryName = software.amazon.jsii.Kernel.get(this, "fullNatEntryName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -340,6 +370,7 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
             this.natIp = java.util.Objects.requireNonNull(builder.natIp, "natIp is required");
             this.natIpPort = java.util.Objects.requireNonNull(builder.natIpPort, "natIpPort is required");
             this.networkInterfaceId = java.util.Objects.requireNonNull(builder.networkInterfaceId, "networkInterfaceId is required");
+            this.accessDomain = builder.accessDomain;
             this.fullNatEntryDescription = builder.fullNatEntryDescription;
             this.fullNatEntryName = builder.fullNatEntryName;
         }
@@ -380,6 +411,11 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getAccessDomain() {
+            return this.accessDomain;
+        }
+
+        @Override
         public final java.lang.Object getFullNatEntryDescription() {
             return this.fullNatEntryDescription;
         }
@@ -402,6 +438,9 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
             data.set("natIp", om.valueToTree(this.getNatIp()));
             data.set("natIpPort", om.valueToTree(this.getNatIpPort()));
             data.set("networkInterfaceId", om.valueToTree(this.getNetworkInterfaceId()));
+            if (this.getAccessDomain() != null) {
+                data.set("accessDomain", om.valueToTree(this.getAccessDomain()));
+            }
             if (this.getFullNatEntryDescription() != null) {
                 data.set("fullNatEntryDescription", om.valueToTree(this.getFullNatEntryDescription()));
             }
@@ -433,6 +472,7 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
             if (!natIp.equals(that.natIp)) return false;
             if (!natIpPort.equals(that.natIpPort)) return false;
             if (!networkInterfaceId.equals(that.networkInterfaceId)) return false;
+            if (this.accessDomain != null ? !this.accessDomain.equals(that.accessDomain) : that.accessDomain != null) return false;
             if (this.fullNatEntryDescription != null ? !this.fullNatEntryDescription.equals(that.fullNatEntryDescription) : that.fullNatEntryDescription != null) return false;
             return this.fullNatEntryName != null ? this.fullNatEntryName.equals(that.fullNatEntryName) : that.fullNatEntryName == null;
         }
@@ -446,6 +486,7 @@ public interface FullNatEntryProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.natIp.hashCode());
             result = 31 * result + (this.natIpPort.hashCode());
             result = 31 * result + (this.networkInterfaceId.hashCode());
+            result = 31 * result + (this.accessDomain != null ? this.accessDomain.hashCode() : 0);
             result = 31 * result + (this.fullNatEntryDescription != null ? this.fullNatEntryDescription.hashCode() : 0);
             result = 31 * result + (this.fullNatEntryName != null ? this.fullNatEntryName.hashCode() : 0);
             return result;

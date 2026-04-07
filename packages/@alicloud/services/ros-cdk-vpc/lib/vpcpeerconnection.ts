@@ -42,6 +42,13 @@ export interface VpcPeerConnectionProps {
     readonly acceptingRegionId?: string | ros.IResolvable;
 
     /**
+     * Property bandwidth: The bandwidth of the VPC peering connection.
+     * 
+     * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
      * Property deletionForce: Specifies whether to forcefully delete the VPC peering connection. Valid values:false (default): notrue: yes If you forcefully delete the VPC peering connection, the system deletes the routes that point to the VPC peering connection from the VPC route table.
      */
     readonly deletionForce?: boolean | ros.IResolvable;
@@ -54,11 +61,26 @@ export interface VpcPeerConnectionProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * Property linkType: The link type.
+     * 
+     * Valid values: Platinum, Gold.
+     * If you specify this parameter, make sure that you are creating an inter-region VPC peering connection.
+     */
+    readonly linkType?: string | ros.IResolvable;
+
+    /**
      * Property name: The name of the VPC peering connection.
      * The name must be 2 to 128 characters in length and can contain digits, underscores
      * (_), and hyphens (-). It must start with a letter.
      */
     readonly name?: string | ros.IResolvable;
+
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     * 
+     * For more information about resource groups, see [What is Resource Group](~~94475~~).
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
 }
 
 /**
@@ -73,7 +95,7 @@ export interface IVpcPeerConnection extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcPeerConnection`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpcPeerConnection`, which is used to create a peering connection between virtual private clouds (VPCs).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcPeerConnection`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
@@ -101,12 +123,15 @@ export class VpcPeerConnection extends ros.Resource implements IVpcPeerConnectio
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosVpcPeerConnection = new RosVpcPeerConnection(this, id,  {
+            acceptingVpcId: props.acceptingVpcId,
             description: props.description,
             deletionForce: props.deletionForce,
-            acceptingVpcId: props.acceptingVpcId,
             vpcId: props.vpcId,
+            resourceGroupId: props.resourceGroupId,
             acceptingRegionId: props.acceptingRegionId,
+            bandwidth: props.bandwidth,
             acceptingAliUid: props.acceptingAliUid,
+            linkType: props.linkType,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosVpcPeerConnection;

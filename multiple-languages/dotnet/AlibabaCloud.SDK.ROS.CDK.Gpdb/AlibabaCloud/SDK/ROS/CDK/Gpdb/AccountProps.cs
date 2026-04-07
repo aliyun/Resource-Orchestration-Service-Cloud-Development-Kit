@@ -149,5 +149,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 _accountDescription = value;
             }
         }
+
+        private object? _accountType;
+
+        /// <summary>Property accountType: Default value is Super, which creates a privileged account.</summary>
+        /// <remarks>
+        /// When the parameter is Normal, it creates a normal account.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "accountType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? AccountType
+        {
+            get => _accountType;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _accountType = value;
+            }
+        }
     }
 }

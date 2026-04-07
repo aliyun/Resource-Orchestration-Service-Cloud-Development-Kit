@@ -116,7 +116,7 @@ export interface IDataset extends ros.IResource {
     readonly attrWorkspaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Dataset`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Dataset`, which is used to query a dataset.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataset`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-dataset
  */
@@ -220,8 +220,8 @@ export class Dataset extends ros.Resource implements IDataset {
 
         const rosDataset = new RosDataset(this, id,  {
             workspaceId: props.workspaceId,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             datasetId: props.datasetId,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDataset;
         this.attrAccessibility = rosDataset.attrAccessibility;

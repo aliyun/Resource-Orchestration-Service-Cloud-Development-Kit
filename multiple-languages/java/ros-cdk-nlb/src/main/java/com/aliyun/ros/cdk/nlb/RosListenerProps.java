@@ -5,10 +5,14 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.435Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.086Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListenerProps")
 @software.amazon.jsii.Jsii.Proxy(RosListenerProps.Jsii$Proxy.class)
 public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort();
 
     /**
      */
@@ -17,10 +21,6 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getServerGroupId();
 
     /**
      */
@@ -84,12 +84,6 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
-    default @org.jetbrains.annotations.Nullable java.lang.Object getListenerPort() {
-        return null;
-    }
-
-    /**
-     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMss() {
         return null;
     }
@@ -120,6 +114,18 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServerGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServerGroupTuples() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStartPort() {
         return null;
     }
@@ -140,9 +146,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
      * A builder for {@link RosListenerProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosListenerProps> {
+        java.lang.Object listenerPort;
         java.lang.Object listenerProtocol;
         java.lang.Object loadBalancerId;
-        java.lang.Object serverGroupId;
         java.lang.Object alpnEnabled;
         java.lang.Object alpnPolicy;
         java.lang.Object caCertificateIds;
@@ -153,14 +159,35 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         java.lang.Object endPort;
         java.lang.Object idleTimeout;
         java.lang.Object listenerDescription;
-        java.lang.Object listenerPort;
         java.lang.Object mss;
         java.lang.Object proxyProtocolEnabled;
         java.lang.Object proxyProtocolV2Config;
         java.lang.Object secSensorEnabled;
         java.lang.Object securityPolicyId;
+        java.lang.Object serverGroupId;
+        java.lang.Object serverGroupTuples;
         java.lang.Object startPort;
         java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> tags;
+
+        /**
+         * Sets the value of {@link RosListenerProps#getListenerPort}
+         * @param listenerPort the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder listenerPort(java.lang.Number listenerPort) {
+            this.listenerPort = listenerPort;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getListenerPort}
+         * @param listenerPort the value to be set. This parameter is required.
+         * @return {@code this}
+         */
+        public Builder listenerPort(com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.listenerPort = listenerPort;
+            return this;
+        }
 
         /**
          * Sets the value of {@link RosListenerProps#getListenerProtocol}
@@ -199,26 +226,6 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          */
         public Builder loadBalancerId(com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
             this.loadBalancerId = loadBalancerId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosListenerProps#getServerGroupId}
-         * @param serverGroupId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder serverGroupId(java.lang.String serverGroupId) {
-            this.serverGroupId = serverGroupId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosListenerProps#getServerGroupId}
-         * @param serverGroupId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder serverGroupId(com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
-            this.serverGroupId = serverGroupId;
             return this;
         }
 
@@ -423,26 +430,6 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
-         * Sets the value of {@link RosListenerProps#getListenerPort}
-         * @param listenerPort the value to be set.
-         * @return {@code this}
-         */
-        public Builder listenerPort(java.lang.Number listenerPort) {
-            this.listenerPort = listenerPort;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosListenerProps#getListenerPort}
-         * @param listenerPort the value to be set.
-         * @return {@code this}
-         */
-        public Builder listenerPort(com.aliyun.ros.cdk.core.IResolvable listenerPort) {
-            this.listenerPort = listenerPort;
-            return this;
-        }
-
-        /**
          * Sets the value of {@link RosListenerProps#getMss}
          * @param mss the value to be set.
          * @return {@code this}
@@ -543,6 +530,46 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         /**
+         * Sets the value of {@link RosListenerProps#getServerGroupId}
+         * @param serverGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverGroupId(java.lang.String serverGroupId) {
+            this.serverGroupId = serverGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getServerGroupId}
+         * @param serverGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverGroupId(com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
+            this.serverGroupId = serverGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getServerGroupTuples}
+         * @param serverGroupTuples the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverGroupTuples(com.aliyun.ros.cdk.core.IResolvable serverGroupTuples) {
+            this.serverGroupTuples = serverGroupTuples;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosListenerProps#getServerGroupTuples}
+         * @param serverGroupTuples the value to be set.
+         * @return {@code this}
+         */
+        public Builder serverGroupTuples(java.util.List<? extends java.lang.Object> serverGroupTuples) {
+            this.serverGroupTuples = serverGroupTuples;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosListenerProps#getStartPort}
          * @param startPort the value to be set.
          * @return {@code this}
@@ -589,9 +616,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosListenerProps {
+        private final java.lang.Object listenerPort;
         private final java.lang.Object listenerProtocol;
         private final java.lang.Object loadBalancerId;
-        private final java.lang.Object serverGroupId;
         private final java.lang.Object alpnEnabled;
         private final java.lang.Object alpnPolicy;
         private final java.lang.Object caCertificateIds;
@@ -602,12 +629,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         private final java.lang.Object endPort;
         private final java.lang.Object idleTimeout;
         private final java.lang.Object listenerDescription;
-        private final java.lang.Object listenerPort;
         private final java.lang.Object mss;
         private final java.lang.Object proxyProtocolEnabled;
         private final java.lang.Object proxyProtocolV2Config;
         private final java.lang.Object secSensorEnabled;
         private final java.lang.Object securityPolicyId;
+        private final java.lang.Object serverGroupId;
+        private final java.lang.Object serverGroupTuples;
         private final java.lang.Object startPort;
         private final java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty> tags;
 
@@ -617,9 +645,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerProtocol = software.amazon.jsii.Kernel.get(this, "listenerProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.loadBalancerId = software.amazon.jsii.Kernel.get(this, "loadBalancerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.serverGroupId = software.amazon.jsii.Kernel.get(this, "serverGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.alpnEnabled = software.amazon.jsii.Kernel.get(this, "alpnEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.alpnPolicy = software.amazon.jsii.Kernel.get(this, "alpnPolicy", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.caCertificateIds = software.amazon.jsii.Kernel.get(this, "caCertificateIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -630,12 +658,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.endPort = software.amazon.jsii.Kernel.get(this, "endPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.idleTimeout = software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.listenerDescription = software.amazon.jsii.Kernel.get(this, "listenerDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.listenerPort = software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.mss = software.amazon.jsii.Kernel.get(this, "mss", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyProtocolEnabled = software.amazon.jsii.Kernel.get(this, "proxyProtocolEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.proxyProtocolV2Config = software.amazon.jsii.Kernel.get(this, "proxyProtocolV2Config", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.secSensorEnabled = software.amazon.jsii.Kernel.get(this, "secSensorEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.securityPolicyId = software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverGroupId = software.amazon.jsii.Kernel.get(this, "serverGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serverGroupTuples = software.amazon.jsii.Kernel.get(this, "serverGroupTuples", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.startPort = software.amazon.jsii.Kernel.get(this, "startPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.nlb.RosListener.TagsProperty.class)));
         }
@@ -646,9 +675,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         @SuppressWarnings("unchecked")
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.listenerPort = java.util.Objects.requireNonNull(builder.listenerPort, "listenerPort is required");
             this.listenerProtocol = java.util.Objects.requireNonNull(builder.listenerProtocol, "listenerProtocol is required");
             this.loadBalancerId = java.util.Objects.requireNonNull(builder.loadBalancerId, "loadBalancerId is required");
-            this.serverGroupId = java.util.Objects.requireNonNull(builder.serverGroupId, "serverGroupId is required");
             this.alpnEnabled = builder.alpnEnabled;
             this.alpnPolicy = builder.alpnPolicy;
             this.caCertificateIds = builder.caCertificateIds;
@@ -659,14 +688,20 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             this.endPort = builder.endPort;
             this.idleTimeout = builder.idleTimeout;
             this.listenerDescription = builder.listenerDescription;
-            this.listenerPort = builder.listenerPort;
             this.mss = builder.mss;
             this.proxyProtocolEnabled = builder.proxyProtocolEnabled;
             this.proxyProtocolV2Config = builder.proxyProtocolV2Config;
             this.secSensorEnabled = builder.secSensorEnabled;
             this.securityPolicyId = builder.securityPolicyId;
+            this.serverGroupId = builder.serverGroupId;
+            this.serverGroupTuples = builder.serverGroupTuples;
             this.startPort = builder.startPort;
             this.tags = (java.util.List<com.aliyun.ros.cdk.nlb.RosListener.TagsProperty>)builder.tags;
+        }
+
+        @Override
+        public final java.lang.Object getListenerPort() {
+            return this.listenerPort;
         }
 
         @Override
@@ -677,11 +712,6 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         @Override
         public final java.lang.Object getLoadBalancerId() {
             return this.loadBalancerId;
-        }
-
-        @Override
-        public final java.lang.Object getServerGroupId() {
-            return this.serverGroupId;
         }
 
         @Override
@@ -735,11 +765,6 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
-        public final java.lang.Object getListenerPort() {
-            return this.listenerPort;
-        }
-
-        @Override
         public final java.lang.Object getMss() {
             return this.mss;
         }
@@ -765,6 +790,16 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
         }
 
         @Override
+        public final java.lang.Object getServerGroupId() {
+            return this.serverGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getServerGroupTuples() {
+            return this.serverGroupTuples;
+        }
+
+        @Override
         public final java.lang.Object getStartPort() {
             return this.startPort;
         }
@@ -780,9 +815,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            data.set("listenerPort", om.valueToTree(this.getListenerPort()));
             data.set("listenerProtocol", om.valueToTree(this.getListenerProtocol()));
             data.set("loadBalancerId", om.valueToTree(this.getLoadBalancerId()));
-            data.set("serverGroupId", om.valueToTree(this.getServerGroupId()));
             if (this.getAlpnEnabled() != null) {
                 data.set("alpnEnabled", om.valueToTree(this.getAlpnEnabled()));
             }
@@ -813,9 +848,6 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.getListenerDescription() != null) {
                 data.set("listenerDescription", om.valueToTree(this.getListenerDescription()));
             }
-            if (this.getListenerPort() != null) {
-                data.set("listenerPort", om.valueToTree(this.getListenerPort()));
-            }
             if (this.getMss() != null) {
                 data.set("mss", om.valueToTree(this.getMss()));
             }
@@ -830,6 +862,12 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             }
             if (this.getSecurityPolicyId() != null) {
                 data.set("securityPolicyId", om.valueToTree(this.getSecurityPolicyId()));
+            }
+            if (this.getServerGroupId() != null) {
+                data.set("serverGroupId", om.valueToTree(this.getServerGroupId()));
+            }
+            if (this.getServerGroupTuples() != null) {
+                data.set("serverGroupTuples", om.valueToTree(this.getServerGroupTuples()));
             }
             if (this.getStartPort() != null) {
                 data.set("startPort", om.valueToTree(this.getStartPort()));
@@ -855,9 +893,9 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
 
             RosListenerProps.Jsii$Proxy that = (RosListenerProps.Jsii$Proxy) o;
 
+            if (!listenerPort.equals(that.listenerPort)) return false;
             if (!listenerProtocol.equals(that.listenerProtocol)) return false;
             if (!loadBalancerId.equals(that.loadBalancerId)) return false;
-            if (!serverGroupId.equals(that.serverGroupId)) return false;
             if (this.alpnEnabled != null ? !this.alpnEnabled.equals(that.alpnEnabled) : that.alpnEnabled != null) return false;
             if (this.alpnPolicy != null ? !this.alpnPolicy.equals(that.alpnPolicy) : that.alpnPolicy != null) return false;
             if (this.caCertificateIds != null ? !this.caCertificateIds.equals(that.caCertificateIds) : that.caCertificateIds != null) return false;
@@ -868,21 +906,22 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             if (this.endPort != null ? !this.endPort.equals(that.endPort) : that.endPort != null) return false;
             if (this.idleTimeout != null ? !this.idleTimeout.equals(that.idleTimeout) : that.idleTimeout != null) return false;
             if (this.listenerDescription != null ? !this.listenerDescription.equals(that.listenerDescription) : that.listenerDescription != null) return false;
-            if (this.listenerPort != null ? !this.listenerPort.equals(that.listenerPort) : that.listenerPort != null) return false;
             if (this.mss != null ? !this.mss.equals(that.mss) : that.mss != null) return false;
             if (this.proxyProtocolEnabled != null ? !this.proxyProtocolEnabled.equals(that.proxyProtocolEnabled) : that.proxyProtocolEnabled != null) return false;
             if (this.proxyProtocolV2Config != null ? !this.proxyProtocolV2Config.equals(that.proxyProtocolV2Config) : that.proxyProtocolV2Config != null) return false;
             if (this.secSensorEnabled != null ? !this.secSensorEnabled.equals(that.secSensorEnabled) : that.secSensorEnabled != null) return false;
             if (this.securityPolicyId != null ? !this.securityPolicyId.equals(that.securityPolicyId) : that.securityPolicyId != null) return false;
+            if (this.serverGroupId != null ? !this.serverGroupId.equals(that.serverGroupId) : that.serverGroupId != null) return false;
+            if (this.serverGroupTuples != null ? !this.serverGroupTuples.equals(that.serverGroupTuples) : that.serverGroupTuples != null) return false;
             if (this.startPort != null ? !this.startPort.equals(that.startPort) : that.startPort != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
         }
 
         @Override
         public final int hashCode() {
-            int result = this.listenerProtocol.hashCode();
+            int result = this.listenerPort.hashCode();
+            result = 31 * result + (this.listenerProtocol.hashCode());
             result = 31 * result + (this.loadBalancerId.hashCode());
-            result = 31 * result + (this.serverGroupId.hashCode());
             result = 31 * result + (this.alpnEnabled != null ? this.alpnEnabled.hashCode() : 0);
             result = 31 * result + (this.alpnPolicy != null ? this.alpnPolicy.hashCode() : 0);
             result = 31 * result + (this.caCertificateIds != null ? this.caCertificateIds.hashCode() : 0);
@@ -893,12 +932,13 @@ public interface RosListenerProps extends software.amazon.jsii.JsiiSerializable 
             result = 31 * result + (this.endPort != null ? this.endPort.hashCode() : 0);
             result = 31 * result + (this.idleTimeout != null ? this.idleTimeout.hashCode() : 0);
             result = 31 * result + (this.listenerDescription != null ? this.listenerDescription.hashCode() : 0);
-            result = 31 * result + (this.listenerPort != null ? this.listenerPort.hashCode() : 0);
             result = 31 * result + (this.mss != null ? this.mss.hashCode() : 0);
             result = 31 * result + (this.proxyProtocolEnabled != null ? this.proxyProtocolEnabled.hashCode() : 0);
             result = 31 * result + (this.proxyProtocolV2Config != null ? this.proxyProtocolV2Config.hashCode() : 0);
             result = 31 * result + (this.secSensorEnabled != null ? this.secSensorEnabled.hashCode() : 0);
             result = 31 * result + (this.securityPolicyId != null ? this.securityPolicyId.hashCode() : 0);
+            result = 31 * result + (this.serverGroupId != null ? this.serverGroupId.hashCode() : 0);
+            result = 31 * result + (this.serverGroupTuples != null ? this.serverGroupTuples.hashCode() : 0);
             result = 31 * result + (this.startPort != null ? this.startPort.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             return result;

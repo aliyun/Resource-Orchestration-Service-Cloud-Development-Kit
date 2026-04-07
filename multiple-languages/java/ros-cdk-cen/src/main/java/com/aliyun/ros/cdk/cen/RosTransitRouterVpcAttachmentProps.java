@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.217Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.464Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterVpcAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosTransitRouterVpcAttachmentProps.Jsii$Proxy.class)
 public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,6 +21,12 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoCreateVpcRoute() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPublishRouteEnabled() {
         return null;
     }
 
@@ -74,6 +80,12 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterVpcAttachmentOptions() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcOwnerId() {
         return null;
     }
@@ -91,6 +103,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
         java.lang.Object vpcId;
         java.lang.Object zoneMappings;
         java.lang.Object autoCreateVpcRoute;
+        java.lang.Object autoPublishRouteEnabled;
         java.lang.Object cenId;
         java.lang.Object chargeType;
         java.lang.Object deletionForce;
@@ -99,6 +112,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
         java.lang.Object transitRouterAttachmentDescription;
         java.lang.Object transitRouterAttachmentName;
         java.lang.Object transitRouterId;
+        java.lang.Object transitRouterVpcAttachmentOptions;
         java.lang.Object vpcOwnerId;
 
         /**
@@ -158,6 +172,26 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
          */
         public Builder autoCreateVpcRoute(com.aliyun.ros.cdk.core.IResolvable autoCreateVpcRoute) {
             this.autoCreateVpcRoute = autoCreateVpcRoute;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTransitRouterVpcAttachmentProps#getAutoPublishRouteEnabled}
+         * @param autoPublishRouteEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoPublishRouteEnabled(java.lang.Boolean autoPublishRouteEnabled) {
+            this.autoPublishRouteEnabled = autoPublishRouteEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTransitRouterVpcAttachmentProps#getAutoPublishRouteEnabled}
+         * @param autoPublishRouteEnabled the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoPublishRouteEnabled(com.aliyun.ros.cdk.core.IResolvable autoPublishRouteEnabled) {
+            this.autoPublishRouteEnabled = autoPublishRouteEnabled;
             return this;
         }
 
@@ -322,6 +356,26 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
         }
 
         /**
+         * Sets the value of {@link RosTransitRouterVpcAttachmentProps#getTransitRouterVpcAttachmentOptions}
+         * @param transitRouterVpcAttachmentOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder transitRouterVpcAttachmentOptions(com.aliyun.ros.cdk.core.IResolvable transitRouterVpcAttachmentOptions) {
+            this.transitRouterVpcAttachmentOptions = transitRouterVpcAttachmentOptions;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosTransitRouterVpcAttachmentProps#getTransitRouterVpcAttachmentOptions}
+         * @param transitRouterVpcAttachmentOptions the value to be set.
+         * @return {@code this}
+         */
+        public Builder transitRouterVpcAttachmentOptions(java.util.Map<java.lang.String, ? extends java.lang.Object> transitRouterVpcAttachmentOptions) {
+            this.transitRouterVpcAttachmentOptions = transitRouterVpcAttachmentOptions;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosTransitRouterVpcAttachmentProps#getVpcOwnerId}
          * @param vpcOwnerId the value to be set.
          * @return {@code this}
@@ -360,6 +414,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
         private final java.lang.Object vpcId;
         private final java.lang.Object zoneMappings;
         private final java.lang.Object autoCreateVpcRoute;
+        private final java.lang.Object autoPublishRouteEnabled;
         private final java.lang.Object cenId;
         private final java.lang.Object chargeType;
         private final java.lang.Object deletionForce;
@@ -368,6 +423,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
         private final java.lang.Object transitRouterAttachmentDescription;
         private final java.lang.Object transitRouterAttachmentName;
         private final java.lang.Object transitRouterId;
+        private final java.lang.Object transitRouterVpcAttachmentOptions;
         private final java.lang.Object vpcOwnerId;
 
         /**
@@ -379,6 +435,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneMappings = software.amazon.jsii.Kernel.get(this, "zoneMappings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoCreateVpcRoute = software.amazon.jsii.Kernel.get(this, "autoCreateVpcRoute", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoPublishRouteEnabled = software.amazon.jsii.Kernel.get(this, "autoPublishRouteEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.chargeType = software.amazon.jsii.Kernel.get(this, "chargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -387,6 +444,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             this.transitRouterAttachmentDescription = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterAttachmentName = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterId = software.amazon.jsii.Kernel.get(this, "transitRouterId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.transitRouterVpcAttachmentOptions = software.amazon.jsii.Kernel.get(this, "transitRouterVpcAttachmentOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcOwnerId = software.amazon.jsii.Kernel.get(this, "vpcOwnerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -398,6 +456,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.zoneMappings = java.util.Objects.requireNonNull(builder.zoneMappings, "zoneMappings is required");
             this.autoCreateVpcRoute = builder.autoCreateVpcRoute;
+            this.autoPublishRouteEnabled = builder.autoPublishRouteEnabled;
             this.cenId = builder.cenId;
             this.chargeType = builder.chargeType;
             this.deletionForce = builder.deletionForce;
@@ -406,6 +465,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             this.transitRouterAttachmentDescription = builder.transitRouterAttachmentDescription;
             this.transitRouterAttachmentName = builder.transitRouterAttachmentName;
             this.transitRouterId = builder.transitRouterId;
+            this.transitRouterVpcAttachmentOptions = builder.transitRouterVpcAttachmentOptions;
             this.vpcOwnerId = builder.vpcOwnerId;
         }
 
@@ -422,6 +482,11 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
         @Override
         public final java.lang.Object getAutoCreateVpcRoute() {
             return this.autoCreateVpcRoute;
+        }
+
+        @Override
+        public final java.lang.Object getAutoPublishRouteEnabled() {
+            return this.autoPublishRouteEnabled;
         }
 
         @Override
@@ -465,6 +530,11 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
         }
 
         @Override
+        public final java.lang.Object getTransitRouterVpcAttachmentOptions() {
+            return this.transitRouterVpcAttachmentOptions;
+        }
+
+        @Override
         public final java.lang.Object getVpcOwnerId() {
             return this.vpcOwnerId;
         }
@@ -479,6 +549,9 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             data.set("zoneMappings", om.valueToTree(this.getZoneMappings()));
             if (this.getAutoCreateVpcRoute() != null) {
                 data.set("autoCreateVpcRoute", om.valueToTree(this.getAutoCreateVpcRoute()));
+            }
+            if (this.getAutoPublishRouteEnabled() != null) {
+                data.set("autoPublishRouteEnabled", om.valueToTree(this.getAutoPublishRouteEnabled()));
             }
             if (this.getCenId() != null) {
                 data.set("cenId", om.valueToTree(this.getCenId()));
@@ -504,6 +577,9 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             if (this.getTransitRouterId() != null) {
                 data.set("transitRouterId", om.valueToTree(this.getTransitRouterId()));
             }
+            if (this.getTransitRouterVpcAttachmentOptions() != null) {
+                data.set("transitRouterVpcAttachmentOptions", om.valueToTree(this.getTransitRouterVpcAttachmentOptions()));
+            }
             if (this.getVpcOwnerId() != null) {
                 data.set("vpcOwnerId", om.valueToTree(this.getVpcOwnerId()));
             }
@@ -528,6 +604,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             if (!vpcId.equals(that.vpcId)) return false;
             if (!zoneMappings.equals(that.zoneMappings)) return false;
             if (this.autoCreateVpcRoute != null ? !this.autoCreateVpcRoute.equals(that.autoCreateVpcRoute) : that.autoCreateVpcRoute != null) return false;
+            if (this.autoPublishRouteEnabled != null ? !this.autoPublishRouteEnabled.equals(that.autoPublishRouteEnabled) : that.autoPublishRouteEnabled != null) return false;
             if (this.cenId != null ? !this.cenId.equals(that.cenId) : that.cenId != null) return false;
             if (this.chargeType != null ? !this.chargeType.equals(that.chargeType) : that.chargeType != null) return false;
             if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
@@ -536,6 +613,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             if (this.transitRouterAttachmentDescription != null ? !this.transitRouterAttachmentDescription.equals(that.transitRouterAttachmentDescription) : that.transitRouterAttachmentDescription != null) return false;
             if (this.transitRouterAttachmentName != null ? !this.transitRouterAttachmentName.equals(that.transitRouterAttachmentName) : that.transitRouterAttachmentName != null) return false;
             if (this.transitRouterId != null ? !this.transitRouterId.equals(that.transitRouterId) : that.transitRouterId != null) return false;
+            if (this.transitRouterVpcAttachmentOptions != null ? !this.transitRouterVpcAttachmentOptions.equals(that.transitRouterVpcAttachmentOptions) : that.transitRouterVpcAttachmentOptions != null) return false;
             return this.vpcOwnerId != null ? this.vpcOwnerId.equals(that.vpcOwnerId) : that.vpcOwnerId == null;
         }
 
@@ -544,6 +622,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             int result = this.vpcId.hashCode();
             result = 31 * result + (this.zoneMappings.hashCode());
             result = 31 * result + (this.autoCreateVpcRoute != null ? this.autoCreateVpcRoute.hashCode() : 0);
+            result = 31 * result + (this.autoPublishRouteEnabled != null ? this.autoPublishRouteEnabled.hashCode() : 0);
             result = 31 * result + (this.cenId != null ? this.cenId.hashCode() : 0);
             result = 31 * result + (this.chargeType != null ? this.chargeType.hashCode() : 0);
             result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
@@ -552,6 +631,7 @@ public interface RosTransitRouterVpcAttachmentProps extends software.amazon.jsii
             result = 31 * result + (this.transitRouterAttachmentDescription != null ? this.transitRouterAttachmentDescription.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentName != null ? this.transitRouterAttachmentName.hashCode() : 0);
             result = 31 * result + (this.transitRouterId != null ? this.transitRouterId.hashCode() : 0);
+            result = 31 * result + (this.transitRouterVpcAttachmentOptions != null ? this.transitRouterVpcAttachmentOptions.hashCode() : 0);
             result = 31 * result + (this.vpcOwnerId != null ? this.vpcOwnerId.hashCode() : 0);
             return result;
         }

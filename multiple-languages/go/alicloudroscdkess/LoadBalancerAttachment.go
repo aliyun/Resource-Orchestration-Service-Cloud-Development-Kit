@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`, which is used to add one or more Server Load Balancer (SLB) instances.
 type LoadBalancerAttachment interface {
 	alicloudroscdkcore.Resource
 	ILoadBalancerAttachment

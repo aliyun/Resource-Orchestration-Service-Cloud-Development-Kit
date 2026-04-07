@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`, which is used to grant an account the permission to attach an elastic network interface (ENI) to an instance.
 type NetworkInterfacePermission interface {
 	alicloudroscdkcore.Resource
 	INetworkInterfacePermission

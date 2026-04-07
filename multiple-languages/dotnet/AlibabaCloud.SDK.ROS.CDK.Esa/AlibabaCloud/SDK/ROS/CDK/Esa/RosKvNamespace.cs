@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Esa
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::KvNamespace`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::KvNamespace`The , which resource is used to create a key-value (KV) namespace.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `KvNamespace` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kvnamespace

@@ -34,6 +34,12 @@ type HealthCheckTemplateProps struct {
 	// Other domain labels cannot start or end with a hyphen (-).
 	// This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
 	HealthCheckHost interface{} `field:"optional" json:"healthCheckHost" yaml:"healthCheckHost"`
+	// Property healthCheckHttpVersion: The HTTP version for health check protocol.
+	//
+	// Valid values: HTTP1.0 or HTTP1.1.
+	// Default value: HTTP 1.1.
+	// This parameter is available only when HealthCheckProtocol is set to HTTP or HTTPS.
+	HealthCheckHttpVersion interface{} `field:"optional" json:"healthCheckHttpVersion" yaml:"healthCheckHttpVersion"`
 	// Property healthCheckInterval: The interval between two consecutive health checks.
 	//
 	// Unit: seconds.
@@ -84,6 +90,8 @@ type HealthCheckTemplateProps struct {
 	// Valid values: 2 to 10.
 	// Default value: 3.
 	HealthyThreshold interface{} `field:"optional" json:"healthyThreshold" yaml:"healthyThreshold"`
+	// Property resourceGroupId: The ID of the resource group.
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property unhealthyThreshold: The number of times that a healthy backend server must consecutively fail health checks before it is declared unhealthy.
 	//
 	// In this case, the health status is changed from success to fail.

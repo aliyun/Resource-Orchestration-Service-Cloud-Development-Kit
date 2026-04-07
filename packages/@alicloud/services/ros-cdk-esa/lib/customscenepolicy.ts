@@ -75,7 +75,7 @@ export interface ICustomScenePolicy extends ros.IResource {
     readonly attrTemplate: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CustomScenePolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CustomScenePolicy`The , which resource type is used to create scenario-specific policies.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCustomScenePolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-customscenepolicy
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Databases`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Databases`, which is used to query PolarDB for Xscale (PolarDB-X) databases.
 type Databases interface {
 	alicloudroscdkcore.Resource
 	IDatabases

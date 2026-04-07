@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosContactGroup) validateSetEnableResourcePropertyConstraintP
 	return nil
 }
 
+func (j *jsiiProxy_RosContactGroup) validateSetEnableSubscribedParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosContactGroupParameters(scope alicloudroscdkcore.Construct, id *string, props *RosContactGroupProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

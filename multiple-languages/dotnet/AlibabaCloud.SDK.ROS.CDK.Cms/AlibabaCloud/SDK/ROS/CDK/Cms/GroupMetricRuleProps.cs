@@ -272,6 +272,54 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
+        private object? _contactGroups;
+
+        /// <summary>Property contactGroups: The alert contact groups.</summary>
+        [JsiiOptional]
+        [JsiiProperty(name: "contactGroups", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? ContactGroups
+        {
+            get => _contactGroups;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case string cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _contactGroups = value;
+            }
+        }
+
         private object? _dimensions;
 
         /// <summary>Property dimensions: The expended resource dimensions.</summary>
@@ -365,6 +413,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
+        private object? _extraDimensionJson;
+
+        /// <summary>Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.</summary>
+        /// <remarks>
+        /// Format: a collection of key:value pairs, for example, <c>port:80</c> or <c>\/dev\/xvda:d-m5e6yphgzn3aprwu****</c>.
+        ///
+        /// When the first-level dimension of the alert rule is <c>{"instanceId":"i-m5e1qg6uo38rztr4****"}</c>, its secondary dimension is the disk <c>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</c>.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "extraDimensionJson", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        public object? ExtraDimensionJson
+        {
+            get => _extraDimensionJson;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case System.Collections.Generic.IDictionary<string, object> cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, System.Collections.Generic.IDictionary<string, object>; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _extraDimensionJson = value;
+            }
+        }
+
         private object? _interval;
 
         /// <summary>Property interval: The detection period of alerts.</summary>
@@ -416,6 +500,46 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
+        private object? _noDataPolicy;
+
+        /// <summary>Property noDataPolicy: The handling method when there is no monitoring data.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>KEEP_LAST_STATE (default): No action is taken.</description>
+        /// <description>INSUFFICIENT_DATA: Alert content is "No Data".</description>
+        /// <description>OK: Normal.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "noDataPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? NoDataPolicy
+        {
+            get => _noDataPolicy;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _noDataPolicy = value;
+            }
+        }
+
         private object? _noEffectiveInterval;
 
         /// <summary>Property noEffectiveInterval: The period when the alert rule is ineffective.</summary>
@@ -444,6 +568,40 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                     }
                 }
                 _noEffectiveInterval = value;
+            }
+        }
+
+        private object? _options;
+
+        /// <summary>Property options: The advanced settings.</summary>
+        /// <remarks>
+        /// Format: <c>{"key1":"value1","key2":"value2"}</c>, for example, <c>{"NotSendOK":true}</c>, indicating whether to send alert recovery notifications. The key is <c>NotSendOK</c>, and the value is <c>true</c> (do not send) or <c>false</c> (send by default).
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "options", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Options
+        {
+            get => _options;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _options = value;
             }
         }
 

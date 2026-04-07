@@ -278,7 +278,7 @@ export interface IStarRocksInstance extends ros.IResource {
     readonly attrVswitches: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::StarRocksInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EMR::StarRocksInstance`The , which type is used to create a serverless StarRocks instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStarRocksInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-starrocksinstance
  */
@@ -440,8 +440,8 @@ export class StarRocksInstance extends ros.Resource implements IStarRocksInstanc
             resourceGroupId: props.resourceGroupId,
             kmsKeyId: props.kmsKeyId,
             promotionOptionNo: props.promotionOptionNo,
-            pricingCycle: props.pricingCycle,
             encrypted: props.encrypted,
+            pricingCycle: props.pricingCycle,
             autoRenew: props.autoRenew,
             resourceType: props.resourceType,
             duration: props.duration,

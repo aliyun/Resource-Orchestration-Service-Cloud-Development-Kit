@@ -138,7 +138,7 @@ export interface IRecommendInstanceTypes extends ros.IResource {
     readonly attrInstanceTypes: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::RecommendInstanceTypes`, which is used to query the recommended instance types of Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRecommendInstanceTypes`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-recommendinstancetypes
  */
@@ -174,17 +174,17 @@ export class RecommendInstanceTypes extends ros.Resource implements IRecommendIn
             zoneMatchMode: props.zoneMatchMode,
             ioOptimized: props.ioOptimized,
             zoneId: props.zoneId,
-            instanceChargeType: props.instanceChargeType,
             memory: props.memory,
+            instanceChargeType: props.instanceChargeType,
             scene: props.scene,
             systemDiskCategory: props.systemDiskCategory,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             cores: props.cores,
             priorityStrategy: props.priorityStrategy,
             instanceFamilyLevel: props.instanceFamilyLevel,
+            instanceType: props.instanceType,
             instanceTypeFamilies: props.instanceTypeFamilies,
             maxPrice: props.maxPrice,
-            instanceType: props.instanceType,
             spotStrategy: props.spotStrategy,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRecommendInstanceTypes;

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Trigger`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Trigger`, which is used to trigger the invocation of a function.
 type RosTrigger interface {
 	alicloudroscdkcore.RosResource
 	AttrFunctionName() alicloudroscdkcore.IResolvable

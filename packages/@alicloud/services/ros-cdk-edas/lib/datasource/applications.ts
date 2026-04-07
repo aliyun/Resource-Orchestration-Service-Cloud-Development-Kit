@@ -55,7 +55,7 @@ export interface IApplications extends ros.IResource {
     readonly attrApplications: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::Applications`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::Applications`, which is used to query applications.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplications`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
  */
@@ -91,8 +91,8 @@ export class Applications extends ros.Resource implements IApplications {
             logicalRegionId: props.logicalRegionId,
             resourceGroupId: props.resourceGroupId,
             clusterId: props.clusterId,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             appName: props.appName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApplications;
         this.attrAppIds = rosApplications.attrAppIds;

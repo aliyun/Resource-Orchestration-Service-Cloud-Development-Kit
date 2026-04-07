@@ -16,6 +16,16 @@ export interface FwSwitchProps {
     readonly ipaddrList?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * Property ipVersion: The IP version number.
+     */
+    readonly ipVersion?: string | ros.IResolvable;
+
+    /**
+     * Property memberUid: The member unique identifier.
+     */
+    readonly memberUid?: string | ros.IResolvable;
+
+    /**
      * Property regionList: The region list.
      * **Note**: The IpaddrList, RegionList, and ResourceTypeList arguments are not allowed to be empty at the same time. A value must be set for one of the three arguments.
      */
@@ -46,7 +56,7 @@ export interface IFwSwitch extends ros.IResource {
     readonly props: FwSwitchProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`, which is used to enable a firewall.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFwSwitch`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
  */
@@ -70,6 +80,8 @@ export class FwSwitch extends ros.Resource implements IFwSwitch {
 
         const rosFwSwitch = new RosFwSwitch(this, id,  {
             ipaddrList: props.ipaddrList,
+            memberUid: props.memberUid,
+            ipVersion: props.ipVersion,
             resourceTypeList: props.resourceTypeList,
             regionList: props.regionList,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

@@ -9,9 +9,11 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`, which is used to allocate a public connection string to an instance.
 type RosInstancePublicConnection interface {
 	alicloudroscdkcore.RosResource
+	AddressType() interface{}
+	SetAddressType(val interface{})
 	AttrConnectionString() alicloudroscdkcore.IResolvable
 	AttrDbInstanceId() alicloudroscdkcore.IResolvable
 	ConnectionStringPrefix() interface{}
@@ -174,6 +176,16 @@ type RosInstancePublicConnection interface {
 // The jsii proxy struct for RosInstancePublicConnection
 type jsiiProxy_RosInstancePublicConnection struct {
 	internal.Type__alicloudroscdkcoreRosResource
+}
+
+func (j *jsiiProxy_RosInstancePublicConnection) AddressType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"addressType",
+		&returns,
+	)
+	return returns
 }
 
 func (j *jsiiProxy_RosInstancePublicConnection) AttrConnectionString() alicloudroscdkcore.IResolvable {
@@ -351,6 +363,17 @@ func NewRosInstancePublicConnection_Override(r RosInstancePublicConnection, scop
 		"@alicloud/ros-cdk-gpdb.RosInstancePublicConnection",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosInstancePublicConnection)SetAddressType(val interface{}) {
+	if err := j.validateSetAddressTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"addressType",
+		val,
 	)
 }
 

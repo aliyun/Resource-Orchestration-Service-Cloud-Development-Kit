@@ -1,5 +1,7 @@
 @alicloud/ros-cdk-alb.AScript=com.aliyun.ros.cdk.alb.AScript
 @alicloud/ros-cdk-alb.AScriptProps=com.aliyun.ros.cdk.alb.AScriptProps
+@alicloud/ros-cdk-alb.AccessLogEnable=com.aliyun.ros.cdk.alb.AccessLogEnable
+@alicloud/ros-cdk-alb.AccessLogEnableProps=com.aliyun.ros.cdk.alb.AccessLogEnableProps
 @alicloud/ros-cdk-alb.Acl=com.aliyun.ros.cdk.alb.Acl
 @alicloud/ros-cdk-alb.AclAssociation=com.aliyun.ros.cdk.alb.AclAssociation
 @alicloud/ros-cdk-alb.AclAssociationProps=com.aliyun.ros.cdk.alb.AclAssociationProps
@@ -11,6 +13,7 @@
 @alicloud/ros-cdk-alb.HealthCheckTemplate=com.aliyun.ros.cdk.alb.HealthCheckTemplate
 @alicloud/ros-cdk-alb.HealthCheckTemplateProps=com.aliyun.ros.cdk.alb.HealthCheckTemplateProps
 @alicloud/ros-cdk-alb.IAScript=com.aliyun.ros.cdk.alb.IAScript
+@alicloud/ros-cdk-alb.IAccessLogEnable=com.aliyun.ros.cdk.alb.IAccessLogEnable
 @alicloud/ros-cdk-alb.IAcl=com.aliyun.ros.cdk.alb.IAcl
 @alicloud/ros-cdk-alb.IAclAssociation=com.aliyun.ros.cdk.alb.IAclAssociation
 @alicloud/ros-cdk-alb.IAdditionalCertificateAssociation=com.aliyun.ros.cdk.alb.IAdditionalCertificateAssociation
@@ -22,6 +25,8 @@
 @alicloud/ros-cdk-alb.ISecurityGroupAttachment=com.aliyun.ros.cdk.alb.ISecurityGroupAttachment
 @alicloud/ros-cdk-alb.ISecurityPolicy=com.aliyun.ros.cdk.alb.ISecurityPolicy
 @alicloud/ros-cdk-alb.IServerGroup=com.aliyun.ros.cdk.alb.IServerGroup
+@alicloud/ros-cdk-alb.IStartZone=com.aliyun.ros.cdk.alb.IStartZone
+@alicloud/ros-cdk-alb.IZoneShift=com.aliyun.ros.cdk.alb.IZoneShift
 @alicloud/ros-cdk-alb.Listener=com.aliyun.ros.cdk.alb.Listener
 @alicloud/ros-cdk-alb.ListenerProps=com.aliyun.ros.cdk.alb.ListenerProps
 @alicloud/ros-cdk-alb.LoadBalancer=com.aliyun.ros.cdk.alb.LoadBalancer
@@ -29,6 +34,8 @@
 @alicloud/ros-cdk-alb.RosAScript=com.aliyun.ros.cdk.alb.RosAScript
 @alicloud/ros-cdk-alb.RosAScript.ExtAttributesProperty=com.aliyun.ros.cdk.alb.RosAScript$ExtAttributesProperty
 @alicloud/ros-cdk-alb.RosAScriptProps=com.aliyun.ros.cdk.alb.RosAScriptProps
+@alicloud/ros-cdk-alb.RosAccessLogEnable=com.aliyun.ros.cdk.alb.RosAccessLogEnable
+@alicloud/ros-cdk-alb.RosAccessLogEnableProps=com.aliyun.ros.cdk.alb.RosAccessLogEnableProps
 @alicloud/ros-cdk-alb.RosAcl=com.aliyun.ros.cdk.alb.RosAcl
 @alicloud/ros-cdk-alb.RosAcl.AclEntriesProperty=com.aliyun.ros.cdk.alb.RosAcl$AclEntriesProperty
 @alicloud/ros-cdk-alb.RosAclAssociation=com.aliyun.ros.cdk.alb.RosAclAssociation
@@ -101,6 +108,12 @@
 @alicloud/ros-cdk-alb.RosServerGroup.TagsProperty=com.aliyun.ros.cdk.alb.RosServerGroup$TagsProperty
 @alicloud/ros-cdk-alb.RosServerGroup.UchConfigProperty=com.aliyun.ros.cdk.alb.RosServerGroup$UchConfigProperty
 @alicloud/ros-cdk-alb.RosServerGroupProps=com.aliyun.ros.cdk.alb.RosServerGroupProps
+@alicloud/ros-cdk-alb.RosStartZone=com.aliyun.ros.cdk.alb.RosStartZone
+@alicloud/ros-cdk-alb.RosStartZone.ZoneMappingsProperty=com.aliyun.ros.cdk.alb.RosStartZone$ZoneMappingsProperty
+@alicloud/ros-cdk-alb.RosStartZoneProps=com.aliyun.ros.cdk.alb.RosStartZoneProps
+@alicloud/ros-cdk-alb.RosZoneShift=com.aliyun.ros.cdk.alb.RosZoneShift
+@alicloud/ros-cdk-alb.RosZoneShift.ZoneMappingsProperty=com.aliyun.ros.cdk.alb.RosZoneShift$ZoneMappingsProperty
+@alicloud/ros-cdk-alb.RosZoneShiftProps=com.aliyun.ros.cdk.alb.RosZoneShiftProps
 @alicloud/ros-cdk-alb.Rule=com.aliyun.ros.cdk.alb.Rule
 @alicloud/ros-cdk-alb.RuleProps=com.aliyun.ros.cdk.alb.RuleProps
 @alicloud/ros-cdk-alb.SecurityGroupAttachment=com.aliyun.ros.cdk.alb.SecurityGroupAttachment
@@ -109,6 +122,10 @@
 @alicloud/ros-cdk-alb.SecurityPolicyProps=com.aliyun.ros.cdk.alb.SecurityPolicyProps
 @alicloud/ros-cdk-alb.ServerGroup=com.aliyun.ros.cdk.alb.ServerGroup
 @alicloud/ros-cdk-alb.ServerGroupProps=com.aliyun.ros.cdk.alb.ServerGroupProps
+@alicloud/ros-cdk-alb.StartZone=com.aliyun.ros.cdk.alb.StartZone
+@alicloud/ros-cdk-alb.StartZoneProps=com.aliyun.ros.cdk.alb.StartZoneProps
+@alicloud/ros-cdk-alb.ZoneShift=com.aliyun.ros.cdk.alb.ZoneShift
+@alicloud/ros-cdk-alb.ZoneShiftProps=com.aliyun.ros.cdk.alb.ZoneShiftProps
 @alicloud/ros-cdk-alb.datasource.ILoadBalancers=com.aliyun.ros.cdk.alb.datasource.ILoadBalancers
 @alicloud/ros-cdk-alb.datasource.IZones=com.aliyun.ros.cdk.alb.datasource.IZones
 @alicloud/ros-cdk-alb.datasource.LoadBalancers=com.aliyun.ros.cdk.alb.datasource.LoadBalancers

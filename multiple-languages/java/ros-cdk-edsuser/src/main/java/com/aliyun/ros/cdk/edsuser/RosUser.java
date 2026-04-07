@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edsuser;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EdsUser::User</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EdsUser::User</code>, which is used to create a convenience user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.096Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.530Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edsuser.$Module.class, fqn = "@alicloud/ros-cdk-edsuser.RosUser")
 public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -79,6 +79,42 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAutoLockTime() {
+        return software.amazon.jsii.Kernel.get(this, "autoLockTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAutoLockTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "autoLockTime", value);
+    }
+
+    /**
+     */
+    public void setAutoLockTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "autoLockTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getBusinessChannel() {
+        return software.amazon.jsii.Kernel.get(this, "businessChannel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setBusinessChannel(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "businessChannel", value);
+    }
+
+    /**
+     */
+    public void setBusinessChannel(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "businessChannel", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getEmail() {
         return software.amazon.jsii.Kernel.get(this, "email", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -93,6 +129,24 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setEmail(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "email", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIsLocalAdmin() {
+        return software.amazon.jsii.Kernel.get(this, "isLocalAdmin", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIsLocalAdmin(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "isLocalAdmin", value);
+    }
+
+    /**
+     */
+    public void setIsLocalAdmin(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "isLocalAdmin", value);
     }
 
     /**
@@ -151,6 +205,24 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPasswordExpireDays() {
+        return software.amazon.jsii.Kernel.get(this, "passwordExpireDays", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPasswordExpireDays(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "passwordExpireDays", value);
+    }
+
+    /**
+     */
+    public void setPasswordExpireDays(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "passwordExpireDays", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getPhone() {
         return software.amazon.jsii.Kernel.get(this, "phone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -165,6 +237,24 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setPhone(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "phone", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRealNickName() {
+        return software.amazon.jsii.Kernel.get(this, "realNickName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRealNickName(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "realNickName", value);
+    }
+
+    /**
+     */
+    public void setRealNickName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "realNickName", value);
     }
 
     /**
@@ -230,6 +320,40 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param autoLockTime This parameter is required.
+         */
+        public Builder autoLockTime(final java.lang.String autoLockTime) {
+            this.props.autoLockTime(autoLockTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param autoLockTime This parameter is required.
+         */
+        public Builder autoLockTime(final com.aliyun.ros.cdk.core.IResolvable autoLockTime) {
+            this.props.autoLockTime(autoLockTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param businessChannel This parameter is required.
+         */
+        public Builder businessChannel(final java.lang.String businessChannel) {
+            this.props.businessChannel(businessChannel);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param businessChannel This parameter is required.
+         */
+        public Builder businessChannel(final com.aliyun.ros.cdk.core.IResolvable businessChannel) {
+            this.props.businessChannel(businessChannel);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param email This parameter is required.
          */
         public Builder email(final java.lang.String email) {
@@ -242,6 +366,23 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder email(final com.aliyun.ros.cdk.core.IResolvable email) {
             this.props.email(email);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param isLocalAdmin This parameter is required.
+         */
+        public Builder isLocalAdmin(final java.lang.Boolean isLocalAdmin) {
+            this.props.isLocalAdmin(isLocalAdmin);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param isLocalAdmin This parameter is required.
+         */
+        public Builder isLocalAdmin(final com.aliyun.ros.cdk.core.IResolvable isLocalAdmin) {
+            this.props.isLocalAdmin(isLocalAdmin);
             return this;
         }
 
@@ -298,6 +439,23 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param passwordExpireDays This parameter is required.
+         */
+        public Builder passwordExpireDays(final java.lang.String passwordExpireDays) {
+            this.props.passwordExpireDays(passwordExpireDays);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param passwordExpireDays This parameter is required.
+         */
+        public Builder passwordExpireDays(final com.aliyun.ros.cdk.core.IResolvable passwordExpireDays) {
+            this.props.passwordExpireDays(passwordExpireDays);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param phone This parameter is required.
          */
         public Builder phone(final java.lang.String phone) {
@@ -310,6 +468,23 @@ public class RosUser extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder phone(final com.aliyun.ros.cdk.core.IResolvable phone) {
             this.props.phone(phone);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param realNickName This parameter is required.
+         */
+        public Builder realNickName(final java.lang.String realNickName) {
+            this.props.realNickName(realNickName);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param realNickName This parameter is required.
+         */
+        public Builder realNickName(final com.aliyun.ros.cdk.core.IResolvable realNickName) {
+            this.props.realNickName(realNickName);
             return this;
         }
 

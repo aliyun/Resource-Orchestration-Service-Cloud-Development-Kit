@@ -9,7 +9,9 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::LaunchTemplate`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::LaunchTemplate`, which is used to create a launch template.
+//
+// You can use a launch template to create an Elastic Compute Service (ECS) instance.
 type RosLaunchTemplate interface {
 	alicloudroscdkcore.RosResource
 	AttrDefaultVersionNumber() alicloudroscdkcore.IResolvable

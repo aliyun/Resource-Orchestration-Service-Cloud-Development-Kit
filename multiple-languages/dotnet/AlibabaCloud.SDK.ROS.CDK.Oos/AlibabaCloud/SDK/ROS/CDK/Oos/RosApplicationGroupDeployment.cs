@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ApplicationGroupDeployment` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
@@ -52,6 +52,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             get;
         }
         = GetStaticProperty<string>(typeof(AlibabaCloud.SDK.ROS.CDK.Oos.RosApplicationGroupDeployment))!;
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ApplicationName: The name of the application.
+        /// </remarks>
+        [JsiiProperty(name: "attrApplicationName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrApplicationName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: ExecutionId: The execution ID of the application group deployment.
+        /// </remarks>
+        [JsiiProperty(name: "attrExecutionId", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrExecutionId
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
+
+        /// <remarks>
+        /// <strong>Attribute</strong>: Name: The name of the application group.
+        /// </remarks>
+        [JsiiProperty(name: "attrName", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}")]
+        public virtual AlibabaCloud.SDK.ROS.CDK.Core.IResolvable AttrName
+        {
+            get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResolvable>()!;
+        }
 
         [JsiiProperty(name: "rosProperties", typeJson: "{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}")]
         protected override System.Collections.Generic.IDictionary<string, object> RosProperties

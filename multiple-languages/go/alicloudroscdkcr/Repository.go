@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CR::Repository`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CR::Repository`, which is used to create an image repository.
 type Repository interface {
 	alicloudroscdkcore.Resource
 	IRepository

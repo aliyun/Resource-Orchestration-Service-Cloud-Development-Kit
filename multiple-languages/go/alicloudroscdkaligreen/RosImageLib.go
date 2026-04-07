@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::ImageLib`, which is used to create a custom image library.
 type RosImageLib interface {
 	alicloudroscdkcore.RosResource
 	AttrBizTypes() alicloudroscdkcore.IResolvable

@@ -57,6 +57,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property resourceGroupId: The ID of the resource group to which the user gateway belongs.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>You can call the ListResourceGroups interface to query the resource group ID.</description>
+        /// <description>If you do not specify a resource group, the user gateway will belong to the default resource group after creation.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `CustomerGateway`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
@@ -101,6 +118,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Name
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group to which the user gateway belongs.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>You can call the ListResourceGroups interface to query the resource group ID.</description>
+            /// <description>If you do not specify a resource group, the user gateway will belong to the default resource group after creation.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

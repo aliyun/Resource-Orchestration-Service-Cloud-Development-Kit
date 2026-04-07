@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterAccessWhiteList`, which is used to modify the IP address whitelist that allows access to a PolarDB cluster.
 type DBClusterAccessWhiteList interface {
 	alicloudroscdkcore.Resource
 	IDBClusterAccessWhiteList

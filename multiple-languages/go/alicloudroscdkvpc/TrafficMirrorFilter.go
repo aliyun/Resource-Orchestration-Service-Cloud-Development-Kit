@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorFilter`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::TrafficMirrorFilter`, which is used to create a filter for traffic mirroring.
 type TrafficMirrorFilter interface {
 	alicloudroscdkcore.Resource
 	ITrafficMirrorFilter

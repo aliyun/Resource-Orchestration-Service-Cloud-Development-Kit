@@ -10,7 +10,12 @@ export { RosListener as ListenerProperty };
 export interface ListenerProps {
 
     /**
-     * Property listenerProtocol: undefined
+     * Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
+     */
+    readonly listenerPort: number | ros.IResolvable;
+
+    /**
+     * Property listenerProtocol: Listening protocol. Values: TCP, UDP, or TCPSSL.
      */
     readonly listenerProtocol: string | ros.IResolvable;
 
@@ -18,11 +23,6 @@ export interface ListenerProps {
      * Property loadBalancerId: ID of the LoadBalancer
      */
     readonly loadBalancerId: string | ros.IResolvable;
-
-    /**
-     * Property serverGroupId: ID of the ServerGroup
-     */
-    readonly serverGroupId: string | ros.IResolvable;
 
     /**
      * Property alpnEnabled: undefined
@@ -75,11 +75,6 @@ export interface ListenerProps {
     readonly listenerDescription?: string | ros.IResolvable;
 
     /**
-     * Property listenerPort: Port of the listener,[0, 65535] the portRange setting need 0
-     */
-    readonly listenerPort?: number | ros.IResolvable;
-
-    /**
      * Property mss: Max length of the TCP packet
      */
     readonly mss?: number | ros.IResolvable;
@@ -103,6 +98,18 @@ export interface ListenerProps {
      * Property securityPolicyId: Only valid for TcpSSL protocol monitoring
      */
     readonly securityPolicyId?: string | ros.IResolvable;
+
+    /**
+     * Property serverGroupId: ID of the ServerGroup
+     */
+    readonly serverGroupId?: string | ros.IResolvable;
+
+    /**
+     * Property serverGroupTuples: Multi-server group list.
+     * When the number of destination server groups is 1, the default value is 100 if no weight is specified.
+     * When the number of destination server groups is greater than 1, the user needs to specify the weight value.
+     */
+    readonly serverGroupTuples?: Array<RosListener.ServerGroupTuplesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property startPort: StartPort of the portRange
@@ -132,7 +139,7 @@ export interface IListener extends ros.IResource {
     readonly attrListenerPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NLB::Listener`Use the , which resource type to create a listener.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-listener
  */
@@ -171,10 +178,11 @@ export class Listener extends ros.Resource implements IListener {
             cps: props.cps,
             serverGroupId: props.serverGroupId,
             idleTimeout: props.idleTimeout,
-            proxyProtocolV2Config: props.proxyProtocolV2Config,
             loadBalancerId: props.loadBalancerId,
-            mss: props.mss,
+            proxyProtocolV2Config: props.proxyProtocolV2Config,
             listenerProtocol: props.listenerProtocol,
+            mss: props.mss,
+            serverGroupTuples: props.serverGroupTuples,
             securityPolicyId: props.securityPolicyId,
             listenerDescription: props.listenerDescription,
             alpnPolicy: props.alpnPolicy,

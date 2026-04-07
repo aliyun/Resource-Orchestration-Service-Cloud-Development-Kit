@@ -15,5 +15,9 @@ type VcoRouteEntryProps struct {
 	Weight interface{} `field:"required" json:"weight" yaml:"weight"`
 	// Property description: Descriptive information for the destination routing entry.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property overlayMode: The tunnel protocol.
+	//
+	// Valid value: **Ipsec** (default), which indicates the IPsec tunnel protocol.
+	OverlayMode interface{} `field:"optional" json:"overlayMode" yaml:"overlayMode"`
 }
 

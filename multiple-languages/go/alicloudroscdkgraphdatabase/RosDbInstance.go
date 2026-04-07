@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`, which is used to create a Graph Database (GDB) instance.
 type RosDbInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrConnectionString() alicloudroscdkcore.IResolvable

@@ -42,7 +42,7 @@ export interface IUpgradeVersion extends ros.IResource {
     readonly props: UpgradeVersionProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::UpgradeVersion`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::UpgradeVersion`, which is used to upgrade the major version of a Tair (Redis OSS-compatible) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUpgradeVersion`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-upgradeversion
  */
@@ -68,8 +68,8 @@ export class UpgradeVersion extends ros.Resource implements IUpgradeVersion {
             majorVersion: props.majorVersion,
             instanceId: props.instanceId,
             effectiveTime: props.effectiveTime,
-            autoUpgradeOpen: props.autoUpgradeOpen,
             minorVersion: props.minorVersion,
+            autoUpgradeOpen: props.autoUpgradeOpen,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosUpgradeVersion;
     }

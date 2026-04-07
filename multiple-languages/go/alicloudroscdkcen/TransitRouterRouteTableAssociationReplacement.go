@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociationReplacement`The , which resource replaces the transit router route table associated with a network instance connection.
 type TransitRouterRouteTableAssociationReplacement interface {
 	alicloudroscdkcore.Resource
 	ITransitRouterRouteTableAssociationReplacement

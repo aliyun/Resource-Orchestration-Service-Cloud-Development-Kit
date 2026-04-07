@@ -215,24 +215,24 @@ export class RunCommandOfLifespan extends ros.Resource implements IRunCommandOfL
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRunCommandOfLifespan = new RosRunCommandOfLifespan(this, id,  {
-            parameters: props.parameters,
             description: props.description,
+            parameters: props.parameters,
             resourceGroupId: props.resourceGroupId,
             timeout: props.timeout,
             windowsPasswordName: props.windowsPasswordName,
             contentEncoding: props.contentEncoding,
             name: props.name,
-            workingDir: props.workingDir,
             commandContent: props.commandContent,
+            workingDir: props.workingDir,
             commandContentOnDeletion: props.commandContentOnDeletion,
             type: props.type,
             username: props.username,
-            containerName: props.containerName,
             containerId: props.containerId,
+            containerName: props.containerName,
             launcher: props.launcher,
             enableParameter: props.enableParameter,
-            sync: props.sync === undefined || props.sync === null ? false : props.sync,
             instanceIds: props.instanceIds,
+            sync: props.sync === undefined || props.sync === null ? false : props.sync,
             tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRunCommandOfLifespan;

@@ -176,7 +176,6 @@ function RosContainerGroupPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
     errors.collect(ros.propertyValidator('initContainer', ros.listValidator(RosContainerGroup_InitContainerPropertyValidator))(properties.initContainer));
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
-    errors.collect(ros.propertyValidator('eipInstanceId', ros.validateString)(properties.eipInstanceId));
     errors.collect(ros.propertyValidator('containerGroupName', ros.requiredValidator)(properties.containerGroupName));
     if(properties.containerGroupName && (Array.isArray(properties.containerGroupName) || (typeof properties.containerGroupName) === 'string')) {
         errors.collect(ros.propertyValidator('containerGroupName', ros.validateLength)({
@@ -186,6 +185,7 @@ function RosContainerGroupPropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('containerGroupName', ros.validateString)(properties.containerGroupName));
+    errors.collect(ros.propertyValidator('eipInstanceId', ros.validateString)(properties.eipInstanceId));
     errors.collect(ros.propertyValidator('container', ros.requiredValidator)(properties.container));
     errors.collect(ros.propertyValidator('container', ros.listValidator(RosContainerGroup_ContainerPropertyValidator))(properties.container));
     errors.collect(ros.propertyValidator('imageSnapshotId', ros.validateString)(properties.imageSnapshotId));
@@ -214,8 +214,8 @@ function RosContainerGroupPropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('hostAliase', ros.listValidator(RosContainerGroup_HostAliasePropertyValidator))(properties.hostAliase));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('terminationGracePeriodSeconds', ros.validateNumber)(properties.terminationGracePeriodSeconds));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('slsEnable', ros.validateBoolean)(properties.slsEnable));
     if(properties.restartPolicy && (typeof properties.restartPolicy) !== 'object') {
         errors.collect(ros.propertyValidator('restartPolicy', ros.validateAllowedValues)({
@@ -290,7 +290,7 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `ContainerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
@@ -710,13 +710,13 @@ export namespace RosContainerGroup {
          */
         readonly readinessProbe?: RosContainerGroup.ReadinessProbeProperty | ros.IResolvable;
         /**
-         * @Property livenessProbe: The liveness probe.
-         */
-        readonly livenessProbe?: RosContainerGroup.LivenessProbeProperty | ros.IResolvable;
-        /**
          * @Property memory: The memory assigned to the container. Unit: GiB.
          */
         readonly memory?: number | ros.IResolvable;
+        /**
+         * @Property livenessProbe: The liveness probe.
+         */
+        readonly livenessProbe?: RosContainerGroup.LivenessProbeProperty | ros.IResolvable;
         /**
          * @Property port: The open ports and protocols. You can set a maximum of 100 ports.
          */
@@ -786,8 +786,8 @@ function RosContainerGroup_ContainerPropertyValidator(properties: any): ros.Vali
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('readinessProbe', RosContainerGroup_ReadinessProbePropertyValidator)(properties.readinessProbe));
-    errors.collect(ros.propertyValidator('livenessProbe', RosContainerGroup_LivenessProbePropertyValidator)(properties.livenessProbe));
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
+    errors.collect(ros.propertyValidator('livenessProbe', RosContainerGroup_LivenessProbePropertyValidator)(properties.livenessProbe));
     if(properties.port && (Array.isArray(properties.port) || (typeof properties.port) === 'string')) {
         errors.collect(ros.propertyValidator('port', ros.validateLength)({
             data: properties.port.length,
@@ -855,8 +855,8 @@ function rosContainerGroupContainerPropertyToRosTemplate(properties: any): any {
     RosContainerGroup_ContainerPropertyValidator(properties).assertSuccess();
     return {
       'ReadinessProbe': rosContainerGroupReadinessProbePropertyToRosTemplate(properties.readinessProbe),
-      'LivenessProbe': rosContainerGroupLivenessProbePropertyToRosTemplate(properties.livenessProbe),
       'Memory': ros.numberToRosTemplate(properties.memory),
+      'LivenessProbe': rosContainerGroupLivenessProbePropertyToRosTemplate(properties.livenessProbe),
       'Port': ros.listMapper(rosContainerGroupPortPropertyToRosTemplate)(properties.port),
       'Cpu': ros.numberToRosTemplate(properties.cpu),
       'Image': ros.stringToRosTemplate(properties.image),
@@ -1125,25 +1125,25 @@ export namespace RosContainerGroup {
          */
         readonly memory?: number | ros.IResolvable;
         /**
-         * @Property port: The open ports and protocols. You can set a maximum of 100 ports.
-         */
-        readonly port?: Array<RosContainerGroup.InitContainerPortProperty | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property arg: The arguments passed to the commands. A maximum of 10 arguments are supported.
          */
         readonly arg?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property port: The open ports and protocols. You can set a maximum of 100 ports.
+         */
+        readonly port?: Array<RosContainerGroup.InitContainerPortProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property securityContext: The security context of the container group.
          */
         readonly securityContext?: RosContainerGroup.InitContainerSecurityContextProperty | ros.IResolvable;
         /**
-         * @Property volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
-         */
-        readonly volumeMount?: Array<RosContainerGroup.InitContainerVolumeMountProperty | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property cpu: The number of vCPUs assigned to the container. Unit: vCPUs (cores).
          */
         readonly cpu?: number | ros.IResolvable;
+        /**
+         * @Property volumeMount: The number of volumes that are mounted to the container. A maximum of 16 volumes are supported.
+         */
+        readonly volumeMount?: Array<RosContainerGroup.InitContainerVolumeMountProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property image: The container image.
          */
@@ -1179,14 +1179,6 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
     }
     errors.collect(ros.propertyValidator('command', ros.listValidator(ros.validateString))(properties.command));
     errors.collect(ros.propertyValidator('memory', ros.validateNumber)(properties.memory));
-    if(properties.port && (Array.isArray(properties.port) || (typeof properties.port) === 'string')) {
-        errors.collect(ros.propertyValidator('port', ros.validateLength)({
-            data: properties.port.length,
-            min: undefined,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('port', ros.listValidator(RosContainerGroup_InitContainerPortPropertyValidator))(properties.port));
     if(properties.arg && (Array.isArray(properties.arg) || (typeof properties.arg) === 'string')) {
         errors.collect(ros.propertyValidator('arg', ros.validateLength)({
             data: properties.arg.length,
@@ -1195,7 +1187,16 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('arg', ros.listValidator(ros.validateString))(properties.arg));
+    if(properties.port && (Array.isArray(properties.port) || (typeof properties.port) === 'string')) {
+        errors.collect(ros.propertyValidator('port', ros.validateLength)({
+            data: properties.port.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('port', ros.listValidator(RosContainerGroup_InitContainerPortPropertyValidator))(properties.port));
     errors.collect(ros.propertyValidator('securityContext', RosContainerGroup_InitContainerSecurityContextPropertyValidator)(properties.securityContext));
+    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     if(properties.volumeMount && (Array.isArray(properties.volumeMount) || (typeof properties.volumeMount) === 'string')) {
         errors.collect(ros.propertyValidator('volumeMount', ros.validateLength)({
             data: properties.volumeMount.length,
@@ -1204,7 +1205,6 @@ function RosContainerGroup_InitContainerPropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('volumeMount', ros.listValidator(RosContainerGroup_InitContainerVolumeMountPropertyValidator))(properties.volumeMount));
-    errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     errors.collect(ros.propertyValidator('image', ros.validateString)(properties.image));
     if(properties.environmentVar && (Array.isArray(properties.environmentVar) || (typeof properties.environmentVar) === 'string')) {
         errors.collect(ros.propertyValidator('environmentVar', ros.validateLength)({
@@ -1234,11 +1234,11 @@ function rosContainerGroupInitContainerPropertyToRosTemplate(properties: any): a
       'ImagePullPolicy': ros.stringToRosTemplate(properties.imagePullPolicy),
       'Command': ros.listMapper(ros.stringToRosTemplate)(properties.command),
       'Memory': ros.numberToRosTemplate(properties.memory),
-      'Port': ros.listMapper(rosContainerGroupInitContainerPortPropertyToRosTemplate)(properties.port),
       'Arg': ros.listMapper(ros.stringToRosTemplate)(properties.arg),
+      'Port': ros.listMapper(rosContainerGroupInitContainerPortPropertyToRosTemplate)(properties.port),
       'SecurityContext': rosContainerGroupInitContainerSecurityContextPropertyToRosTemplate(properties.securityContext),
-      'VolumeMount': ros.listMapper(rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate)(properties.volumeMount),
       'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'VolumeMount': ros.listMapper(rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate)(properties.volumeMount),
       'Image': ros.stringToRosTemplate(properties.image),
       'EnvironmentVar': ros.listMapper(rosContainerGroupInitContainerEnvironmentVarPropertyToRosTemplate)(properties.environmentVar),
       'Name': ros.stringToRosTemplate(properties.name),
@@ -1449,13 +1449,13 @@ export namespace RosContainerGroup {
      */
     export interface InitContainerVolumeMountProperty {
         /**
-         * @Property readOnly: Default value: False.
-         */
-        readonly readOnly?: boolean | ros.IResolvable;
-        /**
          * @Property mountPath: A mount path. The data in the target directory is overwritten by the data in the mounted volume. Therefore, use caution when you mount a volume to a directory.
          */
         readonly mountPath?: string | ros.IResolvable;
+        /**
+         * @Property readOnly: Default value: False.
+         */
+        readonly readOnly?: boolean | ros.IResolvable;
         /**
          * @Property name: The name of the volume. The name is the same as that specified for the Name parameter in the Volume section.
          */
@@ -1472,8 +1472,8 @@ export namespace RosContainerGroup {
 function RosContainerGroup_InitContainerVolumeMountPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
     errors.collect(ros.propertyValidator('mountPath', ros.validateString)(properties.mountPath));
+    errors.collect(ros.propertyValidator('readOnly', ros.validateBoolean)(properties.readOnly));
     errors.collect(ros.propertyValidator('name', ros.validateNumber)(properties.name));
     return errors.wrap('supplied properties not correct for "InitContainerVolumeMountProperty"');
 }
@@ -1490,8 +1490,8 @@ function rosContainerGroupInitContainerVolumeMountPropertyToRosTemplate(properti
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_InitContainerVolumeMountPropertyValidator(properties).assertSuccess();
     return {
-      'ReadOnly': ros.booleanToRosTemplate(properties.readOnly),
       'MountPath': ros.stringToRosTemplate(properties.mountPath),
+      'ReadOnly': ros.booleanToRosTemplate(properties.readOnly),
       'Name': ros.numberToRosTemplate(properties.name),
     };
 }
@@ -1502,13 +1502,13 @@ export namespace RosContainerGroup {
      */
     export interface LivenessProbeProperty {
         /**
-         * @Property timeoutSeconds: The number of seconds after which the probe times out. Default value: 1. Minimum value: 1.
-         */
-        readonly timeoutSeconds?: number | ros.IResolvable;
-        /**
          * @Property initialDelaySeconds: The number of seconds after the container has started before probes are initiated.
          */
         readonly initialDelaySeconds?: number | ros.IResolvable;
+        /**
+         * @Property timeoutSeconds: The number of seconds after which the probe times out. Default value: 1. Minimum value: 1.
+         */
+        readonly timeoutSeconds?: number | ros.IResolvable;
         /**
          * @Property periodSeconds: Specifies the period at which the probe is performed. Unit: seconds. Default value: 10. Minimum value: 1.
          */
@@ -1553,6 +1553,7 @@ export namespace RosContainerGroup {
 function RosContainerGroup_LivenessProbePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     if(properties.timeoutSeconds && (typeof properties.timeoutSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateRange)({
             data: properties.timeoutSeconds,
@@ -1561,7 +1562,6 @@ function RosContainerGroup_LivenessProbePropertyValidator(properties: any): ros.
           }));
     }
     errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateNumber)(properties.timeoutSeconds));
-    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     if(properties.periodSeconds && (typeof properties.periodSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('periodSeconds', ros.validateRange)({
             data: properties.periodSeconds,
@@ -1598,8 +1598,8 @@ function rosContainerGroupLivenessProbePropertyToRosTemplate(properties: any): a
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_LivenessProbePropertyValidator(properties).assertSuccess();
     return {
-      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
+      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
       'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
       'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
@@ -1724,13 +1724,13 @@ export namespace RosContainerGroup {
      */
     export interface ReadinessProbeProperty {
         /**
-         * @Property timeoutSeconds: The number of seconds after which the probe times out. Default value: 1. Minimum value: 1.
-         */
-        readonly timeoutSeconds?: number | ros.IResolvable;
-        /**
          * @Property initialDelaySeconds: The number of seconds after the container has started before probes are initiated.
          */
         readonly initialDelaySeconds?: number | ros.IResolvable;
+        /**
+         * @Property timeoutSeconds: The number of seconds after which the probe times out. Default value: 1. Minimum value: 1.
+         */
+        readonly timeoutSeconds?: number | ros.IResolvable;
         /**
          * @Property periodSeconds: Specifies the period at which the probe is performed. Unit: seconds. Default value: 10. Minimum value: 1.
          */
@@ -1775,6 +1775,7 @@ export namespace RosContainerGroup {
 function RosContainerGroup_ReadinessProbePropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     if(properties.timeoutSeconds && (typeof properties.timeoutSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateRange)({
             data: properties.timeoutSeconds,
@@ -1783,7 +1784,6 @@ function RosContainerGroup_ReadinessProbePropertyValidator(properties: any): ros
           }));
     }
     errors.collect(ros.propertyValidator('timeoutSeconds', ros.validateNumber)(properties.timeoutSeconds));
-    errors.collect(ros.propertyValidator('initialDelaySeconds', ros.validateNumber)(properties.initialDelaySeconds));
     if(properties.periodSeconds && (typeof properties.periodSeconds) !== 'object') {
         errors.collect(ros.propertyValidator('periodSeconds', ros.validateRange)({
             data: properties.periodSeconds,
@@ -1820,8 +1820,8 @@ function rosContainerGroupReadinessProbePropertyToRosTemplate(properties: any): 
     if (!ros.canInspect(properties)) { return properties; }
     RosContainerGroup_ReadinessProbePropertyValidator(properties).assertSuccess();
     return {
-      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'InitialDelaySeconds': ros.numberToRosTemplate(properties.initialDelaySeconds),
+      'TimeoutSeconds': ros.numberToRosTemplate(properties.timeoutSeconds),
       'PeriodSeconds': ros.numberToRosTemplate(properties.periodSeconds),
       'FailureThreshold': ros.numberToRosTemplate(properties.failureThreshold),
       'SuccessThreshold': ros.numberToRosTemplate(properties.successThreshold),
@@ -2276,13 +2276,15 @@ function RosImageCachePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('imageCacheSize', ros.validateNumber)(properties.imageCacheSize));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('autoMatchImageCache', ros.validateBoolean)(properties.autoMatchImageCache));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
-    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
     errors.collect(ros.propertyValidator('imageCacheName', ros.requiredValidator)(properties.imageCacheName));
     errors.collect(ros.propertyValidator('imageCacheName', ros.validateString)(properties.imageCacheName));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.imageRegistryCredential && (Array.isArray(properties.imageRegistryCredential) || (typeof properties.imageRegistryCredential) === 'string')) {
         errors.collect(ros.propertyValidator('imageRegistryCredential', ros.validateLength)({
             data: properties.imageRegistryCredential.length,
@@ -2291,8 +2293,6 @@ function RosImageCachePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('imageRegistryCredential', ros.listValidator(ros.validateString))(properties.imageRegistryCredential));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('acrRegistryInfo', ros.listValidator(RosImageCache_AcrRegistryInfoPropertyValidator))(properties.acrRegistryInfo));
     errors.collect(ros.propertyValidator('retentionDays', ros.validateNumber)(properties.retentionDays));
     errors.collect(ros.propertyValidator('image', ros.requiredValidator)(properties.image));
@@ -2338,7 +2338,7 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ImageCache`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ImageCache`, which is used to create an image cache.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageCache` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */

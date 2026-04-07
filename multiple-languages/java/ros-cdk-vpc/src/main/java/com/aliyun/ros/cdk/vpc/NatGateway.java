@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::NatGateway</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::NatGateway</code>The , which resource type creates a NAT Gateway.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NatGateway")
 public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.INatGateway {
 
@@ -166,6 +166,52 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
+            return this;
+        }
+
+        /**
+         * Property accessMode: Reverse access mode to the VPC NAT gateway.
+         * <p>
+         * @return {@code this}
+         * @param accessMode Property accessMode: Reverse access mode to the VPC NAT gateway. This parameter is required.
+         */
+        public Builder accessMode(final com.aliyun.ros.cdk.core.IResolvable accessMode) {
+            this.props.accessMode(accessMode);
+            return this;
+        }
+        /**
+         * Property accessMode: Reverse access mode to the VPC NAT gateway.
+         * <p>
+         * @return {@code this}
+         * @param accessMode Property accessMode: Reverse access mode to the VPC NAT gateway. This parameter is required.
+         */
+        public Builder accessMode(final com.aliyun.ros.cdk.vpc.RosNatGateway.AccessModeProperty accessMode) {
+            this.props.accessMode(accessMode);
+            return this;
+        }
+
+        /**
+         * Property availabilityMode: The availability mode of the NAT gateway.
+         * <p>
+         * Valid values: CrossAZ, SingleAZ
+         * <p>
+         * @return {@code this}
+         * @param availabilityMode Property availabilityMode: The availability mode of the NAT gateway. This parameter is required.
+         */
+        public Builder availabilityMode(final java.lang.String availabilityMode) {
+            this.props.availabilityMode(availabilityMode);
+            return this;
+        }
+        /**
+         * Property availabilityMode: The availability mode of the NAT gateway.
+         * <p>
+         * Valid values: CrossAZ, SingleAZ
+         * <p>
+         * @return {@code this}
+         * @param availabilityMode Property availabilityMode: The availability mode of the NAT gateway. This parameter is required.
+         */
+        public Builder availabilityMode(final com.aliyun.ros.cdk.core.IResolvable availabilityMode) {
+            this.props.availabilityMode(availabilityMode);
             return this;
         }
 
@@ -359,6 +405,27 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
+         * Property ipv4Prefix: The IPv4 prefix.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefix Property ipv4Prefix: The IPv4 prefix. This parameter is required.
+         */
+        public Builder ipv4Prefix(final java.lang.String ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+        /**
+         * Property ipv4Prefix: The IPv4 prefix.
+         * <p>
+         * @return {@code this}
+         * @param ipv4Prefix Property ipv4Prefix: The IPv4 prefix. This parameter is required.
+         */
+        public Builder ipv4Prefix(final com.aliyun.ros.cdk.core.IResolvable ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+
+        /**
          * Property natGatewayName: Display name of the NAT gateway, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.
          * <p>
          * @return {@code this}
@@ -376,6 +443,27 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder natGatewayName(final com.aliyun.ros.cdk.core.IResolvable natGatewayName) {
             this.props.natGatewayName(natGatewayName);
+            return this;
+        }
+
+        /**
+         * Property natIp: The NAT IP address.
+         * <p>
+         * @return {@code this}
+         * @param natIp Property natIp: The NAT IP address. This parameter is required.
+         */
+        public Builder natIp(final java.lang.String natIp) {
+            this.props.natIp(natIp);
+            return this;
+        }
+        /**
+         * Property natIp: The NAT IP address.
+         * <p>
+         * @return {@code this}
+         * @param natIp Property natIp: The NAT IP address. This parameter is required.
+         */
+        public Builder natIp(final com.aliyun.ros.cdk.core.IResolvable natIp) {
+            this.props.natIp(natIp);
             return this;
         }
 
@@ -436,6 +524,27 @@ public class NatGateway extends com.aliyun.ros.cdk.core.Resource implements com.
          */
         public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.props.networkType(networkType);
+            return this;
+        }
+
+        /**
+         * Property privateLinkEnabled: Whether to support private network connection.
+         * <p>
+         * @return {@code this}
+         * @param privateLinkEnabled Property privateLinkEnabled: Whether to support private network connection. This parameter is required.
+         */
+        public Builder privateLinkEnabled(final java.lang.Boolean privateLinkEnabled) {
+            this.props.privateLinkEnabled(privateLinkEnabled);
+            return this;
+        }
+        /**
+         * Property privateLinkEnabled: Whether to support private network connection.
+         * <p>
+         * @return {@code this}
+         * @param privateLinkEnabled Property privateLinkEnabled: Whether to support private network connection. This parameter is required.
+         */
+        public Builder privateLinkEnabled(final com.aliyun.ros.cdk.core.IResolvable privateLinkEnabled) {
+            this.props.privateLinkEnabled(privateLinkEnabled);
             return this;
         }
 

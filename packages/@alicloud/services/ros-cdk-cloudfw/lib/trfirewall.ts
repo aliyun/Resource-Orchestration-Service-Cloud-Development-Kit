@@ -94,7 +94,7 @@ export interface ITrFirewall extends ros.IResource {
     readonly attrFirewallId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`, which is used to create a virtual private cloud (VPC) firewall for a transit router.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTrFirewall`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewall
  */

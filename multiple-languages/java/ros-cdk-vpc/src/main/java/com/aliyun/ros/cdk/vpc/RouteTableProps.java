@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routetable
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.198Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouteTableProps")
 @software.amazon.jsii.Jsii.Proxy(RouteTableProps.Jsii$Proxy.class)
 public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
@@ -14,6 +14,13 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
      * Property vpcId: The ID of the VPC to which the custom route table belongs.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
+
+    /**
+     * Property associateType: The type of the route table.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAssociateType() {
+        return null;
+    }
 
     /**
      * Property description: The description of the route table.
@@ -53,6 +60,7 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
      */
     public static final class Builder implements software.amazon.jsii.Builder<RouteTableProps> {
         java.lang.Object vpcId;
+        java.lang.Object associateType;
         java.lang.Object description;
         java.lang.Object routeTableName;
         java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags;
@@ -74,6 +82,26 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
             this.vpcId = vpcId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RouteTableProps#getAssociateType}
+         * @param associateType Property associateType: The type of the route table.
+         * @return {@code this}
+         */
+        public Builder associateType(java.lang.String associateType) {
+            this.associateType = associateType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RouteTableProps#getAssociateType}
+         * @param associateType Property associateType: The type of the route table.
+         * @return {@code this}
+         */
+        public Builder associateType(com.aliyun.ros.cdk.core.IResolvable associateType) {
+            this.associateType = associateType;
             return this;
         }
 
@@ -150,6 +178,7 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RouteTableProps {
         private final java.lang.Object vpcId;
+        private final java.lang.Object associateType;
         private final java.lang.Object description;
         private final java.lang.Object routeTableName;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty> tags;
@@ -161,6 +190,7 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.associateType = software.amazon.jsii.Kernel.get(this, "associateType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeTableName = software.amazon.jsii.Kernel.get(this, "routeTableName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty.class)));
@@ -173,6 +203,7 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
+            this.associateType = builder.associateType;
             this.description = builder.description;
             this.routeTableName = builder.routeTableName;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosRouteTable.TagsProperty>)builder.tags;
@@ -181,6 +212,11 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
+        }
+
+        @Override
+        public final java.lang.Object getAssociateType() {
+            return this.associateType;
         }
 
         @Override
@@ -205,6 +241,9 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("vpcId", om.valueToTree(this.getVpcId()));
+            if (this.getAssociateType() != null) {
+                data.set("associateType", om.valueToTree(this.getAssociateType()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -233,6 +272,7 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
             RouteTableProps.Jsii$Proxy that = (RouteTableProps.Jsii$Proxy) o;
 
             if (!vpcId.equals(that.vpcId)) return false;
+            if (this.associateType != null ? !this.associateType.equals(that.associateType) : that.associateType != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.routeTableName != null ? !this.routeTableName.equals(that.routeTableName) : that.routeTableName != null) return false;
             return this.tags != null ? this.tags.equals(that.tags) : that.tags == null;
@@ -241,6 +281,7 @@ public interface RouteTableProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final int hashCode() {
             int result = this.vpcId.hashCode();
+            result = 31 * result + (this.associateType != null ? this.associateType.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.routeTableName != null ? this.routeTableName.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);

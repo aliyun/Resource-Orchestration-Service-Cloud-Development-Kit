@@ -104,7 +104,7 @@ export interface ITensorboard extends ros.IResource {
     readonly attrTensorboardUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Tensorboard`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTensorboard`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */
@@ -139,10 +139,10 @@ export class Tensorboard extends ros.Resource implements ITensorboard {
         const rosTensorboard = new RosTensorboard(this, id,  {
             maxRunningTimeMinutes: props.maxRunningTimeMinutes,
             options: props.options,
-            memory: props.memory,
             summaryPath: props.summaryPath,
-            sourceId: props.sourceId,
+            memory: props.memory,
             sourceType: props.sourceType,
+            sourceId: props.sourceId,
             workspaceId: props.workspaceId,
             cpu: props.cpu,
             uri: props.uri,

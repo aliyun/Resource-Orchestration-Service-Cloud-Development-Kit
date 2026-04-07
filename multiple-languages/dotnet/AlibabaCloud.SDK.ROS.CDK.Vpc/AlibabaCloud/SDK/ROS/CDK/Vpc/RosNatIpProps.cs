@@ -147,6 +147,94 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        private object? _ipv4Prefix;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv4Prefix: The IPv4 prefix of the IP address range to be created.
+        /// The IPv4 prefix must be within the reserved CIDR block of the switch where the NAT gateway is deployed, and the reserved CIDR block must not be occupied. The prefix length must be \/28.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv4Prefix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Ipv4Prefix
+        {
+            get => _ipv4Prefix;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ipv4Prefix = value;
+            }
+        }
+
+        private object? _ipv4PrefixCount;
+
+        /// <remarks>
+        /// <strong>Property</strong>: ipv4PrefixCount: The number of IPv4 prefixes to automatically allocate.
+        /// Randomly allocated from the unassigned reserved CIDR blocks of the switch where the NAT gateway is deployed. Valid values: 1 to 10.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "ipv4PrefixCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? Ipv4PrefixCount
+        {
+            get => _ipv4PrefixCount;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case double cast_cd4240:
+                            break;
+                        case byte cast_cd4240:
+                            break;
+                        case decimal cast_cd4240:
+                            break;
+                        case float cast_cd4240:
+                            break;
+                        case int cast_cd4240:
+                            break;
+                        case long cast_cd4240:
+                            break;
+                        case sbyte cast_cd4240:
+                            break;
+                        case short cast_cd4240:
+                            break;
+                        case uint cast_cd4240:
+                            break;
+                        case ulong cast_cd4240:
+                            break;
+                        case ushort cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: double, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _ipv4PrefixCount = value;
+            }
+        }
+
         private object? _natIp;
 
         /// <remarks>

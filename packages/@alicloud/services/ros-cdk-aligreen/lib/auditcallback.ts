@@ -67,7 +67,7 @@ export interface IAuditCallback extends ros.IResource {
     readonly attrUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::AuditCallback`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::AuditCallback`, which is used to create an audit callback.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAuditCallback`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-auditcallback
  */
@@ -118,8 +118,8 @@ export class AuditCallback extends ros.Resource implements IAuditCallback {
             cryptType: props.cryptType,
             callbackTypes: props.callbackTypes,
             auditCallbackName: props.auditCallbackName,
-            url: props.url,
             callbackSuggestions: props.callbackSuggestions,
+            url: props.url,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAuditCallback;
         this.attrAuditCallbackName = rosAuditCallback.attrAuditCallbackName;

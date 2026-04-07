@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ess
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`You can use the , which resource to create a scaling group.</summary>
     /// <remarks>
+    /// A scaling group is a collection of ECS instances that are used for the same application scenario. A scaling group does not take effect immediately after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group. After the scaling group is enabled, it can trigger scaling activities and execute scaling rules.
+    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
     /// </remarks>

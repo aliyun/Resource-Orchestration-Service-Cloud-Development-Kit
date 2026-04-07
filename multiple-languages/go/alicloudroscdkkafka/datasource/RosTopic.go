@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topic`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::KAFKA::Topic`, which is used to query the information about a topic.
 type RosTopic interface {
 	alicloudroscdkcore.RosResource
 	AttrCompactTopic() alicloudroscdkcore.IResolvable

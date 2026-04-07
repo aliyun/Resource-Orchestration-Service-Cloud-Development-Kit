@@ -40,7 +40,7 @@ export interface IXTraceApps extends ros.IResource {
     readonly attrXTraceApps: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::XTraceApps`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::XTraceApps`, which is used to query all the application monitoring tasks in a region.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosXTraceApps`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapps
  */

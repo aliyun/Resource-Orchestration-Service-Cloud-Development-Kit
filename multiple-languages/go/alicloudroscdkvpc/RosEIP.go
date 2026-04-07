@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::EIP`The , which resource type requests an Elastic IP Address (EIP).
 type RosEIP interface {
 	alicloudroscdkcore.RosResource
 	AttrAllocationId() alicloudroscdkcore.IResolvable
@@ -32,8 +32,12 @@ type RosEIP interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	InstanceChargeType() interface{}
 	SetInstanceChargeType(val interface{})
+	InstanceId() interface{}
+	SetInstanceId(val interface{})
 	InternetChargeType() interface{}
 	SetInternetChargeType(val interface{})
+	IpAddress() interface{}
+	SetIpAddress(val interface{})
 	Isp() interface{}
 	SetIsp(val interface{})
 	// The logical ID for this stack element.
@@ -314,11 +318,31 @@ func (j *jsiiProxy_RosEIP) InstanceChargeType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosEIP) InstanceId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"instanceId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosEIP) InternetChargeType() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"internetChargeType",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosEIP) IpAddress() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipAddress",
 		&returns,
 	)
 	return returns
@@ -598,6 +622,17 @@ func (j *jsiiProxy_RosEIP)SetInstanceChargeType(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosEIP)SetInstanceId(val interface{}) {
+	if err := j.validateSetInstanceIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"instanceId",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosEIP)SetInternetChargeType(val interface{}) {
 	if err := j.validateSetInternetChargeTypeParameters(val); err != nil {
 		panic(err)
@@ -605,6 +640,17 @@ func (j *jsiiProxy_RosEIP)SetInternetChargeType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"internetChargeType",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEIP)SetIpAddress(val interface{}) {
+	if err := j.validateSetIpAddressParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipAddress",
 		val,
 	)
 }

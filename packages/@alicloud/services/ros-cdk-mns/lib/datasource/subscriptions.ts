@@ -45,7 +45,7 @@ export interface ISubscriptions extends ros.IResource {
     readonly attrSubscriptions: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscriptions`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Subscriptions`, which is used to query the information about the subscriptions.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSubscriptions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-mns-subscriptions
  */
@@ -79,8 +79,8 @@ export class Subscriptions extends ros.Resource implements ISubscriptions {
 
         const rosSubscriptions = new RosSubscriptions(this, id,  {
             subscriptionName: props.subscriptionName,
-            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             topicName: props.topicName,
+            refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSubscriptions;
         this.attrSubscriptionIds = rosSubscriptions.attrSubscriptionIds;

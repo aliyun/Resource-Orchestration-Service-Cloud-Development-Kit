@@ -142,7 +142,7 @@ export interface IImages extends ros.IResource {
     readonly attrImages: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Images`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Images`, which is used to query available images.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImages`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
@@ -179,16 +179,16 @@ export class Images extends ros.Resource implements IImages {
             imageOwnerAlias: props.imageOwnerAlias,
             usage: props.usage,
             actionType: props.actionType,
-            resourceGroupId: props.resourceGroupId,
             architecture: props.architecture,
+            resourceGroupId: props.resourceGroupId,
             imageFamily: props.imageFamily,
             isSupportIoOptimized: props.isSupportIoOptimized,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             isSupportCloudinit: props.isSupportCloudinit,
-            imageName: props.imageName,
             snapshotId: props.snapshotId,
-            isPublic: props.isPublic,
+            imageName: props.imageName,
             osType: props.osType,
+            isPublic: props.isPublic,
             imageId: props.imageId,
             instanceType: props.instanceType,
             tags: props.tags,

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Group`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Group`, which is used to create a user group.
 type RosGroup interface {
 	alicloudroscdkcore.RosResource
 	Algorithm() interface{}

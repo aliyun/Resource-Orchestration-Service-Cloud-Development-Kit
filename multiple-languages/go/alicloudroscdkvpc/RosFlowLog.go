@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FlowLog`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
 type RosFlowLog interface {
 	alicloudroscdkcore.RosResource
 	AttrDescription() alicloudroscdkcore.IResolvable

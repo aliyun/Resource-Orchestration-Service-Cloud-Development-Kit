@@ -30,6 +30,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: vpcId: The ID of the VPC.
+        /// </remarks>
+        [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VpcId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosBgpNetwork`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpnetwork
@@ -58,6 +71,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             public object RouterId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: vpcId: The ID of the VPC.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VpcId
+            {
+                get => GetInstanceProperty<object?>();
             }
         }
     }

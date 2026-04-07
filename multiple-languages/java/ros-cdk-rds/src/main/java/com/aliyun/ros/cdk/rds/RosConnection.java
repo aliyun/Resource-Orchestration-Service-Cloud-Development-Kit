@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rds;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::Connection</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::Connection</code>, which is used to apply for a public endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.545Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.210Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosConnection")
 public class RosConnection extends com.aliyun.ros.cdk.core.RosResource {
 

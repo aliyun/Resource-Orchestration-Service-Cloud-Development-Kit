@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VOD::Storage`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VOD::Storage`, which is used to add an Object Storage Service (OSS) bucket in ApsaraVideo VOD (VOD).
 type Storage interface {
 	alicloudroscdkcore.Resource
 	IStorage

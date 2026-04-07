@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::NatGateway</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::NatGateway</code>The , which resource type creates a NAT Gateway.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.088Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.028Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGateway")
 public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -105,6 +105,42 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setVSwitchId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "vSwitchId", java.util.Objects.requireNonNull(value, "vSwitchId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccessMode() {
+        return software.amazon.jsii.Kernel.get(this, "accessMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAccessMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accessMode", value);
+    }
+
+    /**
+     */
+    public void setAccessMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.vpc.RosNatGateway.AccessModeProperty value) {
+        software.amazon.jsii.Kernel.set(this, "accessMode", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAvailabilityMode() {
+        return software.amazon.jsii.Kernel.get(this, "availabilityMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAvailabilityMode(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "availabilityMode", value);
+    }
+
+    /**
+     */
+    public void setAvailabilityMode(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "availabilityMode", value);
     }
 
     /**
@@ -235,6 +271,24 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv4Prefix() {
+        return software.amazon.jsii.Kernel.get(this, "ipv4Prefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv4Prefix(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipv4Prefix", value);
+    }
+
+    /**
+     */
+    public void setIpv4Prefix(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv4Prefix", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getNatGatewayName() {
         return software.amazon.jsii.Kernel.get(this, "natGatewayName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -249,6 +303,24 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setNatGatewayName(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "natGatewayName", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getNatIp() {
+        return software.amazon.jsii.Kernel.get(this, "natIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setNatIp(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "natIp", value);
+    }
+
+    /**
+     */
+    public void setNatIp(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "natIp", value);
     }
 
     /**
@@ -289,6 +361,24 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getPrivateLinkEnabled() {
+        return software.amazon.jsii.Kernel.get(this, "privateLinkEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setPrivateLinkEnabled(final @org.jetbrains.annotations.Nullable java.lang.Boolean value) {
+        software.amazon.jsii.Kernel.set(this, "privateLinkEnabled", value);
+    }
+
+    /**
+     */
+    public void setPrivateLinkEnabled(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "privateLinkEnabled", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityProtectionEnabled() {
         return software.amazon.jsii.Kernel.get(this, "securityProtectionEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -315,6 +405,178 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTags(final @org.jetbrains.annotations.Nullable java.util.List<com.aliyun.ros.cdk.vpc.RosNatGateway.TagsProperty> value) {
         software.amazon.jsii.Kernel.set(this, "tags", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatGateway.AccessModeProperty")
+    @software.amazon.jsii.Jsii.Proxy(AccessModeProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface AccessModeProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getModeValue() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getTunnelType() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link AccessModeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link AccessModeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<AccessModeProperty> {
+            java.lang.Object modeValue;
+            java.lang.Object tunnelType;
+
+            /**
+             * Sets the value of {@link AccessModeProperty#getModeValue}
+             * @param modeValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder modeValue(java.lang.String modeValue) {
+                this.modeValue = modeValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessModeProperty#getModeValue}
+             * @param modeValue the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder modeValue(com.aliyun.ros.cdk.core.IResolvable modeValue) {
+                this.modeValue = modeValue;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessModeProperty#getTunnelType}
+             * @param tunnelType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tunnelType(java.lang.String tunnelType) {
+                this.tunnelType = tunnelType;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link AccessModeProperty#getTunnelType}
+             * @param tunnelType the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder tunnelType(com.aliyun.ros.cdk.core.IResolvable tunnelType) {
+                this.tunnelType = tunnelType;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link AccessModeProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public AccessModeProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link AccessModeProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AccessModeProperty {
+            private final java.lang.Object modeValue;
+            private final java.lang.Object tunnelType;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.modeValue = software.amazon.jsii.Kernel.get(this, "modeValue", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.tunnelType = software.amazon.jsii.Kernel.get(this, "tunnelType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.modeValue = builder.modeValue;
+                this.tunnelType = builder.tunnelType;
+            }
+
+            @Override
+            public final java.lang.Object getModeValue() {
+                return this.modeValue;
+            }
+
+            @Override
+            public final java.lang.Object getTunnelType() {
+                return this.tunnelType;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getModeValue() != null) {
+                    data.set("modeValue", om.valueToTree(this.getModeValue()));
+                }
+                if (this.getTunnelType() != null) {
+                    data.set("tunnelType", om.valueToTree(this.getTunnelType()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-vpc.RosNatGateway.AccessModeProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                AccessModeProperty.Jsii$Proxy that = (AccessModeProperty.Jsii$Proxy) o;
+
+                if (this.modeValue != null ? !this.modeValue.equals(that.modeValue) : that.modeValue != null) return false;
+                return this.tunnelType != null ? this.tunnelType.equals(that.tunnelType) : that.tunnelType == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.modeValue != null ? this.modeValue.hashCode() : 0;
+                result = 31 * result + (this.tunnelType != null ? this.tunnelType.hashCode() : 0);
+                return result;
+            }
+        }
     }
     /**
      */
@@ -547,6 +809,40 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param accessMode This parameter is required.
+         */
+        public Builder accessMode(final com.aliyun.ros.cdk.core.IResolvable accessMode) {
+            this.props.accessMode(accessMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param accessMode This parameter is required.
+         */
+        public Builder accessMode(final com.aliyun.ros.cdk.vpc.RosNatGateway.AccessModeProperty accessMode) {
+            this.props.accessMode(accessMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param availabilityMode This parameter is required.
+         */
+        public Builder availabilityMode(final java.lang.String availabilityMode) {
+            this.props.availabilityMode(availabilityMode);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param availabilityMode This parameter is required.
+         */
+        public Builder availabilityMode(final com.aliyun.ros.cdk.core.IResolvable availabilityMode) {
+            this.props.availabilityMode(availabilityMode);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param deletionForce This parameter is required.
          */
         public Builder deletionForce(final java.lang.Boolean deletionForce) {
@@ -666,6 +962,23 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param ipv4Prefix This parameter is required.
+         */
+        public Builder ipv4Prefix(final java.lang.String ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv4Prefix This parameter is required.
+         */
+        public Builder ipv4Prefix(final com.aliyun.ros.cdk.core.IResolvable ipv4Prefix) {
+            this.props.ipv4Prefix(ipv4Prefix);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param natGatewayName This parameter is required.
          */
         public Builder natGatewayName(final java.lang.String natGatewayName) {
@@ -678,6 +991,23 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder natGatewayName(final com.aliyun.ros.cdk.core.IResolvable natGatewayName) {
             this.props.natGatewayName(natGatewayName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param natIp This parameter is required.
+         */
+        public Builder natIp(final java.lang.String natIp) {
+            this.props.natIp(natIp);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param natIp This parameter is required.
+         */
+        public Builder natIp(final com.aliyun.ros.cdk.core.IResolvable natIp) {
+            this.props.natIp(natIp);
             return this;
         }
 
@@ -712,6 +1042,23 @@ public class RosNatGateway extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder networkType(final com.aliyun.ros.cdk.core.IResolvable networkType) {
             this.props.networkType(networkType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param privateLinkEnabled This parameter is required.
+         */
+        public Builder privateLinkEnabled(final java.lang.Boolean privateLinkEnabled) {
+            this.props.privateLinkEnabled(privateLinkEnabled);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param privateLinkEnabled This parameter is required.
+         */
+        public Builder privateLinkEnabled(final com.aliyun.ros.cdk.core.IResolvable privateLinkEnabled) {
+            this.props.privateLinkEnabled(privateLinkEnabled);
             return this;
         }
 

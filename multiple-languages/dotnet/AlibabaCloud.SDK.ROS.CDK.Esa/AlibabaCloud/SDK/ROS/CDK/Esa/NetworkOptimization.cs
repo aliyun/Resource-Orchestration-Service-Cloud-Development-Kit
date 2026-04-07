@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Esa
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`The , which type is used to add network optimization configurations for a website.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkOptimization`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-networkoptimization
@@ -119,7 +119,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Esa
             get => GetInstanceProperty<object>()!;
         }
 
-        /// <summary>Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100～500.</summary>
+        /// <summary>Attribute UploadMaxFilesize: Maximum upload file size, in MB, value range: 100ï½500.</summary>
         [JsiiProperty(name: "attrUploadMaxFilesize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrUploadMaxFilesize
         {

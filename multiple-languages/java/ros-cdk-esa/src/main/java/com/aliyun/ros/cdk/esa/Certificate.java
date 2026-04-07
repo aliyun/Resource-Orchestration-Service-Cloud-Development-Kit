@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.esa;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::Certificate</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::Certificate</code>The , which type configures a website certificate.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.432Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.903Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.Certificate")
 public class Certificate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.esa.ICertificate {
 

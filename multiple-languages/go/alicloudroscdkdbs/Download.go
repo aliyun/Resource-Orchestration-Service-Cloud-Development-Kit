@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DBS::Download`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DBS::Download`, which is used to create an advanced download task.
 type Download interface {
 	alicloudroscdkcore.Resource
 	IDownload

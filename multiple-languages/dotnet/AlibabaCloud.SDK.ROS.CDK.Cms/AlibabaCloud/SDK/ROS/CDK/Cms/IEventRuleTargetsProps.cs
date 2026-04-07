@@ -51,6 +51,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
+        /// <summary>Property openApiParameters: API callback notification parameter list.</summary>
+        [JsiiProperty(name: "openApiParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRuleTargets.OpenApiParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? OpenApiParameters
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property slsParameters: SLS configuration.A maximum of 5 parameters.</summary>
         [JsiiProperty(name: "slsParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRuleTargets.SlsParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -111,6 +122,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             [JsiiOptional]
             [JsiiProperty(name: "mnsParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRuleTargets.MnsParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? MnsParameters
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property openApiParameters: API callback notification parameter list.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "openApiParameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosEventRuleTargets.OpenApiParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? OpenApiParameters
             {
                 get => GetInstanceProperty<object?>();
             }

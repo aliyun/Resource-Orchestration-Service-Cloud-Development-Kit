@@ -23,6 +23,7 @@
 @alicloud/ros-cdk-mse.INacosService=com.aliyun.ros.cdk.mse.INacosService
 @alicloud/ros-cdk-mse.IPluginConfig=com.aliyun.ros.cdk.mse.IPluginConfig
 @alicloud/ros-cdk-mse.IServiceSource=com.aliyun.ros.cdk.mse.IServiceSource
+@alicloud/ros-cdk-mse.IZnode=com.aliyun.ros.cdk.mse.IZnode
 @alicloud/ros-cdk-mse.NacosConfig=com.aliyun.ros.cdk.mse.NacosConfig
 @alicloud/ros-cdk-mse.NacosConfigProps=com.aliyun.ros.cdk.mse.NacosConfigProps
 @alicloud/ros-cdk-mse.NacosService=com.aliyun.ros.cdk.mse.NacosService
@@ -67,8 +68,12 @@
 @alicloud/ros-cdk-mse.RosServiceSource=com.aliyun.ros.cdk.mse.RosServiceSource
 @alicloud/ros-cdk-mse.RosServiceSource.IngressOptionsProperty=com.aliyun.ros.cdk.mse.RosServiceSource$IngressOptionsProperty
 @alicloud/ros-cdk-mse.RosServiceSourceProps=com.aliyun.ros.cdk.mse.RosServiceSourceProps
+@alicloud/ros-cdk-mse.RosZnode=com.aliyun.ros.cdk.mse.RosZnode
+@alicloud/ros-cdk-mse.RosZnodeProps=com.aliyun.ros.cdk.mse.RosZnodeProps
 @alicloud/ros-cdk-mse.ServiceSource=com.aliyun.ros.cdk.mse.ServiceSource
 @alicloud/ros-cdk-mse.ServiceSourceProps=com.aliyun.ros.cdk.mse.ServiceSourceProps
+@alicloud/ros-cdk-mse.Znode=com.aliyun.ros.cdk.mse.Znode
+@alicloud/ros-cdk-mse.ZnodeProps=com.aliyun.ros.cdk.mse.ZnodeProps
 @alicloud/ros-cdk-mse.datasource.Clusters=com.aliyun.ros.cdk.mse.datasource.Clusters
 @alicloud/ros-cdk-mse.datasource.ClustersProps=com.aliyun.ros.cdk.mse.datasource.ClustersProps
 @alicloud/ros-cdk-mse.datasource.Gateways=com.aliyun.ros.cdk.mse.datasource.Gateways

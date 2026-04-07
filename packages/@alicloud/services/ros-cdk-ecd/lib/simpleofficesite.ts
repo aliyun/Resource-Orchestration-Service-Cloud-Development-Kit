@@ -106,7 +106,7 @@ export interface ISimpleOfficeSite extends ros.IResource {
     readonly attrOfficeSiteId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSimpleOfficeSite`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
@@ -139,13 +139,13 @@ export class SimpleOfficeSite extends ros.Resource implements ISimpleOfficeSite 
             cloudBoxOfficeSite: props.cloudBoxOfficeSite,
             cidrBlock: props.cidrBlock,
             verifyCode: props.verifyCode,
-            vpcType: props.vpcType,
             needVerifyZeroDevice: props.needVerifyZeroDevice,
+            vpcType: props.vpcType,
             cenOwnerId: props.cenOwnerId,
             bandwidth: props.bandwidth,
             cenId: props.cenId,
-            desktopAccessType: props.desktopAccessType,
             officeSiteName: props.officeSiteName,
+            desktopAccessType: props.desktopAccessType,
             enableInternetAccess: props.enableInternetAccess,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSimpleOfficeSite;

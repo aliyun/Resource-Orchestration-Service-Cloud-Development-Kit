@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-routerinterface
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.109Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.075Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouterInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(RosRouterInterfaceProps.Jsii$Proxy.class)
 public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,7 +32,19 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getFastLinkMode() {
         return null;
     }
 
@@ -110,6 +122,12 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRouterType() {
         return null;
     }
@@ -134,7 +152,9 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object routerId;
         java.lang.Object accessPointId;
         java.lang.Object autoPay;
+        java.lang.Object autoRenew;
         java.lang.Object description;
+        java.lang.Object fastLinkMode;
         java.lang.Object healthCheckSourceIp;
         java.lang.Object healthCheckTargetIp;
         java.lang.Object instanceChargeType;
@@ -147,6 +167,7 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object oppositeRouterType;
         java.lang.Object period;
         java.lang.Object pricingCycle;
+        java.lang.Object resourceGroupId;
         java.lang.Object routerType;
         java.lang.Object spec;
 
@@ -231,6 +252,26 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getAutoRenew}
+         * @param autoRenew the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenew(java.lang.Boolean autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getAutoRenew}
+         * @param autoRenew the value to be set.
+         * @return {@code this}
+         */
+        public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.autoRenew = autoRenew;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getDescription}
          * @param description the value to be set.
          * @return {@code this}
@@ -247,6 +288,26 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
             this.description = description;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getFastLinkMode}
+         * @param fastLinkMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder fastLinkMode(java.lang.Boolean fastLinkMode) {
+            this.fastLinkMode = fastLinkMode;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getFastLinkMode}
+         * @param fastLinkMode the value to be set.
+         * @return {@code this}
+         */
+        public Builder fastLinkMode(com.aliyun.ros.cdk.core.IResolvable fastLinkMode) {
+            this.fastLinkMode = fastLinkMode;
             return this;
         }
 
@@ -491,6 +552,26 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosRouterInterfaceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosRouterInterfaceProps#getResourceGroupId}
+         * @param resourceGroupId the value to be set.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosRouterInterfaceProps#getRouterType}
          * @param routerType the value to be set.
          * @return {@code this}
@@ -550,7 +631,9 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object routerId;
         private final java.lang.Object accessPointId;
         private final java.lang.Object autoPay;
+        private final java.lang.Object autoRenew;
         private final java.lang.Object description;
+        private final java.lang.Object fastLinkMode;
         private final java.lang.Object healthCheckSourceIp;
         private final java.lang.Object healthCheckTargetIp;
         private final java.lang.Object instanceChargeType;
@@ -563,6 +646,7 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object oppositeRouterType;
         private final java.lang.Object period;
         private final java.lang.Object pricingCycle;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object routerType;
         private final java.lang.Object spec;
 
@@ -576,7 +660,9 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             this.routerId = software.amazon.jsii.Kernel.get(this, "routerId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.accessPointId = software.amazon.jsii.Kernel.get(this, "accessPointId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.autoPay = software.amazon.jsii.Kernel.get(this, "autoPay", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.autoRenew = software.amazon.jsii.Kernel.get(this, "autoRenew", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.fastLinkMode = software.amazon.jsii.Kernel.get(this, "fastLinkMode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckSourceIp = software.amazon.jsii.Kernel.get(this, "healthCheckSourceIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.healthCheckTargetIp = software.amazon.jsii.Kernel.get(this, "healthCheckTargetIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -589,6 +675,7 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             this.oppositeRouterType = software.amazon.jsii.Kernel.get(this, "oppositeRouterType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.pricingCycle = software.amazon.jsii.Kernel.get(this, "pricingCycle", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routerType = software.amazon.jsii.Kernel.get(this, "routerType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.spec = software.amazon.jsii.Kernel.get(this, "spec", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -602,7 +689,9 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             this.routerId = java.util.Objects.requireNonNull(builder.routerId, "routerId is required");
             this.accessPointId = builder.accessPointId;
             this.autoPay = builder.autoPay;
+            this.autoRenew = builder.autoRenew;
             this.description = builder.description;
+            this.fastLinkMode = builder.fastLinkMode;
             this.healthCheckSourceIp = builder.healthCheckSourceIp;
             this.healthCheckTargetIp = builder.healthCheckTargetIp;
             this.instanceChargeType = builder.instanceChargeType;
@@ -615,6 +704,7 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             this.oppositeRouterType = builder.oppositeRouterType;
             this.period = builder.period;
             this.pricingCycle = builder.pricingCycle;
+            this.resourceGroupId = builder.resourceGroupId;
             this.routerType = builder.routerType;
             this.spec = builder.spec;
         }
@@ -640,8 +730,18 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getAutoRenew() {
+            return this.autoRenew;
+        }
+
+        @Override
         public final java.lang.Object getDescription() {
             return this.description;
+        }
+
+        @Override
+        public final java.lang.Object getFastLinkMode() {
+            return this.fastLinkMode;
         }
 
         @Override
@@ -705,6 +805,11 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getRouterType() {
             return this.routerType;
         }
@@ -728,8 +833,14 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             if (this.getAutoPay() != null) {
                 data.set("autoPay", om.valueToTree(this.getAutoPay()));
             }
+            if (this.getAutoRenew() != null) {
+                data.set("autoRenew", om.valueToTree(this.getAutoRenew()));
+            }
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
+            }
+            if (this.getFastLinkMode() != null) {
+                data.set("fastLinkMode", om.valueToTree(this.getFastLinkMode()));
             }
             if (this.getHealthCheckSourceIp() != null) {
                 data.set("healthCheckSourceIp", om.valueToTree(this.getHealthCheckSourceIp()));
@@ -767,6 +878,9 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             if (this.getPricingCycle() != null) {
                 data.set("pricingCycle", om.valueToTree(this.getPricingCycle()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getRouterType() != null) {
                 data.set("routerType", om.valueToTree(this.getRouterType()));
             }
@@ -795,7 +909,9 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             if (!routerId.equals(that.routerId)) return false;
             if (this.accessPointId != null ? !this.accessPointId.equals(that.accessPointId) : that.accessPointId != null) return false;
             if (this.autoPay != null ? !this.autoPay.equals(that.autoPay) : that.autoPay != null) return false;
+            if (this.autoRenew != null ? !this.autoRenew.equals(that.autoRenew) : that.autoRenew != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
+            if (this.fastLinkMode != null ? !this.fastLinkMode.equals(that.fastLinkMode) : that.fastLinkMode != null) return false;
             if (this.healthCheckSourceIp != null ? !this.healthCheckSourceIp.equals(that.healthCheckSourceIp) : that.healthCheckSourceIp != null) return false;
             if (this.healthCheckTargetIp != null ? !this.healthCheckTargetIp.equals(that.healthCheckTargetIp) : that.healthCheckTargetIp != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
@@ -808,6 +924,7 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             if (this.oppositeRouterType != null ? !this.oppositeRouterType.equals(that.oppositeRouterType) : that.oppositeRouterType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.pricingCycle != null ? !this.pricingCycle.equals(that.pricingCycle) : that.pricingCycle != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.routerType != null ? !this.routerType.equals(that.routerType) : that.routerType != null) return false;
             return this.spec != null ? this.spec.equals(that.spec) : that.spec == null;
         }
@@ -818,7 +935,9 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.routerId.hashCode());
             result = 31 * result + (this.accessPointId != null ? this.accessPointId.hashCode() : 0);
             result = 31 * result + (this.autoPay != null ? this.autoPay.hashCode() : 0);
+            result = 31 * result + (this.autoRenew != null ? this.autoRenew.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
+            result = 31 * result + (this.fastLinkMode != null ? this.fastLinkMode.hashCode() : 0);
             result = 31 * result + (this.healthCheckSourceIp != null ? this.healthCheckSourceIp.hashCode() : 0);
             result = 31 * result + (this.healthCheckTargetIp != null ? this.healthCheckTargetIp.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
@@ -831,6 +950,7 @@ public interface RosRouterInterfaceProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.oppositeRouterType != null ? this.oppositeRouterType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.pricingCycle != null ? this.pricingCycle.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.routerType != null ? this.routerType.hashCode() : 0);
             result = 31 * result + (this.spec != null ? this.spec.hashCode() : 0);
             return result;

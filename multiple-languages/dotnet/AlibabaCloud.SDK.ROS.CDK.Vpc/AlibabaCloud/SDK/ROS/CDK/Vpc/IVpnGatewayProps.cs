@@ -160,6 +160,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.</description>
+        /// <description>After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.</description>
+        /// </list>
+        ///
+        /// If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+        /// </remarks>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property sslConnections: The maximum number of clients allowed to connect at the same time.</summary>
         [JsiiProperty(name: "sslConnections", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -336,6 +355,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.</description>
+            /// <description>After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.</description>
+            /// </list>
+            ///
+            /// If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

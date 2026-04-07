@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`The , which type is used to create an Application Load Balancer (ALB) instance.
 type LoadBalancer interface {
 	alicloudroscdkcore.Resource
 	ILoadBalancer

@@ -85,6 +85,8 @@ type InstanceProps struct {
 	// - **ONLY_CONFIGURATION_FEE**: charges only configuration fees.
 	// - **CONFIGURATION_FEE_AND_DATA_FEE**: charges configuration fees and data traffic fees.
 	FeeType interface{} `field:"optional" json:"feeType" yaml:"feeType"`
+	// Property insightModule: Whether to enable the insight module.
+	InsightModule interface{} `field:"optional" json:"insightModule" yaml:"insightModule"`
 	// Property jobId: The ID of the task.
 	//
 	// **Note**: If this parameter is specified, you do not need to specify the SourceRegion, DestinationRegion, SourceEndpointEngineName, or DestinationEndpointEngineName parameter. Even if these parameters are specified, the value of the JobId parameter takes precedence.

@@ -189,7 +189,7 @@ export interface IInstances extends ros.IResource {
     readonly attrInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Instances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Instances`, which is used to query the information about Elastic Compute Service (ECS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-instances
  */
@@ -225,16 +225,16 @@ export class Instances extends ros.Resource implements IInstances {
             innerIpAddresses: props.innerIpAddresses,
             resourceGroupId: props.resourceGroupId,
             privateIpAddresses: props.privateIpAddresses,
-            instanceChargeType: props.instanceChargeType,
             instanceTypeFamily: props.instanceTypeFamily,
+            instanceChargeType: props.instanceChargeType,
             instanceNetworkType: props.instanceNetworkType,
             filters: props.filters,
-            additionalAttributes: props.additionalAttributes,
             imageId: props.imageId,
+            additionalAttributes: props.additionalAttributes,
             publicIpAddresses: props.publicIpAddresses,
             rdmaIpAddresses: props.rdmaIpAddresses,
-            instanceIds: props.instanceIds,
             instanceType: props.instanceType,
+            instanceIds: props.instanceIds,
             ipv6Address: props.ipv6Address,
             tags: props.tags,
             status: props.status,
@@ -248,8 +248,8 @@ export class Instances extends ros.Resource implements IInstances {
             internetChargeType: props.internetChargeType,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
             instanceName: props.instanceName,
-            eipAddresses: props.eipAddresses,
             vpcId: props.vpcId,
+            eipAddresses: props.eipAddresses,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstances;
         this.attrInstanceIds = rosInstances.attrInstanceIds;

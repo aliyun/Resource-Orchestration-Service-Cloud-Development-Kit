@@ -57,7 +57,7 @@ export interface IMachineGroup extends ros.IResource {
     readonly attrProjectName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MachineGroup`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::MachineGroup`, which is used to create a machine group. Log Service manages all the ECS instances whose logs need to be collected using the Logtail client in the form of machine groups.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMachineGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-machinegroup
  */
@@ -90,8 +90,8 @@ export class MachineGroup extends ros.Resource implements IMachineGroup {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMachineGroup = new RosMachineGroup(this, id,  {
-            machineList: props.machineList,
             groupName: props.groupName,
+            machineList: props.machineList,
             groupType: props.groupType,
             projectName: props.projectName,
             machineIdentifyType: props.machineIdentifyType,

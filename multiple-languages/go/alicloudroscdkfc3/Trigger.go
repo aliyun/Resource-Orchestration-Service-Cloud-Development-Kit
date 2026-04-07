@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Trigger`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::Trigger`, which is used to create a Function Compute 3.0 trigger.
 type Trigger interface {
 	alicloudroscdkcore.Resource
 	ITrigger

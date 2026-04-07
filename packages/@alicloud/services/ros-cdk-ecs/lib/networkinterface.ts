@@ -157,7 +157,7 @@ export interface INetworkInterface extends ros.IResource {
     readonly attrSecondaryPrivateIpAddresses: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterface`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
@@ -207,19 +207,19 @@ export class NetworkInterface extends ros.Resource implements INetworkInterface 
         const rosNetworkInterface = new RosNetworkInterface(this, id,  {
             networkInterfaceTrafficMode: props.networkInterfaceTrafficMode,
             description: props.description,
-            deleteOnRelease: props.deleteOnRelease,
             privateIpAddresses: props.privateIpAddresses,
             resourceGroupId: props.resourceGroupId,
             secondaryPrivateIpAddressCount: props.secondaryPrivateIpAddressCount,
+            deleteOnRelease: props.deleteOnRelease,
             ipv6PrefixCount: props.ipv6PrefixCount,
             ipv4Prefixes: props.ipv4Prefixes,
-            vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
+            vSwitchId: props.vSwitchId,
             networkInterfaceName: props.networkInterfaceName,
             ipv4PrefixCount: props.ipv4PrefixCount,
             primaryIpAddress: props.primaryIpAddress,
-            ipv6Prefixes: props.ipv6Prefixes,
             ipv6Addresses: props.ipv6Addresses,
+            ipv6Prefixes: props.ipv6Prefixes,
             securityGroupIds: props.securityGroupIds,
             queueNumber: props.queueNumber,
             txQueueSize: props.txQueueSize,

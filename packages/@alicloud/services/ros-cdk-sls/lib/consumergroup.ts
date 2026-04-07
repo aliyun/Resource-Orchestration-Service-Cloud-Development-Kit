@@ -102,8 +102,8 @@ export class ConsumerGroup extends ros.Resource implements IConsumerGroup {
         const rosConsumerGroup = new RosConsumerGroup(this, id,  {
             order: props.order,
             project: props.project,
-            timeout: props.timeout,
             logstore: props.logstore,
+            timeout: props.timeout,
             consumerGroup: props.consumerGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosConsumerGroup;

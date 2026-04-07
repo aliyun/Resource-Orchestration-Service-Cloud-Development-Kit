@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetAutoCreateVpcRouteP
 	return nil
 }
 
+func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetAutoPublishRouteEnabledParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetCenIdParameters(val interface{}) error {
 	return nil
 }
@@ -121,6 +125,10 @@ func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetTransitRouterAttach
 }
 
 func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetTransitRouterIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosTransitRouterVpcAttachment) validateSetTransitRouterVpcAttachmentOptionsParameters(val interface{}) error {
 	return nil
 }
 

@@ -64,7 +64,7 @@ export interface IAccount extends ros.IResource {
     readonly attrDbClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::Account`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::Account`, which is used to create a database account for an AnalyticDB for MySQL cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
  */
@@ -105,8 +105,8 @@ export class Account extends ros.Resource implements IAccount {
             accountDescription: props.accountDescription,
             dbClusterId: props.dbClusterId,
             accountType: props.accountType,
-            accountPassword: props.accountPassword,
             accountName: props.accountName,
+            accountPassword: props.accountPassword,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccount;
         this.attrAccountName = rosAccount.attrAccountName;

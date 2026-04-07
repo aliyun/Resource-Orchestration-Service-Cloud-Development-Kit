@@ -71,7 +71,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::Account`, which is used to create an account.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-account
  */
@@ -274,7 +274,6 @@ export interface RosDbInstanceProps {
 function RosDbInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('dbInstanceNetworkType', ros.requiredValidator)(properties.dbInstanceNetworkType));
     if(properties.dbInstanceNetworkType && (typeof properties.dbInstanceNetworkType) !== 'object') {
@@ -284,6 +283,7 @@ function RosDbInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbInstanceNetworkType', ros.validateString)(properties.dbInstanceNetworkType));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('ecsSecurityGroupRelations', ros.listValidator(RosDbInstance_EcsSecurityGroupRelationsPropertyValidator))(properties.ecsSecurityGroupRelations));
     errors.collect(ros.propertyValidator('dbInstanceStorageType', ros.requiredValidator)(properties.dbInstanceStorageType));
@@ -308,7 +308,6 @@ function RosDbInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('dbInstanceCategory', ros.validateString)(properties.dbInstanceCategory));
     errors.collect(ros.propertyValidator('sourceDbInstanceId', ros.validateString)(properties.sourceDbInstanceId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
-    errors.collect(ros.propertyValidator('dbInstanceIpArray', ros.listValidator(RosDbInstance_DBInstanceIPArrayPropertyValidator))(properties.dbInstanceIpArray));
     errors.collect(ros.propertyValidator('dbVersion', ros.requiredValidator)(properties.dbVersion));
     if(properties.dbVersion && (typeof properties.dbVersion) !== 'object') {
         errors.collect(ros.propertyValidator('dbVersion', ros.validateAllowedValues)({
@@ -317,6 +316,7 @@ function RosDbInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbVersion', ros.validateString)(properties.dbVersion));
+    errors.collect(ros.propertyValidator('dbInstanceIpArray', ros.listValidator(RosDbInstance_DBInstanceIPArrayPropertyValidator))(properties.dbInstanceIpArray));
     if(properties.createType && (typeof properties.createType) !== 'object') {
         errors.collect(ros.propertyValidator('createType', ros.validateAllowedValues)({
           data: properties.createType,
@@ -391,7 +391,7 @@ function rosDbInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GraphDatabase::DbInstance`, which is used to create a Graph Database (GDB) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `DbInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-graphdatabase-dbinstance
  */

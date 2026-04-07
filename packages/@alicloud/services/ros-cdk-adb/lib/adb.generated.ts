@@ -61,10 +61,10 @@ function RosAccountPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('accountType', ros.validateString)(properties.accountType));
-    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
-    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
     errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
     errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountPassword', ros.requiredValidator)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
     return errors.wrap('supplied properties not correct for "RosAccountProps"');
 }
 
@@ -91,7 +91,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::Account`, which is used to create a database account for an AnalyticDB for MySQL cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
  */
@@ -186,6 +186,186 @@ export class RosAccount extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosBackupPolicy`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-backuppolicy
+ */
+export interface RosBackupPolicyProps {
+
+    /**
+     * @Property dbClusterId: The ID of the ADB cluster.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupPeriod: The preferred backup period. Valid values: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+     */
+    readonly preferredBackupPeriod: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupTime: The preferred backup time. Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+     */
+    readonly preferredBackupTime: string | ros.IResolvable;
+
+    /**
+     * @Property backupRetentionPeriod: The number of days for which backup files are retained. Valid values: 7 to 730.
+     */
+    readonly backupRetentionPeriod?: number | ros.IResolvable;
+
+    /**
+     * @Property enableBackupLog: Whether to enable log backup. Valid values: Enable, Disable.
+     */
+    readonly enableBackupLog?: string | ros.IResolvable;
+
+    /**
+     * @Property logBackupRetentionPeriod: The number of days for which log backup files are retained. Valid values: 7 to 730.
+     */
+    readonly logBackupRetentionPeriod?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosBackupPolicyProps`
+ *
+ * @param properties - the TypeScript properties of a `RosBackupPolicyProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosBackupPolicyPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.requiredValidator)(properties.preferredBackupPeriod));
+    if(properties.preferredBackupPeriod && (Array.isArray(properties.preferredBackupPeriod) || (typeof properties.preferredBackupPeriod) === 'string')) {
+        errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.validateLength)({
+            data: properties.preferredBackupPeriod.length,
+            min: 1,
+            max: 7,
+          }));
+    }
+    errors.collect(ros.propertyValidator('preferredBackupPeriod', ros.listValidator(ros.validateString))(properties.preferredBackupPeriod));
+    if(properties.logBackupRetentionPeriod && (typeof properties.logBackupRetentionPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateRange)({
+            data: properties.logBackupRetentionPeriod,
+            min: 7,
+            max: 730,
+          }));
+    }
+    errors.collect(ros.propertyValidator('logBackupRetentionPeriod', ros.validateNumber)(properties.logBackupRetentionPeriod));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.requiredValidator)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('preferredBackupTime', ros.validateString)(properties.preferredBackupTime));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('enableBackupLog', ros.validateString)(properties.enableBackupLog));
+    if(properties.backupRetentionPeriod && (typeof properties.backupRetentionPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('backupRetentionPeriod', ros.validateRange)({
+            data: properties.backupRetentionPeriod,
+            min: 7,
+            max: 730,
+          }));
+    }
+    errors.collect(ros.propertyValidator('backupRetentionPeriod', ros.validateNumber)(properties.backupRetentionPeriod));
+    return errors.wrap('supplied properties not correct for "RosBackupPolicyProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ADB::BackupPolicy` resource
+ *
+ * @param properties - the TypeScript properties of a `RosBackupPolicyProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ADB::BackupPolicy` resource.
+ */
+// @ts-ignore TS6133
+function rosBackupPolicyPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosBackupPolicyPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'PreferredBackupPeriod': ros.listMapper(ros.stringToRosTemplate)(properties.preferredBackupPeriod),
+      'PreferredBackupTime': ros.stringToRosTemplate(properties.preferredBackupTime),
+      'BackupRetentionPeriod': ros.numberToRosTemplate(properties.backupRetentionPeriod),
+      'EnableBackupLog': ros.stringToRosTemplate(properties.enableBackupLog),
+      'LogBackupRetentionPeriod': ros.numberToRosTemplate(properties.logBackupRetentionPeriod),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::BackupPolicy`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `BackupPolicy` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-backuppolicy
+ */
+export class RosBackupPolicy extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ADB::BackupPolicy";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbClusterId: The ID of the ADB cluster.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupPeriod: The preferred backup period. Valid values: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
+     */
+    public preferredBackupPeriod: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property preferredBackupTime: The preferred backup time. Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+     */
+    public preferredBackupTime: string | ros.IResolvable;
+
+    /**
+     * @Property backupRetentionPeriod: The number of days for which backup files are retained. Valid values: 7 to 730.
+     */
+    public backupRetentionPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableBackupLog: Whether to enable log backup. Valid values: Enable, Disable.
+     */
+    public enableBackupLog: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property logBackupRetentionPeriod: The number of days for which log backup files are retained. Valid values: 7 to 730.
+     */
+    public logBackupRetentionPeriod: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosBackupPolicyProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosBackupPolicy.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbClusterId = props.dbClusterId;
+        this.preferredBackupPeriod = props.preferredBackupPeriod;
+        this.preferredBackupTime = props.preferredBackupTime;
+        this.backupRetentionPeriod = props.backupRetentionPeriod;
+        this.enableBackupLog = props.enableBackupLog;
+        this.logBackupRetentionPeriod = props.logBackupRetentionPeriod;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbClusterId: this.dbClusterId,
+            preferredBackupPeriod: this.preferredBackupPeriod,
+            preferredBackupTime: this.preferredBackupTime,
+            backupRetentionPeriod: this.backupRetentionPeriod,
+            enableBackupLog: this.enableBackupLog,
+            logBackupRetentionPeriod: this.logBackupRetentionPeriod,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosBackupPolicyPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDBCluster`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
@@ -266,15 +446,36 @@ export interface RosDBClusterProps {
     readonly dbNodeStorage?: number | ros.IResolvable;
 
     /**
+     * @Property diskEncryption: Whether to enable cloud disk encryption. Value:
+     * 
+     * - true: yes.
+     * - false: no.
+     */
+    readonly diskEncryption?: boolean | ros.IResolvable;
+
+    /**
      * @Property elasticIoResource: Elastic IO Unit
      * Note the flexible mode cluster will use this parameter.
      */
     readonly elasticIoResource?: number | ros.IResolvable;
 
     /**
+     * @Property enableSsl: Whether to enable SSL link encryption function, value:
+     * 
+     * - **true**: open.
+     * - **false**: close.
+     */
+    readonly enableSsl?: boolean | ros.IResolvable;
+
+    /**
      * @Property executorCount: ExecutorCount
      */
     readonly executorCount?: number | ros.IResolvable;
+
+    /**
+     * @Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+     */
+    readonly kmsId?: string | ros.IResolvable;
 
     /**
      * @Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
@@ -332,8 +533,9 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('dbClusterCategory', ros.validateString)(properties.dbClusterCategory));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('enableSsl', ros.validateBoolean)(properties.enableSsl));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
@@ -352,8 +554,10 @@ function RosDBClusterPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
     errors.collect(ros.propertyValidator('elasticIoResource', ros.validateNumber)(properties.elasticIoResource));
+    errors.collect(ros.propertyValidator('diskEncryption', ros.validateBoolean)(properties.diskEncryption));
     errors.collect(ros.propertyValidator('dbClusterVersion', ros.requiredValidator)(properties.dbClusterVersion));
     errors.collect(ros.propertyValidator('dbClusterVersion', ros.validateString)(properties.dbClusterVersion));
+    errors.collect(ros.propertyValidator('kmsId', ros.validateString)(properties.kmsId));
     if(properties.dbNodeGroupCount && (typeof properties.dbNodeGroupCount) !== 'object') {
         errors.collect(ros.propertyValidator('dbNodeGroupCount', ros.validateRange)({
             data: properties.dbNodeGroupCount,
@@ -400,8 +604,11 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
       'DBClusterDescription': ros.stringToRosTemplate(properties.dbClusterDescription),
       'DBNodeGroupCount': ros.numberToRosTemplate(properties.dbNodeGroupCount),
       'DBNodeStorage': ros.numberToRosTemplate(properties.dbNodeStorage),
+      'DiskEncryption': ros.booleanToRosTemplate(properties.diskEncryption),
       'ElasticIOResource': ros.numberToRosTemplate(properties.elasticIoResource),
+      'EnableSSL': ros.booleanToRosTemplate(properties.enableSsl),
       'ExecutorCount': ros.numberToRosTemplate(properties.executorCount),
+      'KmsId': ros.stringToRosTemplate(properties.kmsId),
       'Period': ros.numberToRosTemplate(properties.period),
       'PeriodType': ros.stringToRosTemplate(properties.periodType),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -411,7 +618,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ADB::DBCluster`Use the , which resource type to create an AnalyticDB for MySQL cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */
@@ -519,15 +726,36 @@ export class RosDBCluster extends ros.RosResource {
     public dbNodeStorage: number | ros.IResolvable | undefined;
 
     /**
+     * @Property diskEncryption: Whether to enable cloud disk encryption. Value:
+     * 
+     * - true: yes.
+     * - false: no.
+     */
+    public diskEncryption: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property elasticIoResource: Elastic IO Unit
      * Note the flexible mode cluster will use this parameter.
      */
     public elasticIoResource: number | ros.IResolvable | undefined;
 
     /**
+     * @Property enableSsl: Whether to enable SSL link encryption function, value:
+     * 
+     * - **true**: open.
+     * - **false**: close.
+     */
+    public enableSsl: boolean | ros.IResolvable | undefined;
+
+    /**
      * @Property executorCount: ExecutorCount
      */
     public executorCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property kmsId: The kmsId used for cloud disk encryption, effective only when DiskEncryption is true.
+     */
+    public kmsId: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
@@ -581,8 +809,11 @@ export class RosDBCluster extends ros.RosResource {
         this.dbClusterDescription = props.dbClusterDescription;
         this.dbNodeGroupCount = props.dbNodeGroupCount;
         this.dbNodeStorage = props.dbNodeStorage;
+        this.diskEncryption = props.diskEncryption;
         this.elasticIoResource = props.elasticIoResource;
+        this.enableSsl = props.enableSsl;
         this.executorCount = props.executorCount;
+        this.kmsId = props.kmsId;
         this.period = props.period;
         this.periodType = props.periodType;
         this.resourceGroupId = props.resourceGroupId;
@@ -604,8 +835,11 @@ export class RosDBCluster extends ros.RosResource {
             dbClusterDescription: this.dbClusterDescription,
             dbNodeGroupCount: this.dbNodeGroupCount,
             dbNodeStorage: this.dbNodeStorage,
+            diskEncryption: this.diskEncryption,
             elasticIoResource: this.elasticIoResource,
+            enableSsl: this.enableSsl,
             executorCount: this.executorCount,
+            kmsId: this.kmsId,
             period: this.period,
             periodType: this.periodType,
             resourceGroupId: this.resourceGroupId,

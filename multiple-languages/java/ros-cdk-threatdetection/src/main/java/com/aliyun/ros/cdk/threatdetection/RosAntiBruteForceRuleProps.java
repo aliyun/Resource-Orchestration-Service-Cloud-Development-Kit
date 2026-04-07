@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.threatdetection;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-antibruteforcerule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.757Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.605Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.RosAntiBruteForceRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosAntiBruteForceRuleProps.Jsii$Proxy.class)
 public interface RosAntiBruteForceRuleProps extends software.amazon.jsii.JsiiSerializable {

@@ -45,7 +45,7 @@ export interface IInstances extends ros.IResource {
     readonly attrInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OTS::Instances`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OTS::Instances`, which is used to query Tablestore instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ots-instances
  */
@@ -78,8 +78,8 @@ export class Instances extends ros.Resource implements IInstances {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosInstances = new RosInstances(this, id,  {
-            status: props.status,
             instanceName: props.instanceName,
+            status: props.status,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstances;

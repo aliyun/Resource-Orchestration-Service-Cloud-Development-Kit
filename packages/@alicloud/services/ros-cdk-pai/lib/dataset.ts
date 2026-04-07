@@ -180,7 +180,7 @@ export interface IDataset extends ros.IResource {
     readonly attrWorkspaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Dataset`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDataset`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
@@ -287,9 +287,9 @@ export class Dataset extends ros.Resource implements IDataset {
             description: props.description,
             accessibility: props.accessibility,
             datasetName: props.datasetName,
-            sourceType: props.sourceType,
-            sourceId: props.sourceId,
             dataSourceType: props.dataSourceType,
+            sourceId: props.sourceId,
+            sourceType: props.sourceType,
             workspaceId: props.workspaceId,
             dataType: props.dataType,
             uri: props.uri,

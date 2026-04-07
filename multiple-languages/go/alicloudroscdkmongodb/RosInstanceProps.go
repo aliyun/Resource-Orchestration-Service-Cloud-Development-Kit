@@ -8,25 +8,35 @@ type RosInstanceProps struct {
 	DbInstanceClass interface{} `field:"required" json:"dbInstanceClass" yaml:"dbInstanceClass"`
 	DbInstanceStorage interface{} `field:"required" json:"dbInstanceStorage" yaml:"dbInstanceStorage"`
 	AccountPassword interface{} `field:"optional" json:"accountPassword" yaml:"accountPassword"`
+	AuditPolicyOptions interface{} `field:"optional" json:"auditPolicyOptions" yaml:"auditPolicyOptions"`
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
+	BackupPolicyOptions interface{} `field:"optional" json:"backupPolicyOptions" yaml:"backupPolicyOptions"`
 	BusinessInfo interface{} `field:"optional" json:"businessInfo" yaml:"businessInfo"`
 	ChargeType interface{} `field:"optional" json:"chargeType" yaml:"chargeType"`
+	ClusterId interface{} `field:"optional" json:"clusterId" yaml:"clusterId"`
 	CouponNo interface{} `field:"optional" json:"couponNo" yaml:"couponNo"`
 	DatabaseNames interface{} `field:"optional" json:"databaseNames" yaml:"databaseNames"`
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
+	DbInstanceReleaseProtection interface{} `field:"optional" json:"dbInstanceReleaseProtection" yaml:"dbInstanceReleaseProtection"`
+	Encrypted interface{} `field:"optional" json:"encrypted" yaml:"encrypted"`
+	EncryptionKey interface{} `field:"optional" json:"encryptionKey" yaml:"encryptionKey"`
 	EngineVersion interface{} `field:"optional" json:"engineVersion" yaml:"engineVersion"`
 	HiddenZoneId interface{} `field:"optional" json:"hiddenZoneId" yaml:"hiddenZoneId"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PrivateConnections interface{} `field:"optional" json:"privateConnections" yaml:"privateConnections"`
+	ProvisionedIops interface{} `field:"optional" json:"provisionedIops" yaml:"provisionedIops"`
 	ReadonlyReplicas interface{} `field:"optional" json:"readonlyReplicas" yaml:"readonlyReplicas"`
 	ReplicationFactor interface{} `field:"optional" json:"replicationFactor" yaml:"replicationFactor"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	RestoreTime interface{} `field:"optional" json:"restoreTime" yaml:"restoreTime"`
+	RestoreType interface{} `field:"optional" json:"restoreType" yaml:"restoreType"`
 	SecondaryZoneId interface{} `field:"optional" json:"secondaryZoneId" yaml:"secondaryZoneId"`
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
 	SecurityIpArray interface{} `field:"optional" json:"securityIpArray" yaml:"securityIpArray"`
 	SrcDbInstanceId interface{} `field:"optional" json:"srcDbInstanceId" yaml:"srcDbInstanceId"`
+	SrcRegion interface{} `field:"optional" json:"srcRegion" yaml:"srcRegion"`
+	SslOptions interface{} `field:"optional" json:"sslOptions" yaml:"sslOptions"`
 	StorageEngine interface{} `field:"optional" json:"storageEngine" yaml:"storageEngine"`
 	StorageType interface{} `field:"optional" json:"storageType" yaml:"storageType"`
 	Tags *[]*RosInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`

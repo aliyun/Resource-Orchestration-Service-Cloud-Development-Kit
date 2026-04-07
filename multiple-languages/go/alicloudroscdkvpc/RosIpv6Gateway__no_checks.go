@@ -96,6 +96,10 @@ func (j *jsiiProxy_RosIpv6Gateway) validateSetNameParameters(val interface{}) er
 	return nil
 }
 
+func (j *jsiiProxy_RosIpv6Gateway) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosIpv6Gateway) validateSetSpecParameters(val interface{}) error {
 	return nil
 }

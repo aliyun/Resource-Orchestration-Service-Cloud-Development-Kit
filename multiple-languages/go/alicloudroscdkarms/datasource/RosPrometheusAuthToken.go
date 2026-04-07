@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::PrometheusAuthToken`, which is used to query an authentication token for read and write over the Internet.
 type RosPrometheusAuthToken interface {
 	alicloudroscdkcore.RosResource
 	AttrToken() alicloudroscdkcore.IResolvable

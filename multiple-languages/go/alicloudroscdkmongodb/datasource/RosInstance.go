@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::Instance`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::MONGODB::Instance`, which is used to query the information about an ApsaraDB for MongoDB instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrAccountDescription() alicloudroscdkcore.IResolvable

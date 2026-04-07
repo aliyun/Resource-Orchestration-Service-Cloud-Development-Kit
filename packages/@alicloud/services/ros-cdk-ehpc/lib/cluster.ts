@@ -352,7 +352,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     readonly attrSecurityGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */
@@ -397,8 +397,8 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
 
         const rosCluster = new RosCluster(this, id,  {
             volumeProtocol: props.volumeProtocol,
-            resourceGroupId: props.resourceGroupId,
             computeEnableHt: props.computeEnableHt,
+            resourceGroupId: props.resourceGroupId,
             withoutElasticIp: props.withoutElasticIp,
             systemDiskType: props.systemDiskType,
             remoteVisEnable: props.remoteVisEnable,
@@ -408,8 +408,8 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
             deployMode: props.deployMode,
             postInstallScript: props.postInstallScript,
             imageId: props.imageId,
-            isComputeEss: props.isComputeEss,
             ecsOrderLoginInstanceType: props.ecsOrderLoginInstanceType,
+            isComputeEss: props.isComputeEss,
             jobQueue: props.jobQueue,
             vSwitchId: props.vSwitchId,
             period: props.period,

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DMS::ScriptExecution`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DMS::ScriptExecution`The , which type executes SQL scripts.
 type ScriptExecution interface {
 	alicloudroscdkcore.Resource
 	IScriptExecution

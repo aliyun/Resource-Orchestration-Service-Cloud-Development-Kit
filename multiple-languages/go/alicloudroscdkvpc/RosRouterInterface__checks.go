@@ -269,6 +269,23 @@ func (j *jsiiProxy_RosRouterInterface) validateSetAutoPayParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosRouterInterface) validateSetAutoRenewParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosRouterInterface) validateSetDescriptionParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -289,6 +306,23 @@ func (j *jsiiProxy_RosRouterInterface) validateSetDescriptionParameters(val inte
 func (j *jsiiProxy_RosRouterInterface) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosRouterInterface) validateSetFastLinkModeParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
 	}
 
 	return nil
@@ -522,6 +556,23 @@ func (j *jsiiProxy_RosRouterInterface) validateSetPeriodParameters(val interface
 }
 
 func (j *jsiiProxy_RosRouterInterface) validateSetPricingCycleParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosRouterInterface) validateSetResourceGroupIdParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok

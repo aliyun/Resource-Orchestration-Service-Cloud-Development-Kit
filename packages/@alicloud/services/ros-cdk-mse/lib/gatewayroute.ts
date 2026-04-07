@@ -107,7 +107,7 @@ export interface IGatewayRoute extends ros.IResource {
     readonly attrRouteId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayRoute`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayRoute`The , which resource is used to add a gateway route.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGatewayRoute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayroute
  */
@@ -135,19 +135,19 @@ export class GatewayRoute extends ros.Resource implements IGatewayRoute {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosGatewayRoute = new RosGatewayRoute(this, id,  {
-            description: props.description,
             policies: props.policies,
+            description: props.description,
             gatewayId: props.gatewayId,
             destinationType: props.destinationType,
             name: props.name,
             services: props.services,
-            domainIdList: props.domainIdList,
             gatewayUniqueId: props.gatewayUniqueId,
+            domainIdList: props.domainIdList,
+            routeOrder: props.routeOrder,
             domainId: props.domainId,
             routeType: props.routeType,
-            routeOrder: props.routeOrder,
-            redirectJson: props.redirectJson,
             directResponseJson: props.directResponseJson,
+            redirectJson: props.redirectJson,
             fallbackServices: props.fallbackServices,
             fallback: props.fallback,
             predicates: props.predicates,

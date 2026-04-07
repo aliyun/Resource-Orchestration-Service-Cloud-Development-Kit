@@ -64,7 +64,7 @@ export interface IBizType extends ros.IResource {
     readonly attrIndustryInfo: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::BizType`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::BizType`, which is used to create a business scenario.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBizType`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-biztype
  */

@@ -1,0 +1,166 @@
+//go:build no_runtime_type_checking
+
+package alicloudroscdkclickhouse
+
+// Building without runtime type checking enabled, so all the below just return nil
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddConditionParameters(con alicloudroscdkcore.RosCondition) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddCountParameters(count interface{}) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddDeletionOverrideParameters(path *string) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddDependsOnParameters(target alicloudroscdkcore.RosResource) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddDescParameters(desc *string) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddMetaDataParameters(key *string, value interface{}) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddOverrideParameters(path *string, value interface{}) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddPropertyDeletionOverrideParameters(propertyPath *string) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddPropertyOverrideParameters(propertyPath *string, value interface{}) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateAddRosDependencyParameters(target *string) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateApplyRemovalPolicyParameters(options *alicloudroscdkcore.RemovalPolicyOptions) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateGetAttParameters(attributeName *string) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateOnSynthesizeParameters(session constructs.ISynthesisSession) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateOverrideLogicalIdParameters(newLogicalId *string) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateRenderPropertiesParameters(props *map[string]interface{}) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateSynthesizeParameters(session alicloudroscdkcore.ISynthesisSession) error {
+	return nil
+}
+
+func (r *jsiiProxy_RosEnterpriseDBCluster) validateValidatePropertiesParameters(_properties interface{}) error {
+	return nil
+}
+
+func validateRosEnterpriseDBCluster_IsConstructParameters(x interface{}) error {
+	return nil
+}
+
+func validateRosEnterpriseDBCluster_IsRosElementParameters(x interface{}) error {
+	return nil
+}
+
+func validateRosEnterpriseDBCluster_IsRosResourceParameters(construct alicloudroscdkcore.IConstruct) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetBackupSetIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetDbInstanceDescriptionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetDbTimeZoneParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetDeploySchemaParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetEngineParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetMultiZoneParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetNodeCountParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetNodeScaleMaxParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetNodeScaleMinParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetPublicConnectionSettingParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetSourceDbInstanceIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetStorageQuotaParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetStorageTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetTagsParameters(val *[]*RosEnterpriseDBCluster_TagsProperty) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetVpcIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetVSwitchIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEnterpriseDBCluster) validateSetZoneIdParameters(val interface{}) error {
+	return nil
+}
+
+func validateNewRosEnterpriseDBClusterParameters(scope alicloudroscdkcore.Construct, id *string, props *RosEnterpriseDBClusterProps, enableResourcePropertyConstraint *bool) error {
+	return nil
+}
+

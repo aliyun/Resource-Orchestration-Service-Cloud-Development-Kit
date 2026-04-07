@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::DhcpOptionsSet</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::DhcpOptionsSet</code>, which is used to create Dynamic Host Configuration Protocol (DHCP) options sets.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.975Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosDhcpOptionsSet")
 public class RosDhcpOptionsSet extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -148,6 +148,60 @@ public class RosDhcpOptionsSet extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpv6LeaseTime() {
+        return software.amazon.jsii.Kernel.get(this, "ipv6LeaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpv6LeaseTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6LeaseTime", value);
+    }
+
+    /**
+     */
+    public void setIpv6LeaseTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipv6LeaseTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getLeaseTime() {
+        return software.amazon.jsii.Kernel.get(this, "leaseTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setLeaseTime(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "leaseTime", value);
+    }
+
+    /**
+     */
+    public void setLeaseTime(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "leaseTime", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
+     */
+    public void setResourceGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "resourceGroupId", value);
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.vpc.RosDhcpOptionsSet}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.vpc.RosDhcpOptionsSet> {
@@ -238,6 +292,57 @@ public class RosDhcpOptionsSet extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder domainNameServers(final java.util.List<? extends java.lang.Object> domainNameServers) {
             this.props.domainNameServers(domainNameServers);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipv6LeaseTime This parameter is required.
+         */
+        public Builder ipv6LeaseTime(final java.lang.String ipv6LeaseTime) {
+            this.props.ipv6LeaseTime(ipv6LeaseTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipv6LeaseTime This parameter is required.
+         */
+        public Builder ipv6LeaseTime(final com.aliyun.ros.cdk.core.IResolvable ipv6LeaseTime) {
+            this.props.ipv6LeaseTime(ipv6LeaseTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param leaseTime This parameter is required.
+         */
+        public Builder leaseTime(final java.lang.String leaseTime) {
+            this.props.leaseTime(leaseTime);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param leaseTime This parameter is required.
+         */
+        public Builder leaseTime(final com.aliyun.ros.cdk.core.IResolvable leaseTime) {
+            this.props.leaseTime(leaseTime);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param resourceGroupId This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

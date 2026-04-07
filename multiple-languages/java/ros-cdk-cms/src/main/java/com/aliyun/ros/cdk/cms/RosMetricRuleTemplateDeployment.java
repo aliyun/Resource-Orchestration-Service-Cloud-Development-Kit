@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::MetricRuleTemplateDeployment</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::MetricRuleTemplateDeployment</code>, which is used to apply an alert template to an application group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.774Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.111Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMetricRuleTemplateDeployment")
 public class RosMetricRuleTemplateDeployment extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -64,7 +64,7 @@ export interface IRule extends ros.IResource {
     readonly attrRuleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EventBridge::Rule`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EventBridge::Rule`, which is used to create an event rule for an event bus.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
  */
@@ -102,8 +102,8 @@ export class Rule extends ros.Resource implements IRule {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosRule = new RosRule(this, id,  {
-            status: props.status,
             eventBusName: props.eventBusName,
+            status: props.status,
             filterPattern: props.filterPattern,
             description: props.description,
             targets: props.targets,

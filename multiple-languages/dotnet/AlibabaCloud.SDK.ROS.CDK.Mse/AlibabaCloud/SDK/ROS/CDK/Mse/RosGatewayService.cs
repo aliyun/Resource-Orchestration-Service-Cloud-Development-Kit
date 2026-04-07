@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayService`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayService`The , which resource is used to import a service into a gateway.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `GatewayService` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayservice

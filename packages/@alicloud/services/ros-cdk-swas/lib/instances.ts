@@ -50,6 +50,11 @@ export interface InstancesProps {
      * Default value: 0.
      */
     readonly dataDiskSize?: number | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to swas. Max support 20 tags to add during create swas. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstances.TagsProperty[];
 }
 
 /**
@@ -74,7 +79,7 @@ export interface IInstances extends ros.IResource {
     readonly attrPublicIpAddresses: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SWAS::Instances`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SWAS::Instances`, which is used to create subscription simple application servers.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-instances
  */
@@ -119,6 +124,7 @@ export class Instances extends ros.Resource implements IInstances {
             imageId: props.imageId,
             period: props.period,
             dataDiskSize: props.dataDiskSize,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstances;
         this.attrInnerIpAddresses = rosInstances.attrInnerIpAddresses;

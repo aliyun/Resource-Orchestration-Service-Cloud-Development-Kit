@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCaCertificate`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCaCertificate`The , which type uploads a client CA certificate.
 type RosClientCaCertificate interface {
 	alicloudroscdkcore.RosResource
 	AttrCertificate() alicloudroscdkcore.IResolvable

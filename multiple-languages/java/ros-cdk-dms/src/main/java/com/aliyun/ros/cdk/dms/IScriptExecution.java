@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dms;
 /**
  * Represents a <code>ScriptExecution</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.523Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.866Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.IScriptExecution")
 @software.amazon.jsii.Jsii.Proxy(IScriptExecution.Jsii$Proxy.class)
 public interface IScriptExecution extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

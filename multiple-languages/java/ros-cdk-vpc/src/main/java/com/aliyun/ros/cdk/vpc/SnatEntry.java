@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::SnatEntry</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::SnatEntry</code>The , which resource is used to add an SNAT entry to an SNAT table.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.206Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.183Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SnatEntry")
 public class SnatEntry extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.ISnatEntry {
 
@@ -185,6 +185,31 @@ public class SnatEntry extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder eipAffinity(final com.aliyun.ros.cdk.core.IResolvable eipAffinity) {
             this.props.eipAffinity(eipAffinity);
+            return this;
+        }
+
+        /**
+         * Property networkInterfaceId: The ID of the elastic network interface.
+         * <p>
+         * The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the elastic network interface. This parameter is required.
+         */
+        public Builder networkInterfaceId(final java.lang.String networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
+        /**
+         * Property networkInterfaceId: The ID of the elastic network interface.
+         * <p>
+         * The IPv4 addresses of the elastic network interface will be used as the SNAT IP addresses.
+         * <p>
+         * @return {@code this}
+         * @param networkInterfaceId Property networkInterfaceId: The ID of the elastic network interface. This parameter is required.
+         */
+        public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
+            this.props.networkInterfaceId(networkInterfaceId);
             return this;
         }
 

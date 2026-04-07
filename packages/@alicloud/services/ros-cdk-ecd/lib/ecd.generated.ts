@@ -149,7 +149,7 @@ function rosBundlePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Bundle`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Bundle`, which is used to create a custom cloud computer template.
  * @Note This class does not contain additional functions, so it is recommended to use the `Bundle` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-bundle
  */
@@ -443,14 +443,6 @@ function RosDesktopGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('keepDuration', ros.validateNumber)(properties.keepDuration));
-    if(properties.idleDisconnectDuration && (typeof properties.idleDisconnectDuration) !== 'object') {
-        errors.collect(ros.propertyValidator('idleDisconnectDuration', ros.validateRange)({
-            data: properties.idleDisconnectDuration,
-            min: 360000,
-            max: 3600000,
-          }));
-    }
-    errors.collect(ros.propertyValidator('idleDisconnectDuration', ros.validateNumber)(properties.idleDisconnectDuration));
     if(properties.maxDesktopsCount && (typeof properties.maxDesktopsCount) !== 'object') {
         errors.collect(ros.propertyValidator('maxDesktopsCount', ros.validateRange)({
             data: properties.maxDesktopsCount,
@@ -459,6 +451,14 @@ function RosDesktopGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('maxDesktopsCount', ros.validateNumber)(properties.maxDesktopsCount));
+    if(properties.idleDisconnectDuration && (typeof properties.idleDisconnectDuration) !== 'object') {
+        errors.collect(ros.propertyValidator('idleDisconnectDuration', ros.validateRange)({
+            data: properties.idleDisconnectDuration,
+            min: 360000,
+            max: 3600000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('idleDisconnectDuration', ros.validateNumber)(properties.idleDisconnectDuration));
     if(properties.resetType && (typeof properties.resetType) !== 'object') {
         errors.collect(ros.propertyValidator('resetType', ros.validateRange)({
             data: properties.resetType,
@@ -475,17 +475,9 @@ function RosDesktopGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('minDesktopsCount', ros.validateNumber)(properties.minDesktopsCount));
-    errors.collect(ros.propertyValidator('comments', ros.validateString)(properties.comments));
     errors.collect(ros.propertyValidator('policyGroupId', ros.requiredValidator)(properties.policyGroupId));
     errors.collect(ros.propertyValidator('policyGroupId', ros.validateString)(properties.policyGroupId));
-    if(properties.endUserIds && (Array.isArray(properties.endUserIds) || (typeof properties.endUserIds) === 'string')) {
-        errors.collect(ros.propertyValidator('endUserIds', ros.validateLength)({
-            data: properties.endUserIds.length,
-            min: 0,
-            max: 1000,
-          }));
-    }
-    errors.collect(ros.propertyValidator('endUserIds', ros.listValidator(ros.validateString))(properties.endUserIds));
+    errors.collect(ros.propertyValidator('comments', ros.validateString)(properties.comments));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateRange)({
             data: properties.period,
@@ -494,6 +486,14 @@ function RosDesktopGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    if(properties.endUserIds && (Array.isArray(properties.endUserIds) || (typeof properties.endUserIds) === 'string')) {
+        errors.collect(ros.propertyValidator('endUserIds', ros.validateLength)({
+            data: properties.endUserIds.length,
+            min: 0,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('endUserIds', ros.listValidator(ros.validateString))(properties.endUserIds));
     if(properties.defaultInitDesktopCount && (typeof properties.defaultInitDesktopCount) !== 'object') {
         errors.collect(ros.propertyValidator('defaultInitDesktopCount', ros.validateRange)({
             data: properties.defaultInitDesktopCount,
@@ -507,7 +507,6 @@ function RosDesktopGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('officeSiteId', ros.validateString)(properties.officeSiteId));
     errors.collect(ros.propertyValidator('bundleId', ros.requiredValidator)(properties.bundleId));
     errors.collect(ros.propertyValidator('bundleId', ros.validateString)(properties.bundleId));
-    errors.collect(ros.propertyValidator('stopDuration', ros.validateNumber)(properties.stopDuration));
     errors.collect(ros.propertyValidator('chargeType', ros.requiredValidator)(properties.chargeType));
     if(properties.chargeType && (typeof properties.chargeType) !== 'object') {
         errors.collect(ros.propertyValidator('chargeType', ros.validateAllowedValues)({
@@ -516,6 +515,7 @@ function RosDesktopGroupPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
+    errors.collect(ros.propertyValidator('stopDuration', ros.validateNumber)(properties.stopDuration));
     errors.collect(ros.propertyValidator('volumeEncryptionKey', ros.validateString)(properties.volumeEncryptionKey));
     if(properties.allowAutoSetup && (typeof properties.allowAutoSetup) !== 'object') {
         errors.collect(ros.propertyValidator('allowAutoSetup', ros.validateRange)({
@@ -586,7 +586,7 @@ function rosDesktopGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::DesktopGroup`, which is used to create a cloud computer pool.
  * @Note This class does not contain additional functions, so it is recommended to use the `DesktopGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktopgroup
  */
@@ -995,7 +995,6 @@ function RosDesktopsPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('promotionId', ros.validateString)(properties.promotionId));
     errors.collect(ros.propertyValidator('policyGroupId', ros.requiredValidator)(properties.policyGroupId));
     errors.collect(ros.propertyValidator('policyGroupId', ros.validateString)(properties.policyGroupId));
-    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     if(properties.amount && (typeof properties.amount) !== 'object') {
         errors.collect(ros.propertyValidator('amount', ros.validateRange)({
             data: properties.amount,
@@ -1004,6 +1003,7 @@ function RosDesktopsPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('amount', ros.validateNumber)(properties.amount));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('desktopName', ros.validateString)(properties.desktopName));
     errors.collect(ros.propertyValidator('hostname', ros.validateString)(properties.hostname));
     if(properties.period && (typeof properties.period) !== 'object') {
@@ -1097,7 +1097,7 @@ function rosDesktopsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::Desktops`, which is used to create one or more cloud desktops.
  * @Note This class does not contain additional functions, so it is recommended to use the `Desktops` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
@@ -1483,7 +1483,6 @@ function RosNetworkPackagePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
           data: properties.payType,
@@ -1491,13 +1490,7 @@ function RosNetworkPackagePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
-    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
-        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
-          data: properties.periodUnit,
-          allowedValues: ["Month","Year","Week"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     if(properties.internetChargeType && (typeof properties.internetChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('internetChargeType', ros.validateAllowedValues)({
           data: properties.internetChargeType,
@@ -1505,6 +1498,13 @@ function RosNetworkPackagePropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('internetChargeType', ros.validateString)(properties.internetChargeType));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Month","Year","Week"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
     return errors.wrap('supplied properties not correct for "RosNetworkPackageProps"');
 }
 
@@ -1535,7 +1535,7 @@ function rosNetworkPackagePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackage`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackage`, which is used to create a premium bandwidth plan for an office network.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackage
  */
@@ -1700,7 +1700,7 @@ function rosNetworkPackageAssociationPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::NetworkPackageAssociation`, which is used to associate a premium bandwidth plan with an office network.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkPackageAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-networkpackageassociation
  */
@@ -1866,6 +1866,7 @@ function RosSimpleOfficeSitePropsValidator(properties: any): ros.ValidationResul
     errors.collect(ros.propertyValidator('cloudBoxOfficeSite', ros.validateBoolean)(properties.cloudBoxOfficeSite));
     errors.collect(ros.propertyValidator('cidrBlock', ros.validateString)(properties.cidrBlock));
     errors.collect(ros.propertyValidator('verifyCode', ros.validateString)(properties.verifyCode));
+    errors.collect(ros.propertyValidator('needVerifyZeroDevice', ros.validateBoolean)(properties.needVerifyZeroDevice));
     if(properties.vpcType && (typeof properties.vpcType) !== 'object') {
         errors.collect(ros.propertyValidator('vpcType', ros.validateAllowedValues)({
           data: properties.vpcType,
@@ -1873,10 +1874,10 @@ function RosSimpleOfficeSitePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('vpcType', ros.validateString)(properties.vpcType));
-    errors.collect(ros.propertyValidator('needVerifyZeroDevice', ros.validateBoolean)(properties.needVerifyZeroDevice));
     errors.collect(ros.propertyValidator('cenOwnerId', ros.validateNumber)(properties.cenOwnerId));
     errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('cenId', ros.validateString)(properties.cenId));
+    errors.collect(ros.propertyValidator('officeSiteName', ros.validateString)(properties.officeSiteName));
     if(properties.desktopAccessType && (typeof properties.desktopAccessType) !== 'object') {
         errors.collect(ros.propertyValidator('desktopAccessType', ros.validateAllowedValues)({
           data: properties.desktopAccessType,
@@ -1884,7 +1885,6 @@ function RosSimpleOfficeSitePropsValidator(properties: any): ros.ValidationResul
         }));
     }
     errors.collect(ros.propertyValidator('desktopAccessType', ros.validateString)(properties.desktopAccessType));
-    errors.collect(ros.propertyValidator('officeSiteName', ros.validateString)(properties.officeSiteName));
     errors.collect(ros.propertyValidator('enableInternetAccess', ros.validateBoolean)(properties.enableInternetAccess));
     return errors.wrap('supplied properties not correct for "RosSimpleOfficeSiteProps"');
 }
@@ -1920,7 +1920,7 @@ function rosSimpleOfficeSitePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
  * @Note This class does not contain additional functions, so it is recommended to use the `SimpleOfficeSite` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */
@@ -2131,7 +2131,7 @@ function rosUserDesktopGroupAdditionPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`, which is used grant the permissions on a cloud computer pool to users.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserDesktopGroupAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-userdesktopgroupaddition
  */

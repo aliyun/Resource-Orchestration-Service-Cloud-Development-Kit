@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.740Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.095Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosEventRuleProps.Jsii$Proxy.class)
 public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,6 +38,12 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getSilenceTime() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getState() {
         return null;
     }
@@ -57,6 +63,7 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object description;
         java.lang.Object eventType;
         java.lang.Object groupId;
+        java.lang.Object silenceTime;
         java.lang.Object state;
 
         /**
@@ -160,6 +167,26 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosEventRuleProps#getSilenceTime}
+         * @param silenceTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder silenceTime(java.lang.Number silenceTime) {
+            this.silenceTime = silenceTime;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEventRuleProps#getSilenceTime}
+         * @param silenceTime the value to be set.
+         * @return {@code this}
+         */
+        public Builder silenceTime(com.aliyun.ros.cdk.core.IResolvable silenceTime) {
+            this.silenceTime = silenceTime;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEventRuleProps#getState}
          * @param state the value to be set.
          * @return {@code this}
@@ -200,6 +227,7 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object description;
         private final java.lang.Object eventType;
         private final java.lang.Object groupId;
+        private final java.lang.Object silenceTime;
         private final java.lang.Object state;
 
         /**
@@ -213,6 +241,7 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.eventType = software.amazon.jsii.Kernel.get(this, "eventType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.groupId = software.amazon.jsii.Kernel.get(this, "groupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.silenceTime = software.amazon.jsii.Kernel.get(this, "silenceTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.state = software.amazon.jsii.Kernel.get(this, "state", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
@@ -226,6 +255,7 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
             this.description = builder.description;
             this.eventType = builder.eventType;
             this.groupId = builder.groupId;
+            this.silenceTime = builder.silenceTime;
             this.state = builder.state;
         }
 
@@ -255,6 +285,11 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getSilenceTime() {
+            return this.silenceTime;
+        }
+
+        @Override
         public final java.lang.Object getState() {
             return this.state;
         }
@@ -275,6 +310,9 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
             }
             if (this.getGroupId() != null) {
                 data.set("groupId", om.valueToTree(this.getGroupId()));
+            }
+            if (this.getSilenceTime() != null) {
+                data.set("silenceTime", om.valueToTree(this.getSilenceTime()));
             }
             if (this.getState() != null) {
                 data.set("state", om.valueToTree(this.getState()));
@@ -302,6 +340,7 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.eventType != null ? !this.eventType.equals(that.eventType) : that.eventType != null) return false;
             if (this.groupId != null ? !this.groupId.equals(that.groupId) : that.groupId != null) return false;
+            if (this.silenceTime != null ? !this.silenceTime.equals(that.silenceTime) : that.silenceTime != null) return false;
             return this.state != null ? this.state.equals(that.state) : that.state == null;
         }
 
@@ -312,6 +351,7 @@ public interface RosEventRuleProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.eventType != null ? this.eventType.hashCode() : 0);
             result = 31 * result + (this.groupId != null ? this.groupId.hashCode() : 0);
+            result = 31 * result + (this.silenceTime != null ? this.silenceTime.hashCode() : 0);
             result = 31 * result + (this.state != null ? this.state.hashCode() : 0);
             return result;
         }

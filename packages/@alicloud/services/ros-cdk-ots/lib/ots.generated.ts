@@ -111,7 +111,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Instance`, which is used to create a Tablestore instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
  */
@@ -401,7 +401,7 @@ function rosInstanceV2PropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::InstanceV2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::InstanceV2`The , which resource type is used to create a new Tablestore instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instancev2
  */
@@ -598,8 +598,6 @@ export interface RosSearchIndexProps {
 function RosSearchIndexPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('indexName', ros.requiredValidator)(properties.indexName));
-    errors.collect(ros.propertyValidator('indexName', ros.validateString)(properties.indexName));
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     if(properties.instanceName && (typeof properties.instanceName) !== 'object') {
         errors.collect(ros.propertyValidator('instanceName', ros.validateAllowedPattern)({
@@ -608,6 +606,8 @@ function RosSearchIndexPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
+    errors.collect(ros.propertyValidator('indexName', ros.requiredValidator)(properties.indexName));
+    errors.collect(ros.propertyValidator('indexName', ros.validateString)(properties.indexName));
     errors.collect(ros.propertyValidator('tableName', ros.requiredValidator)(properties.tableName));
     if(properties.tableName && (typeof properties.tableName) !== 'object') {
         errors.collect(ros.propertyValidator('tableName', ros.validateAllowedPattern)({
@@ -618,8 +618,8 @@ function RosSearchIndexPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tableName', ros.validateString)(properties.tableName));
     errors.collect(ros.propertyValidator('fieldSchemas', ros.requiredValidator)(properties.fieldSchemas));
     errors.collect(ros.propertyValidator('fieldSchemas', ros.listValidator(RosSearchIndex_FieldSchemasPropertyValidator))(properties.fieldSchemas));
-    errors.collect(ros.propertyValidator('indexSort', RosSearchIndex_IndexSortPropertyValidator)(properties.indexSort));
     errors.collect(ros.propertyValidator('indexSetting', RosSearchIndex_IndexSettingPropertyValidator)(properties.indexSetting));
+    errors.collect(ros.propertyValidator('indexSort', RosSearchIndex_IndexSortPropertyValidator)(properties.indexSort));
     return errors.wrap('supplied properties not correct for "RosSearchIndexProps"');
 }
 
@@ -647,7 +647,7 @@ function rosSearchIndexPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table. You can create multiple search indexes for a data table.
  * @Note This class does not contain additional functions, so it is recommended to use the `SearchIndex` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
@@ -763,15 +763,15 @@ export namespace RosSearchIndex {
          */
         readonly analyzer?: string | ros.IResolvable;
         /**
-         * @Property subFieldSchemas: This parameter specifies the list of field schemas for subfields. 
-     * If the column is a NESTED column, you must specify this parameter to configure the index types of subcolumns in the NESTED column.
-         */
-        readonly subFieldSchemas?: Array<RosSearchIndex.SubFieldSchemasProperty | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property fieldName: This parameter specifies the name of the field (column) to index. 
      * The field can be a primary key column or an attribute column.
          */
         readonly fieldName: string | ros.IResolvable;
+        /**
+         * @Property subFieldSchemas: This parameter specifies the list of field schemas for subfields. 
+     * If the column is a NESTED column, you must specify this parameter to configure the index types of subcolumns in the NESTED column.
+         */
+        readonly subFieldSchemas?: Array<RosSearchIndex.SubFieldSchemasProperty | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property fieldType: This parameter specifies the type of the field. Type: FieldType. 
      * For more information, see the description of field types for a search index.
@@ -794,9 +794,9 @@ function RosSearchIndex_FieldSchemasPropertyValidator(properties: any): ros.Vali
     errors.collect(ros.propertyValidator('store', ros.validateBoolean)(properties.store));
     errors.collect(ros.propertyValidator('index', ros.validateBoolean)(properties.index));
     errors.collect(ros.propertyValidator('analyzer', ros.validateString)(properties.analyzer));
-    errors.collect(ros.propertyValidator('subFieldSchemas', ros.listValidator(RosSearchIndex_SubFieldSchemasPropertyValidator))(properties.subFieldSchemas));
     errors.collect(ros.propertyValidator('fieldName', ros.requiredValidator)(properties.fieldName));
     errors.collect(ros.propertyValidator('fieldName', ros.validateString)(properties.fieldName));
+    errors.collect(ros.propertyValidator('subFieldSchemas', ros.listValidator(RosSearchIndex_SubFieldSchemasPropertyValidator))(properties.subFieldSchemas));
     errors.collect(ros.propertyValidator('fieldType', ros.requiredValidator)(properties.fieldType));
     if(properties.fieldType && (typeof properties.fieldType) !== 'object') {
         errors.collect(ros.propertyValidator('fieldType', ros.validateAllowedValues)({
@@ -825,8 +825,8 @@ function rosSearchIndexFieldSchemasPropertyToRosTemplate(properties: any): any {
       'Store': ros.booleanToRosTemplate(properties.store),
       'Index': ros.booleanToRosTemplate(properties.index),
       'Analyzer': ros.stringToRosTemplate(properties.analyzer),
-      'SubFieldSchemas': ros.listMapper(rosSearchIndexSubFieldSchemasPropertyToRosTemplate)(properties.subFieldSchemas),
       'FieldName': ros.stringToRosTemplate(properties.fieldName),
+      'SubFieldSchemas': ros.listMapper(rosSearchIndexSubFieldSchemasPropertyToRosTemplate)(properties.subFieldSchemas),
       'FieldType': ros.stringToRosTemplate(properties.fieldType),
     };
 }
@@ -1366,14 +1366,6 @@ function RosTablePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('maxVersions', ros.validateNumber)(properties.maxVersions));
     errors.collect(ros.propertyValidator('secondaryIndices', ros.listValidator(RosTable_SecondaryIndicesPropertyValidator))(properties.secondaryIndices));
-    if(properties.deviationCellVersionInSec && (typeof properties.deviationCellVersionInSec) !== 'object') {
-        errors.collect(ros.propertyValidator('deviationCellVersionInSec', ros.validateRange)({
-            data: properties.deviationCellVersionInSec,
-            min: 1,
-            max: 9223372036854775807,
-          }));
-    }
-    errors.collect(ros.propertyValidator('deviationCellVersionInSec', ros.validateNumber)(properties.deviationCellVersionInSec));
     errors.collect(ros.propertyValidator('primaryKey', ros.requiredValidator)(properties.primaryKey));
     if(properties.primaryKey && (Array.isArray(properties.primaryKey) || (typeof properties.primaryKey) === 'string')) {
         errors.collect(ros.propertyValidator('primaryKey', ros.validateLength)({
@@ -1384,6 +1376,14 @@ function RosTablePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('primaryKey', ros.listValidator(RosTable_PrimaryKeyPropertyValidator))(properties.primaryKey));
     errors.collect(ros.propertyValidator('columns', ros.listValidator(RosTable_ColumnsPropertyValidator))(properties.columns));
+    if(properties.deviationCellVersionInSec && (typeof properties.deviationCellVersionInSec) !== 'object') {
+        errors.collect(ros.propertyValidator('deviationCellVersionInSec', ros.validateRange)({
+            data: properties.deviationCellVersionInSec,
+            min: 1,
+            max: 9223372036854775807,
+          }));
+    }
+    errors.collect(ros.propertyValidator('deviationCellVersionInSec', ros.validateNumber)(properties.deviationCellVersionInSec));
     errors.collect(ros.propertyValidator('reservedThroughput', RosTable_ReservedThroughputPropertyValidator)(properties.reservedThroughput));
     return errors.wrap('supplied properties not correct for "RosTableProps"');
 }
@@ -1415,7 +1415,7 @@ function rosTablePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Table`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
  * @Note This class does not contain additional functions, so it is recommended to use the `Table` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
@@ -1713,13 +1713,13 @@ export namespace RosTable {
          */
         readonly indexName: string | ros.IResolvable;
         /**
-         * @Property columns: The columns of the index.
-         */
-        readonly columns: Array<string | ros.IResolvable> | ros.IResolvable;
-        /**
          * @Property primaryKeys: The primary keys of the index.
          */
         readonly primaryKeys: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property columns: The columns of the index.
+         */
+        readonly columns: Array<string | ros.IResolvable> | ros.IResolvable;
         /**
          * @Property indexType: The index type
          */
@@ -1738,10 +1738,10 @@ function RosTable_SecondaryIndicesPropertyValidator(properties: any): ros.Valida
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('indexName', ros.requiredValidator)(properties.indexName));
     errors.collect(ros.propertyValidator('indexName', ros.validateString)(properties.indexName));
-    errors.collect(ros.propertyValidator('columns', ros.requiredValidator)(properties.columns));
-    errors.collect(ros.propertyValidator('columns', ros.listValidator(ros.validateString))(properties.columns));
     errors.collect(ros.propertyValidator('primaryKeys', ros.requiredValidator)(properties.primaryKeys));
     errors.collect(ros.propertyValidator('primaryKeys', ros.listValidator(ros.validateString))(properties.primaryKeys));
+    errors.collect(ros.propertyValidator('columns', ros.requiredValidator)(properties.columns));
+    errors.collect(ros.propertyValidator('columns', ros.listValidator(ros.validateString))(properties.columns));
     if(properties.indexType && (typeof properties.indexType) !== 'object') {
         errors.collect(ros.propertyValidator('indexType', ros.validateAllowedValues)({
           data: properties.indexType,
@@ -1765,8 +1765,8 @@ function rosTableSecondaryIndicesPropertyToRosTemplate(properties: any): any {
     RosTable_SecondaryIndicesPropertyValidator(properties).assertSuccess();
     return {
       'IndexName': ros.stringToRosTemplate(properties.indexName),
-      'Columns': ros.listMapper(ros.stringToRosTemplate)(properties.columns),
       'PrimaryKeys': ros.listMapper(ros.stringToRosTemplate)(properties.primaryKeys),
+      'Columns': ros.listMapper(ros.stringToRosTemplate)(properties.columns),
       'IndexType': ros.stringToRosTemplate(properties.indexType),
     };
 }
@@ -1863,6 +1863,7 @@ function RosVCUInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('vcu', ros.validateNumber)(properties.vcu));
+    errors.collect(ros.propertyValidator('instanceDescription', ros.validateString)(properties.instanceDescription));
     if(properties.autoRenewPeriodInMonth && (typeof properties.autoRenewPeriodInMonth) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewPeriodInMonth', ros.validateRange)({
             data: properties.autoRenewPeriodInMonth,
@@ -1871,7 +1872,6 @@ function RosVCUInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('autoRenewPeriodInMonth', ros.validateNumber)(properties.autoRenewPeriodInMonth));
-    errors.collect(ros.propertyValidator('instanceDescription', ros.validateString)(properties.instanceDescription));
     errors.collect(ros.propertyValidator('clusterType', ros.requiredValidator)(properties.clusterType));
     if(properties.clusterType && (typeof properties.clusterType) !== 'object') {
         errors.collect(ros.propertyValidator('clusterType', ros.validateAllowedValues)({
@@ -1880,6 +1880,7 @@ function RosVCUInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
+    errors.collect(ros.propertyValidator('enableAutoRenew', ros.validateBoolean)(properties.enableAutoRenew));
     if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
         errors.collect(ros.propertyValidator('tags', ros.validateLength)({
             data: properties.tags.length,
@@ -1888,7 +1889,6 @@ function RosVCUInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosVCUInstance_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('enableAutoRenew', ros.validateBoolean)(properties.enableAutoRenew));
     return errors.wrap('supplied properties not correct for "RosVCUInstanceProps"');
 }
 
@@ -1920,7 +1920,7 @@ function rosVCUInstancePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VCUInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VCUInstance`The , which resource creates a Virtual Compute Unit (VCU) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `VCUInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vcuinstance
  */
@@ -2144,7 +2144,7 @@ function rosVpcBinderPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VpcBinder`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VpcBinder`, which is used to bind a Tablestore instance to a virtual private cloud (VPC).
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcBinder` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
  */

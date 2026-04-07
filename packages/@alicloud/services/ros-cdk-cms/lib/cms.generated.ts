@@ -64,7 +64,7 @@ function rosContactPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Contact`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Contact`, which is used to create an alert contact.
  * @Note This class does not contain additional functions, so it is recommended to use the `Contact` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
@@ -204,6 +204,11 @@ export interface RosContactGroupProps {
      * @Property describe: The description of the alert contact group.
      */
     readonly describe: string | ros.IResolvable;
+
+    /**
+     * @Property enableSubscribed: Whether to enable the subscription feature.
+     */
+    readonly enableSubscribed?: boolean | ros.IResolvable;
 }
 
 /**
@@ -229,6 +234,7 @@ function RosContactGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('contactNames', ros.listValidator(ros.validateString))(properties.contactNames));
+    errors.collect(ros.propertyValidator('enableSubscribed', ros.validateBoolean)(properties.enableSubscribed));
     return errors.wrap('supplied properties not correct for "RosContactGroupProps"');
 }
 
@@ -249,11 +255,12 @@ function rosContactGroupPropsToRosTemplate(properties: any, enableResourceProper
       'ContactGroupName': ros.stringToRosTemplate(properties.contactGroupName),
       'ContactNames': ros.listMapper(ros.stringToRosTemplate)(properties.contactNames),
       'Describe': ros.stringToRosTemplate(properties.describe),
+      'EnableSubscribed': ros.booleanToRosTemplate(properties.enableSubscribed),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ContactGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ContactGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
@@ -287,6 +294,11 @@ export class RosContactGroup extends ros.RosResource {
     public describe: string | ros.IResolvable;
 
     /**
+     * @Property enableSubscribed: Whether to enable the subscription feature.
+     */
+    public enableSubscribed: boolean | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -299,6 +311,7 @@ export class RosContactGroup extends ros.RosResource {
         this.contactGroupName = props.contactGroupName;
         this.contactNames = props.contactNames;
         this.describe = props.describe;
+        this.enableSubscribed = props.enableSubscribed;
     }
 
 
@@ -307,6 +320,7 @@ export class RosContactGroup extends ros.RosResource {
             contactGroupName: this.contactGroupName,
             contactNames: this.contactNames,
             describe: this.describe,
+            enableSubscribed: this.enableSubscribed,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
@@ -432,7 +446,7 @@ function rosDynamicTagGroupPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `DynamicTagGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
@@ -631,6 +645,11 @@ export interface RosEventRuleProps {
     readonly groupId?: string | ros.IResolvable;
 
     /**
+     * @Property silenceTime: Channel silence time in seconds.
+     */
+    readonly silenceTime?: number | ros.IResolvable;
+
+    /**
      * @Property state: The status of the alert rule. Valid values:
      * ENABLED
      * DISABLED
@@ -657,6 +676,7 @@ function RosEventRulePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('eventPattern', ros.listValidator(RosEventRule_EventPatternPropertyValidator))(properties.eventPattern));
+    errors.collect(ros.propertyValidator('silenceTime', ros.validateNumber)(properties.silenceTime));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('eventType', ros.validateString)(properties.eventType));
     errors.collect(ros.propertyValidator('state', ros.validateString)(properties.state));
@@ -685,12 +705,13 @@ function rosEventRulePropsToRosTemplate(properties: any, enableResourcePropertyC
       'Description': ros.stringToRosTemplate(properties.description),
       'EventType': ros.stringToRosTemplate(properties.eventType),
       'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'SilenceTime': ros.numberToRosTemplate(properties.silenceTime),
       'State': ros.stringToRosTemplate(properties.state),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule. If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
  * @Note This class does not contain additional functions, so it is recommended to use the `EventRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
@@ -736,6 +757,11 @@ export class RosEventRule extends ros.RosResource {
     public groupId: string | ros.IResolvable | undefined;
 
     /**
+     * @Property silenceTime: Channel silence time in seconds.
+     */
+    public silenceTime: number | ros.IResolvable | undefined;
+
+    /**
      * @Property state: The status of the alert rule. Valid values:
      * ENABLED
      * DISABLED
@@ -757,6 +783,7 @@ export class RosEventRule extends ros.RosResource {
         this.description = props.description;
         this.eventType = props.eventType;
         this.groupId = props.groupId;
+        this.silenceTime = props.silenceTime;
         this.state = props.state;
     }
 
@@ -768,6 +795,7 @@ export class RosEventRule extends ros.RosResource {
             description: this.description,
             eventType: this.eventType,
             groupId: this.groupId,
+            silenceTime: this.silenceTime,
             state: this.state,
         };
     }
@@ -794,6 +822,10 @@ export namespace RosEventRule {
      * levels).
          */
         readonly levelList?: Array<any | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property keywordFilter: Keyword filter configuration.
+         */
+        readonly keywordFilter?: RosEventRule.KeywordFilterProperty | ros.IResolvable;
         /**
          * @Property statusList: The status of the event. Please refer to the configuration of CMS.
          */
@@ -825,6 +857,7 @@ function RosEventRule_EventPatternPropertyValidator(properties: any): ros.Valida
     errors.collect(ros.propertyValidator('sqlFilter', ros.validateString)(properties.sqlFilter));
     errors.collect(ros.propertyValidator('nameList', ros.listValidator(ros.validateAny))(properties.nameList));
     errors.collect(ros.propertyValidator('levelList', ros.listValidator(ros.validateAny))(properties.levelList));
+    errors.collect(ros.propertyValidator('keywordFilter', RosEventRule_KeywordFilterPropertyValidator)(properties.keywordFilter));
     errors.collect(ros.propertyValidator('statusList', ros.listValidator(ros.validateAny))(properties.statusList));
     errors.collect(ros.propertyValidator('eventTypeList', ros.listValidator(ros.validateAny))(properties.eventTypeList));
     errors.collect(ros.propertyValidator('product', ros.validateString)(properties.product));
@@ -847,10 +880,65 @@ function rosEventRuleEventPatternPropertyToRosTemplate(properties: any): any {
       'SQLFilter': ros.stringToRosTemplate(properties.sqlFilter),
       'NameList': ros.listMapper(ros.objectToRosTemplate)(properties.nameList),
       'LevelList': ros.listMapper(ros.objectToRosTemplate)(properties.levelList),
+      'KeywordFilter': rosEventRuleKeywordFilterPropertyToRosTemplate(properties.keywordFilter),
       'StatusList': ros.listMapper(ros.objectToRosTemplate)(properties.statusList),
       'EventTypeList': ros.listMapper(ros.objectToRosTemplate)(properties.eventTypeList),
       'Product': ros.stringToRosTemplate(properties.product),
       'CustomFilters': ros.stringToRosTemplate(properties.customFilters),
+    };
+}
+
+export namespace RosEventRule {
+    /**
+     * @stability external
+     */
+    export interface KeywordFilterProperty {
+        /**
+         * @Property relation: The relationship between the keyword filter and the previous keyword filter.
+         */
+        readonly relation?: string | ros.IResolvable;
+        /**
+         * @Property keywords: The keyword filter.
+         */
+        readonly keywords?: Array<string | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `KeywordFilterProperty`
+ *
+ * @param properties - the TypeScript properties of a `KeywordFilterProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEventRule_KeywordFilterPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('relation', ros.validateString)(properties.relation));
+    if(properties.keywords && (Array.isArray(properties.keywords) || (typeof properties.keywords) === 'string')) {
+        errors.collect(ros.propertyValidator('keywords', ros.validateLength)({
+            data: properties.keywords.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('keywords', ros.listValidator(ros.validateString))(properties.keywords));
+    return errors.wrap('supplied properties not correct for "KeywordFilterProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::EventRule.KeywordFilter` resource
+ *
+ * @param properties - the TypeScript properties of a `KeywordFilterProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::EventRule.KeywordFilter` resource.
+ */
+// @ts-ignore TS6133
+function rosEventRuleKeywordFilterPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEventRule_KeywordFilterPropertyValidator(properties).assertSuccess();
+    return {
+      'Relation': ros.stringToRosTemplate(properties.relation),
+      'Keywords': ros.listMapper(ros.stringToRosTemplate)(properties.keywords),
     };
 }
 
@@ -881,6 +969,11 @@ export interface RosEventRuleTargetsProps {
     readonly mnsParameters?: Array<RosEventRuleTargets.MnsParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
+     * @Property openApiParameters: API callback notification parameter list.
+     */
+    readonly openApiParameters?: Array<RosEventRuleTargets.OpenApiParametersProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property slsParameters: SLS configuration.A maximum of 5 parameters.
      */
     readonly slsParameters?: Array<RosEventRuleTargets.SlsParametersProperty | ros.IResolvable> | ros.IResolvable;
@@ -901,6 +994,14 @@ export interface RosEventRuleTargetsProps {
 function RosEventRuleTargetsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.openApiParameters && (Array.isArray(properties.openApiParameters) || (typeof properties.openApiParameters) === 'string')) {
+        errors.collect(ros.propertyValidator('openApiParameters', ros.validateLength)({
+            data: properties.openApiParameters.length,
+            min: undefined,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('openApiParameters', ros.listValidator(RosEventRuleTargets_OpenApiParametersPropertyValidator))(properties.openApiParameters));
     if(properties.contactParameters && (Array.isArray(properties.contactParameters) || (typeof properties.contactParameters) === 'string')) {
         errors.collect(ros.propertyValidator('contactParameters', ros.validateLength)({
             data: properties.contactParameters.length,
@@ -964,13 +1065,14 @@ function rosEventRuleTargetsPropsToRosTemplate(properties: any, enableResourcePr
       'ContactParameters': ros.listMapper(rosEventRuleTargetsContactParametersPropertyToRosTemplate)(properties.contactParameters),
       'FcParameters': ros.listMapper(rosEventRuleTargetsFcParametersPropertyToRosTemplate)(properties.fcParameters),
       'MnsParameters': ros.listMapper(rosEventRuleTargetsMnsParametersPropertyToRosTemplate)(properties.mnsParameters),
+      'OpenApiParameters': ros.listMapper(rosEventRuleTargetsOpenApiParametersPropertyToRosTemplate)(properties.openApiParameters),
       'SlsParameters': ros.listMapper(rosEventRuleTargetsSlsParametersPropertyToRosTemplate)(properties.slsParameters),
       'WebhookParameters': ros.listMapper(rosEventRuleTargetsWebhookParametersPropertyToRosTemplate)(properties.webhookParameters),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRuleTargets`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `EventRuleTargets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
@@ -1004,6 +1106,11 @@ export class RosEventRuleTargets extends ros.RosResource {
     public mnsParameters: Array<RosEventRuleTargets.MnsParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
+     * @Property openApiParameters: API callback notification parameter list.
+     */
+    public openApiParameters: Array<RosEventRuleTargets.OpenApiParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property slsParameters: SLS configuration.A maximum of 5 parameters.
      */
     public slsParameters: Array<RosEventRuleTargets.SlsParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
@@ -1026,6 +1133,7 @@ export class RosEventRuleTargets extends ros.RosResource {
         this.contactParameters = props.contactParameters;
         this.fcParameters = props.fcParameters;
         this.mnsParameters = props.mnsParameters;
+        this.openApiParameters = props.openApiParameters;
         this.slsParameters = props.slsParameters;
         this.webhookParameters = props.webhookParameters;
     }
@@ -1037,6 +1145,7 @@ export class RosEventRuleTargets extends ros.RosResource {
             contactParameters: this.contactParameters,
             fcParameters: this.fcParameters,
             mnsParameters: this.mnsParameters,
+            openApiParameters: this.openApiParameters,
             slsParameters: this.slsParameters,
             webhookParameters: this.webhookParameters,
         };
@@ -1168,6 +1277,10 @@ export namespace RosEventRuleTargets {
          */
         readonly region?: string | ros.IResolvable;
         /**
+         * @Property topic: The topic of lightweight message queue (formerly MNS).
+         */
+        readonly topic?: string | ros.IResolvable;
+        /**
          * @Property queue: The name of the MNS queue.
          */
         readonly queue?: string | ros.IResolvable;
@@ -1188,6 +1301,7 @@ function RosEventRuleTargets_MnsParametersPropertyValidator(properties: any): ro
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('topic', ros.validateString)(properties.topic));
     errors.collect(ros.propertyValidator('queue', ros.validateString)(properties.queue));
     errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "MnsParametersProperty"');
@@ -1206,7 +1320,97 @@ function rosEventRuleTargetsMnsParametersPropertyToRosTemplate(properties: any):
     RosEventRuleTargets_MnsParametersPropertyValidator(properties).assertSuccess();
     return {
       'Region': ros.stringToRosTemplate(properties.region),
+      'Topic': ros.stringToRosTemplate(properties.topic),
       'Queue': ros.stringToRosTemplate(properties.queue),
+      'Id': ros.stringToRosTemplate(properties.identity),
+    };
+}
+
+export namespace RosEventRuleTargets {
+    /**
+     * @stability external
+     */
+    export interface OpenApiParametersProperty {
+        /**
+         * @Property role: The role name.
+         */
+        readonly role?: string | ros.IResolvable;
+        /**
+         * @Property action: The API name.
+         */
+        readonly action?: string | ros.IResolvable;
+        /**
+         * @Property version: The version of the API.
+         */
+        readonly version?: string | ros.IResolvable;
+        /**
+         * @Property jsonParams: The JSON format parameters for alarm callback.
+         */
+        readonly jsonParams?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property product: The cloud product ID corresponding to the API.
+         */
+        readonly product?: string | ros.IResolvable;
+        /**
+         * @Property region: The region corresponding to the resource.
+         */
+        readonly region?: string | ros.IResolvable;
+        /**
+         * @Property arn: The ARN of the resource. The value of N ranges from 1 to 5.
+     * Format: `arn:acs:${Service}:${Region}:${Account}:${ResourceType}\/${ResourceId}`. The meanings of each field are as follows:
+     *   - Service: cloud product.
+     *   - Region: region ID.
+     *   - Account: Alibaba Cloud account ID.
+     *   - ResourceType: resource type.
+     *   - ResourceId: resource ID.
+         */
+        readonly arn?: string | ros.IResolvable;
+        /**
+         * @Property identity: The unique identifier of the API callback notification method.
+         */
+        readonly identity?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `OpenApiParametersProperty`
+ *
+ * @param properties - the TypeScript properties of a `OpenApiParametersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEventRuleTargets_OpenApiParametersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('role', ros.validateString)(properties.role));
+    errors.collect(ros.propertyValidator('action', ros.validateString)(properties.action));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('jsonParams', ros.hashValidator(ros.validateAny))(properties.jsonParams));
+    errors.collect(ros.propertyValidator('product', ros.validateString)(properties.product));
+    errors.collect(ros.propertyValidator('region', ros.validateString)(properties.region));
+    errors.collect(ros.propertyValidator('arn', ros.validateString)(properties.arn));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
+    return errors.wrap('supplied properties not correct for "OpenApiParametersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS::EventRuleTargets.OpenApiParameters` resource
+ *
+ * @param properties - the TypeScript properties of a `OpenApiParametersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS::EventRuleTargets.OpenApiParameters` resource.
+ */
+// @ts-ignore TS6133
+function rosEventRuleTargetsOpenApiParametersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEventRuleTargets_OpenApiParametersPropertyValidator(properties).assertSuccess();
+    return {
+      'Role': ros.stringToRosTemplate(properties.role),
+      'Action': ros.stringToRosTemplate(properties.action),
+      'Version': ros.stringToRosTemplate(properties.version),
+      'JsonParams': ros.hashMapper(ros.objectToRosTemplate)(properties.jsonParams),
+      'Product': ros.stringToRosTemplate(properties.product),
+      'Region': ros.stringToRosTemplate(properties.region),
+      'Arn': ros.stringToRosTemplate(properties.arn),
       'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
@@ -1408,6 +1612,11 @@ export interface RosGroupMetricRuleProps {
     readonly ruleName: string | ros.IResolvable;
 
     /**
+     * @Property contactGroups: The alert contact groups.
+     */
+    readonly contactGroups?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
      * @Property dimensions: The expended resource dimensions.
      */
     readonly dimensions?: string | ros.IResolvable;
@@ -1423,14 +1632,38 @@ export interface RosGroupMetricRuleProps {
     readonly emailSubject?: string | ros.IResolvable;
 
     /**
+     * @Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+     * 
+     * Format: a collection of key:value pairs, for example, `port:80` or `\/dev\/xvda:d-m5e6yphgzn3aprwu****`.
+     * 
+     * When the first-level dimension of the alert rule is `{"instanceId":"i-m5e1qg6uo38rztr4****"}`, its secondary dimension is the disk `{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}`.
+     */
+    readonly extraDimensionJson?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
      * @Property interval: The detection period of alerts.
      */
     readonly interval?: number | ros.IResolvable;
 
     /**
+     * @Property noDataPolicy: The handling method when there is no monitoring data. Valid values:
+     * - KEEP_LAST_STATE (default): No action is taken.
+     * - INSUFFICIENT_DATA: Alert content is "No Data".
+     * - OK: Normal.
+     */
+    readonly noDataPolicy?: string | ros.IResolvable;
+
+    /**
      * @Property noEffectiveInterval: The period when the alert rule is ineffective.
      */
     readonly noEffectiveInterval?: string | ros.IResolvable;
+
+    /**
+     * @Property options: The advanced settings.
+     * 
+     * Format: `{"key1":"value1","key2":"value2"}`, for example, `{"NotSendOK":true}`, indicating whether to send alert recovery notifications. The key is `NotSendOK`, and the value is `true` (do not send) or `false` (send by default).
+     */
+    readonly options?: string | ros.IResolvable;
 
     /**
      * @Property period: The aggregation period. Unite: second.
@@ -1468,6 +1701,8 @@ function RosGroupMetricRulePropsValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('silenceTime', ros.validateNumber)(properties.silenceTime));
+    errors.collect(ros.propertyValidator('contactGroups', ros.listValidator(ros.validateString))(properties.contactGroups));
+    errors.collect(ros.propertyValidator('options', ros.validateString)(properties.options));
     errors.collect(ros.propertyValidator('category', ros.requiredValidator)(properties.category));
     errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
     errors.collect(ros.propertyValidator('ruleId', ros.requiredValidator)(properties.ruleId));
@@ -1475,15 +1710,23 @@ function RosGroupMetricRulePropsValidator(properties: any): ros.ValidationResult
     errors.collect(ros.propertyValidator('dimensions', ros.validateString)(properties.dimensions));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('effectiveInterval', ros.validateString)(properties.effectiveInterval));
+    if(properties.noDataPolicy && (typeof properties.noDataPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('noDataPolicy', ros.validateAllowedValues)({
+          data: properties.noDataPolicy,
+          allowedValues: ["KEEP_LAST_STATE","INSUFFICIENT_DATA","OK"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('noDataPolicy', ros.validateString)(properties.noDataPolicy));
     errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
     errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
     errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
     errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     errors.collect(ros.propertyValidator('metricName', ros.requiredValidator)(properties.metricName));
     errors.collect(ros.propertyValidator('metricName', ros.validateString)(properties.metricName));
+    errors.collect(ros.propertyValidator('extraDimensionJson', ros.hashValidator(ros.validateAny))(properties.extraDimensionJson));
+    errors.collect(ros.propertyValidator('emailSubject', ros.validateString)(properties.emailSubject));
     errors.collect(ros.propertyValidator('escalations', ros.requiredValidator)(properties.escalations));
     errors.collect(ros.propertyValidator('escalations', RosGroupMetricRule_EscalationsPropertyValidator)(properties.escalations));
-    errors.collect(ros.propertyValidator('emailSubject', ros.validateString)(properties.emailSubject));
     errors.collect(ros.propertyValidator('webhook', ros.validateString)(properties.webhook));
     errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
     errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
@@ -1512,11 +1755,15 @@ function rosGroupMetricRulePropsToRosTemplate(properties: any, enableResourcePro
       'Namespace': ros.stringToRosTemplate(properties.namespace),
       'RuleId': ros.stringToRosTemplate(properties.ruleId),
       'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'ContactGroups': ros.listMapper(ros.stringToRosTemplate)(properties.contactGroups),
       'Dimensions': ros.stringToRosTemplate(properties.dimensions),
       'EffectiveInterval': ros.stringToRosTemplate(properties.effectiveInterval),
       'EmailSubject': ros.stringToRosTemplate(properties.emailSubject),
+      'ExtraDimensionJson': ros.hashMapper(ros.objectToRosTemplate)(properties.extraDimensionJson),
       'Interval': ros.numberToRosTemplate(properties.interval),
+      'NoDataPolicy': ros.stringToRosTemplate(properties.noDataPolicy),
       'NoEffectiveInterval': ros.stringToRosTemplate(properties.noEffectiveInterval),
+      'Options': ros.stringToRosTemplate(properties.options),
       'Period': ros.numberToRosTemplate(properties.period),
       'SilenceTime': ros.numberToRosTemplate(properties.silenceTime),
       'Webhook': ros.stringToRosTemplate(properties.webhook),
@@ -1524,7 +1771,7 @@ function rosGroupMetricRulePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`The , which resource creates an alert rule for an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `GroupMetricRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
@@ -1615,6 +1862,11 @@ export class RosGroupMetricRule extends ros.RosResource {
     public ruleName: string | ros.IResolvable;
 
     /**
+     * @Property contactGroups: The alert contact groups.
+     */
+    public contactGroups: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @Property dimensions: The expended resource dimensions.
      */
     public dimensions: string | ros.IResolvable | undefined;
@@ -1630,14 +1882,38 @@ export class RosGroupMetricRule extends ros.RosResource {
     public emailSubject: string | ros.IResolvable | undefined;
 
     /**
+     * @Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.
+     * 
+     * Format: a collection of key:value pairs, for example, `port:80` or `\/dev\/xvda:d-m5e6yphgzn3aprwu****`.
+     * 
+     * When the first-level dimension of the alert rule is `{"instanceId":"i-m5e1qg6uo38rztr4****"}`, its secondary dimension is the disk `{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}`.
+     */
+    public extraDimensionJson: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
      * @Property interval: The detection period of alerts.
      */
     public interval: number | ros.IResolvable | undefined;
 
     /**
+     * @Property noDataPolicy: The handling method when there is no monitoring data. Valid values:
+     * - KEEP_LAST_STATE (default): No action is taken.
+     * - INSUFFICIENT_DATA: Alert content is "No Data".
+     * - OK: Normal.
+     */
+    public noDataPolicy: string | ros.IResolvable | undefined;
+
+    /**
      * @Property noEffectiveInterval: The period when the alert rule is ineffective.
      */
     public noEffectiveInterval: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property options: The advanced settings.
+     * 
+     * Format: `{"key1":"value1","key2":"value2"}`, for example, `{"NotSendOK":true}`, indicating whether to send alert recovery notifications. The key is `NotSendOK`, and the value is `true` (do not send) or `false` (send by default).
+     */
+    public options: string | ros.IResolvable | undefined;
 
     /**
      * @Property period: The aggregation period. Unite: second.
@@ -1672,11 +1948,15 @@ export class RosGroupMetricRule extends ros.RosResource {
         this.namespace = props.namespace;
         this.ruleId = props.ruleId;
         this.ruleName = props.ruleName;
+        this.contactGroups = props.contactGroups;
         this.dimensions = props.dimensions;
         this.effectiveInterval = props.effectiveInterval;
         this.emailSubject = props.emailSubject;
+        this.extraDimensionJson = props.extraDimensionJson;
         this.interval = props.interval;
+        this.noDataPolicy = props.noDataPolicy;
         this.noEffectiveInterval = props.noEffectiveInterval;
+        this.options = props.options;
         this.period = props.period;
         this.silenceTime = props.silenceTime;
         this.webhook = props.webhook;
@@ -1692,11 +1972,15 @@ export class RosGroupMetricRule extends ros.RosResource {
             namespace: this.namespace,
             ruleId: this.ruleId,
             ruleName: this.ruleName,
+            contactGroups: this.contactGroups,
             dimensions: this.dimensions,
             effectiveInterval: this.effectiveInterval,
             emailSubject: this.emailSubject,
+            extraDimensionJson: this.extraDimensionJson,
             interval: this.interval,
+            noDataPolicy: this.noDataPolicy,
             noEffectiveInterval: this.noEffectiveInterval,
+            options: this.options,
             period: this.period,
             silenceTime: this.silenceTime,
             webhook: this.webhook,
@@ -2047,7 +2331,7 @@ function rosMetricRuleTargetsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources for an alert rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTargets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
@@ -2257,7 +2541,7 @@ function rosMetricRuleTemplatePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert template.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
@@ -2400,14 +2684,14 @@ export namespace RosMetricRuleTemplate {
          */
         readonly webhook?: string | ros.IResolvable;
         /**
+         * @Property ruleName: The name of the alert rule.
+         */
+        readonly ruleName: string | ros.IResolvable;
+        /**
          * @Property namespace: The namespace of the service. 
      * Note For more information, see DescribeMetricMetaList or Appendix 1: Metrics.
          */
         readonly namespace: string | ros.IResolvable;
-        /**
-         * @Property ruleName: The name of the alert rule.
-         */
-        readonly ruleName: string | ros.IResolvable;
         /**
          * @Property selector: The dimension of the alert. It is an extended field.
          */
@@ -2431,10 +2715,10 @@ function RosMetricRuleTemplate_AlertTemplatesPropertyValidator(properties: any):
     errors.collect(ros.propertyValidator('escalations', RosMetricRuleTemplate_EscalationsPropertyValidator)(properties.escalations));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('webhook', ros.validateString)(properties.webhook));
-    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
-    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
     errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
     errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
     errors.collect(ros.propertyValidator('selector', ros.validateString)(properties.selector));
     return errors.wrap('supplied properties not correct for "AlertTemplatesProperty"');
 }
@@ -2456,8 +2740,8 @@ function rosMetricRuleTemplateAlertTemplatesPropertyToRosTemplate(properties: an
       'Escalations': rosMetricRuleTemplateEscalationsPropertyToRosTemplate(properties.escalations),
       'Period': ros.numberToRosTemplate(properties.period),
       'Webhook': ros.stringToRosTemplate(properties.webhook),
-      'Namespace': ros.stringToRosTemplate(properties.namespace),
       'RuleName': ros.stringToRosTemplate(properties.ruleName),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
       'Selector': ros.stringToRosTemplate(properties.selector),
     };
 }
@@ -2922,7 +3206,7 @@ function rosMetricRuleTemplateDeploymentPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`, which is used to apply an alert template to an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplateDeployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
  */
@@ -3095,7 +3379,7 @@ function rosMonitorGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroup`, which is used to create an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
  */
@@ -3211,7 +3495,7 @@ function rosMonitorGroupInstancesPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`, which is used to add instances to an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroupInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
@@ -3443,7 +3727,7 @@ function rosMonitoringAgentPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgent`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgent`, which is used to install the CloudMonitor agent on Alibaba Cloud hosts.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitoringAgent` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagent
  */
@@ -3566,7 +3850,7 @@ function rosMonitoringAgentProcessPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a process monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitoringAgentProcess` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
@@ -3706,7 +3990,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Namespace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Namespace`, which is used to create a namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */
@@ -3819,11 +4103,6 @@ export interface RosResourceMetricRuleProps {
     readonly contactGroups: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-     */
-    readonly escalations: RosResourceMetricRule.EscalationsProperty | ros.IResolvable;
-
-    /**
      * @Property metricName: The name of the metric.
      * For information about how to query the name of a metric, see Appendix 1: Metrics.
      * Note: If you create a Prometheus alert rule for Hybrid Cloud Monitoring, you must set this parameter to the name of the namespace. For information about how to obtain the name of a namespace, see DescribeHybridMonitorNamespaceList.
@@ -3864,6 +4143,11 @@ export interface RosResourceMetricRuleProps {
      * @Property emailSubject: The subject of the alert notification email.
      */
     readonly emailSubject?: string | ros.IResolvable;
+
+    /**
+     * @Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+     */
+    readonly escalations?: RosResourceMetricRule.EscalationsProperty | ros.IResolvable;
 
     /**
      * @Property interval: The interval at which the alert is triggered. Unit: seconds.
@@ -3937,7 +4221,6 @@ export interface RosResourceMetricRuleProps {
 function RosResourceMetricRulePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('noEffectiveInterval', ros.validateString)(properties.noEffectiveInterval));
     errors.collect(ros.propertyValidator('contactGroups', ros.requiredValidator)(properties.contactGroups));
     if(properties.contactGroups && (Array.isArray(properties.contactGroups) || (typeof properties.contactGroups) === 'string')) {
         errors.collect(ros.propertyValidator('contactGroups', ros.validateLength)({
@@ -3947,6 +4230,7 @@ function RosResourceMetricRulePropsValidator(properties: any): ros.ValidationRes
           }));
     }
     errors.collect(ros.propertyValidator('contactGroups', ros.listValidator(ros.validateString))(properties.contactGroups));
+    errors.collect(ros.propertyValidator('noEffectiveInterval', ros.validateString)(properties.noEffectiveInterval));
     errors.collect(ros.propertyValidator('silenceTime', ros.validateNumber)(properties.silenceTime));
     errors.collect(ros.propertyValidator('ruleId', ros.validateString)(properties.ruleId));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
@@ -3965,9 +4249,8 @@ function RosResourceMetricRulePropsValidator(properties: any): ros.ValidationRes
     errors.collect(ros.propertyValidator('metricName', ros.requiredValidator)(properties.metricName));
     errors.collect(ros.propertyValidator('metricName', ros.validateString)(properties.metricName));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
-    errors.collect(ros.propertyValidator('escalations', ros.requiredValidator)(properties.escalations));
-    errors.collect(ros.propertyValidator('escalations', RosResourceMetricRule_EscalationsPropertyValidator)(properties.escalations));
     errors.collect(ros.propertyValidator('emailSubject', ros.validateString)(properties.emailSubject));
+    errors.collect(ros.propertyValidator('escalations', RosResourceMetricRule_EscalationsPropertyValidator)(properties.escalations));
     errors.collect(ros.propertyValidator('compositeExpression', RosResourceMetricRule_CompositeExpressionPropertyValidator)(properties.compositeExpression));
     errors.collect(ros.propertyValidator('webhook', ros.validateString)(properties.webhook));
     errors.collect(ros.propertyValidator('resources', ros.requiredValidator)(properties.resources));
@@ -3999,7 +4282,6 @@ function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResource
     }
     return {
       'ContactGroups': ros.listMapper(ros.stringToRosTemplate)(properties.contactGroups),
-      'Escalations': rosResourceMetricRuleEscalationsPropertyToRosTemplate(properties.escalations),
       'MetricName': ros.stringToRosTemplate(properties.metricName),
       'Namespace': ros.stringToRosTemplate(properties.namespace),
       'Resources': ros.listMapper(ros.anyDictToRosTemplate)(properties.resources),
@@ -4007,6 +4289,7 @@ function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResource
       'DeletionForce': ros.booleanToRosTemplate(properties.deletionForce),
       'EffectiveInterval': ros.stringToRosTemplate(properties.effectiveInterval),
       'EmailSubject': ros.stringToRosTemplate(properties.emailSubject),
+      'Escalations': rosResourceMetricRuleEscalationsPropertyToRosTemplate(properties.escalations),
       'Interval': ros.numberToRosTemplate(properties.interval),
       'Labels': ros.listMapper(rosResourceMetricRuleLabelsPropertyToRosTemplate)(properties.labels),
       'NoDataPolicy': ros.stringToRosTemplate(properties.noDataPolicy),
@@ -4021,7 +4304,7 @@ function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ResourceMetricRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create a threshold-triggered alert rule for a metric of a resource.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceMetricRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
@@ -4050,11 +4333,6 @@ export class RosResourceMetricRule extends ros.RosResource {
      * Note: An alert contact group can contain one or more alert contacts. For information about how to create alert contacts and alert contact groups, see PutContact and PutContactGroup.
      */
     public contactGroups: Array<string | ros.IResolvable> | ros.IResolvable;
-
-    /**
-     * @Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
-     */
-    public escalations: RosResourceMetricRule.EscalationsProperty | ros.IResolvable;
 
     /**
      * @Property metricName: The name of the metric.
@@ -4097,6 +4375,11 @@ export class RosResourceMetricRule extends ros.RosResource {
      * @Property emailSubject: The subject of the alert notification email.
      */
     public emailSubject: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property escalations: You must select at least one of the Critical, Warn, and Info alert levels.
+     */
+    public escalations: RosResourceMetricRule.EscalationsProperty | ros.IResolvable | undefined;
 
     /**
      * @Property interval: The interval at which the alert is triggered. Unit: seconds.
@@ -4171,7 +4454,6 @@ export class RosResourceMetricRule extends ros.RosResource {
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
         this.contactGroups = props.contactGroups;
-        this.escalations = props.escalations;
         this.metricName = props.metricName;
         this.namespace = props.namespace;
         this.resources = props.resources;
@@ -4179,6 +4461,7 @@ export class RosResourceMetricRule extends ros.RosResource {
         this.deletionForce = props.deletionForce;
         this.effectiveInterval = props.effectiveInterval;
         this.emailSubject = props.emailSubject;
+        this.escalations = props.escalations;
         this.interval = props.interval;
         this.labels = props.labels;
         this.noDataPolicy = props.noDataPolicy;
@@ -4195,7 +4478,6 @@ export class RosResourceMetricRule extends ros.RosResource {
     protected get rosProperties(): { [key: string]: any }  {
         return {
             contactGroups: this.contactGroups,
-            escalations: this.escalations,
             metricName: this.metricName,
             namespace: this.namespace,
             resources: this.resources,
@@ -4203,6 +4485,7 @@ export class RosResourceMetricRule extends ros.RosResource {
             deletionForce: this.deletionForce,
             effectiveInterval: this.effectiveInterval,
             emailSubject: this.emailSubject,
+            escalations: this.escalations,
             interval: this.interval,
             labels: this.labels,
             noDataPolicy: this.noDataPolicy,
@@ -4523,6 +4806,10 @@ export namespace RosResourceMetricRule {
          */
         readonly comparisonOperator: string | ros.IResolvable;
         /**
+         * @Property expressionRaw: The raw expression.
+         */
+        readonly expressionRaw?: string | ros.IResolvable;
+        /**
          * @Property period: The aggregation period of the metric.
      * Unit: seconds.
          */
@@ -4540,6 +4827,10 @@ export namespace RosResourceMetricRule {
          * @Property threshold: The alert threshold.
          */
         readonly threshold: string | ros.IResolvable;
+        /**
+         * @Property identity: ID.
+         */
+        readonly identity?: string | ros.IResolvable;
     }
 }
 /**
@@ -4562,6 +4853,7 @@ function RosResourceMetricRule_ExpressionListPropertyValidator(properties: any):
         }));
     }
     errors.collect(ros.propertyValidator('comparisonOperator', ros.validateString)(properties.comparisonOperator));
+    errors.collect(ros.propertyValidator('expressionRaw', ros.validateString)(properties.expressionRaw));
     errors.collect(ros.propertyValidator('period', ros.requiredValidator)(properties.period));
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('statistics', ros.requiredValidator)(properties.statistics));
@@ -4574,6 +4866,7 @@ function RosResourceMetricRule_ExpressionListPropertyValidator(properties: any):
     errors.collect(ros.propertyValidator('statistics', ros.validateString)(properties.statistics));
     errors.collect(ros.propertyValidator('threshold', ros.requiredValidator)(properties.threshold));
     errors.collect(ros.propertyValidator('threshold', ros.validateString)(properties.threshold));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
     return errors.wrap('supplied properties not correct for "ExpressionListProperty"');
 }
 
@@ -4591,9 +4884,11 @@ function rosResourceMetricRuleExpressionListPropertyToRosTemplate(properties: an
     return {
       'MetricName': ros.stringToRosTemplate(properties.metricName),
       'ComparisonOperator': ros.stringToRosTemplate(properties.comparisonOperator),
+      'ExpressionRaw': ros.stringToRosTemplate(properties.expressionRaw),
       'Period': ros.numberToRosTemplate(properties.period),
       'Statistics': ros.stringToRosTemplate(properties.statistics),
       'Threshold': ros.stringToRosTemplate(properties.threshold),
+      'Id': ros.stringToRosTemplate(properties.identity),
     };
 }
 
@@ -4998,7 +5293,7 @@ function rosSiteMonitorPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `SiteMonitor` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
@@ -5206,7 +5501,7 @@ function rosSlsGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SlsGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SlsGroup`, which is used to create a Logstore group for the metrics of Simple Log Service logs.
  * @Note This class does not contain additional functions, so it is recommended to use the `SlsGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup
  */

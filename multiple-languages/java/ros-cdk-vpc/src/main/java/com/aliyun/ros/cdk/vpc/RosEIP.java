@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::EIP</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::EIP</code>The , which resource type requests an Elastic IP Address (EIP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.040Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.978Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIP")
 public class RosEIP extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -169,6 +169,24 @@ public class RosEIP extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
+    }
+
+    /**
+     */
+    public void setInstanceId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "instanceId", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -183,6 +201,24 @@ public class RosEIP extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setInternetChargeType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "internetChargeType", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIpAddress() {
+        return software.amazon.jsii.Kernel.get(this, "ipAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIpAddress(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "ipAddress", value);
+    }
+
+    /**
+     */
+    public void setIpAddress(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "ipAddress", value);
     }
 
     /**
@@ -656,6 +692,23 @@ public class RosEIP extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final java.lang.String instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param instanceId This parameter is required.
+         */
+        public Builder instanceId(final com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.props.instanceId(instanceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param internetChargeType This parameter is required.
          */
         public Builder internetChargeType(final java.lang.String internetChargeType) {
@@ -668,6 +721,23 @@ public class RosEIP extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props.internetChargeType(internetChargeType);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param ipAddress This parameter is required.
+         */
+        public Builder ipAddress(final java.lang.String ipAddress) {
+            this.props.ipAddress(ipAddress);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param ipAddress This parameter is required.
+         */
+        public Builder ipAddress(final com.aliyun.ros.cdk.core.IResolvable ipAddress) {
+            this.props.ipAddress(ipAddress);
             return this;
         }
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`, which is used to delay the creation, deletion, update, and rollback of other resources.
 type RosSleep interface {
 	alicloudroscdkcore.RosResource
 	CreateDuration() interface{}

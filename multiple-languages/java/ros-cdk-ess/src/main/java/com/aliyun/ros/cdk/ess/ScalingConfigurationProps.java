@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.881Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ScalingConfigurationProps.Jsii$Proxy.class)
 public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSerializable {
@@ -136,7 +136,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
-     * Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+     * Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
         return null;
@@ -958,7 +958,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInstanceId}
-         * @param instanceId Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+         * @param instanceId Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
          * @return {@code this}
          */
         public Builder instanceId(java.lang.String instanceId) {
@@ -968,7 +968,7 @@ public interface ScalingConfigurationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ScalingConfigurationProps#getInstanceId}
-         * @param instanceId Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized,UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
+         * @param instanceId Property instanceId: Source ECS instance to copy configuration, if the properties is setting, Which will copy the InstanceType, ImageId, InternetChargeType, IoOptimized, UserData, KeyPairName, RamRoleName, InternetMaxBandwidthIn,InternetMaxBandwidthOut, and first security group id from source instance, you can also specify the relative properties to overwrite the properties copy from source instance id.
          * @return {@code this}
          */
         public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {

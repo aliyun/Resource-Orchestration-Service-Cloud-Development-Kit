@@ -175,6 +175,28 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
+        /// <summary>Property vSwitchBak: The ID of the secondary VSwitch.</summary>
+        [JsiiProperty(name: "vSwitchBak", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VSwitchBak
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property vSwitchBak2: The ID of the third VSwitch.</summary>
+        [JsiiProperty(name: "vSwitchBak2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? VSwitchBak2
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property vSwitchId: VSwitchId.</summary>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -186,10 +208,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
+        /// <summary>Property zondIdBak2: The ID of the third zone.</summary>
+        [JsiiProperty(name: "zondIdBak2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZondIdBak2
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property zoneId: ZoneId.</summary>
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ZoneId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property zoneIdBak: The ID of the secondary zone.</summary>
+        [JsiiProperty(name: "zoneIdBak", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ZoneIdBak
         {
             get
             {
@@ -354,6 +398,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property vSwitchBak: The ID of the secondary VSwitch.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "vSwitchBak", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchBak
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property vSwitchBak2: The ID of the third VSwitch.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "vSwitchBak2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchBak2
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property vSwitchId: VSwitchId.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -362,10 +422,26 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property zondIdBak2: The ID of the third zone.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "zondIdBak2", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZondIdBak2
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property zoneId: ZoneId.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ZoneId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property zoneIdBak: The ID of the secondary zone.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "zoneIdBak", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ZoneIdBak
             {
                 get => GetInstanceProperty<object?>();
             }

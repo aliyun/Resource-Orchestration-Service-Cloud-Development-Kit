@@ -196,7 +196,7 @@ type PrepayDBInstanceProps struct {
 	LogBackupFrequency interface{} `field:"optional" json:"logBackupFrequency" yaml:"logBackupFrequency"`
 	// Property logBackupLocalRetentionNumber: The number of log backup files that can be retained on the instance.
 	//
-	// Default value: 60. Valid values: 6 to 100.
+	// Default value: 60. Valid values: 6 to 100. If the instance type is MySQL, you can pass in -1, which means there is no limit on the number of reserved local Binlogs.
 	LogBackupLocalRetentionNumber interface{} `field:"optional" json:"logBackupLocalRetentionNumber" yaml:"logBackupLocalRetentionNumber"`
 	// Property logBackupRetentionPeriod: The number of days for which to retain log backup files.
 	//

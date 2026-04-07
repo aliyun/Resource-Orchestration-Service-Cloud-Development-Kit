@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::RouterInterface</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.200Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.176Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RouterInterface")
 public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IRouterInterface {
 
@@ -214,6 +214,27 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
+         * Property autoRenew: Specifies whether auto-renewal is enabled.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Specifies whether auto-renewal is enabled. This parameter is required.
+         */
+        public Builder autoRenew(final java.lang.Boolean autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+        /**
+         * Property autoRenew: Specifies whether auto-renewal is enabled.
+         * <p>
+         * @return {@code this}
+         * @param autoRenew Property autoRenew: Specifies whether auto-renewal is enabled. This parameter is required.
+         */
+        public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
+            this.props.autoRenew(autoRenew);
+            return this;
+        }
+
+        /**
          * Property description: Custom description of the RouterInterface, [2, 256] characters.
          * <p>
          * Don't fill or empty, the default is empty.
@@ -235,6 +256,41 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
+            return this;
+        }
+
+        /**
+         * Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode.
+         * <p>
+         * Fast link mode allows the router interfaces between VBR and VPC ends to be automatically connected after they are created.
+         * This parameter is valid only when the value of <strong>RouterType</strong> is <strong>VBR</strong> and the value of <strong>OppositeRouterType</strong> is <strong>VRouter</strong>.
+         * <p>
+         * <ul>
+         * <li>When the value of the <strong>FastLinkMode</strong> parameter is <strong>true</strong>, the value of the <strong>Role</strong> parameter must be <strong>InitiatingSide</strong>, and the <strong>AccessPointId</strong>, <strong>OppositeRouterType</strong>, <strong>OppsiteRouterId</strong>, and <strong>OppositeInterfaceOwnerId</strong> parameters are required.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param fastLinkMode Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode. This parameter is required.
+         */
+        public Builder fastLinkMode(final java.lang.Boolean fastLinkMode) {
+            this.props.fastLinkMode(fastLinkMode);
+            return this;
+        }
+        /**
+         * Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode.
+         * <p>
+         * Fast link mode allows the router interfaces between VBR and VPC ends to be automatically connected after they are created.
+         * This parameter is valid only when the value of <strong>RouterType</strong> is <strong>VBR</strong> and the value of <strong>OppositeRouterType</strong> is <strong>VRouter</strong>.
+         * <p>
+         * <ul>
+         * <li>When the value of the <strong>FastLinkMode</strong> parameter is <strong>true</strong>, the value of the <strong>Role</strong> parameter must be <strong>InitiatingSide</strong>, and the <strong>AccessPointId</strong>, <strong>OppositeRouterType</strong>, <strong>OppsiteRouterId</strong>, and <strong>OppositeInterfaceOwnerId</strong> parameters are required.</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param fastLinkMode Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode. This parameter is required.
+         */
+        public Builder fastLinkMode(final com.aliyun.ros.cdk.core.IResolvable fastLinkMode) {
+            this.props.fastLinkMode(fastLinkMode);
             return this;
         }
 
@@ -523,6 +579,27 @@ public class RouterInterface extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.props.pricingCycle(pricingCycle);
+            return this;
+        }
+
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final java.lang.String resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
+            return this;
+        }
+        /**
+         * Property resourceGroupId: The ID of the resource group.
+         * <p>
+         * @return {@code this}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
+         */
+        public Builder resourceGroupId(final com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.props.resourceGroupId(resourceGroupId);
             return this;
         }
 

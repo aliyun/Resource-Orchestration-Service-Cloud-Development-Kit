@@ -81,7 +81,7 @@ export interface IZone extends ros.IResource {
     readonly attrZoneType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Zone`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a built-in authoritative zone.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
@@ -133,8 +133,8 @@ export class Zone extends ros.Resource implements IZone {
             ignoredStackTagKeys: props.ignoredStackTagKeys,
             resourceGroupId: props.resourceGroupId,
             proxyPattern: props.proxyPattern === undefined || props.proxyPattern === null ? 'ZONE' : props.proxyPattern,
-            tags: props.tags,
             dnsGroup: props.dnsGroup,
+            tags: props.tags,
             remark: props.remark,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosZone;

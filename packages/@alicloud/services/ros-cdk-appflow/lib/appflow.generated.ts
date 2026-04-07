@@ -50,9 +50,9 @@ function RosChatbotPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('chatbotConfig', RosChatbot_ChatbotConfigPropertyValidator)(properties.chatbotConfig));
+    errors.collect(ros.propertyValidator('chatbotIcon', ros.validateString)(properties.chatbotIcon));
     errors.collect(ros.propertyValidator('chatbotName', ros.requiredValidator)(properties.chatbotName));
     errors.collect(ros.propertyValidator('chatbotName', ros.validateString)(properties.chatbotName));
-    errors.collect(ros.propertyValidator('chatbotIcon', ros.validateString)(properties.chatbotIcon));
     errors.collect(ros.propertyValidator('chatbotDesc', ros.validateString)(properties.chatbotDesc));
     errors.collect(ros.propertyValidator('from', ros.validateString)(properties.from));
     errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));
@@ -83,7 +83,7 @@ function rosChatbotPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Chatbot`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Chatbot`The , which resource is used to create a chatbot.
  * @Note This class does not contain additional functions, so it is recommended to use the `Chatbot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbot
  */
@@ -409,7 +409,7 @@ function rosChatbotFlowPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`The , which type is used to create a chatbot flow.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChatbotFlow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbotflow
  */
@@ -564,7 +564,7 @@ function rosChatbotModelPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotModel`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotModel`The , which is used to create a chatbot model.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChatbotModel` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbotmodel
  */
@@ -711,6 +711,7 @@ function RosFlowPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('flowName', ros.requiredValidator)(properties.flowName));
     errors.collect(ros.propertyValidator('flowName', ros.validateString)(properties.flowName));
     errors.collect(ros.propertyValidator('launchFlow', ros.validateBoolean)(properties.launchFlow));
+    errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));
     if(properties.flowStatus && (typeof properties.flowStatus) !== 'object') {
         errors.collect(ros.propertyValidator('flowStatus', ros.validateAllowedValues)({
           data: properties.flowStatus,
@@ -718,7 +719,6 @@ function RosFlowPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('flowStatus', ros.validateString)(properties.flowStatus));
-    errors.collect(ros.propertyValidator('templateId', ros.validateString)(properties.templateId));
     errors.collect(ros.propertyValidator('template', ros.hashValidator(ros.validateAny))(properties.template));
     return errors.wrap('supplied properties not correct for "RosFlowProps"');
 }
@@ -749,7 +749,7 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Flow`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Flow`, which is used to create a flow.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-flow
  */
@@ -915,7 +915,7 @@ function rosUserAuthConfigPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`, which is used to create configurations for a user credential.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserAuthConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
  */

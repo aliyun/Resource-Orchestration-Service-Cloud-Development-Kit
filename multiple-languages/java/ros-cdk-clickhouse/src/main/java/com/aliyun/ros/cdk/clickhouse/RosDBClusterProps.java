@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.clickhouse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.314Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.625Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.RosDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosDBClusterProps.Jsii$Proxy.class)
 public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -80,13 +80,37 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchBak() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchBak2() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZondIdBak2() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZoneIdBak() {
         return null;
     }
 
@@ -114,8 +138,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         java.lang.Object period;
         java.lang.Object usedTime;
         java.lang.Object vpcId;
+        java.lang.Object vSwitchBak;
+        java.lang.Object vSwitchBak2;
         java.lang.Object vSwitchId;
+        java.lang.Object zondIdBak2;
         java.lang.Object zoneId;
+        java.lang.Object zoneIdBak;
 
         /**
          * Sets the value of {@link RosDBClusterProps#getCategory}
@@ -398,6 +426,46 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getVSwitchBak}
+         * @param vSwitchBak the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchBak(java.lang.String vSwitchBak) {
+            this.vSwitchBak = vSwitchBak;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getVSwitchBak}
+         * @param vSwitchBak the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchBak(com.aliyun.ros.cdk.core.IResolvable vSwitchBak) {
+            this.vSwitchBak = vSwitchBak;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getVSwitchBak2}
+         * @param vSwitchBak2 the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchBak2(java.lang.String vSwitchBak2) {
+            this.vSwitchBak2 = vSwitchBak2;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getVSwitchBak2}
+         * @param vSwitchBak2 the value to be set.
+         * @return {@code this}
+         */
+        public Builder vSwitchBak2(com.aliyun.ros.cdk.core.IResolvable vSwitchBak2) {
+            this.vSwitchBak2 = vSwitchBak2;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getVSwitchId}
          * @param vSwitchId the value to be set.
          * @return {@code this}
@@ -418,6 +486,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         /**
+         * Sets the value of {@link RosDBClusterProps#getZondIdBak2}
+         * @param zondIdBak2 the value to be set.
+         * @return {@code this}
+         */
+        public Builder zondIdBak2(java.lang.String zondIdBak2) {
+            this.zondIdBak2 = zondIdBak2;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getZondIdBak2}
+         * @param zondIdBak2 the value to be set.
+         * @return {@code this}
+         */
+        public Builder zondIdBak2(com.aliyun.ros.cdk.core.IResolvable zondIdBak2) {
+            this.zondIdBak2 = zondIdBak2;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosDBClusterProps#getZoneId}
          * @param zoneId the value to be set.
          * @return {@code this}
@@ -434,6 +522,26 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.zoneId = zoneId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getZoneIdBak}
+         * @param zoneIdBak the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneIdBak(java.lang.String zoneIdBak) {
+            this.zoneIdBak = zoneIdBak;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosDBClusterProps#getZoneIdBak}
+         * @param zoneIdBak the value to be set.
+         * @return {@code this}
+         */
+        public Builder zoneIdBak(com.aliyun.ros.cdk.core.IResolvable zoneIdBak) {
+            this.zoneIdBak = zoneIdBak;
             return this;
         }
 
@@ -467,8 +575,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         private final java.lang.Object period;
         private final java.lang.Object usedTime;
         private final java.lang.Object vpcId;
+        private final java.lang.Object vSwitchBak;
+        private final java.lang.Object vSwitchBak2;
         private final java.lang.Object vSwitchId;
+        private final java.lang.Object zondIdBak2;
         private final java.lang.Object zoneId;
+        private final java.lang.Object zoneIdBak;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -490,8 +602,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.usedTime = software.amazon.jsii.Kernel.get(this, "usedTime", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchBak = software.amazon.jsii.Kernel.get(this, "vSwitchBak", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.vSwitchBak2 = software.amazon.jsii.Kernel.get(this, "vSwitchBak2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zondIdBak2 = software.amazon.jsii.Kernel.get(this, "zondIdBak2", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zoneIdBak = software.amazon.jsii.Kernel.get(this, "zoneIdBak", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -513,8 +629,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             this.period = builder.period;
             this.usedTime = builder.usedTime;
             this.vpcId = builder.vpcId;
+            this.vSwitchBak = builder.vSwitchBak;
+            this.vSwitchBak2 = builder.vSwitchBak2;
             this.vSwitchId = builder.vSwitchId;
+            this.zondIdBak2 = builder.zondIdBak2;
             this.zoneId = builder.zoneId;
+            this.zoneIdBak = builder.zoneIdBak;
         }
 
         @Override
@@ -588,13 +708,33 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
         }
 
         @Override
+        public final java.lang.Object getVSwitchBak() {
+            return this.vSwitchBak;
+        }
+
+        @Override
+        public final java.lang.Object getVSwitchBak2() {
+            return this.vSwitchBak2;
+        }
+
+        @Override
         public final java.lang.Object getVSwitchId() {
             return this.vSwitchId;
         }
 
         @Override
+        public final java.lang.Object getZondIdBak2() {
+            return this.zondIdBak2;
+        }
+
+        @Override
         public final java.lang.Object getZoneId() {
             return this.zoneId;
+        }
+
+        @Override
+        public final java.lang.Object getZoneIdBak() {
+            return this.zoneIdBak;
         }
 
         @Override
@@ -629,11 +769,23 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
+            if (this.getVSwitchBak() != null) {
+                data.set("vSwitchBak", om.valueToTree(this.getVSwitchBak()));
+            }
+            if (this.getVSwitchBak2() != null) {
+                data.set("vSwitchBak2", om.valueToTree(this.getVSwitchBak2()));
+            }
             if (this.getVSwitchId() != null) {
                 data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             }
+            if (this.getZondIdBak2() != null) {
+                data.set("zondIdBak2", om.valueToTree(this.getZondIdBak2()));
+            }
             if (this.getZoneId() != null) {
                 data.set("zoneId", om.valueToTree(this.getZoneId()));
+            }
+            if (this.getZoneIdBak() != null) {
+                data.set("zoneIdBak", om.valueToTree(this.getZoneIdBak()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -667,8 +819,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
             if (this.usedTime != null ? !this.usedTime.equals(that.usedTime) : that.usedTime != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
+            if (this.vSwitchBak != null ? !this.vSwitchBak.equals(that.vSwitchBak) : that.vSwitchBak != null) return false;
+            if (this.vSwitchBak2 != null ? !this.vSwitchBak2.equals(that.vSwitchBak2) : that.vSwitchBak2 != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
-            return this.zoneId != null ? this.zoneId.equals(that.zoneId) : that.zoneId == null;
+            if (this.zondIdBak2 != null ? !this.zondIdBak2.equals(that.zondIdBak2) : that.zondIdBak2 != null) return false;
+            if (this.zoneId != null ? !this.zoneId.equals(that.zoneId) : that.zoneId != null) return false;
+            return this.zoneIdBak != null ? this.zoneIdBak.equals(that.zoneIdBak) : that.zoneIdBak == null;
         }
 
         @Override
@@ -687,8 +843,12 @@ public interface RosDBClusterProps extends software.amazon.jsii.JsiiSerializable
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
             result = 31 * result + (this.usedTime != null ? this.usedTime.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
+            result = 31 * result + (this.vSwitchBak != null ? this.vSwitchBak.hashCode() : 0);
+            result = 31 * result + (this.vSwitchBak2 != null ? this.vSwitchBak2.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);
+            result = 31 * result + (this.zondIdBak2 != null ? this.zondIdBak2.hashCode() : 0);
             result = 31 * result + (this.zoneId != null ? this.zoneId.hashCode() : 0);
+            result = 31 * result + (this.zoneIdBak != null ? this.zoneIdBak.hashCode() : 0);
             return result;
         }
     }

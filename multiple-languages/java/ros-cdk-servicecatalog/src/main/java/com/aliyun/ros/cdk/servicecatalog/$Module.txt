@@ -1,0 +1,15 @@
+@alicloud/ros-cdk-servicecatalog.Constraint=com.aliyun.ros.cdk.servicecatalog.Constraint
+@alicloud/ros-cdk-servicecatalog.ConstraintProps=com.aliyun.ros.cdk.servicecatalog.ConstraintProps
+@alicloud/ros-cdk-servicecatalog.IConstraint=com.aliyun.ros.cdk.servicecatalog.IConstraint
+@alicloud/ros-cdk-servicecatalog.IProductPortfolioAssociation=com.aliyun.ros.cdk.servicecatalog.IProductPortfolioAssociation
+@alicloud/ros-cdk-servicecatalog.IProductVersion=com.aliyun.ros.cdk.servicecatalog.IProductVersion
+@alicloud/ros-cdk-servicecatalog.ProductPortfolioAssociation=com.aliyun.ros.cdk.servicecatalog.ProductPortfolioAssociation
+@alicloud/ros-cdk-servicecatalog.ProductPortfolioAssociationProps=com.aliyun.ros.cdk.servicecatalog.ProductPortfolioAssociationProps
+@alicloud/ros-cdk-servicecatalog.ProductVersion=com.aliyun.ros.cdk.servicecatalog.ProductVersion
+@alicloud/ros-cdk-servicecatalog.ProductVersionProps=com.aliyun.ros.cdk.servicecatalog.ProductVersionProps
+@alicloud/ros-cdk-servicecatalog.RosConstraint=com.aliyun.ros.cdk.servicecatalog.RosConstraint
+@alicloud/ros-cdk-servicecatalog.RosConstraintProps=com.aliyun.ros.cdk.servicecatalog.RosConstraintProps
+@alicloud/ros-cdk-servicecatalog.RosProductPortfolioAssociation=com.aliyun.ros.cdk.servicecatalog.RosProductPortfolioAssociation
+@alicloud/ros-cdk-servicecatalog.RosProductPortfolioAssociationProps=com.aliyun.ros.cdk.servicecatalog.RosProductPortfolioAssociationProps
+@alicloud/ros-cdk-servicecatalog.RosProductVersion=com.aliyun.ros.cdk.servicecatalog.RosProductVersion
+@alicloud/ros-cdk-servicecatalog.RosProductVersionProps=com.aliyun.ros.cdk.servicecatalog.RosProductVersionProps

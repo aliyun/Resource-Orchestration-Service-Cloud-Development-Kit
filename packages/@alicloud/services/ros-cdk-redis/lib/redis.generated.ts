@@ -101,7 +101,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Account`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Account`, which is used to create an account that has specific permissions for a Tair (Redis OSS-compatible) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
@@ -267,7 +267,7 @@ function rosAuditLogConfigPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::AuditLogConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::AuditLogConfig`, which is used to modify the audit log settings of a Tair (Redis OSS-compatible) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `AuditLogConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
  */
@@ -416,7 +416,7 @@ function rosConnectionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Connection`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Connection`, which is used to apply for a public endpoint for an ApsaraDB for Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Connection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
  */
@@ -690,8 +690,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosInstance_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('backupPolicy', RosInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
@@ -704,6 +704,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('instanceMaintainTime', RosInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
     if(properties.readOnlyCount && (typeof properties.readOnlyCount) !== 'object') {
         errors.collect(ros.propertyValidator('readOnlyCount', ros.validateRange)({
@@ -713,7 +714,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('readOnlyCount', ros.validateNumber)(properties.readOnlyCount));
-    errors.collect(ros.propertyValidator('instanceMaintainTime', RosInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -800,7 +800,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`The , which type creates Redis instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
@@ -1314,7 +1314,7 @@ export namespace RosInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -1336,7 +1336,6 @@ function RosInstance_ClassicInnerConnectionPropertyValidator(properties: any): r
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -1439,7 +1438,7 @@ export namespace RosInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -1461,7 +1460,6 @@ function RosInstance_DirectConnectionPropertyValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -1569,7 +1567,7 @@ export namespace RosInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -1591,7 +1589,6 @@ function RosInstance_PublicConnectionPropertyValidator(properties: any): ros.Val
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -1747,7 +1744,7 @@ export namespace RosInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -1769,7 +1766,6 @@ function RosInstance_VpcPrivateConnectionPropertyValidator(properties: any): ros
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -2001,8 +1997,8 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('tags', ros.listValidator(RosPrepayInstance_TagsPropertyValidator))(properties.tags));
-    errors.collect(ros.propertyValidator('backupPolicy', RosPrepayInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    errors.collect(ros.propertyValidator('backupPolicy', RosPrepayInstance_BackupPolicyPropertyValidator)(properties.backupPolicy));
     errors.collect(ros.propertyValidator('engineVersion', ros.validateString)(properties.engineVersion));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.evictionPolicy && (typeof properties.evictionPolicy) !== 'object') {
@@ -2015,6 +2011,7 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('subscriptionDeletionForce', ros.validateBoolean)(properties.subscriptionDeletionForce));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('instanceMaintainTime', RosPrepayInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     errors.collect(ros.propertyValidator('productType', ros.validateString)(properties.productType));
     if(properties.readOnlyCount && (typeof properties.readOnlyCount) !== 'object') {
         errors.collect(ros.propertyValidator('readOnlyCount', ros.validateRange)({
@@ -2024,7 +2021,6 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
           }));
     }
     errors.collect(ros.propertyValidator('readOnlyCount', ros.validateNumber)(properties.readOnlyCount));
-    errors.collect(ros.propertyValidator('instanceMaintainTime', RosPrepayInstance_InstanceMaintainTimePropertyValidator)(properties.instanceMaintainTime));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -2034,8 +2030,8 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('instanceClass', ros.validateString)(properties.instanceClass));
     errors.collect(ros.propertyValidator('vpcPasswordFree', ros.validateBoolean)(properties.vpcPasswordFree));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('secondaryZoneId', ros.validateString)(properties.secondaryZoneId));
     if(properties.autoRenewDuration && (typeof properties.autoRenewDuration) !== 'object') {
         errors.collect(ros.propertyValidator('autoRenewDuration', ros.validateRange)({
@@ -2105,7 +2101,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription Tair (Redis OSS-compatible) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrepayInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
@@ -2622,7 +2618,7 @@ export namespace RosPrepayInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -2644,7 +2640,6 @@ function RosPrepayInstance_ClassicInnerConnectionPropertyValidator(properties: a
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -2747,7 +2742,7 @@ export namespace RosPrepayInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -2769,7 +2764,6 @@ function RosPrepayInstance_DirectConnectionPropertyValidator(properties: any): r
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -2877,7 +2871,7 @@ export namespace RosPrepayInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -2899,7 +2893,6 @@ function RosPrepayInstance_PublicConnectionPropertyValidator(properties: any): r
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -3055,7 +3048,7 @@ export namespace RosPrepayInstance {
      * and can contain lowercase letters and digits. 
      * It must start with a lowercase letter.
          */
-        readonly connectionString: string | ros.IResolvable;
+        readonly connectionString?: string | ros.IResolvable;
     }
 }
 /**
@@ -3077,7 +3070,6 @@ function RosPrepayInstance_VpcPrivateConnectionPropertyValidator(properties: any
           }));
     }
     errors.collect(ros.propertyValidator('connectionPort', ros.validateNumber)(properties.connectionPort));
-    errors.collect(ros.propertyValidator('connectionString', ros.requiredValidator)(properties.connectionString));
     if(properties.connectionString && (typeof properties.connectionString) !== 'object') {
         errors.collect(ros.propertyValidator('connectionString', ros.validateAllowedPattern)({
           data: properties.connectionString,
@@ -3163,7 +3155,6 @@ function RosUpgradeVersionPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('effectiveTime', ros.validateString)(properties.effectiveTime));
-    errors.collect(ros.propertyValidator('autoUpgradeOpen', ros.validateBoolean)(properties.autoUpgradeOpen));
     if(properties.minorVersion && (typeof properties.minorVersion) !== 'object') {
         errors.collect(ros.propertyValidator('minorVersion', ros.validateAllowedValues)({
           data: properties.minorVersion,
@@ -3171,6 +3162,7 @@ function RosUpgradeVersionPropsValidator(properties: any): ros.ValidationResult 
         }));
     }
     errors.collect(ros.propertyValidator('minorVersion', ros.validateString)(properties.minorVersion));
+    errors.collect(ros.propertyValidator('autoUpgradeOpen', ros.validateBoolean)(properties.autoUpgradeOpen));
     return errors.wrap('supplied properties not correct for "RosUpgradeVersionProps"');
 }
 
@@ -3197,7 +3189,7 @@ function rosUpgradeVersionPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::UpgradeVersion`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::UpgradeVersion`, which is used to upgrade the major version of a Tair (Redis OSS-compatible) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `UpgradeVersion` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-upgradeversion
  */
@@ -3347,7 +3339,7 @@ function rosWhitelistPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`The , which type sets the IP whitelist for a Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Whitelist` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */

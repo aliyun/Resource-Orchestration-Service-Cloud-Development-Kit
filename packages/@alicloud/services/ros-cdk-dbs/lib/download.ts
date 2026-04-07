@@ -114,7 +114,7 @@ export interface IDownload extends ros.IResource {
     readonly attrTaskId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::Download`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DBS::Download`, which is used to create an advanced download task.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDownload`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
@@ -157,8 +157,8 @@ export class Download extends ros.Resource implements IDownload {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosDownload = new RosDownload(this, id,  {
-            bakSetId: props.bakSetId,
             instanceName: props.instanceName,
+            bakSetId: props.bakSetId,
             downloadPointInTime: props.downloadPointInTime,
             bakSetType: props.bakSetType,
             bakSetSize: props.bakSetSize,

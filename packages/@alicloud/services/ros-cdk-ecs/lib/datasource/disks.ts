@@ -197,7 +197,7 @@ export interface IDisks extends ros.IResource {
     readonly attrDisks: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::Disks`, which is used to query the Elastic Block Storage (EBS) devices that you created, including cloud disks and local disks.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDisks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disks
  */
@@ -235,8 +235,8 @@ export class Disks extends ros.Resource implements IDisks {
             enableShared: props.enableShared,
             category: props.category,
             kmsKeyId: props.kmsKeyId,
-            resourceGroupId: props.resourceGroupId,
             zoneId: props.zoneId,
+            resourceGroupId: props.resourceGroupId,
             instanceId: props.instanceId,
             encrypted: props.encrypted,
             deleteWithInstance: props.deleteWithInstance,

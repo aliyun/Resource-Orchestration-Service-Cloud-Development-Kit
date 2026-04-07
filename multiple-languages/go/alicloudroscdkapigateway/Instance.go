@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Instance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Instance`, which is used to create a dedicated instance.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

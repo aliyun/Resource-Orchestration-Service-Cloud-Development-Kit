@@ -64,7 +64,7 @@ export interface ISecurityGroupClone extends ros.IResource {
     readonly attrSecurityGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupClone`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupClone`, which is used to clone a security group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupclone
  */
@@ -93,8 +93,8 @@ export class SecurityGroupClone extends ros.Resource implements ISecurityGroupCl
 
         const rosSecurityGroupClone = new RosSecurityGroupClone(this, id,  {
             description: props.description,
-            vpcId: props.vpcId,
             securityGroupName: props.securityGroupName,
+            vpcId: props.vpcId,
             resourceGroupId: props.resourceGroupId,
             destinationRegionId: props.destinationRegionId === undefined || props.destinationRegionId === null ? 'CURRENT' : props.destinationRegionId,
             networkType: props.networkType,

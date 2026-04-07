@@ -68,6 +68,11 @@ export interface KeyProps {
      * Property rotationInterval: The time period for automatic rotation. The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
      */
     readonly rotationInterval?: string | ros.IResolvable;
+
+    /**
+     * Property tags: Tags to attach to key. Max support 20 tags to add during create key. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosKey.TagsProperty[];
 }
 
 /**
@@ -82,7 +87,7 @@ export interface IKey extends ros.IResource {
     readonly attrKeyId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Key`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Key`The , which resource creates a master key.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKey`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
@@ -114,13 +119,14 @@ export class Key extends ros.Resource implements IKey {
             protectionLevel: props.protectionLevel,
             description: props.description,
             rotationInterval: props.rotationInterval,
-            enableAutomaticRotation: props.enableAutomaticRotation,
             pendingWindowInDays: props.pendingWindowInDays === undefined || props.pendingWindowInDays === null ? 30 : props.pendingWindowInDays,
+            enableAutomaticRotation: props.enableAutomaticRotation,
             keySpec: props.keySpec,
-            enable: props.enable === undefined || props.enable === null ? true : props.enable,
             keyUsage: props.keyUsage,
-            deletionProtection: props.deletionProtection,
+            enable: props.enable === undefined || props.enable === null ? true : props.enable,
             dkmsInstanceId: props.dkmsInstanceId,
+            deletionProtection: props.deletionProtection,
+            tags: props.tags,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosKey;
         this.attrKeyId = rosKey.attrKeyId;

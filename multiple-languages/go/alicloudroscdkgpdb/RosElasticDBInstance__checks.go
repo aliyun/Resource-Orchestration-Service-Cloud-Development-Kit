@@ -235,6 +235,23 @@ func validateRosElasticDBInstance_IsRosResourceParameters(construct alicloudrosc
 	return nil
 }
 
+func (j *jsiiProxy_RosElasticDBInstance) validateSetBackupIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosElasticDBInstance) validateSetDbInstanceCategoryParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -614,6 +631,23 @@ func (j *jsiiProxy_RosElasticDBInstance) validateSetSegStorageTypeParameters(val
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
 	}
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosElasticDBInstance) validateSetSrcDbInstanceNameParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
 		// ok

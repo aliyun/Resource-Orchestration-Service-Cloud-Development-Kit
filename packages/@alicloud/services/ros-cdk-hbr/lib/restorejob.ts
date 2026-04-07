@@ -87,7 +87,7 @@ export interface IRestoreJob extends ros.IResource {
     readonly attrStatus: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::RestoreJob`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRestoreJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */
@@ -142,8 +142,8 @@ export class RestoreJob extends ros.Resource implements IRestoreJob {
             sourceClientId: props.sourceClientId,
             targetInstanceId: props.targetInstanceId,
             vaultId: props.vaultId,
-            sourceInstanceId: props.sourceInstanceId,
             restoreType: props.restoreType,
+            sourceInstanceId: props.sourceInstanceId,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosRestoreJob;
         this.attrErrorMessage = rosRestoreJob.attrErrorMessage;

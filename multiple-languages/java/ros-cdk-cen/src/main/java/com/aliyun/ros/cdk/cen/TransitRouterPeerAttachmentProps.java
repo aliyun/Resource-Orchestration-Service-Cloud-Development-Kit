@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterpeerattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.233Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterPeerAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterPeerAttachmentProps.Jsii$Proxy.class)
 public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -66,9 +66,30 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
     }
 
     /**
+     * Property deletionForce: Whether to force delete the peer attachment.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionForce() {
+        return null;
+    }
+
+    /**
      * Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeerTransitRouterRegionId() {
+        return null;
+    }
+
+    /**
+     * Property routeTableAssociationEnabled: Whether to enable the association of route tables.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTableAssociationEnabled() {
+        return null;
+    }
+
+    /**
+     * Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getRouteTablePropagationEnabled() {
         return null;
     }
 
@@ -123,7 +144,10 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
         java.lang.Object cenBandwidthPackageId;
         java.lang.Object cenId;
         java.lang.Object defaultLinkType;
+        java.lang.Object deletionForce;
         java.lang.Object peerTransitRouterRegionId;
+        java.lang.Object routeTableAssociationEnabled;
+        java.lang.Object routeTablePropagationEnabled;
         java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> tags;
         java.lang.Object transitRouterAttachmentDescription;
         java.lang.Object transitRouterAttachmentName;
@@ -280,6 +304,26 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
         }
 
         /**
+         * Sets the value of {@link TransitRouterPeerAttachmentProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether to force delete the peer attachment.
+         * @return {@code this}
+         */
+        public Builder deletionForce(java.lang.Boolean deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterPeerAttachmentProps#getDeletionForce}
+         * @param deletionForce Property deletionForce: Whether to force delete the peer attachment.
+         * @return {@code this}
+         */
+        public Builder deletionForce(com.aliyun.ros.cdk.core.IResolvable deletionForce) {
+            this.deletionForce = deletionForce;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link TransitRouterPeerAttachmentProps#getPeerTransitRouterRegionId}
          * @param peerTransitRouterRegionId Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
          * @return {@code this}
@@ -296,6 +340,46 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
          */
         public Builder peerTransitRouterRegionId(com.aliyun.ros.cdk.core.IResolvable peerTransitRouterRegionId) {
             this.peerTransitRouterRegionId = peerTransitRouterRegionId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterPeerAttachmentProps#getRouteTableAssociationEnabled}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: Whether to enable the association of route tables.
+         * @return {@code this}
+         */
+        public Builder routeTableAssociationEnabled(java.lang.Boolean routeTableAssociationEnabled) {
+            this.routeTableAssociationEnabled = routeTableAssociationEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterPeerAttachmentProps#getRouteTableAssociationEnabled}
+         * @param routeTableAssociationEnabled Property routeTableAssociationEnabled: Whether to enable the association of route tables.
+         * @return {@code this}
+         */
+        public Builder routeTableAssociationEnabled(com.aliyun.ros.cdk.core.IResolvable routeTableAssociationEnabled) {
+            this.routeTableAssociationEnabled = routeTableAssociationEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterPeerAttachmentProps#getRouteTablePropagationEnabled}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+         * @return {@code this}
+         */
+        public Builder routeTablePropagationEnabled(java.lang.Boolean routeTablePropagationEnabled) {
+            this.routeTablePropagationEnabled = routeTablePropagationEnabled;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link TransitRouterPeerAttachmentProps#getRouteTablePropagationEnabled}
+         * @param routeTablePropagationEnabled Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+         * @return {@code this}
+         */
+        public Builder routeTablePropagationEnabled(com.aliyun.ros.cdk.core.IResolvable routeTablePropagationEnabled) {
+            this.routeTablePropagationEnabled = routeTablePropagationEnabled;
             return this;
         }
 
@@ -398,7 +482,10 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
         private final java.lang.Object cenBandwidthPackageId;
         private final java.lang.Object cenId;
         private final java.lang.Object defaultLinkType;
+        private final java.lang.Object deletionForce;
         private final java.lang.Object peerTransitRouterRegionId;
+        private final java.lang.Object routeTableAssociationEnabled;
+        private final java.lang.Object routeTablePropagationEnabled;
         private final java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty> tags;
         private final java.lang.Object transitRouterAttachmentDescription;
         private final java.lang.Object transitRouterAttachmentName;
@@ -417,7 +504,10 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
             this.cenBandwidthPackageId = software.amazon.jsii.Kernel.get(this, "cenBandwidthPackageId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.cenId = software.amazon.jsii.Kernel.get(this, "cenId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.defaultLinkType = software.amazon.jsii.Kernel.get(this, "defaultLinkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.deletionForce = software.amazon.jsii.Kernel.get(this, "deletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.peerTransitRouterRegionId = software.amazon.jsii.Kernel.get(this, "peerTransitRouterRegionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeTableAssociationEnabled = software.amazon.jsii.Kernel.get(this, "routeTableAssociationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.routeTablePropagationEnabled = software.amazon.jsii.Kernel.get(this, "routeTablePropagationEnabled", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty.class)));
             this.transitRouterAttachmentDescription = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.transitRouterAttachmentName = software.amazon.jsii.Kernel.get(this, "transitRouterAttachmentName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -437,7 +527,10 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
             this.cenBandwidthPackageId = builder.cenBandwidthPackageId;
             this.cenId = builder.cenId;
             this.defaultLinkType = builder.defaultLinkType;
+            this.deletionForce = builder.deletionForce;
             this.peerTransitRouterRegionId = builder.peerTransitRouterRegionId;
+            this.routeTableAssociationEnabled = builder.routeTableAssociationEnabled;
+            this.routeTablePropagationEnabled = builder.routeTablePropagationEnabled;
             this.tags = (java.util.List<com.aliyun.ros.cdk.cen.RosTransitRouterPeerAttachment.TagsProperty>)builder.tags;
             this.transitRouterAttachmentDescription = builder.transitRouterAttachmentDescription;
             this.transitRouterAttachmentName = builder.transitRouterAttachmentName;
@@ -480,8 +573,23 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
         }
 
         @Override
+        public final java.lang.Object getDeletionForce() {
+            return this.deletionForce;
+        }
+
+        @Override
         public final java.lang.Object getPeerTransitRouterRegionId() {
             return this.peerTransitRouterRegionId;
+        }
+
+        @Override
+        public final java.lang.Object getRouteTableAssociationEnabled() {
+            return this.routeTableAssociationEnabled;
+        }
+
+        @Override
+        public final java.lang.Object getRouteTablePropagationEnabled() {
+            return this.routeTablePropagationEnabled;
         }
 
         @Override
@@ -529,8 +637,17 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
             if (this.getDefaultLinkType() != null) {
                 data.set("defaultLinkType", om.valueToTree(this.getDefaultLinkType()));
             }
+            if (this.getDeletionForce() != null) {
+                data.set("deletionForce", om.valueToTree(this.getDeletionForce()));
+            }
             if (this.getPeerTransitRouterRegionId() != null) {
                 data.set("peerTransitRouterRegionId", om.valueToTree(this.getPeerTransitRouterRegionId()));
+            }
+            if (this.getRouteTableAssociationEnabled() != null) {
+                data.set("routeTableAssociationEnabled", om.valueToTree(this.getRouteTableAssociationEnabled()));
+            }
+            if (this.getRouteTablePropagationEnabled() != null) {
+                data.set("routeTablePropagationEnabled", om.valueToTree(this.getRouteTablePropagationEnabled()));
             }
             if (this.getTags() != null) {
                 data.set("tags", om.valueToTree(this.getTags()));
@@ -569,7 +686,10 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
             if (this.cenBandwidthPackageId != null ? !this.cenBandwidthPackageId.equals(that.cenBandwidthPackageId) : that.cenBandwidthPackageId != null) return false;
             if (this.cenId != null ? !this.cenId.equals(that.cenId) : that.cenId != null) return false;
             if (this.defaultLinkType != null ? !this.defaultLinkType.equals(that.defaultLinkType) : that.defaultLinkType != null) return false;
+            if (this.deletionForce != null ? !this.deletionForce.equals(that.deletionForce) : that.deletionForce != null) return false;
             if (this.peerTransitRouterRegionId != null ? !this.peerTransitRouterRegionId.equals(that.peerTransitRouterRegionId) : that.peerTransitRouterRegionId != null) return false;
+            if (this.routeTableAssociationEnabled != null ? !this.routeTableAssociationEnabled.equals(that.routeTableAssociationEnabled) : that.routeTableAssociationEnabled != null) return false;
+            if (this.routeTablePropagationEnabled != null ? !this.routeTablePropagationEnabled.equals(that.routeTablePropagationEnabled) : that.routeTablePropagationEnabled != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.transitRouterAttachmentDescription != null ? !this.transitRouterAttachmentDescription.equals(that.transitRouterAttachmentDescription) : that.transitRouterAttachmentDescription != null) return false;
             if (this.transitRouterAttachmentName != null ? !this.transitRouterAttachmentName.equals(that.transitRouterAttachmentName) : that.transitRouterAttachmentName != null) return false;
@@ -585,7 +705,10 @@ public interface TransitRouterPeerAttachmentProps extends software.amazon.jsii.J
             result = 31 * result + (this.cenBandwidthPackageId != null ? this.cenBandwidthPackageId.hashCode() : 0);
             result = 31 * result + (this.cenId != null ? this.cenId.hashCode() : 0);
             result = 31 * result + (this.defaultLinkType != null ? this.defaultLinkType.hashCode() : 0);
+            result = 31 * result + (this.deletionForce != null ? this.deletionForce.hashCode() : 0);
             result = 31 * result + (this.peerTransitRouterRegionId != null ? this.peerTransitRouterRegionId.hashCode() : 0);
+            result = 31 * result + (this.routeTableAssociationEnabled != null ? this.routeTableAssociationEnabled.hashCode() : 0);
+            result = 31 * result + (this.routeTablePropagationEnabled != null ? this.routeTablePropagationEnabled.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentDescription != null ? this.transitRouterAttachmentDescription.hashCode() : 0);
             result = 31 * result + (this.transitRouterAttachmentName != null ? this.transitRouterAttachmentName.hashCode() : 0);

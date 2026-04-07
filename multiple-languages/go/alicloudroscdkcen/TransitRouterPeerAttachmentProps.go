@@ -27,8 +27,14 @@ type TransitRouterPeerAttachmentProps struct {
 	// Optional values are Platinum, Gold, and default to Gold.
 	// And it can only be configured as Platinum (Platinum) when the bandwidth allocation method is billed by traffic.
 	DefaultLinkType interface{} `field:"optional" json:"defaultLinkType" yaml:"defaultLinkType"`
+	// Property deletionForce: Whether to force delete the peer attachment.
+	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
 	// Property peerTransitRouterRegionId: The region ID to which the peer forwarding router instance belongs.
 	PeerTransitRouterRegionId interface{} `field:"optional" json:"peerTransitRouterRegionId" yaml:"peerTransitRouterRegionId"`
+	// Property routeTableAssociationEnabled: Whether to enable the association of route tables.
+	RouteTableAssociationEnabled interface{} `field:"optional" json:"routeTableAssociationEnabled" yaml:"routeTableAssociationEnabled"`
+	// Property routeTablePropagationEnabled: Whether to enable the propagation of route tables.
+	RouteTablePropagationEnabled interface{} `field:"optional" json:"routeTablePropagationEnabled" yaml:"routeTablePropagationEnabled"`
 	// Property tags: The list of tags in the form of key\/value pairs.
 	//
 	// You can define a maximum of 20 tags.

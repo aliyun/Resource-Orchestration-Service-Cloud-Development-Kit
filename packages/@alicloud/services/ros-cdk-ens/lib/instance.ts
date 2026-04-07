@@ -227,7 +227,7 @@ export interface IInstance extends ros.IResource {
     readonly attrVSwitchId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Instance`, which is used to create Edge Node Service (ENS) instances.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -363,21 +363,21 @@ export class Instance extends ros.Resource implements IInstance {
             autoRenewPeriod: props.autoRenewPeriod,
             keyPairName: props.keyPairName,
             privateIpAddress: props.privateIpAddress,
-            userData: props.userData,
             ipType: props.ipType,
             systemDiskSize: props.systemDiskSize,
+            userData: props.userData,
             autoRenew: props.autoRenew,
             vSwitchId: props.vSwitchId,
-            period: props.period,
             quantity: props.quantity,
+            period: props.period,
             internetChargeType: props.internetChargeType,
             instanceName: props.instanceName,
             uniqueSuffix: props.uniqueSuffix,
             imageId: props.imageId,
             paymentType: props.paymentType,
             dataDiskSize: props.dataDiskSize,
-            instanceType: props.instanceType,
             ensRegionId: props.ensRegionId,
+            instanceType: props.instanceType,
             hostName: props.hostName,
             password: props.password,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

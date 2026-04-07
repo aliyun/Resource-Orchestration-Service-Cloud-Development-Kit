@@ -459,6 +459,9 @@ func init() {
 		"@alicloud/ros-cdk-cloudfw.RosAddressBook",
 		reflect.TypeOf((*RosAddressBook)(nil)).Elem(),
 		[]_jsii_.Member{
+			_jsii_.MemberProperty{JsiiProperty: "ackClusterConnectorId", GoGetter: "AckClusterConnectorId"},
+			_jsii_.MemberProperty{JsiiProperty: "ackLabels", GoGetter: "AckLabels"},
+			_jsii_.MemberProperty{JsiiProperty: "ackNamespaces", GoGetter: "AckNamespaces"},
 			_jsii_.MemberMethod{JsiiMethod: "addCondition", GoMethod: "AddCondition"},
 			_jsii_.MemberMethod{JsiiMethod: "addCount", GoMethod: "AddCount"},
 			_jsii_.MemberMethod{JsiiMethod: "addDeletionOverride", GoMethod: "AddDeletionOverride"},
@@ -509,6 +512,10 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-cloudfw.RosAddressBook.AckLabelsProperty",
+		reflect.TypeOf((*RosAddressBook_AckLabelsProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-cloudfw.RosAddressBook.TagListProperty",
@@ -666,7 +673,9 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "ipaddrList", GoGetter: "IpaddrList"},
+			_jsii_.MemberProperty{JsiiProperty: "ipVersion", GoGetter: "IpVersion"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "memberUid", GoGetter: "MemberUid"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
@@ -1136,6 +1145,7 @@ func init() {
 			_jsii_.MemberProperty{JsiiProperty: "destPort", GoGetter: "DestPort"},
 			_jsii_.MemberProperty{JsiiProperty: "destPortGroup", GoGetter: "DestPortGroup"},
 			_jsii_.MemberProperty{JsiiProperty: "destPortType", GoGetter: "DestPortType"},
+			_jsii_.MemberProperty{JsiiProperty: "domainResolveType", GoGetter: "DomainResolveType"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "endTime", GoGetter: "EndTime"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},

@@ -13,6 +13,10 @@ type VpcCidrBlockAssociationProps struct {
 	//
 	// Note You must and can specify only one of SecondaryCidrBlock and Ipv6CidrBlock.
 	IPv6CidrBlock interface{} `field:"optional" json:"iPv6CidrBlock" yaml:"iPv6CidrBlock"`
+	// Property ipv6CidrMask: Add an IPv6 network segment to the VPC from the IPAM address pool by specifying a mask.
+	//
+	// Note When adding an additional IPv6 network segment to the VPC from the specified IPAM address pool, at least one of Ipv6CidrBlock or Ipv6CidrMask must be specified.
+	Ipv6CidrMask interface{} `field:"optional" json:"ipv6CidrMask" yaml:"ipv6CidrMask"`
 	// Property ipv6Isp: The type of the IPv6 CIDR block.
 	//
 	// Valid values:

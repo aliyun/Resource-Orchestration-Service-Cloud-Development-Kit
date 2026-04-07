@@ -16,6 +16,7 @@ type RosVpnGatewayProps struct {
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	NetworkType interface{} `field:"optional" json:"networkType" yaml:"networkType"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	SslConnections interface{} `field:"optional" json:"sslConnections" yaml:"sslConnections"`
 	Tags *[]*RosVpnGateway_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	VpnType interface{} `field:"optional" json:"vpnType" yaml:"vpnType"`

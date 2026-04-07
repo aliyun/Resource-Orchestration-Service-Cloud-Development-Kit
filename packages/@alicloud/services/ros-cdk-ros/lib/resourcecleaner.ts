@@ -193,7 +193,7 @@ The value is a list of dict. The dict contains the fields below:
     readonly attrScanErrors: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceCleaner`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
@@ -308,14 +308,14 @@ The value is a list of dict. The dict contains the fields below:
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosResourceCleaner = new RosResourceCleaner(this, id,  {
-            failureOption: props.failureOption === undefined || props.failureOption === null ? 'Normal' : props.failureOption,
             resourceFilters: props.resourceFilters,
+            failureOption: props.failureOption === undefined || props.failureOption === null ? 'Normal' : props.failureOption,
             action: props.action,
-            cleanUpAlgorithm: props.cleanUpAlgorithm === undefined || props.cleanUpAlgorithm === null ? 'ResourceDependency' : props.cleanUpAlgorithm,
             mode: props.mode === undefined || props.mode === null ? 'Loose' : props.mode,
+            cleanUpAlgorithm: props.cleanUpAlgorithm === undefined || props.cleanUpAlgorithm === null ? 'ResourceDependency' : props.cleanUpAlgorithm,
             cleanUpRetryCount: props.cleanUpRetryCount === undefined || props.cleanUpRetryCount === null ? 1 : props.cleanUpRetryCount,
-            resourceTypeOrder: props.resourceTypeOrder,
             resources: props.resources,
+            resourceTypeOrder: props.resourceTypeOrder,
             cleanUpTimeout: props.cleanUpTimeout === undefined || props.cleanUpTimeout === null ? 3600 : props.cleanUpTimeout,
             disabledSideEffects: props.disabledSideEffects,
             excludedResources: props.excludedResources,

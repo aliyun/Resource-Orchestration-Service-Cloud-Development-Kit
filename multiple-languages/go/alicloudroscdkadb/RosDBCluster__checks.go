@@ -440,6 +440,23 @@ func (j *jsiiProxy_RosDBCluster) validateSetDbNodeStorageParameters(val interfac
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetDiskEncryptionParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetElasticIoResourceParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
@@ -505,6 +522,23 @@ func (j *jsiiProxy_RosDBCluster) validateSetEnableResourcePropertyConstraintPara
 	return nil
 }
 
+func (j *jsiiProxy_RosDBCluster) validateSetEnableSslParameters(val interface{}) error {
+	switch val.(type) {
+	case *bool:
+		// ok
+	case bool:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosDBCluster) validateSetExecutorCountParameters(val interface{}) error {
 	switch val.(type) {
 	case *float64:
@@ -556,6 +590,23 @@ func (j *jsiiProxy_RosDBCluster) validateSetExecutorCountParameters(val interfac
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *float64, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosDBCluster) validateSetKmsIdParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 

@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-hdr.ISitePair=com.aliyun.ros.cdk.hdr.ISitePair
+@alicloud/ros-cdk-hdr.RosSitePair=com.aliyun.ros.cdk.hdr.RosSitePair
+@alicloud/ros-cdk-hdr.RosSitePairProps=com.aliyun.ros.cdk.hdr.RosSitePairProps
+@alicloud/ros-cdk-hdr.SitePair=com.aliyun.ros.cdk.hdr.SitePair
+@alicloud/ros-cdk-hdr.SitePairProps=com.aliyun.ros.cdk.hdr.SitePairProps

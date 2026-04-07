@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::ManagedInstances`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::ManagedInstances`, which is used to query managed instances.
 type RosManagedInstances interface {
 	alicloudroscdkcore.RosResource
 	ActivationId() interface{}

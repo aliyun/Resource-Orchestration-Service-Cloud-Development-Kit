@@ -241,7 +241,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Hologram::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Hologram::Instance`, which is used to create a Hologres instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hologram-instance
  */
@@ -588,13 +588,13 @@ export namespace RosInstance {
          */
         readonly type?: string | ros.IResolvable;
         /**
-         * @Property endpoint: Domain name.
-         */
-        readonly endpoint?: string | ros.IResolvable;
-        /**
          * @Property vpcId: VPC primary key.
          */
         readonly vpcId?: string | ros.IResolvable;
+        /**
+         * @Property endpoint: Domain name.
+         */
+        readonly endpoint?: string | ros.IResolvable;
         /**
          * @Property vSwitchId: The ID of the virtual switch.
          */
@@ -624,8 +624,8 @@ function RosInstance_EndpointsPropertyValidator(properties: any): ros.Validation
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('enabled', ros.validateBoolean)(properties.enabled));
     errors.collect(ros.propertyValidator('vpcInstanceId', ros.validateString)(properties.vpcInstanceId));
@@ -646,8 +646,8 @@ function rosInstanceEndpointsPropertyToRosTemplate(properties: any): any {
     RosInstance_EndpointsPropertyValidator(properties).assertSuccess();
     return {
       'Type': ros.stringToRosTemplate(properties.type),
-      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'Endpoint': ros.stringToRosTemplate(properties.endpoint),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
       'Enabled': ros.booleanToRosTemplate(properties.enabled),
       'VpcInstanceId': ros.stringToRosTemplate(properties.vpcInstanceId),

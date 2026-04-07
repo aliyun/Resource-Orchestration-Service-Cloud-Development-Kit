@@ -279,5 +279,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
                 _dataDiskSize = value;
             }
         }
+
+        /// <summary>Property tags: Tags to attach to swas.</summary>
+        /// <remarks>
+        /// Max support 20 tags to add during create swas. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-swas.RosInstance.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Swas.RosInstance.ITagsProperty[]? Tags
+        {
+            get;
+            set;
+        }
     }
 }

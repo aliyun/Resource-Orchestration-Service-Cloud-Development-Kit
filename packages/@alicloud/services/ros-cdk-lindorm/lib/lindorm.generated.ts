@@ -195,8 +195,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('streamSpec', ros.validateString)(properties.streamSpec));
     errors.collect(ros.propertyValidator('instanceStorage', ros.validateNumber)(properties.instanceStorage));
-    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
           data: properties.instanceChargeType,
@@ -204,6 +204,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.streamNum && (typeof properties.streamNum) !== 'object') {
         errors.collect(ros.propertyValidator('streamNum', ros.validateRange)({
             data: properties.streamNum,
@@ -220,7 +221,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('coldStorage', ros.validateNumber)(properties.coldStorage));
-    errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('diskCategory', ros.requiredValidator)(properties.diskCategory));
     if(properties.diskCategory && (typeof properties.diskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('diskCategory', ros.validateAllowedValues)({
@@ -229,13 +236,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('instanceName', ros.requiredValidator)(properties.instanceName));
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
@@ -248,6 +248,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('solrNum', ros.validateNumber)(properties.solrNum));
     errors.collect(ros.propertyValidator('solrSpec', ros.validateString)(properties.solrSpec));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     if(properties.filestoreNum && (typeof properties.filestoreNum) !== 'object') {
         errors.collect(ros.propertyValidator('filestoreNum', ros.validateRange)({
             data: properties.filestoreNum,
@@ -256,8 +258,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('filestoreNum', ros.validateNumber)(properties.filestoreNum));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('securityIpList', ros.listValidator(ros.validateString))(properties.securityIpList));
     errors.collect(ros.propertyValidator('lindormSpec', ros.validateString)(properties.lindormSpec));
     errors.collect(ros.propertyValidator('tsdbSpec', ros.validateString)(properties.tsdbSpec));
@@ -270,7 +270,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('lindormNum', ros.validateNumber)(properties.lindormNum));
-    errors.collect(ros.propertyValidator('filestoreSpec', ros.validateString)(properties.filestoreSpec));
     if(properties.tsdbNum && (typeof properties.tsdbNum) !== 'object') {
         errors.collect(ros.propertyValidator('tsdbNum', ros.validateRange)({
             data: properties.tsdbNum,
@@ -279,6 +278,7 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('tsdbNum', ros.validateNumber)(properties.tsdbNum));
+    errors.collect(ros.propertyValidator('filestoreSpec', ros.validateString)(properties.filestoreSpec));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -331,7 +331,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::Instance`, which is used to create a Lindorm instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-instance
  */
@@ -885,7 +885,6 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
     errors.collect(ros.propertyValidator('solrNum', ros.validateNumber)(properties.solrNum));
     errors.collect(ros.propertyValidator('solrSpec', ros.validateString)(properties.solrSpec));
     errors.collect(ros.propertyValidator('coreSpec', ros.validateString)(properties.coreSpec));
-    errors.collect(ros.propertyValidator('filestoreSpec', ros.validateString)(properties.filestoreSpec));
     if(properties.tsdbNum && (typeof properties.tsdbNum) !== 'object') {
         errors.collect(ros.propertyValidator('tsdbNum', ros.validateRange)({
             data: properties.tsdbNum,
@@ -894,6 +893,7 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
           }));
     }
     errors.collect(ros.propertyValidator('tsdbNum', ros.validateNumber)(properties.tsdbNum));
+    errors.collect(ros.propertyValidator('filestoreSpec', ros.validateString)(properties.filestoreSpec));
     errors.collect(ros.propertyValidator('arbiterZoneId', ros.validateString)(properties.arbiterZoneId));
     errors.collect(ros.propertyValidator('streamSpec', ros.validateString)(properties.streamSpec));
     errors.collect(ros.propertyValidator('primaryZoneId', ros.validateString)(properties.primaryZoneId));
@@ -923,6 +923,13 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
     }
     errors.collect(ros.propertyValidator('coldStorage', ros.validateNumber)(properties.coldStorage));
     errors.collect(ros.propertyValidator('logSpec', ros.validateString)(properties.logSpec));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('diskCategory', ros.requiredValidator)(properties.diskCategory));
     if(properties.diskCategory && (typeof properties.diskCategory) !== 'object') {
         errors.collect(ros.propertyValidator('diskCategory', ros.validateAllowedValues)({
@@ -931,13 +938,6 @@ function RosMultiZoneInstancePropsValidator(properties: any): ros.ValidationResu
         }));
     }
     errors.collect(ros.propertyValidator('diskCategory', ros.validateString)(properties.diskCategory));
-    if(properties.period && (typeof properties.period) !== 'object') {
-        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
-          data: properties.period,
-          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36],
-        }));
-    }
-    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('deletionProtection', ros.validateBoolean)(properties.deletionProtection));
     errors.collect(ros.propertyValidator('primaryVSwitchId', ros.validateString)(properties.primaryVSwitchId));
     errors.collect(ros.propertyValidator('arbiterVSwitchId', ros.validateString)(properties.arbiterVSwitchId));
@@ -1041,7 +1041,7 @@ function rosMultiZoneInstancePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `MultiZoneInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */

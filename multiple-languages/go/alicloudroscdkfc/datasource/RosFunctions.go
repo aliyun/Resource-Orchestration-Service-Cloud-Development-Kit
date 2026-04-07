@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Functions`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Functions`, which is used to query functions.
 type RosFunctions interface {
 	alicloudroscdkcore.RosResource
 	AttrFunctionNames() alicloudroscdkcore.IResolvable

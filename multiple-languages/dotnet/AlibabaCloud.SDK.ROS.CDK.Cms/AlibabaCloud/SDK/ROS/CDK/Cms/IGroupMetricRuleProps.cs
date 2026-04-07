@@ -109,6 +109,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             get;
         }
 
+        /// <summary>Property contactGroups: The alert contact groups.</summary>
+        [JsiiProperty(name: "contactGroups", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ContactGroups
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property dimensions: The expended resource dimensions.</summary>
         [JsiiProperty(name: "dimensions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -142,6 +153,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
+        /// <summary>Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.</summary>
+        /// <remarks>
+        /// Format: a collection of key:value pairs, for example, <c>port:80</c> or <c>\/dev\/xvda:d-m5e6yphgzn3aprwu****</c>.
+        ///
+        /// When the first-level dimension of the alert rule is <c>{"instanceId":"i-m5e1qg6uo38rztr4****"}</c>, its secondary dimension is the disk <c>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</c>.
+        /// </remarks>
+        [JsiiProperty(name: "extraDimensionJson", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ExtraDimensionJson
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property interval: The detection period of alerts.</summary>
         [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -153,10 +180,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
         }
 
+        /// <summary>Property noDataPolicy: The handling method when there is no monitoring data.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>KEEP_LAST_STATE (default): No action is taken.</description>
+        /// <description>INSUFFICIENT_DATA: Alert content is "No Data".</description>
+        /// <description>OK: Normal.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "noDataPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? NoDataPolicy
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property noEffectiveInterval: The period when the alert rule is ineffective.</summary>
         [JsiiProperty(name: "noEffectiveInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? NoEffectiveInterval
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property options: The advanced settings.</summary>
+        /// <remarks>
+        /// Format: <c>{"key1":"value1","key2":"value2"}</c>, for example, <c>{"NotSendOK":true}</c>, indicating whether to send alert recovery notifications. The key is <c>NotSendOK</c>, and the value is <c>true</c> (do not send) or <c>false</c> (send by default).
+        /// </remarks>
+        [JsiiProperty(name: "options", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Options
         {
             get
             {
@@ -312,6 +373,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 get => GetInstanceProperty<object>()!;
             }
 
+            /// <summary>Property contactGroups: The alert contact groups.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "contactGroups", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? ContactGroups
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property dimensions: The expended resource dimensions.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "dimensions", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -336,6 +405,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property extraDimensionJson: The secondary or tertiary dimensions of the alert rule in the application group.</summary>
+            /// <remarks>
+            /// Format: a collection of key:value pairs, for example, <c>port:80</c> or <c>\/dev\/xvda:d-m5e6yphgzn3aprwu****</c>.
+            ///
+            /// When the first-level dimension of the alert rule is <c>{"instanceId":"i-m5e1qg6uo38rztr4****"}</c>, its secondary dimension is the disk <c>{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}</c>.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "extraDimensionJson", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
+            public object? ExtraDimensionJson
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property interval: The detection period of alerts.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -344,10 +426,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property noDataPolicy: The handling method when there is no monitoring data.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>KEEP_LAST_STATE (default): No action is taken.</description>
+            /// <description>INSUFFICIENT_DATA: Alert content is "No Data".</description>
+            /// <description>OK: Normal.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "noDataPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? NoDataPolicy
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property noEffectiveInterval: The period when the alert rule is ineffective.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "noEffectiveInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? NoEffectiveInterval
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property options: The advanced settings.</summary>
+            /// <remarks>
+            /// Format: <c>{"key1":"value1","key2":"value2"}</c>, for example, <c>{"NotSendOK":true}</c>, indicating whether to send alert recovery notifications. The key is <c>NotSendOK</c>, and the value is <c>true</c> (do not send) or <c>false</c> (send by default).
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "options", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? Options
             {
                 get => GetInstanceProperty<object?>();
             }

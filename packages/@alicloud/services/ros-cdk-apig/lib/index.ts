@@ -9,6 +9,7 @@ export * from './pluginclass';
 export * from './policy';
 export * from './route';
 export * from './service';
+export * from './source';
 
 // ALIYUN::APIG Resources:
 export * from './apig.generated';

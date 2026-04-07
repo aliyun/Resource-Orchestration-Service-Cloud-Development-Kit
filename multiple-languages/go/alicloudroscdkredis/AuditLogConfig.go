@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::AuditLogConfig`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::AuditLogConfig`, which is used to modify the audit log settings of a Tair (Redis OSS-compatible) instance.
 type AuditLogConfig interface {
 	alicloudroscdkcore.Resource
 	IAuditLogConfig

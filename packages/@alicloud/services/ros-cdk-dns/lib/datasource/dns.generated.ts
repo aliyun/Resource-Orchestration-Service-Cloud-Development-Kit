@@ -70,7 +70,7 @@ function rosDomainGroupsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainGroups`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainGroups`, which is used to query domain name groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domaingroups
  */
@@ -230,6 +230,7 @@ export interface RosDomainRecordsProps {
 function RosDomainRecordsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('orderBy', ros.validateString)(properties.orderBy));
     if(properties.status && (typeof properties.status) !== 'object') {
         errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
           data: properties.status,
@@ -237,13 +238,13 @@ function RosDomainRecordsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
-    errors.collect(ros.propertyValidator('orderBy', ros.validateString)(properties.orderBy));
     errors.collect(ros.propertyValidator('rrKeyWord', ros.validateString)(properties.rrKeyWord));
     errors.collect(ros.propertyValidator('domainName', ros.requiredValidator)(properties.domainName));
     errors.collect(ros.propertyValidator('domainName', ros.validateString)(properties.domainName));
     errors.collect(ros.propertyValidator('typeKeyWord', ros.validateString)(properties.typeKeyWord));
     errors.collect(ros.propertyValidator('lang', ros.validateString)(properties.lang));
     errors.collect(ros.propertyValidator('direction', ros.validateString)(properties.direction));
+    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -251,7 +252,6 @@ function RosDomainRecordsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     errors.collect(ros.propertyValidator('line', ros.validateString)(properties.line));
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('valueKeyWord', ros.validateString)(properties.valueKeyWord));
@@ -298,7 +298,7 @@ function rosDomainRecordsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainRecords`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query Domain Name System (DNS) records.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainRecords` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */
@@ -511,6 +511,7 @@ function RosDomainsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('searchMode', ros.validateString)(properties.searchMode));
+    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -518,7 +519,6 @@ function RosDomainsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
     return errors.wrap('supplied properties not correct for "RosDomainsProps"');
 }
 
@@ -547,7 +547,7 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::Domains`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DNS::Domains`, which is used to query domain names.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domains
  */

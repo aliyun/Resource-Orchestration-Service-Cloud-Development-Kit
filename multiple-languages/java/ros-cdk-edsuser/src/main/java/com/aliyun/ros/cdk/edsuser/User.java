@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edsuser;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::EdsUser::User</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EdsUser::User</code>, which is used to create a convenience user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.098Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.532Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edsuser.$Module.class, fqn = "@alicloud/ros-cdk-edsuser.User")
 public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.edsuser.IUser {
 
@@ -137,6 +137,52 @@ public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
+         * Property autoLockTime: The date when the account is automatically locked.
+         * <p>
+         * Format: yyyy-MM-dd HH:mm:ss.
+         * <p>
+         * @return {@code this}
+         * @param autoLockTime Property autoLockTime: The date when the account is automatically locked. This parameter is required.
+         */
+        public Builder autoLockTime(final java.lang.String autoLockTime) {
+            this.props.autoLockTime(autoLockTime);
+            return this;
+        }
+        /**
+         * Property autoLockTime: The date when the account is automatically locked.
+         * <p>
+         * Format: yyyy-MM-dd HH:mm:ss.
+         * <p>
+         * @return {@code this}
+         * @param autoLockTime Property autoLockTime: The date when the account is automatically locked. This parameter is required.
+         */
+        public Builder autoLockTime(final com.aliyun.ros.cdk.core.IResolvable autoLockTime) {
+            this.props.autoLockTime(autoLockTime);
+            return this;
+        }
+
+        /**
+         * Property businessChannel: The channel.
+         * <p>
+         * @return {@code this}
+         * @param businessChannel Property businessChannel: The channel. This parameter is required.
+         */
+        public Builder businessChannel(final java.lang.String businessChannel) {
+            this.props.businessChannel(businessChannel);
+            return this;
+        }
+        /**
+         * Property businessChannel: The channel.
+         * <p>
+         * @return {@code this}
+         * @param businessChannel Property businessChannel: The channel. This parameter is required.
+         */
+        public Builder businessChannel(final com.aliyun.ros.cdk.core.IResolvable businessChannel) {
+            this.props.businessChannel(businessChannel);
+            return this;
+        }
+
+        /**
          * Property email: The email address of the end user.
          * <p>
          * The email address is used to receive notifications about events such as desktop assignment. You must specify an email address or a mobile number to receive notifications.
@@ -158,6 +204,27 @@ public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
          */
         public Builder email(final com.aliyun.ros.cdk.core.IResolvable email) {
             this.props.email(email);
+            return this;
+        }
+
+        /**
+         * Property isLocalAdmin: Whether to set this convenient account as a local administrator.
+         * <p>
+         * @return {@code this}
+         * @param isLocalAdmin Property isLocalAdmin: Whether to set this convenient account as a local administrator. This parameter is required.
+         */
+        public Builder isLocalAdmin(final java.lang.Boolean isLocalAdmin) {
+            this.props.isLocalAdmin(isLocalAdmin);
+            return this;
+        }
+        /**
+         * Property isLocalAdmin: Whether to set this convenient account as a local administrator.
+         * <p>
+         * @return {@code this}
+         * @param isLocalAdmin Property isLocalAdmin: Whether to set this convenient account as a local administrator. This parameter is required.
+         */
+        public Builder isLocalAdmin(final com.aliyun.ros.cdk.core.IResolvable isLocalAdmin) {
+            this.props.isLocalAdmin(isLocalAdmin);
             return this;
         }
 
@@ -237,23 +304,81 @@ public class User extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).
+         * Property passwordExpireDays: The default password is valid indefinitely.
+         * <p>
+         * This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param phone Property phone: Mobile numbers are not supported on the international site (alibabacloud.com). This parameter is required.
+         * @param passwordExpireDays Property passwordExpireDays: The default password is valid indefinitely. This parameter is required.
+         */
+        public Builder passwordExpireDays(final java.lang.String passwordExpireDays) {
+            this.props.passwordExpireDays(passwordExpireDays);
+            return this;
+        }
+        /**
+         * Property passwordExpireDays: The default password is valid indefinitely.
+         * <p>
+         * This parameter can be used to set a validity period of 30 to 365 days. When the password expires, the end user must change the password before logging in again.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This feature is currently in invitation-only testing. To try it, submit a ticket to enable it.
+         * <p>
+         * </blockquote>
+         * <p>
+         * @return {@code this}
+         * @param passwordExpireDays Property passwordExpireDays: The default password is valid indefinitely. This parameter is required.
+         */
+        public Builder passwordExpireDays(final com.aliyun.ros.cdk.core.IResolvable passwordExpireDays) {
+            this.props.passwordExpireDays(passwordExpireDays);
+            return this;
+        }
+
+        /**
+         * Property phone: Mobile numbers are not supported on the international site.
+         * <p>
+         * @return {@code this}
+         * @param phone Property phone: Mobile numbers are not supported on the international site. This parameter is required.
          */
         public Builder phone(final java.lang.String phone) {
             this.props.phone(phone);
             return this;
         }
         /**
-         * Property phone: Mobile numbers are not supported on the international site (alibabacloud.com).
+         * Property phone: Mobile numbers are not supported on the international site.
          * <p>
          * @return {@code this}
-         * @param phone Property phone: Mobile numbers are not supported on the international site (alibabacloud.com). This parameter is required.
+         * @param phone Property phone: Mobile numbers are not supported on the international site. This parameter is required.
          */
         public Builder phone(final com.aliyun.ros.cdk.core.IResolvable phone) {
             this.props.phone(phone);
+            return this;
+        }
+
+        /**
+         * Property realNickName: The display name of the user.
+         * <p>
+         * @return {@code this}
+         * @param realNickName Property realNickName: The display name of the user. This parameter is required.
+         */
+        public Builder realNickName(final java.lang.String realNickName) {
+            this.props.realNickName(realNickName);
+            return this;
+        }
+        /**
+         * Property realNickName: The display name of the user.
+         * <p>
+         * @return {@code this}
+         * @param realNickName Property realNickName: The display name of the user. This parameter is required.
+         */
+        public Builder realNickName(final com.aliyun.ros.cdk.core.IResolvable realNickName) {
+            this.props.realNickName(realNickName);
             return this;
         }
 

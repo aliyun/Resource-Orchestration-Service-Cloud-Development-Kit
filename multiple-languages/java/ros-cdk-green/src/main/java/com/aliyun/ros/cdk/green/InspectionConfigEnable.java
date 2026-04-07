@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.green;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::Green::InspectionConfigEnable</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:57.512Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.128Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.green.$Module.class, fqn = "@alicloud/ros-cdk-green.InspectionConfigEnable")
 public class InspectionConfigEnable extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.green.IInspectionConfigEnable {
 

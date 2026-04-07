@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Arms
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Prometheus`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ARMS::Prometheus`, which is used to create a Prometheus instance.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrometheus`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-prometheus

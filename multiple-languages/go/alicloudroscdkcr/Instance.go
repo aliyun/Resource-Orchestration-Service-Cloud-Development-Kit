@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CR::Instance`, which is used to create a Container Registry Enterprise Edition instance.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance
@@ -19,7 +19,7 @@ type Instance interface {
 	AttrInstanceId() interface{}
 	// Attribute InstanceName: InstanceName.
 	AttrInstanceName() interface{}
-	// Attribute InstanceSpecification: InstanceSpecification.
+	// Attribute InstanceSpecification: The instance specification.
 	AttrInstanceSpecification() interface{}
 	// Attribute ModifiedTime: Last modification time.
 	AttrModifiedTime() interface{}

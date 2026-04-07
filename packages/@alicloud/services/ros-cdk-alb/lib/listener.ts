@@ -130,7 +130,7 @@ export interface IListener extends ros.IResource {
     readonly attrLoadBalancerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`The , which resource type creates an HTTP, HTTPS, or QUIC listener for an Application Load Balancer (ALB) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
@@ -164,8 +164,8 @@ export class Listener extends ros.Resource implements IListener {
 
         const rosListener = new RosListener(this, id,  {
             caEnabled: props.caEnabled,
-            listenerPort: props.listenerPort,
             requestTimeout: props.requestTimeout,
+            listenerPort: props.listenerPort,
             http2Enabled: props.http2Enabled,
             defaultActions: props.defaultActions,
             certificates: props.certificates,

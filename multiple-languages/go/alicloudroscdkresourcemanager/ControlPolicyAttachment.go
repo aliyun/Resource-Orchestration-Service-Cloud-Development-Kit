@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicyAttachment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicyAttachment`, which is used to attach a custom control policy.
 type ControlPolicyAttachment interface {
 	alicloudroscdkcore.Resource
 	IControlPolicyAttachment

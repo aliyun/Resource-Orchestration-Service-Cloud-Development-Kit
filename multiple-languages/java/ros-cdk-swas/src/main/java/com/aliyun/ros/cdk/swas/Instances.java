@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.swas;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SWAS::Instances</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SWAS::Instances</code>, which is used to create subscription simple application servers.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.713Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.456Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.swas.$Module.class, fqn = "@alicloud/ros-cdk-swas.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.swas.IInstances {
 
@@ -313,6 +313,19 @@ public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.a
          */
         public Builder dataDiskSize(final com.aliyun.ros.cdk.core.IResolvable dataDiskSize) {
             this.props.dataDiskSize(dataDiskSize);
+            return this;
+        }
+
+        /**
+         * Property tags: Tags to attach to swas.
+         * <p>
+         * Max support 20 tags to add during create swas. Each tag with two properties Key and Value, and Key is required.
+         * <p>
+         * @return {@code this}
+         * @param tags Property tags: Tags to attach to swas. This parameter is required.
+         */
+        public Builder tags(final java.util.List<? extends com.aliyun.ros.cdk.swas.RosInstances.TagsProperty> tags) {
+            this.props.tags(tags);
             return this;
         }
 

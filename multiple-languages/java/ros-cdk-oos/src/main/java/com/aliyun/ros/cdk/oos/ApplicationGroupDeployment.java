@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::ApplicationGroupDeployment</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::ApplicationGroupDeployment</code>The , which resource deploys an application group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.494Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.147Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ApplicationGroupDeployment")
 public class ApplicationGroupDeployment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IApplicationGroupDeployment {
 
@@ -38,6 +38,30 @@ public class ApplicationGroupDeployment extends com.aliyun.ros.cdk.core.Resource
     public ApplicationGroupDeployment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.oos.ApplicationGroupDeploymentProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
+    }
+
+    /**
+     * Attribute ApplicationName: The name of the application.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrApplicationName() {
+        return software.amazon.jsii.Kernel.get(this, "attrApplicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ExecutionId: The execution ID of the application group deployment.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrExecutionId() {
+        return software.amazon.jsii.Kernel.get(this, "attrExecutionId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Name: The name of the application group.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrName() {
+        return software.amazon.jsii.Kernel.get(this, "attrName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     @Override

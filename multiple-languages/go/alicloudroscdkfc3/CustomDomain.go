@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::CustomDomain`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FC3::CustomDomain`, which is used to create a custom domain name in Function Compute 3.0.
 type CustomDomain interface {
 	alicloudroscdkcore.Resource
 	ICustomDomain

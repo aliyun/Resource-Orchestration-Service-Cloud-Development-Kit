@@ -25,11 +25,53 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             get;
         }
 
-        /// <summary>Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.</summary>
+        /// <summary>Property groupType: Type of the address book.</summary>
         [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object GroupType
         {
             get;
+        }
+
+        /// <summary>Property ackClusterConnectorId: ACK cluster connector ID.</summary>
+        /// <remarks>
+        /// Batch query ACK cluster connector list.
+        /// </remarks>
+        [JsiiProperty(name: "ackClusterConnectorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AckClusterConnectorId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ackLabels: ACK cluster container group label list.</summary>
+        /// <remarks>
+        ///     Up to 10.
+        /// </remarks>
+        [JsiiProperty(name: "ackLabels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cloudfw.RosAddressBook.AckLabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AckLabels
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property ackNamespaces: ACK cluster container group namespace list.</summary>
+        /// <remarks>
+        /// Up to 10.
+        /// </remarks>
+        [JsiiProperty(name: "ackNamespaces", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AckNamespaces
+        {
+            get
+            {
+                return null;
+            }
         }
 
         /// <summary>Property addressList: Address list of the address book, between multiple addresses separated by commas.</summary>
@@ -91,7 +133,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         /// <summary>Property tagRelation: The relationship between the labels to be matched more ECS.</summary>
         /// <remarks>
         /// and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-        /// or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+        /// or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
         /// </remarks>
         [JsiiProperty(name: "tagRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -128,11 +170,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property groupType: Type the address book, the optional values ​​are: ip: IP Address Book domain: domain name address book port: Port Address Book tag: ECS label address book.</summary>
+            /// <summary>Property groupType: Type of the address book.</summary>
             [JsiiProperty(name: "groupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object GroupType
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Property ackClusterConnectorId: ACK cluster connector ID.</summary>
+            /// <remarks>
+            /// Batch query ACK cluster connector list.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ackClusterConnectorId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AckClusterConnectorId
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ackLabels: ACK cluster container group label list.</summary>
+            /// <remarks>
+            ///     Up to 10.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ackLabels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cloudfw.RosAddressBook.AckLabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AckLabels
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property ackNamespaces: ACK cluster container group namespace list.</summary>
+            /// <remarks>
+            /// Up to 10.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "ackNamespaces", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? AckNamespaces
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <summary>Property addressList: Address list of the address book, between multiple addresses separated by commas.</summary>
@@ -182,7 +257,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             /// <summary>Property tagRelation: The relationship between the labels to be matched more ECS.</summary>
             /// <remarks>
             /// and: the relationship between multiple labels "and" that matches both ECS IP public network more tags will be added to the address book.
-            /// or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS ​​public IP address book will be added.
+            /// or: a plurality of inter-labeled "or" relationship, i.e., as long as a matching tag ECS public IP address book will be added.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tagRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

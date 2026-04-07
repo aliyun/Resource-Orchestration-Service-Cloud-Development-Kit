@@ -4,8 +4,10 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Group`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ::Group`, which is used to create a Group ID on the ROCKETMQ client.</summary>
     /// <remarks>
+    /// The Group ID that you create is used to publish and subscribe to messages.
+    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
     /// </remarks>

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::VpcFirewallControlPolicy</code>The , which resource type adds access control policies to specified VPC firewall policy groups.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.466Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.795Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicy")
 public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IVpcFirewallControlPolicy {
 
@@ -524,10 +524,47 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource i
         }
 
         /**
+         * Property domainResolveType: The domain resolution method of the access control policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>FQDN: Based on FQDN</li>
+         * <li>DNS: Based on DNS dynamic resolution</li>
+         * <li>FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param domainResolveType Property domainResolveType: The domain resolution method of the access control policy. This parameter is required.
+         */
+        public Builder domainResolveType(final java.lang.String domainResolveType) {
+            this.props.domainResolveType(domainResolveType);
+            return this;
+        }
+        /**
+         * Property domainResolveType: The domain resolution method of the access control policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>FQDN: Based on FQDN</li>
+         * <li>DNS: Based on DNS dynamic resolution</li>
+         * <li>FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution</li>
+         * </ul>
+         * <p>
+         * @return {@code this}
+         * @param domainResolveType Property domainResolveType: The domain resolution method of the access control policy. This parameter is required.
+         */
+        public Builder domainResolveType(final com.aliyun.ros.cdk.core.IResolvable domainResolveType) {
+            this.props.domainResolveType(domainResolveType);
+            return this;
+        }
+
+        /**
          * Property endTime: The end time of the policy validity period for an access control policy.
          * <p>
          * It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-         * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+         * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
          * <p>
          * @return {@code this}
          * @param endTime Property endTime: The end time of the policy validity period for an access control policy. This parameter is required.
@@ -540,7 +577,7 @@ public class VpcFirewallControlPolicy extends com.aliyun.ros.cdk.core.Resource i
          * Property endTime: The end time of the policy validity period for an access control policy.
          * <p>
          * It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-         * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+         * Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
          * <p>
          * @return {@code this}
          * @param endTime Property endTime: The end time of the policy validity period for an access control policy. This parameter is required.

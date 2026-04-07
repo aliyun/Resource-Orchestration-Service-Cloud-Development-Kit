@@ -83,7 +83,7 @@ function rosGroupsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Groups`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Groups`, which is used to query groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `Groups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-groups
  */
@@ -222,7 +222,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instance`, which is used to query the details of an ApsaraMQ for RocketMQ instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instance
  */
@@ -471,7 +471,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instances`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Instances`, which is used to query the information about all ApsaraMQ for RocketMQ instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-instances
  */
@@ -564,6 +564,8 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
+    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -571,8 +573,6 @@ function RosTopicPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('topicName', ros.requiredValidator)(properties.topicName));
-    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     return errors.wrap('supplied properties not correct for "RosTopicProps"');
 }
 
@@ -597,7 +597,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Topic`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Topic`, which is used to query the information about a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topic
  */
@@ -727,6 +727,7 @@ function RosTopicsPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -734,7 +735,6 @@ function RosTopicsPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('topicName', ros.validateString)(properties.topicName));
     return errors.wrap('supplied properties not correct for "RosTopicsProps"');
 }
 
@@ -759,7 +759,7 @@ function rosTopicsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Topics`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ROCKETMQ::Topics`, which is used to query topics on an ApsaraMQ for RocketMQ instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topics` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq-topics
  */

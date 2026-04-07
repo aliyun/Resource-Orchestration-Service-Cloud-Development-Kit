@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::FullNatEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.054Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.006Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosFullNatEntry")
 public class RosFullNatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -187,6 +187,24 @@ public class RosFullNatEntry extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getAccessDomain() {
+        return software.amazon.jsii.Kernel.get(this, "accessDomain", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setAccessDomain(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "accessDomain", value);
+    }
+
+    /**
+     */
+    public void setAccessDomain(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "accessDomain", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getFullNatEntryDescription() {
         return software.amazon.jsii.Kernel.get(this, "fullNatEntryDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -363,6 +381,23 @@ public class RosFullNatEntry extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder networkInterfaceId(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceId) {
             this.props.networkInterfaceId(networkInterfaceId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param accessDomain This parameter is required.
+         */
+        public Builder accessDomain(final java.lang.String accessDomain) {
+            this.props.accessDomain(accessDomain);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param accessDomain This parameter is required.
+         */
+        public Builder accessDomain(final com.aliyun.ros.cdk.core.IResolvable accessDomain) {
+            this.props.accessDomain(accessDomain);
             return this;
         }
 

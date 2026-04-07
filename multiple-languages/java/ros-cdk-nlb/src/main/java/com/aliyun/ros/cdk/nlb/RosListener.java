@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::Listener</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::NLB::Listener</code>Use the , which resource type to create a listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:58.432Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.082Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -67,6 +67,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.NotNull java.lang.Object getListenerPort() {
+        return software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setListenerPort(final @org.jetbrains.annotations.NotNull java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "listenerPort", java.util.Objects.requireNonNull(value, "listenerPort is required"));
+    }
+
+    /**
+     */
+    public void setListenerPort(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "listenerPort", java.util.Objects.requireNonNull(value, "listenerPort is required"));
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.NotNull java.lang.Object getListenerProtocol() {
         return software.amazon.jsii.Kernel.get(this, "listenerProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -99,24 +117,6 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setLoadBalancerId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "loadBalancerId", java.util.Objects.requireNonNull(value, "loadBalancerId is required"));
-    }
-
-    /**
-     */
-    public @org.jetbrains.annotations.NotNull java.lang.Object getServerGroupId() {
-        return software.amazon.jsii.Kernel.get(this, "serverGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setServerGroupId(final @org.jetbrains.annotations.NotNull java.lang.String value) {
-        software.amazon.jsii.Kernel.set(this, "serverGroupId", java.util.Objects.requireNonNull(value, "serverGroupId is required"));
-    }
-
-    /**
-     */
-    public void setServerGroupId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "serverGroupId", java.util.Objects.requireNonNull(value, "serverGroupId is required"));
     }
 
     /**
@@ -333,24 +333,6 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
-    public @org.jetbrains.annotations.Nullable java.lang.Object getListenerPort() {
-        return software.amazon.jsii.Kernel.get(this, "listenerPort", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-    }
-
-    /**
-     */
-    public void setListenerPort(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
-        software.amazon.jsii.Kernel.set(this, "listenerPort", value);
-    }
-
-    /**
-     */
-    public void setListenerPort(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
-        software.amazon.jsii.Kernel.set(this, "listenerPort", value);
-    }
-
-    /**
-     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getMss() {
         return software.amazon.jsii.Kernel.get(this, "mss", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -437,6 +419,58 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityPolicyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityPolicyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServerGroupId() {
+        return software.amazon.jsii.Kernel.get(this, "serverGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServerGroupId(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "serverGroupId", value);
+    }
+
+    /**
+     */
+    public void setServerGroupId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serverGroupId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServerGroupTuples() {
+        return software.amazon.jsii.Kernel.get(this, "serverGroupTuples", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServerGroupTuples(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serverGroupTuples", value);
+    }
+
+    /**
+     */
+    public void setServerGroupTuples(final @org.jetbrains.annotations.Nullable java.util.List<java.lang.Object> value) {
+        if (software.amazon.jsii.Configuration.getRuntimeTypeChecking()) {
+            for (int __idx_ac66f0 = 0; __idx_ac66f0 < value.size(); __idx_ac66f0++) {
+                final java.lang.Object __val_ac66f0 = value.get(__idx_ac66f0);
+                if (
+                     !(__val_ac66f0 instanceof com.aliyun.ros.cdk.core.IResolvable)
+                    && !(__val_ac66f0 instanceof com.aliyun.ros.cdk.nlb.RosListener.ServerGroupTuplesProperty)
+                    && !(__val_ac66f0.getClass().equals(software.amazon.jsii.JsiiObject.class))
+                ) {
+                    throw new IllegalArgumentException(
+                        new java.lang.StringBuilder("Expected ")
+                            .append("value").append(".get(").append(__idx_ac66f0).append(")")
+                            .append(" to be one of: com.aliyun.ros.cdk.core.IResolvable, com.aliyun.ros.cdk.nlb.RosListener.ServerGroupTuplesProperty; received ")
+                            .append(__val_ac66f0.getClass()).toString());
+                }
+            }
+        }
+        software.amazon.jsii.Kernel.set(this, "serverGroupTuples", value);
     }
 
     /**
@@ -685,6 +719,178 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
     }
     /**
      */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListener.ServerGroupTuplesProperty")
+    @software.amazon.jsii.Jsii.Proxy(ServerGroupTuplesProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ServerGroupTuplesProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getServerGroupId() {
+            return null;
+        }
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getWeight() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link ServerGroupTuplesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ServerGroupTuplesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ServerGroupTuplesProperty> {
+            java.lang.Object serverGroupId;
+            java.lang.Object weight;
+
+            /**
+             * Sets the value of {@link ServerGroupTuplesProperty#getServerGroupId}
+             * @param serverGroupId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupId(java.lang.String serverGroupId) {
+                this.serverGroupId = serverGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerGroupTuplesProperty#getServerGroupId}
+             * @param serverGroupId the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder serverGroupId(com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
+                this.serverGroupId = serverGroupId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerGroupTuplesProperty#getWeight}
+             * @param weight the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(java.lang.Number weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServerGroupTuplesProperty#getWeight}
+             * @param weight the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder weight(com.aliyun.ros.cdk.core.IResolvable weight) {
+                this.weight = weight;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ServerGroupTuplesProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ServerGroupTuplesProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ServerGroupTuplesProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServerGroupTuplesProperty {
+            private final java.lang.Object serverGroupId;
+            private final java.lang.Object weight;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.serverGroupId = software.amazon.jsii.Kernel.get(this, "serverGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+                this.weight = software.amazon.jsii.Kernel.get(this, "weight", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.serverGroupId = builder.serverGroupId;
+                this.weight = builder.weight;
+            }
+
+            @Override
+            public final java.lang.Object getServerGroupId() {
+                return this.serverGroupId;
+            }
+
+            @Override
+            public final java.lang.Object getWeight() {
+                return this.weight;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getServerGroupId() != null) {
+                    data.set("serverGroupId", om.valueToTree(this.getServerGroupId()));
+                }
+                if (this.getWeight() != null) {
+                    data.set("weight", om.valueToTree(this.getWeight()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-nlb.RosListener.ServerGroupTuplesProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ServerGroupTuplesProperty.Jsii$Proxy that = (ServerGroupTuplesProperty.Jsii$Proxy) o;
+
+                if (this.serverGroupId != null ? !this.serverGroupId.equals(that.serverGroupId) : that.serverGroupId != null) return false;
+                return this.weight != null ? this.weight.equals(that.weight) : that.weight == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.serverGroupId != null ? this.serverGroupId.hashCode() : 0;
+                result = 31 * result + (this.weight != null ? this.weight.hashCode() : 0);
+                return result;
+            }
+        }
+    }
+    /**
+     */
     @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.RosListener.TagsProperty")
     @software.amazon.jsii.Jsii.Proxy(TagsProperty.Jsii$Proxy.class)
     @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
@@ -880,6 +1086,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param listenerPort This parameter is required.
+         */
+        public Builder listenerPort(final java.lang.Number listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param listenerPort This parameter is required.
+         */
+        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
+            this.props.listenerPort(listenerPort);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param listenerProtocol This parameter is required.
          */
         public Builder listenerProtocol(final java.lang.String listenerProtocol) {
@@ -909,23 +1132,6 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder loadBalancerId(final com.aliyun.ros.cdk.core.IResolvable loadBalancerId) {
             this.props.loadBalancerId(loadBalancerId);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
-         * @param serverGroupId This parameter is required.
-         */
-        public Builder serverGroupId(final java.lang.String serverGroupId) {
-            this.props.serverGroupId(serverGroupId);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param serverGroupId This parameter is required.
-         */
-        public Builder serverGroupId(final com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
-            this.props.serverGroupId(serverGroupId);
             return this;
         }
 
@@ -1101,23 +1307,6 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
-         * @param listenerPort This parameter is required.
-         */
-        public Builder listenerPort(final java.lang.Number listenerPort) {
-            this.props.listenerPort(listenerPort);
-            return this;
-        }
-        /**
-         * @return {@code this}
-         * @param listenerPort This parameter is required.
-         */
-        public Builder listenerPort(final com.aliyun.ros.cdk.core.IResolvable listenerPort) {
-            this.props.listenerPort(listenerPort);
-            return this;
-        }
-
-        /**
-         * @return {@code this}
          * @param mss This parameter is required.
          */
         public Builder mss(final java.lang.Number mss) {
@@ -1198,6 +1387,40 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityPolicyId(final com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
             this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serverGroupId This parameter is required.
+         */
+        public Builder serverGroupId(final java.lang.String serverGroupId) {
+            this.props.serverGroupId(serverGroupId);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serverGroupId This parameter is required.
+         */
+        public Builder serverGroupId(final com.aliyun.ros.cdk.core.IResolvable serverGroupId) {
+            this.props.serverGroupId(serverGroupId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serverGroupTuples This parameter is required.
+         */
+        public Builder serverGroupTuples(final com.aliyun.ros.cdk.core.IResolvable serverGroupTuples) {
+            this.props.serverGroupTuples(serverGroupTuples);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serverGroupTuples This parameter is required.
+         */
+        public Builder serverGroupTuples(final java.util.List<? extends java.lang.Object> serverGroupTuples) {
+            this.props.serverGroupTuples(serverGroupTuples);
             return this;
         }
 

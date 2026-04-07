@@ -136,8 +136,8 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('ignoreExisting', ros.validateBoolean)(properties.ignoreExisting));
-    errors.collect(ros.propertyValidator('intelligentLoadBalancing', ros.validateBoolean)(properties.intelligentLoadBalancing));
     errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('intelligentLoadBalancing', ros.validateBoolean)(properties.intelligentLoadBalancing));
     if(properties.period && (typeof properties.period) !== 'object') {
         errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
           data: properties.period,
@@ -146,16 +146,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
     errors.collect(ros.propertyValidator('botWebProtection', ros.validateBoolean)(properties.botWebProtection));
-    errors.collect(ros.propertyValidator('apiSecurity', ros.validateBoolean)(properties.apiSecurity));
-    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
-    if(properties.trafficBillingProtectionThreshold && (typeof properties.trafficBillingProtectionThreshold) !== 'object') {
-        errors.collect(ros.propertyValidator('trafficBillingProtectionThreshold', ros.validateRange)({
-            data: properties.trafficBillingProtectionThreshold,
-            min: 1000,
-            max: 100000,
-          }));
-    }
-    errors.collect(ros.propertyValidator('trafficBillingProtectionThreshold', ros.validateNumber)(properties.trafficBillingProtectionThreshold));
     errors.collect(ros.propertyValidator('payType', ros.requiredValidator)(properties.payType));
     if(properties.payType && (typeof properties.payType) !== 'object') {
         errors.collect(ros.propertyValidator('payType', ros.validateAllowedValues)({
@@ -164,6 +154,16 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('payType', ros.validateString)(properties.payType));
+    errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
+    errors.collect(ros.propertyValidator('apiSecurity', ros.validateBoolean)(properties.apiSecurity));
+    if(properties.trafficBillingProtectionThreshold && (typeof properties.trafficBillingProtectionThreshold) !== 'object') {
+        errors.collect(ros.propertyValidator('trafficBillingProtectionThreshold', ros.validateRange)({
+            data: properties.trafficBillingProtectionThreshold,
+            min: 1000,
+            max: 100000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('trafficBillingProtectionThreshold', ros.validateNumber)(properties.trafficBillingProtectionThreshold));
     if(properties.logStorage && (typeof properties.logStorage) !== 'object') {
         errors.collect(ros.propertyValidator('logStorage', ros.validateRange)({
             data: properties.logStorage,
@@ -180,6 +180,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('elasticQps', ros.validateNumber)(properties.elasticQps));
+    if(properties.wafVersion && (typeof properties.wafVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('wafVersion', ros.validateAllowedValues)({
+          data: properties.wafVersion,
+          allowedValues: ["Basic","Pro","Enterprise","Ultimate"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('wafVersion', ros.validateString)(properties.wafVersion));
     if(properties.domainsExtension && (typeof properties.domainsExtension) !== 'object') {
         errors.collect(ros.propertyValidator('domainsExtension', ros.validateRange)({
             data: properties.domainsExtension,
@@ -188,13 +195,6 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('domainsExtension', ros.validateNumber)(properties.domainsExtension));
-    if(properties.wafVersion && (typeof properties.wafVersion) !== 'object') {
-        errors.collect(ros.propertyValidator('wafVersion', ros.validateAllowedValues)({
-          data: properties.wafVersion,
-          allowedValues: ["Basic","Pro","Enterprise","Ultimate"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('wafVersion', ros.validateString)(properties.wafVersion));
     if(properties.exclusiveIpAddress && (typeof properties.exclusiveIpAddress) !== 'object') {
         errors.collect(ros.propertyValidator('exclusiveIpAddress', ros.validateRange)({
             data: properties.exclusiveIpAddress,
@@ -736,15 +736,15 @@ export namespace RosTGW {
          */
         readonly cipherSuite?: number | ros.IResolvable;
         /**
+         * @Property port: Access the cloud product port of WAF.
+         */
+        readonly port: number | ros.IResolvable;
+        /**
          * @Property enableTlSv3: Whether to support TSL1.3 version. This parameter is used only when the value of HttpsPorts is not empty (indicating that the domain name uses the HTTPS protocol). Value:
      * true: indicates that TSL1.3 version is supported.
      * false: indicates that TSL1.3 version is not supported.
          */
         readonly enableTlSv3?: boolean | ros.IResolvable;
-        /**
-         * @Property port: Access the cloud product port of WAF.
-         */
-        readonly port: number | ros.IResolvable;
         /**
          * @Property resourceProduct: Access to WAF cloud products.
          */
@@ -790,9 +790,9 @@ function RosTGW_ListenPropertyValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('tlsVersion', ros.validateString)(properties.tlsVersion));
     errors.collect(ros.propertyValidator('http2Enabled', ros.validateBoolean)(properties.http2Enabled));
     errors.collect(ros.propertyValidator('cipherSuite', ros.validateNumber)(properties.cipherSuite));
-    errors.collect(ros.propertyValidator('enableTlSv3', ros.validateBoolean)(properties.enableTlSv3));
     errors.collect(ros.propertyValidator('port', ros.requiredValidator)(properties.port));
     errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
+    errors.collect(ros.propertyValidator('enableTlSv3', ros.validateBoolean)(properties.enableTlSv3));
     errors.collect(ros.propertyValidator('resourceProduct', ros.requiredValidator)(properties.resourceProduct));
     if(properties.resourceProduct && (typeof properties.resourceProduct) !== 'object') {
         errors.collect(ros.propertyValidator('resourceProduct', ros.validateAllowedValues)({
@@ -832,8 +832,8 @@ function rosTGWListenPropertyToRosTemplate(properties: any): any {
       'TLSVersion': ros.stringToRosTemplate(properties.tlsVersion),
       'Http2Enabled': ros.booleanToRosTemplate(properties.http2Enabled),
       'CipherSuite': ros.numberToRosTemplate(properties.cipherSuite),
-      'EnableTLSv3': ros.booleanToRosTemplate(properties.enableTlSv3),
       'Port': ros.numberToRosTemplate(properties.port),
+      'EnableTLSv3': ros.booleanToRosTemplate(properties.enableTlSv3),
       'ResourceProduct': ros.stringToRosTemplate(properties.resourceProduct),
       'Certificates': ros.listMapper(rosTGWCertificatesPropertyToRosTemplate)(properties.certificates),
       'Protocol': ros.stringToRosTemplate(properties.protocol),
@@ -872,6 +872,10 @@ export namespace RosTGW {
          */
         readonly requestHeaders?: Array<RosTGW.RequestHeadersProperty | ros.IResolvable> | ros.IResolvable;
         /**
+         * @Property readTimeout: Read timeout duration, unit: seconds. Value range: 1~3600.
+         */
+        readonly readTimeout?: number | ros.IResolvable;
+        /**
          * @Property keepaliveRequests: The number of requests for multiplexing long connections. Value range: 60~1000, unit: number.
          */
         readonly keepaliveRequests?: number | ros.IResolvable;
@@ -879,10 +883,6 @@ export namespace RosTGW {
          * @Property keepaliveTimeout: Idle long connection timeout, value range: 1~60, default 15, unit: second.
          */
         readonly keepaliveTimeout?: number | ros.IResolvable;
-        /**
-         * @Property readTimeout: Read timeout duration, unit: seconds. Value range: 1~3600.
-         */
-        readonly readTimeout?: number | ros.IResolvable;
         /**
          * @Property xffProto: X-Forward-For-Proto The protocol of WAF. Value:
      * true (default): indicates that the protocol of WAF is transmitted.
@@ -933,6 +933,14 @@ function RosTGW_RedirectPropertyValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('requestHeaders', ros.listValidator(RosTGW_RequestHeadersPropertyValidator))(properties.requestHeaders));
+    if(properties.readTimeout && (typeof properties.readTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('readTimeout', ros.validateRange)({
+            data: properties.readTimeout,
+            min: 1,
+            max: 3600,
+          }));
+    }
+    errors.collect(ros.propertyValidator('readTimeout', ros.validateNumber)(properties.readTimeout));
     if(properties.keepaliveRequests && (typeof properties.keepaliveRequests) !== 'object') {
         errors.collect(ros.propertyValidator('keepaliveRequests', ros.validateRange)({
             data: properties.keepaliveRequests,
@@ -949,14 +957,6 @@ function RosTGW_RedirectPropertyValidator(properties: any): ros.ValidationResult
           }));
     }
     errors.collect(ros.propertyValidator('keepaliveTimeout', ros.validateNumber)(properties.keepaliveTimeout));
-    if(properties.readTimeout && (typeof properties.readTimeout) !== 'object') {
-        errors.collect(ros.propertyValidator('readTimeout', ros.validateRange)({
-            data: properties.readTimeout,
-            min: 1,
-            max: 3600,
-          }));
-    }
-    errors.collect(ros.propertyValidator('readTimeout', ros.validateNumber)(properties.readTimeout));
     errors.collect(ros.propertyValidator('xffProto', ros.validateBoolean)(properties.xffProto));
     return errors.wrap('supplied properties not correct for "RedirectProperty"');
 }
@@ -978,9 +978,9 @@ function rosTGWRedirectPropertyToRosTemplate(properties: any): any {
       'XffHeaderMode': ros.numberToRosTemplate(properties.xffHeaderMode),
       'Keepalive': ros.booleanToRosTemplate(properties.keepalive),
       'RequestHeaders': ros.listMapper(rosTGWRequestHeadersPropertyToRosTemplate)(properties.requestHeaders),
+      'ReadTimeout': ros.numberToRosTemplate(properties.readTimeout),
       'KeepaliveRequests': ros.numberToRosTemplate(properties.keepaliveRequests),
       'KeepaliveTimeout': ros.numberToRosTemplate(properties.keepaliveTimeout),
-      'ReadTimeout': ros.numberToRosTemplate(properties.readTimeout),
       'XffProto': ros.booleanToRosTemplate(properties.xffProto),
     };
 }

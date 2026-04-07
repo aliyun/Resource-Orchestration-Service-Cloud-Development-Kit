@@ -65,7 +65,7 @@ export interface IMountTarget extends ros.IResource {
     readonly attrMountTargetDomain: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::MountTarget`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::MountTarget`You can use the , which resource to create a mount target.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMountTarget`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
@@ -96,9 +96,9 @@ export class MountTarget extends ros.Resource implements IMountTarget {
             status: props.status,
             vpcId: props.vpcId,
             networkType: props.networkType,
-            securityGroupId: props.securityGroupId,
             vSwitchId: props.vSwitchId,
             accessGroupName: props.accessGroupName === undefined || props.accessGroupName === null ? 'DEFAULT_VPC_GROUP_NAME' : props.accessGroupName,
+            securityGroupId: props.securityGroupId,
             fileSystemId: props.fileSystemId,
             enableIpv6: props.enableIpv6,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

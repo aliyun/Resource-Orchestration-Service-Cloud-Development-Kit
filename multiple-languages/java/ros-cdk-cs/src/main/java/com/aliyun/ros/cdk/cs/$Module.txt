@@ -84,6 +84,7 @@
 @alicloud/ros-cdk-cs.RosManagedEdgeKubernetesClusterProps=com.aliyun.ros.cdk.cs.RosManagedEdgeKubernetesClusterProps
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AddonsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$AddonsProperty
+@alicloud/ros-cdk-cs.RosManagedKubernetesCluster.AutoModeProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$AutoModeProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.DataDisksProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$DataDisksProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.DeleteOptionsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$DeleteOptionsProperty
 @alicloud/ros-cdk-cs.RosManagedKubernetesCluster.InstancePatternsProperty=com.aliyun.ros.cdk.cs.RosManagedKubernetesCluster$InstancePatternsProperty

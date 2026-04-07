@@ -54,7 +54,7 @@ export interface ITopic extends ros.IResource {
     readonly attrTopicUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Topic`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MNS::Topic`, which is used to create a topic.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTopic`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-topic
  */
@@ -94,8 +94,8 @@ export class Topic extends ros.Resource implements ITopic {
         const rosTopic = new RosTopic(this, id,  {
             maximumMessageSize: props.maximumMessageSize === undefined || props.maximumMessageSize === null ? 65536 : props.maximumMessageSize,
             tags: props.tags,
-            loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
             topicName: props.topicName,
+            loggingEnabled: props.loggingEnabled === undefined || props.loggingEnabled === null ? false : props.loggingEnabled,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTopic;
         this.attrArnWithSlash = rosTopic.attrArnWithSlash;

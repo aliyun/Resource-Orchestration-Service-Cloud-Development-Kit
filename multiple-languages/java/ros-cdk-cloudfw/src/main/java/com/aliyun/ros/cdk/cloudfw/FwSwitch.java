@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::FwSwitch</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::FwSwitch</code>, which is used to enable a firewall.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:53.382Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.717Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.FwSwitch")
 public class FwSwitch extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IFwSwitch {
 
@@ -135,6 +135,48 @@ public class FwSwitch extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder ipaddrList(final com.aliyun.ros.cdk.core.IResolvable ipaddrList) {
             this.props().ipaddrList(ipaddrList);
+            return this;
+        }
+
+        /**
+         * Property ipVersion: The IP version number.
+         * <p>
+         * @return {@code this}
+         * @param ipVersion Property ipVersion: The IP version number. This parameter is required.
+         */
+        public Builder ipVersion(final java.lang.String ipVersion) {
+            this.props().ipVersion(ipVersion);
+            return this;
+        }
+        /**
+         * Property ipVersion: The IP version number.
+         * <p>
+         * @return {@code this}
+         * @param ipVersion Property ipVersion: The IP version number. This parameter is required.
+         */
+        public Builder ipVersion(final com.aliyun.ros.cdk.core.IResolvable ipVersion) {
+            this.props().ipVersion(ipVersion);
+            return this;
+        }
+
+        /**
+         * Property memberUid: The member unique identifier.
+         * <p>
+         * @return {@code this}
+         * @param memberUid Property memberUid: The member unique identifier. This parameter is required.
+         */
+        public Builder memberUid(final java.lang.String memberUid) {
+            this.props().memberUid(memberUid);
+            return this;
+        }
+        /**
+         * Property memberUid: The member unique identifier.
+         * <p>
+         * @return {@code this}
+         * @param memberUid Property memberUid: The member unique identifier. This parameter is required.
+         */
+        public Builder memberUid(final com.aliyun.ros.cdk.core.IResolvable memberUid) {
+            this.props().memberUid(memberUid);
             return this;
         }
 

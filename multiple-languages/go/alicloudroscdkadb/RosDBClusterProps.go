@@ -16,8 +16,11 @@ type RosDBClusterProps struct {
 	DbClusterDescription interface{} `field:"optional" json:"dbClusterDescription" yaml:"dbClusterDescription"`
 	DbNodeGroupCount interface{} `field:"optional" json:"dbNodeGroupCount" yaml:"dbNodeGroupCount"`
 	DbNodeStorage interface{} `field:"optional" json:"dbNodeStorage" yaml:"dbNodeStorage"`
+	DiskEncryption interface{} `field:"optional" json:"diskEncryption" yaml:"diskEncryption"`
 	ElasticIoResource interface{} `field:"optional" json:"elasticIoResource" yaml:"elasticIoResource"`
+	EnableSsl interface{} `field:"optional" json:"enableSsl" yaml:"enableSsl"`
 	ExecutorCount interface{} `field:"optional" json:"executorCount" yaml:"executorCount"`
+	KmsId interface{} `field:"optional" json:"kmsId" yaml:"kmsId"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	PeriodType interface{} `field:"optional" json:"periodType" yaml:"periodType"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`, which is used to enable a firewall.
 type FwSwitch interface {
 	alicloudroscdkcore.Resource
 	IFwSwitch

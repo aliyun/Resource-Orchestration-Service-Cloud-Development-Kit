@@ -92,10 +92,17 @@ type VpcFirewallControlPolicyProps struct {
 	// port: port
 	// group: address book.
 	DestPortType interface{} `field:"optional" json:"destPortType" yaml:"destPortType"`
+	// Property domainResolveType: The domain resolution method of the access control policy.
+	//
+	// Valid values:
+	// - FQDN: Based on FQDN
+	// - DNS: Based on DNS dynamic resolution
+	// - FQDN_AND_DNS: Based on both FQDN and DNS dynamic resolution.
+	DomainResolveType interface{} `field:"optional" json:"domainResolveType" yaml:"domainResolveType"`
 	// Property endTime: The end time of the policy validity period for an access control policy.
 	//
 	// It is represented in a second-level timestamp format. It must be the whole hour or half hour, and at least half an hour greater than the start time.
-	// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must havea value, and you need to set the end time.
+	// Notes: When RepeatType is Permanent, EndTime is empty. When RepeatType is None, Daily, Weekly, Monthly, EndTime must have a value, and you need to set the end time.
 	EndTime interface{} `field:"optional" json:"endTime" yaml:"endTime"`
 	// Property lang: The natural language of the request and response.
 	//

@@ -23,6 +23,8 @@ type RosVpcCidrBlockAssociation interface {
 	SetIpamPoolId(val interface{})
 	IPv6CidrBlock() interface{}
 	SetIPv6CidrBlock(val interface{})
+	Ipv6CidrMask() interface{}
+	SetIpv6CidrMask(val interface{})
 	Ipv6Isp() interface{}
 	SetIpv6Isp(val interface{})
 	IpVersion() interface{}
@@ -233,6 +235,16 @@ func (j *jsiiProxy_RosVpcCidrBlockAssociation) IPv6CidrBlock() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosVpcCidrBlockAssociation) Ipv6CidrMask() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ipv6CidrMask",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosVpcCidrBlockAssociation) Ipv6Isp() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -420,6 +432,17 @@ func (j *jsiiProxy_RosVpcCidrBlockAssociation)SetIPv6CidrBlock(val interface{}) 
 	_jsii_.Set(
 		j,
 		"iPv6CidrBlock",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosVpcCidrBlockAssociation)SetIpv6CidrMask(val interface{}) {
+	if err := j.validateSetIpv6CidrMaskParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ipv6CidrMask",
 		val,
 	)
 }

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-natip
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.093Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.034Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosNatIpProps")
 @software.amazon.jsii.Jsii.Proxy(RosNatIpProps.Jsii$Proxy.class)
 public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
@@ -25,6 +25,18 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNatIpName();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv4Prefix() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpv4PrefixCount() {
+        return null;
+    }
 
     /**
      */
@@ -52,6 +64,8 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object natIpCidr;
         java.lang.Object natIpDescription;
         java.lang.Object natIpName;
+        java.lang.Object ipv4Prefix;
+        java.lang.Object ipv4PrefixCount;
         java.lang.Object natIp;
         java.lang.Object natIpCidrId;
 
@@ -136,6 +150,46 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosNatIpProps#getIpv4Prefix}
+         * @param ipv4Prefix the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv4Prefix(java.lang.String ipv4Prefix) {
+            this.ipv4Prefix = ipv4Prefix;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNatIpProps#getIpv4Prefix}
+         * @param ipv4Prefix the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv4Prefix(com.aliyun.ros.cdk.core.IResolvable ipv4Prefix) {
+            this.ipv4Prefix = ipv4Prefix;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNatIpProps#getIpv4PrefixCount}
+         * @param ipv4PrefixCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv4PrefixCount(java.lang.Number ipv4PrefixCount) {
+            this.ipv4PrefixCount = ipv4PrefixCount;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosNatIpProps#getIpv4PrefixCount}
+         * @param ipv4PrefixCount the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipv4PrefixCount(com.aliyun.ros.cdk.core.IResolvable ipv4PrefixCount) {
+            this.ipv4PrefixCount = ipv4PrefixCount;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosNatIpProps#getNatIp}
          * @param natIp the value to be set.
          * @return {@code this}
@@ -195,6 +249,8 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object natIpCidr;
         private final java.lang.Object natIpDescription;
         private final java.lang.Object natIpName;
+        private final java.lang.Object ipv4Prefix;
+        private final java.lang.Object ipv4PrefixCount;
         private final java.lang.Object natIp;
         private final java.lang.Object natIpCidrId;
 
@@ -208,6 +264,8 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
             this.natIpCidr = software.amazon.jsii.Kernel.get(this, "natIpCidr", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natIpDescription = software.amazon.jsii.Kernel.get(this, "natIpDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natIpName = software.amazon.jsii.Kernel.get(this, "natIpName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv4Prefix = software.amazon.jsii.Kernel.get(this, "ipv4Prefix", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipv4PrefixCount = software.amazon.jsii.Kernel.get(this, "ipv4PrefixCount", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natIp = software.amazon.jsii.Kernel.get(this, "natIp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.natIpCidrId = software.amazon.jsii.Kernel.get(this, "natIpCidrId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
@@ -221,6 +279,8 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
             this.natIpCidr = java.util.Objects.requireNonNull(builder.natIpCidr, "natIpCidr is required");
             this.natIpDescription = java.util.Objects.requireNonNull(builder.natIpDescription, "natIpDescription is required");
             this.natIpName = java.util.Objects.requireNonNull(builder.natIpName, "natIpName is required");
+            this.ipv4Prefix = builder.ipv4Prefix;
+            this.ipv4PrefixCount = builder.ipv4PrefixCount;
             this.natIp = builder.natIp;
             this.natIpCidrId = builder.natIpCidrId;
         }
@@ -246,6 +306,16 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getIpv4Prefix() {
+            return this.ipv4Prefix;
+        }
+
+        @Override
+        public final java.lang.Object getIpv4PrefixCount() {
+            return this.ipv4PrefixCount;
+        }
+
+        @Override
         public final java.lang.Object getNatIp() {
             return this.natIp;
         }
@@ -265,6 +335,12 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
             data.set("natIpCidr", om.valueToTree(this.getNatIpCidr()));
             data.set("natIpDescription", om.valueToTree(this.getNatIpDescription()));
             data.set("natIpName", om.valueToTree(this.getNatIpName()));
+            if (this.getIpv4Prefix() != null) {
+                data.set("ipv4Prefix", om.valueToTree(this.getIpv4Prefix()));
+            }
+            if (this.getIpv4PrefixCount() != null) {
+                data.set("ipv4PrefixCount", om.valueToTree(this.getIpv4PrefixCount()));
+            }
             if (this.getNatIp() != null) {
                 data.set("natIp", om.valueToTree(this.getNatIp()));
             }
@@ -293,6 +369,8 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
             if (!natIpCidr.equals(that.natIpCidr)) return false;
             if (!natIpDescription.equals(that.natIpDescription)) return false;
             if (!natIpName.equals(that.natIpName)) return false;
+            if (this.ipv4Prefix != null ? !this.ipv4Prefix.equals(that.ipv4Prefix) : that.ipv4Prefix != null) return false;
+            if (this.ipv4PrefixCount != null ? !this.ipv4PrefixCount.equals(that.ipv4PrefixCount) : that.ipv4PrefixCount != null) return false;
             if (this.natIp != null ? !this.natIp.equals(that.natIp) : that.natIp != null) return false;
             return this.natIpCidrId != null ? this.natIpCidrId.equals(that.natIpCidrId) : that.natIpCidrId == null;
         }
@@ -303,6 +381,8 @@ public interface RosNatIpProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.natIpCidr.hashCode());
             result = 31 * result + (this.natIpDescription.hashCode());
             result = 31 * result + (this.natIpName.hashCode());
+            result = 31 * result + (this.ipv4Prefix != null ? this.ipv4Prefix.hashCode() : 0);
+            result = 31 * result + (this.ipv4PrefixCount != null ? this.ipv4PrefixCount.hashCode() : 0);
             result = 31 * result + (this.natIp != null ? this.natIp.hashCode() : 0);
             result = 31 * result + (this.natIpCidrId != null ? this.natIpCidrId.hashCode() : 0);
             return result;

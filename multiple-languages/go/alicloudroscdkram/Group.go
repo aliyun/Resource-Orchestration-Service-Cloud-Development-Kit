@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Group`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::Group`, which is used to create a Resource Access Management (RAM) user group.
 type Group interface {
 	alicloudroscdkcore.Resource
 	IGroup

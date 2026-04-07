@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ice
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::SearchLib`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::SearchLib`, which is used to create a search library.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SearchLib` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-searchlib

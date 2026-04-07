@@ -11,7 +11,7 @@ type KeywordLibProps struct {
 	KeywordLibName interface{} `field:"required" json:"keywordLibName" yaml:"keywordLibName"`
 	// Property resourceType: The moderation scenario to which the text library applies.
 	//
-	// Valid values:TEXT: text anti-spam、IMAGE: ad violation detection、VOICE: audio anti-spam.
+	// Valid values:TEXT: text anti-spamãIMAGE: ad violation detectionãVOICE: audio anti-spam.
 	ResourceType interface{} `field:"required" json:"resourceType" yaml:"resourceType"`
 	// Property bizTypes: The business scenario.
 	//

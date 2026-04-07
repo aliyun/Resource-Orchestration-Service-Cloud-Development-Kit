@@ -78,7 +78,7 @@ export interface IAccount extends ros.IResource {
     readonly props: AccountProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Account`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Account`The , which resource type creates accounts for PolarDB databases.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-account
  */
@@ -106,9 +106,9 @@ export class Account extends ros.Resource implements IAccount {
             dbClusterId: props.dbClusterId,
             dbName: props.dbName,
             accountType: props.accountType,
-            privForAllDb: props.privForAllDb,
             accountName: props.accountName,
             accountPassword: props.accountPassword,
+            privForAllDb: props.privForAllDb,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosAccount;
     }

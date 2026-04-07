@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dataworks;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DataWorks::Project</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DataWorks::Project</code>, which is used to create a DataWorks workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.266Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.619Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 

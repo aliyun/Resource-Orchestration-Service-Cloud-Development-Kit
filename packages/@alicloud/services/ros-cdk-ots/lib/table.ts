@@ -67,7 +67,7 @@ export interface ITable extends ros.IResource {
     readonly attrTableName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-table
  */
@@ -100,9 +100,9 @@ export class Table extends ros.Resource implements ITable {
             timeToLive: props.timeToLive === undefined || props.timeToLive === null ? -1 : props.timeToLive,
             maxVersions: props.maxVersions === undefined || props.maxVersions === null ? 1 : props.maxVersions,
             secondaryIndices: props.secondaryIndices,
-            deviationCellVersionInSec: props.deviationCellVersionInSec === undefined || props.deviationCellVersionInSec === null ? 86400 : props.deviationCellVersionInSec,
             primaryKey: props.primaryKey,
             columns: props.columns,
+            deviationCellVersionInSec: props.deviationCellVersionInSec === undefined || props.deviationCellVersionInSec === null ? 86400 : props.deviationCellVersionInSec,
             reservedThroughput: props.reservedThroughput,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosTable;

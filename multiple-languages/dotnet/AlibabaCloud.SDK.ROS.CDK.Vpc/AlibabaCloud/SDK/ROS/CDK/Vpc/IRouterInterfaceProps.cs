@@ -59,6 +59,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property autoRenew: Specifies whether auto-renewal is enabled.</summary>
+        [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? AutoRenew
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property description: Custom description of the RouterInterface, [2, 256] characters.</summary>
         /// <remarks>
         /// Don't fill or empty, the default is empty.
@@ -66,6 +77,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <summary>Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode.</summary>
+        /// <remarks>
+        /// Fast link mode allows the router interfaces between VBR and VPC ends to be automatically connected after they are created.
+        /// This parameter is valid only when the value of <strong>RouterType</strong> is <strong>VBR</strong> and the value of <strong>OppositeRouterType</strong> is <strong>VRouter</strong>.
+        ///
+        /// <list type="bullet">
+        /// <description>When the value of the <strong>FastLinkMode</strong> parameter is <strong>true</strong>, the value of the <strong>Role</strong> parameter must be <strong>InitiatingSide</strong>, and the <strong>AccessPointId</strong>, <strong>OppositeRouterType</strong>, <strong>OppsiteRouterId</strong>, and <strong>OppositeInterfaceOwnerId</strong> parameters are required.</description>
+        /// </list>
+        /// </remarks>
+        [JsiiProperty(name: "fastLinkMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? FastLinkMode
         {
             get
             {
@@ -232,6 +262,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
+        /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+        [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? ResourceGroupId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property routerType: Router type.</summary>
         /// <remarks>
         /// Now support 'VRouter|VBR'
@@ -313,6 +354,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
+            /// <summary>Property autoRenew: Specifies whether auto-renewal is enabled.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? AutoRenew
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
             /// <summary>Property description: Custom description of the RouterInterface, [2, 256] characters.</summary>
             /// <remarks>
             /// Don't fill or empty, the default is empty.
@@ -320,6 +369,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property fastLinkMode: Specifies whether the VBR-associated router interface is created in fast link mode.</summary>
+            /// <remarks>
+            /// Fast link mode allows the router interfaces between VBR and VPC ends to be automatically connected after they are created.
+            /// This parameter is valid only when the value of <strong>RouterType</strong> is <strong>VBR</strong> and the value of <strong>OppositeRouterType</strong> is <strong>VRouter</strong>.
+            ///
+            /// <list type="bullet">
+            /// <description>When the value of the <strong>FastLinkMode</strong> parameter is <strong>true</strong>, the value of the <strong>Role</strong> parameter must be <strong>InitiatingSide</strong>, and the <strong>AccessPointId</strong>, <strong>OppositeRouterType</strong>, <strong>OppsiteRouterId</strong>, and <strong>OppositeInterfaceOwnerId</strong> parameters are required.</description>
+            /// </list>
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "fastLinkMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? FastLinkMode
             {
                 get => GetInstanceProperty<object?>();
             }
@@ -443,6 +508,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             [JsiiOptional]
             [JsiiProperty(name: "pricingCycle", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PricingCycle
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? ResourceGroupId
             {
                 get => GetInstanceProperty<object?>();
             }

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::VirtualCapacityReservation`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ACS::VirtualCapacityReservation`The , which resource type creates a capacity reservation task.
 type RosVirtualCapacityReservation interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

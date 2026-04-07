@@ -14,5 +14,7 @@ type ZonesProps struct {
 	RefreshOptions interface{} `field:"optional" json:"refreshOptions" yaml:"refreshOptions"`
 	// Property resourceGroupId: ResourceGroupId.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
+	// Property vpcId: The ID of the VPC that is associated with the zone.
+	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 }
 

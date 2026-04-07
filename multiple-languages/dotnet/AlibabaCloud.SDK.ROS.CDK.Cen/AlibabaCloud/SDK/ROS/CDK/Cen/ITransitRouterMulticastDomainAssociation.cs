@@ -1,0 +1,103 @@
+using Amazon.JSII.Runtime.Deputy;
+
+#pragma warning disable CS0672,CS0809,CS1591
+
+namespace AlibabaCloud.SDK.ROS.CDK.Cen
+{
+    /// <summary>Represents a `TransitRouterMulticastDomainAssociation`.</summary>
+    [JsiiInterface(nativeType: typeof(ITransitRouterMulticastDomainAssociation), fullyQualifiedName: "@alicloud/ros-cdk-cen.ITransitRouterMulticastDomainAssociation")]
+    public interface ITransitRouterMulticastDomainAssociation : AlibabaCloud.SDK.ROS.CDK.Core.IResource
+    {
+        /// <summary>Attribute TransitRouterAttachmentId: The ID of the VPC connection.</summary>
+        [JsiiProperty(name: "attrTransitRouterAttachmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrTransitRouterAttachmentId
+        {
+            get;
+        }
+
+        /// <summary>Attribute TransitRouterMulticastDomainId: The ID of the multicast domain.</summary>
+        [JsiiProperty(name: "attrTransitRouterMulticastDomainId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrTransitRouterMulticastDomainId
+        {
+            get;
+        }
+
+        /// <summary>Attribute VSwitchId: The ID of the VSwitch.</summary>
+        [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrVSwitchId
+        {
+            get;
+        }
+
+        [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cen.TransitRouterMulticastDomainAssociationProps\"}")]
+        AlibabaCloud.SDK.ROS.CDK.Cen.ITransitRouterMulticastDomainAssociationProps Props
+        {
+            get;
+        }
+
+        /// <summary>Represents a `TransitRouterMulticastDomainAssociation`.</summary>
+        [JsiiTypeProxy(nativeType: typeof(ITransitRouterMulticastDomainAssociation), fullyQualifiedName: "@alicloud/ros-cdk-cen.ITransitRouterMulticastDomainAssociation")]
+        internal sealed class _Proxy : DeputyBase, AlibabaCloud.SDK.ROS.CDK.Cen.ITransitRouterMulticastDomainAssociation
+        {
+            private _Proxy(ByRefValue reference): base(reference)
+            {
+            }
+
+            /// <summary>Attribute TransitRouterAttachmentId: The ID of the VPC connection.</summary>
+            [JsiiProperty(name: "attrTransitRouterAttachmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrTransitRouterAttachmentId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute TransitRouterMulticastDomainId: The ID of the multicast domain.</summary>
+            [JsiiProperty(name: "attrTransitRouterMulticastDomainId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrTransitRouterMulticastDomainId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute VSwitchId: The ID of the VSwitch.</summary>
+            [JsiiProperty(name: "attrVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrVSwitchId
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            [JsiiProperty(name: "props", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-cen.TransitRouterMulticastDomainAssociationProps\"}")]
+            public AlibabaCloud.SDK.ROS.CDK.Cen.ITransitRouterMulticastDomainAssociationProps Props
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Cen.ITransitRouterMulticastDomainAssociationProps>()!;
+            }
+
+            /// <summary>The environment this resource belongs to.</summary>
+            /// <remarks>
+            /// For resources that are created and managed by the CDK
+            /// (generally, those created by creating new class instances like Role, Bucket, etc.),
+            /// this is always the same as the environment of the stack they belong to;
+            /// however, for imported resources
+            /// (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+            /// that might be different than the stack they were imported into.
+            /// </remarks>
+            [JsiiProperty(name: "env", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.IResourceEnvironment\"}")]
+            public AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment Env
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.IResourceEnvironment>()!;
+            }
+
+            /// <summary>The stack in which this resource is defined.</summary>
+            [JsiiProperty(name: "stack", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.Stack\"}")]
+            public AlibabaCloud.SDK.ROS.CDK.Core.Stack Stack
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.Stack>()!;
+            }
+
+            /// <summary>The construct tree node for this construct.</summary>
+            [JsiiProperty(name: "node", typeJson: "{\"fqn\":\"@alicloud/ros-cdk-core.ConstructNode\"}")]
+            public AlibabaCloud.SDK.ROS.CDK.Core.ConstructNode Node
+            {
+                get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Core.ConstructNode>()!;
+            }
+        }
+    }
+}

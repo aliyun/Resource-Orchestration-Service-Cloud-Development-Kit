@@ -82,7 +82,7 @@ function rosCatalogPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::Catalog`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::Catalog`The , which type creates a data catalog in Data Lake Formation.
  * @Note This class does not contain additional functions, so it is recommended to use the `Catalog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-catalog
  */
@@ -255,7 +255,7 @@ function rosPermissionsPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::Permissions`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::Permissions`The , which resource type is used to grant permissions in a batch.
  * @Note This class does not contain additional functions, so it is recommended to use the `Permissions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-permissions
  */
@@ -424,7 +424,7 @@ function rosVpcConfigPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::VpcConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::VpcConfig`The , which type is used to configure a VPC whitelist.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-vpcconfig
  */

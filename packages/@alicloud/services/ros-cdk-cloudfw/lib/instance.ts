@@ -121,7 +121,7 @@ export interface IInstance extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::Instance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::Instance`, which is used to create a Cloud Firewall instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-instance
  */
@@ -154,8 +154,8 @@ export class Instance extends ros.Resource implements IInstance {
             aclExtension: props.aclExtension,
             natFirewallNum: props.natFirewallNum,
             natBandwidth: props.natBandwidth,
-            ipNum: props.ipNum,
             autoRenew: props.autoRenew,
+            ipNum: props.ipNum,
             period: props.period,
             payType: props.payType,
             autoPay: props.autoPay === undefined || props.autoPay === null ? false : props.autoPay,
@@ -163,8 +163,8 @@ export class Instance extends ros.Resource implements IInstance {
             logAnalysis: props.logAnalysis,
             vpcFirewallNum: props.vpcFirewallNum,
             accountNum: props.accountNum,
-            multiAccountManagement: props.multiAccountManagement === undefined || props.multiAccountManagement === null ? false : props.multiAccountManagement,
             bandwidth: props.bandwidth,
+            multiAccountManagement: props.multiAccountManagement === undefined || props.multiAccountManagement === null ? false : props.multiAccountManagement,
             spec: props.spec,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

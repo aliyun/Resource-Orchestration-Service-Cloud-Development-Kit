@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Instance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Instance`The , which resource type creates an Elastic Compute Service (ECS) instance.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

@@ -108,6 +108,10 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetDefaultLinkTypePar
 	return nil
 }
 
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetDeletionForceParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }
@@ -117,6 +121,14 @@ func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetPeerTransitRouterI
 }
 
 func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetPeerTransitRouterRegionIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetRouteTableAssociationEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosTransitRouterPeerAttachment) validateSetRouteTablePropagationEnabledParameters(val interface{}) error {
 	return nil
 }
 

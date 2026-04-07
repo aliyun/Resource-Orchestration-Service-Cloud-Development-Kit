@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`The , which resource type creates a PolarDB cluster.
 type RosDBCluster interface {
 	alicloudroscdkcore.RosResource
 	AllowShutDown() interface{}

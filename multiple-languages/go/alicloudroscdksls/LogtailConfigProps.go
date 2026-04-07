@@ -75,7 +75,7 @@ type LogtailConfigProps struct {
 	//          "preserve": true,
 	//          "preserveDepth": 1,
 	//          "priority": 0,
-	//          "quote": "\u0001",
+	//          "quote": "",
 	//          "sendRateExpire": 0,
 	//          "sensitive_keys": [],
 	//          "separator": ",,,",

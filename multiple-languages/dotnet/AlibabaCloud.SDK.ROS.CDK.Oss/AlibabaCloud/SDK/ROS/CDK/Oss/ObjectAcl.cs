@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oss
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OSS::ObjectAcl`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OSS::ObjectAcl`, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosObjectAcl`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl

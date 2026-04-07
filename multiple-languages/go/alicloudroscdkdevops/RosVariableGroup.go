@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::VariableGroup`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::VariableGroup`, which is used to create a variable group.
 type RosVariableGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrVariableGroupId() alicloudroscdkcore.IResolvable

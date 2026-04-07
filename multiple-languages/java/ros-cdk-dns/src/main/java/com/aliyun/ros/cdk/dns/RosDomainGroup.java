@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dns;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DNS::DomainGroup</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DNS::DomainGroup</code>, which is used to add a domain name group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:54.607Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.975Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosDomainGroup")
 public class RosDomainGroup extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -32,7 +32,7 @@ export interface IBasicAccelerateIp extends ros.IResource {
     readonly attrAccelerateIpId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAccelerateIp`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAccelerateIp`, which is used to create an accelerated IP address for a basic Global Accelerator (GA) instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicAccelerateIp`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerateip
  */

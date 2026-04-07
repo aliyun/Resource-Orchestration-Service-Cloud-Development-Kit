@@ -62,7 +62,7 @@ export interface IAlias extends ros.IResource {
     readonly attrVersionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Alias`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Alias`The , which type creates an alias for a service version in Function Compute.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlias`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
  */

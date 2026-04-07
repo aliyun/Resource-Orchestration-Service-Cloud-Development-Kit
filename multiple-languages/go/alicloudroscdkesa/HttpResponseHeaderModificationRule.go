@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpResponseHeaderModificationRule`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpResponseHeaderModificationRule`The , which resource type is used to create a configuration for modifying HTTP response headers.
 type HttpResponseHeaderModificationRule interface {
 	alicloudroscdkcore.Resource
 	IHttpResponseHeaderModificationRule

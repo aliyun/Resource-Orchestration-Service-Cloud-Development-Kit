@@ -48,6 +48,11 @@ export interface ElasticDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * Property backupId: Backup set ID. You can call DescribeDataBackups to view the backup set IDs of all backup sets under the target instance.
+     */
+    readonly backupId?: string | ros.IResolvable;
+
+    /**
      * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
      * This parameter must be passed in to create a storage reservation mode instance.
      */
@@ -110,6 +115,11 @@ export interface ElasticDBInstanceProps {
     readonly securityIpList?: string | ros.IResolvable;
 
     /**
+     * Property srcDbInstanceName: Clone source instance ID. You can call the DescribeDBInstances interface to view the details of all AnalyticDB PostgreSQL instances in the target region, including the instance ID.
+     */
+    readonly srcDbInstanceName?: string | ros.IResolvable;
+
+    /**
      * Property tags: The list of instance tags in the form of key\/value pairs.
      * You can define a maximum of 20 tags for instance.
      */
@@ -155,7 +165,7 @@ export interface IElasticDBInstance extends ros.IResource {
     readonly attrPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosElasticDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
@@ -205,16 +215,18 @@ export class ElasticDBInstance extends ros.Resource implements IElasticDBInstanc
         const rosElasticDBInstance = new RosElasticDBInstance(this, id,  {
             masterNodeNum: props.masterNodeNum,
             encryptionType: props.encryptionType,
-            instanceSpec: props.instanceSpec,
             engineVersion: props.engineVersion,
             privateIpAddress: props.privateIpAddress,
+            instanceSpec: props.instanceSpec,
             zoneId: props.zoneId,
             vpcId: props.vpcId,
+            srcDbInstanceName: props.srcDbInstanceName,
             vSwitchId: props.vSwitchId,
             segNodeNum: props.segNodeNum,
             period: props.period,
             segStorageType: props.segStorageType,
             storageSize: props.storageSize,
+            backupId: props.backupId,
             encryptionKey: props.encryptionKey,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbInstanceCategory: props.dbInstanceCategory,

@@ -85,6 +85,7 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('loadBalancerNames', ros.listValidator(ros.validateString))(properties.loadBalancerNames));
+    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     if(properties.loadBalancerBussinessStatus && (typeof properties.loadBalancerBussinessStatus) !== 'object') {
         errors.collect(ros.propertyValidator('loadBalancerBussinessStatus', ros.validateAllowedValues)({
           data: properties.loadBalancerBussinessStatus,
@@ -92,7 +93,6 @@ function RosLoadBalancersPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('loadBalancerBussinessStatus', ros.validateString)(properties.loadBalancerBussinessStatus));
-    errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
     if(properties.vpcIds && (Array.isArray(properties.vpcIds) || (typeof properties.vpcIds) === 'string')) {
         errors.collect(ros.propertyValidator('vpcIds', ros.validateLength)({
@@ -178,7 +178,7 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ALB::LoadBalancers`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ALB::LoadBalancers`, which is used to query the basic information about created Application Load Balancer (ALB) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-loadbalancers
  */
@@ -406,7 +406,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ALB::Zones`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ALB::Zones`This data source provides information about the zones that are available for Application Load Balancer (ALB) in a region.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-alb-zones
  */

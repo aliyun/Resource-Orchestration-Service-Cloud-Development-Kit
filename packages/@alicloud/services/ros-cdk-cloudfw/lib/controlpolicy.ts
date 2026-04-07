@@ -191,7 +191,7 @@ export interface IControlPolicy extends ros.IResource {
     readonly attrAclUuid: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */
@@ -236,12 +236,12 @@ export class ControlPolicy extends ros.Resource implements IControlPolicy {
             proto: props.proto,
             repeatEndTime: props.repeatEndTime,
             domainResolveType: props.domainResolveType,
-            repeatDays: props.repeatDays,
             repeatType: props.repeatType,
+            repeatDays: props.repeatDays,
             regionId: props.regionId === undefined || props.regionId === null ? 'cn-hangzhou' : props.regionId,
             repeatStartTime: props.repeatStartTime,
-            release: props.release,
             newOrder: props.newOrder,
+            release: props.release,
             destPortGroup: props.destPortGroup,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosControlPolicy;

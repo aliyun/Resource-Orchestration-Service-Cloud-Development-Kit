@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::VServerGroup</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::VServerGroup</code>, which is used to query the information about a vServer group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:00.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.274Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.VServerGroup")
 public class VServerGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.datasource.IVServerGroup {
 

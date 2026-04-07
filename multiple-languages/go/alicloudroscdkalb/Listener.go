@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`The , which resource type creates an HTTP, HTTPS, or QUIC listener for an Application Load Balancer (ALB) instance.
 type Listener interface {
 	alicloudroscdkcore.Resource
 	IListener

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::VirtualHost</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::VirtualHost</code>, which is used to create a vhost.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:52.293Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.459Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.VirtualHost")
 public class VirtualHost extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.amqp.IVirtualHost {
 

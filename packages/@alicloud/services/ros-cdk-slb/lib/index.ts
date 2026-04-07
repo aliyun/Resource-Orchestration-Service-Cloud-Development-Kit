@@ -2,6 +2,7 @@ export * from './accesscontrol';
 export * from './accesslogsaddition';
 export * from './backendserverattachment';
 export * from './backendservertovservergroupaddition';
+export * from './cacertificate';
 export * from './certificate';
 export * from './domainextension';
 export * from './listener';

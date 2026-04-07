@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::RamAccountAlias</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::RamAccountAlias</code>, which is used to create an alias for an Alibaba Cloud account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.978Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RamAccountAlias")
 public class RamAccountAlias extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IRamAccountAlias {
 

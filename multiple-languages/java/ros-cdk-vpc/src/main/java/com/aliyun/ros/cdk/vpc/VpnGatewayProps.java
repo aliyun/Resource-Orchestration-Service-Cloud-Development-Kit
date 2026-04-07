@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.286Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.271Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(VpnGatewayProps.Jsii$Proxy.class)
 public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
@@ -111,6 +111,20 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
+     * Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.
+     * <p>
+     * <ul>
+     * <li>If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.</li>
+     * <li>After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.</li>
+     * </ul>
+     * <p>
+     * If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
      * Property sslConnections: The maximum number of clients allowed to connect at the same time.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSslConnections() {
@@ -161,6 +175,7 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object name;
         java.lang.Object networkType;
         java.lang.Object period;
+        java.lang.Object resourceGroupId;
         java.lang.Object sslConnections;
         java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags;
         java.lang.Object vpnType;
@@ -423,6 +438,38 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link VpnGatewayProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.
+         *                        <ul>
+         *                        <li>If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.</li>
+         *                        <li>After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.</li>
+         *                        </ul>
+         *                        <p>
+         *                        If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(java.lang.String resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link VpnGatewayProps#getResourceGroupId}
+         * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the VPN gateway belongs.
+         *                        <ul>
+         *                        <li>If you do not specify a resource group ID, the VPN gateway will belong to the default resource group after creation.</li>
+         *                        <li>After the VPN gateway is created, if you create SSL server, SSL client certificate, IPsec server, or IPsec connection (in the scenario where the IPsec connection is bound to the VPN gateway), these resources will directly belong to the resource group of the VPN gateway and cannot be modified.</li>
+         *                        </ul>
+         *                        <p>
+         *                        If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
+         * @return {@code this}
+         */
+        public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {
+            this.resourceGroupId = resourceGroupId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link VpnGatewayProps#getSslConnections}
          * @param sslConnections Property sslConnections: The maximum number of clients allowed to connect at the same time.
          * @return {@code this}
@@ -521,6 +568,7 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object name;
         private final java.lang.Object networkType;
         private final java.lang.Object period;
+        private final java.lang.Object resourceGroupId;
         private final java.lang.Object sslConnections;
         private final java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty> tags;
         private final java.lang.Object vpnType;
@@ -543,6 +591,7 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.networkType = software.amazon.jsii.Kernel.get(this, "networkType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.sslConnections = software.amazon.jsii.Kernel.get(this, "sslConnections", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty.class)));
             this.vpnType = software.amazon.jsii.Kernel.get(this, "vpnType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -566,6 +615,7 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
             this.name = builder.name;
             this.networkType = builder.networkType;
             this.period = builder.period;
+            this.resourceGroupId = builder.resourceGroupId;
             this.sslConnections = builder.sslConnections;
             this.tags = (java.util.List<com.aliyun.ros.cdk.vpc.RosVpnGateway.TagsProperty>)builder.tags;
             this.vpnType = builder.vpnType;
@@ -628,6 +678,11 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getResourceGroupId() {
+            return this.resourceGroupId;
+        }
+
+        @Override
         public final java.lang.Object getSslConnections() {
             return this.sslConnections;
         }
@@ -682,6 +737,9 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getPeriod() != null) {
                 data.set("period", om.valueToTree(this.getPeriod()));
             }
+            if (this.getResourceGroupId() != null) {
+                data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
             if (this.getSslConnections() != null) {
                 data.set("sslConnections", om.valueToTree(this.getSslConnections()));
             }
@@ -723,6 +781,7 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.networkType != null ? !this.networkType.equals(that.networkType) : that.networkType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.sslConnections != null ? !this.sslConnections.equals(that.sslConnections) : that.sslConnections != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.vpnType != null ? !this.vpnType.equals(that.vpnType) : that.vpnType != null) return false;
@@ -742,6 +801,7 @@ public interface VpnGatewayProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.networkType != null ? this.networkType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);
+            result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.sslConnections != null ? this.sslConnections.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.vpnType != null ? this.vpnType.hashCode() : 0);

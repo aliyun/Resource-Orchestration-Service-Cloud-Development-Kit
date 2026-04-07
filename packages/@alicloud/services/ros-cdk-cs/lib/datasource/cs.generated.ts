@@ -107,7 +107,7 @@ function rosClusterApplicationResourcesPropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterApplicationResources`, which is used to query the information about resources of a specified type in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterApplicationResources` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusterapplicationresources
  */
@@ -268,7 +268,7 @@ function rosClusterNodePoolsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterNodePools`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterNodePools`, which is used to query the information about all node pools in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterNodePools` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusternodepools
  */
@@ -418,7 +418,7 @@ function rosClusterUserKubeconfigPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::ClusterUserKubeconfig`, which is used to query the kubeconfig file of a Container Service for Kubernetes (ACK) cluster by cluster ID.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterUserKubeconfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-clusteruserkubeconfig
  */
@@ -566,7 +566,7 @@ function rosKubernetesClusterPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::KubernetesCluster`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::KubernetesCluster`, which is used to query the information about a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `KubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetescluster
  */
@@ -899,9 +899,10 @@ export interface RosKubernetesClustersProps {
 function RosKubernetesClustersPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('clusterType', ros.validateString)(properties.clusterType));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.validateString)(properties.clusterSpec));
     errors.collect(ros.propertyValidator('profile', ros.validateString)(properties.profile));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -909,7 +910,6 @@ function RosKubernetesClustersPropsValidator(properties: any): ros.ValidationRes
         }));
     }
     errors.collect(ros.propertyValidator('refreshOptions', ros.validateString)(properties.refreshOptions));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
     return errors.wrap('supplied properties not correct for "RosKubernetesClustersProps"');
 }
 
@@ -936,7 +936,7 @@ function rosKubernetesClustersPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::KubernetesClusters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CS::KubernetesClusters`, which is used to query Container Service for Kubernetes (ACK) clusters.
  * @Note This class does not contain additional functions, so it is recommended to use the `KubernetesClusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
  */

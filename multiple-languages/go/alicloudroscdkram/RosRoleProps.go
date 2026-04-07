@@ -13,5 +13,6 @@ type RosRoleProps struct {
 	MaxSessionDuration interface{} `field:"optional" json:"maxSessionDuration" yaml:"maxSessionDuration"`
 	Policies interface{} `field:"optional" json:"policies" yaml:"policies"`
 	PolicyAttachments interface{} `field:"optional" json:"policyAttachments" yaml:"policyAttachments"`
+	Tags *[]*RosRole_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

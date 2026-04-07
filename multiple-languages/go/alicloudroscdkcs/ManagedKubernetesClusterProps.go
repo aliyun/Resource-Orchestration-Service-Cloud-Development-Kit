@@ -19,6 +19,8 @@ type ManagedKubernetesClusterProps struct {
 	// Log service: Optional. If the log service is not enabled, the cluster audit function cannot be used.
 	// Ingress: The installation of the Ingress component is enabled by default.
 	Addons interface{} `field:"optional" json:"addons" yaml:"addons"`
+	// Property autoMode: Whether to enable auto scaling.
+	AutoMode interface{} `field:"optional" json:"autoMode" yaml:"autoMode"`
 	// Property cloudMonitorFlags: Whether to install the cloud monitoring plugin: true: indicates installation false: Do not install Default to false.
 	CloudMonitorFlags interface{} `field:"optional" json:"cloudMonitorFlags" yaml:"cloudMonitorFlags"`
 	// Property clusterSpec: The managed cluster spec.
@@ -34,7 +36,7 @@ type ManagedKubernetesClusterProps struct {
 	ContainerCidr interface{} `field:"optional" json:"containerCidr" yaml:"containerCidr"`
 	// Property controlPlaneLogComponents: List of target components for which logs need to be collected.
 	//
-	// Supports apiserver, kcm, scheduler, ccm and controlplane-events.
+	// Supports apiserver, kcm, scheduler, ccm, controlplane-events, ack-goatscaler, coredns, cluster-autoscaler, kuberay-operator, gatekepper, vk, istio, cluster-operator, application-controller.
 	ControlPlaneLogComponents interface{} `field:"optional" json:"controlPlaneLogComponents" yaml:"controlPlaneLogComponents"`
 	// Property controlPlaneLogProject: Control plane log project.
 	//

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Datalakeformation
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::Catalog`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::Catalog`The , which type creates a data catalog in Data Lake Formation.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Catalog` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-catalog

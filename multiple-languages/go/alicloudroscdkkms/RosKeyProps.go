@@ -16,5 +16,6 @@ type RosKeyProps struct {
 	Policy interface{} `field:"optional" json:"policy" yaml:"policy"`
 	ProtectionLevel interface{} `field:"optional" json:"protectionLevel" yaml:"protectionLevel"`
 	RotationInterval interface{} `field:"optional" json:"rotationInterval" yaml:"rotationInterval"`
+	Tags *[]*RosKey_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 }
 

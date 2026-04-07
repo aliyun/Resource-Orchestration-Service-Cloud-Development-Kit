@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eip
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.048Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.998Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPProps.Jsii$Proxy.class)
 public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
@@ -42,7 +42,19 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceId() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIpAddress() {
         return null;
     }
 
@@ -121,7 +133,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object deletionProtection;
         java.lang.Object description;
         java.lang.Object instanceChargeType;
+        java.lang.Object instanceId;
         java.lang.Object internetChargeType;
+        java.lang.Object ipAddress;
         java.lang.Object isp;
         java.lang.Object name;
         java.lang.Object netmode;
@@ -234,6 +248,26 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         /**
+         * Sets the value of {@link RosEIPProps#getInstanceId}
+         * @param instanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceId(java.lang.String instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getInstanceId}
+         * @param instanceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder instanceId(com.aliyun.ros.cdk.core.IResolvable instanceId) {
+            this.instanceId = instanceId;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPProps#getInternetChargeType}
          * @param internetChargeType the value to be set.
          * @return {@code this}
@@ -250,6 +284,26 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.internetChargeType = internetChargeType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getIpAddress}
+         * @param ipAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipAddress(java.lang.String ipAddress) {
+            this.ipAddress = ipAddress;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPProps#getIpAddress}
+         * @param ipAddress the value to be set.
+         * @return {@code this}
+         */
+        public Builder ipAddress(com.aliyun.ros.cdk.core.IResolvable ipAddress) {
+            this.ipAddress = ipAddress;
             return this;
         }
 
@@ -465,7 +519,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object deletionProtection;
         private final java.lang.Object description;
         private final java.lang.Object instanceChargeType;
+        private final java.lang.Object instanceId;
         private final java.lang.Object internetChargeType;
+        private final java.lang.Object ipAddress;
         private final java.lang.Object isp;
         private final java.lang.Object name;
         private final java.lang.Object netmode;
@@ -488,7 +544,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = software.amazon.jsii.Kernel.get(this, "deletionProtection", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.instanceChargeType = software.amazon.jsii.Kernel.get(this, "instanceChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.instanceId = software.amazon.jsii.Kernel.get(this, "instanceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.ipAddress = software.amazon.jsii.Kernel.get(this, "ipAddress", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.name = software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -512,7 +570,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             this.deletionProtection = builder.deletionProtection;
             this.description = builder.description;
             this.instanceChargeType = builder.instanceChargeType;
+            this.instanceId = builder.instanceId;
             this.internetChargeType = builder.internetChargeType;
+            this.ipAddress = builder.ipAddress;
             this.isp = builder.isp;
             this.name = builder.name;
             this.netmode = builder.netmode;
@@ -551,8 +611,18 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
         }
 
         @Override
+        public final java.lang.Object getInstanceId() {
+            return this.instanceId;
+        }
+
+        @Override
         public final java.lang.Object getInternetChargeType() {
             return this.internetChargeType;
+        }
+
+        @Override
+        public final java.lang.Object getIpAddress() {
+            return this.ipAddress;
         }
 
         @Override
@@ -626,8 +696,14 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getInstanceChargeType() != null) {
                 data.set("instanceChargeType", om.valueToTree(this.getInstanceChargeType()));
             }
+            if (this.getInstanceId() != null) {
+                data.set("instanceId", om.valueToTree(this.getInstanceId()));
+            }
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
+            }
+            if (this.getIpAddress() != null) {
+                data.set("ipAddress", om.valueToTree(this.getIpAddress()));
             }
             if (this.getIsp() != null) {
                 data.set("isp", om.valueToTree(this.getIsp()));
@@ -682,7 +758,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             if (this.deletionProtection != null ? !this.deletionProtection.equals(that.deletionProtection) : that.deletionProtection != null) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.instanceChargeType != null ? !this.instanceChargeType.equals(that.instanceChargeType) : that.instanceChargeType != null) return false;
+            if (this.instanceId != null ? !this.instanceId.equals(that.instanceId) : that.instanceId != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
+            if (this.ipAddress != null ? !this.ipAddress.equals(that.ipAddress) : that.ipAddress != null) return false;
             if (this.isp != null ? !this.isp.equals(that.isp) : that.isp != null) return false;
             if (this.name != null ? !this.name.equals(that.name) : that.name != null) return false;
             if (this.netmode != null ? !this.netmode.equals(that.netmode) : that.netmode != null) return false;
@@ -702,7 +780,9 @@ public interface RosEIPProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.deletionProtection != null ? this.deletionProtection.hashCode() : 0);
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.instanceChargeType != null ? this.instanceChargeType.hashCode() : 0);
+            result = 31 * result + (this.instanceId != null ? this.instanceId.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
+            result = 31 * result + (this.ipAddress != null ? this.ipAddress.hashCode() : 0);
             result = 31 * result + (this.isp != null ? this.isp.hashCode() : 0);
             result = 31 * result + (this.name != null ? this.name.hashCode() : 0);
             result = 31 * result + (this.netmode != null ? this.netmode.hashCode() : 0);

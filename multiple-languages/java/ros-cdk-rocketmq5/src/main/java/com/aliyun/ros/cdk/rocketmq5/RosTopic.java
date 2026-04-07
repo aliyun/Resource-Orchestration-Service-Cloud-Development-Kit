@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq5;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Topic</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Topic</code>, which is used to create a topic for a Message Queue for Apache RocketMQ V5.0 instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:59.944Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.RosTopic")
 public class RosTopic extends com.aliyun.ros.cdk.core.RosResource {
 

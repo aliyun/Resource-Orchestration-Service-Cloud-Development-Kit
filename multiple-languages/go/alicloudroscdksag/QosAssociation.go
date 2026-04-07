@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosAssociation`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosAssociation`, which is used to associate a quality of service (QoS) policy with a Smart Access Gateway (SAG) instance.
 type QosAssociation interface {
 	alicloudroscdkcore.Resource
 	IQosAssociation

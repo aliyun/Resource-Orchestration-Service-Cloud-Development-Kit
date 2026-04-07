@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.esa;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::Kv</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::Kv</code>Use the , which resource type to set a single key-value pair in a KV bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:24:56.584Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.096Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.Kv")
 public class Kv extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.esa.IKv {
 
@@ -185,24 +185,24 @@ public class Kv extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.r
         }
 
         /**
-         * Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000).
+         * Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000).
          * <p>
          * If the content is larger than 2 MB, call [PutKvWithHighCapacity] https://www.alibabacloud.com/help/en/doc-detail/2850486.html.
          * <p>
          * @return {@code this}
-         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000). This parameter is required.
+         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000). This parameter is required.
          */
         public Builder expiration(final java.lang.Number expiration) {
             this.props.expiration(expiration);
             return this;
         }
         /**
-         * Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000).
+         * Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000).
          * <p>
          * If the content is larger than 2 MB, call [PutKvWithHighCapacity] https://www.alibabacloud.com/help/en/doc-detail/2850486.html.
          * <p>
          * @return {@code this}
-         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 × 1000 × 1000). This parameter is required.
+         * @param expiration Property expiration: The content of the key, which can be up to 2 MB (2 Ã 1000 Ã 1000). This parameter is required.
          */
         public Builder expiration(final com.aliyun.ros.cdk.core.IResolvable expiration) {
             this.props.expiration(expiration);

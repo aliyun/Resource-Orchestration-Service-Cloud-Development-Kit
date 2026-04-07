@@ -100,7 +100,7 @@ export interface ISecret extends ros.IResource {
     readonly attrUpdateTime: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secret`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secret`, which is used to query the information about a secret.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecret`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secret
  */

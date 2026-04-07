@@ -7,8 +7,6 @@ package alicloudroscdkcen
 type TransitRouterVpnAttachmentProps struct {
 	// Property vpnId: IPsec connection ID.
 	VpnId interface{} `field:"required" json:"vpnId" yaml:"vpnId"`
-	// Property zoneId: Availability zone ID in the current region.
-	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
 	// Property autoPublishRouteEnabled: Whether to allow forwarding router instances to automatically publish route entries to IPsec connections.
 	//
 	// Default is true.
@@ -33,5 +31,7 @@ type TransitRouterVpnAttachmentProps struct {
 	TransitRouterId interface{} `field:"optional" json:"transitRouterId" yaml:"transitRouterId"`
 	// Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
 	VpnOwnerId interface{} `field:"optional" json:"vpnOwnerId" yaml:"vpnOwnerId"`
+	// Property zoneId: Availability zone ID in the current region.
+	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
 }
 

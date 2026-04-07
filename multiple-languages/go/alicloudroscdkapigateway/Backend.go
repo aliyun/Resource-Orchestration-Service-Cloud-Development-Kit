@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Backend`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Backend`, which is used to create a backend service.
 type Backend interface {
 	alicloudroscdkcore.Resource
 	IBackend

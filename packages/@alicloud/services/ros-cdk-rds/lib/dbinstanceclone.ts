@@ -307,7 +307,7 @@ export interface IDBInstanceClone extends ros.IResource {
     readonly attrPublicPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RDS::DBInstanceClone`, which is used to restore historical data of an instance to a new instance. The new instance is called the cloned instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstanceClone`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
@@ -366,37 +366,37 @@ export class DBInstanceClone extends ros.Resource implements IDBInstanceClone {
 
         const rosDBInstanceClone = new RosDBInstanceClone(this, id,  {
             periodType: props.periodType === undefined || props.periodType === null ? 'Month' : props.periodType,
-            category: props.category,
             privateIpAddress: props.privateIpAddress,
+            category: props.category,
             dedicatedHostGroupId: props.dedicatedHostGroupId,
             port: props.port,
             backupId: props.backupId,
-            instanceNetworkType: props.instanceNetworkType,
             restoreTime: props.restoreTime,
+            instanceNetworkType: props.instanceNetworkType,
             preferredBackupPeriod: props.preferredBackupPeriod,
             dbNames: props.dbNames,
             slaveZoneIds: props.slaveZoneIds,
-            dbInstanceId: props.dbInstanceId,
             securityIpList: props.securityIpList,
+            dbInstanceId: props.dbInstanceId,
             dbInstanceStorage: props.dbInstanceStorage,
             backupType: props.backupType,
             dbMappings: props.dbMappings,
-            connectionStringPrefix: props.connectionStringPrefix,
             maintainTime: props.maintainTime,
+            connectionStringPrefix: props.connectionStringPrefix,
             tags: props.tags,
             dbInstanceDescription: props.dbInstanceDescription,
             zoneId: props.zoneId,
             dbInstanceClass: props.dbInstanceClass,
             allocatePublicConnection: props.allocatePublicConnection,
-            preferredBackupTime: props.preferredBackupTime,
             vSwitchId: props.vSwitchId,
             securityGroupId: props.securityGroupId,
+            preferredBackupTime: props.preferredBackupTime,
             period: props.period === undefined || props.period === null ? 1 : props.period,
             payType: props.payType === undefined || props.payType === null ? 'Postpaid' : props.payType,
             dbInstanceStorageType: props.dbInstanceStorageType,
             connectionStringType: props.connectionStringType === undefined || props.connectionStringType === null ? 'Inner' : props.connectionStringType,
-            restoreTable: props.restoreTable,
             masterUserPassword: props.masterUserPassword,
+            restoreTable: props.restoreTable,
             masterUserType: props.masterUserType === undefined || props.masterUserType === null ? 'Normal' : props.masterUserType,
             vpcId: props.vpcId,
             sslSetting: props.sslSetting === undefined || props.sslSetting === null ? 'Disabled' : props.sslSetting,

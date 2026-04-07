@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2025-12-10T08:25:01.050Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.000Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosEIPSegmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosEIPSegmentProps.Jsii$Proxy.class)
 public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,6 +28,12 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
 
     /**
      */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
+        return null;
+    }
+
+    /**
+     */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetmode() {
         return null;
     }
@@ -35,6 +41,12 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
     /**
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
+        return null;
+    }
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
         return null;
     }
 
@@ -51,8 +63,10 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
         java.lang.Object eipMask;
         java.lang.Object bandwidth;
         java.lang.Object internetChargeType;
+        java.lang.Object isp;
         java.lang.Object netmode;
         java.lang.Object resourceGroupId;
+        java.lang.Object zone;
 
         /**
          * Sets the value of {@link RosEIPSegmentProps#getEipMask}
@@ -115,6 +129,26 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosEIPSegmentProps#getIsp}
+         * @param isp the value to be set.
+         * @return {@code this}
+         */
+        public Builder isp(java.lang.String isp) {
+            this.isp = isp;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPSegmentProps#getIsp}
+         * @param isp the value to be set.
+         * @return {@code this}
+         */
+        public Builder isp(com.aliyun.ros.cdk.core.IResolvable isp) {
+            this.isp = isp;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosEIPSegmentProps#getNetmode}
          * @param netmode the value to be set.
          * @return {@code this}
@@ -155,6 +189,26 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         /**
+         * Sets the value of {@link RosEIPSegmentProps#getZone}
+         * @param zone the value to be set.
+         * @return {@code this}
+         */
+        public Builder zone(java.lang.String zone) {
+            this.zone = zone;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEIPSegmentProps#getZone}
+         * @param zone the value to be set.
+         * @return {@code this}
+         */
+        public Builder zone(com.aliyun.ros.cdk.core.IResolvable zone) {
+            this.zone = zone;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosEIPSegmentProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -173,8 +227,10 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
         private final java.lang.Object eipMask;
         private final java.lang.Object bandwidth;
         private final java.lang.Object internetChargeType;
+        private final java.lang.Object isp;
         private final java.lang.Object netmode;
         private final java.lang.Object resourceGroupId;
+        private final java.lang.Object zone;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -185,8 +241,10 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
             this.eipMask = software.amazon.jsii.Kernel.get(this, "eipMask", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.bandwidth = software.amazon.jsii.Kernel.get(this, "bandwidth", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.internetChargeType = software.amazon.jsii.Kernel.get(this, "internetChargeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.isp = software.amazon.jsii.Kernel.get(this, "isp", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.netmode = software.amazon.jsii.Kernel.get(this, "netmode", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.zone = software.amazon.jsii.Kernel.get(this, "zone", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -197,8 +255,10 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
             this.eipMask = java.util.Objects.requireNonNull(builder.eipMask, "eipMask is required");
             this.bandwidth = builder.bandwidth;
             this.internetChargeType = builder.internetChargeType;
+            this.isp = builder.isp;
             this.netmode = builder.netmode;
             this.resourceGroupId = builder.resourceGroupId;
+            this.zone = builder.zone;
         }
 
         @Override
@@ -217,6 +277,11 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
         }
 
         @Override
+        public final java.lang.Object getIsp() {
+            return this.isp;
+        }
+
+        @Override
         public final java.lang.Object getNetmode() {
             return this.netmode;
         }
@@ -224,6 +289,11 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
         @Override
         public final java.lang.Object getResourceGroupId() {
             return this.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getZone() {
+            return this.zone;
         }
 
         @Override
@@ -239,11 +309,17 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
             if (this.getInternetChargeType() != null) {
                 data.set("internetChargeType", om.valueToTree(this.getInternetChargeType()));
             }
+            if (this.getIsp() != null) {
+                data.set("isp", om.valueToTree(this.getIsp()));
+            }
             if (this.getNetmode() != null) {
                 data.set("netmode", om.valueToTree(this.getNetmode()));
             }
             if (this.getResourceGroupId() != null) {
                 data.set("resourceGroupId", om.valueToTree(this.getResourceGroupId()));
+            }
+            if (this.getZone() != null) {
+                data.set("zone", om.valueToTree(this.getZone()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -266,8 +342,10 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
             if (!eipMask.equals(that.eipMask)) return false;
             if (this.bandwidth != null ? !this.bandwidth.equals(that.bandwidth) : that.bandwidth != null) return false;
             if (this.internetChargeType != null ? !this.internetChargeType.equals(that.internetChargeType) : that.internetChargeType != null) return false;
+            if (this.isp != null ? !this.isp.equals(that.isp) : that.isp != null) return false;
             if (this.netmode != null ? !this.netmode.equals(that.netmode) : that.netmode != null) return false;
-            return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
+            if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
+            return this.zone != null ? this.zone.equals(that.zone) : that.zone == null;
         }
 
         @Override
@@ -275,8 +353,10 @@ public interface RosEIPSegmentProps extends software.amazon.jsii.JsiiSerializabl
             int result = this.eipMask.hashCode();
             result = 31 * result + (this.bandwidth != null ? this.bandwidth.hashCode() : 0);
             result = 31 * result + (this.internetChargeType != null ? this.internetChargeType.hashCode() : 0);
+            result = 31 * result + (this.isp != null ? this.isp.hashCode() : 0);
             result = 31 * result + (this.netmode != null ? this.netmode.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
+            result = 31 * result + (this.zone != null ? this.zone.hashCode() : 0);
             return result;
         }
     }

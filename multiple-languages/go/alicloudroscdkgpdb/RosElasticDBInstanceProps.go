@@ -12,6 +12,7 @@ type RosElasticDBInstanceProps struct {
 	StorageSize interface{} `field:"required" json:"storageSize" yaml:"storageSize"`
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
+	BackupId interface{} `field:"optional" json:"backupId" yaml:"backupId"`
 	DbInstanceCategory interface{} `field:"optional" json:"dbInstanceCategory" yaml:"dbInstanceCategory"`
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
 	DbInstanceMode interface{} `field:"optional" json:"dbInstanceMode" yaml:"dbInstanceMode"`
@@ -23,6 +24,7 @@ type RosElasticDBInstanceProps struct {
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	PrivateIpAddress interface{} `field:"optional" json:"privateIpAddress" yaml:"privateIpAddress"`
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
+	SrcDbInstanceName interface{} `field:"optional" json:"srcDbInstanceName" yaml:"srcDbInstanceName"`
 	Tags *[]*RosElasticDBInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 }

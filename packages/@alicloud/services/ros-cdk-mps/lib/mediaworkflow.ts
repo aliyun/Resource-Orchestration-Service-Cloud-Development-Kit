@@ -68,7 +68,7 @@ export interface IMediaWorkflow extends ros.IResource {
     readonly attrTriggerMode: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MPS::MediaWorkflow`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MPS::MediaWorkflow`, which is used to add a media workflow.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMediaWorkflow`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-mediaworkflow
  */
@@ -121,8 +121,8 @@ export class MediaWorkflow extends ros.Resource implements IMediaWorkflow {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosMediaWorkflow = new RosMediaWorkflow(this, id,  {
-            triggerMode: props.triggerMode,
             topology: props.topology,
+            triggerMode: props.triggerMode,
             name: props.name,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosMediaWorkflow;

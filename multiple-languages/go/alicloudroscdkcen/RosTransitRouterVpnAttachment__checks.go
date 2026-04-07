@@ -427,9 +427,6 @@ func (j *jsiiProxy_RosTransitRouterVpnAttachment) validateSetVpnOwnerIdParameter
 }
 
 func (j *jsiiProxy_RosTransitRouterVpnAttachment) validateSetZoneIdParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
 	switch val.(type) {
 	case *string:
 		// ok
