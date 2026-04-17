@@ -4316,7 +4316,7 @@ class ModelVersionProps:
         :param labels: Property labels: List of model version labels.
         :param metrics: Property metrics: The metrics for the model. The length after serialization is limited to 8,192. Example: { "Results": [{ "Dataset": { "DatasetId": "d-sdkjanksaklerhfd" }, "Metrics": { "cer": 0.175 } }, { "Dataset": { "Uri": "oss://xxxx/" }, "Metrics": { "cer": 0.172 } }] }
         :param options: Property options: The extended field. This is a JSON string.
-        :param source_id: Property sourceId: Source ID. - When the source type is Custom, this field is not restricted. - When the source is PAIFlow or TrainingService, the format is ''' region=<region_id>,workspaceId=<workspace_id>,kind=,id= ''' Among them: - region is the Alibaba Cloud region ID. - workspaceId indicates the workspace ID. - kind: is a type. Value: PipelineRun(PAIFlow workflow);ServiceJob (training service). - id: is a unique identifier.
+        :param source_id: Property sourceId: Source ID. - When the source type is Custom, this field is not restricted. - When the source is PAIFlow or TrainingService, the format is: region=<region_id>,workspaceId=<workspace_id>,kind=,id= Among them: - region is the Alibaba Cloud region ID. - workspaceId indicates the workspace ID. - kind: is a type. Value: PipelineRun(PAIFlow workflow);ServiceJob (training service). - id: is a unique identifier.
         :param source_type: Property sourceType: Model source type, possible values: - Custom: Custom. - PAIFlow:PAI workflow. - TrainingService:PAI training service.
         :param training_spec: Property trainingSpec: Training configuration. Configuration for fine-tuning, incremental training.
         :param version_description: Property versionDescription: Model version description.
@@ -4480,10 +4480,8 @@ class ModelVersionProps:
         '''Property sourceId: Source ID.
 
         - When the source type is Custom, this field is not restricted.
-        - When the source is PAIFlow or TrainingService, the format is
-          '''
+        - When the source is PAIFlow or TrainingService, the format is:
           region=<region_id>,workspaceId=<workspace_id>,kind=,id=
-          '''
           Among them:
         - region is the Alibaba Cloud region ID.
         - workspaceId indicates the workspace ID.
@@ -4970,16 +4968,16 @@ class RosCodeSourceProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-codesource
 
-        :param accessibility: 
-        :param code_repo: 
-        :param display_name: 
-        :param mount_path: 
-        :param workspace_id: 
-        :param code_branch: 
-        :param code_commit: 
-        :param code_repo_access_token: 
-        :param code_repo_user_name: 
-        :param description: 
+        :param accessibility:
+        :param code_repo:
+        :param display_name:
+        :param mount_path:
+        :param workspace_id:
+        :param code_branch:
+        :param code_commit:
+        :param code_repo_access_token:
+        :param code_repo_user_name:
+        :param description:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__3f0f59b53aa977cf83c047ae88363c5355326156f1cd88d115ff8377e463a13b)
@@ -5643,17 +5641,17 @@ class RosDatasetProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
 
-        :param dataset_name: 
-        :param data_source_type: 
-        :param property: 
-        :param uri: 
-        :param workspace_id: 
-        :param accessibility: 
-        :param data_type: 
-        :param description: 
-        :param options: 
-        :param source_id: 
-        :param source_type: 
+        :param dataset_name:
+        :param data_source_type:
+        :param property:
+        :param uri:
+        :param workspace_id:
+        :param accessibility:
+        :param data_type:
+        :param description:
+        :param options:
+        :param source_id:
+        :param source_type:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__076d8dc761a75fae8e99c1dddcd8ddaab1c07c88c37496930b41fa8ba32b4a80)
@@ -6213,8 +6211,8 @@ class RosDatasetVersion(
             value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
         ) -> None:
             '''
-            :param key: 
-            :param value: 
+            :param key:
+            :param value:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__6028368af8ae00c1f561c515b2c926b57b021b3b47badca088d27b570e8c1fd1)
@@ -6294,17 +6292,17 @@ class RosDatasetVersionProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-datasetversion
 
-        :param dataset_id: 
-        :param data_source_type: 
-        :param property: 
-        :param uri: 
-        :param data_count: 
-        :param data_size: 
-        :param description: 
-        :param labels: 
-        :param options: 
-        :param source_id: 
-        :param source_type: 
+        :param dataset_id:
+        :param data_source_type:
+        :param property:
+        :param uri:
+        :param data_count:
+        :param data_size:
+        :param description:
+        :param labels:
+        :param options:
+        :param source_id:
+        :param source_type:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__52d61e4be1962dd5557fbd3cf0931100e287801303c41cffc657687ed6cb5462)
@@ -6761,10 +6759,10 @@ class RosExperimentProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
 
-        :param artifact_uri: 
-        :param experiment_name: 
-        :param workspace_id: 
-        :param accessibility: 
+        :param artifact_uri:
+        :param experiment_name:
+        :param workspace_id:
+        :param accessibility:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__4a00e9e8d9dcc763f031d400b3189a79b10327fea87966d07e1a5b17269de00d)
@@ -7063,8 +7061,8 @@ class RosImage(
             value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
         ) -> None:
             '''
-            :param key: 
-            :param value: 
+            :param key:
+            :param value:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__f626cdca5e98f28787d92ef4b5607dfc7161b5936270ce6c6874b36e677c5e9d)
@@ -7132,11 +7130,11 @@ class RosImageProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-image
 
-        :param image_name: 
-        :param image_uri: 
-        :param accessibility: 
-        :param labels: 
-        :param workspace_id: 
+        :param image_name:
+        :param image_uri:
+        :param accessibility:
+        :param labels:
+        :param workspace_id:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__710e6323d6c5726a169098fa8ca56db1281d6d5ac80b549792098ea09a69e5d1)
@@ -7423,9 +7421,9 @@ class RosMemberProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-member
 
-        :param roles: 
-        :param user_id: 
-        :param workspace_id: 
+        :param roles:
+        :param user_id:
+        :param workspace_id:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__e9d4097fd1c1a9100568251dbe2b50eab1f591ff26a12ea61dfba93240005e49)
@@ -7941,10 +7939,8 @@ class RosModelVersion(
         sourceId: Source ID.
 
         - When the source type is Custom, this field is not restricted.
-        - When the source is PAIFlow or TrainingService, the format is
-        '''
+        - When the source is PAIFlow or TrainingService, the format is:
         region=<region_id>,workspaceId=<workspace_id>,kind=,id=
-        '''
         Among them:
 
         - region is the Alibaba Cloud region ID.
@@ -8063,8 +8059,8 @@ class RosModelVersion(
             value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
         ) -> None:
             '''
-            :param key: 
-            :param value: 
+            :param key:
+            :param value:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__2349f1a39b655f1aedae752cfa9e6bce2cb42877061eb7c5e473c7e07d777dc4)
@@ -8153,21 +8149,21 @@ class RosModelVersionProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-modelversion
 
-        :param model_id: 
-        :param uri: 
-        :param approval_status: 
-        :param extra_info: 
-        :param format_type: 
-        :param framework_type: 
-        :param inference_spec: 
-        :param labels: 
-        :param metrics: 
-        :param options: 
-        :param source_id: 
-        :param source_type: 
-        :param training_spec: 
-        :param version_description: 
-        :param version_name: 
+        :param model_id:
+        :param uri:
+        :param approval_status:
+        :param extra_info:
+        :param format_type:
+        :param framework_type:
+        :param inference_spec:
+        :param labels:
+        :param metrics:
+        :param options:
+        :param source_id:
+        :param source_type:
+        :param training_spec:
+        :param version_description:
+        :param version_name:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__d06650c9233fb168bd7de6f8b5065764981a602d51ded96bf281f6484808ec6a)
@@ -8364,10 +8360,8 @@ class RosModelVersionProps:
         sourceId: Source ID.
 
         - When the source type is Custom, this field is not restricted.
-        - When the source is PAIFlow or TrainingService, the format is
-        '''
+        - When the source is PAIFlow or TrainingService, the format is:
         region=<region_id>,workspaceId=<workspace_id>,kind=,id=
-        '''
         Among them:
 
         - region is the Alibaba Cloud region ID.
@@ -8724,10 +8718,10 @@ class RosRunProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
 
-        :param experiment_id: 
-        :param run_name: 
-        :param source_id: 
-        :param source_type: 
+        :param experiment_id:
+        :param run_name:
+        :param source_id:
+        :param source_type:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__f95a83e0380bec6290bb2fcd4bd51f640cbb4574d33db952725e075768c2f09c)
@@ -9198,9 +9192,9 @@ class RosServiceProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-service
 
-        :param service_config: 
-        :param develop: 
-        :param labels: 
+        :param service_config:
+        :param develop:
+        :param labels:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__d1680fcf6acd6bbc21c74de73de11722e3403f1fc35a71071a0ab876cddd0326)
@@ -9424,7 +9418,7 @@ class RosUserConfig(
             config_value: typing.Optional[typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable]] = None,
         ) -> None:
             '''
-            :param config_value: 
+            :param config_value:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__91eadb0aaf181478f29d3e4b92da511835afa63134d88a21460f41bcf338a7c8)
@@ -9476,9 +9470,9 @@ class RosUserConfigProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-userconfig
 
-        :param category_name: 
-        :param config_key: 
-        :param configs: 
+        :param category_name:
+        :param config_key:
+        :param configs:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__ceb9bfb962625231bee06de20d6a7460a62d53fa7a0cc48861ac01fb75672594)
@@ -9807,10 +9801,10 @@ class RosWorkspaceProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
 
-        :param description: 
-        :param env_types: 
-        :param workspace_name: 
-        :param display_name: 
+        :param description:
+        :param env_types:
+        :param workspace_name:
+        :param display_name:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__b76973ee1489193047d033ef3c509ef4548f4a0af708fb448aeb4391b6e0ec60)
@@ -10425,10 +10419,10 @@ class RosWorkspaceResourceDlc(
             spec: typing.Optional[typing.Union[_ros_cdk_core_7adfd82f.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         ) -> None:
             '''
-            :param env_type: 
-            :param workspace_resource_name: 
-            :param workspace_resource_workspace_id: 
-            :param spec: 
+            :param env_type:
+            :param workspace_resource_name:
+            :param workspace_resource_workspace_id:
+            :param spec:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__3b63c737a049056c6be56bdb83efec08ab424dc639b21a4ad5124e241f87be64)
@@ -10529,11 +10523,11 @@ class RosWorkspaceResourceDlcProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcedlc
 
-        :param group_name: 
-        :param resources: 
-        :param workspace_id: 
-        :param is_default: 
-        :param option: 
+        :param group_name:
+        :param resources:
+        :param workspace_id:
+        :param is_default:
+        :param option:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__ebe3af48413265457d30902f743d3ada3ff1f69c0081c3fe7bf7d63bc0a3ca88)
@@ -10849,10 +10843,10 @@ class RosWorkspaceResourceFlink(
             spec: typing.Optional[typing.Union[_ros_cdk_core_7adfd82f.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         ) -> None:
             '''
-            :param env_type: 
-            :param workspace_resource_name: 
-            :param workspace_resource_workspace_id: 
-            :param spec: 
+            :param env_type:
+            :param workspace_resource_name:
+            :param workspace_resource_workspace_id:
+            :param spec:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__89ca36c747cdfe0629d41004d514da825f4cecde19a50efd3dad85f13cc21e5d)
@@ -10953,11 +10947,11 @@ class RosWorkspaceResourceFlinkProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
 
-        :param group_name: 
-        :param resources: 
-        :param workspace_id: 
-        :param is_default: 
-        :param option: 
+        :param group_name:
+        :param resources:
+        :param workspace_id:
+        :param is_default:
+        :param option:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__57bfe40c04abe5e6fe19e91814ee8956f205f1f3fa2b27ecfbe7b2f455a8f03e)
@@ -11265,7 +11259,7 @@ class RosWorkspaceResourceMaxCompute(
             quota_id: typing.Union[builtins.str, _ros_cdk_core_7adfd82f.IResolvable],
         ) -> None:
             '''
-            :param quota_id: 
+            :param quota_id:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__a70ae00332f2bfed57c993bdf06e7efc8435125887165aa32a8edcb286a675d1)
@@ -11321,11 +11315,11 @@ class RosWorkspaceResourceMaxCompute(
             spec: typing.Optional[typing.Union[_ros_cdk_core_7adfd82f.IResolvable, typing.Mapping[builtins.str, typing.Any]]] = None,
         ) -> None:
             '''
-            :param env_type: 
-            :param workspace_resource_name: 
-            :param workspace_resource_workspace_id: 
-            :param quotas: 
-            :param spec: 
+            :param env_type:
+            :param workspace_resource_name:
+            :param workspace_resource_workspace_id:
+            :param quotas:
+            :param spec:
             '''
             if __debug__:
                 type_hints = typing.get_type_hints(_typecheckingstub__6957cb7eb7fe278e12e47aee5f6cd93edb8f6a9976848a38f6ab123bd66380b6)
@@ -11439,11 +11433,11 @@ class RosWorkspaceResourceMaxComputeProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
 
-        :param group_name: 
-        :param resources: 
-        :param workspace_id: 
-        :param is_default: 
-        :param option: 
+        :param group_name:
+        :param resources:
+        :param workspace_id:
+        :param is_default:
+        :param option:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__79d876bae6e4a2d418971fcf603e4262414b3c2431be6929353adf44d387cdb3)
@@ -11561,13 +11555,13 @@ class RosWorkspaceResourceProps:
 
         See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresource
 
-        :param env_type: 
-        :param resource_type: 
-        :param workspace_id: 
-        :param workspace_resource_name: 
-        :param group_name: 
-        :param is_default: 
-        :param spec: 
+        :param env_type:
+        :param resource_type:
+        :param workspace_id:
+        :param workspace_resource_name:
+        :param group_name:
+        :param is_default:
+        :param spec:
         '''
         if __debug__:
             type_hints = typing.get_type_hints(_typecheckingstub__fe31769a070ebc84838752e4eb193b66eae28b1c6e2dbd1252f343b17cfa9c2d)
