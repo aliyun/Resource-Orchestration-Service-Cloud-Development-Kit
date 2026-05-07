@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cdn.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::CDN::Domains`, which is used to query the basic information about created accelerated domain names.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::CDN::Domains`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cdn-domains

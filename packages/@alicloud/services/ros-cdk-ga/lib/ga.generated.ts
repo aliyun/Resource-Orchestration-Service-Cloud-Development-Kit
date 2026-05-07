@@ -1955,7 +1955,7 @@ function rosBasicAcceleratorIpEndpointRelationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`, which is used to create a mapping between an accelerated IP address and an endpoint for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAcceleratorIpEndpointRelation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicacceleratoripendpointrelation
  */
@@ -2147,7 +2147,7 @@ function rosBasicEndpointPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`, which is used to create an endpoint for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpoint`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpoint
  */
@@ -2550,7 +2550,7 @@ function rosBasicIpSetPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`, which is used to create an acceleration region for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicIpSet`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicIpSet` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicipset
  */
@@ -4825,7 +4825,7 @@ function rosLogStoreToEndpointGroupAttachmentPropsToRosTemplate(properties: any,
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`, which is used to associate a Simple Log Service (SLS) Logstore with endpoint groups.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogStoreToEndpointGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-logstoretoendpointgroupattachment
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpcs`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::Vpcs`, which is used to query created virtual private clouds (VPCs).
 type RosVpcs interface {
 	alicloudroscdkcore.RosResource
 	AttrVpcIds() alicloudroscdkcore.IResolvable

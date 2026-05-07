@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::SecurityPolicy</code>, which is used to create a custom security policy for a TCP/SSL listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.100Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.080Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.SecurityPolicy")
 public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nlb.ISecurityPolicy {
 

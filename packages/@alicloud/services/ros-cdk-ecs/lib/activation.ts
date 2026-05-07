@@ -77,7 +77,7 @@ export interface IActivation extends ros.IResource {
     readonly attrRegisteredCount: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Activation`, which is used to create an activation code.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Activation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosActivation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-activation
  */

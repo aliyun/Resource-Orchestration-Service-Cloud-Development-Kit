@@ -1,0 +1,108 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosAccount } from './rocketmq5.generated';
+// Generated from the AliCloud ROS Resource Specification
+export { RosAccount as AccountProperty };
+
+/**
+ * Properties for defining a `Account`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-account
+ */
+export interface AccountProps {
+
+    /**
+     * Property instanceId: The unifed ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * Property password: Account password
+     * Length Limit: 3~64 characters.
+     */
+    readonly password: string | ros.IResolvable;
+
+    /**
+     * Property username: Account Name
+     * Length Limit: 3~64 characters
+     * Character limit: Supports letters a ~ z or A ~ Z, numbers 0~9, underscore (_) and dash (-).
+     */
+    readonly username: string | ros.IResolvable;
+
+    /**
+     * Property accountStatus: Account Status
+     * DISABLE: DISABLE.
+     * ENABLE: Enabled.
+     */
+    readonly accountStatus?: string | ros.IResolvable;
+}
+
+/**
+ * Represents a `Account`.
+ */
+export interface IAccount extends ros.IResource {
+    readonly props: AccountProps;
+
+    /**
+     * Attribute AccountStatus: Account Status.
+     */
+    readonly attrAccountStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute Password: Account password.
+     */
+    readonly attrPassword: ros.IResolvable | string;
+
+    /**
+     * Attribute Username: Account Name.
+     */
+    readonly attrUsername: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ROCKETMQ5::Account`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-account
+ */
+export class Account extends ros.Resource implements IAccount {
+    protected scope: ros.Construct;
+    protected id: string;
+    public readonly props: AccountProps;
+    protected enableResourcePropertyConstraint: boolean;
+
+    /**
+     * Attribute AccountStatus: Account Status.
+     */
+    public readonly attrAccountStatus: ros.IResolvable | string;
+
+    /**
+     * Attribute Password: Account password.
+     */
+    public readonly attrPassword: ros.IResolvable | string;
+
+    /**
+     * Attribute Username: Account Name.
+     */
+    public readonly attrUsername: ros.IResolvable | string;
+
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: AccountProps, enableResourcePropertyConstraint:boolean = true) {
+        super(scope, id);
+        this.scope = scope;
+        this.id = id;
+        this.props = props;
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+
+        const rosAccount = new RosAccount(this, id,  {
+            accountStatus: props.accountStatus,
+            instanceId: props.instanceId,
+            username: props.username,
+            password: props.password,
+        }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
+        this.resource = rosAccount;
+        this.attrAccountStatus = rosAccount.attrAccountStatus;
+        this.attrPassword = rosAccount.attrPassword;
+        this.attrUsername = rosAccount.attrUsername;
+    }
+}

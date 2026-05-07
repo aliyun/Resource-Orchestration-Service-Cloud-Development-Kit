@@ -19,6 +19,7 @@ type RosAcl interface {
 	AttrInstanceId() alicloudroscdkcore.IResolvable
 	AttrIpWhitelists() alicloudroscdkcore.IResolvable
 	AttrResourceName() alicloudroscdkcore.IResolvable
+	AttrResourceType() alicloudroscdkcore.IResolvable
 	AttrUsername() alicloudroscdkcore.IResolvable
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
@@ -243,6 +244,16 @@ func (j *jsiiProxy_RosAcl) AttrResourceName() alicloudroscdkcore.IResolvable {
 	_jsii_.Get(
 		j,
 		"attrResourceName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosAcl) AttrResourceType() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrResourceType",
 		&returns,
 	)
 	return returns

@@ -181,7 +181,7 @@ function rosBucketPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`The , which resource type creates an OSS bucket.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Bucket`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Bucket` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucket
  */
@@ -3316,7 +3316,7 @@ function rosDirectoryPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Directory`, which is used to create a directory for a specified bucket.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Directory`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Directory` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-directory
  */
@@ -3572,7 +3572,7 @@ function rosObjectAclPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`, which is used to modify the access control list (ACL) of an Object Storage Service (OSS) object.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::ObjectAcl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ObjectAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-objectacl
  */

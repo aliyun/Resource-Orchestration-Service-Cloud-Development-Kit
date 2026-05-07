@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Ignores file paths based on simple glob patterns.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:20.880Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.746Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.GlobIgnoreStrategy")
 public class GlobIgnoreStrategy extends com.aliyun.ros.cdk.core.IgnoreStrategy {
 

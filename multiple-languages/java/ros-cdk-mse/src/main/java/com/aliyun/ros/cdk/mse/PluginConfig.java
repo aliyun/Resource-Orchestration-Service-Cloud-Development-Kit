@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::PluginConfig</code>The , which resource creates a plugin configuration.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.903Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.860Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.PluginConfig")
 public class PluginConfig extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.IPluginConfig {
 

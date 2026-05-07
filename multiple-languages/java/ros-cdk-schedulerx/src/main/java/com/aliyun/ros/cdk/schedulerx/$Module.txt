@@ -3,6 +3,7 @@
 @alicloud/ros-cdk-schedulerx.IAppGroup=com.aliyun.ros.cdk.schedulerx.IAppGroup
 @alicloud/ros-cdk-schedulerx.IJob=com.aliyun.ros.cdk.schedulerx.IJob
 @alicloud/ros-cdk-schedulerx.INamespace=com.aliyun.ros.cdk.schedulerx.INamespace
+@alicloud/ros-cdk-schedulerx.IWorkFlow=com.aliyun.ros.cdk.schedulerx.IWorkFlow
 @alicloud/ros-cdk-schedulerx.Job=com.aliyun.ros.cdk.schedulerx.Job
 @alicloud/ros-cdk-schedulerx.JobProps=com.aliyun.ros.cdk.schedulerx.JobProps
 @alicloud/ros-cdk-schedulerx.Namespace=com.aliyun.ros.cdk.schedulerx.Namespace
@@ -14,3 +15,7 @@
 @alicloud/ros-cdk-schedulerx.RosJobProps=com.aliyun.ros.cdk.schedulerx.RosJobProps
 @alicloud/ros-cdk-schedulerx.RosNamespace=com.aliyun.ros.cdk.schedulerx.RosNamespace
 @alicloud/ros-cdk-schedulerx.RosNamespaceProps=com.aliyun.ros.cdk.schedulerx.RosNamespaceProps
+@alicloud/ros-cdk-schedulerx.RosWorkFlow=com.aliyun.ros.cdk.schedulerx.RosWorkFlow
+@alicloud/ros-cdk-schedulerx.RosWorkFlowProps=com.aliyun.ros.cdk.schedulerx.RosWorkFlowProps
+@alicloud/ros-cdk-schedulerx.WorkFlow=com.aliyun.ros.cdk.schedulerx.WorkFlow
+@alicloud/ros-cdk-schedulerx.WorkFlowProps=com.aliyun.ros.cdk.schedulerx.WorkFlowProps

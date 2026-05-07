@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`The , which resource type creates a Serverless App Engine (SAE) application.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`.
 type RosApplication interface {
 	alicloudroscdkcore.RosResource
 	AcrAssumeRoleArn() interface{}

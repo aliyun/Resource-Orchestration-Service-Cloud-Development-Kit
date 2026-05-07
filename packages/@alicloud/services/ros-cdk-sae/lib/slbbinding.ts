@@ -52,7 +52,7 @@ export interface ISlbBinding extends ros.IResource {
     readonly attrChangeOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::SlbBinding`, which is used to bind an SLB instance to an application.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::SlbBinding`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSlbBinding`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
  */

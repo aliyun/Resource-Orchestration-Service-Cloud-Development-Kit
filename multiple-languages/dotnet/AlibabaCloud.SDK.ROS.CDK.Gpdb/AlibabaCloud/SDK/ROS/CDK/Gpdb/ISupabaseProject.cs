@@ -15,6 +15,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get;
         }
 
+        /// <summary>Attribute Eni: Network interface.</summary>
+        [JsiiProperty(name: "attrEni", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrEni
+        {
+            get;
+        }
+
         /// <summary>Attribute PrivateConnectUrl: Private connection URL.</summary>
         [JsiiProperty(name: "attrPrivateConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrPrivateConnectUrl
@@ -53,6 +60,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             /// <summary>Attribute ApiKeys: API keys.</summary>
             [JsiiProperty(name: "attrApiKeys", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrApiKeys
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute Eni: Network interface.</summary>
+            [JsiiProperty(name: "attrEni", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrEni
             {
                 get => GetInstanceProperty<object>()!;
             }

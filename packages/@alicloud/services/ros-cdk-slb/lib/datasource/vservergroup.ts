@@ -55,7 +55,7 @@ export interface IVServerGroup extends ros.IResource {
     readonly attrVServerGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroup`, which is used to query the information about a vServer group.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::VServerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-vservergroup
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rocketmq;
  * <p>
  * The Group ID that you create is used to publish and subscribe to messages.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.556Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.625Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rocketmq.IGroup {
 

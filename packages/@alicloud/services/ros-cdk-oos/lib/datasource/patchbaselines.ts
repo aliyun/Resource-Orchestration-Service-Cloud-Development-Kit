@@ -50,7 +50,7 @@ export interface IPatchBaselines extends ros.IResource {
     readonly attrPatchBaselines: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::PatchBaselines`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPatchBaselines`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */

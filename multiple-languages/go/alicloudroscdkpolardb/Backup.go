@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Backup`, which is used to create a full snapshot backup for a PolarDB cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::Backup`.
 type Backup interface {
 	alicloudroscdkcore.Resource
 	IBackup

@@ -1,0 +1,17 @@
+@alicloud/ros-cdk-cms2.IIntegrationPolicy=com.aliyun.ros.cdk.cms2.IIntegrationPolicy
+@alicloud/ros-cdk-cms2.IPrometheusInstance=com.aliyun.ros.cdk.cms2.IPrometheusInstance
+@alicloud/ros-cdk-cms2.IntegrationPolicy=com.aliyun.ros.cdk.cms2.IntegrationPolicy
+@alicloud/ros-cdk-cms2.IntegrationPolicyProps=com.aliyun.ros.cdk.cms2.IntegrationPolicyProps
+@alicloud/ros-cdk-cms2.PrometheusInstance=com.aliyun.ros.cdk.cms2.PrometheusInstance
+@alicloud/ros-cdk-cms2.PrometheusInstanceProps=com.aliyun.ros.cdk.cms2.PrometheusInstanceProps
+@alicloud/ros-cdk-cms2.RosIntegrationPolicy=com.aliyun.ros.cdk.cms2.RosIntegrationPolicy
+@alicloud/ros-cdk-cms2.RosIntegrationPolicy.EntityGroupProperty=com.aliyun.ros.cdk.cms2.RosIntegrationPolicy$EntityGroupProperty
+@alicloud/ros-cdk-cms2.RosIntegrationPolicy.TagsProperty=com.aliyun.ros.cdk.cms2.RosIntegrationPolicy$TagsProperty
+@alicloud/ros-cdk-cms2.RosIntegrationPolicyProps=com.aliyun.ros.cdk.cms2.RosIntegrationPolicyProps
+@alicloud/ros-cdk-cms2.RosPrometheusInstance=com.aliyun.ros.cdk.cms2.RosPrometheusInstance
+@alicloud/ros-cdk-cms2.RosPrometheusInstanceProps=com.aliyun.ros.cdk.cms2.RosPrometheusInstanceProps
+@alicloud/ros-cdk-cms2.datasource.IServiceObservability=com.aliyun.ros.cdk.cms2.datasource.IServiceObservability
+@alicloud/ros-cdk-cms2.datasource.RosServiceObservability=com.aliyun.ros.cdk.cms2.datasource.RosServiceObservability
+@alicloud/ros-cdk-cms2.datasource.RosServiceObservabilityProps=com.aliyun.ros.cdk.cms2.datasource.RosServiceObservabilityProps
+@alicloud/ros-cdk-cms2.datasource.ServiceObservability=com.aliyun.ros.cdk.cms2.datasource.ServiceObservability
+@alicloud/ros-cdk-cms2.datasource.ServiceObservabilityProps=com.aliyun.ros.cdk.cms2.datasource.ServiceObservabilityProps

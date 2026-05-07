@@ -87,7 +87,7 @@ export interface IRdsExternalStore extends ros.IResource {
     readonly attrProject: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::RdsExternalStore`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::RdsExternalStore`, which is used to create an ApsaraDB RDS for MySQL external store.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRdsExternalStore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-rdsexternalstore
  */

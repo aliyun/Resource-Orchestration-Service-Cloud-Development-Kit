@@ -244,7 +244,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Group`, which is used to create a user group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::Group`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paiplugin-group
  */

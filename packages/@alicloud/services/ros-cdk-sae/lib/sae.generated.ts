@@ -346,7 +346,7 @@ export interface RosApplicationProps {
     readonly tags?: RosApplication.TagsProperty[];
 
     /**
-     * @Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 300.
+     * @Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 600.
      */
     readonly terminationGracePeriodSeconds?: number | ros.IResolvable;
 
@@ -505,7 +505,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('terminationGracePeriodSeconds', ros.validateRange)({
             data: properties.terminationGracePeriodSeconds,
             min: 1,
-            max: 300,
+            max: 600,
           }));
     }
     errors.collect(ros.propertyValidator('terminationGracePeriodSeconds', ros.validateNumber)(properties.terminationGracePeriodSeconds));
@@ -620,7 +620,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`The , which resource type creates a Serverless App Engine (SAE) application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
@@ -981,7 +981,7 @@ export class RosApplication extends ros.RosResource {
     public tags: RosApplication.TagsProperty[] | undefined;
 
     /**
-     * @Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 300.
+     * @Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 600.
      */
     public terminationGracePeriodSeconds: number | ros.IResolvable | undefined;
 
@@ -1518,7 +1518,7 @@ function rosApplicationScalingRulePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`, which is used to create an auto scaling policy for an application.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationScalingRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-applicationscalingrule
  */
@@ -2295,7 +2295,7 @@ function rosIngressPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`, which is used to create a routing rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ingress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
  */
@@ -2981,7 +2981,7 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Secret`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Secret`The , which type is used to create a Secret instance in the namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-secret
  */
@@ -3132,7 +3132,7 @@ function rosSlbBindingPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::SlbBinding`, which is used to bind an SLB instance to an application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::SlbBinding`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SlbBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-slbbinding
  */

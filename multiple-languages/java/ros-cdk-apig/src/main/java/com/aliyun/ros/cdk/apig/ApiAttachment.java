@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::ApiAttachment</code>, which is used to attach an API.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.464Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.355Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.ApiAttachment")
 public class ApiAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IApiAttachment {
 
@@ -38,14 +38,6 @@ public class ApiAttachment extends com.aliyun.ros.cdk.core.Resource implements c
     public ApiAttachment(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Construct scope, final @org.jetbrains.annotations.NotNull java.lang.String id, final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apig.ApiAttachmentProps props) {
         super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
         software.amazon.jsii.JsiiEngine.getInstance().createNewObject(this, new Object[] { java.util.Objects.requireNonNull(scope, "scope is required"), java.util.Objects.requireNonNull(id, "id is required"), java.util.Objects.requireNonNull(props, "props is required") });
-    }
-
-    /**
-     * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-     */
-    @Override
-    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvironmentId() {
-        return software.amazon.jsii.Kernel.get(this, "attrEnvironmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -130,48 +122,6 @@ public class ApiAttachment extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property backendScene: API release scenario.
-         * <p>
-         * @return {@code this}
-         * @param backendScene Property backendScene: API release scenario. This parameter is required.
-         */
-        public Builder backendScene(final java.lang.String backendScene) {
-            this.props.backendScene(backendScene);
-            return this;
-        }
-        /**
-         * Property backendScene: API release scenario.
-         * <p>
-         * @return {@code this}
-         * @param backendScene Property backendScene: API release scenario. This parameter is required.
-         */
-        public Builder backendScene(final com.aliyun.ros.cdk.core.IResolvable backendScene) {
-            this.props.backendScene(backendScene);
-            return this;
-        }
-
-        /**
-         * Property environmentId: The ID of the environment to which the API is to deploy.
-         * <p>
-         * @return {@code this}
-         * @param environmentId Property environmentId: The ID of the environment to which the API is to deploy. This parameter is required.
-         */
-        public Builder environmentId(final java.lang.String environmentId) {
-            this.props.environmentId(environmentId);
-            return this;
-        }
-        /**
-         * Property environmentId: The ID of the environment to which the API is to deploy.
-         * <p>
-         * @return {@code this}
-         * @param environmentId Property environmentId: The ID of the environment to which the API is to deploy. This parameter is required.
-         */
-        public Builder environmentId(final com.aliyun.ros.cdk.core.IResolvable environmentId) {
-            this.props.environmentId(environmentId);
-            return this;
-        }
-
-        /**
          * Property httpApiId: The ID of the HTTP API.
          * <p>
          * @return {@code this}
@@ -189,27 +139,6 @@ public class ApiAttachment extends com.aliyun.ros.cdk.core.Resource implements c
          */
         public Builder httpApiId(final com.aliyun.ros.cdk.core.IResolvable httpApiId) {
             this.props.httpApiId(httpApiId);
-            return this;
-        }
-
-        /**
-         * Property serviceConfigs: Services associated with API publishing and their configurations.
-         * <p>
-         * @return {@code this}
-         * @param serviceConfigs Property serviceConfigs: Services associated with API publishing and their configurations. This parameter is required.
-         */
-        public Builder serviceConfigs(final com.aliyun.ros.cdk.core.IResolvable serviceConfigs) {
-            this.props.serviceConfigs(serviceConfigs);
-            return this;
-        }
-        /**
-         * Property serviceConfigs: Services associated with API publishing and their configurations.
-         * <p>
-         * @return {@code this}
-         * @param serviceConfigs Property serviceConfigs: Services associated with API publishing and their configurations. This parameter is required.
-         */
-        public Builder serviceConfigs(final java.util.List<? extends java.lang.Object> serviceConfigs) {
-            this.props.serviceConfigs(serviceConfigs);
             return this;
         }
 

@@ -73,7 +73,7 @@ function rosAITaskPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AITask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AITask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */
@@ -504,7 +504,7 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-accountprivilege
  */
@@ -1162,7 +1162,7 @@ function rosBackupPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Backup`, which is used to create a full snapshot backup for a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Backup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Backup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-backup
  */
@@ -2938,7 +2938,7 @@ function rosDBClusterEndpointPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterEndpoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpoint
  */
@@ -3245,7 +3245,7 @@ function rosDBClusterEndpointAddressPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`, which is used to create a public endpoint for an Apsara PolarDB cluster. The public endpoint can be a primary endpoint, the default cluster endpoint, or a custom cluster endpoint.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBClusterEndpointAddress`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusterEndpointAddress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbclusterendpointaddress
  */
@@ -4030,7 +4030,7 @@ function rosGlobalSecurityIPGroupPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalSecurityIPGroup`, which is used to create a global IP whitelist template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalSecurityIPGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GlobalSecurityIPGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globalsecurityipgroup
  */
@@ -4179,7 +4179,7 @@ function rosParameterGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ParameterGroup`, which is used to create a parameter template of PolarDB.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::ParameterGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ParameterGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-parametergroup
  */

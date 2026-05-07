@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ServiceLog`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ServiceLog`, which is used to enable the service log feature.
 type RosServiceLog interface {
 	alicloudroscdkcore.RosResource
 	AttrProjectName() alicloudroscdkcore.IResolvable

@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`, which is used to create an application.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`.</summary>
     /// <remarks>
-    /// Before you call a third-party API, you must create an application and use the application as an identity to call the API.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
     /// </remarks>

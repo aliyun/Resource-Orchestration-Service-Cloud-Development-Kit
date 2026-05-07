@@ -50,7 +50,7 @@ export interface ITriggers extends ros.IResource {
     readonly attrTriggers: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Triggers`, which is used to query triggers.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::FC::Triggers`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTriggers`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
  */

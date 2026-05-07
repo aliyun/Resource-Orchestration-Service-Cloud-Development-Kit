@@ -72,7 +72,7 @@ export interface ICluster extends ros.IResource {
     readonly attrIaasProvider: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::Cluster`, which is used to create a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
  */

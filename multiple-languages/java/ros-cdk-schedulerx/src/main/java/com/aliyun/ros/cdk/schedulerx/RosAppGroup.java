@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.schedulerx;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SchedulerX::AppGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.schedulerx.$Module.class, fqn = "@alicloud/ros-cdk-schedulerx.RosAppGroup")
 public class RosAppGroup extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::PluginAttachment`, which is used to bind a plug-in.
+// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::PluginAttachment`.
 type PluginAttachment interface {
 	alicloudroscdkcore.Resource
 	IPluginAttachment

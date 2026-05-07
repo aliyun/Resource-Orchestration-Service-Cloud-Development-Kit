@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ARMS::Environments</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.985Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.896Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.Environments")
 public class Environments extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.arms.datasource.IEnvironments {
 
@@ -127,6 +127,27 @@ public class Environments extends com.aliyun.ros.cdk.core.Resource implements co
             this.scope = scope;
             this.id = id;
             this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        }
+
+        /**
+         * Property bindResourceId: The bound resource ID.
+         * <p>
+         * @return {@code this}
+         * @param bindResourceId Property bindResourceId: The bound resource ID. This parameter is required.
+         */
+        public Builder bindResourceId(final java.lang.String bindResourceId) {
+            this.props().bindResourceId(bindResourceId);
+            return this;
+        }
+        /**
+         * Property bindResourceId: The bound resource ID.
+         * <p>
+         * @return {@code this}
+         * @param bindResourceId Property bindResourceId: The bound resource ID. This parameter is required.
+         */
+        public Builder bindResourceId(final com.aliyun.ros.cdk.core.IResolvable bindResourceId) {
+            this.props().bindResourceId(bindResourceId);
+            return this;
         }
 
         /**

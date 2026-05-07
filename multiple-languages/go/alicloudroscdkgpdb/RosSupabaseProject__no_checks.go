@@ -88,6 +88,10 @@ func (j *jsiiProxy_RosSupabaseProject) validateSetAccountPasswordParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosSupabaseProject) validateSetDatabaseIpListParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosSupabaseProject) validateSetDiskPerformanceLevelParameters(val interface{}) error {
 	return nil
 }

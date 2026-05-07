@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::EHPC::Nodes</code>, which is used to query nodes in an Elastic High Performance Computing (E-HPC) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.642Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.617Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.datasource.RosNodes")
 public class RosNodes extends com.aliyun.ros.cdk.core.RosResource {
 

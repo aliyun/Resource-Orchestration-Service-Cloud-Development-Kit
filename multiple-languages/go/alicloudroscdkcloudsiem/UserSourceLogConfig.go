@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`, which is used to add logs of a cloud service within an account.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`.
 type UserSourceLogConfig interface {
 	alicloudroscdkcore.Resource
 	IUserSourceLogConfig

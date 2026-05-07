@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`The , which resource type creates a Serverless App Engine (SAE) application.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Application`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
@@ -2050,7 +2050,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 300.
+        /// <strong>Property</strong>: terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 600.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

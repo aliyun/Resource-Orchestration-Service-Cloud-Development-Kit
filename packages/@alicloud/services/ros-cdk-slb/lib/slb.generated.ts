@@ -1161,7 +1161,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`, which is used to upload a certificate to a Server Load Balancer (SLB) instance. Server certificates and certificate authority (CA) certificates are supported.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Certificate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-certificate
  */
@@ -1402,7 +1402,7 @@ function rosDomainExtensionPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::DomainExtension`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtension` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */
@@ -3303,7 +3303,7 @@ function rosLoadBalancerClonePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::LoadBalancerClone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancerclone
  */
@@ -3608,7 +3608,7 @@ function rosMasterSlaveServerGroupPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::MasterSlaveServerGroup`, which is used to create a primary/secondary server group.
  * @Note This class does not contain additional functions, so it is recommended to use the `MasterSlaveServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
@@ -3850,7 +3850,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`, which is used to add forwarding rules to an HTTP or HTTPS listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
@@ -4258,7 +4258,7 @@ function rosTLSPolicyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`, which is used to create a Transport Layer Security (TLS) policy.
  * @Note This class does not contain additional functions, so it is recommended to use the `TLSPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-tlspolicy
  */

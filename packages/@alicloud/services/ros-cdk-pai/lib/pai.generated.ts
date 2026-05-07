@@ -491,7 +491,7 @@ function rosDatasetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Dataset`, which is used to create a dataset.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Dataset`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Dataset` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-dataset
  */
@@ -1761,10 +1761,8 @@ export interface RosModelVersionProps {
     /**
      * @Property sourceId: Source ID.
      * * When the source type is Custom, this field is not restricted.
-     * * When the source is PAIFlow or TrainingService, the format is
-     * '''
+     * * When the source is PAIFlow or TrainingService, the format is:
      * region=<region_id>,workspaceId=<workspace_id>,kind=<kind>,id=<id>
-     * '''
      * Among them:
      * - region is the Alibaba Cloud region ID.
      * - workspaceId indicates the workspace ID.
@@ -2070,10 +2068,8 @@ export class RosModelVersion extends ros.RosResource {
     /**
      * @Property sourceId: Source ID.
      * * When the source type is Custom, this field is not restricted.
-     * * When the source is PAIFlow or TrainingService, the format is
-     * '''
+     * * When the source is PAIFlow or TrainingService, the format is:
      * region=<region_id>,workspaceId=<workspace_id>,kind=<kind>,id=<id>
-     * '''
      * Among them:
      * - region is the Alibaba Cloud region ID.
      * - workspaceId indicates the workspace ID.

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::AccountAlias`, which is used to query the alias of a cloud account.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::AccountAlias`.
 type AccountAlias interface {
 	alicloudroscdkcore.Resource
 	IAccountAlias

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::Hologram::Instance`, which is used to query the information about a Hologres instance by instance ID.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::Hologram::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrInstance() alicloudroscdkcore.IResolvable

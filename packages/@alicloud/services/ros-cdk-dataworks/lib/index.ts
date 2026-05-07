@@ -1,3 +1,4 @@
+export * from './datasourcesharedrule';
 export * from './project';
 export * from './resourcegroup';
 export * from './resourcegrouprelation';

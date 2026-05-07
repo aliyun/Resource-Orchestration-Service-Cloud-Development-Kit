@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VirtualBorderRouter`Use the , which resource to create a virtual border router (VBR).
 type RosVirtualBorderRouter interface {
 	alicloudroscdkcore.RosResource
 	AttrName() alicloudroscdkcore.IResolvable

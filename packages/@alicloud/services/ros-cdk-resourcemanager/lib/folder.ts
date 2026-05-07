@@ -42,7 +42,7 @@ export interface IFolder extends ros.IResource {
     readonly attrParentFolderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Folder`, which is used to create a folder.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Folder`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFolder`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-folder
  */

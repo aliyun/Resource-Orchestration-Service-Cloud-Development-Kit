@@ -75,7 +75,7 @@ export interface IDeliveryChannel extends ros.IResource {
     readonly attrDeliveryChannelId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Config::DeliveryChannel`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeliveryChannel`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */

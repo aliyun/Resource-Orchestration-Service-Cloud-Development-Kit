@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`, which is used to attach a policy to a specified role.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToRole`.
 type AttachPolicyToRole interface {
 	alicloudroscdkcore.Resource
 	IAttachPolicyToRole

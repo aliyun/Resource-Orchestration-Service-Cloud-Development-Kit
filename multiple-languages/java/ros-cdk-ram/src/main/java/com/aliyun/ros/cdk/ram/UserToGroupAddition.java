@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::UserToGroupAddition</code>, which is used to add users to a RAM group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::UserToGroupAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.032Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.084Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.UserToGroupAddition")
 public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IUserToGroupAddition {
 

@@ -54,7 +54,7 @@ export interface IVcoRouteEntry extends ros.IResource {
     readonly attrVpnConnectionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VcoRouteEntry`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VcoRouteEntry`, which is used to add a destination-based route for an IPsec-VPN connection.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVcoRouteEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vcorouteentry
  */

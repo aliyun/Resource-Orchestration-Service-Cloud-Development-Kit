@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CEN::TransitRouters</code>, which is used to query the information about transit routers of a Cloud Enterprise Network (CEN) instance.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CEN::TransitRouters</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.580Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.518Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.TransitRouters")
 public class TransitRouters extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.datasource.ITransitRouters {
 

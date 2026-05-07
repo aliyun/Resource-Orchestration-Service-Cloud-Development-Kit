@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Rule`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::Rule`, which is used to query the configuration details of a forwarding rule.
 type RosRule interface {
 	alicloudroscdkcore.RosResource
 	AttrCookie() alicloudroscdkcore.IResolvable

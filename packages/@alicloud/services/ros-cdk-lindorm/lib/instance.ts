@@ -206,7 +206,7 @@ export interface IInstance extends ros.IResource {
     readonly attrJdbcUrlList: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::Instance`, which is used to create a Lindorm instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-instance
  */

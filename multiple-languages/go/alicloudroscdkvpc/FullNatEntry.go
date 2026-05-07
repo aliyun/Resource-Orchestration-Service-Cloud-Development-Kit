@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FullNatEntry`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FullNatEntry`, which is used to add a FULLNAT entry to a FULLNAT table.
 type FullNatEntry interface {
 	alicloudroscdkcore.Resource
 	IFullNatEntry

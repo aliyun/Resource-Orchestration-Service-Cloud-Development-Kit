@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADB::BackupPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.087Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.956Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.RosBackupPolicy")
 public class RosBackupPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

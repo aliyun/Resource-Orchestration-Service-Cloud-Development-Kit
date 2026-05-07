@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Service`, which is used to query the information about a service in Elastic Algorithm Service (EAS).
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Service`.
 type Service interface {
 	alicloudroscdkcore.Resource
 	IService

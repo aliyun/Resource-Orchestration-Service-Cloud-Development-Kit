@@ -101,7 +101,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Account`, which is used to create an account that has specific permissions for a Tair (Redis OSS-compatible) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-account
  */
@@ -638,6 +638,11 @@ export interface RosInstanceProps {
     readonly tairConfig?: RosInstance.TairConfigProperty | ros.IResolvable;
 
     /**
+     * @Property tlsProtocol: The TLS version of the instance.
+     */
+    readonly tlsProtocol?: string | ros.IResolvable;
+
+    /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -743,6 +748,13 @@ function RosInstancePropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('chargeType', ros.validateString)(properties.chargeType));
     errors.collect(ros.propertyValidator('nodeType', ros.validateString)(properties.nodeType));
+    if(properties.tlsProtocol && (typeof properties.tlsProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('tlsProtocol', ros.validateAllowedValues)({
+          data: properties.tlsProtocol,
+          allowedValues: ["TLSv1","TLSv1.1","TLSv1.2","TLSv1.3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tlsProtocol', ros.validateString)(properties.tlsProtocol));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -792,6 +804,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
       'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'Tags': ros.listMapper(rosInstanceTagsPropertyToRosTemplate)(properties.tags),
       'TairConfig': rosInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
+      'TLSProtocol': ros.stringToRosTemplate(properties.tlsProtocol),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VpcPasswordFree': ros.booleanToRosTemplate(properties.vpcPasswordFree),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
@@ -800,7 +813,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`The , which type creates Redis instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
@@ -1111,6 +1124,11 @@ export class RosInstance extends ros.RosResource {
     public tairConfig: RosInstance.TairConfigProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property tlsProtocol: The TLS version of the instance.
+     */
+    public tlsProtocol: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -1197,6 +1215,7 @@ export class RosInstance extends ros.RosResource {
         this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.tags = props.tags;
         this.tairConfig = props.tairConfig;
+        this.tlsProtocol = props.tlsProtocol;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -1231,6 +1250,7 @@ export class RosInstance extends ros.RosResource {
             subscriptionDeletionForce: this.subscriptionDeletionForce,
             tags: this.tags,
             tairConfig: this.tairConfig,
+            tlsProtocol: this.tlsProtocol,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -1945,6 +1965,11 @@ export interface RosPrepayInstanceProps {
     readonly tairConfig?: RosPrepayInstance.TairConfigProperty | ros.IResolvable;
 
     /**
+     * @Property tlsProtocol: The TLS version of the instance.
+     */
+    readonly tlsProtocol?: string | ros.IResolvable;
+
+    /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -2044,6 +2069,13 @@ function RosPrepayInstancePropsValidator(properties: any): ros.ValidationResult 
     errors.collect(ros.propertyValidator('instanceName', ros.validateString)(properties.instanceName));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('nodeType', ros.validateString)(properties.nodeType));
+    if(properties.tlsProtocol && (typeof properties.tlsProtocol) !== 'object') {
+        errors.collect(ros.propertyValidator('tlsProtocol', ros.validateAllowedValues)({
+          data: properties.tlsProtocol,
+          allowedValues: ["TLSv1","TLSv1.1","TLSv1.2","TLSv1.3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('tlsProtocol', ros.validateString)(properties.tlsProtocol));
     if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
         errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
           data: properties.periodUnit,
@@ -2093,6 +2125,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
       'SubscriptionDeletionForce': ros.booleanToRosTemplate(properties.subscriptionDeletionForce),
       'Tags': ros.listMapper(rosPrepayInstanceTagsPropertyToRosTemplate)(properties.tags),
       'TairConfig': rosPrepayInstanceTairConfigPropertyToRosTemplate(properties.tairConfig),
+      'TLSProtocol': ros.stringToRosTemplate(properties.tlsProtocol),
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VpcPasswordFree': ros.booleanToRosTemplate(properties.vpcPasswordFree),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
@@ -2101,7 +2134,7 @@ function rosPrepayInstancePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription Tair (Redis OSS-compatible) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PrepayInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
@@ -2415,6 +2448,11 @@ export class RosPrepayInstance extends ros.RosResource {
     public tairConfig: RosPrepayInstance.TairConfigProperty | ros.IResolvable | undefined;
 
     /**
+     * @Property tlsProtocol: The TLS version of the instance.
+     */
+    public tlsProtocol: string | ros.IResolvable | undefined;
+
+    /**
      * @Property vpcId: The VPC id to create ecs instance.
      */
     public vpcId: string | ros.IResolvable | undefined;
@@ -2501,6 +2539,7 @@ export class RosPrepayInstance extends ros.RosResource {
         this.subscriptionDeletionForce = props.subscriptionDeletionForce;
         this.tags = props.tags;
         this.tairConfig = props.tairConfig;
+        this.tlsProtocol = props.tlsProtocol;
         this.vpcId = props.vpcId;
         this.vpcPasswordFree = props.vpcPasswordFree;
         this.vSwitchId = props.vSwitchId;
@@ -2535,6 +2574,7 @@ export class RosPrepayInstance extends ros.RosResource {
             subscriptionDeletionForce: this.subscriptionDeletionForce,
             tags: this.tags,
             tairConfig: this.tairConfig,
+            tlsProtocol: this.tlsProtocol,
             vpcId: this.vpcId,
             vpcPasswordFree: this.vpcPasswordFree,
             vSwitchId: this.vSwitchId,
@@ -3189,7 +3229,7 @@ function rosUpgradeVersionPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::UpgradeVersion`, which is used to upgrade the major version of a Tair (Redis OSS-compatible) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::UpgradeVersion`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UpgradeVersion` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-upgradeversion
  */
@@ -3339,7 +3379,7 @@ function rosWhitelistPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`The , which type sets the IP whitelist for a Redis instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Whitelist` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */

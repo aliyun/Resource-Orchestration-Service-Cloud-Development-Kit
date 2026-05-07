@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::FC3::AsyncInvokeConfig</code>, which type is used to specify the asynchronous invocation configuration for a function.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:26.657Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.596Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.RosAsyncInvokeConfig")
 public class RosAsyncInvokeConfig extends com.aliyun.ros.cdk.core.RosResource {
 

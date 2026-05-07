@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::Instance</code>The , which type creates Redis instances.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.371Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.421Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -681,6 +681,24 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setTairConfig(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.redis.RosInstance.TairConfigProperty value) {
         software.amazon.jsii.Kernel.set(this, "tairConfig", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getTlsProtocol() {
+        return software.amazon.jsii.Kernel.get(this, "tlsProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setTlsProtocol(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "tlsProtocol", value);
+    }
+
+    /**
+     */
+    public void setTlsProtocol(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "tlsProtocol", value);
     }
 
     /**
@@ -2887,6 +2905,23 @@ public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder tairConfig(final com.aliyun.ros.cdk.redis.RosInstance.TairConfigProperty tairConfig) {
             this.props.tairConfig(tairConfig);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param tlsProtocol This parameter is required.
+         */
+        public Builder tlsProtocol(final java.lang.String tlsProtocol) {
+            this.props.tlsProtocol(tlsProtocol);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param tlsProtocol This parameter is required.
+         */
+        public Builder tlsProtocol(final com.aliyun.ros.cdk.core.IResolvable tlsProtocol) {
+            this.props.tlsProtocol(tlsProtocol);
             return this;
         }
 

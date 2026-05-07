@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancerClone`, which is used to clone a Server Load Balancer (SLB) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLB::LoadBalancerClone`.
 type LoadBalancerClone interface {
 	alicloudroscdkcore.Resource
 	ILoadBalancerClone

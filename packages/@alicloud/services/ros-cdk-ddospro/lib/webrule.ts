@@ -64,7 +64,7 @@ export interface IWebRule extends ros.IResource {
     readonly attrDomain: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::WebRule`, which is used to create a forwarding rule for a website.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::WebRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWebRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-webrule
  */

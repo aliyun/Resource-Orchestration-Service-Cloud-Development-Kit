@@ -37,13 +37,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
         {
         }
 
-        /// <summary>Attribute EnvironmentId: The ID of the environment to which the API is to deploy.</summary>
-        [JsiiProperty(name: "attrEnvironmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        public virtual object AttrEnvironmentId
-        {
-            get => GetInstanceProperty<object>()!;
-        }
-
         /// <summary>Attribute HttpApiId: The ID of the HTTP API.</summary>
         [JsiiProperty(name: "attrHttpApiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrHttpApiId

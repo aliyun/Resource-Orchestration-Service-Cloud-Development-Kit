@@ -5,26 +5,14 @@ package com.aliyun.ros.cdk.apig;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-apiattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.517Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.423Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.RosApiAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosApiAttachmentProps.Jsii$Proxy.class)
 public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      */
-    @org.jetbrains.annotations.NotNull java.lang.Object getBackendScene();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getEnvironmentId();
-
-    /**
-     */
     @org.jetbrains.annotations.NotNull java.lang.Object getHttpApiId();
-
-    /**
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getServiceConfigs();
 
     /**
      */
@@ -54,53 +42,10 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
      * A builder for {@link RosApiAttachmentProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosApiAttachmentProps> {
-        java.lang.Object backendScene;
-        java.lang.Object environmentId;
         java.lang.Object httpApiId;
-        java.lang.Object serviceConfigs;
         java.lang.Object description;
         java.lang.Object domainIds;
         java.lang.Object routeId;
-
-        /**
-         * Sets the value of {@link RosApiAttachmentProps#getBackendScene}
-         * @param backendScene the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder backendScene(java.lang.String backendScene) {
-            this.backendScene = backendScene;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiAttachmentProps#getBackendScene}
-         * @param backendScene the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder backendScene(com.aliyun.ros.cdk.core.IResolvable backendScene) {
-            this.backendScene = backendScene;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiAttachmentProps#getEnvironmentId}
-         * @param environmentId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder environmentId(java.lang.String environmentId) {
-            this.environmentId = environmentId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiAttachmentProps#getEnvironmentId}
-         * @param environmentId the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder environmentId(com.aliyun.ros.cdk.core.IResolvable environmentId) {
-            this.environmentId = environmentId;
-            return this;
-        }
 
         /**
          * Sets the value of {@link RosApiAttachmentProps#getHttpApiId}
@@ -119,26 +64,6 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         public Builder httpApiId(com.aliyun.ros.cdk.core.IResolvable httpApiId) {
             this.httpApiId = httpApiId;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiAttachmentProps#getServiceConfigs}
-         * @param serviceConfigs the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder serviceConfigs(com.aliyun.ros.cdk.core.IResolvable serviceConfigs) {
-            this.serviceConfigs = serviceConfigs;
-            return this;
-        }
-
-        /**
-         * Sets the value of {@link RosApiAttachmentProps#getServiceConfigs}
-         * @param serviceConfigs the value to be set. This parameter is required.
-         * @return {@code this}
-         */
-        public Builder serviceConfigs(java.util.List<? extends java.lang.Object> serviceConfigs) {
-            this.serviceConfigs = serviceConfigs;
             return this;
         }
 
@@ -218,10 +143,7 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosApiAttachmentProps {
-        private final java.lang.Object backendScene;
-        private final java.lang.Object environmentId;
         private final java.lang.Object httpApiId;
-        private final java.lang.Object serviceConfigs;
         private final java.lang.Object description;
         private final java.lang.Object domainIds;
         private final java.lang.Object routeId;
@@ -232,10 +154,7 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
-            this.backendScene = software.amazon.jsii.Kernel.get(this, "backendScene", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.environmentId = software.amazon.jsii.Kernel.get(this, "environmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.httpApiId = software.amazon.jsii.Kernel.get(this, "httpApiId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-            this.serviceConfigs = software.amazon.jsii.Kernel.get(this, "serviceConfigs", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.description = software.amazon.jsii.Kernel.get(this, "description", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.domainIds = software.amazon.jsii.Kernel.get(this, "domainIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.routeId = software.amazon.jsii.Kernel.get(this, "routeId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -246,33 +165,15 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
-            this.backendScene = java.util.Objects.requireNonNull(builder.backendScene, "backendScene is required");
-            this.environmentId = java.util.Objects.requireNonNull(builder.environmentId, "environmentId is required");
             this.httpApiId = java.util.Objects.requireNonNull(builder.httpApiId, "httpApiId is required");
-            this.serviceConfigs = java.util.Objects.requireNonNull(builder.serviceConfigs, "serviceConfigs is required");
             this.description = builder.description;
             this.domainIds = builder.domainIds;
             this.routeId = builder.routeId;
         }
 
         @Override
-        public final java.lang.Object getBackendScene() {
-            return this.backendScene;
-        }
-
-        @Override
-        public final java.lang.Object getEnvironmentId() {
-            return this.environmentId;
-        }
-
-        @Override
         public final java.lang.Object getHttpApiId() {
             return this.httpApiId;
-        }
-
-        @Override
-        public final java.lang.Object getServiceConfigs() {
-            return this.serviceConfigs;
         }
 
         @Override
@@ -296,10 +197,7 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
-            data.set("backendScene", om.valueToTree(this.getBackendScene()));
-            data.set("environmentId", om.valueToTree(this.getEnvironmentId()));
             data.set("httpApiId", om.valueToTree(this.getHttpApiId()));
-            data.set("serviceConfigs", om.valueToTree(this.getServiceConfigs()));
             if (this.getDescription() != null) {
                 data.set("description", om.valueToTree(this.getDescription()));
             }
@@ -327,10 +225,7 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
 
             RosApiAttachmentProps.Jsii$Proxy that = (RosApiAttachmentProps.Jsii$Proxy) o;
 
-            if (!backendScene.equals(that.backendScene)) return false;
-            if (!environmentId.equals(that.environmentId)) return false;
             if (!httpApiId.equals(that.httpApiId)) return false;
-            if (!serviceConfigs.equals(that.serviceConfigs)) return false;
             if (this.description != null ? !this.description.equals(that.description) : that.description != null) return false;
             if (this.domainIds != null ? !this.domainIds.equals(that.domainIds) : that.domainIds != null) return false;
             return this.routeId != null ? this.routeId.equals(that.routeId) : that.routeId == null;
@@ -338,10 +233,7 @@ public interface RosApiAttachmentProps extends software.amazon.jsii.JsiiSerializ
 
         @Override
         public final int hashCode() {
-            int result = this.backendScene.hashCode();
-            result = 31 * result + (this.environmentId.hashCode());
-            result = 31 * result + (this.httpApiId.hashCode());
-            result = 31 * result + (this.serviceConfigs.hashCode());
+            int result = this.httpApiId.hashCode();
             result = 31 * result + (this.description != null ? this.description.hashCode() : 0);
             result = 31 * result + (this.domainIds != null ? this.domainIds.hashCode() : 0);
             result = 31 * result + (this.routeId != null ? this.routeId.hashCode() : 0);

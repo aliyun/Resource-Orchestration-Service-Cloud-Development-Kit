@@ -9,24 +9,9 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosApiAttachmentProps {
 
     /**
-     * @Property backendScene: API release scenario.
-     */
-    readonly backendScene: string | ros.IResolvable;
-
-    /**
-     * @Property environmentId: The ID of the environment to which the API is to deploy.
-     */
-    readonly environmentId: string | ros.IResolvable;
-
-    /**
      * @Property httpApiId: The ID of the HTTP API.
      */
     readonly httpApiId: string | ros.IResolvable;
-
-    /**
-     * @Property serviceConfigs: Services associated with API publishing and their configurations.
-     */
-    readonly serviceConfigs: Array<RosApiAttachment.ServiceConfigsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property description: The description of publication.
@@ -54,26 +39,7 @@ export interface RosApiAttachmentProps {
 function RosApiAttachmentPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
-    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
-    errors.collect(ros.propertyValidator('backendScene', ros.requiredValidator)(properties.backendScene));
-    if(properties.backendScene && (typeof properties.backendScene) !== 'object') {
-        errors.collect(ros.propertyValidator('backendScene', ros.validateAllowedValues)({
-          data: properties.backendScene,
-          allowedValues: ["MultiServiceByRatio","Mock","SingleService","MultiServiceByContent"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('backendScene', ros.validateString)(properties.backendScene));
-    errors.collect(ros.propertyValidator('serviceConfigs', ros.requiredValidator)(properties.serviceConfigs));
-    if(properties.serviceConfigs && (Array.isArray(properties.serviceConfigs) || (typeof properties.serviceConfigs) === 'string')) {
-        errors.collect(ros.propertyValidator('serviceConfigs', ros.validateLength)({
-            data: properties.serviceConfigs.length,
-            min: 1,
-            max: 10,
-          }));
-    }
-    errors.collect(ros.propertyValidator('serviceConfigs', ros.listValidator(RosApiAttachment_ServiceConfigsPropertyValidator))(properties.serviceConfigs));
     errors.collect(ros.propertyValidator('routeId', ros.validateString)(properties.routeId));
     errors.collect(ros.propertyValidator('httpApiId', ros.requiredValidator)(properties.httpApiId));
     errors.collect(ros.propertyValidator('httpApiId', ros.validateString)(properties.httpApiId));
@@ -102,10 +68,7 @@ function rosApiAttachmentPropsToRosTemplate(properties: any, enableResourcePrope
         RosApiAttachmentPropsValidator(properties).assertSuccess();
     }
     return {
-      'BackendScene': ros.stringToRosTemplate(properties.backendScene),
-      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
       'HttpApiId': ros.stringToRosTemplate(properties.httpApiId),
-      'ServiceConfigs': ros.listMapper(rosApiAttachmentServiceConfigsPropertyToRosTemplate)(properties.serviceConfigs),
       'Description': ros.stringToRosTemplate(properties.description),
       'DomainIds': ros.listMapper(ros.stringToRosTemplate)(properties.domainIds),
       'RouteId': ros.stringToRosTemplate(properties.routeId),
@@ -124,11 +87,6 @@ export class RosApiAttachment extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::APIG::ApiAttachment";
 
     /**
-     * @Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-     */
-    public readonly attrEnvironmentId: ros.IResolvable;
-
-    /**
      * @Attribute HttpApiId: The ID of the HTTP API.
      */
     public readonly attrHttpApiId: ros.IResolvable;
@@ -142,24 +100,9 @@ export class RosApiAttachment extends ros.RosResource {
 
 
     /**
-     * @Property backendScene: API release scenario.
-     */
-    public backendScene: string | ros.IResolvable;
-
-    /**
-     * @Property environmentId: The ID of the environment to which the API is to deploy.
-     */
-    public environmentId: string | ros.IResolvable;
-
-    /**
      * @Property httpApiId: The ID of the HTTP API.
      */
     public httpApiId: string | ros.IResolvable;
-
-    /**
-     * @Property serviceConfigs: Services associated with API publishing and their configurations.
-     */
-    public serviceConfigs: Array<RosApiAttachment.ServiceConfigsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property description: The description of publication.
@@ -183,15 +126,11 @@ export class RosApiAttachment extends ros.RosResource {
      */
     constructor(scope: ros.Construct, id: string, props: RosApiAttachmentProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosApiAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
-        this.attrEnvironmentId = this.getAtt('EnvironmentId');
         this.attrHttpApiId = this.getAtt('HttpApiId');
         this.attrRouteId = this.getAtt('RouteId');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
-        this.backendScene = props.backendScene;
-        this.environmentId = props.environmentId;
         this.httpApiId = props.httpApiId;
-        this.serviceConfigs = props.serviceConfigs;
         this.description = props.description;
         this.domainIds = props.domainIds;
         this.routeId = props.routeId;
@@ -200,10 +139,7 @@ export class RosApiAttachment extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
-            backendScene: this.backendScene,
-            environmentId: this.environmentId,
             httpApiId: this.httpApiId,
-            serviceConfigs: this.serviceConfigs,
             description: this.description,
             domainIds: this.domainIds,
             routeId: this.routeId,
@@ -214,201 +150,813 @@ export class RosApiAttachment extends ros.RosResource {
     }
 }
 
-export namespace RosApiAttachment {
+/**
+ * Properties for defining a `RosConsumer`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-consumer
+ */
+export interface RosConsumerProps {
+
+    /**
+     * @Property akSkIdentityConfigs: List of AK\/SK identity configurations.
+     */
+    readonly akSkIdentityConfigs?: Array<RosConsumer.AkSkIdentityConfigsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property apikeyIdentityConfig: API key identity configuration.
+     */
+    readonly apikeyIdentityConfig?: RosConsumer.ApikeyIdentityConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the consumer.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property enable: Whether to enable the consumer.
+     */
+    readonly enable?: boolean | ros.IResolvable;
+
+    /**
+     * @Property gatewayType: The type of the gateway.
+     */
+    readonly gatewayType?: string | ros.IResolvable;
+
+    /**
+     * @Property jwtIdentityConfig: JWT identity configuration.
+     */
+    readonly jwtIdentityConfig?: RosConsumer.JwtIdentityConfigProperty | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the consumer.
+     */
+    readonly name?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosConsumerProps`
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumerPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('jwtIdentityConfig', RosConsumer_JwtIdentityConfigPropertyValidator)(properties.jwtIdentityConfig));
+    errors.collect(ros.propertyValidator('enable', ros.validateBoolean)(properties.enable));
+    errors.collect(ros.propertyValidator('gatewayType', ros.validateString)(properties.gatewayType));
+    errors.collect(ros.propertyValidator('apikeyIdentityConfig', RosConsumer_ApikeyIdentityConfigPropertyValidator)(properties.apikeyIdentityConfig));
+    errors.collect(ros.propertyValidator('akSkIdentityConfigs', ros.listValidator(RosConsumer_AkSkIdentityConfigsPropertyValidator))(properties.akSkIdentityConfigs));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosConsumerProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosConsumerPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AkSkIdentityConfigs': ros.listMapper(rosConsumerAkSkIdentityConfigsPropertyToRosTemplate)(properties.akSkIdentityConfigs),
+      'ApikeyIdentityConfig': rosConsumerApikeyIdentityConfigPropertyToRosTemplate(properties.apikeyIdentityConfig),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Enable': ros.booleanToRosTemplate(properties.enable),
+      'GatewayType': ros.stringToRosTemplate(properties.gatewayType),
+      'JwtIdentityConfig': rosConsumerJwtIdentityConfigPropertyToRosTemplate(properties.jwtIdentityConfig),
+      'Name': ros.stringToRosTemplate(properties.name),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Consumer`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Consumer` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-consumer
+ */
+export class RosConsumer extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::APIG::Consumer";
+
+    /**
+     * @Attribute ConsumerId: The ID of the consumer.
+     */
+    public readonly attrConsumerId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property akSkIdentityConfigs: List of AK\/SK identity configurations.
+     */
+    public akSkIdentityConfigs: Array<RosConsumer.AkSkIdentityConfigsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property apikeyIdentityConfig: API key identity configuration.
+     */
+    public apikeyIdentityConfig: RosConsumer.ApikeyIdentityConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the consumer.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property enable: Whether to enable the consumer.
+     */
+    public enable: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property gatewayType: The type of the gateway.
+     */
+    public gatewayType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property jwtIdentityConfig: JWT identity configuration.
+     */
+    public jwtIdentityConfig: RosConsumer.JwtIdentityConfigProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the consumer.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConsumerProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConsumer.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConsumerId = this.getAtt('ConsumerId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.akSkIdentityConfigs = props.akSkIdentityConfigs;
+        this.apikeyIdentityConfig = props.apikeyIdentityConfig;
+        this.description = props.description;
+        this.enable = props.enable;
+        this.gatewayType = props.gatewayType;
+        this.jwtIdentityConfig = props.jwtIdentityConfig;
+        this.name = props.name;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            akSkIdentityConfigs: this.akSkIdentityConfigs,
+            apikeyIdentityConfig: this.apikeyIdentityConfig,
+            description: this.description,
+            enable: this.enable,
+            gatewayType: this.gatewayType,
+            jwtIdentityConfig: this.jwtIdentityConfig,
+            name: this.name,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConsumerPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosConsumer {
     /**
      * @stability external
      */
-    export interface ConditionsProperty {
+    export interface AkSkIdentityConfigsProperty {
         /**
-         * @Property operator: The operator. Exact\/Prefix\/Regex.
-         */
-        readonly operator?: string | ros.IResolvable;
-        /**
-         * @Property type: The type of the match.
+         * @Property type: The type of the identity configuration. Valid values: AkSk.
          */
         readonly type?: string | ros.IResolvable;
         /**
-         * @Property value: Param value.
+         * @Property sk: The Secret Key.
          */
-        readonly value?: string | ros.IResolvable;
+        readonly sk?: string | ros.IResolvable;
         /**
-         * @Property key: Param key.
+         * @Property ak: The Access Key.
+         */
+        readonly ak?: string | ros.IResolvable;
+        /**
+         * @Property generateMode: The generation mode. Valid values: Custom, System.
+         */
+        readonly generateMode?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `AkSkIdentityConfigsProperty`
+ *
+ * @param properties - the TypeScript properties of a `AkSkIdentityConfigsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumer_AkSkIdentityConfigsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["AkSk"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('sk', ros.validateString)(properties.sk));
+    errors.collect(ros.propertyValidator('ak', ros.validateString)(properties.ak));
+    if(properties.generateMode && (typeof properties.generateMode) !== 'object') {
+        errors.collect(ros.propertyValidator('generateMode', ros.validateAllowedValues)({
+          data: properties.generateMode,
+          allowedValues: ["Custom","System"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('generateMode', ros.validateString)(properties.generateMode));
+    return errors.wrap('supplied properties not correct for "AkSkIdentityConfigsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.AkSkIdentityConfigs` resource
+ *
+ * @param properties - the TypeScript properties of a `AkSkIdentityConfigsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.AkSkIdentityConfigs` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerAkSkIdentityConfigsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosConsumer_AkSkIdentityConfigsPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Sk': ros.stringToRosTemplate(properties.sk),
+      'Ak': ros.stringToRosTemplate(properties.ak),
+      'GenerateMode': ros.stringToRosTemplate(properties.generateMode),
+    };
+}
+
+export namespace RosConsumer {
+    /**
+     * @stability external
+     */
+    export interface ApikeyIdentityConfigProperty {
+        /**
+         * @Property apikeySource: The API key source configuration.
+         */
+        readonly apikeySource?: RosConsumer.ApikeySourceProperty | ros.IResolvable;
+        /**
+         * @Property type: The type of the identity configuration. Valid values: Apikey.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property credentials: The list of credentials.
+         */
+        readonly credentials?: Array<RosConsumer.CredentialsProperty | ros.IResolvable> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ApikeyIdentityConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ApikeyIdentityConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumer_ApikeyIdentityConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('apikeySource', RosConsumer_ApikeySourcePropertyValidator)(properties.apikeySource));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["Apikey"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('credentials', ros.listValidator(RosConsumer_CredentialsPropertyValidator))(properties.credentials));
+    return errors.wrap('supplied properties not correct for "ApikeyIdentityConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.ApikeyIdentityConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `ApikeyIdentityConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.ApikeyIdentityConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerApikeyIdentityConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosConsumer_ApikeyIdentityConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'ApikeySource': rosConsumerApikeySourcePropertyToRosTemplate(properties.apikeySource),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'Credentials': ros.listMapper(rosConsumerCredentialsPropertyToRosTemplate)(properties.credentials),
+    };
+}
+
+export namespace RosConsumer {
+    /**
+     * @stability external
+     */
+    export interface ApikeySourceProperty {
+        /**
+         * @Property value: The value for the API key source.
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property source: The source of the API key. Valid values: Header, QueryString, Default.
+         */
+        readonly source: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ApikeySourceProperty`
+ *
+ * @param properties - the TypeScript properties of a `ApikeySourceProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumer_ApikeySourcePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('source', ros.requiredValidator)(properties.source));
+    if(properties.source && (typeof properties.source) !== 'object') {
+        errors.collect(ros.propertyValidator('source', ros.validateAllowedValues)({
+          data: properties.source,
+          allowedValues: ["Header","QueryString","Default"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('source', ros.validateString)(properties.source));
+    return errors.wrap('supplied properties not correct for "ApikeySourceProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.ApikeySource` resource
+ *
+ * @param properties - the TypeScript properties of a `ApikeySourceProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.ApikeySource` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerApikeySourcePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosConsumer_ApikeySourcePropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Source': ros.stringToRosTemplate(properties.source),
+    };
+}
+
+export namespace RosConsumer {
+    /**
+     * @stability external
+     */
+    export interface CredentialsProperty {
+        /**
+         * @Property apikey: The API key value.
+         */
+        readonly apikey?: string | ros.IResolvable;
+        /**
+         * @Property generateMode: The generation mode. Valid values: Custom, System.
+         */
+        readonly generateMode: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CredentialsProperty`
+ *
+ * @param properties - the TypeScript properties of a `CredentialsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumer_CredentialsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('apikey', ros.validateString)(properties.apikey));
+    errors.collect(ros.propertyValidator('generateMode', ros.requiredValidator)(properties.generateMode));
+    if(properties.generateMode && (typeof properties.generateMode) !== 'object') {
+        errors.collect(ros.propertyValidator('generateMode', ros.validateAllowedValues)({
+          data: properties.generateMode,
+          allowedValues: ["Custom","System"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('generateMode', ros.validateString)(properties.generateMode));
+    return errors.wrap('supplied properties not correct for "CredentialsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.Credentials` resource
+ *
+ * @param properties - the TypeScript properties of a `CredentialsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.Credentials` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerCredentialsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosConsumer_CredentialsPropertyValidator(properties).assertSuccess();
+    return {
+      'Apikey': ros.stringToRosTemplate(properties.apikey),
+      'GenerateMode': ros.stringToRosTemplate(properties.generateMode),
+    };
+}
+
+export namespace RosConsumer {
+    /**
+     * @stability external
+     */
+    export interface JwtIdentityConfigProperty {
+        /**
+         * @Property type: The type of the identity configuration. Valid values: Jwt.
+         */
+        readonly type?: string | ros.IResolvable;
+        /**
+         * @Property secretType: The secret type. Valid values: Asymmetry (asymmetric encryption), Symmetry (symmetric encryption).
+         */
+        readonly secretType?: string | ros.IResolvable;
+        /**
+         * @Property jwks: The JWKS configuration.
+         */
+        readonly jwks?: string | ros.IResolvable;
+        /**
+         * @Property jwtPayloadConfig: The JWT payload configuration.
+         */
+        readonly jwtPayloadConfig?: RosConsumer.JwtPayloadConfigProperty | ros.IResolvable;
+        /**
+         * @Property jwtTokenConfig: The JWT token configuration.
+         */
+        readonly jwtTokenConfig?: RosConsumer.JwtTokenConfigProperty | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `JwtIdentityConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `JwtIdentityConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumer_JwtIdentityConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["Jwt"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('secretType', ros.validateString)(properties.secretType));
+    errors.collect(ros.propertyValidator('jwks', ros.validateString)(properties.jwks));
+    errors.collect(ros.propertyValidator('jwtPayloadConfig', RosConsumer_JwtPayloadConfigPropertyValidator)(properties.jwtPayloadConfig));
+    errors.collect(ros.propertyValidator('jwtTokenConfig', RosConsumer_JwtTokenConfigPropertyValidator)(properties.jwtTokenConfig));
+    return errors.wrap('supplied properties not correct for "JwtIdentityConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.JwtIdentityConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `JwtIdentityConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.JwtIdentityConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerJwtIdentityConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosConsumer_JwtIdentityConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Type': ros.stringToRosTemplate(properties.type),
+      'SecretType': ros.stringToRosTemplate(properties.secretType),
+      'Jwks': ros.stringToRosTemplate(properties.jwks),
+      'JwtPayloadConfig': rosConsumerJwtPayloadConfigPropertyToRosTemplate(properties.jwtPayloadConfig),
+      'JwtTokenConfig': rosConsumerJwtTokenConfigPropertyToRosTemplate(properties.jwtTokenConfig),
+    };
+}
+
+export namespace RosConsumer {
+    /**
+     * @stability external
+     */
+    export interface JwtPayloadConfigProperty {
+        /**
+         * @Property payloadKeyName: The key name of the JWT payload.
+         */
+        readonly payloadKeyName?: string | ros.IResolvable;
+        /**
+         * @Property payloadKeyValue: The value of the JWT payload.
+         */
+        readonly payloadKeyValue?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `JwtPayloadConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `JwtPayloadConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosConsumer_JwtPayloadConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('payloadKeyName', ros.validateString)(properties.payloadKeyName));
+    errors.collect(ros.propertyValidator('payloadKeyValue', ros.validateString)(properties.payloadKeyValue));
+    return errors.wrap('supplied properties not correct for "JwtPayloadConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.JwtPayloadConfig` resource
+ *
+ * @param properties - the TypeScript properties of a `JwtPayloadConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.JwtPayloadConfig` resource.
+ */
+// @ts-ignore TS6133
+function rosConsumerJwtPayloadConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosConsumer_JwtPayloadConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'PayloadKeyName': ros.stringToRosTemplate(properties.payloadKeyName),
+      'PayloadKeyValue': ros.stringToRosTemplate(properties.payloadKeyValue),
+    };
+}
+
+export namespace RosConsumer {
+    /**
+     * @stability external
+     */
+    export interface JwtTokenConfigProperty {
+        /**
+         * @Property pass: Whether to pass through the JWT.
+         */
+        readonly pass?: boolean | ros.IResolvable;
+        /**
+         * @Property position: The position where JWT is stored. Valid values: HEADER, QUERY.
+         */
+        readonly position?: string | ros.IResolvable;
+        /**
+         * @Property prefix: The prefix for JWT token.
+         */
+        readonly prefix?: string | ros.IResolvable;
+        /**
+         * @Property key: The key name for JWT.
          */
         readonly key?: string | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `ConditionsProperty`
+ * Determine whether the given properties match those of a `JwtTokenConfigProperty`
  *
- * @param properties - the TypeScript properties of a `ConditionsProperty`
+ * @param properties - the TypeScript properties of a `JwtTokenConfigProperty`
  *
  * @returns the result of the validation.
  */
-function RosApiAttachment_ConditionsPropertyValidator(properties: any): ros.ValidationResult {
+function RosConsumer_JwtTokenConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    if(properties.operator && (typeof properties.operator) !== 'object') {
-        errors.collect(ros.propertyValidator('operator', ros.validateAllowedValues)({
-          data: properties.operator,
-          allowedValues: ["Exact","Prefix","Regex"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('operator', ros.validateString)(properties.operator));
-    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
-    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('pass', ros.validateBoolean)(properties.pass));
+    errors.collect(ros.propertyValidator('position', ros.validateString)(properties.position));
+    errors.collect(ros.propertyValidator('prefix', ros.validateString)(properties.prefix));
     errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
-    return errors.wrap('supplied properties not correct for "ConditionsProperty"');
+    return errors.wrap('supplied properties not correct for "JwtTokenConfigProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::ApiAttachment.Conditions` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.JwtTokenConfig` resource
  *
- * @param properties - the TypeScript properties of a `ConditionsProperty`
+ * @param properties - the TypeScript properties of a `JwtTokenConfigProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::ApiAttachment.Conditions` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::Consumer.JwtTokenConfig` resource.
  */
 // @ts-ignore TS6133
-function rosApiAttachmentConditionsPropertyToRosTemplate(properties: any): any {
+function rosConsumerJwtTokenConfigPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosApiAttachment_ConditionsPropertyValidator(properties).assertSuccess();
+    RosConsumer_JwtTokenConfigPropertyValidator(properties).assertSuccess();
     return {
-      'Operator': ros.stringToRosTemplate(properties.operator),
-      'Type': ros.stringToRosTemplate(properties.type),
-      'Value': ros.stringToRosTemplate(properties.value),
+      'Pass': ros.booleanToRosTemplate(properties.pass),
+      'Position': ros.stringToRosTemplate(properties.position),
+      'Prefix': ros.stringToRosTemplate(properties.prefix),
       'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
-export namespace RosApiAttachment {
-    /**
-     * @stability external
-     */
-    export interface MatchProperty {
-        /**
-         * @Property defaultMatch: Match default condition or not.
-         */
-        readonly defaultMatch?: boolean | ros.IResolvable;
-        /**
-         * @Property conditions: Match conditions.
-         */
-        readonly conditions?: Array<RosApiAttachment.ConditionsProperty | ros.IResolvable> | ros.IResolvable;
-    }
-}
 /**
- * Determine whether the given properties match those of a `MatchProperty`
- *
- * @param properties - the TypeScript properties of a `MatchProperty`
- *
- * @returns the result of the validation.
+ * Properties for defining a `RosConsumerAuthorizationRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-consumerauthorizationrule
  */
-function RosApiAttachment_MatchPropertyValidator(properties: any): ros.ValidationResult {
-    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
-    const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('defaultMatch', ros.validateBoolean)(properties.defaultMatch));
-    errors.collect(ros.propertyValidator('conditions', ros.listValidator(RosApiAttachment_ConditionsPropertyValidator))(properties.conditions));
-    return errors.wrap('supplied properties not correct for "MatchProperty"');
+export interface RosConsumerAuthorizationRuleProps {
+
+    /**
+     * @Property consumerId: The consumer ID.
+     */
+    readonly consumerId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceIdentifier: Resource identifier for non-standard code sources.
+     */
+    readonly resourceIdentifier: RosConsumerAuthorizationRule.ResourceIdentifierProperty | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource type.
+     */
+    readonly resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property expireMode: The expire mode. Valid values: LongTerm, ShortTerm.
+     */
+    readonly expireMode?: string | ros.IResolvable;
+
+    /**
+     * @Property expireTimestamp: The expire timestamp in milliseconds.
+     */
+    readonly expireTimestamp?: number | ros.IResolvable;
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::ApiAttachment.Match` resource
+ * Determine whether the given properties match those of a `RosConsumerAuthorizationRuleProps`
  *
- * @param properties - the TypeScript properties of a `MatchProperty`
+ * @param properties - the TypeScript properties of a `RosConsumerAuthorizationRuleProps`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::ApiAttachment.Match` resource.
+ * @returns the result of the validation.
+ */
+function RosConsumerAuthorizationRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceIdentifier', ros.requiredValidator)(properties.resourceIdentifier));
+    errors.collect(ros.propertyValidator('resourceIdentifier', RosConsumerAuthorizationRule_ResourceIdentifierPropertyValidator)(properties.resourceIdentifier));
+    errors.collect(ros.propertyValidator('expireTimestamp', ros.validateNumber)(properties.expireTimestamp));
+    errors.collect(ros.propertyValidator('consumerId', ros.requiredValidator)(properties.consumerId));
+    errors.collect(ros.propertyValidator('consumerId', ros.validateString)(properties.consumerId));
+    errors.collect(ros.propertyValidator('resourceType', ros.requiredValidator)(properties.resourceType));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    if(properties.expireMode && (typeof properties.expireMode) !== 'object') {
+        errors.collect(ros.propertyValidator('expireMode', ros.validateAllowedValues)({
+          data: properties.expireMode,
+          allowedValues: ["LongTerm","ShortTerm"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('expireMode', ros.validateString)(properties.expireMode));
+    return errors.wrap('supplied properties not correct for "RosConsumerAuthorizationRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::ConsumerAuthorizationRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosConsumerAuthorizationRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::ConsumerAuthorizationRule` resource.
  */
 // @ts-ignore TS6133
-function rosApiAttachmentMatchPropertyToRosTemplate(properties: any): any {
+function rosConsumerAuthorizationRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosApiAttachment_MatchPropertyValidator(properties).assertSuccess();
+    if(enableResourcePropertyConstraint) {
+        RosConsumerAuthorizationRulePropsValidator(properties).assertSuccess();
+    }
     return {
-      'DefaultMatch': ros.booleanToRosTemplate(properties.defaultMatch),
-      'Conditions': ros.listMapper(rosApiAttachmentConditionsPropertyToRosTemplate)(properties.conditions),
+      'ConsumerId': ros.stringToRosTemplate(properties.consumerId),
+      'ResourceIdentifier': rosConsumerAuthorizationRuleResourceIdentifierPropertyToRosTemplate(properties.resourceIdentifier),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'ExpireMode': ros.stringToRosTemplate(properties.expireMode),
+      'ExpireTimestamp': ros.numberToRosTemplate(properties.expireTimestamp),
     };
 }
 
-export namespace RosApiAttachment {
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::ConsumerAuthorizationRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerAuthorizationRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-consumerauthorizationrule
+ */
+export class RosConsumerAuthorizationRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::APIG::ConsumerAuthorizationRule";
+
+    /**
+     * @Attribute ConsumerAuthorizationRuleId: The ID of the consumer authorization rule.
+     */
+    public readonly attrConsumerAuthorizationRuleId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property consumerId: The consumer ID.
+     */
+    public consumerId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceIdentifier: Resource identifier for non-standard code sources.
+     */
+    public resourceIdentifier: RosConsumerAuthorizationRule.ResourceIdentifierProperty | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The resource type.
+     */
+    public resourceType: string | ros.IResolvable;
+
+    /**
+     * @Property expireMode: The expire mode. Valid values: LongTerm, ShortTerm.
+     */
+    public expireMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property expireTimestamp: The expire timestamp in milliseconds.
+     */
+    public expireTimestamp: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosConsumerAuthorizationRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosConsumerAuthorizationRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrConsumerAuthorizationRuleId = this.getAtt('ConsumerAuthorizationRuleId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.consumerId = props.consumerId;
+        this.resourceIdentifier = props.resourceIdentifier;
+        this.resourceType = props.resourceType;
+        this.expireMode = props.expireMode;
+        this.expireTimestamp = props.expireTimestamp;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            consumerId: this.consumerId,
+            resourceIdentifier: this.resourceIdentifier,
+            resourceType: this.resourceType,
+            expireMode: this.expireMode,
+            expireTimestamp: this.expireTimestamp,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosConsumerAuthorizationRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosConsumerAuthorizationRule {
     /**
      * @stability external
      */
-    export interface ServiceConfigsProperty {
+    export interface ResourceIdentifierProperty {
         /**
-         * @Property version: The version of the service.
+         * @Property environmentId: The environment ID.
          */
-        readonly version?: string | ros.IResolvable;
+        readonly environmentId: string | ros.IResolvable;
         /**
-         * @Property port: Service Port. Dynamic ports are not passed in.
+         * @Property parentResourceId: The parent resource ID.
          */
-        readonly port?: number | ros.IResolvable;
+        readonly parentResourceId?: string | ros.IResolvable;
         /**
-         * @Property protocol: The protocol of the Domain.
+         * @Property resourceId: The resource ID.
          */
-        readonly protocol?: string | ros.IResolvable;
+        readonly resourceId: string | ros.IResolvable;
         /**
-         * @Property weight: Traffic weight for this service, range [1,100], valid only in proportional scenarios.
+         * @Property resources: The resource infos.
          */
-        readonly weight: number | ros.IResolvable;
-        /**
-         * @Property serviceId: The ID of the service associated with the release API.
-         */
-        readonly serviceId: string | ros.IResolvable;
-        /**
-         * @Property match: Match condition configurations in api deployment.
-         */
-        readonly match?: RosApiAttachment.MatchProperty | ros.IResolvable;
+        readonly resources?: Array<string | ros.IResolvable> | ros.IResolvable;
     }
 }
 /**
- * Determine whether the given properties match those of a `ServiceConfigsProperty`
+ * Determine whether the given properties match those of a `ResourceIdentifierProperty`
  *
- * @param properties - the TypeScript properties of a `ServiceConfigsProperty`
+ * @param properties - the TypeScript properties of a `ResourceIdentifierProperty`
  *
  * @returns the result of the validation.
  */
-function RosApiAttachment_ServiceConfigsPropertyValidator(properties: any): ros.ValidationResult {
+function RosConsumerAuthorizationRule_ResourceIdentifierPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
-    errors.collect(ros.propertyValidator('port', ros.validateNumber)(properties.port));
-    if(properties.protocol && (typeof properties.protocol) !== 'object') {
-        errors.collect(ros.propertyValidator('protocol', ros.validateAllowedValues)({
-          data: properties.protocol,
-          allowedValues: ["HTTP","HTTPS"],
-        }));
-    }
-    errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
-    errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
-    if(properties.weight && (typeof properties.weight) !== 'object') {
-        errors.collect(ros.propertyValidator('weight', ros.validateRange)({
-            data: properties.weight,
-            min: 1,
-            max: 100,
-          }));
-    }
-    errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
-    errors.collect(ros.propertyValidator('serviceId', ros.requiredValidator)(properties.serviceId));
-    errors.collect(ros.propertyValidator('serviceId', ros.validateString)(properties.serviceId));
-    errors.collect(ros.propertyValidator('match', RosApiAttachment_MatchPropertyValidator)(properties.match));
-    return errors.wrap('supplied properties not correct for "ServiceConfigsProperty"');
+    errors.collect(ros.propertyValidator('environmentId', ros.requiredValidator)(properties.environmentId));
+    errors.collect(ros.propertyValidator('environmentId', ros.validateString)(properties.environmentId));
+    errors.collect(ros.propertyValidator('parentResourceId', ros.validateString)(properties.parentResourceId));
+    errors.collect(ros.propertyValidator('resourceId', ros.requiredValidator)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    errors.collect(ros.propertyValidator('resources', ros.listValidator(ros.validateString))(properties.resources));
+    return errors.wrap('supplied properties not correct for "ResourceIdentifierProperty"');
 }
 
 /**
- * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::ApiAttachment.ServiceConfigs` resource
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::APIG::ConsumerAuthorizationRule.ResourceIdentifier` resource
  *
- * @param properties - the TypeScript properties of a `ServiceConfigsProperty`
+ * @param properties - the TypeScript properties of a `ResourceIdentifierProperty`
  *
- * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::ApiAttachment.ServiceConfigs` resource.
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::APIG::ConsumerAuthorizationRule.ResourceIdentifier` resource.
  */
 // @ts-ignore TS6133
-function rosApiAttachmentServiceConfigsPropertyToRosTemplate(properties: any): any {
+function rosConsumerAuthorizationRuleResourceIdentifierPropertyToRosTemplate(properties: any): any {
     if (!ros.canInspect(properties)) { return properties; }
-    RosApiAttachment_ServiceConfigsPropertyValidator(properties).assertSuccess();
+    RosConsumerAuthorizationRule_ResourceIdentifierPropertyValidator(properties).assertSuccess();
     return {
-      'Version': ros.stringToRosTemplate(properties.version),
-      'Port': ros.numberToRosTemplate(properties.port),
-      'Protocol': ros.stringToRosTemplate(properties.protocol),
-      'Weight': ros.numberToRosTemplate(properties.weight),
-      'ServiceId': ros.stringToRosTemplate(properties.serviceId),
-      'Match': rosApiAttachmentMatchPropertyToRosTemplate(properties.match),
+      'EnvironmentId': ros.stringToRosTemplate(properties.environmentId),
+      'ParentResourceId': ros.stringToRosTemplate(properties.parentResourceId),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'Resources': ros.listMapper(ros.stringToRosTemplate)(properties.resources),
     };
 }
 
@@ -548,7 +1096,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`, which is used to create a domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
  */
@@ -2074,7 +2622,7 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Plugin`, which is used to create a plug-in.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Plugin`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Plugin` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-plugin
  */
@@ -2234,7 +2782,7 @@ function rosPluginAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginAttachment`, which is used to bind a plug-in.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-pluginattachment
  */

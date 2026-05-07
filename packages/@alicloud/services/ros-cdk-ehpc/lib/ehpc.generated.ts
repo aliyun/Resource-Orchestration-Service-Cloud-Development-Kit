@@ -2253,7 +2253,7 @@ function rosClusterV2PropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::ClusterV2`, which is used to create a cluster in Elastic High Performance Computing (E-HPC) of the new version.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::ClusterV2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
  */
@@ -3782,6 +3782,577 @@ function rosClusterV2TagsPropertyToRosTemplate(properties: any): any {
     return {
       'Value': ros.stringToRosTemplate(properties.value),
       'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
+ * Properties for defining a `RosQueue`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-queue
+ */
+export interface RosQueueProps {
+
+    /**
+     * @Property clusterId: The cluster ID.
+     */
+    readonly clusterId?: string | ros.IResolvable;
+
+    /**
+     * @Property computeNodes: The hardware configurations of the compute nodes in the queue. Valid values of N: 1 to 10.
+     */
+    readonly computeNodes?: Array<RosQueue.ComputeNodesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property enableScaleIn: Specifies whether to enable auto scale-in for the queue. Valid values:
+     * *   true
+     * *   false.
+     */
+    readonly enableScaleIn?: boolean | ros.IResolvable;
+
+    /**
+     * @Property enableScaleOut: Specifies whether to enable auto scale-out for the queue. Valid values:
+     * *   true
+     * *   false.
+     */
+    readonly enableScaleOut?: boolean | ros.IResolvable;
+
+    /**
+     * @Property hostnamePrefix: The hostname prefix of the added compute nodes.
+     */
+    readonly hostnamePrefix?: string | ros.IResolvable;
+
+    /**
+     * @Property hostnameSuffix: The hostname suffix of the compute nodes in the queue.
+     */
+    readonly hostnameSuffix?: string | ros.IResolvable;
+
+    /**
+     * @Property initialCount: The initial number of compute nodes in the queue.
+     */
+    readonly initialCount?: number | ros.IResolvable;
+
+    /**
+     * @Property interConnect: The type of the network for interconnecting compute nodes in the queue.
+     */
+    readonly interConnect?: string | ros.IResolvable;
+
+    /**
+     * @Property maxCount: The maximum number of compute nodes that the queue can contain.
+     */
+    readonly maxCount?: number | ros.IResolvable;
+
+    /**
+     * @Property minCount: The minimum number of compute nodes that the queue must contain.
+     */
+    readonly minCount?: number | ros.IResolvable;
+
+    /**
+     * @Property queueName: The queue name.
+     */
+    readonly queueName?: string | ros.IResolvable;
+
+    /**
+     * @Property vSwitchIds: The VSwitches available for use by compute nodes in the queue.
+     */
+    readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosQueueProps`
+ *
+ * @param properties - the TypeScript properties of a `RosQueueProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosQueuePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('enableScaleIn', ros.validateBoolean)(properties.enableScaleIn));
+    errors.collect(ros.propertyValidator('clusterId', ros.validateString)(properties.clusterId));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: 0,
+            max: 5,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('hostnameSuffix', ros.validateString)(properties.hostnameSuffix));
+    if(properties.computeNodes && (Array.isArray(properties.computeNodes) || (typeof properties.computeNodes) === 'string')) {
+        errors.collect(ros.propertyValidator('computeNodes', ros.validateLength)({
+            data: properties.computeNodes.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('computeNodes', ros.listValidator(RosQueue_ComputeNodesPropertyValidator))(properties.computeNodes));
+    errors.collect(ros.propertyValidator('interConnect', ros.validateString)(properties.interConnect));
+    errors.collect(ros.propertyValidator('enableScaleOut', ros.validateBoolean)(properties.enableScaleOut));
+    errors.collect(ros.propertyValidator('maxCount', ros.validateNumber)(properties.maxCount));
+    errors.collect(ros.propertyValidator('queueName', ros.validateString)(properties.queueName));
+    errors.collect(ros.propertyValidator('initialCount', ros.validateNumber)(properties.initialCount));
+    errors.collect(ros.propertyValidator('hostnamePrefix', ros.validateString)(properties.hostnamePrefix));
+    errors.collect(ros.propertyValidator('minCount', ros.validateNumber)(properties.minCount));
+    return errors.wrap('supplied properties not correct for "RosQueueProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Queue` resource
+ *
+ * @param properties - the TypeScript properties of a `RosQueueProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Queue` resource.
+ */
+// @ts-ignore TS6133
+function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosQueuePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ClusterId': ros.stringToRosTemplate(properties.clusterId),
+      'ComputeNodes': ros.listMapper(rosQueueComputeNodesPropertyToRosTemplate)(properties.computeNodes),
+      'EnableScaleIn': ros.booleanToRosTemplate(properties.enableScaleIn),
+      'EnableScaleOut': ros.booleanToRosTemplate(properties.enableScaleOut),
+      'HostnamePrefix': ros.stringToRosTemplate(properties.hostnamePrefix),
+      'HostnameSuffix': ros.stringToRosTemplate(properties.hostnameSuffix),
+      'InitialCount': ros.numberToRosTemplate(properties.initialCount),
+      'InterConnect': ros.stringToRosTemplate(properties.interConnect),
+      'MaxCount': ros.numberToRosTemplate(properties.maxCount),
+      'MinCount': ros.numberToRosTemplate(properties.minCount),
+      'QueueName': ros.stringToRosTemplate(properties.queueName),
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EHPC::Queue`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-queue
+ */
+export class RosQueue extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::EHPC::Queue";
+
+    /**
+     * @Attribute ComputeNodes: The hardware configurations of the compute nodes in the queue.
+     */
+    public readonly attrComputeNodes: ros.IResolvable;
+
+    /**
+     * @Attribute CreateTime: Queue creation time.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute EnableScaleIn: Specifies whether to enable auto scale-in for the queue.
+     */
+    public readonly attrEnableScaleIn: ros.IResolvable;
+
+    /**
+     * @Attribute EnableScaleOut: Specifies whether to enable auto scale-out for the queue.
+     */
+    public readonly attrEnableScaleOut: ros.IResolvable;
+
+    /**
+     * @Attribute HostnamePrefix: The hostname prefix of the added compute nodes.
+     */
+    public readonly attrHostnamePrefix: ros.IResolvable;
+
+    /**
+     * @Attribute HostnameSuffix: The hostname suffix of the compute nodes in the queue.
+     */
+    public readonly attrHostnameSuffix: ros.IResolvable;
+
+    /**
+     * @Attribute InitialCount: The initial number of compute nodes in the queue.
+     */
+    public readonly attrInitialCount: ros.IResolvable;
+
+    /**
+     * @Attribute InterConnect: The type of the network for interconnecting compute nodes in the queue.
+     */
+    public readonly attrInterConnect: ros.IResolvable;
+
+    /**
+     * @Attribute MaxCount: The maximum number of compute nodes that the queue can contain.
+     */
+    public readonly attrMaxCount: ros.IResolvable;
+
+    /**
+     * @Attribute MinCount: The minimum number of compute nodes that the queue must contain.
+     */
+    public readonly attrMinCount: ros.IResolvable;
+
+    /**
+     * @Attribute QueueName: The queue name.
+     */
+    public readonly attrQueueName: ros.IResolvable;
+
+    /**
+     * @Attribute UpdateTime: Queue update time.
+     */
+    public readonly attrUpdateTime: ros.IResolvable;
+
+    /**
+     * @Attribute VSwitchIds: The VSwitches available for use by compute nodes in the queue.
+     */
+    public readonly attrVSwitchIds: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property clusterId: The cluster ID.
+     */
+    public clusterId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property computeNodes: The hardware configurations of the compute nodes in the queue. Valid values of N: 1 to 10.
+     */
+    public computeNodes: Array<RosQueue.ComputeNodesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableScaleIn: Specifies whether to enable auto scale-in for the queue. Valid values:
+     * *   true
+     * *   false.
+     */
+    public enableScaleIn: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property enableScaleOut: Specifies whether to enable auto scale-out for the queue. Valid values:
+     * *   true
+     * *   false.
+     */
+    public enableScaleOut: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property hostnamePrefix: The hostname prefix of the added compute nodes.
+     */
+    public hostnamePrefix: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property hostnameSuffix: The hostname suffix of the compute nodes in the queue.
+     */
+    public hostnameSuffix: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property initialCount: The initial number of compute nodes in the queue.
+     */
+    public initialCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property interConnect: The type of the network for interconnecting compute nodes in the queue.
+     */
+    public interConnect: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxCount: The maximum number of compute nodes that the queue can contain.
+     */
+    public maxCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property minCount: The minimum number of compute nodes that the queue must contain.
+     */
+    public minCount: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property queueName: The queue name.
+     */
+    public queueName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vSwitchIds: The VSwitches available for use by compute nodes in the queue.
+     */
+    public vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosQueueProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosQueue.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrComputeNodes = this.getAtt('ComputeNodes');
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrEnableScaleIn = this.getAtt('EnableScaleIn');
+        this.attrEnableScaleOut = this.getAtt('EnableScaleOut');
+        this.attrHostnamePrefix = this.getAtt('HostnamePrefix');
+        this.attrHostnameSuffix = this.getAtt('HostnameSuffix');
+        this.attrInitialCount = this.getAtt('InitialCount');
+        this.attrInterConnect = this.getAtt('InterConnect');
+        this.attrMaxCount = this.getAtt('MaxCount');
+        this.attrMinCount = this.getAtt('MinCount');
+        this.attrQueueName = this.getAtt('QueueName');
+        this.attrUpdateTime = this.getAtt('UpdateTime');
+        this.attrVSwitchIds = this.getAtt('VSwitchIds');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.clusterId = props.clusterId;
+        this.computeNodes = props.computeNodes;
+        this.enableScaleIn = props.enableScaleIn;
+        this.enableScaleOut = props.enableScaleOut;
+        this.hostnamePrefix = props.hostnamePrefix;
+        this.hostnameSuffix = props.hostnameSuffix;
+        this.initialCount = props.initialCount;
+        this.interConnect = props.interConnect;
+        this.maxCount = props.maxCount;
+        this.minCount = props.minCount;
+        this.queueName = props.queueName;
+        this.vSwitchIds = props.vSwitchIds;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            clusterId: this.clusterId,
+            computeNodes: this.computeNodes,
+            enableScaleIn: this.enableScaleIn,
+            enableScaleOut: this.enableScaleOut,
+            hostnamePrefix: this.hostnamePrefix,
+            hostnameSuffix: this.hostnameSuffix,
+            initialCount: this.initialCount,
+            interConnect: this.interConnect,
+            maxCount: this.maxCount,
+            minCount: this.minCount,
+            queueName: this.queueName,
+            vSwitchIds: this.vSwitchIds,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosQueuePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosQueue {
+    /**
+     * @stability external
+     */
+    export interface ComputeNodesProperty {
+        /**
+         * @Property systemDisk: Node system disk configuration details.
+         */
+        readonly systemDisk?: RosQueue.SystemDiskProperty | ros.IResolvable;
+        /**
+         * @Property autoRenewPeriod: Duration of a single auto-renewal. Valid values: 
+     * When PeriodUnit = Week: 1, 2, 3. 
+     * When PeriodUnit = Month: 1, 2, 3, 6, 12, 24, 36, 48, 60. 
+     * Default value: 1.
+         */
+        readonly autoRenewPeriod?: number | ros.IResolvable;
+        /**
+         * @Property enableHt: Whether to enable Hyper-Threading on the node. Valid values: 
+     * ** true: enabled. 
+     * ** false: disabled
+         */
+        readonly enableHt?: boolean | ros.IResolvable;
+        /**
+         * @Property instanceChargeType: Instance billing method. Valid values: 
+     * ** PrePaid: Subscription. 
+     * ** PostPaid: Pay-as-you-go (default).
+         */
+        readonly instanceChargeType?: string | ros.IResolvable;
+        /**
+         * @Property autoRenew: Whether auto-renewal is enabled. This parameter only takes effect when InstanceChargeType is set to PrePaid. Valid values: 
+     * ** true: Auto-renewal enabled.
+     * ** false: Auto-renewal disabled.
+     * Default value: false.
+         */
+        readonly autoRenew?: boolean | ros.IResolvable;
+        /**
+         * @Property imageId: Image ID. The image resource selected when launching the instance.
+         */
+        readonly imageId?: string | ros.IResolvable;
+        /**
+         * @Property period: Purchase duration of the resource, measured in the unit specified by PeriodUnit.Required only when InstanceChargeType is set to PrePaid.If DedicatedHostId is provided, the chosen Period must not exceed the remaining subscription duration of that dedicated host. Valid values: 
+     * PeriodUnit=Week → Period: 1, 2, 3, 4.
+     * PeriodUnit=Month → Period: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24, 36, 48, 60
+         */
+        readonly period?: number | ros.IResolvable;
+        /**
+         * @Property spotPriceLimit: Set the maximum hourly price for the instance. Supports up to three decimal places. This parameter takes effect only when SpotStrategy is set to SpotWithPriceLimit.
+         */
+        readonly spotPriceLimit?: number | ros.IResolvable;
+        /**
+         * @Property duration: Retention duration for a preemptible instance, measured in hours. Default value: 1. Valid values: 
+     * ** 1: After creation, Alibaba Cloud guarantees that the instance will run for at least one hour before it can be automatically released. Once the first hour has elapsed, the system will continuously compare your bid price against the market price and check resource availability to determine whether the instance is retained or reclaimed.
+     * ** 0: After creation, Alibaba Cloud provides no one-hour guarantee. The system immediately compares your bid price with the market price and checks resource availability to decide whether to keep or reclaim the instance.
+         */
+        readonly duration?: number | ros.IResolvable;
+        /**
+         * @Property instanceType: The resource specifications of the ECS instance.
+         */
+        readonly instanceType?: string | ros.IResolvable;
+        /**
+         * @Property spotStrategy: Spot (bidding) strategy for pay-as-you-go instances. Valid only when InstanceChargeType is set to PostPaid. Valid values: 
+     * ** NoSpot (default): A regular pay-as-you-go instance.
+     * ** SpotWithPriceLimit: A spot instance with a user-defined maximum price.
+     * ** SpotAsPriceGo: The system bids automatically at the current market price.
+         */
+        readonly spotStrategy?: string | ros.IResolvable;
+        /**
+         * @Property periodUnit: Duration unit for the Subscription (Pay-As-You-Go\/Prepaid) billing method. Valid values: 
+     * ** Week.
+     * ** Month (default).
+         */
+        readonly periodUnit?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ComputeNodesProperty`
+ *
+ * @param properties - the TypeScript properties of a `ComputeNodesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosQueue_ComputeNodesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('systemDisk', RosQueue_SystemDiskPropertyValidator)(properties.systemDisk));
+    if(properties.autoRenewPeriod && (typeof properties.autoRenewPeriod) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateAllowedValues)({
+          data: properties.autoRenewPeriod,
+          allowedValues: [1,2,3,6,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('autoRenewPeriod', ros.validateNumber)(properties.autoRenewPeriod));
+    errors.collect(ros.propertyValidator('enableHt', ros.validateBoolean)(properties.enableHt));
+    if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
+          data: properties.instanceChargeType,
+          allowedValues: ["PrePaid","PostPaid"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
+    errors.collect(ros.propertyValidator('autoRenew', ros.validateBoolean)(properties.autoRenew));
+    errors.collect(ros.propertyValidator('imageId', ros.validateString)(properties.imageId));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,2,3,4,5,6,7,8,9,12,24,36,48,60],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('spotPriceLimit', ros.validateNumber)(properties.spotPriceLimit));
+    if(properties.duration && (typeof properties.duration) !== 'object') {
+        errors.collect(ros.propertyValidator('duration', ros.validateAllowedValues)({
+          data: properties.duration,
+          allowedValues: [0,1],
+        }));
+    }
+    errors.collect(ros.propertyValidator('duration', ros.validateNumber)(properties.duration));
+    errors.collect(ros.propertyValidator('instanceType', ros.validateString)(properties.instanceType));
+    if(properties.spotStrategy && (typeof properties.spotStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('spotStrategy', ros.validateAllowedValues)({
+          data: properties.spotStrategy,
+          allowedValues: ["NoSpot","SpotWithPriceLimit","SpotAsPriceGo"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('spotStrategy', ros.validateString)(properties.spotStrategy));
+    if(properties.periodUnit && (typeof properties.periodUnit) !== 'object') {
+        errors.collect(ros.propertyValidator('periodUnit', ros.validateAllowedValues)({
+          data: properties.periodUnit,
+          allowedValues: ["Week","Month"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('periodUnit', ros.validateString)(properties.periodUnit));
+    return errors.wrap('supplied properties not correct for "ComputeNodesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Queue.ComputeNodes` resource
+ *
+ * @param properties - the TypeScript properties of a `ComputeNodesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Queue.ComputeNodes` resource.
+ */
+// @ts-ignore TS6133
+function rosQueueComputeNodesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosQueue_ComputeNodesPropertyValidator(properties).assertSuccess();
+    return {
+      'SystemDisk': rosQueueSystemDiskPropertyToRosTemplate(properties.systemDisk),
+      'AutoRenewPeriod': ros.numberToRosTemplate(properties.autoRenewPeriod),
+      'EnableHt': ros.booleanToRosTemplate(properties.enableHt),
+      'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
+      'AutoRenew': ros.booleanToRosTemplate(properties.autoRenew),
+      'ImageId': ros.stringToRosTemplate(properties.imageId),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'SpotPriceLimit': ros.numberToRosTemplate(properties.spotPriceLimit),
+      'Duration': ros.numberToRosTemplate(properties.duration),
+      'InstanceType': ros.stringToRosTemplate(properties.instanceType),
+      'SpotStrategy': ros.stringToRosTemplate(properties.spotStrategy),
+      'PeriodUnit': ros.stringToRosTemplate(properties.periodUnit),
+    };
+}
+
+export namespace RosQueue {
+    /**
+     * @stability external
+     */
+    export interface SystemDiskProperty {
+        /**
+         * @Property category: System disk cloud disk type. Valid values:
+     * ** cloud_efficiency: Efficient Cloud Disk
+     * ** cloud_ssd: SSD Cloud Disk
+     * ** cloud_essd: ESSD Cloud Disk
+     *
+         */
+        readonly category?: string | ros.IResolvable;
+        /**
+         * @Property size: System disk size, in GiB. Valid ranges: 
+     * ** cloud_efficiency: 40–32,768. 
+     * ** cloud_ssd: 40–32,768.
+     * ** cloud_essd: The valid range depends on the value of DataDisk.N.PerformanceLevel: 
+     *    * PL0: 40–65,536. 
+     *    * PL1: 40–65,536. 
+     *    * PL2: 461–65,536. 
+     *    * PL3: 1,261–65,536. 
+     *
+         */
+        readonly size?: number | ros.IResolvable;
+        /**
+         * @Property level: Performance level of the ESSD cloud disk when it is used as the system disk. Valid values: 
+     * ** PL0: Up to 10,000 random read\/write IOPS per disk.
+     * ** PL1 (default): Up to 50,000 random read\/write IOPS per disk
+     * ** PL2: Up to 100,000 random read\/write IOPS per disk
+     * ** PL3: Up to 1,000,000 random read\/write IOPS per disk
+         */
+        readonly level?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `SystemDiskProperty`
+ *
+ * @param properties - the TypeScript properties of a `SystemDiskProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosQueue_SystemDiskPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('category', ros.validateString)(properties.category));
+    errors.collect(ros.propertyValidator('size', ros.validateNumber)(properties.size));
+    errors.collect(ros.propertyValidator('level', ros.validateString)(properties.level));
+    return errors.wrap('supplied properties not correct for "SystemDiskProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Queue.SystemDisk` resource
+ *
+ * @param properties - the TypeScript properties of a `SystemDiskProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::EHPC::Queue.SystemDisk` resource.
+ */
+// @ts-ignore TS6133
+function rosQueueSystemDiskPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosQueue_SystemDiskPropertyValidator(properties).assertSuccess();
+    return {
+      'Category': ros.stringToRosTemplate(properties.category),
+      'Size': ros.numberToRosTemplate(properties.size),
+      'Level': ros.stringToRosTemplate(properties.level),
     };
 }
 

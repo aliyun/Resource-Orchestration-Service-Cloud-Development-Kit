@@ -44,6 +44,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get => GetInstanceProperty<object>()!;
         }
 
+        /// <summary>Attribute Eni: Network interface.</summary>
+        [JsiiProperty(name: "attrEni", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrEni
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute PrivateConnectUrl: Private connection URL.</summary>
         [JsiiProperty(name: "attrPrivateConnectUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrPrivateConnectUrl

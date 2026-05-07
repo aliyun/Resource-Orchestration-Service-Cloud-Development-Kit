@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::IpsecServer`, which is used to create an IPsec-VPN server.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::IpsecServer`.
 type RosIpsecServer interface {
 	alicloudroscdkcore.RosResource
 	AttrIpsecServerId() alicloudroscdkcore.IResolvable

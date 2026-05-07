@@ -1,4 +1,6 @@
 export * from './apiattachment';
+export * from './consumer';
+export * from './consumerauthorizationrule';
 export * from './domain';
 export * from './gateway';
 export * from './httpapi';

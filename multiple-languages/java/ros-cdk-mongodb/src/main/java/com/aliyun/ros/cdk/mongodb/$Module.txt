@@ -1,6 +1,9 @@
 @alicloud/ros-cdk-mongodb.AuditPolicy=com.aliyun.ros.cdk.mongodb.AuditPolicy
 @alicloud/ros-cdk-mongodb.AuditPolicyProps=com.aliyun.ros.cdk.mongodb.AuditPolicyProps
+@alicloud/ros-cdk-mongodb.GlobalSecurityIPGroup=com.aliyun.ros.cdk.mongodb.GlobalSecurityIPGroup
+@alicloud/ros-cdk-mongodb.GlobalSecurityIPGroupProps=com.aliyun.ros.cdk.mongodb.GlobalSecurityIPGroupProps
 @alicloud/ros-cdk-mongodb.IAuditPolicy=com.aliyun.ros.cdk.mongodb.IAuditPolicy
+@alicloud/ros-cdk-mongodb.IGlobalSecurityIPGroup=com.aliyun.ros.cdk.mongodb.IGlobalSecurityIPGroup
 @alicloud/ros-cdk-mongodb.IInstance=com.aliyun.ros.cdk.mongodb.IInstance
 @alicloud/ros-cdk-mongodb.IPrivateSrvNetworkAddress=com.aliyun.ros.cdk.mongodb.IPrivateSrvNetworkAddress
 @alicloud/ros-cdk-mongodb.IShardingInstance=com.aliyun.ros.cdk.mongodb.IShardingInstance
@@ -12,6 +15,8 @@
 @alicloud/ros-cdk-mongodb.PrivateSrvNetworkAddressProps=com.aliyun.ros.cdk.mongodb.PrivateSrvNetworkAddressProps
 @alicloud/ros-cdk-mongodb.RosAuditPolicy=com.aliyun.ros.cdk.mongodb.RosAuditPolicy
 @alicloud/ros-cdk-mongodb.RosAuditPolicyProps=com.aliyun.ros.cdk.mongodb.RosAuditPolicyProps
+@alicloud/ros-cdk-mongodb.RosGlobalSecurityIPGroup=com.aliyun.ros.cdk.mongodb.RosGlobalSecurityIPGroup
+@alicloud/ros-cdk-mongodb.RosGlobalSecurityIPGroupProps=com.aliyun.ros.cdk.mongodb.RosGlobalSecurityIPGroupProps
 @alicloud/ros-cdk-mongodb.RosInstance=com.aliyun.ros.cdk.mongodb.RosInstance
 @alicloud/ros-cdk-mongodb.RosInstance.AuditPolicyOptionsProperty=com.aliyun.ros.cdk.mongodb.RosInstance$AuditPolicyOptionsProperty
 @alicloud/ros-cdk-mongodb.RosInstance.BackupPolicyOptionsProperty=com.aliyun.ros.cdk.mongodb.RosInstance$BackupPolicyOptionsProperty

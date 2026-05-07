@@ -40,7 +40,7 @@ export interface IMessageCallbacks extends ros.IResource {
     readonly attrMessageCallbacks: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::MessageCallbacks`, which is used to query sets of event notification configurations.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::VOD::MessageCallbacks`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMessageCallbacks`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-messagecallbacks
  */

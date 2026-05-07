@@ -818,7 +818,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
         /// <summary>Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.</summary>
         /// <remarks>
-        /// The value ranges from 1 to 300.
+        /// The value ranges from 1 to 600.
         /// </remarks>
         [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -1577,7 +1577,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sae
 
             /// <summary>Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.</summary>
             /// <remarks>
-            /// The value ranges from 1 to 300.
+            /// The value ranges from 1 to 600.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "terminationGracePeriodSeconds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

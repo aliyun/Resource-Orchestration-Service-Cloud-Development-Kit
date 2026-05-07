@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OTS::InstanceV2`The , which resource type is used to create a new Tablestore instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OTS::InstanceV2`.
 type InstanceV2 interface {
 	alicloudroscdkcore.Resource
 	IInstanceV2

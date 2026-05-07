@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure virtual private cloud (VPC) access authorization for an instance.
-//
-// This helps APIs provide services based on private networks.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`.
 type RosVpcAccessConfig interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

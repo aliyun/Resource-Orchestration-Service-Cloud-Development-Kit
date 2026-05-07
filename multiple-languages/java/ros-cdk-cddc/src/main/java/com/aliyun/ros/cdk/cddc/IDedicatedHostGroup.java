@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cddc;
 /**
  * Represents a <code>DedicatedHostGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.210Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.153Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.IDedicatedHostGroup")
 @software.amazon.jsii.Jsii.Proxy(IDedicatedHostGroup.Jsii$Proxy.class)
 public interface IDedicatedHostGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

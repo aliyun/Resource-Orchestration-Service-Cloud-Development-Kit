@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`, which is used to configure service settings.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ServiceSettings` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings

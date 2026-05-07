@@ -12,11 +12,8 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::ApiAttachment`, which is used to attach an API.
 type RosApiAttachment interface {
 	alicloudroscdkcore.RosResource
-	AttrEnvironmentId() alicloudroscdkcore.IResolvable
 	AttrHttpApiId() alicloudroscdkcore.IResolvable
 	AttrRouteId() alicloudroscdkcore.IResolvable
-	BackendScene() interface{}
-	SetBackendScene(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -27,8 +24,6 @@ type RosApiAttachment interface {
 	SetDomainIds(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
-	EnvironmentId() interface{}
-	SetEnvironmentId(val interface{})
 	HttpApiId() interface{}
 	SetHttpApiId(val interface{})
 	// The logical ID for this stack element.
@@ -55,8 +50,6 @@ type RosApiAttachment interface {
 	RosResourceType() *string
 	RouteId() interface{}
 	SetRouteId(val interface{})
-	ServiceConfigs() interface{}
-	SetServiceConfigs(val interface{})
 	// The stack in which this element is defined.
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
@@ -185,16 +178,6 @@ type jsiiProxy_RosApiAttachment struct {
 	internal.Type__alicloudroscdkcoreRosResource
 }
 
-func (j *jsiiProxy_RosApiAttachment) AttrEnvironmentId() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
-	_jsii_.Get(
-		j,
-		"attrEnvironmentId",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosApiAttachment) AttrHttpApiId() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -210,16 +193,6 @@ func (j *jsiiProxy_RosApiAttachment) AttrRouteId() alicloudroscdkcore.IResolvabl
 	_jsii_.Get(
 		j,
 		"attrRouteId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosApiAttachment) BackendScene() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"backendScene",
 		&returns,
 	)
 	return returns
@@ -260,16 +233,6 @@ func (j *jsiiProxy_RosApiAttachment) EnableResourcePropertyConstraint() *bool {
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosApiAttachment) EnvironmentId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"environmentId",
 		&returns,
 	)
 	return returns
@@ -355,16 +318,6 @@ func (j *jsiiProxy_RosApiAttachment) RouteId() interface{} {
 	return returns
 }
 
-func (j *jsiiProxy_RosApiAttachment) ServiceConfigs() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"serviceConfigs",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_RosApiAttachment) Stack() alicloudroscdkcore.Stack {
 	var returns alicloudroscdkcore.Stack
 	_jsii_.Get(
@@ -413,17 +366,6 @@ func NewRosApiAttachment_Override(r RosApiAttachment, scope alicloudroscdkcore.C
 	)
 }
 
-func (j *jsiiProxy_RosApiAttachment)SetBackendScene(val interface{}) {
-	if err := j.validateSetBackendSceneParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"backendScene",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosApiAttachment)SetDescription(val interface{}) {
 	if err := j.validateSetDescriptionParameters(val); err != nil {
 		panic(err)
@@ -457,17 +399,6 @@ func (j *jsiiProxy_RosApiAttachment)SetEnableResourcePropertyConstraint(val *boo
 	)
 }
 
-func (j *jsiiProxy_RosApiAttachment)SetEnvironmentId(val interface{}) {
-	if err := j.validateSetEnvironmentIdParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"environmentId",
-		val,
-	)
-}
-
 func (j *jsiiProxy_RosApiAttachment)SetHttpApiId(val interface{}) {
 	if err := j.validateSetHttpApiIdParameters(val); err != nil {
 		panic(err)
@@ -486,17 +417,6 @@ func (j *jsiiProxy_RosApiAttachment)SetRouteId(val interface{}) {
 	_jsii_.Set(
 		j,
 		"routeId",
-		val,
-	)
-}
-
-func (j *jsiiProxy_RosApiAttachment)SetServiceConfigs(val interface{}) {
-	if err := j.validateSetServiceConfigsParameters(val); err != nil {
-		panic(err)
-	}
-	_jsii_.Set(
-		j,
-		"serviceConfigs",
 		val,
 	)
 }

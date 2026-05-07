@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>The , which resource creates a Supabase project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.067Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.997Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.SupabaseProject")
 public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.ISupabaseProject {
 
@@ -46,6 +46,14 @@ public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys() {
         return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute Eni: Network interface.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrEni() {
+        return software.amazon.jsii.Kernel.get(this, "attrEni", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**
@@ -311,6 +319,27 @@ public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * Property databaseIpList: Database IP list.
+         * <p>
+         * @return {@code this}
+         * @param databaseIpList Property databaseIpList: Database IP list. This parameter is required.
+         */
+        public Builder databaseIpList(final java.lang.String databaseIpList) {
+            this.props.databaseIpList(databaseIpList);
+            return this;
+        }
+        /**
+         * Property databaseIpList: Database IP list.
+         * <p>
+         * @return {@code this}
+         * @param databaseIpList Property databaseIpList: Database IP list. This parameter is required.
+         */
+        public Builder databaseIpList(final com.aliyun.ros.cdk.core.IResolvable databaseIpList) {
+            this.props.databaseIpList(databaseIpList);
             return this;
         }
 

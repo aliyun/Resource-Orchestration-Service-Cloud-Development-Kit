@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.threatdetection;
 /**
  * Represents a <code>VulWhitelist</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.585Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.660Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.IVulWhitelist")
 @software.amazon.jsii.Jsii.Proxy(IVulWhitelist.Jsii$Proxy.class)
 public interface IVulWhitelist extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

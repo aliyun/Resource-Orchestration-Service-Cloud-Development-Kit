@@ -1,0 +1,5 @@
+@alicloud/ros-cdk-paifeaturestore.Datasource=com.aliyun.ros.cdk.paifeaturestore.Datasource
+@alicloud/ros-cdk-paifeaturestore.DatasourceProps=com.aliyun.ros.cdk.paifeaturestore.DatasourceProps
+@alicloud/ros-cdk-paifeaturestore.IDatasource=com.aliyun.ros.cdk.paifeaturestore.IDatasource
+@alicloud/ros-cdk-paifeaturestore.RosDatasource=com.aliyun.ros.cdk.paifeaturestore.RosDatasource
+@alicloud/ros-cdk-paifeaturestore.RosDatasourceProps=com.aliyun.ros.cdk.paifeaturestore.RosDatasourceProps

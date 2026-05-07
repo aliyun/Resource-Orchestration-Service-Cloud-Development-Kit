@@ -5,10 +5,16 @@ package com.aliyun.ros.cdk.arms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-environments
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:22.037Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.944Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.RosEnvironmentsProps")
 @software.amazon.jsii.Jsii.Proxy(RosEnvironmentsProps.Jsii$Proxy.class)
 public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializable {
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getBindResourceId() {
+        return null;
+    }
 
     /**
      */
@@ -38,9 +44,30 @@ public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializa
      * A builder for {@link RosEnvironmentsProps}
      */
     public static final class Builder implements software.amazon.jsii.Builder<RosEnvironmentsProps> {
+        java.lang.Object bindResourceId;
         java.lang.Object environmentType;
         java.lang.Object refreshOptions;
         java.lang.Object resourceGroupId;
+
+        /**
+         * Sets the value of {@link RosEnvironmentsProps#getBindResourceId}
+         * @param bindResourceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder bindResourceId(java.lang.String bindResourceId) {
+            this.bindResourceId = bindResourceId;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosEnvironmentsProps#getBindResourceId}
+         * @param bindResourceId the value to be set.
+         * @return {@code this}
+         */
+        public Builder bindResourceId(com.aliyun.ros.cdk.core.IResolvable bindResourceId) {
+            this.bindResourceId = bindResourceId;
+            return this;
+        }
 
         /**
          * Sets the value of {@link RosEnvironmentsProps#getEnvironmentType}
@@ -118,6 +145,7 @@ public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializa
      */
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements RosEnvironmentsProps {
+        private final java.lang.Object bindResourceId;
         private final java.lang.Object environmentType;
         private final java.lang.Object refreshOptions;
         private final java.lang.Object resourceGroupId;
@@ -128,6 +156,7 @@ public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
+            this.bindResourceId = software.amazon.jsii.Kernel.get(this, "bindResourceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.environmentType = software.amazon.jsii.Kernel.get(this, "environmentType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.refreshOptions = software.amazon.jsii.Kernel.get(this, "refreshOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -138,9 +167,15 @@ public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializa
          */
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+            this.bindResourceId = builder.bindResourceId;
             this.environmentType = builder.environmentType;
             this.refreshOptions = builder.refreshOptions;
             this.resourceGroupId = builder.resourceGroupId;
+        }
+
+        @Override
+        public final java.lang.Object getBindResourceId() {
+            return this.bindResourceId;
         }
 
         @Override
@@ -164,6 +199,9 @@ public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializa
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
+            if (this.getBindResourceId() != null) {
+                data.set("bindResourceId", om.valueToTree(this.getBindResourceId()));
+            }
             if (this.getEnvironmentType() != null) {
                 data.set("environmentType", om.valueToTree(this.getEnvironmentType()));
             }
@@ -191,6 +229,7 @@ public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializa
 
             RosEnvironmentsProps.Jsii$Proxy that = (RosEnvironmentsProps.Jsii$Proxy) o;
 
+            if (this.bindResourceId != null ? !this.bindResourceId.equals(that.bindResourceId) : that.bindResourceId != null) return false;
             if (this.environmentType != null ? !this.environmentType.equals(that.environmentType) : that.environmentType != null) return false;
             if (this.refreshOptions != null ? !this.refreshOptions.equals(that.refreshOptions) : that.refreshOptions != null) return false;
             return this.resourceGroupId != null ? this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId == null;
@@ -198,7 +237,8 @@ public interface RosEnvironmentsProps extends software.amazon.jsii.JsiiSerializa
 
         @Override
         public final int hashCode() {
-            int result = this.environmentType != null ? this.environmentType.hashCode() : 0;
+            int result = this.bindResourceId != null ? this.bindResourceId.hashCode() : 0;
+            result = 31 * result + (this.environmentType != null ? this.environmentType.hashCode() : 0);
             result = 31 * result + (this.refreshOptions != null ? this.refreshOptions.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             return result;

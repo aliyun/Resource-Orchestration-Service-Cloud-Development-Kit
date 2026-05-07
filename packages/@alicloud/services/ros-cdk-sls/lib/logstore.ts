@@ -98,7 +98,7 @@ export interface ILogstore extends ros.IResource {
     readonly attrProjectName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Simple Log Service (SLS) project.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLS::Logstore`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLogstore`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */

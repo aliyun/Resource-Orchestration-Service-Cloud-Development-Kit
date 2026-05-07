@@ -1,0 +1,248 @@
+package com.aliyun.ros.cdk.cms2.datasource;
+
+/**
+ * Represents a <code>ServiceObservability</code>.
+ */
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.168Z")
+@software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms2.$Module.class, fqn = "@alicloud/ros-cdk-cms2.datasource.IServiceObservability")
+@software.amazon.jsii.Jsii.Proxy(IServiceObservability.Jsii$Proxy.class)
+public interface IServiceObservability extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
+
+    /**
+     * Attribute EntryPointInfo: The entry point info of service observability.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrEntryPointInfo();
+
+    /**
+     * Attribute FeeType: The fee type of service observability.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrFeeType();
+
+    /**
+     * Attribute Quotas: The quotas of service observability.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrQuotas();
+
+    /**
+     * Attribute Settings: The settings of service observability.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrSettings();
+
+    /**
+     * Attribute Status: The status of service observability.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrStatus();
+
+    /**
+     * Attribute Type: The type of service observability.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrType();
+
+    /**
+     * Attribute Workspace: The name of workspace.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspace();
+
+    @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms2.datasource.ServiceObservabilityProps getProps();
+
+    /**
+     * A proxy class which represents a concrete javascript instance of this type.
+     */
+    @software.amazon.jsii.Internal
+    final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements com.aliyun.ros.cdk.cms2.datasource.IServiceObservability.Jsii$Default {
+        protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+            super(objRef);
+        }
+
+        /**
+         * The construct tree node for this construct.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ConstructNode getNode() {
+            return software.amazon.jsii.Kernel.get(this, "node", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ConstructNode.class));
+        }
+
+        /**
+         * The environment this resource belongs to.
+         * <p>
+         * For resources that are created and managed by the CDK
+         * (generally, those created by creating new class instances like Role, Bucket, etc.),
+         * this is always the same as the environment of the stack they belong to;
+         * however, for imported resources
+         * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+         * that might be different than the stack they were imported into.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
+        }
+
+        /**
+         * The stack in which this resource is defined.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
+            return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
+        }
+
+        /**
+         * Attribute EntryPointInfo: The entry point info of service observability.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrEntryPointInfo() {
+            return software.amazon.jsii.Kernel.get(this, "attrEntryPointInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute FeeType: The fee type of service observability.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrFeeType() {
+            return software.amazon.jsii.Kernel.get(this, "attrFeeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Quotas: The quotas of service observability.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrQuotas() {
+            return software.amazon.jsii.Kernel.get(this, "attrQuotas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Settings: The settings of service observability.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrSettings() {
+            return software.amazon.jsii.Kernel.get(this, "attrSettings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Status: The status of service observability.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrStatus() {
+            return software.amazon.jsii.Kernel.get(this, "attrStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Type: The type of service observability.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrType() {
+            return software.amazon.jsii.Kernel.get(this, "attrType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Workspace: The name of workspace.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspace() {
+            return software.amazon.jsii.Kernel.get(this, "attrWorkspace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        @Override
+        public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms2.datasource.ServiceObservabilityProps getProps() {
+            return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cms2.datasource.ServiceObservabilityProps.class));
+        }
+    }
+
+    /**
+     * Internal default implementation for {@link IServiceObservability}.
+     */
+    @software.amazon.jsii.Internal
+    interface Jsii$Default extends IServiceObservability, com.aliyun.ros.cdk.core.IResource.Jsii$Default {
+
+        /**
+         * The construct tree node for this construct.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.ConstructNode getNode() {
+            return software.amazon.jsii.Kernel.get(this, "node", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.ConstructNode.class));
+        }
+
+        /**
+         * The environment this resource belongs to.
+         * <p>
+         * For resources that are created and managed by the CDK
+         * (generally, those created by creating new class instances like Role, Bucket, etc.),
+         * this is always the same as the environment of the stack they belong to;
+         * however, for imported resources
+         * (those obtained from static methods like fromRoleArn, fromBucketName, etc.),
+         * that might be different than the stack they were imported into.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResourceEnvironment getEnv() {
+            return software.amazon.jsii.Kernel.get(this, "env", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResourceEnvironment.class));
+        }
+
+        /**
+         * The stack in which this resource is defined.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
+            return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
+        }
+
+        /**
+         * Attribute EntryPointInfo: The entry point info of service observability.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrEntryPointInfo() {
+            return software.amazon.jsii.Kernel.get(this, "attrEntryPointInfo", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute FeeType: The fee type of service observability.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrFeeType() {
+            return software.amazon.jsii.Kernel.get(this, "attrFeeType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Quotas: The quotas of service observability.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrQuotas() {
+            return software.amazon.jsii.Kernel.get(this, "attrQuotas", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Settings: The settings of service observability.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrSettings() {
+            return software.amazon.jsii.Kernel.get(this, "attrSettings", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Status: The status of service observability.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrStatus() {
+            return software.amazon.jsii.Kernel.get(this, "attrStatus", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Type: The type of service observability.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrType() {
+            return software.amazon.jsii.Kernel.get(this, "attrType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Workspace: The name of workspace.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrWorkspace() {
+            return software.amazon.jsii.Kernel.get(this, "attrWorkspace", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        @Override
+        default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.cms2.datasource.ServiceObservabilityProps getProps() {
+            return software.amazon.jsii.Kernel.get(this, "props", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.cms2.datasource.ServiceObservabilityProps.class));
+        }
+    }
+}

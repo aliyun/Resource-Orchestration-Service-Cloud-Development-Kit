@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::UserToGroupAddition`, which is used to add users to a RAM group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::UserToGroupAddition`.
 type UserToGroupAddition interface {
 	alicloudroscdkcore.Resource
 	IUserToGroupAddition

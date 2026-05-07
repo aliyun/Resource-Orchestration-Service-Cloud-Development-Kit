@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Images`, which is used to query the information about available images.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Images`.
 type RosImages interface {
 	alicloudroscdkcore.RosResource
 	AttrImageIds() alicloudroscdkcore.IResolvable

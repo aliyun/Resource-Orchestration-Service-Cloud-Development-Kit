@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VcoRouteEntry`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VcoRouteEntry`, which is used to add a destination-based route for an IPsec-VPN connection.
 type VcoRouteEntry interface {
 	alicloudroscdkcore.Resource
 	IVcoRouteEntry

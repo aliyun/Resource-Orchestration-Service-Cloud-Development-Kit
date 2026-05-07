@@ -212,7 +212,7 @@ function rosEditingProjectsPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::EditingProjects`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::EditingProjects`, which is used to query the basic information about online editing projects.
  * @Note This class does not contain additional functions, so it is recommended to use the `EditingProjects` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-editingprojects
  */
@@ -497,7 +497,7 @@ function rosMessageCallbacksPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::MessageCallbacks`, which is used to query sets of event notification configurations.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::MessageCallbacks`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MessageCallbacks` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-messagecallbacks
  */
@@ -622,7 +622,7 @@ function rosStoragePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::Storage`, which is used to query a storage configuration.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::Storage`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Storage` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-storage
  */
@@ -788,7 +788,7 @@ function rosStoragesPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::Storages`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::Storages`, which is used to query storage configurations.
  * @Note This class does not contain additional functions, so it is recommended to use the `Storages` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-storages
  */

@@ -84,10 +84,6 @@ func validateRosApiAttachment_IsRosResourceParameters(construct alicloudroscdkco
 	return nil
 }
 
-func (j *jsiiProxy_RosApiAttachment) validateSetBackendSceneParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosApiAttachment) validateSetDescriptionParameters(val interface{}) error {
 	return nil
 }
@@ -100,19 +96,11 @@ func (j *jsiiProxy_RosApiAttachment) validateSetEnableResourcePropertyConstraint
 	return nil
 }
 
-func (j *jsiiProxy_RosApiAttachment) validateSetEnvironmentIdParameters(val interface{}) error {
-	return nil
-}
-
 func (j *jsiiProxy_RosApiAttachment) validateSetHttpApiIdParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosApiAttachment) validateSetRouteIdParameters(val interface{}) error {
-	return nil
-}
-
-func (j *jsiiProxy_RosApiAttachment) validateSetServiceConfigsParameters(val interface{}) error {
 	return nil
 }
 

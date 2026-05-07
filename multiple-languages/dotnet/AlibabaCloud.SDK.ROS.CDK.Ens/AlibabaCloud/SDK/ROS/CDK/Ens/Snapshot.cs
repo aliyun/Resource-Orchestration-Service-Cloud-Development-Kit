@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ens
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Snapshot`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshot`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-snapshot

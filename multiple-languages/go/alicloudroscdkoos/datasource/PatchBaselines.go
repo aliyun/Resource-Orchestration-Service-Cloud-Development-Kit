@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::PatchBaselines`.
 type PatchBaselines interface {
 	alicloudroscdkcore.Resource
 	IPatchBaselines

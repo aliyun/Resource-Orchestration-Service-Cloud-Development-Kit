@@ -1,4 +1,5 @@
 export * from './backendserverattachment';
+export * from './hdmonitorregionconfig';
 export * from './listener';
 export * from './loadbalancer';
 export * from './securitygroupattachment';

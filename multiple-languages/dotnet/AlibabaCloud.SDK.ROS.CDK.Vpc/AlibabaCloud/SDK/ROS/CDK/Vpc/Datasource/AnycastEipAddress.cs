@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vpc.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::Eipanycast::AnycastEipAddress`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::Eipanycast::AnycastEipAddress`, which is used to query the information about an Anycast elastic IP address (Anycast EIP).</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAnycastEipAddress`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eipanycast-anycasteipaddress

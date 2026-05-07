@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::DeployRevision`The , which type is used to create a deployment.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::DeployRevision`.
 type DeployRevision interface {
 	alicloudroscdkcore.Resource
 	IDeployRevision

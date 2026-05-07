@@ -212,6 +212,11 @@ export class RosEnvironment extends ros.RosResource {
 export interface RosEnvironmentsProps {
 
     /**
+     * @Property bindResourceId: The bound resource ID.
+     */
+    readonly bindResourceId?: string | ros.IResolvable;
+
+    /**
      * @Property environmentType: Type of environment.
      */
     readonly environmentType?: string | ros.IResolvable;
@@ -248,6 +253,7 @@ function RosEnvironmentsPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('environmentType', ros.validateString)(properties.environmentType));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('bindResourceId', ros.validateString)(properties.bindResourceId));
     if(properties.refreshOptions && (typeof properties.refreshOptions) !== 'object') {
         errors.collect(ros.propertyValidator('refreshOptions', ros.validateAllowedValues)({
           data: properties.refreshOptions,
@@ -272,6 +278,7 @@ function rosEnvironmentsPropsToRosTemplate(properties: any, enableResourceProper
         RosEnvironmentsPropsValidator(properties).assertSuccess();
     }
     return {
+      'BindResourceId': ros.stringToRosTemplate(properties.bindResourceId),
       'EnvironmentType': ros.stringToRosTemplate(properties.environmentType),
       'RefreshOptions': ros.stringToRosTemplate(properties.refreshOptions),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
@@ -303,6 +310,11 @@ export class RosEnvironments extends ros.RosResource {
 
 
     /**
+     * @Property bindResourceId: The bound resource ID.
+     */
+    public bindResourceId: string | ros.IResolvable | undefined;
+
+    /**
      * @Property environmentType: Type of environment.
      */
     public environmentType: string | ros.IResolvable | undefined;
@@ -331,6 +343,7 @@ export class RosEnvironments extends ros.RosResource {
         this.attrEnvironments = this.getAtt('Environments');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.bindResourceId = props.bindResourceId;
         this.environmentType = props.environmentType;
         this.refreshOptions = props.refreshOptions;
         this.resourceGroupId = props.resourceGroupId;
@@ -339,6 +352,7 @@ export class RosEnvironments extends ros.RosResource {
 
     protected get rosProperties(): { [key: string]: any }  {
         return {
+            bindResourceId: this.bindResourceId,
             environmentType: this.environmentType,
             refreshOptions: this.refreshOptions,
             resourceGroupId: this.resourceGroupId,
@@ -411,7 +425,7 @@ function rosGrafanaWorkspacePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`, which is used to query the information about a Grafana workspace.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspace
  */
@@ -571,7 +585,7 @@ function rosGrafanaWorkspacesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`, which is used to query the information about Grafana workspaces.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces
  */
@@ -1622,7 +1636,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`, which is used to query the information about an application monitoring task.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapp
  */

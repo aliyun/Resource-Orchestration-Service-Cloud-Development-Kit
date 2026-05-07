@@ -14,6 +14,8 @@ type RosEnvironments interface {
 	alicloudroscdkcore.RosResource
 	AttrEnvironmentIds() alicloudroscdkcore.IResolvable
 	AttrEnvironments() alicloudroscdkcore.IResolvable
+	BindResourceId() interface{}
+	SetBindResourceId(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
@@ -196,6 +198,16 @@ func (j *jsiiProxy_RosEnvironments) AttrEnvironments() alicloudroscdkcore.IResol
 	return returns
 }
 
+func (j *jsiiProxy_RosEnvironments) BindResourceId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"bindResourceId",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosEnvironments) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
@@ -351,6 +363,17 @@ func NewRosEnvironments_Override(r RosEnvironments, scope alicloudroscdkcore.Con
 		"@alicloud/ros-cdk-arms.datasource.RosEnvironments",
 		[]interface{}{scope, id, props, enableResourcePropertyConstraint},
 		r,
+	)
+}
+
+func (j *jsiiProxy_RosEnvironments)SetBindResourceId(val interface{}) {
+	if err := j.validateSetBindResourceIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"bindResourceId",
+		val,
 	)
 }
 

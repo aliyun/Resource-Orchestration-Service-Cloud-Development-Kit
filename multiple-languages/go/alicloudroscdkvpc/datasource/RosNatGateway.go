@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateway`, which is used to query the information about a NAT gateway.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NatGateway`.
 type RosNatGateway interface {
 	alicloudroscdkcore.RosResource
 	AttrAutoPay() alicloudroscdkcore.IResolvable

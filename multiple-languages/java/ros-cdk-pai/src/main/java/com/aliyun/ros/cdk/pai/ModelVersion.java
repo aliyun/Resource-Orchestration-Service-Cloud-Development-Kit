@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAI::ModelVersion</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.394Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.406Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.ModelVersion")
 public class ModelVersion extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pai.IModelVersion {
 
@@ -508,10 +508,8 @@ public class ModelVersion extends com.aliyun.ros.cdk.core.Resource implements co
          * <p>
          * <ul>
          * <li>When the source type is Custom, this field is not restricted.</li>
-         * <li>When the source is PAIFlow or TrainingService, the format is
-         * '''
+         * <li>When the source is PAIFlow or TrainingService, the format is:
          * region=&lt;region_id&gt;,workspaceId=&lt;workspace_id&gt;,kind=<kind>,id=<id>
-         * '''
          * Among them:</li>
          * <li>region is the Alibaba Cloud region ID.</li>
          * <li>workspaceId indicates the workspace ID.</li>
@@ -531,10 +529,8 @@ public class ModelVersion extends com.aliyun.ros.cdk.core.Resource implements co
          * <p>
          * <ul>
          * <li>When the source type is Custom, this field is not restricted.</li>
-         * <li>When the source is PAIFlow or TrainingService, the format is
-         * '''
+         * <li>When the source is PAIFlow or TrainingService, the format is:
          * region=&lt;region_id&gt;,workspaceId=&lt;workspace_id&gt;,kind=<kind>,id=<id>
-         * '''
          * Among them:</li>
          * <li>region is the Alibaba Cloud region ID.</li>
          * <li>workspaceId indicates the workspace ID.</li>

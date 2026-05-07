@@ -72,6 +72,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             get => GetInstanceProperty<object>()!;
         }
 
+        /// <summary>Attribute ResourceType: The type of the resource on which you want to grant permissions.</summary>
+        [JsiiProperty(name: "attrResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        public virtual object AttrResourceType
+        {
+            get => GetInstanceProperty<object>()!;
+        }
+
         /// <summary>Attribute Username: The username of the account.</summary>
         [JsiiProperty(name: "attrUsername", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrUsername

@@ -1315,6 +1315,135 @@ export class RosDBInstanceIPArray extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosDBResourceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbresourcegroup
+ */
+export interface RosDBResourceGroupProps {
+
+    /**
+     * @Property dbInstanceId: The instance ID.> You can call the [DescribeDBInstances](~~ 86911 ~~) operation to view the instance IDs of all AnalyticDB PostgreSQL instances in the target region.
+     */
+    readonly dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupConfig: Resource group configuration.
+     */
+    readonly resourceGroupConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupName: Resource group name.
+     */
+    readonly resourceGroupName: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDBResourceGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDBResourceGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDBResourceGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceGroupConfig', ros.requiredValidator)(properties.resourceGroupConfig));
+    errors.collect(ros.propertyValidator('resourceGroupConfig', ros.hashValidator(ros.validateAny))(properties.resourceGroupConfig));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.requiredValidator)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('dbInstanceId', ros.validateString)(properties.dbInstanceId));
+    errors.collect(ros.propertyValidator('resourceGroupName', ros.requiredValidator)(properties.resourceGroupName));
+    errors.collect(ros.propertyValidator('resourceGroupName', ros.validateString)(properties.resourceGroupName));
+    return errors.wrap('supplied properties not correct for "RosDBResourceGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GPDB::DBResourceGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDBResourceGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GPDB::DBResourceGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosDBResourceGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDBResourceGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DBInstanceId': ros.stringToRosTemplate(properties.dbInstanceId),
+      'ResourceGroupConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.resourceGroupConfig),
+      'ResourceGroupName': ros.stringToRosTemplate(properties.resourceGroupName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::DBResourceGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DBResourceGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbresourcegroup
+ */
+export class RosDBResourceGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GPDB::DBResourceGroup";
+
+    /**
+     * @Attribute ResourceGroupConfig: Resource group configuration.
+     */
+    public readonly attrResourceGroupConfig: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupName: Resource group name.
+     */
+    public readonly attrResourceGroupName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dbInstanceId: The instance ID.> You can call the [DescribeDBInstances](~~ 86911 ~~) operation to view the instance IDs of all AnalyticDB PostgreSQL instances in the target region.
+     */
+    public dbInstanceId: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupConfig: Resource group configuration.
+     */
+    public resourceGroupConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupName: Resource group name.
+     */
+    public resourceGroupName: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDBResourceGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDBResourceGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResourceGroupConfig = this.getAtt('ResourceGroupConfig');
+        this.attrResourceGroupName = this.getAtt('ResourceGroupName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dbInstanceId = props.dbInstanceId;
+        this.resourceGroupConfig = props.resourceGroupConfig;
+        this.resourceGroupName = props.resourceGroupName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dbInstanceId: this.dbInstanceId,
+            resourceGroupConfig: this.resourceGroupConfig,
+            resourceGroupName: this.resourceGroupName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDBResourceGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosDatabase`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-database
  */
@@ -2939,6 +3068,11 @@ export interface RosSupabaseProjectProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * @Property databaseIpList: Database IP list.
+     */
+    readonly databaseIpList?: string | ros.IResolvable;
+
+    /**
      * @Property diskPerformanceLevel: Cloud disk PL level, default PL0. Selectable value:
      * PL0
      * PL1
@@ -2976,10 +3110,6 @@ export interface RosSupabaseProjectProps {
 function RosSupabaseProjectPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('projectSpec', ros.requiredValidator)(properties.projectSpec));
-    errors.collect(ros.propertyValidator('projectSpec', ros.validateString)(properties.projectSpec));
-    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
-    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
     errors.collect(ros.propertyValidator('zoneId', ros.requiredValidator)(properties.zoneId));
     errors.collect(ros.propertyValidator('zoneId', ros.validateString)(properties.zoneId));
     errors.collect(ros.propertyValidator('projectName', ros.requiredValidator)(properties.projectName));
@@ -2990,8 +3120,6 @@ function RosSupabaseProjectPropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('projectName', ros.validateString)(properties.projectName));
-    errors.collect(ros.propertyValidator('securityIpList', ros.requiredValidator)(properties.securityIpList));
-    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
     errors.collect(ros.propertyValidator('vSwitchId', ros.requiredValidator)(properties.vSwitchId));
     errors.collect(ros.propertyValidator('vSwitchId', ros.validateString)(properties.vSwitchId));
     if(properties.diskPerformanceLevel && (typeof properties.diskPerformanceLevel) !== 'object') {
@@ -3001,14 +3129,6 @@ function RosSupabaseProjectPropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('diskPerformanceLevel', ros.validateString)(properties.diskPerformanceLevel));
-    if(properties.usedTime && (typeof properties.usedTime) !== 'object') {
-        errors.collect(ros.propertyValidator('usedTime', ros.validateRange)({
-            data: properties.usedTime,
-            min: 1,
-            max: 11,
-          }));
-    }
-    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
     errors.collect(ros.propertyValidator('storageSize', ros.validateNumber)(properties.storageSize));
     errors.collect(ros.propertyValidator('period', ros.validateString)(properties.period));
     if(properties.payType && (typeof properties.payType) !== 'object') {
@@ -3026,6 +3146,21 @@ function RosSupabaseProjectPropsValidator(properties: any): ros.ValidationResult
         }));
     }
     errors.collect(ros.propertyValidator('accountPassword', ros.validateString)(properties.accountPassword));
+    errors.collect(ros.propertyValidator('projectSpec', ros.requiredValidator)(properties.projectSpec));
+    errors.collect(ros.propertyValidator('projectSpec', ros.validateString)(properties.projectSpec));
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('securityIpList', ros.requiredValidator)(properties.securityIpList));
+    errors.collect(ros.propertyValidator('securityIpList', ros.validateString)(properties.securityIpList));
+    if(properties.usedTime && (typeof properties.usedTime) !== 'object') {
+        errors.collect(ros.propertyValidator('usedTime', ros.validateRange)({
+            data: properties.usedTime,
+            min: 1,
+            max: 11,
+          }));
+    }
+    errors.collect(ros.propertyValidator('usedTime', ros.validateNumber)(properties.usedTime));
+    errors.collect(ros.propertyValidator('databaseIpList', ros.validateString)(properties.databaseIpList));
     return errors.wrap('supplied properties not correct for "RosSupabaseProjectProps"');
 }
 
@@ -3050,6 +3185,7 @@ function rosSupabaseProjectPropsToRosTemplate(properties: any, enableResourcePro
       'VpcId': ros.stringToRosTemplate(properties.vpcId),
       'VSwitchId': ros.stringToRosTemplate(properties.vSwitchId),
       'ZoneId': ros.stringToRosTemplate(properties.zoneId),
+      'DatabaseIPList': ros.stringToRosTemplate(properties.databaseIpList),
       'DiskPerformanceLevel': ros.stringToRosTemplate(properties.diskPerformanceLevel),
       'PayType': ros.stringToRosTemplate(properties.payType),
       'Period': ros.stringToRosTemplate(properties.period),
@@ -3073,6 +3209,11 @@ export class RosSupabaseProject extends ros.RosResource {
      * @Attribute ApiKeys: API keys
      */
     public readonly attrApiKeys: ros.IResolvable;
+
+    /**
+     * @Attribute Eni: Network interface
+     */
+    public readonly attrEni: ros.IResolvable;
 
     /**
      * @Attribute PrivateConnectUrl: Private connection URL
@@ -3142,6 +3283,11 @@ export class RosSupabaseProject extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
+     * @Property databaseIpList: Database IP list.
+     */
+    public databaseIpList: string | ros.IResolvable | undefined;
+
+    /**
      * @Property diskPerformanceLevel: Cloud disk PL level, default PL0. Selectable value:
      * PL0
      * PL1
@@ -3176,6 +3322,7 @@ export class RosSupabaseProject extends ros.RosResource {
     constructor(scope: ros.Construct, id: string, props: RosSupabaseProjectProps, enableResourcePropertyConstraint: boolean) {
         super(scope, id, { type: RosSupabaseProject.ROS_RESOURCE_TYPE_NAME, properties: props });
         this.attrApiKeys = this.getAtt('ApiKeys');
+        this.attrEni = this.getAtt('Eni');
         this.attrPrivateConnectUrl = this.getAtt('PrivateConnectUrl');
         this.attrProjectId = this.getAtt('ProjectId');
         this.attrPublicConnectUrl = this.getAtt('PublicConnectUrl');
@@ -3188,6 +3335,7 @@ export class RosSupabaseProject extends ros.RosResource {
         this.vpcId = props.vpcId;
         this.vSwitchId = props.vSwitchId;
         this.zoneId = props.zoneId;
+        this.databaseIpList = props.databaseIpList;
         this.diskPerformanceLevel = props.diskPerformanceLevel;
         this.payType = props.payType;
         this.period = props.period;
@@ -3205,6 +3353,7 @@ export class RosSupabaseProject extends ros.RosResource {
             vpcId: this.vpcId,
             vSwitchId: this.vSwitchId,
             zoneId: this.zoneId,
+            databaseIpList: this.databaseIpList,
             diskPerformanceLevel: this.diskPerformanceLevel,
             payType: this.payType,
             period: this.period,

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription Tair (Redis OSS-compatible) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::PrepayInstance`.
 type RosPrepayInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrArchitectureType() alicloudroscdkcore.IResolvable
@@ -125,6 +125,8 @@ type RosPrepayInstance interface {
 	SetTags(val *[]*RosPrepayInstance_TagsProperty)
 	TairConfig() interface{}
 	SetTairConfig(val interface{})
+	TlsProtocol() interface{}
+	SetTlsProtocol(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -907,6 +909,16 @@ func (j *jsiiProxy_RosPrepayInstance) TairConfig() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosPrepayInstance) TlsProtocol() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tlsProtocol",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosPrepayInstance) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -1267,6 +1279,17 @@ func (j *jsiiProxy_RosPrepayInstance)SetTairConfig(val interface{}) {
 	_jsii_.Set(
 		j,
 		"tairConfig",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosPrepayInstance)SetTlsProtocol(val interface{}) {
+	if err := j.validateSetTlsProtocolParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tlsProtocol",
 		val,
 	)
 }

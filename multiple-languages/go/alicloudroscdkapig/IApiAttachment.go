@@ -10,8 +10,6 @@ import (
 // Represents a `ApiAttachment`.
 type IApiAttachment interface {
 	alicloudroscdkcore.IResource
-	// Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-	AttrEnvironmentId() interface{}
 	// Attribute HttpApiId: The ID of the HTTP API.
 	AttrHttpApiId() interface{}
 	// Attribute RouteId: The route ID.
@@ -24,16 +22,6 @@ type IApiAttachment interface {
 // The jsii proxy for IApiAttachment
 type jsiiProxy_IApiAttachment struct {
 	internal.Type__alicloudroscdkcoreIResource
-}
-
-func (j *jsiiProxy_IApiAttachment) AttrEnvironmentId() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrEnvironmentId",
-		&returns,
-	)
-	return returns
 }
 
 func (j *jsiiProxy_IApiAttachment) AttrHttpApiId() interface{} {

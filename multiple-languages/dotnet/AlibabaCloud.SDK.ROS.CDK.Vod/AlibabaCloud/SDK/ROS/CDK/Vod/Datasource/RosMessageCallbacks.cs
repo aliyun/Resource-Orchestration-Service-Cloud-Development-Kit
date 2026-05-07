@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Vod.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::MessageCallbacks`, which is used to query sets of event notification configurations.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::MessageCallbacks`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `MessageCallbacks` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-messagecallbacks

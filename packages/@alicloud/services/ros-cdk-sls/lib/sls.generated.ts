@@ -1112,7 +1112,7 @@ function rosAnalyzeProductLogPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::AnalyzeProductLog`, which is used to analyze the logs of a cloud service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::AnalyzeProductLog`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AnalyzeProductLog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-analyzeproductlog
  */
@@ -1233,7 +1233,7 @@ function rosApplyConfigToMachineGroupPropsToRosTemplate(properties: any, enableR
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ApplyConfigToMachineGroup`, which is used to apply Log Service configurations to machine groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplyConfigToMachineGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-applyconfigtomachinegroup
  */
@@ -2809,7 +2809,7 @@ function rosDashboardPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Dashboard`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Dashboard`, which is used to create a dashboard.
  * @Note This class does not contain additional functions, so it is recommended to use the `Dashboard` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-dashboard
  */
@@ -2991,7 +2991,7 @@ function rosEtlPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Etl`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Etl`, which is used to create a data transformation task.
  * @Note This class does not contain additional functions, so it is recommended to use the `Etl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-etl
  */
@@ -4196,7 +4196,7 @@ function rosLogstorePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`, which is used to create a Logstore in a Simple Log Service (SLS) project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Logstore`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Logstore` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logstore
  */
@@ -4636,7 +4636,7 @@ function rosLogtailConfigPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::LogtailConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogtailConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */
@@ -5381,7 +5381,7 @@ function rosOssExportPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::OssExport`, which is used to create an Object Storage Service (OSS) data shipping job to manage Simple Log Service (SLS) data and ship Logstore data to OSS for storage.
  * @Note This class does not contain additional functions, so it is recommended to use the `OssExport` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-ossexport
  */
@@ -6091,7 +6091,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`, which is used to create a Simple Log Service (SLS) project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Project`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-project
  */
@@ -6362,7 +6362,7 @@ function rosRdsExternalStorePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::RdsExternalStore`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::RdsExternalStore`, which is used to create an ApsaraDB RDS for MySQL external store.
  * @Note This class does not contain additional functions, so it is recommended to use the `RdsExternalStore` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-rdsexternalstore
  */
@@ -6546,7 +6546,7 @@ function rosSavedsearchPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Savedsearch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Savedsearch`, which is used to save search results as a saved search.
  * @Note This class does not contain additional functions, so it is recommended to use the `Savedsearch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-savedsearch
  */
@@ -6751,7 +6751,7 @@ function rosServiceLogPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ServiceLog`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::ServiceLog`, which is used to enable the service log feature.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceLog` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-servicelog
  */

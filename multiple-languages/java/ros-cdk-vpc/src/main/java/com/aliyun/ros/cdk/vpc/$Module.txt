@@ -60,6 +60,7 @@
 @alicloud/ros-cdk-vpc.IHaVipAssociation=com.aliyun.ros.cdk.vpc.IHaVipAssociation
 @alicloud/ros-cdk-vpc.IIpam=com.aliyun.ros.cdk.vpc.IIpam
 @alicloud/ros-cdk-vpc.IIpamPool=com.aliyun.ros.cdk.vpc.IIpamPool
+@alicloud/ros-cdk-vpc.IIpamPoolAllocation=com.aliyun.ros.cdk.vpc.IIpamPoolAllocation
 @alicloud/ros-cdk-vpc.IIpamResourceDiscovery=com.aliyun.ros.cdk.vpc.IIpamResourceDiscovery
 @alicloud/ros-cdk-vpc.IIpamScope=com.aliyun.ros.cdk.vpc.IIpamScope
 @alicloud/ros-cdk-vpc.IIpsecServer=com.aliyun.ros.cdk.vpc.IIpsecServer
@@ -105,6 +106,8 @@
 @alicloud/ros-cdk-vpc.IVpnRouteEntry=com.aliyun.ros.cdk.vpc.IVpnRouteEntry
 @alicloud/ros-cdk-vpc.Ipam=com.aliyun.ros.cdk.vpc.Ipam
 @alicloud/ros-cdk-vpc.IpamPool=com.aliyun.ros.cdk.vpc.IpamPool
+@alicloud/ros-cdk-vpc.IpamPoolAllocation=com.aliyun.ros.cdk.vpc.IpamPoolAllocation
+@alicloud/ros-cdk-vpc.IpamPoolAllocationProps=com.aliyun.ros.cdk.vpc.IpamPoolAllocationProps
 @alicloud/ros-cdk-vpc.IpamPoolProps=com.aliyun.ros.cdk.vpc.IpamPoolProps
 @alicloud/ros-cdk-vpc.IpamProps=com.aliyun.ros.cdk.vpc.IpamProps
 @alicloud/ros-cdk-vpc.IpamResourceDiscovery=com.aliyun.ros.cdk.vpc.IpamResourceDiscovery
@@ -189,6 +192,8 @@
 @alicloud/ros-cdk-vpc.RosIpam.TagsProperty=com.aliyun.ros.cdk.vpc.RosIpam$TagsProperty
 @alicloud/ros-cdk-vpc.RosIpamPool=com.aliyun.ros.cdk.vpc.RosIpamPool
 @alicloud/ros-cdk-vpc.RosIpamPool.TagsProperty=com.aliyun.ros.cdk.vpc.RosIpamPool$TagsProperty
+@alicloud/ros-cdk-vpc.RosIpamPoolAllocation=com.aliyun.ros.cdk.vpc.RosIpamPoolAllocation
+@alicloud/ros-cdk-vpc.RosIpamPoolAllocationProps=com.aliyun.ros.cdk.vpc.RosIpamPoolAllocationProps
 @alicloud/ros-cdk-vpc.RosIpamPoolProps=com.aliyun.ros.cdk.vpc.RosIpamPoolProps
 @alicloud/ros-cdk-vpc.RosIpamProps=com.aliyun.ros.cdk.vpc.RosIpamProps
 @alicloud/ros-cdk-vpc.RosIpamResourceDiscovery=com.aliyun.ros.cdk.vpc.RosIpamResourceDiscovery

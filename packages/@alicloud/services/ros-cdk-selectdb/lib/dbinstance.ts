@@ -116,7 +116,7 @@ export interface IDBInstance extends ros.IResource {
     readonly attrVpcConnectionString: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SELECTDB::DBInstance`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SELECTDB::DBInstance`, which is used to create an ApsaraDB for SelectDB instance.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-selectdb-dbinstance
  */

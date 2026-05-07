@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::AnycastEIP`, which is used to create an Anycast elastic IP address (Anycast EIP).
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::AnycastEIP`.
 type AnycastEIP interface {
 	alicloudroscdkcore.Resource
 	IAnycastEIP

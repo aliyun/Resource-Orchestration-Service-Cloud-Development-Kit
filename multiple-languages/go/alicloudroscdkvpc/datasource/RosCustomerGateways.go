@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateways`, which is used to query customer gateways.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::CustomerGateways`.
 type RosCustomerGateways interface {
 	alicloudroscdkcore.RosResource
 	AttrCustomerGatewayIds() alicloudroscdkcore.IResolvable

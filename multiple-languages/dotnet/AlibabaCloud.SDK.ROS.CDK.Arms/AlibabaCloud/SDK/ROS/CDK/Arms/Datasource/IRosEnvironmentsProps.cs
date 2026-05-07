@@ -12,6 +12,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms.Datasource
     public interface IRosEnvironmentsProps
     {
         /// <remarks>
+        /// <strong>Property</strong>: bindResourceId: The bound resource ID.
+        /// </remarks>
+        [JsiiProperty(name: "bindResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? BindResourceId
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: environmentType: Type of environment.
         /// </remarks>
         [JsiiProperty(name: "environmentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -62,6 +75,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms.Datasource
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: bindResourceId: The bound resource ID.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "bindResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? BindResourceId
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

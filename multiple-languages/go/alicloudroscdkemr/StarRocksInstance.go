@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EMR::StarRocksInstance`The , which type is used to create a serverless StarRocks instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EMR::StarRocksInstance`.
 type StarRocksInstance interface {
 	alicloudroscdkcore.Resource
 	IStarRocksInstance

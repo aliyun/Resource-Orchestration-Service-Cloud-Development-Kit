@@ -10,6 +10,11 @@ export { RosEnvironments as EnvironmentsProperty };
 export interface EnvironmentsProps {
 
     /**
+     * Property bindResourceId: The bound resource ID.
+     */
+    readonly bindResourceId?: string | ros.IResolvable;
+
+    /**
      * Property environmentType: Type of environment.
      */
     readonly environmentType?: string | ros.IResolvable;
@@ -80,6 +85,7 @@ export class Environments extends ros.Resource implements IEnvironments {
         const rosEnvironments = new RosEnvironments(this, id,  {
             environmentType: props.environmentType,
             resourceGroupId: props.resourceGroupId,
+            bindResourceId: props.bindResourceId,
             refreshOptions: props.refreshOptions === undefined || props.refreshOptions === null ? 'Never' : props.refreshOptions,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosEnvironments;

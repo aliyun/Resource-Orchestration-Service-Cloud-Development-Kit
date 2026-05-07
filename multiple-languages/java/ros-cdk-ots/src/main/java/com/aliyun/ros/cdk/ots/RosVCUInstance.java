@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OTS::VCUInstance</code>The , which resource creates a Virtual Compute Unit (VCU) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.309Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.311Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.RosVCUInstance")
 public class RosVCUInstance extends com.aliyun.ros.cdk.core.RosResource {
 

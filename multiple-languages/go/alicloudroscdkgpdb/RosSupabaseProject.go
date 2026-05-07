@@ -15,6 +15,7 @@ type RosSupabaseProject interface {
 	AccountPassword() interface{}
 	SetAccountPassword(val interface{})
 	AttrApiKeys() alicloudroscdkcore.IResolvable
+	AttrEni() alicloudroscdkcore.IResolvable
 	AttrPrivateConnectUrl() alicloudroscdkcore.IResolvable
 	AttrProjectId() alicloudroscdkcore.IResolvable
 	AttrPublicConnectUrl() alicloudroscdkcore.IResolvable
@@ -22,6 +23,8 @@ type RosSupabaseProject interface {
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DatabaseIpList() interface{}
+	SetDatabaseIpList(val interface{})
 	DiskPerformanceLevel() interface{}
 	SetDiskPerformanceLevel(val interface{})
 	EnableResourcePropertyConstraint() *bool
@@ -216,6 +219,16 @@ func (j *jsiiProxy_RosSupabaseProject) AttrApiKeys() alicloudroscdkcore.IResolva
 	return returns
 }
 
+func (j *jsiiProxy_RosSupabaseProject) AttrEni() alicloudroscdkcore.IResolvable {
+	var returns alicloudroscdkcore.IResolvable
+	_jsii_.Get(
+		j,
+		"attrEni",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosSupabaseProject) AttrPrivateConnectUrl() alicloudroscdkcore.IResolvable {
 	var returns alicloudroscdkcore.IResolvable
 	_jsii_.Get(
@@ -251,6 +264,16 @@ func (j *jsiiProxy_RosSupabaseProject) CreationStack() *[]*string {
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosSupabaseProject) DatabaseIpList() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"databaseIpList",
 		&returns,
 	)
 	return returns
@@ -491,6 +514,17 @@ func (j *jsiiProxy_RosSupabaseProject)SetAccountPassword(val interface{}) {
 	_jsii_.Set(
 		j,
 		"accountPassword",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosSupabaseProject)SetDatabaseIpList(val interface{}) {
+	if err := j.validateSetDatabaseIpListParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"databaseIpList",
 		val,
 	)
 }

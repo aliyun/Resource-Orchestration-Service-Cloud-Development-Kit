@@ -92,7 +92,7 @@ export interface IFlowLog extends ros.IResource {
     readonly attrTrafficType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`, which is used to create a flow log.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::FlowLog`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFlowLog`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-flowlog
  */

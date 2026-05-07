@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Domains`, which is used to query the information about domain names.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Domains`.
 type Domains interface {
 	alicloudroscdkcore.Resource
 	IDomains

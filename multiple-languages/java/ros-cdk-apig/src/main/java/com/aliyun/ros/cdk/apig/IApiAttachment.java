@@ -3,15 +3,10 @@ package com.aliyun.ros.cdk.apig;
 /**
  * Represents a <code>ApiAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.477Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.382Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.IApiAttachment")
 @software.amazon.jsii.Jsii.Proxy(IApiAttachment.Jsii$Proxy.class)
 public interface IApiAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
-
-    /**
-     * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvironmentId();
 
     /**
      * Attribute HttpApiId: The ID of the HTTP API.
@@ -65,14 +60,6 @@ public interface IApiAttachment extends software.amazon.jsii.JsiiSerializable, c
         @Override
         public final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
-        }
-
-        /**
-         * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvironmentId() {
-            return software.amazon.jsii.Kernel.get(this, "attrEnvironmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -134,14 +121,6 @@ public interface IApiAttachment extends software.amazon.jsii.JsiiSerializable, c
         @Override
         default @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.Stack getStack() {
             return software.amazon.jsii.Kernel.get(this, "stack", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.Stack.class));
-        }
-
-        /**
-         * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvironmentId() {
-            return software.amazon.jsii.Kernel.get(this, "attrEnvironmentId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

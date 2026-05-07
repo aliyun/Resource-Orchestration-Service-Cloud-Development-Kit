@@ -107,6 +107,8 @@ type PrepayInstanceProps struct {
 	//
 	// This parameter is available only if the InstanceClass parameter is start with tair.
 	TairConfig interface{} `field:"optional" json:"tairConfig" yaml:"tairConfig"`
+	// Property tlsProtocol: The TLS version of the instance.
+	TlsProtocol interface{} `field:"optional" json:"tlsProtocol" yaml:"tlsProtocol"`
 	// Property vpcId: The VPC id to create ecs instance.
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 	// Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC.

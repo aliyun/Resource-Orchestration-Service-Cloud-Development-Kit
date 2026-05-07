@@ -3,6 +3,197 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosDataSourceSharedRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-datasourcesharedrule
+ */
+export interface RosDataSourceSharedRuleProps {
+
+    /**
+     * @Property dataSourceId: The ID of the data source, that is, the unique identifier of the data source.
+     */
+    readonly dataSourceId: number | ros.IResolvable;
+
+    /**
+     * @Property envType: The environment type of the data source shared to the target project, such as Dev (Development Environment) and Prod (production environment).
+     */
+    readonly envType: string | ros.IResolvable;
+
+    /**
+     * @Property targetProjectId: The ID of the project to which the data source is shared.
+     */
+    readonly targetProjectId: number | ros.IResolvable;
+
+    /**
+     * @Property sharedUser: The target user of the data source permission policy, which is null to share to the project.
+     */
+    readonly sharedUser?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosDataSourceSharedRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosDataSourceSharedRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosDataSourceSharedRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('sharedUser', ros.validateString)(properties.sharedUser));
+    errors.collect(ros.propertyValidator('targetProjectId', ros.requiredValidator)(properties.targetProjectId));
+    errors.collect(ros.propertyValidator('targetProjectId', ros.validateNumber)(properties.targetProjectId));
+    errors.collect(ros.propertyValidator('envType', ros.requiredValidator)(properties.envType));
+    if(properties.envType && (typeof properties.envType) !== 'object') {
+        errors.collect(ros.propertyValidator('envType', ros.validateAllowedValues)({
+          data: properties.envType,
+          allowedValues: ["Dev","Prod"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('envType', ros.validateString)(properties.envType));
+    errors.collect(ros.propertyValidator('dataSourceId', ros.requiredValidator)(properties.dataSourceId));
+    errors.collect(ros.propertyValidator('dataSourceId', ros.validateNumber)(properties.dataSourceId));
+    return errors.wrap('supplied properties not correct for "RosDataSourceSharedRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DataWorks::DataSourceSharedRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosDataSourceSharedRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DataWorks::DataSourceSharedRule` resource.
+ */
+// @ts-ignore TS6133
+function rosDataSourceSharedRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosDataSourceSharedRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DataSourceId': ros.numberToRosTemplate(properties.dataSourceId),
+      'EnvType': ros.stringToRosTemplate(properties.envType),
+      'TargetProjectId': ros.numberToRosTemplate(properties.targetProjectId),
+      'SharedUser': ros.stringToRosTemplate(properties.sharedUser),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DataWorks::DataSourceSharedRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `DataSourceSharedRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-datasourcesharedrule
+ */
+export class RosDataSourceSharedRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DataWorks::DataSourceSharedRule";
+
+    /**
+     * @Attribute CreateTime: The creation time of the data source sharing rule.
+     */
+    public readonly attrCreateTime: ros.IResolvable;
+
+    /**
+     * @Attribute CreateUser: Creator of the data source permission policy.
+     */
+    public readonly attrCreateUser: ros.IResolvable;
+
+    /**
+     * @Attribute DataSourceId: The ID of the data source, that is, the unique identifier of the data source.
+     */
+    public readonly attrDataSourceId: ros.IResolvable;
+
+    /**
+     * @Attribute DataSourceSharedRuleId: The data source sharing rule ID, that is, the unique identifier of the data source sharing rule.
+     */
+    public readonly attrDataSourceSharedRuleId: ros.IResolvable;
+
+    /**
+     * @Attribute EnvType: The environment type of the data source shared to the target project, such as Dev (Development Environment) and Prod (production environment).
+     */
+    public readonly attrEnvType: ros.IResolvable;
+
+    /**
+     * @Attribute SharedDataSourceName: The name of the data source shared to the target space. Consists of the name of the source space and the name of the data source, separated by dots.
+     */
+    public readonly attrSharedDataSourceName: ros.IResolvable;
+
+    /**
+     * @Attribute SharedUser: The target user of the data source permission policy, which is null to share to the project.
+     */
+    public readonly attrSharedUser: ros.IResolvable;
+
+    /**
+     * @Attribute SourceProjectId: The ID of the project to which the data source is originally created.
+     */
+    public readonly attrSourceProjectId: ros.IResolvable;
+
+    /**
+     * @Attribute TargetProjectId: The ID of the project to which the data source is shared.
+     */
+    public readonly attrTargetProjectId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dataSourceId: The ID of the data source, that is, the unique identifier of the data source.
+     */
+    public dataSourceId: number | ros.IResolvable;
+
+    /**
+     * @Property envType: The environment type of the data source shared to the target project, such as Dev (Development Environment) and Prod (production environment).
+     */
+    public envType: string | ros.IResolvable;
+
+    /**
+     * @Property targetProjectId: The ID of the project to which the data source is shared.
+     */
+    public targetProjectId: number | ros.IResolvable;
+
+    /**
+     * @Property sharedUser: The target user of the data source permission policy, which is null to share to the project.
+     */
+    public sharedUser: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosDataSourceSharedRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosDataSourceSharedRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCreateTime = this.getAtt('CreateTime');
+        this.attrCreateUser = this.getAtt('CreateUser');
+        this.attrDataSourceId = this.getAtt('DataSourceId');
+        this.attrDataSourceSharedRuleId = this.getAtt('DataSourceSharedRuleId');
+        this.attrEnvType = this.getAtt('EnvType');
+        this.attrSharedDataSourceName = this.getAtt('SharedDataSourceName');
+        this.attrSharedUser = this.getAtt('SharedUser');
+        this.attrSourceProjectId = this.getAtt('SourceProjectId');
+        this.attrTargetProjectId = this.getAtt('TargetProjectId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dataSourceId = props.dataSourceId;
+        this.envType = props.envType;
+        this.targetProjectId = props.targetProjectId;
+        this.sharedUser = props.sharedUser;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dataSourceId: this.dataSourceId,
+            envType: this.envType,
+            targetProjectId: this.targetProjectId,
+            sharedUser: this.sharedUser,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosDataSourceSharedRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosProject`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-project
  */

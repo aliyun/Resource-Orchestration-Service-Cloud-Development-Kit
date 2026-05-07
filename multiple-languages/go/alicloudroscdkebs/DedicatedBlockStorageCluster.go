@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DedicatedBlockStorageCluster`, which is used to create a dedicated block storage cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DedicatedBlockStorageCluster`.
 type DedicatedBlockStorageCluster interface {
 	alicloudroscdkcore.Resource
 	IDedicatedBlockStorageCluster

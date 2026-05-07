@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SELECTDB::DBInstance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SELECTDB::DBInstance`, which is used to create an ApsaraDB for SelectDB instance.
 type DBInstance interface {
 	alicloudroscdkcore.Resource
 	IDBInstance

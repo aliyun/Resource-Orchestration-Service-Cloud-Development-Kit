@@ -1,3 +1,6 @@
+@alicloud/ros-cdk-dataworks.DataSourceSharedRule=com.aliyun.ros.cdk.dataworks.DataSourceSharedRule
+@alicloud/ros-cdk-dataworks.DataSourceSharedRuleProps=com.aliyun.ros.cdk.dataworks.DataSourceSharedRuleProps
+@alicloud/ros-cdk-dataworks.IDataSourceSharedRule=com.aliyun.ros.cdk.dataworks.IDataSourceSharedRule
 @alicloud/ros-cdk-dataworks.IProject=com.aliyun.ros.cdk.dataworks.IProject
 @alicloud/ros-cdk-dataworks.IResourceGroup=com.aliyun.ros.cdk.dataworks.IResourceGroup
 @alicloud/ros-cdk-dataworks.IResourceGroupRelation=com.aliyun.ros.cdk.dataworks.IResourceGroupRelation
@@ -8,6 +11,8 @@
 @alicloud/ros-cdk-dataworks.ResourceGroupProps=com.aliyun.ros.cdk.dataworks.ResourceGroupProps
 @alicloud/ros-cdk-dataworks.ResourceGroupRelation=com.aliyun.ros.cdk.dataworks.ResourceGroupRelation
 @alicloud/ros-cdk-dataworks.ResourceGroupRelationProps=com.aliyun.ros.cdk.dataworks.ResourceGroupRelationProps
+@alicloud/ros-cdk-dataworks.RosDataSourceSharedRule=com.aliyun.ros.cdk.dataworks.RosDataSourceSharedRule
+@alicloud/ros-cdk-dataworks.RosDataSourceSharedRuleProps=com.aliyun.ros.cdk.dataworks.RosDataSourceSharedRuleProps
 @alicloud/ros-cdk-dataworks.RosProject=com.aliyun.ros.cdk.dataworks.RosProject
 @alicloud/ros-cdk-dataworks.RosProject.TagsProperty=com.aliyun.ros.cdk.dataworks.RosProject$TagsProperty
 @alicloud/ros-cdk-dataworks.RosProjectProps=com.aliyun.ros.cdk.dataworks.RosProjectProps

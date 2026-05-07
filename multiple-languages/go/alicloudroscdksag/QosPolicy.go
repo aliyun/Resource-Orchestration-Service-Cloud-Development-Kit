@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosPolicy`, which is used to create a traffic classification rule for a quality of service (QoS) policy.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAG::QosPolicy`.
 type QosPolicy interface {
 	alicloudroscdkcore.Resource
 	IQosPolicy

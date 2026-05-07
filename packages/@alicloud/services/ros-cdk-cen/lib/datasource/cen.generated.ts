@@ -470,7 +470,7 @@ function rosCenRouteMapsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenRouteMaps`, which is used to query the information about routing policies.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::CenRouteMaps`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CenRouteMaps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
@@ -1103,7 +1103,7 @@ function rosTransitRouterRouteTablesPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`, which is used to query the information about route tables of an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouterRouteTables`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouterRouteTables` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouterroutetables
  */
@@ -1279,7 +1279,7 @@ function rosTransitRoutersPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouters`, which is used to query the information about transit routers of a Cloud Enterprise Network (CEN) instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CEN::TransitRouters`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TransitRouters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-transitrouters
  */

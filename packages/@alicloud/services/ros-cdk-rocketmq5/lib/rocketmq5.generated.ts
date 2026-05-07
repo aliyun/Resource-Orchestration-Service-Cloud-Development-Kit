@@ -3,6 +3,171 @@
 import * as ros from '@alicloud/ros-cdk-core';
 
 /**
+ * Properties for defining a `RosAccount`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-account
+ */
+export interface RosAccountProps {
+
+    /**
+     * @Property instanceId: The unifed ID of the instance.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property password: Account password
+     * Length Limit: 3~64 characters.
+     */
+    readonly password: string | ros.IResolvable;
+
+    /**
+     * @Property username: Account Name
+     * Length Limit: 3~64 characters
+     * Character limit: Supports letters a ~ z or A ~ Z, numbers 0~9, underscore (_) and dash (-).
+     */
+    readonly username: string | ros.IResolvable;
+
+    /**
+     * @Property accountStatus: Account Status
+     * DISABLE: DISABLE.
+     * ENABLE: Enabled.
+     */
+    readonly accountStatus?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAccountProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccountPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.accountStatus && (typeof properties.accountStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('accountStatus', ros.validateAllowedValues)({
+          data: properties.accountStatus,
+          allowedValues: ["DISABLE","ENABLE"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('accountStatus', ros.validateString)(properties.accountStatus));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('username', ros.requiredValidator)(properties.username));
+    errors.collect(ros.propertyValidator('username', ros.validateString)(properties.username));
+    errors.collect(ros.propertyValidator('password', ros.requiredValidator)(properties.password));
+    errors.collect(ros.propertyValidator('password', ros.validateString)(properties.password));
+    return errors.wrap('supplied properties not correct for "RosAccountProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ROCKETMQ5::Account` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAccountProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ROCKETMQ5::Account` resource.
+ */
+// @ts-ignore TS6133
+function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAccountPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'Password': ros.stringToRosTemplate(properties.password),
+      'Username': ros.stringToRosTemplate(properties.username),
+      'AccountStatus': ros.stringToRosTemplate(properties.accountStatus),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Account`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-account
+ */
+export class RosAccount extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::ROCKETMQ5::Account";
+
+    /**
+     * @Attribute AccountStatus: Account Status.
+     */
+    public readonly attrAccountStatus: ros.IResolvable;
+
+    /**
+     * @Attribute Password: Account password.
+     */
+    public readonly attrPassword: ros.IResolvable;
+
+    /**
+     * @Attribute Username: Account Name.
+     */
+    public readonly attrUsername: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property instanceId: The unifed ID of the instance.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property password: Account password
+     * Length Limit: 3~64 characters.
+     */
+    public password: string | ros.IResolvable;
+
+    /**
+     * @Property username: Account Name
+     * Length Limit: 3~64 characters
+     * Character limit: Supports letters a ~ z or A ~ Z, numbers 0~9, underscore (_) and dash (-).
+     */
+    public username: string | ros.IResolvable;
+
+    /**
+     * @Property accountStatus: Account Status
+     * DISABLE: DISABLE.
+     * ENABLE: Enabled.
+     */
+    public accountStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAccountProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAccount.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAccountStatus = this.getAtt('AccountStatus');
+        this.attrPassword = this.getAtt('Password');
+        this.attrUsername = this.getAtt('Username');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.instanceId = props.instanceId;
+        this.password = props.password;
+        this.username = props.username;
+        this.accountStatus = props.accountStatus;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            instanceId: this.instanceId,
+            password: this.password,
+            username: this.username,
+            accountStatus: this.accountStatus,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAccountPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosAcl`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-acl
  */
@@ -147,6 +312,11 @@ export class RosAcl extends ros.RosResource {
     public readonly attrResourceName: ros.IResolvable;
 
     /**
+     * @Attribute ResourceType: The type of the resource on which you want to grant permissions.
+     */
+    public readonly attrResourceType: ros.IResolvable;
+
+    /**
      * @Attribute Username: The username of the account.
      */
     public readonly attrUsername: ros.IResolvable;
@@ -205,6 +375,7 @@ export class RosAcl extends ros.RosResource {
         this.attrInstanceId = this.getAtt('InstanceId');
         this.attrIpWhitelists = this.getAtt('IpWhitelists');
         this.attrResourceName = this.getAtt('ResourceName');
+        this.attrResourceType = this.getAtt('ResourceType');
         this.attrUsername = this.getAtt('Username');
 
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
@@ -677,7 +848,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`The , which resource type creates an ApsaraMQ for RocketMQ 5.0 instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ5::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-instance
  */

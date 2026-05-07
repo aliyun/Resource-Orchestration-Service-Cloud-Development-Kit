@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * Represents a <code>SupabaseProject</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.022Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.956Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.ISupabaseProject")
 @software.amazon.jsii.Jsii.Proxy(ISupabaseProject.Jsii$Proxy.class)
 public interface ISupabaseProject extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -12,6 +12,11 @@ public interface ISupabaseProject extends software.amazon.jsii.JsiiSerializable,
      * Attribute ApiKeys: API keys.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys();
+
+    /**
+     * Attribute Eni: Network interface.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrEni();
 
     /**
      * Attribute PrivateConnectUrl: Private connection URL.
@@ -76,6 +81,14 @@ public interface ISupabaseProject extends software.amazon.jsii.JsiiSerializable,
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys() {
             return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Eni: Network interface.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrEni() {
+            return software.amazon.jsii.Kernel.get(this, "attrEni", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -151,6 +164,14 @@ public interface ISupabaseProject extends software.amazon.jsii.JsiiSerializable,
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrApiKeys() {
             return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute Eni: Network interface.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrEni() {
+            return software.amazon.jsii.Kernel.get(this, "attrEni", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

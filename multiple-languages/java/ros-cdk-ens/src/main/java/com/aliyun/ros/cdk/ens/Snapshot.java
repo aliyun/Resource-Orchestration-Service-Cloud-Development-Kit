@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ens;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Snapshot</code>, which is used to create a snapshot.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ENS::Snapshot</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.853Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.821Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.Snapshot")
 public class Snapshot extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ens.ISnapshot {
 

@@ -277,7 +277,7 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DirectMail::Domains`, which is used to query the information about domain names.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DirectMail::Domains`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains
  */
@@ -518,7 +518,7 @@ function rosIpfiltersPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::DirectMail::Ipfilters`, which is used to query IP filters.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::DirectMail::Ipfilters`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ipfilters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-ipfilters
  */

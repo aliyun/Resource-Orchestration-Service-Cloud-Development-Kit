@@ -53,7 +53,7 @@ export interface IDedicatedHostClusters extends ros.IResource {
     readonly attrDedicatedHostClusters: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`, which is used to query the information about dedicated host clusters.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */

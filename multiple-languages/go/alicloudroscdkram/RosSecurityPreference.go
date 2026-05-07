@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`, which is used to configure security preferences for Resource Access Management (RAM) users.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SecurityPreference`.
 type RosSecurityPreference interface {
 	alicloudroscdkcore.RosResource
 	AllowUserToChangePassword() interface{}

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTableWithGatewayAssociation`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::RouteTableWithGatewayAssociation`, which is used to associate a gateway route table with an IPv4 or IPv6 gateway in the same virtual private cloud (VPC).
 type RouteTableWithGatewayAssociation interface {
 	alicloudroscdkcore.Resource
 	IRouteTableWithGatewayAssociation

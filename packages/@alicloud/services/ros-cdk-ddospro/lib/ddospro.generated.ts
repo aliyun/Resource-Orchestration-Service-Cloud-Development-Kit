@@ -376,7 +376,7 @@ function rosPremiumInstancePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PremiumInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
  */
@@ -1441,7 +1441,7 @@ function rosWebRulePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`, which is used to create a forwarding rule for a website.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WebRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-webrule
  */

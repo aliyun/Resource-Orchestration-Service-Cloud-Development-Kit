@@ -12,6 +12,8 @@ type ISupabaseProject interface {
 	alicloudroscdkcore.IResource
 	// Attribute ApiKeys: API keys.
 	AttrApiKeys() interface{}
+	// Attribute Eni: Network interface.
+	AttrEni() interface{}
 	// Attribute PrivateConnectUrl: Private connection URL.
 	AttrPrivateConnectUrl() interface{}
 	// Attribute ProjectId: Supabase instance ID.
@@ -31,6 +33,16 @@ func (j *jsiiProxy_ISupabaseProject) AttrApiKeys() interface{} {
 	_jsii_.Get(
 		j,
 		"attrApiKeys",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_ISupabaseProject) AttrEni() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrEni",
 		&returns,
 	)
 	return returns

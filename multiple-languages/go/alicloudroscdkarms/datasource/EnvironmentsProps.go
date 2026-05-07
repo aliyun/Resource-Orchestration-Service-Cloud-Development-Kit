@@ -5,6 +5,8 @@ package datasource
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-environments
 type EnvironmentsProps struct {
+	// Property bindResourceId: The bound resource ID.
+	BindResourceId interface{} `field:"optional" json:"bindResourceId" yaml:"bindResourceId"`
 	// Property environmentType: Type of environment.
 	EnvironmentType interface{} `field:"optional" json:"environmentType" yaml:"environmentType"`
 	// Property refreshOptions: The refresh strategy for the datasource resource when the stack is updated.

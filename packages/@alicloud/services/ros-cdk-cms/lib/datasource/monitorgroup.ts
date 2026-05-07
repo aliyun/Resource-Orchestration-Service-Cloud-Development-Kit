@@ -85,7 +85,7 @@ export interface IMonitorGroup extends ros.IResource {
     readonly attrType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroup`, which is used to query the information about an application group.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CMS::MonitorGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMonitorGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroup
  */

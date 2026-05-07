@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Hbr.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::HBR::Vault`, which is used to query the information about a backup vault.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::HBR::Vault`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVault`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hbr-vault

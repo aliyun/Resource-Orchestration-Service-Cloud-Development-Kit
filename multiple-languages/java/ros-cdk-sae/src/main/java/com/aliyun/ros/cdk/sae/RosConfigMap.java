@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sae;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SAE::ConfigMap</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.832Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.RosConfigMap")
 public class RosConfigMap extends com.aliyun.ros.cdk.core.RosResource {
 

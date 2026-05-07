@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::ManagedPolicy</code>, which is used to create a Resource Access Management (RAM) policy.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.005Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.043Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosManagedPolicy")
 public class RosManagedPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

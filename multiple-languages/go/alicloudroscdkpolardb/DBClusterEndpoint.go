@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`, which is used to create a custom endpoint for a PolarDB cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBClusterEndpoint`.
 type DBClusterEndpoint interface {
 	alicloudroscdkcore.Resource
 	IDBClusterEndpoint
