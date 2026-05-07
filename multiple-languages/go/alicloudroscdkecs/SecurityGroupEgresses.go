@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`, which is used to associate multiple outbound rules with a security group at a time.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupEgresses`.
 type SecurityGroupEgresses interface {
 	alicloudroscdkcore.Resource
 	ISecurityGroupEgresses

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.devops;
 /**
  * Represents a <code>HostGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.761Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.768Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.IHostGroup")
 @software.amazon.jsii.Jsii.Proxy(IHostGroup.Jsii$Proxy.class)
 public interface IHostGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

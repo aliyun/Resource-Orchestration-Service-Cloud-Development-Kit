@@ -7,7 +7,6 @@ export * from './envservicemonitor';
 export * from './environment';
 export * from './environmentfeature';
 export * from './managedprometheus';
-export * from './prometheus';
 export * from './retcodeapp';
 export * from './rum';
 export * from './xtraceapp';

@@ -8,13 +8,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
     [JsiiInterface(nativeType: typeof(IApiAttachment), fullyQualifiedName: "@alicloud/ros-cdk-apig.IApiAttachment")]
     public interface IApiAttachment : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
-        /// <summary>Attribute EnvironmentId: The ID of the environment to which the API is to deploy.</summary>
-        [JsiiProperty(name: "attrEnvironmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrEnvironmentId
-        {
-            get;
-        }
-
         /// <summary>Attribute HttpApiId: The ID of the HTTP API.</summary>
         [JsiiProperty(name: "attrHttpApiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrHttpApiId
@@ -44,13 +37,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
         {
             private _Proxy(ByRefValue reference): base(reference)
             {
-            }
-
-            /// <summary>Attribute EnvironmentId: The ID of the environment to which the API is to deploy.</summary>
-            [JsiiProperty(name: "attrEnvironmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrEnvironmentId
-            {
-                get => GetInstanceProperty<object>()!;
             }
 
             /// <summary>Attribute HttpApiId: The ID of the HTTP API.</summary>

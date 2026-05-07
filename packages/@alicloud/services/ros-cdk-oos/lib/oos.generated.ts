@@ -701,7 +701,7 @@ function RosDeployRevisionPropsValidator(properties: any): ros.ValidationResult 
     if(properties.revisionType && (typeof properties.revisionType) !== 'object') {
         errors.collect(ros.propertyValidator('revisionType', ros.validateAllowedValues)({
           data: properties.revisionType,
-          allowedValues: ["GitRepo","Oss","EcsImage","DockerImage","Command"],
+          allowedValues: ["GitRepo","Oss","EcsImage","DockerImage","Command","Yaml","HelmChart"],
         }));
     }
     errors.collect(ros.propertyValidator('revisionType', ros.validateString)(properties.revisionType));
@@ -741,7 +741,7 @@ function rosDeployRevisionPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DeployRevision`The , which type is used to create a deployment.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DeployRevision`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeployRevision` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-deployrevision
  */
@@ -2227,7 +2227,7 @@ function rosServiceSettingsPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`, which is used to configure service settings.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ServiceSettings`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServiceSettings` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings
  */
@@ -2617,7 +2617,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`The , which resource type creates a template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Template`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-template
  */

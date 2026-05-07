@@ -1115,3 +1115,267 @@ export class RosNamespace extends ros.RosResource {
         return rosNamespacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
+
+/**
+ * Properties for defining a `RosWorkFlow`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-schedulerx-workflow
+ */
+export interface RosWorkFlowProps {
+
+    /**
+     * @Property groupId: The application Group ID, which is obtained from the application management page of the console.
+     */
+    readonly groupId: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The namespace ID, which is obtained from the namespace page in the console.
+     */
+    readonly namespace: string | ros.IResolvable;
+
+    /**
+     * @Property timeType: Time type. Currently, the following time types are supported:
+     * - cron: 1
+     * - api: 100.
+     */
+    readonly timeType: number | ros.IResolvable;
+
+    /**
+     * @Property workflowName: Workflow Name.
+     */
+    readonly workflowName: string | ros.IResolvable;
+
+    /**
+     * @Property description: Workflow description.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property maxConcurrency: The maximum number of workflow instances running at the same time. The default value is 1, that is, the last trigger is not completed, and the next trigger will not be performed even when the running time is reached.
+     */
+    readonly maxConcurrency?: number | ros.IResolvable;
+
+    /**
+     * @Property namespaceSource: Special third parties are required.
+     */
+    readonly namespaceSource?: string | ros.IResolvable;
+
+    /**
+     * @Property timeExpression: Time expression, which is set based on the selected time type.
+     * - cron: Fill in standard cron expressions to support online verification.
+     * - api: No time expression.
+     */
+    readonly timeExpression?: string | ros.IResolvable;
+
+    /**
+     * @Property timezone: Time Zone.
+     */
+    readonly timezone?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWorkFlowProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWorkFlowProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkFlowPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('timezone', ros.validateString)(properties.timezone));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('workflowName', ros.requiredValidator)(properties.workflowName));
+    errors.collect(ros.propertyValidator('workflowName', ros.validateString)(properties.workflowName));
+    errors.collect(ros.propertyValidator('namespaceSource', ros.validateString)(properties.namespaceSource));
+    errors.collect(ros.propertyValidator('maxConcurrency', ros.validateNumber)(properties.maxConcurrency));
+    errors.collect(ros.propertyValidator('timeExpression', ros.validateString)(properties.timeExpression));
+    errors.collect(ros.propertyValidator('namespace', ros.requiredValidator)(properties.namespace));
+    errors.collect(ros.propertyValidator('namespace', ros.validateString)(properties.namespace));
+    errors.collect(ros.propertyValidator('timeType', ros.requiredValidator)(properties.timeType));
+    if(properties.timeType && (typeof properties.timeType) !== 'object') {
+        errors.collect(ros.propertyValidator('timeType', ros.validateAllowedValues)({
+          data: properties.timeType,
+          allowedValues: [1,100],
+        }));
+    }
+    errors.collect(ros.propertyValidator('timeType', ros.validateNumber)(properties.timeType));
+    errors.collect(ros.propertyValidator('groupId', ros.requiredValidator)(properties.groupId));
+    errors.collect(ros.propertyValidator('groupId', ros.validateString)(properties.groupId));
+    return errors.wrap('supplied properties not correct for "RosWorkFlowProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::SchedulerX::WorkFlow` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWorkFlowProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::SchedulerX::WorkFlow` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWorkFlowPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GroupId': ros.stringToRosTemplate(properties.groupId),
+      'Namespace': ros.stringToRosTemplate(properties.namespace),
+      'TimeType': ros.numberToRosTemplate(properties.timeType),
+      'WorkflowName': ros.stringToRosTemplate(properties.workflowName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'MaxConcurrency': ros.numberToRosTemplate(properties.maxConcurrency),
+      'NamespaceSource': ros.stringToRosTemplate(properties.namespaceSource),
+      'TimeExpression': ros.stringToRosTemplate(properties.timeExpression),
+      'Timezone': ros.stringToRosTemplate(properties.timezone),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SchedulerX::WorkFlow`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `WorkFlow` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-schedulerx-workflow
+ */
+export class RosWorkFlow extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::SchedulerX::WorkFlow";
+
+    /**
+     * @Attribute Description: Workflow description.
+     */
+    public readonly attrDescription: ros.IResolvable;
+
+    /**
+     * @Attribute GroupId: The application Group ID, which is obtained from the application management page of the console.
+     */
+    public readonly attrGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute MaxConcurrency: The maximum number of workflow instances running at the same time. The default value is 1, that is, the last trigger is not completed, and the next trigger will not be performed even when the running time is reached.
+     */
+    public readonly attrMaxConcurrency: ros.IResolvable;
+
+    /**
+     * @Attribute Namespace: The namespace ID, which is obtained from the namespace page in the console.
+     */
+    public readonly attrNamespace: ros.IResolvable;
+
+    /**
+     * @Attribute TimeExpression: Time expression, which is set based on the selected time type.
+     */
+    public readonly attrTimeExpression: ros.IResolvable;
+
+    /**
+     * @Attribute TimeType: Time type.
+     */
+    public readonly attrTimeType: ros.IResolvable;
+
+    /**
+     * @Attribute WorkFlowId: workflow id.
+     */
+    public readonly attrWorkFlowId: ros.IResolvable;
+
+    /**
+     * @Attribute WorkflowName: Workflow Name.
+     */
+    public readonly attrWorkflowName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property groupId: The application Group ID, which is obtained from the application management page of the console.
+     */
+    public groupId: string | ros.IResolvable;
+
+    /**
+     * @Property namespace: The namespace ID, which is obtained from the namespace page in the console.
+     */
+    public namespace: string | ros.IResolvable;
+
+    /**
+     * @Property timeType: Time type. Currently, the following time types are supported:
+     * - cron: 1
+     * - api: 100.
+     */
+    public timeType: number | ros.IResolvable;
+
+    /**
+     * @Property workflowName: Workflow Name.
+     */
+    public workflowName: string | ros.IResolvable;
+
+    /**
+     * @Property description: Workflow description.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxConcurrency: The maximum number of workflow instances running at the same time. The default value is 1, that is, the last trigger is not completed, and the next trigger will not be performed even when the running time is reached.
+     */
+    public maxConcurrency: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property namespaceSource: Special third parties are required.
+     */
+    public namespaceSource: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property timeExpression: Time expression, which is set based on the selected time type.
+     * - cron: Fill in standard cron expressions to support online verification.
+     * - api: No time expression.
+     */
+    public timeExpression: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property timezone: Time Zone.
+     */
+    public timezone: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWorkFlowProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWorkFlow.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDescription = this.getAtt('Description');
+        this.attrGroupId = this.getAtt('GroupId');
+        this.attrMaxConcurrency = this.getAtt('MaxConcurrency');
+        this.attrNamespace = this.getAtt('Namespace');
+        this.attrTimeExpression = this.getAtt('TimeExpression');
+        this.attrTimeType = this.getAtt('TimeType');
+        this.attrWorkFlowId = this.getAtt('WorkFlowId');
+        this.attrWorkflowName = this.getAtt('WorkflowName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.groupId = props.groupId;
+        this.namespace = props.namespace;
+        this.timeType = props.timeType;
+        this.workflowName = props.workflowName;
+        this.description = props.description;
+        this.maxConcurrency = props.maxConcurrency;
+        this.namespaceSource = props.namespaceSource;
+        this.timeExpression = props.timeExpression;
+        this.timezone = props.timezone;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            groupId: this.groupId,
+            namespace: this.namespace,
+            timeType: this.timeType,
+            workflowName: this.workflowName,
+            description: this.description,
+            maxConcurrency: this.maxConcurrency,
+            namespaceSource: this.namespaceSource,
+            timeExpression: this.timeExpression,
+            timezone: this.timezone,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWorkFlowPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}

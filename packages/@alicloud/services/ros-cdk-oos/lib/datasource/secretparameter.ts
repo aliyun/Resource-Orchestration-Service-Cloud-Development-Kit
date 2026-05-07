@@ -105,7 +105,7 @@ export interface ISecretParameter extends ros.IResource {
     readonly attrValue: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::SecretParameter`, which is used to query the information about an encryption parameter.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::SecretParameter`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecretParameter`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameter
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adblake;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ADBLake::ResourceGroupAccountBinding</code>, which is used to associate a resource group with a database account.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.145Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.015Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.RosResourceGroupAccountBinding")
 public class RosResourceGroupAccountBinding extends com.aliyun.ros.cdk.core.RosResource {
 

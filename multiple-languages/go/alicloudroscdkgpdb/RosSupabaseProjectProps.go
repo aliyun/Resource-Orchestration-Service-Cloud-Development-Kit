@@ -12,6 +12,7 @@ type RosSupabaseProjectProps struct {
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
+	DatabaseIpList interface{} `field:"optional" json:"databaseIpList" yaml:"databaseIpList"`
 	DiskPerformanceLevel interface{} `field:"optional" json:"diskPerformanceLevel" yaml:"diskPerformanceLevel"`
 	PayType interface{} `field:"optional" json:"payType" yaml:"payType"`
 	Period interface{} `field:"optional" json:"period" yaml:"period"`

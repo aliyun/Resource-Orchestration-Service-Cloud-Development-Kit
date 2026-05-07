@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest;
 /**
  * Represents a <code>ServiceInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.199Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.185Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.IServiceInstance")
 @software.amazon.jsii.Jsii.Proxy(IServiceInstance.Jsii$Proxy.class)
 public interface IServiceInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

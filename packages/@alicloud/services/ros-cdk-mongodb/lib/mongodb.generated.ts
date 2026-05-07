@@ -138,6 +138,133 @@ export class RosAuditPolicy extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosGlobalSecurityIPGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-globalsecurityipgroup
+ */
+export interface RosGlobalSecurityIPGroupProps {
+
+    /**
+     * @Property globalIgName: The name of the IP whitelist template.
+     */
+    readonly globalIgName: string | ros.IResolvable;
+
+    /**
+     * @Property globalSecurityIpList: The IP address in the whitelist template.
+     */
+    readonly globalSecurityIpList: Array<any | ros.IResolvable> | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosGlobalSecurityIPGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalSecurityIPGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosGlobalSecurityIPGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('globalIgName', ros.requiredValidator)(properties.globalIgName));
+    errors.collect(ros.propertyValidator('globalIgName', ros.validateString)(properties.globalIgName));
+    errors.collect(ros.propertyValidator('globalSecurityIpList', ros.requiredValidator)(properties.globalSecurityIpList));
+    if(properties.globalSecurityIpList && (Array.isArray(properties.globalSecurityIpList) || (typeof properties.globalSecurityIpList) === 'string')) {
+        errors.collect(ros.propertyValidator('globalSecurityIpList', ros.validateLength)({
+            data: properties.globalSecurityIpList.length,
+            min: 1,
+            max: 1000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('globalSecurityIpList', ros.listValidator(ros.validateAny))(properties.globalSecurityIpList));
+    return errors.wrap('supplied properties not correct for "RosGlobalSecurityIPGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::GlobalSecurityIPGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosGlobalSecurityIPGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::MONGODB::GlobalSecurityIPGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosGlobalSecurityIPGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosGlobalSecurityIPGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'GlobalIgName': ros.stringToRosTemplate(properties.globalIgName),
+      'GlobalSecurityIpList': ros.listMapper(ros.objectToRosTemplate)(properties.globalSecurityIpList),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::GlobalSecurityIPGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `GlobalSecurityIPGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-globalsecurityipgroup
+ */
+export class RosGlobalSecurityIPGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::MONGODB::GlobalSecurityIPGroup";
+
+    /**
+     * @Attribute GlobalIgName: The name of the IP whitelist template.
+     */
+    public readonly attrGlobalIgName: ros.IResolvable;
+
+    /**
+     * @Attribute GlobalSecurityGroupId: The ID of the IP whitelist template.
+     */
+    public readonly attrGlobalSecurityGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute GlobalSecurityIpList: The IP address in the whitelist template.
+     */
+    public readonly attrGlobalSecurityIpList: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property globalIgName: The name of the IP whitelist template.
+     */
+    public globalIgName: string | ros.IResolvable;
+
+    /**
+     * @Property globalSecurityIpList: The IP address in the whitelist template.
+     */
+    public globalSecurityIpList: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosGlobalSecurityIPGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosGlobalSecurityIPGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrGlobalIgName = this.getAtt('GlobalIgName');
+        this.attrGlobalSecurityGroupId = this.getAtt('GlobalSecurityGroupId');
+        this.attrGlobalSecurityIpList = this.getAtt('GlobalSecurityIpList');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.globalIgName = props.globalIgName;
+        this.globalSecurityIpList = props.globalSecurityIpList;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            globalIgName: this.globalIgName,
+            globalSecurityIpList: this.globalSecurityIpList,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosGlobalSecurityIPGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosInstance`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
  */
@@ -520,7 +647,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::Instance`The , which type creates or clones a MongoDB replica set instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MONGODB::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
  */

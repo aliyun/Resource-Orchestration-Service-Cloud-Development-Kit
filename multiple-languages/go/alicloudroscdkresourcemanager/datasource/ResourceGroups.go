@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ResourceManager::ResourceGroups`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ResourceManager::ResourceGroups`, which is used to query resource groups.
 type ResourceGroups interface {
 	alicloudroscdkcore.Resource
 	IResourceGroups

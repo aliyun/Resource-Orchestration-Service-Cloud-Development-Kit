@@ -185,7 +185,7 @@ export interface IService extends ros.IResource {
     readonly attrWeight: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Service`, which is used to query the information about a service in Elastic Algorithm Service (EAS).
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::Service`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosService`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-service
  */

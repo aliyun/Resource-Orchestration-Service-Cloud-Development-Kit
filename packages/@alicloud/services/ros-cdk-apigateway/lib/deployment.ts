@@ -42,7 +42,7 @@ export interface IDeployment extends ros.IResource {
     readonly props: DeploymentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to publish an API to a specific runtime environment, or switch a published API to a specific version.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Deployment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */

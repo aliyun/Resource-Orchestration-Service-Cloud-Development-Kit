@@ -42,7 +42,7 @@ export interface IBackupClients extends ros.IResource {
     readonly attrInstanceIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::BackupClients`, which is used to install backup clients on Elastic Compute Service (ECS) instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::BackupClients`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackupClients`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-backupclients
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RAM::Role</code>, which is used to query the information about a role.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::RAM::Role</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.062Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.098Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.datasource.Role")
 public class Role extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.datasource.IRole {
 

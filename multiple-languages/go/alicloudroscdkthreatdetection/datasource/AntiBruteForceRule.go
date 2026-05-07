@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRule`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ThreatDetection::AntiBruteForceRule`, which is used to query the information about a created defense rule against brute-force attacks.
 type AntiBruteForceRule interface {
 	alicloudroscdkcore.Resource
 	IAntiBruteForceRule

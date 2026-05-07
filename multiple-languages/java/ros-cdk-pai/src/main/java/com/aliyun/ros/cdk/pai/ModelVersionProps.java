@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-modelversion
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.397Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.410Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.ModelVersionProps")
 @software.amazon.jsii.Jsii.Proxy(ModelVersionProps.Jsii$Proxy.class)
 public interface ModelVersionProps extends software.amazon.jsii.JsiiSerializable {
@@ -102,10 +102,8 @@ public interface ModelVersionProps extends software.amazon.jsii.JsiiSerializable
      * <p>
      * <ul>
      * <li>When the source type is Custom, this field is not restricted.</li>
-     * <li>When the source is PAIFlow or TrainingService, the format is
-     * '''
+     * <li>When the source is PAIFlow or TrainingService, the format is:
      * region=&lt;region_id&gt;,workspaceId=&lt;workspace_id&gt;,kind=<kind>,id=<id>
-     * '''
      * Among them:</li>
      * <li>region is the Alibaba Cloud region ID.</li>
      * <li>workspaceId indicates the workspace ID.</li>
@@ -415,10 +413,8 @@ public interface ModelVersionProps extends software.amazon.jsii.JsiiSerializable
          * @param sourceId Property sourceId: Source ID.
          *                 <ul>
          *                 <li>When the source type is Custom, this field is not restricted.</li>
-         *                 <li>When the source is PAIFlow or TrainingService, the format is
-         *                 '''
+         *                 <li>When the source is PAIFlow or TrainingService, the format is:
          *                 region=&lt;region_id&gt;,workspaceId=&lt;workspace_id&gt;,kind=<kind>,id=<id>
-         *                 '''
          *                 Among them:</li>
          *                 <li>region is the Alibaba Cloud region ID.</li>
          *                 <li>workspaceId indicates the workspace ID.</li>
@@ -437,10 +433,8 @@ public interface ModelVersionProps extends software.amazon.jsii.JsiiSerializable
          * @param sourceId Property sourceId: Source ID.
          *                 <ul>
          *                 <li>When the source type is Custom, this field is not restricted.</li>
-         *                 <li>When the source is PAIFlow or TrainingService, the format is
-         *                 '''
+         *                 <li>When the source is PAIFlow or TrainingService, the format is:
          *                 region=&lt;region_id&gt;,workspaceId=&lt;workspace_id&gt;,kind=<kind>,id=<id>
-         *                 '''
          *                 Among them:</li>
          *                 <li>region is the Alibaba Cloud region ID.</li>
          *                 <li>workspaceId indicates the workspace ID.</li>

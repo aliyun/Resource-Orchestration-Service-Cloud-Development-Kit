@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::MessageCallbacks`, which is used to query sets of event notification configurations.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VOD::MessageCallbacks`.
 type RosMessageCallbacks interface {
 	alicloudroscdkcore.RosResource
 	AppId() interface{}

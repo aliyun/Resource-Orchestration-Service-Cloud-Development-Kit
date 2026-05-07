@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::TLSPolicies`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::TLSPolicies`, which is used to query Transport Layer Security (TLS) policies.
 type TLSPolicies interface {
 	alicloudroscdkcore.Resource
 	ITLSPolicies

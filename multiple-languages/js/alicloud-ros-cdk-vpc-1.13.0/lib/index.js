@@ -1,0 +1,87 @@
+"use strict";
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __exportStar = (this && this.__exportStar) || function(m, exports) {
+    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.datasource = void 0;
+__exportStar(require("./anycasteip"), exports);
+__exportStar(require("./anycasteipassociation"), exports);
+__exportStar(require("./bgpgroup"), exports);
+__exportStar(require("./bgpnetwork"), exports);
+__exportStar(require("./bgppeer"), exports);
+__exportStar(require("./commonbandwidthpackage"), exports);
+__exportStar(require("./commonbandwidthpackageip"), exports);
+__exportStar(require("./customergateway"), exports);
+__exportStar(require("./dhcpoptionsset"), exports);
+__exportStar(require("./dhcpoptionssetattachment"), exports);
+__exportStar(require("./eip"), exports);
+__exportStar(require("./eipassociation"), exports);
+__exportStar(require("./eippro"), exports);
+__exportStar(require("./eipsegment"), exports);
+__exportStar(require("./flowlog"), exports);
+__exportStar(require("./forwardentry"), exports);
+__exportStar(require("./fullnatentry"), exports);
+__exportStar(require("./grantinstancetocen"), exports);
+__exportStar(require("./havip"), exports);
+__exportStar(require("./havipassociation"), exports);
+__exportStar(require("./ipam"), exports);
+__exportStar(require("./ipampool"), exports);
+__exportStar(require("./ipampoolallocation"), exports);
+__exportStar(require("./ipamresourcediscovery"), exports);
+__exportStar(require("./ipamscope"), exports);
+__exportStar(require("./ipsecserver"), exports);
+__exportStar(require("./ipv4gateway"), exports);
+__exportStar(require("./ipv6egressrule"), exports);
+__exportStar(require("./ipv6gateway"), exports);
+__exportStar(require("./ipv6internetbandwidth"), exports);
+__exportStar(require("./natgateway"), exports);
+__exportStar(require("./natip"), exports);
+__exportStar(require("./natipcidr"), exports);
+__exportStar(require("./networkacl"), exports);
+__exportStar(require("./networkaclassociation"), exports);
+__exportStar(require("./peeringrouterinterfacebinding"), exports);
+__exportStar(require("./peeringrouterinterfaceconnection"), exports);
+__exportStar(require("./prefixlist"), exports);
+__exportStar(require("./publicipaddresspool"), exports);
+__exportStar(require("./routetable"), exports);
+__exportStar(require("./routetableassociation"), exports);
+__exportStar(require("./routetableattachment"), exports);
+__exportStar(require("./routetablewithgatewayassociation"), exports);
+__exportStar(require("./routerinterface"), exports);
+__exportStar(require("./snatentry"), exports);
+__exportStar(require("./sslvpnclientcert"), exports);
+__exportStar(require("./sslvpnserver"), exports);
+__exportStar(require("./trafficmirrorfilter"), exports);
+__exportStar(require("./trafficmirrorsession"), exports);
+__exportStar(require("./trafficmirrorsessionsourcesaddition"), exports);
+__exportStar(require("./trafficqos"), exports);
+__exportStar(require("./trafficqosqueue"), exports);
+__exportStar(require("./trafficqosrule"), exports);
+__exportStar(require("./vswitchcidrreservation"), exports);
+__exportStar(require("./vcorouteentry"), exports);
+__exportStar(require("./virtualborderrouter"), exports);
+__exportStar(require("./vpccidrblockassociation"), exports);
+__exportStar(require("./vpcgatewayendpoint"), exports);
+__exportStar(require("./vpcgatewayendpointassociation"), exports);
+__exportStar(require("./vpcipv6cidrallocation"), exports);
+__exportStar(require("./vpcpeerconnection"), exports);
+__exportStar(require("./vpnattachment"), exports);
+__exportStar(require("./vpnconnection"), exports);
+__exportStar(require("./vpngateway"), exports);
+__exportStar(require("./vpnpbrrouteentry"), exports);
+__exportStar(require("./vpnrouteentry"), exports);
+// ALIYUN::VPC Resources:
+__exportStar(require("./vpc.generated"), exports);
+exports.datasource = require("./datasource");
+//# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiaW5kZXguanMiLCJzb3VyY2VSb290IjoiIiwic291cmNlcyI6WyJpbmRleC50cyJdLCJuYW1lcyI6W10sIm1hcHBpbmdzIjoiOzs7Ozs7Ozs7Ozs7Ozs7OztBQUFBLCtDQUE2QjtBQUM3QiwwREFBd0M7QUFDeEMsNkNBQTJCO0FBQzNCLCtDQUE2QjtBQUM3Qiw0Q0FBMEI7QUFDMUIsMkRBQXlDO0FBQ3pDLDZEQUEyQztBQUMzQyxvREFBa0M7QUFDbEMsbURBQWlDO0FBQ2pDLDZEQUEyQztBQUMzQyx3Q0FBc0I7QUFDdEIsbURBQWlDO0FBQ2pDLDJDQUF5QjtBQUN6QiwrQ0FBNkI7QUFDN0IsNENBQTBCO0FBQzFCLGlEQUErQjtBQUMvQixpREFBK0I7QUFDL0IsdURBQXFDO0FBQ3JDLDBDQUF3QjtBQUN4QixxREFBbUM7QUFDbkMseUNBQXVCO0FBQ3ZCLDZDQUEyQjtBQUMzQix1REFBcUM7QUFDckMsMERBQXdDO0FBQ3hDLDhDQUE0QjtBQUM1QixnREFBOEI7QUFDOUIsZ0RBQThCO0FBQzlCLG1EQUFpQztBQUNqQyxnREFBOEI7QUFDOUIsMERBQXdDO0FBQ3hDLCtDQUE2QjtBQUM3QiwwQ0FBd0I7QUFDeEIsOENBQTRCO0FBQzVCLCtDQUE2QjtBQUM3QiwwREFBd0M7QUFDeEMsa0VBQWdEO0FBQ2hELHFFQUFtRDtBQUNuRCwrQ0FBNkI7QUFDN0Isd0RBQXNDO0FBQ3RDLCtDQUE2QjtBQUM3QiwwREFBd0M7QUFDeEMseURBQXVDO0FBQ3ZDLHFFQUFtRDtBQUNuRCxvREFBa0M7QUFDbEMsOENBQTRCO0FBQzVCLHFEQUFtQztBQUNuQyxpREFBK0I7QUFDL0Isd0RBQXNDO0FBQ3RDLHlEQUF1QztBQUN2Qyx3RUFBc0Q7QUFDdEQsK0NBQTZCO0FBQzdCLG9EQUFrQztBQUNsQyxtREFBaUM7QUFDakMsMkRBQXlDO0FBQ3pDLGtEQUFnQztBQUNoQyx3REFBc0M7QUFDdEMsNERBQTBDO0FBQzFDLHVEQUFxQztBQUNyQyxrRUFBZ0Q7QUFDaEQsMERBQXdDO0FBQ3hDLHNEQUFvQztBQUNwQyxrREFBZ0M7QUFDaEMsa0RBQWdDO0FBQ2hDLCtDQUE2QjtBQUM3QixxREFBbUM7QUFDbkMsa0RBQWdDO0FBRWhDLHlCQUF5QjtBQUN6QixrREFBZ0M7QUFDaEMsNkNBQTJDIiwic291cmNlc0NvbnRlbnQiOlsiZXhwb3J0ICogZnJvbSAnLi9hbnljYXN0ZWlwJztcbmV4cG9ydCAqIGZyb20gJy4vYW55Y2FzdGVpcGFzc29jaWF0aW9uJztcbmV4cG9ydCAqIGZyb20gJy4vYmdwZ3JvdXAnO1xuZXhwb3J0ICogZnJvbSAnLi9iZ3BuZXR3b3JrJztcbmV4cG9ydCAqIGZyb20gJy4vYmdwcGVlcic7XG5leHBvcnQgKiBmcm9tICcuL2NvbW1vbmJhbmR3aWR0aHBhY2thZ2UnO1xuZXhwb3J0ICogZnJvbSAnLi9jb21tb25iYW5kd2lkdGhwYWNrYWdlaXAnO1xuZXhwb3J0ICogZnJvbSAnLi9jdXN0b21lcmdhdGV3YXknO1xuZXhwb3J0ICogZnJvbSAnLi9kaGNwb3B0aW9uc3NldCc7XG5leHBvcnQgKiBmcm9tICcuL2RoY3BvcHRpb25zc2V0YXR0YWNobWVudCc7XG5leHBvcnQgKiBmcm9tICcuL2VpcCc7XG5leHBvcnQgKiBmcm9tICcuL2VpcGFzc29jaWF0aW9uJztcbmV4cG9ydCAqIGZyb20gJy4vZWlwcHJvJztcbmV4cG9ydCAqIGZyb20gJy4vZWlwc2VnbWVudCc7XG5leHBvcnQgKiBmcm9tICcuL2Zsb3dsb2cnO1xuZXhwb3J0ICogZnJvbSAnLi9mb3J3YXJkZW50cnknO1xuZXhwb3J0ICogZnJvbSAnLi9mdWxsbmF0ZW50cnknO1xuZXhwb3J0ICogZnJvbSAnLi9ncmFudGluc3RhbmNldG9jZW4nO1xuZXhwb3J0ICogZnJvbSAnLi9oYXZpcCc7XG5leHBvcnQgKiBmcm9tICcuL2hhdmlwYXNzb2NpYXRpb24nO1xuZXhwb3J0ICogZnJvbSAnLi9pcGFtJztcbmV4cG9ydCAqIGZyb20gJy4vaXBhbXBvb2wnO1xuZXhwb3J0ICogZnJvbSAnLi9pcGFtcG9vbGFsbG9jYXRpb24nO1xuZXhwb3J0ICogZnJvbSAnLi9pcGFtcmVzb3VyY2VkaXNjb3ZlcnknO1xuZXhwb3J0ICogZnJvbSAnLi9pcGFtc2NvcGUnO1xuZXhwb3J0ICogZnJvbSAnLi9pcHNlY3NlcnZlcic7XG5leHBvcnQgKiBmcm9tICcuL2lwdjRnYXRld2F5JztcbmV4cG9ydCAqIGZyb20gJy4vaXB2NmVncmVzc3J1bGUnO1xuZXhwb3J0ICogZnJvbSAnLi9pcHY2Z2F0ZXdheSc7XG5leHBvcnQgKiBmcm9tICcuL2lwdjZpbnRlcm5ldGJhbmR3aWR0aCc7XG5leHBvcnQgKiBmcm9tICcuL25hdGdhdGV3YXknO1xuZXhwb3J0ICogZnJvbSAnLi9uYXRpcCc7XG5leHBvcnQgKiBmcm9tICcuL25hdGlwY2lkcic7XG5leHBvcnQgKiBmcm9tICcuL25ldHdvcmthY2wnO1xuZXhwb3J0ICogZnJvbSAnLi9uZXR3b3JrYWNsYXNzb2NpYXRpb24nO1xuZXhwb3J0ICogZnJvbSAnLi9wZWVyaW5ncm91dGVyaW50ZXJmYWNlYmluZGluZyc7XG5leHBvcnQgKiBmcm9tICcuL3BlZXJpbmdyb3V0ZXJpbnRlcmZhY2Vjb25uZWN0aW9uJztcbmV4cG9ydCAqIGZyb20gJy4vcHJlZml4bGlzdCc7XG5leHBvcnQgKiBmcm9tICcuL3B1YmxpY2lwYWRkcmVzc3Bvb2wnO1xuZXhwb3J0ICogZnJvbSAnLi9yb3V0ZXRhYmxlJztcbmV4cG9ydCAqIGZyb20gJy4vcm91dGV0YWJsZWFzc29jaWF0aW9uJztcbmV4cG9ydCAqIGZyb20gJy4vcm91dGV0YWJsZWF0dGFjaG1lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi9yb3V0ZXRhYmxld2l0aGdhdGV3YXlhc3NvY2lhdGlvbic7XG5leHBvcnQgKiBmcm9tICcuL3JvdXRlcmludGVyZmFjZSc7XG5leHBvcnQgKiBmcm9tICcuL3NuYXRlbnRyeSc7XG5leHBvcnQgKiBmcm9tICcuL3NzbHZwbmNsaWVudGNlcnQnO1xuZXhwb3J0ICogZnJvbSAnLi9zc2x2cG5zZXJ2ZXInO1xuZXhwb3J0ICogZnJvbSAnLi90cmFmZmljbWlycm9yZmlsdGVyJztcbmV4cG9ydCAqIGZyb20gJy4vdHJhZmZpY21pcnJvcnNlc3Npb24nO1xuZXhwb3J0ICogZnJvbSAnLi90cmFmZmljbWlycm9yc2Vzc2lvbnNvdXJjZXNhZGRpdGlvbic7XG5leHBvcnQgKiBmcm9tICcuL3RyYWZmaWNxb3MnO1xuZXhwb3J0ICogZnJvbSAnLi90cmFmZmljcW9zcXVldWUnO1xuZXhwb3J0ICogZnJvbSAnLi90cmFmZmljcW9zcnVsZSc7XG5leHBvcnQgKiBmcm9tICcuL3Zzd2l0Y2hjaWRycmVzZXJ2YXRpb24nO1xuZXhwb3J0ICogZnJvbSAnLi92Y29yb3V0ZWVudHJ5JztcbmV4cG9ydCAqIGZyb20gJy4vdmlydHVhbGJvcmRlcnJvdXRlcic7XG5leHBvcnQgKiBmcm9tICcuL3ZwY2NpZHJibG9ja2Fzc29jaWF0aW9uJztcbmV4cG9ydCAqIGZyb20gJy4vdnBjZ2F0ZXdheWVuZHBvaW50JztcbmV4cG9ydCAqIGZyb20gJy4vdnBjZ2F0ZXdheWVuZHBvaW50YXNzb2NpYXRpb24nO1xuZXhwb3J0ICogZnJvbSAnLi92cGNpcHY2Y2lkcmFsbG9jYXRpb24nO1xuZXhwb3J0ICogZnJvbSAnLi92cGNwZWVyY29ubmVjdGlvbic7XG5leHBvcnQgKiBmcm9tICcuL3ZwbmF0dGFjaG1lbnQnO1xuZXhwb3J0ICogZnJvbSAnLi92cG5jb25uZWN0aW9uJztcbmV4cG9ydCAqIGZyb20gJy4vdnBuZ2F0ZXdheSc7XG5leHBvcnQgKiBmcm9tICcuL3ZwbnBicnJvdXRlZW50cnknO1xuZXhwb3J0ICogZnJvbSAnLi92cG5yb3V0ZWVudHJ5JztcblxuLy8gQUxJWVVOOjpWUEMgUmVzb3VyY2VzOlxuZXhwb3J0ICogZnJvbSAnLi92cGMuZ2VuZXJhdGVkJztcbmV4cG9ydCAqIGFzIGRhdGFzb3VyY2UgZnJvbSAnLi9kYXRhc291cmNlJztcbiJdfQ==

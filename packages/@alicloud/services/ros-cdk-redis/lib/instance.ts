@@ -152,6 +152,11 @@ export interface InstanceProps {
     readonly tairConfig?: RosInstance.TairConfigProperty | ros.IResolvable;
 
     /**
+     * Property tlsProtocol: The TLS version of the instance.
+     */
+    readonly tlsProtocol?: string | ros.IResolvable;
+
+    /**
      * Property vpcId: The VPC id to create ecs instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -336,7 +341,7 @@ export interface IInstance extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`The , which type creates Redis instances.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-instance
  */
@@ -542,6 +547,7 @@ export class Instance extends ros.Resource implements IInstance {
             vpcId: props.vpcId,
             chargeType: props.chargeType,
             nodeType: props.nodeType,
+            tlsProtocol: props.tlsProtocol,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosInstance;

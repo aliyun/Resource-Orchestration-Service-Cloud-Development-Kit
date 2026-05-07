@@ -357,6 +357,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             }
         }
 
+        /// <summary>Property tlsProtocol: The TLS version of the instance.</summary>
+        [JsiiProperty(name: "tlsProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? TlsProtocol
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Property vpcId: The VPC id to create ecs instance.</summary>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -687,6 +698,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Redis
             [JsiiOptional]
             [JsiiProperty(name: "tairConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-redis.RosPrepayInstance.TairConfigProperty\"}]}}", isOptional: true)]
             public object? TairConfig
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <summary>Property tlsProtocol: The TLS version of the instance.</summary>
+            [JsiiOptional]
+            [JsiiProperty(name: "tlsProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? TlsProtocol
             {
                 get => GetInstanceProperty<object?>();
             }

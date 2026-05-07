@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vpc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::RouteTableWithGatewayAssociation</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::VPC::RouteTableWithGatewayAssociation</code>, which is used to associate a gateway route table with an IPv4 or IPv6 gateway in the same virtual private cloud (VPC).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.072Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.RosRouteTableWithGatewayAssociation")
 public class RosRouteTableWithGatewayAssociation extends com.aliyun.ros.cdk.core.RosResource {
 

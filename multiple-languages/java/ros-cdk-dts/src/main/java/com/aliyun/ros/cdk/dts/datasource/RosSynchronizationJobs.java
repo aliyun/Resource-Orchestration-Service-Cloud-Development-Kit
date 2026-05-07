@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DTS::SynchronizationJobs</code>, which is used to query the information about data synchronization tasks in Data Transmission Service (DTS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:24.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.219Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.RosSynchronizationJobs")
 public class RosSynchronizationJobs extends com.aliyun.ros.cdk.core.RosResource {
 

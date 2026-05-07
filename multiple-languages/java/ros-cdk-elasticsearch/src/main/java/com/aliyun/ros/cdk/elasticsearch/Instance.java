@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.elasticsearch;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ElasticSearch::Instance</code>The , which resource is used to create an Elasticsearch instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ElasticSearch::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:25.647Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.622Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearch.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearch.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.elasticsearch.IInstance {
 

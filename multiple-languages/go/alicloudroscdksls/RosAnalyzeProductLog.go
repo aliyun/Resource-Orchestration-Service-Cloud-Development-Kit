@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::AnalyzeProductLog`, which is used to analyze the logs of a cloud service.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::AnalyzeProductLog`.
 type RosAnalyzeProductLog interface {
 	alicloudroscdkcore.RosResource
 	CloudProduct() interface{}

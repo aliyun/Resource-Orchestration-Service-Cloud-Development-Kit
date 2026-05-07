@@ -23,6 +23,8 @@ type Acl interface {
 	AttrIpWhitelists() interface{}
 	// Attribute ResourceName: The name of the resource on which you want to grant permissions.
 	AttrResourceName() interface{}
+	// Attribute ResourceType: The type of the resource on which you want to grant permissions.
+	AttrResourceType() interface{}
 	// Attribute Username: The username of the account.
 	AttrUsername() interface{}
 	EnableResourcePropertyConstraint() *bool
@@ -165,6 +167,16 @@ func (j *jsiiProxy_Acl) AttrResourceName() interface{} {
 	_jsii_.Get(
 		j,
 		"attrResourceName",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_Acl) AttrResourceType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"attrResourceType",
 		&returns,
 	)
 	return returns

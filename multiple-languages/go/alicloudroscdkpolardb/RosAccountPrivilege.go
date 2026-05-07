@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`, which is used to grant access permissions on one or more databases in a specified ApsaraDB for POLARDB cluster to a standard account.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::AccountPrivilege`.
 type RosAccountPrivilege interface {
 	alicloudroscdkcore.RosResource
 	AccountName() interface{}

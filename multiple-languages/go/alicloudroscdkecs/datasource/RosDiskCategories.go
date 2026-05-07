@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the information about disk categories.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DiskCategories`.
 type RosDiskCategories interface {
 	alicloudroscdkcore.RosResource
 	AttrDiskCategories() alicloudroscdkcore.IResolvable

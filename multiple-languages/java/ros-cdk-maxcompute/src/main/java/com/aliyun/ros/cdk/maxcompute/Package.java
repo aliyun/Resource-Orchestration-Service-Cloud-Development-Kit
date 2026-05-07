@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.maxcompute;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MaxCompute::Package</code>, which is used to create a package.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.699Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.646Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.Package")
 public class Package extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.maxcompute.IPackage {
 

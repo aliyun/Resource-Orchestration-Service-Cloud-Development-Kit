@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ApplicationDeployment`, which is used to deploy an application.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CS::ApplicationDeployment`.
 type ApplicationDeployment interface {
 	alicloudroscdkcore.Resource
 	IApplicationDeployment

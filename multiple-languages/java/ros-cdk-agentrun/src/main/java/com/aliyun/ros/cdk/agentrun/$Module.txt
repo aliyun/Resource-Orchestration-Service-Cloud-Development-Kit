@@ -1,0 +1,13 @@
+@alicloud/ros-cdk-agentrun.ITemplate=com.aliyun.ros.cdk.agentrun.ITemplate
+@alicloud/ros-cdk-agentrun.RosTemplate=com.aliyun.ros.cdk.agentrun.RosTemplate
+@alicloud/ros-cdk-agentrun.RosTemplate.ArmsConfigurationProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$ArmsConfigurationProperty
+@alicloud/ros-cdk-agentrun.RosTemplate.ContainerConfigurationProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$ContainerConfigurationProperty
+@alicloud/ros-cdk-agentrun.RosTemplate.CredentialConfigurationProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$CredentialConfigurationProperty
+@alicloud/ros-cdk-agentrun.RosTemplate.LogConfigurationProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$LogConfigurationProperty
+@alicloud/ros-cdk-agentrun.RosTemplate.MountPointsProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$MountPointsProperty
+@alicloud/ros-cdk-agentrun.RosTemplate.NasConfigProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$NasConfigProperty
+@alicloud/ros-cdk-agentrun.RosTemplate.NetworkConfigurationProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$NetworkConfigurationProperty
+@alicloud/ros-cdk-agentrun.RosTemplate.OssConfigurationProperty=com.aliyun.ros.cdk.agentrun.RosTemplate$OssConfigurationProperty
+@alicloud/ros-cdk-agentrun.RosTemplateProps=com.aliyun.ros.cdk.agentrun.RosTemplateProps
+@alicloud/ros-cdk-agentrun.Template=com.aliyun.ros.cdk.agentrun.Template
+@alicloud/ros-cdk-agentrun.TemplateProps=com.aliyun.ros.cdk.agentrun.TemplateProps

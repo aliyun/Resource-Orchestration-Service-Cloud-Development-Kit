@@ -232,7 +232,7 @@ type ApplicationProps struct {
 	Tags *[]*RosApplication_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	// Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
 	//
-	// The value ranges from 1 to 300.
+	// The value ranges from 1 to 600.
 	TerminationGracePeriodSeconds interface{} `field:"optional" json:"terminationGracePeriodSeconds" yaml:"terminationGracePeriodSeconds"`
 	// Property timezone: Application time zone.
 	//

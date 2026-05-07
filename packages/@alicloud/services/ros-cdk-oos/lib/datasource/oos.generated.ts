@@ -487,7 +487,7 @@ function rosPatchBaselinesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`, which is used to query patch baselines.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaselines`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaselines` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaselines
  */
@@ -626,7 +626,7 @@ function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameter`, which is used to query the information about an encryption parameter.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameter
  */

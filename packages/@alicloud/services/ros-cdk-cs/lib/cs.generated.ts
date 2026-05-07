@@ -995,7 +995,7 @@ function rosApplicationDeploymentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ApplicationDeployment`, which is used to deploy an application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ApplicationDeployment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationDeployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-applicationdeployment
  */
@@ -2055,7 +2055,7 @@ function rosClusterHelmApplicationPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`The , which type is used to deploy an application using Helm.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClusterHelmApplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusterhelmapplication
  */
@@ -6182,7 +6182,7 @@ function rosManagedKubernetesClusterPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`The , which type creates ACK managed clusters.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedKubernetesCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-managedkubernetescluster
  */

@@ -75,7 +75,7 @@ export interface IConsumerGroup extends ros.IResource {
     readonly attrUpdateTime: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroup`, which is used to query the information about a consumer group in ApsaraMQ for RocketMQ 5.0.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ5::ConsumerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rocketmq5-consumergroup
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Represents a <code>RdsExternalStore</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.317Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.IRdsExternalStore")
 @software.amazon.jsii.Jsii.Proxy(IRdsExternalStore.Jsii$Proxy.class)
 public interface IRdsExternalStore extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpGroup`, which is used to create a Border Gateway Protocol (BGP) (Multi-ISP) group for a virtual border router (VBR).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::BgpGroup`.
 type RosBgpGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrBgpGroupId() alicloudroscdkcore.IResolvable

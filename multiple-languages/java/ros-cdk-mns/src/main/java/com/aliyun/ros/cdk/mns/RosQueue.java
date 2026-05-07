@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * A queue is a destination address where messages are stored. Queues can be classified into standard and delayed queues.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.755Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.708Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosQueue")
 public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>IpamScope</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.861Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.951Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IIpamScope")
 @software.amazon.jsii.Jsii.Proxy(IIpamScope.Jsii$Proxy.class)
 public interface IIpamScope extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

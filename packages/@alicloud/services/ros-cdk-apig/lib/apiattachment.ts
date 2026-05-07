@@ -10,24 +10,9 @@ export { RosApiAttachment as ApiAttachmentProperty };
 export interface ApiAttachmentProps {
 
     /**
-     * Property backendScene: API release scenario.
-     */
-    readonly backendScene: string | ros.IResolvable;
-
-    /**
-     * Property environmentId: The ID of the environment to which the API is to deploy.
-     */
-    readonly environmentId: string | ros.IResolvable;
-
-    /**
      * Property httpApiId: The ID of the HTTP API.
      */
     readonly httpApiId: string | ros.IResolvable;
-
-    /**
-     * Property serviceConfigs: Services associated with API publishing and their configurations.
-     */
-    readonly serviceConfigs: Array<RosApiAttachment.ServiceConfigsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property description: The description of publication.
@@ -52,11 +37,6 @@ export interface IApiAttachment extends ros.IResource {
     readonly props: ApiAttachmentProps;
 
     /**
-     * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-     */
-    readonly attrEnvironmentId: ros.IResolvable | string;
-
-    /**
      * Attribute HttpApiId: The ID of the HTTP API.
      */
     readonly attrHttpApiId: ros.IResolvable | string;
@@ -76,11 +56,6 @@ export class ApiAttachment extends ros.Resource implements IApiAttachment {
     protected id: string;
     public readonly props: ApiAttachmentProps;
     protected enableResourcePropertyConstraint: boolean;
-
-    /**
-     * Attribute EnvironmentId: The ID of the environment to which the API is to deploy.
-     */
-    public readonly attrEnvironmentId: ros.IResolvable | string;
 
     /**
      * Attribute HttpApiId: The ID of the HTTP API.
@@ -105,16 +80,12 @@ export class ApiAttachment extends ros.Resource implements IApiAttachment {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosApiAttachment = new RosApiAttachment(this, id,  {
-            environmentId: props.environmentId,
             description: props.description,
-            backendScene: props.backendScene,
-            serviceConfigs: props.serviceConfigs,
             routeId: props.routeId,
             httpApiId: props.httpApiId,
             domainIds: props.domainIds,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosApiAttachment;
-        this.attrEnvironmentId = rosApiAttachment.attrEnvironmentId;
         this.attrHttpApiId = rosApiAttachment.attrHttpApiId;
         this.attrRouteId = rosApiAttachment.attrRouteId;
     }

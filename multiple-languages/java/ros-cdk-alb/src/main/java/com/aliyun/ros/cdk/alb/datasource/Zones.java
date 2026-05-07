@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ALB::Zones</code>This data source provides information about the zones that are available for Application Load Balancer (ALB) in a region.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.220Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.datasource.Zones")
 public class Zones extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.datasource.IZones {
 

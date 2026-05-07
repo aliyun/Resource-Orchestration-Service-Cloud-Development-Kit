@@ -44,10 +44,8 @@ type ModelVersionProps struct {
 	// Property sourceId: Source ID.
 	//
 	// * When the source type is Custom, this field is not restricted.
-	// * When the source is PAIFlow or TrainingService, the format is
-	// '''
+	// * When the source is PAIFlow or TrainingService, the format is:
 	// region=<region_id>,workspaceId=<workspace_id>,kind=<kind>,id=<id>
-	// '''
 	// Among them:
 	// - region is the Alibaba Cloud region ID.
 	// - workspaceId indicates the workspace ID.

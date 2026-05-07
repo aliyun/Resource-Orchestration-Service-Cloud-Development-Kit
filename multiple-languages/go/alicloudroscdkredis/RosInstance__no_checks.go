@@ -188,6 +188,10 @@ func (j *jsiiProxy_RosInstance) validateSetTairConfigParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosInstance) validateSetTlsProtocolParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosInstance) validateSetVpcIdParameters(val interface{}) error {
 	return nil
 }

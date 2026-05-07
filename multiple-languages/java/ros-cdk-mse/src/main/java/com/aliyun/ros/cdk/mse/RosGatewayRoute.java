@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::GatewayRoute</code>The , which resource is used to add a gateway route.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.931Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.889Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosGatewayRoute")
 public class RosGatewayRoute extends com.aliyun.ros.cdk.core.RosResource {
 

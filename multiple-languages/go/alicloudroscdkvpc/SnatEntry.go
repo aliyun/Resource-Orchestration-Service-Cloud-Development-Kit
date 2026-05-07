@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`The , which resource is used to add an SNAT entry to an SNAT table.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::SnatEntry`.
 type SnatEntry interface {
 	alicloudroscdkcore.Resource
 	ISnatEntry

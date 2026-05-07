@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>Ipv6EgressRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.865Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.954Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IIpv6EgressRule")
 @software.amazon.jsii.Jsii.Proxy(IIpv6EgressRule.Jsii$Proxy.class)
 public interface IIpv6EgressRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

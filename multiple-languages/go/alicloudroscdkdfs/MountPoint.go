@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DFS::MountPoint`, which is used to create a mount target.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DFS::MountPoint`.
 type MountPoint interface {
 	alicloudroscdkcore.Resource
 	IMountPoint

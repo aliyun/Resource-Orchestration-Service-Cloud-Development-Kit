@@ -6,7 +6,7 @@ package com.aliyun.ros.cdk.core;
  * This is where the image can be
  * consumed at runtime.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:20.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.707Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DockerImageAssetLocation")
 @software.amazon.jsii.Jsii.Proxy(DockerImageAssetLocation.Jsii$Proxy.class)
 public interface DockerImageAssetLocation extends software.amazon.jsii.JsiiSerializable {

@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CDN::Domain`, which is used to add an accelerated domain name.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CDN::Domain`.
 type Domain interface {
 	alicloudroscdkcore.Resource
 	IDomain

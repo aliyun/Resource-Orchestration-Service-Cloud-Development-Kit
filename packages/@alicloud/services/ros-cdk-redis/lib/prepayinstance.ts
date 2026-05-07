@@ -155,6 +155,11 @@ export interface PrepayInstanceProps {
     readonly tairConfig?: RosPrepayInstance.TairConfigProperty | ros.IResolvable;
 
     /**
+     * Property tlsProtocol: The TLS version of the instance.
+     */
+    readonly tlsProtocol?: string | ros.IResolvable;
+
+    /**
      * Property vpcId: The VPC id to create ecs instance.
      */
     readonly vpcId?: string | ros.IResolvable;
@@ -339,7 +344,7 @@ export interface IPrepayInstance extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`, which is used to create a subscription Tair (Redis OSS-compatible) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::PrepayInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPrepayInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
@@ -545,6 +550,7 @@ export class PrepayInstance extends ros.Resource implements IPrepayInstance {
             instanceName: props.instanceName,
             vpcId: props.vpcId,
             nodeType: props.nodeType,
+            tlsProtocol: props.tlsProtocol,
             periodUnit: props.periodUnit,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosPrepayInstance;

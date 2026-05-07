@@ -30,7 +30,7 @@ export interface IAccountAlias extends ros.IResource {
     readonly attrAccountAlias: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::AccountAlias`, which is used to query the alias of a cloud account.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::AccountAlias`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccountAlias`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-accountalias
  */

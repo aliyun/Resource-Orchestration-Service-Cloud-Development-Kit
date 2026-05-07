@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`, which is used to create a custom control policy.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`.
 type RosControlPolicy interface {
 	alicloudroscdkcore.RosResource
 	AttrAttachmentCount() alicloudroscdkcore.IResolvable

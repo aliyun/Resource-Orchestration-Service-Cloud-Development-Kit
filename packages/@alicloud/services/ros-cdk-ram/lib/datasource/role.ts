@@ -65,7 +65,7 @@ export interface IRole extends ros.IResource {
     readonly attrUpdateDate: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Role`, which is used to query the information about a role.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::RAM::Role`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRole`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ram-role
  */

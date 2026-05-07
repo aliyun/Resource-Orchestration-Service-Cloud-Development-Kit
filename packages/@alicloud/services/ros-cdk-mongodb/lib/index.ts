@@ -1,4 +1,5 @@
 export * from './auditpolicy';
+export * from './globalsecurityipgroup';
 export * from './instance';
 export * from './privatesrvnetworkaddress';
 export * from './shardinginstance';

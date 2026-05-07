@@ -44,7 +44,7 @@ export interface IAITask extends ros.IResource {
     readonly attrDbClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AITask`, which is used to enable the PolarDB for AI feature.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::AITask`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAITask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-aitask
  */

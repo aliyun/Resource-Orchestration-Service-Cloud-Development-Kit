@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListener`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::LoadBalancerTCPListener`, which is used to query the configurations of a TCP listener.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `LoadBalancerTCPListener` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-loadbalancertcplistener

@@ -91,6 +91,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: databaseIpList: Database IP list.
+        /// </remarks>
+        [JsiiProperty(name: "databaseIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? DatabaseIpList
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: diskPerformanceLevel: Cloud disk PL level, default PL0. Selectable value:
         /// PL0
         /// PL1
@@ -245,6 +258,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             public object ZoneId
             {
                 get => GetInstanceProperty<object>()!;
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: databaseIpList: Database IP list.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "databaseIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DatabaseIpList
+            {
+                get => GetInstanceProperty<object?>();
             }
 
             /// <remarks>

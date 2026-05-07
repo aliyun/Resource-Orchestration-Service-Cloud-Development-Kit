@@ -242,7 +242,7 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PolarDBX::Accounts`, which is used to query PolarDB for Xscale (PolarDB-X) accounts.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PolarDBX::Accounts`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-accounts
  */

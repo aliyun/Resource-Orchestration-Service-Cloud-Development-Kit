@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Represents a <code>XTraceApp</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:21.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.852Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.IXTraceApp")
 @software.amazon.jsii.Jsii.Proxy(IXTraceApp.Jsii$Proxy.class)
 public interface IXTraceApp extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

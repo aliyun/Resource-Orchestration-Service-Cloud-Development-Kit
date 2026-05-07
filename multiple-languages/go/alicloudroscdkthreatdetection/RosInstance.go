@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ThreatDetection::Instance`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ThreatDetection::Instance`, which is used to purchase Security Center (SAS).
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrBuyNumber() alicloudroscdkcore.IResolvable

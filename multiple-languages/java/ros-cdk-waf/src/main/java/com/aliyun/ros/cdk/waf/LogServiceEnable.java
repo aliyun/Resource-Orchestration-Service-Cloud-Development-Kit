@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::WAF::LogServiceEnable</code>, which is used to enable the log collection feature for a specific domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.557Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.643Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.LogServiceEnable")
 public class LogServiceEnable extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.waf.ILogServiceEnable {
 

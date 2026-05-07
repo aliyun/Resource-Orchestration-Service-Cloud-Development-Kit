@@ -235,26 +235,6 @@ func validateRosApiAttachment_IsRosResourceParameters(construct alicloudroscdkco
 	return nil
 }
 
-func (j *jsiiProxy_RosApiAttachment) validateSetBackendSceneParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	switch val.(type) {
-	case *string:
-		// ok
-	case string:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_RosApiAttachment) validateSetDescriptionParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -326,26 +306,6 @@ func (j *jsiiProxy_RosApiAttachment) validateSetEnableResourcePropertyConstraint
 	return nil
 }
 
-func (j *jsiiProxy_RosApiAttachment) validateSetEnvironmentIdParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	switch val.(type) {
-	case *string:
-		// ok
-	case string:
-		// ok
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
 func (j *jsiiProxy_RosApiAttachment) validateSetHttpApiIdParameters(val interface{}) error {
 	if val == nil {
 		return fmt.Errorf("parameter val is required, but nil was provided")
@@ -377,69 +337,6 @@ func (j *jsiiProxy_RosApiAttachment) validateSetRouteIdParameters(val interface{
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
-		}
-	}
-
-	return nil
-}
-
-func (j *jsiiProxy_RosApiAttachment) validateSetServiceConfigsParameters(val interface{}) error {
-	if val == nil {
-		return fmt.Errorf("parameter val is required, but nil was provided")
-	}
-	switch val.(type) {
-	case alicloudroscdkcore.IResolvable:
-		// ok
-	case *[]interface{}:
-		val := val.(*[]interface{})
-		for idx_97dfc6, v := range *val {
-			switch v.(type) {
-			case alicloudroscdkcore.IResolvable:
-				// ok
-			case *RosApiAttachment_ServiceConfigsProperty:
-				v := v.(*RosApiAttachment_ServiceConfigsProperty)
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			case RosApiAttachment_ServiceConfigsProperty:
-				v_ := v.(RosApiAttachment_ServiceConfigsProperty)
-				v := &v_
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			default:
-				if !_jsii_.IsAnonymousProxy(v) {
-					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApiAttachment_ServiceConfigsProperty; received %#v (a %T)", idx_97dfc6, v, v)
-				}
-			}
-		}
-	case []interface{}:
-		val_ := val.([]interface{})
-		val := &val_
-		for idx_97dfc6, v := range *val {
-			switch v.(type) {
-			case alicloudroscdkcore.IResolvable:
-				// ok
-			case *RosApiAttachment_ServiceConfigsProperty:
-				v := v.(*RosApiAttachment_ServiceConfigsProperty)
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			case RosApiAttachment_ServiceConfigsProperty:
-				v_ := v.(RosApiAttachment_ServiceConfigsProperty)
-				v := &v_
-				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
-					return err
-				}
-			default:
-				if !_jsii_.IsAnonymousProxy(v) {
-					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApiAttachment_ServiceConfigsProperty; received %#v (a %T)", idx_97dfc6, v, v)
-				}
-			}
-		}
-	default:
-		if !_jsii_.IsAnonymousProxy(val) {
-			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
 		}
 	}
 

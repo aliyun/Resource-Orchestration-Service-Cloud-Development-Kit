@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5;
 /**
  * Represents a <code>Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.613Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.690Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.IAcl")
 @software.amazon.jsii.Jsii.Proxy(IAcl.Jsii$Proxy.class)
 public interface IAcl extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
@@ -32,6 +32,11 @@ public interface IAcl extends software.amazon.jsii.JsiiSerializable, com.aliyun.
      * Attribute ResourceName: The name of the resource on which you want to grant permissions.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceName();
+
+    /**
+     * Attribute ResourceType: The type of the resource on which you want to grant permissions.
+     */
+    @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType();
 
     /**
      * Attribute Username: The username of the account.
@@ -118,6 +123,14 @@ public interface IAcl extends software.amazon.jsii.JsiiSerializable, com.aliyun.
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceName() {
             return software.amazon.jsii.Kernel.get(this, "attrResourceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ResourceType: The type of the resource on which you want to grant permissions.
+         */
+        @Override
+        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -209,6 +222,14 @@ public interface IAcl extends software.amazon.jsii.JsiiSerializable, com.aliyun.
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceName() {
             return software.amazon.jsii.Kernel.get(this, "attrResourceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+        }
+
+        /**
+         * Attribute ResourceType: The type of the resource on which you want to grant permissions.
+         */
+        @Override
+        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
+            return software.amazon.jsii.Kernel.get(this, "attrResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**

@@ -4,6 +4,8 @@
 @alicloud/ros-cdk-gpdb.DBInstanceIPArray=com.aliyun.ros.cdk.gpdb.DBInstanceIPArray
 @alicloud/ros-cdk-gpdb.DBInstanceIPArrayProps=com.aliyun.ros.cdk.gpdb.DBInstanceIPArrayProps
 @alicloud/ros-cdk-gpdb.DBInstanceProps=com.aliyun.ros.cdk.gpdb.DBInstanceProps
+@alicloud/ros-cdk-gpdb.DBResourceGroup=com.aliyun.ros.cdk.gpdb.DBResourceGroup
+@alicloud/ros-cdk-gpdb.DBResourceGroupProps=com.aliyun.ros.cdk.gpdb.DBResourceGroupProps
 @alicloud/ros-cdk-gpdb.Database=com.aliyun.ros.cdk.gpdb.Database
 @alicloud/ros-cdk-gpdb.DatabaseProps=com.aliyun.ros.cdk.gpdb.DatabaseProps
 @alicloud/ros-cdk-gpdb.ElasticDBInstance=com.aliyun.ros.cdk.gpdb.ElasticDBInstance
@@ -13,6 +15,7 @@
 @alicloud/ros-cdk-gpdb.IAccount=com.aliyun.ros.cdk.gpdb.IAccount
 @alicloud/ros-cdk-gpdb.IDBInstance=com.aliyun.ros.cdk.gpdb.IDBInstance
 @alicloud/ros-cdk-gpdb.IDBInstanceIPArray=com.aliyun.ros.cdk.gpdb.IDBInstanceIPArray
+@alicloud/ros-cdk-gpdb.IDBResourceGroup=com.aliyun.ros.cdk.gpdb.IDBResourceGroup
 @alicloud/ros-cdk-gpdb.IDatabase=com.aliyun.ros.cdk.gpdb.IDatabase
 @alicloud/ros-cdk-gpdb.IElasticDBInstance=com.aliyun.ros.cdk.gpdb.IElasticDBInstance
 @alicloud/ros-cdk-gpdb.IExternalDataService=com.aliyun.ros.cdk.gpdb.IExternalDataService
@@ -32,6 +35,8 @@
 @alicloud/ros-cdk-gpdb.RosDBInstanceIPArray=com.aliyun.ros.cdk.gpdb.RosDBInstanceIPArray
 @alicloud/ros-cdk-gpdb.RosDBInstanceIPArrayProps=com.aliyun.ros.cdk.gpdb.RosDBInstanceIPArrayProps
 @alicloud/ros-cdk-gpdb.RosDBInstanceProps=com.aliyun.ros.cdk.gpdb.RosDBInstanceProps
+@alicloud/ros-cdk-gpdb.RosDBResourceGroup=com.aliyun.ros.cdk.gpdb.RosDBResourceGroup
+@alicloud/ros-cdk-gpdb.RosDBResourceGroupProps=com.aliyun.ros.cdk.gpdb.RosDBResourceGroupProps
 @alicloud/ros-cdk-gpdb.RosDatabase=com.aliyun.ros.cdk.gpdb.RosDatabase
 @alicloud/ros-cdk-gpdb.RosDatabaseProps=com.aliyun.ros.cdk.gpdb.RosDatabaseProps
 @alicloud/ros-cdk-gpdb.RosElasticDBInstance=com.aliyun.ros.cdk.gpdb.RosElasticDBInstance

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SCIMSynchronization`, which is used to enable or disable System for Cross-domain Identity Management (SCIM) synchronization.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::SCIMSynchronization`.
 type SCIMSynchronization interface {
 	alicloudroscdkcore.Resource
 	ISCIMSynchronization

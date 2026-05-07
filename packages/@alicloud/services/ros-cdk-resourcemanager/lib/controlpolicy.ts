@@ -72,7 +72,7 @@ export interface IControlPolicy extends ros.IResource {
     readonly attrPolicyType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`, which is used to create a custom control policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ControlPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-controlpolicy
  */

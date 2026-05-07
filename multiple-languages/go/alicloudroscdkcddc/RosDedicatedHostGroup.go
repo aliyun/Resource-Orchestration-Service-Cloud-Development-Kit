@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`, which is used to create a dedicated cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`.
 type RosDedicatedHostGroup interface {
 	alicloudroscdkcore.RosResource
 	AllocationPolicy() interface{}

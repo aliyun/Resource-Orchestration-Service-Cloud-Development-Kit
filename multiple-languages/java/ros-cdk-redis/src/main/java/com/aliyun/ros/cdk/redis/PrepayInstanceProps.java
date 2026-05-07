@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-prepayinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.363Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.412Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(PrepayInstanceProps.Jsii$Proxy.class)
 public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -241,6 +241,13 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
+     * Property tlsProtocol: The TLS version of the instance.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getTlsProtocol() {
+        return null;
+    }
+
+    /**
      * Property vpcId: The VPC id to create ecs instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcId() {
@@ -310,6 +317,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         java.lang.Object subscriptionDeletionForce;
         java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
         java.lang.Object tairConfig;
+        java.lang.Object tlsProtocol;
         java.lang.Object vpcId;
         java.lang.Object vpcPasswordFree;
         java.lang.Object vSwitchId;
@@ -884,6 +892,26 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         /**
+         * Sets the value of {@link PrepayInstanceProps#getTlsProtocol}
+         * @param tlsProtocol Property tlsProtocol: The TLS version of the instance.
+         * @return {@code this}
+         */
+        public Builder tlsProtocol(java.lang.String tlsProtocol) {
+            this.tlsProtocol = tlsProtocol;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link PrepayInstanceProps#getTlsProtocol}
+         * @param tlsProtocol Property tlsProtocol: The TLS version of the instance.
+         * @return {@code this}
+         */
+        public Builder tlsProtocol(com.aliyun.ros.cdk.core.IResolvable tlsProtocol) {
+            this.tlsProtocol = tlsProtocol;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link PrepayInstanceProps#getVpcId}
          * @param vpcId Property vpcId: The VPC id to create ecs instance.
          * @return {@code this}
@@ -1016,6 +1044,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         private final java.lang.Object subscriptionDeletionForce;
         private final java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty> tags;
         private final java.lang.Object tairConfig;
+        private final java.lang.Object tlsProtocol;
         private final java.lang.Object vpcId;
         private final java.lang.Object vpcPasswordFree;
         private final java.lang.Object vSwitchId;
@@ -1052,6 +1081,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.subscriptionDeletionForce = software.amazon.jsii.Kernel.get(this, "subscriptionDeletionForce", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tags = software.amazon.jsii.Kernel.get(this, "tags", software.amazon.jsii.NativeType.listOf(software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty.class)));
             this.tairConfig = software.amazon.jsii.Kernel.get(this, "tairConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.tlsProtocol = software.amazon.jsii.Kernel.get(this, "tlsProtocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vpcPasswordFree = software.amazon.jsii.Kernel.get(this, "vpcPasswordFree", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -1089,6 +1119,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             this.subscriptionDeletionForce = builder.subscriptionDeletionForce;
             this.tags = (java.util.List<com.aliyun.ros.cdk.redis.RosPrepayInstance.TagsProperty>)builder.tags;
             this.tairConfig = builder.tairConfig;
+            this.tlsProtocol = builder.tlsProtocol;
             this.vpcId = builder.vpcId;
             this.vpcPasswordFree = builder.vpcPasswordFree;
             this.vSwitchId = builder.vSwitchId;
@@ -1221,6 +1252,11 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
         }
 
         @Override
+        public final java.lang.Object getTlsProtocol() {
+            return this.tlsProtocol;
+        }
+
+        @Override
         public final java.lang.Object getVpcId() {
             return this.vpcId;
         }
@@ -1321,6 +1357,9 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.getTairConfig() != null) {
                 data.set("tairConfig", om.valueToTree(this.getTairConfig()));
             }
+            if (this.getTlsProtocol() != null) {
+                data.set("tlsProtocol", om.valueToTree(this.getTlsProtocol()));
+            }
             if (this.getVpcId() != null) {
                 data.set("vpcId", om.valueToTree(this.getVpcId()));
             }
@@ -1376,6 +1415,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             if (this.subscriptionDeletionForce != null ? !this.subscriptionDeletionForce.equals(that.subscriptionDeletionForce) : that.subscriptionDeletionForce != null) return false;
             if (this.tags != null ? !this.tags.equals(that.tags) : that.tags != null) return false;
             if (this.tairConfig != null ? !this.tairConfig.equals(that.tairConfig) : that.tairConfig != null) return false;
+            if (this.tlsProtocol != null ? !this.tlsProtocol.equals(that.tlsProtocol) : that.tlsProtocol != null) return false;
             if (this.vpcId != null ? !this.vpcId.equals(that.vpcId) : that.vpcId != null) return false;
             if (this.vpcPasswordFree != null ? !this.vpcPasswordFree.equals(that.vpcPasswordFree) : that.vpcPasswordFree != null) return false;
             if (this.vSwitchId != null ? !this.vSwitchId.equals(that.vSwitchId) : that.vSwitchId != null) return false;
@@ -1409,6 +1449,7 @@ public interface PrepayInstanceProps extends software.amazon.jsii.JsiiSerializab
             result = 31 * result + (this.subscriptionDeletionForce != null ? this.subscriptionDeletionForce.hashCode() : 0);
             result = 31 * result + (this.tags != null ? this.tags.hashCode() : 0);
             result = 31 * result + (this.tairConfig != null ? this.tairConfig.hashCode() : 0);
+            result = 31 * result + (this.tlsProtocol != null ? this.tlsProtocol.hashCode() : 0);
             result = 31 * result + (this.vpcId != null ? this.vpcId.hashCode() : 0);
             result = 31 * result + (this.vpcPasswordFree != null ? this.vpcPasswordFree.hashCode() : 0);
             result = 31 * result + (this.vSwitchId != null ? this.vSwitchId.hashCode() : 0);

@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`.</summary>
     /// <remarks>
-    /// If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `EventRule` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
     /// </remarks>

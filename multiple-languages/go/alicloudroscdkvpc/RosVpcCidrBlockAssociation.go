@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::VPC::VpcCidrBlockAssociation`, which is used to add a secondary CIDR block to a virtual private cloud (VPC).
 type RosVpcCidrBlockAssociation interface {
 	alicloudroscdkcore.RosResource
 	AttrVpcId() alicloudroscdkcore.IResolvable

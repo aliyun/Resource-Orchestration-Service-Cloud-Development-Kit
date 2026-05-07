@@ -11,30 +11,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
     [JsiiInterface(nativeType: typeof(IApiAttachmentProps), fullyQualifiedName: "@alicloud/ros-cdk-apig.ApiAttachmentProps")]
     public interface IApiAttachmentProps
     {
-        /// <summary>Property backendScene: API release scenario.</summary>
-        [JsiiProperty(name: "backendScene", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object BackendScene
-        {
-            get;
-        }
-
-        /// <summary>Property environmentId: The ID of the environment to which the API is to deploy.</summary>
-        [JsiiProperty(name: "environmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object EnvironmentId
-        {
-            get;
-        }
-
         /// <summary>Property httpApiId: The ID of the HTTP API.</summary>
         [JsiiProperty(name: "httpApiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object HttpApiId
-        {
-            get;
-        }
-
-        /// <summary>Property serviceConfigs: Services associated with API publishing and their configurations.</summary>
-        [JsiiProperty(name: "serviceConfigs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosApiAttachment.ServiceConfigsProperty\"}]}},\"kind\":\"array\"}}]}}")]
-        object ServiceConfigs
         {
             get;
         }
@@ -86,30 +65,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             {
             }
 
-            /// <summary>Property backendScene: API release scenario.</summary>
-            [JsiiProperty(name: "backendScene", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object BackendScene
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property environmentId: The ID of the environment to which the API is to deploy.</summary>
-            [JsiiProperty(name: "environmentId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object EnvironmentId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
             /// <summary>Property httpApiId: The ID of the HTTP API.</summary>
             [JsiiProperty(name: "httpApiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object HttpApiId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Property serviceConfigs: Services associated with API publishing and their configurations.</summary>
-            [JsiiProperty(name: "serviceConfigs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-apig.RosApiAttachment.ServiceConfigsProperty\"}]}},\"kind\":\"array\"}}]}}")]
-            public object ServiceConfigs
             {
                 get => GetInstanceProperty<object>()!;
             }

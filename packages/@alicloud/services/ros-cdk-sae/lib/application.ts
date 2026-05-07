@@ -347,7 +347,7 @@ export interface ApplicationProps {
     readonly tags?: RosApplication.TagsProperty[];
 
     /**
-     * Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 300.
+     * Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. The value ranges from 1 to 600.
      */
     readonly terminationGracePeriodSeconds?: number | ros.IResolvable;
 
@@ -404,7 +404,7 @@ export interface IApplication extends ros.IResource {
     readonly attrChangeOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Application`The , which resource type creates a Serverless App Engine (SAE) application.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Application`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplication`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */

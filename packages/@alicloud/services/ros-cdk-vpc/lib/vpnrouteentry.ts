@@ -69,7 +69,7 @@ export interface IVpnRouteEntry extends ros.IResource {
     readonly attrVpnGatewayId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnRouteEntry`, which is used to create a destination-based route for a VPN gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::VPC::VpnRouteEntry`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpnRouteEntry`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpnrouteentry
  */

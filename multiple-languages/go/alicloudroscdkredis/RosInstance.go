@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`The , which type creates Redis instances.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrArchitectureType() alicloudroscdkcore.IResolvable
@@ -125,6 +125,8 @@ type RosInstance interface {
 	SetTags(val *[]*RosInstance_TagsProperty)
 	TairConfig() interface{}
 	SetTairConfig(val interface{})
+	TlsProtocol() interface{}
+	SetTlsProtocol(val interface{})
 	// Return properties modified after initiation.
 	//
 	// Resources that expose mutable properties should override this function to
@@ -907,6 +909,16 @@ func (j *jsiiProxy_RosInstance) TairConfig() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosInstance) TlsProtocol() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"tlsProtocol",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosInstance) UpdatedProperites() *map[string]interface{} {
 	var returns *map[string]interface{}
 	_jsii_.Get(
@@ -1267,6 +1279,17 @@ func (j *jsiiProxy_RosInstance)SetTairConfig(val interface{}) {
 	_jsii_.Set(
 		j,
 		"tairConfig",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosInstance)SetTlsProtocol(val interface{}) {
+	if err := j.validateSetTlsProtocolParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tlsProtocol",
 		val,
 	)
 }

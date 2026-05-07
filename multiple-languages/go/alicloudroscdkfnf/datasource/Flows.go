@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Flows`, which is used to query multiple flows at a time.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Flows`.
 type Flows interface {
 	alicloudroscdkcore.Resource
 	IFlows

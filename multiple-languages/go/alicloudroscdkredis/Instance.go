@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`The , which type creates Redis instances.
+// This class encapsulates and extends the ROS resource type `ALIYUN::REDIS::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

@@ -91,7 +91,7 @@ export interface ICluster extends ros.IResource {
     readonly attrVSwitchIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Cluster`, which is used to create a cluster for an order in exclusive mode.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FOAS::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-foas-cluster
  */

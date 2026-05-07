@@ -7,7 +7,10 @@
 @alicloud/ros-cdk-ehpc.IAutoScaleConfig=com.aliyun.ros.cdk.ehpc.IAutoScaleConfig
 @alicloud/ros-cdk-ehpc.ICluster=com.aliyun.ros.cdk.ehpc.ICluster
 @alicloud/ros-cdk-ehpc.IClusterV2=com.aliyun.ros.cdk.ehpc.IClusterV2
+@alicloud/ros-cdk-ehpc.IQueue=com.aliyun.ros.cdk.ehpc.IQueue
 @alicloud/ros-cdk-ehpc.IUsers=com.aliyun.ros.cdk.ehpc.IUsers
+@alicloud/ros-cdk-ehpc.Queue=com.aliyun.ros.cdk.ehpc.Queue
+@alicloud/ros-cdk-ehpc.QueueProps=com.aliyun.ros.cdk.ehpc.QueueProps
 @alicloud/ros-cdk-ehpc.RosAutoScaleConfig=com.aliyun.ros.cdk.ehpc.RosAutoScaleConfig
 @alicloud/ros-cdk-ehpc.RosAutoScaleConfig.DataDisksProperty=com.aliyun.ros.cdk.ehpc.RosAutoScaleConfig$DataDisksProperty
 @alicloud/ros-cdk-ehpc.RosAutoScaleConfig.InstanceTypesProperty=com.aliyun.ros.cdk.ehpc.RosAutoScaleConfig$InstanceTypesProperty
@@ -37,6 +40,10 @@
 @alicloud/ros-cdk-ehpc.RosClusterV2.SystemDiskProperty=com.aliyun.ros.cdk.ehpc.RosClusterV2$SystemDiskProperty
 @alicloud/ros-cdk-ehpc.RosClusterV2.TagsProperty=com.aliyun.ros.cdk.ehpc.RosClusterV2$TagsProperty
 @alicloud/ros-cdk-ehpc.RosClusterV2Props=com.aliyun.ros.cdk.ehpc.RosClusterV2Props
+@alicloud/ros-cdk-ehpc.RosQueue=com.aliyun.ros.cdk.ehpc.RosQueue
+@alicloud/ros-cdk-ehpc.RosQueue.ComputeNodesProperty=com.aliyun.ros.cdk.ehpc.RosQueue$ComputeNodesProperty
+@alicloud/ros-cdk-ehpc.RosQueue.SystemDiskProperty=com.aliyun.ros.cdk.ehpc.RosQueue$SystemDiskProperty
+@alicloud/ros-cdk-ehpc.RosQueueProps=com.aliyun.ros.cdk.ehpc.RosQueueProps
 @alicloud/ros-cdk-ehpc.RosUsers=com.aliyun.ros.cdk.ehpc.RosUsers
 @alicloud/ros-cdk-ehpc.RosUsers.UsersProperty=com.aliyun.ros.cdk.ehpc.RosUsers$UsersProperty
 @alicloud/ros-cdk-ehpc.RosUsersProps=com.aliyun.ros.cdk.ehpc.RosUsersProps

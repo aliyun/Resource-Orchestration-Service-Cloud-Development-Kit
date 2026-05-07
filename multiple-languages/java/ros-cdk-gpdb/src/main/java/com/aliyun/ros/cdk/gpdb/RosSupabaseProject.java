@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gpdb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>The , which resource creates a Supabase project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.063Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.993Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosSupabaseProject")
 public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -44,6 +44,12 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
      */
     public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrApiKeys() {
         return software.amazon.jsii.Kernel.get(this, "attrApiKeys", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable getAttrEni() {
+        return software.amazon.jsii.Kernel.get(this, "attrEni", software.amazon.jsii.NativeType.forClass(com.aliyun.ros.cdk.core.IResolvable.class));
     }
 
     /**
@@ -201,6 +207,24 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setZoneId(final @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", java.util.Objects.requireNonNull(value, "zoneId is required"));
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getDatabaseIpList() {
+        return software.amazon.jsii.Kernel.get(this, "databaseIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setDatabaseIpList(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "databaseIpList", value);
+    }
+
+    /**
+     */
+    public void setDatabaseIpList(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "databaseIpList", value);
     }
 
     /**
@@ -435,6 +459,23 @@ public class RosSupabaseProject extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param databaseIpList This parameter is required.
+         */
+        public Builder databaseIpList(final java.lang.String databaseIpList) {
+            this.props.databaseIpList(databaseIpList);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param databaseIpList This parameter is required.
+         */
+        public Builder databaseIpList(final com.aliyun.ros.cdk.core.IResolvable databaseIpList) {
+            this.props.databaseIpList(databaseIpList);
             return this;
         }
 

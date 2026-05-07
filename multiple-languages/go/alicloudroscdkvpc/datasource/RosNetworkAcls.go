@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NetworkAcls`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::VPC::NetworkAcls`, which is used to query created network access control lists (ACLs).
 type RosNetworkAcls interface {
 	alicloudroscdkcore.RosResource
 	AttrNetworkAclIds() alicloudroscdkcore.IResolvable

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Sae
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`, which is used to create an auto scaling policy for an application.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ApplicationScalingRule` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-applicationscalingrule

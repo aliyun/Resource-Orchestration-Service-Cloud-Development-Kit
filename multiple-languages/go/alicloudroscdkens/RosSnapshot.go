@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`.
 type RosSnapshot interface {
 	alicloudroscdkcore.RosResource
 	AttrSnapShotId() alicloudroscdkcore.IResolvable

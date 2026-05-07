@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::Qos`ALIYUN::SAG::QoS is used to create a quality of service (QoS) policy for a Smart Access Gateway (SAG) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::Qos`.
 type RosQos interface {
 	alicloudroscdkcore.RosResource
 	AttrQosId() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::App`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::App`, which is used to create a Smart Access Gateway (SAG) app instance.
 type RosApp interface {
 	alicloudroscdkcore.RosResource
 	AttrOrderId() alicloudroscdkcore.IResolvable

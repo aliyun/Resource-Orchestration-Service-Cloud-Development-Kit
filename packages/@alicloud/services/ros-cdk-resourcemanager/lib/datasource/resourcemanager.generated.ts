@@ -77,7 +77,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ResourceManager::ResourceGroup`, which is used to query the information about a resource group.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ResourceManager::ResourceGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-resourcemanager-resourcegroup
  */
@@ -286,7 +286,7 @@ function rosResourceGroupsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ResourceManager::ResourceGroups`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ResourceManager::ResourceGroups`, which is used to query resource groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-resourcemanager-resourcegroups
  */

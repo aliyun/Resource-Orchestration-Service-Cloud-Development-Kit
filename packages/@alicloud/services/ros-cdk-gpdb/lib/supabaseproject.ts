@@ -59,6 +59,11 @@ export interface SupabaseProjectProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
+     * Property databaseIpList: Database IP list.
+     */
+    readonly databaseIpList?: string | ros.IResolvable;
+
+    /**
      * Property diskPerformanceLevel: Cloud disk PL level, default PL0. Selectable value:
      * PL0
      * PL1
@@ -98,6 +103,11 @@ export interface ISupabaseProject extends ros.IResource {
     readonly attrApiKeys: ros.IResolvable | string;
 
     /**
+     * Attribute Eni: Network interface
+     */
+    readonly attrEni: ros.IResolvable | string;
+
+    /**
      * Attribute PrivateConnectUrl: Private connection URL
      */
     readonly attrPrivateConnectUrl: ros.IResolvable | string;
@@ -129,6 +139,11 @@ export class SupabaseProject extends ros.Resource implements ISupabaseProject {
     public readonly attrApiKeys: ros.IResolvable | string;
 
     /**
+     * Attribute Eni: Network interface
+     */
+    public readonly attrEni: ros.IResolvable | string;
+
+    /**
      * Attribute PrivateConnectUrl: Private connection URL
      */
     public readonly attrPrivateConnectUrl: ros.IResolvable | string;
@@ -156,21 +171,23 @@ export class SupabaseProject extends ros.Resource implements ISupabaseProject {
         this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
 
         const rosSupabaseProject = new RosSupabaseProject(this, id,  {
-            projectSpec: props.projectSpec,
-            vpcId: props.vpcId,
             zoneId: props.zoneId,
             projectName: props.projectName,
-            securityIpList: props.securityIpList,
             vSwitchId: props.vSwitchId,
             diskPerformanceLevel: props.diskPerformanceLevel,
-            usedTime: props.usedTime,
             storageSize: props.storageSize,
             period: props.period,
             payType: props.payType,
             accountPassword: props.accountPassword,
+            projectSpec: props.projectSpec,
+            vpcId: props.vpcId,
+            securityIpList: props.securityIpList,
+            usedTime: props.usedTime,
+            databaseIpList: props.databaseIpList,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosSupabaseProject;
         this.attrApiKeys = rosSupabaseProject.attrApiKeys;
+        this.attrEni = rosSupabaseProject.attrEni;
         this.attrPrivateConnectUrl = rosSupabaseProject.attrPrivateConnectUrl;
         this.attrProjectId = rosSupabaseProject.attrProjectId;
         this.attrPublicConnectUrl = rosSupabaseProject.attrPublicConnectUrl;

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationJob`, which is used to query the execution information about a data migration task in Data Transmission Service (DTS).
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DTS::MigrationJob`.
 type MigrationJob interface {
 	alicloudroscdkcore.Resource
 	IMigrationJob

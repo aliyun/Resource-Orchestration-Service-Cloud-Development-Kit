@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ROCKETMQ5::Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.609Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.684Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.Acl")
 public class Acl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rocketmq5.IAcl {
 
@@ -78,6 +78,14 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
     @Override
     public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceName() {
         return software.amazon.jsii.Kernel.get(this, "attrResourceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     * Attribute ResourceType: The type of the resource on which you want to grant permissions.
+     */
+    @Override
+    public @org.jetbrains.annotations.NotNull java.lang.Object getAttrResourceType() {
+        return software.amazon.jsii.Kernel.get(this, "attrResourceType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
 
     /**

@@ -1,6 +1,7 @@
 export * from './account';
 export * from './dbinstance';
 export * from './dbinstanceiparray';
+export * from './dbresourcegroup';
 export * from './database';
 export * from './elasticdbinstance';
 export * from './externaldataservice';

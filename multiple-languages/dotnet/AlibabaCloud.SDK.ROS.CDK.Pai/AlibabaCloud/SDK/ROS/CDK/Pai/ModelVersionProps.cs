@@ -371,10 +371,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pai
         /// <remarks>
         /// <list type="bullet">
         /// <description>When the source type is Custom, this field is not restricted.</description>
-        /// <description>When the source is PAIFlow or TrainingService, the format is
-        /// '''
+        /// <description>When the source is PAIFlow or TrainingService, the format is:
         /// region=&lt;region_id&gt;,workspaceId=&lt;workspace_id&gt;,kind=<kind xmlns="http://www.w3.org/1999/xhtml"></kind>,id=<id xmlns="http://www.w3.org/1999/xhtml"></id>
-        /// '''
         /// Among them:</description>
         /// <description>region is the Alibaba Cloud region ID.</description>
         /// <description>workspaceId indicates the workspace ID.</description>

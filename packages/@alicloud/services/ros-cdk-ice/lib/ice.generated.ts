@@ -72,7 +72,7 @@ function rosCategoryPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::Category`, which is used to create a media asset category.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::Category`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Category` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-category
  */

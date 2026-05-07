@@ -20,6 +20,7 @@ export * from './havip';
 export * from './havipassociation';
 export * from './ipam';
 export * from './ipampool';
+export * from './ipampoolallocation';
 export * from './ipamresourcediscovery';
 export * from './ipamscope';
 export * from './ipsecserver';

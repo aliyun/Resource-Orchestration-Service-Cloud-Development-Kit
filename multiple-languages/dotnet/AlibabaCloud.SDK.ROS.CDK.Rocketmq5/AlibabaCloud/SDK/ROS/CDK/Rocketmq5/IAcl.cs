@@ -43,6 +43,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             get;
         }
 
+        /// <summary>Attribute ResourceType: The type of the resource on which you want to grant permissions.</summary>
+        [JsiiProperty(name: "attrResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+        object AttrResourceType
+        {
+            get;
+        }
+
         /// <summary>Attribute Username: The username of the account.</summary>
         [JsiiProperty(name: "attrUsername", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrUsername
@@ -95,6 +102,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Rocketmq5
             /// <summary>Attribute ResourceName: The name of the resource on which you want to grant permissions.</summary>
             [JsiiProperty(name: "attrResourceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrResourceName
+            {
+                get => GetInstanceProperty<object>()!;
+            }
+
+            /// <summary>Attribute ResourceType: The type of the resource on which you want to grant permissions.</summary>
+            [JsiiProperty(name: "attrResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
+            public object AttrResourceType
             {
                 get => GetInstanceProperty<object>()!;
             }

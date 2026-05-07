@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.vod.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VOD::MessageCallbacks</code>, which is used to query sets of event notification configurations.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::VOD::MessageCallbacks</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.748Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.datasource.RosMessageCallbacks")
 public class RosMessageCallbacks extends com.aliyun.ros.cdk.core.RosResource {
 

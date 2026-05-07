@@ -1,3 +1,4 @@
+export * from './account';
 export * from './acl';
 export * from './consumergroup';
 export * from './instance';

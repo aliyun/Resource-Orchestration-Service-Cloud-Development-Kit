@@ -35,7 +35,7 @@ export interface ISecrets extends ros.IResource {
     readonly attrSecrets: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secrets`, which is used to query all secrets that are created within the current account in the current region.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::KMS::Secrets`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecrets`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secrets
  */

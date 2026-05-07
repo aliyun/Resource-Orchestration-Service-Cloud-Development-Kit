@@ -78,7 +78,7 @@ export interface IDatabase extends ros.IResource {
     readonly attrDatabaseName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Database`, which is used to create a database.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PolarDBX::Database`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabase`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-database
  */

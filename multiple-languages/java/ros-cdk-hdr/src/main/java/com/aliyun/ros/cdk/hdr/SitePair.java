@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hdr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HDR::SitePair</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.277Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hdr.$Module.class, fqn = "@alicloud/ros-cdk-hdr.SitePair")
 public class SitePair extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hdr.ISitePair {
 

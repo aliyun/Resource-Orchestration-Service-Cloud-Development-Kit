@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sls;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::Savedsearch</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLS::Savedsearch</code>, which is used to save search results as a saved search.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:30.415Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.505Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosSavedsearch")
 public class RosSavedsearch extends com.aliyun.ros.cdk.core.RosResource {
 

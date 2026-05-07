@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paiplugin;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAIPlugin::InferenceJob</code>, which is used to create a prediction job.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:28.619Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.644Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.InferenceJob")
 public class InferenceJob extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.paiplugin.IInferenceJob {
 

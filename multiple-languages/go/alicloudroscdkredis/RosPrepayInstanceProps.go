@@ -30,6 +30,7 @@ type RosPrepayInstanceProps struct {
 	SubscriptionDeletionForce interface{} `field:"optional" json:"subscriptionDeletionForce" yaml:"subscriptionDeletionForce"`
 	Tags *[]*RosPrepayInstance_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	TairConfig interface{} `field:"optional" json:"tairConfig" yaml:"tairConfig"`
+	TlsProtocol interface{} `field:"optional" json:"tlsProtocol" yaml:"tlsProtocol"`
 	VpcId interface{} `field:"optional" json:"vpcId" yaml:"vpcId"`
 	VpcPasswordFree interface{} `field:"optional" json:"vpcPasswordFree" yaml:"vpcPasswordFree"`
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`

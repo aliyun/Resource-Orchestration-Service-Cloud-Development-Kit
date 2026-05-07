@@ -81,6 +81,11 @@ export interface IAcl extends ros.IResource {
     readonly attrResourceName: ros.IResolvable | string;
 
     /**
+     * Attribute ResourceType: The type of the resource on which you want to grant permissions.
+     */
+    readonly attrResourceType: ros.IResolvable | string;
+
+    /**
      * Attribute Username: The username of the account.
      */
     readonly attrUsername: ros.IResolvable | string;
@@ -122,6 +127,11 @@ export class Acl extends ros.Resource implements IAcl {
     public readonly attrResourceName: ros.IResolvable | string;
 
     /**
+     * Attribute ResourceType: The type of the resource on which you want to grant permissions.
+     */
+    public readonly attrResourceType: ros.IResolvable | string;
+
+    /**
      * Attribute Username: The username of the account.
      */
     public readonly attrUsername: ros.IResolvable | string;
@@ -153,6 +163,7 @@ export class Acl extends ros.Resource implements IAcl {
         this.attrInstanceId = rosAcl.attrInstanceId;
         this.attrIpWhitelists = rosAcl.attrIpWhitelists;
         this.attrResourceName = rosAcl.attrResourceName;
+        this.attrResourceType = rosAcl.attrResourceType;
         this.attrUsername = rosAcl.attrUsername;
     }
 }

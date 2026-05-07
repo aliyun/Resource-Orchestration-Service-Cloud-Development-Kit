@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Table`, which is used to create a table based on a specified schema.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Table`.
 type RosTable interface {
 	alicloudroscdkcore.RosResource
 	AttrTableName() alicloudroscdkcore.IResolvable

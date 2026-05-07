@@ -196,7 +196,6 @@ export interface RosAutoEnableServiceProps {
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management
-     * IOT: IoT Platform
      * KMS: Key Management Service
      * NLP: Natural Language Processing
      * OSS: Object Storage Service
@@ -237,7 +236,7 @@ function RosAutoEnableServicePropsValidator(properties: any): ros.ValidationResu
     if(properties.serviceName && (typeof properties.serviceName) !== 'object') {
         errors.collect(ros.propertyValidator('serviceName', ros.validateAllowedValues)({
           data: properties.serviceName,
-          allowedValues: ["AHAS","ARMS","ARMS/App","ARMS/Web","ARMS/PrometheusMonitor","ARMS/SyntheticPost","ApiGateway","BatchCompute","BrainIndustrial","CloudStorageGateway","CMS","CR","CS","DataHub","DCDN","EDAS","EMAS","FC","FNF","MaxCompute","MNS","NAS","HBR","IMM","IOT","KMS","NLP","OSS","OTS","PrivateLink","PrivateZone","RocketMQ","SAE","SLS","TrafficMirror","VS","Xtrace","CDN","CDT","CDTCb","TransitRouter","PAI","Config","CloudSSO","ControlPolicy","DSC","DataWorks","TrustedService/ROS"],
+          allowedValues: ["AHAS","ARMS","ARMS/App","ARMS/Web","ARMS/PrometheusMonitor","ARMS/SyntheticPost","ApiGateway","BatchCompute","BrainIndustrial","CloudStorageGateway","CMS","CR","CS","DataHub","DCDN","EDAS","EMAS","FC","FNF","MaxCompute","MNS","NAS","HBR","IMM","KMS","NLP","OSS","OTS","PrivateLink","PrivateZone","RocketMQ","SAE","SLS","TrafficMirror","VS","Xtrace","CDN","CDT","CDTCb","TransitRouter","PAI","Config","CloudSSO","ControlPolicy","DSC","DataWorks","TrustedService/ROS"],
         }));
     }
     errors.collect(ros.propertyValidator('serviceName', ros.validateString)(properties.serviceName));
@@ -302,7 +301,6 @@ export class RosAutoEnableService extends ros.RosResource {
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
      * IMM: Intelligent Media Management
-     * IOT: IoT Platform
      * KMS: Key Management Service
      * NLP: Natural Language Processing
      * OSS: Object Storage Service
@@ -2290,7 +2288,7 @@ function rosStackInstancesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackInstances`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackInstances`, which is used to create stack instances within specified accounts in specified regions.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */
@@ -2587,7 +2585,7 @@ function rosWaitConditionPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitCondition`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::WaitCondition`, which is used to wait for signals. You can use ALIYUN::ROS::WaitCondition together with ALIYUN::ROS::WaitConditionHandle to manage the execution process of a stack. When you create an Elastic Compute Service (ECS) instance, a signal is sent during the execution of the user data.
  * @Note This class does not contain additional functions, so it is recommended to use the `WaitCondition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-waitcondition
  */

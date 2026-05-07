@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dlf;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DLF::Catalog</code>, which is used to create a catalog in Data Lake Formation (DLF).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.840Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dlf.$Module.class, fqn = "@alicloud/ros-cdk-dlf.Catalog")
 public class Catalog extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dlf.ICatalog {
 

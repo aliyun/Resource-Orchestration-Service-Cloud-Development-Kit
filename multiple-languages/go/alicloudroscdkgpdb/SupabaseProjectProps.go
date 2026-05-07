@@ -35,6 +35,8 @@ type SupabaseProjectProps struct {
 	//
 	// Description You can call the DescribeRegions interface to view the available Availability Zone ID.
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
+	// Property databaseIpList: Database IP list.
+	DatabaseIpList interface{} `field:"optional" json:"databaseIpList" yaml:"databaseIpList"`
 	// Property diskPerformanceLevel: Cloud disk PL level, default PL0.
 	//
 	// Selectable value:

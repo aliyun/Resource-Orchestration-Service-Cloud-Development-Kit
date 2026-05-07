@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`.
 type RosDisk interface {
 	alicloudroscdkcore.RosResource
 	AttrDiskId() alicloudroscdkcore.IResolvable

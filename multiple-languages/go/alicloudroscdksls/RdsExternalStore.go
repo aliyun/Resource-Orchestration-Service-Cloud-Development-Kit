@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::RdsExternalStore`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SLS::RdsExternalStore`, which is used to create an ApsaraDB RDS for MySQL external store.
 type RdsExternalStore interface {
 	alicloudroscdkcore.Resource
 	IRdsExternalStore

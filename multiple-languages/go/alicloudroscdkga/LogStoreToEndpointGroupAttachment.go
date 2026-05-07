@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`, which is used to associate a Simple Log Service (SLS) Logstore with endpoint groups.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`.
 type LogStoreToEndpointGroupAttachment interface {
 	alicloudroscdkcore.Resource
 	ILogStoreToEndpointGroupAttachment

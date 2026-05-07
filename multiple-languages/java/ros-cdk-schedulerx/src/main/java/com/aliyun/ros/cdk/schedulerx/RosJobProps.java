@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.schedulerx;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-schedulerx-job
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.985Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.059Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.schedulerx.$Module.class, fqn = "@alicloud/ros-cdk-schedulerx.RosJobProps")
 @software.amazon.jsii.Jsii.Proxy(RosJobProps.Jsii$Proxy.class)
 public interface RosJobProps extends software.amazon.jsii.JsiiSerializable {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`, which is used to purchase Internet bandwidth for an IPv6 address.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::Ipv6InternetBandwidth`.
 type Ipv6InternetBandwidth interface {
 	alicloudroscdkcore.Resource
 	IIpv6InternetBandwidth

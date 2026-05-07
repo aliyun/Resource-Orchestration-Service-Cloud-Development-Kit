@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::HBR::BackupClients`, which is used to install backup clients on Elastic Compute Service (ECS) instances.
+// This class encapsulates and extends the ROS resource type `ALIYUN::HBR::BackupClients`.
 type BackupClients interface {
 	alicloudroscdkcore.Resource
 	IBackupClients

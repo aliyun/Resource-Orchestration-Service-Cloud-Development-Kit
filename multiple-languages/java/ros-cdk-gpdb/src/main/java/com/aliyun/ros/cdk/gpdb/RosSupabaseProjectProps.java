@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:27.065Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.994Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.RosSupabaseProjectProps")
 @software.amazon.jsii.Jsii.Proxy(RosSupabaseProjectProps.Jsii$Proxy.class)
 public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,6 +37,12 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
     /**
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
+
+    /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getDatabaseIpList() {
+        return null;
+    }
 
     /**
      */
@@ -85,6 +91,7 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
         java.lang.Object vpcId;
         java.lang.Object vSwitchId;
         java.lang.Object zoneId;
+        java.lang.Object databaseIpList;
         java.lang.Object diskPerformanceLevel;
         java.lang.Object payType;
         java.lang.Object period;
@@ -232,6 +239,26 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
         }
 
         /**
+         * Sets the value of {@link RosSupabaseProjectProps#getDatabaseIpList}
+         * @param databaseIpList the value to be set.
+         * @return {@code this}
+         */
+        public Builder databaseIpList(java.lang.String databaseIpList) {
+            this.databaseIpList = databaseIpList;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosSupabaseProjectProps#getDatabaseIpList}
+         * @param databaseIpList the value to be set.
+         * @return {@code this}
+         */
+        public Builder databaseIpList(com.aliyun.ros.cdk.core.IResolvable databaseIpList) {
+            this.databaseIpList = databaseIpList;
+            return this;
+        }
+
+        /**
          * Sets the value of {@link RosSupabaseProjectProps#getDiskPerformanceLevel}
          * @param diskPerformanceLevel the value to be set.
          * @return {@code this}
@@ -354,6 +381,7 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
         private final java.lang.Object vpcId;
         private final java.lang.Object vSwitchId;
         private final java.lang.Object zoneId;
+        private final java.lang.Object databaseIpList;
         private final java.lang.Object diskPerformanceLevel;
         private final java.lang.Object payType;
         private final java.lang.Object period;
@@ -373,6 +401,7 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
             this.vpcId = software.amazon.jsii.Kernel.get(this, "vpcId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.vSwitchId = software.amazon.jsii.Kernel.get(this, "vSwitchId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.zoneId = software.amazon.jsii.Kernel.get(this, "zoneId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.databaseIpList = software.amazon.jsii.Kernel.get(this, "databaseIpList", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.diskPerformanceLevel = software.amazon.jsii.Kernel.get(this, "diskPerformanceLevel", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.payType = software.amazon.jsii.Kernel.get(this, "payType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.period = software.amazon.jsii.Kernel.get(this, "period", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -392,6 +421,7 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
             this.vpcId = java.util.Objects.requireNonNull(builder.vpcId, "vpcId is required");
             this.vSwitchId = java.util.Objects.requireNonNull(builder.vSwitchId, "vSwitchId is required");
             this.zoneId = java.util.Objects.requireNonNull(builder.zoneId, "zoneId is required");
+            this.databaseIpList = builder.databaseIpList;
             this.diskPerformanceLevel = builder.diskPerformanceLevel;
             this.payType = builder.payType;
             this.period = builder.period;
@@ -435,6 +465,11 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
         }
 
         @Override
+        public final java.lang.Object getDatabaseIpList() {
+            return this.databaseIpList;
+        }
+
+        @Override
         public final java.lang.Object getDiskPerformanceLevel() {
             return this.diskPerformanceLevel;
         }
@@ -472,6 +507,9 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
             data.set("vpcId", om.valueToTree(this.getVpcId()));
             data.set("vSwitchId", om.valueToTree(this.getVSwitchId()));
             data.set("zoneId", om.valueToTree(this.getZoneId()));
+            if (this.getDatabaseIpList() != null) {
+                data.set("databaseIpList", om.valueToTree(this.getDatabaseIpList()));
+            }
             if (this.getDiskPerformanceLevel() != null) {
                 data.set("diskPerformanceLevel", om.valueToTree(this.getDiskPerformanceLevel()));
             }
@@ -512,6 +550,7 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
             if (!vpcId.equals(that.vpcId)) return false;
             if (!vSwitchId.equals(that.vSwitchId)) return false;
             if (!zoneId.equals(that.zoneId)) return false;
+            if (this.databaseIpList != null ? !this.databaseIpList.equals(that.databaseIpList) : that.databaseIpList != null) return false;
             if (this.diskPerformanceLevel != null ? !this.diskPerformanceLevel.equals(that.diskPerformanceLevel) : that.diskPerformanceLevel != null) return false;
             if (this.payType != null ? !this.payType.equals(that.payType) : that.payType != null) return false;
             if (this.period != null ? !this.period.equals(that.period) : that.period != null) return false;
@@ -528,6 +567,7 @@ public interface RosSupabaseProjectProps extends software.amazon.jsii.JsiiSerial
             result = 31 * result + (this.vpcId.hashCode());
             result = 31 * result + (this.vSwitchId.hashCode());
             result = 31 * result + (this.zoneId.hashCode());
+            result = 31 * result + (this.databaseIpList != null ? this.databaseIpList.hashCode() : 0);
             result = 31 * result + (this.diskPerformanceLevel != null ? this.diskPerformanceLevel.hashCode() : 0);
             result = 31 * result + (this.payType != null ? this.payType.hashCode() : 0);
             result = 31 * result + (this.period != null ? this.period.hashCode() : 0);

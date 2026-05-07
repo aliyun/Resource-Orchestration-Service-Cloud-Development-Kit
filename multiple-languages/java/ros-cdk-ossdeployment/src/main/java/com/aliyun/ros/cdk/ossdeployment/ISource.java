@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ossdeployment;
 /**
  * Represents a source for bucket deployments.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:31.910Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:56.043Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ossdeployment.$Module.class, fqn = "@alicloud/ros-cdk-ossdeployment.ISource")
 @software.amazon.jsii.Jsii.Proxy(ISource.Jsii$Proxy.class)
 public interface ISource extends software.amazon.jsii.JsiiSerializable {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::REDIS::PrepayInstance</code>, which is used to create a subscription Tair (Redis OSS-compatible) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::REDIS::PrepayInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.358Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.399Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.PrepayInstance")
 public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.redis.IPrepayInstance {
 
@@ -985,6 +985,27 @@ public class PrepayInstance extends com.aliyun.ros.cdk.core.Resource implements 
          */
         public Builder tairConfig(final com.aliyun.ros.cdk.redis.RosPrepayInstance.TairConfigProperty tairConfig) {
             this.props().tairConfig(tairConfig);
+            return this;
+        }
+
+        /**
+         * Property tlsProtocol: The TLS version of the instance.
+         * <p>
+         * @return {@code this}
+         * @param tlsProtocol Property tlsProtocol: The TLS version of the instance. This parameter is required.
+         */
+        public Builder tlsProtocol(final java.lang.String tlsProtocol) {
+            this.props().tlsProtocol(tlsProtocol);
+            return this;
+        }
+        /**
+         * Property tlsProtocol: The TLS version of the instance.
+         * <p>
+         * @return {@code this}
+         * @param tlsProtocol Property tlsProtocol: The TLS version of the instance. This parameter is required.
+         */
+        public Builder tlsProtocol(final com.aliyun.ros.cdk.core.IResolvable tlsProtocol) {
+            this.props().tlsProtocol(tlsProtocol);
             return this;
         }
 

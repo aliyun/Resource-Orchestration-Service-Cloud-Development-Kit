@@ -364,6 +364,325 @@ export class RosOrder extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosPcaCertificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-pcacertificate
+ */
+export interface RosPcaCertificateProps {
+
+    /**
+     * @Property commonName: The common name or abbreviation of the organization. Support the use of Chinese, English characters.
+     */
+    readonly commonName: string | ros.IResolvable;
+
+    /**
+     * @Property locality: Name of the city where the organization is located. Support the use of Chinese, English characters.
+     */
+    readonly locality: string | ros.IResolvable;
+
+    /**
+     * @Property organization: The name of the organization (corresponding to your enterprise or company) associated with the root CA certificate. Support the use of Chinese, English characters.
+     */
+    readonly organization: string | ros.IResolvable;
+
+    /**
+     * @Property organizationUnit: The name of the department or branch under the organization. Support the use of Chinese, English characters.
+     */
+    readonly organizationUnit: string | ros.IResolvable;
+
+    /**
+     * @Property state: <props = "china"> The name of the province, municipality, or autonomous region in which the organization is located. Support the use of Chinese, English characters. <\/props>
+     * <props = "intl"> Name of the province or state where the organization is located. Support the use of Chinese, English characters. <\/props>.
+     */
+    readonly state: string | ros.IResolvable;
+
+    /**
+     * @Property years: The validity period of the root CA certificate, in years.
+     * > It is recommended to set to 5~10 years.
+     */
+    readonly years: number | ros.IResolvable;
+
+    /**
+     * @Property algorithm: The key algorithm type of the root CA certificate. The key algorithm is expressed using the '<encryption algorithm >_< key length>' format. Value:
+     * - **RSA_1024**: The corresponding signature algorithm is Sha256WithRSA.
+     * - **RSA_2048**: The corresponding signature algorithm is Sha256WithRSA.
+     * - **RSA_4096**: The corresponding signature algorithm is Sha256WithRSA.
+     * - **ECC_256**: The signature algorithm is Sha256WithECDSA.
+     * - **ECC_384**: The corresponding signature algorithm is Sha256WithECDSA.
+     * - **ECC_512**: The signature algorithm is Sha256WithECDSA.
+     * - **SM2_256**: The corresponding signature algorithm is SM3WithSM2.
+     * 
+     * The encryption algorithm of the root CA certificate must be the same as the **certificate algorithm** of the private Root CA you purchased. Example: If the **certificate algorithm** selected when you purchase a private Root CA is **RSA**, the key algorithm of the root CA certificate must be **RSA\_1024**, **RSA\_2048**, or **RSA\_4096**.
+     */
+    readonly algorithm?: string | ros.IResolvable;
+
+    /**
+     * @Property caStatus: The current CA status. Value:
+     * - Issue: Enabled.
+     * - Forbidden: Disabled.
+     * - Revoke: Revoked.
+     */
+    readonly caStatus?: string | ros.IResolvable;
+
+    /**
+     * @Property countryCode: The code of the country or region in which the organization is located, using a two-digit capital abbreviation. For example, **CN** represents China and **US** represents the United States.
+     * For more information about the codes of different countries, see **International Code** in [Management Company Information](~~ 198289 ~~).
+     */
+    readonly countryCode?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosPcaCertificateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosPcaCertificateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosPcaCertificatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('organization', ros.requiredValidator)(properties.organization));
+    errors.collect(ros.propertyValidator('organization', ros.validateString)(properties.organization));
+    errors.collect(ros.propertyValidator('years', ros.requiredValidator)(properties.years));
+    if(properties.years && (typeof properties.years) !== 'object') {
+        errors.collect(ros.propertyValidator('years', ros.validateRange)({
+            data: properties.years,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('years', ros.validateNumber)(properties.years));
+    errors.collect(ros.propertyValidator('locality', ros.requiredValidator)(properties.locality));
+    errors.collect(ros.propertyValidator('locality', ros.validateString)(properties.locality));
+    errors.collect(ros.propertyValidator('state', ros.requiredValidator)(properties.state));
+    errors.collect(ros.propertyValidator('state', ros.validateString)(properties.state));
+    errors.collect(ros.propertyValidator('organizationUnit', ros.requiredValidator)(properties.organizationUnit));
+    errors.collect(ros.propertyValidator('organizationUnit', ros.validateString)(properties.organizationUnit));
+    errors.collect(ros.propertyValidator('countryCode', ros.validateString)(properties.countryCode));
+    if(properties.algorithm && (typeof properties.algorithm) !== 'object') {
+        errors.collect(ros.propertyValidator('algorithm', ros.validateAllowedValues)({
+          data: properties.algorithm,
+          allowedValues: ["RSA_1024","RSA_2048","RSA_4096","ECC_256","ECC_384","ECC_512","SM2_256"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('algorithm', ros.validateString)(properties.algorithm));
+    if(properties.caStatus && (typeof properties.caStatus) !== 'object') {
+        errors.collect(ros.propertyValidator('caStatus', ros.validateAllowedValues)({
+          data: properties.caStatus,
+          allowedValues: ["Issue","Forbidden","Revoke"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('caStatus', ros.validateString)(properties.caStatus));
+    errors.collect(ros.propertyValidator('commonName', ros.requiredValidator)(properties.commonName));
+    errors.collect(ros.propertyValidator('commonName', ros.validateString)(properties.commonName));
+    return errors.wrap('supplied properties not correct for "RosPcaCertificateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CAS::PcaCertificate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosPcaCertificateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CAS::PcaCertificate` resource.
+ */
+// @ts-ignore TS6133
+function rosPcaCertificatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosPcaCertificatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'CommonName': ros.stringToRosTemplate(properties.commonName),
+      'Locality': ros.stringToRosTemplate(properties.locality),
+      'Organization': ros.stringToRosTemplate(properties.organization),
+      'OrganizationUnit': ros.stringToRosTemplate(properties.organizationUnit),
+      'State': ros.stringToRosTemplate(properties.state),
+      'Years': ros.numberToRosTemplate(properties.years),
+      'Algorithm': ros.stringToRosTemplate(properties.algorithm),
+      'CaStatus': ros.stringToRosTemplate(properties.caStatus),
+      'CountryCode': ros.stringToRosTemplate(properties.countryCode),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::PcaCertificate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `PcaCertificate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-pcacertificate
+ */
+export class RosPcaCertificate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CAS::PcaCertificate";
+
+    /**
+     * @Attribute Algorithm: The key algorithm type of the root CA certificate. The key algorithm is expressed using the '<encryption algorithm >_< key length>' format.
+     */
+    public readonly attrAlgorithm: ros.IResolvable;
+
+    /**
+     * @Attribute CertificateType: The type of CA.
+     */
+    public readonly attrCertificateType: ros.IResolvable;
+
+    /**
+     * @Attribute CommonName: The common name or abbreviation of the organization. Support the use of Chinese, English characters.
+     */
+    public readonly attrCommonName: ros.IResolvable;
+
+    /**
+     * @Attribute CountryCode: The code of the country or region in which the organization is located, using a two-digit capital abbreviation. For example, **CN** represents China and **US** represents the United States.
+     */
+    public readonly attrCountryCode: ros.IResolvable;
+
+    /**
+     * @Attribute Identifier: Certificate Identifier.
+     */
+    public readonly attrIdentifier: ros.IResolvable;
+
+    /**
+     * @Attribute IssuerType: The institution issuing the CA.
+     */
+    public readonly attrIssuerType: ros.IResolvable;
+
+    /**
+     * @Attribute Locality: Name of the city where the organization is located. Support the use of Chinese, English characters.
+     */
+    public readonly attrLocality: ros.IResolvable;
+
+    /**
+     * @Attribute Organization: The name of the organization (corresponding to your enterprise or company) associated with the root CA certificate. Support the use of Chinese, English characters.
+     */
+    public readonly attrOrganization: ros.IResolvable;
+
+    /**
+     * @Attribute OrganizationUnit: The name of the department or branch under the organization. Support the use of Chinese, English characters.
+     */
+    public readonly attrOrganizationUnit: ros.IResolvable;
+
+    /**
+     * @Attribute State: <props = "china"> The name of the province, municipality, or autonomous region in which the organization is located. Support the use of Chinese, English characters.
+     */
+    public readonly attrState: ros.IResolvable;
+
+    /**
+     * @Attribute Years: The validity period of the root CA certificate, in years.
+     */
+    public readonly attrYears: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property commonName: The common name or abbreviation of the organization. Support the use of Chinese, English characters.
+     */
+    public commonName: string | ros.IResolvable;
+
+    /**
+     * @Property locality: Name of the city where the organization is located. Support the use of Chinese, English characters.
+     */
+    public locality: string | ros.IResolvable;
+
+    /**
+     * @Property organization: The name of the organization (corresponding to your enterprise or company) associated with the root CA certificate. Support the use of Chinese, English characters.
+     */
+    public organization: string | ros.IResolvable;
+
+    /**
+     * @Property organizationUnit: The name of the department or branch under the organization. Support the use of Chinese, English characters.
+     */
+    public organizationUnit: string | ros.IResolvable;
+
+    /**
+     * @Property state: <props = "china"> The name of the province, municipality, or autonomous region in which the organization is located. Support the use of Chinese, English characters. <\/props>
+     * <props = "intl"> Name of the province or state where the organization is located. Support the use of Chinese, English characters. <\/props>.
+     */
+    public state: string | ros.IResolvable;
+
+    /**
+     * @Property years: The validity period of the root CA certificate, in years.
+     * > It is recommended to set to 5~10 years.
+     */
+    public years: number | ros.IResolvable;
+
+    /**
+     * @Property algorithm: The key algorithm type of the root CA certificate. The key algorithm is expressed using the '<encryption algorithm >_< key length>' format. Value:
+     * - **RSA_1024**: The corresponding signature algorithm is Sha256WithRSA.
+     * - **RSA_2048**: The corresponding signature algorithm is Sha256WithRSA.
+     * - **RSA_4096**: The corresponding signature algorithm is Sha256WithRSA.
+     * - **ECC_256**: The signature algorithm is Sha256WithECDSA.
+     * - **ECC_384**: The corresponding signature algorithm is Sha256WithECDSA.
+     * - **ECC_512**: The signature algorithm is Sha256WithECDSA.
+     * - **SM2_256**: The corresponding signature algorithm is SM3WithSM2.
+     * 
+     * The encryption algorithm of the root CA certificate must be the same as the **certificate algorithm** of the private Root CA you purchased. Example: If the **certificate algorithm** selected when you purchase a private Root CA is **RSA**, the key algorithm of the root CA certificate must be **RSA\_1024**, **RSA\_2048**, or **RSA\_4096**.
+     */
+    public algorithm: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property caStatus: The current CA status. Value:
+     * - Issue: Enabled.
+     * - Forbidden: Disabled.
+     * - Revoke: Revoked.
+     */
+    public caStatus: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property countryCode: The code of the country or region in which the organization is located, using a two-digit capital abbreviation. For example, **CN** represents China and **US** represents the United States.
+     * For more information about the codes of different countries, see **International Code** in [Management Company Information](~~ 198289 ~~).
+     */
+    public countryCode: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosPcaCertificateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosPcaCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAlgorithm = this.getAtt('Algorithm');
+        this.attrCertificateType = this.getAtt('CertificateType');
+        this.attrCommonName = this.getAtt('CommonName');
+        this.attrCountryCode = this.getAtt('CountryCode');
+        this.attrIdentifier = this.getAtt('Identifier');
+        this.attrIssuerType = this.getAtt('IssuerType');
+        this.attrLocality = this.getAtt('Locality');
+        this.attrOrganization = this.getAtt('Organization');
+        this.attrOrganizationUnit = this.getAtt('OrganizationUnit');
+        this.attrState = this.getAtt('State');
+        this.attrYears = this.getAtt('Years');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.commonName = props.commonName;
+        this.locality = props.locality;
+        this.organization = props.organization;
+        this.organizationUnit = props.organizationUnit;
+        this.state = props.state;
+        this.years = props.years;
+        this.algorithm = props.algorithm;
+        this.caStatus = props.caStatus;
+        this.countryCode = props.countryCode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            commonName: this.commonName,
+            locality: this.locality,
+            organization: this.organization,
+            organizationUnit: this.organizationUnit,
+            state: this.state,
+            years: this.years,
+            algorithm: this.algorithm,
+            caStatus: this.caStatus,
+            countryCode: this.countryCode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosPcaCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosSslCertificate`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-sslcertificate
  */
@@ -686,4 +1005,333 @@ export class RosSslCertificate extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosSslCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosUserCertificate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-usercertificate
+ */
+export interface RosUserCertificateProps {
+
+    /**
+     * @Property cert: The certificate content in PEM format.
+     */
+    readonly cert?: string | ros.IResolvable;
+
+    /**
+     * @Property certificateName: Custom certificate name. Maximum supported character length:128. All character types are supported, including letters, numbers and underscores.
+     *  The certificate name under the same user cannot be duplicated.
+     */
+    readonly certificateName?: string | ros.IResolvable;
+
+    /**
+     * @Property encryptCert: The content of the encryption certificate in PEM format.
+     */
+    readonly encryptCert?: string | ros.IResolvable;
+
+    /**
+     * @Property encryptPrivateKey: The private key content of the encryption certificate in PEM format.
+     */
+    readonly encryptPrivateKey?: string | ros.IResolvable;
+
+    /**
+     * @Property key: The private key content of the certificate in PEM format.
+     */
+    readonly key?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceId: Resource ID.
+     */
+    readonly resourceId?: string | ros.IResolvable;
+
+    /**
+     * @Property signCert: The signature certificate content in PEM format.
+     */
+    readonly signCert?: string | ros.IResolvable;
+
+    /**
+     * @Property signPrivateKey: The private key content of the signature certificate in PEM format.
+     */
+    readonly signPrivateKey?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags of certificate.
+     */
+    readonly tags?: RosUserCertificate.TagsProperty[];
+}
+
+/**
+ * Determine whether the given properties match those of a `RosUserCertificateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosUserCertificateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserCertificatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('signCert', ros.validateString)(properties.signCert));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('resourceId', ros.validateString)(properties.resourceId));
+    errors.collect(ros.propertyValidator('encryptCert', ros.validateString)(properties.encryptCert));
+    errors.collect(ros.propertyValidator('signPrivateKey', ros.validateString)(properties.signPrivateKey));
+    errors.collect(ros.propertyValidator('cert', ros.validateString)(properties.cert));
+    errors.collect(ros.propertyValidator('encryptPrivateKey', ros.validateString)(properties.encryptPrivateKey));
+    errors.collect(ros.propertyValidator('certificateName', ros.validateString)(properties.certificateName));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosUserCertificate_TagsPropertyValidator))(properties.tags));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "RosUserCertificateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CAS::UserCertificate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosUserCertificateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CAS::UserCertificate` resource.
+ */
+// @ts-ignore TS6133
+function rosUserCertificatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosUserCertificatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'Cert': ros.stringToRosTemplate(properties.cert),
+      'CertificateName': ros.stringToRosTemplate(properties.certificateName),
+      'EncryptCert': ros.stringToRosTemplate(properties.encryptCert),
+      'EncryptPrivateKey': ros.stringToRosTemplate(properties.encryptPrivateKey),
+      'Key': ros.stringToRosTemplate(properties.key),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ResourceId': ros.stringToRosTemplate(properties.resourceId),
+      'SignCert': ros.stringToRosTemplate(properties.signCert),
+      'SignPrivateKey': ros.stringToRosTemplate(properties.signPrivateKey),
+      'Tags': ros.listMapper(rosUserCertificateTagsPropertyToRosTemplate)(properties.tags),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CAS::UserCertificate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `UserCertificate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cas-usercertificate
+ */
+export class RosUserCertificate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CAS::UserCertificate";
+
+    /**
+     * @Attribute Cert: The certificate content in PEM format.
+     */
+    public readonly attrCert: ros.IResolvable;
+
+    /**
+     * @Attribute CertId: Certificate ID.
+     */
+    public readonly attrCertId: ros.IResolvable;
+
+    /**
+     * @Attribute CertificateName: Custom certificate name. Maximum supported character length:128. All character types are supported, including letters, numbers and underscores.
+     */
+    public readonly attrCertificateName: ros.IResolvable;
+
+    /**
+     * @Attribute EncryptCert: The content of the encryption certificate in PEM format.
+     */
+    public readonly attrEncryptCert: ros.IResolvable;
+
+    /**
+     * @Attribute EncryptPrivateKey: The private key content of the encryption certificate in PEM format.
+     */
+    public readonly attrEncryptPrivateKey: ros.IResolvable;
+
+    /**
+     * @Attribute Key: The private key content of the certificate in PEM format.
+     */
+    public readonly attrKey: ros.IResolvable;
+
+    /**
+     * @Attribute ResourceGroupId: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute SignCert: The signature certificate content in PEM format.
+     */
+    public readonly attrSignCert: ros.IResolvable;
+
+    /**
+     * @Attribute SignPrivateKey: The private key content of the signature certificate in PEM format.
+     */
+    public readonly attrSignPrivateKey: ros.IResolvable;
+
+    /**
+     * @Attribute Tags: The tag of the resource.
+     */
+    public readonly attrTags: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property cert: The certificate content in PEM format.
+     */
+    public cert: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property certificateName: Custom certificate name. Maximum supported character length:128. All character types are supported, including letters, numbers and underscores.
+     *  The certificate name under the same user cannot be duplicated.
+     */
+    public certificateName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encryptCert: The content of the encryption certificate in PEM format.
+     */
+    public encryptCert: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property encryptPrivateKey: The private key content of the encryption certificate in PEM format.
+     */
+    public encryptPrivateKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property key: The private key content of the certificate in PEM format.
+     */
+    public key: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The ID of the resource group.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceId: Resource ID.
+     */
+    public resourceId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property signCert: The signature certificate content in PEM format.
+     */
+    public signCert: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property signPrivateKey: The private key content of the signature certificate in PEM format.
+     */
+    public signPrivateKey: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags of certificate.
+     */
+    public tags: RosUserCertificate.TagsProperty[] | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosUserCertificateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosUserCertificate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCert = this.getAtt('Cert');
+        this.attrCertId = this.getAtt('CertId');
+        this.attrCertificateName = this.getAtt('CertificateName');
+        this.attrEncryptCert = this.getAtt('EncryptCert');
+        this.attrEncryptPrivateKey = this.getAtt('EncryptPrivateKey');
+        this.attrKey = this.getAtt('Key');
+        this.attrResourceGroupId = this.getAtt('ResourceGroupId');
+        this.attrSignCert = this.getAtt('SignCert');
+        this.attrSignPrivateKey = this.getAtt('SignPrivateKey');
+        this.attrTags = this.getAtt('Tags');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.cert = props.cert;
+        this.certificateName = props.certificateName;
+        this.encryptCert = props.encryptCert;
+        this.encryptPrivateKey = props.encryptPrivateKey;
+        this.key = props.key;
+        this.resourceGroupId = props.resourceGroupId;
+        this.resourceId = props.resourceId;
+        this.signCert = props.signCert;
+        this.signPrivateKey = props.signPrivateKey;
+        this.tags = props.tags;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            cert: this.cert,
+            certificateName: this.certificateName,
+            encryptCert: this.encryptCert,
+            encryptPrivateKey: this.encryptPrivateKey,
+            key: this.key,
+            resourceGroupId: this.resourceGroupId,
+            resourceId: this.resourceId,
+            signCert: this.signCert,
+            signPrivateKey: this.signPrivateKey,
+            tags: this.tags,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosUserCertificatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosUserCertificate {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosUserCertificate_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CAS::UserCertificate.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CAS::UserCertificate.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosUserCertificateTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosUserCertificate_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }

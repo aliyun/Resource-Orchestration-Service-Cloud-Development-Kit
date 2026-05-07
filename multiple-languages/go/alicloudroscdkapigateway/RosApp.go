@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`, which is used to create an application.
-//
-// Before you call a third-party API, you must create an application and use the application as an identity to call the API.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`.
 type RosApp interface {
 	alicloudroscdkcore.RosResource
 	AppCode() interface{}

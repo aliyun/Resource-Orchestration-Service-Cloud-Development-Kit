@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.sae;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::Application</code>The , which resource type creates a Serverless App Engine (SAE) application.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAE::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.753Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.837Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sae.IApplication {
 
@@ -1638,7 +1638,7 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
          * <p>
-         * The value ranges from 1 to 300.
+         * The value ranges from 1 to 600.
          * <p>
          * @return {@code this}
          * @param terminationGracePeriodSeconds Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. This parameter is required.
@@ -1650,7 +1650,7 @@ public class Application extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
          * <p>
-         * The value ranges from 1 to 300.
+         * The value ranges from 1 to 600.
          * <p>
          * @return {@code this}
          * @param terminationGracePeriodSeconds Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds. This parameter is required.

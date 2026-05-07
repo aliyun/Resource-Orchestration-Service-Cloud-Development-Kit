@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sae;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-application
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:29.777Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.846Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sae.$Module.class, fqn = "@alicloud/ros-cdk-sae.ApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationProps.Jsii$Proxy.class)
 public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -555,7 +555,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     /**
      * Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
      * <p>
-     * The value ranges from 1 to 300.
+     * The value ranges from 1 to 600.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTerminationGracePeriodSeconds() {
         return null;
@@ -2091,7 +2091,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ApplicationProps#getTerminationGracePeriodSeconds}
          * @param terminationGracePeriodSeconds Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
-         *                                      The value ranges from 1 to 300.
+         *                                      The value ranges from 1 to 600.
          * @return {@code this}
          */
         public Builder terminationGracePeriodSeconds(java.lang.Number terminationGracePeriodSeconds) {
@@ -2102,7 +2102,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ApplicationProps#getTerminationGracePeriodSeconds}
          * @param terminationGracePeriodSeconds Property terminationGracePeriodSeconds: Graceful offline timeout, default 30, unit of seconds.
-         *                                      The value ranges from 1 to 300.
+         *                                      The value ranges from 1 to 600.
          * @return {@code this}
          */
         public Builder terminationGracePeriodSeconds(com.aliyun.ros.cdk.core.IResolvable terminationGracePeriodSeconds) {

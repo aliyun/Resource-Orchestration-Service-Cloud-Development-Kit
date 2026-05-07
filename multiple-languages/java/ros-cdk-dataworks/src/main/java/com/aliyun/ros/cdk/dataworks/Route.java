@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dataworks;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DataWorks::Route</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-04-07T05:57:23.626Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.635Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.Route")
 public class Route extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dataworks.IRoute {
 

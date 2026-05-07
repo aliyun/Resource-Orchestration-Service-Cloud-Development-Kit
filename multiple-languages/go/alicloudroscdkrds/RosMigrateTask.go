@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::MigrateTask`, which is used to create a migration task to restore backup files from an Object Storage Service (OSS) bucket to an ApsaraDB RDS for SQL Server instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::MigrateTask`.
 type RosMigrateTask interface {
 	alicloudroscdkcore.RosResource
 	AttrDbName() alicloudroscdkcore.IResolvable

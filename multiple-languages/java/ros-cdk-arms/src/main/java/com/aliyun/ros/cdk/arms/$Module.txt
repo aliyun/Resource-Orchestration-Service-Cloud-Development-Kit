@@ -23,14 +23,11 @@
 @alicloud/ros-cdk-arms.IEnvironment=com.aliyun.ros.cdk.arms.IEnvironment
 @alicloud/ros-cdk-arms.IEnvironmentFeature=com.aliyun.ros.cdk.arms.IEnvironmentFeature
 @alicloud/ros-cdk-arms.IManagedPrometheus=com.aliyun.ros.cdk.arms.IManagedPrometheus
-@alicloud/ros-cdk-arms.IPrometheus=com.aliyun.ros.cdk.arms.IPrometheus
 @alicloud/ros-cdk-arms.IRetcodeApp=com.aliyun.ros.cdk.arms.IRetcodeApp
 @alicloud/ros-cdk-arms.IRum=com.aliyun.ros.cdk.arms.IRum
 @alicloud/ros-cdk-arms.IXTraceApp=com.aliyun.ros.cdk.arms.IXTraceApp
 @alicloud/ros-cdk-arms.ManagedPrometheus=com.aliyun.ros.cdk.arms.ManagedPrometheus
 @alicloud/ros-cdk-arms.ManagedPrometheusProps=com.aliyun.ros.cdk.arms.ManagedPrometheusProps
-@alicloud/ros-cdk-arms.Prometheus=com.aliyun.ros.cdk.arms.Prometheus
-@alicloud/ros-cdk-arms.PrometheusProps=com.aliyun.ros.cdk.arms.PrometheusProps
 @alicloud/ros-cdk-arms.RetcodeApp=com.aliyun.ros.cdk.arms.RetcodeApp
 @alicloud/ros-cdk-arms.RetcodeAppProps=com.aliyun.ros.cdk.arms.RetcodeAppProps
 @alicloud/ros-cdk-arms.RosAddonRelease=com.aliyun.ros.cdk.arms.RosAddonRelease
@@ -53,9 +50,6 @@
 @alicloud/ros-cdk-arms.RosEnvironmentProps=com.aliyun.ros.cdk.arms.RosEnvironmentProps
 @alicloud/ros-cdk-arms.RosManagedPrometheus=com.aliyun.ros.cdk.arms.RosManagedPrometheus
 @alicloud/ros-cdk-arms.RosManagedPrometheusProps=com.aliyun.ros.cdk.arms.RosManagedPrometheusProps
-@alicloud/ros-cdk-arms.RosPrometheus=com.aliyun.ros.cdk.arms.RosPrometheus
-@alicloud/ros-cdk-arms.RosPrometheus.TagsProperty=com.aliyun.ros.cdk.arms.RosPrometheus$TagsProperty
-@alicloud/ros-cdk-arms.RosPrometheusProps=com.aliyun.ros.cdk.arms.RosPrometheusProps
 @alicloud/ros-cdk-arms.RosRetcodeApp=com.aliyun.ros.cdk.arms.RosRetcodeApp
 @alicloud/ros-cdk-arms.RosRetcodeAppProps=com.aliyun.ros.cdk.arms.RosRetcodeAppProps
 @alicloud/ros-cdk-arms.RosRum=com.aliyun.ros.cdk.arms.RosRum

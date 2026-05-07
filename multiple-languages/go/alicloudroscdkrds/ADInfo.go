@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ADInfo`, which is used to configure Active Directory Domain Services (AD DS).
+// This class encapsulates and extends the ROS resource type `ALIYUN::RDS::ADInfo`.
 type ADInfo interface {
 	alicloudroscdkcore.Resource
 	IADInfo

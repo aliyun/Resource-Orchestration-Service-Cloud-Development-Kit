@@ -84,6 +84,10 @@ func validateRosEnvironments_IsRosResourceParameters(construct alicloudroscdkcor
 	return nil
 }
 
+func (j *jsiiProxy_RosEnvironments) validateSetBindResourceIdParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosEnvironments) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
 	return nil
 }

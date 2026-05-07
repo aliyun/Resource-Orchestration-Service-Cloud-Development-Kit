@@ -49,7 +49,7 @@ export interface IDomainExtension extends ros.IResource {
     readonly attrListenerPort: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::DomainExtension`, which is used to create a domain extension for an SLB instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::DomainExtension`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtension`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-domainextension
  */

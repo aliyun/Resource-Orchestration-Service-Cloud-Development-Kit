@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ADInfo`, which is used to configure Active Directory Domain Services (AD DS).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ADInfo`.
 type RosADInfo interface {
 	alicloudroscdkcore.RosResource
 	AdAccountName() interface{}
