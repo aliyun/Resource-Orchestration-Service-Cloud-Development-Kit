@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-scriptexecution
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.885Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:25:54.811Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.RosScriptExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(RosScriptExecutionProps.Jsii$Proxy.class)
 public interface RosScriptExecutionProps extends software.amazon.jsii.JsiiSerializable {

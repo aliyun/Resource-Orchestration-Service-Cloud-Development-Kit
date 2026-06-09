@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::SyncEcsHost</code>, which is used to create a hostname synchronization task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::SyncEcsHost</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.931Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.938Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.SyncEcsHost")
 public class SyncEcsHost extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.ISyncEcsHost {
 

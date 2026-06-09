@@ -71,7 +71,7 @@ function rosAccountsPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Accounts`, which is used to query the information about database accounts of an ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::Accounts`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accounts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-accounts
  */
@@ -941,7 +941,7 @@ function rosDBInstancesPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstances`, which is used to query ApsaraDB RDS instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::RDS::DBInstances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-rds-dbinstances
  */

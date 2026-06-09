@@ -103,7 +103,7 @@ function rosAScriptPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::AScript`, which is used to create an AScript rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `AScript` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-ascript
  */
@@ -3322,7 +3322,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::Rule`The , which type creates a forwarding rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
@@ -4859,7 +4859,7 @@ function RosRule_TrafficLimitConfigPropertyValidator(properties: any): ros.Valid
         errors.collect(ros.propertyValidator('perIpQps', ros.validateRange)({
             data: properties.perIpQps,
             min: 1,
-            max: 100000,
+            max: 1000000,
           }));
     }
     errors.collect(ros.propertyValidator('perIpQps', ros.validateNumber)(properties.perIpQps));
@@ -4867,7 +4867,7 @@ function RosRule_TrafficLimitConfigPropertyValidator(properties: any): ros.Valid
         errors.collect(ros.propertyValidator('qps', ros.validateRange)({
             data: properties.qps,
             min: 1,
-            max: 100000,
+            max: 1000000,
           }));
     }
     errors.collect(ros.propertyValidator('qps', ros.validateNumber)(properties.qps));

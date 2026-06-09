@@ -3810,7 +3810,7 @@ function rosHttpRequestHeaderModificationRulePropsToRosTemplate(properties: any,
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpRequestHeaderModificationRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpRequestHeaderModificationRule`The , which type is used to create configurations that modify HTTP request headers.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpRequestHeaderModificationRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httprequestheadermodificationrule
  */
@@ -5153,7 +5153,7 @@ function rosHttpsBasicConfigurationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`The , which type is used to add a basic HTTPS configuration for a website.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpsBasicConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsbasicconfiguration
  */
@@ -5524,7 +5524,7 @@ function rosImageTransformPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ImageTransform`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ImageTransform`You can use the , which resource type to add an image transform configuration for a website.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageTransform` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-imagetransform
  */
@@ -6127,7 +6127,7 @@ function rosNetworkOptimizationPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::NetworkOptimization`The , which type is used to add network optimization configurations for a website.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::NetworkOptimization`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkOptimization` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-networkoptimization
  */
@@ -8016,7 +8016,7 @@ function rosPagePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Page`The , which type is used to create a custom response page.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Page`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Page` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-page
  */
@@ -10549,7 +10549,7 @@ function rosSiteDeliveryTaskPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`The , which type is used to create a real-time log delivery task.
  * @Note This class does not contain additional functions, so it is recommended to use the `SiteDeliveryTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-sitedeliverytask
  */

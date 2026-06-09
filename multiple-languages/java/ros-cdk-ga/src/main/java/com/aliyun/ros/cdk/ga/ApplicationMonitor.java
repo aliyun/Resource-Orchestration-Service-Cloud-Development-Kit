@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::ApplicationMonitor</code>, which is used to create an origin probing task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::ApplicationMonitor</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.744Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.745Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.ApplicationMonitor")
 public class ApplicationMonitor extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.IApplicationMonitor {
 

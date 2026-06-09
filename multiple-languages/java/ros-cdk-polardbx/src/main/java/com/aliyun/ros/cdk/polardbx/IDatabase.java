@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardbx;
 /**
  * Represents a <code>Database</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.841Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:29:50.452Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.IDatabase")
 @software.amazon.jsii.Jsii.Proxy(IDatabase.Jsii$Proxy.class)
 public interface IDatabase extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

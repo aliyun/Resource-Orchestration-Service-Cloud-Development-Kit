@@ -5,6 +5,8 @@ export * from './experiment';
 export * from './image';
 export * from './member';
 export * from './modelversion';
+export * from './quota';
+export * from './resourcegroup';
 export * from './run';
 export * from './service';
 export * from './userconfig';

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Handshake`, which is used to create an invitation.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::Handshake`.
 type Handshake interface {
 	alicloudroscdkcore.Resource
 	IHandshake

@@ -32,6 +32,11 @@ export interface DomainProps {
     readonly forceHttps?: boolean | ros.IResolvable;
 
     /**
+     * Property gatewayType: The type of Gateway.
+     */
+    readonly gatewayType?: string | ros.IResolvable;
+
+    /**
      * Property http2Option: Whether to enable http2 settings.
      */
     readonly http2Option?: string | ros.IResolvable;
@@ -114,7 +119,7 @@ export interface IDomain extends ros.IResource {
     readonly attrTlsMin: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Domain`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Domain`, which is used to create a domain name.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
  */
@@ -195,6 +200,7 @@ export class Domain extends ros.Resource implements IDomain {
             certIdentifier: props.certIdentifier,
             tlsMin: props.tlsMin,
             http2Option: props.http2Option,
+            gatewayType: props.gatewayType,
             protocol: props.protocol,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);
         this.resource = rosDomain;

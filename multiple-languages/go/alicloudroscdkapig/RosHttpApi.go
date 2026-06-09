@@ -12,25 +12,37 @@ import (
 // This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::HttpApi`, which is used to create an HTTP API.
 type RosHttpApi interface {
 	alicloudroscdkcore.RosResource
-	AttrBasePath() alicloudroscdkcore.IResolvable
-	AttrDescription() alicloudroscdkcore.IResolvable
-	AttrEnvironments() alicloudroscdkcore.IResolvable
+	AgentProtocols() interface{}
+	SetAgentProtocols(val interface{})
+	AiProtocols() interface{}
+	SetAiProtocols(val interface{})
 	AttrHttpApiId() alicloudroscdkcore.IResolvable
-	AttrHttpApiName() alicloudroscdkcore.IResolvable
-	AttrProtocols() alicloudroscdkcore.IResolvable
-	AttrType() alicloudroscdkcore.IResolvable
+	AuthConfig() interface{}
+	SetAuthConfig(val interface{})
 	BasePath() interface{}
 	SetBasePath(val interface{})
+	BelongGatewayId() interface{}
+	SetBelongGatewayId(val interface{})
+	BuiltinRouteNames() interface{}
+	SetBuiltinRouteNames(val interface{})
 	// Returns: the stack trace of the point where this Resource was created from, sourced
 	// from the +metadata+ entry typed +aliyun:ros:logicalId+, and with the bottom-most
 	// node +internal+ entries filtered.
 	CreationStack() *[]*string
+	DeployConfigs() interface{}
+	SetDeployConfigs(val interface{})
 	Description() interface{}
 	SetDescription(val interface{})
+	EnableAuth() interface{}
+	SetEnableAuth(val interface{})
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
+	FirstByteTimeout() interface{}
+	SetFirstByteTimeout(val interface{})
 	HttpApiName() interface{}
 	SetHttpApiName(val interface{})
+	IngressConfig() interface{}
+	SetIngressConfig(val interface{})
 	// The logical ID for this stack element.
 	//
 	// The logical ID of the element
@@ -41,8 +53,12 @@ type RosHttpApi interface {
 	// Returns: the logical ID as a stringified token. This value will only get
 	// resolved during synthesis.
 	LogicalId() *string
+	ModelCategory() interface{}
+	SetModelCategory(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	OnlyChangeConfig() interface{}
+	SetOnlyChangeConfig(val interface{})
 	Protocols() interface{}
 	SetProtocols(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
@@ -50,6 +66,10 @@ type RosHttpApi interface {
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
 	// coerce it to an IResolvable through `Lazy.any({ produce: resource.ref })`.
 	Ref() *string
+	RemoveBasePathOnForward() interface{}
+	SetRemoveBasePathOnForward(val interface{})
+	ResourceGroupId() interface{}
+	SetResourceGroupId(val interface{})
 	// Options for this resource, such as condition, update policy etc.
 	RosOptions() alicloudroscdkcore.IRosResourceOptions
 	RosProperties() *map[string]interface{}
@@ -59,6 +79,8 @@ type RosHttpApi interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Strategy() interface{}
+	SetStrategy(val interface{})
 	Type() interface{}
 	SetType(val interface{})
 	// Return properties modified after initiation.
@@ -66,6 +88,8 @@ type RosHttpApi interface {
 	// Resources that expose mutable properties should override this function to
 	// collect and return the properties object for this resource.
 	UpdatedProperites() *map[string]interface{}
+	VersionConfig() interface{}
+	SetVersionConfig(val interface{})
 	AddCondition(con alicloudroscdkcore.RosCondition)
 	AddCount(count interface{})
 	// Syntactic sugar for `addOverride(path, undefined)`.
@@ -185,31 +209,21 @@ type jsiiProxy_RosHttpApi struct {
 	internal.Type__alicloudroscdkcoreRosResource
 }
 
-func (j *jsiiProxy_RosHttpApi) AttrBasePath() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RosHttpApi) AgentProtocols() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
-		"attrBasePath",
+		"agentProtocols",
 		&returns,
 	)
 	return returns
 }
 
-func (j *jsiiProxy_RosHttpApi) AttrDescription() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RosHttpApi) AiProtocols() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
-		"attrDescription",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosHttpApi) AttrEnvironments() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
-	_jsii_.Get(
-		j,
-		"attrEnvironments",
+		"aiProtocols",
 		&returns,
 	)
 	return returns
@@ -225,31 +239,11 @@ func (j *jsiiProxy_RosHttpApi) AttrHttpApiId() alicloudroscdkcore.IResolvable {
 	return returns
 }
 
-func (j *jsiiProxy_RosHttpApi) AttrHttpApiName() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
+func (j *jsiiProxy_RosHttpApi) AuthConfig() interface{} {
+	var returns interface{}
 	_jsii_.Get(
 		j,
-		"attrHttpApiName",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosHttpApi) AttrProtocols() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
-	_jsii_.Get(
-		j,
-		"attrProtocols",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_RosHttpApi) AttrType() alicloudroscdkcore.IResolvable {
-	var returns alicloudroscdkcore.IResolvable
-	_jsii_.Get(
-		j,
-		"attrType",
+		"authConfig",
 		&returns,
 	)
 	return returns
@@ -265,11 +259,41 @@ func (j *jsiiProxy_RosHttpApi) BasePath() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosHttpApi) BelongGatewayId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"belongGatewayId",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHttpApi) BuiltinRouteNames() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"builtinRouteNames",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosHttpApi) CreationStack() *[]*string {
 	var returns *[]*string
 	_jsii_.Get(
 		j,
 		"creationStack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHttpApi) DeployConfigs() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"deployConfigs",
 		&returns,
 	)
 	return returns
@@ -285,11 +309,31 @@ func (j *jsiiProxy_RosHttpApi) Description() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosHttpApi) EnableAuth() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"enableAuth",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosHttpApi) EnableResourcePropertyConstraint() *bool {
 	var returns *bool
 	_jsii_.Get(
 		j,
 		"enableResourcePropertyConstraint",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHttpApi) FirstByteTimeout() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"firstByteTimeout",
 		&returns,
 	)
 	return returns
@@ -305,6 +349,16 @@ func (j *jsiiProxy_RosHttpApi) HttpApiName() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosHttpApi) IngressConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"ingressConfig",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosHttpApi) LogicalId() *string {
 	var returns *string
 	_jsii_.Get(
@@ -315,11 +369,31 @@ func (j *jsiiProxy_RosHttpApi) LogicalId() *string {
 	return returns
 }
 
+func (j *jsiiProxy_RosHttpApi) ModelCategory() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"modelCategory",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosHttpApi) Node() alicloudroscdkcore.ConstructNode {
 	var returns alicloudroscdkcore.ConstructNode
 	_jsii_.Get(
 		j,
 		"node",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHttpApi) OnlyChangeConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"onlyChangeConfig",
 		&returns,
 	)
 	return returns
@@ -340,6 +414,26 @@ func (j *jsiiProxy_RosHttpApi) Ref() *string {
 	_jsii_.Get(
 		j,
 		"ref",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHttpApi) RemoveBasePathOnForward() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"removeBasePathOnForward",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHttpApi) ResourceGroupId() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"resourceGroupId",
 		&returns,
 	)
 	return returns
@@ -385,6 +479,16 @@ func (j *jsiiProxy_RosHttpApi) Stack() alicloudroscdkcore.Stack {
 	return returns
 }
 
+func (j *jsiiProxy_RosHttpApi) Strategy() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"strategy",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosHttpApi) Type() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -400,6 +504,16 @@ func (j *jsiiProxy_RosHttpApi) UpdatedProperites() *map[string]interface{} {
 	_jsii_.Get(
 		j,
 		"updatedProperites",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosHttpApi) VersionConfig() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"versionConfig",
 		&returns,
 	)
 	return returns
@@ -433,6 +547,39 @@ func NewRosHttpApi_Override(r RosHttpApi, scope alicloudroscdkcore.Construct, id
 	)
 }
 
+func (j *jsiiProxy_RosHttpApi)SetAgentProtocols(val interface{}) {
+	if err := j.validateSetAgentProtocolsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"agentProtocols",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetAiProtocols(val interface{}) {
+	if err := j.validateSetAiProtocolsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"aiProtocols",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetAuthConfig(val interface{}) {
+	if err := j.validateSetAuthConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"authConfig",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosHttpApi)SetBasePath(val interface{}) {
 	if err := j.validateSetBasePathParameters(val); err != nil {
 		panic(err)
@@ -440,6 +587,39 @@ func (j *jsiiProxy_RosHttpApi)SetBasePath(val interface{}) {
 	_jsii_.Set(
 		j,
 		"basePath",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetBelongGatewayId(val interface{}) {
+	if err := j.validateSetBelongGatewayIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"belongGatewayId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetBuiltinRouteNames(val interface{}) {
+	if err := j.validateSetBuiltinRouteNamesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"builtinRouteNames",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetDeployConfigs(val interface{}) {
+	if err := j.validateSetDeployConfigsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"deployConfigs",
 		val,
 	)
 }
@@ -455,6 +635,17 @@ func (j *jsiiProxy_RosHttpApi)SetDescription(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosHttpApi)SetEnableAuth(val interface{}) {
+	if err := j.validateSetEnableAuthParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"enableAuth",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosHttpApi)SetEnableResourcePropertyConstraint(val *bool) {
 	if err := j.validateSetEnableResourcePropertyConstraintParameters(val); err != nil {
 		panic(err)
@@ -462,6 +653,17 @@ func (j *jsiiProxy_RosHttpApi)SetEnableResourcePropertyConstraint(val *bool) {
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetFirstByteTimeout(val interface{}) {
+	if err := j.validateSetFirstByteTimeoutParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"firstByteTimeout",
 		val,
 	)
 }
@@ -477,6 +679,39 @@ func (j *jsiiProxy_RosHttpApi)SetHttpApiName(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosHttpApi)SetIngressConfig(val interface{}) {
+	if err := j.validateSetIngressConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"ingressConfig",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetModelCategory(val interface{}) {
+	if err := j.validateSetModelCategoryParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"modelCategory",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetOnlyChangeConfig(val interface{}) {
+	if err := j.validateSetOnlyChangeConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"onlyChangeConfig",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosHttpApi)SetProtocols(val interface{}) {
 	if err := j.validateSetProtocolsParameters(val); err != nil {
 		panic(err)
@@ -488,6 +723,39 @@ func (j *jsiiProxy_RosHttpApi)SetProtocols(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosHttpApi)SetRemoveBasePathOnForward(val interface{}) {
+	if err := j.validateSetRemoveBasePathOnForwardParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"removeBasePathOnForward",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetResourceGroupId(val interface{}) {
+	if err := j.validateSetResourceGroupIdParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"resourceGroupId",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetStrategy(val interface{}) {
+	if err := j.validateSetStrategyParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"strategy",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosHttpApi)SetType(val interface{}) {
 	if err := j.validateSetTypeParameters(val); err != nil {
 		panic(err)
@@ -495,6 +763,17 @@ func (j *jsiiProxy_RosHttpApi)SetType(val interface{}) {
 	_jsii_.Set(
 		j,
 		"type",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosHttpApi)SetVersionConfig(val interface{}) {
+	if err := j.validateSetVersionConfigParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"versionConfig",
 		val,
 	)
 }

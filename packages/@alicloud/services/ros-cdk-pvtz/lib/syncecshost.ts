@@ -32,7 +32,7 @@ export interface ISyncEcsHost extends ros.IResource {
     readonly props: SyncEcsHostProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`, which is used to create a hostname synchronization task.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSyncEcsHost`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-syncecshost
  */

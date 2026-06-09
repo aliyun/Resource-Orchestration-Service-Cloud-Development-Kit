@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Plugin`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Plugin`, which is used to query the information about a plug-in.
 type Plugin interface {
 	alicloudroscdkcore.Resource
 	IPlugin

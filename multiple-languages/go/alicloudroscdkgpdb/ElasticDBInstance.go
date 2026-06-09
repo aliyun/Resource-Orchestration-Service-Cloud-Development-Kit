@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`.
 type ElasticDBInstance interface {
 	alicloudroscdkcore.Resource
 	IElasticDBInstance

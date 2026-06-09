@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddos;
 /**
  * Represents a <code>Policy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.686Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:15:30.707Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddos.$Module.class, fqn = "@alicloud/ros-cdk-ddos.IPolicy")
 @software.amazon.jsii.Jsii.Proxy(IPolicy.Jsii$Proxy.class)
 public interface IPolicy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

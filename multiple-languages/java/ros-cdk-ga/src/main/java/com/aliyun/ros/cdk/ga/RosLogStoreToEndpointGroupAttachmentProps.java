@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-logstoretoendpointgroupattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.870Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosLogStoreToEndpointGroupAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosLogStoreToEndpointGroupAttachmentProps.Jsii$Proxy.class)
 public interface RosLogStoreToEndpointGroupAttachmentProps extends software.amazon.jsii.JsiiSerializable {

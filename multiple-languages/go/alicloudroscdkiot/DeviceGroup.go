@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::DeviceGroup`, which is used to create a group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::IOT::DeviceGroup`.
 type DeviceGroup interface {
 	alicloudroscdkcore.Resource
 	IDeviceGroup

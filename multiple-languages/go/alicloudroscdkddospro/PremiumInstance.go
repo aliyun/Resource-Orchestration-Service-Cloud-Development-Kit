@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DDoSPro::PremiumInstance`, which is used to create an Anti-DDoS Proxy (Outside Chinese Mainland) instance.
 type PremiumInstance interface {
 	alicloudroscdkcore.Resource
 	IPremiumInstance

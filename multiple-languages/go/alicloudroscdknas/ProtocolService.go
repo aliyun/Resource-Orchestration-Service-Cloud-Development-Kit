@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolService`, which is used to create a protocol service for a Cloud Paralleled File System (CPFS) file system.
+// This class encapsulates and extends the ROS resource type `ALIYUN::NAS::ProtocolService`.
 type ProtocolService interface {
 	alicloudroscdkcore.Resource
 	IProtocolService

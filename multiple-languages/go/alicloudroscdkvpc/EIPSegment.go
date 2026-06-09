@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPSegment`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::VPC::EIPSegment`, which is used to apply for contiguous elastic IP addresses (EIPs).
 type EIPSegment interface {
 	alicloudroscdkcore.Resource
 	IEIPSegment

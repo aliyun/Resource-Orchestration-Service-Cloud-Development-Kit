@@ -42,7 +42,7 @@ export interface IPackage extends ros.IResource {
     readonly attrProjectName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Package`, which is used to create a package.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Package`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-package
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cdt;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdt-resourcepackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.247Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:43:56.312Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdt.$Module.class, fqn = "@alicloud/ros-cdk-cdt.ResourcePackageProps")
 @software.amazon.jsii.Jsii.Proxy(ResourcePackageProps.Jsii$Proxy.class)
 public interface ResourcePackageProps extends software.amazon.jsii.JsiiSerializable {

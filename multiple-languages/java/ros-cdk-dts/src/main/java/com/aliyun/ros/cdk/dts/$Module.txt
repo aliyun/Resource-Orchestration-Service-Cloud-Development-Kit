@@ -5,11 +5,14 @@
 @alicloud/ros-cdk-dts.IConsumerChannel=com.aliyun.ros.cdk.dts.IConsumerChannel
 @alicloud/ros-cdk-dts.IConsumerGroup=com.aliyun.ros.cdk.dts.IConsumerGroup
 @alicloud/ros-cdk-dts.IInstance=com.aliyun.ros.cdk.dts.IInstance
+@alicloud/ros-cdk-dts.IJobMonitorRule=com.aliyun.ros.cdk.dts.IJobMonitorRule
 @alicloud/ros-cdk-dts.IMigrationJob2=com.aliyun.ros.cdk.dts.IMigrationJob2
 @alicloud/ros-cdk-dts.ISubscriptionJob2=com.aliyun.ros.cdk.dts.ISubscriptionJob2
 @alicloud/ros-cdk-dts.ISynchronizationJob2=com.aliyun.ros.cdk.dts.ISynchronizationJob2
 @alicloud/ros-cdk-dts.Instance=com.aliyun.ros.cdk.dts.Instance
 @alicloud/ros-cdk-dts.InstanceProps=com.aliyun.ros.cdk.dts.InstanceProps
+@alicloud/ros-cdk-dts.JobMonitorRule=com.aliyun.ros.cdk.dts.JobMonitorRule
+@alicloud/ros-cdk-dts.JobMonitorRuleProps=com.aliyun.ros.cdk.dts.JobMonitorRuleProps
 @alicloud/ros-cdk-dts.MigrationJob2=com.aliyun.ros.cdk.dts.MigrationJob2
 @alicloud/ros-cdk-dts.MigrationJob2Props=com.aliyun.ros.cdk.dts.MigrationJob2Props
 @alicloud/ros-cdk-dts.RosConsumerChannel=com.aliyun.ros.cdk.dts.RosConsumerChannel
@@ -18,6 +21,8 @@
 @alicloud/ros-cdk-dts.RosConsumerGroupProps=com.aliyun.ros.cdk.dts.RosConsumerGroupProps
 @alicloud/ros-cdk-dts.RosInstance=com.aliyun.ros.cdk.dts.RosInstance
 @alicloud/ros-cdk-dts.RosInstanceProps=com.aliyun.ros.cdk.dts.RosInstanceProps
+@alicloud/ros-cdk-dts.RosJobMonitorRule=com.aliyun.ros.cdk.dts.RosJobMonitorRule
+@alicloud/ros-cdk-dts.RosJobMonitorRuleProps=com.aliyun.ros.cdk.dts.RosJobMonitorRuleProps
 @alicloud/ros-cdk-dts.RosMigrationJob2=com.aliyun.ros.cdk.dts.RosMigrationJob2
 @alicloud/ros-cdk-dts.RosMigrationJob2.DataCheckConfigureProperty=com.aliyun.ros.cdk.dts.RosMigrationJob2$DataCheckConfigureProperty
 @alicloud/ros-cdk-dts.RosMigrationJob2.DestinationEndpointProperty=com.aliyun.ros.cdk.dts.RosMigrationJob2$DestinationEndpointProperty

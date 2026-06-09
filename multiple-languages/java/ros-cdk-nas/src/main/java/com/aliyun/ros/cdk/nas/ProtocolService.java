@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::ProtocolService</code>, which is used to create a protocol service for a Cloud Paralleled File System (CPFS) file system.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::ProtocolService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.963Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.522Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolService")
 public class ProtocolService extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IProtocolService {
 

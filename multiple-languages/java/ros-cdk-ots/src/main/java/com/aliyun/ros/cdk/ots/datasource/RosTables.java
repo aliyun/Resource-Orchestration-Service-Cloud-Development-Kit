@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ots.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::OTS::Tables</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.328Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:18:52.669Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ots.$Module.class, fqn = "@alicloud/ros-cdk-ots.datasource.RosTables")
 public class RosTables extends com.aliyun.ros.cdk.core.RosResource {
 

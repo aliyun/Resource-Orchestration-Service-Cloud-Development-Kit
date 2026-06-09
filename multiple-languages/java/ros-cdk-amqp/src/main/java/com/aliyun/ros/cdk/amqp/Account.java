@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Account</code>The , which type creates username and password for ApsaraMQ for RabbitMQ.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.306Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.784Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.amqp.IAccount {
 

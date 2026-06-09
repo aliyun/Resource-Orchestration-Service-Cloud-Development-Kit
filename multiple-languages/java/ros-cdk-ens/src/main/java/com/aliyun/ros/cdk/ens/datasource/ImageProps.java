@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ens.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ens-image
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:47:31.749Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.datasource.ImageProps")
 @software.amazon.jsii.Jsii.Proxy(ImageProps.Jsii$Proxy.class)
 public interface ImageProps extends software.amazon.jsii.JsiiSerializable {

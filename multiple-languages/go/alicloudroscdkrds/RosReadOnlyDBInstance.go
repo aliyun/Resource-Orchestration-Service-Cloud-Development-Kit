@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`.
 type RosReadOnlyDBInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrConnectionString() alicloudroscdkcore.IResolvable

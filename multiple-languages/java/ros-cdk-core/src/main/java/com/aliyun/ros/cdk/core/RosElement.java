@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * An element of a stack.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.787Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:05:41.235Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.RosElement")
 public abstract class RosElement extends com.aliyun.ros.cdk.core.Construct {
 

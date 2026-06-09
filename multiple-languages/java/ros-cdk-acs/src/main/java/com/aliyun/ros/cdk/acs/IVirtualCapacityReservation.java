@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acs;
 /**
  * Represents a <code>VirtualCapacityReservation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:11:47.736Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.IVirtualCapacityReservation")
 @software.amazon.jsii.Jsii.Proxy(IVirtualCapacityReservation.Jsii$Proxy.class)
 public interface IVirtualCapacityReservation extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

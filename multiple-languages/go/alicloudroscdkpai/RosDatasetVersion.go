@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::DatasetVersion`, which is used to create a dataset version.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::DatasetVersion`.
 type RosDatasetVersion interface {
 	alicloudroscdkcore.RosResource
 	AttrVersionName() alicloudroscdkcore.IResolvable

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * Represents a <code>ServiceSettings</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.165Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.927Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.IServiceSettings")
 @software.amazon.jsii.Jsii.Proxy(IServiceSettings.Jsii$Proxy.class)
 public interface IServiceSettings extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

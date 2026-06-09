@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Represents a <code>SignatureBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.647Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.564Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.ISignatureBinding")
 @software.amazon.jsii.Jsii.Proxy(ISignatureBinding.Jsii$Proxy.class)
 public interface ISignatureBinding extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

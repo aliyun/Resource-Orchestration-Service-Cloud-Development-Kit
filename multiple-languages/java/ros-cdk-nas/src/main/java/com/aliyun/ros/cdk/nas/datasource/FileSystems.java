@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::NAS::FileSystems</code>, which is used to query the information about file systems.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::NAS::FileSystems</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.552Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.FileSystems")
 public class FileSystems extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.datasource.IFileSystems {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayService`The , which resource is used to import a service into a gateway.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayService`.
 type GatewayService interface {
 	alicloudroscdkcore.Resource
 	IGatewayService

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Ignores file paths based on the <a href="https://git-scm.com/docs/gitignore"><code>.gitignore specification</code></a>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.746Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:05:41.203Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.GitIgnoreStrategy")
 public class GitIgnoreStrategy extends com.aliyun.ros.cdk.core.IgnoreStrategy {
 

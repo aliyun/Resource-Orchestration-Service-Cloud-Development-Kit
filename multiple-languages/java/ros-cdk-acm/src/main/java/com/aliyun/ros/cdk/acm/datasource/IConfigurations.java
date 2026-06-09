@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acm.datasource;
 /**
  * Represents a <code>Configurations</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.848Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:10:26.808Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.datasource.IConfigurations")
 @software.amazon.jsii.Jsii.Proxy(IConfigurations.Jsii$Proxy.class)
 public interface IConfigurations extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

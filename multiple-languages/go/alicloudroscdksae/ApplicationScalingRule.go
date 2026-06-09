@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`, which is used to create an auto scaling policy for an application.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`.
 type ApplicationScalingRule interface {
 	alicloudroscdkcore.Resource
 	IApplicationScalingRule

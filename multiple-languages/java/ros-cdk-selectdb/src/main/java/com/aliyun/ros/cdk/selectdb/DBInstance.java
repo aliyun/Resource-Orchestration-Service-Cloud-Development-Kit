@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.selectdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SELECTDB::DBInstance</code>, which is used to create an ApsaraDB for SelectDB instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.088Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:49:12.833Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.selectdb.$Module.class, fqn = "@alicloud/ros-cdk-selectdb.DBInstance")
 public class DBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.selectdb.IDBInstance {
 

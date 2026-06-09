@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AccessKey`The , which resource type retrieves a specified RAM user’s AccessKey ID, AccessKey secret, and AccessKey status.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AccessKey`.
 type AccessKey interface {
 	alicloudroscdkcore.Resource
 	IAccessKey

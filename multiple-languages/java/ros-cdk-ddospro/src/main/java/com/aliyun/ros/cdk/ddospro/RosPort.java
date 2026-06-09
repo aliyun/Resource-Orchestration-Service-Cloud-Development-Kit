@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DDoSPro::Port</code>, which is used to create a port forwarding rule for an Anti-DDoS Proxy instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.733Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:17:14.285Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.RosPort")
 public class RosPort extends com.aliyun.ros.cdk.core.RosResource {
 

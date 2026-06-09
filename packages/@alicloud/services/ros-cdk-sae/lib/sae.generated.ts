@@ -1518,7 +1518,7 @@ function rosApplicationScalingRulePropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`, which is used to create an auto scaling policy for an application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::ApplicationScalingRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationScalingRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-applicationscalingrule
  */
@@ -2295,7 +2295,7 @@ function rosIngressPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Ingress`, which is used to create a routing rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Ingress` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-ingress
  */
@@ -2623,7 +2623,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Namespace`, which is used to create a Namespace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Namespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-namespace
  */
@@ -2981,7 +2981,7 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Secret`The , which type is used to create a Secret instance in the namespace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAE::Secret`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sae-secret
  */

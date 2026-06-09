@@ -63,7 +63,7 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`, which is used to create an alias for a Customer Master Key (CMK).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Alias`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Alias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */
@@ -317,7 +317,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Instance`, which is used to create a Key Management Service (KMS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
  */
@@ -671,7 +671,7 @@ function rosKeyPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`The , which resource creates a master key.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Key` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */
@@ -929,7 +929,7 @@ function rosNetworkRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::NetworkRule`, which is used to create a network access rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::NetworkRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-networkrule
  */
@@ -1106,7 +1106,7 @@ function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Policy`, which is used to create a permission policy to configure the keys and secrets that applications are allowed to access.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Policy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy
  */
@@ -1471,7 +1471,7 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Secret`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-secret
  */

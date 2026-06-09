@@ -45,7 +45,7 @@ export interface IDatabases extends ros.IResource {
     readonly attrPolarDbxDatabases: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Databases`, which is used to query PolarDB for Xscale (PolarDB-X) databases.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::PolarDBX::Databases`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDatabases`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardbx-databases
  */

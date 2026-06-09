@@ -16,7 +16,7 @@ package com.aliyun.ros.cdk.core;
  * The file/directory are staged based on their content hash (fingerprint). This
  * means that only if content was changed, copy will happen.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.676Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:05:41.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AssetStaging")
 public class AssetStaging extends com.aliyun.ros.cdk.core.Construct {
 

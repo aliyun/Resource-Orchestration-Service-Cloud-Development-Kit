@@ -90,7 +90,7 @@ export interface IUser extends ros.IResource {
     readonly attrUserName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::User`The , which resource creates a RAM user.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::User`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUser`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */

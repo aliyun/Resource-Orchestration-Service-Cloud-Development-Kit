@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Pai
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`, which is used to associate Realtime Compute for Apache Flink resources with a workspace.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosWorkspaceResourceFlink`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink

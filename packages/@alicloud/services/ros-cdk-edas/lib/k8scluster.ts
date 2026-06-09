@@ -81,7 +81,7 @@ export interface IK8sCluster extends ros.IResource {
     readonly attrVswitchId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::K8sCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosK8sCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */

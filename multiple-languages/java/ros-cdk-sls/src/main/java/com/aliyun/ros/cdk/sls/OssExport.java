@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SLS::OssExport</code>, which is used to create an Object Storage Service (OSS) data shipping job to manage Simple Log Service (SLS) data and ship Logstore data to OSS for storage.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.423Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:57:03.203Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.OssExport")
 public class OssExport extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sls.IOssExport {
 

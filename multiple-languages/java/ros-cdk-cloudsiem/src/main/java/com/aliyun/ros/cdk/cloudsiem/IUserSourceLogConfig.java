@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsiem;
 /**
  * Represents a <code>UserSourceLogConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.841Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:51:36.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.IUserSourceLogConfig")
 @software.amazon.jsii.Jsii.Proxy(IUserSourceLogConfig.Jsii$Proxy.class)
 public interface IUserSourceLogConfig extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

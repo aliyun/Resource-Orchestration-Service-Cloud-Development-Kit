@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::BackendServerAttachment`, which is used to add backend servers to a Network Load Balancer (NLB) server group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::BackendServerAttachment`.
 type RosBackendServerAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrServerGroupId() alicloudroscdkcore.IResolvable

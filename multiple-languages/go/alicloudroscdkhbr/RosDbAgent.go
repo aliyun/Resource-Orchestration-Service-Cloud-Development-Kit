@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbAgent`, which is used to install a Data Disaster Recovery client.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::HBR::DbAgent`.
 type RosDbAgent interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceIds() alicloudroscdkcore.IResolvable

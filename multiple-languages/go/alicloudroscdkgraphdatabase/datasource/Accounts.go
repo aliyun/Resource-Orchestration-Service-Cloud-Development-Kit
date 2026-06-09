@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::Accounts`, which is used to query the information about accounts.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::Accounts`.
 type Accounts interface {
 	alicloudroscdkcore.Resource
 	IAccounts

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * Represents a <code>HostAccount</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.024Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.503Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.IHostAccount")
 @software.amazon.jsii.Jsii.Proxy(IHostAccount.Jsii$Proxy.class)
 public interface IHostAccount extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

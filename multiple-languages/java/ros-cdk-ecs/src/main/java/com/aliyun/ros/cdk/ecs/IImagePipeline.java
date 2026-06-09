@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>ImagePipeline</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.573Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.IImagePipeline")
 @software.amazon.jsii.Jsii.Proxy(IImagePipeline.Jsii$Proxy.class)
 public interface IImagePipeline extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

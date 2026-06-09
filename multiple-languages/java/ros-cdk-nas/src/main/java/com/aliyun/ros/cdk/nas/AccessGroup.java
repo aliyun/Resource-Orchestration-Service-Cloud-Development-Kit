@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::AccessGroup</code>, which is used to create a permission group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::AccessGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.940Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.465Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessGroup")
 public class AccessGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IAccessGroup {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.paifeaturestore;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paifeaturestore-datasource
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.632Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:25:42.664Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paifeaturestore.$Module.class, fqn = "@alicloud/ros-cdk-paifeaturestore.RosDatasourceProps")
 @software.amazon.jsii.Jsii.Proxy(RosDatasourceProps.Jsii$Proxy.class)
 public interface RosDatasourceProps extends software.amazon.jsii.JsiiSerializable {

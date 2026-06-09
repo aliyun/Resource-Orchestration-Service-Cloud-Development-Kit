@@ -144,7 +144,7 @@ export interface INetworkOptimization extends ros.IResource {
     readonly attrWebsocket: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`The , which type is used to add network optimization configurations for a website.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkOptimization`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-networkoptimization
  */

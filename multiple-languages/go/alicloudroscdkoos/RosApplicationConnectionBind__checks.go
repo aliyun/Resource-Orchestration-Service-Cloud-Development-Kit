@@ -326,6 +326,66 @@ func (j *jsiiProxy_RosApplicationConnectionBind) validateSetEnableResourceProper
 	return nil
 }
 
+func (j *jsiiProxy_RosApplicationConnectionBind) validateSetParametersParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosApplicationConnectionBind_ParametersProperty:
+				v := v.(*RosApplicationConnectionBind_ParametersProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosApplicationConnectionBind_ParametersProperty:
+				v_ := v.(RosApplicationConnectionBind_ParametersProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApplicationConnectionBind_ParametersProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosApplicationConnectionBind_ParametersProperty:
+				v := v.(*RosApplicationConnectionBind_ParametersProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosApplicationConnectionBind_ParametersProperty:
+				v_ := v.(RosApplicationConnectionBind_ParametersProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosApplicationConnectionBind_ParametersProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func validateNewRosApplicationConnectionBindParameters(scope alicloudroscdkcore.Construct, id *string, props *RosApplicationConnectionBindProps, enableResourcePropertyConstraint *bool) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

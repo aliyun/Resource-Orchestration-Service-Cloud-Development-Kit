@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc.datasource;
 /**
  * Represents a <code>Nodes</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.614Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.741Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.datasource.INodes")
 @software.amazon.jsii.Jsii.Proxy(INodes.Jsii$Proxy.class)
 public interface INodes extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

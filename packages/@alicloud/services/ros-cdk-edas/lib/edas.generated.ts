@@ -489,7 +489,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Cluster`, which is used to create a cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-cluster
  */
@@ -4578,7 +4578,7 @@ function rosK8sClusterPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sCluster`, which is used to create a cluster of Container Service for Kubernetes (ACK).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `K8sCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8scluster
  */
@@ -4798,7 +4798,7 @@ function rosK8sSlbBindingPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::K8sSlbBinding`, which is used to bind a Server Load Balancer (SLB) instance to an application in a Container Service for Kubernetes (ACK) cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `K8sSlbBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-k8sslbbinding
  */
@@ -5385,7 +5385,7 @@ function rosUserDefineRegionPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::UserDefineRegion`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::UserDefineRegion`, which is used to create or edit a custom namespace.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserDefineRegion` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-userdefineregion
  */

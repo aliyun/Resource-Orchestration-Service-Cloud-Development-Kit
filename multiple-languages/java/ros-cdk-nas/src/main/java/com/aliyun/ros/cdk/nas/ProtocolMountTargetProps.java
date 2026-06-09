@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.962Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.520Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolMountTargetProps")
 @software.amazon.jsii.Jsii.Proxy(ProtocolMountTargetProps.Jsii$Proxy.class)
 public interface ProtocolMountTargetProps extends software.amazon.jsii.JsiiSerializable {

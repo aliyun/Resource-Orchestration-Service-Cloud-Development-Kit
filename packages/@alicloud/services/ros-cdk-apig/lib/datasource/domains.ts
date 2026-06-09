@@ -40,7 +40,7 @@ export interface IDomains extends ros.IResource {
     readonly attrDomains: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Domains`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Domains`The , which type is used to query domain list.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-domains
  */

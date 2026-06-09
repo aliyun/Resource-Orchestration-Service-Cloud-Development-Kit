@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosApplicationConnectionBind) validateSetEnableResourceProper
 	return nil
 }
 
+func (j *jsiiProxy_RosApplicationConnectionBind) validateSetParametersParameters(val interface{}) error {
+	return nil
+}
+
 func validateNewRosApplicationConnectionBindParameters(scope alicloudroscdkcore.Construct, id *string, props *RosApplicationConnectionBindProps, enableResourcePropertyConstraint *bool) error {
 	return nil
 }

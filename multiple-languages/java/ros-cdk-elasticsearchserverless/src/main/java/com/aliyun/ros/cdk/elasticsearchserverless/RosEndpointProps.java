@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.elasticsearchserverless;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-elasticsearchserverless-endpoint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.658Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:44:50.447Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.elasticsearchserverless.$Module.class, fqn = "@alicloud/ros-cdk-elasticsearchserverless.RosEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(RosEndpointProps.Jsii$Proxy.class)
 public interface RosEndpointProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.appflow;
 /**
  * Represents a <code>Flow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.791Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.445Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.IFlow")
 @software.amazon.jsii.Jsii.Proxy(IFlow.Jsii$Proxy.class)
 public interface IFlow extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

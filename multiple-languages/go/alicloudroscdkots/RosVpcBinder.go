@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VpcBinder`, which is used to bind a Tablestore instance to a virtual private cloud (VPC).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VpcBinder`.
 type RosVpcBinder interface {
 	alicloudroscdkcore.RosResource
 	AttrDomains() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Image`, which is used to query the information about a custom image.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ENS::Image`.
 type Image interface {
 	alicloudroscdkcore.Resource
 	IImage

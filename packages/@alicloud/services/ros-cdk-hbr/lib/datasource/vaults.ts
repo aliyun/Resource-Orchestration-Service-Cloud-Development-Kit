@@ -47,7 +47,7 @@ export interface IVaults extends ros.IResource {
     readonly attrVaults: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::HBR::Vaults`, which is used to query the basic information about backup vaults.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::HBR::Vaults`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVaults`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-hbr-vaults
  */

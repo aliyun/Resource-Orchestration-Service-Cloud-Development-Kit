@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Represents a <code>BucketPublicAccessBlock</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.860Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.872Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.IBucketPublicAccessBlock")
 @software.amazon.jsii.Jsii.Proxy(IBucketPublicAccessBlock.Jsii$Proxy.class)
 public interface IBucketPublicAccessBlock extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

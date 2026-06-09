@@ -268,7 +268,7 @@ export interface IMultiZoneInstance extends ros.IResource {
     readonly attrJdbcUrlList: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`, which is used to create a multi-zone Lindorm instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Lindorm::MultiZoneInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMultiZoneInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-lindorm-multizoneinstance
  */

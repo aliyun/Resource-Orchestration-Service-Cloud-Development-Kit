@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::AuditPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.704Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:10:27.827Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.AuditPolicy")
 public class AuditPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mongodb.IAuditPolicy {
 

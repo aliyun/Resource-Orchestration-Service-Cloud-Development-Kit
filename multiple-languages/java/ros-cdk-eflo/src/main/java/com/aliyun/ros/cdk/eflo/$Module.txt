@@ -1,0 +1,7 @@
+@alicloud/ros-cdk-eflo.IVpd=com.aliyun.ros.cdk.eflo.IVpd
+@alicloud/ros-cdk-eflo.RosVpd=com.aliyun.ros.cdk.eflo.RosVpd
+@alicloud/ros-cdk-eflo.RosVpd.SubnetsProperty=com.aliyun.ros.cdk.eflo.RosVpd$SubnetsProperty
+@alicloud/ros-cdk-eflo.RosVpd.TagsProperty=com.aliyun.ros.cdk.eflo.RosVpd$TagsProperty
+@alicloud/ros-cdk-eflo.RosVpdProps=com.aliyun.ros.cdk.eflo.RosVpdProps
+@alicloud/ros-cdk-eflo.Vpd=com.aliyun.ros.cdk.eflo.Vpd
+@alicloud/ros-cdk-eflo.VpdProps=com.aliyun.ros.cdk.eflo.VpdProps

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`, which is used to create a global database network (GDN).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`.
 type RosGlobalDatabaseNetwork interface {
 	alicloudroscdkcore.RosResource
 	AttrConnections() alicloudroscdkcore.IResolvable

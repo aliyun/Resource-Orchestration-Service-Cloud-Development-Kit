@@ -53,7 +53,7 @@ export interface IScalingGroups extends ros.IResource {
     readonly attrScalingGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingGroups`, which is used to query scaling groups.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ESS::ScalingGroups`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ess-scalinggroups
  */

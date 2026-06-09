@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * Represents a <code>ZoneRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.918Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.913Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.IZoneRecord")
 @software.amazon.jsii.Jsii.Proxy(IZoneRecord.Jsii$Proxy.class)
 public interface IZoneRecord extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

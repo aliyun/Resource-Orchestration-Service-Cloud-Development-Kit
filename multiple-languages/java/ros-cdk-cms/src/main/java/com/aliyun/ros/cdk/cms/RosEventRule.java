@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::EventRule</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::EventRule</code>, which is used to create or modify an event-triggered alert rule.
+ * <p>
+ * If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.053Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.009Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosEventRule")
 public class RosEventRule extends com.aliyun.ros.cdk.core.RosResource {
 

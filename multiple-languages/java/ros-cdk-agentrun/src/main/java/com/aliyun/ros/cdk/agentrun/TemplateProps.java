@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.agentrun;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-agentrun-template
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:20:40.765Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.agentrun.$Module.class, fqn = "@alicloud/ros-cdk-agentrun.TemplateProps")
 @software.amazon.jsii.Jsii.Proxy(TemplateProps.Jsii$Proxy.class)
 public interface TemplateProps extends software.amazon.jsii.JsiiSerializable {

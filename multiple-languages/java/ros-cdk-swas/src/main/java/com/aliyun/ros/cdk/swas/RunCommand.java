@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.swas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SWAS::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.553Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:58:36.015Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.swas.$Module.class, fqn = "@alicloud/ros-cdk-swas.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.swas.IRunCommand {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`, which is used to create a secret and store the initial version of the secret.
+// This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Secret`.
 type Secret interface {
 	alicloudroscdkcore.Resource
 	ISecret

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>VcoRouteEntry</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.455Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IVcoRouteEntry")
 @software.amazon.jsii.Jsii.Proxy(IVcoRouteEntry.Jsii$Proxy.class)
 public interface IVcoRouteEntry extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

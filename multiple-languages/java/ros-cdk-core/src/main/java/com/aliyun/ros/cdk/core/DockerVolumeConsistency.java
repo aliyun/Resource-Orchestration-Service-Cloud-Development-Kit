@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.core;
  * <p>
  * Only valid on macOS due to the way file storage works on Mac
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.715Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:05:41.180Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DockerVolumeConsistency")
 public enum DockerVolumeConsistency {
     /**

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`, which is used to query the information about an instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::GraphDatabase::DbInstance`.
 type DbInstance interface {
 	alicloudroscdkcore.Resource
 	IDbInstance

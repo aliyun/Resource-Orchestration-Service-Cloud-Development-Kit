@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.flink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-member
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.678Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:06:21.266Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.RosMemberProps")
 @software.amazon.jsii.Jsii.Proxy(RosMemberProps.Jsii$Proxy.class)
 public interface RosMemberProps extends software.amazon.jsii.JsiiSerializable {

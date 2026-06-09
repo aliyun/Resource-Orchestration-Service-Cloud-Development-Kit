@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::SecurityGroupAttachment</code>, which is used to bind a security group to a Network Load Balancer (NLB) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::SecurityGroupAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.079Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:01:45.102Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.SecurityGroupAttachment")
 public class SecurityGroupAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nlb.ISecurityGroupAttachment {
 

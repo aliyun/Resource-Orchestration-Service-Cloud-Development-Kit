@@ -8,51 +8,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
     [JsiiInterface(nativeType: typeof(IHttpApi), fullyQualifiedName: "@alicloud/ros-cdk-apig.IHttpApi")]
     public interface IHttpApi : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
-        /// <summary>Attribute BasePath: The base path of the API.</summary>
-        [JsiiProperty(name: "attrBasePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrBasePath
-        {
-            get;
-        }
-
-        /// <summary>Attribute Description: Description of API.</summary>
-        [JsiiProperty(name: "attrDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrDescription
-        {
-            get;
-        }
-
-        /// <summary>Attribute Environments: Published Environmental Information of the API.</summary>
-        [JsiiProperty(name: "attrEnvironments", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrEnvironments
-        {
-            get;
-        }
-
-        /// <summary>Attribute HttpApiId: The ID of the API.</summary>
+        /// <summary>Attribute HttpApiId: The ID of the HTTP API.</summary>
         [JsiiProperty(name: "attrHttpApiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrHttpApiId
-        {
-            get;
-        }
-
-        /// <summary>Attribute HttpApiName: The name of the API.</summary>
-        [JsiiProperty(name: "attrHttpApiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrHttpApiName
-        {
-            get;
-        }
-
-        /// <summary>Attribute Protocols: List of API Access Protocols.</summary>
-        [JsiiProperty(name: "attrProtocols", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrProtocols
-        {
-            get;
-        }
-
-        /// <summary>Attribute Type: The type of HTTP API.</summary>
-        [JsiiProperty(name: "attrType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-        object AttrType
         {
             get;
         }
@@ -71,51 +29,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             {
             }
 
-            /// <summary>Attribute BasePath: The base path of the API.</summary>
-            [JsiiProperty(name: "attrBasePath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrBasePath
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Attribute Description: Description of API.</summary>
-            [JsiiProperty(name: "attrDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrDescription
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Attribute Environments: Published Environmental Information of the API.</summary>
-            [JsiiProperty(name: "attrEnvironments", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrEnvironments
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Attribute HttpApiId: The ID of the API.</summary>
+            /// <summary>Attribute HttpApiId: The ID of the HTTP API.</summary>
             [JsiiProperty(name: "attrHttpApiId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrHttpApiId
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Attribute HttpApiName: The name of the API.</summary>
-            [JsiiProperty(name: "attrHttpApiName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrHttpApiName
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Attribute Protocols: List of API Access Protocols.</summary>
-            [JsiiProperty(name: "attrProtocols", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrProtocols
-            {
-                get => GetInstanceProperty<object>()!;
-            }
-
-            /// <summary>Attribute Type: The type of HTTP API.</summary>
-            [JsiiProperty(name: "attrType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object AttrType
             {
                 get => GetInstanceProperty<object>()!;
             }

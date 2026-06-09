@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayDomain`You can use , which to add an associated domain to a gateway.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayDomain`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGatewayDomain`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewaydomain

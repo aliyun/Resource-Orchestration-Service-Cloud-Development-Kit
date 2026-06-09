@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::APIG::Gateway</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::APIG::Gateway</code>The , which type is used to query gateway details.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.749Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.datasource.RosGateway")
 public class RosGateway extends com.aliyun.ros.cdk.core.RosResource {
 

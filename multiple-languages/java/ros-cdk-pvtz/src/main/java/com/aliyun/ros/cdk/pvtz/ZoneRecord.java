@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pvtz;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::ZoneRecord</code>, which is used to add a Domain Name Service (DNS) record to a private zone.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::ZoneRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.937Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.946Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneRecord")
 public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.IZoneRecord {
 

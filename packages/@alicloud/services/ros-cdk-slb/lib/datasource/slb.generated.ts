@@ -232,7 +232,7 @@ function rosAccessControlsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::AccessControls`, which is used to query created access control lists (ACLs).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::AccessControls`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessControls` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-accesscontrols
  */
@@ -530,7 +530,7 @@ function rosDomainExtensionsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::DomainExtensions`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the additional domains that are added.
  * @Note This class does not contain additional functions, so it is recommended to use the `DomainExtensions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */

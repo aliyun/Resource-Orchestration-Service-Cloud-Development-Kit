@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.computenest.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::ComputeNest::ServiceInstance</code>, which type is used to query the information about a service instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.211Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:00:24.326Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.datasource.ServiceInstance")
 public class ServiceInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.computenest.datasource.IServiceInstance {
 

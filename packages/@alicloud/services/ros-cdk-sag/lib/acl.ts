@@ -28,7 +28,7 @@ export interface IAcl extends ros.IResource {
     readonly attrAclId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACL`, which is used to create an access control list (ACL).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SAG::ACL`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosACL`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
  */

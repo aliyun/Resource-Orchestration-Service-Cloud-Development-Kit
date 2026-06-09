@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketstyle
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.888Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.913Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketStyleProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketStyleProps.Jsii$Proxy.class)
 public interface RosBucketStyleProps extends software.amazon.jsii.JsiiSerializable {

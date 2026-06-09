@@ -1356,7 +1356,7 @@ function RosFunctionPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('instanceConcurrency', ros.validateRange)({
             data: properties.instanceConcurrency,
             min: 1,
-            max: 100,
+            max: 200,
           }));
     }
     errors.collect(ros.propertyValidator('instanceConcurrency', ros.validateNumber)(properties.instanceConcurrency));
@@ -4399,7 +4399,7 @@ function rosTriggerPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Trigger`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC3::Trigger`, which is used to create a Function Compute 3.0 trigger.
  * @Note This class does not contain additional functions, so it is recommended to use the `Trigger` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-trigger
  */

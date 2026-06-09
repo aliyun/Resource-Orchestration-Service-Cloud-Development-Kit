@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`The , which resource type creates custom route entries.
 type Route interface {
 	alicloudroscdkcore.Resource
 	IRoute

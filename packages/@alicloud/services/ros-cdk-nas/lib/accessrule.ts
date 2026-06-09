@@ -62,7 +62,7 @@ export interface IAccessRule extends ros.IResource {
     readonly attrAccessRuleId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessRule`, which is used to create a rule for a permission group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::NAS::AccessRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
  */

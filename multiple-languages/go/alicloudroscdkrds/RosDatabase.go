@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Database`The , which resource type creates a database in an RDS instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Database`.
 type RosDatabase interface {
 	alicloudroscdkcore.RosResource
 	AttrDbInstanceId() alicloudroscdkcore.IResolvable

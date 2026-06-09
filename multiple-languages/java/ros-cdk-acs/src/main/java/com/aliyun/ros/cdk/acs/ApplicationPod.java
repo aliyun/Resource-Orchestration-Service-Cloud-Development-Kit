@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.acs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::ApplicationPod</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:11:47.706Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.ApplicationPod")
 public class ApplicationPod extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.acs.IApplicationPod {
 

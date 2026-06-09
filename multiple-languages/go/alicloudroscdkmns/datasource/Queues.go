@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queues`, which is used to query all queues within an Alibaba Cloud account.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MNS::Queues`.
 type Queues interface {
 	alicloudroscdkcore.Resource
 	IQueues

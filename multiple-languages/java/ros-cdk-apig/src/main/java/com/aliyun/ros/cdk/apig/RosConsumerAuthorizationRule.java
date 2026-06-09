@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::ConsumerAuthorizationRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.428Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.620Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.RosConsumerAuthorizationRule")
 public class RosConsumerAuthorizationRule extends com.aliyun.ros.cdk.core.RosResource {
 

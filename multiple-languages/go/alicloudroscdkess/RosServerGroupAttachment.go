@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group.
-//
-// Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
 type RosServerGroupAttachment interface {
 	alicloudroscdkcore.RosResource
 	AttrScalingActivityId() alicloudroscdkcore.IResolvable

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`The , which type is used to add network optimization configurations for a website.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::NetworkOptimization`.
 type NetworkOptimization interface {
 	alicloudroscdkcore.Resource
 	INetworkOptimization

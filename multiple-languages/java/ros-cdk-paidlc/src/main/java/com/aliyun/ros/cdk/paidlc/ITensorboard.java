@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidlc;
 /**
  * Represents a <code>Tensorboard</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.574Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:23:04.918Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidlc.$Module.class, fqn = "@alicloud/ros-cdk-paidlc.ITensorboard")
 @software.amazon.jsii.Jsii.Proxy(ITensorboard.Jsii$Proxy.class)
 public interface ITensorboard extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

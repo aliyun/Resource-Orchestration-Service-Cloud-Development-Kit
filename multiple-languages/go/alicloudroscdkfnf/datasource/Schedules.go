@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedules`, which is used to query time-based schedules.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::FNF::Schedules`.
 type Schedules interface {
 	alicloudroscdkcore.Resource
 	ISchedules

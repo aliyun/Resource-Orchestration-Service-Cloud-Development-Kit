@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kafka;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-acl
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.413Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.560Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.AclProps")
 @software.amazon.jsii.Jsii.Proxy(AclProps.Jsii$Proxy.class)
 public interface AclProps extends software.amazon.jsii.JsiiSerializable {

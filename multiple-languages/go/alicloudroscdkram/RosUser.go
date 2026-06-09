@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`The , which resource creates a RAM user.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`.
 type RosUser interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateDate() alicloudroscdkcore.IResolvable

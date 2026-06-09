@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * Represents a <code>VirtualHost</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.330Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.810Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.IVirtualHost")
 @software.amazon.jsii.Jsii.Proxy(IVirtualHost.Jsii$Proxy.class)
 public interface IVirtualHost extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

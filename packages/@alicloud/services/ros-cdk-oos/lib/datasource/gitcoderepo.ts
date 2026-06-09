@@ -55,7 +55,7 @@ export interface IGitCodeRepo extends ros.IResource {
     readonly attrAuthorizedUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::GitCodeRepo`, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::GitCodeRepo`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGitCodeRepo`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::NLB::LoadBalancer`The , which type is used to query the basic information of single Network Load Balancer (NLB) instance.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::NLB::LoadBalancer`.
 type LoadBalancer interface {
 	alicloudroscdkcore.Resource
 	ILoadBalancer

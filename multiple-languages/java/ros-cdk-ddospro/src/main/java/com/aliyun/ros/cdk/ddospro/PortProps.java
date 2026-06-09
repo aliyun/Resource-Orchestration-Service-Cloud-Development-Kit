@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ddospro;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-port
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.723Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:17:14.263Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.PortProps")
 @software.amazon.jsii.Jsii.Proxy(PortProps.Jsii$Proxy.class)
 public interface PortProps extends software.amazon.jsii.JsiiSerializable {

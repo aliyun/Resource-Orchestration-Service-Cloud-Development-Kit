@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.schedulerx;
 /**
  * Represents a <code>WorkFlow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.044Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:46:20.752Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.schedulerx.$Module.class, fqn = "@alicloud/ros-cdk-schedulerx.IWorkFlow")
 @software.amazon.jsii.Jsii.Proxy(IWorkFlow.Jsii$Proxy.class)
 public interface IWorkFlow extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

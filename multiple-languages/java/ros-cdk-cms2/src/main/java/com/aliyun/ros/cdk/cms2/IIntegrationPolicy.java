@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms2;
 /**
  * Represents a <code>IntegrationPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.156Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:59:01.326Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms2.$Module.class, fqn = "@alicloud/ros-cdk-cms2.IIntegrationPolicy")
 @software.amazon.jsii.Jsii.Proxy(IIntegrationPolicy.Jsii$Proxy.class)
 public interface IIntegrationPolicy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

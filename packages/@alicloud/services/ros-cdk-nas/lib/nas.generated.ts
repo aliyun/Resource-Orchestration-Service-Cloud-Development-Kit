@@ -89,7 +89,7 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessGroup`, which is used to create a permission group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
@@ -276,7 +276,7 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessRule`, which is used to create a rule for a permission group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessrule
  */
@@ -523,7 +523,7 @@ function rosDataFlowPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DataFlow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
@@ -895,7 +895,7 @@ function rosFileSystemPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`The , which resource type creates a NAS file system.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::FileSystem`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FileSystem` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-filesystem
  */
@@ -1171,7 +1171,7 @@ function rosFilesetPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`, which is used to create a fileset.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::Fileset`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Fileset` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-fileset
  */
@@ -1362,7 +1362,7 @@ function rosMountTargetPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::MountTarget`You can use the , which resource to create a mount target.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::MountTarget`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-mounttarget
  */
@@ -1576,7 +1576,7 @@ function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`, which is used to create an export directory for a protocol service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
@@ -1819,7 +1819,7 @@ function rosProtocolServicePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolService`, which is used to create a protocol service for a Cloud Paralleled File System (CPFS) file system.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolService`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */

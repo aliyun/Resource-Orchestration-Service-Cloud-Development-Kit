@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`, which is used to modify the parameters of an ApsaraDB RDS instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`.
 type RosDBInstanceParameterGroup interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

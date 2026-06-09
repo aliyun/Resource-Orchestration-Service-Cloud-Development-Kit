@@ -249,7 +249,7 @@ function rosAccessRulePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::AccessRule`, which is used to create a rule for a permission group.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-accessrule
  */
@@ -750,7 +750,7 @@ function rosMountPointPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::MountPoint`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DFS::MountPoint`, which is used to create a mount target.
  * @Note This class does not contain additional functions, so it is recommended to use the `MountPoint` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dfs-mountpoint
  */

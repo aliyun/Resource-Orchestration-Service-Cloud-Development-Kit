@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`, which is used to create a domain name.
 type RosDomain interface {
 	alicloudroscdkcore.RosResource
 	AttrCertIdentifier() alicloudroscdkcore.IResolvable
@@ -35,6 +35,8 @@ type RosDomain interface {
 	SetEnableResourcePropertyConstraint(val *bool)
 	ForceHttps() interface{}
 	SetForceHttps(val interface{})
+	GatewayType() interface{}
+	SetGatewayType(val interface{})
 	Http2Option() interface{}
 	SetHttp2Option(val interface{})
 	// The logical ID for this stack element.
@@ -347,6 +349,16 @@ func (j *jsiiProxy_RosDomain) ForceHttps() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosDomain) GatewayType() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"gatewayType",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosDomain) Http2Option() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -555,6 +567,17 @@ func (j *jsiiProxy_RosDomain)SetForceHttps(val interface{}) {
 	_jsii_.Set(
 		j,
 		"forceHttps",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosDomain)SetGatewayType(val interface{}) {
+	if err := j.validateSetGatewayTypeParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"gatewayType",
 		val,
 	)
 }

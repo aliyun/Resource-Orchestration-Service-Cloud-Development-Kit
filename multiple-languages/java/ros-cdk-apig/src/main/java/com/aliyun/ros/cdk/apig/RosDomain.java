@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::Domain</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::Domain</code>, which is used to create a domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.431Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.622Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.RosDomain")
 public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -183,6 +183,24 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setForceHttps(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "forceHttps", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getGatewayType() {
+        return software.amazon.jsii.Kernel.get(this, "gatewayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setGatewayType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "gatewayType", value);
+    }
+
+    /**
+     */
+    public void setGatewayType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "gatewayType", value);
     }
 
     /**
@@ -667,6 +685,23 @@ public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder forceHttps(final com.aliyun.ros.cdk.core.IResolvable forceHttps) {
             this.props.forceHttps(forceHttps);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param gatewayType This parameter is required.
+         */
+        public Builder gatewayType(final java.lang.String gatewayType) {
+            this.props.gatewayType(gatewayType);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param gatewayType This parameter is required.
+         */
+        public Builder gatewayType(final com.aliyun.ros.cdk.core.IResolvable gatewayType) {
+            this.props.gatewayType(gatewayType);
             return this;
         }
 

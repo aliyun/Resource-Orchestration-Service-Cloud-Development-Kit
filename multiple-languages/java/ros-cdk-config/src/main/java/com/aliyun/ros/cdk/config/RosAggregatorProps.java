@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.config;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.254Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:01:48.356Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.RosAggregatorProps")
 @software.amazon.jsii.Jsii.Proxy(RosAggregatorProps.Jsii$Proxy.class)
 public interface RosAggregatorProps extends software.amazon.jsii.JsiiSerializable {

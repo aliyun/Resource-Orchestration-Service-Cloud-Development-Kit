@@ -87,7 +87,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Rule`, which is used to add a forwarding rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-rule
  */
@@ -329,7 +329,7 @@ function rosSyncEcsHostPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`, which is used to create a hostname synchronization task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::SyncEcsHost`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SyncEcsHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-syncecshost
  */
@@ -722,7 +722,7 @@ function rosZonePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Zone`, which is used to create a built-in authoritative zone.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::Zone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zone
  */
@@ -998,7 +998,7 @@ function rosZoneRecordPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PVTZ::ZoneRecord`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ZoneRecord` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */

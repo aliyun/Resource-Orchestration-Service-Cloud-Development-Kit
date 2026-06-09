@@ -48,7 +48,7 @@ function rosAccessKeyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`The , which resource type retrieves a specified RAM user’s AccessKey ID, AccessKey secret, and AccessKey status.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AccessKey`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessKey` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */
@@ -153,7 +153,7 @@ function rosAppSecretPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AppSecret`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AppSecret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
  */
@@ -359,7 +359,7 @@ function rosApplicationPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`, which is used to create an application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Application`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Application` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-application
  */
@@ -558,7 +558,7 @@ function rosAttachPolicyToGroupPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToGroup`, which is used to attach a policy to a user group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytogroup
  */
@@ -816,7 +816,7 @@ function rosAttachPolicyToUserPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`, which is used to grant permissions to a specified user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AttachPolicyToUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-attachpolicytouser
  */
@@ -1385,7 +1385,7 @@ function rosLoginProfilePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`, which is used to create logon configurations for a Resource Access Management (RAM) user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::LoginProfile`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoginProfile` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
  */
@@ -1583,7 +1583,7 @@ function rosManagedPolicyPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`, which is used to create a Resource Access Management (RAM) policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::ManagedPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ManagedPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-managedpolicy
  */
@@ -1926,7 +1926,7 @@ function rosOIDCProviderPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::OIDCProvider`, which is used to create an OpenID Connect (OIDC) identity provider (IdP).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::OIDCProvider`.
  * @Note This class does not contain additional functions, so it is recommended to use the `OIDCProvider` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-oidcprovider
  */
@@ -2078,7 +2078,7 @@ function rosRamAccountAliasPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`, which is used to create an alias for an Alibaba Cloud account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RamAccountAlias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
@@ -2258,7 +2258,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`The , which resource creates a RAM role.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
@@ -3107,7 +3107,7 @@ function rosSAMLProviderPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::SAMLProvider`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SAMLProvider` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider
  */
@@ -3569,7 +3569,7 @@ function rosUserPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`The , which resource creates a RAM user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::User`.
  * @Note This class does not contain additional functions, so it is recommended to use the `User` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-user
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`, which creates accounts for managing databases.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`.
 type RosAccount interface {
 	alicloudroscdkcore.RosResource
 	AccountDescription() interface{}

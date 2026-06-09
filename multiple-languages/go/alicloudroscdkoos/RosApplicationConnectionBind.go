@@ -36,6 +36,8 @@ type RosApplicationConnectionBind interface {
 	LogicalId() *string
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	Parameters() interface{}
+	SetParameters(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -244,6 +246,16 @@ func (j *jsiiProxy_RosApplicationConnectionBind) Node() alicloudroscdkcore.Const
 	return returns
 }
 
+func (j *jsiiProxy_RosApplicationConnectionBind) Parameters() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"parameters",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosApplicationConnectionBind) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -372,6 +384,17 @@ func (j *jsiiProxy_RosApplicationConnectionBind)SetEnableResourcePropertyConstra
 	_jsii_.Set(
 		j,
 		"enableResourcePropertyConstraint",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosApplicationConnectionBind)SetParameters(val interface{}) {
+	if err := j.validateSetParametersParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"parameters",
 		val,
 	)
 }

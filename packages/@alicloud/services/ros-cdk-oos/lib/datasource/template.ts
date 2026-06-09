@@ -112,7 +112,7 @@ Package: the template for software packages.
     readonly attrUpdatedDate: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Template`The , which type is used to query the details of a single template.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Template`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTemplate`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-template
  */

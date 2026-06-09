@@ -67,7 +67,7 @@ export interface IZoneRecord extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneRecord`, which is used to add a Domain Name Service (DNS) record to a private zone.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::PVTZ::ZoneRecord`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosZoneRecord`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-zonerecord
  */

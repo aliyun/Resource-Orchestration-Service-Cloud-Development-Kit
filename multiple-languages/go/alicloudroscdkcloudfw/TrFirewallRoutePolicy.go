@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`, which is used to create a routing policy for a virtual private cloud (VPC) firewall of a transit router.
 type TrFirewallRoutePolicy interface {
 	alicloudroscdkcore.Resource
 	ITrFirewallRoutePolicy

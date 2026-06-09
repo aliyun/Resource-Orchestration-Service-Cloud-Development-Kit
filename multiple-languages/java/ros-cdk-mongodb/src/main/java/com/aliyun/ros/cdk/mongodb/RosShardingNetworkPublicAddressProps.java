@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mongodb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-shardingnetworkpublicaddress
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.758Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:10:27.892Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.RosShardingNetworkPublicAddressProps")
 @software.amazon.jsii.Jsii.Proxy(RosShardingNetworkPublicAddressProps.Jsii$Proxy.class)
 public interface RosShardingNetworkPublicAddressProps extends software.amazon.jsii.JsiiSerializable {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * Represents a <code>AccountPrivilege</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.731Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.460Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.IAccountPrivilege")
 @software.amazon.jsii.Jsii.Proxy(IAccountPrivilege.Jsii$Proxy.class)
 public interface IAccountPrivilege extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

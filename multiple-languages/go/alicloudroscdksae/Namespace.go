@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Namespace`, which is used to create a Namespace.
+// This class encapsulates and extends the ROS resource type `ALIYUN::SAE::Namespace`.
 type Namespace interface {
 	alicloudroscdkcore.Resource
 	INamespace

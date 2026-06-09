@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::FileSystems`, which is used to query the information about file systems.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::NAS::FileSystems`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFileSystems`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-filesystems

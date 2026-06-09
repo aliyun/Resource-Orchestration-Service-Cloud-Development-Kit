@@ -52,7 +52,7 @@ export interface IApplicationGroupDeployment extends ros.IResource {
     readonly attrName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosApplicationGroupDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
  */

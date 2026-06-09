@@ -123,7 +123,7 @@ function rosCodeSourcePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::CodeSource`, which is used to create a code build in Platform for AI (PAI).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::CodeSource`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CodeSource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-codesource
  */
@@ -894,7 +894,7 @@ function rosDatasetVersionPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::DatasetVersion`, which is used to create a dataset version.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::DatasetVersion`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DatasetVersion` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-datasetversion
  */
@@ -1152,7 +1152,7 @@ function rosExperimentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Experiment`, which is used to create an experiment.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Experiment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Experiment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
  */
@@ -2218,6 +2218,713 @@ function rosModelVersionLabelsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosQuota`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-quota
+ */
+export interface RosQuotaProps {
+
+    /**
+     * @Property quotaName: The name of the quota.
+     */
+    readonly quotaName: string | ros.IResolvable;
+
+    /**
+     * @Property allocateStrategy: The allocation strategy.
+     */
+    readonly allocateStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property clusterSpec: The cluster specification.
+     */
+    readonly clusterSpec?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the quota.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property labels: The labels associated with the quota.
+     */
+    readonly labels?: Array<RosQuota.LabelsProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property min: The minimum resource allocation configuration.
+     */
+    readonly min?: RosQuota.MinProperty | ros.IResolvable;
+
+    /**
+     * @Property parentQuotaId: The ID of the parent quota.
+     */
+    readonly parentQuotaId?: string | ros.IResolvable;
+
+    /**
+     * @Property queueStrategy: The queue strategy.
+     */
+    readonly queueStrategy?: string | ros.IResolvable;
+
+    /**
+     * @Property quotaConfig: The quota configuration.
+     */
+    readonly quotaConfig?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupIds: The list of resource group IDs.
+     */
+    readonly resourceGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The type of the resource.
+     */
+    readonly resourceType?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosQuotaProps`
+ *
+ * @param properties - the TypeScript properties of a `RosQuotaProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosQuotaPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('quotaName', ros.requiredValidator)(properties.quotaName));
+    errors.collect(ros.propertyValidator('quotaName', ros.validateString)(properties.quotaName));
+    errors.collect(ros.propertyValidator('min', RosQuota_MinPropertyValidator)(properties.min));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('resourceGroupIds', ros.listValidator(ros.validateString))(properties.resourceGroupIds));
+    if(properties.allocateStrategy && (typeof properties.allocateStrategy) !== 'object') {
+        errors.collect(ros.propertyValidator('allocateStrategy', ros.validateAllowedValues)({
+          data: properties.allocateStrategy,
+          allowedValues: ["ByNodeSpecs"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('allocateStrategy', ros.validateString)(properties.allocateStrategy));
+    errors.collect(ros.propertyValidator('quotaConfig', ros.hashValidator(ros.validateAny))(properties.quotaConfig));
+    if(properties.resourceType && (typeof properties.resourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('resourceType', ros.validateAllowedValues)({
+          data: properties.resourceType,
+          allowedValues: ["Lingjun","ECS","ACS"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('labels', ros.listValidator(RosQuota_LabelsPropertyValidator))(properties.labels));
+    errors.collect(ros.propertyValidator('clusterSpec', ros.hashValidator(ros.validateAny))(properties.clusterSpec));
+    errors.collect(ros.propertyValidator('parentQuotaId', ros.validateString)(properties.parentQuotaId));
+    errors.collect(ros.propertyValidator('queueStrategy', ros.validateString)(properties.queueStrategy));
+    return errors.wrap('supplied properties not correct for "RosQuotaProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Quota` resource
+ *
+ * @param properties - the TypeScript properties of a `RosQuotaProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Quota` resource.
+ */
+// @ts-ignore TS6133
+function rosQuotaPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosQuotaPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'QuotaName': ros.stringToRosTemplate(properties.quotaName),
+      'AllocateStrategy': ros.stringToRosTemplate(properties.allocateStrategy),
+      'ClusterSpec': ros.hashMapper(ros.objectToRosTemplate)(properties.clusterSpec),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Labels': ros.listMapper(rosQuotaLabelsPropertyToRosTemplate)(properties.labels),
+      'Min': rosQuotaMinPropertyToRosTemplate(properties.min),
+      'ParentQuotaId': ros.stringToRosTemplate(properties.parentQuotaId),
+      'QueueStrategy': ros.stringToRosTemplate(properties.queueStrategy),
+      'QuotaConfig': ros.hashMapper(ros.objectToRosTemplate)(properties.quotaConfig),
+      'ResourceGroupIds': ros.listMapper(ros.stringToRosTemplate)(properties.resourceGroupIds),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Quota`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Quota` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-quota
+ */
+export class RosQuota extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::Quota";
+
+    /**
+     * @Attribute QuotaId: The ID of the quota.
+     */
+    public readonly attrQuotaId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property quotaName: The name of the quota.
+     */
+    public quotaName: string | ros.IResolvable;
+
+    /**
+     * @Property allocateStrategy: The allocation strategy.
+     */
+    public allocateStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property clusterSpec: The cluster specification.
+     */
+    public clusterSpec: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the quota.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property labels: The labels associated with the quota.
+     */
+    public labels: Array<RosQuota.LabelsProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property min: The minimum resource allocation configuration.
+     */
+    public min: RosQuota.MinProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property parentQuotaId: The ID of the parent quota.
+     */
+    public parentQuotaId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property queueStrategy: The queue strategy.
+     */
+    public queueStrategy: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property quotaConfig: The quota configuration.
+     */
+    public quotaConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupIds: The list of resource group IDs.
+     */
+    public resourceGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceType: The type of the resource.
+     */
+    public resourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosQuotaProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosQuota.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrQuotaId = this.getAtt('QuotaId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.quotaName = props.quotaName;
+        this.allocateStrategy = props.allocateStrategy;
+        this.clusterSpec = props.clusterSpec;
+        this.description = props.description;
+        this.labels = props.labels;
+        this.min = props.min;
+        this.parentQuotaId = props.parentQuotaId;
+        this.queueStrategy = props.queueStrategy;
+        this.quotaConfig = props.quotaConfig;
+        this.resourceGroupIds = props.resourceGroupIds;
+        this.resourceType = props.resourceType;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            quotaName: this.quotaName,
+            allocateStrategy: this.allocateStrategy,
+            clusterSpec: this.clusterSpec,
+            description: this.description,
+            labels: this.labels,
+            min: this.min,
+            parentQuotaId: this.parentQuotaId,
+            queueStrategy: this.queueStrategy,
+            quotaConfig: this.quotaConfig,
+            resourceGroupIds: this.resourceGroupIds,
+            resourceType: this.resourceType,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosQuotaPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosQuota {
+    /**
+     * @stability external
+     */
+    export interface LabelsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `LabelsProperty`
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosQuota_LabelsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "LabelsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Quota.Labels` resource
+ *
+ * @param properties - the TypeScript properties of a `LabelsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Quota.Labels` resource.
+ */
+// @ts-ignore TS6133
+function rosQuotaLabelsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosQuota_LabelsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosQuota {
+    /**
+     * @stability external
+     */
+    export interface MinProperty {
+        /**
+         * @Property resourceAmount: The resource amount.
+         */
+        readonly resourceAmount?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+        /**
+         * @Property nodeSpecs: The node specification.
+         */
+        readonly nodeSpecs?: Array<{ [key: string]: any }> | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `MinProperty`
+ *
+ * @param properties - the TypeScript properties of a `MinProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosQuota_MinPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('resourceAmount', ros.hashValidator(ros.validateAny))(properties.resourceAmount));
+    errors.collect(ros.propertyValidator('nodeSpecs', ros.listValidator(ros.validateAnyDict))(properties.nodeSpecs));
+    return errors.wrap('supplied properties not correct for "MinProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::Quota.Min` resource
+ *
+ * @param properties - the TypeScript properties of a `MinProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::Quota.Min` resource.
+ */
+// @ts-ignore TS6133
+function rosQuotaMinPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosQuota_MinPropertyValidator(properties).assertSuccess();
+    return {
+      'ResourceAmount': ros.hashMapper(ros.objectToRosTemplate)(properties.resourceAmount),
+      'NodeSpecs': ros.listMapper(ros.anyDictToRosTemplate)(properties.nodeSpecs),
+    };
+}
+
+/**
+ * Properties for defining a `RosResourceGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-resourcegroup
+ */
+export interface RosResourceGroupProps {
+
+    /**
+     * @Property computingResourceProvider: The computing resource provider of the resource group.
+     */
+    readonly computingResourceProvider?: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the resource group.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property name: The name of the resource group.
+     */
+    readonly name?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property resourceType: The type of the resource group.
+     */
+    readonly resourceType?: string | ros.IResolvable;
+
+    /**
+     * @Property tag: The tags of the resource group.
+     */
+    readonly tag?: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property userVpc: User VPC configuration containing network settings for the resource group
+     */
+    readonly userVpc?: RosResourceGroup.UserVpcProperty | ros.IResolvable;
+
+    /**
+     * @Property version: The version of the resource group.
+     */
+    readonly version?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosResourceGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosResourceGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('computingResourceProvider', ros.validateString)(properties.computingResourceProvider));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('version', ros.validateString)(properties.version));
+    errors.collect(ros.propertyValidator('resourceType', ros.validateString)(properties.resourceType));
+    errors.collect(ros.propertyValidator('tag', ros.listValidator(ros.validateRosTag))(properties.tag));
+    errors.collect(ros.propertyValidator('userVpc', RosResourceGroup_UserVpcPropertyValidator)(properties.userVpc));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    return errors.wrap('supplied properties not correct for "RosResourceGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosResourceGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosResourceGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ComputingResourceProvider': ros.stringToRosTemplate(properties.computingResourceProvider),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'Name': ros.stringToRosTemplate(properties.name),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'ResourceType': ros.stringToRosTemplate(properties.resourceType),
+      'Tag': ros.listMapper(ros.rosTagToRosTemplate)(properties.tag),
+      'UserVpc': rosResourceGroupUserVpcPropertyToRosTemplate(properties.userVpc),
+      'Version': ros.stringToRosTemplate(properties.version),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::ResourceGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-resourcegroup
+ */
+export class RosResourceGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::PAI::ResourceGroup";
+
+    /**
+     * @Attribute ResourceGroupID: The ID of the resource group.
+     */
+    public readonly attrResourceGroupId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property computingResourceProvider: The computing resource provider of the resource group.
+     */
+    public computingResourceProvider: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the resource group.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property name: The name of the resource group.
+     */
+    public name: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: Resource group id.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceType: The type of the resource group.
+     */
+    public resourceType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tag: The tags of the resource group.
+     */
+    public tag: Array<ros.RosTag | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property userVpc: User VPC configuration containing network settings for the resource group
+     */
+    public userVpc: RosResourceGroup.UserVpcProperty | ros.IResolvable | undefined;
+
+    /**
+     * @Property version: The version of the resource group.
+     */
+    public version: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosResourceGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosResourceGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrResourceGroupId = this.getAtt('ResourceGroupID');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.computingResourceProvider = props.computingResourceProvider;
+        this.description = props.description;
+        this.name = props.name;
+        this.resourceGroupId = props.resourceGroupId;
+        this.resourceType = props.resourceType;
+        this.tag = props.tag;
+        this.userVpc = props.userVpc;
+        this.version = props.version;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            computingResourceProvider: this.computingResourceProvider,
+            description: this.description,
+            name: this.name,
+            resourceGroupId: this.resourceGroupId,
+            resourceType: this.resourceType,
+            tag: this.tag,
+            userVpc: this.userVpc,
+            version: this.version,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosResourceGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosResourceGroup {
+    /**
+     * @stability external
+     */
+    export interface DefaultForwardInfoProperty {
+        /**
+         * @Property eipAllocationId: The allocation ID of the Elastic IP Address (EIP) for public network access
+         */
+        readonly eipAllocationId?: string | ros.IResolvable;
+        /**
+         * @Property natGatewayId: The unique identifier of the NAT Gateway for network address translation
+         */
+        readonly natGatewayId?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DefaultForwardInfoProperty`
+ *
+ * @param properties - the TypeScript properties of a `DefaultForwardInfoProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroup_DefaultForwardInfoPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('eipAllocationId', ros.validateString)(properties.eipAllocationId));
+    errors.collect(ros.propertyValidator('natGatewayId', ros.validateString)(properties.natGatewayId));
+    return errors.wrap('supplied properties not correct for "DefaultForwardInfoProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup.DefaultForwardInfo` resource
+ *
+ * @param properties - the TypeScript properties of a `DefaultForwardInfoProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup.DefaultForwardInfo` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupDefaultForwardInfoPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceGroup_DefaultForwardInfoPropertyValidator(properties).assertSuccess();
+    return {
+      'EipAllocationId': ros.stringToRosTemplate(properties.eipAllocationId),
+      'NatGatewayId': ros.stringToRosTemplate(properties.natGatewayId),
+    };
+}
+
+export namespace RosResourceGroup {
+    /**
+     * @stability external
+     */
+    export interface TagProperty {
+        /**
+         * @Property value: Value
+         */
+        readonly value: string | ros.IResolvable;
+        /**
+         * @Property key: Key
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroup_TagPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.requiredValidator)(properties.value));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup.Tag` resource
+ *
+ * @param properties - the TypeScript properties of a `TagProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup.Tag` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupTagPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceGroup_TagPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+export namespace RosResourceGroup {
+    /**
+     * @stability external
+     */
+    export interface UserVpcProperty {
+        /**
+         * @Property vpcId: The unique identifier of the Virtual Private Cloud (VPC) where the resource group is located
+         */
+        readonly vpcId: string | ros.IResolvable;
+        /**
+         * @Property securityGroupId: The unique identifier of the security group that controls network access rules for the resource group
+         */
+        readonly securityGroupId: string | ros.IResolvable;
+        /**
+         * @Property defaultRoute: The default route configuration specifying the default forwarding path for network traffic
+         */
+        readonly defaultRoute?: string | ros.IResolvable;
+        /**
+         * @Property switchId: The unique identifier of the vSwitch within the VPC for network connectivity
+         */
+        readonly switchId: string | ros.IResolvable;
+        /**
+         * @Property defaultForwardInfo: Default forwarding information configuration including NAT gateway and EIP settings for network traffic forwarding
+         */
+        readonly defaultForwardInfo?: RosResourceGroup.DefaultForwardInfoProperty | ros.IResolvable;
+        /**
+         * @Property extendedCidRs: List of extended CIDR blocks for additional network address ranges
+         */
+        readonly extendedCidRs?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property roleArn: The Amazon Resource Name (ARN) of the RAM role for authorizing access to other cloud services
+         */
+        readonly roleArn?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `UserVpcProperty`
+ *
+ * @param properties - the TypeScript properties of a `UserVpcProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceGroup_UserVpcPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.requiredValidator)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('securityGroupId', ros.validateString)(properties.securityGroupId));
+    errors.collect(ros.propertyValidator('defaultRoute', ros.validateString)(properties.defaultRoute));
+    errors.collect(ros.propertyValidator('switchId', ros.requiredValidator)(properties.switchId));
+    errors.collect(ros.propertyValidator('switchId', ros.validateString)(properties.switchId));
+    errors.collect(ros.propertyValidator('defaultForwardInfo', RosResourceGroup_DefaultForwardInfoPropertyValidator)(properties.defaultForwardInfo));
+    errors.collect(ros.propertyValidator('extendedCidRs', ros.listValidator(ros.validateString))(properties.extendedCidRs));
+    errors.collect(ros.propertyValidator('roleArn', ros.validateString)(properties.roleArn));
+    return errors.wrap('supplied properties not correct for "UserVpcProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup.UserVpc` resource
+ *
+ * @param properties - the TypeScript properties of a `UserVpcProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::PAI::ResourceGroup.UserVpc` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceGroupUserVpcPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosResourceGroup_UserVpcPropertyValidator(properties).assertSuccess();
+    return {
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'SecurityGroupId': ros.stringToRosTemplate(properties.securityGroupId),
+      'DefaultRoute': ros.stringToRosTemplate(properties.defaultRoute),
+      'SwitchId': ros.stringToRosTemplate(properties.switchId),
+      'DefaultForwardInfo': rosResourceGroupDefaultForwardInfoPropertyToRosTemplate(properties.defaultForwardInfo),
+      'ExtendedCIDRs': ros.listMapper(ros.stringToRosTemplate)(properties.extendedCidRs),
+      'RoleArn': ros.stringToRosTemplate(properties.roleArn),
+    };
+}
+
+/**
  * Properties for defining a `RosRun`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
  */
@@ -2284,7 +2991,7 @@ function rosRunPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Run`, which is used to create a run. A run belongs to an experiment and can be associated with a workload. A run can also represent a single code execution.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Run`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Run` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-run
  */
@@ -3002,7 +3709,7 @@ function rosWorkspacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Workspace`, which is used to create a workspace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Workspace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Workspace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspace
  */
@@ -3481,7 +4188,7 @@ function rosWorkspaceResourceDlcPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`, which is used to associate Deep Learning Containers (DLC) resources with a workspace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceDlc`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceDlc` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcedlc
  */
@@ -3737,7 +4444,7 @@ function rosWorkspaceResourceFlinkPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`, which is used to associate Realtime Compute for Apache Flink resources with a workspace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceFlink`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceFlink` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourceflink
  */
@@ -4000,7 +4707,7 @@ function rosWorkspaceResourceMaxComputePropsToRosTemplate(properties: any, enabl
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`, which is used to associate MaxCompute resources with a workspace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::WorkspaceResourceMaxCompute`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WorkspaceResourceMaxCompute` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-workspaceresourcemaxcompute
  */

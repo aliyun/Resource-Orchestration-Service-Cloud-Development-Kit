@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::DatasetVersion`, which is used to create a dataset version.
+// This class encapsulates and extends the ROS resource type `ALIYUN::PAI::DatasetVersion`.
 type DatasetVersion interface {
 	alicloudroscdkcore.Resource
 	IDatasetVersion

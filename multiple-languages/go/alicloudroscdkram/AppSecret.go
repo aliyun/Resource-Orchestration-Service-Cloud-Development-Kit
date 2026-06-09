@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`.
 type AppSecret interface {
 	alicloudroscdkcore.Resource
 	IAppSecret

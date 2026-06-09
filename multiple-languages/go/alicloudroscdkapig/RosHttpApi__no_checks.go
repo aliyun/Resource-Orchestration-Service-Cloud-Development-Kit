@@ -84,7 +84,31 @@ func validateRosHttpApi_IsRosResourceParameters(construct alicloudroscdkcore.ICo
 	return nil
 }
 
+func (j *jsiiProxy_RosHttpApi) validateSetAgentProtocolsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetAiProtocolsParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetAuthConfigParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosHttpApi) validateSetBasePathParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetBelongGatewayIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetBuiltinRouteNamesParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetDeployConfigsParameters(val interface{}) error {
 	return nil
 }
 
@@ -92,7 +116,15 @@ func (j *jsiiProxy_RosHttpApi) validateSetDescriptionParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosHttpApi) validateSetEnableAuthParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosHttpApi) validateSetEnableResourcePropertyConstraintParameters(val *bool) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetFirstByteTimeoutParameters(val interface{}) error {
 	return nil
 }
 
@@ -100,11 +132,39 @@ func (j *jsiiProxy_RosHttpApi) validateSetHttpApiNameParameters(val interface{})
 	return nil
 }
 
+func (j *jsiiProxy_RosHttpApi) validateSetIngressConfigParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetModelCategoryParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetOnlyChangeConfigParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosHttpApi) validateSetProtocolsParameters(val interface{}) error {
 	return nil
 }
 
+func (j *jsiiProxy_RosHttpApi) validateSetRemoveBasePathOnForwardParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetResourceGroupIdParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetStrategyParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosHttpApi) validateSetTypeParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosHttpApi) validateSetVersionConfigParameters(val interface{}) error {
 	return nil
 }
 

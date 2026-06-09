@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.aligreen;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::Aligreen::BizType</code>, which is used to create a business scenario.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:24:00.783Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.RosBizType")
 public class RosBizType extends com.aliyun.ros.cdk.core.RosResource {
 

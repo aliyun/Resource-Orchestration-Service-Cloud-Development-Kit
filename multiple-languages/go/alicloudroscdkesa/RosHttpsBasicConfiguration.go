@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`The , which type is used to add a basic HTTPS configuration for a website.
 type RosHttpsBasicConfiguration interface {
 	alicloudroscdkcore.RosResource
 	AttrCiphersuite() alicloudroscdkcore.IResolvable

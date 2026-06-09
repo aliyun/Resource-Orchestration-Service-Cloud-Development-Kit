@@ -3,45 +3,15 @@ package com.aliyun.ros.cdk.apig;
 /**
  * Represents a <code>HttpApi</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.390Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.579Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.IHttpApi")
 @software.amazon.jsii.Jsii.Proxy(IHttpApi.Jsii$Proxy.class)
 public interface IHttpApi extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
 
     /**
-     * Attribute BasePath: The base path of the API.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrBasePath();
-
-    /**
-     * Attribute Description: Description of API.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrDescription();
-
-    /**
-     * Attribute Environments: Published Environmental Information of the API.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvironments();
-
-    /**
-     * Attribute HttpApiId: The ID of the API.
+     * Attribute HttpApiId: The ID of the HTTP API.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpApiId();
-
-    /**
-     * Attribute HttpApiName: The name of the API.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpApiName();
-
-    /**
-     * Attribute Protocols: List of API Access Protocols.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrProtocols();
-
-    /**
-     * Attribute Type: The type of HTTP API.
-     */
-    @org.jetbrains.annotations.NotNull java.lang.Object getAttrType();
 
     @org.jetbrains.annotations.NotNull com.aliyun.ros.cdk.apig.HttpApiProps getProps();
 
@@ -86,59 +56,11 @@ public interface IHttpApi extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute BasePath: The base path of the API.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrBasePath() {
-            return software.amazon.jsii.Kernel.get(this, "attrBasePath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Description: Description of API.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrDescription() {
-            return software.amazon.jsii.Kernel.get(this, "attrDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Environments: Published Environmental Information of the API.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvironments() {
-            return software.amazon.jsii.Kernel.get(this, "attrEnvironments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute HttpApiId: The ID of the API.
+         * Attribute HttpApiId: The ID of the HTTP API.
          */
         @Override
         public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpApiId() {
             return software.amazon.jsii.Kernel.get(this, "attrHttpApiId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute HttpApiName: The name of the API.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpApiName() {
-            return software.amazon.jsii.Kernel.get(this, "attrHttpApiName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Protocols: List of API Access Protocols.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrProtocols() {
-            return software.amazon.jsii.Kernel.get(this, "attrProtocols", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Type: The type of HTTP API.
-         */
-        @Override
-        public final @org.jetbrains.annotations.NotNull java.lang.Object getAttrType() {
-            return software.amazon.jsii.Kernel.get(this, "attrType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override
@@ -185,59 +107,11 @@ public interface IHttpApi extends software.amazon.jsii.JsiiSerializable, com.ali
         }
 
         /**
-         * Attribute BasePath: The base path of the API.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrBasePath() {
-            return software.amazon.jsii.Kernel.get(this, "attrBasePath", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Description: Description of API.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrDescription() {
-            return software.amazon.jsii.Kernel.get(this, "attrDescription", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Environments: Published Environmental Information of the API.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrEnvironments() {
-            return software.amazon.jsii.Kernel.get(this, "attrEnvironments", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute HttpApiId: The ID of the API.
+         * Attribute HttpApiId: The ID of the HTTP API.
          */
         @Override
         default @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpApiId() {
             return software.amazon.jsii.Kernel.get(this, "attrHttpApiId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute HttpApiName: The name of the API.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrHttpApiName() {
-            return software.amazon.jsii.Kernel.get(this, "attrHttpApiName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Protocols: List of API Access Protocols.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrProtocols() {
-            return software.amazon.jsii.Kernel.get(this, "attrProtocols", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
-        }
-
-        /**
-         * Attribute Type: The type of HTTP API.
-         */
-        @Override
-        default @org.jetbrains.annotations.NotNull java.lang.Object getAttrType() {
-            return software.amazon.jsii.Kernel.get(this, "attrType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         @Override

@@ -564,7 +564,7 @@ function rosZonesPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zones`, which is used to query built-in authoritative zones.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::PVTZ::Zones`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Zones` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pvtz-zones
  */

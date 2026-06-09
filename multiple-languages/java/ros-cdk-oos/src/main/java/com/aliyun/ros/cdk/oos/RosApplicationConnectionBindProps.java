@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnectionbind
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.175Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.941Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosApplicationConnectionBindProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationConnectionBindProps.Jsii$Proxy.class)
 public interface RosApplicationConnectionBindProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,6 +27,12 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
     }
 
     /**
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link RosApplicationConnectionBindProps}
      */
     static Builder builder() {
@@ -39,6 +45,7 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
         java.lang.Object connectionIds;
         java.lang.Object applicationGroupName;
         java.lang.Object applicationName;
+        java.lang.Object parameters;
 
         /**
          * Sets the value of {@link RosApplicationConnectionBindProps#getConnectionIds}
@@ -101,6 +108,26 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
         }
 
         /**
+         * Sets the value of {@link RosApplicationConnectionBindProps#getParameters}
+         * @param parameters the value to be set.
+         * @return {@code this}
+         */
+        public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
+            this.parameters = parameters;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link RosApplicationConnectionBindProps#getParameters}
+         * @param parameters the value to be set.
+         * @return {@code this}
+         */
+        public Builder parameters(java.util.List<? extends java.lang.Object> parameters) {
+            this.parameters = parameters;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link RosApplicationConnectionBindProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -119,6 +146,7 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
         private final java.lang.Object connectionIds;
         private final java.lang.Object applicationGroupName;
         private final java.lang.Object applicationName;
+        private final java.lang.Object parameters;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -129,6 +157,7 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
             this.connectionIds = software.amazon.jsii.Kernel.get(this, "connectionIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.applicationGroupName = software.amazon.jsii.Kernel.get(this, "applicationGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -139,6 +168,7 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
             this.connectionIds = java.util.Objects.requireNonNull(builder.connectionIds, "connectionIds is required");
             this.applicationGroupName = builder.applicationGroupName;
             this.applicationName = builder.applicationName;
+            this.parameters = builder.parameters;
         }
 
         @Override
@@ -157,6 +187,11 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
         }
 
         @Override
+        public final java.lang.Object getParameters() {
+            return this.parameters;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -168,6 +203,9 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
             }
             if (this.getApplicationName() != null) {
                 data.set("applicationName", om.valueToTree(this.getApplicationName()));
+            }
+            if (this.getParameters() != null) {
+                data.set("parameters", om.valueToTree(this.getParameters()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -189,7 +227,8 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
 
             if (!connectionIds.equals(that.connectionIds)) return false;
             if (this.applicationGroupName != null ? !this.applicationGroupName.equals(that.applicationGroupName) : that.applicationGroupName != null) return false;
-            return this.applicationName != null ? this.applicationName.equals(that.applicationName) : that.applicationName == null;
+            if (this.applicationName != null ? !this.applicationName.equals(that.applicationName) : that.applicationName != null) return false;
+            return this.parameters != null ? this.parameters.equals(that.parameters) : that.parameters == null;
         }
 
         @Override
@@ -197,6 +236,7 @@ public interface RosApplicationConnectionBindProps extends software.amazon.jsii.
             int result = this.connectionIds.hashCode();
             result = 31 * result + (this.applicationGroupName != null ? this.applicationGroupName.hashCode() : 0);
             result = 31 * result + (this.applicationName != null ? this.applicationName.hashCode() : 0);
+            result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             return result;
         }
     }

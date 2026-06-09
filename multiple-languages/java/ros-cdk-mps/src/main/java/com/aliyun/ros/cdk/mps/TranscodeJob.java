@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MPS::TranscodeJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.798Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:55:13.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.TranscodeJob")
 public class TranscodeJob extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mps.ITranscodeJob {
 

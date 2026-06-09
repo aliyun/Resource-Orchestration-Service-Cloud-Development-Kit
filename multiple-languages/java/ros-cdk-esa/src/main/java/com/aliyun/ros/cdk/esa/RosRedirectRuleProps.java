@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.esa;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-redirectrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.183Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.871Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosRedirectRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRedirectRuleProps.Jsii$Proxy.class)
 public interface RosRedirectRuleProps extends software.amazon.jsii.JsiiSerializable {

@@ -88,7 +88,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`, which is used to create a Group ID on the ROCKETMQ client. The Group ID that you create is used to publish and subscribe to messages.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROCKETMQ::Group`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq-group
  */

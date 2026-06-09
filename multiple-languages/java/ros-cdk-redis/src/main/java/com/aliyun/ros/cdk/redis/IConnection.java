@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis;
 /**
  * Represents a <code>Connection</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.380Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:36:44.797Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.IConnection")
 @software.amazon.jsii.Jsii.Proxy(IConnection.Jsii$Proxy.class)
 public interface IConnection extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

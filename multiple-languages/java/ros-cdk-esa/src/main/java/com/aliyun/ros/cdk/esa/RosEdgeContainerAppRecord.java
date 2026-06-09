@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESA::EdgeContainerAppRecord</code>The , which type creates an associated domain name for an edge container application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.783Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosEdgeContainerAppRecord")
 public class RosEdgeContainerAppRecord extends com.aliyun.ros.cdk.core.RosResource {
 

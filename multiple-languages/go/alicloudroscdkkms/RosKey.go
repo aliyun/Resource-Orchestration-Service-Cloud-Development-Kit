@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`The , which resource creates a master key.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::KMS::Key`.
 type RosKey interface {
 	alicloudroscdkcore.RosResource
 	AttrKeyId() alicloudroscdkcore.IResolvable

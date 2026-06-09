@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.amqp;
 /**
  * Represents a <code>Exchange</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.328Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.806Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.IExchange")
 @software.amazon.jsii.Jsii.Proxy(IExchange.Jsii$Proxy.class)
 public interface IExchange extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

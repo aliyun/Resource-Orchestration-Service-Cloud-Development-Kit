@@ -13,20 +13,8 @@ import (
 type HttpApi interface {
 	alicloudroscdkcore.Resource
 	IHttpApi
-	// Attribute BasePath: The base path of the API.
-	AttrBasePath() interface{}
-	// Attribute Description: Description of API.
-	AttrDescription() interface{}
-	// Attribute Environments: Published Environmental Information of the API.
-	AttrEnvironments() interface{}
-	// Attribute HttpApiId: The ID of the API.
+	// Attribute HttpApiId: The ID of the HTTP API.
 	AttrHttpApiId() interface{}
-	// Attribute HttpApiName: The name of the API.
-	AttrHttpApiName() interface{}
-	// Attribute Protocols: List of API Access Protocols.
-	AttrProtocols() interface{}
-	// Attribute Type: The type of HTTP API.
-	AttrType() interface{}
 	EnableResourcePropertyConstraint() *bool
 	SetEnableResourcePropertyConstraint(val *bool)
 	// The environment this resource belongs to.
@@ -122,71 +110,11 @@ type jsiiProxy_HttpApi struct {
 	jsiiProxy_IHttpApi
 }
 
-func (j *jsiiProxy_HttpApi) AttrBasePath() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrBasePath",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_HttpApi) AttrDescription() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrDescription",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_HttpApi) AttrEnvironments() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrEnvironments",
-		&returns,
-	)
-	return returns
-}
-
 func (j *jsiiProxy_HttpApi) AttrHttpApiId() interface{} {
 	var returns interface{}
 	_jsii_.Get(
 		j,
 		"attrHttpApiId",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_HttpApi) AttrHttpApiName() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrHttpApiName",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_HttpApi) AttrProtocols() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrProtocols",
-		&returns,
-	)
-	return returns
-}
-
-func (j *jsiiProxy_HttpApi) AttrType() interface{} {
-	var returns interface{}
-	_jsii_.Get(
-		j,
-		"attrType",
 		&returns,
 	)
 	return returns

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`, which is used to allocate a public connection string to an instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`.
 type InstancePublicConnection interface {
 	alicloudroscdkcore.Resource
 	IInstancePublicConnection

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::OIDCProvider`, which is used to create an OpenID Connect (OIDC) identity provider (IdP).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::OIDCProvider`.
 type RosOIDCProvider interface {
 	alicloudroscdkcore.RosResource
 	AttrOidcProviderName() alicloudroscdkcore.IResolvable

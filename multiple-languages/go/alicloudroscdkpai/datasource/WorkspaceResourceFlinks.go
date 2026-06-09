@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlinks`, which is used to query the Realtime Compute for Apache Flink resources that are associated with a workspace.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::PAI::WorkspaceResourceFlinks`.
 type WorkspaceResourceFlinks interface {
 	alicloudroscdkcore.Resource
 	IWorkspaceResourceFlinks

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * Represents a <code>NacosService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.853Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.347Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.INacosService")
 @software.amazon.jsii.Jsii.Proxy(INacosService.Jsii$Proxy.class)
 public interface INacosService extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

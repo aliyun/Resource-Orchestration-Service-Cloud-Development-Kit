@@ -72,7 +72,7 @@ function rosAlertPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Alert`, which is used to create an alert rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::Alert`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Alert` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
  */
@@ -4636,7 +4636,7 @@ function rosLogtailConfigPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::LogtailConfig`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLS::LogtailConfig`, which is used to configure Logtail properties for data collection.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogtailConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-logtailconfig
  */

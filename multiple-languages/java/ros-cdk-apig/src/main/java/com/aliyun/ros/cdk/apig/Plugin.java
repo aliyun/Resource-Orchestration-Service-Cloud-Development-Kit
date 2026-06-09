@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Plugin</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Plugin</code>, which is used to create a plug-in.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.405Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.605Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Plugin")
 public class Plugin extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IPlugin {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::InsertMediaToSearchLib`, which is used to add a media asset to a search library.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ICE::InsertMediaToSearchLib`.
 type RosInsertMediaToSearchLib interface {
 	alicloudroscdkcore.RosResource
 	AttrMediaId() alicloudroscdkcore.IResolvable

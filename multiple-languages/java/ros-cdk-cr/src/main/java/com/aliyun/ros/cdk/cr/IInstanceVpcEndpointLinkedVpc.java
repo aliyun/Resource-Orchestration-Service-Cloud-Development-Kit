@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Represents a <code>InstanceVpcEndpointLinkedVpc</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.289Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:03:09.584Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.IInstanceVpcEndpointLinkedVpc")
 @software.amazon.jsii.Jsii.Proxy(IInstanceVpcEndpointLinkedVpc.Jsii$Proxy.class)
 public interface IInstanceVpcEndpointLinkedVpc extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

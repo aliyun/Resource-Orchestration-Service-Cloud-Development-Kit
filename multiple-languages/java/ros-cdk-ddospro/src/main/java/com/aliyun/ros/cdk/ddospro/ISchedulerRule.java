@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ddospro;
 /**
  * Represents a <code>SchedulerRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.721Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:17:14.257Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.ISchedulerRule")
 @software.amazon.jsii.Jsii.Proxy(ISchedulerRule.Jsii$Proxy.class)
 public interface ISchedulerRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

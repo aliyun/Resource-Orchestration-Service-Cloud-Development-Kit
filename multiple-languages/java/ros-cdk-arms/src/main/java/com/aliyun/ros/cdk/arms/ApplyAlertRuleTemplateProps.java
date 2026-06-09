@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-applyalertruletemplate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.030Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ApplyAlertRuleTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(ApplyAlertRuleTemplateProps.Jsii$Proxy.class)
 public interface ApplyAlertRuleTemplateProps extends software.amazon.jsii.JsiiSerializable {

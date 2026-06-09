@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::Snapshot</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::Snapshot</code>, which is used to query the information about a snapshot.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.335Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.453Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosSnapshot")
 public class RosSnapshot extends com.aliyun.ros.cdk.core.RosResource {
 

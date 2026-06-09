@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::StackGroup`, which is used to create a stack group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::StackGroup`.
 type StackGroup interface {
 	alicloudroscdkcore.Resource
 	IStackGroup

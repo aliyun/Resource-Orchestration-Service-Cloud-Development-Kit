@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Topic`, which is used to create a topic.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Topic`.
 type RosTopic interface {
 	alicloudroscdkcore.RosResource
 	AttrArnWithSlash() alicloudroscdkcore.IResolvable

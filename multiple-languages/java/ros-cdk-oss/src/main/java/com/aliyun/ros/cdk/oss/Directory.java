@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OSS::Directory</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.839Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.864Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.Directory")
 public class Directory extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oss.IDirectory {
 

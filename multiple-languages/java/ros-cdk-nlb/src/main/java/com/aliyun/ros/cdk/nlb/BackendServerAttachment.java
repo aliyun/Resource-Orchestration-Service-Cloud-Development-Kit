@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::BackendServerAttachment</code>, which is used to add backend servers to a Network Load Balancer (NLB) server group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::BackendServerAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.025Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:01:45.034Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.BackendServerAttachment")
 public class BackendServerAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nlb.IBackendServerAttachment {
 

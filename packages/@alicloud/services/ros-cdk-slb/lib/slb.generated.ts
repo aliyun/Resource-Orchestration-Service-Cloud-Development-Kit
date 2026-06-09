@@ -1857,7 +1857,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`You can use , which to create a Server Load Balancer (SLB) listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Listener`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */
@@ -3850,7 +3850,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`, which is used to add forwarding rules to an HTTP or HTTPS listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::Rule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-rule
  */
@@ -4258,7 +4258,7 @@ function rosTLSPolicyPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`, which is used to create a Transport Layer Security (TLS) policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SLB::TLSPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TLSPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-tlspolicy
  */

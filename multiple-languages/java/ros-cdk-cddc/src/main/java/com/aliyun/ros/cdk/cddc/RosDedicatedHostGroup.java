@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cddc;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CDDC::DedicatedHostGroup</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CDDC::DedicatedHostGroup</code>, which is used to create a dedicated cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.167Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:41:20.842Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.RosDedicatedHostGroup")
 public class RosDedicatedHostGroup extends com.aliyun.ros.cdk.core.RosResource {
 

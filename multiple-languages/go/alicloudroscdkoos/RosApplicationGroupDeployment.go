@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
 type RosApplicationGroupDeployment interface {
 	alicloudroscdkcore.RosResource
 	ApplicationName() interface{}

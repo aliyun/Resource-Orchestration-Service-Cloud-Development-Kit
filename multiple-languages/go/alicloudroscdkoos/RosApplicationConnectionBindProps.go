@@ -8,5 +8,6 @@ type RosApplicationConnectionBindProps struct {
 	ConnectionIds interface{} `field:"required" json:"connectionIds" yaml:"connectionIds"`
 	ApplicationGroupName interface{} `field:"optional" json:"applicationGroupName" yaml:"applicationGroupName"`
 	ApplicationName interface{} `field:"optional" json:"applicationName" yaml:"applicationName"`
+	Parameters interface{} `field:"optional" json:"parameters" yaml:"parameters"`
 }
 

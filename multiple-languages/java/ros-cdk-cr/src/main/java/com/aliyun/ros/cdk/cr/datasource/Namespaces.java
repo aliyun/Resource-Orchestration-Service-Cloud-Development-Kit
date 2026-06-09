@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CR::Namespaces</code>, which is used to query namespaces.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.357Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:03:09.675Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.datasource.Namespaces")
 public class Namespaces extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cr.datasource.INamespaces {
 

@@ -24,6 +24,11 @@ export interface ApplicationConnectionBindProps {
      * Property applicationName: The name of the application.
      */
     readonly applicationName?: string | ros.IResolvable;
+
+    /**
+     * Property parameters: The parameters of the application connection bind.
+     */
+    readonly parameters?: Array<RosApplicationConnectionBind.ParametersProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -57,6 +62,7 @@ export class ApplicationConnectionBind extends ros.Resource implements IApplicat
 
         const rosApplicationConnectionBind = new RosApplicationConnectionBind(this, id,  {
             applicationName: props.applicationName,
+            parameters: props.parameters,
             connectionIds: props.connectionIds,
             applicationGroupName: props.applicationGroupName,
         }, enableResourcePropertyConstraint && this.stack.enableResourcePropertyConstraint);

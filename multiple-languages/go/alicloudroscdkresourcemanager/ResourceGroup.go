@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`The , which resource type creates a resource group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`.
 type ResourceGroup interface {
 	alicloudroscdkcore.Resource
 	IResourceGroup

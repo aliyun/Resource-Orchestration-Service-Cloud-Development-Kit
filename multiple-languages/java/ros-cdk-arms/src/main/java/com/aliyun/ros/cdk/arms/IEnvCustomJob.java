@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms;
 /**
  * Represents a <code>EnvCustomJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.843Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.069Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.IEnvCustomJob")
 @software.amazon.jsii.Jsii.Proxy(IEnvCustomJob.Jsii$Proxy.class)
 public interface IEnvCustomJob extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

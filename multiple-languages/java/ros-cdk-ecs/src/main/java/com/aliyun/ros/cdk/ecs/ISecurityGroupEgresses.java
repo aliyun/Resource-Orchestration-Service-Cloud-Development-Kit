@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>SecurityGroupEgresses</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.596Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.925Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ISecurityGroupEgresses")
 @software.amazon.jsii.Jsii.Proxy(ISecurityGroupEgresses.Jsii$Proxy.class)
 public interface ISecurityGroupEgresses extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

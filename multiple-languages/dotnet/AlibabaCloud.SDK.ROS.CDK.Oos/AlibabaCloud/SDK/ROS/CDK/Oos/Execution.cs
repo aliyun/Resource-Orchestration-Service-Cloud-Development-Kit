@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Oos
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::OOS::Execution`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosExecution`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * Represents a <code>CacheRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.646Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.ICacheRule")
 @software.amazon.jsii.Jsii.Proxy(ICacheRule.Jsii$Proxy.class)
 public interface ICacheRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -76,7 +76,7 @@ export interface IVCUInstance extends ros.IResource {
     readonly attrInstanceName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::VCUInstance`The , which resource creates a Virtual Compute Unit (VCU) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OTS::VCUInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVCUInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vcuinstance
  */

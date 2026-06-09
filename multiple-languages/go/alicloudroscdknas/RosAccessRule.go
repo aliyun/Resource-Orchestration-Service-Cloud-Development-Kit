@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessRule`, which is used to create a rule for a permission group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::AccessRule`.
 type RosAccessRule interface {
 	alicloudroscdkcore.RosResource
 	AccessGroupName() interface{}

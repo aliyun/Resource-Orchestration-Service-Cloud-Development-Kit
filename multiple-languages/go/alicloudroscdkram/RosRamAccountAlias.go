@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`, which is used to create an alias for an Alibaba Cloud account.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::RamAccountAlias`.
 type RosRamAccountAlias interface {
 	alicloudroscdkcore.RosResource
 	AccountAlias() interface{}

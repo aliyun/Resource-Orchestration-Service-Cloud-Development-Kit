@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.edas;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EDAS::Application</code>, which is used to create an application in an Elastic Compute Service (ECS) cluster in Enterprise Distributed Application Service (EDAS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.421Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:38:16.779Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosApplication")
 public class RosApplication extends com.aliyun.ros.cdk.core.RosResource {
 

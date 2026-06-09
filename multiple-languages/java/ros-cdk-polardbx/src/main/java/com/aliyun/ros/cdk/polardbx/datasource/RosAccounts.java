@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardbx.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::PolarDBX::Accounts</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.876Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:29:50.491Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.datasource.RosAccounts")
 public class RosAccounts extends com.aliyun.ros.cdk.core.RosResource {
 

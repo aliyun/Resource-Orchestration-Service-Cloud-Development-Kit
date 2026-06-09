@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::VpcAccessConfig</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ApiGateway::VpcAccessConfig</code>, which is used to configure virtual private cloud (VPC) access authorization for an instance.
+ * <p>
+ * This helps APIs provide services based on private networks.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.727Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.624Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.RosVpcAccessConfig")
 public class RosVpcAccessConfig extends com.aliyun.ros.cdk.core.RosResource {
 

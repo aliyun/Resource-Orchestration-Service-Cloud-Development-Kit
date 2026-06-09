@@ -245,7 +245,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`Use , which to create a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
  */
@@ -760,7 +760,7 @@ function rosEngineNamespacePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`, which is used to create a namespace for an engine.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::EngineNamespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EngineNamespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-enginenamespace
  */
@@ -939,7 +939,7 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`, which is used to add a gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway
  */
@@ -1395,7 +1395,7 @@ function rosGateway2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway2`The ALIYUN::MSE::Use Gateway2 resource type to create cloud-native gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Gateway2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gateway2
  */
@@ -1848,7 +1848,7 @@ function rosGatewayDomainPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayDomain`You can use , which to add an associated domain to a gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayDomain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GatewayDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewaydomain
  */
@@ -2183,7 +2183,7 @@ function rosGatewayRoutePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayRoute`The , which resource is used to add a gateway route.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayRoute`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GatewayRoute` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayroute
  */
@@ -3242,7 +3242,7 @@ function rosGatewayServicePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayService`The , which resource is used to import a service into a gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::GatewayService`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GatewayService` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewayservice
  */
@@ -3513,7 +3513,7 @@ function rosNacosConfigPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosConfig`, which is used to create a Nacos configuration.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::NacosConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NacosConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-nacosconfig
  */
@@ -3879,7 +3879,7 @@ function rosPluginConfigPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::PluginConfig`The , which resource creates a plugin configuration.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::PluginConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-pluginconfig
  */

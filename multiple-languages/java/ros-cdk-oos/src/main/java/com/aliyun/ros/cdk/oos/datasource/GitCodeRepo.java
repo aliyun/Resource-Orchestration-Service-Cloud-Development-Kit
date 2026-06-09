@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OOS::GitCodeRepo</code>, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OOS::GitCodeRepo</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.217Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.976Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.GitCodeRepo")
 public class GitCodeRepo extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.datasource.IGitCodeRepo {
 

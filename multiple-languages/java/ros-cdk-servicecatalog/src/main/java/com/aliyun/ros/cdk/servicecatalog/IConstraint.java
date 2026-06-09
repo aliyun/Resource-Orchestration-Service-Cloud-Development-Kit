@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.servicecatalog;
 /**
  * Represents a <code>Constraint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.103Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:53:18.326Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.servicecatalog.$Module.class, fqn = "@alicloud/ros-cdk-servicecatalog.IConstraint")
 @software.amazon.jsii.Jsii.Proxy(IConstraint.Jsii$Proxy.class)
 public interface IConstraint extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

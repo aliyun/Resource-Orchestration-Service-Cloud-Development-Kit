@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dfs;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DFS::AccessRule</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DFS::AccessRule</code>, which is used to create a rule for a permission group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.808Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:20:44.389Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.RosAccessRule")
 public class RosAccessRule extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -49,11 +49,8 @@ export function specGenerator() {
     let onlyResourceTypes: Set<string> = new Set();
     // ALIYUN与DATASOURCE开头的资源集合
     let fullResourceTypes: Set<string> = new Set();
-    let codeMappingTypesArray = new Array();
     let resourceTypes: any = {};
     let propertyTypes: any = {};
-    let codeMappingFile = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/code_mapping.json')).toString();
-    let codeMappingFileContent = JSON.parse(codeMappingFile);
     let specificationOriginFile = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/specification_origin.json')).toString();
     let specificationOriginFileContent = JSON.parse(specificationOriginFile);
     let fieldMappingFile = fs.readFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/field_mapping.json')).toString();
@@ -161,15 +158,7 @@ export function specGenerator() {
             Properties: typeDetail.Properties ? typeDetail.Properties : {},
         };
     }
-    for (let [rosCode] of Object.entries(codeMappingFileContent['CodeMapping'])) {
-        codeMappingTypesArray.push('ALIYUN::' + rosCode)
-    }
-    let onlyTypesArray = Array.from(onlyResourceTypes)
     let fullTypesArray = Array.from(fullResourceTypes)
-    let diffArr = getArrDifference(onlyTypesArray, codeMappingTypesArray)
-    if(diffArr != null && diffArr != ""){
-        throw new Error(`code_mapping file diff with types file "${diffArr}", please add information with code_mapping file.`);
-    }
     fs.writeFileSync(path.join(__dirname, '/../../@alicloud/ros-cdk-spec/spec/types.json'), JSON.stringify(fullTypesArray, null, '\t'));
     spec['PropertyTypes'] = propertyTypes;
     spec['ResourceTypes'] = resourceTypes;
@@ -210,12 +199,3 @@ function initialToUpperCase(str: string): string {
     return str.substring(0, 1).toUpperCase() + str.substring(1);
 }
 
-function getArrDifference(arr1: any, arr2: any) {
-    let newArr = [];
-    let arr3 = arr1.concat(arr2);
-    function isContain(value: any) {
-        return arr1.indexOf(value) == -1 || arr2.indexOf(value) == -1;
-    }
-    newArr = arr3.filter(isContain);
-    return newArr;
-}

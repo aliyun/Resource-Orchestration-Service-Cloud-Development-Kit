@@ -777,7 +777,7 @@ function rosCompliancePackPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::CompliancePack`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::CompliancePack`, which is used to create a compliance package.
  * @Note This class does not contain additional functions, so it is recommended to use the `CompliancePack` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-compliancepack
  */
@@ -1042,7 +1042,7 @@ function rosDeliveryChannelPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::DeliveryChannel`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::DeliveryChannel`, which is used to create or update a delivery channel.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeliveryChannel` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-deliverychannel
  */
@@ -1145,6 +1145,326 @@ export class RosDeliveryChannel extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDeliveryChannelPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+/**
+ * Properties for defining a `RosReportTemplate`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-reporttemplate
+ */
+export interface RosReportTemplateProps {
+
+    /**
+     * @Property reportTemplateName: Report Template Name.
+     */
+    readonly reportTemplateName: string | ros.IResolvable;
+
+    /**
+     * @Property reportFileFormats: Report Format. Currently only support `excel`.
+     */
+    readonly reportFileFormats?: string | ros.IResolvable;
+
+    /**
+     * @Property reportGranularity: Report Aggregation Granularity.
+     */
+    readonly reportGranularity?: string | ros.IResolvable;
+
+    /**
+     * @Property reportLanguage: Report Content Language, Currently only support `zh-CN` or `en-US`.
+     */
+    readonly reportLanguage?: string | ros.IResolvable;
+
+    /**
+     * @Property reportScope: Report range, yes and logic between multiple sets of k-v pairs.
+     */
+    readonly reportScope?: Array<RosReportTemplate.ReportScopeProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property reportTemplateDescription: Report Template Description.
+     */
+    readonly reportTemplateDescription?: string | ros.IResolvable;
+
+    /**
+     * @Property subscriptionFrequency: Report subscription frequency. If this field is not empty, it is a Cron expression in Quartz format triggered by the subscription notification.
+     * The format is: Seconds, time, day, month, week. The following are examples of commonly used Cron expressions:
+     * - Execute at 0 o'clock every day: 0 0 0 * *?
+     * - Every Monday at 15: 30: 0 30 15? * MON
+     * - Execute at 2 o'clock on the 1st of each month: 0 0 2 1 *?
+     * Among them:
+     * - "*" Indicates any value
+     * - What-? Used for day and week fields, indicating that no specific value is specified
+     * - MON means Monday
+     * > The trigger time is UTC +8, and the settings of the cron expression can be converted according to the time zone.
+     * > It can only be triggered according to the cron expression time as much as possible. The cron expression limits the same template to trigger at most one notification per day.
+     */
+    readonly subscriptionFrequency?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosReportTemplateProps`
+ *
+ * @param properties - the TypeScript properties of a `RosReportTemplateProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosReportTemplatePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('reportGranularity', ros.validateString)(properties.reportGranularity));
+    if(properties.reportScope && (Array.isArray(properties.reportScope) || (typeof properties.reportScope) === 'string')) {
+        errors.collect(ros.propertyValidator('reportScope', ros.validateLength)({
+            data: properties.reportScope.length,
+            min: 0,
+            max: 2,
+          }));
+    }
+    errors.collect(ros.propertyValidator('reportScope', ros.listValidator(RosReportTemplate_ReportScopePropertyValidator))(properties.reportScope));
+    if(properties.reportFileFormats && (typeof properties.reportFileFormats) !== 'object') {
+        errors.collect(ros.propertyValidator('reportFileFormats', ros.validateAllowedValues)({
+          data: properties.reportFileFormats,
+          allowedValues: ["excel"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('reportFileFormats', ros.validateString)(properties.reportFileFormats));
+    errors.collect(ros.propertyValidator('subscriptionFrequency', ros.validateString)(properties.subscriptionFrequency));
+    errors.collect(ros.propertyValidator('reportTemplateName', ros.requiredValidator)(properties.reportTemplateName));
+    errors.collect(ros.propertyValidator('reportTemplateName', ros.validateString)(properties.reportTemplateName));
+    errors.collect(ros.propertyValidator('reportLanguage', ros.validateString)(properties.reportLanguage));
+    errors.collect(ros.propertyValidator('reportTemplateDescription', ros.validateString)(properties.reportTemplateDescription));
+    return errors.wrap('supplied properties not correct for "RosReportTemplateProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::ReportTemplate` resource
+ *
+ * @param properties - the TypeScript properties of a `RosReportTemplateProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::ReportTemplate` resource.
+ */
+// @ts-ignore TS6133
+function rosReportTemplatePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosReportTemplatePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'ReportTemplateName': ros.stringToRosTemplate(properties.reportTemplateName),
+      'ReportFileFormats': ros.stringToRosTemplate(properties.reportFileFormats),
+      'ReportGranularity': ros.stringToRosTemplate(properties.reportGranularity),
+      'ReportLanguage': ros.stringToRosTemplate(properties.reportLanguage),
+      'ReportScope': ros.listMapper(rosReportTemplateReportScopePropertyToRosTemplate)(properties.reportScope),
+      'ReportTemplateDescription': ros.stringToRosTemplate(properties.reportTemplateDescription),
+      'SubscriptionFrequency': ros.stringToRosTemplate(properties.subscriptionFrequency),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::ReportTemplate`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ReportTemplate` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-reporttemplate
+ */
+export class RosReportTemplate extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::Config::ReportTemplate";
+
+    /**
+     * @Attribute ReportFileFormats: Report Format. Currently only support `excel`.
+     */
+    public readonly attrReportFileFormats: ros.IResolvable;
+
+    /**
+     * @Attribute ReportGranularity: Report Aggregation Granularity.
+     */
+    public readonly attrReportGranularity: ros.IResolvable;
+
+    /**
+     * @Attribute ReportLanguage: Report Content Language, Currently only support `zh-CN` or `en-US`.
+     */
+    public readonly attrReportLanguage: ros.IResolvable;
+
+    /**
+     * @Attribute ReportScope: Report range, yes and logic between multiple sets of k-v pairs.
+     */
+    public readonly attrReportScope: ros.IResolvable;
+
+    /**
+     * @Attribute ReportTemplateDescription: Report Template Description.
+     */
+    public readonly attrReportTemplateDescription: ros.IResolvable;
+
+    /**
+     * @Attribute ReportTemplateId: Report template Id.
+     */
+    public readonly attrReportTemplateId: ros.IResolvable;
+
+    /**
+     * @Attribute ReportTemplateName: Report Template Name.
+     */
+    public readonly attrReportTemplateName: ros.IResolvable;
+
+    /**
+     * @Attribute SubscriptionFrequency: Report subscription frequency. If this field is not empty, it is a Cron expression in Quartz format triggered by the subscription notification.
+     */
+    public readonly attrSubscriptionFrequency: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property reportTemplateName: Report Template Name.
+     */
+    public reportTemplateName: string | ros.IResolvable;
+
+    /**
+     * @Property reportFileFormats: Report Format. Currently only support `excel`.
+     */
+    public reportFileFormats: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property reportGranularity: Report Aggregation Granularity.
+     */
+    public reportGranularity: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property reportLanguage: Report Content Language, Currently only support `zh-CN` or `en-US`.
+     */
+    public reportLanguage: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property reportScope: Report range, yes and logic between multiple sets of k-v pairs.
+     */
+    public reportScope: Array<RosReportTemplate.ReportScopeProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property reportTemplateDescription: Report Template Description.
+     */
+    public reportTemplateDescription: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property subscriptionFrequency: Report subscription frequency. If this field is not empty, it is a Cron expression in Quartz format triggered by the subscription notification.
+     * The format is: Seconds, time, day, month, week. The following are examples of commonly used Cron expressions:
+     * - Execute at 0 o'clock every day: 0 0 0 * *?
+     * - Every Monday at 15: 30: 0 30 15? * MON
+     * - Execute at 2 o'clock on the 1st of each month: 0 0 2 1 *?
+     * Among them:
+     * - "*" Indicates any value
+     * - What-? Used for day and week fields, indicating that no specific value is specified
+     * - MON means Monday
+     * > The trigger time is UTC +8, and the settings of the cron expression can be converted according to the time zone.
+     * > It can only be triggered according to the cron expression time as much as possible. The cron expression limits the same template to trigger at most one notification per day.
+     */
+    public subscriptionFrequency: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosReportTemplateProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosReportTemplate.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrReportFileFormats = this.getAtt('ReportFileFormats');
+        this.attrReportGranularity = this.getAtt('ReportGranularity');
+        this.attrReportLanguage = this.getAtt('ReportLanguage');
+        this.attrReportScope = this.getAtt('ReportScope');
+        this.attrReportTemplateDescription = this.getAtt('ReportTemplateDescription');
+        this.attrReportTemplateId = this.getAtt('ReportTemplateId');
+        this.attrReportTemplateName = this.getAtt('ReportTemplateName');
+        this.attrSubscriptionFrequency = this.getAtt('SubscriptionFrequency');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.reportTemplateName = props.reportTemplateName;
+        this.reportFileFormats = props.reportFileFormats;
+        this.reportGranularity = props.reportGranularity;
+        this.reportLanguage = props.reportLanguage;
+        this.reportScope = props.reportScope;
+        this.reportTemplateDescription = props.reportTemplateDescription;
+        this.subscriptionFrequency = props.subscriptionFrequency;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            reportTemplateName: this.reportTemplateName,
+            reportFileFormats: this.reportFileFormats,
+            reportGranularity: this.reportGranularity,
+            reportLanguage: this.reportLanguage,
+            reportScope: this.reportScope,
+            reportTemplateDescription: this.reportTemplateDescription,
+            subscriptionFrequency: this.subscriptionFrequency,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosReportTemplatePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosReportTemplate {
+    /**
+     * @stability external
+     */
+    export interface ReportScopeProperty {
+        /**
+         * @Property matchType: The matching logic. Currently, only In is supported.
+         */
+        readonly matchType?: string | ros.IResolvable;
+        /**
+         * @Property value: The value of the report range. Each k-v pair is an OR logic. For example, multiple rule IDs can be separated by commas (,).
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: Key for reporting scope, currently supported:
+     * - AggregatorId
+     * - CompliancePackId
+     * - RuleId.
+         */
+        readonly key?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ReportScopeProperty`
+ *
+ * @param properties - the TypeScript properties of a `ReportScopeProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosReportTemplate_ReportScopePropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.matchType && (typeof properties.matchType) !== 'object') {
+        errors.collect(ros.propertyValidator('matchType', ros.validateAllowedValues)({
+          data: properties.matchType,
+          allowedValues: ["In"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('matchType', ros.validateString)(properties.matchType));
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    if(properties.key && (typeof properties.key) !== 'object') {
+        errors.collect(ros.propertyValidator('key', ros.validateAllowedValues)({
+          data: properties.key,
+          allowedValues: ["AggregatorId","CompliancePackId","RuleId"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "ReportScopeProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::Config::ReportTemplate.ReportScope` resource
+ *
+ * @param properties - the TypeScript properties of a `ReportScopeProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::Config::ReportTemplate.ReportScope` resource.
+ */
+// @ts-ignore TS6133
+function rosReportTemplateReportScopePropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosReportTemplate_ReportScopePropertyValidator(properties).assertSuccess();
+    return {
+      'MatchType': ros.stringToRosTemplate(properties.matchType),
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
 }
 
 /**
@@ -1296,7 +1616,7 @@ function rosRulePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Rule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Config::Rule`, which is used to create or modify a rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `Rule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-rule
  */

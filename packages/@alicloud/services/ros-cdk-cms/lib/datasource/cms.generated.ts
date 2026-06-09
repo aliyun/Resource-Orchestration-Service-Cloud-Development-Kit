@@ -260,7 +260,7 @@ function rosAlarmContactsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContacts`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::AlarmContacts`, which is used to query the information about alert contacts.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmContacts` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
@@ -385,7 +385,7 @@ function rosMonitorGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CMS::MonitorGroup`, which is used to query the information about an application group.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroup
  */

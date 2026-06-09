@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.arms.datasource;
 /**
  * Represents a <code>Environments</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.904Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.128Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.IEnvironments")
 @software.amazon.jsii.Jsii.Proxy(IEnvironments.Jsii$Proxy.class)
 public interface IEnvironments extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

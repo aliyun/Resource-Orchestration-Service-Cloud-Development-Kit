@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ens;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:47:31.710Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.RosDiskInstanceAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(RosDiskInstanceAttachmentProps.Jsii$Proxy.class)
 public interface RosDiskInstanceAttachmentProps extends software.amazon.jsii.JsiiSerializable {

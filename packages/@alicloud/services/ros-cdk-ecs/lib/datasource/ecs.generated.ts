@@ -1273,7 +1273,7 @@ function rosDedicatedHostClustersPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`, which is used to query the information about dedicated host clusters.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostClusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-dedicatedhostclusters
  */
@@ -2045,7 +2045,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disk`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Disk`, which is used to query the information about a cloud disk.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-disk
  */
@@ -2443,7 +2443,7 @@ function rosDiskCategoriesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DiskCategories`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::DiskCategories`, which is used to query the information about disk categories.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskCategories` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-diskcategories
  */
@@ -3704,7 +3704,7 @@ function rosImagesPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Images`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Images`, which is used to query available images.
  * @Note This class does not contain additional functions, so it is recommended to use the `Images` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-images
  */
@@ -5589,7 +5589,7 @@ function rosLaunchTemplatePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplate`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::LaunchTemplate`, which is used to query the information about a launch template.
  * @Note This class does not contain additional functions, so it is recommended to use the `LaunchTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-launchtemplate
  */
@@ -7702,7 +7702,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshot`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Snapshot`, which is used to query the information about a snapshot.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-snapshot
  */

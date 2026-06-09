@@ -1,9 +1,11 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::AlarmTaskEnable</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::AlarmTaskEnable</code>, which is used to start an alarm task.
+ * <p>
+ * You can call this operation to enable alarm tasks when the task is stopped.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.315Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.372Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.AlarmTaskEnable")
 public class AlarmTaskEnable extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IAlarmTaskEnable {
 

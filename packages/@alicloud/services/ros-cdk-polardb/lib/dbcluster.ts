@@ -481,7 +481,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrPrimaryEndpointIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`The , which resource type creates a PolarDB cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::POLARDB::DBCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */

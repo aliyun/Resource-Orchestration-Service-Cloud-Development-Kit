@@ -171,7 +171,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrOrderId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::DBCluster`Use the , which resource type to create an AnalyticDB for MySQL cluster.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-dbcluster
  */

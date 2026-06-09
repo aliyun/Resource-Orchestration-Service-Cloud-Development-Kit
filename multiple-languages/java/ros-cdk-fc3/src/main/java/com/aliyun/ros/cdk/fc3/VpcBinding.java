@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FC3::VpcBinding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.640Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:03:30.916Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.VpcBinding")
 public class VpcBinding extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc3.IVpcBinding {
 

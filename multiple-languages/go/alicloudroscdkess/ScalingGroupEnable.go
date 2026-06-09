@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`, which is used to enable a scaling group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroupEnable`.
 type ScalingGroupEnable interface {
 	alicloudroscdkcore.Resource
 	IScalingGroupEnable

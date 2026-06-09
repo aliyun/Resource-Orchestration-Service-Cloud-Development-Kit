@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * Represents a <code>DeliverTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.208Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.237Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.IDeliverTask")
 @software.amazon.jsii.Jsii.Proxy(IDeliverTask.Jsii$Proxy.class)
 public interface IDeliverTask extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

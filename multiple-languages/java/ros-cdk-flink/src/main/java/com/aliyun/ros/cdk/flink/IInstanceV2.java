@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * Represents a <code>InstanceV2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.643Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:06:21.217Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.IInstanceV2")
 @software.amazon.jsii.Jsii.Proxy(IInstanceV2.Jsii$Proxy.class)
 public interface IInstanceV2 extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

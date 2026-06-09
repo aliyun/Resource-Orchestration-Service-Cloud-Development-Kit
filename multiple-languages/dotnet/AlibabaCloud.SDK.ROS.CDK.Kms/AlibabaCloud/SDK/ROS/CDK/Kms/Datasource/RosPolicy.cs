@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Kms.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Policy`, which is used to query the information about a permission policy.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Policy`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-policy

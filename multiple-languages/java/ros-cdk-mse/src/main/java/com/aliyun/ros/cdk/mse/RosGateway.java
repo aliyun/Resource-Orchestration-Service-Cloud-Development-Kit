@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::Gateway</code>, which is used to add a gateway.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.881Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.363Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosGateway")
 public class RosGateway extends com.aliyun.ros.cdk.core.RosResource {
 

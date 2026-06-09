@@ -72,7 +72,7 @@ export interface IProject2 extends ros.IResource {
     readonly attrProjectName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::IMM::Project2`, which is used to create a project of the new Intelligent Media Management (IMM) version.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::IMM::Project2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProject2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project2
  */

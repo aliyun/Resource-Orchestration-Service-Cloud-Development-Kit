@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.slb.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::DomainExtensions</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::DomainExtensions</code>, which is used to query the additional domains that are added.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.348Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.DomainExtensions")
 public class DomainExtensions extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.datasource.IDomainExtensions {
 

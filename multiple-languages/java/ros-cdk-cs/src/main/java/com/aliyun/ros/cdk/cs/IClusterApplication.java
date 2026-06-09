@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Represents a <code>ClusterApplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.412Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.572Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.IClusterApplication")
 @software.amazon.jsii.Jsii.Proxy(IClusterApplication.Jsii$Proxy.class)
 public interface IClusterApplication extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

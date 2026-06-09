@@ -425,7 +425,7 @@ function rosGrafanaWorkspacePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspace`, which is used to query the information about a Grafana workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspace
  */
@@ -585,7 +585,7 @@ function rosGrafanaWorkspacesPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`, which is used to query the information about Grafana workspaces.
  * @Note This class does not contain additional functions, so it is recommended to use the `GrafanaWorkspaces` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-grafanaworkspaces
  */
@@ -1636,7 +1636,7 @@ function rosXTraceAppPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::XTraceApp`, which is used to query the information about an application monitoring task.
  * @Note This class does not contain additional functions, so it is recommended to use the `XTraceApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-xtraceapp
  */

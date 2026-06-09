@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apig;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.374Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.555Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -35,6 +35,13 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
      * Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getForceHttps() {
+        return null;
+    }
+
+    /**
+     * Property gatewayType: The type of Gateway.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getGatewayType() {
         return null;
     }
 
@@ -91,6 +98,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         java.lang.Object protocol;
         java.lang.Object certIdentifier;
         java.lang.Object forceHttps;
+        java.lang.Object gatewayType;
         java.lang.Object http2Option;
         java.lang.Object resourceGroupId;
         java.lang.Object tlsCipherSuitesConfig;
@@ -180,6 +188,26 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
          */
         public Builder forceHttps(com.aliyun.ros.cdk.core.IResolvable forceHttps) {
             this.forceHttps = forceHttps;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getGatewayType}
+         * @param gatewayType Property gatewayType: The type of Gateway.
+         * @return {@code this}
+         */
+        public Builder gatewayType(java.lang.String gatewayType) {
+            this.gatewayType = gatewayType;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link DomainProps#getGatewayType}
+         * @param gatewayType Property gatewayType: The type of Gateway.
+         * @return {@code this}
+         */
+        public Builder gatewayType(com.aliyun.ros.cdk.core.IResolvable gatewayType) {
+            this.gatewayType = gatewayType;
             return this;
         }
 
@@ -307,6 +335,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         private final java.lang.Object protocol;
         private final java.lang.Object certIdentifier;
         private final java.lang.Object forceHttps;
+        private final java.lang.Object gatewayType;
         private final java.lang.Object http2Option;
         private final java.lang.Object resourceGroupId;
         private final java.lang.Object tlsCipherSuitesConfig;
@@ -323,6 +352,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             this.protocol = software.amazon.jsii.Kernel.get(this, "protocol", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.certIdentifier = software.amazon.jsii.Kernel.get(this, "certIdentifier", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.forceHttps = software.amazon.jsii.Kernel.get(this, "forceHttps", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.gatewayType = software.amazon.jsii.Kernel.get(this, "gatewayType", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.http2Option = software.amazon.jsii.Kernel.get(this, "http2Option", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.resourceGroupId = software.amazon.jsii.Kernel.get(this, "resourceGroupId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.tlsCipherSuitesConfig = software.amazon.jsii.Kernel.get(this, "tlsCipherSuitesConfig", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
@@ -339,6 +369,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             this.protocol = java.util.Objects.requireNonNull(builder.protocol, "protocol is required");
             this.certIdentifier = builder.certIdentifier;
             this.forceHttps = builder.forceHttps;
+            this.gatewayType = builder.gatewayType;
             this.http2Option = builder.http2Option;
             this.resourceGroupId = builder.resourceGroupId;
             this.tlsCipherSuitesConfig = builder.tlsCipherSuitesConfig;
@@ -364,6 +395,11 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
         @Override
         public final java.lang.Object getForceHttps() {
             return this.forceHttps;
+        }
+
+        @Override
+        public final java.lang.Object getGatewayType() {
+            return this.gatewayType;
         }
 
         @Override
@@ -405,6 +441,9 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             if (this.getForceHttps() != null) {
                 data.set("forceHttps", om.valueToTree(this.getForceHttps()));
             }
+            if (this.getGatewayType() != null) {
+                data.set("gatewayType", om.valueToTree(this.getGatewayType()));
+            }
             if (this.getHttp2Option() != null) {
                 data.set("http2Option", om.valueToTree(this.getHttp2Option()));
             }
@@ -442,6 +481,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             if (!protocol.equals(that.protocol)) return false;
             if (this.certIdentifier != null ? !this.certIdentifier.equals(that.certIdentifier) : that.certIdentifier != null) return false;
             if (this.forceHttps != null ? !this.forceHttps.equals(that.forceHttps) : that.forceHttps != null) return false;
+            if (this.gatewayType != null ? !this.gatewayType.equals(that.gatewayType) : that.gatewayType != null) return false;
             if (this.http2Option != null ? !this.http2Option.equals(that.http2Option) : that.http2Option != null) return false;
             if (this.resourceGroupId != null ? !this.resourceGroupId.equals(that.resourceGroupId) : that.resourceGroupId != null) return false;
             if (this.tlsCipherSuitesConfig != null ? !this.tlsCipherSuitesConfig.equals(that.tlsCipherSuitesConfig) : that.tlsCipherSuitesConfig != null) return false;
@@ -455,6 +495,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
             result = 31 * result + (this.protocol.hashCode());
             result = 31 * result + (this.certIdentifier != null ? this.certIdentifier.hashCode() : 0);
             result = 31 * result + (this.forceHttps != null ? this.forceHttps.hashCode() : 0);
+            result = 31 * result + (this.gatewayType != null ? this.gatewayType.hashCode() : 0);
             result = 31 * result + (this.http2Option != null ? this.http2Option.hashCode() : 0);
             result = 31 * result + (this.resourceGroupId != null ? this.resourceGroupId.hashCode() : 0);
             result = 31 * result + (this.tlsCipherSuitesConfig != null ? this.tlsCipherSuitesConfig.hashCode() : 0);

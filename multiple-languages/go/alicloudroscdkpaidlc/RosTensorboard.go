@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Tensorboard`.
 type RosTensorboard interface {
 	alicloudroscdkcore.RosResource
 	AttrTensorboardId() alicloudroscdkcore.IResolvable

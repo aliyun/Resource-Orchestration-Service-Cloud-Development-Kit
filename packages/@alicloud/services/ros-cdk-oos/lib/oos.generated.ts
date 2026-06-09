@@ -229,6 +229,11 @@ export interface RosApplicationConnectionBindProps {
      * @Property applicationName: The name of the application.
      */
     readonly applicationName?: string | ros.IResolvable;
+
+    /**
+     * @Property parameters: The parameters of the application connection bind.
+     */
+    readonly parameters?: Array<RosApplicationConnectionBind.ParametersProperty | ros.IResolvable> | ros.IResolvable;
 }
 
 /**
@@ -242,6 +247,14 @@ function RosApplicationConnectionBindPropsValidator(properties: any): ros.Valida
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('applicationName', ros.validateString)(properties.applicationName));
+    if(properties.parameters && (Array.isArray(properties.parameters) || (typeof properties.parameters) === 'string')) {
+        errors.collect(ros.propertyValidator('parameters', ros.validateLength)({
+            data: properties.parameters.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('parameters', ros.listValidator(RosApplicationConnectionBind_ParametersPropertyValidator))(properties.parameters));
     errors.collect(ros.propertyValidator('connectionIds', ros.requiredValidator)(properties.connectionIds));
     if(properties.connectionIds && (Array.isArray(properties.connectionIds) || (typeof properties.connectionIds) === 'string')) {
         errors.collect(ros.propertyValidator('connectionIds', ros.validateLength)({
@@ -272,6 +285,7 @@ function rosApplicationConnectionBindPropsToRosTemplate(properties: any, enableR
       'ConnectionIds': ros.listMapper(ros.stringToRosTemplate)(properties.connectionIds),
       'ApplicationGroupName': ros.stringToRosTemplate(properties.applicationGroupName),
       'ApplicationName': ros.stringToRosTemplate(properties.applicationName),
+      'Parameters': ros.listMapper(rosApplicationConnectionBindParametersPropertyToRosTemplate)(properties.parameters),
     };
 }
 
@@ -306,6 +320,11 @@ export class RosApplicationConnectionBind extends ros.RosResource {
     public applicationName: string | ros.IResolvable | undefined;
 
     /**
+     * @Property parameters: The parameters of the application connection bind.
+     */
+    public parameters: Array<RosApplicationConnectionBind.ParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -317,6 +336,7 @@ export class RosApplicationConnectionBind extends ros.RosResource {
         this.connectionIds = props.connectionIds;
         this.applicationGroupName = props.applicationGroupName;
         this.applicationName = props.applicationName;
+        this.parameters = props.parameters;
     }
 
 
@@ -325,11 +345,65 @@ export class RosApplicationConnectionBind extends ros.RosResource {
             connectionIds: this.connectionIds,
             applicationGroupName: this.applicationGroupName,
             applicationName: this.applicationName,
+            parameters: this.parameters,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosApplicationConnectionBindPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosApplicationConnectionBind {
+    /**
+     * @stability external
+     */
+    export interface ParametersProperty {
+        /**
+         * @Property connectionId: The connection ID.
+         */
+        readonly connectionId?: string | ros.IResolvable;
+        /**
+         * @Property parameterValue: The parameter value.
+         */
+        readonly parameterValue?: string | ros.IResolvable;
+        /**
+         * @Property parameterKey: The parameter key.
+         */
+        readonly parameterKey?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ParametersProperty`
+ *
+ * @param properties - the TypeScript properties of a `ParametersProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosApplicationConnectionBind_ParametersPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('connectionId', ros.validateString)(properties.connectionId));
+    errors.collect(ros.propertyValidator('parameterValue', ros.validateString)(properties.parameterValue));
+    errors.collect(ros.propertyValidator('parameterKey', ros.validateString)(properties.parameterKey));
+    return errors.wrap('supplied properties not correct for "ParametersProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnectionBind.Parameters` resource
+ *
+ * @param properties - the TypeScript properties of a `ParametersProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::OOS::ApplicationConnectionBind.Parameters` resource.
+ */
+// @ts-ignore TS6133
+function rosApplicationConnectionBindParametersPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosApplicationConnectionBind_ParametersPropertyValidator(properties).assertSuccess();
+    return {
+      'ConnectionId': ros.stringToRosTemplate(properties.connectionId),
+      'ParameterValue': ros.stringToRosTemplate(properties.parameterValue),
+      'ParameterKey': ros.stringToRosTemplate(properties.parameterKey),
+    };
 }
 
 /**
@@ -414,7 +488,7 @@ function rosApplicationGroupDeploymentPropsToRosTemplate(properties: any, enable
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`The , which resource deploys an application group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::ApplicationGroupDeployment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationGroupDeployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationgroupdeployment
  */
@@ -540,7 +614,7 @@ function rosDefaultPatchBaselinePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`, which is used to register a default patch baseline.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::DefaultPatchBaseline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DefaultPatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-defaultpatchbaseline
  */
@@ -989,7 +1063,7 @@ function rosExecutionPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`, which is used to start an execution.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Execution`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Execution` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
@@ -1346,7 +1420,7 @@ function rosParameterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`, which is used to create a common parameter.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::Parameter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Parameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
@@ -1569,7 +1643,7 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::PatchBaseline`, which is used to create a patch baseline.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::PatchBaseline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-patchbaseline
  */
@@ -1932,7 +2006,7 @@ function rosSecretParameterPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`, which is used to create an encryption parameter.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::SecretParameter`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameter` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-secretparameter
  */
@@ -2415,7 +2489,7 @@ function rosStateConfigurationPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::StateConfiguration`, which is used to create a desired-state configuration.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OOS::StateConfiguration`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StateConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-stateconfiguration
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::HBase::Cluster`.
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	ICluster

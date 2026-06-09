@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OSS::BucketPublicAccessBlock</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.884Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketPublicAccessBlock")
 public class RosBucketPublicAccessBlock extends com.aliyun.ros.cdk.core.RosResource {
 
