@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenBandwidthLimit</code>, which is used to configure the bandwidth for cross-region interconnection in a bandwidth plan.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.251Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.221Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthLimit")
 public class CenBandwidthLimit extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ICenBandwidthLimit {
 

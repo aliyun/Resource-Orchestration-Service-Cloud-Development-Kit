@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Domain</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Domain</code>, which is used to create a domain name.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.372Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.552Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IDomain {
 
@@ -276,6 +276,27 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
          */
         public Builder forceHttps(final com.aliyun.ros.cdk.core.IResolvable forceHttps) {
             this.props.forceHttps(forceHttps);
+            return this;
+        }
+
+        /**
+         * Property gatewayType: The type of Gateway.
+         * <p>
+         * @return {@code this}
+         * @param gatewayType Property gatewayType: The type of Gateway. This parameter is required.
+         */
+        public Builder gatewayType(final java.lang.String gatewayType) {
+            this.props.gatewayType(gatewayType);
+            return this;
+        }
+        /**
+         * Property gatewayType: The type of Gateway.
+         * <p>
+         * @return {@code this}
+         * @param gatewayType Property gatewayType: The type of Gateway. This parameter is required.
+         */
+        public Builder gatewayType(final com.aliyun.ros.cdk.core.IResolvable gatewayType) {
+            this.props.gatewayType(gatewayType);
             return this;
         }
 

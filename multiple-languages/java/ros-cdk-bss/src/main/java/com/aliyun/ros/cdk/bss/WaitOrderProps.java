@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.bss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bss-waitorder
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.072Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:38:31.682Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.WaitOrderProps")
 @software.amazon.jsii.Jsii.Proxy(WaitOrderProps.Jsii$Proxy.class)
 public interface WaitOrderProps extends software.amazon.jsii.JsiiSerializable {

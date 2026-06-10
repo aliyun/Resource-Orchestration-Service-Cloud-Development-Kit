@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-alert
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.448Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:57:03.220Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosAlertProps")
 @software.amazon.jsii.Jsii.Proxy(RosAlertProps.Jsii$Proxy.class)
 public interface RosAlertProps extends software.amazon.jsii.JsiiSerializable {

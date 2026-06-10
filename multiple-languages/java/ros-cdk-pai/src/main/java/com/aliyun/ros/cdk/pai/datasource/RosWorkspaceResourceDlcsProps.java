@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcedlcs
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.531Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:20:13.924Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.RosWorkspaceResourceDlcsProps")
 @software.amazon.jsii.Jsii.Proxy(RosWorkspaceResourceDlcsProps.Jsii$Proxy.class)
 public interface RosWorkspaceResourceDlcsProps extends software.amazon.jsii.JsiiSerializable {

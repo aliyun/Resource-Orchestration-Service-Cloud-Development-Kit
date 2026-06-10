@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `RuleAction` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction

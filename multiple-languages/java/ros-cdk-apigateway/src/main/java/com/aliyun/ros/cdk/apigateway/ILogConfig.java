@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * Represents a <code>LogConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.643Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.560Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.ILogConfig")
 @software.amazon.jsii.Jsii.Proxy(ILogConfig.Jsii$Proxy.class)
 public interface ILogConfig extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

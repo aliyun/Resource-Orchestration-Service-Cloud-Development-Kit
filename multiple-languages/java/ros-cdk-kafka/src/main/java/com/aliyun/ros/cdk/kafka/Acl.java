@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kafka;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Acl</code>, which is used to create an access control list (ACL).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.411Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.554Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Acl")
 public class Acl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kafka.IAcl {
 

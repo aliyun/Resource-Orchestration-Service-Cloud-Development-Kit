@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`, which is used to create a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DataFlow` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow

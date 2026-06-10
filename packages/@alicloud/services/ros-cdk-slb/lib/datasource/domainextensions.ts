@@ -51,7 +51,7 @@ export interface IDomainExtensions extends ros.IResource {
     readonly attrDomainExtensions: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the additional domains that are added.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainExtensions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-slb-domainextensions
  */

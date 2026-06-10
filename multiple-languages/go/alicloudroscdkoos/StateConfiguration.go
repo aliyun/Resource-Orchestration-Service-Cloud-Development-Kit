@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::StateConfiguration`, which is used to create a desired-state configuration.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OOS::StateConfiguration`.
 type StateConfiguration interface {
 	alicloudroscdkcore.Resource
 	IStateConfiguration

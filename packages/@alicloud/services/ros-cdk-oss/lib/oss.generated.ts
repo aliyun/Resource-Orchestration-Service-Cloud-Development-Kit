@@ -2519,7 +2519,7 @@ function rosBucketReplicationPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketReplication`The , which is used to specify data replication rules for an OSS bucket.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::BucketReplication`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BucketReplication` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketreplication
  */
@@ -3444,7 +3444,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`, which is used to bind a custom domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OSS::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-domain
  */

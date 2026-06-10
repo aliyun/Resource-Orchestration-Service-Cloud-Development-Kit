@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Represents a <code>TransitRouterVbrAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.324Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.310Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.ITransitRouterVbrAttachment")
 @software.amazon.jsii.Jsii.Proxy(ITransitRouterVbrAttachment.Jsii$Proxy.class)
 public interface ITransitRouterVbrAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

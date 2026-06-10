@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.clickhouse.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-clickhouse-enterprisedbclusters
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.602Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:45.098Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.datasource.EnterpriseDBClustersProps")
 @software.amazon.jsii.Jsii.Proxy(EnterpriseDBClustersProps.Jsii$Proxy.class)
 public interface EnterpriseDBClustersProps extends software.amazon.jsii.JsiiSerializable {

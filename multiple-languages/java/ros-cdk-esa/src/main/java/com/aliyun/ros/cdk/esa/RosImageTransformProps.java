@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.esa;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-imagetransform
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.143Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.818Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosImageTransformProps")
 @software.amazon.jsii.Jsii.Proxy(RosImageTransformProps.Jsii$Proxy.class)
 public interface RosImageTransformProps extends software.amazon.jsii.JsiiSerializable {

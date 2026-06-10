@@ -91,7 +91,7 @@ export interface IBasicAccelerator extends ros.IResource {
     readonly attrAcceleratorId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAccelerator`, which is used to create a basic Global Accelerator (GA) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GA::BasicAccelerator`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBasicAccelerator`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerator
  */

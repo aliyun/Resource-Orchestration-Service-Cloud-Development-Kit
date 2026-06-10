@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Represents a <code>EnterpriseDBClusterAccount</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.557Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:45.049Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.IEnterpriseDBClusterAccount")
 @software.amazon.jsii.Jsii.Proxy(IEnterpriseDBClusterAccount.Jsii$Proxy.class)
 public interface IEnterpriseDBClusterAccount extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

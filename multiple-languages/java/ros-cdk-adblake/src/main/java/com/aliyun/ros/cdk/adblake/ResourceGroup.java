@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.adblake;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::ResourceGroup</code>, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.996Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.694Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.ResourceGroup")
 public class ResourceGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adblake.IResourceGroup {
 

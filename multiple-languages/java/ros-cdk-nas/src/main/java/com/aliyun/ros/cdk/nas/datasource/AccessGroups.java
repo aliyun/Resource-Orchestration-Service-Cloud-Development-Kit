@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::NAS::AccessGroups</code>, which is used to query the information about permission groups.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::NAS::AccessGroups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.996Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.547Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.datasource.AccessGroups")
 public class AccessGroups extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.datasource.IAccessGroups {
 

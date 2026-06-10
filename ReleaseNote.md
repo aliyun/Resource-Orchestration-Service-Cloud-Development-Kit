@@ -1,4 +1,8 @@
 # Aliyun ROS Cloud Development Toolkit Changelog
+## [ros-cdk-cli 1.14.0] (2026-06-08)
+### Features 
+- Update ROS resource sdk packages(Added the ALIYUN::BPStudio::Application、ALIYUN::Bailian::ApiKey、ALIYUN::CMS2::AddonRelease、ALIYUN::CMS2::ServiceObservability、ALIYUN::Config::ReportTemplate、ALIYUN::DTS::JobMonitorRule、ALIYUN::Eflo::Vpd、ALIYUN::EventBridge::ApiDestination、ALIYUN::EventBridge::Connection、ALIYUN::PAI::Quota、ALIYUN::PAI::ResourceGroup、DATASOURCE::BPStudio::Application、DATASOURCE::BPStudio::Template)
+
 ## [ros-cdk-cli 1.13.0] (2026-05-07)
 ### Features
 - Update ROS resource sdk packages(Added the ALIYUN::AgentRun::Template、ALIYUN::APIG::Consumer、ALIYUN::APIG::ConsumerAuthorizationRule、ALIYUN::CAS::PcaCertificate、ALIYUN::CAS::UserCertificate、ALIYUN::CMS2::IntegrationPolicy、ALIYUN::CMS2::PrometheusInstance、ALIYUN::DataWorks::DataSourceSharedRule、ALIYUN::EHPC::Queue、ALIYUN::GPDB::DBResourceGroup、ALIYUN::MONGODB::GlobalSecurityIPGroup、ALIYUN::NLB::HdMonitorRegionConfig、ALIYUN::PaiFeatureStore::Datasource、ALIYUN::ROCKETMQ5::Account、ALIYUN::SchedulerX::WorkFlow、ALIYUN::VPC::IpamPoolAllocation、DATASOURCE::CMS2::ServiceObservability)

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * Represents a <code>RecoveryPlan</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.934Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.869Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.IRecoveryPlan")
 @software.amazon.jsii.Jsii.Proxy(IRecoveryPlan.Jsii$Proxy.class)
 public interface IRecoveryPlan extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

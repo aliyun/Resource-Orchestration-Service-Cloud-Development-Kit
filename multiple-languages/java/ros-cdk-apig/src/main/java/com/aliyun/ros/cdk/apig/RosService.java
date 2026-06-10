@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::Service</code>, which is used to create a service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.467Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.691Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 

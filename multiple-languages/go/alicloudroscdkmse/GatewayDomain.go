@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayDomain`You can use , which to add an associated domain to a gateway.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayDomain`.
 type GatewayDomain interface {
 	alicloudroscdkcore.Resource
 	IGatewayDomain

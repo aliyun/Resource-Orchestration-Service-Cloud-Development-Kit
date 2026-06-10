@@ -298,7 +298,7 @@ function rosDeviceGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::DeviceGroup`, which is used to create a group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::DeviceGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DeviceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
@@ -587,7 +587,7 @@ function rosProductPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`, which is used to create a product.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::Product`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Product` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-product
  */
@@ -876,7 +876,7 @@ function rosProductTopicPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`, which is used to create a topic category for a specified product.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::ProductTopic`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProductTopic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic
  */
@@ -1504,7 +1504,7 @@ function rosRuleActionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`, which is used to create a rule action for a specified rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::IOT::RuleAction`.
  * @Note This class does not contain additional functions, so it is recommended to use the `RuleAction` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-ruleaction
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::APIG::Environments</code>The DATASOURCE::APIG:: Environments type is used to query environment list.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.504Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.707Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.datasource.Environments")
 public class Environments extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.datasource.IEnvironments {
 

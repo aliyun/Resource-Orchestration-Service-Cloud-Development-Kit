@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * A Docker image.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.706Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:05:41.173Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.DockerImage")
 public class DockerImage extends software.amazon.jsii.JsiiObject {
 

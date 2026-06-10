@@ -63,7 +63,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancer`The , which type is used to query the basic information of single Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancer
  */
@@ -429,7 +429,7 @@ function rosLoadBalancersPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`, which is used to query the basic information about created Network Load Balancer (NLB) instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NLB::LoadBalancers`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nlb-loadbalancers
  */

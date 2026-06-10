@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * Represents a <code>PasswordTaskHostAccountAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.026Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.507Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.IPasswordTaskHostAccountAttachment")
 @software.amazon.jsii.Jsii.Proxy(IPasswordTaskHostAccountAttachment.Jsii$Proxy.class)
 public interface IPasswordTaskHostAccountAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -37,7 +37,7 @@ export interface IAccessKey extends ros.IResource {
     readonly attrStatus: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AccessKey`The , which resource type retrieves a specified RAM user’s AccessKey ID, AccessKey secret, and AccessKey status.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AccessKey`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccessKey`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-accesskey
  */

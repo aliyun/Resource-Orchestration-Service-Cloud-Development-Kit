@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls;
 /**
  * Represents a <code>Audit</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.381Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:57:03.159Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.IAudit")
 @software.amazon.jsii.Jsii.Proxy(IAudit.Jsii$Proxy.class)
 public interface IAudit extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

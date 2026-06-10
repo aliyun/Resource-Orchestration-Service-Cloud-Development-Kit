@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::GatewayDomain</code>You can use , which to add an associated domain to a gateway.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::GatewayDomain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.832Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.314Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.GatewayDomain")
 public class GatewayDomain extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.IGatewayDomain {
 

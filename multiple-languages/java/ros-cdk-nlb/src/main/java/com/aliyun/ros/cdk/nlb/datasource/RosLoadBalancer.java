@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nlb.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::NLB::LoadBalancer</code>The , which type is used to query the basic information of single Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::NLB::LoadBalancer</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.115Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:01:45.130Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.datasource.RosLoadBalancer")
 public class RosLoadBalancer extends com.aliyun.ros.cdk.core.RosResource {
 

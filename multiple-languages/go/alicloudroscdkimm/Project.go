@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::IMM::Project`, which is used to create an Intelligent Media Management (IMM) project.
+// This class encapsulates and extends the ROS resource type `ALIYUN::IMM::Project`.
 type Project interface {
 	alicloudroscdkcore.Resource
 	IProject

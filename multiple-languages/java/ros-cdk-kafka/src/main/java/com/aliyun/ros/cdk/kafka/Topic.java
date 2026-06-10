@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kafka;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Topic</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::Topic</code>, which is used to create a topic.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.616Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kafka.ITopic {
 

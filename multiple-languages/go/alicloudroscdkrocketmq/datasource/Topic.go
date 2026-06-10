@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Topic`, which is used to query the information about a topic.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ROCKETMQ::Topic`.
 type Topic interface {
 	alicloudroscdkcore.Resource
 	ITopic

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-experiment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.421Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:20:13.833Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.RosExperimentProps")
 @software.amazon.jsii.Jsii.Proxy(RosExperimentProps.Jsii$Proxy.class)
 public interface RosExperimentProps extends software.amazon.jsii.JsiiSerializable {

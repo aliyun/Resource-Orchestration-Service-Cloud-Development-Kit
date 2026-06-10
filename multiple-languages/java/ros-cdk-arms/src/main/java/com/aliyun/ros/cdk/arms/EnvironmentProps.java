@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-environment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.839Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.062Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.EnvironmentProps")
 @software.amazon.jsii.Jsii.Proxy(EnvironmentProps.Jsii$Proxy.class)
 public interface EnvironmentProps extends software.amazon.jsii.JsiiSerializable {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.appflow;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbot
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.799Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.456Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.RosChatbotProps")
 @software.amazon.jsii.Jsii.Proxy(RosChatbotProps.Jsii$Proxy.class)
 public interface RosChatbotProps extends software.amazon.jsii.JsiiSerializable {

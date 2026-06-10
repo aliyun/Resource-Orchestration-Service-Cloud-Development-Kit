@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.
 type RosInstanceV2 interface {
 	alicloudroscdkcore.RosResource
 	ArchitectureType() interface{}

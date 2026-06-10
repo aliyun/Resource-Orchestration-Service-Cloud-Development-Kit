@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.arms.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ARMS::GrafanaWorkspace</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ARMS::GrafanaWorkspace</code>, which is used to query the information about a Grafana workspace.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.945Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.160Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.RosGrafanaWorkspace")
 public class RosGrafanaWorkspace extends com.aliyun.ros.cdk.core.RosResource {
 

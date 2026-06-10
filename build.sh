@@ -295,13 +295,45 @@ jsii_pack() {
 
     if [ "${ARG1}" == "--source-code" ];
     then
-        for pack_dir in $(cat $TMPDIR/jsii.txt); do
-           $PACMAK -c true --verbose $pack_dir
-        done
+        echo "[DEBUG] Running in --source-code mode" >&2
+        echo "[DEBUG] Reading package list from $TMPDIR/jsii.txt" >&2
+        echo "[DEBUG] Total packages to process: $(wc -l < $TMPDIR/jsii.txt)" >&2
+        batch_size=3
+        batch_count=0
+        batch_args=""
+        total_count=0
+        echo "[DEBUG] Batch size set to $batch_size" >&2
+        while read pack_dir; do
+            total_count=$((total_count + 1))
+            echo "[DEBUG] [$total_count] Adding package: $pack_dir" >&2
+            batch_args="$batch_args $pack_dir"
+            batch_count=$((batch_count + 1))
+            if [ $batch_count -ge $batch_size ]; then
+                echo "Packaging batch of $batch_count modules (total processed: $total_count)..." >&2
+                echo "[DEBUG] Running: $PACMAK -c true --verbose $batch_args" >&2
+                START_TIME=$(date +%s)
+                $PACMAK -c true --verbose $batch_args
+                END_TIME=$(date +%s)
+                echo "[DEBUG] Batch completed in $((END_TIME - START_TIME)) seconds" >&2
+                batch_count=0
+                batch_args=""
+            fi
+        done < $TMPDIR/jsii.txt
+        if [ $batch_count -gt 0 ]; then
+            echo "Packaging final batch of $batch_count modules (total processed: $total_count)..." >&2
+            echo "[DEBUG] Running: $PACMAK -c true --verbose $batch_args" >&2
+            START_TIME=$(date +%s)
+            $PACMAK -c true --verbose $batch_args
+            END_TIME=$(date +%s)
+            echo "[DEBUG] Final batch completed in $((END_TIME - START_TIME)) seconds" >&2
+        fi
+        echo "[DEBUG] All $total_count packages processed successfully" >&2
     else
-        $PACMAK \
-          --verbose \
-          $(cat $TMPDIR/jsii.txt)
+        echo "[DEBUG] Packaging packages one by one" >&2
+        while read pack_dir; do
+            echo "[DEBUG] Running: $PACMAK --verbose $pack_dir" >&2
+            $PACMAK --verbose $pack_dir
+        done < $TMPDIR/jsii.txt
     fi
     for dir in $(find packages -name dist | grep -v node_modules | grep -v run-wrappers); do
       echo "Merging ${dir}" >&2

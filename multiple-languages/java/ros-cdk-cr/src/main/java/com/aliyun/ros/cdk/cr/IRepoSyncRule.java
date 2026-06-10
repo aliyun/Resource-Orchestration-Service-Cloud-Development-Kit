@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * Represents a <code>RepoSyncRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:03:09.587Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.IRepoSyncRule")
 @software.amazon.jsii.Jsii.Proxy(IRepoSyncRule.Jsii$Proxy.class)
 public interface IRepoSyncRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

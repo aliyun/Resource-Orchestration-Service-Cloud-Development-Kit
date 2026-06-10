@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.searchengine.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SearchEngine::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.084Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:47:39.004Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.searchengine.$Module.class, fqn = "@alicloud/ros-cdk-searchengine.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.searchengine.datasource.IInstances {
 

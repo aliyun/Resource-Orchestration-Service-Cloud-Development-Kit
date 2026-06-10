@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ess;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroupenable
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.414Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.476Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingGroupEnableProps")
 @software.amazon.jsii.Jsii.Proxy(RosScalingGroupEnableProps.Jsii$Proxy.class)
 public interface RosScalingGroupEnableProps extends software.amazon.jsii.JsiiSerializable {

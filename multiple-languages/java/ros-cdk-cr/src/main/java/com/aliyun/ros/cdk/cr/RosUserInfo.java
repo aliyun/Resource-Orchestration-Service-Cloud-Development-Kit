@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CR::UserInfo</code>, which is used to create the information about a user.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.338Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:03:09.652Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.RosUserInfo")
 public class RosUserInfo extends com.aliyun.ros.cdk.core.RosResource {
 

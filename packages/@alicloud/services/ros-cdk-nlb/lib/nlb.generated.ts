@@ -64,7 +64,7 @@ function rosBackendServerAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::BackendServerAttachment`, which is used to add backend servers to a Network Load Balancer (NLB) server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::BackendServerAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-backendserverattachment
  */
@@ -1142,7 +1142,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`, which is used to create a Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::LoadBalancer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
@@ -1718,7 +1718,7 @@ function rosSecurityGroupAttachmentPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`, which is used to bind a security group to a Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitygroupattachment
  */
@@ -1863,7 +1863,7 @@ function rosSecurityPolicyPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`, which is used to create a custom security policy for a TCP/SSL listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::SecurityPolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecurityPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
  */
@@ -2193,7 +2193,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`, which is used to create a server group for a Network Load Balancer (NLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NLB::ServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-servergroup
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>GrantInstanceToCen</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.931Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.419Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.IGrantInstanceToCen")
 @software.amazon.jsii.Jsii.Proxy(IGrantInstanceToCen.Jsii$Proxy.class)
 public interface IGrantInstanceToCen extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

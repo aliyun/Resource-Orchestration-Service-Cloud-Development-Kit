@@ -195,7 +195,7 @@ export interface IHttpsBasicConfiguration extends ros.IResource {
     readonly attrTls13: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`The , which type is used to add a basic HTTPS configuration for a website.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosHttpsBasicConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsbasicconfiguration
  */

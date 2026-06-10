@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::EBS::DiskReplicaPair</code>, which is used to query a replication pair.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.313Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:32:36.327Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.datasource.DiskReplicaPair")
 public class DiskReplicaPair extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ebs.datasource.IDiskReplicaPair {
 

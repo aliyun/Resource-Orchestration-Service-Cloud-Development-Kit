@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gwlb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GWLB::Listener</code>, which type is used to create a listener.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.081Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:21:47.010Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gwlb.$Module.class, fqn = "@alicloud/ros-cdk-gwlb.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gwlb.IListener {
 

@@ -266,7 +266,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`, which creates accounts for managing databases.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-account
  */
@@ -427,7 +427,7 @@ function rosAccountPrivilegePropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`, which is used to authorize an account to access a database.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::AccountPrivilege`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccountPrivilege` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-accountprivilege
  */
@@ -1513,7 +1513,7 @@ function rosDBInstancePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstance`The , which type is used to create an ApsaraDB RDS database instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstance
  */
@@ -2790,7 +2790,7 @@ function rosDBInstanceClonePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`, which is used to restore historical data of an instance to a new instance. The new instance is called the cloned instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceClone`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceClone` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceclone
  */
@@ -3442,7 +3442,7 @@ function rosDBInstanceParameterGroupPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`, which is used to modify the parameters of an ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceParameterGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceParameterGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstanceparametergroup
  */
@@ -3607,7 +3607,7 @@ function rosDBInstanceSecurityIpsPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBInstanceSecurityIps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbinstancesecurityips
  */
@@ -3799,7 +3799,7 @@ function rosDBProxyPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBProxy`, which is used to enable the database proxy feature for an ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBProxy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBProxy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-dbproxy
  */
@@ -4055,7 +4055,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Database`The , which resource type creates a database in an RDS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::Database`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-database
  */
@@ -4490,7 +4490,7 @@ function rosPostgresExtensionsPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PostgresExtensions`, which is used to install extensions on a database.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::PostgresExtensions`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PostgresExtensions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
  */
@@ -6495,7 +6495,7 @@ function rosReadOnlyDBInstancePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`, which is used to create a read-only ApsaraDB RDS instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::ReadOnlyDBInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ReadOnlyDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-readonlydbinstance
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adblake;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.987Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.681Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {

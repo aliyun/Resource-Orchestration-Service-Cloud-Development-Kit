@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::OSS::BucketReplication`The , which is used to specify data replication rules for an OSS bucket.
+// This class encapsulates and extends the ROS resource type `ALIYUN::OSS::BucketReplication`.
 type BucketReplication interface {
 	alicloudroscdkcore.Resource
 	IBucketReplication

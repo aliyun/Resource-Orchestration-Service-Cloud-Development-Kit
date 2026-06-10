@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rds-postgresextensions
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.286Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:35:11.080Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosPostgresExtensionsProps")
 @software.amazon.jsii.Jsii.Proxy(RosPostgresExtensionsProps.Jsii$Proxy.class)
 public interface RosPostgresExtensionsProps extends software.amazon.jsii.JsiiSerializable {

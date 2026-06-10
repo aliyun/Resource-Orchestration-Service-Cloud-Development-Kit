@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Policy`, which is used to create a permission policy to configure the keys and secrets that applications are allowed to access.
+// This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Policy`.
 type Policy interface {
 	alicloudroscdkcore.Resource
 	IPolicy

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToGroup`, which is used to attach a policy to a user group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToGroup`.
 type AttachPolicyToGroup interface {
 	alicloudroscdkcore.Resource
 	IAttachPolicyToGroup

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ClusterHelmApplication`The , which type is used to deploy an application using Helm.
 type RosClusterHelmApplication interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterId() alicloudroscdkcore.IResolvable

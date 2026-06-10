@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Represents a <code>Function</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.938Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.374Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.IFunction")
 @software.amazon.jsii.Jsii.Proxy(IFunction.Jsii$Proxy.class)
 public interface IFunction extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`Use , which to create a cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::Cluster`.
 type Cluster interface {
 	alicloudroscdkcore.Resource
 	ICluster

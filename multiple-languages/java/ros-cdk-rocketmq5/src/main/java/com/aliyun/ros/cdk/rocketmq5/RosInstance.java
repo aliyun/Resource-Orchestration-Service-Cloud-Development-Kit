@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.rocketmq5;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Instance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROCKETMQ5::Instance</code>The , which resource type creates an ApsaraMQ for RocketMQ 5.0 instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.703Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:40:34.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.RosInstance")
 public class RosInstance extends com.aliyun.ros.cdk.core.RosResource {
 

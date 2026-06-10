@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallconfigure
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.729Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosVpcFirewallConfigureProps")
 @software.amazon.jsii.Jsii.Proxy(RosVpcFirewallConfigureProps.Jsii$Proxy.class)
 public interface RosVpcFirewallConfigureProps extends software.amazon.jsii.JsiiSerializable {

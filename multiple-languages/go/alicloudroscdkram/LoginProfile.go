@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::LoginProfile`, which is used to create logon configurations for a Resource Access Management (RAM) user.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::LoginProfile`.
 type LoginProfile interface {
 	alicloudroscdkcore.Resource
 	ILoginProfile

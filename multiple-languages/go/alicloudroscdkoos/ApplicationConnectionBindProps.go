@@ -13,5 +13,7 @@ type ApplicationConnectionBindProps struct {
 	ApplicationGroupName interface{} `field:"optional" json:"applicationGroupName" yaml:"applicationGroupName"`
 	// Property applicationName: The name of the application.
 	ApplicationName interface{} `field:"optional" json:"applicationName" yaml:"applicationName"`
+	// Property parameters: The parameters of the application connection bind.
+	Parameters interface{} `field:"optional" json:"parameters" yaml:"parameters"`
 }
 

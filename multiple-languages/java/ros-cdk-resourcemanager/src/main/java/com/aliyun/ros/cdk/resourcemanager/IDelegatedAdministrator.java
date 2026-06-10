@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.resourcemanager;
 /**
  * Represents a <code>DelegatedAdministrator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.524Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:38:07.238Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.IDelegatedAdministrator")
 @software.amazon.jsii.Jsii.Proxy(IDelegatedAdministrator.Jsii$Proxy.class)
 public interface IDelegatedAdministrator extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

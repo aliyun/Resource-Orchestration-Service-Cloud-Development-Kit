@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.actiontrail;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-advancedquerytemplate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.925Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.937Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.RosAdvancedQueryTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(RosAdvancedQueryTemplateProps.Jsii$Proxy.class)
 public interface RosAdvancedQueryTemplateProps extends software.amazon.jsii.JsiiSerializable {

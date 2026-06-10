@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dms-instance2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.868Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:25:54.778Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dms.$Module.class, fqn = "@alicloud/ros-cdk-dms.Instance2Props")
 @software.amazon.jsii.Jsii.Proxy(Instance2Props.Jsii$Proxy.class)
 public interface Instance2Props extends software.amazon.jsii.JsiiSerializable {

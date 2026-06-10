@@ -123,7 +123,7 @@ function rosAcceleratorPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accelerator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
@@ -699,7 +699,7 @@ function rosAclsListenerAssociationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`, which is used to associate an access control list (ACL) with a listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AclsListenerAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-aclslistenerassociation
  */
@@ -900,7 +900,7 @@ function rosApplicationMonitorPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`, which is used to create an origin probing task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationMonitor` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-applicationmonitor
  */
@@ -1378,7 +1378,7 @@ function rosBandwidthPackageAcceleratorAdditionPropsToRosTemplate(properties: an
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`, which is used to bind a bandwidth plan to a global acceleration instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BandwidthPackageAcceleratorAddition`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BandwidthPackageAcceleratorAddition` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-bandwidthpackageacceleratoraddition
  */
@@ -1715,7 +1715,7 @@ function rosBasicAcceleratorPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`, which is used to create a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAccelerator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerator
  */
@@ -1955,7 +1955,7 @@ function rosBasicAcceleratorIpEndpointRelationPropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAcceleratorIpEndpointRelation`, which is used to create a mapping between an accelerated IP address and an endpoint for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAcceleratorIpEndpointRelation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicacceleratoripendpointrelation
  */
@@ -2367,7 +2367,7 @@ function rosBasicEndpointGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`, which is used to create an endpoint group for a basic Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpointGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpointgroup
  */
@@ -2688,7 +2688,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`, which is used to create a domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
  */
@@ -3226,7 +3226,7 @@ function rosEndpointGroupsPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`, which is used to create multiple endpoint groups at a time.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EndpointGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroups
  */
@@ -3758,7 +3758,7 @@ function rosForwardingRulesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ForwardingRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
  */
@@ -4431,7 +4431,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`, which is used to create a listener for a Global Accelerator (GA) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
@@ -4825,7 +4825,7 @@ function rosLogStoreToEndpointGroupAttachmentPropsToRosTemplate(properties: any,
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::LogStoreToEndpointGroupAttachment`, which is used to associate a Simple Log Service (SLS) Logstore with endpoint groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogStoreToEndpointGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-logstoretoendpointgroupattachment
  */

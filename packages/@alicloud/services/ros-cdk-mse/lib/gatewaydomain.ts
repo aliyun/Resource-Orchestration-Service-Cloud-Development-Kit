@@ -67,7 +67,7 @@ export interface IGatewayDomain extends ros.IResource {
     readonly attrDomainId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayDomain`You can use , which to add an associated domain to a gateway.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MSE::GatewayDomain`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosGatewayDomain`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-gatewaydomain
  */

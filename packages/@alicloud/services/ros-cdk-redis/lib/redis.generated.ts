@@ -267,7 +267,7 @@ function rosAuditLogConfigPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::AuditLogConfig`, which is used to modify the audit log settings of a Tair (Redis OSS-compatible) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::AuditLogConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AuditLogConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
  */
@@ -416,7 +416,7 @@ function rosConnectionPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Connection`, which is used to apply for a public endpoint for an ApsaraDB for Redis instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Connection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Connection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-connection
  */
@@ -3379,7 +3379,7 @@ function rosWhitelistPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::REDIS::Whitelist`The , which type sets the IP whitelist for a Redis instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Whitelist` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-whitelist
  */

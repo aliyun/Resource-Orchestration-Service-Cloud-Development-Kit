@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ram
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`, which is used to create an identity provider (IdP) for role-based single sign-on (SSO).</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::RAM::SAMLProvider`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSAMLProvider`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-samlprovider

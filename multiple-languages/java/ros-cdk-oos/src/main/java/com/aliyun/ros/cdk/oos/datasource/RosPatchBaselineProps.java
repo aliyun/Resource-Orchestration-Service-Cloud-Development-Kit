@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaseline
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.237Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:13:00.002Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.RosPatchBaselineProps")
 @software.amazon.jsii.Jsii.Proxy(RosPatchBaselineProps.Jsii$Proxy.class)
 public interface RosPatchBaselineProps extends software.amazon.jsii.JsiiSerializable {

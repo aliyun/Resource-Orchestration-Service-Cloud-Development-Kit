@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.servicecatalog;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ServiceCatalog::ProductPortfolioAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.106Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:53:18.339Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.servicecatalog.$Module.class, fqn = "@alicloud/ros-cdk-servicecatalog.ProductPortfolioAssociation")
 public class ProductPortfolioAssociation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.servicecatalog.IProductPortfolioAssociation {
 

@@ -100,6 +100,10 @@ func (j *jsiiProxy_RosDomain) validateSetForceHttpsParameters(val interface{}) e
 	return nil
 }
 
+func (j *jsiiProxy_RosDomain) validateSetGatewayTypeParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosDomain) validateSetHttp2OptionParameters(val interface{}) error {
 	return nil
 }

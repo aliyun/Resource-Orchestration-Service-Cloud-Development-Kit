@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::TrFirewall</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::TrFirewall</code>, which is used to create a virtual private cloud (VPC) firewall for a transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.735Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.138Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.TrFirewall")
 public class TrFirewall extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.ITrFirewall {
 

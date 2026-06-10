@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.pai;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PAI::DatasetVersion</code>, which is used to create a dataset version.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::PAI::DatasetVersion</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.418Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:20:13.827Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.RosDatasetVersion")
 public class RosDatasetVersion extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Whitelist`, which is used to create a Whitelist.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Whitelist`.
 type Whitelist interface {
 	alicloudroscdkcore.Resource
 	IWhitelist

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vod.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vod-messagecallbacks
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:02:58.305Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vod.$Module.class, fqn = "@alicloud/ros-cdk-vod.datasource.RosMessageCallbacksProps")
 @software.amazon.jsii.Jsii.Proxy(RosMessageCallbacksProps.Jsii$Proxy.class)
 public interface RosMessageCallbacksProps extends software.amazon.jsii.JsiiSerializable {

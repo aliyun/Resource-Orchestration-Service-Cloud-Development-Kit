@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-monitorgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.137Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.MonitorGroupProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorGroupProps.Jsii$Proxy.class)
 public interface MonitorGroupProps extends software.amazon.jsii.JsiiSerializable {

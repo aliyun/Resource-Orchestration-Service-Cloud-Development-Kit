@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mns;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MNS::Topic</code>, which is used to create a topic.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MNS::Topic</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.730Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:51:02.134Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.Topic")
 public class Topic extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mns.ITopic {
 

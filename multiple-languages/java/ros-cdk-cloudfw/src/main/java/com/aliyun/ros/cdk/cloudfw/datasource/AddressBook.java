@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CLOUDFW::AddressBook</code>.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CLOUDFW::AddressBook</code>, which is used to query the information about an address book for access control in Cloud Firewall.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.770Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.datasource.AddressBook")
 public class AddressBook extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.datasource.IAddressBook {
 

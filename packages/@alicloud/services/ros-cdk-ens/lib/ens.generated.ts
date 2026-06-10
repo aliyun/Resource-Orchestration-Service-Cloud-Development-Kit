@@ -115,7 +115,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
@@ -756,7 +756,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Instance`, which is used to create Edge Node Service (ENS) instances.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instance
  */
@@ -2144,7 +2144,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-snapshot
  */

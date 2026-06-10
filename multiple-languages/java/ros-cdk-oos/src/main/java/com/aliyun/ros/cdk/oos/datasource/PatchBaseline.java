@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OOS::PatchBaseline</code>, which is used to query a patch baseline.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OOS::PatchBaseline</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.996Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.datasource.PatchBaseline")
 public class PatchBaseline extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.datasource.IPatchBaseline {
 

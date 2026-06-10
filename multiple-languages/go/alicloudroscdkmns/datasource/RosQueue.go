@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queue`, which is used to query the information about a created queue.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::MNS::Queue`.
 type RosQueue interface {
 	alicloudroscdkcore.RosResource
 	AttrActiveMessages() alicloudroscdkcore.IResolvable

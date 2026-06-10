@@ -100,7 +100,7 @@ function rosGitCodeRepoPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`, which is used to generate the URL of a user-specified GitHub or Gitee code repository.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::GitCodeRepo`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GitCodeRepo` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-gitcoderepo
  */
@@ -247,7 +247,7 @@ function rosPatchBaselinePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaseline`, which is used to query a patch baseline.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::PatchBaseline`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PatchBaseline` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-patchbaseline
  */
@@ -835,7 +835,7 @@ function rosSecretParametersPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SecretParameters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-secretparameters
  */
@@ -974,7 +974,7 @@ function rosTemplatePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Template`The , which type is used to query the details of a single template.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Template`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Template` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-template
  */
@@ -1326,7 +1326,7 @@ function rosTemplatesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`The , which type is used to query template lists.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Templates` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-templates
  */

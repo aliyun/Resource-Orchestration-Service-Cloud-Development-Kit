@@ -561,7 +561,7 @@ function rosInstanceV2PropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
  */
@@ -1140,7 +1140,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */
@@ -1325,7 +1325,7 @@ function rosNamespaceV2PropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::NamespaceV2`The , which resource creates a project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::NamespaceV2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NamespaceV2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespacev2
  */

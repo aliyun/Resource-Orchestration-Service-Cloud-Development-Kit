@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * Any object that has an associated principal that a permission can be granted to.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.996Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.274Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.IGrantable")
 @software.amazon.jsii.Jsii.Proxy(IGrantable.Jsii$Proxy.class)
 public interface IGrantable extends software.amazon.jsii.JsiiSerializable {

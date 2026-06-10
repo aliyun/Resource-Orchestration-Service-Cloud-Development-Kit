@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fnf.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fnf-flow
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.701Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:08:10.308Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.datasource.RosFlowProps")
 @software.amazon.jsii.Jsii.Proxy(RosFlowProps.Jsii$Proxy.class)
 public interface RosFlowProps extends software.amazon.jsii.JsiiSerializable {

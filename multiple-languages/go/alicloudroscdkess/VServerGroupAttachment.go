@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`, which is used to associate vServer groups of a Sever Load Balancer (SLB) instance with a scaling group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`.
 type VServerGroupAttachment interface {
 	alicloudroscdkcore.Resource
 	IVServerGroupAttachment

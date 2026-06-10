@@ -1,0 +1,15 @@
+@alicloud/ros-cdk-bpstudio.Application=com.aliyun.ros.cdk.bpstudio.Application
+@alicloud/ros-cdk-bpstudio.ApplicationProps=com.aliyun.ros.cdk.bpstudio.ApplicationProps
+@alicloud/ros-cdk-bpstudio.IApplication=com.aliyun.ros.cdk.bpstudio.IApplication
+@alicloud/ros-cdk-bpstudio.RosApplication=com.aliyun.ros.cdk.bpstudio.RosApplication
+@alicloud/ros-cdk-bpstudio.RosApplicationProps=com.aliyun.ros.cdk.bpstudio.RosApplicationProps
+@alicloud/ros-cdk-bpstudio.datasource.Application=com.aliyun.ros.cdk.bpstudio.datasource.Application
+@alicloud/ros-cdk-bpstudio.datasource.ApplicationProps=com.aliyun.ros.cdk.bpstudio.datasource.ApplicationProps
+@alicloud/ros-cdk-bpstudio.datasource.IApplication=com.aliyun.ros.cdk.bpstudio.datasource.IApplication
+@alicloud/ros-cdk-bpstudio.datasource.ITemplate=com.aliyun.ros.cdk.bpstudio.datasource.ITemplate
+@alicloud/ros-cdk-bpstudio.datasource.RosApplication=com.aliyun.ros.cdk.bpstudio.datasource.RosApplication
+@alicloud/ros-cdk-bpstudio.datasource.RosApplicationProps=com.aliyun.ros.cdk.bpstudio.datasource.RosApplicationProps
+@alicloud/ros-cdk-bpstudio.datasource.RosTemplate=com.aliyun.ros.cdk.bpstudio.datasource.RosTemplate
+@alicloud/ros-cdk-bpstudio.datasource.RosTemplateProps=com.aliyun.ros.cdk.bpstudio.datasource.RosTemplateProps
+@alicloud/ros-cdk-bpstudio.datasource.Template=com.aliyun.ros.cdk.bpstudio.datasource.Template
+@alicloud/ros-cdk-bpstudio.datasource.TemplateProps=com.aliyun.ros.cdk.bpstudio.datasource.TemplateProps

@@ -7,7 +7,7 @@ package com.aliyun.ros.cdk.core;
  * used for optimizing and caching deployment activities related to this asset such as
  * packaging, uploading to OSS bucket, etc.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.673Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:05:41.129Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.AssetHashType")
 public enum AssetHashType {
     /**

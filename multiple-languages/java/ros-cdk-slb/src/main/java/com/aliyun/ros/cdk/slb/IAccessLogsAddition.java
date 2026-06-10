@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Represents a <code>AccessLogsAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.251Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.IAccessLogsAddition")
 @software.amazon.jsii.Jsii.Proxy(IAccessLogsAddition.Jsii$Proxy.class)
 public interface IAccessLogsAddition extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

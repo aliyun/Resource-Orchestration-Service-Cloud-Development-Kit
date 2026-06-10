@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.threatdetection;
 /**
  * Represents a <code>HoneypotProbe</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.653Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:59:58.503Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.IHoneypotProbe")
 @software.amazon.jsii.Jsii.Proxy(IHoneypotProbe.Jsii$Proxy.class)
 public interface IHoneypotProbe extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

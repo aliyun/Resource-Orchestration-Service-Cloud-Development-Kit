@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::ApplicationConnectionBind</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.882Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ApplicationConnectionBind")
 public class ApplicationConnectionBind extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IApplicationConnectionBind {
 
@@ -167,6 +167,27 @@ public class ApplicationConnectionBind extends com.aliyun.ros.cdk.core.Resource 
          */
         public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
             this.props.applicationName(applicationName);
+            return this;
+        }
+
+        /**
+         * Property parameters: The parameters of the application connection bind.
+         * <p>
+         * @return {@code this}
+         * @param parameters Property parameters: The parameters of the application connection bind. This parameter is required.
+         */
+        public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
+            this.props.parameters(parameters);
+            return this;
+        }
+        /**
+         * Property parameters: The parameters of the application connection bind.
+         * <p>
+         * @return {@code this}
+         * @param parameters Property parameters: The parameters of the application connection bind. This parameter is required.
+         */
+        public Builder parameters(final java.util.List<? extends java.lang.Object> parameters) {
+            this.props.parameters(parameters);
             return this;
         }
 

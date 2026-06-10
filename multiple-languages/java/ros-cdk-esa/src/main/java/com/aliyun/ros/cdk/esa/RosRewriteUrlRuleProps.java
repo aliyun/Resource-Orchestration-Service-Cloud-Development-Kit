@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.esa;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-rewriteurlrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.185Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.873Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.RosRewriteUrlRuleProps")
 @software.amazon.jsii.Jsii.Proxy(RosRewriteUrlRuleProps.Jsii$Proxy.class)
 public interface RosRewriteUrlRuleProps extends software.amazon.jsii.JsiiSerializable {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Quota`The , which type is used to create a MaxCompute (previously known as ODPS) quota.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MaxCompute::Quota`.
 type Quota interface {
 	alicloudroscdkcore.Resource
 	IQuota

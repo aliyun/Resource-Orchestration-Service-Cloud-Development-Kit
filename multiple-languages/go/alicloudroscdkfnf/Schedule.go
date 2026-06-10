@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Schedule`, which is used to create a time-based schedule.
+// This class encapsulates and extends the ROS resource type `ALIYUN::FNF::Schedule`.
 type Schedule interface {
 	alicloudroscdkcore.Resource
 	ISchedule

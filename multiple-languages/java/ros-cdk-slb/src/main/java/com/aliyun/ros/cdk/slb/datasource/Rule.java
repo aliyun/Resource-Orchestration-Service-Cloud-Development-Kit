@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SLB::Rule</code>, which is used to query the configuration details of a forwarding rule.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.339Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.420Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.Rule")
 public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.slb.datasource.IRule {
 

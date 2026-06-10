@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.bastionhost;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-passwordtask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.044Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.517Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.PasswordTaskProps")
 @software.amazon.jsii.Jsii.Proxy(PasswordTaskProps.Jsii$Proxy.class)
 public interface PasswordTaskProps extends software.amazon.jsii.JsiiSerializable {

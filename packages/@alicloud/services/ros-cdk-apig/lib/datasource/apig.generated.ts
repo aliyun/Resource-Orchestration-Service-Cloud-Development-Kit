@@ -236,7 +236,7 @@ function rosDomainsPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Domains`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Domains`The , which type is used to query domain list.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domains` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-domains
  */
@@ -642,7 +642,7 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Gateway`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Gateway`The , which type is used to query gateway details.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-gateway
  */
@@ -1296,7 +1296,7 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Plugin`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Plugin`, which is used to query the information about a plug-in.
  * @Note This class does not contain additional functions, so it is recommended to use the `Plugin` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-plugin
  */
@@ -2167,7 +2167,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Service`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::APIG::Service`, which is used to query the information about a service.
  * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-service
  */

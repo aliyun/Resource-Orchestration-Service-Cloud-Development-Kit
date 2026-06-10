@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Slb
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`You can use , which to create a Server Load Balancer (SLB) listener.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener

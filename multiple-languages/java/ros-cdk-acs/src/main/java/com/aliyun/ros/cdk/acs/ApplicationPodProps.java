@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.acs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acs-applicationpod
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:44.862Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:11:47.712Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.ApplicationPodProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationPodProps.Jsii$Proxy.class)
 public interface ApplicationPodProps extends software.amazon.jsii.JsiiSerializable {

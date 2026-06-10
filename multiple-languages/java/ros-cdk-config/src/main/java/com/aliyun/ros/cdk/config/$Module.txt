@@ -10,7 +10,10 @@
 @alicloud/ros-cdk-config.IAggregator=com.aliyun.ros.cdk.config.IAggregator
 @alicloud/ros-cdk-config.ICompliancePack=com.aliyun.ros.cdk.config.ICompliancePack
 @alicloud/ros-cdk-config.IDeliveryChannel=com.aliyun.ros.cdk.config.IDeliveryChannel
+@alicloud/ros-cdk-config.IReportTemplate=com.aliyun.ros.cdk.config.IReportTemplate
 @alicloud/ros-cdk-config.IRule=com.aliyun.ros.cdk.config.IRule
+@alicloud/ros-cdk-config.ReportTemplate=com.aliyun.ros.cdk.config.ReportTemplate
+@alicloud/ros-cdk-config.ReportTemplateProps=com.aliyun.ros.cdk.config.ReportTemplateProps
 @alicloud/ros-cdk-config.RosAggregateCompliancePack=com.aliyun.ros.cdk.config.RosAggregateCompliancePack
 @alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRuleParametersProperty=com.aliyun.ros.cdk.config.RosAggregateCompliancePack$ConfigRuleParametersProperty
 @alicloud/ros-cdk-config.RosAggregateCompliancePack.ConfigRulesProperty=com.aliyun.ros.cdk.config.RosAggregateCompliancePack$ConfigRulesProperty
@@ -23,6 +26,9 @@
 @alicloud/ros-cdk-config.RosCompliancePackProps=com.aliyun.ros.cdk.config.RosCompliancePackProps
 @alicloud/ros-cdk-config.RosDeliveryChannel=com.aliyun.ros.cdk.config.RosDeliveryChannel
 @alicloud/ros-cdk-config.RosDeliveryChannelProps=com.aliyun.ros.cdk.config.RosDeliveryChannelProps
+@alicloud/ros-cdk-config.RosReportTemplate=com.aliyun.ros.cdk.config.RosReportTemplate
+@alicloud/ros-cdk-config.RosReportTemplate.ReportScopeProperty=com.aliyun.ros.cdk.config.RosReportTemplate$ReportScopeProperty
+@alicloud/ros-cdk-config.RosReportTemplateProps=com.aliyun.ros.cdk.config.RosReportTemplateProps
 @alicloud/ros-cdk-config.RosRule=com.aliyun.ros.cdk.config.RosRule
 @alicloud/ros-cdk-config.RosRuleProps=com.aliyun.ros.cdk.config.RosRuleProps
 @alicloud/ros-cdk-config.Rule=com.aliyun.ros.cdk.config.Rule

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::TrFirewallRoutePolicy</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CLOUDFW::TrFirewallRoutePolicy</code>, which is used to create a routing policy for a virtual private cloud (VPC) firewall of a transit router.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.722Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.126Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.RosTrFirewallRoutePolicy")
 public class RosTrFirewallRoutePolicy extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.waf;
 /**
  * Represents a <code>AclRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.616Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:07:49.792Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.waf.$Module.class, fqn = "@alicloud/ros-cdk-waf.IAclRule")
 @software.amazon.jsii.Jsii.Proxy(IAclRule.Jsii$Proxy.class)
 public interface IAclRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.schedulerx;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SchedulerX::WorkFlow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.064Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:46:20.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.schedulerx.$Module.class, fqn = "@alicloud/ros-cdk-schedulerx.WorkFlow")
 public class WorkFlow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.schedulerx.IWorkFlow {
 

@@ -52,7 +52,7 @@ export interface ILayer extends ros.IResource {
     readonly attrVersion: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`, which is used to release a layer version.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::FC::Layer`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLayer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */

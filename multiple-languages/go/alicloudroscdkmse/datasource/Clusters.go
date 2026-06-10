@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::MSE::Clusters`, which is used to query Microservices Registry clusters.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::MSE::Clusters`.
 type Clusters interface {
 	alicloudroscdkcore.Resource
 	IClusters

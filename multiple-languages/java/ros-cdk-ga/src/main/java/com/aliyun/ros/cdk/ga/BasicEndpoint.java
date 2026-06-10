@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::BasicEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.756Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.775Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BasicEndpoint")
 public class BasicEndpoint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.IBasicEndpoint {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::InstanceGroupClone</code>Use , which to clone a group of ECS instances.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.657Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.970Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupClone")
 public class InstanceGroupClone extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IInstanceGroupClone {
 

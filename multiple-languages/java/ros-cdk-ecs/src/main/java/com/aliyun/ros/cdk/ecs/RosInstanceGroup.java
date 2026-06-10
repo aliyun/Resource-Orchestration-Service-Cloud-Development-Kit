@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECS::InstanceGroup</code>The , which resource creates a group of ECS instances that share identical configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.109Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.RosInstanceGroup")
 public class RosInstanceGroup extends com.aliyun.ros.cdk.core.RosResource {
 

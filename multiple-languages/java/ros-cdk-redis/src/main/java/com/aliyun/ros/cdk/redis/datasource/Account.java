@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.redis.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::REDIS::Account</code>, which is used to query an account in an ApsaraDB for Redis instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.456Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:36:44.876Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.datasource.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.redis.datasource.IAccount {
 

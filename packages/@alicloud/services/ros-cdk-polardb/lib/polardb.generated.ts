@@ -1891,7 +1891,7 @@ function rosDBClusterPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`The , which resource type creates a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBCluster`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBCluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbcluster
  */
@@ -3446,7 +3446,7 @@ function rosDBNodesPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`, which is used to add nodes to a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::DBNodes`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBNodes` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-dbnodes
  */
@@ -3681,7 +3681,7 @@ function rosDatabasePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`, which is used to create a database in a PolarDB cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Database`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Database` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */
@@ -3848,7 +3848,7 @@ function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`, which is used to create a global database network (GDN).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::GlobalDatabaseNetwork`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetwork` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-globaldatabasenetwork
  */

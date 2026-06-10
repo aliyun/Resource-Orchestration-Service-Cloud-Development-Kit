@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dbs.datasource;
 /**
  * Represents a <code>BackupPlans</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.674Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:11:33.709Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.datasource.IBackupPlans")
 @software.amazon.jsii.Jsii.Proxy(IBackupPlans.Jsii$Proxy.class)
 public interface IBackupPlans extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

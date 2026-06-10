@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms2;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-integrationpolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.165Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:59:01.354Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms2.$Module.class, fqn = "@alicloud/ros-cdk-cms2.RosIntegrationPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosIntegrationPolicyProps.Jsii$Proxy.class)
 public interface RosIntegrationPolicyProps extends software.amazon.jsii.JsiiSerializable {

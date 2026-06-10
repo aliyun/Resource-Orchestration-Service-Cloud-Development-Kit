@@ -32,7 +32,7 @@ export interface IAppSecret extends ros.IResource {
     readonly attrAppSecretValue: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`, which is used to create an application secret.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AppSecret`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAppSecret`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-appsecret
  */

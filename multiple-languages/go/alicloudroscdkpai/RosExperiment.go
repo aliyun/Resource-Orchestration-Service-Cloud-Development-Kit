@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Experiment`, which is used to create an experiment.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAI::Experiment`.
 type RosExperiment interface {
 	alicloudroscdkcore.RosResource
 	Accessibility() interface{}

@@ -58,6 +58,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
         }
 
         /// <remarks>
+        /// <strong>Property</strong>: gatewayType: The type of Gateway.
+        /// </remarks>
+        [JsiiProperty(name: "gatewayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? GatewayType
+        {
+            get
+            {
+                return null;
+            }
+        }
+
+        /// <remarks>
         /// <strong>Property</strong>: http2Option: Whether to enable http2 settings.
         /// </remarks>
         [JsiiProperty(name: "http2Option", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -169,6 +182,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apig
             [JsiiOptional]
             [JsiiProperty(name: "forceHttps", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ForceHttps
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: gatewayType: The type of Gateway.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "gatewayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? GatewayType
             {
                 get => GetInstanceProperty<object?>();
             }

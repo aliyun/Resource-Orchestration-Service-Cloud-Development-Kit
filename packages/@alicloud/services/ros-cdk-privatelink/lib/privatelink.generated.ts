@@ -930,7 +930,7 @@ function rosVpcEndpointServiceAttachmentPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`, which is used to add a service resource to an endpoint service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PrivateLink::VpcEndpointServiceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcEndpointServiceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointserviceattachment
  */

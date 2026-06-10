@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.lindorm.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-lindorm-instances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.628Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:41:50.424Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.lindorm.$Module.class, fqn = "@alicloud/ros-cdk-lindorm.datasource.InstancesProps")
 @software.amazon.jsii.Jsii.Proxy(InstancesProps.Jsii$Proxy.class)
 public interface InstancesProps extends software.amazon.jsii.JsiiSerializable {

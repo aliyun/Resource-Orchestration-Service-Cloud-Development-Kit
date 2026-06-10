@@ -9,6 +9,7 @@ type RosDomainProps struct {
 	Protocol interface{} `field:"required" json:"protocol" yaml:"protocol"`
 	CertIdentifier interface{} `field:"optional" json:"certIdentifier" yaml:"certIdentifier"`
 	ForceHttps interface{} `field:"optional" json:"forceHttps" yaml:"forceHttps"`
+	GatewayType interface{} `field:"optional" json:"gatewayType" yaml:"gatewayType"`
 	Http2Option interface{} `field:"optional" json:"http2Option" yaml:"http2Option"`
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	TlsCipherSuitesConfig interface{} `field:"optional" json:"tlsCipherSuitesConfig" yaml:"tlsCipherSuitesConfig"`

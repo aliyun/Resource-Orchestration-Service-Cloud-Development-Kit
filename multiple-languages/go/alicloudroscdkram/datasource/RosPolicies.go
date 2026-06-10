@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Policies`, which is used to query policies.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::RAM::Policies`.
 type RosPolicies interface {
 	alicloudroscdkcore.RosResource
 	AttrPolicies() alicloudroscdkcore.IResolvable

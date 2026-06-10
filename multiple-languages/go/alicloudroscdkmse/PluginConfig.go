@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::PluginConfig`The , which resource creates a plugin configuration.
+// This class encapsulates and extends the ROS resource type `ALIYUN::MSE::PluginConfig`.
 type PluginConfig interface {
 	alicloudroscdkcore.Resource
 	IPluginConfig

@@ -173,7 +173,7 @@ export interface IInstance extends ros.IResource {
     readonly attrQps: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Instance`ALIYUN::MEMCACHE::Instance is used to create an ApsaraDB for Memcache (OCS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Memcache::Instance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-memcache-instance
  */

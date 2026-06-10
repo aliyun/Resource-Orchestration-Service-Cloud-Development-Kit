@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`The , which resource creates a RAM role.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RAM::Role`.
 type RosRole interface {
 	alicloudroscdkcore.RosResource
 	AssumeRolePolicyDocument() interface{}

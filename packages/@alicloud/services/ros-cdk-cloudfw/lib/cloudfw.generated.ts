@@ -1216,7 +1216,7 @@ function rosFwSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::FwSwitch`, which is used to enable a firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `FwSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-fwswitch
  */
@@ -2036,7 +2036,7 @@ function rosNatFirewallControlPolicyPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::NatFirewallControlPolicy`, which is used to add an access control policy for a NAT firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `NatFirewallControlPolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-natfirewallcontrolpolicy
  */
@@ -2441,7 +2441,7 @@ function rosTrFirewallPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewall`, which is used to create a virtual private cloud (VPC) firewall for a transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewall` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewall
  */
@@ -2688,7 +2688,7 @@ function rosTrFirewallRoutePolicyPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::TrFirewallRoutePolicy`, which is used to create a routing policy for a virtual private cloud (VPC) firewall of a transit router.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrFirewallRoutePolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-trfirewallroutepolicy
  */
@@ -3240,7 +3240,7 @@ function rosVpcFirewallConfigurePropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::VpcFirewallConfigure`, which is used to create a virtual private cloud (VPC) firewall.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcFirewallConfigure` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallconfigure
  */

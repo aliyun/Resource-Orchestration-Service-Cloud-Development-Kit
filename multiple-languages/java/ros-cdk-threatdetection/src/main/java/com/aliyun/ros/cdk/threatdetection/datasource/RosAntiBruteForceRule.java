@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.threatdetection.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ThreatDetection::AntiBruteForceRule</code>, which is used to query the information about a created defense rule against brute-force attacks.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.777Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:59:58.610Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.datasource.RosAntiBruteForceRule")
 public class RosAntiBruteForceRule extends com.aliyun.ros.cdk.core.RosResource {
 

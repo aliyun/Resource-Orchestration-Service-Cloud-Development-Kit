@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-policy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.509Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:39:52.883Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.PolicyProps")
 @software.amazon.jsii.Jsii.Proxy(PolicyProps.Jsii$Proxy.class)
 public interface PolicyProps extends software.amazon.jsii.JsiiSerializable {

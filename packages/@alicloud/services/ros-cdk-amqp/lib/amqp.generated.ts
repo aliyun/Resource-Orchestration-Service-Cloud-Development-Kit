@@ -464,7 +464,7 @@ function rosExchangePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.
  * @Note This class does not contain additional functions, so it is recommended to use the `Exchange` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */

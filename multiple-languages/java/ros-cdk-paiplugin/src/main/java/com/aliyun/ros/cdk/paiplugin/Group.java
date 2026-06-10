@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paiplugin;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PAIPlugin::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.635Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:27:03.626Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paiplugin.$Module.class, fqn = "@alicloud/ros-cdk-paiplugin.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.paiplugin.IGroup {
 

@@ -268,13 +268,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addDependency", GoMethod: "AddDependency"},
 			_jsii_.MemberMethod{JsiiMethod: "addResourceDesc", GoMethod: "AddResourceDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
-			_jsii_.MemberProperty{JsiiProperty: "attrBasePath", GoGetter: "AttrBasePath"},
-			_jsii_.MemberProperty{JsiiProperty: "attrDescription", GoGetter: "AttrDescription"},
-			_jsii_.MemberProperty{JsiiProperty: "attrEnvironments", GoGetter: "AttrEnvironments"},
 			_jsii_.MemberProperty{JsiiProperty: "attrHttpApiId", GoGetter: "AttrHttpApiId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrHttpApiName", GoGetter: "AttrHttpApiName"},
-			_jsii_.MemberProperty{JsiiProperty: "attrProtocols", GoGetter: "AttrProtocols"},
-			_jsii_.MemberProperty{JsiiProperty: "attrType", GoGetter: "AttrType"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
@@ -420,13 +414,7 @@ func init() {
 		"@alicloud/ros-cdk-apig.IHttpApi",
 		reflect.TypeOf((*IHttpApi)(nil)).Elem(),
 		[]_jsii_.Member{
-			_jsii_.MemberProperty{JsiiProperty: "attrBasePath", GoGetter: "AttrBasePath"},
-			_jsii_.MemberProperty{JsiiProperty: "attrDescription", GoGetter: "AttrDescription"},
-			_jsii_.MemberProperty{JsiiProperty: "attrEnvironments", GoGetter: "AttrEnvironments"},
 			_jsii_.MemberProperty{JsiiProperty: "attrHttpApiId", GoGetter: "AttrHttpApiId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrHttpApiName", GoGetter: "AttrHttpApiName"},
-			_jsii_.MemberProperty{JsiiProperty: "attrProtocols", GoGetter: "AttrProtocols"},
-			_jsii_.MemberProperty{JsiiProperty: "attrType", GoGetter: "AttrType"},
 			_jsii_.MemberProperty{JsiiProperty: "env", GoGetter: "Env"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
 			_jsii_.MemberProperty{JsiiProperty: "props", GoGetter: "Props"},
@@ -1094,6 +1082,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
 			_jsii_.MemberProperty{JsiiProperty: "forceHttps", GoGetter: "ForceHttps"},
+			_jsii_.MemberProperty{JsiiProperty: "gatewayType", GoGetter: "GatewayType"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "http2Option", GoGetter: "Http2Option"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
@@ -1260,25 +1249,30 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyDeletionOverride", GoMethod: "AddPropertyDeletionOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addPropertyOverride", GoMethod: "AddPropertyOverride"},
 			_jsii_.MemberMethod{JsiiMethod: "addRosDependency", GoMethod: "AddRosDependency"},
+			_jsii_.MemberProperty{JsiiProperty: "agentProtocols", GoGetter: "AgentProtocols"},
+			_jsii_.MemberProperty{JsiiProperty: "aiProtocols", GoGetter: "AiProtocols"},
 			_jsii_.MemberMethod{JsiiMethod: "applyRemovalPolicy", GoMethod: "ApplyRemovalPolicy"},
-			_jsii_.MemberProperty{JsiiProperty: "attrBasePath", GoGetter: "AttrBasePath"},
-			_jsii_.MemberProperty{JsiiProperty: "attrDescription", GoGetter: "AttrDescription"},
-			_jsii_.MemberProperty{JsiiProperty: "attrEnvironments", GoGetter: "AttrEnvironments"},
 			_jsii_.MemberProperty{JsiiProperty: "attrHttpApiId", GoGetter: "AttrHttpApiId"},
-			_jsii_.MemberProperty{JsiiProperty: "attrHttpApiName", GoGetter: "AttrHttpApiName"},
-			_jsii_.MemberProperty{JsiiProperty: "attrProtocols", GoGetter: "AttrProtocols"},
-			_jsii_.MemberProperty{JsiiProperty: "attrType", GoGetter: "AttrType"},
+			_jsii_.MemberProperty{JsiiProperty: "authConfig", GoGetter: "AuthConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "basePath", GoGetter: "BasePath"},
+			_jsii_.MemberProperty{JsiiProperty: "belongGatewayId", GoGetter: "BelongGatewayId"},
+			_jsii_.MemberProperty{JsiiProperty: "builtinRouteNames", GoGetter: "BuiltinRouteNames"},
 			_jsii_.MemberProperty{JsiiProperty: "creationStack", GoGetter: "CreationStack"},
+			_jsii_.MemberProperty{JsiiProperty: "deployConfigs", GoGetter: "DeployConfigs"},
 			_jsii_.MemberProperty{JsiiProperty: "description", GoGetter: "Description"},
+			_jsii_.MemberProperty{JsiiProperty: "enableAuth", GoGetter: "EnableAuth"},
 			_jsii_.MemberProperty{JsiiProperty: "enableResourcePropertyConstraint", GoGetter: "EnableResourcePropertyConstraint"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchCondition", GoMethod: "FetchCondition"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchDesc", GoMethod: "FetchDesc"},
 			_jsii_.MemberMethod{JsiiMethod: "fetchRosDependency", GoMethod: "FetchRosDependency"},
+			_jsii_.MemberProperty{JsiiProperty: "firstByteTimeout", GoGetter: "FirstByteTimeout"},
 			_jsii_.MemberMethod{JsiiMethod: "getAtt", GoMethod: "GetAtt"},
 			_jsii_.MemberProperty{JsiiProperty: "httpApiName", GoGetter: "HttpApiName"},
+			_jsii_.MemberProperty{JsiiProperty: "ingressConfig", GoGetter: "IngressConfig"},
 			_jsii_.MemberProperty{JsiiProperty: "logicalId", GoGetter: "LogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "modelCategory", GoGetter: "ModelCategory"},
 			_jsii_.MemberProperty{JsiiProperty: "node", GoGetter: "Node"},
+			_jsii_.MemberProperty{JsiiProperty: "onlyChangeConfig", GoGetter: "OnlyChangeConfig"},
 			_jsii_.MemberMethod{JsiiMethod: "onPrepare", GoMethod: "OnPrepare"},
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
@@ -1286,23 +1280,239 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
 			_jsii_.MemberProperty{JsiiProperty: "protocols", GoGetter: "Protocols"},
 			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
+			_jsii_.MemberProperty{JsiiProperty: "removeBasePathOnForward", GoGetter: "RemoveBasePathOnForward"},
 			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "resourceGroupId", GoGetter: "ResourceGroupId"},
 			_jsii_.MemberProperty{JsiiProperty: "rosOptions", GoGetter: "RosOptions"},
 			_jsii_.MemberProperty{JsiiProperty: "rosProperties", GoGetter: "RosProperties"},
 			_jsii_.MemberProperty{JsiiProperty: "rosResourceType", GoGetter: "RosResourceType"},
 			_jsii_.MemberProperty{JsiiProperty: "stack", GoGetter: "Stack"},
+			_jsii_.MemberProperty{JsiiProperty: "strategy", GoGetter: "Strategy"},
 			_jsii_.MemberMethod{JsiiMethod: "synthesize", GoMethod: "Synthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "toString", GoMethod: "ToString"},
 			_jsii_.MemberProperty{JsiiProperty: "type", GoGetter: "Type"},
 			_jsii_.MemberProperty{JsiiProperty: "updatedProperites", GoGetter: "UpdatedProperites"},
 			_jsii_.MemberMethod{JsiiMethod: "validate", GoMethod: "Validate"},
 			_jsii_.MemberMethod{JsiiMethod: "validateProperties", GoMethod: "ValidateProperties"},
+			_jsii_.MemberProperty{JsiiProperty: "versionConfig", GoGetter: "VersionConfig"},
 		},
 		func() interface{} {
 			j := jsiiProxy_RosHttpApi{}
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiCacheConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiCacheConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiFallbackConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiFallbackConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiFallbackConfigServiceConfigsProperty",
+		reflect.TypeOf((*RosHttpApi_AiFallbackConfigServiceConfigsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiNetworkSearchConfigPluginStatusProperty",
+		reflect.TypeOf((*RosHttpApi_AiNetworkSearchConfigPluginStatusProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiNetworkSearchConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiNetworkSearchConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiSecurityGuardConfigPluginStatusProperty",
+		reflect.TypeOf((*RosHttpApi_AiSecurityGuardConfigPluginStatusProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiSecurityGuardConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiSecurityGuardConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiStatisticsConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiStatisticsConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiTokenRateLimitConfigPluginStatusProperty",
+		reflect.TypeOf((*RosHttpApi_AiTokenRateLimitConfigPluginStatusProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiTokenRateLimitConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiTokenRateLimitConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiTokenRateLimitConfigRedisConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiTokenRateLimitConfigRedisConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiToolSelectionConfigPluginStatusProperty",
+		reflect.TypeOf((*RosHttpApi_AiToolSelectionConfigPluginStatusProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AiToolSelectionConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AiToolSelectionConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.AuthConfigProperty",
+		reflect.TypeOf((*RosHttpApi_AuthConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ConditionsProperty",
+		reflect.TypeOf((*RosHttpApi_ConditionsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ConsumerRequestCheckServiceProperty",
+		reflect.TypeOf((*RosHttpApi_ConsumerRequestCheckServiceProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ConsumerResponseCheckServiceProperty",
+		reflect.TypeOf((*RosHttpApi_ConsumerResponseCheckServiceProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ConsumerRiskLevelProperty",
+		reflect.TypeOf((*RosHttpApi_ConsumerRiskLevelProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ConsumerRulesProperty",
+		reflect.TypeOf((*RosHttpApi_ConsumerRulesProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ContextSelectionProperty",
+		reflect.TypeOf((*RosHttpApi_ContextSelectionProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.CustomDomainInfosProperty",
+		reflect.TypeOf((*RosHttpApi_CustomDomainInfosProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.DeployConfigsProperty",
+		reflect.TypeOf((*RosHttpApi_DeployConfigsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.EmbeddingConfigProperty",
+		reflect.TypeOf((*RosHttpApi_EmbeddingConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.EnableConditionsProperty",
+		reflect.TypeOf((*RosHttpApi_EnableConditionsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.GatewayInfoProperty",
+		reflect.TypeOf((*RosHttpApi_GatewayInfoProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.GlobalRulesProperty",
+		reflect.TypeOf((*RosHttpApi_GlobalRulesProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.IngressConfigProperty",
+		reflect.TypeOf((*RosHttpApi_IngressConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.MatchProperty",
+		reflect.TypeOf((*RosHttpApi_MatchProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.MockProperty",
+		reflect.TypeOf((*RosHttpApi_MockProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ModelServiceProperty",
+		reflect.TypeOf((*RosHttpApi_ModelServiceProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ObservabilityRouteConfigProperty",
+		reflect.TypeOf((*RosHttpApi_ObservabilityRouteConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.PathFieldConfigsProperty",
+		reflect.TypeOf((*RosHttpApi_PathFieldConfigsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.PluginStatusProperty",
+		reflect.TypeOf((*RosHttpApi_PluginStatusProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.PolicyConfigsProperty",
+		reflect.TypeOf((*RosHttpApi_PolicyConfigsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.PromptConfigProperty",
+		reflect.TypeOf((*RosHttpApi_PromptConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.QueryRewritingProperty",
+		reflect.TypeOf((*RosHttpApi_QueryRewritingProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.RedisConfigProperty",
+		reflect.TypeOf((*RosHttpApi_RedisConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.RiskConfigProperty",
+		reflect.TypeOf((*RosHttpApi_RiskConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.RouteBackendProperty",
+		reflect.TypeOf((*RosHttpApi_RouteBackendProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.RulesProperty",
+		reflect.TypeOf((*RosHttpApi_RulesProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.SearchEngineConfigProperty",
+		reflect.TypeOf((*RosHttpApi_SearchEngineConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.SearchFromProperty",
+		reflect.TypeOf((*RosHttpApi_SearchFromProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.SearchRewriteProperty",
+		reflect.TypeOf((*RosHttpApi_SearchRewriteProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.SemanticRouterConfigProperty",
+		reflect.TypeOf((*RosHttpApi_SemanticRouterConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ServiceConfigsProperty",
+		reflect.TypeOf((*RosHttpApi_ServiceConfigsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ServicesProperty",
+		reflect.TypeOf((*RosHttpApi_ServicesProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.SubDomainsProperty",
+		reflect.TypeOf((*RosHttpApi_SubDomainsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ToolRerankingModelServiceProperty",
+		reflect.TypeOf((*RosHttpApi_ToolRerankingModelServiceProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.ToolRerankingProperty",
+		reflect.TypeOf((*RosHttpApi_ToolRerankingProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.TriggerConditionsProperty",
+		reflect.TypeOf((*RosHttpApi_TriggerConditionsProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.VectorConfigProperty",
+		reflect.TypeOf((*RosHttpApi_VectorConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.VersionConfigProperty",
+		reflect.TypeOf((*RosHttpApi_VersionConfigProperty)(nil)).Elem(),
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-apig.RosHttpApi.VpcInfoProperty",
+		reflect.TypeOf((*RosHttpApi_VpcInfoProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-apig.RosHttpApiProps",

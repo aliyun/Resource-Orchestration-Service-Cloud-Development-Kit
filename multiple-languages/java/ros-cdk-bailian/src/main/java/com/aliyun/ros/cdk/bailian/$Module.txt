@@ -1,0 +1,6 @@
+@alicloud/ros-cdk-bailian.ApiKey=com.aliyun.ros.cdk.bailian.ApiKey
+@alicloud/ros-cdk-bailian.ApiKeyProps=com.aliyun.ros.cdk.bailian.ApiKeyProps
+@alicloud/ros-cdk-bailian.IApiKey=com.aliyun.ros.cdk.bailian.IApiKey
+@alicloud/ros-cdk-bailian.RosApiKey=com.aliyun.ros.cdk.bailian.RosApiKey
+@alicloud/ros-cdk-bailian.RosApiKey.AuthSetModelProperty=com.aliyun.ros.cdk.bailian.RosApiKey$AuthSetModelProperty
+@alicloud/ros-cdk-bailian.RosApiKeyProps=com.aliyun.ros.cdk.bailian.RosApiKeyProps

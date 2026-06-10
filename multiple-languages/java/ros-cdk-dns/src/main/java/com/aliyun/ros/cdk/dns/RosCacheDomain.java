@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DNS::CacheDomain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.959Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.897Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosCacheDomain")
 public class RosCacheDomain extends com.aliyun.ros.cdk.core.RosResource {
 

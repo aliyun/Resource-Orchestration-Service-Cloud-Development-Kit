@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`, which is used to modify an IP address whitelist of an ApsaraDB for RDS instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::RDS::DBInstanceSecurityIps`.
 type RosDBInstanceSecurityIps interface {
 	alicloudroscdkcore.RosResource
 	AttrSecurityIps() alicloudroscdkcore.IResolvable

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::SLB::AccessLogsAddition</code>, which is used to configure an access log forwarding rule for a Classic Load Balancer (CLB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.200Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.299Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.RosAccessLogsAddition")
 public class RosAccessLogsAddition extends com.aliyun.ros.cdk.core.RosResource {
 

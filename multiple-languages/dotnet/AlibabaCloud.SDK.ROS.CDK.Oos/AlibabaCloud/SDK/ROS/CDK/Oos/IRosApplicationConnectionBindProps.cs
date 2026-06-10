@@ -47,6 +47,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
+        /// <remarks>
+        /// <strong>Property</strong>: parameters: The parameters of the application connection bind.
+        /// </remarks>
+        [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oos.RosApplicationConnectionBind.ParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+        object? Parameters
+        {
+            get
+            {
+                return null;
+            }
+        }
+
         /// <summary>Properties for defining a `RosApplicationConnectionBind`.</summary>
         /// <remarks>
         /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnectionbind
@@ -84,6 +97,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             [JsiiOptional]
             [JsiiProperty(name: "applicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ApplicationName
+            {
+                get => GetInstanceProperty<object?>();
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: parameters: The parameters of the application connection bind.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-oos.RosApplicationConnectionBind.ParametersProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+            public object? Parameters
             {
                 get => GetInstanceProperty<object?>();
             }

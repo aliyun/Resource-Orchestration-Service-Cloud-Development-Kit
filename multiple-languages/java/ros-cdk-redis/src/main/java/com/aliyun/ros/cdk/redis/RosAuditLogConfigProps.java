@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-auditlogconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:36:44.849Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosAuditLogConfigProps")
 @software.amazon.jsii.Jsii.Proxy(RosAuditLogConfigProps.Jsii$Proxy.class)
 public interface RosAuditLogConfigProps extends software.amazon.jsii.JsiiSerializable {

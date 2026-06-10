@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`, which is used to grant permissions to a specified user.
+// This class encapsulates and extends the ROS resource type `ALIYUN::RAM::AttachPolicyToUser`.
 type AttachPolicyToUser interface {
 	alicloudroscdkcore.Resource
 	IAttachPolicyToUser

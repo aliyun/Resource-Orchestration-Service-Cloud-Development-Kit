@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mongodb.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::MONGODB::Instance</code>, which is used to query the information about an ApsaraDB for MongoDB instance.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::MONGODB::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.782Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:10:27.920Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.datasource.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mongodb.datasource.IInstance {
 

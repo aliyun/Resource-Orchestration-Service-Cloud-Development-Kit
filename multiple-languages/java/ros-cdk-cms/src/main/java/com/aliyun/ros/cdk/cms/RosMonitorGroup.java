@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS::MonitorGroup</code>, which is used to create an application group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.087Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.029Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.RosMonitorGroup")
 public class RosMonitorGroup extends com.aliyun.ros.cdk.core.RosResource {
 

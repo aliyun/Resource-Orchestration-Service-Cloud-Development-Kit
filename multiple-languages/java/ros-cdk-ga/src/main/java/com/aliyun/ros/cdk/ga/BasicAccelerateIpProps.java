@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ga;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerateip
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.751Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.768Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.BasicAccelerateIpProps")
 @software.amazon.jsii.Jsii.Proxy(BasicAccelerateIpProps.Jsii$Proxy.class)
 public interface BasicAccelerateIpProps extends software.amazon.jsii.JsiiSerializable {

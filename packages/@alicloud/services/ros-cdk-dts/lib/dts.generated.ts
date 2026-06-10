@@ -902,6 +902,255 @@ export class RosInstance extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosJobMonitorRule`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-jobmonitorrule
+ */
+export interface RosJobMonitorRuleProps {
+
+    /**
+     * @Property dtsJobId: Migration, synchronization or subscription task ID can be by calling the [DescribeDtsJobs](~~ 209702 ~~) get.
+     */
+    readonly dtsJobId: string | ros.IResolvable;
+
+    /**
+     * @Property type: Monitoring rules of type, the return value:
+     * - **delay**: delay alarm.
+     * - **error**: abnormal alarm.
+     */
+    readonly type: string | ros.IResolvable;
+
+    /**
+     * @Property delayRuleTime: Trigger delay alarm threshold, which is measured in seconds.
+     */
+    readonly delayRuleTime?: number | ros.IResolvable;
+
+    /**
+     * @Property period: The statistical period of the incremental verification task. Unit: minutes.
+     * > currently supported values are 1 minute, 3 minutes, 5 minutes and 30 minutes.
+     */
+    readonly period?: number | ros.IResolvable;
+
+    /**
+     * @Property phones: The alarm is triggered after notification of the contact phone number.
+     */
+    readonly phones?: Array<any | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property state: Whether to enable monitoring rules, return value:
+     * - **Y**: enable.
+     * - **N**: Inactive.
+     */
+    readonly state?: string | ros.IResolvable;
+
+    /**
+     * @Property times: The number of cycles of the incremental verification task.
+     */
+    readonly times?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosJobMonitorRuleProps`
+ *
+ * @param properties - the TypeScript properties of a `RosJobMonitorRuleProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosJobMonitorRulePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["delay","error"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.requiredValidator)(properties.dtsJobId));
+    errors.collect(ros.propertyValidator('dtsJobId', ros.validateString)(properties.dtsJobId));
+    if(properties.phones && (Array.isArray(properties.phones) || (typeof properties.phones) === 'string')) {
+        errors.collect(ros.propertyValidator('phones', ros.validateLength)({
+            data: properties.phones.length,
+            min: 0,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('phones', ros.listValidator(ros.validateAny))(properties.phones));
+    if(properties.state && (typeof properties.state) !== 'object') {
+        errors.collect(ros.propertyValidator('state', ros.validateAllowedValues)({
+          data: properties.state,
+          allowedValues: ["Y","N"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('state', ros.validateString)(properties.state));
+    errors.collect(ros.propertyValidator('times', ros.validateNumber)(properties.times));
+    if(properties.period && (typeof properties.period) !== 'object') {
+        errors.collect(ros.propertyValidator('period', ros.validateAllowedValues)({
+          data: properties.period,
+          allowedValues: [1,3,5,30],
+        }));
+    }
+    errors.collect(ros.propertyValidator('period', ros.validateNumber)(properties.period));
+    errors.collect(ros.propertyValidator('delayRuleTime', ros.validateNumber)(properties.delayRuleTime));
+    return errors.wrap('supplied properties not correct for "RosJobMonitorRuleProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::DTS::JobMonitorRule` resource
+ *
+ * @param properties - the TypeScript properties of a `RosJobMonitorRuleProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::DTS::JobMonitorRule` resource.
+ */
+// @ts-ignore TS6133
+function rosJobMonitorRulePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosJobMonitorRulePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'DtsJobId': ros.stringToRosTemplate(properties.dtsJobId),
+      'Type': ros.stringToRosTemplate(properties.type),
+      'DelayRuleTime': ros.numberToRosTemplate(properties.delayRuleTime),
+      'Period': ros.numberToRosTemplate(properties.period),
+      'Phones': ros.listMapper(ros.objectToRosTemplate)(properties.phones),
+      'State': ros.stringToRosTemplate(properties.state),
+      'Times': ros.numberToRosTemplate(properties.times),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::JobMonitorRule`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `JobMonitorRule` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-jobmonitorrule
+ */
+export class RosJobMonitorRule extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::DTS::JobMonitorRule";
+
+    /**
+     * @Attribute DelayRuleTime: Trigger delay alarm threshold, which is measured in seconds.
+     */
+    public readonly attrDelayRuleTime: ros.IResolvable;
+
+    /**
+     * @Attribute DtsJobId: Migration, synchronization or subscription task ID can be by calling the [DescribeDtsJobs](~~ 209702 ~~) get.
+     */
+    public readonly attrDtsJobId: ros.IResolvable;
+
+    /**
+     * @Attribute Period: The statistical period of the incremental verification task. Unit: minutes.
+     */
+    public readonly attrPeriod: ros.IResolvable;
+
+    /**
+     * @Attribute Phones: The alarm is triggered after notification of the contact phone number, A plurality of phone numbers between them with a comma (,) to separate.
+     */
+    public readonly attrPhones: ros.IResolvable;
+
+    /**
+     * @Attribute State: Whether to enable monitoring rules, return value:.
+     */
+    public readonly attrState: ros.IResolvable;
+
+    /**
+     * @Attribute Times: The number of cycles of the incremental verification task.
+     */
+    public readonly attrTimes: ros.IResolvable;
+
+    /**
+     * @Attribute Type: Monitoring rules of type, the return value:.
+     */
+    public readonly attrType: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property dtsJobId: Migration, synchronization or subscription task ID can be by calling the [DescribeDtsJobs](~~ 209702 ~~) get.
+     */
+    public dtsJobId: string | ros.IResolvable;
+
+    /**
+     * @Property type: Monitoring rules of type, the return value:
+     * - **delay**: delay alarm.
+     * - **error**: abnormal alarm.
+     */
+    public type: string | ros.IResolvable;
+
+    /**
+     * @Property delayRuleTime: Trigger delay alarm threshold, which is measured in seconds.
+     */
+    public delayRuleTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property period: The statistical period of the incremental verification task. Unit: minutes.
+     * > currently supported values are 1 minute, 3 minutes, 5 minutes and 30 minutes.
+     */
+    public period: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property phones: The alarm is triggered after notification of the contact phone number.
+     */
+    public phones: Array<any | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property state: Whether to enable monitoring rules, return value:
+     * - **Y**: enable.
+     * - **N**: Inactive.
+     */
+    public state: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property times: The number of cycles of the incremental verification task.
+     */
+    public times: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosJobMonitorRuleProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosJobMonitorRule.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrDelayRuleTime = this.getAtt('DelayRuleTime');
+        this.attrDtsJobId = this.getAtt('DtsJobId');
+        this.attrPeriod = this.getAtt('Period');
+        this.attrPhones = this.getAtt('Phones');
+        this.attrState = this.getAtt('State');
+        this.attrTimes = this.getAtt('Times');
+        this.attrType = this.getAtt('Type');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.dtsJobId = props.dtsJobId;
+        this.type = props.type;
+        this.delayRuleTime = props.delayRuleTime;
+        this.period = props.period;
+        this.phones = props.phones;
+        this.state = props.state;
+        this.times = props.times;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            dtsJobId: this.dtsJobId,
+            type: this.type,
+            delayRuleTime: this.delayRuleTime,
+            period: this.period,
+            phones: this.phones,
+            state: this.state,
+            times: this.times,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosJobMonitorRulePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
  * Properties for defining a `RosMigrationJob2`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */

@@ -121,7 +121,7 @@ function rosDBClustersPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBClusters`, which is used to query the information about PolarDB clusters.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBClusters`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBClusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbclusters
  */
@@ -333,7 +333,7 @@ function rosDBNodeClassesPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`, which is used to query available PolarDB cluster resources.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::DBNodeClasses`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DBNodeClasses` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-dbnodeclasses
  */
@@ -499,7 +499,7 @@ function rosGlobalDatabaseNetworkPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetwork`, which is used to query the details of a Global Database Network (GDN) within the current Alibaba Cloud account.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetwork`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetwork` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetwork
  */
@@ -664,7 +664,7 @@ function rosGlobalDatabaseNetworksPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`, which is used to query all global database networks (GDNs) within the current Alibaba Cloud account.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::GlobalDatabaseNetworks`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GlobalDatabaseNetworks` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-globaldatabasenetworks
  */
@@ -980,7 +980,7 @@ function rosParameterGroupsPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::ParameterGroups`, which is used to query parameter templates in a region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::POLARDB::ParameterGroups`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ParameterGroups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-polardb-parametergroups
  */

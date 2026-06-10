@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.servicecatalog;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ServiceCatalog::Constraint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.101Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:53:18.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.servicecatalog.$Module.class, fqn = "@alicloud/ros-cdk-servicecatalog.Constraint")
 public class Constraint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.servicecatalog.IConstraint {
 

@@ -63,7 +63,7 @@ function rosPackagePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Package`, which is used to create a package.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Package`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Package` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-package
  */
@@ -428,7 +428,7 @@ function rosProjectPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Project`, which is used to create a MaxCompute project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Project`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Project` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-project
  */
@@ -827,7 +827,7 @@ function rosQuotaPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Quota`The , which type is used to create a MaxCompute (previously known as ODPS) quota.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Quota`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Quota` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-quota
  */
@@ -1026,7 +1026,7 @@ function rosRolePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Role`, which is used to create a role at the MaxCompute project level.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Role`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Role` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-role
  */
@@ -1571,7 +1571,7 @@ function rosTablePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Table`, which is used to create a table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MaxCompute::Table`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Table` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-maxcompute-table
  */

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Template`The , which type is used to query the details of a single template.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Template`.
 type Template interface {
 	alicloudroscdkcore.Resource
 	ITemplate

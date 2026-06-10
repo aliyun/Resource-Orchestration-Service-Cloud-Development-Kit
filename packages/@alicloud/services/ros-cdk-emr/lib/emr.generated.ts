@@ -3168,7 +3168,7 @@ function rosStarRocksInstancePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::StarRocksInstance`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::EMR::StarRocksInstance`The , which type is used to create a serverless StarRocks instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `StarRocksInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-emr-starrocksinstance
  */

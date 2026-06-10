@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-pai-workspaceresourcemaxcompute
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.553Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:20:13.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.datasource.WorkspaceResourceMaxComputeProps")
 @software.amazon.jsii.Jsii.Proxy(WorkspaceResourceMaxComputeProps.Jsii$Proxy.class)
 public interface WorkspaceResourceMaxComputeProps extends software.amazon.jsii.JsiiSerializable {

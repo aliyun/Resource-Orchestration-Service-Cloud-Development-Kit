@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.oos;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::Execution</code>, which is used to start an execution.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::OOS::Execution</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.179Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.947Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosExecution")
 public class RosExecution extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CAS::UserCertificate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.126Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:39:53.107Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.UserCertificate")
 public class UserCertificate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cas.IUserCertificate {
 

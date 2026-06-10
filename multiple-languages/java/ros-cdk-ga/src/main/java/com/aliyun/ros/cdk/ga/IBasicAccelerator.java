@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Represents a <code>BasicAccelerator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.792Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.812Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.IBasicAccelerator")
 @software.amazon.jsii.Jsii.Proxy(IBasicAccelerator.Jsii$Proxy.class)
 public interface IBasicAccelerator extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

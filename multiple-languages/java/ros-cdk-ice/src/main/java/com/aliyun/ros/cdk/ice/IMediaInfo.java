@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ice;
 /**
  * Represents a <code>MediaInfo</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.319Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:31:54.375Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.IMediaInfo")
 @software.amazon.jsii.Jsii.Proxy(IMediaInfo.Jsii$Proxy.class)
 public interface IMediaInfo extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

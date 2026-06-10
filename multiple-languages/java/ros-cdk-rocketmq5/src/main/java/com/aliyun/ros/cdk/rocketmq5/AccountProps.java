@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.rocketmq5;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-rocketmq5-account
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.684Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:40:34.071Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.AccountProps")
 @software.amazon.jsii.Jsii.Proxy(AccountProps.Jsii$Proxy.class)
 public interface AccountProps extends software.amazon.jsii.JsiiSerializable {

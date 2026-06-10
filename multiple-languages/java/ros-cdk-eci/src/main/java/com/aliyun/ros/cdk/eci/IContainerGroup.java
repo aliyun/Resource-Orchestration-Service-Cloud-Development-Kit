@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eci;
 /**
  * Represents a <code>ContainerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.415Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:35:20.498Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eci.$Module.class, fqn = "@alicloud/ros-cdk-eci.IContainerGroup")
 @software.amazon.jsii.Jsii.Proxy(IContainerGroup.Jsii$Proxy.class)
 public interface IContainerGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::AppSecret</code>, which is used to create an application secret.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::AppSecret</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.239Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AppSecret")
 public class AppSecret extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IAppSecret {
 

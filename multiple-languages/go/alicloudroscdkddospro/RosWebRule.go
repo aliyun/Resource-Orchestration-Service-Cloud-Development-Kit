@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DDoSPro::WebRule`, which is used to create a forwarding rule for a website.
 type RosWebRule interface {
 	alicloudroscdkcore.RosResource
 	AttrDomain() alicloudroscdkcore.IResolvable

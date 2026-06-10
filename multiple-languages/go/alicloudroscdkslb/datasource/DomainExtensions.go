@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::SLB::DomainExtensions`, which is used to query the additional domains that are added.
 type DomainExtensions interface {
 	alicloudroscdkcore.Resource
 	IDomainExtensions

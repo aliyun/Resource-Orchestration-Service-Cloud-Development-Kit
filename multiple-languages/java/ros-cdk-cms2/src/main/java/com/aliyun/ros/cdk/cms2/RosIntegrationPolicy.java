@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms2;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CMS2::IntegrationPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.163Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:59:01.351Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms2.$Module.class, fqn = "@alicloud/ros-cdk-cms2.RosIntegrationPolicy")
 public class RosIntegrationPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -452,7 +452,7 @@ function rosCustomResourcePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`, which lets you create a custom resource.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::CustomResource`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomResource` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-customresource
  */
@@ -847,7 +847,7 @@ function rosResourceCleanerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`, which is used to create a resource cleaner.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::ResourceCleaner`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceCleaner` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
@@ -1543,7 +1543,7 @@ function rosSleepPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`, which is used to delay the creation, deletion, update, and rollback of other resources.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::Sleep`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Sleep` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-sleep
  */
@@ -1999,7 +1999,7 @@ function rosStackGroupPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`, which is used to create a stack group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackgroup
  */
@@ -2288,7 +2288,7 @@ function rosStackInstancesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackInstances`, which is used to create stack instances within specified accounts in specified regions.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ROS::StackInstances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StackInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-stackinstances
  */

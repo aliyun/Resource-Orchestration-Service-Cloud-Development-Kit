@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::VpcConfig`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DataLakeFormation::VpcConfig`The , which type is used to configure a VPC whitelist.
 type RosVpcConfig interface {
 	alicloudroscdkcore.RosResource
 	AttrVpcId() alicloudroscdkcore.IResolvable

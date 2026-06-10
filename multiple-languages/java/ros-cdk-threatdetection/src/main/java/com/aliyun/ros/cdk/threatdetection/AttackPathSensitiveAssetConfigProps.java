@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.threatdetection;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-threatdetection-attackpathsensitiveassetconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.585Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:59:58.428Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.AttackPathSensitiveAssetConfigProps")
 @software.amazon.jsii.Jsii.Proxy(AttackPathSensitiveAssetConfigProps.Jsii$Proxy.class)
 public interface AttackPathSensitiveAssetConfigProps extends software.amazon.jsii.JsiiSerializable {

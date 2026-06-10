@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`, which is used to query encryption parameters.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::SecretParameters`.
 type RosSecretParameters interface {
 	alicloudroscdkcore.RosResource
 	AttrSecretParameterNames() alicloudroscdkcore.IResolvable

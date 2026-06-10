@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cs;
 /**
  * Represents a <code>ManagedKubernetesCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.417Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.586Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.IManagedKubernetesCluster")
 @software.amazon.jsii.Jsii.Proxy(IManagedKubernetesCluster.Jsii$Proxy.class)
 public interface IManagedKubernetesCluster extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

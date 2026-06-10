@@ -13,6 +13,8 @@
 @alicloud/ros-cdk-pai.IImage=com.aliyun.ros.cdk.pai.IImage
 @alicloud/ros-cdk-pai.IMember=com.aliyun.ros.cdk.pai.IMember
 @alicloud/ros-cdk-pai.IModelVersion=com.aliyun.ros.cdk.pai.IModelVersion
+@alicloud/ros-cdk-pai.IQuota=com.aliyun.ros.cdk.pai.IQuota
+@alicloud/ros-cdk-pai.IResourceGroup=com.aliyun.ros.cdk.pai.IResourceGroup
 @alicloud/ros-cdk-pai.IRun=com.aliyun.ros.cdk.pai.IRun
 @alicloud/ros-cdk-pai.IService=com.aliyun.ros.cdk.pai.IService
 @alicloud/ros-cdk-pai.IUserConfig=com.aliyun.ros.cdk.pai.IUserConfig
@@ -27,6 +29,10 @@
 @alicloud/ros-cdk-pai.MemberProps=com.aliyun.ros.cdk.pai.MemberProps
 @alicloud/ros-cdk-pai.ModelVersion=com.aliyun.ros.cdk.pai.ModelVersion
 @alicloud/ros-cdk-pai.ModelVersionProps=com.aliyun.ros.cdk.pai.ModelVersionProps
+@alicloud/ros-cdk-pai.Quota=com.aliyun.ros.cdk.pai.Quota
+@alicloud/ros-cdk-pai.QuotaProps=com.aliyun.ros.cdk.pai.QuotaProps
+@alicloud/ros-cdk-pai.ResourceGroup=com.aliyun.ros.cdk.pai.ResourceGroup
+@alicloud/ros-cdk-pai.ResourceGroupProps=com.aliyun.ros.cdk.pai.ResourceGroupProps
 @alicloud/ros-cdk-pai.RosCodeSource=com.aliyun.ros.cdk.pai.RosCodeSource
 @alicloud/ros-cdk-pai.RosCodeSourceProps=com.aliyun.ros.cdk.pai.RosCodeSourceProps
 @alicloud/ros-cdk-pai.RosDataset=com.aliyun.ros.cdk.pai.RosDataset
@@ -44,6 +50,15 @@
 @alicloud/ros-cdk-pai.RosModelVersion=com.aliyun.ros.cdk.pai.RosModelVersion
 @alicloud/ros-cdk-pai.RosModelVersion.LabelsProperty=com.aliyun.ros.cdk.pai.RosModelVersion$LabelsProperty
 @alicloud/ros-cdk-pai.RosModelVersionProps=com.aliyun.ros.cdk.pai.RosModelVersionProps
+@alicloud/ros-cdk-pai.RosQuota=com.aliyun.ros.cdk.pai.RosQuota
+@alicloud/ros-cdk-pai.RosQuota.LabelsProperty=com.aliyun.ros.cdk.pai.RosQuota$LabelsProperty
+@alicloud/ros-cdk-pai.RosQuota.MinProperty=com.aliyun.ros.cdk.pai.RosQuota$MinProperty
+@alicloud/ros-cdk-pai.RosQuotaProps=com.aliyun.ros.cdk.pai.RosQuotaProps
+@alicloud/ros-cdk-pai.RosResourceGroup=com.aliyun.ros.cdk.pai.RosResourceGroup
+@alicloud/ros-cdk-pai.RosResourceGroup.DefaultForwardInfoProperty=com.aliyun.ros.cdk.pai.RosResourceGroup$DefaultForwardInfoProperty
+@alicloud/ros-cdk-pai.RosResourceGroup.TagProperty=com.aliyun.ros.cdk.pai.RosResourceGroup$TagProperty
+@alicloud/ros-cdk-pai.RosResourceGroup.UserVpcProperty=com.aliyun.ros.cdk.pai.RosResourceGroup$UserVpcProperty
+@alicloud/ros-cdk-pai.RosResourceGroupProps=com.aliyun.ros.cdk.pai.RosResourceGroupProps
 @alicloud/ros-cdk-pai.RosRun=com.aliyun.ros.cdk.pai.RosRun
 @alicloud/ros-cdk-pai.RosRunProps=com.aliyun.ros.cdk.pai.RosRunProps
 @alicloud/ros-cdk-pai.RosService=com.aliyun.ros.cdk.pai.RosService

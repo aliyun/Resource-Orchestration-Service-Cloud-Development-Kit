@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::HBR::DbVault</code>, which is used to create a mirror vault.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.216Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.794Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosDbVault")
 public class RosDbVault extends com.aliyun.ros.cdk.core.RosResource {
 

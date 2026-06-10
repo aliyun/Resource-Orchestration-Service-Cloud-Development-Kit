@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.redis;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::Whitelist</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::REDIS::Whitelist</code>The , which type sets the IP whitelist for a Redis instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.438Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:36:44.872Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosWhitelist")
 public class RosWhitelist extends com.aliyun.ros.cdk.core.RosResource {
 

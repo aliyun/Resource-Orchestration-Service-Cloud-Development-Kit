@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::FC::CustomDomains</code>.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::FC::CustomDomains</code>, which is used to query custom domain names in Function Compute.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:56.030Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.453Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.RosCustomDomains")
 public class RosCustomDomains extends com.aliyun.ros.cdk.core.RosResource {
 

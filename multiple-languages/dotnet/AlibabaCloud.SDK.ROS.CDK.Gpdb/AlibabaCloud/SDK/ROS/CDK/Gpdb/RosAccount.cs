@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::Account`, which is used to create a database account for an AnalyticDB for PostgreSQL instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::Account`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account

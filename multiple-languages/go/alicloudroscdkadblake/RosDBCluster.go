@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ADBLake::DBCluster`, which type is used to create an AnalyticDB for MySQL Data Lakehouse Edition cluster.
 type RosDBCluster interface {
 	alicloudroscdkcore.RosResource
 	AttrConnectionString() alicloudroscdkcore.IResolvable

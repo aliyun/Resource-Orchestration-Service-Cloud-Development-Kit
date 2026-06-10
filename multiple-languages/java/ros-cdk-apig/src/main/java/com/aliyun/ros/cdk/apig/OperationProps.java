@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apig;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-operation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.404Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.OperationProps")
 @software.amazon.jsii.Jsii.Proxy(OperationProps.Jsii$Proxy.class)
 public interface OperationProps extends software.amazon.jsii.JsiiSerializable {

@@ -202,7 +202,7 @@ function rosCustomDomainsPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::CustomDomains`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::CustomDomains`, which is used to query custom domain names in Function Compute.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomains` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-customdomains
  */
@@ -619,7 +619,7 @@ function rosTriggersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Triggers`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::FC::Triggers`, which is used to query triggers.
  * @Note This class does not contain additional functions, so it is recommended to use the `Triggers` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-fc-triggers
  */

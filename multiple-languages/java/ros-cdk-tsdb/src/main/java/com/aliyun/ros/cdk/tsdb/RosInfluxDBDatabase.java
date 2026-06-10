@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::TSDB::InfluxDBDatabase</code>, which is used to create a Time Series Database (TSDB) database.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.792Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:01:33.205Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.RosInfluxDBDatabase")
 public class RosInfluxDBDatabase extends com.aliyun.ros.cdk.core.RosResource {
 

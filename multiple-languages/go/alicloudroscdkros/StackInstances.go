@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::StackInstances`, which is used to create stack instances within specified accounts in specified regions.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ROS::StackInstances`.
 type StackInstances interface {
 	alicloudroscdkcore.Resource
 	IStackInstances

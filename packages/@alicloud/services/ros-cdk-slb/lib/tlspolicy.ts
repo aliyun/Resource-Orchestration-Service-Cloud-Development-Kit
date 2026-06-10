@@ -90,7 +90,7 @@ export interface ITLSPolicy extends ros.IResource {
     readonly attrTlsVersions: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::TLSPolicy`, which is used to create a Transport Layer Security (TLS) policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::TLSPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTLSPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-tlspolicy
  */

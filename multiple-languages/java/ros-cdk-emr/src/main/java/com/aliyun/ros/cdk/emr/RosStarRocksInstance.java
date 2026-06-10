@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.emr;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EMR::StarRocksInstance</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::EMR::StarRocksInstance</code>The , which type is used to create a serverless StarRocks instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.715Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:46:06.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.RosStarRocksInstance")
 public class RosStarRocksInstance extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ebs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ebs-dedicatedblockstoragecluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.307Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:32:36.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.datasource.DedicatedBlockStorageClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedBlockStorageClusterProps.Jsii$Proxy.class)
 public interface DedicatedBlockStorageClusterProps extends software.amazon.jsii.JsiiSerializable {

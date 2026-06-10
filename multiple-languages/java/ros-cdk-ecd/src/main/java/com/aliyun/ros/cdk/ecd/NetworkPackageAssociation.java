@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecd;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::NetworkPackageAssociation</code>, which is used to associate a premium bandwidth plan with an office network.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.372Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.441Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.NetworkPackageAssociation")
 public class NetworkPackageAssociation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecd.INetworkPackageAssociation {
 

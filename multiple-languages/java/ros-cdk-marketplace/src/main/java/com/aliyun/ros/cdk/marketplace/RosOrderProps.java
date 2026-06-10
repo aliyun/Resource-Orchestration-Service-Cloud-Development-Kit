@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.marketplace;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-marketplace-order
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.640Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:45:14.148Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.marketplace.$Module.class, fqn = "@alicloud/ros-cdk-marketplace.RosOrderProps")
 @software.amazon.jsii.Jsii.Proxy(RosOrderProps.Jsii$Proxy.class)
 public interface RosOrderProps extends software.amazon.jsii.JsiiSerializable {

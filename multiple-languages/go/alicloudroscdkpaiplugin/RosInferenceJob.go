@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`, which is used to create a prediction job.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::PAIPlugin::InferenceJob`.
 type RosInferenceJob interface {
 	alicloudroscdkcore.RosResource
 	Algorithm() interface{}

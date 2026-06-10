@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * Represents a <code>TrafficQos</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.973Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.451Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.ITrafficQos")
 @software.amazon.jsii.Jsii.Proxy(ITrafficQos.Jsii$Proxy.class)
 public interface ITrafficQos extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

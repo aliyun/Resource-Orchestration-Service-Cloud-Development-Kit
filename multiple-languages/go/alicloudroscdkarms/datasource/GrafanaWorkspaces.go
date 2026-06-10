@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::GrafanaWorkspaces`, which is used to query the information about Grafana workspaces.
 type GrafanaWorkspaces interface {
 	alicloudroscdkcore.Resource
 	IGrafanaWorkspaces

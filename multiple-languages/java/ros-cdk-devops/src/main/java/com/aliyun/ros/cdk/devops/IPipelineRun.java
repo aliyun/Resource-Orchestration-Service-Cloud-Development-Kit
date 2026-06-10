@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.devops;
 /**
  * Represents a <code>PipelineRun</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.770Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:19:02.033Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.devops.$Module.class, fqn = "@alicloud/ros-cdk-devops.IPipelineRun")
 @software.amazon.jsii.Jsii.Proxy(IPipelineRun.Jsii$Proxy.class)
 public interface IPipelineRun extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

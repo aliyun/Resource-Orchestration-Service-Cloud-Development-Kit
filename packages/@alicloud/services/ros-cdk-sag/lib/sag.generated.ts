@@ -49,7 +49,7 @@ function rosACLPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACL`, which is used to create an access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::ACL`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ACL` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-acl
  */
@@ -1628,7 +1628,7 @@ function rosQosCarPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosCar`, which is used to create a traffic throttling rule for a quality of service (QoS) policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::SAG::QosCar`.
  * @Note This class does not contain additional functions, so it is recommended to use the `QosCar` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-qoscar
  */

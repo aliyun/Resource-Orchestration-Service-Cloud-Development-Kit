@@ -27,7 +27,7 @@ export interface IVpcConfig extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::VpcConfig`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::VpcConfig`The , which type is used to configure a VPC whitelist.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosVpcConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-datalakeformation-vpcconfig
  */

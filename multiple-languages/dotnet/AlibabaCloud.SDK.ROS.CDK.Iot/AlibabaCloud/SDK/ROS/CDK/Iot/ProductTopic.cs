@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Iot
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::IOT::ProductTopic`, which is used to create a topic category for a specified product.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::IOT::ProductTopic`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosProductTopic`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-producttopic

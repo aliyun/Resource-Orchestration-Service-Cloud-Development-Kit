@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cr.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CR::Repositories</code>, which is used to query the information about image repositories.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:47.359Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:03:09.677Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cr.$Module.class, fqn = "@alicloud/ros-cdk-cr.datasource.Repositories")
 public class Repositories extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cr.datasource.IRepositories {
 

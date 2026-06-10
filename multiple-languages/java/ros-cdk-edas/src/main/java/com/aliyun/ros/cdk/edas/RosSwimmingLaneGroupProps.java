@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.edas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-swimminglanegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:49.472Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:38:16.823Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.RosSwimmingLaneGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosSwimmingLaneGroupProps.Jsii$Proxy.class)
 public interface RosSwimmingLaneGroupProps extends software.amazon.jsii.JsiiSerializable {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.maxcompute;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::MaxCompute::Project</code>, which is used to create a MaxCompute project.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::MaxCompute::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.647Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:47:11.313Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.maxcompute.$Module.class, fqn = "@alicloud/ros-cdk-maxcompute.Project")
 public class Project extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.maxcompute.IProject {
 

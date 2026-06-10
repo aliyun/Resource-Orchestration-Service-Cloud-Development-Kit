@@ -210,7 +210,7 @@ export interface IListener extends ros.IResource {
     readonly attrLoadBalancerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`You can use , which to create a Server Load Balancer (SLB) listener.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::SLB::Listener`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-listener
  */

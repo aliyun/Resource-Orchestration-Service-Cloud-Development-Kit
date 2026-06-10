@@ -111,7 +111,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Instance`, which is used to create a Tablestore instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-instance
  */
@@ -647,7 +647,7 @@ function rosSearchIndexPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`, which is used to create a search index for a data table. You can create multiple search indexes for a data table.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::SearchIndex`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SearchIndex` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-searchindex
  */
@@ -1920,7 +1920,7 @@ function rosVCUInstancePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VCUInstance`The , which resource creates a Virtual Compute Unit (VCU) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VCUInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VCUInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vcuinstance
  */
@@ -2144,7 +2144,7 @@ function rosVpcBinderPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VpcBinder`, which is used to bind a Tablestore instance to a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::OTS::VpcBinder`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcBinder` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ots-vpcbinder
  */

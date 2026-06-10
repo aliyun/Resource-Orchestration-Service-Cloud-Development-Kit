@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc;
  * <p>
  * A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:55.927Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.358Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.Function")
 public class Function extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc.IFunction {
 

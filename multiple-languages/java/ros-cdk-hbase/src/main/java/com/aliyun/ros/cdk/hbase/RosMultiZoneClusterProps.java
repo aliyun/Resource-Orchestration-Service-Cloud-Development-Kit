@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbase;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.136Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:23:50.006Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.RosMultiZoneClusterProps")
 @software.amazon.jsii.Jsii.Proxy(RosMultiZoneClusterProps.Jsii$Proxy.class)
 public interface RosMultiZoneClusterProps extends software.amazon.jsii.JsiiSerializable {

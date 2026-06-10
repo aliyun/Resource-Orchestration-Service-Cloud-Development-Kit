@@ -124,7 +124,7 @@ export interface ITemplates extends ros.IResource {
     readonly attrTemplates: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Templates`The , which type is used to query template lists.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::OOS::Templates`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTemplates`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-oos-templates
  */

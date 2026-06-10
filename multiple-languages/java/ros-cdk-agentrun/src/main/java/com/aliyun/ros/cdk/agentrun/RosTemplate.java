@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.agentrun;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AgentRun::Template</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.021Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:20:40.744Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.agentrun.$Module.class, fqn = "@alicloud/ros-cdk-agentrun.RosTemplate")
 public class RosTemplate extends com.aliyun.ros.cdk.core.RosResource {
 

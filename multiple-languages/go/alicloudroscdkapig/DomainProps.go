@@ -15,6 +15,8 @@ type DomainProps struct {
 	CertIdentifier interface{} `field:"optional" json:"certIdentifier" yaml:"certIdentifier"`
 	// Property forceHttps: Set the HTTPS protocol type and whether to enable forced HTTPS redirection.
 	ForceHttps interface{} `field:"optional" json:"forceHttps" yaml:"forceHttps"`
+	// Property gatewayType: The type of Gateway.
+	GatewayType interface{} `field:"optional" json:"gatewayType" yaml:"gatewayType"`
 	// Property http2Option: Whether to enable http2 settings.
 	Http2Option interface{} `field:"optional" json:"http2Option" yaml:"http2Option"`
 	// Property resourceGroupId: The ID of the resource group.

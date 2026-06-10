@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ossassets;
 /**
  * An asset represents a local file or directory, which is automatically uploaded to OSS bucket and then can be referenced within a CDK application.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.272Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:17:26.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ossassets.$Module.class, fqn = "@alicloud/ros-cdk-ossassets.Asset")
 public class Asset extends com.aliyun.ros.cdk.core.Resource {
 

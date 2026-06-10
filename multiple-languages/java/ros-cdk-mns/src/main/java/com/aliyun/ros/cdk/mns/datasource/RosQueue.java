@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mns.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MNS::Queue</code>, which is used to query the information about a created queue.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::MNS::Queue</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.746Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:51:02.168Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.datasource.RosQueue")
 public class RosQueue extends com.aliyun.ros.cdk.core.RosResource {
 

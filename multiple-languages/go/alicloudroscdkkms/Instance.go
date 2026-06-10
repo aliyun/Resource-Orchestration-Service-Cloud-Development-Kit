@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Instance`, which is used to create a Key Management Service (KMS) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Instance`.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cms;
 /**
  * Represents a <code>ContactGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:46.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.IContactGroup")
 @software.amazon.jsii.Jsii.Proxy(IContactGroup.Jsii$Proxy.class)
 public interface IContactGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

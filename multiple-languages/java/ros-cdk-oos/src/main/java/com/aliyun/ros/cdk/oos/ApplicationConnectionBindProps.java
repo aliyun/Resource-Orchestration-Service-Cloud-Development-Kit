@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnectionbind
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:52.127Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.884Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ApplicationConnectionBindProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationConnectionBindProps.Jsii$Proxy.class)
 public interface ApplicationConnectionBindProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,6 +32,13 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
     }
 
     /**
+     * Property parameters: The parameters of the application connection bind.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link ApplicationConnectionBindProps}
      */
     static Builder builder() {
@@ -44,6 +51,7 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
         java.lang.Object connectionIds;
         java.lang.Object applicationGroupName;
         java.lang.Object applicationName;
+        java.lang.Object parameters;
 
         /**
          * Sets the value of {@link ApplicationConnectionBindProps#getConnectionIds}
@@ -108,6 +116,26 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
         }
 
         /**
+         * Sets the value of {@link ApplicationConnectionBindProps#getParameters}
+         * @param parameters Property parameters: The parameters of the application connection bind.
+         * @return {@code this}
+         */
+        public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
+            this.parameters = parameters;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link ApplicationConnectionBindProps#getParameters}
+         * @param parameters Property parameters: The parameters of the application connection bind.
+         * @return {@code this}
+         */
+        public Builder parameters(java.util.List<? extends java.lang.Object> parameters) {
+            this.parameters = parameters;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link ApplicationConnectionBindProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -126,6 +154,7 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
         private final java.lang.Object connectionIds;
         private final java.lang.Object applicationGroupName;
         private final java.lang.Object applicationName;
+        private final java.lang.Object parameters;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -136,6 +165,7 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
             this.connectionIds = software.amazon.jsii.Kernel.get(this, "connectionIds", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.applicationGroupName = software.amazon.jsii.Kernel.get(this, "applicationGroupName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
             this.applicationName = software.amazon.jsii.Kernel.get(this, "applicationName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.parameters = software.amazon.jsii.Kernel.get(this, "parameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -146,6 +176,7 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
             this.connectionIds = java.util.Objects.requireNonNull(builder.connectionIds, "connectionIds is required");
             this.applicationGroupName = builder.applicationGroupName;
             this.applicationName = builder.applicationName;
+            this.parameters = builder.parameters;
         }
 
         @Override
@@ -164,6 +195,11 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
         }
 
         @Override
+        public final java.lang.Object getParameters() {
+            return this.parameters;
+        }
+
+        @Override
         @software.amazon.jsii.Internal
         public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
             final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
@@ -175,6 +211,9 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
             }
             if (this.getApplicationName() != null) {
                 data.set("applicationName", om.valueToTree(this.getApplicationName()));
+            }
+            if (this.getParameters() != null) {
+                data.set("parameters", om.valueToTree(this.getParameters()));
             }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
@@ -196,7 +235,8 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
 
             if (!connectionIds.equals(that.connectionIds)) return false;
             if (this.applicationGroupName != null ? !this.applicationGroupName.equals(that.applicationGroupName) : that.applicationGroupName != null) return false;
-            return this.applicationName != null ? this.applicationName.equals(that.applicationName) : that.applicationName == null;
+            if (this.applicationName != null ? !this.applicationName.equals(that.applicationName) : that.applicationName != null) return false;
+            return this.parameters != null ? this.parameters.equals(that.parameters) : that.parameters == null;
         }
 
         @Override
@@ -204,6 +244,7 @@ public interface ApplicationConnectionBindProps extends software.amazon.jsii.Jsi
             int result = this.connectionIds.hashCode();
             result = 31 * result + (this.applicationGroupName != null ? this.applicationGroupName.hashCode() : 0);
             result = 31 * result + (this.applicationName != null ? this.applicationName.hashCode() : 0);
+            result = 31 * result + (this.parameters != null ? this.parameters.hashCode() : 0);
             return result;
         }
     }

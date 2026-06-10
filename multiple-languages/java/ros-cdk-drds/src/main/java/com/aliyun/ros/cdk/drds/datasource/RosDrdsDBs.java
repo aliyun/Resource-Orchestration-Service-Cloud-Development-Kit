@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.drds.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::DRDS::DrdsDBs</code>, which is used to query the information about databases on an instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:48.075Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:28:31.301Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.datasource.RosDrdsDBs")
 public class RosDrdsDBs extends com.aliyun.ros.cdk.core.RosResource {
 

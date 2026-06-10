@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Signature</code>, which is used to create a backend signature.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:45.728Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.625Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Signature")
 public class Signature extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apigateway.ISignature {
 

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`, which is used to create multiple endpoint groups at a time.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroups`.
 type RosEndpointGroups interface {
 	alicloudroscdkcore.RosResource
 	AcceleratorId() interface{}

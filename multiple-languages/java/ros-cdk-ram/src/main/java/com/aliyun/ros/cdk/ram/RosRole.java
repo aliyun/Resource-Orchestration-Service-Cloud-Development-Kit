@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ram;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::Role</code>The , which resource creates a RAM role.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RAM::Role</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.048Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.322Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RosRole")
 public class RosRole extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kafka.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::KAFKA::Instances</code>, which is used to query the information about ApsaraMQ for Kafka instances.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::KAFKA::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:51.471Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.646Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

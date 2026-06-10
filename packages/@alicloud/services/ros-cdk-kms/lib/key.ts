@@ -87,7 +87,7 @@ export interface IKey extends ros.IResource {
     readonly attrKeyId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Key`The , which resource creates a master key.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Key`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKey`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-key
  */

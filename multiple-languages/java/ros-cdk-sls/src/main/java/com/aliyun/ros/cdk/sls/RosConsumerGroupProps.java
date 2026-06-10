@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sls;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sls-consumergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.465Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:57:03.245Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.RosConsumerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosConsumerGroupProps.Jsii$Proxy.class)
 public interface RosConsumerGroupProps extends software.amazon.jsii.JsiiSerializable {

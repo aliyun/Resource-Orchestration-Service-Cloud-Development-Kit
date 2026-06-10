@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`The , which type is used to create a real-time log delivery task.
 type SiteDeliveryTask interface {
 	alicloudroscdkcore.Resource
 	ISiteDeliveryTask

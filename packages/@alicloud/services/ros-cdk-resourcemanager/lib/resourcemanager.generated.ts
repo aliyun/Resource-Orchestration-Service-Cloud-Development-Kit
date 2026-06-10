@@ -69,7 +69,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Account`, which is used to create a member of the resource account type.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-account
  */
@@ -1237,7 +1237,7 @@ function rosHandshakePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Handshake`, which is used to create an invitation.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::Handshake`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Handshake` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-handshake
  */
@@ -2277,7 +2277,7 @@ function rosResourceGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`The , which resource type creates a resource group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourcegroup
  */
@@ -2524,7 +2524,7 @@ function rosResourceSharePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ResourceManager::ResourceShare`, which is used to create a resource share.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceShare` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-resourceshare
  */

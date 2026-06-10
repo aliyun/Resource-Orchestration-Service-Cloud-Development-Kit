@@ -106,7 +106,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::Account`, which is used to create a database account for an AnalyticDB for PostgreSQL instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-account
  */
@@ -1966,7 +1966,7 @@ function rosElasticDBInstancePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`, which is used to create an AnalyticDB for PostgreSQL instance in elastic storage mode.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::ElasticDBInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ElasticDBInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-elasticdbinstance
  */
@@ -2492,7 +2492,7 @@ function rosInstancePublicConnectionPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`, which is used to allocate a public connection string to an instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::InstancePublicConnection`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstancePublicConnection` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-instancepublicconnection
  */
@@ -3195,7 +3195,7 @@ function rosSupabaseProjectPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SupabaseProject` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
  */

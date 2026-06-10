@@ -729,6 +729,7 @@ func init() {
 			_jsii_.MemberMethod{JsiiMethod: "onSynthesize", GoMethod: "OnSynthesize"},
 			_jsii_.MemberMethod{JsiiMethod: "onValidate", GoMethod: "OnValidate"},
 			_jsii_.MemberMethod{JsiiMethod: "overrideLogicalId", GoMethod: "OverrideLogicalId"},
+			_jsii_.MemberProperty{JsiiProperty: "parameters", GoGetter: "Parameters"},
 			_jsii_.MemberMethod{JsiiMethod: "prepare", GoMethod: "Prepare"},
 			_jsii_.MemberProperty{JsiiProperty: "ref", GoGetter: "Ref"},
 			_jsii_.MemberMethod{JsiiMethod: "renderProperties", GoMethod: "RenderProperties"},
@@ -747,6 +748,10 @@ func init() {
 			_jsii_.InitJsiiProxy(&j.Type__alicloudroscdkcoreRosResource)
 			return &j
 		},
+	)
+	_jsii_.RegisterStruct(
+		"@alicloud/ros-cdk-oos.RosApplicationConnectionBind.ParametersProperty",
+		reflect.TypeOf((*RosApplicationConnectionBind_ParametersProperty)(nil)).Elem(),
 	)
 	_jsii_.RegisterStruct(
 		"@alicloud/ros-cdk-oos.RosApplicationConnectionBindProps",

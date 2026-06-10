@@ -72,7 +72,7 @@ export interface IStateConfiguration extends ros.IResource {
     readonly attrStateConfigurationId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::StateConfiguration`, which is used to create a desired-state configuration.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::OOS::StateConfiguration`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosStateConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-stateconfiguration
  */

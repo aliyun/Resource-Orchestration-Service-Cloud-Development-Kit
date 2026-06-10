@@ -179,7 +179,7 @@ function rosJobPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Job`, which is used to create a Machine Learning Platform for AI (PAI) job to run in a cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Job`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Job` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-job
  */
@@ -766,7 +766,7 @@ function rosTensorboardPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Tensorboard`, which is used to create a TensorBoard instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::PAIDLC::Tensorboard`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Tensorboard` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-paidlc-tensorboard
  */

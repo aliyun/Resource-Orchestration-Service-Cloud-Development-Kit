@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.redis;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-redis-upgradeversion
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.437Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:36:44.872Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.redis.$Module.class, fqn = "@alicloud/ros-cdk-redis.RosUpgradeVersionProps")
 @software.amazon.jsii.Jsii.Proxy(RosUpgradeVersionProps.Jsii$Proxy.class)
 public interface RosUpgradeVersionProps extends software.amazon.jsii.JsiiSerializable {

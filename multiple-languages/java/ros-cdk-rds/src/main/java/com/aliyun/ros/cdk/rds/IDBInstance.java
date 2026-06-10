@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Represents a <code>DBInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:53.197Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:35:10.992Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.IDBInstance")
 @software.amazon.jsii.Jsii.Proxy(IDBInstance.Jsii$Proxy.class)
 public interface IDBInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

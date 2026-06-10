@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-masterslaveservergroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:54.198Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.294Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.MasterSlaveServerGroupProps")
 @software.amazon.jsii.Jsii.Proxy(MasterSlaveServerGroupProps.Jsii$Proxy.class)
 public interface MasterSlaveServerGroupProps extends software.amazon.jsii.JsiiSerializable {

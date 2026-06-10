@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fc3;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc3-concurrencyconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-05-07T04:16:50.557Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:03:30.819Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.ConcurrencyConfigProps")
 @software.amazon.jsii.Jsii.Proxy(ConcurrencyConfigProps.Jsii$Proxy.class)
 public interface ConcurrencyConfigProps extends software.amazon.jsii.JsiiSerializable {

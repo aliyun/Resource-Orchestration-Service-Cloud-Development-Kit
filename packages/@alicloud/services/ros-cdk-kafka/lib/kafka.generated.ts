@@ -158,7 +158,7 @@ function rosAclPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Acl`, which is used to create an access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Acl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Acl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-acl
  */
@@ -361,7 +361,7 @@ function rosConsumerGroupPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`, which is used to create a consumer group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::ConsumerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ConsumerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-consumergroup
  */
@@ -1342,7 +1342,7 @@ function rosSaslUserPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`, which is used to create a Simple Authentication and Security Layer (SASL) user.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::SaslUser`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SaslUser` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-sasluser
  */
@@ -1587,7 +1587,7 @@ function rosTopicPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Topic`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::KAFKA::Topic`, which is used to create a topic.
  * @Note This class does not contain additional functions, so it is recommended to use the `Topic` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kafka-topic
  */

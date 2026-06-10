@@ -29,6 +29,7 @@
 @alicloud/ros-cdk-oos.RosApplicationConnection=com.aliyun.ros.cdk.oos.RosApplicationConnection
 @alicloud/ros-cdk-oos.RosApplicationConnection.EnvVarsProperty=com.aliyun.ros.cdk.oos.RosApplicationConnection$EnvVarsProperty
 @alicloud/ros-cdk-oos.RosApplicationConnectionBind=com.aliyun.ros.cdk.oos.RosApplicationConnectionBind
+@alicloud/ros-cdk-oos.RosApplicationConnectionBind.ParametersProperty=com.aliyun.ros.cdk.oos.RosApplicationConnectionBind$ParametersProperty
 @alicloud/ros-cdk-oos.RosApplicationConnectionBindProps=com.aliyun.ros.cdk.oos.RosApplicationConnectionBindProps
 @alicloud/ros-cdk-oos.RosApplicationConnectionProps=com.aliyun.ros.cdk.oos.RosApplicationConnectionProps
 @alicloud/ros-cdk-oos.RosApplicationGroupDeployment=com.aliyun.ros.cdk.oos.RosApplicationGroupDeployment
