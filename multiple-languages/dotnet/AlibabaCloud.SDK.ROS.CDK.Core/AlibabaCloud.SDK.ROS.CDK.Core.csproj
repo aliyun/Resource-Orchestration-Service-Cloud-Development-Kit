@@ -147,12 +147,12 @@
 		
     
 		
-		<ProjectReference Include="../AlibabaCloud.SDK.ROS.CDK.Assembly.Schema/AlibabaCloud.SDK.ROS.CDK.Assembly.Schema.csproj"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Assembly.Schema" Version="[1.14.0,2.0.0)"/>
 		
 		
     
 		
-		<ProjectReference Include="../AlibabaCloud.SDK.ROS.CDK.Cxapi/AlibabaCloud.SDK.ROS.CDK.Cxapi.csproj"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Cxapi" Version="[1.14.0,2.0.0)"/>
 		
 		
     
