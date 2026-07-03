@@ -152,7 +152,7 @@
 		
     
 		
-		<ProjectReference Include="../AlibabaCloud.SDK.ROS.CDK.Fc/AlibabaCloud.SDK.ROS.CDK.Fc.csproj"/>
+		<PackageReference Include="AlibabaCloud.SDK.ROS.CDK.Fc" Version="[1.0.25,2.0.0)"/>
 		
 		
     
