@@ -5,13 +5,23 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-role
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.295Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.239Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RoleProps")
 @software.amazon.jsii.Jsii.Proxy(RoleProps.Jsii$Proxy.class)
 public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+     * Property assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume the RAM role.
+     * <p>
+     * Trusted entities can be cloud accounts, cloud
+     * services, or identity providers (IdPs).
+     * <p>
+     * <blockquote>
+     * <p>
+     * RAM users cannot assume RAM roles whose trusted entity is a cloud
+     * service.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAssumeRolePolicyDocument();
 
@@ -98,7 +108,16 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RoleProps#getAssumeRolePolicyDocument}
-         * @param assumeRolePolicyDocument Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role. This parameter is required.
+         * @param assumeRolePolicyDocument Property assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume the RAM role. This parameter is required.
+         *                                 Trusted entities can be cloud accounts, cloud
+         *                                 services, or identity providers (IdPs).
+         *                                 <p>
+         *                                 <blockquote>
+         *                                 <p>
+         *                                 RAM users cannot assume RAM roles whose trusted entity is a cloud
+         *                                 service.
+         *                                 <p>
+         *                                 </blockquote>
          * @return {@code this}
          */
         public Builder assumeRolePolicyDocument(com.aliyun.ros.cdk.core.IResolvable assumeRolePolicyDocument) {
@@ -108,7 +127,16 @@ public interface RoleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RoleProps#getAssumeRolePolicyDocument}
-         * @param assumeRolePolicyDocument Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role. This parameter is required.
+         * @param assumeRolePolicyDocument Property assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume the RAM role. This parameter is required.
+         *                                 Trusted entities can be cloud accounts, cloud
+         *                                 services, or identity providers (IdPs).
+         *                                 <p>
+         *                                 <blockquote>
+         *                                 <p>
+         *                                 RAM users cannot assume RAM roles whose trusted entity is a cloud
+         *                                 service.
+         *                                 <p>
+         *                                 </blockquote>
          * @return {@code this}
          */
         public Builder assumeRolePolicyDocument(com.aliyun.ros.cdk.ram.RosRole.AssumeRolePolicyDocumentProperty assumeRolePolicyDocument) {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adblake;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.681Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:55:45.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,7 +53,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+     * Property cloneSourceRegionId: The region ID of the source cluster.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for cross-region cloning.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCloneSourceRegionId() {
         return null;
@@ -112,18 +118,34 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property kmsId:.
+     * Property kmsId: The ID of the key used to encrypt data on cloud disks.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter takes effect only when disk encryption is enabled for the
+     * AnalyticDB for MySQL cluster.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKmsId() {
         return null;
     }
 
     /**
-     * Property period: The subscription duration of the subscription cluster.
+     * Property period: The unit of the subscription duration.
      * <p>
-     * Valid values when Period is set to Year: 1 to 3 (integer).
-     * Valid values when Period is set to Month: 1 to 9 (integer).
-     * Note This parameter must be specified when PayType is set to Prepaid.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Year</li>
+     * <li>Month</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you set <code>PayType</code> to <code>Prepaid</code>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -142,7 +164,14 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property productForm: Valid values: IntegrationForm LegacyForm.
+     * Property productForm: The product form.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>IntegrationForm: Integration Form.</li>
+     * <li>LegacyForm: Data Lakehouse Edition.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProductForm() {
         return null;
@@ -158,15 +187,31 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property reservedNodeCount: The number of reserved nodes.
      * <p>
-     * Must be 1 for basic version and multiple
-     * of 3 for enterprise version.
+     * <ul>
+     * <li>For Enterprise Edition, the value must be a multiple of 3. The default value is</li>
+     * </ul>
+     * <p>
+     * <ol>
+     * <li></li>
+     * </ol>
+     * <p>
+     * <ul>
+     * <li>For Basic Edition, the default value is 1.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is available only when <code>ProductForm</code> is set to
+     * <code>IntegrationForm</code>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReservedNodeCount() {
         return null;
     }
 
     /**
-     * Property reservedNodeSize: The size of each reserved node.
+     * Property reservedNodeSize: The resource specification of each reserved node, in ACUs.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReservedNodeSize() {
         return null;
@@ -180,7 +225,10 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property restoreToTime: The point in time to which you want to restore data from the backup set.
+     * Property restoreToTime: The point in time to which you want to restore the cluster.
+     * <p>
+     * Specify the time in
+     * the <code>YYYY-MM-DDThh:mm:ssZ</code> format. The time must be in UTC.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreToTime() {
         return null;
@@ -198,14 +246,28 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+     * Property secondaryVSwitchId: The ID of the secondary vSwitch.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The value of this parameter cannot be the same as the value of the <code>VSwitchId</code>
+     * parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryVSwitchId() {
         return null;
     }
 
     /**
-     * Property secondaryZoneId: The secondary zone ID.
+     * Property secondaryZoneId: The ID of the secondary availability zone.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The value of this parameter cannot be the same as the value of the <code>ZoneId</code>
+     * parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecondaryZoneId() {
         return null;
@@ -411,7 +473,12 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getCloneSourceRegionId}
-         * @param cloneSourceRegionId Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+         * @param cloneSourceRegionId Property cloneSourceRegionId: The region ID of the source cluster.
+         *                            <blockquote>
+         *                            <p>
+         *                            This parameter is required for cross-region cloning.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder cloneSourceRegionId(java.lang.String cloneSourceRegionId) {
@@ -421,7 +488,12 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getCloneSourceRegionId}
-         * @param cloneSourceRegionId Property cloneSourceRegionId: The ID of the source region where the cluster is located.
+         * @param cloneSourceRegionId Property cloneSourceRegionId: The region ID of the source cluster.
+         *                            <blockquote>
+         *                            <p>
+         *                            This parameter is required for cross-region cloning.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder cloneSourceRegionId(com.aliyun.ros.cdk.core.IResolvable cloneSourceRegionId) {
@@ -555,7 +627,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getKmsId}
-         * @param kmsId Property kmsId:.
+         * @param kmsId Property kmsId: The ID of the key used to encrypt data on cloud disks.
+         *              <blockquote>
+         *              <p>
+         *              This parameter takes effect only when disk encryption is enabled for the
+         *              AnalyticDB for MySQL cluster.
+         *              <p>
+         *              </blockquote>
          * @return {@code this}
          */
         public Builder kmsId(java.lang.String kmsId) {
@@ -565,7 +643,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getKmsId}
-         * @param kmsId Property kmsId:.
+         * @param kmsId Property kmsId: The ID of the key used to encrypt data on cloud disks.
+         *              <blockquote>
+         *              <p>
+         *              This parameter takes effect only when disk encryption is enabled for the
+         *              AnalyticDB for MySQL cluster.
+         *              <p>
+         *              </blockquote>
          * @return {@code this}
          */
         public Builder kmsId(com.aliyun.ros.cdk.core.IResolvable kmsId) {
@@ -575,10 +659,19 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: The subscription duration of the subscription cluster.
-         *               Valid values when Period is set to Year: 1 to 3 (integer).
-         *               Valid values when Period is set to Month: 1 to 9 (integer).
-         *               Note This parameter must be specified when PayType is set to Prepaid.
+         * @param period Property period: The unit of the subscription duration.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>Year</li>
+         *               <li>Month</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you set <code>PayType</code> to <code>Prepaid</code>.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.String period) {
@@ -588,10 +681,19 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: The subscription duration of the subscription cluster.
-         *               Valid values when Period is set to Year: 1 to 3 (integer).
-         *               Valid values when Period is set to Month: 1 to 9 (integer).
-         *               Note This parameter must be specified when PayType is set to Prepaid.
+         * @param period Property period: The unit of the subscription duration.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>Year</li>
+         *               <li>Month</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you set <code>PayType</code> to <code>Prepaid</code>.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -629,7 +731,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getProductForm}
-         * @param productForm Property productForm: Valid values: IntegrationForm LegacyForm.
+         * @param productForm Property productForm: The product form.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>IntegrationForm: Integration Form.</li>
+         *                    <li>LegacyForm: Data Lakehouse Edition.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder productForm(java.lang.String productForm) {
@@ -639,7 +747,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getProductForm}
-         * @param productForm Property productForm: Valid values: IntegrationForm LegacyForm.
+         * @param productForm Property productForm: The product form.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>IntegrationForm: Integration Form.</li>
+         *                    <li>LegacyForm: Data Lakehouse Edition.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder productForm(com.aliyun.ros.cdk.core.IResolvable productForm) {
@@ -670,8 +784,24 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getReservedNodeCount}
          * @param reservedNodeCount Property reservedNodeCount: The number of reserved nodes.
-         *                          Must be 1 for basic version and multiple
-         *                          of 3 for enterprise version.
+         *                          <ul>
+         *                          <li>For Enterprise Edition, the value must be a multiple of 3. The default value is</li>
+         *                          </ul>
+         *                          <p>
+         *                          <ol>
+         *                          <li></li>
+         *                          </ol>
+         *                          <p>
+         *                          <ul>
+         *                          <li>For Basic Edition, the default value is 1.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter is available only when <code>ProductForm</code> is set to
+         *                          <code>IntegrationForm</code>.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder reservedNodeCount(java.lang.Number reservedNodeCount) {
@@ -682,8 +812,24 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBClusterProps#getReservedNodeCount}
          * @param reservedNodeCount Property reservedNodeCount: The number of reserved nodes.
-         *                          Must be 1 for basic version and multiple
-         *                          of 3 for enterprise version.
+         *                          <ul>
+         *                          <li>For Enterprise Edition, the value must be a multiple of 3. The default value is</li>
+         *                          </ul>
+         *                          <p>
+         *                          <ol>
+         *                          <li></li>
+         *                          </ol>
+         *                          <p>
+         *                          <ul>
+         *                          <li>For Basic Edition, the default value is 1.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter is available only when <code>ProductForm</code> is set to
+         *                          <code>IntegrationForm</code>.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder reservedNodeCount(com.aliyun.ros.cdk.core.IResolvable reservedNodeCount) {
@@ -693,7 +839,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getReservedNodeSize}
-         * @param reservedNodeSize Property reservedNodeSize: The size of each reserved node.
+         * @param reservedNodeSize Property reservedNodeSize: The resource specification of each reserved node, in ACUs.
          * @return {@code this}
          */
         public Builder reservedNodeSize(java.lang.Number reservedNodeSize) {
@@ -703,7 +849,7 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getReservedNodeSize}
-         * @param reservedNodeSize Property reservedNodeSize: The size of each reserved node.
+         * @param reservedNodeSize Property reservedNodeSize: The resource specification of each reserved node, in ACUs.
          * @return {@code this}
          */
         public Builder reservedNodeSize(com.aliyun.ros.cdk.core.IResolvable reservedNodeSize) {
@@ -733,7 +879,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getRestoreToTime}
-         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore data from the backup set.
+         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore the cluster.
+         *                      Specify the time in
+         *                      the <code>YYYY-MM-DDThh:mm:ssZ</code> format. The time must be in UTC.
          * @return {@code this}
          */
         public Builder restoreToTime(java.lang.String restoreToTime) {
@@ -743,7 +891,9 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getRestoreToTime}
-         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore data from the backup set.
+         * @param restoreToTime Property restoreToTime: The point in time to which you want to restore the cluster.
+         *                      Specify the time in
+         *                      the <code>YYYY-MM-DDThh:mm:ssZ</code> format. The time must be in UTC.
          * @return {@code this}
          */
         public Builder restoreToTime(com.aliyun.ros.cdk.core.IResolvable restoreToTime) {
@@ -779,7 +929,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getSecondaryVSwitchId}
-         * @param secondaryVSwitchId Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+         * @param secondaryVSwitchId Property secondaryVSwitchId: The ID of the secondary vSwitch.
+         *                           <blockquote>
+         *                           <p>
+         *                           The value of this parameter cannot be the same as the value of the <code>VSwitchId</code>
+         *                           parameter.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder secondaryVSwitchId(java.lang.String secondaryVSwitchId) {
@@ -789,7 +945,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getSecondaryVSwitchId}
-         * @param secondaryVSwitchId Property secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+         * @param secondaryVSwitchId Property secondaryVSwitchId: The ID of the secondary vSwitch.
+         *                           <blockquote>
+         *                           <p>
+         *                           The value of this parameter cannot be the same as the value of the <code>VSwitchId</code>
+         *                           parameter.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder secondaryVSwitchId(com.aliyun.ros.cdk.core.IResolvable secondaryVSwitchId) {
@@ -799,7 +961,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getSecondaryZoneId}
-         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID.
+         * @param secondaryZoneId Property secondaryZoneId: The ID of the secondary availability zone.
+         *                        <blockquote>
+         *                        <p>
+         *                        The value of this parameter cannot be the same as the value of the <code>ZoneId</code>
+         *                        parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder secondaryZoneId(java.lang.String secondaryZoneId) {
@@ -809,7 +977,13 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getSecondaryZoneId}
-         * @param secondaryZoneId Property secondaryZoneId: The secondary zone ID.
+         * @param secondaryZoneId Property secondaryZoneId: The ID of the secondary availability zone.
+         *                        <blockquote>
+         *                        <p>
+         *                        The value of this parameter cannot be the same as the value of the <code>ZoneId</code>
+         *                        parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder secondaryZoneId(com.aliyun.ros.cdk.core.IResolvable secondaryZoneId) {

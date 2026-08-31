@@ -19,6 +19,8 @@ type ScalingConfigurationProps struct {
 	// You can specify the number of vCPUs and the memory size to determine the range of instance types. For example, you can set CPU to 2 and Memory to 16 to specify instance types that have 2 vCPUs and 16 GiB of memory. If you specify Cpu and Memory, Auto Scaling determines the available instance types based on factors such as I\/O optimization requirements and zones. Then, Auto Scaling preferentially creates instances by using the lowest-priced instance type.
 	// **Note**: You can specify **Cpu** and **Memory** to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
 	Cpu interface{} `field:"optional" json:"cpu" yaml:"cpu"`
+	// Property cpuOptions: CPU options.
+	CpuOptions interface{} `field:"optional" json:"cpuOptions" yaml:"cpuOptions"`
 	// Property creditSpecification: The performance mode of the burstable instance.
 	//
 	// Valid values:

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.flink;
 /**
  * Represents a <code>Namespace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:06:21.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:13:20.904Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.INamespace")
 @software.amazon.jsii.Jsii.Proxy(INamespace.Jsii$Proxy.class)
 public interface INamespace extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

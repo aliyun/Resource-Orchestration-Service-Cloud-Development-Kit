@@ -5,23 +5,34 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.626Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:57.024Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.SignatureProps")
 @software.amazon.jsii.Jsii.Proxy(SignatureProps.Jsii$Proxy.class)
 public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property signatureKey: The key of the signature.
+     * Property signatureKey: The Key value of the key.
+     * <p>
+     * The value must be 6 to 20 characters in length and can
+     * contain letters, digits, and underscores (_). It must start with a letter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSignatureKey();
 
     /**
-     * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * Property signatureName: The displayed name of the key.
+     * <p>
+     * The name must be 4 to 50 characters in length and
+     * can contain letters, digits, and underscores (_). It must start with a letter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSignatureName();
 
     /**
-     * Property signatureSecret: The secret of the signature.
+     * Property signatureSecret: The Secret value of the key.
+     * <p>
+     * The value must be 6 to 30 characters in length and
+     * can contain letters, digits, and special characters. Special characters include
+     * underscores (_), at signs (&#64;), number signs (#), exclamation points (!), and
+     * asterisks (*). The value must start with a letter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSignatureSecret();
 
@@ -41,7 +52,9 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureKey}
-         * @param signatureKey Property signatureKey: The key of the signature. This parameter is required.
+         * @param signatureKey Property signatureKey: The Key value of the key. This parameter is required.
+         *                     The value must be 6 to 20 characters in length and can
+         *                     contain letters, digits, and underscores (_). It must start with a letter.
          * @return {@code this}
          */
         public Builder signatureKey(java.lang.String signatureKey) {
@@ -51,7 +64,9 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureKey}
-         * @param signatureKey Property signatureKey: The key of the signature. This parameter is required.
+         * @param signatureKey Property signatureKey: The Key value of the key. This parameter is required.
+         *                     The value must be 6 to 20 characters in length and can
+         *                     contain letters, digits, and underscores (_). It must start with a letter.
          * @return {@code this}
          */
         public Builder signatureKey(com.aliyun.ros.cdk.core.IResolvable signatureKey) {
@@ -61,7 +76,9 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureName}
-         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param signatureName Property signatureName: The displayed name of the key. This parameter is required.
+         *                      The name must be 4 to 50 characters in length and
+         *                      can contain letters, digits, and underscores (_). It must start with a letter.
          * @return {@code this}
          */
         public Builder signatureName(java.lang.String signatureName) {
@@ -71,7 +88,9 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureName}
-         * @param signatureName Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param signatureName Property signatureName: The displayed name of the key. This parameter is required.
+         *                      The name must be 4 to 50 characters in length and
+         *                      can contain letters, digits, and underscores (_). It must start with a letter.
          * @return {@code this}
          */
         public Builder signatureName(com.aliyun.ros.cdk.core.IResolvable signatureName) {
@@ -81,7 +100,11 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureSecret}
-         * @param signatureSecret Property signatureSecret: The secret of the signature. This parameter is required.
+         * @param signatureSecret Property signatureSecret: The Secret value of the key. This parameter is required.
+         *                        The value must be 6 to 30 characters in length and
+         *                        can contain letters, digits, and special characters. Special characters include
+         *                        underscores (_), at signs (&#64;), number signs (#), exclamation points (!), and
+         *                        asterisks (*). The value must start with a letter.
          * @return {@code this}
          */
         public Builder signatureSecret(java.lang.String signatureSecret) {
@@ -91,7 +114,11 @@ public interface SignatureProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link SignatureProps#getSignatureSecret}
-         * @param signatureSecret Property signatureSecret: The secret of the signature. This parameter is required.
+         * @param signatureSecret Property signatureSecret: The Secret value of the key. This parameter is required.
+         *                        The value must be 6 to 30 characters in length and
+         *                        can contain letters, digits, and special characters. Special characters include
+         *                        underscores (_), at signs (&#64;), number signs (#), exclamation points (!), and
+         *                        asterisks (*). The value must start with a letter.
          * @return {@code this}
          */
         public Builder signatureSecret(com.aliyun.ros.cdk.core.IResolvable signatureSecret) {

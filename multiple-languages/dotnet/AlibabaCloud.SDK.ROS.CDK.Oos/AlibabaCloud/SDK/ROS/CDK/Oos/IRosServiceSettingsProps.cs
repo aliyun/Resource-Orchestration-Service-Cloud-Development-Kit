@@ -77,7 +77,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: rdcEnterpriseId: Enterprise ID.
+        /// <strong>Property</strong>: rdcEnterpriseId: The Apsara DevOps enterprise ID.
         /// </remarks>
         [JsiiProperty(name: "rdcEnterpriseId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -151,7 +151,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: rdcEnterpriseId: Enterprise ID.
+            /// <strong>Property</strong>: rdcEnterpriseId: The Apsara DevOps enterprise ID.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "rdcEnterpriseId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

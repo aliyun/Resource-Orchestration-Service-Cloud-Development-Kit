@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`, which is used to create a host in a Proprietary MyBase dedicated cluster in ApsaraDB for MyBase.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::MyBase`.
 type MyBase interface {
 	alicloudroscdkcore.Resource
 	IMyBase

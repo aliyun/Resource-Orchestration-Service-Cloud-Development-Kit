@@ -25,10 +25,10 @@ export interface AggregateCompliancePackProps {
     readonly description: string | ros.IResolvable;
 
     /**
-     * Property riskLevel: Compliance package risk level. Value:
-     * 1: High risk.
-     * 2: Medium risk.
-     * 3: Low risk.
+     * Property riskLevel: The risk level of the compliance pack. Valid values:
+     * - 1: High
+     * - 2 (default): Medium
+     * - 3: Low
      */
     readonly riskLevel: number | ros.IResolvable;
 
@@ -109,7 +109,7 @@ export interface IAggregateCompliancePack extends ros.IResource {
     readonly attrCompliancePackId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Config::AggregateCompliancePack`, which is used to create a compliance package for an account group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Config::AggregateCompliancePack`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAggregateCompliancePack`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::GA::BandwidthPackage</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.874Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.872Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.datasource.BandwidthPackage")
 public class BandwidthPackage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.datasource.IBandwidthPackage {
 

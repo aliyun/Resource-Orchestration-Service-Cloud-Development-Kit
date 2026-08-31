@@ -12,7 +12,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     public interface IRosDomainProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: cdnType: The business type. Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+        /// <strong>Property</strong>: cdnType: The business type of the domain name. Valid values:
+        /// - web: images and small files.
+        /// - download: large files.
+        /// - video: on-demand video and audio streaming.
         /// </remarks>
         [JsiiProperty(name: "cdnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object CdnType
@@ -30,7 +33,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: checkUrl: The validation of the origin.
+        /// <strong>Property</strong>: checkUrl: The health check URL.
         /// </remarks>
         [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -69,7 +72,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: scope: Valid values: domestic, overseas, and global. Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+        /// <strong>Property</strong>: scope: The acceleration region. Valid values:
+        /// - domestic (default): Chinese mainland only.
+        /// - overseas: global (excluding the Chinese mainland).
+        /// - global: global.
         /// </remarks>
         [JsiiProperty(name: "scope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -132,7 +138,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: cdnType: The business type. Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+            /// <strong>Property</strong>: cdnType: The business type of the domain name. Valid values:
+            /// - web: images and small files.
+            /// - download: large files.
+            /// - video: on-demand video and audio streaming.
             /// </remarks>
             [JsiiProperty(name: "cdnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object CdnType
@@ -150,7 +159,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: checkUrl: The validation of the origin.
+            /// <strong>Property</strong>: checkUrl: The health check URL.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "checkUrl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -180,7 +189,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: scope: Valid values: domestic, overseas, and global. Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+            /// <strong>Property</strong>: scope: The acceleration region. Valid values:
+            /// - domestic (default): Chinese mainland only.
+            /// - overseas: global (excluding the Chinese mainland).
+            /// - global: global.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scope", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

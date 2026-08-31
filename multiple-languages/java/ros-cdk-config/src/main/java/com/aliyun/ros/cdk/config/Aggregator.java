@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.config;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::Aggregator</code>, which is used to create an account group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Config::Aggregator</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:01:48.313Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:52:04.559Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.Aggregator")
 public class Aggregator extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.config.IAggregator {
 
@@ -206,20 +206,28 @@ public class Aggregator extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property folderId: The folder ID.
+         * Property folderId: The ID of the attached folder.
+         * <p>
+         * You can specify multiple folder IDs. Separate the
+         * IDs with commas (,).
+         * This parameter is required if you set <code>AggregatorType</code> to <code>FOLDER</code>.
          * <p>
          * @return {@code this}
-         * @param folderId Property folderId: The folder ID. This parameter is required.
+         * @param folderId Property folderId: The ID of the attached folder. This parameter is required.
          */
         public Builder folderId(final java.lang.String folderId) {
             this.props.folderId(folderId);
             return this;
         }
         /**
-         * Property folderId: The folder ID.
+         * Property folderId: The ID of the attached folder.
+         * <p>
+         * You can specify multiple folder IDs. Separate the
+         * IDs with commas (,).
+         * This parameter is required if you set <code>AggregatorType</code> to <code>FOLDER</code>.
          * <p>
          * @return {@code this}
-         * @param folderId Property folderId: The folder ID. This parameter is required.
+         * @param folderId Property folderId: The ID of the attached folder. This parameter is required.
          */
         public Builder folderId(final com.aliyun.ros.cdk.core.IResolvable folderId) {
             this.props.folderId(folderId);

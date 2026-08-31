@@ -76,7 +76,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
 
         private object? _dbInstanceIsCreating;
 
-        /// <summary>Property dbInstanceIsCreating: Check whether the RDS instance is being created.</summary>
+        /// <summary>Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "dbInstanceIsCreating", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DbInstanceIsCreating
@@ -107,11 +107,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
 
         private object? _dbInstType;
 
-        /// <summary>Property dbInstType: The type of the attached storage.</summary>
-        /// <remarks>
-        /// Valid values:
-        /// RDS or POLARDB
-        /// </remarks>
+        /// <summary>Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "dbInstType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DbInstType
@@ -173,7 +169,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
 
         private object? _encode;
 
-        /// <summary>Property encode: Encoding used by the database.</summary>
+        /// <summary>Property encode: The encoding method that is used by the database.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "encode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Encode
@@ -204,7 +200,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
 
         private object? _instDbName;
 
-        /// <summary>Property instDbName:.</summary>
+        /// <summary>Property instDbName: List of databases.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "instDbName", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-drds.RosDrdsDB.InstDbNameProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? InstDbName
@@ -283,7 +279,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Drds
 
         private object? _rdsInstance;
 
-        /// <summary>Property rdsInstance: This property is required only for vertical partitioning.</summary>
+        /// <summary>Property rdsInstance: List of RDS instances.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "rdsInstance", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? RdsInstance

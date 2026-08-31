@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-servicesettings
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.971Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.915Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ServiceSettingsProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceSettingsProps.Jsii$Proxy.class)
 public interface ServiceSettingsProps extends software.amazon.jsii.JsiiSerializable {
@@ -50,7 +50,7 @@ public interface ServiceSettingsProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property rdcEnterpriseId: Enterprise ID.
+     * Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRdcEnterpriseId() {
         return null;
@@ -179,7 +179,7 @@ public interface ServiceSettingsProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ServiceSettingsProps#getRdcEnterpriseId}
-         * @param rdcEnterpriseId Property rdcEnterpriseId: Enterprise ID.
+         * @param rdcEnterpriseId Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
          * @return {@code this}
          */
         public Builder rdcEnterpriseId(java.lang.String rdcEnterpriseId) {
@@ -189,7 +189,7 @@ public interface ServiceSettingsProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ServiceSettingsProps#getRdcEnterpriseId}
-         * @param rdcEnterpriseId Property rdcEnterpriseId: Enterprise ID.
+         * @param rdcEnterpriseId Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
          * @return {@code this}
          */
         public Builder rdcEnterpriseId(com.aliyun.ros.cdk.core.IResolvable rdcEnterpriseId) {

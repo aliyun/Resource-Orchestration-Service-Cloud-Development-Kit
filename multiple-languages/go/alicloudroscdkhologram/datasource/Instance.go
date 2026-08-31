@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::Hologram::Instance`.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::Hologram::Instance`, which is used to query the information about a Hologres instance by instance ID.
 type Instance interface {
 	alicloudroscdkcore.Resource
 	IInstance

@@ -11,11 +11,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     [JsiiInterface(nativeType: typeof(ISslVpnServerProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.SslVpnServerProps")]
     public interface ISslVpnServerProps
     {
-        /// <summary>Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC.</summary>
+        /// <summary>Property clientIpPool: The client CIDR block.</summary>
         /// <remarks>
-        /// It does not refer to the existing intranet segment of the client.
-        /// When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-        /// The network segment cannot conflict with the LocalSubnet address segment.
+        /// The CIDR block from which an IP address is allocated to the virtual network
+        /// interface controller (NIC) of the client, rather than the private CIDR block.
+        /// If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+        /// assigns an IP address from the specified client CIDR block for the client to
+        /// access cloud resources.
+        /// Make sure that the number of IP addresses in the client CIDR block is at least
+        /// four times the maximum number of SSL-VPN connections supported by the VPN
+        /// gateway.
+        /// ... (omitted for brevity; see metadata URL) ...
+        ///
+        /// <list type="bullet">
+        /// <description>The subnet mask of the client CIDR block must be 16 to 29 bits in length.</description>
+        /// <description>Make sure that the client CIDR block does not overlap with the local CIDR
+        /// block, the VPC CIDR block, or route CIDR blocks associated with the client.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "clientIpPool", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ClientIpPool
@@ -23,9 +35,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.</summary>
+        /// <summary>Property localSubnet: The local CIDR block.</summary>
         /// <remarks>
-        /// The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+        /// The CIDR block that your client needs to access by using the SSL-VPN connection.
+        /// This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+        /// connected to a VPC by using an Express Connect circuit, or a cloud
+        /// service such as Object Storage Service (OSS).
+        /// The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+        /// You cannot specify the following CIDR blocks as the local CIDR blocks:
+        ///
+        /// <list type="bullet">
+        /// <description>127.0.0.0~127.255.255.255</description>
+        /// <description>169.254.0.0~169.254.255.255</description>
+        /// <description>224.0.0.0~239.255.255.255</description>
+        /// <description>255.0.0.0~255.255.255.255</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object LocalSubnet
@@ -113,10 +137,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property name: The name of the SSL-VPN server.</summary>
+        /// <summary>Property name: The SSL server name.</summary>
         /// <remarks>
-        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-        /// But it can't start with http:// or https://.
+        /// The name must be 1 to 100 characters in length and cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -143,9 +167,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property proto: The protocol used by the SSL-VPN server.</summary>
+        /// <summary>Property proto: The protocol that is used by the SSL server.</summary>
         /// <remarks>
-        /// Allowed values: UDP (default) | TCP.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>TCP (default)</description>
+        /// <description>UDP</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "proto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -168,11 +197,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             {
             }
 
-            /// <summary>Property clientIpPool: It is the address segment that assigns the access address to the client virtual NIC.</summary>
+            /// <summary>Property clientIpPool: The client CIDR block.</summary>
             /// <remarks>
-            /// It does not refer to the existing intranet segment of the client.
-            /// When the client accesses the local end through an SSL-VPN connection, the VPN gateway allocates an IP address to the client from the specified client network segment.
-            /// The network segment cannot conflict with the LocalSubnet address segment.
+            /// The CIDR block from which an IP address is allocated to the virtual network
+            /// interface controller (NIC) of the client, rather than the private CIDR block.
+            /// If the client accesses the SSL server over an SSL-VPN connection, the VPN gateway
+            /// assigns an IP address from the specified client CIDR block for the client to
+            /// access cloud resources.
+            /// Make sure that the number of IP addresses in the client CIDR block is at least
+            /// four times the maximum number of SSL-VPN connections supported by the VPN
+            /// gateway.
+            /// ... (omitted for brevity; see metadata URL) ...
+            ///
+            /// <list type="bullet">
+            /// <description>The subnet mask of the client CIDR block must be 16 to 29 bits in length.</description>
+            /// <description>Make sure that the client CIDR block does not overlap with the local CIDR
+            /// block, the VPC CIDR block, or route CIDR blocks associated with the client.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "clientIpPool", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ClientIpPool
@@ -180,9 +221,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property localSubnet: Is the address segment that the client wants to access through an SSL-VPN connection.</summary>
+            /// <summary>Property localSubnet: The local CIDR block.</summary>
             /// <remarks>
-            /// The local network segment can be the network segment of the VPC, the network segment of the switch, the network segment of the IDC interconnected by the leased line and the VPC, and the network segment of the cloud service such as RDS/OSS.
+            /// The CIDR block that your client needs to access by using the SSL-VPN connection.
+            /// This value can be the CIDR block of a VPC, a vSwitch, a data center that is
+            /// connected to a VPC by using an Express Connect circuit, or a cloud
+            /// service such as Object Storage Service (OSS).
+            /// The subnet mask of the specified local CIDR block must be 8 to 32 bits in length.
+            /// You cannot specify the following CIDR blocks as the local CIDR blocks:
+            ///
+            /// <list type="bullet">
+            /// <description>127.0.0.0~127.255.255.255</description>
+            /// <description>169.254.0.0~169.254.255.255</description>
+            /// <description>224.0.0.0~239.255.255.255</description>
+            /// <description>255.0.0.0~255.255.255.255</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object LocalSubnet
@@ -252,10 +305,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property name: The name of the SSL-VPN server.</summary>
+            /// <summary>Property name: The SSL server name.</summary>
             /// <remarks>
-            /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-).
-            /// But it can't start with http:// or https://.
+            /// The name must be 1 to 100 characters in length and cannot start with <c>http:\/\/</c> or
+            /// <c>https:\/\/</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -276,9 +329,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property proto: The protocol used by the SSL-VPN server.</summary>
+            /// <summary>Property proto: The protocol that is used by the SSL server.</summary>
             /// <remarks>
-            /// Allowed values: UDP (default) | TCP.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>TCP (default)</description>
+            /// <description>UDP</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "proto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

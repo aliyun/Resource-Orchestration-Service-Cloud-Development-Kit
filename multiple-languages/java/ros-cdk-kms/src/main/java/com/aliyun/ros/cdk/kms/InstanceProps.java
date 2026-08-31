@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.kms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:39:52.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:55:06.322Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,10 +53,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property period: The subscription duration of the KMS instance.
+     * Property period: The subscription duration.
      * <p>
-     * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-     * If PeriodUnit is Year, the valid range is 1, 2, 3
+     * Unit: month. The value must be an integral multiple of
+     * 12.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you create a subscription instance.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -75,7 +81,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property renewPeriod: Automatic renewal period, in months.
+     * Property renewPeriod: The auto-renewal period.
+     * <p>
+     * Unit: month.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if the RenewalStatus parameter is set to
+     * AutoRenewal.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRenewPeriod() {
         return null;
@@ -261,9 +276,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The subscription duration of the KMS instance.
-         *               If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-         *               If PeriodUnit is Year, the valid range is 1, 2, 3
+         * @param period Property period: The subscription duration.
+         *               Unit: month. The value must be an integral multiple of
+         *               12.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you create a subscription instance.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -273,9 +294,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The subscription duration of the KMS instance.
-         *               If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-         *               If PeriodUnit is Year, the valid range is 1, 2, 3
+         * @param period Property period: The subscription duration.
+         *               Unit: month. The value must be an integral multiple of
+         *               12.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you create a subscription instance.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -313,7 +340,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getRenewPeriod}
-         * @param renewPeriod Property renewPeriod: Automatic renewal period, in months.
+         * @param renewPeriod Property renewPeriod: The auto-renewal period.
+         *                    Unit: month.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    This parameter is required if the RenewalStatus parameter is set to
+         *                    AutoRenewal.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder renewPeriod(java.lang.Number renewPeriod) {
@@ -323,7 +358,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getRenewPeriod}
-         * @param renewPeriod Property renewPeriod: Automatic renewal period, in months.
+         * @param renewPeriod Property renewPeriod: The auto-renewal period.
+         *                    Unit: month.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    This parameter is required if the RenewalStatus parameter is set to
+         *                    AutoRenewal.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder renewPeriod(com.aliyun.ros.cdk.core.IResolvable renewPeriod) {

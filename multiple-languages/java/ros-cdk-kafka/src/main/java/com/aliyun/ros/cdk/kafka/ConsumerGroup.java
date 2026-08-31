@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kafka;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KAFKA::ConsumerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:37:40.564Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:51:39.084Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kafka.$Module.class, fqn = "@alicloud/ros-cdk-kafka.ConsumerGroup")
 public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kafka.IConsumerGroup {
 
@@ -122,10 +122,12 @@ public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property consumerId: Group name.
          * <p>
-         * Value:
-         * Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-         * The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-         * Once the group name is created, it cannot be modified.
+         * <ul>
+         * <li>Reserved instance: Supports uppercase and lowercase letters, numbers,
+         * underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.</li>
+         * <li>Serverless instance: Can only contain letters, numbers, and special characters
+         * "&#64;._*$#^!&amp;-", limited to 1-249 characters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param consumerId Property consumerId: Group name. This parameter is required.
@@ -137,10 +139,12 @@ public class ConsumerGroup extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property consumerId: Group name.
          * <p>
-         * Value:
-         * Can only contain letters, numbers, dashes (-), underscores (_), and at least one English or number.
-         * The length is limited to 3 to 128 characters, and more than 128 characters will be automatically intercepted.
-         * Once the group name is created, it cannot be modified.
+         * <ul>
+         * <li>Reserved instance: Supports uppercase and lowercase letters, numbers,
+         * underscores (_), hyphens (-), and periods (.), limited to 3-64 characters.</li>
+         * <li>Serverless instance: Can only contain letters, numbers, and special characters
+         * "&#64;._*$#^!&amp;-", limited to 1-249 characters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param consumerId Property consumerId: Group name. This parameter is required.

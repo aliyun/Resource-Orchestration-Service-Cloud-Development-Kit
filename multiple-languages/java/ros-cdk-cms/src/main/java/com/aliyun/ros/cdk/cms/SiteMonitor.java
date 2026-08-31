@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::SiteMonitor</code>, which is used to create a site monitoring task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::SiteMonitor</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.056Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.367Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.SiteMonitor")
 public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.ISiteMonitor {
 
@@ -133,26 +133,26 @@ public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property taskName: The name of the site monitoring task.
+         * Property taskName: The name of the monitoring task.
          * <p>
-         * The name must be 4 to 100 characters in length.
-         * It can contain letters, digits, and underscores (_).
+         * The name must be 4 to 100 characters long and can contain letters, digits,
+         * underscores (_), and Chinese characters.
          * <p>
          * @return {@code this}
-         * @param taskName Property taskName: The name of the site monitoring task. This parameter is required.
+         * @param taskName Property taskName: The name of the monitoring task. This parameter is required.
          */
         public Builder taskName(final java.lang.String taskName) {
             this.props.taskName(taskName);
             return this;
         }
         /**
-         * Property taskName: The name of the site monitoring task.
+         * Property taskName: The name of the monitoring task.
          * <p>
-         * The name must be 4 to 100 characters in length.
-         * It can contain letters, digits, and underscores (_).
+         * The name must be 4 to 100 characters long and can contain letters, digits,
+         * underscores (_), and Chinese characters.
          * <p>
          * @return {@code this}
-         * @param taskName Property taskName: The name of the site monitoring task. This parameter is required.
+         * @param taskName Property taskName: The name of the monitoring task. This parameter is required.
          */
         public Builder taskName(final com.aliyun.ros.cdk.core.IResolvable taskName) {
             this.props.taskName(taskName);
@@ -160,26 +160,26 @@ public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property taskType: The protocol used by the site monitoring task.
+         * Property taskType: The type of monitoring task.
          * <p>
-         * Valid values: HTTP, HTTPS, PING, TCP,
-         * UDP, DNS, SMTP, POP3, and FTP.
+         * Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+         * WEBSOCKET.
          * <p>
          * @return {@code this}
-         * @param taskType Property taskType: The protocol used by the site monitoring task. This parameter is required.
+         * @param taskType Property taskType: The type of monitoring task. This parameter is required.
          */
         public Builder taskType(final java.lang.String taskType) {
             this.props.taskType(taskType);
             return this;
         }
         /**
-         * Property taskType: The protocol used by the site monitoring task.
+         * Property taskType: The type of monitoring task.
          * <p>
-         * Valid values: HTTP, HTTPS, PING, TCP,
-         * UDP, DNS, SMTP, POP3, and FTP.
+         * Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+         * WEBSOCKET.
          * <p>
          * @return {@code this}
-         * @param taskType Property taskType: The protocol used by the site monitoring task. This parameter is required.
+         * @param taskType Property taskType: The type of monitoring task. This parameter is required.
          */
         public Builder taskType(final com.aliyun.ros.cdk.core.IResolvable taskType) {
             this.props.taskType(taskType);
@@ -208,26 +208,26 @@ public class SiteMonitor extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property interval: The interval at which detection requests are sent.
+         * Property interval: The monitoring frequency in minutes.
          * <p>
-         * Valid values: 1, 5, and 15. Unit:
-         * minutes. Default value: 1.
+         * Valid values: 1, 5, 15, 30, and 60.
+         * Default: 1.
          * <p>
          * @return {@code this}
-         * @param interval Property interval: The interval at which detection requests are sent. This parameter is required.
+         * @param interval Property interval: The monitoring frequency in minutes. This parameter is required.
          */
         public Builder interval(final java.lang.Number interval) {
             this.props.interval(interval);
             return this;
         }
         /**
-         * Property interval: The interval at which detection requests are sent.
+         * Property interval: The monitoring frequency in minutes.
          * <p>
-         * Valid values: 1, 5, and 15. Unit:
-         * minutes. Default value: 1.
+         * Valid values: 1, 5, 15, 30, and 60.
+         * Default: 1.
          * <p>
          * @return {@code this}
-         * @param interval Property interval: The interval at which detection requests are sent. This parameter is required.
+         * @param interval Property interval: The monitoring frequency in minutes. This parameter is required.
          */
         public Builder interval(final com.aliyun.ros.cdk.core.IResolvable interval) {
             this.props.interval(interval);

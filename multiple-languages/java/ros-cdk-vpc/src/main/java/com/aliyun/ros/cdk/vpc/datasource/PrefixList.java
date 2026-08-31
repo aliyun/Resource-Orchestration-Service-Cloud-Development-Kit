@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::PrefixList</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.842Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.PrefixList")
 public class PrefixList extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.datasource.IPrefixList {
 

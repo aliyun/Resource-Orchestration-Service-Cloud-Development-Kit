@@ -49,19 +49,22 @@ type AutoScaleConfigProps struct {
 	// If you set Queues.N.QueueImageId or ImageId, the parameter that you set takes effect.
 	// If you leave both Queues.N.QueueImageId and ImageId empty, the image that was specified when you created the cluster or the last time when you scaled out the cluster is used by default.
 	ImageId interface{} `field:"optional" json:"imageId" yaml:"imageId"`
-	// Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
+	// Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster.
 	//
+	// Valid
+	// values: 0 to 500.
 	// Default value: 100.
 	MaxNodesInCluster interface{} `field:"optional" json:"maxNodesInCluster" yaml:"maxNodesInCluster"`
-	// Property queues:.
+	// Property queues: The information about the queue.
 	Queues interface{} `field:"optional" json:"queues" yaml:"queues"`
 	// Property shrinkIdleTimes: The number of consecutive times that a compute node is idle during the resource scale-in check.
 	//
 	// Default value: 3.
 	ShrinkIdleTimes interface{} `field:"optional" json:"shrinkIdleTimes" yaml:"shrinkIdleTimes"`
-	// Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in.
+	// Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in.
 	//
 	// Unit: minutes.
+	// Valid values: 2 to 10.
 	// Default value: 2.
 	ShrinkIntervalInMinutes interface{} `field:"optional" json:"shrinkIntervalInMinutes" yaml:"shrinkIntervalInMinutes"`
 	// Property spotPriceLimit: The maximum hourly price of the compute nodes.

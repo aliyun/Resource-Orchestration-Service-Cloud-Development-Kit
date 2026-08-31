@@ -1,11 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::LaunchTemplate</code>, which is used to create a launch template.
- * <p>
- * You can use a launch template to create an Elastic Compute Service (ECS) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::LaunchTemplate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.019Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.394Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.LaunchTemplate")
 public class LaunchTemplate extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ILaunchTemplate {
 

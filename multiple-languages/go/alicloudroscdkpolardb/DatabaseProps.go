@@ -11,24 +11,41 @@ type DatabaseProps struct {
 	CharacterSetName interface{} `field:"required" json:"characterSetName" yaml:"characterSetName"`
 	// Property dbClusterId: The ID of the ApsaraDB for POLARDB cluster for which a database is to be created.
 	DbClusterId interface{} `field:"required" json:"dbClusterId" yaml:"dbClusterId"`
-	// Property dbName: The name of the database to be created.
+	// Property dbName: The name of the database.
 	//
-	// The name must comply with the following rules:
-	// It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-	// (-), and underscores (_).
-	// It must end with a letter or a digit. It can be up to 64 characters in length.
+	// The name must meet the following requirements:
+	// *   The name can contain lowercase letters, digits, hyphens (-), and underscores
+	// (_).
+	// *   The name must start with a lowercase letter and end with a lowercase letter
+	// or a digit. The name must be 1 to 64 characters in length.
+	// > Do not use reserved words as database names, such as `test` or `mysql`.
 	DbName interface{} `field:"required" json:"dbName" yaml:"dbName"`
-	// Property accountName: The name of the database account to be used.
+	// Property accountName: The name of the account that is authorized to access the database.
+	//
+	// You can call
+	// the [DescribeAccounts]() operation to query account information.
+	// >- You can specify only a standard account. By default, privileged accounts have
+	// all permissions on all databases. You do not need to grant privileged accounts
+	// the permissions to access the database.
+	// >- This parameter is required for PolarDB for PostgreSQL (Compatible with Oracle)
+	// clusters or PolarDB for PostgreSQL clusters. This parameter is optional for
+	// PolarDB for MySQL clusters.
 	AccountName interface{} `field:"optional" json:"accountName" yaml:"accountName"`
-	// Property accountPrivilege: The permissions of the database account on the database.
+	// Property accountPrivilege: The permissions that are granted to the account.
 	//
 	// Valid values:
-	// ReadWrite: has read and write permissions on the database.
-	// ReadOnly: has the read-only permission on the database.
-	// DMLOnly: runs only data manipulation language (DML) statements.
-	// DDLOnly: runs only data definition language (DDL) statements.
-	// ReadIndex: has read and index permissions on the database.
-	// Default value: ReadWrite.
+	// *   ReadWrite: read and write permissions.
+	// *   ReadOnly: read-only permissions.
+	// *   DMLOnly: permissions only to execute DML statements on the database.
+	// *   DDLOnly: permissions only to execute DDL statements on the database.
+	// *   ReadIndex: read-only and index permissions.
+	// The default value is ReadWrite.
+	// >
+	// *   This parameter is valid only when the AccountName parameter is specified.
+	// *   For a PolarDB for PostgreSQL (Compatible with Oracle) or PolarDB for
+	// PostgreSQL cluster, this parameter is optional. If AccountName is specified, it
+	// is the account of the database owner.
+	// *   For a PolarDB for MySQL cluster, this parameter is optional.
 	AccountPrivilege interface{} `field:"optional" json:"accountPrivilege" yaml:"accountPrivilege"`
 	// Property collate: A locale setting that specifies the collation for newly created databases.
 	//
@@ -44,9 +61,12 @@ type DatabaseProps struct {
 	Ctype interface{} `field:"optional" json:"ctype" yaml:"ctype"`
 	// Property dbDescription: The description of the database.
 	//
-	// Valid values:
-	// It cannot start with http:\/\/ or https:\/\/.
-	// It must be 2 to 256 characters in length.
+	// The description must meet the following
+	// requirements:
+	// *   It cannot start with `http:\/\/` or `https:\/\/`.
+	// *   It must be 2 to 256 characters in length.
+	// > This parameter is required for a PolarDB for Oracle or PolarDB for PostgreSQL
+	// cluster. This parameter is optional for a PolarDB for MySQL cluster.
 	DbDescription interface{} `field:"optional" json:"dbDescription" yaml:"dbDescription"`
 }
 

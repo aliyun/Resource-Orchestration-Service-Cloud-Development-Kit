@@ -5,16 +5,21 @@ package alicloudroscdkecs
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagepipeline
 type ImagePipelineProps struct {
-	// Property baseImage: The source image.
+	// Property baseImage: The base image.
 	//
-	// If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-	// If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+	// The value of this parameter varies based on the value of
+	// `BaseImageType`:
+	// - If `BaseImageType` is `IMAGE`, specify the ID of the base image.
+	// - If `BaseImageType` is `IMAGE_FAMILY`, specify the name of the base image
+	// family.
+	// - If `BaseImageType` is `OSS`, this parameter is not required.
 	BaseImage interface{} `field:"required" json:"baseImage" yaml:"baseImage"`
-	// Property baseImageType: The type of the source image.
+	// Property baseImageType: The type of the base image.
 	//
 	// Valid values:
-	// IMAGE: image
-	// IMAGE_FAMILY: image family.
+	// - IMAGE: An ECS image.
+	// - IMAGE_FAMILY: An image family.
+	// - OSS: An OSS object.
 	BaseImageType interface{} `field:"required" json:"baseImageType" yaml:"baseImageType"`
 	// Property addAccount: The IDs of Alibaba Cloud accounts to which to share the image that will be created based on the image template.
 	//
@@ -40,10 +45,10 @@ type ImagePipelineProps struct {
 	//
 	// Default value is true.
 	ExecutePipeline interface{} `field:"optional" json:"executePipeline" yaml:"executePipeline"`
-	// Property imageName: The prefix of the image name.
+	// Property imageName: The prefix of the destination image name.
 	//
-	// The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-	// The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}_{ExecutionId}.
+	// ><notice>This parameter is deprecated. Use `ImageOptions.ImageName`
+	// instead.><\/notice>
 	ImageName interface{} `field:"optional" json:"imageName" yaml:"imageName"`
 	// Property instanceType: The instance type.
 	//
@@ -55,10 +60,14 @@ type ImagePipelineProps struct {
 	// Unit: Mbit\/s. Valid values: 0 to 100.
 	// Default value: 0.
 	InternetMaxBandwidthOut interface{} `field:"optional" json:"internetMaxBandwidthOut" yaml:"internetMaxBandwidthOut"`
-	// Property name: The name of the image template.
+	// Property name: The name of the image pipeline.
 	//
-	// The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-	// Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+	// It must be 2 to 128 characters long, start with a
+	// letter or a Chinese character, and cannot start with `http:\/\/` or `https:\/\/`.
+	// Allowed characters include letters, digits, Chinese characters, colons (:),
+	// underscores (_), periods (.), and hyphens (-).
+	// > If you do not specify this parameter, the value of `ImagePipelineId` is used as
+	// the name.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

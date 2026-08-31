@@ -108,7 +108,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: desktopName: The name of the cloud desktop.
+        /// <strong>Property</strong>: desktopName: The name of the desktop. The name must meet the following requirements:
+        /// - The name cannot exceed 64 characters in length.
+        /// - It must start with a letter or a Chinese character. It cannot start
+        /// with`http:\/\/` or `https:\/\/`.
+        /// - It can contain letters, digits, Chinese characters, colons (:), underscores
+        /// (_), periods (.), and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "desktopName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -433,7 +438,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecd
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: desktopName: The name of the cloud desktop.
+            /// <strong>Property</strong>: desktopName: The name of the desktop. The name must meet the following requirements:
+            /// - The name cannot exceed 64 characters in length.
+            /// - It must start with a letter or a Chinese character. It cannot start
+            /// with`http:\/\/` or `https:\/\/`.
+            /// - It can contain letters, digits, Chinese characters, colons (:), underscores
+            /// (_), periods (.), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "desktopName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::FNF::Schedule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:08:10.293Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:15:33.497Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.Schedule")
 public class Schedule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fnf.ISchedule {
 
@@ -170,20 +170,38 @@ public class Schedule extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property scheduleName: Schedule name.
+         * Property scheduleName: The name of the timed schedule.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+         * hyphens (-).</li>
+         * <li>It is case-sensitive.</li>
+         * <li>It must be 1 to 128 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param scheduleName Property scheduleName: Schedule name. This parameter is required.
+         * @param scheduleName Property scheduleName: The name of the timed schedule. This parameter is required.
          */
         public Builder scheduleName(final java.lang.String scheduleName) {
             this.props.scheduleName(scheduleName);
             return this;
         }
         /**
-         * Property scheduleName: Schedule name.
+         * Property scheduleName: The name of the timed schedule.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+         * hyphens (-).</li>
+         * <li>It is case-sensitive.</li>
+         * <li>It must be 1 to 128 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param scheduleName Property scheduleName: Schedule name. This parameter is required.
+         * @param scheduleName Property scheduleName: The name of the timed schedule. This parameter is required.
          */
         public Builder scheduleName(final com.aliyun.ros.cdk.core.IResolvable scheduleName) {
             this.props.scheduleName(scheduleName);
@@ -233,20 +251,26 @@ public class Schedule extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property payload: Payload.
+         * Property payload: The trigger message of the timed schedule.
+         * <p>
+         * The message must be in the JSON
+         * format.
          * <p>
          * @return {@code this}
-         * @param payload Property payload: Payload. This parameter is required.
+         * @param payload Property payload: The trigger message of the timed schedule. This parameter is required.
          */
         public Builder payload(final java.lang.String payload) {
             this.props.payload(payload);
             return this;
         }
         /**
-         * Property payload: Payload.
+         * Property payload: The trigger message of the timed schedule.
+         * <p>
+         * The message must be in the JSON
+         * format.
          * <p>
          * @return {@code this}
-         * @param payload Property payload: Payload. This parameter is required.
+         * @param payload Property payload: The trigger message of the timed schedule. This parameter is required.
          */
         public Builder payload(final com.aliyun.ros.cdk.core.IResolvable payload) {
             this.props.payload(payload);

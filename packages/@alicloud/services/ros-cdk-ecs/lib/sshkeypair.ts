@@ -10,7 +10,10 @@ export { RosSSHKeyPair as SSHKeyPairProperty };
 export interface SSHKeyPairProps {
 
     /**
-     * Property keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
+     * Property keyPairName: The name of the key pair. The name must be unique. It must be 2 to 128 characters
+     * in length. It must start with a letter and cannot start with http\:\/\/ or
+     * https\:\/\/. It can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     readonly keyPairName: string | ros.IResolvable;
 
@@ -57,7 +60,7 @@ export interface ISSHKeyPair extends ros.IResource {
     readonly attrPrivateKeyBody: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SSHKeyPair`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSSHKeyPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
  */

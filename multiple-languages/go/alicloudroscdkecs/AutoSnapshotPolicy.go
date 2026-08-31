@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`, which is used to create an automatic snapshot policy.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AutoSnapshotPolicy`.
 type AutoSnapshotPolicy interface {
 	alicloudroscdkcore.Resource
 	IAutoSnapshotPolicy

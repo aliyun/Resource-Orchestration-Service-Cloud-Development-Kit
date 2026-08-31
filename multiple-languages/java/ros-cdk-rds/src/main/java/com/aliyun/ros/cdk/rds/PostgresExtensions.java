@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RDS::PostgresExtensions</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:35:11.003Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:02:12.029Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.PostgresExtensions")
 public class PostgresExtensions extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.rds.IPostgresExtensions {
 

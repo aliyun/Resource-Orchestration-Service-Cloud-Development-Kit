@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteipassociation
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.340Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.144Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIPAssociationProps")
 @software.amazon.jsii.Jsii.Proxy(AnycastEIPAssociationProps.Jsii$Proxy.class)
 public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSerializable {
@@ -26,14 +26,46 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
     @org.jetbrains.annotations.NotNull java.lang.Object getBindInstanceRegionId();
 
     /**
-     * Property bindInstanceType: The cloud resource instance type to be bound.
+     * Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.
      * <p>
-     * Valid value: SlbInstance, SLB instance of private network type.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>SlbInstance: CLB instance in a virtual private cloud (VPC).</li>
+     * <li>NetworkInterface: ENI.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBindInstanceType();
 
     /**
      * Property associationMode: The association mode.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Default: the default mode. In this mode, the associated cloud resource is the
+     * default origin server.</li>
+     * <li>Normal: the normal mode. In this mode, the associated cloud resource is a
+     * normal origin server.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * An Anycast EIP can be associated with cloud resources in multiple regions.
+     * However, you can specify only one default origin server and multiple normal
+     * origin servers. When you do not specify an access point or add a new access
+     * point, requests are forwarded to the default origin server by default.
+     * <p>
+     * <ul>
+     * <li>If this is your first time to associate a cloud resource with the Anycast
+     * EIP, the association mode is Default by default.</li>
+     * <li>If this is not your first time to associate a cloud resource with the Anycast
+     * EIP, you can set the association mode to Default. This makes the new cloud
+     * resource the default origin server, and the original default origin server
+     * becomes a normal origin server.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAssociationMode() {
         return null;
@@ -47,7 +79,11 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
     }
 
     /**
-     * Property privateIpAddress: The private IP address.
+     * Property privateIpAddress: The secondary private IP address of the ENI.
+     * <p>
+     * This parameter is required when BindInstanceType is set to NetworkInterface. If
+     * you do not specify this parameter, the primary private IP address of the ENI is
+     * used.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
@@ -133,8 +169,13 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link AnycastEIPAssociationProps#getBindInstanceType}
-         * @param bindInstanceType Property bindInstanceType: The cloud resource instance type to be bound. This parameter is required.
-         *                         Valid value: SlbInstance, SLB instance of private network type.
+         * @param bindInstanceType Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP. This parameter is required.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li>SlbInstance: CLB instance in a virtual private cloud (VPC).</li>
+         *                         <li>NetworkInterface: ENI.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder bindInstanceType(java.lang.String bindInstanceType) {
@@ -144,8 +185,13 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link AnycastEIPAssociationProps#getBindInstanceType}
-         * @param bindInstanceType Property bindInstanceType: The cloud resource instance type to be bound. This parameter is required.
-         *                         Valid value: SlbInstance, SLB instance of private network type.
+         * @param bindInstanceType Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP. This parameter is required.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li>SlbInstance: CLB instance in a virtual private cloud (VPC).</li>
+         *                         <li>NetworkInterface: ENI.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder bindInstanceType(com.aliyun.ros.cdk.core.IResolvable bindInstanceType) {
@@ -156,6 +202,32 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
         /**
          * Sets the value of {@link AnycastEIPAssociationProps#getAssociationMode}
          * @param associationMode Property associationMode: The association mode.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Default: the default mode. In this mode, the associated cloud resource is the
+         *                        default origin server.</li>
+         *                        <li>Normal: the normal mode. In this mode, the associated cloud resource is a
+         *                        normal origin server.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        An Anycast EIP can be associated with cloud resources in multiple regions.
+         *                        However, you can specify only one default origin server and multiple normal
+         *                        origin servers. When you do not specify an access point or add a new access
+         *                        point, requests are forwarded to the default origin server by default.
+         *                        <p>
+         *                        <ul>
+         *                        <li>If this is your first time to associate a cloud resource with the Anycast
+         *                        EIP, the association mode is Default by default.</li>
+         *                        <li>If this is not your first time to associate a cloud resource with the Anycast
+         *                        EIP, you can set the association mode to Default. This makes the new cloud
+         *                        resource the default origin server, and the original default origin server
+         *                        becomes a normal origin server.</li>
+         *                        </ul>
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder associationMode(java.lang.String associationMode) {
@@ -166,6 +238,32 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
         /**
          * Sets the value of {@link AnycastEIPAssociationProps#getAssociationMode}
          * @param associationMode Property associationMode: The association mode.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Default: the default mode. In this mode, the associated cloud resource is the
+         *                        default origin server.</li>
+         *                        <li>Normal: the normal mode. In this mode, the associated cloud resource is a
+         *                        normal origin server.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        An Anycast EIP can be associated with cloud resources in multiple regions.
+         *                        However, you can specify only one default origin server and multiple normal
+         *                        origin servers. When you do not specify an access point or add a new access
+         *                        point, requests are forwarded to the default origin server by default.
+         *                        <p>
+         *                        <ul>
+         *                        <li>If this is your first time to associate a cloud resource with the Anycast
+         *                        EIP, the association mode is Default by default.</li>
+         *                        <li>If this is not your first time to associate a cloud resource with the Anycast
+         *                        EIP, you can set the association mode to Default. This makes the new cloud
+         *                        resource the default origin server, and the original default origin server
+         *                        becomes a normal origin server.</li>
+         *                        </ul>
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder associationMode(com.aliyun.ros.cdk.core.IResolvable associationMode) {
@@ -195,7 +293,10 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link AnycastEIPAssociationProps#getPrivateIpAddress}
-         * @param privateIpAddress Property privateIpAddress: The private IP address.
+         * @param privateIpAddress Property privateIpAddress: The secondary private IP address of the ENI.
+         *                         This parameter is required when BindInstanceType is set to NetworkInterface. If
+         *                         you do not specify this parameter, the primary private IP address of the ENI is
+         *                         used.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
@@ -205,7 +306,10 @@ public interface AnycastEIPAssociationProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link AnycastEIPAssociationProps#getPrivateIpAddress}
-         * @param privateIpAddress Property privateIpAddress: The private IP address.
+         * @param privateIpAddress Property privateIpAddress: The secondary private IP address of the ENI.
+         *                         This parameter is required when BindInstanceType is set to NetworkInterface. If
+         *                         you do not specify this parameter, the primary private IP address of the ENI is
+         *                         used.
          * @return {@code this}
          */
         public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {

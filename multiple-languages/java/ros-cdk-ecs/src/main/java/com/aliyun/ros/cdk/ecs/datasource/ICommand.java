@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
 /**
  * Represents a <code>Command</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.317Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.713Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.ICommand")
 @software.amazon.jsii.Jsii.Proxy(ICommand.Jsii$Proxy.class)
 public interface ICommand extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

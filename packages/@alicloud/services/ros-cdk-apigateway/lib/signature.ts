@@ -10,17 +10,22 @@ export { RosSignature as SignatureProperty };
 export interface SignatureProps {
 
     /**
-     * Property signatureKey: The key of the signature.
+     * Property signatureKey: The Key value of the key. The value must be 6 to 20 characters in length and can
+     * contain letters, digits, and underscores (_). It must start with a letter.
      */
     readonly signatureKey: string | ros.IResolvable;
 
     /**
-     * Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * Property signatureName: The displayed name of the key. The name must be 4 to 50 characters in length and
+     * can contain letters, digits, and underscores (_). It must start with a letter.
      */
     readonly signatureName: string | ros.IResolvable;
 
     /**
-     * Property signatureSecret: The secret of the signature.
+     * Property signatureSecret: The Secret value of the key. The value must be 6 to 30 characters in length and
+     * can contain letters, digits, and special characters. Special characters include
+     * underscores (_), at signs (@), number signs (#), exclamation points (!), and
+     * asterisks (\*). The value must start with a letter.
      */
     readonly signatureSecret: string | ros.IResolvable;
 }
@@ -37,7 +42,7 @@ export interface ISignature extends ros.IResource {
     readonly attrSignatureId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Signature`, which is used to create a backend signature.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Signature`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSignature`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */

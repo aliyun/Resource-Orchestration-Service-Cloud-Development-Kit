@@ -7,16 +7,20 @@ package alicloudroscdkprivatelink
 type VpcEndpointServiceAttachmentProps struct {
 	// Property resourceId: The resource id.
 	ResourceId interface{} `field:"required" json:"resourceId" yaml:"resourceId"`
-	// Property resourceType: The resource type.
+	// Property resourceType: The type of the service resource.
 	//
-	// Allowed values:
-	// - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
-	// - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
-	// - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
+	// Valid values:
+	// - slb: Classic Load Balancer (CLB).
+	// - alb: Application Load Balancer (ALB).
+	// - nlb: Network Load Balancer (NLB).
+	// - gwlb: Gateway Load Balancer (GWLB).
 	ResourceType interface{} `field:"required" json:"resourceType" yaml:"resourceType"`
 	// Property serviceId: The endpoint service that is associated with the endpoint.
 	ServiceId interface{} `field:"required" json:"serviceId" yaml:"serviceId"`
-	// Property zoneId: Zone id of the service resource.
+	// Property zoneId: The zone where the service resource is located.
+	//
+	// This parameter is required if the
+	// service resource is an ALB, NLB, or GWLB instance.
 	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`
 }
 

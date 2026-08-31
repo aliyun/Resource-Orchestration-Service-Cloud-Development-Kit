@@ -5,13 +5,21 @@ package com.aliyun.ros.cdk.pvtz;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:52:38.651Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.UserVpcAuthorizationProps")
 @software.amazon.jsii.Jsii.Proxy(UserVpcAuthorizationProps.Jsii$Proxy.class)
 public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property authorizedUserId: The account ID of the user who authorizes the resource.
+     * Property authorizedUserId: The ID of the account that owns the authorized resources.
+     * <p>
+     * <blockquote>
+     * <p>
+     * Only cloud accounts are supported. RAM users are not supported. You can
+     * associate accounts only if they are on the same site. Cross-site association
+     * is not supported.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAuthorizedUserId();
 
@@ -34,7 +42,14 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
-     * Property authType: Authorization type.
+     * Property authType: The authorization type.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>NORMAL: standard authorization.</li>
+     * <li>CLOUD_PRODUCT: cloud product authorization.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAuthType() {
         return null;
@@ -65,7 +80,14 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link UserVpcAuthorizationProps#getAuthorizedUserId}
-         * @param authorizedUserId Property authorizedUserId: The account ID of the user who authorizes the resource. This parameter is required.
+         * @param authorizedUserId Property authorizedUserId: The ID of the account that owns the authorized resources. This parameter is required.
+         *                         <blockquote>
+         *                         <p>
+         *                         Only cloud accounts are supported. RAM users are not supported. You can
+         *                         associate accounts only if they are on the same site. Cross-site association
+         *                         is not supported.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder authorizedUserId(java.lang.String authorizedUserId) {
@@ -75,7 +97,14 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link UserVpcAuthorizationProps#getAuthorizedUserId}
-         * @param authorizedUserId Property authorizedUserId: The account ID of the user who authorizes the resource. This parameter is required.
+         * @param authorizedUserId Property authorizedUserId: The ID of the account that owns the authorized resources. This parameter is required.
+         *                         <blockquote>
+         *                         <p>
+         *                         Only cloud accounts are supported. RAM users are not supported. You can
+         *                         associate accounts only if they are on the same site. Cross-site association
+         *                         is not supported.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder authorizedUserId(com.aliyun.ros.cdk.core.IResolvable authorizedUserId) {
@@ -131,7 +160,13 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link UserVpcAuthorizationProps#getAuthType}
-         * @param authType Property authType: Authorization type.
+         * @param authType Property authType: The authorization type.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>NORMAL: standard authorization.</li>
+         *                 <li>CLOUD_PRODUCT: cloud product authorization.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder authType(java.lang.String authType) {
@@ -141,7 +176,13 @@ public interface UserVpcAuthorizationProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link UserVpcAuthorizationProps#getAuthType}
-         * @param authType Property authType: Authorization type.
+         * @param authType Property authType: The authorization type.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>NORMAL: standard authorization.</li>
+         *                 <li>CLOUD_PRODUCT: cloud product authorization.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder authType(com.aliyun.ros.cdk.core.IResolvable authType) {

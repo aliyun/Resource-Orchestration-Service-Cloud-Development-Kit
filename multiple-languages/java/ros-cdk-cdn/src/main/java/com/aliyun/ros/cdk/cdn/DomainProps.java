@@ -5,15 +5,21 @@ package com.aliyun.ros.cdk.cdn;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domain
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.231Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.585Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DomainProps")
 @software.amazon.jsii.Jsii.Proxy(DomainProps.Jsii$Proxy.class)
 public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property cdnType: The business type.
+     * Property cdnType: The business type of the domain name.
      * <p>
-     * Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>web: images and small files.</li>
+     * <li>download: large files.</li>
+     * <li>video: on-demand video and audio streaming.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCdnType();
 
@@ -25,7 +31,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
     /**
-     * Property checkUrl: The validation of the origin.
+     * Property checkUrl: The health check URL.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCheckUrl() {
         return null;
@@ -50,9 +56,15 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property scope: Valid values: domestic, overseas, and global.
+     * Property scope: The acceleration region.
      * <p>
-     * Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>domestic (default): Chinese mainland only.</li>
+     * <li>overseas: global (excluding the Chinese mainland).</li>
+     * <li>global: global.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getScope() {
         return null;
@@ -103,8 +115,14 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getCdnType}
-         * @param cdnType Property cdnType: The business type. This parameter is required.
-         *                Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+         * @param cdnType Property cdnType: The business type of the domain name. This parameter is required.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>web: images and small files.</li>
+         *                <li>download: large files.</li>
+         *                <li>video: on-demand video and audio streaming.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder cdnType(java.lang.String cdnType) {
@@ -114,8 +132,14 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getCdnType}
-         * @param cdnType Property cdnType: The business type. This parameter is required.
-         *                Valid values: web, download, video, livestream, and httpsdelivery. web: acceleration of images and small files download. download: acceleration of large file downloads. video: live streaming acceleration. httpsdelivery: SSL acceleration for HTTPS.
+         * @param cdnType Property cdnType: The business type of the domain name. This parameter is required.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>web: images and small files.</li>
+         *                <li>download: large files.</li>
+         *                <li>video: on-demand video and audio streaming.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder cdnType(com.aliyun.ros.cdk.core.IResolvable cdnType) {
@@ -147,7 +171,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getCheckUrl}
-         * @param checkUrl Property checkUrl: The validation of the origin.
+         * @param checkUrl Property checkUrl: The health check URL.
          * @return {@code this}
          */
         public Builder checkUrl(java.lang.String checkUrl) {
@@ -157,7 +181,7 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getCheckUrl}
-         * @param checkUrl Property checkUrl: The validation of the origin.
+         * @param checkUrl Property checkUrl: The health check URL.
          * @return {@code this}
          */
         public Builder checkUrl(com.aliyun.ros.cdk.core.IResolvable checkUrl) {
@@ -211,8 +235,14 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getScope}
-         * @param scope Property scope: Valid values: domestic, overseas, and global.
-         *              Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+         * @param scope Property scope: The acceleration region.
+         *              Valid values:
+         *              <p>
+         *              <ul>
+         *              <li>domestic (default): Chinese mainland only.</li>
+         *              <li>overseas: global (excluding the Chinese mainland).</li>
+         *              <li>global: global.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder scope(java.lang.String scope) {
@@ -222,8 +252,14 @@ public interface DomainProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DomainProps#getScope}
-         * @param scope Property scope: Valid values: domestic, overseas, and global.
-         *              Default value: domestic. The setting is supported for users outside mainland China, users in mainland China of level 3 or above.
+         * @param scope Property scope: The acceleration region.
+         *              Valid values:
+         *              <p>
+         *              <ul>
+         *              <li>domestic (default): Chinese mainland only.</li>
+         *              <li>overseas: global (excluding the Chinese mainland).</li>
+         *              <li>global: global.</li>
+         *              </ul>
          * @return {@code this}
          */
         public Builder scope(com.aliyun.ros.cdk.core.IResolvable scope) {

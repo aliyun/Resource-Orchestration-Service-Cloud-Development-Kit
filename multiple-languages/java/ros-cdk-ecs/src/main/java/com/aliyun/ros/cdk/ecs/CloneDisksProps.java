@@ -5,25 +5,67 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-clonedisks
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.844Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.199Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CloneDisksProps")
 @software.amazon.jsii.Jsii.Proxy(CloneDisksProps.Jsii$Proxy.class)
 public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property diskCategory: The category of the disk.
+     * Property diskCategory: The type of the new disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>cloud_essd</code>: ESSD cloud disk.</li>
+     * <li><code>cloud_auto</code>: ESSD AutoPL cloud disk.</li>
+     * <li><code>cloud_essd_entry</code>: ESSD Entry cloud disk.</li>
+     * <li><code>cloud_regional_disk_auto</code>: regional disk.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Disk type limits for cloning
+     * <p>
+     * <ul>
+     * <li>A non-regional disk can be cloned only as a non-regional disk.</li>
+     * <li>A regional disk can be cloned only as a regional disk.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDiskCategory();
 
     /**
-     * Property multiAttach: Whether to enable multi-attach for the disk.
+     * Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk.
      * <p>
-     * Valid values: Enabled, Disabled.
+     * Valid
+     * values:
+     * <p>
+     * <ul>
+     * <li><code>Disabled</code>: Disables the multi-attach feature.</li>
+     * <li><code>Enabled</code>: Enables the multi-attach feature. You can set this parameter to
+     * <code>Enabled</code> only for ESSD cloud disks.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMultiAttach();
 
     /**
-     * Property size: The size of the disk in GiB.
+     * Property size: The size of the new disk, in GiB.
+     * <p>
+     * The value must be greater than or equal to the
+     * size of the source disk. The value range varies based on the <code>DiskCategory</code>
+     * value:
+     * <p>
+     * <ul>
+     * <li><code>cloud_essd</code>: The value range depends on the <code>PerformanceLevel</code> value.</li>
+     * <li><code>PL0</code>: 1 to 65,536</li>
+     * <li><code>PL1</code>: 20 to 65,536</li>
+     * <li><code>PL2</code>: 461 to 65,536</li>
+     * <li><code>PL3</code>: 1,261 to 65,536</li>
+     * <li><code>cloud_auto</code>: 1 to 65,536</li>
+     * <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+     * <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSize();
 
@@ -33,21 +75,48 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceDiskId();
 
     /**
-     * Property burstingEnabled: Whether to enable bursting for the disk.
+     * Property burstingEnabled: Specifies whether to enable performance bursting for the new disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables performance bursting.</li>
+     * <li><code>false</code>: Disables performance bursting.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+     * more information, see ESSD AutoPL cloud disks.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBurstingEnabled() {
         return null;
     }
 
     /**
-     * Property diskName: The name of the disk.
+     * Property diskName: The name of the new disk.
+     * <p>
+     * The name must be 2 to 128 characters in length. It must
+     * start with a letter and can contain letters, digits, colons (:), underscores (_),
+     * periods (.), and hyphens (-).
+     * Default value: none.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskName() {
         return null;
     }
 
     /**
-     * Property encrypted: Whether to encrypt the disk.
+     * Property encrypted: Specifies whether to encrypt the new disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: The disk is encrypted.</li>
+     * <li><code>false</code>: The disk is not encrypted.
+     * Default value: false.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
         return null;
@@ -61,14 +130,45 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property performanceLevel: The performance level of the disk.
+     * Property performanceLevel: The performance level of the new ESSD cloud disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>PL0</code>: A single disk can deliver up to 10,000 random read/write IOPS.</li>
+     * <li><code>PL1</code>: A single disk can deliver up to 50,000 random read/write IOPS.</li>
+     * <li><code>PL2</code>: A single disk can deliver up to 100,000 random read/write IOPS.</li>
+     * <li><code>PL3</code>: A single disk can deliver up to 1,000,000 random read/write IOPS.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required when <code>DiskCategory</code> is set to <code>cloud_essd</code>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPerformanceLevel() {
         return null;
     }
 
     /**
-     * Property provisionedIops: The provisioned IOPS for the disk.
+     * Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>You cannot set this parameter for disks that are 3 GiB or smaller in size.</li>
+     * <li>For disks that are 4 GiB or larger in size, the value must be in the range of
+     * <code>[0, min(1000 * Size - baseline performance, 50000)]</code>.
+     * baseline performance = <code>max(min(1800 + 50 * Size, 50000), 3000)</code>.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+     * more information, see ESSD AutoPL cloud disks.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProvisionedIops() {
         return null;
@@ -115,7 +215,26 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getDiskCategory}
-         * @param diskCategory Property diskCategory: The category of the disk. This parameter is required.
+         * @param diskCategory Property diskCategory: The type of the new disk. This parameter is required.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>cloud_essd</code>: ESSD cloud disk.</li>
+         *                     <li><code>cloud_auto</code>: ESSD AutoPL cloud disk.</li>
+         *                     <li><code>cloud_essd_entry</code>: ESSD Entry cloud disk.</li>
+         *                     <li><code>cloud_regional_disk_auto</code>: regional disk.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     Disk type limits for cloning
+         *                     <p>
+         *                     <ul>
+         *                     <li>A non-regional disk can be cloned only as a non-regional disk.</li>
+         *                     <li>A regional disk can be cloned only as a regional disk.</li>
+         *                     </ul>
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder diskCategory(java.lang.String diskCategory) {
@@ -125,7 +244,26 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getDiskCategory}
-         * @param diskCategory Property diskCategory: The category of the disk. This parameter is required.
+         * @param diskCategory Property diskCategory: The type of the new disk. This parameter is required.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>cloud_essd</code>: ESSD cloud disk.</li>
+         *                     <li><code>cloud_auto</code>: ESSD AutoPL cloud disk.</li>
+         *                     <li><code>cloud_essd_entry</code>: ESSD Entry cloud disk.</li>
+         *                     <li><code>cloud_regional_disk_auto</code>: regional disk.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     Disk type limits for cloning
+         *                     <p>
+         *                     <ul>
+         *                     <li>A non-regional disk can be cloned only as a non-regional disk.</li>
+         *                     <li>A regional disk can be cloned only as a regional disk.</li>
+         *                     </ul>
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder diskCategory(com.aliyun.ros.cdk.core.IResolvable diskCategory) {
@@ -135,8 +273,15 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getMultiAttach}
-         * @param multiAttach Property multiAttach: Whether to enable multi-attach for the disk. This parameter is required.
-         *                    Valid values: Enabled, Disabled.
+         * @param multiAttach Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk. This parameter is required.
+         *                    Valid
+         *                    values:
+         *                    <p>
+         *                    <ul>
+         *                    <li><code>Disabled</code>: Disables the multi-attach feature.</li>
+         *                    <li><code>Enabled</code>: Enables the multi-attach feature. You can set this parameter to
+         *                    <code>Enabled</code> only for ESSD cloud disks.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder multiAttach(java.lang.String multiAttach) {
@@ -146,8 +291,15 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getMultiAttach}
-         * @param multiAttach Property multiAttach: Whether to enable multi-attach for the disk. This parameter is required.
-         *                    Valid values: Enabled, Disabled.
+         * @param multiAttach Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk. This parameter is required.
+         *                    Valid
+         *                    values:
+         *                    <p>
+         *                    <ul>
+         *                    <li><code>Disabled</code>: Disables the multi-attach feature.</li>
+         *                    <li><code>Enabled</code>: Enables the multi-attach feature. You can set this parameter to
+         *                    <code>Enabled</code> only for ESSD cloud disks.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder multiAttach(com.aliyun.ros.cdk.core.IResolvable multiAttach) {
@@ -157,7 +309,21 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getSize}
-         * @param size Property size: The size of the disk in GiB. This parameter is required.
+         * @param size Property size: The size of the new disk, in GiB. This parameter is required.
+         *             The value must be greater than or equal to the
+         *             size of the source disk. The value range varies based on the <code>DiskCategory</code>
+         *             value:
+         *             <p>
+         *             <ul>
+         *             <li><code>cloud_essd</code>: The value range depends on the <code>PerformanceLevel</code> value.</li>
+         *             <li><code>PL0</code>: 1 to 65,536</li>
+         *             <li><code>PL1</code>: 20 to 65,536</li>
+         *             <li><code>PL2</code>: 461 to 65,536</li>
+         *             <li><code>PL3</code>: 1,261 to 65,536</li>
+         *             <li><code>cloud_auto</code>: 1 to 65,536</li>
+         *             <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         *             <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder size(java.lang.Number size) {
@@ -167,7 +333,21 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getSize}
-         * @param size Property size: The size of the disk in GiB. This parameter is required.
+         * @param size Property size: The size of the new disk, in GiB. This parameter is required.
+         *             The value must be greater than or equal to the
+         *             size of the source disk. The value range varies based on the <code>DiskCategory</code>
+         *             value:
+         *             <p>
+         *             <ul>
+         *             <li><code>cloud_essd</code>: The value range depends on the <code>PerformanceLevel</code> value.</li>
+         *             <li><code>PL0</code>: 1 to 65,536</li>
+         *             <li><code>PL1</code>: 20 to 65,536</li>
+         *             <li><code>PL2</code>: 461 to 65,536</li>
+         *             <li><code>PL3</code>: 1,261 to 65,536</li>
+         *             <li><code>cloud_auto</code>: 1 to 65,536</li>
+         *             <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         *             <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder size(com.aliyun.ros.cdk.core.IResolvable size) {
@@ -197,7 +377,20 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getBurstingEnabled}
-         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting for the disk.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting for the new disk.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li><code>true</code>: Enables performance bursting.</li>
+         *                        <li><code>false</code>: Disables performance bursting.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         *                        more information, see ESSD AutoPL cloud disks.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder burstingEnabled(java.lang.Boolean burstingEnabled) {
@@ -207,7 +400,20 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getBurstingEnabled}
-         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting for the disk.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting for the new disk.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li><code>true</code>: Enables performance bursting.</li>
+         *                        <li><code>false</code>: Disables performance bursting.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         *                        more information, see ESSD AutoPL cloud disks.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder burstingEnabled(com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
@@ -217,7 +423,11 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getDiskName}
-         * @param diskName Property diskName: The name of the disk.
+         * @param diskName Property diskName: The name of the new disk.
+         *                 The name must be 2 to 128 characters in length. It must
+         *                 start with a letter and can contain letters, digits, colons (:), underscores (_),
+         *                 periods (.), and hyphens (-).
+         *                 Default value: none.
          * @return {@code this}
          */
         public Builder diskName(java.lang.String diskName) {
@@ -227,7 +437,11 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getDiskName}
-         * @param diskName Property diskName: The name of the disk.
+         * @param diskName Property diskName: The name of the new disk.
+         *                 The name must be 2 to 128 characters in length. It must
+         *                 start with a letter and can contain letters, digits, colons (:), underscores (_),
+         *                 periods (.), and hyphens (-).
+         *                 Default value: none.
          * @return {@code this}
          */
         public Builder diskName(com.aliyun.ros.cdk.core.IResolvable diskName) {
@@ -237,7 +451,14 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getEncrypted}
-         * @param encrypted Property encrypted: Whether to encrypt the disk.
+         * @param encrypted Property encrypted: Specifies whether to encrypt the new disk.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li><code>true</code>: The disk is encrypted.</li>
+         *                  <li><code>false</code>: The disk is not encrypted.
+         *                  Default value: false.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder encrypted(java.lang.Boolean encrypted) {
@@ -247,7 +468,14 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getEncrypted}
-         * @param encrypted Property encrypted: Whether to encrypt the disk.
+         * @param encrypted Property encrypted: Specifies whether to encrypt the new disk.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li><code>true</code>: The disk is encrypted.</li>
+         *                  <li><code>false</code>: The disk is not encrypted.
+         *                  Default value: false.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {
@@ -277,7 +505,21 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getPerformanceLevel}
-         * @param performanceLevel Property performanceLevel: The performance level of the disk.
+         * @param performanceLevel Property performanceLevel: The performance level of the new ESSD cloud disk.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><code>PL0</code>: A single disk can deliver up to 10,000 random read/write IOPS.</li>
+         *                         <li><code>PL1</code>: A single disk can deliver up to 50,000 random read/write IOPS.</li>
+         *                         <li><code>PL2</code>: A single disk can deliver up to 100,000 random read/write IOPS.</li>
+         *                         <li><code>PL3</code>: A single disk can deliver up to 1,000,000 random read/write IOPS.</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         This parameter is required when <code>DiskCategory</code> is set to <code>cloud_essd</code>.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder performanceLevel(java.lang.String performanceLevel) {
@@ -287,7 +529,21 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getPerformanceLevel}
-         * @param performanceLevel Property performanceLevel: The performance level of the disk.
+         * @param performanceLevel Property performanceLevel: The performance level of the new ESSD cloud disk.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><code>PL0</code>: A single disk can deliver up to 10,000 random read/write IOPS.</li>
+         *                         <li><code>PL1</code>: A single disk can deliver up to 50,000 random read/write IOPS.</li>
+         *                         <li><code>PL2</code>: A single disk can deliver up to 100,000 random read/write IOPS.</li>
+         *                         <li><code>PL3</code>: A single disk can deliver up to 1,000,000 random read/write IOPS.</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         This parameter is required when <code>DiskCategory</code> is set to <code>cloud_essd</code>.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder performanceLevel(com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
@@ -297,7 +553,22 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getProvisionedIops}
-         * @param provisionedIops Property provisionedIops: The provisioned IOPS for the disk.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>You cannot set this parameter for disks that are 3 GiB or smaller in size.</li>
+         *                        <li>For disks that are 4 GiB or larger in size, the value must be in the range of
+         *                        <code>[0, min(1000 * Size - baseline performance, 50000)]</code>.
+         *                        baseline performance = <code>max(min(1800 + 50 * Size, 50000), 3000)</code>.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         *                        more information, see ESSD AutoPL cloud disks.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder provisionedIops(java.lang.Number provisionedIops) {
@@ -307,7 +578,22 @@ public interface CloneDisksProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link CloneDisksProps#getProvisionedIops}
-         * @param provisionedIops Property provisionedIops: The provisioned IOPS for the disk.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>You cannot set this parameter for disks that are 3 GiB or smaller in size.</li>
+         *                        <li>For disks that are 4 GiB or larger in size, the value must be in the range of
+         *                        <code>[0, min(1000 * Size - baseline performance, 50000)]</code>.
+         *                        baseline performance = <code>max(min(1800 + 50 * Size, 50000), 3000)</code>.</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         *                        more information, see ESSD AutoPL cloud disks.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder provisionedIops(com.aliyun.ros.cdk.core.IResolvable provisionedIops) {

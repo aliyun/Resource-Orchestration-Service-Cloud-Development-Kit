@@ -243,10 +243,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         private object? _period;
 
-        /// <summary>Property period: The subscription duration of the KMS instance.</summary>
+        /// <summary>Property period: The subscription duration.</summary>
         /// <remarks>
-        /// If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-        /// If PeriodUnit is Year, the valid range is 1, 2, 3
+        /// Unit: month. The value must be an integral multiple of
+        /// 12.
+        ///
+        ///     This parameter is required if you create a subscription instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -335,7 +337,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         private object? _renewPeriod;
 
-        /// <summary>Property renewPeriod: Automatic renewal period, in months.</summary>
+        /// <summary>Property renewPeriod: The auto-renewal period.</summary>
+        /// <remarks>
+        /// Unit: month.
+        ///
+        ///     This parameter is required if the RenewalStatus parameter is set to
+        ///     AutoRenewal.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "renewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? RenewPeriod

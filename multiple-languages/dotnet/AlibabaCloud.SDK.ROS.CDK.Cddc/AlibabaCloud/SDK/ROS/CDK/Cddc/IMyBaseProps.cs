@@ -18,7 +18,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             get;
         }
 
-        /// <summary>Property engine: Database type.</summary>
+        /// <summary>Property engine: The database type.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>mysql</description>
+        /// <description>tair</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "engine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Engine
         {
@@ -39,7 +47,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             get;
         }
 
-        /// <summary>Property securityGroupId: The ID of the security group.</summary>
+        /// <summary>Property securityGroupId: The security group ID.</summary>
+        /// <remarks>
+        /// Specify multiple security groups, separated by commas (,).
+        /// Format: sg-t4neld965n89ocvt,sg-t4neld965n89ocvu
+        /// </remarks>
         [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object SecurityGroupId
         {
@@ -111,7 +123,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property ecsHostName: The host name of the ECS instance.</summary>
+        /// <summary>Property ecsHostName: For Windows operating systems: The host name must be 2 to 15 characters in length and can contain uppercase letters, lowercase letters, and digits.</summary>
+        /// <remarks>
+        /// It cannot
+        /// consist of only digits.
+        /// For other operating systems (such as Linux): The host name must be 2 to 64
+        /// characters in length and can contain periods (.) to separate multiple segments.
+        /// Each segment can contain uppercase letters, lowercase letters, and digits.
+        /// Consecutive periods (.) are not allowed. The host name cannot start or end with a
+        /// period (.).
+        /// </remarks>
         [JsiiProperty(name: "ecsHostName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EcsHostName
@@ -122,7 +143,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property ecsInstanceName: The name of the ECS instance.</summary>
+        /// <summary>Property ecsInstanceName: The instance name.</summary>
+        /// <remarks>
+        /// It must be 2 to 128 characters in length. It must start with
+        /// an uppercase letter, a lowercase letter, or a Chinese character. It cannot start
+        /// with http:// or https://. It can contain Chinese characters, English letters,
+        /// digits, colons (:), underscores (_), periods (.), or hyphens (-). The default
+        /// value is the instance ID.
+        /// </remarks>
         [JsiiProperty(name: "ecsInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EcsInstanceName
@@ -133,7 +161,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property ecsUniqueSuffix: The unique suffix of the ECS instance.</summary>
+        /// <summary>Property ecsUniqueSuffix: Automatically add a sequential suffix to the HostName and InstanceName when you create multiple instances.</summary>
+        /// <remarks>
+        /// The sequential suffix starts from 001 and increments
+        /// up to 999. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: Add.</description>
+        /// <description>false (default): Do not add.
+        /// If HostName or InstanceName is set in a specific sorting format, and the
+        /// name_suffix is not set (i.e., the naming format is
+        /// name_prefix[begin_number,bits]), UniqueSuffix does not take effect. The names
+        /// are sorted only in the specified order.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "ecsUniqueSuffix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EcsUniqueSuffix
@@ -144,7 +185,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property imageId: The image ID.</summary>
+        /// <summary>Property imageId: The custom image ID.</summary>
+        /// <remarks>
+        ///     If you want to use the default image, do not specify this parameter.
+        /// </remarks>
         [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ImageId
@@ -155,11 +199,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property internetChargeType: Network billing type.</summary>
+        /// <summary>Property internetChargeType: The network billing method.</summary>
         /// <remarks>
-        /// Value range:
-        /// PayByBandwidth: billed based on fixed bandwidth.
-        /// PayByTraffic: Pay by traffic usage.
+        /// Valid values include the following:
         /// </remarks>
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -171,11 +213,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property internetMaxBandwidthOut: Set internet output bandwidth of instance.</summary>
+        /// <summary>Property internetMaxBandwidthOut: The maximum outbound public bandwidth, in Mbit\/s.</summary>
         /// <remarks>
-        /// Unit is Mbps(Mega bit per second).
-        /// Range is [0,200]. Default is 1.
-        /// While the property is not 0, public ip will be assigned for instance.
+        /// Valid values: 0 to 100.
+        /// Default value: 0. If you set this parameter to a value greater than 0, a public
+        /// IP address is automatically created.
         /// </remarks>
         [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -198,9 +240,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property osPassword: Password of created ecs instance.</summary>
+        /// <summary>Property osPassword: The logon password for the host.</summary>
         /// <remarks>
-        /// Must contain at least 3 types of special character, lower character, upper character, number.
+        /// You can set it later. The password must meet the
+        /// following requirements:
+        ///
+        /// <list type="bullet">
+        /// <description>It must be 8 to 30 characters in length.</description>
+        /// <description>It must contain at least three of the following character types: uppercase
+        /// letters, lowercase letters, digits, and special characters.</description>
+        /// <description>Special characters: <c>()\</c>~!@#$%^&amp;*-_+=|{}[]:;'&lt;&gt;,.?/`</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>If you want to set the logon password later, leave this parameter empty.</description>
+        ///     <description>If you want to set the logon password, use HTTPS to send requests to prevent
+        ///     password leakage.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "osPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -212,7 +268,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property passwordInherit: Whether to inherit the password from the parent cluster.</summary>
+        /// <summary>Property passwordInherit: Use the default password of the image.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>false (default): Do not use.</description>
+        /// <description>true: Use.</description>
+        /// </list>
+        ///
+        ///     If you use the default password of the image, do not specify the OSPassword
+        ///     parameter.
+        /// </remarks>
         [JsiiProperty(name: "passwordInherit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PasswordInherit
@@ -256,7 +321,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
             }
         }
 
-        /// <summary>Property userDataInBase64: The user data of the ECS instance.</summary>
+        /// <summary>Property userDataInBase64: Indicates whether the custom data is Base64-encoded.</summary>
         [JsiiProperty(name: "userDataInBase64", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? UserDataInBase64
@@ -285,7 +350,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property engine: Database type.</summary>
+            /// <summary>Property engine: The database type.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>mysql</description>
+            /// <description>tair</description>
+            /// </list>
+            /// </remarks>
             [JsiiProperty(name: "engine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Engine
             {
@@ -306,7 +379,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property securityGroupId: The ID of the security group.</summary>
+            /// <summary>Property securityGroupId: The security group ID.</summary>
+            /// <remarks>
+            /// Specify multiple security groups, separated by commas (,).
+            /// Format: sg-t4neld965n89ocvt,sg-t4neld965n89ocvu
+            /// </remarks>
             [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object SecurityGroupId
             {
@@ -366,7 +443,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ecsHostName: The host name of the ECS instance.</summary>
+            /// <summary>Property ecsHostName: For Windows operating systems: The host name must be 2 to 15 characters in length and can contain uppercase letters, lowercase letters, and digits.</summary>
+            /// <remarks>
+            /// It cannot
+            /// consist of only digits.
+            /// For other operating systems (such as Linux): The host name must be 2 to 64
+            /// characters in length and can contain periods (.) to separate multiple segments.
+            /// Each segment can contain uppercase letters, lowercase letters, and digits.
+            /// Consecutive periods (.) are not allowed. The host name cannot start or end with a
+            /// period (.).
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ecsHostName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EcsHostName
@@ -374,7 +460,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ecsInstanceName: The name of the ECS instance.</summary>
+            /// <summary>Property ecsInstanceName: The instance name.</summary>
+            /// <remarks>
+            /// It must be 2 to 128 characters in length. It must start with
+            /// an uppercase letter, a lowercase letter, or a Chinese character. It cannot start
+            /// with http:// or https://. It can contain Chinese characters, English letters,
+            /// digits, colons (:), underscores (_), periods (.), or hyphens (-). The default
+            /// value is the instance ID.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ecsInstanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EcsInstanceName
@@ -382,7 +475,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ecsUniqueSuffix: The unique suffix of the ECS instance.</summary>
+            /// <summary>Property ecsUniqueSuffix: Automatically add a sequential suffix to the HostName and InstanceName when you create multiple instances.</summary>
+            /// <remarks>
+            /// The sequential suffix starts from 001 and increments
+            /// up to 999. Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>true: Add.</description>
+            /// <description>false (default): Do not add.
+            /// If HostName or InstanceName is set in a specific sorting format, and the
+            /// name_suffix is not set (i.e., the naming format is
+            /// name_prefix[begin_number,bits]), UniqueSuffix does not take effect. The names
+            /// are sorted only in the specified order.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ecsUniqueSuffix", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EcsUniqueSuffix
@@ -390,7 +496,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property imageId: The image ID.</summary>
+            /// <summary>Property imageId: The custom image ID.</summary>
+            /// <remarks>
+            ///     If you want to use the default image, do not specify this parameter.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ImageId
@@ -398,11 +507,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property internetChargeType: Network billing type.</summary>
+            /// <summary>Property internetChargeType: The network billing method.</summary>
             /// <remarks>
-            /// Value range:
-            /// PayByBandwidth: billed based on fixed bandwidth.
-            /// PayByTraffic: Pay by traffic usage.
+            /// Valid values include the following:
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -411,11 +518,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property internetMaxBandwidthOut: Set internet output bandwidth of instance.</summary>
+            /// <summary>Property internetMaxBandwidthOut: The maximum outbound public bandwidth, in Mbit\/s.</summary>
             /// <remarks>
-            /// Unit is Mbps(Mega bit per second).
-            /// Range is [0,200]. Default is 1.
-            /// While the property is not 0, public ip will be assigned for instance.
+            /// Valid values: 0 to 100.
+            /// Default value: 0. If you set this parameter to a value greater than 0, a public
+            /// IP address is automatically created.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -432,9 +539,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property osPassword: Password of created ecs instance.</summary>
+            /// <summary>Property osPassword: The logon password for the host.</summary>
             /// <remarks>
-            /// Must contain at least 3 types of special character, lower character, upper character, number.
+            /// You can set it later. The password must meet the
+            /// following requirements:
+            ///
+            /// <list type="bullet">
+            /// <description>It must be 8 to 30 characters in length.</description>
+            /// <description>It must contain at least three of the following character types: uppercase
+            /// letters, lowercase letters, digits, and special characters.</description>
+            /// <description>Special characters: <c>()\</c>~!@#$%^&amp;*-_+=|{}[]:;'&lt;&gt;,.?/`</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>If you want to set the logon password later, leave this parameter empty.</description>
+            ///     <description>If you want to set the logon password, use HTTPS to send requests to prevent
+            ///     password leakage.</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "osPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -443,7 +564,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property passwordInherit: Whether to inherit the password from the parent cluster.</summary>
+            /// <summary>Property passwordInherit: Use the default password of the image.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>false (default): Do not use.</description>
+            /// <description>true: Use.</description>
+            /// </list>
+            ///
+            ///     If you use the default password of the image, do not specify the OSPassword
+            ///     parameter.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "passwordInherit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PasswordInherit
@@ -475,7 +605,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property userDataInBase64: The user data of the ECS instance.</summary>
+            /// <summary>Property userDataInBase64: Indicates whether the custom data is Base64-encoded.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "userDataInBase64", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? UserDataInBase64

@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object _bandwidthLimit;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
+        /// <strong>Property</strong>: bandwidthLimit: The inter-region bandwidth between the two regions. Unit: Mbps.
         /// </remarks>
         [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object BandwidthLimit
@@ -164,7 +164,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _bandwidthType;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+        /// <strong>Property</strong>: bandwidthType: The method used to allocate bandwidth. Valid value:
+        /// - BandwidthPackage (default): allocates bandwidth from a bandwidth plan.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "bandwidthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

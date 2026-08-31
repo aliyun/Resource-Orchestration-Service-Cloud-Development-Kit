@@ -15,9 +15,9 @@ export interface ServerGroupProps {
     readonly healthCheckConfig: RosServerGroup.HealthCheckConfigProperty | ros.IResolvable;
 
     /**
-     * Property serverGroupName: The name of the server group. The name must be 2 to 128 characters in length, and
-     * can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-     * must start with a letter.
+     * Property serverGroupName: The name of the server group. The name must be 2 to 128 characters in length,
+     * start with a letter, digit, or Chinese character, and can contain digits, periods
+     * (.), underscores (_), hyphens (-), and spaces.
      */
     readonly serverGroupName: string | ros.IResolvable;
 
@@ -28,13 +28,18 @@ export interface ServerGroupProps {
     readonly connectionDrainConfig?: RosServerGroup.ConnectionDrainConfigProperty | ros.IResolvable;
 
     /**
-     * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
-     * true (default)
-     * false
-     * Note:
-     * Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-     * Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-     * When cross-zone load balancing is disabled, session persistence cannot be enabled.
+     * Property crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group. Valid
+     * values:
+     * - true (default): Enables cross-zone load balancing.
+     * - false: Disables cross-zone load balancing.
+     * > * Basic ALB instances cannot be associated with server groups for which
+     * cross-zone load balancing is disabled. This feature is supported only by standard
+     * and WAF-enabled ALB instances.
+     * >
+     * > * You can disable cross-zone load balancing for instance-type and IP-type
+     * server groups, but not for function-type server groups.
+     * >
+     * > * You cannot enable sticky sessions if you disable cross-zone load balancing.
      */
     readonly crossZoneEnabled?: boolean | ros.IResolvable;
 
@@ -107,10 +112,9 @@ export interface ServerGroupProps {
     readonly upstreamKeepaliveEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-     * in the specified VPC to the server group.
-     * Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-     * Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+     * Property vpcId: The ID of the VPC where the server group is created. You can add only servers
+     * within this VPC to the server group.
+     * > This parameter is valid only when ServerGroupType is set to Instance or Ip.
      */
     readonly vpcId?: string | ros.IResolvable;
 }
@@ -132,7 +136,7 @@ export interface IServerGroup extends ros.IResource {
     readonly attrServerGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::ServerGroup`Use , which to create a server group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::ServerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
  */

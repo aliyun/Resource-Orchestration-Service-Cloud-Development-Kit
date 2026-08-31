@@ -432,7 +432,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The unit of the subscription duration.
+        /// <strong>Property</strong>: period: The subscription duration unit.
+        /// ><notice>This parameter is required only when `PayType` is set to
+        /// `Prepaid`.><\/notice>
+        /// - Year: Measured in years.
+        /// - Month: Measured in months.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

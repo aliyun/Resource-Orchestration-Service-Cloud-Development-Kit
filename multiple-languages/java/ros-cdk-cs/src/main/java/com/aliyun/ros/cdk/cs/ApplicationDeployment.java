@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ApplicationDeployment</code>, which is used to deploy an application.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ApplicationDeployment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.538Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:56:05.590Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ApplicationDeployment")
 public class ApplicationDeployment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IApplicationDeployment {
 

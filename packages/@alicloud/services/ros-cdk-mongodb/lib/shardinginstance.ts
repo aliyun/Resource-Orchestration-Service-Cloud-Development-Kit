@@ -10,27 +10,37 @@ export { RosShardingInstance as ShardingInstanceProperty };
 export interface ShardingInstanceProps {
 
     /**
-     * Property configServer:
+     * Property configServer: The information of Configserver nodes.
      */
     readonly configServer: Array<RosShardingInstance.ConfigServerProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property mongos:
+     * Property mongos: The information of Mongos nodes.
      */
     readonly mongos: Array<RosShardingInstance.MongosProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property replicaSet:
+     * Property replicaSet: The information of shard nodes.
      */
     readonly replicaSet: Array<RosShardingInstance.ReplicaSetProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+     * Property accountPassword: The password of the root account. The password must meet the following
+     * requirements:
+     * - It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.
+     * - Special characters include !@#$%^&\*()_+-=
+     * - It must be 8 to 32 characters in length.
      */
     readonly accountPassword?: string | ros.IResolvable;
 
     /**
-     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     * Property autoRenew: Specifies whether to enable auto-renewal for the instance. Valid values:
+     * - true: Auto-renewal is enabled.
+     * - false: Auto-renewal is disabled. You must manually renew the instance. This is
+     * the default value.
+     * > This parameter is optional and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
@@ -40,12 +50,25 @@ export interface ShardingInstanceProps {
     readonly chargeType?: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceDescription: Description of created database instance.
+     * Property dbInstanceDescription: The name of the instance. The name must meet the following requirements:
+     * - It must start with a Chinese character or a letter.
+     * - It can contain digits, Chinese characters, letters, underscores (_), periods
+     * (.), and hyphens (-).
+     * - It must be 2 to 256 characters in length.
      */
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
     /**
-     * Property engineVersion: Database instance version.
+     * Property engineVersion: The database version. Valid values:
+     * - 8.0
+     * - 7.0
+     * - 6.0
+     * - 5.0
+     * - 4.4
+     * - 4.2
+     * - 4.0
+     * > * When you clone an instance by calling this operation, the value of this
+     * parameter must be the same as that of the source instance.
      */
     readonly engineVersion?: string | ros.IResolvable;
 
@@ -57,7 +80,10 @@ export interface ShardingInstanceProps {
     readonly hiddenZoneId?: string | ros.IResolvable;
 
     /**
-     * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+     * Property period: The subscription duration of the instance. Unit: month.
+     * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+     * > This parameter is required and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -88,7 +114,9 @@ export interface ShardingInstanceProps {
     readonly securityIpArray?: string | ros.IResolvable;
 
     /**
-     * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+     * Property srcDbInstanceId: The source instance ID.
+     * > This parameter is required only when you clone an instance by calling this
+     * operation. You must also specify the RestoreTime parameter.
      */
     readonly srcDbInstanceId?: string | ros.IResolvable;
 

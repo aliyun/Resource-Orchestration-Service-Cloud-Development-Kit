@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nlb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-loadbalancer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:01:45.065Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:17:42.334Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
@@ -32,14 +32,21 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneMappings();
 
     /**
-     * Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+     * Property addressIpVersion: The version of IP addresses used for the NLB instance.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>ipv4 (default)</li>
+     * <li>DualStack</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
         return null;
     }
 
     /**
-     * Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+     * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidthPackageId() {
         return null;
@@ -78,7 +85,10 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property loadBalancerType: The type of the NLB instance.
+     * Property loadBalancerType: The type of the Server Load Balancer (SLB) instance.
+     * <p>
+     * Set the value to network,
+     * which indicates an NLB instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerType() {
         return null;
@@ -211,7 +221,13 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
-         * @param addressIpVersion Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+         * @param addressIpVersion Property addressIpVersion: The version of IP addresses used for the NLB instance.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li>ipv4 (default)</li>
+         *                         <li>DualStack</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder addressIpVersion(java.lang.String addressIpVersion) {
@@ -221,7 +237,13 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
-         * @param addressIpVersion Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+         * @param addressIpVersion Property addressIpVersion: The version of IP addresses used for the NLB instance.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li>ipv4 (default)</li>
+         *                         <li>DualStack</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder addressIpVersion(com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
@@ -231,7 +253,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getBandwidthPackageId}
-         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance.
          * @return {@code this}
          */
         public Builder bandwidthPackageId(java.lang.String bandwidthPackageId) {
@@ -241,7 +263,7 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getBandwidthPackageId}
-         * @param bandwidthPackageId Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+         * @param bandwidthPackageId Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance.
          * @return {@code this}
          */
         public Builder bandwidthPackageId(com.aliyun.ros.cdk.core.IResolvable bandwidthPackageId) {
@@ -335,7 +357,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerType}
-         * @param loadBalancerType Property loadBalancerType: The type of the NLB instance.
+         * @param loadBalancerType Property loadBalancerType: The type of the Server Load Balancer (SLB) instance.
+         *                         Set the value to network,
+         *                         which indicates an NLB instance.
          * @return {@code this}
          */
         public Builder loadBalancerType(java.lang.String loadBalancerType) {
@@ -345,7 +369,9 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerType}
-         * @param loadBalancerType Property loadBalancerType: The type of the NLB instance.
+         * @param loadBalancerType Property loadBalancerType: The type of the Server Load Balancer (SLB) instance.
+         *                         Set the value to network,
+         *                         which indicates an NLB instance.
          * @return {@code this}
          */
         public Builder loadBalancerType(com.aliyun.ros.cdk.core.IResolvable loadBalancerType) {

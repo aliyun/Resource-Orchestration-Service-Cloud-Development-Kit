@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginPool`The , which type creates an origin address pool.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginPool`.
 type RosOriginPool interface {
 	alicloudroscdkcore.RosResource
 	AttrEnabled() alicloudroscdkcore.IResolvable

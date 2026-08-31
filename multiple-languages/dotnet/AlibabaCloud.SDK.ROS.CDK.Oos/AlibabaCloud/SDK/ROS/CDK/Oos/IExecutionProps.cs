@@ -42,7 +42,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
-        /// <summary>Property mode: Execution mode.</summary>
+        /// <summary>Property mode: The execution mode.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Automatic (default): The execution is automatically run.</description>
+        /// <description>FailurePause: The execution is paused if a task fails.</description>
+        /// <description>Debug: The execution is run in single-step mode.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Mode
@@ -53,7 +62,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
-        /// <summary>Property parameters: Parameters for the execution of template.</summary>
+        /// <summary>Property parameters: The JSON string that consists of a collection of parameters.</summary>
+        /// <remarks>
+        /// The default value is
+        /// {}.
+        /// </remarks>
         [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Parameters
@@ -64,7 +77,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
-        /// <summary>Property parentExecutionId: Parent execution ID.</summary>
+        /// <summary>Property parentExecutionId: The ID of the parent execution.</summary>
         [JsiiProperty(name: "parentExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ParentExecutionId
@@ -141,9 +154,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
             }
         }
 
-        /// <summary>Property templateName: Template name.</summary>
+        /// <summary>Property templateName: The name of the template.</summary>
         /// <remarks>
-        /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+        /// The name can contain letters, digits, hyphens (-), and
+        /// underscores (_). The name can be up to 200 characters in length.
         /// </remarks>
         [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -219,7 +233,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property mode: Execution mode.</summary>
+            /// <summary>Property mode: The execution mode.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Automatic (default): The execution is automatically run.</description>
+            /// <description>FailurePause: The execution is paused if a task fails.</description>
+            /// <description>Debug: The execution is run in single-step mode.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "mode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Mode
@@ -227,7 +250,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property parameters: Parameters for the execution of template.</summary>
+            /// <summary>Property parameters: The JSON string that consists of a collection of parameters.</summary>
+            /// <remarks>
+            /// The default value is
+            /// {}.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? Parameters
@@ -235,7 +262,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property parentExecutionId: Parent execution ID.</summary>
+            /// <summary>Property parentExecutionId: The ID of the parent execution.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "parentExecutionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ParentExecutionId
@@ -294,9 +321,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property templateName: Template name.</summary>
+            /// <summary>Property templateName: The name of the template.</summary>
             /// <remarks>
-            /// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+            /// The name can contain letters, digits, hyphens (-), and
+            /// underscores (_). The name can be up to 200 characters in length.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

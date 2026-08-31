@@ -25,8 +25,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can contain
-        /// letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+        /// <strong>Property</strong>: aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can
+        /// contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+        /// characters. The name must start with a letter, a Chinese character, or a digit.
         /// </remarks>
         [JsiiProperty(name: "aclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -73,8 +74,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can contain
-            /// letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+            /// <strong>Property</strong>: aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can
+            /// contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+            /// characters. The name must start with a letter, a Chinese character, or a digit.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "aclName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

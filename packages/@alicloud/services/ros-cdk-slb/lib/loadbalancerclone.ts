@@ -25,20 +25,35 @@ export interface LoadBalancerCloneProps {
     readonly backendServersPolicy?: string | ros.IResolvable;
 
     /**
-     * Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
-     * PayByCLCU: billed by usage.
-     * If not specified, it is same with the source load balancer.
+     * Property instanceChargeType: The resource metering method for the CLB instance. Valid value:
+     * - PayByCLCU: pay-by-data-transfer
+     * > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+     * Property loadBalancerName: The CLB instance name.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
-     * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+     * Property loadBalancerSpec: The specification of the CLB instance. Valid values:
+     * - slb.s1.small
+     * - slb.s2.small
+     * - slb.s2.medium
+     * - slb.s3.small
+     * - slb.s3.medium
+     * - slb.s3.large
+     * > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.
+     * >
+     * > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly loadBalancerSpec?: string | ros.IResolvable;
 
@@ -59,7 +74,10 @@ export interface LoadBalancerCloneProps {
     readonly tagsPolicy?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+     * Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * > The vSwitch must be in the primary zone.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }

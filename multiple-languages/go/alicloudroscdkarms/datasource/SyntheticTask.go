@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::SyntheticTask`, which is used to query the information about a scheduled synthetic monitoring task.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ARMS::SyntheticTask`.
 type SyntheticTask interface {
 	alicloudroscdkcore.Resource
 	ISyntheticTask

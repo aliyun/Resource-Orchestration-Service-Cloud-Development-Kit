@@ -11,9 +11,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiInterface(nativeType: typeof(INetworkInterfaceProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.NetworkInterfaceProps")]
     public interface INetworkInterfaceProps
     {
-        /// <summary>Property vSwitchId: VSwitch ID of the specified VPC.</summary>
+        /// <summary>Property vSwitchId: The ID of the VSwitch for the elastic network interface.</summary>
         /// <remarks>
-        /// Specifies the switch ID for the VPC.
+        /// The private IP addresses
+        /// for the elastic network interface are assigned from the available CIDR block of
+        /// the VSwitch.
+        ///
+        ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>
+        ///
+        /// The elastic network interface and the instance to be attached must be in the same
+        /// availability zone but can belong to different VSwitches.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object VSwitchId
@@ -32,9 +39,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property description: Description of your ENI.</summary>
+        /// <summary>Property description: The description of the elastic network interface.</summary>
         /// <remarks>
-        /// It is a string of [2, 256] English or Chinese characters.
+        /// The description must be 2 to
+        /// 256 characters long and cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.
+        /// Default value: empty.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -72,7 +81,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.</summary>
+        /// <summary>Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.</summary>
+        /// <remarks>
+        /// Valid values: 1 to 10.
+        ///
+        ///     You must specify either <c>Ipv6Address.N</c> or <c>Ipv6AddressCount</c>, but not both, to
+        ///     assign IPv6 addresses.
+        /// </remarks>
         [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Ipv6AddressCount
@@ -134,11 +149,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property networkInterfaceTrafficMode: The communication mode of the ENI.</summary>
+        /// <summary>Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.</summary>
         /// <remarks>
         /// Valid values:
-        /// Standard: uses the TCP communication mode.
-        /// HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+        ///
+        /// <list type="bullet">
+        /// <description><c>Standard</c>: uses the TCP traffic mode.</description>
+        /// <description><c>HighPerformance</c>: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+        /// traffic mode.</description>
+        /// </list>
+        ///
+        ///     An elastic network interface in RDMA traffic mode can be attached only to an
+        ///     ERI-supported instance type. The number of these elastic network interfaces that
+        ///     can be attached is limited by the instance family. Default value: <c>Standard</c>.
         /// </remarks>
         [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -231,9 +254,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property securityGroupId: The ID of the security group that the ENI joins.</summary>
+        /// <summary>Property securityGroupId: The ID of the security group for the elastic network interface.</summary>
         /// <remarks>
-        /// The security group and the ENI must be in a same VPC.
+        /// The security
+        /// group and the elastic network interface must be in the same VPC.
+        ///
+        ///     You must specify either <c>SecurityGroupId</c> or <c>SecurityGroupIds.N</c>, but not
+        ///     both.
         /// </remarks>
         [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -245,9 +272,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
         }
 
-        /// <summary>Property securityGroupIds: The IDs of the security groups that the ENI joins.</summary>
+        /// <summary>Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.</summary>
         /// <remarks>
-        /// The security groups and the ENI must belong to the same VPC.
+        /// The security groups and the elastic network interface must be in the
+        /// same VPC. The valid values of N depend on the maximum number of security groups
+        /// to which an elastic network interface can be added.
+        ///
+        ///     You must specify either <c>SecurityGroupId</c> or <c>SecurityGroupIds.N</c>, but not
+        ///     both.
         /// </remarks>
         [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -299,9 +331,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             {
             }
 
-            /// <summary>Property vSwitchId: VSwitch ID of the specified VPC.</summary>
+            /// <summary>Property vSwitchId: The ID of the VSwitch for the elastic network interface.</summary>
             /// <remarks>
-            /// Specifies the switch ID for the VPC.
+            /// The private IP addresses
+            /// for the elastic network interface are assigned from the available CIDR block of
+            /// the VSwitch.
+            ///
+            ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>
+            ///
+            /// The elastic network interface and the instance to be attached must be in the same
+            /// availability zone but can belong to different VSwitches.
             /// </remarks>
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VSwitchId
@@ -317,9 +356,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property description: Description of your ENI.</summary>
+            /// <summary>Property description: The description of the elastic network interface.</summary>
             /// <remarks>
-            /// It is a string of [2, 256] English or Chinese characters.
+            /// The description must be 2 to
+            /// 256 characters long and cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.
+            /// Default value: empty.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -348,7 +389,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.</summary>
+            /// <summary>Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.</summary>
+            /// <remarks>
+            /// Valid values: 1 to 10.
+            ///
+            ///     You must specify either <c>Ipv6Address.N</c> or <c>Ipv6AddressCount</c>, but not both, to
+            ///     assign IPv6 addresses.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ipv6AddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Ipv6AddressCount
@@ -395,11 +442,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property networkInterfaceTrafficMode: The communication mode of the ENI.</summary>
+            /// <summary>Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.</summary>
             /// <remarks>
             /// Valid values:
-            /// Standard: uses the TCP communication mode.
-            /// HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+            ///
+            /// <list type="bullet">
+            /// <description><c>Standard</c>: uses the TCP traffic mode.</description>
+            /// <description><c>HighPerformance</c>: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+            /// traffic mode.</description>
+            /// </list>
+            ///
+            ///     An elastic network interface in RDMA traffic mode can be attached only to an
+            ///     ERI-supported instance type. The number of these elastic network interfaces that
+            ///     can be attached is limited by the instance family. Default value: <c>Standard</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "networkInterfaceTrafficMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -471,9 +526,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityGroupId: The ID of the security group that the ENI joins.</summary>
+            /// <summary>Property securityGroupId: The ID of the security group for the elastic network interface.</summary>
             /// <remarks>
-            /// The security group and the ENI must be in a same VPC.
+            /// The security
+            /// group and the elastic network interface must be in the same VPC.
+            ///
+            ///     You must specify either <c>SecurityGroupId</c> or <c>SecurityGroupIds.N</c>, but not
+            ///     both.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -482,9 +541,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityGroupIds: The IDs of the security groups that the ENI joins.</summary>
+            /// <summary>Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.</summary>
             /// <remarks>
-            /// The security groups and the ENI must belong to the same VPC.
+            /// The security groups and the elastic network interface must be in the
+            /// same VPC. The valid values of N depend on the maximum number of security groups
+            /// to which an elastic network interface can be added.
+            ///
+            ///     You must specify either <c>SecurityGroupId</c> or <c>SecurityGroupIds.N</c>, but not
+            ///     both.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityGroupIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

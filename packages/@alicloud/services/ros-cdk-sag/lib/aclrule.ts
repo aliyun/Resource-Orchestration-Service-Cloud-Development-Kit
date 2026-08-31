@@ -20,13 +20,18 @@ export interface ACLRuleProps {
     readonly destCidr: string | ros.IResolvable;
 
     /**
-     * Property destPortRange: Destination port range, 80\/80.
+     * Property destPortRange: The destination port range.
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
      */
     readonly destPortRange: string | ros.IResolvable;
 
     /**
-     * Property direction: Regular direction.
-     * Value: in|out
+     * Property direction: The direction of traffic to which the ACL rule applies. Valid values:
+     * - in: inbound. Traffic from an external network to the local branch where the SAG
+     * instance is deployed.
+     * - out: outbound. Traffic from the local branch where the SAG instance is deployed
+     * to an external network.
      */
     readonly direction: string | ros.IResolvable;
 
@@ -46,7 +51,9 @@ export interface ACLRuleProps {
     readonly sourceCidr: string | ros.IResolvable;
 
     /**
-     * Property sourcePortRange: Source port range, 80\/80.
+     * Property sourcePortRange: The source port range.
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
      */
     readonly sourcePortRange: string | ros.IResolvable;
 
@@ -71,14 +78,17 @@ export interface ACLRuleProps {
 
     /**
      * Property name: The name of the ACL rule.
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * The name must be 2 to 100 characters in length, start with a letter, and can
+     * contain digits, periods (.), underscores (_), and hyphens (-).
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * Property priority: Priority, ranging from 1 to 100.
-     * Default: 1
+     * Property priority: The priority of the ACL rule.
+     * A smaller value indicates a higher priority. If multiple rules have the same
+     * priority, the rule that is first delivered to the Smart Access Gateway device
+     * takes precedence.
+     * Valid values: 1 to 100. Default value: 1.
      */
     readonly priority?: number | ros.IResolvable;
 

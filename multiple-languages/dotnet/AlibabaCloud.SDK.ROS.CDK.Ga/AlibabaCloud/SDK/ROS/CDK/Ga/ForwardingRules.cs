@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ga
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::GA::ForwardingRules`.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosForwardingRules`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
@@ -37,7 +37,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
         {
         }
 
-        /// <summary>Attribute ForwardingRuleIds: The IDs of the endpoint groups.</summary>
+        /// <summary>Attribute ForwardingRuleIds: The IDs of the forwarding rules.</summary>
         [JsiiProperty(name: "attrForwardingRuleIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AttrForwardingRuleIds
         {

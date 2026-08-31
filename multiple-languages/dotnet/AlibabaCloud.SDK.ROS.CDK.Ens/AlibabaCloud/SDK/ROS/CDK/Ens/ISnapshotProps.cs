@@ -42,7 +42,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
 
         /// <summary>Property snapshotName: The name of the snapshot.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+        /// The name must be 2 to 128 characters in length. It must
+        /// start with a letter or a Chinese character, but cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>. It can contain digits, colons (:), underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "snapshotName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -93,7 +95,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
 
             /// <summary>Property snapshotName: The name of the snapshot.</summary>
             /// <remarks>
-            /// The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+            /// The name must be 2 to 128 characters in length. It must
+            /// start with a letter or a Chinese character, but cannot start with <c>http:\/\/</c> or
+            /// <c>https:\/\/</c>. It can contain digits, colons (:), underscores (_), and hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "snapshotName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

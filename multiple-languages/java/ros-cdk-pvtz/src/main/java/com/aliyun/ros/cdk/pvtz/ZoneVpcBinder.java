@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::ZoneVpcBinder</code>, which is used to bind a private zone to or unbind a private zone from a virtual private cloud (VPC).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:52:38.663Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneVpcBinder")
 public class ZoneVpcBinder extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.IZoneVpcBinder {
 
@@ -120,20 +120,32 @@ public class ZoneVpcBinder extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property vpcs:.
+         * Property vpcs: The VPCs.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you leave this parameter empty, all VPCs bound to the zone are unbound.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcs Property vpcs:. This parameter is required.
+         * @param vpcs Property vpcs: The VPCs. This parameter is required.
          */
         public Builder vpcs(final com.aliyun.ros.cdk.core.IResolvable vpcs) {
             this.props.vpcs(vpcs);
             return this;
         }
         /**
-         * Property vpcs:.
+         * Property vpcs: The VPCs.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you leave this parameter empty, all VPCs bound to the zone are unbound.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vpcs Property vpcs:. This parameter is required.
+         * @param vpcs Property vpcs: The VPCs. This parameter is required.
          */
         public Builder vpcs(final java.util.List<? extends java.lang.Object> vpcs) {
             this.props.vpcs(vpcs);

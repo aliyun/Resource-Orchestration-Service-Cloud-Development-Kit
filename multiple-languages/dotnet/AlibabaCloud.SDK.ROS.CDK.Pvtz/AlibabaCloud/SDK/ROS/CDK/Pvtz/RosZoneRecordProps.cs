@@ -16,9 +16,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         private object _rr;
 
         /// <remarks>
-        /// <strong></strong>: " instead of empty
+        /// <strong></strong>: ", not an empty
+        /// string.
         ///
-        /// <strong>Property</strong>: rr: Host record, if you want to resolve
+        /// <strong>Property</strong>: rr: The host record. A host record is the prefix of a domain name. Common host
+        /// records include www,
         /// </remarks>
         [JsiiProperty(name: "rr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Rr
@@ -50,7 +52,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         private object _status;
 
         /// <remarks>
-        /// <strong>Property</strong>: status: Allowed values: [ENABLE, DISABLE]
+        /// <strong>Property</strong>: status: The status of the DNS record. Valid values:
+        /// - ENABLE: Enables DNS resolution.
+        /// - DISABLE: Pauses DNS resolution.
         /// </remarks>
         [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Status
@@ -82,7 +86,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         private object _type;
 
         /// <remarks>
-        /// <strong>Property</strong>: type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
+        /// <strong>Property</strong>: type: The type of the DNS record. The following types are supported:
+        /// - A: Maps a domain name to an IPv4 address in dotted decimal notation.
+        /// - AAAA: Maps a domain name to an IPv6 address.
+        /// - CNAME: Maps a domain name to another domain name.
+        /// - TXT: A text record. The text can be up to 255 characters in length. TXT records
+        /// are often used for Sender Policy Framework (SPF) records to prevent spam.
+        /// - MX: Maps a domain name to the domain name of a mail server.
+        /// - PTR: Maps an IP address to a domain name.
+        /// - SRV: Specifies the server for a specific service. The format is: Priority
+        /// Weight Port Target. Separate each value with a space.
+        /// > Before adding a PTR record, configure a reverse lookup zone. For more
+        /// information, see [Reverse DNS lookups and PTR records]().
         /// </remarks>
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Type
@@ -178,7 +193,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         private object? _priority;
 
         /// <remarks>
-        /// <strong>Property</strong>: priority: MX record priority, value range [1,99]. Default to 10.
+        /// <strong>Property</strong>: priority: The priority of the MX record. A smaller value indicates a higher priority. Valid
+        /// values: \[1, 99].
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -231,7 +247,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         private object? _ttl;
 
         /// <remarks>
-        /// <strong>Property</strong>: ttl: Survival time, default is 60
+        /// <strong>Property</strong>: ttl: The time to live (TTL). The unit is seconds (s). Valid values are 5, 30, 60, 3600
+        /// (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

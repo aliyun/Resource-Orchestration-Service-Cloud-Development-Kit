@@ -234,7 +234,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _attemptInterval;
 
         /// <remarks>
-        /// <strong>Property</strong>: attemptInterval: The attempt interval of the job.
+        /// <strong>Property</strong>: attemptInterval: The retry interval for a failed job, in seconds. Defaults to 30.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "attemptInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -287,7 +287,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _calendar;
 
         /// <remarks>
-        /// <strong>Property</strong>: calendar: The calendar of the job.
+        /// <strong>Property</strong>: calendar: For a `cron` job, you can specify a custom calendar.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "calendar", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -320,7 +320,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _className;
 
         /// <remarks>
-        /// <strong>Property</strong>: className: The class name of the job.
+        /// <strong>Property</strong>: className: The fully qualified class name of the job interface.
+        /// Required for `java` jobs.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "className", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -353,7 +354,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _consumerSize;
 
         /// <remarks>
-        /// <strong>Property</strong>: consumerSize: The consumer size of the job.
+        /// <strong>Property</strong>: consumerSize: \[Advanced] For `parallel` and `grid` jobs, this specifies the number of consumer
+        /// threads per machine for processing subtasks. Defaults to 5.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "consumerSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -406,7 +408,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _contactInfo;
 
         /// <remarks>
-        /// <strong>Property</strong>: contactInfo: The contact info of the job.
+        /// <strong>Property</strong>: contactInfo: The contact information for the job.
+        /// ><notice>
+        /// This parameter is deprecated.
+        /// ><\/notice>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "contactInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-schedulerx.RosJob.ContactInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -456,7 +461,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _content;
 
         /// <remarks>
-        /// <strong>Property</strong>: content: The content of the job.
+        /// <strong>Property</strong>: content: - For a `python`, `shell`, or `k8s` job, this parameter specifies the script
+        /// content.
+        /// - For a `go` job, the content must be in the following format:
+        /// {"jobName":"HelloWorld"}
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "content", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -489,7 +497,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _dataOffset;
 
         /// <remarks>
-        /// <strong>Property</strong>: dataOffset: The data offset of the job.
+        /// <strong>Property</strong>: dataOffset: The time offset in seconds for a `cron` job.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dataOffset", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -575,7 +583,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _dispatcherSize;
 
         /// <remarks>
-        /// <strong>Property</strong>: dispatcherSize: The dispatcher size of the job.
+        /// <strong>Property</strong>: dispatcherSize: \[Advanced] For `parallel` and `grid` jobs, this specifies the number of threads
+        /// for dispatching subtasks. Defaults to 5.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dispatcherSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -628,7 +637,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _failEnable;
 
         /// <remarks>
-        /// <strong>Property</strong>: failEnable: Whether fail is enabled for the job.
+        /// <strong>Property</strong>: failEnable: Specifies whether to enable alerts for failed jobs. Valid values:
+        /// - true: Enables failure alerts.
+        /// - false: Disables failure alerts.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "failEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -661,7 +672,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _failTimes;
 
         /// <remarks>
-        /// <strong>Property</strong>: failTimes: The fail times of the job.
+        /// <strong>Property</strong>: failTimes: The number of consecutive failures that triggers an alert.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "failTimes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -714,7 +725,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _maxAttempt;
 
         /// <remarks>
-        /// <strong>Property</strong>: maxAttempt: The max attempt of the job.
+        /// <strong>Property</strong>: maxAttempt: The maximum number of retries for a failed job. Defaults to 0.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxAttempt", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -767,7 +778,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _maxConcurrency;
 
         /// <remarks>
-        /// <strong>Property</strong>: maxConcurrency: The max concurrency of the job.
+        /// <strong>Property</strong>: maxConcurrency: The maximum number of concurrent job instances. Defaults to 1. If an existing job
+        /// instance is still running, a new one will not be triggered, even if its scheduled
+        /// time has passed.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxConcurrency", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -820,7 +833,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _missWorkerEnable;
 
         /// <remarks>
-        /// <strong>Property</strong>: missWorkerEnable: Whether miss worker is enabled for the job.
+        /// <strong>Property</strong>: missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job.
+        /// - true: Enables the alert.
+        /// - false: Disables the alert.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "missWorkerEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -853,7 +868,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _namespaceSource;
 
         /// <remarks>
-        /// <strong>Property</strong>: namespaceSource: The namespace source of the job.
+        /// <strong>Property</strong>: namespaceSource: This parameter is required only for specific third-party integrations.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "namespaceSource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -886,7 +901,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _pageSize;
 
         /// <remarks>
-        /// <strong>Property</strong>: pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100.
+        /// <strong>Property</strong>: pageSize: \[Advanced] For `parallel` and `grid` jobs, this specifies the number of subtasks
+        /// retrieved per pull. Defaults to 100.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "pageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -972,7 +988,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _priority;
 
         /// <remarks>
-        /// <strong>Property</strong>: priority: The priority of the job.
+        /// <strong>Property</strong>: priority: The job priority. Valid values:
+        /// - 1: Low
+        /// - 5: Medium
+        /// - 10: High
+        /// - 15: Very High
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1025,7 +1045,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _queueSize;
 
         /// <remarks>
-        /// <strong>Property</strong>: queueSize: The queue size of the job.
+        /// <strong>Property</strong>: queueSize: \[Advanced] For `parallel` and `grid` jobs, this specifies the maximum number of
+        /// subtasks the queue can hold. Defaults to 10000.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "queueSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1078,7 +1099,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _sendChannel;
 
         /// <remarks>
-        /// <strong>Property</strong>: sendChannel: The send channel of the job.
+        /// <strong>Property</strong>: sendChannel: The channel for sending alerts.
+        /// - For the default channel of the application group, use `default`.
+        /// - For a specific channel for the job, use `sms`, `mail`, `phone`, or `webhook`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sendChannel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1144,7 +1167,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _taskAttemptInterval;
 
         /// <remarks>
-        /// <strong>Property</strong>: taskAttemptInterval: The task attempt interval of the job.
+        /// <strong>Property</strong>: taskAttemptInterval: \[Advanced] For `parallel` and `grid` jobs, this specifies the retry interval in
+        /// seconds for a failed subtask. Defaults to 0.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "taskAttemptInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1197,7 +1221,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _taskMaxAttempt;
 
         /// <remarks>
-        /// <strong>Property</strong>: taskMaxAttempt: The task max attempt of the job.
+        /// <strong>Property</strong>: taskMaxAttempt: \[Advanced] For `parallel` and `grid` jobs, this specifies the maximum number of
+        /// retries for a failed subtask. Defaults to 0.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "taskMaxAttempt", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1250,7 +1275,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _timeExpression;
 
         /// <remarks>
-        /// <strong>Property</strong>: timeExpression: The time expression of the job.
+        /// <strong>Property</strong>: timeExpression: The time expression, which depends on the value of `TimeType`.
+        /// - cron: A standard cron expression.
+        /// - api: No time expression is required.
+        /// - fixed_rate: A fixed interval in seconds. For example, a value of 30 triggers
+        /// the job every 30 seconds.
+        /// - second_delay: A fixed delay in seconds before the job is executed. Valid
+        /// values: 1 to 60.
+        /// - one_time: A specific time in `yyyy-MM-dd HH:mm:ss` format or a Unix timestamp
+        /// in milliseconds. Example: "2022-10-10 10:10:00".
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "timeExpression", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1283,7 +1316,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _timeout;
 
         /// <remarks>
-        /// <strong>Property</strong>: timeout: The timeout of the job.
+        /// <strong>Property</strong>: timeout: The timeout threshold in seconds. Defaults to 7200.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1336,7 +1369,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _timeoutEnable;
 
         /// <remarks>
-        /// <strong>Property</strong>: timeoutEnable: Whether timeout is enabled for the job.
+        /// <strong>Property</strong>: timeoutEnable: Specifies whether to enable timeout alerts. Valid values:
+        /// - true: Enables timeout alerts.
+        /// - false: Disables timeout alerts.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "timeoutEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1369,7 +1404,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _timeoutKillEnable;
 
         /// <remarks>
-        /// <strong>Property</strong>: timeoutKillEnable: Whether timeout kill is enabled for the job.
+        /// <strong>Property</strong>: timeoutKillEnable: Specifies whether to terminate the job upon timeout. Valid values:
+        /// - true: Terminates the job if it times out.
+        /// - false: The job is not terminated if it times out.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "timeoutKillEnable", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1435,7 +1472,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Schedulerx
         private object? _xAttrs;
 
         /// <remarks>
-        /// <strong>Property</strong>: xAttrs: The extended attributes of the job.
+        /// <strong>Property</strong>: xAttrs: This parameter is required for `k8s` jobs.<br>For job tasks:
+        /// {"resource":"job"}<br>For shell tasks:
+        /// {"image":"busybox","resource":"shell"}<br><br>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "xAttrs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]

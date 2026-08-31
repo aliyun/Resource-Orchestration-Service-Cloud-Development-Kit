@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.aligreen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::ImageLib</code>, which is used to create a custom image library.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Aligreen::ImageLib</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:24:00.741Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:01:32.939Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.ImageLib")
 public class ImageLib extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.aligreen.IImageLib {
 

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenInstanceAttachment`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CenInstanceAttachment` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstanceattachment
@@ -120,7 +120,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: childInstanceRegionId: The ID of the region where the network is located. The ID of the region where the network is located.
+        /// <strong>Property</strong>: childInstanceRegionId: The ID of the region where the network instance is deployed.
+        /// You can call the [DescribeRegions]() operation to query the most recent region
+        /// list.
         /// </remarks>
         [JsiiProperty(name: "childInstanceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ChildInstanceRegionId
@@ -187,7 +189,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: childInstanceOwnerId: The account ID to which the network belongs.
+        /// <strong>Property</strong>: childInstanceOwnerId: The ID of the account to which the network instance belongs.
+        /// > If the network instance and the CEN instance belong to different accounts,
+        /// this parameter is required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "childInstanceOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

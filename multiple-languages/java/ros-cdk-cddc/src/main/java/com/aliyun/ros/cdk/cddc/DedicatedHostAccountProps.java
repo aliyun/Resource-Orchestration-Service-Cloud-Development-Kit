@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cddc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostaccount
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:41:20.798Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:26:11.427Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.DedicatedHostAccountProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostAccountProps.Jsii$Proxy.class)
 public interface DedicatedHostAccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,24 @@ public interface DedicatedHostAccountProps extends software.amazon.jsii.JsiiSeri
     @org.jetbrains.annotations.NotNull java.lang.Object getAccountName();
 
     /**
-     * Property accountPassword: The password of the account.
+     * Property accountPassword: The password for the host account.
+     * <p>
+     * The password must meet the following
+     * requirements:
+     * <p>
+     * <ul>
+     * <li>The password must be 6 to 32 characters in length.</li>
+     * <li>It must contain uppercase letters, lowercase letters, digits, and special
+     * characters.</li>
+     * <li>Supported special characters: <code>!&#64;#$%^&amp;*()_+-=</code></li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If your engine is SQL Server, the password cannot contain the account name
+     * (case-insensitive).
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccountPassword();
 
@@ -77,7 +94,23 @@ public interface DedicatedHostAccountProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link DedicatedHostAccountProps#getAccountPassword}
-         * @param accountPassword Property accountPassword: The password of the account. This parameter is required.
+         * @param accountPassword Property accountPassword: The password for the host account. This parameter is required.
+         *                        The password must meet the following
+         *                        requirements:
+         *                        <p>
+         *                        <ul>
+         *                        <li>The password must be 6 to 32 characters in length.</li>
+         *                        <li>It must contain uppercase letters, lowercase letters, digits, and special
+         *                        characters.</li>
+         *                        <li>Supported special characters: <code>!&#64;#$%^&amp;*()_+-=</code></li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If your engine is SQL Server, the password cannot contain the account name
+         *                        (case-insensitive).
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder accountPassword(java.lang.String accountPassword) {
@@ -87,7 +120,23 @@ public interface DedicatedHostAccountProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link DedicatedHostAccountProps#getAccountPassword}
-         * @param accountPassword Property accountPassword: The password of the account. This parameter is required.
+         * @param accountPassword Property accountPassword: The password for the host account. This parameter is required.
+         *                        The password must meet the following
+         *                        requirements:
+         *                        <p>
+         *                        <ul>
+         *                        <li>The password must be 6 to 32 characters in length.</li>
+         *                        <li>It must contain uppercase letters, lowercase letters, digits, and special
+         *                        characters.</li>
+         *                        <li>Supported special characters: <code>!&#64;#$%^&amp;*()_+-=</code></li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If your engine is SQL Server, the password cannot contain the account name
+         *                        (case-insensitive).
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder accountPassword(com.aliyun.ros.cdk.core.IResolvable accountPassword) {

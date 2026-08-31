@@ -69,7 +69,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mps
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: speedLevel: Speed level.
+        /// <strong>Property</strong>: speedLevel: The level of the MPS queue. Valid values: 1 to 3.
         /// </remarks>
         [JsiiProperty(name: "speedLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -156,7 +156,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mps
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: speedLevel: Speed level.
+            /// <strong>Property</strong>: speedLevel: The level of the MPS queue. Valid values: 1 to 3.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "speedLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

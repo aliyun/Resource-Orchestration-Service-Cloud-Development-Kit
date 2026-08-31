@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc3;
 /**
  * Represents a <code>FunctionInvoker</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:03:30.856Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:11:11.731Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc3.$Module.class, fqn = "@alicloud/ros-cdk-fc3.IFunctionInvoker")
 @software.amazon.jsii.Jsii.Proxy(IFunctionInvoker.Jsii$Proxy.class)
 public interface IFunctionInvoker extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

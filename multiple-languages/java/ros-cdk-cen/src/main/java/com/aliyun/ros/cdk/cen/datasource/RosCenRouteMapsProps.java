@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cen-cenroutemaps
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.439Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.790Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.datasource.RosCenRouteMapsProps")
 @software.amazon.jsii.Jsii.Proxy(RosCenRouteMapsProps.Jsii$Proxy.class)
 public interface RosCenRouteMapsProps extends software.amazon.jsii.JsiiSerializable {

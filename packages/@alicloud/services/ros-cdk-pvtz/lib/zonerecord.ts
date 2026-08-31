@@ -10,17 +10,33 @@ export { RosZoneRecord as ZoneRecordProperty };
 export interface ZoneRecordProps {
 
     /**
-     * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * Property rr: The host record. A host record is the prefix of a domain name. Common host
+     * records include www, @, \* (for wildcard DNS), and mail (for mailboxes).
+     * For example, to resolve @.example.com, set the host record to "@", not an empty
+     * string.
      */
     readonly rr: string | ros.IResolvable;
 
     /**
-     * Property status: Allowed values: [ENABLE, DISABLE]
+     * Property status: The status of the DNS record. Valid values:
+     * - ENABLE: Enables DNS resolution.
+     * - DISABLE: Pauses DNS resolution.
      */
     readonly status: string | ros.IResolvable;
 
     /**
-     * Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV
+     * Property type: The type of the DNS record. The following types are supported:
+     * - A: Maps a domain name to an IPv4 address in dotted decimal notation.
+     * - AAAA: Maps a domain name to an IPv6 address.
+     * - CNAME: Maps a domain name to another domain name.
+     * - TXT: A text record. The text can be up to 255 characters in length. TXT records
+     * are often used for Sender Policy Framework (SPF) records to prevent spam.
+     * - MX: Maps a domain name to the domain name of a mail server.
+     * - PTR: Maps an IP address to a domain name.
+     * - SRV: Specifies the server for a specific service. The format is: Priority
+     * Weight Port Target. Separate each value with a space.
+     * > Before adding a PTR record, configure a reverse lookup zone. For more
+     * information, see [Reverse DNS lookups and PTR records]().
      */
     readonly type: string | ros.IResolvable;
 
@@ -35,12 +51,14 @@ export interface ZoneRecordProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * Property priority: MX record priority, value range [1,99]. Default to 10.
+     * Property priority: The priority of the MX record. A smaller value indicates a higher priority. Valid
+     * values: \[1, 99].
      */
     readonly priority?: number | ros.IResolvable;
 
     /**
-     * Property ttl: Survival time, default is 60
+     * Property ttl: The time to live (TTL). The unit is seconds (s). Valid values are 5, 30, 60, 3600
+     * (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
      */
     readonly ttl?: number | ros.IResolvable;
 }

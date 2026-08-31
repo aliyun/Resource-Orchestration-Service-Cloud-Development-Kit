@@ -20,7 +20,7 @@ export interface RosContainerGroupProps {
     readonly containerGroupName: string | ros.IResolvable;
 
     /**
-     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * @Property acrRegistryInfo: A list of ACR Enterprise instances.
      */
     readonly acrRegistryInfo?: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -30,7 +30,8 @@ export interface RosContainerGroupProps {
     readonly activeDeadlineSeconds?: number | ros.IResolvable;
 
     /**
-     * @Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+     * @Property autoMatchImageCache: Specifies whether to automatically match the image cache. The default value is
+     * false.
      */
     readonly autoMatchImageCache?: boolean | ros.IResolvable;
 
@@ -60,7 +61,7 @@ export interface RosContainerGroupProps {
     readonly imageRegistryCredential?: Array<RosContainerGroup.ImageRegistryCredentialProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property imageSnapshotId: Image cache ID or snapshot ID.
+     * @Property imageSnapshotId: The ID of the image cache.
      */
     readonly imageSnapshotId?: string | ros.IResolvable;
 
@@ -70,12 +71,14 @@ export interface RosContainerGroupProps {
     readonly initContainer?: Array<RosContainerGroup.InitContainerProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property instanceType: The type of the ECS instance.
+     * @Property instanceType: The ECS instance type. You can specify multiple instance types. For more
+     * information, see [Create an instance by specifying an ECS instance type]().
      */
     readonly instanceType?: string | ros.IResolvable;
 
     /**
-     * @Property ipv6AddressCount: The number of IPv6 addresses.
+     * @Property ipv6AddressCount: The number of IPv6 addresses. The value is fixed at 1, which indicates that one
+     * IPv6 address can be bound to an ECI instance.
      */
     readonly ipv6AddressCount?: number | ros.IResolvable;
 
@@ -149,9 +152,15 @@ export interface RosContainerGroupProps {
     readonly volume?: Array<RosContainerGroup.VolumeProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The ID of the specified VSwitch.
-     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     * @Property vSwitchId: The ID of the vSwitch to which the instance belongs. You can specify up to 10
+     * vSwitch IDs. Separate multiple IDs with commas (,), for example, `vsw-*,vsw-*`.
+     * If you do not specify a vSwitch, the system uses the default vSwitch in the
+     * default VPC of the selected region. If you do not have a default VPC and a
+     * default vSwitch in the region, the system creates a default VPC and a default
+     * vSwitch.
+     * > The number of IP addresses in the vSwitch CIDR block determines the maximum
+     * number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+     * in advance.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
@@ -290,7 +299,7 @@ function rosContainerGroupPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`, which is used to create a container group. A container group is an elastic container instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ContainerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ContainerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-containergroup
  */
@@ -365,7 +374,7 @@ export class RosContainerGroup extends ros.RosResource {
     public containerGroupName: string | ros.IResolvable;
 
     /**
-     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * @Property acrRegistryInfo: A list of ACR Enterprise instances.
      */
     public acrRegistryInfo: Array<RosContainerGroup.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -375,7 +384,8 @@ export class RosContainerGroup extends ros.RosResource {
     public activeDeadlineSeconds: number | ros.IResolvable | undefined;
 
     /**
-     * @Property autoMatchImageCache: Specifies whether to automatically match the image cache.
+     * @Property autoMatchImageCache: Specifies whether to automatically match the image cache. The default value is
+     * false.
      */
     public autoMatchImageCache: boolean | ros.IResolvable | undefined;
 
@@ -405,7 +415,7 @@ export class RosContainerGroup extends ros.RosResource {
     public imageRegistryCredential: Array<RosContainerGroup.ImageRegistryCredentialProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property imageSnapshotId: Image cache ID or snapshot ID.
+     * @Property imageSnapshotId: The ID of the image cache.
      */
     public imageSnapshotId: string | ros.IResolvable | undefined;
 
@@ -415,12 +425,14 @@ export class RosContainerGroup extends ros.RosResource {
     public initContainer: Array<RosContainerGroup.InitContainerProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceType: The type of the ECS instance.
+     * @Property instanceType: The ECS instance type. You can specify multiple instance types. For more
+     * information, see [Create an instance by specifying an ECS instance type]().
      */
     public instanceType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ipv6AddressCount: The number of IPv6 addresses.
+     * @Property ipv6AddressCount: The number of IPv6 addresses. The value is fixed at 1, which indicates that one
+     * IPv6 address can be bound to an ECI instance.
      */
     public ipv6AddressCount: number | ros.IResolvable | undefined;
 
@@ -494,9 +506,15 @@ export class RosContainerGroup extends ros.RosResource {
     public volume: Array<RosContainerGroup.VolumeProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The ID of the specified VSwitch.
-     * If no switch is specified, the system automatically uses the default switch in the default VPC in the selected region.
-     * If no default VPC or default switch is available in the region, the system automatically creates a default VPC and a default switch
+     * @Property vSwitchId: The ID of the vSwitch to which the instance belongs. You can specify up to 10
+     * vSwitch IDs. Separate multiple IDs with commas (,), for example, `vsw-*,vsw-*`.
+     * If you do not specify a vSwitch, the system uses the default vSwitch in the
+     * default VPC of the selected region. If you do not have a default VPC and a
+     * default vSwitch in the region, the system creates a default VPC and a default
+     * vSwitch.
+     * > The number of IP addresses in the vSwitch CIDR block determines the maximum
+     * number of ECI instances that can be created in the vSwitch. Plan the CIDR block
+     * in advance.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -2199,7 +2217,7 @@ function rosContainerGroupVolumeMountPropertyToRosTemplate(properties: any): any
 export interface RosImageCacheProps {
 
     /**
-     * @Property image: The image list to be cached.
+     * @Property image: The container images used to create the image cache.
      */
     readonly image: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -2214,12 +2232,13 @@ export interface RosImageCacheProps {
     readonly securityGroupId: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: VSwitch ID.
+     * @Property vSwitchId: The ID of the vSwitch. You can specify up to 10 vSwitch IDs, separated by commas
+     * (,). For example, `vsw-*,vsw-*`.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * @Property acrRegistryInfo: The information about the ACR instance.
      */
     readonly acrRegistryInfo?: Array<RosImageCache.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -2243,7 +2262,7 @@ export interface RosImageCacheProps {
     readonly imageCacheSize?: number | ros.IResolvable;
 
     /**
-     * @Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
+     * @Property imageRegistryCredential: The credentials of the image repository.
      */
     readonly imageRegistryCredential?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -2338,7 +2357,7 @@ function rosImageCachePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ImageCache`, which is used to create an image cache.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ECI::ImageCache`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageCache` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eci-imagecache
  */
@@ -2357,7 +2376,7 @@ export class RosImageCache extends ros.RosResource {
 
 
     /**
-     * @Property image: The image list to be cached.
+     * @Property image: The container images used to create the image cache.
      */
     public image: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -2372,12 +2391,13 @@ export class RosImageCache extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: VSwitch ID.
+     * @Property vSwitchId: The ID of the vSwitch. You can specify up to 10 vSwitch IDs, separated by commas
+     * (,). For example, `vsw-*,vsw-*`.
      */
     public vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property acrRegistryInfo: Enterprise Edition access credential configuration information.
+     * @Property acrRegistryInfo: The information about the ACR instance.
      */
     public acrRegistryInfo: Array<RosImageCache.AcrRegistryInfoProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -2401,7 +2421,7 @@ export class RosImageCache extends ros.RosResource {
     public imageCacheSize: number | ros.IResolvable | undefined;
 
     /**
-     * @Property imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
+     * @Property imageRegistryCredential: The credentials of the image repository.
      */
     public imageRegistryCredential: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 

@@ -10,7 +10,15 @@ export { RosScalingGroup as ScalingGroupProperty };
 export interface ScalingGroupProps {
 
     /**
-     * Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
+     * Property maxSize: The maximum number of ECS instances that can be contained in the scaling group.
+     * If the number of ECS instances in the scaling group is greater than the value of
+     * the `MaxSize` parameter, Auto Scaling automatically removes ECS instances until
+     * the number of instances in the scaling group is equal to the maximum number.
+     * The value range of the MaxSize parameter varies based on the instance quota. You
+     * can go to Quota Center to check the maximum number of instances that a scaling
+     * group can contain.
+     * For example, if a scaling group can contain up to 2,000 instances, the value
+     * range of the `MaxSize` parameter is 0 to 2000.
      */
     readonly maxSize: number | ros.IResolvable;
 
@@ -52,7 +60,12 @@ export interface ScalingGroupProps {
     readonly customPolicyArn?: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
+     * Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling
+     * group. The value can be a JSON array that contains multiple ApsaraDB RDS instance
+     * IDs. Separate multiple IDs with commas (,).
+     * You can associate only a limited number of ApsaraDB RDS instances with a scaling
+     * group. Go to Quota Center to check the maximum number of ApsaraDB RDS instances
+     * that you can associate with a scaling group.
      */
     readonly dbInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -87,7 +100,10 @@ export interface ScalingGroupProps {
     readonly healthCheckType?: string | ros.IResolvable;
 
     /**
-     * Property healthCheckTypes: The list of health check type.
+     * Property healthCheckTypes: The health check method for the scaling group.
+     * > You can specify multiple values for this parameter to enable multiple health
+     * check options. If the `HealthCheckType` parameter is set, this parameter is
+     * ignored.
      */
     readonly healthCheckTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -116,7 +132,12 @@ export interface ScalingGroupProps {
     readonly launchTemplateVersion?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
+     * Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group.
+     * The value can be a JSON array that contains multiple CLB instance IDs. Separate
+     * multiple IDs with commas (,).
+     * You can associate only a limited number of CLB instances with a scaling group. Go
+     * to Quota Center to check the maximum number of CLB instances that you can
+     * associate with a scaling group.
      */
     readonly loadBalancerIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -129,12 +150,29 @@ export interface ScalingGroupProps {
     readonly maxInstanceLifetime?: number | ros.IResolvable;
 
     /**
-     * Property multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
-     * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
-     * 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
-     * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
-     * 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
+     * Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances.
+     * Valid values:
+     * *   PRIORITY: Auto Scaling scales ECS instances based on the priority of the
+     * vSwitch that is specified by the VSwitchIds.N parameter. Auto Scaling
+     * preferentially scales instances in the zone where the vSwitch that has the
+     * highest priority resides. If the scaling fails, Auto Scaling scales instances in
+     * the zone where the vSwitch that has the next highest priority resides.
+     * *   COST_OPTIMIZED: Auto Scaling preferentially creates ECS instances whose vCPUs
+     * are provided at the lowest price and removes ECS instances whose vCPUs are
+     * provided at the highest price. If preemptible instance types are specified in the
+     * scaling configuration, Auto Scaling preferentially creates preemptible instances.
+     * You can use the CompensateWithOnDemand parameter to specify whether to
+     * automatically create pay-as-you-go instances when preemptible instances cannot be
+     * created due to insufficient resources.
+     * Note The COST_OPTIMIZED **setting takes effect only when you specify multiple
+     * instance types or when you specify at least one preemptible instance type.
+     * *   BALANCE: Auto Scaling evenly distributes ECS instances across zones that are
+     * specified for the scaling group. If ECS instances are unevenly distributed across
+     * zones due to insufficient resources, you can call the [RebalanceInstance]()
+     * operation to evenly distribute the instances across the zones.
+     * *   COMPOSABLE: You can combine the preceding policies based on your business
+     * requirements.
+     * Default value: PRIORITY.
      */
     readonly multiAzPolicy?: string | ros.IResolvable;
 
@@ -180,8 +218,12 @@ export interface ScalingGroupProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
-     * If this parameter is not specified, the default value is ScalingGroupId.
+     * Property scalingGroupName: The name of the scaling group. The name of each scaling group must be unique in a
+     * region. The name must be 2 to 64 characters in length, and can contain letters,
+     * digits, underscores (_), hyphens (-), and periods (.). The name must start with a
+     * letter or a digit.
+     * If you do not specify this parameter, the value of the ScalingGroupId parameter
+     * is used.
      */
     readonly scalingGroupName?: string | ros.IResolvable;
 
@@ -229,15 +271,23 @@ export interface ScalingGroupProps {
     readonly tags?: RosScalingGroup.TagsProperty[];
 
     /**
-     * Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+     * Property vSwitchId: The ID of the vSwitch. If you specify the VSwitchId parameter, the network type
+     * of the scaling group is VPC.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
-     * The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC.
-     * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
-     * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
+     * Property vSwitchIds: The IDs of vSwitches. If you specify the VSwitchIds.N parameter, the VSwitchId
+     * parameter is ignored. If you specify the VSwitchIds.N parameter, the network type
+     * of the scaling group is VPC.
+     * If you specify multiple vSwitches, take note of the following items:
+     * *   The vSwitches must belong to the same VPC.
+     * *   The vSwitches can belong to different zones.
+     * *   The vSwitches are sorted in ascending order of priority. The first vSwitch
+     * that is specified by the VSwitchIds.N parameter has the highest priority. If Auto
+     * Scaling fails to create ECS instances in the zone where the vSwitch that has the
+     * highest priority resides, Auto Scaling creates ECS instances in the zone where
+     * the vSwitch that has the next highest priority resides.
      */
     readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
@@ -264,7 +314,7 @@ export interface IScalingGroup extends ros.IResource {
     readonly attrScalingGroupName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`You can use the , which resource to create a scaling group. A scaling group is a collection of ECS instances that are used for the same application scenario. A scaling group does not take effect immediately after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group. After the scaling group is enabled, it can trigger scaling activities and execute scaling rules.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */

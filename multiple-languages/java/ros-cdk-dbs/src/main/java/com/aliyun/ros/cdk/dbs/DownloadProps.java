@@ -5,15 +5,31 @@ package com.aliyun.ros.cdk.dbs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:11:33.663Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:05:56.020Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.DownloadProps")
 @software.amazon.jsii.Jsii.Proxy(DownloadProps.Jsii$Proxy.class)
 public interface DownloadProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property formatType: The format to which the downloaded backup set is converted.
+     * Property formatType: The target format of the downloaded data.
      * <p>
-     * Valid values: CSV|SQL|Parquet
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>CSV</li>
+     * <li>SQL</li>
+     * <li>Parquet</li>
+     * <li>Bson</li>
+     * <li>qp.xb</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required. The <code>Bson</code> format is available only for MongoDB
+     * instances. The <code>qp.xb</code> format is available only for ApsaraDB RDS for MySQL
+     * instances.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFormatType();
 
@@ -146,8 +162,24 @@ public interface DownloadProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DownloadProps#getFormatType}
-         * @param formatType Property formatType: The format to which the downloaded backup set is converted. This parameter is required.
-         *                   Valid values: CSV|SQL|Parquet
+         * @param formatType Property formatType: The target format of the downloaded data. This parameter is required.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>CSV</li>
+         *                   <li>SQL</li>
+         *                   <li>Parquet</li>
+         *                   <li>Bson</li>
+         *                   <li>qp.xb</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is required. The <code>Bson</code> format is available only for MongoDB
+         *                   instances. The <code>qp.xb</code> format is available only for ApsaraDB RDS for MySQL
+         *                   instances.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder formatType(java.lang.String formatType) {
@@ -157,8 +189,24 @@ public interface DownloadProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DownloadProps#getFormatType}
-         * @param formatType Property formatType: The format to which the downloaded backup set is converted. This parameter is required.
-         *                   Valid values: CSV|SQL|Parquet
+         * @param formatType Property formatType: The target format of the downloaded data. This parameter is required.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>CSV</li>
+         *                   <li>SQL</li>
+         *                   <li>Parquet</li>
+         *                   <li>Bson</li>
+         *                   <li>qp.xb</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is required. The <code>Bson</code> format is available only for MongoDB
+         *                   instances. The <code>qp.xb</code> format is available only for ApsaraDB RDS for MySQL
+         *                   instances.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder formatType(com.aliyun.ros.cdk.core.IResolvable formatType) {

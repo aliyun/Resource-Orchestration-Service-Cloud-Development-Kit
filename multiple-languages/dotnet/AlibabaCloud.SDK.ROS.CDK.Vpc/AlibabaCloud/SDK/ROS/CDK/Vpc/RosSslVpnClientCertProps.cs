@@ -48,8 +48,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _name;
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the client certificate.
-        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
+        /// <strong>Property</strong>: name: The name of the SSL client certificate.
+        /// The name must be 1 to 100 characters in length, and cannot start with `http:\/\/`
+        /// or `https:\/\/`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

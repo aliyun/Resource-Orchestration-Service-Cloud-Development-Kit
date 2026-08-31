@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbase;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-multizonecluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:23:49.984Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:29:16.513Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.MultiZoneClusterProps")
 @software.amazon.jsii.Jsii.Proxy(MultiZoneClusterProps.Jsii$Proxy.class)
 public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -93,7 +93,10 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getLogDiskType();
 
     /**
-     * Property logInstanceType: Log instance type.
+     * Property logInstanceType: The node specifications for log nodes.
+     * <p>
+     * You can query available specifications by
+     * calling the <a href="">DescribeInstanceType</a> API.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLogInstanceType();
 
@@ -105,7 +108,10 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getLogNodeCount();
 
     /**
-     * Property multiZoneCombination: Availability zone combination.
+     * Property multiZoneCombination: The zone combination.
+     * <p>
+     * You can check the supported zone combinations on the buy
+     * page or by calling the <a href="">DescribeMultiZoneAvailableRegions</a> API.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getMultiZoneCombination();
 
@@ -151,10 +157,16 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property clusterName: The name of the instance.
+     * Property clusterName: Instance name.
      * <p>
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * The naming convention is as follows:
+     * <p>
+     * <ul>
+     * <li>Length must be 2 to 128 characters.</li>
+     * <li>Must start with a letter (uppercase or lowercase) or a Chinese character.</li>
+     * <li>Can contain digits or special characters. Valid special characters include the
+     * period (.), hyphen (-), and underscore (_).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterName() {
         return null;
@@ -179,24 +191,42 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property period: The subscription period.
+     * Property period: The subscription duration of a subscription instance.
      * <p>
-     * This parameter only takes effect when the PayType parameter is set to Prepaid.
-     * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-     * from 1 to 5.
-     * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-     * from 1 to 9.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>When PeriodUnit is year, the value range is 1 to 3.</li>
+     * <li>When PeriodUnit is month, the value range is 1 to 9.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required only when the payment type of the instance is
+     * Prepaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
-     * Property periodUnit: The unit of the subscription period.
+     * Property periodUnit: The purchase unit for subscription instances.
      * <p>
      * Valid values:
-     * year
-     * month
+     * <p>
+     * <ul>
+     * <li>year: Year.</li>
+     * <li>month: Month.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required only when the payment type of the instance is
+     * Prepaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriodUnit() {
         return null;
@@ -214,10 +244,18 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property securityIpList: The IP addresses in the whitelist.
+     * Property securityIpList: The IP addresses to add to the instance whitelist.
      * <p>
-     * Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-     * be added to the whitelist. Separate multiple IP addresses with commas (,).
+     * Separate multiple IP addresses
+     * with commas (,).
+     * <p>
+     * <blockquote>
+     * <p>
+     * If the IP address is set to 127.0.0.1, access to the instance from all IP
+     * addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+     * IP addresses in the range 192.168.0.XX are allowed to access the instance.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
         return null;
@@ -529,7 +567,9 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getLogInstanceType}
-         * @param logInstanceType Property logInstanceType: Log instance type. This parameter is required.
+         * @param logInstanceType Property logInstanceType: The node specifications for log nodes. This parameter is required.
+         *                        You can query available specifications by
+         *                        calling the <a href="">DescribeInstanceType</a> API.
          * @return {@code this}
          */
         public Builder logInstanceType(java.lang.String logInstanceType) {
@@ -539,7 +579,9 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getLogInstanceType}
-         * @param logInstanceType Property logInstanceType: Log instance type. This parameter is required.
+         * @param logInstanceType Property logInstanceType: The node specifications for log nodes. This parameter is required.
+         *                        You can query available specifications by
+         *                        calling the <a href="">DescribeInstanceType</a> API.
          * @return {@code this}
          */
         public Builder logInstanceType(com.aliyun.ros.cdk.core.IResolvable logInstanceType) {
@@ -571,7 +613,9 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getMultiZoneCombination}
-         * @param multiZoneCombination Property multiZoneCombination: Availability zone combination. This parameter is required.
+         * @param multiZoneCombination Property multiZoneCombination: The zone combination. This parameter is required.
+         *                             You can check the supported zone combinations on the buy
+         *                             page or by calling the <a href="">DescribeMultiZoneAvailableRegions</a> API.
          * @return {@code this}
          */
         public Builder multiZoneCombination(java.lang.String multiZoneCombination) {
@@ -581,7 +625,9 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getMultiZoneCombination}
-         * @param multiZoneCombination Property multiZoneCombination: Availability zone combination. This parameter is required.
+         * @param multiZoneCombination Property multiZoneCombination: The zone combination. This parameter is required.
+         *                             You can check the supported zone combinations on the buy
+         *                             page or by calling the <a href="">DescribeMultiZoneAvailableRegions</a> API.
          * @return {@code this}
          */
         public Builder multiZoneCombination(com.aliyun.ros.cdk.core.IResolvable multiZoneCombination) {
@@ -725,9 +771,15 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getClusterName}
-         * @param clusterName Property clusterName: The name of the instance.
-         *                    The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         *                    (.), underscores (_), and hyphens (-). It must start with a letter.
+         * @param clusterName Property clusterName: Instance name.
+         *                    The naming convention is as follows:
+         *                    <p>
+         *                    <ul>
+         *                    <li>Length must be 2 to 128 characters.</li>
+         *                    <li>Must start with a letter (uppercase or lowercase) or a Chinese character.</li>
+         *                    <li>Can contain digits or special characters. Valid special characters include the
+         *                    period (.), hyphen (-), and underscore (_).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder clusterName(java.lang.String clusterName) {
@@ -737,9 +789,15 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getClusterName}
-         * @param clusterName Property clusterName: The name of the instance.
-         *                    The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         *                    (.), underscores (_), and hyphens (-). It must start with a letter.
+         * @param clusterName Property clusterName: Instance name.
+         *                    The naming convention is as follows:
+         *                    <p>
+         *                    <ul>
+         *                    <li>Length must be 2 to 128 characters.</li>
+         *                    <li>Must start with a letter (uppercase or lowercase) or a Chinese character.</li>
+         *                    <li>Can contain digits or special characters. Valid special characters include the
+         *                    period (.), hyphen (-), and underscore (_).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder clusterName(com.aliyun.ros.cdk.core.IResolvable clusterName) {
@@ -793,12 +851,20 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getPeriod}
-         * @param period Property period: The subscription period.
-         *               This parameter only takes effect when the PayType parameter is set to Prepaid.
-         *               When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-         *               from 1 to 5.
-         *               When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-         *               from 1 to 9.
+         * @param period Property period: The subscription duration of a subscription instance.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>When PeriodUnit is year, the value range is 1 to 3.</li>
+         *               <li>When PeriodUnit is month, the value range is 1 to 9.</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required only when the payment type of the instance is
+         *               Prepaid.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -808,12 +874,20 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getPeriod}
-         * @param period Property period: The subscription period.
-         *               This parameter only takes effect when the PayType parameter is set to Prepaid.
-         *               When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-         *               from 1 to 5.
-         *               When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-         *               from 1 to 9.
+         * @param period Property period: The subscription duration of a subscription instance.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>When PeriodUnit is year, the value range is 1 to 3.</li>
+         *               <li>When PeriodUnit is month, the value range is 1 to 9.</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required only when the payment type of the instance is
+         *               Prepaid.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -823,10 +897,20 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The unit of the subscription period.
+         * @param periodUnit Property periodUnit: The purchase unit for subscription instances.
          *                   Valid values:
-         *                   year
-         *                   month
+         *                   <p>
+         *                   <ul>
+         *                   <li>year: Year.</li>
+         *                   <li>month: Month.</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is required only when the payment type of the instance is
+         *                   Prepaid.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder periodUnit(java.lang.String periodUnit) {
@@ -836,10 +920,20 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getPeriodUnit}
-         * @param periodUnit Property periodUnit: The unit of the subscription period.
+         * @param periodUnit Property periodUnit: The purchase unit for subscription instances.
          *                   Valid values:
-         *                   year
-         *                   month
+         *                   <p>
+         *                   <ul>
+         *                   <li>year: Year.</li>
+         *                   <li>month: Month.</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is required only when the payment type of the instance is
+         *                   Prepaid.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder periodUnit(com.aliyun.ros.cdk.core.IResolvable periodUnit) {
@@ -875,9 +969,17 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The IP addresses in the whitelist.
-         *                       Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-         *                       be added to the whitelist. Separate multiple IP addresses with commas (,).
+         * @param securityIpList Property securityIpList: The IP addresses to add to the instance whitelist.
+         *                       Separate multiple IP addresses
+         *                       with commas (,).
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       If the IP address is set to 127.0.0.1, access to the instance from all IP
+         *                       addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+         *                       IP addresses in the range 192.168.0.XX are allowed to access the instance.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder securityIpList(java.lang.String securityIpList) {
@@ -887,9 +989,17 @@ public interface MultiZoneClusterProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link MultiZoneClusterProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The IP addresses in the whitelist.
-         *                       Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-         *                       be added to the whitelist. Separate multiple IP addresses with commas (,).
+         * @param securityIpList Property securityIpList: The IP addresses to add to the instance whitelist.
+         *                       Separate multiple IP addresses
+         *                       with commas (,).
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       If the IP address is set to 127.0.0.1, access to the instance from all IP
+         *                       addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+         *                       IP addresses in the range 192.168.0.XX are allowed to access the instance.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder securityIpList(com.aliyun.ros.cdk.core.IResolvable securityIpList) {

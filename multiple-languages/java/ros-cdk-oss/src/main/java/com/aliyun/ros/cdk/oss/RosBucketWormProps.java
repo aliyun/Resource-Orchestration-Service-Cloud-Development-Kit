@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oss;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oss-bucketworm
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.914Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:18:25.442Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.RosBucketWormProps")
 @software.amazon.jsii.Jsii.Proxy(RosBucketWormProps.Jsii$Proxy.class)
 public interface RosBucketWormProps extends software.amazon.jsii.JsiiSerializable {

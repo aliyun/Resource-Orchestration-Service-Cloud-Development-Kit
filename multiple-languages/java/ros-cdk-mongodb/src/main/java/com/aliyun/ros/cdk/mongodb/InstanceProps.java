@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mongodb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:10:27.853Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:16:24.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,7 +23,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceStorage();
 
     /**
-     * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+     * Property accountPassword: The password of the root account.
+     * <p>
+     * The password must meet the following
+     * requirements:
+     * <p>
+     * <ul>
+     * <li>It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.</li>
+     * <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+     * <li>It must be 8 to 32 characters in length.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPassword() {
         return null;
@@ -37,16 +47,39 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+     * Property autoRenew: Specifies whether to enable auto-renewal for the instance.
      * <p>
-     * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: Auto-renewal is enabled.</li>
+     * <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+     * the default value.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is optional and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
     }
 
     /**
-     * Property backupId: Specific backup set Id.
+     * Property backupId: The backup point ID.
+     * <p>
+     * To query the backup point ID, call the <a href="">DescribeBackups</a>
+     * operation.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify this parameter and the SrcDBInstanceId parameter only when you
+     * clone an instance based on a backup point.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBackupId() {
         return null;
@@ -83,23 +116,45 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property couponNo: The coupon code.
+     * Property couponNo: Specifies whether to use a coupon.
      * <p>
-     * Default value:youhuiquan_promotion_option_id_for_blank.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>default or null (default): Uses a coupon.</li>
+     * <li>youhuiquan_promotion_option_id_for_blank: Does not use a coupon.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCouponNo() {
         return null;
     }
 
     /**
-     * Property databaseNames: The name of the database.
+     * Property databaseNames: The database name.
+     * <p>
+     * <blockquote>
+     * <p>
+     * When you clone an instance, you can specify this parameter to clone specific
+     * databases. If you do not specify this parameter, all databases of the instance
+     * are cloned.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDatabaseNames() {
         return null;
     }
 
     /**
-     * Property dbInstanceDescription: Description of created database instance.
+     * Property dbInstanceDescription: The name of the instance.
+     * <p>
+     * The name must meet the following requirements:
+     * <p>
+     * <ul>
+     * <li>It must start with a Chinese character or a letter.</li>
+     * <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+     * (.), and hyphens (-).</li>
+     * <li>It must be 2 to 256 characters in length.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceDescription() {
         return null;
@@ -134,7 +189,28 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property engineVersion: Database instance version.
+     * Property engineVersion: The database version.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>8.0</li>
+     * <li>7.0</li>
+     * <li>6.0</li>
+     * <li>5.0</li>
+     * <li>4.4</li>
+     * <li>4.2</li>
+     * <li>4.0</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>When you clone an instance by calling this operation, the value of this
+     * parameter must be the same as that of the source instance.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEngineVersion() {
         return null;
@@ -151,7 +227,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+     * Property period: The subscription duration of the instance.
+     * <p>
+     * Unit: month.
+     * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -174,7 +260,10 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
+     * Property readonlyReplicas: The number of read-only nodes in the replica set instance.
+     * <p>
+     * Valid values are
+     * integers from 0 to 5. The default value is 0.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReadonlyReplicas() {
         return null;
@@ -206,13 +295,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property restoreType: Backup recovery instance.
+     * Property restoreType: The method to restore an instance from a backup.
      * <p>
      * <ul>
-     * <li>0: Restore instance to specified backup set</li>
-     * <li>1: Restore instance to specified point in time</li>
-     * <li>2: Restore released instance to specified backup set</li>
-     * <li>3: Restore instance to specified backup set</li>
+     * <li>0: Restores the instance to a specified backup set.</li>
+     * <li>1: Restores the instance to a specified point in time.</li>
+     * <li>2: Restores a released instance to a specified backup set.</li>
+     * <li>3: Restores the instance to a specified geo-redundant backup set.</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreType() {
@@ -248,7 +337,14 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+     * Property srcDbInstanceId: The source instance ID.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required only when you clone an instance by calling this
+     * operation. You must also specify the RestoreTime parameter.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSrcDbInstanceId() {
         return null;
@@ -446,7 +542,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getAccountPassword}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * @param accountPassword Property accountPassword: The password of the root account.
+         *                        The password must meet the following
+         *                        requirements:
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must contain at least three of the following character types: uppercase
+         *                        letters, lowercase letters, digits, and special characters.</li>
+         *                        <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         *                        <li>It must be 8 to 32 characters in length.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder accountPassword(java.lang.String accountPassword) {
@@ -456,7 +561,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getAccountPassword}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * @param accountPassword Property accountPassword: The password of the root account.
+         *                        The password must meet the following
+         *                        requirements:
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must contain at least three of the following character types: uppercase
+         *                        letters, lowercase letters, digits, and special characters.</li>
+         *                        <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         *                        <li>It must be 8 to 32 characters in length.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder accountPassword(com.aliyun.ros.cdk.core.IResolvable accountPassword) {
@@ -486,8 +600,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true: Auto-renewal is enabled.</li>
+         *                  <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         *                  the default value.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter is optional and takes effect only when you set the ChargeType
+         *                  parameter to PrePaid.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -497,8 +624,21 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getAutoRenew}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
-         *                  Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true: Auto-renewal is enabled.</li>
+         *                  <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         *                  the default value.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter is optional and takes effect only when you set the ChargeType
+         *                  parameter to PrePaid.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {
@@ -508,7 +648,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getBackupId}
-         * @param backupId Property backupId: Specific backup set Id.
+         * @param backupId Property backupId: The backup point ID.
+         *                 To query the backup point ID, call the <a href="">DescribeBackups</a>
+         *                 operation.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 You must specify this parameter and the SrcDBInstanceId parameter only when you
+         *                 clone an instance based on a backup point.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder backupId(java.lang.String backupId) {
@@ -518,7 +667,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getBackupId}
-         * @param backupId Property backupId: Specific backup set Id.
+         * @param backupId Property backupId: The backup point ID.
+         *                 To query the backup point ID, call the <a href="">DescribeBackups</a>
+         *                 operation.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 You must specify this parameter and the SrcDBInstanceId parameter only when you
+         *                 clone an instance based on a backup point.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder backupId(com.aliyun.ros.cdk.core.IResolvable backupId) {
@@ -610,8 +768,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getCouponNo}
-         * @param couponNo Property couponNo: The coupon code.
-         *                 Default value:youhuiquan_promotion_option_id_for_blank.
+         * @param couponNo Property couponNo: Specifies whether to use a coupon.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>default or null (default): Uses a coupon.</li>
+         *                 <li>youhuiquan_promotion_option_id_for_blank: Does not use a coupon.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder couponNo(java.lang.String couponNo) {
@@ -621,8 +784,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getCouponNo}
-         * @param couponNo Property couponNo: The coupon code.
-         *                 Default value:youhuiquan_promotion_option_id_for_blank.
+         * @param couponNo Property couponNo: Specifies whether to use a coupon.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>default or null (default): Uses a coupon.</li>
+         *                 <li>youhuiquan_promotion_option_id_for_blank: Does not use a coupon.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder couponNo(com.aliyun.ros.cdk.core.IResolvable couponNo) {
@@ -632,7 +800,14 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDatabaseNames}
-         * @param databaseNames Property databaseNames: The name of the database.
+         * @param databaseNames Property databaseNames: The database name.
+         *                      <blockquote>
+         *                      <p>
+         *                      When you clone an instance, you can specify this parameter to clone specific
+         *                      databases. If you do not specify this parameter, all databases of the instance
+         *                      are cloned.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder databaseNames(java.lang.String databaseNames) {
@@ -642,7 +817,14 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDatabaseNames}
-         * @param databaseNames Property databaseNames: The name of the database.
+         * @param databaseNames Property databaseNames: The database name.
+         *                      <blockquote>
+         *                      <p>
+         *                      When you clone an instance, you can specify this parameter to clone specific
+         *                      databases. If you do not specify this parameter, all databases of the instance
+         *                      are cloned.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder databaseNames(com.aliyun.ros.cdk.core.IResolvable databaseNames) {
@@ -652,7 +834,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDbInstanceDescription}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance.
+         *                              The name must meet the following requirements:
+         *                              <p>
+         *                              <ul>
+         *                              <li>It must start with a Chinese character or a letter.</li>
+         *                              <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         *                              (.), and hyphens (-).</li>
+         *                              <li>It must be 2 to 256 characters in length.</li>
+         *                              </ul>
          * @return {@code this}
          */
         public Builder dbInstanceDescription(java.lang.String dbInstanceDescription) {
@@ -662,7 +852,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDbInstanceDescription}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance.
+         *                              The name must meet the following requirements:
+         *                              <p>
+         *                              <ul>
+         *                              <li>It must start with a Chinese character or a letter.</li>
+         *                              <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         *                              (.), and hyphens (-).</li>
+         *                              <li>It must be 2 to 256 characters in length.</li>
+         *                              </ul>
          * @return {@code this}
          */
         public Builder dbInstanceDescription(com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
@@ -744,7 +942,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database instance version.
+         * @param engineVersion Property engineVersion: The database version.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>8.0</li>
+         *                      <li>7.0</li>
+         *                      <li>6.0</li>
+         *                      <li>5.0</li>
+         *                      <li>4.4</li>
+         *                      <li>4.2</li>
+         *                      <li>4.0</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>When you clone an instance by calling this operation, the value of this
+         *                      parameter must be the same as that of the source instance.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -754,7 +972,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database instance version.
+         * @param engineVersion Property engineVersion: The database version.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>8.0</li>
+         *                      <li>7.0</li>
+         *                      <li>6.0</li>
+         *                      <li>5.0</li>
+         *                      <li>4.4</li>
+         *                      <li>4.2</li>
+         *                      <li>4.0</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>When you clone an instance by calling this operation, the value of this
+         *                      parameter must be the same as that of the source instance.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
@@ -788,7 +1026,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * @param period Property period: The subscription duration of the instance.
+         *               Unit: month.
+         *               Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required and takes effect only when you set the ChargeType
+         *               parameter to PrePaid.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -798,7 +1045,16 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPeriod}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * @param period Property period: The subscription duration of the instance.
+         *               Unit: month.
+         *               Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required and takes effect only when you set the ChargeType
+         *               parameter to PrePaid.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -850,7 +1106,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getReadonlyReplicas}
-         * @param readonlyReplicas Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
+         * @param readonlyReplicas Property readonlyReplicas: The number of read-only nodes in the replica set instance.
+         *                         Valid values are
+         *                         integers from 0 to 5. The default value is 0.
          * @return {@code this}
          */
         public Builder readonlyReplicas(java.lang.Number readonlyReplicas) {
@@ -860,7 +1118,9 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getReadonlyReplicas}
-         * @param readonlyReplicas Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
+         * @param readonlyReplicas Property readonlyReplicas: The number of read-only nodes in the replica set instance.
+         *                         Valid values are
+         *                         integers from 0 to 5. The default value is 0.
          * @return {@code this}
          */
         public Builder readonlyReplicas(com.aliyun.ros.cdk.core.IResolvable readonlyReplicas) {
@@ -934,12 +1194,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getRestoreType}
-         * @param restoreType Property restoreType: Backup recovery instance.
+         * @param restoreType Property restoreType: The method to restore an instance from a backup.
          *                    <ul>
-         *                    <li>0: Restore instance to specified backup set</li>
-         *                    <li>1: Restore instance to specified point in time</li>
-         *                    <li>2: Restore released instance to specified backup set</li>
-         *                    <li>3: Restore instance to specified backup set</li>
+         *                    <li>0: Restores the instance to a specified backup set.</li>
+         *                    <li>1: Restores the instance to a specified point in time.</li>
+         *                    <li>2: Restores a released instance to a specified backup set.</li>
+         *                    <li>3: Restores the instance to a specified geo-redundant backup set.</li>
          *                    </ul>
          * @return {@code this}
          */
@@ -950,12 +1210,12 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getRestoreType}
-         * @param restoreType Property restoreType: Backup recovery instance.
+         * @param restoreType Property restoreType: The method to restore an instance from a backup.
          *                    <ul>
-         *                    <li>0: Restore instance to specified backup set</li>
-         *                    <li>1: Restore instance to specified point in time</li>
-         *                    <li>2: Restore released instance to specified backup set</li>
-         *                    <li>3: Restore instance to specified backup set</li>
+         *                    <li>0: Restores the instance to a specified backup set.</li>
+         *                    <li>1: Restores the instance to a specified point in time.</li>
+         *                    <li>2: Restores a released instance to a specified backup set.</li>
+         *                    <li>3: Restores the instance to a specified geo-redundant backup set.</li>
          *                    </ul>
          * @return {@code this}
          */
@@ -1034,7 +1294,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getSrcDbInstanceId}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID.
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is required only when you clone an instance by calling this
+         *                        operation. You must also specify the RestoreTime parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder srcDbInstanceId(java.lang.String srcDbInstanceId) {
@@ -1044,7 +1310,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getSrcDbInstanceId}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID.
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is required only when you clone an instance by calling this
+         *                        operation. You must also specify the RestoreTime parameter.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder srcDbInstanceId(com.aliyun.ros.cdk.core.IResolvable srcDbInstanceId) {

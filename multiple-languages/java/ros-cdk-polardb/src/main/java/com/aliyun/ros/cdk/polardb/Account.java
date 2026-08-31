@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::Account</code>The , which resource type creates accounts for PolarDB databases.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.391Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.488Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.IAccount {
 
@@ -106,11 +106,13 @@ public class Account extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property accountName: The name of the database account.
          * <p>
-         * The name must comply with the following rules:
+         * The name must meet the following requirements:
          * <p>
          * <ul>
-         * <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
-         * <li>It can be up to 16 characters in length.</li>
+         * <li>It must start with a lowercase letter and end with a letter or a digit.</li>
+         * <li>It can contain lowercase letters, digits, and underscores (_).</li>
+         * <li>It must be 1 to 16 characters in length.</li>
+         * <li>It cannot be a reserved keyword, such as root or admin.</li>
          * </ul>
          * <p>
          * @return {@code this}
@@ -123,11 +125,13 @@ public class Account extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property accountName: The name of the database account.
          * <p>
-         * The name must comply with the following rules:
+         * The name must meet the following requirements:
          * <p>
          * <ul>
-         * <li>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</li>
-         * <li>It can be up to 16 characters in length.</li>
+         * <li>It must start with a lowercase letter and end with a letter or a digit.</li>
+         * <li>It can contain lowercase letters, digits, and underscores (_).</li>
+         * <li>It must be 1 to 16 characters in length.</li>
+         * <li>It cannot be a reserved keyword, such as root or admin.</li>
          * </ul>
          * <p>
          * @return {@code this}
@@ -232,38 +236,72 @@ public class Account extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property accountPrivilege: The permissions of the database account on the database.
+         * Property accountPrivilege: The privilege level to grant on the specified databases.
          * <p>
          * Valid values:
-         * ReadWrite: has read and write permissions on the database.
-         * ReadOnly: has the read-only permission on the database.
-         * DMLOnly: runs only data manipulation language (DML) statements.
-         * DDLOnly: runs only data definition language (DDL) statements.
-         * ReadIndex: has read and index permissions on the database.
-         * Default value: ReadWrite.
-         * Separate multiple permissions with a comma (,).
+         * <p>
+         * <ul>
+         * <li>ReadWrite: read and write permissions</li>
+         * <li>ReadOnly: read-only permissions</li>
+         * <li>DMLOnly: DML permissions only</li>
+         * <li>DDLOnly: DDL permissions only</li>
+         * <li>ReadIndex: read-only and index permissions</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter takes effect only when you specify the <code>DBName</code> parameter.</li>
+         * <li>If you specify multiple databases in <code>DBName</code>, you must specify a
+         * corresponding permission for each in <code>AccountPrivilege</code>, separated by commas. The
+         * <code>AccountPrivilege</code> string cannot exceed 900 characters. For example, to grant
+         * read and write permissions to database DB1 and read-only permissions to database
+         * DB2, set <code>DBName</code> to <code>DB1,DB2</code> and set <code>AccountPrivilege</code> to
+         * <code>ReadWrite,ReadOnly</code>.</li>
+         * <li>This parameter applies only to standard accounts on PolarDB for MySQL
+         * clusters.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database. This parameter is required.
+         * @param accountPrivilege Property accountPrivilege: The privilege level to grant on the specified databases. This parameter is required.
          */
         public Builder accountPrivilege(final java.lang.String accountPrivilege) {
             this.props.accountPrivilege(accountPrivilege);
             return this;
         }
         /**
-         * Property accountPrivilege: The permissions of the database account on the database.
+         * Property accountPrivilege: The privilege level to grant on the specified databases.
          * <p>
          * Valid values:
-         * ReadWrite: has read and write permissions on the database.
-         * ReadOnly: has the read-only permission on the database.
-         * DMLOnly: runs only data manipulation language (DML) statements.
-         * DDLOnly: runs only data definition language (DDL) statements.
-         * ReadIndex: has read and index permissions on the database.
-         * Default value: ReadWrite.
-         * Separate multiple permissions with a comma (,).
+         * <p>
+         * <ul>
+         * <li>ReadWrite: read and write permissions</li>
+         * <li>ReadOnly: read-only permissions</li>
+         * <li>DMLOnly: DML permissions only</li>
+         * <li>DDLOnly: DDL permissions only</li>
+         * <li>ReadIndex: read-only and index permissions</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter takes effect only when you specify the <code>DBName</code> parameter.</li>
+         * <li>If you specify multiple databases in <code>DBName</code>, you must specify a
+         * corresponding permission for each in <code>AccountPrivilege</code>, separated by commas. The
+         * <code>AccountPrivilege</code> string cannot exceed 900 characters. For example, to grant
+         * read and write permissions to database DB1 and read-only permissions to database
+         * DB2, set <code>DBName</code> to <code>DB1,DB2</code> and set <code>AccountPrivilege</code> to
+         * <code>ReadWrite,ReadOnly</code>.</li>
+         * <li>This parameter applies only to standard accounts on PolarDB for MySQL
+         * clusters.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database. This parameter is required.
+         * @param accountPrivilege Property accountPrivilege: The privilege level to grant on the specified databases. This parameter is required.
          */
         public Builder accountPrivilege(final com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
             this.props.accountPrivilege(accountPrivilege);
@@ -312,24 +350,38 @@ public class Account extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property dbName: The name of the database whose access permissions are to be granted to the database account.
+         * Property dbName: The name of the database that the account can access.
          * <p>
-         * Separate multiple databases with a comma (,).
+         * To specify multiple
+         * databases, separate the database names with a comma (,).
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter applies only to standard accounts on PolarDB for MySQL clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account. This parameter is required.
+         * @param dbName Property dbName: The name of the database that the account can access. This parameter is required.
          */
         public Builder dbName(final java.lang.String dbName) {
             this.props.dbName(dbName);
             return this;
         }
         /**
-         * Property dbName: The name of the database whose access permissions are to be granted to the database account.
+         * Property dbName: The name of the database that the account can access.
          * <p>
-         * Separate multiple databases with a comma (,).
+         * To specify multiple
+         * databases, separate the database names with a comma (,).
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter applies only to standard accounts on PolarDB for MySQL clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbName Property dbName: The name of the database whose access permissions are to be granted to the database account. This parameter is required.
+         * @param dbName Property dbName: The name of the database that the account can access. This parameter is required.
          */
         public Builder dbName(final com.aliyun.ros.cdk.core.IResolvable dbName) {
             this.props.dbName(dbName);

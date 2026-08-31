@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources for an alert rule.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTargets`.
 type MetricRuleTargets interface {
 	alicloudroscdkcore.Resource
 	IMetricRuleTargets

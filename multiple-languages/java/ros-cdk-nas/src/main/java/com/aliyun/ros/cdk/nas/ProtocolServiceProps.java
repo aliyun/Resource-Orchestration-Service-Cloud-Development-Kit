@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.523Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolServiceProps")
 @software.amazon.jsii.Jsii.Proxy(ProtocolServiceProps.Jsii$Proxy.class)
 public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,11 +23,9 @@ public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getProtocolSpec();
 
     /**
-     * Property protocolType: The protocol type of agreement service.
+     * Property protocolType: The protocol type of the protocol service.
      * <p>
-     * Ranges:
-     * NFS: Agreement service supports NFS protocol access.
-     * The default value: NFS.
+     * Valid value: NFS (default). Only NFSv3 is supported.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getProtocolType();
 
@@ -42,7 +40,19 @@ public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
     /**
-     * Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * Property description: The description of the protocol service.
+     * <p>
+     * The name of the protocol service appears
+     * in the console.
+     * Limits:
+     * <p>
+     * <ul>
+     * <li>The description must be 2 to 128 characters in length.</li>
+     * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.</li>
+     * <li>The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -119,10 +129,8 @@ public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ProtocolServiceProps#getProtocolType}
-         * @param protocolType Property protocolType: The protocol type of agreement service. This parameter is required.
-         *                     Ranges:
-         *                     NFS: Agreement service supports NFS protocol access.
-         *                     The default value: NFS.
+         * @param protocolType Property protocolType: The protocol type of the protocol service. This parameter is required.
+         *                     Valid value: NFS (default). Only NFSv3 is supported.
          * @return {@code this}
          */
         public Builder protocolType(java.lang.String protocolType) {
@@ -132,10 +140,8 @@ public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ProtocolServiceProps#getProtocolType}
-         * @param protocolType Property protocolType: The protocol type of agreement service. This parameter is required.
-         *                     Ranges:
-         *                     NFS: Agreement service supports NFS protocol access.
-         *                     The default value: NFS.
+         * @param protocolType Property protocolType: The protocol type of the protocol service. This parameter is required.
+         *                     Valid value: NFS (default). Only NFSv3 is supported.
          * @return {@code this}
          */
         public Builder protocolType(com.aliyun.ros.cdk.core.IResolvable protocolType) {
@@ -185,7 +191,18 @@ public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ProtocolServiceProps#getDescription}
-         * @param description Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the protocol service.
+         *                    The name of the protocol service appears
+         *                    in the console.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -195,7 +212,18 @@ public interface ProtocolServiceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link ProtocolServiceProps#getDescription}
-         * @param description Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * @param description Property description: The description of the protocol service.
+         *                    The name of the protocol service appears
+         *                    in the console.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The description must be 2 to 128 characters in length.</li>
+         *                    <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain letters, digits, colons (:), underscores (_), and
+         *                    hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

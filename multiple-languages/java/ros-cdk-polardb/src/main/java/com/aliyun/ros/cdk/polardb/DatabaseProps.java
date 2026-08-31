@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-database
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.557Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DatabaseProps")
 @software.amazon.jsii.Jsii.Proxy(DatabaseProps.Jsii$Proxy.class)
 public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,32 +23,71 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
-     * Property dbName: The name of the database to be created.
+     * Property dbName: The name of the database.
      * <p>
-     * The name must comply with the following rules:
-     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-     * (-), and underscores (_).
-     * It must end with a letter or a digit. It can be up to 64 characters in length.
+     * The name must meet the following requirements:
+     * <p>
+     * <ul>
+     * <li>The name can contain lowercase letters, digits, hyphens (-), and underscores
+     * (_).</li>
+     * <li>The name must start with a lowercase letter and end with a lowercase letter
+     * or a digit. The name must be 1 to 64 characters in length.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Do not use reserved words as database names, such as <code>test</code> or <code>mysql</code>.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbName();
 
     /**
-     * Property accountName: The name of the database account to be used.
+     * Property accountName: The name of the account that is authorized to access the database.
+     * <p>
+     * You can call
+     * the <a href="">DescribeAccounts</a> operation to query account information.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>You can specify only a standard account. By default, privileged accounts have
+     * all permissions on all databases. You do not need to grant privileged accounts
+     * the permissions to access the database.</li>
+     * <li>This parameter is required for PolarDB for PostgreSQL (Compatible with Oracle)
+     * clusters or PolarDB for PostgreSQL clusters. This parameter is optional for
+     * PolarDB for MySQL clusters.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccountName() {
         return null;
     }
 
     /**
-     * Property accountPrivilege: The permissions of the database account on the database.
+     * Property accountPrivilege: The permissions that are granted to the account.
      * <p>
      * Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * ReadIndex: has read and index permissions on the database.
-     * Default value: ReadWrite.
+     * <p>
+     * <ul>
+     * <li>ReadWrite: read and write permissions.</li>
+     * <li>ReadOnly: read-only permissions.</li>
+     * <li>DMLOnly: permissions only to execute DML statements on the database.</li>
+     * <li>DDLOnly: permissions only to execute DDL statements on the database.</li>
+     * <li>ReadIndex: read-only and index permissions.
+     * The default value is ReadWrite.</li>
+     * </ul>
+     * <p>
+     * <blockquote></blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter is valid only when the AccountName parameter is specified.</li>
+     * <li>For a PolarDB for PostgreSQL (Compatible with Oracle) or PolarDB for
+     * PostgreSQL cluster, this parameter is optional. If AccountName is specified, it
+     * is the account of the database owner.</li>
+     * <li>For a PolarDB for MySQL cluster, this parameter is optional.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccountPrivilege() {
         return null;
@@ -79,9 +118,20 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property dbDescription: The description of the database.
      * <p>
-     * Valid values:
-     * It cannot start with http:// or https://.
-     * It must be 2 to 256 characters in length.
+     * The description must meet the following
+     * requirements:
+     * <p>
+     * <ul>
+     * <li>It cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+     * <li>It must be 2 to 256 characters in length.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for a PolarDB for Oracle or PolarDB for PostgreSQL
+     * cluster. This parameter is optional for a PolarDB for MySQL cluster.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbDescription() {
         return null;
@@ -150,11 +200,21 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getDbName}
-         * @param dbName Property dbName: The name of the database to be created. This parameter is required.
-         *               The name must comply with the following rules:
-         *               It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-         *               (-), and underscores (_).
-         *               It must end with a letter or a digit. It can be up to 64 characters in length.
+         * @param dbName Property dbName: The name of the database. This parameter is required.
+         *               The name must meet the following requirements:
+         *               <p>
+         *               <ul>
+         *               <li>The name can contain lowercase letters, digits, hyphens (-), and underscores
+         *               (_).</li>
+         *               <li>The name must start with a lowercase letter and end with a lowercase letter
+         *               or a digit. The name must be 1 to 64 characters in length.</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               Do not use reserved words as database names, such as <code>test</code> or <code>mysql</code>.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder dbName(java.lang.String dbName) {
@@ -164,11 +224,21 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getDbName}
-         * @param dbName Property dbName: The name of the database to be created. This parameter is required.
-         *               The name must comply with the following rules:
-         *               It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-         *               (-), and underscores (_).
-         *               It must end with a letter or a digit. It can be up to 64 characters in length.
+         * @param dbName Property dbName: The name of the database. This parameter is required.
+         *               The name must meet the following requirements:
+         *               <p>
+         *               <ul>
+         *               <li>The name can contain lowercase letters, digits, hyphens (-), and underscores
+         *               (_).</li>
+         *               <li>The name must start with a lowercase letter and end with a lowercase letter
+         *               or a digit. The name must be 1 to 64 characters in length.</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               Do not use reserved words as database names, such as <code>test</code> or <code>mysql</code>.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder dbName(com.aliyun.ros.cdk.core.IResolvable dbName) {
@@ -178,7 +248,22 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getAccountName}
-         * @param accountName Property accountName: The name of the database account to be used.
+         * @param accountName Property accountName: The name of the account that is authorized to access the database.
+         *                    You can call
+         *                    the <a href="">DescribeAccounts</a> operation to query account information.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    <ul>
+         *                    <li>You can specify only a standard account. By default, privileged accounts have
+         *                    all permissions on all databases. You do not need to grant privileged accounts
+         *                    the permissions to access the database.</li>
+         *                    <li>This parameter is required for PolarDB for PostgreSQL (Compatible with Oracle)
+         *                    clusters or PolarDB for PostgreSQL clusters. This parameter is optional for
+         *                    PolarDB for MySQL clusters.</li>
+         *                    </ul>
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder accountName(java.lang.String accountName) {
@@ -188,7 +273,22 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getAccountName}
-         * @param accountName Property accountName: The name of the database account to be used.
+         * @param accountName Property accountName: The name of the account that is authorized to access the database.
+         *                    You can call
+         *                    the <a href="">DescribeAccounts</a> operation to query account information.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    <ul>
+         *                    <li>You can specify only a standard account. By default, privileged accounts have
+         *                    all permissions on all databases. You do not need to grant privileged accounts
+         *                    the permissions to access the database.</li>
+         *                    <li>This parameter is required for PolarDB for PostgreSQL (Compatible with Oracle)
+         *                    clusters or PolarDB for PostgreSQL clusters. This parameter is optional for
+         *                    PolarDB for MySQL clusters.</li>
+         *                    </ul>
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder accountName(com.aliyun.ros.cdk.core.IResolvable accountName) {
@@ -198,14 +298,27 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getAccountPrivilege}
-         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         * @param accountPrivilege Property accountPrivilege: The permissions that are granted to the account.
          *                         Valid values:
-         *                         ReadWrite: has read and write permissions on the database.
-         *                         ReadOnly: has the read-only permission on the database.
-         *                         DMLOnly: runs only data manipulation language (DML) statements.
-         *                         DDLOnly: runs only data definition language (DDL) statements.
-         *                         ReadIndex: has read and index permissions on the database.
-         *                         Default value: ReadWrite.
+         *                         <p>
+         *                         <ul>
+         *                         <li>ReadWrite: read and write permissions.</li>
+         *                         <li>ReadOnly: read-only permissions.</li>
+         *                         <li>DMLOnly: permissions only to execute DML statements on the database.</li>
+         *                         <li>DDLOnly: permissions only to execute DDL statements on the database.</li>
+         *                         <li>ReadIndex: read-only and index permissions.
+         *                         The default value is ReadWrite.</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote></blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>This parameter is valid only when the AccountName parameter is specified.</li>
+         *                         <li>For a PolarDB for PostgreSQL (Compatible with Oracle) or PolarDB for
+         *                         PostgreSQL cluster, this parameter is optional. If AccountName is specified, it
+         *                         is the account of the database owner.</li>
+         *                         <li>For a PolarDB for MySQL cluster, this parameter is optional.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder accountPrivilege(java.lang.String accountPrivilege) {
@@ -215,14 +328,27 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DatabaseProps#getAccountPrivilege}
-         * @param accountPrivilege Property accountPrivilege: The permissions of the database account on the database.
+         * @param accountPrivilege Property accountPrivilege: The permissions that are granted to the account.
          *                         Valid values:
-         *                         ReadWrite: has read and write permissions on the database.
-         *                         ReadOnly: has the read-only permission on the database.
-         *                         DMLOnly: runs only data manipulation language (DML) statements.
-         *                         DDLOnly: runs only data definition language (DDL) statements.
-         *                         ReadIndex: has read and index permissions on the database.
-         *                         Default value: ReadWrite.
+         *                         <p>
+         *                         <ul>
+         *                         <li>ReadWrite: read and write permissions.</li>
+         *                         <li>ReadOnly: read-only permissions.</li>
+         *                         <li>DMLOnly: permissions only to execute DML statements on the database.</li>
+         *                         <li>DDLOnly: permissions only to execute DDL statements on the database.</li>
+         *                         <li>ReadIndex: read-only and index permissions.
+         *                         The default value is ReadWrite.</li>
+         *                         </ul>
+         *                         <p>
+         *                         <blockquote></blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>This parameter is valid only when the AccountName parameter is specified.</li>
+         *                         <li>For a PolarDB for PostgreSQL (Compatible with Oracle) or PolarDB for
+         *                         PostgreSQL cluster, this parameter is optional. If AccountName is specified, it
+         *                         is the account of the database owner.</li>
+         *                         <li>For a PolarDB for MySQL cluster, this parameter is optional.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder accountPrivilege(com.aliyun.ros.cdk.core.IResolvable accountPrivilege) {
@@ -285,9 +411,20 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DatabaseProps#getDbDescription}
          * @param dbDescription Property dbDescription: The description of the database.
-         *                      Valid values:
-         *                      It cannot start with http:// or https://.
-         *                      It must be 2 to 256 characters in length.
+         *                      The description must meet the following
+         *                      requirements:
+         *                      <p>
+         *                      <ul>
+         *                      <li>It cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                      <li>It must be 2 to 256 characters in length.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      This parameter is required for a PolarDB for Oracle or PolarDB for PostgreSQL
+         *                      cluster. This parameter is optional for a PolarDB for MySQL cluster.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder dbDescription(java.lang.String dbDescription) {
@@ -298,9 +435,20 @@ public interface DatabaseProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DatabaseProps#getDbDescription}
          * @param dbDescription Property dbDescription: The description of the database.
-         *                      Valid values:
-         *                      It cannot start with http:// or https://.
-         *                      It must be 2 to 256 characters in length.
+         *                      The description must meet the following
+         *                      requirements:
+         *                      <p>
+         *                      <ul>
+         *                      <li>It cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                      <li>It must be 2 to 256 characters in length.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      This parameter is required for a PolarDB for Oracle or PolarDB for PostgreSQL
+         *                      cluster. This parameter is optional for a PolarDB for MySQL cluster.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder dbDescription(com.aliyun.ros.cdk.core.IResolvable dbDescription) {

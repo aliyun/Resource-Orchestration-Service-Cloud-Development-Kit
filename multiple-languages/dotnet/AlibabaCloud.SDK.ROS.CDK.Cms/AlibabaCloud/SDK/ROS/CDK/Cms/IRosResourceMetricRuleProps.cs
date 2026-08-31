@@ -56,8 +56,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: compositeExpression: The trigger conditions for multiple metrics.
-        /// Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+        /// <strong>Property</strong>: compositeExpression: The alert conditions for multiple metrics.
+        /// > The settings for a single metric and multiple metrics are mutually exclusive.
+        /// You cannot configure both.
         /// </remarks>
         [JsiiProperty(name: "compositeExpression", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.CompositeExpressionProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -136,7 +137,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: labels:
+        /// <strong>Property</strong>: labels: Labels to add to a triggered alert. These labels appear in the alert
+        /// notification.
+        /// > This feature is equivalent to the `label` feature in Prometheus alerting.
         /// </remarks>
         [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -192,8 +195,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: prometheus: The Prometheus alert rule.
-        /// Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+        /// <strong>Property</strong>: prometheus: The configurations for a Prometheus alert rule.
+        /// > You need to configure this parameter only when you create a Prometheus alert
+        /// rule for CloudMonitor for Enterprise.
         /// </remarks>
         [JsiiProperty(name: "prometheus", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.PrometheusProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -318,8 +322,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: compositeExpression: The trigger conditions for multiple metrics.
-            /// Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+            /// <strong>Property</strong>: compositeExpression: The alert conditions for multiple metrics.
+            /// > The settings for a single metric and multiple metrics are mutually exclusive.
+            /// You cannot configure both.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "compositeExpression", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.CompositeExpressionProperty\"}]}}", isOptional: true)]
@@ -380,7 +385,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: labels:
+            /// <strong>Property</strong>: labels: Labels to add to a triggered alert. These labels appear in the alert
+            /// notification.
+            /// > This feature is equivalent to the `label` feature in Prometheus alerting.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "labels", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.LabelsProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -424,8 +431,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: prometheus: The Prometheus alert rule.
-            /// Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+            /// <strong>Property</strong>: prometheus: The configurations for a Prometheus alert rule.
+            /// > You need to configure this parameter only when you create a Prometheus alert
+            /// rule for CloudMonitor for Enterprise.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "prometheus", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosResourceMetricRule.PrometheusProperty\"}]}}", isOptional: true)]

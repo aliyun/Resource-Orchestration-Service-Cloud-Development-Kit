@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Application`, which is used to create an application in an Elastic Compute Service (ECS) cluster in Enterprise Distributed Application Service (EDAS).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::EDAS::Application`.
 type RosApplication interface {
 	alicloudroscdkcore.RosResource
 	ApplicationName() interface{}

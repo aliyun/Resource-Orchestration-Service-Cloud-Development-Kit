@@ -62,7 +62,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             get;
         }
 
-        /// <summary>Property vSwitchId: The vSwitch ID of the instance.</summary>
+        /// <summary>Property vSwitchId: The vSwitch ID.</summary>
+        /// <remarks>
+        ///     <list type="bullet">
+        ///     <description>This parameter is required.</description>
+        ///     <description>The vSwitch must be in the zone specified by <c>ZoneId</c>.</description>
+        ///     </list>
+        /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object VSwitchId
         {
@@ -94,9 +100,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.</summary>
+        /// <summary>Property dbInstanceCategory: The instance edition.</summary>
         /// <remarks>
-        /// This parameter must be passed in to create a storage reservation mode instance.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>HighAvailability: High-availability Edition</description>
+        /// <description>Basic: Basic Edition</description>
+        /// </list>
+        ///
+        ///     This parameter is required for instances in elastic storage mode.
         /// </remarks>
         [JsiiProperty(name: "dbInstanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -225,7 +238,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Property privateIpAddress: Private IP address.</summary>
+        /// <summary>Property privateIpAddress: This parameter is deprecated.</summary>
         [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PrivateIpAddress
@@ -236,10 +249,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
         }
 
-        /// <summary>Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.</summary>
+        /// <summary>Property securityIpList: The IP address whitelist for the instance.</summary>
         /// <remarks>
-        /// Default value:
-        /// 127.0.0.1.
+        /// A value of 127.0.0.1 blocks all external access. After you create the instance,
+        /// you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+        /// whitelist.
         /// </remarks>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -357,7 +371,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property vSwitchId: The vSwitch ID of the instance.</summary>
+            /// <summary>Property vSwitchId: The vSwitch ID.</summary>
+            /// <remarks>
+            ///     <list type="bullet">
+            ///     <description>This parameter is required.</description>
+            ///     <description>The vSwitch must be in the zone specified by <c>ZoneId</c>.</description>
+            ///     </list>
+            /// </remarks>
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VSwitchId
             {
@@ -386,9 +406,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.</summary>
+            /// <summary>Property dbInstanceCategory: The instance edition.</summary>
             /// <remarks>
-            /// This parameter must be passed in to create a storage reservation mode instance.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>HighAvailability: High-availability Edition</description>
+            /// <description>Basic: Basic Edition</description>
+            /// </list>
+            ///
+            ///     This parameter is required for instances in elastic storage mode.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -490,7 +517,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property privateIpAddress: Private IP address.</summary>
+            /// <summary>Property privateIpAddress: This parameter is deprecated.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PrivateIpAddress
@@ -498,10 +525,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.</summary>
+            /// <summary>Property securityIpList: The IP address whitelist for the instance.</summary>
             /// <remarks>
-            /// Default value:
-            /// 127.0.0.1.
+            /// A value of 127.0.0.1 blocks all external access. After you create the instance,
+            /// you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+            /// whitelist.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

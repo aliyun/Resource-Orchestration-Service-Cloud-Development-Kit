@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MPS::TranscodeJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:55:13.169Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:11:47.235Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.TranscodeJob")
 public class TranscodeJob extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mps.ITranscodeJob {
 
@@ -112,24 +112,46 @@ public class TranscodeJob extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property input: The input configuration of the job.
+         * Property input: Job input.
          * <p>
-         * For more information, see Input details.
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+         * using UTF-8 encoding.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>The OSS region must match the region where MPS is deployed.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param input Property input: The input configuration of the job. This parameter is required.
+         * @param input Property input: Job input. This parameter is required.
          */
         public Builder input(final com.aliyun.ros.cdk.core.IResolvable input) {
             this.props.input(input);
             return this;
         }
         /**
-         * Property input: The input configuration of the job.
+         * Property input: Job input.
          * <p>
-         * For more information, see Input details.
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+         * using UTF-8 encoding.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>The OSS region must match the region where MPS is deployed.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param input Property input: The input configuration of the job. This parameter is required.
+         * @param input Property input: Job input. This parameter is required.
          */
         public Builder input(final java.util.Map<java.lang.String, ? extends java.lang.Object> input) {
             this.props.input(input);
@@ -204,20 +226,32 @@ public class TranscodeJob extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property outputLocation: The region of the OSS bucket where the output files are stored.
+         * Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+         * <p>
+         * <ul>
+         * <li>The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+         * service.</li>
+         * <li>Follows the OSS bucket definition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param outputLocation Property outputLocation: The region of the OSS bucket where the output files are stored. This parameter is required.
+         * @param outputLocation Property outputLocation: The OSS region (OSS Region) where the output bucket resides. This parameter is required.
          */
         public Builder outputLocation(final java.lang.String outputLocation) {
             this.props.outputLocation(outputLocation);
             return this;
         }
         /**
-         * Property outputLocation: The region of the OSS bucket where the output files are stored.
+         * Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+         * <p>
+         * <ul>
+         * <li>The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+         * service.</li>
+         * <li>Follows the OSS bucket definition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param outputLocation Property outputLocation: The region of the OSS bucket where the output files are stored. This parameter is required.
+         * @param outputLocation Property outputLocation: The OSS region (OSS Region) where the output bucket resides. This parameter is required.
          */
         public Builder outputLocation(final com.aliyun.ros.cdk.core.IResolvable outputLocation) {
             this.props.outputLocation(outputLocation);

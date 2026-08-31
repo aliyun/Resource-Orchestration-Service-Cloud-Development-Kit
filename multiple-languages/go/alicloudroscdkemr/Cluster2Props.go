@@ -9,13 +9,27 @@ type Cluster2Props struct {
 	Applications interface{} `field:"required" json:"applications" yaml:"applications"`
 	// Property clusterName: Cluster name.The length is 1 ~ 128 characters, and the alphabet or Chinese must be started. It cannot start with http:\/\/ and https: \/\/.It can include Chinese, English, numbers, half-horn colons (:), down line (_), half-angle period (.) Or short lines (-).
 	ClusterName interface{} `field:"required" json:"clusterName" yaml:"clusterName"`
-	// Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+	// Property clusterType: The cluster type.
+	//
+	// Valid values:
+	// - DATALAKE: new data lake.
+	// - OLAP: data analytics.
+	// - DATAFLOW: real-time data stream.
+	// - DATASERVING: data serving.
+	// - CUSTOM: custom cluster.
+	// - HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+	// If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+	// 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+	// cluster type.
 	ClusterType interface{} `field:"required" json:"clusterType" yaml:"clusterType"`
 	// Property nodeAttributes: Node attributes.All ECS nodes basic attributes of the cluster.
 	NodeAttributes interface{} `field:"required" json:"nodeAttributes" yaml:"nodeAttributes"`
 	// Property nodeGroups: The node group configuration array.The value range of the number n of the number N group: 1 ~ 100.
 	NodeGroups interface{} `field:"required" json:"nodeGroups" yaml:"nodeGroups"`
-	// Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.
+	// Property releaseVersion: The EMR release version.
+	//
+	// You can find the EMR release versions on the EMR cluster
+	// purchase page.
 	ReleaseVersion interface{} `field:"required" json:"releaseVersion" yaml:"releaseVersion"`
 	// Property applicationConfigs: Application configuration.The value range of the number n of the array element n: 1 ~ 1000.
 	ApplicationConfigs interface{} `field:"optional" json:"applicationConfigs" yaml:"applicationConfigs"`

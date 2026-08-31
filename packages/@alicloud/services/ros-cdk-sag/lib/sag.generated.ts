@@ -216,13 +216,18 @@ export interface RosACLRuleProps {
     readonly destCidr: string | ros.IResolvable;
 
     /**
-     * @Property destPortRange: Destination port range, 80\/80.
+     * @Property destPortRange: The destination port range.
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
      */
     readonly destPortRange: string | ros.IResolvable;
 
     /**
-     * @Property direction: Regular direction.
-     * Value: in|out
+     * @Property direction: The direction of traffic to which the ACL rule applies. Valid values:
+     * - in: inbound. Traffic from an external network to the local branch where the SAG
+     * instance is deployed.
+     * - out: outbound. Traffic from the local branch where the SAG instance is deployed
+     * to an external network.
      */
     readonly direction: string | ros.IResolvable;
 
@@ -242,7 +247,9 @@ export interface RosACLRuleProps {
     readonly sourceCidr: string | ros.IResolvable;
 
     /**
-     * @Property sourcePortRange: Source port range, 80\/80.
+     * @Property sourcePortRange: The source port range.
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
      */
     readonly sourcePortRange: string | ros.IResolvable;
 
@@ -267,14 +274,17 @@ export interface RosACLRuleProps {
 
     /**
      * @Property name: The name of the ACL rule.
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * The name must be 2 to 100 characters in length, start with a letter, and can
+     * contain digits, periods (.), underscores (_), and hyphens (-).
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * @Property priority: Priority, ranging from 1 to 100.
-     * Default: 1
+     * @Property priority: The priority of the ACL rule.
+     * A smaller value indicates a higher priority. If multiple rules have the same
+     * priority, the rule that is first delivered to the Smart Access Gateway device
+     * takes precedence.
+     * Valid values: 1 to 100. Default value: 1.
      */
     readonly priority?: number | ros.IResolvable;
 
@@ -428,13 +438,18 @@ export class RosACLRule extends ros.RosResource {
     public destCidr: string | ros.IResolvable;
 
     /**
-     * @Property destPortRange: Destination port range, 80\/80.
+     * @Property destPortRange: The destination port range.
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
      */
     public destPortRange: string | ros.IResolvable;
 
     /**
-     * @Property direction: Regular direction.
-     * Value: in|out
+     * @Property direction: The direction of traffic to which the ACL rule applies. Valid values:
+     * - in: inbound. Traffic from an external network to the local branch where the SAG
+     * instance is deployed.
+     * - out: outbound. Traffic from the local branch where the SAG instance is deployed
+     * to an external network.
      */
     public direction: string | ros.IResolvable;
 
@@ -454,7 +469,9 @@ export class RosACLRule extends ros.RosResource {
     public sourceCidr: string | ros.IResolvable;
 
     /**
-     * @Property sourcePortRange: Source port range, 80\/80.
+     * @Property sourcePortRange: The source port range.
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1\/200 or 80\/80. A value of -1\/-1 means all ports.
      */
     public sourcePortRange: string | ros.IResolvable;
 
@@ -479,14 +496,17 @@ export class RosACLRule extends ros.RosResource {
 
     /**
      * @Property name: The name of the ACL rule.
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * The name must be 2 to 100 characters in length, start with a letter, and can
+     * contain digits, periods (.), underscores (_), and hyphens (-).
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * @Property priority: Priority, ranging from 1 to 100.
-     * Default: 1
+     * @Property priority: The priority of the ACL rule.
+     * A smaller value indicates a higher priority. If multiple rules have the same
+     * priority, the rule that is first delivered to the Smart Access Gateway device
+     * takes precedence.
+     * Valid values: 1 to 100. Default value: 1.
      */
     public priority: number | ros.IResolvable | undefined;
 
@@ -732,7 +752,8 @@ export class RosApp extends ros.RosResource {
 export interface RosAppUserProps {
 
     /**
-     * @Property bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
+     * @Property bandwidth: The maximum bandwidth value. Unit: Kbit\/s. Valid values: 1 to 20000. Default
+     * value: 2000.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -763,15 +784,21 @@ export interface RosAppUserProps {
     readonly disable?: boolean | ros.IResolvable;
 
     /**
-     * @Property password: The password used to log on to SAG APP.
-     * For a client account, if you specify the username, you must also specify the password.
+     * @Property password: The password that is used to log on to the SAG app.
+     * The password must be 8 to 32 characters in length. It can contain letters,
+     * digits, underscores (_), at signs (@), and hyphens (-). It must start with a
+     * letter or a digit.
      */
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property userName: The username of the client account. Usernames of client accounts added to the same
-     * SAG APP instance must be unique.
-     * For a client account, if you specify the username, you must also specify the password.
+     * @Property userName: The username of the client account. The usernames of client accounts added to the
+     * same SAG app instance must be unique.
+     * The username must be 7 to 33 characters in length, and can contain letters,
+     * digits, underscores (_), at signs (@), periods (.), and hyphens (-). It must
+     * start with a letter or a digit.
+     * >  For a client account, if you specify the username, you must also specify the
+     * password. If you specify the password, you must specify the username.
      */
     readonly userName?: string | ros.IResolvable;
 }
@@ -848,7 +875,8 @@ export class RosAppUser extends ros.RosResource {
 
 
     /**
-     * @Property bandwidth: The bandwidth. Unit: Kbit\/s. Maximum bandwidth: 2,000 Kbit\/s.
+     * @Property bandwidth: The maximum bandwidth value. Unit: Kbit\/s. Valid values: 1 to 20000. Default
+     * value: 2000.
      */
     public bandwidth: number | ros.IResolvable;
 
@@ -879,15 +907,21 @@ export class RosAppUser extends ros.RosResource {
     public disable: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property password: The password used to log on to SAG APP.
-     * For a client account, if you specify the username, you must also specify the password.
+     * @Property password: The password that is used to log on to the SAG app.
+     * The password must be 8 to 32 characters in length. It can contain letters,
+     * digits, underscores (_), at signs (@), and hyphens (-). It must start with a
+     * letter or a digit.
      */
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property userName: The username of the client account. Usernames of client accounts added to the same
-     * SAG APP instance must be unique.
-     * For a client account, if you specify the username, you must also specify the password.
+     * @Property userName: The username of the client account. The usernames of client accounts added to the
+     * same SAG app instance must be unique.
+     * The username must be 7 to 33 characters in length, and can contain letters,
+     * digits, underscores (_), at signs (@), periods (.), and hyphens (-). It must
+     * start with a letter or a digit.
+     * >  For a client account, if you specify the username, you must also specify the
+     * password. If you specify the password, you must specify the username.
      */
     public userName: string | ros.IResolvable | undefined;
 
@@ -936,7 +970,9 @@ export interface RosCloudConnectNetworkProps {
 
     /**
      * @Property description: The description of the CCN instance.
-     * The description can contain 2 to 256 characters. The description cannot start with http:\/\/ or https:\/\/.
+     * The description must be 2 to 256 characters in length and can contain letters,
+     * digits, underscores (_), and hyphens (-). The description must start with a
+     * letter.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -947,7 +983,8 @@ export interface RosCloudConnectNetworkProps {
 
     /**
      * @Property name: The name of the CCN instance.
-     * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:\/\/ or https:\/\/.
+     * The name must be 2 to 128 characters in length and can contain letters, digits,
+     * periods (.), underscores (_),and hyphens (-). The name must start with a letter.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -1028,7 +1065,9 @@ export class RosCloudConnectNetwork extends ros.RosResource {
 
     /**
      * @Property description: The description of the CCN instance.
-     * The description can contain 2 to 256 characters. The description cannot start with http:\/\/ or https:\/\/.
+     * The description must be 2 to 256 characters in length and can contain letters,
+     * digits, underscores (_), and hyphens (-). The description must start with a
+     * letter.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -1039,7 +1078,8 @@ export class RosCloudConnectNetwork extends ros.RosResource {
 
     /**
      * @Property name: The name of the CCN instance.
-     * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:\/\/ or https:\/\/.
+     * The name must be 2 to 128 characters in length and can contain letters, digits,
+     * periods (.), underscores (_),and hyphens (-). The name must start with a letter.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -1516,33 +1556,36 @@ export interface RosQosCarProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property maxBandwidthAbs: The maximum bandwidth. This parameter is required when LimitType is set to Absolute.
+     * @Property maxBandwidthAbs: The maximum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+     * This parameter is returned when LimitType is set to Absolute.
+     * >  The maximum bandwidth value must be greater than the minimum bandwidth value.
      */
     readonly maxBandwidthAbs?: number | ros.IResolvable;
 
     /**
-     * @Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG
-     * instance.
-     * This parameter is required when LimitType is set to Percent.
+     * @Property maxBandwidthPercent: The maximum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
+     * >  The maximum bandwidth percentage must be greater than the minimum bandwidth
+     * percentage.
      */
     readonly maxBandwidthPercent?: number | ros.IResolvable;
 
     /**
-     * @Property minBandwidthAbs: The minimum bandwidth. This parameter is required when LimitType is set to Absolute.
+     * @Property minBandwidthAbs: The minimum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+     * This parameter is returned when LimitType is set to Absolute.
      */
     readonly minBandwidthAbs?: number | ros.IResolvable;
 
     /**
-     * @Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG
-     * instance.
-     * This parameter is required when LimitType is set to Percent.
+     * @Property minBandwidthPercent: The minimum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
      */
     readonly minBandwidthPercent?: number | ros.IResolvable;
 
     /**
-     * @Property name: The name of the traffic throttling policy. The name must be 2 to 128 characters in
-     * length, and can contain Chinese characters, letters, digits, periods (.), underscores
-     * (_), and hyphens (-).
+     * @Property name: The name of the traffic throttling rule.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * periods (.), underscores (_), and hyphens (-). The name must start with a letter.
      */
     readonly name?: string | ros.IResolvable;
 
@@ -1671,33 +1714,36 @@ export class RosQosCar extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property maxBandwidthAbs: The maximum bandwidth. This parameter is required when LimitType is set to Absolute.
+     * @Property maxBandwidthAbs: The maximum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+     * This parameter is returned when LimitType is set to Absolute.
+     * >  The maximum bandwidth value must be greater than the minimum bandwidth value.
      */
     public maxBandwidthAbs: number | ros.IResolvable | undefined;
 
     /**
-     * @Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG
-     * instance.
-     * This parameter is required when LimitType is set to Percent.
+     * @Property maxBandwidthPercent: The maximum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
+     * >  The maximum bandwidth percentage must be greater than the minimum bandwidth
+     * percentage.
      */
     public maxBandwidthPercent: number | ros.IResolvable | undefined;
 
     /**
-     * @Property minBandwidthAbs: The minimum bandwidth. This parameter is required when LimitType is set to Absolute.
+     * @Property minBandwidthAbs: The minimum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+     * This parameter is returned when LimitType is set to Absolute.
      */
     public minBandwidthAbs: number | ros.IResolvable | undefined;
 
     /**
-     * @Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG
-     * instance.
-     * This parameter is required when LimitType is set to Percent.
+     * @Property minBandwidthPercent: The minimum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
      */
     public minBandwidthPercent: number | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the traffic throttling policy. The name must be 2 to 128 characters in
-     * length, and can contain Chinese characters, letters, digits, periods (.), underscores
-     * (_), and hyphens (-).
+     * @Property name: The name of the traffic throttling rule.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * periods (.), underscores (_), and hyphens (-). The name must start with a letter.
      */
     public name: string | ros.IResolvable | undefined;
 
@@ -1781,8 +1827,9 @@ export interface RosQosPolicyProps {
     readonly ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property priority: The priority of the traffic throttling policy to which the traffic classification
-     * rule belongs.
+     * @Property priority: The priority of the throttling rule to which the stream classification rule
+     * belongs.
+     * Valid values: 1 to 3. A smaller value indicates a higher priority.
      */
     readonly priority: number | ros.IResolvable;
 
@@ -1808,9 +1855,10 @@ export interface RosQosPolicyProps {
     readonly sourcePortRange: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of the traffic classification rule.
-     * The description must be 1 to 512 characters in length and can contain letters, digits,
-     * underscores (_), and hyphens (-). It must start with a letter.
+     * @Property description: The description of the stream classification rule for the QoS policy.
+     * The description must be 1 to 512 characters in length. It must start with a
+     * letter or a Chinese character and can contain digits, underscores (_), and
+     * hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -1836,9 +1884,9 @@ export interface RosQosPolicyProps {
     readonly endTime?: string | ros.IResolvable;
 
     /**
-     * @Property name: The name of the traffic classification rule.
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * @Property name: The name of the stream classification rule.
+     * The name must be 2 to 100 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, hyphens (-), and underscores (_).
      */
     readonly name?: string | ros.IResolvable;
 
@@ -1970,8 +2018,9 @@ export class RosQosPolicy extends ros.RosResource {
     public ipProtocol: string | ros.IResolvable;
 
     /**
-     * @Property priority: The priority of the traffic throttling policy to which the traffic classification
-     * rule belongs.
+     * @Property priority: The priority of the throttling rule to which the stream classification rule
+     * belongs.
+     * Valid values: 1 to 3. A smaller value indicates a higher priority.
      */
     public priority: number | ros.IResolvable;
 
@@ -1997,9 +2046,10 @@ export class RosQosPolicy extends ros.RosResource {
     public sourcePortRange: string | ros.IResolvable;
 
     /**
-     * @Property description: The description of the traffic classification rule.
-     * The description must be 1 to 512 characters in length and can contain letters, digits,
-     * underscores (_), and hyphens (-). It must start with a letter.
+     * @Property description: The description of the stream classification rule for the QoS policy.
+     * The description must be 1 to 512 characters in length. It must start with a
+     * letter or a Chinese character and can contain digits, underscores (_), and
+     * hyphens (-).
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -2025,9 +2075,9 @@ export class RosQosPolicy extends ros.RosResource {
     public endTime: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: The name of the traffic classification rule.
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * @Property name: The name of the stream classification rule.
+     * The name must be 2 to 100 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, hyphens (-), and underscores (_).
      */
     public name: string | ros.IResolvable | undefined;
 

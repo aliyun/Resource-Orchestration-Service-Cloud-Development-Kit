@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros.datasource;
 /**
  * Represents a <code>StackInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:42:02.143Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:23:14.506Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.datasource.IStackInstance")
 @software.amazon.jsii.Jsii.Proxy(IStackInstance.Jsii$Proxy.class)
 public interface IStackInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

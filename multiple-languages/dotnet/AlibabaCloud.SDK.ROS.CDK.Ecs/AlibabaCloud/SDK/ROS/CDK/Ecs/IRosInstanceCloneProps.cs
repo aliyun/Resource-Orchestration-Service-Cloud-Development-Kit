@@ -34,7 +34,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+        /// <strong>Property</strong>: deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+        /// determines whether you can use the ECS console or call the [DeleteInstance]()
+        /// operation to release the instance. Valid values:
+        /// - true: enables release protection for the instance.
+        /// - false: disables release protection for the instance.
+        /// Default value: false.
+        /// > This parameter is applicable to only pay-as-you-go instances. It can protect
+        /// instances against manual releases, but not against automatic releases.
         /// </remarks>
         [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -301,7 +308,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance
+            /// <strong>Property</strong>: deletionProtection: Specifies whether to enable release protection for the instance. This parameter
+            /// determines whether you can use the ECS console or call the [DeleteInstance]()
+            /// operation to release the instance. Valid values:
+            /// - true: enables release protection for the instance.
+            /// - false: disables release protection for the instance.
+            /// Default value: false.
+            /// > This parameter is applicable to only pay-as-you-go instances. It can protect
+            /// instances against manual releases, but not against automatic releases.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

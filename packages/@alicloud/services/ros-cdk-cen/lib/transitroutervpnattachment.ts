@@ -45,12 +45,16 @@ export interface TransitRouterVpnAttachmentProps {
     readonly tags?: RosTransitRouterVpnAttachment.TagsProperty[];
 
     /**
-     * Property transitRouterAttachmentDescription: Description of the VPN connection.
+     * Property transitRouterAttachmentDescription: The description of the VPN connection.
+     * The description can be empty or 1 to 256 characters in length, and cannot start
+     * with http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentDescription?: string | ros.IResolvable;
 
     /**
      * Property transitRouterAttachmentName: The name of the VPN connection.
+     * The name can be empty or 1 to 128 characters in length, and cannot start with
+     * http:\/\/ or https:\/\/.
      */
     readonly transitRouterAttachmentName?: string | ros.IResolvable;
 
@@ -60,7 +64,11 @@ export interface TransitRouterVpnAttachmentProps {
     readonly transitRouterId?: string | ros.IResolvable;
 
     /**
-     * Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+     * Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+     * - If you do not specify this parameter, the ID of the current account
+     * is used.
+     * - This parameter is required if you want to connect to a cross-account IPsec-VPN
+     * connection.
      */
     readonly vpnOwnerId?: string | ros.IResolvable;
 
@@ -82,7 +90,7 @@ export interface ITransitRouterVpnAttachment extends ros.IResource {
     readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`, which is used to create a VPN connection.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterVpnAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterVpnAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */

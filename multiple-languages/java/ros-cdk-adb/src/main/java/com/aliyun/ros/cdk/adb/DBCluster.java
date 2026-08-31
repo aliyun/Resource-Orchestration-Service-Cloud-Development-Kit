@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::DBCluster</code>Use the , which resource type to create an AnalyticDB for MySQL cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:14:30.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:53:53.091Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adb.IDBCluster {
 
@@ -136,30 +136,72 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property dbClusterCategory: The edition of the cluster.
+         * Property dbClusterCategory: The cluster edition.
          * <p>
-         * Valid values when the cluster is in reserved mode:
-         * Basic
-         * Cluster
-         * When the cluster is in elastic mode, set the value to MixedStorage.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Cluster: reserved cluster.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Reserved clusters are available only in the Chinese mainland and Singapore
+         * regions. In the Singapore region, you can purchase reserved clusters only with
+         * the pay-as-you-go billing method.
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>MixedStorage: elastic cluster (new).</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set <code>DBClusterCategory</code> to <code>Cluster</code>, you must set the <code>Mode</code> parameter
+         * to <code>Reserved</code>. If you set <code>DBClusterCategory</code> to <code>MixedStorage</code>, you must set the
+         * <code>Mode</code> parameter to <code>Flexible</code>. Otherwise, cluster creation will fail.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbClusterCategory Property dbClusterCategory: The edition of the cluster. This parameter is required.
+         * @param dbClusterCategory Property dbClusterCategory: The cluster edition. This parameter is required.
          */
         public Builder dbClusterCategory(final java.lang.String dbClusterCategory) {
             this.props.dbClusterCategory(dbClusterCategory);
             return this;
         }
         /**
-         * Property dbClusterCategory: The edition of the cluster.
+         * Property dbClusterCategory: The cluster edition.
          * <p>
-         * Valid values when the cluster is in reserved mode:
-         * Basic
-         * Cluster
-         * When the cluster is in elastic mode, set the value to MixedStorage.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Cluster: reserved cluster.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Reserved clusters are available only in the Chinese mainland and Singapore
+         * regions. In the Singapore region, you can purchase reserved clusters only with
+         * the pay-as-you-go billing method.
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>MixedStorage: elastic cluster (new).</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set <code>DBClusterCategory</code> to <code>Cluster</code>, you must set the <code>Mode</code> parameter
+         * to <code>Reserved</code>. If you set <code>DBClusterCategory</code> to <code>MixedStorage</code>, you must set the
+         * <code>Mode</code> parameter to <code>Flexible</code>. Otherwise, cluster creation will fail.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbClusterCategory Property dbClusterCategory: The edition of the cluster. This parameter is required.
+         * @param dbClusterCategory Property dbClusterCategory: The cluster edition. This parameter is required.
          */
         public Builder dbClusterCategory(final com.aliyun.ros.cdk.core.IResolvable dbClusterCategory) {
             this.props.dbClusterCategory(dbClusterCategory);
@@ -192,28 +234,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property mode: The mode of the cluster.
+         * Property mode: The cluster mode.
          * <p>
          * Valid values:
-         * Reserver: the reserved mode
-         * Flexible: the elastic mode
+         * <p>
+         * <ul>
+         * <li>Reserved: reserved mode.</li>
+         * <li>Flexible: flexible mode.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mode Property mode: The mode of the cluster. This parameter is required.
+         * @param mode Property mode: The cluster mode. This parameter is required.
          */
         public Builder mode(final java.lang.String mode) {
             this.props.mode(mode);
             return this;
         }
         /**
-         * Property mode: The mode of the cluster.
+         * Property mode: The cluster mode.
          * <p>
          * Valid values:
-         * Reserver: the reserved mode
-         * Flexible: the elastic mode
+         * <p>
+         * <ul>
+         * <li>Reserved: reserved mode.</li>
+         * <li>Flexible: flexible mode.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mode Property mode: The mode of the cluster. This parameter is required.
+         * @param mode Property mode: The cluster mode. This parameter is required.
          */
         public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
             this.props.mode(mode);
@@ -292,24 +340,68 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property computeResource: The computing resource of the cluster.
+         * Property computeResource: The compute resources for the cluster.
          * <p>
-         * This parameter is required in elastic mode.
+         * Compute resources are used for data
+         * queries. A larger amount of compute resources can provide better query
+         * performance. Compute resources are available in cluster and single-node editions:
+         * <p>
+         * <ul>
+         * <li>Cluster edition: includes specifications such as 16 cores/64 GB, 24 cores/96
+         * GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+         * scheduled scaling, and tiered storage of hot and cold data.</li>
+         * <li>Single-node edition: includes specifications such as 8 cores/32 GB and 16
+         * cores/64 GB. The single-node edition does not provide an SLA guarantee and has a
+         * long recovery time from failures (4 to 8 hours). We do not recommend that you use
+         * the single-node edition in production environments.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>You can call the <a href="">DescribeAvailableResource</a> operation to query the compute
+         * resources that are available in a specific region.</li>
+         * <li>This parameter is required when <code>Mode</code> is set to <code>Flexible</code> (flexible mode).</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param computeResource Property computeResource: The computing resource of the cluster. This parameter is required.
+         * @param computeResource Property computeResource: The compute resources for the cluster. This parameter is required.
          */
         public Builder computeResource(final java.lang.String computeResource) {
             this.props.computeResource(computeResource);
             return this;
         }
         /**
-         * Property computeResource: The computing resource of the cluster.
+         * Property computeResource: The compute resources for the cluster.
          * <p>
-         * This parameter is required in elastic mode.
+         * Compute resources are used for data
+         * queries. A larger amount of compute resources can provide better query
+         * performance. Compute resources are available in cluster and single-node editions:
+         * <p>
+         * <ul>
+         * <li>Cluster edition: includes specifications such as 16 cores/64 GB, 24 cores/96
+         * GB, and 32 cores or more. The cluster edition supports resource pool isolation,
+         * scheduled scaling, and tiered storage of hot and cold data.</li>
+         * <li>Single-node edition: includes specifications such as 8 cores/32 GB and 16
+         * cores/64 GB. The single-node edition does not provide an SLA guarantee and has a
+         * long recovery time from failures (4 to 8 hours). We do not recommend that you use
+         * the single-node edition in production environments.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>You can call the <a href="">DescribeAvailableResource</a> operation to query the compute
+         * resources that are available in a specific region.</li>
+         * <li>This parameter is required when <code>Mode</code> is set to <code>Flexible</code> (flexible mode).</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param computeResource Property computeResource: The computing resource of the cluster. This parameter is required.
+         * @param computeResource Property computeResource: The compute resources for the cluster. This parameter is required.
          */
         public Builder computeResource(final com.aliyun.ros.cdk.core.IResolvable computeResource) {
             this.props.computeResource(computeResource);
@@ -348,6 +440,11 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         /**
          * Property dbClusterDescription: The description of the cluster.
          * <p>
+         * <ul>
+         * <li>The description cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         * <li>The description must be 2 to 256 characters long.</li>
+         * </ul>
+         * <p>
          * @return {@code this}
          * @param dbClusterDescription Property dbClusterDescription: The description of the cluster. This parameter is required.
          */
@@ -357,6 +454,11 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
         /**
          * Property dbClusterDescription: The description of the cluster.
+         * <p>
+         * <ul>
+         * <li>The description cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         * <li>The description must be 2 to 256 characters long.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param dbClusterDescription Property dbClusterDescription: The description of the cluster. This parameter is required.
@@ -369,9 +471,13 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         /**
          * Property dbNodeGroupCount: The number of node groups.
          * <p>
-         * This parameter is required in reserved mode. Valid values:
-         * T8, T16, T32, and T52: 1
-         * C8 and C32: 1 to 128
+         * The value must be an integer from 1 to 200.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when <code>Mode</code> is set to <code>Reserved</code> (reserved mode).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dbNodeGroupCount Property dbNodeGroupCount: The number of node groups. This parameter is required.
@@ -383,9 +489,13 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         /**
          * Property dbNodeGroupCount: The number of node groups.
          * <p>
-         * This parameter is required in reserved mode. Valid values:
-         * T8, T16, T32, and T52: 1
-         * C8 and C32: 1 to 128
+         * The value must be an integer from 1 to 200.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when <code>Mode</code> is set to <code>Reserved</code> (reserved mode).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dbNodeGroupCount Property dbNodeGroupCount: The number of node groups. This parameter is required.
@@ -464,20 +574,20 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
+         * Property elasticIoResource: The number of Elastic IO Units (EIUs).
          * <p>
          * @return {@code this}
-         * @param elasticIoResource Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter. This parameter is required.
+         * @param elasticIoResource Property elasticIoResource: The number of Elastic IO Units (EIUs). This parameter is required.
          */
         public Builder elasticIoResource(final java.lang.Number elasticIoResource) {
             this.props.elasticIoResource(elasticIoResource);
             return this;
         }
         /**
-         * Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter.
+         * Property elasticIoResource: The number of Elastic IO Units (EIUs).
          * <p>
          * @return {@code this}
-         * @param elasticIoResource Property elasticIoResource: Elastic IO Unit Note the flexible mode cluster will use this parameter. This parameter is required.
+         * @param elasticIoResource Property elasticIoResource: The number of Elastic IO Units (EIUs). This parameter is required.
          */
         public Builder elasticIoResource(final com.aliyun.ros.cdk.core.IResolvable elasticIoResource) {
             this.props.elasticIoResource(elasticIoResource);
@@ -516,20 +626,20 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property executorCount: ExecutorCount.
+         * Property executorCount: This parameter is reserved.
          * <p>
          * @return {@code this}
-         * @param executorCount Property executorCount: ExecutorCount. This parameter is required.
+         * @param executorCount Property executorCount: This parameter is reserved. This parameter is required.
          */
         public Builder executorCount(final java.lang.Number executorCount) {
             this.props.executorCount(executorCount);
             return this;
         }
         /**
-         * Property executorCount: ExecutorCount.
+         * Property executorCount: This parameter is reserved.
          * <p>
          * @return {@code this}
-         * @param executorCount Property executorCount: ExecutorCount. This parameter is required.
+         * @param executorCount Property executorCount: This parameter is reserved. This parameter is required.
          */
         public Builder executorCount(final com.aliyun.ros.cdk.core.IResolvable executorCount) {
             this.props.executorCount(executorCount);
@@ -558,24 +668,46 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+         * Property period: The subscription period unit.
          * <p>
-         * Valid values when the Period parameter is set to Year: 1, 2, and 3.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Year</li>
+         * <li>Month</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when <code>PayType</code> is set to <code>Prepaid</code> (subscription).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9. This parameter is required.
+         * @param period Property period: The subscription period unit. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+         * Property period: The subscription period unit.
          * <p>
-         * Valid values when the Period parameter is set to Year: 1, 2, and 3.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Year</li>
+         * <li>Month</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when <code>PayType</code> is set to <code>Prepaid</code> (subscription).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: Valid values when the Period parameter is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9. This parameter is required.
+         * @param period Property period: The subscription period unit. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);

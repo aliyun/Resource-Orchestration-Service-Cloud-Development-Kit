@@ -15,9 +15,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
     {
         private object _ciphers;
 
-        /// <summary>Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version.</summary>
+        /// <summary>Property ciphers: The cipher suites supported by the security policy.</summary>
         /// <remarks>
-        /// You can specify at most 32 cipher suites.
+        /// Valid values of this
+        /// parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+        /// suites.
         /// </remarks>
         [JsiiProperty(name: "ciphers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public object Ciphers

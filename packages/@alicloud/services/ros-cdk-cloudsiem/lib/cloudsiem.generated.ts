@@ -9,7 +9,13 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosImportLogTasksSubmissionProps {
 
     /**
-     * @Property accounts: The list of accounts to be submitted.
+     * @Property accounts: The list of accounts for log ingestion. The value must be a JSON array. Valid
+     * values:
+     * - AccountId: The ID of the account.
+     * - Imported: Specifies whether to enable or disable log ingestion for the account.
+     * Valid values:
+     * - 0: Disable ingestion.
+     * - 1: Enable ingestion.
      */
     readonly accounts: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -78,7 +84,7 @@ function rosImportLogTasksSubmissionPropsToRosTemplate(properties: any, enableRe
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::ImportLogTasksSubmission`, which is used to import and submit a log collection task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::ImportLogTasksSubmission`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImportLogTasksSubmission` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-importlogtaskssubmission
  */
@@ -92,7 +98,13 @@ export class RosImportLogTasksSubmission extends ros.RosResource {
 
 
     /**
-     * @Property accounts: The list of accounts to be submitted.
+     * @Property accounts: The list of accounts for log ingestion. The value must be a JSON array. Valid
+     * values:
+     * - AccountId: The ID of the account.
+     * - Imported: Specifies whether to enable or disable log ingestion for the account.
+     * Valid values:
+     * - 0: Disable ingestion.
+     * - 1: Enable ingestion.
      */
     public accounts: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -152,7 +164,8 @@ export interface RosUserSourceLogConfigProps {
     readonly sourceLogCode: string | ros.IResolvable;
 
     /**
-     * @Property sourceLogInfo: The info of log to be added.
+     * @Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.
+     * The value is a JSON string.
      */
     readonly sourceLogInfo: RosUserSourceLogConfig.SourceLogInfoProperty | ros.IResolvable;
 
@@ -210,7 +223,7 @@ function rosUserSourceLogConfigPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`, which is used to add logs of a cloud service within an account.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CloudSiem::UserSourceLogConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserSourceLogConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-usersourcelogconfig
  */
@@ -229,7 +242,8 @@ export class RosUserSourceLogConfig extends ros.RosResource {
     public sourceLogCode: string | ros.IResolvable;
 
     /**
-     * @Property sourceLogInfo: The info of log to be added.
+     * @Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.
+     * The value is a JSON string.
      */
     public sourceLogInfo: RosUserSourceLogConfig.SourceLogInfoProperty | ros.IResolvable;
 

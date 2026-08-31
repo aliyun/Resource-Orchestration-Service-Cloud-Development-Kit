@@ -16,7 +16,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         private object _keyPairName;
 
         /// <remarks>
-        /// <strong>Property</strong>: keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
+        /// <strong>Property</strong>: keyPairName: The name of the key pair. The name must be unique. It must be 2 to 128 characters
+        /// in length. It must start with a letter and cannot start with http\:\/\/ or
+        /// https\:\/\/. It can contain letters, digits, colons (:), underscores (_), and
+        /// hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object KeyPairName

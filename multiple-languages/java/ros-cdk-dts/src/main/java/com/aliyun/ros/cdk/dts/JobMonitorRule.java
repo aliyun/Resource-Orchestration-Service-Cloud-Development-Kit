@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::JobMonitorRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.784Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.945Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.JobMonitorRule")
 public class JobMonitorRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.IJobMonitorRule {
 

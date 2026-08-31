@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-replicationvault
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.781Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.172Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.ReplicationVaultProps")
 @software.amazon.jsii.Jsii.Proxy(ReplicationVaultProps.Jsii$Proxy.class)
 public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,28 +33,55 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property encryptType: The encryption type of the vault.
+     * Property encryptType: The method that is used to encrypt the source data.
+     * <p>
+     * This parameter is valid only
+     * if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+     * <p>
+     * <ul>
+     * <li>HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+     * method of Hybrid Backup Recovery (HBR).</li>
+     * <li>KMS: The source data is encrypted by using Key Management Service (KMS).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncryptType() {
         return null;
     }
 
     /**
-     * Property kmsKeyId: The KMS key ID used for encryption.
+     * Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key.
+     * <p>
+     * This
+     * parameter is required only if you set the EncryptType parameter to KMS.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKmsKeyId() {
         return null;
     }
 
     /**
-     * Property redundancyType: The redundancy type of the vault.
+     * Property redundancyType: The data redundancy type of the backup vault.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+     * of each object on multiple devices of different facilities in the same zone. This
+     * way, Cloud Backup ensures data durability and availability even if hardware
+     * failures occur.</li>
+     * <li>ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+     * mechanism to distribute data across three zones within the same region. If a zone
+     * fails, the data that is stored in the other two zones is still accessible.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRedundancyType() {
         return null;
     }
 
     /**
-     * Property vaultStorageClass: The storage class of the vault.
+     * Property vaultStorageClass: The storage type of the backup vault.
+     * <p>
+     * Valid value: STANDARD, which indicates
+     * standard storage.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVaultStorageClass() {
         return null;
@@ -161,7 +188,15 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getEncryptType}
-         * @param encryptType Property encryptType: The encryption type of the vault.
+         * @param encryptType Property encryptType: The method that is used to encrypt the source data.
+         *                    This parameter is valid only
+         *                    if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+         *                    method of Hybrid Backup Recovery (HBR).</li>
+         *                    <li>KMS: The source data is encrypted by using Key Management Service (KMS).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder encryptType(java.lang.String encryptType) {
@@ -171,7 +206,15 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getEncryptType}
-         * @param encryptType Property encryptType: The encryption type of the vault.
+         * @param encryptType Property encryptType: The method that is used to encrypt the source data.
+         *                    This parameter is valid only
+         *                    if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+         *                    method of Hybrid Backup Recovery (HBR).</li>
+         *                    <li>KMS: The source data is encrypted by using Key Management Service (KMS).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder encryptType(com.aliyun.ros.cdk.core.IResolvable encryptType) {
@@ -181,7 +224,9 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getKmsKeyId}
-         * @param kmsKeyId Property kmsKeyId: The KMS key ID used for encryption.
+         * @param kmsKeyId Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key.
+         *                 This
+         *                 parameter is required only if you set the EncryptType parameter to KMS.
          * @return {@code this}
          */
         public Builder kmsKeyId(java.lang.String kmsKeyId) {
@@ -191,7 +236,9 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getKmsKeyId}
-         * @param kmsKeyId Property kmsKeyId: The KMS key ID used for encryption.
+         * @param kmsKeyId Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key.
+         *                 This
+         *                 parameter is required only if you set the EncryptType parameter to KMS.
          * @return {@code this}
          */
         public Builder kmsKeyId(com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
@@ -201,7 +248,18 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getRedundancyType}
-         * @param redundancyType Property redundancyType: The redundancy type of the vault.
+         * @param redundancyType Property redundancyType: The data redundancy type of the backup vault.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+         *                       of each object on multiple devices of different facilities in the same zone. This
+         *                       way, Cloud Backup ensures data durability and availability even if hardware
+         *                       failures occur.</li>
+         *                       <li>ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+         *                       mechanism to distribute data across three zones within the same region. If a zone
+         *                       fails, the data that is stored in the other two zones is still accessible.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder redundancyType(java.lang.String redundancyType) {
@@ -211,7 +269,18 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getRedundancyType}
-         * @param redundancyType Property redundancyType: The redundancy type of the vault.
+         * @param redundancyType Property redundancyType: The data redundancy type of the backup vault.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li>LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+         *                       of each object on multiple devices of different facilities in the same zone. This
+         *                       way, Cloud Backup ensures data durability and availability even if hardware
+         *                       failures occur.</li>
+         *                       <li>ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+         *                       mechanism to distribute data across three zones within the same region. If a zone
+         *                       fails, the data that is stored in the other two zones is still accessible.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder redundancyType(com.aliyun.ros.cdk.core.IResolvable redundancyType) {
@@ -221,7 +290,9 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getVaultStorageClass}
-         * @param vaultStorageClass Property vaultStorageClass: The storage class of the vault.
+         * @param vaultStorageClass Property vaultStorageClass: The storage type of the backup vault.
+         *                          Valid value: STANDARD, which indicates
+         *                          standard storage.
          * @return {@code this}
          */
         public Builder vaultStorageClass(java.lang.String vaultStorageClass) {
@@ -231,7 +302,9 @@ public interface ReplicationVaultProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link ReplicationVaultProps#getVaultStorageClass}
-         * @param vaultStorageClass Property vaultStorageClass: The storage class of the vault.
+         * @param vaultStorageClass Property vaultStorageClass: The storage type of the backup vault.
+         *                          Valid value: STANDARD, which indicates
+         *                          standard storage.
          * @return {@code this}
          */
         public Builder vaultStorageClass(com.aliyun.ros.cdk.core.IResolvable vaultStorageClass) {

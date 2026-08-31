@@ -32,7 +32,7 @@ export interface INamespace extends ros.IResource {
     readonly attrNamespaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ACM::Namespace`, which is used to create a namespace.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ACM::Namespace`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-namespace
  */

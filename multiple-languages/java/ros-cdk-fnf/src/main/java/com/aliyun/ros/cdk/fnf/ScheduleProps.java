@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fnf;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-schedule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:08:10.295Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:15:33.499Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.ScheduleProps")
 @software.amazon.jsii.Jsii.Proxy(ScheduleProps.Jsii$Proxy.class)
 public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,16 @@ public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getFlowName();
 
     /**
-     * Property scheduleName: Schedule name.
+     * Property scheduleName: The name of the timed schedule.
+     * <p>
+     * The name must meet the following requirements:
+     * <p>
+     * <ul>
+     * <li>It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+     * hyphens (-).</li>
+     * <li>It is case-sensitive.</li>
+     * <li>It must be 1 to 128 characters in length.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getScheduleName();
 
@@ -40,7 +49,10 @@ public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property payload: Payload.
+     * Property payload: The trigger message of the timed schedule.
+     * <p>
+     * The message must be in the JSON
+     * format.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayload() {
         return null;
@@ -105,7 +117,15 @@ public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ScheduleProps#getScheduleName}
-         * @param scheduleName Property scheduleName: Schedule name. This parameter is required.
+         * @param scheduleName Property scheduleName: The name of the timed schedule. This parameter is required.
+         *                     The name must meet the following requirements:
+         *                     <p>
+         *                     <ul>
+         *                     <li>It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+         *                     hyphens (-).</li>
+         *                     <li>It is case-sensitive.</li>
+         *                     <li>It must be 1 to 128 characters in length.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder scheduleName(java.lang.String scheduleName) {
@@ -115,7 +135,15 @@ public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ScheduleProps#getScheduleName}
-         * @param scheduleName Property scheduleName: Schedule name. This parameter is required.
+         * @param scheduleName Property scheduleName: The name of the timed schedule. This parameter is required.
+         *                     The name must meet the following requirements:
+         *                     <p>
+         *                     <ul>
+         *                     <li>It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+         *                     hyphens (-).</li>
+         *                     <li>It is case-sensitive.</li>
+         *                     <li>It must be 1 to 128 characters in length.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder scheduleName(com.aliyun.ros.cdk.core.IResolvable scheduleName) {
@@ -165,7 +193,9 @@ public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ScheduleProps#getPayload}
-         * @param payload Property payload: Payload.
+         * @param payload Property payload: The trigger message of the timed schedule.
+         *                The message must be in the JSON
+         *                format.
          * @return {@code this}
          */
         public Builder payload(java.lang.String payload) {
@@ -175,7 +205,9 @@ public interface ScheduleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ScheduleProps#getPayload}
-         * @param payload Property payload: Payload.
+         * @param payload Property payload: The trigger message of the timed schedule.
+         *                The message must be in the JSON
+         *                format.
          * @return {@code this}
          */
         public Builder payload(com.aliyun.ros.cdk.core.IResolvable payload) {

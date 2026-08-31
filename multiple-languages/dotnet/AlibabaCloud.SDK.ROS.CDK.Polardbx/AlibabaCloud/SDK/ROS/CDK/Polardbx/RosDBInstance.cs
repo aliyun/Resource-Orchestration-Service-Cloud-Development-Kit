@@ -96,7 +96,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dbNodeClass: The specification of the nodes in the instance you want to create.
+        /// <strong>Property</strong>: dbNodeClass: Node specifications:
+        /// - polarx.x4.medium.2e: 2 vCPUs, 8 GB
+        /// - polarx.x4.large.2e: 4 vCPUs, 16 GB
+        /// - polarx.x8.large.2e: 4 vCPUs, 32 GB
+        /// - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB
+        /// - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB
+        /// - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB
+        /// - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB
+        /// - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB
+        /// - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB
+        /// - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB
+        /// - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB
         /// </remarks>
         [JsiiProperty(name: "dbNodeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object DbNodeClass
@@ -126,7 +137,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dbNodeCount: The number of nodes in the instance you want to create.
+        /// <strong>Property</strong>: dbNodeCount: Number of instance nodes. Minimum value is 2.
         /// </remarks>
         [JsiiProperty(name: "dbNodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object DbNodeCount
@@ -183,7 +194,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: engineVersion: The version of the database engine.
+        /// <strong>Property</strong>: engineVersion: MySQL engine version, either 5.7 or 8.0.
         /// </remarks>
         [JsiiProperty(name: "engineVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object EngineVersion
@@ -457,7 +468,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardbx
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: resourceGroupId: The ID of resource group
+        /// <strong>Property</strong>: resourceGroupId: Can be empty. Resource group ID. Not supported for now.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ImagePipeline</code>, which is used to create an image template.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ImagePipeline</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.301Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ImagePipeline")
 public class ImagePipeline extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IImagePipeline {
 
@@ -112,26 +112,40 @@ public class ImagePipeline extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property baseImage: The source image.
+         * Property baseImage: The base image.
          * <p>
-         * If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-         * If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+         * The value of this parameter varies based on the value of
+         * <code>BaseImageType</code>:
+         * <p>
+         * <ul>
+         * <li>If <code>BaseImageType</code> is <code>IMAGE</code>, specify the ID of the base image.</li>
+         * <li>If <code>BaseImageType</code> is <code>IMAGE_FAMILY</code>, specify the name of the base image
+         * family.</li>
+         * <li>If <code>BaseImageType</code> is <code>OSS</code>, this parameter is not required.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param baseImage Property baseImage: The source image. This parameter is required.
+         * @param baseImage Property baseImage: The base image. This parameter is required.
          */
         public Builder baseImage(final java.lang.String baseImage) {
             this.props.baseImage(baseImage);
             return this;
         }
         /**
-         * Property baseImage: The source image.
+         * Property baseImage: The base image.
          * <p>
-         * If you set BaseImageType to IMAGE, set the BaseImage parameter to the ID of a custom image.
-         * If you set BaseImageType to IMAGE_FAMILY, set the BaseImage parameter to the name of an image family.
+         * The value of this parameter varies based on the value of
+         * <code>BaseImageType</code>:
+         * <p>
+         * <ul>
+         * <li>If <code>BaseImageType</code> is <code>IMAGE</code>, specify the ID of the base image.</li>
+         * <li>If <code>BaseImageType</code> is <code>IMAGE_FAMILY</code>, specify the name of the base image
+         * family.</li>
+         * <li>If <code>BaseImageType</code> is <code>OSS</code>, this parameter is not required.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param baseImage Property baseImage: The source image. This parameter is required.
+         * @param baseImage Property baseImage: The base image. This parameter is required.
          */
         public Builder baseImage(final com.aliyun.ros.cdk.core.IResolvable baseImage) {
             this.props.baseImage(baseImage);
@@ -139,28 +153,36 @@ public class ImagePipeline extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property baseImageType: The type of the source image.
+         * Property baseImageType: The type of the base image.
          * <p>
          * Valid values:
-         * IMAGE: image
-         * IMAGE_FAMILY: image family
+         * <p>
+         * <ul>
+         * <li>IMAGE: An ECS image.</li>
+         * <li>IMAGE_FAMILY: An image family.</li>
+         * <li>OSS: An OSS object.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param baseImageType Property baseImageType: The type of the source image. This parameter is required.
+         * @param baseImageType Property baseImageType: The type of the base image. This parameter is required.
          */
         public Builder baseImageType(final java.lang.String baseImageType) {
             this.props.baseImageType(baseImageType);
             return this;
         }
         /**
-         * Property baseImageType: The type of the source image.
+         * Property baseImageType: The type of the base image.
          * <p>
          * Valid values:
-         * IMAGE: image
-         * IMAGE_FAMILY: image family
+         * <p>
+         * <ul>
+         * <li>IMAGE: An ECS image.</li>
+         * <li>IMAGE_FAMILY: An image family.</li>
+         * <li>OSS: An OSS object.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param baseImageType Property baseImageType: The type of the source image. This parameter is required.
+         * @param baseImageType Property baseImageType: The type of the base image. This parameter is required.
          */
         public Builder baseImageType(final com.aliyun.ros.cdk.core.IResolvable baseImageType) {
             this.props.baseImageType(baseImageType);
@@ -301,26 +323,34 @@ public class ImagePipeline extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property imageName: The prefix of the image name.
+         * Property imageName: The prefix of the destination image name.
          * <p>
-         * The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (<em>), periods (.), and hyphens (-).
-         * The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}</em>{ExecutionId}.
+         * <blockquote>
+         * <p>
+         * <notice>This parameter is deprecated. Use <code>ImageOptions.ImageName</code>
+         * instead.&gt;</notice>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param imageName Property imageName: The prefix of the image name. This parameter is required.
+         * @param imageName Property imageName: The prefix of the destination image name. This parameter is required.
          */
         public Builder imageName(final java.lang.String imageName) {
             this.props.imageName(imageName);
             return this;
         }
         /**
-         * Property imageName: The prefix of the image name.
+         * Property imageName: The prefix of the destination image name.
          * <p>
-         * The prefix must be 2 to 64 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (<em>), periods (.), and hyphens (-).
-         * The system generates the final complete image name that consists of the specified prefix and the ID of the build task (ExecutionId) in the format of {ImageName}</em>{ExecutionId}.
+         * <blockquote>
+         * <p>
+         * <notice>This parameter is deprecated. Use <code>ImageOptions.ImageName</code>
+         * instead.&gt;</notice>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param imageName Property imageName: The prefix of the image name. This parameter is required.
+         * @param imageName Property imageName: The prefix of the destination image name. This parameter is required.
          */
         public Builder imageName(final com.aliyun.ros.cdk.core.IResolvable imageName) {
             this.props.imageName(imageName);
@@ -382,26 +412,44 @@ public class ImagePipeline extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property name: The name of the image template.
+         * Property name: The name of the image pipeline.
          * <p>
-         * The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-         * Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+         * It must be 2 to 128 characters long, start with a
+         * letter or a Chinese character, and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * Allowed characters include letters, digits, Chinese characters, colons (:),
+         * underscores (_), periods (.), and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, the value of <code>ImagePipelineId</code> is used as
+         * the name.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the image template. This parameter is required.
+         * @param name Property name: The name of the image pipeline. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the image template.
+         * Property name: The name of the image pipeline.
          * <p>
-         * The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:// or https://. It can contain letters, digits, colons (:), underscores (_), periods (.), and hyphens (-).
-         * Note If you do not specify the Name parameter, the return value of ImagePipelineId is used.
+         * It must be 2 to 128 characters long, start with a
+         * letter or a Chinese character, and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * Allowed characters include letters, digits, Chinese characters, colons (:),
+         * underscores (_), periods (.), and hyphens (-).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, the value of <code>ImagePipelineId</code> is used as
+         * the name.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the image template. This parameter is required.
+         * @param name Property name: The name of the image pipeline. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);

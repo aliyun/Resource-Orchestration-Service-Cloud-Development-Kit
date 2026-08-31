@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hologram.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::Hologram::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:29:47.143Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:39:15.148Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hologram.$Module.class, fqn = "@alicloud/ros-cdk-hologram.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object _signatureKey;
 
         /// <remarks>
-        /// <strong>Property</strong>: signatureKey: The key of the signature.
+        /// <strong>Property</strong>: signatureKey: The Key value of the key. The value must be 6 to 20 characters in length and can
+        /// contain letters, digits, and underscores (_). It must start with a letter.
         /// </remarks>
         [JsiiProperty(name: "signatureKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SignatureKey
@@ -48,7 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object _signatureName;
 
         /// <remarks>
-        /// <strong>Property</strong>: signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+        /// <strong>Property</strong>: signatureName: The displayed name of the key. The name must be 4 to 50 characters in length and
+        /// can contain letters, digits, and underscores (_). It must start with a letter.
         /// </remarks>
         [JsiiProperty(name: "signatureName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SignatureName
@@ -80,7 +82,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object _signatureSecret;
 
         /// <remarks>
-        /// <strong>Property</strong>: signatureSecret: The secret of the signature.
+        /// <strong></strong>: ), number signs (#), exclamation points (!), and
+        /// asterisks (\*). The value must start with a letter.
+        ///
+        /// <strong>Property</strong>: signatureSecret: The Secret value of the key. The value must be 6 to 30 characters in length and
+        /// can contain letters, digits, and special characters. Special characters include
+        /// underscores (_), at signs (
         /// </remarks>
         [JsiiProperty(name: "signatureSecret", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SignatureSecret

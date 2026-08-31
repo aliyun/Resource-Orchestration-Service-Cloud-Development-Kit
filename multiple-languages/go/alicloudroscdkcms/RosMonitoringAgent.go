@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgent`, which is used to install the CloudMonitor agent on Alibaba Cloud hosts.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgent`.
 type RosMonitoringAgent interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

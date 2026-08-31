@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fc;
 /**
  * Represents a <code>Version</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.383Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:20:02.172Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.IVersion")
 @software.amazon.jsii.Jsii.Proxy(IVersion.Jsii$Proxy.class)
 public interface IVersion extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

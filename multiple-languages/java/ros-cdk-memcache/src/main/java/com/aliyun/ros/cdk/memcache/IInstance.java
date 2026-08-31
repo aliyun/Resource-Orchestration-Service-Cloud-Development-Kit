@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.memcache;
 /**
  * Represents a <code>Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:49:03.011Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:03:56.960Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.memcache.$Module.class, fqn = "@alicloud/ros-cdk-memcache.IInstance")
 @software.amazon.jsii.Jsii.Proxy(IInstance.Jsii$Proxy.class)
 public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

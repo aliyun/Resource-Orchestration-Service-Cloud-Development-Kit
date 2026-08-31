@@ -45,7 +45,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cddc
 
         private object _accountPassword;
 
-        /// <summary>Property accountPassword: The password of the account.</summary>
+        /// <summary>Property accountPassword: The password for the host account.</summary>
+        /// <remarks>
+        /// The password must meet the following
+        /// requirements:
+        ///
+        /// <list type="bullet">
+        /// <description>The password must be 6 to 32 characters in length.</description>
+        /// <description>It must contain uppercase letters, lowercase letters, digits, and special
+        /// characters.</description>
+        /// <description>Supported special characters: <c>!@#$%^&amp;*()_+-=</c></description>
+        /// </list>
+        ///
+        ///     If your engine is SQL Server, the password cannot contain the account name
+        ///     (case-insensitive).
+        /// </remarks>
         [JsiiProperty(name: "accountPassword", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object AccountPassword
         {

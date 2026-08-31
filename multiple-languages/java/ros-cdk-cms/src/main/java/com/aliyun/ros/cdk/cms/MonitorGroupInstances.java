@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MonitorGroupInstances</code>, which is used to add instances to an application group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MonitorGroupInstances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.266Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroupInstances")
 public class MonitorGroupInstances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IMonitorGroupInstances {
 
@@ -133,20 +133,20 @@ public class MonitorGroupInstances extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property instances:.
+         * Property instances: The instances that you want to add to the application group.
          * <p>
          * @return {@code this}
-         * @param instances Property instances:. This parameter is required.
+         * @param instances Property instances: The instances that you want to add to the application group. This parameter is required.
          */
         public Builder instances(final com.aliyun.ros.cdk.core.IResolvable instances) {
             this.props.instances(instances);
             return this;
         }
         /**
-         * Property instances:.
+         * Property instances: The instances that you want to add to the application group.
          * <p>
          * @return {@code this}
-         * @param instances Property instances:. This parameter is required.
+         * @param instances Property instances: The instances that you want to add to the application group. This parameter is required.
          */
         public Builder instances(final java.util.List<? extends java.lang.Object> instances) {
             this.props.instances(instances);

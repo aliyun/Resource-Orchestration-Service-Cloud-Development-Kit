@@ -11,7 +11,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
     [JsiiInterface(nativeType: typeof(IExpressSyncProps), fullyQualifiedName: "@alicloud/ros-cdk-cloudstoragegateway.ExpressSyncProps")]
     public interface IExpressSyncProps
     {
-        /// <summary>Property bucketName: The name of the OSS bucket.</summary>
+        /// <summary>Property bucketName: The name of the bucket.</summary>
+        /// <remarks>
+        /// Note:
+        ///
+        /// <list type="bullet">
+        /// <description>You can specify only one OSS bucket for a synchronization group. All data
+        /// changes in the bucket are synchronized to your on-premises environment.</description>
+        /// <description>If you have not created a share for the OSS bucket, you must first create a
+        /// share between the file gateway and the OSS bucket.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object BucketName
         {
@@ -25,7 +35,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
             get;
         }
 
-        /// <summary>Property name: The name of the ExpressSync.</summary>
+        /// <summary>Property name: The name of the express synchronization group.</summary>
+        /// <remarks>
+        /// The name must be 1 to 128
+        /// characters in length and can contain letters, Chinese characters, digits, periods
+        /// (.), underscores (_), and hyphens (-). The name must start with a letter or a
+        /// Chinese character.
+        /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Name
         {
@@ -43,7 +59,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
             }
         }
 
-        /// <summary>Property description: The description of the ExpressSync.</summary>
+        /// <summary>Property description: The description of the express synchronization group.</summary>
+        /// <remarks>
+        /// The description can be up
+        /// to 255 characters in length.
+        /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
@@ -65,7 +85,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
             {
             }
 
-            /// <summary>Property bucketName: The name of the OSS bucket.</summary>
+            /// <summary>Property bucketName: The name of the bucket.</summary>
+            /// <remarks>
+            /// Note:
+            ///
+            /// <list type="bullet">
+            /// <description>You can specify only one OSS bucket for a synchronization group. All data
+            /// changes in the bucket are synchronized to your on-premises environment.</description>
+            /// <description>If you have not created a share for the OSS bucket, you must first create a
+            /// share between the file gateway and the OSS bucket.</description>
+            /// </list>
+            /// </remarks>
             [JsiiProperty(name: "bucketName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object BucketName
             {
@@ -79,7 +109,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property name: The name of the ExpressSync.</summary>
+            /// <summary>Property name: The name of the express synchronization group.</summary>
+            /// <remarks>
+            /// The name must be 1 to 128
+            /// characters in length and can contain letters, Chinese characters, digits, periods
+            /// (.), underscores (_), and hyphens (-). The name must start with a letter or a
+            /// Chinese character.
+            /// </remarks>
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Name
             {
@@ -94,7 +130,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property description: The description of the ExpressSync.</summary>
+            /// <summary>Property description: The description of the express synchronization group.</summary>
+            /// <remarks>
+            /// The description can be up
+            /// to 255 characters in length.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description

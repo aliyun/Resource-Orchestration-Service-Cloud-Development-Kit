@@ -5,21 +5,35 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-networkacl
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.495Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.306Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.NetworkAclProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkAclProps.Jsii$Proxy.class)
 public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs.
+     * <p>
+     * If the VPC contains Elastic Compute Service (ECS) instances of the following
+     * instance families, you must upgrade the ECS instances or release the ECS
+     * instances. Otherwise, you cannot create a network ACL for the VPC.
+     * ecs.c1, ecs.c2, ecs.c4, ecs.c5, ecs.ce4, ecs.cm4, ecs.d1, ecs.e3, ecs.e4,
+     * ecs.ga1, ecs.gn4, ecs.gn5, ecs.i1, ecs.m1, ecs.m2, ecs.mn4, ecs.n1, ecs.n2,
+     * ecs.n4, ecs.s1, ecs.s2, ecs.s3, ecs.se1, ecs.sn1, ecs.sn2, ecs.t1, and ecs.xn4.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If the VPC contains an ECS instance that does not support network ACLs,
+     * upgrade the ECS instance.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVpcId();
 
     /**
      * Property description: The description of the network ACL.
      * <p>
-     * The description must be 2 to 256 characters in length. The description must start
-     * with a letter but cannot start with http:// or https://.
+     * The description must be 1 to 256 characters in length, and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -42,9 +56,8 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property networkAclName: The name of the network ACL.
      * <p>
-     * The name must be 2 to 128 characters in length and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-     * start with http:// or https://.
+     * The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+     * or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkAclName() {
         return null;
@@ -69,6 +82,19 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link NetworkAclProps#getVpcId}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs. This parameter is required.
+         *              If the VPC contains Elastic Compute Service (ECS) instances of the following
+         *              instance families, you must upgrade the ECS instances or release the ECS
+         *              instances. Otherwise, you cannot create a network ACL for the VPC.
+         *              ecs.c1, ecs.c2, ecs.c4, ecs.c5, ecs.ce4, ecs.cm4, ecs.d1, ecs.e3, ecs.e4,
+         *              ecs.ga1, ecs.gn4, ecs.gn5, ecs.i1, ecs.m1, ecs.m2, ecs.mn4, ecs.n1, ecs.n2,
+         *              ecs.n4, ecs.s1, ecs.s2, ecs.s3, ecs.se1, ecs.sn1, ecs.sn2, ecs.t1, and ecs.xn4.
+         *              <p>
+         *              <blockquote>
+         *              <p>
+         *              If the VPC contains an ECS instance that does not support network ACLs,
+         *              upgrade the ECS instance.
+         *              <p>
+         *              </blockquote>
          * @return {@code this}
          */
         public Builder vpcId(java.lang.String vpcId) {
@@ -79,6 +105,19 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link NetworkAclProps#getVpcId}
          * @param vpcId Property vpcId: The ID of the virtual private cloud (VPC) to which the network ACL belongs. This parameter is required.
+         *              If the VPC contains Elastic Compute Service (ECS) instances of the following
+         *              instance families, you must upgrade the ECS instances or release the ECS
+         *              instances. Otherwise, you cannot create a network ACL for the VPC.
+         *              ecs.c1, ecs.c2, ecs.c4, ecs.c5, ecs.ce4, ecs.cm4, ecs.d1, ecs.e3, ecs.e4,
+         *              ecs.ga1, ecs.gn4, ecs.gn5, ecs.i1, ecs.m1, ecs.m2, ecs.mn4, ecs.n1, ecs.n2,
+         *              ecs.n4, ecs.s1, ecs.s2, ecs.s3, ecs.se1, ecs.sn1, ecs.sn2, ecs.t1, and ecs.xn4.
+         *              <p>
+         *              <blockquote>
+         *              <p>
+         *              If the VPC contains an ECS instance that does not support network ACLs,
+         *              upgrade the ECS instance.
+         *              <p>
+         *              </blockquote>
          * @return {@code this}
          */
         public Builder vpcId(com.aliyun.ros.cdk.core.IResolvable vpcId) {
@@ -89,8 +128,8 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link NetworkAclProps#getDescription}
          * @param description Property description: The description of the network ACL.
-         *                    The description must be 2 to 256 characters in length. The description must start
-         *                    with a letter but cannot start with http:// or https://.
+         *                    The description must be 1 to 256 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -101,8 +140,8 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link NetworkAclProps#getDescription}
          * @param description Property description: The description of the network ACL.
-         *                    The description must be 2 to 256 characters in length. The description must start
-         *                    with a letter but cannot start with http:// or https://.
+         *                    The description must be 1 to 256 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -153,9 +192,8 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link NetworkAclProps#getNetworkAclName}
          * @param networkAclName Property networkAclName: The name of the network ACL.
-         *                       The name must be 2 to 128 characters in length and can contain letters, digits, periods
-         *                       (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-         *                       start with http:// or https://.
+         *                       The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+         *                       or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder networkAclName(java.lang.String networkAclName) {
@@ -166,9 +204,8 @@ public interface NetworkAclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link NetworkAclProps#getNetworkAclName}
          * @param networkAclName Property networkAclName: The name of the network ACL.
-         *                       The name must be 2 to 128 characters in length and can contain letters, digits, periods
-         *                       (.), underscores (_), and hyphens (-). The name must start with a letter and cannot
-         *                       start with http:// or https://.
+         *                       The name must be 1 to 128 characters in length, and cannot start with <code>http:\/\/</code>
+         *                       or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder networkAclName(com.aliyun.ros.cdk.core.IResolvable networkAclName) {

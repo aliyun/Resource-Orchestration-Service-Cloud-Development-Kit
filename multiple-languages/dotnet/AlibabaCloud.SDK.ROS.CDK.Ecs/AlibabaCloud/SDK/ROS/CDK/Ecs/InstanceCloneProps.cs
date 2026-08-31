@@ -102,7 +102,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _deletionProtection;
 
-        /// <summary>Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.</summary>
+        /// <summary>Property deletionProtection: Specifies whether to enable release protection for the instance.</summary>
+        /// <remarks>
+        /// This parameter
+        /// determines whether you can use the ECS console or call the <a href="">DeleteInstance</a>
+        /// operation to release the instance. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: enables release protection for the instance.</description>
+        /// <description>false: disables release protection for the instance.
+        /// Default value: false.</description>
+        /// </list>
+        ///
+        ///     This parameter is applicable to only pay-as-you-go instances. It can protect
+        ///     instances against manual releases, but not against automatic releases.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deletionProtection", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DeletionProtection

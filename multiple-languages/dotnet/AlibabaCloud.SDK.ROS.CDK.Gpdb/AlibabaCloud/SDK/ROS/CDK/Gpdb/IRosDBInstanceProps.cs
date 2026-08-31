@@ -21,7 +21,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The vSwitch ID of the instance.
+        /// <strong>Property</strong>: vSwitchId: The vSwitch ID.
+        /// > - This parameter is required.
+        /// >
+        /// > - The vSwitch must be in the zone specified by `ZoneId`.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object VSwitchId
@@ -66,7 +69,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: cacheStorageSize: Cache storage size.
+        /// <strong>Property</strong>: cacheStorageSize: The cache size for a serverless instance, in GB.
         /// </remarks>
         [JsiiProperty(name: "cacheStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -94,8 +97,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-        /// This parameter must be passed in to create a storage reservation mode instance.
+        /// <strong>Property</strong>: dbInstanceCategory: The instance edition. Valid values:
+        /// - HighAvailability: High-availability Edition
+        /// - Basic: Basic Edition
+        /// > This parameter is required for instances in elastic storage mode.
         /// </remarks>
         [JsiiProperty(name: "dbInstanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -108,7 +113,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dbInstanceClass: The instance type.
+        /// <strong>Property</strong>: dbInstanceClass: The instance type. For more information, see the description of the
+        /// `DBInstanceClass` parameter.
+        /// > This parameter is required for instances in reserved storage mode.
         /// </remarks>
         [JsiiProperty(name: "dbInstanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -134,8 +141,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dbInstanceGroupCount: The number of compute nodes in the instance.
-        /// The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+        /// <strong>Property</strong>: dbInstanceGroupCount: The number of compute groups. Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+        /// 128.
+        /// > This parameter is required for instances in reserved storage mode.
         /// </remarks>
         [JsiiProperty(name: "dbInstanceGroupCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -161,7 +169,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deployMode: The deployment mode of the instance.
+        /// <strong>Property</strong>: deployMode: The deployment mode. Valid values:
+        /// - multiple: multi-AZ deployment.
+        /// - single: single-AZ deployment.
+        /// > * If this parameter is not specified, the default value is single.
+        /// >
+        /// > * Defaults to `single` (single-AZ deployment), which is the only mode currently
+        /// supported.
         /// </remarks>
         [JsiiProperty(name: "deployMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -216,7 +230,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: idleTime: Idle release wait time. That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+        /// <strong>Property</strong>: idleTime: The period of inactivity, in seconds, after which the instance is considered
+        /// idle. Minimum value: 60. Default value: 600.
+        /// > This parameter is required only for serverless instances that use
+        /// auto-scheduling.
         /// </remarks>
         [JsiiProperty(name: "idleTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -229,11 +246,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceSpec: The specification of segment nodes.
-        /// - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
-        /// - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
-        /// - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-        /// This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+        /// <strong>Property</strong>: instanceSpec: The instance type for the compute nodes.
+        /// Valid values for a High-availability Edition instance in elastic storage mode:
+        /// - 2C16G
+        /// - 4C32G
+        /// - 16C128G
+        /// Valid values for a Basic Edition instance in elastic storage mode:
+        /// - 2C8G
+        /// - 4C16G
+        /// - 8C32G
+        /// - 16C64G
+        /// Valid values for a serverless instance:
+        /// - 4C16G
+        /// - 8C32G
+        /// > This parameter is required for instances in elastic storage mode or serverless
+        /// mode.
         /// </remarks>
         [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -259,7 +286,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: masterCu: Master resources. Default is 8.
+        /// <strong>Property</strong>: masterCu: The resources for the coordinator node. Valid values:
+        /// - 2 CU
+        /// - 4 CU
+        /// - 8 CU
+        /// - 16 CU
+        /// - 32 CU
+        /// > You are charged for coordinator node resources of 8 CUs or more.
         /// </remarks>
         [JsiiProperty(name: "masterCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -326,7 +359,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: privateIpAddress: Private IP address.
+        /// <strong>Property</strong>: privateIpAddress: This parameter is deprecated.
         /// </remarks>
         [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -365,8 +398,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-        /// 127.0.0.1.
+        /// <strong>Property</strong>: securityIpList: The IP address whitelist for the instance.
+        /// A value of 127.0.0.1 blocks all external access. After you create the instance,
+        /// you can call the [ModifySecurityIps]() operation to modify the IP address
+        /// whitelist.
         /// </remarks>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -379,8 +414,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: segDiskPerformanceLevel: Seg disk performance level. The value can be:
-        /// pl0、pl1 and pl2
+        /// <strong>Property</strong>: segDiskPerformanceLevel: The performance level of the ESSDs. Valid values:
+        /// - pl0: PL0
+        /// - pl1: PL1
+        /// - pl2: PL2
+        /// > * This parameter applies only if the segment node storage type is ESSD.
+        /// >
+        /// > * If this parameter is not specified, pl1 is used by default.
         /// </remarks>
         [JsiiProperty(name: "segDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -439,8 +479,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: serverlessResource: Computing resource threshold. The value ranges from 8 to 32. The step length is 8.
-        /// The unit is ACU. The default value is 32.
+        /// <strong>Property</strong>: serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs). The
+        /// value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+        /// > This parameter is required only for serverless instances that use
+        /// auto-scheduling.
         /// </remarks>
         [JsiiProperty(name: "serverlessResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -466,7 +508,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: standbyVSwitchId: The standby VSwitch ID of the instance.
+        /// <strong>Property</strong>: standbyVSwitchId: The ID of the vSwitch in the standby zone.
+        /// > - This parameter is required only for a multi-AZ deployment.
+        /// >
+        /// > - The vSwitch must be in the standby zone specified in `StandbyZoneId`.
         /// </remarks>
         [JsiiProperty(name: "standbyVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -479,7 +524,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: standbyZoneId: The standby zone ID of the instance.
+        /// <strong>Property</strong>: standbyZoneId: The ID of the standby zone.
+        /// > - This parameter is required only for a multi-AZ deployment.
+        /// >
+        /// > - You can call the [DescribeRegions]() operation to query the IDs of available
+        /// zones.
+        /// >
+        /// > - The standby zone must be different from the primary zone.
         /// </remarks>
         [JsiiProperty(name: "standbyZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -492,7 +543,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
+        /// <strong>Property</strong>: storageSize: The storage capacity for the instance, in GB. Valid values: .
+        /// > This parameter is required for instances in elastic storage mode.
         /// </remarks>
         [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -567,7 +619,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The vSwitch ID of the instance.
+            /// <strong>Property</strong>: vSwitchId: The vSwitch ID.
+            /// > - This parameter is required.
+            /// >
+            /// > - The vSwitch must be in the zone specified by `ZoneId`.
             /// </remarks>
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VSwitchId
@@ -606,7 +661,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: cacheStorageSize: Cache storage size.
+            /// <strong>Property</strong>: cacheStorageSize: The cache size for a serverless instance, in GB.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cacheStorageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -628,8 +683,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-            /// This parameter must be passed in to create a storage reservation mode instance.
+            /// <strong>Property</strong>: dbInstanceCategory: The instance edition. Valid values:
+            /// - HighAvailability: High-availability Edition
+            /// - Basic: Basic Edition
+            /// > This parameter is required for instances in elastic storage mode.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -639,7 +696,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dbInstanceClass: The instance type.
+            /// <strong>Property</strong>: dbInstanceClass: The instance type. For more information, see the description of the
+            /// `DBInstanceClass` parameter.
+            /// > This parameter is required for instances in reserved storage mode.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -659,8 +718,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dbInstanceGroupCount: The number of compute nodes in the instance.
-            /// The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+            /// <strong>Property</strong>: dbInstanceGroupCount: The number of compute groups. Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+            /// 128.
+            /// > This parameter is required for instances in reserved storage mode.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbInstanceGroupCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -680,7 +740,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: deployMode: The deployment mode of the instance.
+            /// <strong>Property</strong>: deployMode: The deployment mode. Valid values:
+            /// - multiple: multi-AZ deployment.
+            /// - single: single-AZ deployment.
+            /// > * If this parameter is not specified, the default value is single.
+            /// >
+            /// > * Defaults to `single` (single-AZ deployment), which is the only mode currently
+            /// supported.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "deployMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -723,7 +789,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: idleTime: Idle release wait time. That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+            /// <strong>Property</strong>: idleTime: The period of inactivity, in seconds, after which the instance is considered
+            /// idle. Minimum value: 60. Default value: 600.
+            /// > This parameter is required only for serverless instances that use
+            /// auto-scheduling.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "idleTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -733,11 +802,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: instanceSpec: The specification of segment nodes.
-            /// - When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.
-            /// - When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.
-            /// - When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-            /// This parameter must be passed to create a storage elastic mode instance and a serverless version instance.
+            /// <strong>Property</strong>: instanceSpec: The instance type for the compute nodes.
+            /// Valid values for a High-availability Edition instance in elastic storage mode:
+            /// - 2C16G
+            /// - 4C32G
+            /// - 16C128G
+            /// Valid values for a Basic Edition instance in elastic storage mode:
+            /// - 2C8G
+            /// - 4C16G
+            /// - 8C32G
+            /// - 16C64G
+            /// Valid values for a serverless instance:
+            /// - 4C16G
+            /// - 8C32G
+            /// > This parameter is required for instances in elastic storage mode or serverless
+            /// mode.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "instanceSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -757,7 +836,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: masterCu: Master resources. Default is 8.
+            /// <strong>Property</strong>: masterCu: The resources for the coordinator node. Valid values:
+            /// - 2 CU
+            /// - 4 CU
+            /// - 8 CU
+            /// - 16 CU
+            /// - 32 CU
+            /// > You are charged for coordinator node resources of 8 CUs or more.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "masterCu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -809,7 +894,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: privateIpAddress: Private IP address.
+            /// <strong>Property</strong>: privateIpAddress: This parameter is deprecated.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -839,8 +924,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-            /// 127.0.0.1.
+            /// <strong>Property</strong>: securityIpList: The IP address whitelist for the instance.
+            /// A value of 127.0.0.1 blocks all external access. After you create the instance,
+            /// you can call the [ModifySecurityIps]() operation to modify the IP address
+            /// whitelist.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -850,8 +937,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: segDiskPerformanceLevel: Seg disk performance level. The value can be:
-            /// pl0、pl1 and pl2
+            /// <strong>Property</strong>: segDiskPerformanceLevel: The performance level of the ESSDs. Valid values:
+            /// - pl0: PL0
+            /// - pl1: PL1
+            /// - pl2: PL2
+            /// > * This parameter applies only if the segment node storage type is ESSD.
+            /// >
+            /// > * If this parameter is not specified, pl1 is used by default.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "segDiskPerformanceLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -898,8 +990,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: serverlessResource: Computing resource threshold. The value ranges from 8 to 32. The step length is 8.
-            /// The unit is ACU. The default value is 32.
+            /// <strong>Property</strong>: serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs). The
+            /// value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+            /// > This parameter is required only for serverless instances that use
+            /// auto-scheduling.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "serverlessResource", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -919,7 +1013,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: standbyVSwitchId: The standby VSwitch ID of the instance.
+            /// <strong>Property</strong>: standbyVSwitchId: The ID of the vSwitch in the standby zone.
+            /// > - This parameter is required only for a multi-AZ deployment.
+            /// >
+            /// > - The vSwitch must be in the standby zone specified in `StandbyZoneId`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "standbyVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -929,7 +1026,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: standbyZoneId: The standby zone ID of the instance.
+            /// <strong>Property</strong>: standbyZoneId: The ID of the standby zone.
+            /// > - This parameter is required only for a multi-AZ deployment.
+            /// >
+            /// > - You can call the [DescribeRegions]() operation to query the IDs of available
+            /// zones.
+            /// >
+            /// > - The standby zone must be different from the primary zone.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "standbyZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -939,7 +1042,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: storageSize: The storage capacity of per segment node. Unit: GB. Minimum is 50, max is 4000, step is 50.
+            /// <strong>Property</strong>: storageSize: The storage capacity for the instance, in GB. Valid values: .
+            /// > This parameter is required for instances in elastic storage mode.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "storageSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

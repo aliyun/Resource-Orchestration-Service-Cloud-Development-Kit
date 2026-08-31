@@ -69,7 +69,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deliver: The deliver of the CDN deliver task.
+        /// <strong>Property</strong>: deliver: The method that is used to send operations reports. Operations reports are sent
+        /// to you only by email. The settings must be escaped in JSON.
         /// </remarks>
         [JsiiProperty(name: "deliver", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public virtual object Deliver
@@ -136,7 +137,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: reports: The reports of the CDN deliver task.
+        /// <strong>Property</strong>: reports: The operations reports that are tracked by the task. The data must be escaped in
+        /// JSON.
         /// </remarks>
         [JsiiProperty(name: "reports", typeJson: "{\"union\":{\"types\":[{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"array\"}},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Reports
@@ -166,7 +168,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: schedule: The schedule of the CDN deliver task.
+        /// <strong>Property</strong>: schedule: The parameters that specify the time interval at which the tracking task sends
+        /// operations reports. The settings must be escaped in JSON.
         /// </remarks>
         [JsiiProperty(name: "schedule", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public virtual object Schedule

@@ -51,9 +51,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: ruleName: The name of the forwarding rule.
-        /// The name must be 2 to 128 characters in length.
-        /// It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-        /// must start with a letter.
+        /// - The length must be 2 to 128 English or Chinese characters.
+        /// - The name must start with a letter, a Chinese character, or a number, and can
+        /// contain numbers, periods (.), underscores (_), hyphens (-), and spaces.
         /// </remarks>
         [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object RuleName
@@ -62,7 +62,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: direction: Rule direction. Valid values: Request or Response.
+        /// <strong>Property</strong>: direction: The direction in which the forwarding rule is applied. Valid values:
+        /// - Request (default): The rule matches and processes requests sent from the client
+        /// to the ALB instance.
+        /// - Response: The rule matches and processes responses returned from server groups
+        /// to the ALB instance.
+        /// > Basic ALB instances support only forwarding rules whose Direction is Request.
         /// </remarks>
         [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -125,9 +130,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
             /// <remarks>
             /// <strong>Property</strong>: ruleName: The name of the forwarding rule.
-            /// The name must be 2 to 128 characters in length.
-            /// It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-            /// must start with a letter.
+            /// - The length must be 2 to 128 English or Chinese characters.
+            /// - The name must start with a letter, a Chinese character, or a number, and can
+            /// contain numbers, periods (.), underscores (_), hyphens (-), and spaces.
             /// </remarks>
             [JsiiProperty(name: "ruleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RuleName
@@ -136,7 +141,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: direction: Rule direction. Valid values: Request or Response.
+            /// <strong>Property</strong>: direction: The direction in which the forwarding rule is applied. Valid values:
+            /// - Request (default): The rule matches and processes requests sent from the client
+            /// to the ALB instance.
+            /// - Response: The rule matches and processes responses returned from server groups
+            /// to the ALB instance.
+            /// > Basic ALB instances support only forwarding rules whose Direction is Request.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "direction", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AssignIpv6Addresses</code>, which is used to assign IPv6 addresses to an elastic network interface (ENI).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AssignIpv6Addresses</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.812Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.162Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AssignIpv6Addresses")
 public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAssignIpv6Addresses {
 
@@ -149,24 +149,38 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
+         * Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI.
          * <p>
-         * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * Valid values: 1 to
+         * 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify <code>Ipv6Addresses.N</code> or <code>Ipv6AddressCount</code>, but not both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv6AddressCount Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity. This parameter is required.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI. This parameter is required.
          */
         public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
             this.props.ipv6AddressCount(ipv6AddressCount);
             return this;
         }
         /**
-         * Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity.
+         * Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI.
          * <p>
-         * Note You cannot specify the parameters Ipv6Addresses and Ipv6AddressCount at the same time.
+         * Valid values: 1 to
+         * 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify <code>Ipv6Addresses.N</code> or <code>Ipv6AddressCount</code>, but not both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv6AddressCount Property ipv6AddressCount: IPv6 addresses specified number of randomly generated interfaces elasticity. This parameter is required.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of IPv6 addresses to randomly generate for the ENI. This parameter is required.
          */
         public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
             this.props.ipv6AddressCount(ipv6AddressCount);
@@ -201,20 +215,38 @@ public class AssignIpv6Addresses extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI.
+         * <p>
+         * Valid values: 1 to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+         * Ipv6PrefixCount, but not both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity. This parameter is required.
+         * @param ipv6PrefixCount Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI. This parameter is required.
          */
         public Builder ipv6PrefixCount(final java.lang.Number ipv6PrefixCount) {
             this.props.ipv6PrefixCount(ipv6PrefixCount);
             return this;
         }
         /**
-         * Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity.
+         * Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI.
+         * <p>
+         * Valid values: 1 to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * To assign IPv6 prefixes to the ENI, you must specify Ipv6Prefix.N or
+         * Ipv6PrefixCount, but not both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv6PrefixCount Property ipv6PrefixCount: IPv6 prefix specified number of randomly generated interfaces elasticity. This parameter is required.
+         * @param ipv6PrefixCount Property ipv6PrefixCount: The number of IPv6 prefixes to assign to the ENI. This parameter is required.
          */
         public Builder ipv6PrefixCount(final com.aliyun.ros.cdk.core.IResolvable ipv6PrefixCount) {
             this.props.ipv6PrefixCount(ipv6PrefixCount);

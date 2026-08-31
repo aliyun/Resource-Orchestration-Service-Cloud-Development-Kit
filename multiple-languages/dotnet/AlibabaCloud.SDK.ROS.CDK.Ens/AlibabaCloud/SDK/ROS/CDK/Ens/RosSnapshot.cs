@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ens
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-snapshot
@@ -168,7 +168,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: snapshotName: The name of the snapshot. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+        /// <strong>Property</strong>: snapshotName: The name of the snapshot. The name must be 2 to 128 characters in length. It must
+        /// start with a letter or a Chinese character, but cannot start with `http:\/\/` or
+        /// `https:\/\/`. It can contain digits, colons (:), underscores (_), and hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "snapshotName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

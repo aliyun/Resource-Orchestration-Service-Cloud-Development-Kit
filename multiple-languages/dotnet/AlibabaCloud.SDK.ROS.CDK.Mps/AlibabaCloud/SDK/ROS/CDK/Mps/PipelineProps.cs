@@ -158,7 +158,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mps
 
         private object? _speedLevel;
 
-        /// <summary>Property speedLevel: Speed level.</summary>
+        /// <summary>Property speedLevel: The level of the MPS queue.</summary>
+        /// <remarks>
+        /// Valid values: 1 to 3.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "speedLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SpeedLevel

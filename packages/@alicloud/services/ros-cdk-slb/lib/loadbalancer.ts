@@ -10,7 +10,7 @@ export { RosLoadBalancer as LoadBalancerProperty };
 export interface LoadBalancerProps {
 
     /**
-     * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. If 'ipv6' is selected, please note that the zone and the specification are supported.
+     * Property addressIpVersion: The IP version of the CLB instance. Valid values: ipv4 and ipv6.
      */
     readonly addressIpVersion?: string | ros.IResolvable;
 
@@ -32,9 +32,10 @@ export interface LoadBalancerProps {
     readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
-     * Property instanceChargeType: Instance billing method. Valid value:
-     * - **PayBySpec** (default): Pay by spec.
-     * - **PayByCLCU**: billed by usage.
+     * Property instanceChargeType: The resource metering method for the CLB instance. Valid value:
+     * - PayByCLCU: pay-by-data-transfer
+     * > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
@@ -47,20 +48,27 @@ export interface LoadBalancerProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+     * Property loadBalancerName: The CLB instance name.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
      * Property loadBalancerSpec: The specification of the CLB instance. Valid values:
-     * - **slb.s1.small**
-     * - **slb.s2.small**
-     * - **slb.s2.medium**
-     * - **slb.s3.small**
-     * - **slb.s3.medium**
-     * - **slb.s3.large**
-     * **Note** If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-     * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.
+     * - slb.s1.small
+     * - slb.s2.small
+     * - slb.s2.medium
+     * - slb.s3.small
+     * - slb.s3.medium
+     * - slb.s3.large
+     * > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.
+     * >
+     * > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly loadBalancerSpec?: string | ros.IResolvable;
 
@@ -70,15 +78,23 @@ export interface LoadBalancerProps {
     readonly masterZoneId?: string | ros.IResolvable;
 
     /**
-     * Property modificationProtectionReason: Set the reason for modifying the protection status. The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-     * Only valid when ModificationProtectionStatus is ConsoleProtection.
+     * Property modificationProtectionReason: The reason for enabling the configuration read-only mode. The reason must be 1 to
+     * 80 characters in length. It must start with a letter and can contain letters,
+     * digits, periods (.), underscores (_), and hyphens (-).
+     * > This parameter takes effect only when ModificationProtectionStatus is set to
+     * ConsoleProtection.
      */
     readonly modificationProtectionReason?: string | ros.IResolvable;
 
     /**
-     * Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection
-     * ConsoleProtection: Modify instance protection status by console
-     * Default value is empty.
+     * Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode. Valid values:
+     * - NonProtection: disables the configuration read-only mode. After you disable the
+     * configuration read-only mode, the value of ModificationProtectionReason is
+     * cleared.
+     * - ConsoleProtection: enables the configuration read-only mode.
+     * > If you set this parameter to ConsoleProtection, you cannot modify instance
+     * configurations in the CLB console. However, you can modify instance
+     * configurations by calling API operations.
      */
     readonly modificationProtectionStatus?: string | ros.IResolvable;
 
@@ -103,7 +119,10 @@ export interface LoadBalancerProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The VSwitch id to create load balancer instance. For VPC network only.
+     * Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * > The vSwitch must be in the primary zone.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }

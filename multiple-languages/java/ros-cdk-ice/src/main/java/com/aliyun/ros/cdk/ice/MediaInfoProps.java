@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ice;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ice-mediainfo
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:31:54.397Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:41:15.858Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.MediaInfoProps")
 @software.amazon.jsii.Jsii.Proxy(MediaInfoProps.Jsii$Proxy.class)
 public interface MediaInfoProps extends software.amazon.jsii.JsiiSerializable {
@@ -83,8 +83,7 @@ public interface MediaInfoProps extends software.amazon.jsii.JsiiSerializable {
      * video
      * audio
      * text
-     * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-     * .
+     * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMediaType() {
         return null;
@@ -151,6 +150,12 @@ public interface MediaInfoProps extends software.amazon.jsii.JsiiSerializable {
      * Property userData: The user data.
      * <p>
      * You can specify a custom callback URL.
+     * <p>
+     * <ul>
+     * <li>The value can be up to 1,024 bytes in length.</li>
+     * <li>The value must be encoded in UTF-8.</li>
+     * <li>The value must be in the JSON format.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
@@ -356,8 +361,7 @@ public interface MediaInfoProps extends software.amazon.jsii.JsiiSerializable {
          *                  video
          *                  audio
          *                  text
-         *                  We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-         *                  .
+         *                  We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
          * @return {@code this}
          */
         public Builder mediaType(java.lang.String mediaType) {
@@ -373,8 +377,7 @@ public interface MediaInfoProps extends software.amazon.jsii.JsiiSerializable {
          *                  video
          *                  audio
          *                  text
-         *                  We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-         *                  .
+         *                  We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
          * @return {@code this}
          */
         public Builder mediaType(com.aliyun.ros.cdk.core.IResolvable mediaType) {
@@ -520,6 +523,12 @@ public interface MediaInfoProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link MediaInfoProps#getUserData}
          * @param userData Property userData: The user data.
          *                 You can specify a custom callback URL.
+         *                 <p>
+         *                 <ul>
+         *                 <li>The value can be up to 1,024 bytes in length.</li>
+         *                 <li>The value must be encoded in UTF-8.</li>
+         *                 <li>The value must be in the JSON format.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder userData(com.aliyun.ros.cdk.core.IResolvable userData) {
@@ -531,6 +540,12 @@ public interface MediaInfoProps extends software.amazon.jsii.JsiiSerializable {
          * Sets the value of {@link MediaInfoProps#getUserData}
          * @param userData Property userData: The user data.
          *                 You can specify a custom callback URL.
+         *                 <p>
+         *                 <ul>
+         *                 <li>The value can be up to 1,024 bytes in length.</li>
+         *                 <li>The value must be encoded in UTF-8.</li>
+         *                 <li>The value must be in the JSON format.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder userData(java.util.Map<java.lang.String, ? extends java.lang.Object> userData) {

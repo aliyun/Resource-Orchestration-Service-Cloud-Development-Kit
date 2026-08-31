@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::AnycastEIPAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.338Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.141Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIPAssociation")
 public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IAnycastEIPAssociation {
 
@@ -199,24 +199,34 @@ public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property bindInstanceType: The cloud resource instance type to be bound.
+         * Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.
          * <p>
-         * Valid value: SlbInstance, SLB instance of private network type.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>SlbInstance: CLB instance in a virtual private cloud (VPC).</li>
+         * <li>NetworkInterface: ENI.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bindInstanceType Property bindInstanceType: The cloud resource instance type to be bound. This parameter is required.
+         * @param bindInstanceType Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP. This parameter is required.
          */
         public Builder bindInstanceType(final java.lang.String bindInstanceType) {
             this.props.bindInstanceType(bindInstanceType);
             return this;
         }
         /**
-         * Property bindInstanceType: The cloud resource instance type to be bound.
+         * Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.
          * <p>
-         * Valid value: SlbInstance, SLB instance of private network type.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>SlbInstance: CLB instance in a virtual private cloud (VPC).</li>
+         * <li>NetworkInterface: ENI.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bindInstanceType Property bindInstanceType: The cloud resource instance type to be bound. This parameter is required.
+         * @param bindInstanceType Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP. This parameter is required.
          */
         public Builder bindInstanceType(final com.aliyun.ros.cdk.core.IResolvable bindInstanceType) {
             this.props.bindInstanceType(bindInstanceType);
@@ -225,6 +235,33 @@ public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource impl
 
         /**
          * Property associationMode: The association mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Default: the default mode. In this mode, the associated cloud resource is the
+         * default origin server.</li>
+         * <li>Normal: the normal mode. In this mode, the associated cloud resource is a
+         * normal origin server.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * An Anycast EIP can be associated with cloud resources in multiple regions.
+         * However, you can specify only one default origin server and multiple normal
+         * origin servers. When you do not specify an access point or add a new access
+         * point, requests are forwarded to the default origin server by default.
+         * <p>
+         * <ul>
+         * <li>If this is your first time to associate a cloud resource with the Anycast
+         * EIP, the association mode is Default by default.</li>
+         * <li>If this is not your first time to associate a cloud resource with the Anycast
+         * EIP, you can set the association mode to Default. This makes the new cloud
+         * resource the default origin server, and the original default origin server
+         * becomes a normal origin server.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param associationMode Property associationMode: The association mode. This parameter is required.
@@ -235,6 +272,33 @@ public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource impl
         }
         /**
          * Property associationMode: The association mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Default: the default mode. In this mode, the associated cloud resource is the
+         * default origin server.</li>
+         * <li>Normal: the normal mode. In this mode, the associated cloud resource is a
+         * normal origin server.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * An Anycast EIP can be associated with cloud resources in multiple regions.
+         * However, you can specify only one default origin server and multiple normal
+         * origin servers. When you do not specify an access point or add a new access
+         * point, requests are forwarded to the default origin server by default.
+         * <p>
+         * <ul>
+         * <li>If this is your first time to associate a cloud resource with the Anycast
+         * EIP, the association mode is Default by default.</li>
+         * <li>If this is not your first time to associate a cloud resource with the Anycast
+         * EIP, you can set the association mode to Default. This makes the new cloud
+         * resource the default origin server, and the original default origin server
+         * becomes a normal origin server.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param associationMode Property associationMode: The association mode. This parameter is required.
@@ -266,20 +330,28 @@ public class AnycastEIPAssociation extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property privateIpAddress: The private IP address.
+         * Property privateIpAddress: The secondary private IP address of the ENI.
+         * <p>
+         * This parameter is required when BindInstanceType is set to NetworkInterface. If
+         * you do not specify this parameter, the primary private IP address of the ENI is
+         * used.
          * <p>
          * @return {@code this}
-         * @param privateIpAddress Property privateIpAddress: The private IP address. This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: The secondary private IP address of the ENI. This parameter is required.
          */
         public Builder privateIpAddress(final java.lang.String privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);
             return this;
         }
         /**
-         * Property privateIpAddress: The private IP address.
+         * Property privateIpAddress: The secondary private IP address of the ENI.
+         * <p>
+         * This parameter is required when BindInstanceType is set to NetworkInterface. If
+         * you do not specify this parameter, the primary private IP address of the ENI is
+         * used.
          * <p>
          * @return {@code this}
-         * @param privateIpAddress Property privateIpAddress: The private IP address. This parameter is required.
+         * @param privateIpAddress Property privateIpAddress: The secondary private IP address of the ENI. This parameter is required.
          */
         public Builder privateIpAddress(final com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
             this.props.privateIpAddress(privateIpAddress);

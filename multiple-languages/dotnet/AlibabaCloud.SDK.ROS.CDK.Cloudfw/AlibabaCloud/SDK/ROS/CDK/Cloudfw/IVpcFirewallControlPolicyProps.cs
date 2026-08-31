@@ -234,11 +234,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Property lang: The natural language of the request and response.</summary>
+        /// <summary>Property lang: The language of the request and response.</summary>
         /// <remarks>
         /// Valid values:
-        /// zh: Chinese
-        /// en: English
+        ///
+        /// <list type="bullet">
+        /// <description>zh (default): Chinese</description>
+        /// <description>en: English</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -592,11 +595,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property lang: The natural language of the request and response.</summary>
+            /// <summary>Property lang: The language of the request and response.</summary>
             /// <remarks>
             /// Valid values:
-            /// zh: Chinese
-            /// en: English
+            ///
+            /// <list type="bullet">
+            /// <description>zh (default): Chinese</description>
+            /// <description>en: English</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "lang", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::Directory`, which is used to create a directory.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::Directory`.
 type Directory interface {
 	alicloudroscdkcore.Resource
 	IDirectory

@@ -15,26 +15,30 @@ export interface SnapshotProps {
     readonly diskId: string | ros.IResolvable;
 
     /**
-     * Property description: The description of a snapshot can be 2 to 256 characters in length and cannot begin with http:\/\/ or https:\/\/. The description will appear on the console. By default, the value is zero.
+     * Property description: The snapshot description must be 2 to 256 characters in length and cannot start
+     * with `http:\/\/` or `https:\/\/`.
+     * This parameter is empty by default.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property instantAccess: Specifies whether to enable the instant access feature. Valid values: 
-     * true: enables the instant access feature. This feature can be enabled only for enhanced SSDs (ESSDs) 
-     * false: disables the instant access feature. If InstantAccess is set to false, normal snapshots are created.
+     * Property instantAccess: Specifies whether to enable the Instant Access feature. Valid values:
+     * - true: Enables the Instant Access feature. This feature can be enabled only for
+     * snapshots of ESSD cloud disks.
+     * - false: Disables the Instant Access feature. A standard snapshot is created.
      * Default value: false.
-     * Note This parameter and the Category parameter cannot be specified at the same time. 
-     * For more information, see the "Description" section in this topic.
+     * > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the [Instant Access]() feature by default at no additional cost.
      */
     readonly instantAccess?: boolean | ros.IResolvable;
 
     /**
-     * Property instantAccessRetentionDays: Specifies the retention period of the instant access feature. After the retention period ends, 
-     * the snapshot is automatically released. This parameter takes effect only when InstantAccess 
-     * is set to true. Unit: days.
-     * Valid values: 1 to 65535. By default, the value of 
-     * this parameter is the same as that of RetentionDays.
+     * Property instantAccessRetentionDays: The retention period for the Instant Access feature, in days. The snapshot is
+     * automatically deleted when this retention period expires. This parameter takes
+     * effect only when `InstantAccess` is set to `true`. Valid values: 1 to 65,535.
+     * Defaults to the value of `RetentionDays`.
+     * > This parameter is deprecated. standard snapshots for ESSD cloud disks now
+     * include the [Instant Access]() feature by default at no additional cost.
      */
     readonly instantAccessRetentionDays?: number | ros.IResolvable;
 
@@ -44,13 +48,18 @@ export interface SnapshotProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property retentionDays: Set the retention period of a snapshot in days. The snapshot will be automatically released after the retention period expires.
-     * The value ranges from 1 to 65536.
+     * Property retentionDays: The retention period of the snapshot, in days. Valid values: 1 to 65,536. The
+     * snapshot is automatically deleted when the retention period expires.
+     * If this parameter is not specified, the snapshot is retained indefinitely.
      */
     readonly retentionDays?: number | ros.IResolvable;
 
     /**
-     * Property snapshotName: The name of the snapshot, [2, 128] English or Chinese characters. It must begin with an uppercase\/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:\/\/ or https:\/\/.
+     * Property snapshotName: The snapshot name must be 2 to 128 characters long. It must start with a letter
+     * or a Chinese character and can contain letters, digits, colons (:), underscores
+     * (_), periods (.), and hyphens (-).
+     * > The name cannot start with `http:\/\/` or `https:\/\/`. To avoid conflicts with
+     * auto snapshot names, the name cannot start with `auto`.
      */
     readonly snapshotName?: string | ros.IResolvable;
 
@@ -82,7 +91,7 @@ export interface ISnapshot extends ros.IResource {
     readonly attrSnapshotId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Snapshot`, which is used to create a snapshot for a disk.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Snapshot`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSnapshot`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-snapshot
  */

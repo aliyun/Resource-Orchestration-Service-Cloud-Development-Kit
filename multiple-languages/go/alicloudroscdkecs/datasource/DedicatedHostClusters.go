@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`, which is used to query the information about dedicated host clusters.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::DedicatedHostClusters`.
 type DedicatedHostClusters interface {
 	alicloudroscdkcore.Resource
 	IDedicatedHostClusters

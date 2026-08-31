@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::RDS::AccountPrivilege</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:35:11.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:02:12.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.RosAccountPrivilege")
 public class RosAccountPrivilege extends com.aliyun.ros.cdk.core.RosResource {
 

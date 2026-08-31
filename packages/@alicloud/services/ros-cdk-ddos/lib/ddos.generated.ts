@@ -177,7 +177,7 @@ function rosOriginInstancePropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::OriginInstance`, which is used to create an Anti-DDoS Origin instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::OriginInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `OriginInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-origininstance
  */
@@ -481,7 +481,7 @@ function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::Policy`, which is used to create a mitigation policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DDoS::Policy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-policy
  */

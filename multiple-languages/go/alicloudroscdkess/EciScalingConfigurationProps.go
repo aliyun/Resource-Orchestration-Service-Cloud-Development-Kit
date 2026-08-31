@@ -9,8 +9,12 @@ type EciScalingConfigurationProps struct {
 	ContainerGroupName interface{} `field:"required" json:"containerGroupName" yaml:"containerGroupName"`
 	// Property scalingConfigurationName: The name of the scaling configuration.
 	//
-	// The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-	// The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+	// The name must be 2 to 64 characters in
+	// length and can contain letters, digits, underscores (_), hyphens (-), and periods
+	// (.). The name must start with a letter or a digit.
+	// The name of the scaling configuration must be unique within a scaling group in a
+	// region. If you do not specify this parameter, the value of the
+	// ScalingConfigurationId parameter is used.
 	ScalingConfigurationName interface{} `field:"required" json:"scalingConfigurationName" yaml:"scalingConfigurationName"`
 	// Property scalingGroupId: The ID of the scaling group for which you want to create the scaling configuration.
 	ScalingGroupId interface{} `field:"required" json:"scalingGroupId" yaml:"scalingGroupId"`
@@ -75,11 +79,11 @@ type EciScalingConfigurationProps struct {
 	// Note
 	// For more information about ESSDs, see ESSDs.
 	DataCachePl interface{} `field:"optional" json:"dataCachePl" yaml:"dataCachePl"`
-	// Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching.
+	// Property dataCacheProvisionedIops: The provisioned read\/write input\/output operations per second (IOPS) for the ESSD AutoPL disk when data caching uses an ESSD AutoPL disk.
 	//
-	// Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-	// Note
-	// For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+	// Valid values: 0 to
+	// min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+	// min{1800 + 50 × capacity, 50000}.
 	DataCacheProvisionedIops interface{} `field:"optional" json:"dataCacheProvisionedIops" yaml:"dataCacheProvisionedIops"`
 	// Property dnsConfigNameServers: The IP addresses of the DNS servers.
 	DnsConfigNameServers interface{} `field:"optional" json:"dnsConfigNameServers" yaml:"dnsConfigNameServers"`
@@ -95,7 +99,7 @@ type EciScalingConfigurationProps struct {
 	DnsPolicy interface{} `field:"optional" json:"dnsPolicy" yaml:"dnsPolicy"`
 	// Property egressBandwidth: The maximum outbound bandwidth.
 	//
-	// Unit: bytes.
+	// Unit: bit\/s.
 	EgressBandwidth interface{} `field:"optional" json:"egressBandwidth" yaml:"egressBandwidth"`
 	// Property eipBandwidth: The bandwidth of the EIP.
 	//
@@ -115,7 +119,7 @@ type EciScalingConfigurationProps struct {
 	ImageSnapshotId interface{} `field:"optional" json:"imageSnapshotId" yaml:"imageSnapshotId"`
 	// Property ingressBandwidth: The maximum inbound bandwidth.
 	//
-	// Unit: bytes.
+	// Unit: bit\/s.
 	IngressBandwidth interface{} `field:"optional" json:"ingressBandwidth" yaml:"ingressBandwidth"`
 	// Property initContainers:.
 	InitContainers interface{} `field:"optional" json:"initContainers" yaml:"initContainers"`

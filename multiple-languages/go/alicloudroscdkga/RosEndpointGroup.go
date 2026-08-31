@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroup`, which is used to create an endpoint group.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroup`.
 type RosEndpointGroup interface {
 	alicloudroscdkcore.RosResource
 	AcceleratorId() interface{}
@@ -29,10 +29,16 @@ type RosEndpointGroup interface {
 	SetEndpointGroupRegion(val interface{})
 	EndpointGroupType() interface{}
 	SetEndpointGroupType(val interface{})
+	EndpointIpVersion() interface{}
+	SetEndpointIpVersion(val interface{})
+	EndpointProtocolVersion() interface{}
+	SetEndpointProtocolVersion(val interface{})
 	EndpointRequestProtocol() interface{}
 	SetEndpointRequestProtocol(val interface{})
 	HealthCheckEnabled() interface{}
 	SetHealthCheckEnabled(val interface{})
+	HealthCheckHost() interface{}
+	SetHealthCheckHost(val interface{})
 	HealthCheckIntervalSeconds() interface{}
 	SetHealthCheckIntervalSeconds(val interface{})
 	HealthCheckPath() interface{}
@@ -57,6 +63,8 @@ type RosEndpointGroup interface {
 	SetName(val interface{})
 	// The construct tree node associated with this construct.
 	Node() alicloudroscdkcore.ConstructNode
+	PortOverrides() interface{}
+	SetPortOverrides(val interface{})
 	// Return a string that will be resolved to a RosTemplate `{ Ref }` for this element.
 	//
 	// If, by any chance, the intrinsic reference of a resource is not a string, you could
@@ -71,6 +79,8 @@ type RosEndpointGroup interface {
 	//
 	// RosElements must be defined within a stack scope (directly or indirectly).
 	Stack() alicloudroscdkcore.Stack
+	Tags() *[]*RosEndpointGroup_TagsProperty
+	SetTags(val *[]*RosEndpointGroup_TagsProperty)
 	ThresholdCount() interface{}
 	SetThresholdCount(val interface{})
 	TrafficPercentage() interface{}
@@ -279,6 +289,26 @@ func (j *jsiiProxy_RosEndpointGroup) EndpointGroupType() interface{} {
 	return returns
 }
 
+func (j *jsiiProxy_RosEndpointGroup) EndpointIpVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"endpointIpVersion",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosEndpointGroup) EndpointProtocolVersion() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"endpointProtocolVersion",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosEndpointGroup) EndpointRequestProtocol() interface{} {
 	var returns interface{}
 	_jsii_.Get(
@@ -294,6 +324,16 @@ func (j *jsiiProxy_RosEndpointGroup) HealthCheckEnabled() interface{} {
 	_jsii_.Get(
 		j,
 		"healthCheckEnabled",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosEndpointGroup) HealthCheckHost() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"healthCheckHost",
 		&returns,
 	)
 	return returns
@@ -379,6 +419,16 @@ func (j *jsiiProxy_RosEndpointGroup) Node() alicloudroscdkcore.ConstructNode {
 	return returns
 }
 
+func (j *jsiiProxy_RosEndpointGroup) PortOverrides() interface{} {
+	var returns interface{}
+	_jsii_.Get(
+		j,
+		"portOverrides",
+		&returns,
+	)
+	return returns
+}
+
 func (j *jsiiProxy_RosEndpointGroup) Ref() *string {
 	var returns *string
 	_jsii_.Get(
@@ -424,6 +474,16 @@ func (j *jsiiProxy_RosEndpointGroup) Stack() alicloudroscdkcore.Stack {
 	_jsii_.Get(
 		j,
 		"stack",
+		&returns,
+	)
+	return returns
+}
+
+func (j *jsiiProxy_RosEndpointGroup) Tags() *[]*RosEndpointGroup_TagsProperty {
+	var returns *[]*RosEndpointGroup_TagsProperty
+	_jsii_.Get(
+		j,
+		"tags",
 		&returns,
 	)
 	return returns
@@ -553,6 +613,28 @@ func (j *jsiiProxy_RosEndpointGroup)SetEndpointGroupType(val interface{}) {
 	)
 }
 
+func (j *jsiiProxy_RosEndpointGroup)SetEndpointIpVersion(val interface{}) {
+	if err := j.validateSetEndpointIpVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"endpointIpVersion",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEndpointGroup)SetEndpointProtocolVersion(val interface{}) {
+	if err := j.validateSetEndpointProtocolVersionParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"endpointProtocolVersion",
+		val,
+	)
+}
+
 func (j *jsiiProxy_RosEndpointGroup)SetEndpointRequestProtocol(val interface{}) {
 	if err := j.validateSetEndpointRequestProtocolParameters(val); err != nil {
 		panic(err)
@@ -571,6 +653,17 @@ func (j *jsiiProxy_RosEndpointGroup)SetHealthCheckEnabled(val interface{}) {
 	_jsii_.Set(
 		j,
 		"healthCheckEnabled",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEndpointGroup)SetHealthCheckHost(val interface{}) {
+	if err := j.validateSetHealthCheckHostParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"healthCheckHost",
 		val,
 	)
 }
@@ -637,6 +730,28 @@ func (j *jsiiProxy_RosEndpointGroup)SetName(val interface{}) {
 	_jsii_.Set(
 		j,
 		"name",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEndpointGroup)SetPortOverrides(val interface{}) {
+	if err := j.validateSetPortOverridesParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"portOverrides",
+		val,
+	)
+}
+
+func (j *jsiiProxy_RosEndpointGroup)SetTags(val *[]*RosEndpointGroup_TagsProperty) {
+	if err := j.validateSetTagsParameters(val); err != nil {
+		panic(err)
+	}
+	_jsii_.Set(
+		j,
+		"tags",
 		val,
 	)
 }

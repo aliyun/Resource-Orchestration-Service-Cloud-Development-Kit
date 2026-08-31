@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::SLB::AccessControls</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.392Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.datasource.RosAccessControls")
 public class RosAccessControls extends com.aliyun.ros.cdk.core.RosResource {
 

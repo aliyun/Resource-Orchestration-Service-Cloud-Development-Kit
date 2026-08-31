@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rds;
 /**
  * Represents a <code>DBProxy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:35:10.996Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:02:12.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rds.$Module.class, fqn = "@alicloud/ros-cdk-rds.IDBProxy")
 @software.amazon.jsii.Jsii.Proxy(IDBProxy.Jsii$Proxy.class)
 public interface IDBProxy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

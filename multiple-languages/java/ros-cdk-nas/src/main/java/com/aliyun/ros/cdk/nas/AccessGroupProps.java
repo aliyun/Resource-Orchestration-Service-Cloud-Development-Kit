@@ -5,13 +5,24 @@ package com.aliyun.ros.cdk.nas;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-accessgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.471Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.286Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.AccessGroupProps")
 @software.amazon.jsii.Jsii.Proxy(AccessGroupProps.Jsii$Proxy.class)
 public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property accessGroupName: Permission group name.
+     * Property accessGroupName: The name of the permission group.
+     * <p>
+     * Limits:
+     * <p>
+     * <ul>
+     * <li>The name must be 3 to 64 characters in length.</li>
+     * <li>The name must start with a letter and can contain letters, digits,
+     * underscores (_), and hyphens (-).</li>
+     * <li>The name must be different from the name of the default permission group.
+     * The default permission group for virtual private clouds (VPCs) is named
+     * DEFAULT_VPC_GROUP_NAME.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupName();
 
@@ -21,9 +32,18 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getAccessGroupType();
 
     /**
-     * Property description: Permission group description.
+     * Property description: The description of the permission group.
      * <p>
-     * It is the same as the permission group name by default.
+     * Limits:
+     * <p>
+     * <ul>
+     * <li>By default, the description of a permission group is the same as the name of
+     * the permission group. The description must be 2 to 128 characters in length.</li>
+     * <li>The name must start with a letter and cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.</li>
+     * <li>The description can contain digits, colons (:), underscores (_), and hyphens
+     * (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -55,7 +75,17 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AccessGroupProps#getAccessGroupName}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
+         *                        Limits:
+         *                        <p>
+         *                        <ul>
+         *                        <li>The name must be 3 to 64 characters in length.</li>
+         *                        <li>The name must start with a letter and can contain letters, digits,
+         *                        underscores (_), and hyphens (-).</li>
+         *                        <li>The name must be different from the name of the default permission group.
+         *                        The default permission group for virtual private clouds (VPCs) is named
+         *                        DEFAULT_VPC_GROUP_NAME.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder accessGroupName(java.lang.String accessGroupName) {
@@ -65,7 +95,17 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AccessGroupProps#getAccessGroupName}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
+         *                        Limits:
+         *                        <p>
+         *                        <ul>
+         *                        <li>The name must be 3 to 64 characters in length.</li>
+         *                        <li>The name must start with a letter and can contain letters, digits,
+         *                        underscores (_), and hyphens (-).</li>
+         *                        <li>The name must be different from the name of the default permission group.
+         *                        The default permission group for virtual private clouds (VPCs) is named
+         *                        DEFAULT_VPC_GROUP_NAME.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder accessGroupName(com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
@@ -95,8 +135,17 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AccessGroupProps#getDescription}
-         * @param description Property description: Permission group description.
-         *                    It is the same as the permission group name by default.
+         * @param description Property description: The description of the permission group.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>By default, the description of a permission group is the same as the name of
+         *                    the permission group. The description must be 2 to 128 characters in length.</li>
+         *                    <li>The name must start with a letter and cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain digits, colons (:), underscores (_), and hyphens
+         *                    (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -106,8 +155,17 @@ public interface AccessGroupProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AccessGroupProps#getDescription}
-         * @param description Property description: Permission group description.
-         *                    It is the same as the permission group name by default.
+         * @param description Property description: The description of the permission group.
+         *                    Limits:
+         *                    <p>
+         *                    <ul>
+         *                    <li>By default, the description of a permission group is the same as the name of
+         *                    the permission group. The description must be 2 to 128 characters in length.</li>
+         *                    <li>The name must start with a letter and cannot start with <code>http:\/\/</code> or
+         *                    <code>https:\/\/</code>.</li>
+         *                    <li>The description can contain digits, colons (:), underscores (_), and hyphens
+         *                    (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

@@ -202,7 +202,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: addressIpVersion: IP version, support 'ipv4' or 'ipv6'. If 'ipv6' is selected, please note that the zone and the specification are supported.
+        /// <strong>Property</strong>: addressIpVersion: The IP version of the CLB instance. Valid values: ipv4 and ipv6.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "addressIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -348,9 +348,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceChargeType: Instance billing method. Valid value:
-        /// - **PayBySpec** (default): Pay by spec.
-        /// - **PayByCLCU**: billed by usage.
+        /// <strong>Property</strong>: instanceChargeType: The resource metering method for the CLB instance. Valid value:
+        /// - PayByCLCU: pay-by-data-transfer
+        /// > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+        /// no longer available for purchase. For more details, see [](t2857909.xdita#).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -415,7 +416,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+        /// <strong>Property</strong>: loadBalancerName: The CLB instance name.
+        /// The name must be 1 to 80 characters in length, and can contain digits, periods
+        /// (.), underscores (_), and hyphens (-). It must start with a letter.
+        /// If you do not specify this parameter, the system automatically assigns a name to
+        /// the CLB instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -447,14 +452,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
         /// <remarks>
         /// <strong>Property</strong>: loadBalancerSpec: The specification of the CLB instance. Valid values:
-        /// - **slb.s1.small**
-        /// - **slb.s2.small**
-        /// - **slb.s2.medium**
-        /// - **slb.s3.small**
-        /// - **slb.s3.medium**
-        /// - **slb.s3.large**
-        /// **Note** If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-        /// If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.
+        /// - slb.s1.small
+        /// - slb.s2.small
+        /// - slb.s2.medium
+        /// - slb.s3.small
+        /// - slb.s3.medium
+        /// - slb.s3.large
+        /// > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+        /// do not need to specify this parameter.
+        /// >
+        /// > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+        /// are no longer available for purchase. For more details, see [](t2857909.xdita#).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -516,8 +524,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: modificationProtectionReason: Set the reason for modifying the protection status. The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-        /// Only valid when ModificationProtectionStatus is ConsoleProtection.
+        /// <strong>Property</strong>: modificationProtectionReason: The reason for enabling the configuration read-only mode. The reason must be 1 to
+        /// 80 characters in length. It must start with a letter and can contain letters,
+        /// digits, periods (.), underscores (_), and hyphens (-).
+        /// > This parameter takes effect only when ModificationProtectionStatus is set to
+        /// ConsoleProtection.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "modificationProtectionReason", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -548,9 +559,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection
-        /// ConsoleProtection: Modify instance protection status by console
-        /// Default value is empty.
+        /// <strong>Property</strong>: modificationProtectionStatus: Specifies whether to enable the configuration read-only mode. Valid values:
+        /// - NonProtection: disables the configuration read-only mode. After you disable the
+        /// configuration read-only mode, the value of ModificationProtectionReason is
+        /// cleared.
+        /// - ConsoleProtection: enables the configuration read-only mode.
+        /// > If you set this parameter to ConsoleProtection, you cannot modify instance
+        /// configurations in the CLB console. However, you can modify instance
+        /// configurations by calling API operations.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "modificationProtectionStatus", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -685,7 +701,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The VSwitch id to create load balancer instance. For VPC network only.
+        /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+        /// If you want to deploy the CLB instance in a VPC, this parameter is required. If
+        /// this parameter is specified, AddessType is set to intranet by default.
+        /// > The vSwitch must be in the primary zone.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

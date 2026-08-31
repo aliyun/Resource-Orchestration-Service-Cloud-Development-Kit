@@ -5,9 +5,16 @@ package alicloudroscdkess
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
 type ScalingGroupProps struct {
-	// Property maxSize: Maximum number of ECS instances in the scaling group.
+	// Property maxSize: The maximum number of ECS instances that can be contained in the scaling group.
 	//
-	// Value range: [0, 2000].
+	// If the number of ECS instances in the scaling group is greater than the value of
+	// the `MaxSize` parameter, Auto Scaling automatically removes ECS instances until
+	// the number of instances in the scaling group is equal to the maximum number.
+	// The value range of the MaxSize parameter varies based on the instance quota. You
+	// can go to Quota Center to check the maximum number of instances that a scaling
+	// group can contain.
+	// For example, if a scaling group can contain up to 2,000 instances, the value
+	// range of the `MaxSize` parameter is 0 to 2000.
 	MaxSize interface{} `field:"required" json:"maxSize" yaml:"maxSize"`
 	// Property minSize: Minimum number of ECS instances in the scaling group.
 	//
@@ -38,9 +45,13 @@ type ScalingGroupProps struct {
 	//
 	// This parameter takes effect only if you specify CustomPolicy as the value of first item of RemovalPolicys.
 	CustomPolicyArn interface{} `field:"optional" json:"customPolicyArn" yaml:"customPolicyArn"`
-	// Property dbInstanceIds: ID list of an RDS instance.
+	// Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling group.
 	//
-	// A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
+	// The value can be a JSON array that contains multiple ApsaraDB RDS instance
+	// IDs. Separate multiple IDs with commas (,).
+	// You can associate only a limited number of ApsaraDB RDS instances with a scaling
+	// group. Go to Quota Center to check the maximum number of ApsaraDB RDS instances
+	// that you can associate with a scaling group.
 	DbInstanceIds interface{} `field:"optional" json:"dbInstanceIds" yaml:"dbInstanceIds"`
 	// Property defaultCooldown: Default cool-down time (in seconds) of the scaling group.
 	//
@@ -66,7 +77,11 @@ type ScalingGroupProps struct {
 	//
 	// Allow values is "ECS" and "NONE", default to "ECS".
 	HealthCheckType interface{} `field:"optional" json:"healthCheckType" yaml:"healthCheckType"`
-	// Property healthCheckTypes: The list of health check type.
+	// Property healthCheckTypes: The health check method for the scaling group.
+	//
+	// > You can specify multiple values for this parameter to enable multiple health
+	// check options. If the `HealthCheckType` parameter is set, this parameter is
+	// ignored.
 	HealthCheckTypes interface{} `field:"optional" json:"healthCheckTypes" yaml:"healthCheckTypes"`
 	// Property instanceId: The ID of the ECS instance from which the scaling group obtains configuration information of the specified instance.
 	InstanceId interface{} `field:"optional" json:"instanceId" yaml:"instanceId"`
@@ -83,9 +98,13 @@ type ScalingGroupProps struct {
 	// Default: The default template version is always used.
 	// Latest: The latest template version is always used.
 	LaunchTemplateVersion interface{} `field:"optional" json:"launchTemplateVersion" yaml:"launchTemplateVersion"`
-	// Property loadBalancerIds: ID list of a Server Load Balancer instance.
+	// Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group.
 	//
-	// A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
+	// The value can be a JSON array that contains multiple CLB instance IDs. Separate
+	// multiple IDs with commas (,).
+	// You can associate only a limited number of CLB instances with a scaling group. Go
+	// to Quota Center to check the maximum number of CLB instances that you can
+	// associate with a scaling group.
 	LoadBalancerIds interface{} `field:"optional" json:"loadBalancerIds" yaml:"loadBalancerIds"`
 	// Property maxInstanceLifetime: The maximum life span of an ECS instance in the scaling group.
 	//
@@ -94,14 +113,30 @@ type ScalingGroupProps struct {
 	// Default value: null.
 	// Note: This parameter is unavailable for scaling groups of the ECI type or scaling groups whose ScalingPolicy is set to recycle.
 	MaxInstanceLifetime interface{} `field:"optional" json:"maxInstanceLifetime" yaml:"maxInstanceLifetime"`
-	// Property multiAzPolicy: ECS scaling strategy for multi availability zone.
+	// Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances.
 	//
-	// Allow value:
-	// 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-	// 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
-	// 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
-	// Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
-	// 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
+	// Valid values:
+	// *   PRIORITY: Auto Scaling scales ECS instances based on the priority of the
+	// vSwitch that is specified by the VSwitchIds.N parameter. Auto Scaling
+	// preferentially scales instances in the zone where the vSwitch that has the
+	// highest priority resides. If the scaling fails, Auto Scaling scales instances in
+	// the zone where the vSwitch that has the next highest priority resides.
+	// *   COST_OPTIMIZED: Auto Scaling preferentially creates ECS instances whose vCPUs
+	// are provided at the lowest price and removes ECS instances whose vCPUs are
+	// provided at the highest price. If preemptible instance types are specified in the
+	// scaling configuration, Auto Scaling preferentially creates preemptible instances.
+	// You can use the CompensateWithOnDemand parameter to specify whether to
+	// automatically create pay-as-you-go instances when preemptible instances cannot be
+	// created due to insufficient resources.
+	// Note The COST_OPTIMIZED **setting takes effect only when you specify multiple
+	// instance types or when you specify at least one preemptible instance type.
+	// *   BALANCE: Auto Scaling evenly distributes ECS instances across zones that are
+	// specified for the scaling group. If ECS instances are unevenly distributed across
+	// zones due to insufficient resources, you can call the [RebalanceInstance]()
+	// operation to evenly distribute the instances across the zones.
+	// *   COMPOSABLE: You can combine the preceding policies based on your business
+	// requirements.
+	// Default value: PRIORITY.
 	MultiAzPolicy interface{} `field:"optional" json:"multiAzPolicy" yaml:"multiAzPolicy"`
 	// Property notificationConfigurations: When a scaling event occurs in a scaling group, ESS will send a notification to Cloud Monitor or MNS.
 	NotificationConfigurations interface{} `field:"optional" json:"notificationConfigurations" yaml:"notificationConfigurations"`
@@ -131,10 +166,14 @@ type ScalingGroupProps struct {
 	RemovalPolicys interface{} `field:"optional" json:"removalPolicys" yaml:"removalPolicys"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese).
+	// Property scalingGroupName: The name of the scaling group.
 	//
-	// The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
-	// If this parameter is not specified, the default value is ScalingGroupId.
+	// The name of each scaling group must be unique in a
+	// region. The name must be 2 to 64 characters in length, and can contain letters,
+	// digits, underscores (_), hyphens (-), and periods (.). The name must start with a
+	// letter or a digit.
+	// If you do not specify this parameter, the value of the ScalingGroupId parameter
+	// is used.
 	ScalingGroupName interface{} `field:"optional" json:"scalingGroupName" yaml:"scalingGroupName"`
 	// Property scalingPolicy: The reclaim mode of the scaling group.
 	//
@@ -168,9 +207,24 @@ type ScalingGroupProps struct {
 	//
 	// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
 	Tags *[]*RosScalingGroup_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
-	// Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+	// Property vSwitchId: The ID of the vSwitch.
+	//
+	// If you specify the VSwitchId parameter, the network type
+	// of the scaling group is VPC.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
-	// Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId. The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC. The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority. When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
+	// Property vSwitchIds: The IDs of vSwitches.
+	//
+	// If you specify the VSwitchIds.N parameter, the VSwitchId
+	// parameter is ignored. If you specify the VSwitchIds.N parameter, the network type
+	// of the scaling group is VPC.
+	// If you specify multiple vSwitches, take note of the following items:
+	// *   The vSwitches must belong to the same VPC.
+	// *   The vSwitches can belong to different zones.
+	// *   The vSwitches are sorted in ascending order of priority. The first vSwitch
+	// that is specified by the VSwitchIds.N parameter has the highest priority. If Auto
+	// Scaling fails to create ECS instances in the zone where the vSwitch that has the
+	// highest priority resides, Auto Scaling creates ECS instances in the zone where
+	// the vSwitch that has the next highest priority resides.
 	VSwitchIds interface{} `field:"optional" json:"vSwitchIds" yaml:"vSwitchIds"`
 }
 

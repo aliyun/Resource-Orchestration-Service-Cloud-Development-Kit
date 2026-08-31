@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ClickHouse::EnterpriseDBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:45.017Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:34:08.068Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.EnterpriseDBCluster")
 public class EnterpriseDBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.clickhouse.IEnterpriseDBCluster {
 
@@ -151,6 +151,10 @@ public class EnterpriseDBCluster extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property nodeCount: The number of nodes.
          * <p>
+         * Valid values: 2 to 16. This parameter is required when you
+         * configure an elastic scaling range by using the <code>NodeScaleMin</code> and <code>NodeScaleMax</code>
+         * parameters.
+         * <p>
          * @return {@code this}
          * @param nodeCount Property nodeCount: The number of nodes. This parameter is required.
          */
@@ -160,6 +164,10 @@ public class EnterpriseDBCluster extends com.aliyun.ros.cdk.core.Resource implem
         }
         /**
          * Property nodeCount: The number of nodes.
+         * <p>
+         * Valid values: 2 to 16. This parameter is required when you
+         * configure an elastic scaling range by using the <code>NodeScaleMin</code> and <code>NodeScaleMax</code>
+         * parameters.
          * <p>
          * @return {@code this}
          * @param nodeCount Property nodeCount: The number of nodes. This parameter is required.
@@ -317,20 +325,20 @@ public class EnterpriseDBCluster extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property dbTimeZone: The time zone of the database.
+         * Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
          * <p>
          * @return {@code this}
-         * @param dbTimeZone Property dbTimeZone: The time zone of the database. This parameter is required.
+         * @param dbTimeZone Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier. This parameter is required.
          */
         public Builder dbTimeZone(final java.lang.String dbTimeZone) {
             this.props.dbTimeZone(dbTimeZone);
             return this;
         }
         /**
-         * Property dbTimeZone: The time zone of the database.
+         * Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
          * <p>
          * @return {@code this}
-         * @param dbTimeZone Property dbTimeZone: The time zone of the database. This parameter is required.
+         * @param dbTimeZone Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier. This parameter is required.
          */
         public Builder dbTimeZone(final com.aliyun.ros.cdk.core.IResolvable dbTimeZone) {
             this.props.dbTimeZone(dbTimeZone);
@@ -422,20 +430,26 @@ public class EnterpriseDBCluster extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property sourceDbInstanceId: The ID of the source database instance.
+         * Property sourceDbInstanceId: The ID of the source instance.
+         * <p>
+         * This parameter is required when restoring from a
+         * backup.
          * <p>
          * @return {@code this}
-         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source database instance. This parameter is required.
+         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source instance. This parameter is required.
          */
         public Builder sourceDbInstanceId(final java.lang.String sourceDbInstanceId) {
             this.props.sourceDbInstanceId(sourceDbInstanceId);
             return this;
         }
         /**
-         * Property sourceDbInstanceId: The ID of the source database instance.
+         * Property sourceDbInstanceId: The ID of the source instance.
+         * <p>
+         * This parameter is required when restoring from a
+         * backup.
          * <p>
          * @return {@code this}
-         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source database instance. This parameter is required.
+         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source instance. This parameter is required.
          */
         public Builder sourceDbInstanceId(final com.aliyun.ros.cdk.core.IResolvable sourceDbInstanceId) {
             this.props.sourceDbInstanceId(sourceDbInstanceId);

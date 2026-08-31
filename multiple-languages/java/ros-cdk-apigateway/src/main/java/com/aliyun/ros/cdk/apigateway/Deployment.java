@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Deployment</code>, which is used to publish an API to a specific runtime environment, or switch a published API to a specific version.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Deployment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.537Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.930Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Deployment")
 public class Deployment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apigateway.IDeployment {
 
@@ -167,20 +167,24 @@ public class Deployment extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property description: Description of the deployment, less than 180 characters.
+         * Property description: The description.
+         * <p>
+         * The description can be up to 200 characters in length.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the deployment, less than 180 characters. This parameter is required.
+         * @param description Property description: The description. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Description of the deployment, less than 180 characters.
+         * Property description: The description.
+         * <p>
+         * The description can be up to 200 characters in length.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the deployment, less than 180 characters. This parameter is required.
+         * @param description Property description: The description. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);

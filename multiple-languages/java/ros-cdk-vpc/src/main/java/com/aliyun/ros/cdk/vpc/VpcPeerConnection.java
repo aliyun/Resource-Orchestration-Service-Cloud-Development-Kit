@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpcPeerConnection</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.737Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.528Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpcPeerConnection")
 public class VpcPeerConnection extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVpcPeerConnection {
 
@@ -357,8 +357,6 @@ public class VpcPeerConnection extends com.aliyun.ros.cdk.core.Resource implemen
         /**
          * Property resourceGroupId: The ID of the resource group.
          * <p>
-         * For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
-         * <p>
          * @return {@code this}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.
          */
@@ -368,8 +366,6 @@ public class VpcPeerConnection extends com.aliyun.ros.cdk.core.Resource implemen
         }
         /**
          * Property resourceGroupId: The ID of the resource group.
-         * <p>
-         * For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
          * <p>
          * @return {@code this}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group. This parameter is required.

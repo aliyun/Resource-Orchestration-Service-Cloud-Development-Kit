@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ebs
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`, which is used to add a replication pair to a replication pair-consistent group.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPairAddition`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapairaddition

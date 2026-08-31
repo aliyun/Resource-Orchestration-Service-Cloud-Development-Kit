@@ -7,10 +7,9 @@ package alicloudroscdkalb
 type BackendServerAttachmentProps struct {
 	// Property serverGroupId: The ID of the server group.
 	ServerGroupId interface{} `field:"required" json:"serverGroupId" yaml:"serverGroupId"`
-	// Property servers: The backend servers that you want to add to the server group.
+	// Property servers: A list of backend servers.
 	//
-	// You can specify up to
-	// 40 servers in each call.
+	// You can add up to 200 servers in a single call.
 	Servers interface{} `field:"required" json:"servers" yaml:"servers"`
 }
 

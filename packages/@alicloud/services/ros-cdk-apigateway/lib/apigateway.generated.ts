@@ -317,7 +317,9 @@ export interface RosApiProps {
     readonly resultDescriptions?: string | ros.IResolvable;
 
     /**
-     * @Property resultSample: The sample of the result.
+     * @Property resultSample: An example of a response returned by the backend service. This value is used only
+     * to generate documentation. The actually returned result shall prevail.(Support up
+     * to 32KB)
      */
     readonly resultSample?: string | ros.IResolvable;
 
@@ -485,7 +487,7 @@ function rosApiPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Api`, which is used to create an API.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Api`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Api` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
@@ -611,7 +613,9 @@ export class RosApi extends ros.RosResource {
     public resultDescriptions: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resultSample: The sample of the result.
+     * @Property resultSample: An example of a response returned by the backend service. This value is used only
+     * to generate documentation. The actually returned result shall prevail.(Support up
+     * to 32KB)
      */
     public resultSample: string | ros.IResolvable | undefined;
 
@@ -1917,7 +1921,7 @@ function rosAppPropsToRosTemplate(properties: any, enableResourcePropertyConstra
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`, which is used to create an application. Before you call a third-party API, you must create an application and use the application as an identity to call the API.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::App`.
  * @Note This class does not contain additional functions, so it is recommended to use the `App` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-app
  */
@@ -2186,7 +2190,7 @@ function rosAuthorizationPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Authorization`, which is used to authorize applications to call APIs.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Authorization`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Authorization` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-authorization
  */
@@ -2344,7 +2348,7 @@ function rosBackendPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Backend`, which is used to create a backend service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Backend`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Backend` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-backend
  */
@@ -2536,7 +2540,7 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`, which is used to bind a custom domain name and upload a Secure Sockets Layer (SSL) certificate to a specific API group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::CustomDomain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-customdomain
  */
@@ -2633,7 +2637,7 @@ export interface RosDeploymentProps {
     readonly stageName: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of the deployment, less than 180 characters.
+     * @Property description: The description. The description can be up to 200 characters in length.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -2693,7 +2697,7 @@ function rosDeploymentPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to publish an API to a specific runtime environment, or switch a published API to a specific version.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Deployment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Deployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */
@@ -2722,7 +2726,7 @@ export class RosDeployment extends ros.RosResource {
     public stageName: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of the deployment, less than 180 characters.
+     * @Property description: The description. The description can be up to 200 characters in length.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -2769,7 +2773,10 @@ export class RosDeployment extends ros.RosResource {
 export interface RosGroupProps {
 
     /**
-     * @Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * @Property groupName: The name of the API group. The name must be unique and 4 to 50 characters in
+     * length. It must start with a letter or a Chinese character and can contain
+     * letters, digits, underscores (_), and Chinese characters. If you do not specify
+     * this parameter, the name is not modified.
      */
     readonly groupName: string | ros.IResolvable;
 
@@ -2865,7 +2872,7 @@ function rosGroupPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Group`, which is used to create an API group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Group`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Group` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
@@ -2894,7 +2901,10 @@ export class RosGroup extends ros.RosResource {
 
 
     /**
-     * @Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * @Property groupName: The name of the API group. The name must be unique and 4 to 50 characters in
+     * length. It must start with a letter or a Chinese character and can contain
+     * letters, digits, underscores (_), and Chinese characters. If you do not specify
+     * this parameter, the name is not modified.
      */
     public groupName: string | ros.IResolvable;
 
@@ -3050,10 +3060,13 @@ export interface RosInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
-     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
-     * true: Automatic payment is enabled. The payment is automatically made.
-     * Default true.
+     * @Property autoPay: Specifies whether to enable auto-payment for renewals. Valid values:
+     * - True: Auto-payment is enabled. Make sure that your account has a sufficient
+     * balance.
+     * - False: Manual payment is required. To pay for an order, log on to the console.
+     * In the upper-right corner, choose Billing > User Center. On the Order Management
+     * page, find the order and complete the payment.
+     * Default value: False.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -3068,12 +3081,19 @@ export interface RosInstanceProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * @Property duration: The subscription duration of the instance. Valid values:
+     * - If PricingCycle is set to Month, the valid values are 1 to 9.
+     * - If PricingCycle is set to Year, the valid values are 1 to 3.
+     * > This parameter is required and takes effect only if you set ChargeType to
+     * PrePaid.
      */
     readonly duration?: number | ros.IResolvable;
 
     /**
-     * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
+     * @Property pricingCycle: The billing cycle of the subscription instance. Valid values:
+     * - year
+     * - month
+     * > This parameter is required if you set ChargeType to PrePaid.
      */
     readonly pricingCycle?: string | ros.IResolvable;
 
@@ -3163,7 +3183,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Instance`, which is used to create a dedicated instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */
@@ -3243,10 +3263,13 @@ export class RosInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
-     * @Property autoPay: Indicates whether automatic payment is enabled. Valid values:
-     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
-     * true: Automatic payment is enabled. The payment is automatically made.
-     * Default true.
+     * @Property autoPay: Specifies whether to enable auto-payment for renewals. Valid values:
+     * - True: Auto-payment is enabled. Make sure that your account has a sufficient
+     * balance.
+     * - False: Manual payment is required. To pay for an order, log on to the console.
+     * In the upper-right corner, choose Billing > User Center. On the Order Management
+     * page, find the order and complete the payment.
+     * Default value: False.
      */
     public autoPay: boolean | ros.IResolvable | undefined;
 
@@ -3261,12 +3284,19 @@ export class RosInstance extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property duration: Prepaid time period. It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * @Property duration: The subscription duration of the instance. Valid values:
+     * - If PricingCycle is set to Month, the valid values are 1 to 9.
+     * - If PricingCycle is set to Year, the valid values are 1 to 3.
+     * > This parameter is required and takes effect only if you set ChargeType to
+     * PrePaid.
      */
     public duration: number | ros.IResolvable | undefined;
 
     /**
-     * @Property pricingCycle: Unit of the payment cycle. It could be Month (default) or Year.
+     * @Property pricingCycle: The billing cycle of the subscription instance. Valid values:
+     * - year
+     * - month
+     * > This parameter is required if you set ChargeType to PrePaid.
      */
     public pricingCycle: string | ros.IResolvable | undefined;
 
@@ -3441,7 +3471,7 @@ function rosLogConfigPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::LogConfig`, which is used to create a log configuration.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::LogConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LogConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-logconfig
  */
@@ -3584,7 +3614,7 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Plugin`, which is used to create an API Gateway plug-in.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Plugin`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Plugin` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-plugin
  */
@@ -3802,7 +3832,7 @@ function rosPluginAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`, which is used to bind a plug-in to an API.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment
  */
@@ -3879,17 +3909,22 @@ export class RosPluginAttachment extends ros.RosResource {
 export interface RosSignatureProps {
 
     /**
-     * @Property signatureKey: The key of the signature.
+     * @Property signatureKey: The Key value of the key. The value must be 6 to 20 characters in length and can
+     * contain letters, digits, and underscores (_). It must start with a letter.
      */
     readonly signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * @Property signatureName: The displayed name of the key. The name must be 4 to 50 characters in length and
+     * can contain letters, digits, and underscores (_). It must start with a letter.
      */
     readonly signatureName: string | ros.IResolvable;
 
     /**
-     * @Property signatureSecret: The secret of the signature.
+     * @Property signatureSecret: The Secret value of the key. The value must be 6 to 30 characters in length and
+     * can contain letters, digits, and special characters. Special characters include
+     * underscores (_), at signs (@), number signs (#), exclamation points (!), and
+     * asterisks (\*). The value must start with a letter.
      */
     readonly signatureSecret: string | ros.IResolvable;
 }
@@ -3934,7 +3969,7 @@ function rosSignaturePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Signature`, which is used to create a backend signature.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::Signature`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Signature` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signature
  */
@@ -3953,17 +3988,22 @@ export class RosSignature extends ros.RosResource {
 
 
     /**
-     * @Property signatureKey: The key of the signature.
+     * @Property signatureKey: The Key value of the key. The value must be 6 to 20 characters in length and can
+     * contain letters, digits, and underscores (_). It must start with a letter.
      */
     public signatureKey: string | ros.IResolvable;
 
     /**
-     * @Property signatureName: The name of the Signature.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * @Property signatureName: The displayed name of the key. The name must be 4 to 50 characters in length and
+     * can contain letters, digits, and underscores (_). It must start with a letter.
      */
     public signatureName: string | ros.IResolvable;
 
     /**
-     * @Property signatureSecret: The secret of the signature.
+     * @Property signatureSecret: The Secret value of the key. The value must be 6 to 30 characters in length and
+     * can contain letters, digits, and special characters. Special characters include
+     * underscores (_), at signs (@), number signs (#), exclamation points (!), and
+     * asterisks (\*). The value must start with a letter.
      */
     public signatureSecret: string | ros.IResolvable;
 
@@ -4078,7 +4118,7 @@ function rosSignatureBindingPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`, which is used to bind a backend signature to APIs.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::SignatureBinding`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SignatureBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-signaturebinding
  */
@@ -4208,7 +4248,7 @@ function rosStageConfigPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::StageConfig`, which is used to configure the test, staging, or production environment variables for an API group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::StageConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StageConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-stageconfig
  */
@@ -4275,12 +4315,18 @@ export interface RosTrafficControlProps {
     readonly apiDefault: number | ros.IResolvable;
 
     /**
-     * @Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * @Property trafficControlName: The name of the throttling policy. The name must be 4 to 50 characters in length
+     * and can contain letters, digits, and underscores (_). It cannot start with an
+     * underscore.
      */
     readonly trafficControlName: string | ros.IResolvable;
 
     /**
-     * @Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
+     * @Property trafficControlUnit: The unit to be used in the throttling policy. Valid values:
+     * - SECOND
+     * - MINUTE
+     * - HOUR
+     * - DAY
      */
     readonly trafficControlUnit: string | ros.IResolvable;
 
@@ -4320,7 +4366,7 @@ function RosTrafficControlPropsValidator(properties: any): ros.ValidationResult 
     if(properties.trafficControlUnit && (typeof properties.trafficControlUnit) !== 'object') {
         errors.collect(ros.propertyValidator('trafficControlUnit', ros.validateAllowedValues)({
           data: properties.trafficControlUnit,
-          allowedValues: ["DAY","HOUR","MINUTE"],
+          allowedValues: ["DAY","HOUR","MINUTE","SECOND"],
         }));
     }
     errors.collect(ros.propertyValidator('trafficControlUnit', ros.validateString)(properties.trafficControlUnit));
@@ -4359,7 +4405,7 @@ function rosTrafficControlPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficControl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
@@ -4383,12 +4429,18 @@ export class RosTrafficControl extends ros.RosResource {
     public apiDefault: number | ros.IResolvable;
 
     /**
-     * @Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * @Property trafficControlName: The name of the throttling policy. The name must be 4 to 50 characters in length
+     * and can contain letters, digits, and underscores (_). It cannot start with an
+     * underscore.
      */
     public trafficControlName: string | ros.IResolvable;
 
     /**
-     * @Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
+     * @Property trafficControlUnit: The unit to be used in the throttling policy. Valid values:
+     * - SECOND
+     * - MINUTE
+     * - HOUR
+     * - DAY
      */
     public trafficControlUnit: string | ros.IResolvable;
 
@@ -4593,7 +4645,7 @@ function rosTrafficControlBindingPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControlBinding`, which is used to bind a custom throttling policy to APIs.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControlBinding`.
  * @Note This class does not contain additional functions, so it is recommended to use the `TrafficControlBinding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrolbinding
  */
@@ -4732,7 +4784,7 @@ function rosVpcAccessConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`, which is used to configure virtual private cloud (VPC) access authorization for an instance. This helps APIs provide services based on private networks.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::VpcAccessConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VpcAccessConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-vpcaccessconfig
  */

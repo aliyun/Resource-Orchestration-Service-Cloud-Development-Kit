@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mongodb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MONGODB::ShardingInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:10:27.892Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:16:24.259Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mongodb.$Module.class, fqn = "@alicloud/ros-cdk-mongodb.ShardingInstance")
 public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mongodb.IShardingInstance {
 
@@ -136,20 +136,20 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property configServer:.
+         * Property configServer: The information of Configserver nodes.
          * <p>
          * @return {@code this}
-         * @param configServer Property configServer:. This parameter is required.
+         * @param configServer Property configServer: The information of Configserver nodes. This parameter is required.
          */
         public Builder configServer(final com.aliyun.ros.cdk.core.IResolvable configServer) {
             this.props.configServer(configServer);
             return this;
         }
         /**
-         * Property configServer:.
+         * Property configServer: The information of Configserver nodes.
          * <p>
          * @return {@code this}
-         * @param configServer Property configServer:. This parameter is required.
+         * @param configServer Property configServer: The information of Configserver nodes. This parameter is required.
          */
         public Builder configServer(final java.util.List<? extends java.lang.Object> configServer) {
             this.props.configServer(configServer);
@@ -157,20 +157,20 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property mongos:.
+         * Property mongos: The information of Mongos nodes.
          * <p>
          * @return {@code this}
-         * @param mongos Property mongos:. This parameter is required.
+         * @param mongos Property mongos: The information of Mongos nodes. This parameter is required.
          */
         public Builder mongos(final com.aliyun.ros.cdk.core.IResolvable mongos) {
             this.props.mongos(mongos);
             return this;
         }
         /**
-         * Property mongos:.
+         * Property mongos: The information of Mongos nodes.
          * <p>
          * @return {@code this}
-         * @param mongos Property mongos:. This parameter is required.
+         * @param mongos Property mongos: The information of Mongos nodes. This parameter is required.
          */
         public Builder mongos(final java.util.List<? extends java.lang.Object> mongos) {
             this.props.mongos(mongos);
@@ -178,20 +178,20 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property replicaSet:.
+         * Property replicaSet: The information of shard nodes.
          * <p>
          * @return {@code this}
-         * @param replicaSet Property replicaSet:. This parameter is required.
+         * @param replicaSet Property replicaSet: The information of shard nodes. This parameter is required.
          */
         public Builder replicaSet(final com.aliyun.ros.cdk.core.IResolvable replicaSet) {
             this.props.replicaSet(replicaSet);
             return this;
         }
         /**
-         * Property replicaSet:.
+         * Property replicaSet: The information of shard nodes.
          * <p>
          * @return {@code this}
-         * @param replicaSet Property replicaSet:. This parameter is required.
+         * @param replicaSet Property replicaSet: The information of shard nodes. This parameter is required.
          */
         public Builder replicaSet(final java.util.List<? extends java.lang.Object> replicaSet) {
             this.props.replicaSet(replicaSet);
@@ -199,20 +199,40 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * Property accountPassword: The password of the root account.
+         * <p>
+         * The password must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>It must contain at least three of the following character types: uppercase
+         * letters, lowercase letters, digits, and special characters.</li>
+         * <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         * <li>It must be 8 to 32 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit. This parameter is required.
+         * @param accountPassword Property accountPassword: The password of the root account. This parameter is required.
          */
         public Builder accountPassword(final java.lang.String accountPassword) {
             this.props.accountPassword(accountPassword);
             return this;
         }
         /**
-         * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+         * Property accountPassword: The password of the root account.
+         * <p>
+         * The password must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>It must contain at least three of the following character types: uppercase
+         * letters, lowercase letters, digits, and special characters.</li>
+         * <li>Special characters include !&#64;#$%^&amp;*()_+-=</li>
+         * <li>It must be 8 to 32 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit. This parameter is required.
+         * @param accountPassword Property accountPassword: The password of the root account. This parameter is required.
          */
         public Builder accountPassword(final com.aliyun.ros.cdk.core.IResolvable accountPassword) {
             this.props.accountPassword(accountPassword);
@@ -220,24 +240,50 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         * Property autoRenew: Specifies whether to enable auto-renewal for the instance.
          * <p>
-         * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Auto-renewal is enabled.</li>
+         * <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         * the default value.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is optional and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance. This parameter is required.
          */
         public Builder autoRenew(final java.lang.Boolean autoRenew) {
             this.props.autoRenew(autoRenew);
             return this;
         }
         /**
-         * Property autoRenew: Indicates whether automatic renewal is enabled for the instance.
+         * Property autoRenew: Specifies whether to enable auto-renewal for the instance.
          * <p>
-         * Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Auto-renewal is enabled.</li>
+         * <li>false: Auto-renewal is disabled. You must manually renew the instance. This is
+         * the default value.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is optional and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: Indicates whether automatic renewal is enabled for the instance. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the instance. This parameter is required.
          */
         public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);
@@ -266,20 +312,38 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property dbInstanceDescription: Description of created database instance.
+         * Property dbInstanceDescription: The name of the instance.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>It must start with a Chinese character or a letter.</li>
+         * <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         * (.), and hyphens (-).</li>
+         * <li>It must be 2 to 256 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance. This parameter is required.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance. This parameter is required.
          */
         public Builder dbInstanceDescription(final java.lang.String dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
             return this;
         }
         /**
-         * Property dbInstanceDescription: Description of created database instance.
+         * Property dbInstanceDescription: The name of the instance.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>It must start with a Chinese character or a letter.</li>
+         * <li>It can contain digits, Chinese characters, letters, underscores (_), periods
+         * (.), and hyphens (-).</li>
+         * <li>It must be 2 to 256 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dbInstanceDescription Property dbInstanceDescription: Description of created database instance. This parameter is required.
+         * @param dbInstanceDescription Property dbInstanceDescription: The name of the instance. This parameter is required.
          */
         public Builder dbInstanceDescription(final com.aliyun.ros.cdk.core.IResolvable dbInstanceDescription) {
             this.props.dbInstanceDescription(dbInstanceDescription);
@@ -287,20 +351,62 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property engineVersion: Database instance version.
+         * Property engineVersion: The database version.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>8.0</li>
+         * <li>7.0</li>
+         * <li>6.0</li>
+         * <li>5.0</li>
+         * <li>4.4</li>
+         * <li>4.2</li>
+         * <li>4.0</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>When you clone an instance by calling this operation, the value of this
+         * parameter must be the same as that of the source instance.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database instance version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
          */
         public Builder engineVersion(final java.lang.String engineVersion) {
             this.props.engineVersion(engineVersion);
             return this;
         }
         /**
-         * Property engineVersion: Database instance version.
+         * Property engineVersion: The database version.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>8.0</li>
+         * <li>7.0</li>
+         * <li>6.0</li>
+         * <li>5.0</li>
+         * <li>4.4</li>
+         * <li>4.2</li>
+         * <li>4.0</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>When you clone an instance by calling this operation, the value of this
+         * parameter must be the same as that of the source instance.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param engineVersion Property engineVersion: Database instance version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
          */
         public Builder engineVersion(final com.aliyun.ros.cdk.core.IResolvable engineVersion) {
             this.props.engineVersion(engineVersion);
@@ -335,20 +441,40 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * Property period: The subscription duration of the instance.
+         * <p>
+         * Unit: month.
+         * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1. This parameter is required.
+         * @param period Property period: The subscription duration of the instance. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+         * Property period: The subscription duration of the instance.
+         * <p>
+         * Unit: month.
+         * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only when you set the ChargeType
+         * parameter to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1. This parameter is required.
+         * @param period Property period: The subscription duration of the instance. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -477,20 +603,34 @@ public class ShardingInstance extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * Property srcDbInstanceId: The source instance ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when you clone an instance by calling this
+         * operation. You must also specify the RestoreTime parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance. This parameter is required.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID. This parameter is required.
          */
         public Builder srcDbInstanceId(final java.lang.String srcDbInstanceId) {
             this.props.srcDbInstanceId(srcDbInstanceId);
             return this;
         }
         /**
-         * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+         * Property srcDbInstanceId: The source instance ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when you clone an instance by calling this
+         * operation. You must also specify the RestoreTime parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param srcDbInstanceId Property srcDbInstanceId: Create an instance of the backup set based on an instance. This parameter is required.
+         * @param srcDbInstanceId Property srcDbInstanceId: The source instance ID. This parameter is required.
          */
         public Builder srcDbInstanceId(final com.aliyun.ros.cdk.core.IResolvable srcDbInstanceId) {
             this.props.srcDbInstanceId(srcDbInstanceId);

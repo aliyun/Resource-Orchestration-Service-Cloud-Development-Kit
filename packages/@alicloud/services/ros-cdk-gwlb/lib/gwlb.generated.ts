@@ -78,7 +78,7 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::Listener`, which type is used to create a listener.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::Listener`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gwlb-listener
  */
@@ -323,7 +323,7 @@ function rosLoadBalancerPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::LoadBalancer`The , which type is used to create a Gateway Load Balancer (GWLB) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::LoadBalancer`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gwlb-loadbalancer
  */
@@ -694,7 +694,7 @@ function rosServerGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::ServerGroup`The , which type is used to create a server group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GWLB::ServerGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gwlb-servergroup
  */

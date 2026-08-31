@@ -5,34 +5,36 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.242Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.583Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(CenInstanceProps.Jsii$Proxy.class)
 public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property description: The description of the instance.
+     * Property description: The description of the CEN instance.
      * <p>
-     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property name: The name of the instance.
+     * Property name: The name of the CEN instance.
      * <p>
-     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
-     * Property protectionLevel: The level of CIDR block overlapping.
+     * Property protectionLevel: The level of CIDR block overlap.
      * <p>
-     * Set the value to REDUCED. REDUCED indicates that the
-     * CIDR blocks can overlap with each other but must not be the same.
+     * Set the value to REDUCED. This is the default value. This value specifies that
+     * CIDR blocks can overlap but cannot be identical.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getProtectionLevel() {
         return null;
@@ -72,8 +74,9 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenInstanceProps#getDescription}
-         * @param description Property description: The description of the instance.
-         *                    The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * @param description Property description: The description of the CEN instance.
+         *                    The description can be empty or 1 to 256 characters in length. It cannot start
+         *                    with http:// or https://.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -83,8 +86,9 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenInstanceProps#getDescription}
-         * @param description Property description: The description of the instance.
-         *                    The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * @param description Property description: The description of the CEN instance.
+         *                    The description can be empty or 1 to 256 characters in length. It cannot start
+         *                    with http:// or https://.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -94,8 +98,9 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenInstanceProps#getName}
-         * @param name Property name: The name of the instance.
-         *             The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * @param name Property name: The name of the CEN instance.
+         *             The name can be empty or 1 to 128 characters in length. It cannot start with
+         *             http:// or https://.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -105,8 +110,9 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenInstanceProps#getName}
-         * @param name Property name: The name of the instance.
-         *             The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * @param name Property name: The name of the CEN instance.
+         *             The name can be empty or 1 to 128 characters in length. It cannot start with
+         *             http:// or https://.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -116,9 +122,9 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenInstanceProps#getProtectionLevel}
-         * @param protectionLevel Property protectionLevel: The level of CIDR block overlapping.
-         *                        Set the value to REDUCED. REDUCED indicates that the
-         *                        CIDR blocks can overlap with each other but must not be the same.
+         * @param protectionLevel Property protectionLevel: The level of CIDR block overlap.
+         *                        Set the value to REDUCED. This is the default value. This value specifies that
+         *                        CIDR blocks can overlap but cannot be identical.
          * @return {@code this}
          */
         public Builder protectionLevel(java.lang.String protectionLevel) {
@@ -128,9 +134,9 @@ public interface CenInstanceProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CenInstanceProps#getProtectionLevel}
-         * @param protectionLevel Property protectionLevel: The level of CIDR block overlapping.
-         *                        Set the value to REDUCED. REDUCED indicates that the
-         *                        CIDR blocks can overlap with each other but must not be the same.
+         * @param protectionLevel Property protectionLevel: The level of CIDR block overlap.
+         *                        Set the value to REDUCED. This is the default value. This value specifies that
+         *                        CIDR blocks can overlap but cannot be identical.
          * @return {@code this}
          */
         public Builder protectionLevel(com.aliyun.ros.cdk.core.IResolvable protectionLevel) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::VPC::PublicIpAddressPools</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.845Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.655Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.PublicIpAddressPools")
 public class PublicIpAddressPools extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.datasource.IPublicIpAddressPools {
 

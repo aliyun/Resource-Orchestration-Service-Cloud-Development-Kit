@@ -223,8 +223,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         private object? _messageRetentionPeriod;
 
         /// <remarks>
-        /// <strong>Property</strong>: messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds. After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
-        /// An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+        /// <strong>Property</strong>: messageRetentionPeriod: The maximum time to live (TTL) for a message in the queue. After the specified
+        /// period, the message is deleted, regardless of whether it has been retrieved.
+        /// Valid values: 60 to 604800. Unit: seconds.
+        /// Default value: 345600.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "messageRetentionPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

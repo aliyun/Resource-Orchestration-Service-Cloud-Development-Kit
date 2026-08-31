@@ -31,19 +31,31 @@ export interface BgpGroupProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property ipVersion: The IP version of the BGP group. Valid values: IPv4 and IPv6.
+     * Property ipVersion: The IP version. Valid values:
+     * *   IPv4: This is the default value.
+     * *   IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+     * group has IPv6 enabled.
      */
     readonly ipVersion?: string | ros.IResolvable;
 
     /**
-     * Property isFakeAsn: A router that runs BGP typically belongs to only one AS. In some cases, for example,
-     * the AS needs to be migrated or is merged with another AS, a new AS number replaces
-     * the original one.
+     * Property isFakeAsn: Specifies whether to use a fake ASN. Valid values:
+     * *   false (default)
+     * *   true
+     * >  A router that runs BGP typically belongs to only one AS. If you need to
+     * replace an existing AS with a new AS and you cannot immediately modify BGP
+     * configurations, you can use fake ASNs to ensure service continuity.
      */
     readonly isFakeAsn?: boolean | ros.IResolvable;
 
     /**
-     * Property localAsn: The AS number on the Alibaba Cloud side.
+     * Property localAsn: The custom ASN on the cloud side. Valid values:
+     * *   45104
+     * *   64512~65534
+     * *   4200000000~4294967294
+     * >  65025 is reserved by the cloud platform. By default, the system uses 45104 as
+     * LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+     * may occur.
      */
     readonly localAsn?: number | ros.IResolvable;
 

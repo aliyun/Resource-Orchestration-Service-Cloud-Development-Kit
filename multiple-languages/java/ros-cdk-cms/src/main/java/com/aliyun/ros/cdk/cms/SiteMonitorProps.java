@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.058Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.369Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.SiteMonitorProps")
 @software.amazon.jsii.Jsii.Proxy(SiteMonitorProps.Jsii$Proxy.class)
 public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,18 +16,18 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getAddress();
 
     /**
-     * Property taskName: The name of the site monitoring task.
+     * Property taskName: The name of the monitoring task.
      * <p>
-     * The name must be 4 to 100 characters in length.
-     * It can contain letters, digits, and underscores (_).
+     * The name must be 4 to 100 characters long and can contain letters, digits,
+     * underscores (_), and Chinese characters.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTaskName();
 
     /**
-     * Property taskType: The protocol used by the site monitoring task.
+     * Property taskType: The type of monitoring task.
      * <p>
-     * Valid values: HTTP, HTTPS, PING, TCP,
-     * UDP, DNS, SMTP, POP3, and FTP.
+     * Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+     * WEBSOCKET.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTaskType();
 
@@ -39,10 +39,10 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property interval: The interval at which detection requests are sent.
+     * Property interval: The monitoring frequency in minutes.
      * <p>
-     * Valid values: 1, 5, and 15. Unit:
-     * minutes. Default value: 1.
+     * Valid values: 1, 5, 15, 30, and 60.
+     * Default: 1.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInterval() {
         return null;
@@ -112,9 +112,9 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link SiteMonitorProps#getTaskName}
-         * @param taskName Property taskName: The name of the site monitoring task. This parameter is required.
-         *                 The name must be 4 to 100 characters in length.
-         *                 It can contain letters, digits, and underscores (_).
+         * @param taskName Property taskName: The name of the monitoring task. This parameter is required.
+         *                 The name must be 4 to 100 characters long and can contain letters, digits,
+         *                 underscores (_), and Chinese characters.
          * @return {@code this}
          */
         public Builder taskName(java.lang.String taskName) {
@@ -124,9 +124,9 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link SiteMonitorProps#getTaskName}
-         * @param taskName Property taskName: The name of the site monitoring task. This parameter is required.
-         *                 The name must be 4 to 100 characters in length.
-         *                 It can contain letters, digits, and underscores (_).
+         * @param taskName Property taskName: The name of the monitoring task. This parameter is required.
+         *                 The name must be 4 to 100 characters long and can contain letters, digits,
+         *                 underscores (_), and Chinese characters.
          * @return {@code this}
          */
         public Builder taskName(com.aliyun.ros.cdk.core.IResolvable taskName) {
@@ -136,9 +136,9 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link SiteMonitorProps#getTaskType}
-         * @param taskType Property taskType: The protocol used by the site monitoring task. This parameter is required.
-         *                 Valid values: HTTP, HTTPS, PING, TCP,
-         *                 UDP, DNS, SMTP, POP3, and FTP.
+         * @param taskType Property taskType: The type of monitoring task. This parameter is required.
+         *                 Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+         *                 WEBSOCKET.
          * @return {@code this}
          */
         public Builder taskType(java.lang.String taskType) {
@@ -148,9 +148,9 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link SiteMonitorProps#getTaskType}
-         * @param taskType Property taskType: The protocol used by the site monitoring task. This parameter is required.
-         *                 Valid values: HTTP, HTTPS, PING, TCP,
-         *                 UDP, DNS, SMTP, POP3, and FTP.
+         * @param taskType Property taskType: The type of monitoring task. This parameter is required.
+         *                 Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+         *                 WEBSOCKET.
          * @return {@code this}
          */
         public Builder taskType(com.aliyun.ros.cdk.core.IResolvable taskType) {
@@ -180,9 +180,9 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link SiteMonitorProps#getInterval}
-         * @param interval Property interval: The interval at which detection requests are sent.
-         *                 Valid values: 1, 5, and 15. Unit:
-         *                 minutes. Default value: 1.
+         * @param interval Property interval: The monitoring frequency in minutes.
+         *                 Valid values: 1, 5, 15, 30, and 60.
+         *                 Default: 1.
          * @return {@code this}
          */
         public Builder interval(java.lang.Number interval) {
@@ -192,9 +192,9 @@ public interface SiteMonitorProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link SiteMonitorProps#getInterval}
-         * @param interval Property interval: The interval at which detection requests are sent.
-         *                 Valid values: 1, 5, and 15. Unit:
-         *                 minutes. Default value: 1.
+         * @param interval Property interval: The monitoring frequency in minutes.
+         *                 Valid values: 1, 5, 15, 30, and 60.
+         *                 Default: 1.
          * @return {@code this}
          */
         public Builder interval(com.aliyun.ros.cdk.core.IResolvable interval) {

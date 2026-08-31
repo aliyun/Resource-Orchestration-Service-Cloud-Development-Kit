@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::DeployRevision</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.891Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.835Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.DeployRevision")
 public class DeployRevision extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IDeployRevision {
 
@@ -133,20 +133,38 @@ public class DeployRevision extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property deployResourceType: The type of the deploy resource.
+         * Property deployResourceType: The type of the deployment resource.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>Kubernetes</code>: A Kubernetes cluster.</li>
+         * <li><code>Ecs</code>: An ECS instance.</li>
+         * <li><code>FC</code>: A Function Compute service.</li>
+         * <li><code>SWAS</code>: A Simple Application Server instance.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param deployResourceType Property deployResourceType: The type of the deploy resource. This parameter is required.
+         * @param deployResourceType Property deployResourceType: The type of the deployment resource. This parameter is required.
          */
         public Builder deployResourceType(final java.lang.String deployResourceType) {
             this.props.deployResourceType(deployResourceType);
             return this;
         }
         /**
-         * Property deployResourceType: The type of the deploy resource.
+         * Property deployResourceType: The type of the deployment resource.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>Kubernetes</code>: A Kubernetes cluster.</li>
+         * <li><code>Ecs</code>: An ECS instance.</li>
+         * <li><code>FC</code>: A Function Compute service.</li>
+         * <li><code>SWAS</code>: A Simple Application Server instance.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param deployResourceType Property deployResourceType: The type of the deploy resource. This parameter is required.
+         * @param deployResourceType Property deployResourceType: The type of the deployment resource. This parameter is required.
          */
         public Builder deployResourceType(final com.aliyun.ros.cdk.core.IResolvable deployResourceType) {
             this.props.deployResourceType(deployResourceType);
@@ -217,20 +235,44 @@ public class DeployRevision extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property revisionType: The type of the revision.
+         * Property revisionType: The type of the deployment revision.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>Command</code>: A command.</li>
+         * <li><code>GitRepo</code>: A Git repository.</li>
+         * <li><code>HelmChart</code>: A Helm chart.</li>
+         * <li><code>Oss</code>: An object in Object Storage Service (OSS).</li>
+         * <li><code>EcsImage</code>: An ECS image.</li>
+         * <li><code>DockerImage</code>: A Docker image.</li>
+         * <li><code>Yaml</code>: A YAML file.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param revisionType Property revisionType: The type of the revision. This parameter is required.
+         * @param revisionType Property revisionType: The type of the deployment revision. This parameter is required.
          */
         public Builder revisionType(final java.lang.String revisionType) {
             this.props.revisionType(revisionType);
             return this;
         }
         /**
-         * Property revisionType: The type of the revision.
+         * Property revisionType: The type of the deployment revision.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>Command</code>: A command.</li>
+         * <li><code>GitRepo</code>: A Git repository.</li>
+         * <li><code>HelmChart</code>: A Helm chart.</li>
+         * <li><code>Oss</code>: An object in Object Storage Service (OSS).</li>
+         * <li><code>EcsImage</code>: An ECS image.</li>
+         * <li><code>DockerImage</code>: A Docker image.</li>
+         * <li><code>Yaml</code>: A YAML file.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param revisionType Property revisionType: The type of the revision. This parameter is required.
+         * @param revisionType Property revisionType: The type of the deployment revision. This parameter is required.
          */
         public Builder revisionType(final com.aliyun.ros.cdk.core.IResolvable revisionType) {
             this.props.revisionType(revisionType);

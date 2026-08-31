@@ -21,7 +21,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+        /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256
+        /// characters in length. It cannot start with `http:\/\/` or `https:\/\/`.
+        /// By default, this parameter is left empty.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -73,7 +75,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+        /// <strong>Property</strong>: securityGroupName: The name of the security group. The name must be 2 to 128 characters in length.
+        /// The name must start with a letter and cannot start with `http:\/\/` or `https:\/\/`.
+        /// The name can contain letters, digits, colons (:), underscores (_), periods (.),
+        /// and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "securityGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -87,8 +92,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <remarks>
         /// <strong>Property</strong>: securityGroupType: The type of the security group. Valid values:
-        /// normal: basic security group
-        /// enterprise: advanced security group
+        /// - normal: basic security group
+        /// - enterprise: advanced security group
+        /// Default value: normal.
         /// </remarks>
         [JsiiProperty(name: "securityGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -101,7 +107,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vpcId: Physical ID of the VPC.
+        /// <strong>Property</strong>: vpcId: The ID of the VPC in which you want to create the security group.
+        /// > The VpcId parameter is required only if you want to create security groups of
+        /// the VPC type.
         /// </remarks>
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -134,7 +142,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: description: Description of the security group, [2, 256] characters. Do not fill or empty, the default is empty.
+            /// <strong>Property</strong>: description: The description of the security group. The description must be 2 to 256
+            /// characters in length. It cannot start with `http:\/\/` or `https:\/\/`.
+            /// By default, this parameter is left empty.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -174,7 +184,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: securityGroupName: Display name of the security group, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'
+            /// <strong>Property</strong>: securityGroupName: The name of the security group. The name must be 2 to 128 characters in length.
+            /// The name must start with a letter and cannot start with `http:\/\/` or `https:\/\/`.
+            /// The name can contain letters, digits, colons (:), underscores (_), periods (.),
+            /// and hyphens (-).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -185,8 +198,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
             /// <remarks>
             /// <strong>Property</strong>: securityGroupType: The type of the security group. Valid values:
-            /// normal: basic security group
-            /// enterprise: advanced security group
+            /// - normal: basic security group
+            /// - enterprise: advanced security group
+            /// Default value: normal.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -196,7 +210,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: vpcId: Physical ID of the VPC.
+            /// <strong>Property</strong>: vpcId: The ID of the VPC in which you want to create the security group.
+            /// > The VpcId parameter is required only if you want to create security groups of
+            /// the VPC type.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheis`, which is used to query Prometheus instances.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ARMS::Prometheis`.
 type RosPrometheis interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterIds() alicloudroscdkcore.IResolvable

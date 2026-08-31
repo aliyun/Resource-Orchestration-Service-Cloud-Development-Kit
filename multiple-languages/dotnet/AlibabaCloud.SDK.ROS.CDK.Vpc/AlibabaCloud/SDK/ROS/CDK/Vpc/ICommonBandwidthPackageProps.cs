@@ -11,9 +11,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     [JsiiInterface(nativeType: typeof(ICommonBandwidthPackageProps), fullyQualifiedName: "@alicloud/ros-cdk-vpc.CommonBandwidthPackageProps")]
     public interface ICommonBandwidthPackageProps
     {
-        /// <summary>Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance.</summary>
+        /// <summary>Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance.</summary>
         /// <remarks>
         /// Unit: Mbit/s.
+        /// Valid values: 1 to 1000. Default value: 1.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Bandwidth
@@ -37,8 +38,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property description: The description of the Internet Shared Bandwidth instance.</summary>
         /// <remarks>
-        /// The description must be 2 to 256 characters in length. It must start with a letter,
-        /// and cannot start with http:// or https://.
+        /// The description must be 0 to 256 characters in length and cannot start with
+        /// <c>http:\/\/</c> or <c>https:\/\/</c>.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -50,11 +51,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.</summary>
+        /// <summary>Property internetChargeType: The billing method of the Internet Shared Bandwidth instance.</summary>
         /// <remarks>
-        /// Allowed values:
-        /// PayByBandwidth (default): Billed by bandwidth.
-        /// PayBy95: Charged at Enhanced 95.
+        /// Set the value to
+        /// PayByTraffic, which specifies the pay-by-data-transfer billing method.
         /// </remarks>
         [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -66,7 +66,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property isp: Line type of EIP, value: BGP (multi-line).</summary>
+        /// <summary>Property isp: The line type.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>BGP (default) All regions support BGP (Multi-ISP).</description>
+        /// <description>BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+        /// Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+        /// Indonesia (Jakarta), and Thailand (Bangkok) regions.
+        /// If you are allowed to use single-ISP bandwidth, you can also use one of the
+        /// following values:</description>
+        /// <description>ChinaTelecom</description>
+        /// <description>ChinaUnicom</description>
+        /// <description>ChinaMobile</description>
+        /// <description>ChinaTelecom_L2</description>
+        /// <description>ChinaUnicom_L2</description>
+        /// <description>ChinaMobile_L2
+        /// If your services are deployed in China East 1 Finance, this parameter is required
+        /// and you must set the value to BGP_FinanceCloud.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Isp
@@ -79,9 +99,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property name: The name of the Internet Shared Bandwidth instance.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-        /// (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-        /// start with http:// or https://.
+        /// The name must be 0 to 128 characters in length and cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -93,10 +112,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.</summary>
+        /// <summary>Property ratio: The percentage of the minimum bandwidth commitment.</summary>
         /// <remarks>
-        /// Default to 100.
-        /// Note This parameter is only supported on the China site.
+        /// Set the parameter to 20.
         /// </remarks>
         [JsiiProperty(name: "ratio", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -133,7 +151,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property zone: Zone Id.</summary>
+        /// <summary>Property zone: The zone of the Internet Shared Bandwidth instance.</summary>
+        /// <remarks>
+        /// This parameter is required if
+        /// you create an Internet Shared Bandwidth instance for a cloud box.
+        /// </remarks>
         [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Zone
@@ -155,9 +177,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             {
             }
 
-            /// <summary>Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance.</summary>
+            /// <summary>Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance.</summary>
             /// <remarks>
             /// Unit: Mbit/s.
+            /// Valid values: 1 to 1000. Default value: 1.
             /// </remarks>
             [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Bandwidth
@@ -178,8 +201,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <summary>Property description: The description of the Internet Shared Bandwidth instance.</summary>
             /// <remarks>
-            /// The description must be 2 to 256 characters in length. It must start with a letter,
-            /// and cannot start with http:// or https://.
+            /// The description must be 0 to 256 characters in length and cannot start with
+            /// <c>http:\/\/</c> or <c>https:\/\/</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -188,11 +211,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.</summary>
+            /// <summary>Property internetChargeType: The billing method of the Internet Shared Bandwidth instance.</summary>
             /// <remarks>
-            /// Allowed values:
-            /// PayByBandwidth (default): Billed by bandwidth.
-            /// PayBy95: Charged at Enhanced 95.
+            /// Set the value to
+            /// PayByTraffic, which specifies the pay-by-data-transfer billing method.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -201,7 +223,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property isp: Line type of EIP, value: BGP (multi-line).</summary>
+            /// <summary>Property isp: The line type.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>BGP (default) All regions support BGP (Multi-ISP).</description>
+            /// <description>BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+            /// Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+            /// Indonesia (Jakarta), and Thailand (Bangkok) regions.
+            /// If you are allowed to use single-ISP bandwidth, you can also use one of the
+            /// following values:</description>
+            /// <description>ChinaTelecom</description>
+            /// <description>ChinaUnicom</description>
+            /// <description>ChinaMobile</description>
+            /// <description>ChinaTelecom_L2</description>
+            /// <description>ChinaUnicom_L2</description>
+            /// <description>ChinaMobile_L2
+            /// If your services are deployed in China East 1 Finance, this parameter is required
+            /// and you must set the value to BGP_FinanceCloud.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "isp", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Isp
@@ -211,9 +253,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <summary>Property name: The name of the Internet Shared Bandwidth instance.</summary>
             /// <remarks>
-            /// The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-            /// (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-            /// start with http:// or https://.
+            /// The name must be 0 to 128 characters in length and cannot start with <c>http:\/\/</c> or
+            /// <c>https:\/\/</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -222,10 +263,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.</summary>
+            /// <summary>Property ratio: The percentage of the minimum bandwidth commitment.</summary>
             /// <remarks>
-            /// Default to 100.
-            /// Note This parameter is only supported on the China site.
+            /// Set the parameter to 20.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ratio", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -253,7 +293,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Vpc.RosCommonBandwidthPackage.ITagsProperty[]?>();
             }
 
-            /// <summary>Property zone: Zone Id.</summary>
+            /// <summary>Property zone: The zone of the Internet Shared Bandwidth instance.</summary>
+            /// <remarks>
+            /// This parameter is required if
+            /// you create an Internet Shared Bandwidth instance for a cloud box.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Zone

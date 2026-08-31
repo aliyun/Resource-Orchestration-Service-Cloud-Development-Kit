@@ -30,7 +30,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: scheduleName: Schedule name.
+        /// <strong>Property</strong>: scheduleName: The name of the timed schedule. The name must meet the following requirements:
+        /// - It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+        /// hyphens (-).
+        /// - It is case-sensitive.
+        /// - It must be 1 to 128 characters in length.
         /// </remarks>
         [JsiiProperty(name: "scheduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ScheduleName
@@ -65,7 +69,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: payload: Payload.
+        /// <strong>Property</strong>: payload: The trigger message of the timed schedule. The message must be in the JSON
+        /// format.
         /// </remarks>
         [JsiiProperty(name: "payload", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -107,7 +112,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: scheduleName: Schedule name.
+            /// <strong>Property</strong>: scheduleName: The name of the timed schedule. The name must meet the following requirements:
+            /// - It can contain letters (a-z and A-Z), digits (0-9), underscores (_), and
+            /// hyphens (-).
+            /// - It is case-sensitive.
+            /// - It must be 1 to 128 characters in length.
             /// </remarks>
             [JsiiProperty(name: "scheduleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ScheduleName
@@ -136,7 +145,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: payload: Payload.
+            /// <strong>Property</strong>: payload: The trigger message of the timed schedule. The message must be in the JSON
+            /// format.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "payload", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

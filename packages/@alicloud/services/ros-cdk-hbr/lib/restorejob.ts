@@ -45,7 +45,8 @@ export interface RestoreJobProps {
     readonly targetInstanceId: string | ros.IResolvable;
 
     /**
-     * Property targetPath: Target path. For instance, "\/".
+     * Property targetPath: The destination path for the restore. This parameter is valid only when
+     * RestoreType is set to ECS_FILE.
      */
     readonly targetPath: string | ros.IResolvable;
 
@@ -87,7 +88,7 @@ export interface IRestoreJob extends ros.IResource {
     readonly attrStatus: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::RestoreJob`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::HBR::RestoreJob`, which is used to create a restore job.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRestoreJob`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-restorejob
  */

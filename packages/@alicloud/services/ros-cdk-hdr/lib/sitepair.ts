@@ -20,7 +20,7 @@ export interface SitePairProps {
     readonly primarySiteRegionId: string | ros.IResolvable;
 
     /**
-     * Property primarySiteType: The type of the primary site. Valid values: VPC, VSwitch, VRouter.
+     * Property primarySiteType: The type of the primary site.
      */
     readonly primarySiteType: string | ros.IResolvable;
 
@@ -40,7 +40,7 @@ export interface SitePairProps {
     readonly secondarySiteRegionId: string | ros.IResolvable;
 
     /**
-     * Property secondarySiteType: The type of the secondary site. Valid values: VPC, VSwitch, VRouter.
+     * Property secondarySiteType: The type of the secondary site.
      */
     readonly secondarySiteType: string | ros.IResolvable;
 
@@ -50,12 +50,14 @@ export interface SitePairProps {
     readonly secondarySiteVpcId: string | ros.IResolvable;
 
     /**
-     * Property primarySiteZoneId: The zone ID of the primary site.
+     * Property primarySiteZoneId: The zone ID of the primary site. This parameter is valid only when the site pair
+     * type is cross-zone disaster recovery.
      */
     readonly primarySiteZoneId?: string | ros.IResolvable;
 
     /**
-     * Property secondarySiteZoneId: The zone ID of the secondary site.
+     * Property secondarySiteZoneId: The zone ID of the secondary site. This parameter is valid only when the site
+     * pair type is cross-zone disaster recovery.
      */
     readonly secondarySiteZoneId?: string | ros.IResolvable;
 

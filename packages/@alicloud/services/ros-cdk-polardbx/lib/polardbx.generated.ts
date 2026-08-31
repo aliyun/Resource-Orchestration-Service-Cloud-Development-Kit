@@ -164,17 +164,28 @@ export class RosAccount extends ros.RosResource {
 export interface RosDBInstanceProps {
 
     /**
-     * @Property dbNodeClass: The specification of the nodes in the instance you want to create.
+     * @Property dbNodeClass: Node specifications:
+     * - polarx.x4.medium.2e: 2 vCPUs, 8 GB
+     * - polarx.x4.large.2e: 4 vCPUs, 16 GB
+     * - polarx.x8.large.2e: 4 vCPUs, 32 GB
+     * - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB
+     * - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB
+     * - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB
+     * - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB
+     * - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB
+     * - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB
+     * - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB
+     * - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB
      */
     readonly dbNodeClass: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeCount: The number of nodes in the instance you want to create.
+     * @Property dbNodeCount: Number of instance nodes. Minimum value is 2.
      */
     readonly dbNodeCount: number | ros.IResolvable;
 
     /**
-     * @Property engineVersion: The version of the database engine.
+     * @Property engineVersion: MySQL engine version, either 5.7 or 8.0.
      */
     readonly engineVersion: string | ros.IResolvable;
 
@@ -219,7 +230,7 @@ export interface RosDBInstanceProps {
     readonly period?: string | ros.IResolvable;
 
     /**
-     * @Property resourceGroupId: The ID of resource group
+     * @Property resourceGroupId: Can be empty. Resource group ID. Not supported for now.
      */
     readonly resourceGroupId?: string | ros.IResolvable;
 
@@ -374,17 +385,28 @@ export class RosDBInstance extends ros.RosResource {
 
 
     /**
-     * @Property dbNodeClass: The specification of the nodes in the instance you want to create.
+     * @Property dbNodeClass: Node specifications:
+     * - polarx.x4.medium.2e: 2 vCPUs, 8 GB
+     * - polarx.x4.large.2e: 4 vCPUs, 16 GB
+     * - polarx.x8.large.2e: 4 vCPUs, 32 GB
+     * - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB
+     * - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB
+     * - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB
+     * - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB
+     * - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB
+     * - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB
+     * - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB
+     * - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB
      */
     public dbNodeClass: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeCount: The number of nodes in the instance you want to create.
+     * @Property dbNodeCount: Number of instance nodes. Minimum value is 2.
      */
     public dbNodeCount: number | ros.IResolvable;
 
     /**
-     * @Property engineVersion: The version of the database engine.
+     * @Property engineVersion: MySQL engine version, either 5.7 or 8.0.
      */
     public engineVersion: string | ros.IResolvable;
 
@@ -429,7 +451,7 @@ export class RosDBInstance extends ros.RosResource {
     public period: string | ros.IResolvable | undefined;
 
     /**
-     * @Property resourceGroupId: The ID of resource group
+     * @Property resourceGroupId: Can be empty. Resource group ID. Not supported for now.
      */
     public resourceGroupId: string | ros.IResolvable | undefined;
 

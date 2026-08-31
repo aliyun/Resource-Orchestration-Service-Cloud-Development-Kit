@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms2;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-addonrelease
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:59:01.349Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:47:48.981Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms2.$Module.class, fqn = "@alicloud/ros-cdk-cms2.RosAddonReleaseProps")
 @software.amazon.jsii.Jsii.Proxy(RosAddonReleaseProps.Jsii$Proxy.class)
 public interface RosAddonReleaseProps extends software.amazon.jsii.JsiiSerializable {

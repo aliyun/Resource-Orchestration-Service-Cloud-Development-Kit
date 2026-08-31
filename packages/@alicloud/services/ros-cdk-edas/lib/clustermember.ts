@@ -52,7 +52,7 @@ export interface IClusterMember extends ros.IResource {
     readonly attrInstanceIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::ClusterMember`, which is used to add Elastic Compute Service (ECS) instances to a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EDAS::ClusterMember`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterMember`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-edas-clustermember
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * Represents a <code>UserGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.508Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.204Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.IUserGroup")
 @software.amazon.jsii.Jsii.Proxy(IUserGroup.Jsii$Proxy.class)
 public interface IUserGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

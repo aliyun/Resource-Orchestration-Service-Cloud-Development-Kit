@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CustomList`Use , which to create a custom list.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::CustomList`.
 type CustomList interface {
 	alicloudroscdkcore.Resource
 	ICustomList

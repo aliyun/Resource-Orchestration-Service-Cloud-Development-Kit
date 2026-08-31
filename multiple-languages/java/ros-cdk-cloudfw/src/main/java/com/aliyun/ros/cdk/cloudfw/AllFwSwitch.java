@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AllFwSwitch</code>, which is used to enable all firewalls.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::AllFwSwitch</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.044Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.089Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.AllFwSwitch")
 public class AllFwSwitch extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IAllFwSwitch {
 

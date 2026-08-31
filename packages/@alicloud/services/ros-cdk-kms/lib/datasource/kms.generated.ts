@@ -64,7 +64,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Instance`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Instance`, which is used to query the information about a Key Management Service (KMS) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-instance
  */
@@ -347,7 +347,7 @@ function rosNetworkRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::NetworkRule`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::NetworkRule`, which is used to query the information about a network access rule.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-networkrule
  */
@@ -841,7 +841,7 @@ function rosSecretPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secret`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Secret`, which is used to query the information about a secret.
  * @Note This class does not contain additional functions, so it is recommended to use the `Secret` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-kms-secret
  */

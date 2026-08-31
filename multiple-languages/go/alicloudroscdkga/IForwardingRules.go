@@ -10,7 +10,7 @@ import (
 // Represents a `ForwardingRules`.
 type IForwardingRules interface {
 	alicloudroscdkcore.IResource
-	// Attribute ForwardingRuleIds: The IDs of the endpoint groups.
+	// Attribute ForwardingRuleIds: The IDs of the forwarding rules.
 	AttrForwardingRuleIds() interface{}
 	Props() *ForwardingRulesProps
 }

@@ -15,9 +15,9 @@ export interface ResourceGroupProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
-     * Property engine: Database engine, value:
-     * AnalyticDB (default): AnalyticDB for mysql engine.
-     * Sparkwarehouse: Sparkwarehous engine.
+     * Property engine: The database engine. Valid values:
+     * - AnalyticDB (default): the AnalyticDB for MySQL engine.
+     * - SparkWarehouse: the SparkWarehouse engine.
      */
     readonly engine: string | ros.IResolvable;
 
@@ -43,7 +43,7 @@ export interface ResourceGroupProps {
     readonly autoStopInterval?: string | ros.IResolvable;
 
     /**
-     * Property clusterMode: The mode of cluster. Default: AutoScale.
+     * Property clusterMode: This parameter is reserved.
      */
     readonly clusterMode?: string | ros.IResolvable;
 
@@ -116,7 +116,7 @@ export interface IResourceGroup extends ros.IResource {
     readonly attrGroupUsers: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::ResourceGroup`, which is used to create a resource group for an AnalyticDB for MySQL Data Lakehouse Edition (V3.0) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADBLake::ResourceGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
  */

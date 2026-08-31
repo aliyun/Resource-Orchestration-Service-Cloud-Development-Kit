@@ -67,7 +67,7 @@ export interface IKubernetesClusters extends ros.IResource {
     readonly attrClusters: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`, which is used to query Container Service for Kubernetes (ACK) clusters.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CS::KubernetesClusters`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosKubernetesClusters`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cs-kubernetesclusters
  */

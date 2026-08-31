@@ -22,16 +22,32 @@ type EndpointGroupProps struct {
 	// virtual: The endpoint group is a virtual endpoint group.
 	// Note Only HTTP and HTTPS listeners support virtual endpoint groups.
 	EndpointGroupType interface{} `field:"optional" json:"endpointGroupType" yaml:"endpointGroupType"`
+	// Property endpointIpVersion: The IP address protocol version of the backend service.
+	//
+	// Valid values:
+	// IPv4
+	// IPv6
+	// ProtocolAffinity.
+	EndpointIpVersion interface{} `field:"optional" json:"endpointIpVersion" yaml:"endpointIpVersion"`
+	// Property endpointProtocolVersion: The protocol version of the backend service.
+	//
+	// Valid values:
+	// HTTP1.1
+	// HTTP2
+	// Note This parameter is valid only when the listener uses HTTPS.
+	EndpointProtocolVersion interface{} `field:"optional" json:"endpointProtocolVersion" yaml:"endpointProtocolVersion"`
 	// Property endpointRequestProtocol: The protocol used by the backend service.
 	//
 	// Valid values:
-	// http: This is the default value.
-	// https
+	// HTTP: This is the default value.
+	// HTTPS
 	// Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
 	// For an HTTP listener, the backend service protocol must be HTTP.
 	EndpointRequestProtocol interface{} `field:"optional" json:"endpointRequestProtocol" yaml:"endpointRequestProtocol"`
 	// Property healthCheckEnabled: Specifies whether to enable the health check feature.
 	HealthCheckEnabled interface{} `field:"optional" json:"healthCheckEnabled" yaml:"healthCheckEnabled"`
+	// Property healthCheckHost: The domain name that is used for health checks.
+	HealthCheckHost interface{} `field:"optional" json:"healthCheckHost" yaml:"healthCheckHost"`
 	// Property healthCheckIntervalSeconds: The interval between two consecutive health checks.
 	//
 	// Unit: seconds.
@@ -48,6 +64,12 @@ type EndpointGroupProps struct {
 	HealthCheckProtocol interface{} `field:"optional" json:"healthCheckProtocol" yaml:"healthCheckProtocol"`
 	// Property name: The name of the endpoint group.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
+	// Property portOverrides: The port mapping relationship of the endpoint group.
+	PortOverrides interface{} `field:"optional" json:"portOverrides" yaml:"portOverrides"`
+	// Property tags: Tags to attach to endpoint group.
+	//
+	// Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+	Tags *[]*RosEndpointGroup_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
 	// Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
 	//
 	// Valid values: 2 to 10. Default value: 3.

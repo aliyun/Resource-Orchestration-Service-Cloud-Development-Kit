@@ -5,7 +5,15 @@ package alicloudroscdkcloudsiem
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-importlogtaskssubmission
 type ImportLogTasksSubmissionProps struct {
-	// Property accounts: The list of accounts to be submitted.
+	// Property accounts: The list of accounts for log ingestion.
+	//
+	// The value must be a JSON array. Valid
+	// values:
+	// - AccountId: The ID of the account.
+	// - Imported: Specifies whether to enable or disable log ingestion for the account.
+	// Valid values:
+	// - 0: Disable ingestion.
+	// - 1: Enable ingestion.
 	Accounts interface{} `field:"required" json:"accounts" yaml:"accounts"`
 	// Property cloudCode: The cloud code.
 	//

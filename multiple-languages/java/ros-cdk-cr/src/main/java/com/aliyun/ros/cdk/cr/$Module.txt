@@ -3,6 +3,7 @@
 @alicloud/ros-cdk-cr.IArtifactLifecycleRule=com.aliyun.ros.cdk.cr.IArtifactLifecycleRule
 @alicloud/ros-cdk-cr.IInstance=com.aliyun.ros.cdk.cr.IInstance
 @alicloud/ros-cdk-cr.IInstanceEndpointAclPolicy=com.aliyun.ros.cdk.cr.IInstanceEndpointAclPolicy
+@alicloud/ros-cdk-cr.IInstanceV2=com.aliyun.ros.cdk.cr.IInstanceV2
 @alicloud/ros-cdk-cr.IInstanceVpcEndpointLinkedVpc=com.aliyun.ros.cdk.cr.IInstanceVpcEndpointLinkedVpc
 @alicloud/ros-cdk-cr.INamespace=com.aliyun.ros.cdk.cr.INamespace
 @alicloud/ros-cdk-cr.IRepoSyncRule=com.aliyun.ros.cdk.cr.IRepoSyncRule
@@ -14,6 +15,8 @@
 @alicloud/ros-cdk-cr.InstanceEndpointAclPolicy=com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicy
 @alicloud/ros-cdk-cr.InstanceEndpointAclPolicyProps=com.aliyun.ros.cdk.cr.InstanceEndpointAclPolicyProps
 @alicloud/ros-cdk-cr.InstanceProps=com.aliyun.ros.cdk.cr.InstanceProps
+@alicloud/ros-cdk-cr.InstanceV2=com.aliyun.ros.cdk.cr.InstanceV2
+@alicloud/ros-cdk-cr.InstanceV2Props=com.aliyun.ros.cdk.cr.InstanceV2Props
 @alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpc=com.aliyun.ros.cdk.cr.InstanceVpcEndpointLinkedVpc
 @alicloud/ros-cdk-cr.InstanceVpcEndpointLinkedVpcProps=com.aliyun.ros.cdk.cr.InstanceVpcEndpointLinkedVpcProps
 @alicloud/ros-cdk-cr.Namespace=com.aliyun.ros.cdk.cr.Namespace
@@ -28,6 +31,8 @@
 @alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicy=com.aliyun.ros.cdk.cr.RosInstanceEndpointAclPolicy
 @alicloud/ros-cdk-cr.RosInstanceEndpointAclPolicyProps=com.aliyun.ros.cdk.cr.RosInstanceEndpointAclPolicyProps
 @alicloud/ros-cdk-cr.RosInstanceProps=com.aliyun.ros.cdk.cr.RosInstanceProps
+@alicloud/ros-cdk-cr.RosInstanceV2=com.aliyun.ros.cdk.cr.RosInstanceV2
+@alicloud/ros-cdk-cr.RosInstanceV2Props=com.aliyun.ros.cdk.cr.RosInstanceV2Props
 @alicloud/ros-cdk-cr.RosInstanceVpcEndpointLinkedVpc=com.aliyun.ros.cdk.cr.RosInstanceVpcEndpointLinkedVpc
 @alicloud/ros-cdk-cr.RosInstanceVpcEndpointLinkedVpcProps=com.aliyun.ros.cdk.cr.RosInstanceVpcEndpointLinkedVpcProps
 @alicloud/ros-cdk-cr.RosNamespace=com.aliyun.ros.cdk.cr.RosNamespace

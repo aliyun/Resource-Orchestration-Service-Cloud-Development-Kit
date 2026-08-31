@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.core;
 /**
  * Local bundling.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:05:41.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:29:13.507Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.core.$Module.class, fqn = "@alicloud/ros-cdk-core.ILocalBundling")
 @software.amazon.jsii.Jsii.Proxy(ILocalBundling.Jsii$Proxy.class)
 public interface ILocalBundling extends software.amazon.jsii.JsiiSerializable {

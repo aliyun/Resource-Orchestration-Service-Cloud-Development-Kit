@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Rule</code>The , which type creates a forwarding rule.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Rule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.282Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.479Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Rule")
 public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IRule {
 
@@ -212,9 +212,11 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property ruleName: The name of the forwarding rule.
          * <p>
-         * The name must be 2 to 128 characters in length.
-         * It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-         * must start with a letter.
+         * <ul>
+         * <li>The length must be 2 to 128 English or Chinese characters.</li>
+         * <li>The name must start with a letter, a Chinese character, or a number, and can
+         * contain numbers, periods (.), underscores (_), hyphens (-), and spaces.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param ruleName Property ruleName: The name of the forwarding rule. This parameter is required.
@@ -226,9 +228,11 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property ruleName: The name of the forwarding rule.
          * <p>
-         * The name must be 2 to 128 characters in length.
-         * It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-         * must start with a letter.
+         * <ul>
+         * <li>The length must be 2 to 128 English or Chinese characters.</li>
+         * <li>The name must start with a letter, a Chinese character, or a number, and can
+         * contain numbers, periods (.), underscores (_), hyphens (-), and spaces.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param ruleName Property ruleName: The name of the forwarding rule. This parameter is required.
@@ -239,24 +243,50 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property direction: Rule direction.
+         * Property direction: The direction in which the forwarding rule is applied.
          * <p>
-         * Valid values: Request or Response.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Request (default): The rule matches and processes requests sent from the client
+         * to the ALB instance.</li>
+         * <li>Response: The rule matches and processes responses returned from server groups
+         * to the ALB instance.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Basic ALB instances support only forwarding rules whose Direction is Request.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param direction Property direction: Rule direction. This parameter is required.
+         * @param direction Property direction: The direction in which the forwarding rule is applied. This parameter is required.
          */
         public Builder direction(final java.lang.String direction) {
             this.props.direction(direction);
             return this;
         }
         /**
-         * Property direction: Rule direction.
+         * Property direction: The direction in which the forwarding rule is applied.
          * <p>
-         * Valid values: Request or Response.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Request (default): The rule matches and processes requests sent from the client
+         * to the ALB instance.</li>
+         * <li>Response: The rule matches and processes responses returned from server groups
+         * to the ALB instance.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Basic ALB instances support only forwarding rules whose Direction is Request.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param direction Property direction: Rule direction. This parameter is required.
+         * @param direction Property direction: The direction in which the forwarding rule is applied. This parameter is required.
          */
         public Builder direction(final com.aliyun.ros.cdk.core.IResolvable direction) {
             this.props.direction(direction);

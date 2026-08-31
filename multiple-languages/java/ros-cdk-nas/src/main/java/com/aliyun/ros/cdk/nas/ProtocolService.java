@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::ProtocolService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.522Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.338Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolService")
 public class ProtocolService extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IProtocolService {
 
@@ -166,28 +166,24 @@ public class ProtocolService extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property protocolType: The protocol type of agreement service.
+         * Property protocolType: The protocol type of the protocol service.
          * <p>
-         * Ranges:
-         * NFS: Agreement service supports NFS protocol access.
-         * The default value: NFS.
+         * Valid value: NFS (default). Only NFSv3 is supported.
          * <p>
          * @return {@code this}
-         * @param protocolType Property protocolType: The protocol type of agreement service. This parameter is required.
+         * @param protocolType Property protocolType: The protocol type of the protocol service. This parameter is required.
          */
         public Builder protocolType(final java.lang.String protocolType) {
             this.props.protocolType(protocolType);
             return this;
         }
         /**
-         * Property protocolType: The protocol type of agreement service.
+         * Property protocolType: The protocol type of the protocol service.
          * <p>
-         * Ranges:
-         * NFS: Agreement service supports NFS protocol access.
-         * The default value: NFS.
+         * Valid value: NFS (default). Only NFSv3 is supported.
          * <p>
          * @return {@code this}
-         * @param protocolType Property protocolType: The protocol type of agreement service. This parameter is required.
+         * @param protocolType Property protocolType: The protocol type of the protocol service. This parameter is required.
          */
         public Builder protocolType(final com.aliyun.ros.cdk.core.IResolvable protocolType) {
             this.props.protocolType(protocolType);
@@ -237,20 +233,44 @@ public class ProtocolService extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * Property description: The description of the protocol service.
+         * <p>
+         * The name of the protocol service appears
+         * in the console.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The description must be 2 to 128 characters in length.</li>
+         * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-). This parameter is required.
+         * @param description Property description: The description of the protocol service. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * Property description: The description of the protocol service.
+         * <p>
+         * The name of the protocol service appears
+         * in the console.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The description must be 2 to 128 characters in length.</li>
+         * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-). This parameter is required.
+         * @param description Property description: The description of the protocol service. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);

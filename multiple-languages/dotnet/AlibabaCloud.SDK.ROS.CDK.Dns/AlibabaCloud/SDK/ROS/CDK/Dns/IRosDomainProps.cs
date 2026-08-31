@@ -21,7 +21,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: groupId: Domain name grouping, the default is the "default grouping" GroupId
+        /// <strong>Property</strong>: groupId: The ID of the domain name group. If you do not specify this parameter, pass an
+        /// empty string, or pass defaultGroup, the domain name is added to the default
+        /// group. You can call the AddDomainGroup operation to obtain the group ID.
         /// </remarks>
         [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -80,7 +82,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: groupId: Domain name grouping, the default is the "default grouping" GroupId
+            /// <strong>Property</strong>: groupId: The ID of the domain name group. If you do not specify this parameter, pass an
+            /// empty string, or pass defaultGroup, the domain name is added to the default
+            /// group. You can call the AddDomainGroup operation to obtain the group ID.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "groupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

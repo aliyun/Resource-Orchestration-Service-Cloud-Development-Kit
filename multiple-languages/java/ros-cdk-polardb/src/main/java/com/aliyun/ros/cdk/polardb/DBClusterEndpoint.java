@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBClusterEndpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.431Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.531Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBClusterEndpoint")
 public class DBClusterEndpoint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.IDBClusterEndpoint {
 

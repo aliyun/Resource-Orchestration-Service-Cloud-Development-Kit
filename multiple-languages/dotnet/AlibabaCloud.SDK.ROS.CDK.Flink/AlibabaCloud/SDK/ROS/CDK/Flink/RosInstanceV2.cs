@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Flink
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Flink::InstanceV2`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `InstanceV2` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
@@ -126,7 +126,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceName: The name of instance.
+        /// <strong>Property</strong>: instanceName: The name of the workspace. The name must start with a lowercase letter, can
+        /// contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
         /// </remarks>
         [JsiiProperty(name: "instanceName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object InstanceName
@@ -156,8 +157,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: storage: Resource specifications.
-        /// When ChargeType is configured as PRE, the resource specification parameters must be filled.
+        /// <strong>Property</strong>: storage: The storage parameters.
         /// </remarks>
         [JsiiProperty(name: "storage", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-flink.RosInstanceV2.StorageProperty\"}]}}")]
         public virtual object Storage
@@ -278,9 +278,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Flink
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoRenew: When the payment type is the monthly package, the value of the value is as follows:
-        /// true: Automatic renewal.
-        /// false: Manual renewal.
+        /// <strong>Property</strong>: autoRenew: Specifies whether to enable auto-renewal. Valid values:
+        /// - true: Auto-renewal is enabled.
+        /// - false: Auto-renewal is disabled. This is the default value.
+        /// > This parameter does not take effect for pay-as-you-go instances.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -5,7 +5,11 @@ package alicloudroscdkpvtz
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pvtz-uservpcauthorization
 type UserVpcAuthorizationProps struct {
-	// Property authorizedUserId: The account ID of the user who authorizes the resource.
+	// Property authorizedUserId: The ID of the account that owns the authorized resources.
+	//
+	// > Only cloud accounts are supported. RAM users are not supported. You can
+	// associate accounts only if they are on the same site. Cross-site association
+	// is not supported.
 	AuthorizedUserId interface{} `field:"required" json:"authorizedUserId" yaml:"authorizedUserId"`
 	// Property authChannel: Authorization channel.
 	//
@@ -15,7 +19,11 @@ type UserVpcAuthorizationProps struct {
 	AuthChannel interface{} `field:"optional" json:"authChannel" yaml:"authChannel"`
 	// Property authCode: Verification code, if AuthChannel takes "AUTH_CODE" or is empty, it is mandatory.
 	AuthCode interface{} `field:"optional" json:"authCode" yaml:"authCode"`
-	// Property authType: Authorization type.
+	// Property authType: The authorization type.
+	//
+	// Valid values:
+	// - NORMAL: standard authorization.
+	// - CLOUD_PRODUCT: cloud product authorization.
 	AuthType interface{} `field:"optional" json:"authType" yaml:"authType"`
 	// Property ignoreDeletionForbidden: Whether to ignore following deletion forbidden errors when deleting:- UserAuth.DeleteForbidden.ZoneVpcExists.
 	IgnoreDeletionForbidden interface{} `field:"optional" json:"ignoreDeletionForbidden" yaml:"ignoreDeletionForbidden"`

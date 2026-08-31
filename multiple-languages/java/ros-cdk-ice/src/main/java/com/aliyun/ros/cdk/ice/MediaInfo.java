@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ice;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ICE::MediaInfo</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:31:54.392Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:41:15.853Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ice.$Module.class, fqn = "@alicloud/ros-cdk-ice.MediaInfo")
 public class MediaInfo extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ice.IMediaInfo {
 
@@ -295,8 +295,7 @@ public class MediaInfo extends com.aliyun.ros.cdk.core.Resource implements com.a
          * video
          * audio
          * text
-         * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-         * .
+         * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
          * <p>
          * @return {@code this}
          * @param mediaType Property mediaType: The type of the media asset. This parameter is required.
@@ -313,8 +312,7 @@ public class MediaInfo extends com.aliyun.ros.cdk.core.Resource implements com.a
          * video
          * audio
          * text
-         * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-         * .
+         * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
          * <p>
          * @return {@code this}
          * @param mediaType Property mediaType: The type of the media asset. This parameter is required.
@@ -478,6 +476,12 @@ public class MediaInfo extends com.aliyun.ros.cdk.core.Resource implements com.a
          * <p>
          * You can specify a custom callback URL.
          * <p>
+         * <ul>
+         * <li>The value can be up to 1,024 bytes in length.</li>
+         * <li>The value must be encoded in UTF-8.</li>
+         * <li>The value must be in the JSON format.</li>
+         * </ul>
+         * <p>
          * @return {@code this}
          * @param userData Property userData: The user data. This parameter is required.
          */
@@ -489,6 +493,12 @@ public class MediaInfo extends com.aliyun.ros.cdk.core.Resource implements com.a
          * Property userData: The user data.
          * <p>
          * You can specify a custom callback URL.
+         * <p>
+         * <ul>
+         * <li>The value can be up to 1,024 bytes in length.</li>
+         * <li>The value must be encoded in UTF-8.</li>
+         * <li>The value must be in the JSON format.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param userData Property userData: The user data. This parameter is required.

@@ -32,7 +32,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
-        /// <summary>Property vSwitchId: Switch ID exported by the protocol service.</summary>
+        /// <summary>Property vSwitchId: The vSwitch ID of the export directory.</summary>
+        /// <remarks>
+        /// If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+        /// the VpcId is set, this field is required.
+        /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object VSwitchId
         {
@@ -53,7 +57,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).</summary>
+        /// <summary>Property description: The description of the export directory for the protocol service.</summary>
+        /// <remarks>
+        /// The name of the
+        /// export directory appears in the console.
+        /// Limits:
+        ///
+        /// <list type="bullet">
+        /// <description>The description must be 2 to 128 characters in length.</description>
+        /// <description>The description must start with a letter but cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>.</description>
+        /// <description>The description can contain letters, digits, colons (:), underscores (_), and
+        /// hyphens (-).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Description
@@ -81,16 +98,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             }
         }
 
-        /// <summary>Property path: The path of the CPFS directory that needs to be exported.</summary>
+        /// <summary>Property path: The path of the CPFS directory that you want to export.</summary>
         /// <remarks>
-        /// limit:
-        /// This directory must be existing directory on CPFS.
-        /// The same directory allows only one export.
-        /// Fileset and Path can only specify one.
-        /// Format:
-        /// The length is 1 to 1024 characters.
-        /// Use UTF-8 encoding.
-        /// It must start with the positive oblique line (/), and the root directory must be/.
+        /// Limits:
+        ///
+        /// <list type="bullet">
+        /// <description>The directory already exists in the CPFS file system.</description>
+        /// <description>You can create only one export directory for a directory.</description>
+        /// <description>You can specify either a fileset or a path.
+        /// Format:</description>
+        /// <description>The path must be 1 to 1,024 characters in length.</description>
+        /// <description>The path must be encoded in UTF-8.</description>
+        /// <description>The path must start and end with a forward slash (/). The root directory is
+        /// <c>\/</c>.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -134,7 +155,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property vSwitchId: Switch ID exported by the protocol service.</summary>
+            /// <summary>Property vSwitchId: The vSwitch ID of the export directory.</summary>
+            /// <remarks>
+            /// If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+            /// the VpcId is set, this field is required.
+            /// </remarks>
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object VSwitchId
             {
@@ -152,7 +177,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).</summary>
+            /// <summary>Property description: The description of the export directory for the protocol service.</summary>
+            /// <remarks>
+            /// The name of the
+            /// export directory appears in the console.
+            /// Limits:
+            ///
+            /// <list type="bullet">
+            /// <description>The description must be 2 to 128 characters in length.</description>
+            /// <description>The description must start with a letter but cannot start with <c>http:\/\/</c> or
+            /// <c>https:\/\/</c>.</description>
+            /// <description>The description can contain letters, digits, colons (:), underscores (_), and
+            /// hyphens (-).</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Description
@@ -174,16 +212,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property path: The path of the CPFS directory that needs to be exported.</summary>
+            /// <summary>Property path: The path of the CPFS directory that you want to export.</summary>
             /// <remarks>
-            /// limit:
-            /// This directory must be existing directory on CPFS.
-            /// The same directory allows only one export.
-            /// Fileset and Path can only specify one.
-            /// Format:
-            /// The length is 1 to 1024 characters.
-            /// Use UTF-8 encoding.
-            /// It must start with the positive oblique line (/), and the root directory must be/.
+            /// Limits:
+            ///
+            /// <list type="bullet">
+            /// <description>The directory already exists in the CPFS file system.</description>
+            /// <description>You can create only one export directory for a directory.</description>
+            /// <description>You can specify either a fileset or a path.
+            /// Format:</description>
+            /// <description>The path must be 1 to 1,024 characters in length.</description>
+            /// <description>The path must be encoded in UTF-8.</description>
+            /// <description>The path must start and end with a forward slash (/). The root directory is
+            /// <c>\/</c>.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

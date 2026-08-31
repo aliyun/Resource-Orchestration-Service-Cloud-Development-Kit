@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-policy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.780Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.PolicyProps")
 @software.amazon.jsii.Jsii.Proxy(PolicyProps.Jsii$Proxy.class)
 public interface PolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,21 @@ public interface PolicyProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getPolicyName();
 
     /**
-     * Property policyType: The type of the policy.
+     * Property policyType: The type of the backup policy.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>STANDARD: A standard backup policy. It supports data sources other than ECS
+     * instance backup.</li>
+     * <li>UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+     * If you do not specify this parameter, Cloud Backup automatically sets the policy
+     * type based on whether a backup vault is specified in the policy rules:</li>
+     * <li>If a backup vault is specified in the rules, the policy type is set to
+     * STANDARD.</li>
+     * <li>If no backup vault is specified in the rules, the policy type is set to
+     * UDM_ECS_ONLY.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPolicyType();
 
@@ -69,7 +83,20 @@ public interface PolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link PolicyProps#getPolicyType}
-         * @param policyType Property policyType: The type of the policy. This parameter is required.
+         * @param policyType Property policyType: The type of the backup policy. This parameter is required.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>STANDARD: A standard backup policy. It supports data sources other than ECS
+         *                   instance backup.</li>
+         *                   <li>UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+         *                   If you do not specify this parameter, Cloud Backup automatically sets the policy
+         *                   type based on whether a backup vault is specified in the policy rules:</li>
+         *                   <li>If a backup vault is specified in the rules, the policy type is set to
+         *                   STANDARD.</li>
+         *                   <li>If no backup vault is specified in the rules, the policy type is set to
+         *                   UDM_ECS_ONLY.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder policyType(java.lang.String policyType) {
@@ -79,7 +106,20 @@ public interface PolicyProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link PolicyProps#getPolicyType}
-         * @param policyType Property policyType: The type of the policy. This parameter is required.
+         * @param policyType Property policyType: The type of the backup policy. This parameter is required.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>STANDARD: A standard backup policy. It supports data sources other than ECS
+         *                   instance backup.</li>
+         *                   <li>UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+         *                   If you do not specify this parameter, Cloud Backup automatically sets the policy
+         *                   type based on whether a backup vault is specified in the policy rules:</li>
+         *                   <li>If a backup vault is specified in the rules, the policy type is set to
+         *                   STANDARD.</li>
+         *                   <li>If no backup vault is specified in the rules, the policy type is set to
+         *                   UDM_ECS_ONLY.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder policyType(com.aliyun.ros.cdk.core.IResolvable policyType) {

@@ -25,7 +25,7 @@ export interface DeploymentProps {
     readonly stageName: string | ros.IResolvable;
 
     /**
-     * Property description: Description of the deployment, less than 180 characters.
+     * Property description: The description. The description can be up to 200 characters in length.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -42,7 +42,7 @@ export interface IDeployment extends ros.IResource {
     readonly props: DeploymentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Deployment`, which is used to publish an API to a specific runtime environment, or switch a published API to a specific version.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Deployment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-deployment
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.swas.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::SWAS::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:58:36.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:51:38.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.swas.$Module.class, fqn = "@alicloud/ros-cdk-swas.datasource.Instances")
 public class Instances extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.swas.datasource.IInstances {
 

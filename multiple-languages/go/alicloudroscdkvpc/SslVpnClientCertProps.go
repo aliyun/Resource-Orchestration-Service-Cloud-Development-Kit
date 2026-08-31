@@ -7,9 +7,10 @@ package alicloudroscdkvpc
 type SslVpnClientCertProps struct {
 	// Property sslVpnServerId: ID of the SSL-VPN server.
 	SslVpnServerId interface{} `field:"required" json:"sslVpnServerId" yaml:"sslVpnServerId"`
-	// Property name: The name of the client certificate.
+	// Property name: The name of the SSL client certificate.
 	//
-	// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:\/\/ or https:\/\/.
+	// The name must be 1 to 100 characters in length, and cannot start with `http:\/\/`
+	// or `https:\/\/`.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 }
 

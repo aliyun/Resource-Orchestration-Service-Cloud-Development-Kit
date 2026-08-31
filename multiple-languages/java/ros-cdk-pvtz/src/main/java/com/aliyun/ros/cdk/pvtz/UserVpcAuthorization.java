@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::UserVpcAuthorization</code>, which is used to associate virtual private clouds (VPCs) across accounts.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.940Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:52:38.649Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.UserVpcAuthorization")
 public class UserVpcAuthorization extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.IUserVpcAuthorization {
 
@@ -120,20 +120,36 @@ public class UserVpcAuthorization extends com.aliyun.ros.cdk.core.Resource imple
         }
 
         /**
-         * Property authorizedUserId: The account ID of the user who authorizes the resource.
+         * Property authorizedUserId: The ID of the account that owns the authorized resources.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Only cloud accounts are supported. RAM users are not supported. You can
+         * associate accounts only if they are on the same site. Cross-site association
+         * is not supported.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param authorizedUserId Property authorizedUserId: The account ID of the user who authorizes the resource. This parameter is required.
+         * @param authorizedUserId Property authorizedUserId: The ID of the account that owns the authorized resources. This parameter is required.
          */
         public Builder authorizedUserId(final java.lang.String authorizedUserId) {
             this.props.authorizedUserId(authorizedUserId);
             return this;
         }
         /**
-         * Property authorizedUserId: The account ID of the user who authorizes the resource.
+         * Property authorizedUserId: The ID of the account that owns the authorized resources.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Only cloud accounts are supported. RAM users are not supported. You can
+         * associate accounts only if they are on the same site. Cross-site association
+         * is not supported.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param authorizedUserId Property authorizedUserId: The account ID of the user who authorizes the resource. This parameter is required.
+         * @param authorizedUserId Property authorizedUserId: The ID of the account that owns the authorized resources. This parameter is required.
          */
         public Builder authorizedUserId(final com.aliyun.ros.cdk.core.IResolvable authorizedUserId) {
             this.props.authorizedUserId(authorizedUserId);
@@ -191,20 +207,34 @@ public class UserVpcAuthorization extends com.aliyun.ros.cdk.core.Resource imple
         }
 
         /**
-         * Property authType: Authorization type.
+         * Property authType: The authorization type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NORMAL: standard authorization.</li>
+         * <li>CLOUD_PRODUCT: cloud product authorization.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param authType Property authType: Authorization type. This parameter is required.
+         * @param authType Property authType: The authorization type. This parameter is required.
          */
         public Builder authType(final java.lang.String authType) {
             this.props.authType(authType);
             return this;
         }
         /**
-         * Property authType: Authorization type.
+         * Property authType: The authorization type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>NORMAL: standard authorization.</li>
+         * <li>CLOUD_PRODUCT: cloud product authorization.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param authType Property authType: Authorization type. This parameter is required.
+         * @param authType Property authType: The authorization type. This parameter is required.
          */
         public Builder authType(final com.aliyun.ros.cdk.core.IResolvable authType) {
             this.props.authType(authType);

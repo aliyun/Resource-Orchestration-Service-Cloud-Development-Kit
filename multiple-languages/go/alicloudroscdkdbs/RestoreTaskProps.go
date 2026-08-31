@@ -7,18 +7,19 @@ package alicloudroscdkdbs
 type RestoreTaskProps struct {
 	// Property backupPlanId: The ID of the backup plan.
 	BackupPlanId interface{} `field:"required" json:"backupPlanId" yaml:"backupPlanId"`
-	// Property destinationEndpointInstanceType: The location of the database.
+	// Property destinationEndpointInstanceType: The type of the destination endpoint.
 	//
 	// Valid values:
-	// - rds
-	// - ecs
-	// - express: a database connected over express connect, VPN Gateway, or smart gateway.
-	// - agent: The database connected through the backup Gateway
-	// - dds: apsaradb for MongoDB
-	// - kvstore
-	// - polardb
-	// - drds
-	// - dg: the database is directly connected through IP Address: Port.
+	// - RDS: an ApsaraDB RDS instance.
+	// - ECS: a self-managed database hosted on an ECS instance.
+	// - Express: a database connected over a leased line, VPN Gateway, or Smart Access
+	// Gateway.
+	// - Agent: a database connected via a backup gateway.
+	// - DDS: an ApsaraDB for MongoDB (DDS) instance.
+	// - Other: a database connected over the internet by using a public IP address and
+	// port.
+	// - dg: a self-managed database without a public endpoint, connected via Database
+	// Gateway.
 	DestinationEndpointInstanceType interface{} `field:"required" json:"destinationEndpointInstanceType" yaml:"destinationEndpointInstanceType"`
 	// Property restoreTaskName: The name of the restoration task.
 	RestoreTaskName interface{} `field:"required" json:"restoreTaskName" yaml:"restoreTaskName"`
@@ -44,10 +45,11 @@ type RestoreTaskProps struct {
 	//
 	// Note This parameter is required if the database type is Oracle.
 	DestinationEndpointOracleSid interface{} `field:"optional" json:"destinationEndpointOracleSid" yaml:"destinationEndpointOracleSid"`
-	// Property destinationEndpointPassword: The password that is used to log on to the RDS instance.
+	// Property destinationEndpointPassword: The password for the destination database account.
 	//
-	// Note You must specify this parameter when the database type is Redis, or the database location
-	// is agent and the database type is MSSQL.
+	// > This parameter is optional if the database engine is Redis, or if
+	// `DestinationEndpointInstanceType` is set to `Agent` and the database engine is
+	// MSSQL. In other scenarios, this parameter is required.
 	DestinationEndpointPassword interface{} `field:"optional" json:"destinationEndpointPassword" yaml:"destinationEndpointPassword"`
 	// Property destinationEndpointPort: The port that is used to access the database of the primary MySQL server.
 	//
@@ -57,10 +59,11 @@ type RestoreTaskProps struct {
 	//
 	// NoteDestinationEndpointInstanceType for RDS, ECS, DDS, Express, or Agent, this parameter is required.
 	DestinationEndpointRegion interface{} `field:"optional" json:"destinationEndpointRegion" yaml:"destinationEndpointRegion"`
-	// Property destinationEndpointUserName: The database account.
+	// Property destinationEndpointUserName: The username for the destination database account.
 	//
-	// Note You must specify this parameter when the database type is Redis, or the database location
-	// is agent and the database type is MSSQL.
+	// > This parameter is optional if the database engine is Redis, or if
+	// `DestinationEndpointInstanceType` is set to `Agent` and the database engine is
+	// MSSQL. In other scenarios, this parameter is required.
 	DestinationEndpointUserName interface{} `field:"optional" json:"destinationEndpointUserName" yaml:"destinationEndpointUserName"`
 	// Property duplicateConflict: The handling method for conflicts between objects with the same name.
 	//
@@ -68,17 +71,23 @@ type RestoreTaskProps struct {
 	// failure: The object with the same name fails (default).
 	// renamenew: renames an object with the same name.
 	DuplicateConflict interface{} `field:"optional" json:"duplicateConflict" yaml:"duplicateConflict"`
-	// Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.
+	// Property restoreDir: The restore directory.
+	//
+	// This parameter is required if
+	// DestinationEndpointInstanceType is set to `Agent` and the database type is MySQL.
 	RestoreDir interface{} `field:"optional" json:"restoreDir" yaml:"restoreDir"`
 	// Property restoreHome: Database Program Directory.
 	RestoreHome interface{} `field:"optional" json:"restoreHome" yaml:"restoreHome"`
-	// Property restoreObjects: Restore an object.
+	// Property restoreObjects: The objects to restore.
 	//
-	// Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
+	// - This parameter is optional if `DestinationEndpointInstanceType` is set to
+	// `Agent`. In other scenarios, this parameter is required.
+	// - The value must be a JSON string in the following format: `[{ "DBName":
+	// "source_database_name", "NewDBName": "destination_database_name" }]`
+	// > You can use this API operation to restore data only at the database level. To
+	// restore data at the table level, log on to the console.
 	RestoreObjects interface{} `field:"optional" json:"restoreObjects" yaml:"restoreObjects"`
-	// Property restoreTime: The time when the fault is restored.
-	//
-	// Set the value to 1554560477000.
+	// Property restoreTime: The point-in-time for the restore, specified as a UNIX timestamp in milliseconds.
 	RestoreTime interface{} `field:"optional" json:"restoreTime" yaml:"restoreTime"`
 	// Property startTask: Start restore task after creating a recovery task.
 	StartTask interface{} `field:"optional" json:"startTask" yaml:"startTask"`

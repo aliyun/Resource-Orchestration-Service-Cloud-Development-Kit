@@ -91,7 +91,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: dedicatedHostId: which dedicated host will be deployed
+        /// <strong>Property</strong>: dedicatedHostId: The ID of the dedicated host.
+        /// You can call the [DescribeDedicatedHosts]() operation to query the list of
+        /// dedicated host IDs.
+        /// > Spot instances cannot be created on dedicated hosts. If you specify
+        /// DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
         /// </remarks>
         [JsiiProperty(name: "dedicatedHostId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -183,7 +187,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: hpcClusterId: The HPC cluster ID to which the instance belongs.
+        /// <strong>Property</strong>: hpcClusterId: The ID of the high performance computing (HPC) cluster to which the instance
+        /// belongs.
+        /// This parameter is required when you create instances of a Supper Computing
+        /// Cluster (SCC) instance type. For information about how to create an HPC cluster,
+        /// see [CreateHpcCluster]().
         /// </remarks>
         [JsiiProperty(name: "hpcClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -243,7 +251,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: imageId: Image ID to create ecs instance.
+        /// <strong>Property</strong>: imageId: The image ID.
+        /// <details>
+        /// <summary>
+        /// Naming convention for image IDs
+        /// <\/summary>
+        /// - Public images: Named based on the operating system version, architecture,
+        /// language, and published date.
+        /// - Custom images, shared images, cloud marketplace images, and community
+        /// images: Start with the letter `m`.
+        /// <\/details>
         /// </remarks>
         [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -295,7 +312,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+        /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100.
+        /// Default value: 0.
         /// </remarks>
         [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -308,7 +326,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'optimized'.
+        /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. For instances of [retired
+        /// instance types](), the default value is none. For instances of other instance
+        /// types, the default value is optimized. Valid values:
+        /// - none: The instance is not I\/O optimized.
+        /// - optimized: The instance is I\/O optimized.
         /// </remarks>
         [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -347,7 +369,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
+        /// <strong>Property</strong>: passwordInherit: Specifies whether to use the password preset in the image. Valid values:
+        /// - true: uses the preset password.
+        /// - false: does not use the preset password.
+        /// Default value: false.
+        /// > If you set this parameter to true, make sure that you leave the Password
+        /// parameter empty and the selected image has a preset password.
         /// </remarks>
         [JsiiProperty(name: "passwordInherit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -438,7 +465,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityEnhancementStrategy:
+        /// <strong>Property</strong>: securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+        /// - Active: enables security hardening. This value is applicable only to public
+        /// images.
+        /// - Deactive: does not enable security hardening. This value is applicable to all
+        /// images.
         /// </remarks>
         [JsiiProperty(name: "securityEnhancementStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -477,10 +508,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-        /// Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-        /// If this parameter is set to 0, no protection period is configured for the preemptible instance.
+        /// <strong>Property</strong>: spotDuration: The protection period of the spot instance. Unit: hours. Valid values:
+        /// - 1: After a spot instance is created, the system ensures that the instance is not
+        /// automatically released within 1 hour. After the 1-hour protection period ends, the system
+        /// compares the bid price with the market price and checks the resource inventory to
+        /// determine whether to retain or release the instance.
+        /// - 0: After a spot instance is created, the system does not ensure that the instance
+        /// can run for one hour. The system compares the biding price with the market prices and
+        /// checks the resource inventory to determine whether to retain or release the instance.
         /// Default value: 1.
+        /// >
+        /// - You can set this parameter only to 0 or 1.
+        /// - The spot instance is billed by second. Specify an appropriate protection period.
+        /// - The system sends an ECS system event to notify you 5 minutes before the instance is
+        /// released.
         /// </remarks>
         [JsiiProperty(name: "spotDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -493,7 +534,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+        /// <strong>Property</strong>: spotInterruptionBehavior: The interruption mode of the spot instance. Valid values:
+        /// - Terminate: The instance is released.
+        /// - Stop: The instance is stopped in economical mode.
+        /// For information about the economical mode, see [Economical mode]().
+        /// Default value: Terminate.
         /// </remarks>
         [JsiiProperty(name: "spotInterruptionBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -545,7 +590,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+        /// <strong>Property</strong>: storageSetPartitionNumber: The maximum number of partitions in the storage set. Valid values: integers
+        /// greater than or equal to 2.
         /// </remarks>
         [JsiiProperty(name: "storageSetPartitionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -678,7 +724,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+        /// <strong>Property</strong>: userData: The user data of the instance. You must specify Base64-encoded data. The instance
+        /// user data cannot exceed 32 KB in size before Base64 encoding.
+        /// For information about the limits, formats, and running frequencies of instance
+        /// user data, see [Instance user data]().
+        /// > To ensure security, we recommend that you do not use plaintext to pass in
+        /// confidential information, such as passwords or private keys, as user data. If you
+        /// need to pass in confidential information, we recommend that you encrypt and
+        /// encode the information in Base64 and then decode and decrypt the information in
+        /// the same manner in the instance.
         /// </remarks>
         [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -704,7 +758,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The vSwitch Id to create ecs instance.
+        /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch to which to connect to the instance. You must set this
+        /// parameter when you create an instance of the VPC type. The specified vSwitch and
+        /// security group must belong to the same VPC. You can call the
+        /// [DescribeVSwitches]() operation to query available vSwitches.
+        /// Take note of the following items:
+        /// - If you specify the `VSwitchId` parameter, the zone specified by the `ZoneId`
+        /// parameter must be the zone where the specified vSwitch is located. You can also
+        /// leave the `ZoneId` parameter empty. Then, the system selects the zone where the
+        /// specified vSwitch resides.
+        /// - If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify
+        /// `VSwitchId` but can specify `NetworkInterface.N.VSwitchId`.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -820,7 +884,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: dedicatedHostId: which dedicated host will be deployed
+            /// <strong>Property</strong>: dedicatedHostId: The ID of the dedicated host.
+            /// You can call the [DescribeDedicatedHosts]() operation to query the list of
+            /// dedicated host IDs.
+            /// > Spot instances cannot be created on dedicated hosts. If you specify
+            /// DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dedicatedHostId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -891,7 +959,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: hpcClusterId: The HPC cluster ID to which the instance belongs.
+            /// <strong>Property</strong>: hpcClusterId: The ID of the high performance computing (HPC) cluster to which the instance
+            /// belongs.
+            /// This parameter is required when you create instances of a Supper Computing
+            /// Cluster (SCC) instance type. For information about how to create an HPC cluster,
+            /// see [CreateHpcCluster]().
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "hpcClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -939,7 +1011,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: imageId: Image ID to create ecs instance.
+            /// <strong>Property</strong>: imageId: The image ID.
+            /// <details>
+            /// <summary>
+            /// Naming convention for image IDs
+            /// <\/summary>
+            /// - Public images: Named based on the operating system version, architecture,
+            /// language, and published date.
+            /// - Custom images, shared images, cloud marketplace images, and community
+            /// images: Start with the letter `m`.
+            /// <\/details>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -979,7 +1060,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+            /// <strong>Property</strong>: internetMaxBandwidthOut: The maximum outbound public bandwidth. Unit: Mbit\/s. Valid values: 0 to 100.
+            /// Default value: 0.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "internetMaxBandwidthOut", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -989,7 +1071,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ioOptimized: The 'optimized' instance can provide better IO performance. Support 'none' and 'optimized' only, default is 'optimized'.
+            /// <strong>Property</strong>: ioOptimized: Specifies whether the instance is I\/O optimized. For instances of [retired
+            /// instance types](), the default value is none. For instances of other instance
+            /// types, the default value is optimized. Valid values:
+            /// - none: The instance is not I\/O optimized.
+            /// - optimized: The instance is I\/O optimized.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "ioOptimized", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1019,7 +1105,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: passwordInherit: Specifies whether to use the password preset in the image. To use the PasswordInherit parameter, the Password parameter must be empty and you must make sure that the selected image has a password configured.
+            /// <strong>Property</strong>: passwordInherit: Specifies whether to use the password preset in the image. Valid values:
+            /// - true: uses the preset password.
+            /// - false: does not use the preset password.
+            /// Default value: false.
+            /// > If you set this parameter to true, make sure that you leave the Password
+            /// parameter empty and the selected image has a preset password.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "passwordInherit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1089,7 +1180,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: securityEnhancementStrategy:
+            /// <strong>Property</strong>: securityEnhancementStrategy: Specifies whether to enable security hardening. Valid values:
+            /// - Active: enables security hardening. This value is applicable only to public
+            /// images.
+            /// - Deactive: does not enable security hardening. This value is applicable to all
+            /// images.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityEnhancementStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1119,10 +1214,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: spotDuration: The protection period of the preemptible instance. Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-            /// Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-            /// If this parameter is set to 0, no protection period is configured for the preemptible instance.
+            /// <strong>Property</strong>: spotDuration: The protection period of the spot instance. Unit: hours. Valid values:
+            /// - 1: After a spot instance is created, the system ensures that the instance is not
+            /// automatically released within 1 hour. After the 1-hour protection period ends, the system
+            /// compares the bid price with the market price and checks the resource inventory to
+            /// determine whether to retain or release the instance.
+            /// - 0: After a spot instance is created, the system does not ensure that the instance
+            /// can run for one hour. The system compares the biding price with the market prices and
+            /// checks the resource inventory to determine whether to retain or release the instance.
             /// Default value: 1.
+            /// >
+            /// - You can set this parameter only to 0 or 1.
+            /// - The spot instance is billed by second. Specify an appropriate protection period.
+            /// - The system sends an ECS system event to notify you 5 minutes before the instance is
+            /// released.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "spotDuration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1132,7 +1237,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: spotInterruptionBehavior: The interruption mode of the preemptible instance. Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+            /// <strong>Property</strong>: spotInterruptionBehavior: The interruption mode of the spot instance. Valid values:
+            /// - Terminate: The instance is released.
+            /// - Stop: The instance is stopped in economical mode.
+            /// For information about the economical mode, see [Economical mode]().
+            /// Default value: Terminate.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "spotInterruptionBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1172,7 +1281,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: storageSetPartitionNumber: The maximum number of partitions in the storage set. The value must be greater than or equal to 2.
+            /// <strong>Property</strong>: storageSetPartitionNumber: The maximum number of partitions in the storage set. Valid values: integers
+            /// greater than or equal to 2.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "storageSetPartitionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1275,7 +1385,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: userData: User data to pass to instance. [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+            /// <strong>Property</strong>: userData: The user data of the instance. You must specify Base64-encoded data. The instance
+            /// user data cannot exceed 32 KB in size before Base64 encoding.
+            /// For information about the limits, formats, and running frequencies of instance
+            /// user data, see [Instance user data]().
+            /// > To ensure security, we recommend that you do not use plaintext to pass in
+            /// confidential information, such as passwords or private keys, as user data. If you
+            /// need to pass in confidential information, we recommend that you encrypt and
+            /// encode the information in Base64 and then decode and decrypt the information in
+            /// the same manner in the instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "userData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1295,7 +1413,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The vSwitch Id to create ecs instance.
+            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch to which to connect to the instance. You must set this
+            /// parameter when you create an instance of the VPC type. The specified vSwitch and
+            /// security group must belong to the same VPC. You can call the
+            /// [DescribeVSwitches]() operation to query available vSwitches.
+            /// Take note of the following items:
+            /// - If you specify the `VSwitchId` parameter, the zone specified by the `ZoneId`
+            /// parameter must be the zone where the specified vSwitch is located. You can also
+            /// leave the `ZoneId` parameter empty. Then, the system selects the zone where the
+            /// specified vSwitch resides.
+            /// - If `NetworkInterface.N.InstanceType` is set to `Primary`, you cannot specify
+            /// `VSwitchId` but can specify `NetworkInterface.N.VSwitchId`.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

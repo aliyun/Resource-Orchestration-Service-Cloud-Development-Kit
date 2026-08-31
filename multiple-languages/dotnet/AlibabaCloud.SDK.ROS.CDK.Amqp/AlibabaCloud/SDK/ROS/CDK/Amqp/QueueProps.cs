@@ -45,7 +45,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         private object _queueName;
 
-        /// <summary>Property queueName: The name of the queue.</summary>
+        /// <summary>Property queueName: The name of the queue to create.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>The queue name can contain only letters, digits, hyphens (-), underscores (_),
+        /// periods (.), number signs (#), forward slashes (/), and at signs (@). The name
+        /// must be 1 to 255 characters in length.</description>
+        /// <description>After a queue is created, its name cannot be changed. To change the name,
+        /// delete the queue and create a new one.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "queueName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object QueueName
         {
@@ -75,7 +84,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         private object _virtualHost;
 
-        /// <summary>Property virtualHost: The name of the virtual host.</summary>
+        /// <summary>Property virtualHost: The name of the vhost to which the queue belongs.</summary>
+        /// <remarks>
+        /// The name can contain only letters, digits, hyphens (-), underscores (_), periods
+        /// (.), number signs (#), forward slashes (/), and at signs (@). The name must be 1
+        /// to 255 characters in length.
+        /// </remarks>
         [JsiiProperty(name: "virtualHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VirtualHost
         {
@@ -141,9 +155,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         private object? _autoExpireState;
 
-        /// <summary>Property autoExpireState: The validity period after which the queue is automatically deleted.</summary>
+        /// <summary>Property autoExpireState: The auto-expiration time for the queue.</summary>
         /// <remarks>
-        /// If the queue is not accessed within a specified period of time, it is automatically deleted.
+        /// The queue is automatically deleted if it
+        /// is not accessed within the specified time period.
+        /// Unit: milliseconds.
+        ///
+        ///     This feature must be enabled before you can use this parameter. To enable the
+        ///     feature, .
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoExpireState", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -231,7 +250,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         private object? _deadLetterRoutingKey;
 
-        /// <summary>Property deadLetterRoutingKey: The dead letter routing key.</summary>
+        /// <summary>Property deadLetterRoutingKey: The dead-letter routing key.</summary>
+        /// <remarks>
+        /// The key can contain only letters, digits, hyphens (-), underscores (_), periods
+        /// (.), number signs (#), forward slashes (/), and at signs (@). The key must be 1
+        /// to 255 characters in length.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deadLetterRoutingKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DeadLetterRoutingKey
@@ -265,8 +289,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         /// <summary>Property exclusiveState: Specifies whether the queue is an exclusive queue.</summary>
         /// <remarks>
         /// Valid values:
-        /// true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-        /// false: The Auto Delete attribute is not configured.
+        ///
+        /// <list type="bullet">
+        /// <description>true: The queue is an exclusive queue. An exclusive queue can be used only by
+        /// the connection that declares it. The queue is automatically deleted after the
+        /// connection is closed.</description>
+        /// <description>false: The queue is not an exclusive queue.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "exclusiveState", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -298,7 +327,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         private object? _maximumPriority;
 
-        /// <summary>Property maximumPriority: The priority function is not supported.</summary>
+        /// <summary>Property maximumPriority: The priority of the queue.</summary>
+        /// <remarks>
+        /// The recommended value is an integer from 1 to 10.
+        ///
+        ///     This parameter is used for message priority. It is supported only by dedicated
+        ///     instances and can be used only after the message priority feature is enabled. To
+        ///     enable the feature, .
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maximumPriority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? MaximumPriority
@@ -349,9 +385,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 
         private object? _maxLength;
 
-        /// <summary>Property maxLength: The maximum number of messages that can be stored in the queue.</summary>
+        /// <summary>Property maxLength: This parameter is not supported in the current version.</summary>
         /// <remarks>
-        /// If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+        /// The maximum number of messages that can be stored in the queue. If this limit is
+        /// exceeded, the earliest messages in the queue are deleted.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

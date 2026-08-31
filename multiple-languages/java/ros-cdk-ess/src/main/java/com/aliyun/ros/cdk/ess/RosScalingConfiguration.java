@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScalingConfiguration</code>, which is used to create a scaling configuration for a scaling group.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ESS::ScalingConfiguration</code>, which creates a scaling configuration for an Auto Scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.458Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfiguration")
 public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -117,6 +117,24 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
      */
     public void setCpu(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "cpu", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getCpuOptions() {
+        return software.amazon.jsii.Kernel.get(this, "cpuOptions", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setCpuOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "cpuOptions", value);
+    }
+
+    /**
+     */
+    public void setCpuOptions(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ess.RosScalingConfiguration.CpuOptionsProperty value) {
+        software.amazon.jsii.Kernel.set(this, "cpuOptions", value);
     }
 
     /**
@@ -1231,6 +1249,135 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
      */
     public void setZoneId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "zoneId", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.RosScalingConfiguration.CpuOptionsProperty")
+    @software.amazon.jsii.Jsii.Proxy(CpuOptionsProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface CpuOptionsProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        default @org.jetbrains.annotations.Nullable java.lang.Object getNestedVirtualization() {
+            return null;
+        }
+
+        /**
+         * @return a {@link Builder} of {@link CpuOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link CpuOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<CpuOptionsProperty> {
+            java.lang.Object nestedVirtualization;
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getNestedVirtualization}
+             * @param nestedVirtualization the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nestedVirtualization(java.lang.String nestedVirtualization) {
+                this.nestedVirtualization = nestedVirtualization;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link CpuOptionsProperty#getNestedVirtualization}
+             * @param nestedVirtualization the value to be set.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder nestedVirtualization(com.aliyun.ros.cdk.core.IResolvable nestedVirtualization) {
+                this.nestedVirtualization = nestedVirtualization;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link CpuOptionsProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public CpuOptionsProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link CpuOptionsProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements CpuOptionsProperty {
+            private final java.lang.Object nestedVirtualization;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.nestedVirtualization = software.amazon.jsii.Kernel.get(this, "nestedVirtualization", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.nestedVirtualization = builder.nestedVirtualization;
+            }
+
+            @Override
+            public final java.lang.Object getNestedVirtualization() {
+                return this.nestedVirtualization;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                if (this.getNestedVirtualization() != null) {
+                    data.set("nestedVirtualization", om.valueToTree(this.getNestedVirtualization()));
+                }
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ess.RosScalingConfiguration.CpuOptionsProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                CpuOptionsProperty.Jsii$Proxy that = (CpuOptionsProperty.Jsii$Proxy) o;
+
+                return this.nestedVirtualization != null ? this.nestedVirtualization.equals(that.nestedVirtualization) : that.nestedVirtualization == null;
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.nestedVirtualization != null ? this.nestedVirtualization.hashCode() : 0;
+                return result;
+            }
+        }
     }
     /**
      */
@@ -2894,6 +3041,23 @@ public class RosScalingConfiguration extends com.aliyun.ros.cdk.core.RosResource
          */
         public Builder cpu(final com.aliyun.ros.cdk.core.IResolvable cpu) {
             this.props.cpu(cpu);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param cpuOptions This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.core.IResolvable cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param cpuOptions This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.ess.RosScalingConfiguration.CpuOptionsProperty cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
             return this;
         }
 

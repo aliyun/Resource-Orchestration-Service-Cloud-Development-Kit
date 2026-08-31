@@ -25,10 +25,13 @@ export interface RouterInterfaceProps {
     readonly accessPointId?: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Indicates whether automatic payment is enabled. Valid values:
-     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated. 
-     * true: Automatic payment is enabled. The payment is automatically made.
-     * Default: true.
+     * Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * *   false (default): The automatic payment is disabled. If you select this
+     * option, you must go to the Order Center to complete the payment after an order is
+     * generated.
+     * *   true: The automatic payment is enabled. Payments are automatically complete
+     * after an order is generated.
+     * >  This parameter is required if InstanceChargeType is set to PrePaid.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -60,7 +63,7 @@ export interface RouterInterfaceProps {
     readonly healthCheckTargetIp?: string | ros.IResolvable;
 
     /**
-     * Property instanceChargeType: The billing method of the router interface. Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
+     * Property instanceChargeType: The billing method of the router interface.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
@@ -115,12 +118,30 @@ export interface RouterInterfaceProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property routerType: Router type. Now support 'VRouter|VBR'
+     * Property routerType: The type of router that is associated with the router interface. Valid values:
+     * *   VRouter
+     * *   VBR
      */
     readonly routerType?: string | ros.IResolvable;
 
     /**
-     * Property spec: RouterInterface specification. If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+     * Property spec: The specification of the router interface and the corresponding bandwidth. Valid
+     * values:
+     * *   Mini.2: 2 Mbit\/s
+     * *   Mini.5: 5 Mbit\/s
+     * *   Small.1: 10 Mbit\/s
+     * *   Small.2: 20 Mbit\/s
+     * *   Small.5: 50 Mbit\/s
+     * *   Middle.1: 100 Mbit\/s
+     * *   Middle.2: 200 Mbit\/s
+     * *   Middle.5: 500 Mbit\/s
+     * *   Large.1: 1,000 Mbit\/s
+     * *   Large.2: 2,000 Mbit\/s
+     * *   Large.5: 5,000 Mbit\/s
+     * *   Xlarge.1: 10,000 Mbit\/s
+     * >  If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+     * do not need to specify the specification when you create an acceptor router
+     * interface.
      */
     readonly spec?: string | ros.IResolvable;
 }

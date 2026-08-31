@@ -17,13 +17,13 @@ export interface InstanceV2Props {
     readonly chargeType: string | ros.IResolvable;
 
     /**
-     * Property instanceName: The name of instance.
+     * Property instanceName: The name of the workspace. The name must start with a lowercase letter, can
+     * contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
      */
     readonly instanceName: string | ros.IResolvable;
 
     /**
-     * Property storage: Resource specifications.
-     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     * Property storage: The storage parameters.
      */
     readonly storage: RosInstanceV2.StorageProperty | ros.IResolvable;
 
@@ -43,9 +43,10 @@ export interface InstanceV2Props {
     readonly architectureType?: string | ros.IResolvable;
 
     /**
-     * Property autoRenew: When the payment type is the monthly package, the value of the value is as follows:
-     * true: Automatic renewal.
-     * false: Manual renewal.
+     * Property autoRenew: Specifies whether to enable auto-renewal. Valid values:
+     * - true: Auto-renewal is enabled.
+     * - false: Auto-renewal is disabled. This is the default value.
+     * > This parameter does not take effect for pay-as-you-go instances.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
@@ -119,7 +120,7 @@ export interface IInstanceV2 extends ros.IResource {
     readonly attrWorkspaceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::InstanceV2`The , which resource creates a fully managed Flink workspace.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::InstanceV2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstanceV2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
  */

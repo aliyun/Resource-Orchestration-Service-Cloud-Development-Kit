@@ -45,7 +45,7 @@ export interface IDedicatedHostGroups extends ros.IResource {
     readonly attrDedicatedHostGroups: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`, which is used to query the information about resources in dedicated clusters.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::CDDC::DedicatedHostGroups`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostGroups`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cddc-dedicatedhostgroups
  */

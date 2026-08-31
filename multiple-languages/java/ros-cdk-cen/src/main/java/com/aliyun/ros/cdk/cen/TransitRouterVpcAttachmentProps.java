@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpcattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.410Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.771Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpcAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterVpcAttachmentProps.Jsii$Proxy.class)
 public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,7 +28,12 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
     }
 
     /**
-     * Property autoPublishRouteEnabled: Whether to automatically publish routes.
+     * Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.
+     * <p>
+     * <ul>
+     * <li>false (default): Do not automatically advertise routes.</li>
+     * <li>true: Automatically advertise routes.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPublishRouteEnabled() {
         return null;
@@ -70,14 +75,20 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
     }
 
     /**
-     * Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+     * Property transitRouterAttachmentDescription: The description of the VPC connection.
+     * <p>
+     * The description can be empty or 1 to 256 characters long, and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterAttachmentDescription() {
         return null;
     }
 
     /**
-     * Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+     * Property transitRouterAttachmentName: The name of the VPC connection.
+     * <p>
+     * The name can be empty or 1 to 128 characters long, and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterAttachmentName() {
         return null;
@@ -91,14 +102,27 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
     }
 
     /**
-     * Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+     * Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.
+     * <p>
+     * This parameter is deprecated. We recommend
+     * that you use the <code>Options</code> parameter instead.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterVpcAttachmentOptions() {
         return null;
     }
 
     /**
-     * Property vpcOwnerId: The owner ID of the VPC.
+     * Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.
+     * <p>
+     * By
+     * default, this is the ID of the current account.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you want to attach a cross-account network
+     * instance.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpcOwnerId() {
         return null;
@@ -191,7 +215,11 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getAutoPublishRouteEnabled}
-         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to automatically publish routes.
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.
+         *                                <ul>
+         *                                <li>false (default): Do not automatically advertise routes.</li>
+         *                                <li>true: Automatically advertise routes.</li>
+         *                                </ul>
          * @return {@code this}
          */
         public Builder autoPublishRouteEnabled(java.lang.Boolean autoPublishRouteEnabled) {
@@ -201,7 +229,11 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getAutoPublishRouteEnabled}
-         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Whether to automatically publish routes.
+         * @param autoPublishRouteEnabled Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.
+         *                                <ul>
+         *                                <li>false (default): Do not automatically advertise routes.</li>
+         *                                <li>true: Automatically advertise routes.</li>
+         *                                </ul>
          * @return {@code this}
          */
         public Builder autoPublishRouteEnabled(com.aliyun.ros.cdk.core.IResolvable autoPublishRouteEnabled) {
@@ -311,7 +343,9 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getTransitRouterAttachmentDescription}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPC connection.
+         *                                           The description can be empty or 1 to 256 characters long, and cannot start with
+         *                                           <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentDescription(java.lang.String transitRouterAttachmentDescription) {
@@ -321,7 +355,9 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getTransitRouterAttachmentDescription}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPC connection.
+         *                                           The description can be empty or 1 to 256 characters long, and cannot start with
+         *                                           <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentDescription(com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentDescription) {
@@ -331,7 +367,9 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getTransitRouterAttachmentName}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPC connection.
+         *                                    The name can be empty or 1 to 128 characters long, and cannot start with
+         *                                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentName(java.lang.String transitRouterAttachmentName) {
@@ -341,7 +379,9 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getTransitRouterAttachmentName}
-         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the transit router VPC attachment.
+         * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPC connection.
+         *                                    The name can be empty or 1 to 128 characters long, and cannot start with
+         *                                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentName(com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentName) {
@@ -371,7 +411,9 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getTransitRouterVpcAttachmentOptions}
-         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.
+         *                                          This parameter is deprecated. We recommend
+         *                                          that you use the <code>Options</code> parameter instead.
          * @return {@code this}
          */
         public Builder transitRouterVpcAttachmentOptions(com.aliyun.ros.cdk.core.IResolvable transitRouterVpcAttachmentOptions) {
@@ -381,7 +423,9 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getTransitRouterVpcAttachmentOptions}
-         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.
+         * @param transitRouterVpcAttachmentOptions Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.
+         *                                          This parameter is deprecated. We recommend
+         *                                          that you use the <code>Options</code> parameter instead.
          * @return {@code this}
          */
         public Builder transitRouterVpcAttachmentOptions(java.util.Map<java.lang.String, ? extends java.lang.Object> transitRouterVpcAttachmentOptions) {
@@ -391,7 +435,16 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getVpcOwnerId}
-         * @param vpcOwnerId Property vpcOwnerId: The owner ID of the VPC.
+         * @param vpcOwnerId Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.
+         *                   By
+         *                   default, this is the ID of the current account.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is required if you want to attach a cross-account network
+         *                   instance.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder vpcOwnerId(java.lang.Number vpcOwnerId) {
@@ -401,7 +454,16 @@ public interface TransitRouterVpcAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpcAttachmentProps#getVpcOwnerId}
-         * @param vpcOwnerId Property vpcOwnerId: The owner ID of the VPC.
+         * @param vpcOwnerId Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.
+         *                   By
+         *                   default, this is the ID of the current account.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is required if you want to attach a cross-account network
+         *                   instance.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder vpcOwnerId(com.aliyun.ros.cdk.core.IResolvable vpcOwnerId) {

@@ -11,7 +11,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
     [JsiiInterface(nativeType: typeof(IUserVpcAuthorizationProps), fullyQualifiedName: "@alicloud/ros-cdk-pvtz.UserVpcAuthorizationProps")]
     public interface IUserVpcAuthorizationProps
     {
-        /// <summary>Property authorizedUserId: The account ID of the user who authorizes the resource.</summary>
+        /// <summary>Property authorizedUserId: The ID of the account that owns the authorized resources.</summary>
+        /// <remarks>
+        ///     Only cloud accounts are supported. RAM users are not supported. You can
+        ///     associate accounts only if they are on the same site. Cross-site association
+        ///     is not supported.
+        /// </remarks>
         [JsiiProperty(name: "authorizedUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AuthorizedUserId
         {
@@ -45,7 +50,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             }
         }
 
-        /// <summary>Property authType: Authorization type.</summary>
+        /// <summary>Property authType: The authorization type.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>NORMAL: standard authorization.</description>
+        /// <description>CLOUD_PRODUCT: cloud product authorization.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AuthType
@@ -78,7 +91,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             {
             }
 
-            /// <summary>Property authorizedUserId: The account ID of the user who authorizes the resource.</summary>
+            /// <summary>Property authorizedUserId: The ID of the account that owns the authorized resources.</summary>
+            /// <remarks>
+            ///     Only cloud accounts are supported. RAM users are not supported. You can
+            ///     associate accounts only if they are on the same site. Cross-site association
+            ///     is not supported.
+            /// </remarks>
             [JsiiProperty(name: "authorizedUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AuthorizedUserId
             {
@@ -106,7 +124,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property authType: Authorization type.</summary>
+            /// <summary>Property authType: The authorization type.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>NORMAL: standard authorization.</description>
+            /// <description>CLOUD_PRODUCT: cloud product authorization.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AuthType

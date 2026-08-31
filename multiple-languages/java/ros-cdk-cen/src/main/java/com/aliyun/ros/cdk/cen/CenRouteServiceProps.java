@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenrouteservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.267Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.605Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenRouteServiceProps")
 @software.amazon.jsii.Jsii.Proxy(CenRouteServiceProps.Jsii$Proxy.class)
 public interface CenRouteServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,15 @@ public interface CenRouteServiceProps extends software.amazon.jsii.JsiiSerializa
     @org.jetbrains.annotations.NotNull java.lang.Object getCenId();
 
     /**
-     * Property host: The domain or IP address of the cloud service.
+     * Property host: The IP addresses or CIDR blocks of the cloud service.
+     * <p>
+     * <blockquote>
+     * <p>
+     * In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+     * service. We recommend that you call this operation multiple times to add all IP
+     * addresses and CIDR blocks of the cloud service.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getHost();
 
@@ -50,6 +58,9 @@ public interface CenRouteServiceProps extends software.amazon.jsii.JsiiSerializa
 
     /**
      * Property description: The description of the cloud service.
+     * <p>
+     * This parameter is optional. If you enter a description, it must be 1 to 256
+     * characters in length and cannot start with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -115,7 +126,14 @@ public interface CenRouteServiceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CenRouteServiceProps#getHost}
-         * @param host Property host: The domain or IP address of the cloud service. This parameter is required.
+         * @param host Property host: The IP addresses or CIDR blocks of the cloud service. This parameter is required.
+         *             <blockquote>
+         *             <p>
+         *             In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+         *             service. We recommend that you call this operation multiple times to add all IP
+         *             addresses and CIDR blocks of the cloud service.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder host(java.lang.String host) {
@@ -125,7 +143,14 @@ public interface CenRouteServiceProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CenRouteServiceProps#getHost}
-         * @param host Property host: The domain or IP address of the cloud service. This parameter is required.
+         * @param host Property host: The IP addresses or CIDR blocks of the cloud service. This parameter is required.
+         *             <blockquote>
+         *             <p>
+         *             In most cases, multiple IP addresses or CIDR blocks are assigned to a cloud
+         *             service. We recommend that you call this operation multiple times to add all IP
+         *             addresses and CIDR blocks of the cloud service.
+         *             <p>
+         *             </blockquote>
          * @return {@code this}
          */
         public Builder host(com.aliyun.ros.cdk.core.IResolvable host) {
@@ -204,6 +229,8 @@ public interface CenRouteServiceProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link CenRouteServiceProps#getDescription}
          * @param description Property description: The description of the cloud service.
+         *                    This parameter is optional. If you enter a description, it must be 1 to 256
+         *                    characters in length and cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -214,6 +241,8 @@ public interface CenRouteServiceProps extends software.amazon.jsii.JsiiSerializa
         /**
          * Sets the value of {@link CenRouteServiceProps#getDescription}
          * @param description Property description: The description of the cloud service.
+         *                    This parameter is optional. If you enter a description, it must be 1 to 256
+         *                    characters in length and cannot start with http:// or https://.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

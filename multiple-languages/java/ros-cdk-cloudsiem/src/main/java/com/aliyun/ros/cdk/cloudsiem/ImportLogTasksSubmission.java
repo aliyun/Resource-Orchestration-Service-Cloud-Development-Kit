@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsiem;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSiem::ImportLogTasksSubmission</code>, which is used to import and submit a log collection task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSiem::ImportLogTasksSubmission</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:51:36.499Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:39:59.107Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.ImportLogTasksSubmission")
 public class ImportLogTasksSubmission extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudsiem.IImportLogTasksSubmission {
 
@@ -104,20 +104,42 @@ public class ImportLogTasksSubmission extends com.aliyun.ros.cdk.core.Resource i
         }
 
         /**
-         * Property accounts: The list of accounts to be submitted.
+         * Property accounts: The list of accounts for log ingestion.
+         * <p>
+         * The value must be a JSON array. Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>AccountId: The ID of the account.</li>
+         * <li>Imported: Specifies whether to enable or disable log ingestion for the account.
+         * Valid values:</li>
+         * <li>0: Disable ingestion.</li>
+         * <li>1: Enable ingestion.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accounts Property accounts: The list of accounts to be submitted. This parameter is required.
+         * @param accounts Property accounts: The list of accounts for log ingestion. This parameter is required.
          */
         public Builder accounts(final com.aliyun.ros.cdk.core.IResolvable accounts) {
             this.props.accounts(accounts);
             return this;
         }
         /**
-         * Property accounts: The list of accounts to be submitted.
+         * Property accounts: The list of accounts for log ingestion.
+         * <p>
+         * The value must be a JSON array. Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>AccountId: The ID of the account.</li>
+         * <li>Imported: Specifies whether to enable or disable log ingestion for the account.
+         * Valid values:</li>
+         * <li>0: Disable ingestion.</li>
+         * <li>1: Enable ingestion.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accounts Property accounts: The list of accounts to be submitted. This parameter is required.
+         * @param accounts Property accounts: The list of accounts for log ingestion. This parameter is required.
          */
         public Builder accounts(final java.util.List<? extends java.lang.Object> accounts) {
             this.props.accounts(accounts);

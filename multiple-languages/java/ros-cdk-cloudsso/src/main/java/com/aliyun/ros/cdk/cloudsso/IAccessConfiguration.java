@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsso;
 /**
  * Represents a <code>AccessConfiguration</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.920Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.323Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.IAccessConfiguration")
 @software.amazon.jsii.Jsii.Proxy(IAccessConfiguration.Jsii$Proxy.class)
 public interface IAccessConfiguration extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

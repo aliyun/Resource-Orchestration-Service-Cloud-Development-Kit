@@ -108,11 +108,23 @@ func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointGroupTypeParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointIpVersionParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointProtocolVersionParameters(val interface{}) error {
+	return nil
+}
+
 func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointRequestProtocolParameters(val interface{}) error {
 	return nil
 }
 
 func (j *jsiiProxy_RosEndpointGroup) validateSetHealthCheckEnabledParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetHealthCheckHostParameters(val interface{}) error {
 	return nil
 }
 
@@ -137,6 +149,14 @@ func (j *jsiiProxy_RosEndpointGroup) validateSetListenerIdParameters(val interfa
 }
 
 func (j *jsiiProxy_RosEndpointGroup) validateSetNameParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetPortOverridesParameters(val interface{}) error {
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetTagsParameters(val *[]*RosEndpointGroup_TagsProperty) error {
 	return nil
 }
 

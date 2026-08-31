@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * Represents a <code>CustomScenePolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.668Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:03:27.523Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.ICustomScenePolicy")
 @software.amazon.jsii.Jsii.Proxy(ICustomScenePolicy.Jsii$Proxy.class)
 public interface ICustomScenePolicy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

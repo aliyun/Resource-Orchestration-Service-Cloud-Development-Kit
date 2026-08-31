@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.iot;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-devicegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.684Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.635Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.DeviceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(DeviceGroupProps.Jsii$Proxy.class)
 public interface DeviceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,8 @@ public interface DeviceGroupProps extends software.amazon.jsii.JsiiSerializable 
     /**
      * Property groupName: The name of the group.
      * <p>
-     * The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+     * The alias must be 4 to 30 characters in length, and can
+     * contain letters, digits, and underscores (_).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
@@ -62,7 +63,8 @@ public interface DeviceGroupProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link DeviceGroupProps#getGroupName}
          * @param groupName Property groupName: The name of the group. This parameter is required.
-         *                  The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+         *                  The alias must be 4 to 30 characters in length, and can
+         *                  contain letters, digits, and underscores (_).
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -73,7 +75,8 @@ public interface DeviceGroupProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link DeviceGroupProps#getGroupName}
          * @param groupName Property groupName: The name of the group. This parameter is required.
-         *                  The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+         *                  The alias must be 4 to 30 characters in length, and can
+         *                  contain letters, digits, and underscores (_).
          * @return {@code this}
          */
         public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {

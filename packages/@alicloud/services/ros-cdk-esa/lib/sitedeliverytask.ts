@@ -139,7 +139,7 @@ export interface ISiteDeliveryTask extends ros.IResource {
     readonly attrTaskName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`The , which type is used to create a real-time log delivery task.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSiteDeliveryTask`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-sitedeliverytask
  */

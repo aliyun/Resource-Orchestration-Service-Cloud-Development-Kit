@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudfw;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::ControlPolicy</code>, which is used to add an access control policy.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CLOUDFW::ControlPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.046Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.091Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.ControlPolicy")
 public class ControlPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudfw.IControlPolicy {
 
@@ -278,26 +278,54 @@ public class ControlPolicy extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property proto: The type of security protocol for traffic access in the security access control policy.
+         * Property proto: The protocol type of the traffic in the access control policy.
          * <p>
-         * Can be set to ANY when you are not sure of the specific protocol type.
-         * Allowed values: ANY, TCP, UDP, ICMP
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ANY (any protocol)</li>
+         * <li>TCP</li>
+         * <li>UDP</li>
+         * <li>ICMP</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the traffic direction is <code>out</code> and the destination is a domain-based
+         * threat intelligence or cloud service address book, you can set the protocol only
+         * to <code>TCP</code>. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param proto Property proto: The type of security protocol for traffic access in the security access control policy. This parameter is required.
+         * @param proto Property proto: The protocol type of the traffic in the access control policy. This parameter is required.
          */
         public Builder proto(final java.lang.String proto) {
             this.props.proto(proto);
             return this;
         }
         /**
-         * Property proto: The type of security protocol for traffic access in the security access control policy.
+         * Property proto: The protocol type of the traffic in the access control policy.
          * <p>
-         * Can be set to ANY when you are not sure of the specific protocol type.
-         * Allowed values: ANY, TCP, UDP, ICMP
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ANY (any protocol)</li>
+         * <li>TCP</li>
+         * <li>UDP</li>
+         * <li>ICMP</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the traffic direction is <code>out</code> and the destination is a domain-based
+         * threat intelligence or cloud service address book, you can set the protocol only
+         * to <code>TCP</code>. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param proto Property proto: The type of security protocol for traffic access in the security access control policy. This parameter is required.
+         * @param proto Property proto: The protocol type of the traffic in the access control policy. This parameter is required.
          */
         public Builder proto(final com.aliyun.ros.cdk.core.IResolvable proto) {
             this.props.proto(proto);
@@ -363,28 +391,82 @@ public class ControlPolicy extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property applicationName: Application types supported by the security policy.
+         * Property applicationName: The application type that the access control policy supports.
          * <p>
-         * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-         * NOTE ANY indicates that the policy is applied to all types of applications.
-         * Either ApplicationNameList or ApplicationName must be passed, not both.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>FTP</li>
+         * <li>HTTP</li>
+         * <li>HTTPS</li>
+         * <li>Memcache</li>
+         * <li>MongoDB</li>
+         * <li>MQTT</li>
+         * <li>MySQL</li>
+         * <li>RDP</li>
+         * <li>Redis</li>
+         * <li>SMTP</li>
+         * <li>SMTPS</li>
+         * <li>SSH</li>
+         * <li>SSL_No_Cert</li>
+         * <li>SSL</li>
+         * <li>VNC</li>
+         * <li>ANY (all application types)</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The available application types depend on the protocol type (<code>Proto</code>). If you
+         * set <code>Proto</code> to <code>TCP</code>, you can set <code>ApplicationName</code> to any of the listed
+         * application types. If you set <code>Proto</code> to <code>UDP</code>, <code>ICMP</code>, or <code>ANY</code>, you can
+         * set <code>ApplicationName</code> only to <code>ANY</code>. Specify either <code>ApplicationNameList</code>
+         * or <code>ApplicationName</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param applicationName Property applicationName: Application types supported by the security policy. This parameter is required.
+         * @param applicationName Property applicationName: The application type that the access control policy supports. This parameter is required.
          */
         public Builder applicationName(final java.lang.String applicationName) {
             this.props.applicationName(applicationName);
             return this;
         }
         /**
-         * Property applicationName: Application types supported by the security policy.
+         * Property applicationName: The application type that the access control policy supports.
          * <p>
-         * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-         * NOTE ANY indicates that the policy is applied to all types of applications.
-         * Either ApplicationNameList or ApplicationName must be passed, not both.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>FTP</li>
+         * <li>HTTP</li>
+         * <li>HTTPS</li>
+         * <li>Memcache</li>
+         * <li>MongoDB</li>
+         * <li>MQTT</li>
+         * <li>MySQL</li>
+         * <li>RDP</li>
+         * <li>Redis</li>
+         * <li>SMTP</li>
+         * <li>SMTPS</li>
+         * <li>SSH</li>
+         * <li>SSL_No_Cert</li>
+         * <li>SSL</li>
+         * <li>VNC</li>
+         * <li>ANY (all application types)</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The available application types depend on the protocol type (<code>Proto</code>). If you
+         * set <code>Proto</code> to <code>TCP</code>, you can set <code>ApplicationName</code> to any of the listed
+         * application types. If you set <code>Proto</code> to <code>UDP</code>, <code>ICMP</code>, or <code>ANY</code>, you can
+         * set <code>ApplicationName</code> only to <code>ANY</code>. Specify either <code>ApplicationNameList</code>
+         * or <code>ApplicationName</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param applicationName Property applicationName: Application types supported by the security policy. This parameter is required.
+         * @param applicationName Property applicationName: The application type that the access control policy supports. This parameter is required.
          */
         public Builder applicationName(final com.aliyun.ros.cdk.core.IResolvable applicationName) {
             this.props.applicationName(applicationName);
@@ -413,24 +495,82 @@ public class ControlPolicy extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property destPort: Security access control policy access traffic destination port.
+         * Property destPort: The destination port in the access control policy.
          * <p>
-         * Note When DestPortType to port, set the item.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If <code>Proto</code> is <code>ICMP</code>, leave this parameter empty.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the protocol type is ICMP, you cannot control access based on the
+         * destination port.
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>If <code>Proto</code> is <code>TCP</code>, <code>UDP</code>, or <code>ANY</code>, and <code>DestPortType</code> is
+         * <code>group</code>, leave this parameter empty.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set <code>DestPortType</code> to <code>group</code> (port address book), you do not need
+         * to specify a destination port number. The port address book contains all the
+         * destination ports that the policy manages.
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>If <code>Proto</code> is <code>TCP</code>, <code>UDP</code>, or <code>ANY</code>, and <code>DestPortType</code> is <code>port</code>,
+         * set this parameter to the destination port number.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param destPort Property destPort: Security access control policy access traffic destination port. This parameter is required.
+         * @param destPort Property destPort: The destination port in the access control policy. This parameter is required.
          */
         public Builder destPort(final java.lang.String destPort) {
             this.props.destPort(destPort);
             return this;
         }
         /**
-         * Property destPort: Security access control policy access traffic destination port.
+         * Property destPort: The destination port in the access control policy.
          * <p>
-         * Note When DestPortType to port, set the item.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If <code>Proto</code> is <code>ICMP</code>, leave this parameter empty.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the protocol type is ICMP, you cannot control access based on the
+         * destination port.
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>If <code>Proto</code> is <code>TCP</code>, <code>UDP</code>, or <code>ANY</code>, and <code>DestPortType</code> is
+         * <code>group</code>, leave this parameter empty.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set <code>DestPortType</code> to <code>group</code> (port address book), you do not need
+         * to specify a destination port number. The port address book contains all the
+         * destination ports that the policy manages.
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>If <code>Proto</code> is <code>TCP</code>, <code>UDP</code>, or <code>ANY</code>, and <code>DestPortType</code> is <code>port</code>,
+         * set this parameter to the destination port number.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param destPort Property destPort: Security access control policy access traffic destination port. This parameter is required.
+         * @param destPort Property destPort: The destination port in the access control policy. This parameter is required.
          */
         public Builder destPort(final com.aliyun.ros.cdk.core.IResolvable destPort) {
             this.props.destPort(destPort);

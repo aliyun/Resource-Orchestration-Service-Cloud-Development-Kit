@@ -84,7 +84,7 @@ function rosApplicationsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Applications`, which is used to query applications.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Applications`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Applications` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-applications
  */
@@ -236,7 +236,7 @@ function rosClustersPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Clusters`, which is used to query clusters in Enterprise Distributed Application Service (EDAS).
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Clusters`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Clusters` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-clusters
  */
@@ -360,7 +360,7 @@ function rosUserDefineRegionsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`, which is used to query custom namespaces.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserDefineRegions` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */

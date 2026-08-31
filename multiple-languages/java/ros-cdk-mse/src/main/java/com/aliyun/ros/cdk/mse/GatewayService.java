@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::GatewayService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.323Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.687Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.GatewayService")
 public class GatewayService extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.IGatewayService {
 
@@ -456,20 +456,40 @@ public class GatewayService extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property tlsSetting: TLS settings for the service.
+         * Property tlsSetting: The TLS settings, specified as a JSON string.
+         * <p>
+         * The following fields are supported:
+         * <p>
+         * <ul>
+         * <li><code>mode</code>: The TLS mode.</li>
+         * <li><code>certId</code>: The certificate ID.</li>
+         * <li><code>caCertId</code>: The CA certificate ID.</li>
+         * <li><code>caCertContent</code>: The public key of the CA certificate.</li>
+         * <li><code>sni</code>: The Server Name Indication (SNI).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param tlsSetting Property tlsSetting: TLS settings for the service. This parameter is required.
+         * @param tlsSetting Property tlsSetting: The TLS settings, specified as a JSON string. This parameter is required.
          */
         public Builder tlsSetting(final com.aliyun.ros.cdk.core.IResolvable tlsSetting) {
             this.props.tlsSetting(tlsSetting);
             return this;
         }
         /**
-         * Property tlsSetting: TLS settings for the service.
+         * Property tlsSetting: The TLS settings, specified as a JSON string.
+         * <p>
+         * The following fields are supported:
+         * <p>
+         * <ul>
+         * <li><code>mode</code>: The TLS mode.</li>
+         * <li><code>certId</code>: The certificate ID.</li>
+         * <li><code>caCertId</code>: The CA certificate ID.</li>
+         * <li><code>caCertContent</code>: The public key of the CA certificate.</li>
+         * <li><code>sni</code>: The Server Name Indication (SNI).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param tlsSetting Property tlsSetting: TLS settings for the service. This parameter is required.
+         * @param tlsSetting Property tlsSetting: The TLS settings, specified as a JSON string. This parameter is required.
          */
         public Builder tlsSetting(final java.util.Map<java.lang.String, ? extends java.lang.Object> tlsSetting) {
             this.props.tlsSetting(tlsSetting);

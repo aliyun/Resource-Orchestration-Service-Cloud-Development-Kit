@@ -154,7 +154,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: primarySiteType: The type of the primary site. Valid values: VPC, VSwitch, VRouter.
+        /// <strong>Property</strong>: primarySiteType: The type of the primary site.
         /// </remarks>
         [JsiiProperty(name: "primarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object PrimarySiteType
@@ -274,7 +274,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: secondarySiteType: The type of the secondary site. Valid values: VPC, VSwitch, VRouter.
+        /// <strong>Property</strong>: secondarySiteType: The type of the secondary site.
         /// </remarks>
         [JsiiProperty(name: "secondarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SecondarySiteType
@@ -334,7 +334,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: primarySiteZoneId: The zone ID of the primary site.
+        /// <strong>Property</strong>: primarySiteZoneId: The zone ID of the primary site. This parameter is valid only when the site pair
+        /// type is cross-zone disaster recovery.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "primarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -365,7 +366,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: secondarySiteZoneId: The zone ID of the secondary site.
+        /// <strong>Property</strong>: secondarySiteZoneId: The zone ID of the secondary site. This parameter is valid only when the site
+        /// pair type is cross-zone disaster recovery.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "secondarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

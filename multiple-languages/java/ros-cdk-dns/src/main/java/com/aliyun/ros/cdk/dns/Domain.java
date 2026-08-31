@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dns;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DNS::Domain</code>, which is used to add a domain name.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DNS::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.851Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.455Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.Domain")
 public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dns.IDomain {
 
@@ -181,20 +181,28 @@ public class Domain extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property groupId: Domain name grouping, the default is the "default grouping" GroupId.
+         * Property groupId: The ID of the domain name group.
+         * <p>
+         * If you do not specify this parameter, pass an
+         * empty string, or pass defaultGroup, the domain name is added to the default
+         * group. You can call the AddDomainGroup operation to obtain the group ID.
          * <p>
          * @return {@code this}
-         * @param groupId Property groupId: Domain name grouping, the default is the "default grouping" GroupId. This parameter is required.
+         * @param groupId Property groupId: The ID of the domain name group. This parameter is required.
          */
         public Builder groupId(final java.lang.String groupId) {
             this.props.groupId(groupId);
             return this;
         }
         /**
-         * Property groupId: Domain name grouping, the default is the "default grouping" GroupId.
+         * Property groupId: The ID of the domain name group.
+         * <p>
+         * If you do not specify this parameter, pass an
+         * empty string, or pass defaultGroup, the domain name is added to the default
+         * group. You can call the AddDomainGroup operation to obtain the group ID.
          * <p>
          * @return {@code this}
-         * @param groupId Property groupId: Domain name grouping, the default is the "default grouping" GroupId. This parameter is required.
+         * @param groupId Property groupId: The ID of the domain name group. This parameter is required.
          */
         public Builder groupId(final com.aliyun.ros.cdk.core.IResolvable groupId) {
             this.props.groupId(groupId);

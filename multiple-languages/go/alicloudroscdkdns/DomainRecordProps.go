@@ -7,7 +7,9 @@ package alicloudroscdkdns
 type DomainRecordProps struct {
 	// Property domainName: Domain name.
 	DomainName interface{} `field:"required" json:"domainName" yaml:"domainName"`
-	// Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty.
+	// Property rr: The host record.
+	//
+	// To resolve example.com, set the host record to "@" instead of leaving it empty.
 	Rr interface{} `field:"required" json:"rr" yaml:"rr"`
 	// Property type: Parse record type, see parsing record type format.
 	Type interface{} `field:"required" json:"type" yaml:"type"`
@@ -17,11 +19,16 @@ type DomainRecordProps struct {
 	//
 	// See parsing line enumeration.
 	Line interface{} `field:"optional" json:"line" yaml:"line"`
-	// Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be.
-	Priority interface{} `field:"optional" json:"priority" yaml:"priority"`
-	// Property ttl: The resolution time is valid.
+	// Property priority: The priority of the MX record.
 	//
-	// The default is 600 seconds (10 minutes). See the TTL definition.
+	// Valid values: `[1,50]`.
+	// This parameter is required if the record type is MX. A smaller value indicates a
+	// higher priority.
+	Priority interface{} `field:"optional" json:"priority" yaml:"priority"`
+	// Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record.
+	//
+	// Default
+	// value: 600. Unit: seconds.
 	Ttl interface{} `field:"optional" json:"ttl" yaml:"ttl"`
 }
 

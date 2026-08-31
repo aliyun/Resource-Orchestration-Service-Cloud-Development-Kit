@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Domains`The , which type is used to query domain list.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Domains`.
 type Domains interface {
 	alicloudroscdkcore.Resource
 	IDomains

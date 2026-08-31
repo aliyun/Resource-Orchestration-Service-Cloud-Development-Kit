@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::BackendServerAttachment`Use , which to add backend servers to a server group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::BackendServerAttachment`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `BackendServerAttachment` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
@@ -106,8 +106,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: servers: The backend servers that you want to add to the server group. You can specify up to
-        /// 40 servers in each call.
+        /// <strong>Property</strong>: servers: A list of backend servers. You can add up to 200 servers in a single call.
         /// </remarks>
         [JsiiProperty(name: "servers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosBackendServerAttachment.ServersProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public virtual object Servers

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.fnf;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:08:10.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:15:33.481Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.FlowProps")
 @software.amazon.jsii.Jsii.Proxy(FlowProps.Jsii$Proxy.class)
 public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,9 +16,19 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDefinition();
 
     /**
-     * Property name: The name of the flow created.
+     * Property name: The name of the flow.
      * <p>
-     * This name is unique under the account.
+     * The name must be unique within the same region and cannot
+     * be changed after the flow is created. The name must meet the following
+     * requirements:
+     * <p>
+     * <ul>
+     * <li>It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+     * and hyphens (-).</li>
+     * <li>It must start with a letter or an underscore (_).</li>
+     * <li>It is case-sensitive.</li>
+     * <li>It must be 1 to 128 characters in length.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -99,8 +109,18 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FlowProps#getName}
-         * @param name Property name: The name of the flow created. This parameter is required.
-         *             This name is unique under the account.
+         * @param name Property name: The name of the flow. This parameter is required.
+         *             The name must be unique within the same region and cannot
+         *             be changed after the flow is created. The name must meet the following
+         *             requirements:
+         *             <p>
+         *             <ul>
+         *             <li>It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+         *             and hyphens (-).</li>
+         *             <li>It must start with a letter or an underscore (_).</li>
+         *             <li>It is case-sensitive.</li>
+         *             <li>It must be 1 to 128 characters in length.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -110,8 +130,18 @@ public interface FlowProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link FlowProps#getName}
-         * @param name Property name: The name of the flow created. This parameter is required.
-         *             This name is unique under the account.
+         * @param name Property name: The name of the flow. This parameter is required.
+         *             The name must be unique within the same region and cannot
+         *             be changed after the flow is created. The name must meet the following
+         *             requirements:
+         *             <p>
+         *             <ul>
+         *             <li>It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+         *             and hyphens (-).</li>
+         *             <li>It must start with a letter or an underscore (_).</li>
+         *             <li>It is case-sensitive.</li>
+         *             <li>It must be 1 to 128 characters in length.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

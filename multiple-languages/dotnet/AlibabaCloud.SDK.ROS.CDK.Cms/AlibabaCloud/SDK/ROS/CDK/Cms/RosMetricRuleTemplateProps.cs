@@ -48,7 +48,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _alertTemplates;
 
         /// <remarks>
-        /// <strong>Property</strong>: alertTemplates: Valid values of N: 0 to 200.
+        /// <strong>Property</strong>: alertTemplates: The details of the alert template.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "alertTemplates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosMetricRuleTemplate.AlertTemplatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

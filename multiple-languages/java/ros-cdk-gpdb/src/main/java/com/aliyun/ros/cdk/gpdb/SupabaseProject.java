@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gpdb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GPDB::SupabaseProject</code>The , which resource creates a Supabase project.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.819Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.511Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.SupabaseProject")
 public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.gpdb.ISupabaseProject {
 
@@ -394,20 +394,46 @@ public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property period: The billing period.
+         * Property period: The unit of the subscription duration.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Month</li>
+         * <li>Year</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you use the subscription billing method.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The billing period. This parameter is required.
+         * @param period Property period: The unit of the subscription duration. This parameter is required.
          */
         public Builder period(final java.lang.String period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The billing period.
+         * Property period: The unit of the subscription duration.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Month</li>
+         * <li>Year</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you use the subscription billing method.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The billing period. This parameter is required.
+         * @param period Property period: The unit of the subscription duration. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -436,24 +462,46 @@ public class SupabaseProject extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property usedTime: The subscription period of the instance.
+         * Property usedTime: The subscription duration.
          * <p>
-         * Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If Period is set to Month, the valid values are 1 to 11.</li>
+         * <li>If Period is set to Year, the valid values are 1 to 3.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you use the subscription billing method.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param usedTime Property usedTime: The subscription period of the instance. This parameter is required.
+         * @param usedTime Property usedTime: The subscription duration. This parameter is required.
          */
         public Builder usedTime(final java.lang.Number usedTime) {
             this.props.usedTime(usedTime);
             return this;
         }
         /**
-         * Property usedTime: The subscription period of the instance.
+         * Property usedTime: The subscription duration.
          * <p>
-         * Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If Period is set to Month, the valid values are 1 to 11.</li>
+         * <li>If Period is set to Year, the valid values are 1 to 3.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you use the subscription billing method.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param usedTime Property usedTime: The subscription period of the instance. This parameter is required.
+         * @param usedTime Property usedTime: The subscription duration. This parameter is required.
          */
         public Builder usedTime(final com.aliyun.ros.cdk.core.IResolvable usedTime) {
             this.props.usedTime(usedTime);

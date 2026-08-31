@@ -7,9 +7,16 @@ package alicloudroscdkfnf
 type FlowProps struct {
 	// Property definition: The definition of the created flow following the FDL syntax standard.
 	Definition interface{} `field:"required" json:"definition" yaml:"definition"`
-	// Property name: The name of the flow created.
+	// Property name: The name of the flow.
 	//
-	// This name is unique under the account.
+	// The name must be unique within the same region and cannot
+	// be changed after the flow is created. The name must meet the following
+	// requirements:
+	// - It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+	// and hyphens (-).
+	// - It must start with a letter or an underscore (_).
+	// - It is case-sensitive.
+	// - It must be 1 to 128 characters in length.
 	Name interface{} `field:"required" json:"name" yaml:"name"`
 	// Property description: Create a description of the flow.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`

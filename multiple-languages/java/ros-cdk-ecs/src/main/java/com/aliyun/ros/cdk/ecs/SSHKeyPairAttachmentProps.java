@@ -5,15 +5,17 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPairAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(SSHKeyPairAttachmentProps.Jsii$Proxy.class)
 public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property instanceIds: The comma delimited ECS instance id list.
+     * Property instanceIds: The IDs of instances to which you want to bind the SSH key pair.
      * <p>
-     * Only support Linux.
+     * The value can be
+     * a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+     * IDs with commas (,).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceIds();
 
@@ -47,8 +49,10 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SSHKeyPairAttachmentProps#getInstanceIds}
-         * @param instanceIds Property instanceIds: The comma delimited ECS instance id list. This parameter is required.
-         *                    Only support Linux.
+         * @param instanceIds Property instanceIds: The IDs of instances to which you want to bind the SSH key pair. This parameter is required.
+         *                    The value can be
+         *                    a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+         *                    IDs with commas (,).
          * @return {@code this}
          */
         public Builder instanceIds(java.util.List<? extends java.lang.Object> instanceIds) {
@@ -58,8 +62,10 @@ public interface SSHKeyPairAttachmentProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SSHKeyPairAttachmentProps#getInstanceIds}
-         * @param instanceIds Property instanceIds: The comma delimited ECS instance id list. This parameter is required.
-         *                    Only support Linux.
+         * @param instanceIds Property instanceIds: The IDs of instances to which you want to bind the SSH key pair. This parameter is required.
+         *                    The value can be
+         *                    a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+         *                    IDs with commas (,).
          * @return {@code this}
          */
         public Builder instanceIds(com.aliyun.ros.cdk.core.IResolvable instanceIds) {

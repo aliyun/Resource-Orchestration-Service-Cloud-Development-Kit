@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cddc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDDC::DedicatedHostAccount</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:41:20.796Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:26:11.415Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cddc.$Module.class, fqn = "@alicloud/ros-cdk-cddc.DedicatedHostAccount")
 public class DedicatedHostAccount extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cddc.IDedicatedHostAccount {
 
@@ -125,20 +125,54 @@ public class DedicatedHostAccount extends com.aliyun.ros.cdk.core.Resource imple
         }
 
         /**
-         * Property accountPassword: The password of the account.
+         * Property accountPassword: The password for the host account.
+         * <p>
+         * The password must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>The password must be 6 to 32 characters in length.</li>
+         * <li>It must contain uppercase letters, lowercase letters, digits, and special
+         * characters.</li>
+         * <li>Supported special characters: <code>!&#64;#$%^&amp;*()_+-=</code></li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If your engine is SQL Server, the password cannot contain the account name
+         * (case-insensitive).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: The password of the account. This parameter is required.
+         * @param accountPassword Property accountPassword: The password for the host account. This parameter is required.
          */
         public Builder accountPassword(final java.lang.String accountPassword) {
             this.props.accountPassword(accountPassword);
             return this;
         }
         /**
-         * Property accountPassword: The password of the account.
+         * Property accountPassword: The password for the host account.
+         * <p>
+         * The password must meet the following
+         * requirements:
+         * <p>
+         * <ul>
+         * <li>The password must be 6 to 32 characters in length.</li>
+         * <li>It must contain uppercase letters, lowercase letters, digits, and special
+         * characters.</li>
+         * <li>Supported special characters: <code>!&#64;#$%^&amp;*()_+-=</code></li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If your engine is SQL Server, the password cannot contain the account name
+         * (case-insensitive).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param accountPassword Property accountPassword: The password of the account. This parameter is required.
+         * @param accountPassword Property accountPassword: The password for the host account. This parameter is required.
          */
         public Builder accountPassword(final com.aliyun.ros.cdk.core.IResolvable accountPassword) {
             this.props.accountPassword(accountPassword);

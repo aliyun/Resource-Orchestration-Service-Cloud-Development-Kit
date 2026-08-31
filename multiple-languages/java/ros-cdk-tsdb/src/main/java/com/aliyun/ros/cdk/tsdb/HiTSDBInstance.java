@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.tsdb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::TSDB::HiTSDBInstance</code>, which is used to create a Time Series Database (TSDB) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:01:33.162Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:56:35.210Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstance")
 public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.tsdb.IHiTSDBInstance {
 
@@ -160,20 +160,24 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property instanceClass: The type of the instance.
+         * Property instanceClass: The storage capacity of the instance.
+         * <p>
+         * Unit: GB.
          * <p>
          * @return {@code this}
-         * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
+         * @param instanceClass Property instanceClass: The storage capacity of the instance. This parameter is required.
          */
         public Builder instanceClass(final java.lang.String instanceClass) {
             this.props.instanceClass(instanceClass);
             return this;
         }
         /**
-         * Property instanceClass: The type of the instance.
+         * Property instanceClass: The storage capacity of the instance.
+         * <p>
+         * Unit: GB.
          * <p>
          * @return {@code this}
-         * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
+         * @param instanceClass Property instanceClass: The storage capacity of the instance. This parameter is required.
          */
         public Builder instanceClass(final com.aliyun.ros.cdk.core.IResolvable instanceClass) {
             this.props.instanceClass(instanceClass);
@@ -269,20 +273,20 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property diskCategory: The category of disk.
+         * Property diskCategory: The ID of the request.
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The category of disk. This parameter is required.
+         * @param diskCategory Property diskCategory: The ID of the request. This parameter is required.
          */
         public Builder diskCategory(final java.lang.String diskCategory) {
             this.props.diskCategory(diskCategory);
             return this;
         }
         /**
-         * Property diskCategory: The category of disk.
+         * Property diskCategory: The ID of the request.
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The category of disk. This parameter is required.
+         * @param diskCategory Property diskCategory: The ID of the request. This parameter is required.
          */
         public Builder diskCategory(final com.aliyun.ros.cdk.core.IResolvable diskCategory) {
             this.props.diskCategory(diskCategory);
@@ -336,32 +340,20 @@ public class HiTSDBInstance extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property payType: The billing method.
-         * <p>
-         * Valid values:
-         * <p>
-         * <ul>
-         * <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
-         * </ul>
+         * Property payType: The ID of the VPC in which the instances reside.
          * <p>
          * @return {@code this}
-         * @param payType Property payType: The billing method. This parameter is required.
+         * @param payType Property payType: The ID of the VPC in which the instances reside. This parameter is required.
          */
         public Builder payType(final java.lang.String payType) {
             this.props.payType(payType);
             return this;
         }
         /**
-         * Property payType: The billing method.
-         * <p>
-         * Valid values:
-         * <p>
-         * <ul>
-         * <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
-         * </ul>
+         * Property payType: The ID of the VPC in which the instances reside.
          * <p>
          * @return {@code this}
-         * @param payType Property payType: The billing method. This parameter is required.
+         * @param payType Property payType: The ID of the VPC in which the instances reside. This parameter is required.
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);

@@ -45,9 +45,42 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
 
         private object _masterSlaveBackendServers;
 
-        /// <summary>Property masterSlaveBackendServers: A list of active\/standby server group.</summary>
+        /// <summary>Property masterSlaveBackendServers: The backend servers in the primary\/secondary server group.</summary>
         /// <remarks>
-        /// An active/standby server group can only contain two backend servers.
+        /// Each primary/secondary
+        /// server group consists of two backend servers.
+        /// Configure the following parameters:
+        ///
+        /// <list type="bullet">
+        /// <description>ServerId: required. The IDs of the backend servers. Specify the IDs in a
+        /// string. You can specify the IDs of Elastic Compute Service (ECS) instances,
+        /// elastic network interfaces (ENIs), and elastic container instances. If you set
+        /// ServerId to the IDs of ENIs or elastic container instances, you must configure
+        /// the Type parameter.</description>
+        /// <description>Weight: the weight of the backend server. Valid values: 0 to 100. Default
+        /// value: 100. If you set the weight of a backend server to 0, no requests are
+        /// forwarded to the backend server.</description>
+        /// <description>Description: optional. The description of the backend servers. Specify the
+        /// description in a string. The description must be 1 to 80 characters in length,
+        /// and can contain letters, digits, hyphens (-), forward slashes (/). periods (.),
+        /// and underscores (_).</description>
+        /// <description>Type: the type of the backend server. Valid values:</description>
+        /// <description>ecs (default): ECS instance</description>
+        /// <description>eni: ENI</description>
+        /// <description>eci: elastic container instance</description>
+        /// </list>
+        ///
+        ///     You can specify ENIs and elastic container instances as backend servers only
+        ///     for high-performance CLB instances.
+        ///
+        /// <list type="bullet">
+        /// <description>ServerIp: the IP address of the ENI or elastic container instance.</description>
+        /// <description>Port: the backend port.</description>
+        /// <description>ServerType: Specify the primary and secondary backend servers in a string.
+        /// Valid values:</description>
+        /// <description>Master: primary server</description>
+        /// <description>Slave: secondary server</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "masterSlaveBackendServers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-slb.RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public object MasterSlaveBackendServers

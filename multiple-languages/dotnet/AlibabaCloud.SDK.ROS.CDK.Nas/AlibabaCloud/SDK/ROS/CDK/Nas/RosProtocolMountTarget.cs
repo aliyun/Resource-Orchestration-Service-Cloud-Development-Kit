@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Nas
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`Creates an export directory for a NAS protocol service.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
@@ -193,7 +193,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: Switch ID exported by the protocol service.
+        /// <strong>Property</strong>: vSwitchId: The vSwitch ID of the export directory.
+        /// If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+        /// the VpcId is set, this field is required.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object VSwitchId
@@ -255,11 +257,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
-        /// limit:
-        /// The length is 2 to 128 English or Chinese characters.
-        /// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-        /// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+        /// <strong>Property</strong>: description: The description of the export directory for the protocol service. The name of the
+        /// export directory appears in the console.
+        /// Limits:
+        /// *   The description must be 2 to 128 characters in length.
+        /// *   The description must start with a letter but cannot start with `http:\/\/` or
+        /// `https:\/\/`.
+        /// *   The description can contain letters, digits, colons (:), underscores (_), and
+        /// hyphens (-).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -325,15 +330,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: path: The path of the CPFS directory that needs to be exported.
-        /// limit:
-        /// This directory must be existing directory on CPFS.
-        /// The same directory allows only one export.
-        /// Fileset and Path can only specify one.
+        /// <strong>Property</strong>: path: The path of the CPFS directory that you want to export.
+        /// Limits:
+        /// *   The directory already exists in the CPFS file system.
+        /// *   You can create only one export directory for a directory.
+        /// *   You can specify either a fileset or a path.
         /// Format:
-        /// The length is 1 to 1024 characters.
-        /// Use UTF-8 encoding.
-        /// It must start with the positive oblique line (\/), and the root directory must be\/.
+        /// *   The path must be 1 to 1,024 characters in length.
+        /// *   The path must be encoded in UTF-8.
+        /// *   The path must start and end with a forward slash (\/). The root directory is
+        /// `\/`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "path", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

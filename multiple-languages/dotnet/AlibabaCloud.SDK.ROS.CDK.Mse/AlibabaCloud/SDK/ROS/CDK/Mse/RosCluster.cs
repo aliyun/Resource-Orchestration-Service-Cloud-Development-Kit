@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mse
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MSE::Cluster`Use , which to create a cluster.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mse-cluster
@@ -480,16 +480,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceCount: Number of instance nodes. Range: 1~15.
-        ///
+        /// <strong>Property</strong>: instanceCount: Number of instance nodes, with a range limit of 1 to 9.
         /// [Professional Edition]
-        /// - Must be >=3 and odd number.
-        ///
-        /// [Development Edition]
-        /// - Only 1 allowed.
-        ///
+        /// - The number of instances must be 3 or more and must be an odd number.
+        /// [Developer Edition]
+        /// - The number of instances can only be 1.
         /// [Serverless Edition]
-        /// - Ignore this parameter.
+        /// Ignore this parameter.
         /// </remarks>
         [JsiiProperty(name: "instanceCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object InstanceCount
@@ -713,7 +710,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: eipEnabled: Effective when ConnectionType is `single_eni`, indicates whether to enable public access (elastic IP).
+        /// <strong>Property</strong>: eipEnabled: Valid when `ConnectionType` is `single_eni`, indicating whether to enable public
+        /// network access (Elastic IP).
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "eipEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -891,7 +889,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: securityGroupType: Effective when ConnectionType is `single_eni`, represents the security group type of the instance.
+        /// <strong>Property</strong>: securityGroupType: Valid when `ConnectionType` is `single_eni`, indicating the security group type
+        /// of the instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

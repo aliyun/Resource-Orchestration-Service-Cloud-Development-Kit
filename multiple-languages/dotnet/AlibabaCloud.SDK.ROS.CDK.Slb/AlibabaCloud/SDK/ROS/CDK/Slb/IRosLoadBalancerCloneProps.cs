@@ -47,9 +47,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
-        /// PayByCLCU: billed by usage.
-        /// If not specified, it is same with the source load balancer.
+        /// <strong>Property</strong>: instanceChargeType: The resource metering method for the CLB instance. Valid value:
+        /// - PayByCLCU: pay-by-data-transfer
+        /// > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+        /// no longer available for purchase. For more details, see [](t2857909.xdita#).
         /// </remarks>
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -62,7 +63,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+        /// <strong>Property</strong>: loadBalancerName: The CLB instance name.
+        /// The name must be 1 to 80 characters in length, and can contain digits, periods
+        /// (.), underscores (_), and hyphens (-). It must start with a letter.
+        /// If you do not specify this parameter, the system automatically assigns a name to
+        /// the CLB instance.
         /// </remarks>
         [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -75,8 +80,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
-        /// Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+        /// <strong>Property</strong>: loadBalancerSpec: The specification of the CLB instance. Valid values:
+        /// - slb.s1.small
+        /// - slb.s2.small
+        /// - slb.s2.medium
+        /// - slb.s3.small
+        /// - slb.s3.medium
+        /// - slb.s3.large
+        /// > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+        /// do not need to specify this parameter.
+        /// >
+        /// > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+        /// are no longer available for purchase. For more details, see [](t2857909.xdita#).
         /// </remarks>
         [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -129,7 +144,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+        /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+        /// If you want to deploy the CLB instance in a VPC, this parameter is required. If
+        /// this parameter is specified, AddessType is set to intranet by default.
+        /// > The vSwitch must be in the primary zone.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -182,9 +200,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
-            /// PayByCLCU: billed by usage.
-            /// If not specified, it is same with the source load balancer.
+            /// <strong>Property</strong>: instanceChargeType: The resource metering method for the CLB instance. Valid value:
+            /// - PayByCLCU: pay-by-data-transfer
+            /// > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+            /// no longer available for purchase. For more details, see [](t2857909.xdita#).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -194,7 +213,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+            /// <strong>Property</strong>: loadBalancerName: The CLB instance name.
+            /// The name must be 1 to 80 characters in length, and can contain digits, periods
+            /// (.), underscores (_), and hyphens (-). It must start with a letter.
+            /// If you do not specify this parameter, the system automatically assigns a name to
+            /// the CLB instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -204,8 +227,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
-            /// Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+            /// <strong>Property</strong>: loadBalancerSpec: The specification of the CLB instance. Valid values:
+            /// - slb.s1.small
+            /// - slb.s2.small
+            /// - slb.s2.medium
+            /// - slb.s3.small
+            /// - slb.s3.medium
+            /// - slb.s3.large
+            /// > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+            /// do not need to specify this parameter.
+            /// >
+            /// > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+            /// are no longer available for purchase. For more details, see [](t2857909.xdita#).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "loadBalancerSpec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -246,7 +279,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Slb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+            /// If you want to deploy the CLB instance in a VPC, this parameter is required. If
+            /// this parameter is specified, AddessType is set to intranet by default.
+            /// > The vSwitch must be in the primary zone.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

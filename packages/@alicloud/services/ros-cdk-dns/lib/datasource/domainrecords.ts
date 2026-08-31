@@ -100,7 +100,7 @@ export interface IDomainRecords extends ros.IResource {
     readonly attrDomainRecords: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainRecords`, which is used to query Domain Name System (DNS) records.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DNS::DomainRecords`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainRecords`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-dns-domainrecords
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Represents a <code>BucketAccessMonitor</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.869Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:18:25.399Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.IBucketAccessMonitor")
 @software.amazon.jsii.Jsii.Proxy(IBucketAccessMonitor.Jsii$Proxy.class)
 public interface IBucketAccessMonitor extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

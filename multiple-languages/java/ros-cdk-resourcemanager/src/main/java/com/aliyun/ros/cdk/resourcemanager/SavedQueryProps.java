@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.resourcemanager;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-resourcemanager-savedquery
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:38:07.316Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:17:22.009Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.resourcemanager.$Module.class, fqn = "@alicloud/ros-cdk-resourcemanager.SavedQueryProps")
 @software.amazon.jsii.Jsii.Proxy(SavedQueryProps.Jsii$Proxy.class)
 public interface SavedQueryProps extends software.amazon.jsii.JsiiSerializable {

@@ -15,12 +15,20 @@ export interface QueueProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * Property queueName: The name of the queue.
+     * Property queueName: The name of the queue to create.
+     * - The queue name can contain only letters, digits, hyphens (-), underscores (_),
+     * periods (.), number signs (#), forward slashes (\/), and at signs (@). The name
+     * must be 1 to 255 characters in length.
+     * - After a queue is created, its name cannot be changed. To change the name,
+     * delete the queue and create a new one.
      */
     readonly queueName: string | ros.IResolvable;
 
     /**
-     * Property virtualHost: The name of the virtual host.
+     * Property virtualHost: The name of the vhost to which the queue belongs.
+     * The name can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (\/), and at signs (@). The name must be 1
+     * to 255 characters in length.
      */
     readonly virtualHost: string | ros.IResolvable;
 
@@ -32,8 +40,11 @@ export interface QueueProps {
     readonly autoDeleteState?: boolean | ros.IResolvable;
 
     /**
-     * Property autoExpireState: The validity period after which the queue is automatically deleted.
-     * If the queue is not accessed within a specified period of time, it is automatically deleted.
+     * Property autoExpireState: The auto-expiration time for the queue. The queue is automatically deleted if it
+     * is not accessed within the specified time period.
+     * Unit: milliseconds.
+     * > This feature must be enabled before you can use this parameter. To enable the
+     * feature, .
      */
     readonly autoExpireState?: number | ros.IResolvable;
 
@@ -45,25 +56,34 @@ export interface QueueProps {
     readonly deadLetterExchange?: string | ros.IResolvable;
 
     /**
-     * Property deadLetterRoutingKey: The dead letter routing key.
+     * Property deadLetterRoutingKey: The dead-letter routing key.
+     * The key can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (\/), and at signs (@). The key must be 1
+     * to 255 characters in length.
      */
     readonly deadLetterRoutingKey?: string | ros.IResolvable;
 
     /**
      * Property exclusiveState: Specifies whether the queue is an exclusive queue. Valid values:
-     * true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-     * false: The Auto Delete attribute is not configured.
+     * - true: The queue is an exclusive queue. An exclusive queue can be used only by
+     * the connection that declares it. The queue is automatically deleted after the
+     * connection is closed.
+     * - false: The queue is not an exclusive queue.
      */
     readonly exclusiveState?: boolean | ros.IResolvable;
 
     /**
-     * Property maximumPriority: The priority function is not supported.
+     * Property maximumPriority: The priority of the queue. The recommended value is an integer from 1 to 10.
+     * > This parameter is used for message priority. It is supported only by dedicated
+     * instances and can be used only after the message priority feature is enabled. To
+     * enable the feature, .
      */
     readonly maximumPriority?: number | ros.IResolvable;
 
     /**
-     * Property maxLength: The maximum number of messages that can be stored in the queue. 
-     * If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+     * Property maxLength: This parameter is not supported in the current version.
+     * The maximum number of messages that can be stored in the queue. If this limit is
+     * exceeded, the earliest messages in the queue are deleted.
      */
     readonly maxLength?: number | ros.IResolvable;
 
@@ -88,7 +108,7 @@ export interface IQueue extends ros.IResource {
     readonly attrQueueName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AMQP::Queue`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosQueue`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */

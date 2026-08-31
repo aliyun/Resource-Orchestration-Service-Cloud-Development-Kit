@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cdn
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to configure multiple domain names at a time.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CDN::DomainConfig`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `DomainConfig` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
@@ -60,7 +60,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: domainNames: Your accelerated domain name, separated by commas in English.
+        /// <strong>Property</strong>: domainNames: The domain names to configure for acceleration. Separate multiple domain names
+        /// with a comma (,). Note the following limits:
+        /// - You can specify up to 20 domain names.
+        /// - The number of domain names multiplied by the number of features cannot exceed
+        /// 50.
         /// </remarks>
         [JsiiProperty(name: "domainNames", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object DomainNames

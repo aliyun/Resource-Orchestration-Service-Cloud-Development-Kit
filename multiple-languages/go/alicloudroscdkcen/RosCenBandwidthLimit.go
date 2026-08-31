@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the bandwidth for cross-region interconnection in a bandwidth plan.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`.
 type RosCenBandwidthLimit interface {
 	alicloudroscdkcore.RosResource
 	BandwidthLimit() interface{}

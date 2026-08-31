@@ -54,8 +54,14 @@ export interface ControlPolicyProps {
     readonly newOrder: number | ros.IResolvable;
 
     /**
-     * Property proto: The type of security protocol for traffic access in the security access control policy. Can be set to ANY when you are not sure of the specific protocol type.
-     * Allowed values: ANY, TCP, UDP, ICMP
+     * Property proto: The protocol type of the traffic in the access control policy. Valid values:
+     * - ANY (any protocol)
+     * - TCP
+     * - UDP
+     * - ICMP
+     * > If the traffic direction is \`out\` and the destination is a domain-based
+     * threat intelligence or cloud service address book, you can set the protocol only
+     * to \`TCP\`. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
      */
     readonly proto: string | ros.IResolvable;
 
@@ -76,10 +82,28 @@ export interface ControlPolicyProps {
     readonly sourceType: string | ros.IResolvable;
 
     /**
-     * Property applicationName: Application types supported by the security policy.
-     * The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-     * NOTE ANY indicates that the policy is applied to all types of applications.
-     * Either ApplicationNameList or ApplicationName must be passed, not both.
+     * Property applicationName: The application type that the access control policy supports. Valid values:
+     * - FTP
+     * - HTTP
+     * - HTTPS
+     * - Memcache
+     * - MongoDB
+     * - MQTT
+     * - MySQL
+     * - RDP
+     * - Redis
+     * - SMTP
+     * - SMTPS
+     * - SSH
+     * - SSL_No_Cert
+     * - SSL
+     * - VNC
+     * - ANY (all application types)
+     * > The available application types depend on the protocol type (\`Proto\`). If you
+     * set \`Proto\` to \`TCP\`, you can set \`ApplicationName\` to any of the listed
+     * application types. If you set \`Proto\` to \`UDP\`, \`ICMP\`, or \`ANY\`, you can
+     * set \`ApplicationName\` only to \`ANY\`. Specify either \`ApplicationNameList\`
+     * or \`ApplicationName\`.
      */
     readonly applicationName?: string | ros.IResolvable;
 
@@ -89,8 +113,17 @@ export interface ControlPolicyProps {
     readonly applicationNameList?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property destPort: Security access control policy access traffic destination port.
-     * Note When DestPortType to port, set the item.
+     * Property destPort: The destination port in the access control policy. Valid values:
+     * - If \`Proto\` is \`ICMP\`, leave this parameter empty.
+     * > If the protocol type is ICMP, you cannot control access based on the
+     * destination port.
+     * - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is
+     * \`group\`, leave this parameter empty.
+     * > If you set \`DestPortType\` to \`group\` (port address book), you do not need
+     * to specify a destination port number. The port address book contains all the
+     * destination ports that the policy manages.
+     * - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is \`port\`,
+     * set this parameter to the destination port number.
      */
     readonly destPort?: string | ros.IResolvable;
 
@@ -191,7 +224,7 @@ export interface IControlPolicy extends ros.IResource {
     readonly attrAclUuid: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`, which is used to add an access control policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CLOUDFW::ControlPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosControlPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-controlpolicy
  */

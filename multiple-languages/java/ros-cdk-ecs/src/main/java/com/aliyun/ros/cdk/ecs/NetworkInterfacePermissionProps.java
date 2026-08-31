@@ -5,13 +5,16 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.032Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.414Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfacePermissionProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkInterfacePermissionProps.Jsii$Proxy.class)
 public interface NetworkInterfacePermissionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property accountId: the account id.
+     * Property accountId: The ID of the account to which the permission is granted.
+     * <p>
+     * The
+     * account can be a cloud partner (certified ISV) or an individual user.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAccountId();
 
@@ -21,7 +24,12 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
     @org.jetbrains.annotations.NotNull java.lang.Object getNetworkInterfaceId();
 
     /**
-     * Property permission: the permission.
+     * Property permission: The permission to grant.
+     * <p>
+     * The only supported value is InstanceAttach.
+     * InstanceAttach: Allows an authorized account to attach your elastic network
+     * interface to one of its ECS instances. The ECS instance and the elastic network
+     * interface must be in the same availability zone.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPermission();
 
@@ -41,7 +49,9 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link NetworkInterfacePermissionProps#getAccountId}
-         * @param accountId Property accountId: the account id. This parameter is required.
+         * @param accountId Property accountId: The ID of the account to which the permission is granted. This parameter is required.
+         *                  The
+         *                  account can be a cloud partner (certified ISV) or an individual user.
          * @return {@code this}
          */
         public Builder accountId(java.lang.String accountId) {
@@ -51,7 +61,9 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link NetworkInterfacePermissionProps#getAccountId}
-         * @param accountId Property accountId: the account id. This parameter is required.
+         * @param accountId Property accountId: The ID of the account to which the permission is granted. This parameter is required.
+         *                  The
+         *                  account can be a cloud partner (certified ISV) or an individual user.
          * @return {@code this}
          */
         public Builder accountId(com.aliyun.ros.cdk.core.IResolvable accountId) {
@@ -81,7 +93,11 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link NetworkInterfacePermissionProps#getPermission}
-         * @param permission Property permission: the permission. This parameter is required.
+         * @param permission Property permission: The permission to grant. This parameter is required.
+         *                   The only supported value is InstanceAttach.
+         *                   InstanceAttach: Allows an authorized account to attach your elastic network
+         *                   interface to one of its ECS instances. The ECS instance and the elastic network
+         *                   interface must be in the same availability zone.
          * @return {@code this}
          */
         public Builder permission(java.lang.String permission) {
@@ -91,7 +107,11 @@ public interface NetworkInterfacePermissionProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link NetworkInterfacePermissionProps#getPermission}
-         * @param permission Property permission: the permission. This parameter is required.
+         * @param permission Property permission: The permission to grant. This parameter is required.
+         *                   The only supported value is InstanceAttach.
+         *                   InstanceAttach: Allows an authorized account to attach your elastic network
+         *                   interface to one of its ECS instances. The ECS instance and the elastic network
+         *                   interface must be in the same availability zone.
          * @return {@code this}
          */
         public Builder permission(com.aliyun.ros.cdk.core.IResolvable permission) {

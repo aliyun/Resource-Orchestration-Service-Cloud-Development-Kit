@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::AnycastEIP</code>, which is used to create an Anycast elastic IP address (Anycast EIP).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.333Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.136Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIP")
 public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IAnycastEIP {
 
@@ -146,20 +146,42 @@ public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property bandwidth: Anycast EIP instance bandwidth.
+         * Property bandwidth: The peak bandwidth of the Anycast EIP instance.
+         * <p>
+         * Unit: Mbps.
+         * Valid values: 200 to 1000.
+         * Default value: 1000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The peak bandwidth is for reference only and is not a guaranteed value. It
+         * serves as the upper limit for bandwidth.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: Anycast EIP instance bandwidth. This parameter is required.
+         * @param bandwidth Property bandwidth: The peak bandwidth of the Anycast EIP instance. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props().bandwidth(bandwidth);
             return this;
         }
         /**
-         * Property bandwidth: Anycast EIP instance bandwidth.
+         * Property bandwidth: The peak bandwidth of the Anycast EIP instance.
+         * <p>
+         * Unit: Mbps.
+         * Valid values: 200 to 1000.
+         * Default value: 1000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The peak bandwidth is for reference only and is not a guaranteed value. It
+         * serves as the upper limit for bandwidth.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: Anycast EIP instance bandwidth. This parameter is required.
+         * @param bandwidth Property bandwidth: The peak bandwidth of the Anycast EIP instance. This parameter is required.
          */
         public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.props().bandwidth(bandwidth);
@@ -167,20 +189,26 @@ public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property description: Anycast EIP instance description.
+         * Property description: The description of the Anycast EIP instance.
+         * <p>
+         * The description must be 0 to 256 characters in length and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: Anycast EIP instance description. This parameter is required.
+         * @param description Property description: The description of the Anycast EIP instance. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props().description(description);
             return this;
         }
         /**
-         * Property description: Anycast EIP instance description.
+         * Property description: The description of the Anycast EIP instance.
+         * <p>
+         * The description must be 0 to 256 characters in length and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: Anycast EIP instance description. This parameter is required.
+         * @param description Property description: The description of the Anycast EIP instance. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props().description(description);
@@ -188,20 +216,24 @@ public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property instanceChargeType: Anycast EIP instance charge type.
+         * Property instanceChargeType: The billing method of the Anycast EIP instance.
+         * <p>
+         * Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
          * <p>
          * @return {@code this}
-         * @param instanceChargeType Property instanceChargeType: Anycast EIP instance charge type. This parameter is required.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the Anycast EIP instance. This parameter is required.
          */
         public Builder instanceChargeType(final java.lang.String instanceChargeType) {
             this.props().instanceChargeType(instanceChargeType);
             return this;
         }
         /**
-         * Property instanceChargeType: Anycast EIP instance charge type.
+         * Property instanceChargeType: The billing method of the Anycast EIP instance.
+         * <p>
+         * Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
          * <p>
          * @return {@code this}
-         * @param instanceChargeType Property instanceChargeType: Anycast EIP instance charge type. This parameter is required.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the Anycast EIP instance. This parameter is required.
          */
         public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
             this.props().instanceChargeType(instanceChargeType);
@@ -209,20 +241,26 @@ public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property internetChargeType: Anycast EIP instance access public network billing method.
+         * Property internetChargeType: The metering method for Internet data transfer.
+         * <p>
+         * Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+         * metering method.
          * <p>
          * @return {@code this}
-         * @param internetChargeType Property internetChargeType: Anycast EIP instance access public network billing method. This parameter is required.
+         * @param internetChargeType Property internetChargeType: The metering method for Internet data transfer. This parameter is required.
          */
         public Builder internetChargeType(final java.lang.String internetChargeType) {
             this.props().internetChargeType(internetChargeType);
             return this;
         }
         /**
-         * Property internetChargeType: Anycast EIP instance access public network billing method.
+         * Property internetChargeType: The metering method for Internet data transfer.
+         * <p>
+         * Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+         * metering method.
          * <p>
          * @return {@code this}
-         * @param internetChargeType Property internetChargeType: Anycast EIP instance access public network billing method. This parameter is required.
+         * @param internetChargeType Property internetChargeType: The metering method for Internet data transfer. This parameter is required.
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props().internetChargeType(internetChargeType);
@@ -230,20 +268,26 @@ public class AnycastEIP extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property name: Anycast EIP instance name.
+         * Property name: The name of the Anycast EIP instance.
+         * <p>
+         * The name must be 0 to 128 characters in length. It must start with a letter or a
+         * Chinese character and can contain digits, underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param name Property name: Anycast EIP instance name. This parameter is required.
+         * @param name Property name: The name of the Anycast EIP instance. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props().name(name);
             return this;
         }
         /**
-         * Property name: Anycast EIP instance name.
+         * Property name: The name of the Anycast EIP instance.
+         * <p>
+         * The name must be 0 to 128 characters in length. It must start with a letter or a
+         * Chinese character and can contain digits, underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param name Property name: Anycast EIP instance name. This parameter is required.
+         * @param name Property name: The name of the Anycast EIP instance. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props().name(name);

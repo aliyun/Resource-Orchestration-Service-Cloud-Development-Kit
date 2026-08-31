@@ -136,7 +136,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: templateName: The name of the advanced query template.
+        /// <strong>Property</strong>: templateName: The name of the template, which can contain a maximum of 64 characters.
+        /// Uniqueness is not required.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "templateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -17,8 +17,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         /// <remarks>
         /// <strong>Property</strong>: healthCheckTemplateName: The name of the health check template.
-        /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-        /// (.), underscores (_), and hyphens (-). The name must start with a letter.
+        /// The name must be 2 to 128 characters in length, must start with a letter, a
+        /// digit, or a Chinese character, and can contain digits, periods (.), underscores
+        /// (_), hyphens (-), and spaces.
         /// </remarks>
         [JsiiProperty(name: "healthCheckTemplateName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object HealthCheckTemplateName
@@ -50,11 +51,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         private object? _healthCheckCodes;
 
         /// <remarks>
-        /// <strong>Property</strong>: healthCheckCodes: The HTTP status code for a successful health check.
-        /// If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with commas (,).
-        /// If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges and must separate
-        /// them with commas (,).
-        /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+        /// <strong>Property</strong>: healthCheckCodes: The HTTP status codes that indicate a successful health check.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "healthCheckCodes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -159,16 +156,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         private object? _healthCheckHost;
 
         /// <remarks>
-        /// <strong>Property</strong>: healthCheckHost: The domain name that is used for health checks.
-        /// Default value: $SERVER_IP. The domain name is 1 to 80 characters in length. Make sure that the destination
-        /// CIDR block meets the following requirements:
-        /// The domain name can contain lowercase letters, digits, hyphens (-), and periods (.).
-        /// The domain name contains at least one period (.) but does not start or end with a
-        /// period (.).
-        /// The rightmost domain label can contain only letters, and cannot contain digits or
-        /// hyphens (-).
-        /// Other domain labels cannot start or end with a hyphen (-).
-        /// This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+        /// <strong>Property</strong>: healthCheckHost: The domain name used for the health check. Valid values:
+        /// - $SERVER_IP: The private IP address of a backend server. If you set this
+        /// parameter to `$SERVER_IP` or leave it empty, the load balancer uses the private
+        /// IP address of the backend server as the domain name for the health check.
+        /// - domain: The domain name must be 1 to 80 characters in length and can contain
+        /// letters, digits, periods (.), and hyphens (-).
+        /// > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+        /// set to HTTP or HTTPS.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -292,13 +287,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         private object? _healthCheckMethod;
 
         /// <remarks>
-        /// <strong>Property</strong>: healthCheckMethod: The HTTP method that is used for health checks. Valid values:
-        /// HEAD: By default, the ALB instance sends HEAD requests to a backend server to perform
-        /// HTTP health checks.
-        /// POST: By default, gRPC health checks use the POST method.
-        /// GET: If the length of a response exceeds 8 KB, the response is truncated. However, the
-        /// health check result is not affected.
-        /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+        /// <strong>Property</strong>: healthCheckMethod: The method used for the health check. Valid values:
+        /// - HEAD (default): For HTTP and HTTPS listeners, the default health check method
+        /// is HEAD.
+        /// - POST: For gRPC listeners, the default health check method is POST.
+        /// - GET: If the response body exceeds 8 KB, it is truncated. This does not affect
+        /// the health check result.
+        /// > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+        /// set to HTTP, HTTPS, or gRPC.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "healthCheckMethod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -331,14 +327,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         private object? _healthCheckPath;
 
         /// <remarks>
-        /// <strong></strong>: $ ^ : ' , +. The URL path must start with a forward slash (\/).
-        /// Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+        /// <strong>$</strong>: ^:',+`.
+        /// > This parameter takes effect only when the `HealthCheckProtocol` parameter is
+        /// set to HTTP or HTTPS.
         ///
-        /// <strong>Property</strong>: healthCheckPath: The URL path that is used for health checks.
-        /// It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-        /// (-), forward slashes (\/), periods (.), percent signs (%), question marks (?), number
-        /// signs (#), and ampersands (&). It can also contain the following extended characters:
-        /// _ ; ~ ! ( ) * [ ]
+        /// <strong>Property</strong>: healthCheckPath: The URL that is used for health checks.
+        /// The URL must be 1 to 80 characters in length. It must start with a forward slash
+        /// (\/) and can contain letters, digits, and the following special characters: `- \/ .
+        /// % ? # & _;~!()*[]
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "healthCheckPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -371,14 +367,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         private object? _healthCheckProtocol;
 
         /// <remarks>
-        /// <strong>Property</strong>: healthCheckProtocol: The protocol that is used for health checks. Valid values:
-        /// HTTP: The ALB instance sends HEAD or GET requests to a backend server to simulate access
-        /// from a browser and check whether the backend server is healthy. This is the default
-        /// protocol.
-        /// TCP: To perform TCP health checks, ALB sends SYN packets to a backend server to check
-        /// whether the port of the backend server is available to receive requests.
-        /// GRPC: To perform gRPC health checks, ALB sends POST or GET requests to a backend server
-        /// to check whether the backend server is healthy.
+        /// <strong>Property</strong>: healthCheckProtocol: The protocol used for the health check. Valid values:
+        /// - HTTP (default): simulates browser access by sending HEAD or GET requests to
+        /// check whether the server application is healthy.
+        /// - HTTPS: simulates browser access by sending HEAD or GET requests to check
+        /// whether the server application is healthy. HTTPS provides encrypted data
+        /// transmission and is more secure than HTTP.
+        /// - TCP: checks whether the server port is responsive by sending SYN packets.
+        /// - gRPC: checks whether the server application is healthy by sending POST or GET
+        /// requests.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "healthCheckProtocol", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

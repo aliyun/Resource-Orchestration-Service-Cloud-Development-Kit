@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dts.datasource;
 /**
  * Represents a <code>JobMonitorRules</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.859Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:15.021Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.datasource.IJobMonitorRules")
 @software.amazon.jsii.Jsii.Proxy(IJobMonitorRules.Jsii$Proxy.class)
 public interface IJobMonitorRules extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -40,9 +40,9 @@ export interface InstanceProps {
     readonly logStorage?: number | ros.IResolvable;
 
     /**
-     * Property period: The subscription duration of the KMS instance.
-     * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-     * If PeriodUnit is Year, the valid range is 1, 2, 3
+     * Property period: The subscription duration. Unit: month. The value must be an integral multiple of
+     * 12.
+     * >  This parameter is required if you create a subscription instance.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -55,7 +55,9 @@ export interface InstanceProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * Property renewPeriod: Automatic renewal period, in months.
+     * Property renewPeriod: The auto-renewal period. Unit: month.
+     * >  This parameter is required if the RenewalStatus parameter is set to
+     * AutoRenewal.
      */
     readonly renewPeriod?: number | ros.IResolvable;
 

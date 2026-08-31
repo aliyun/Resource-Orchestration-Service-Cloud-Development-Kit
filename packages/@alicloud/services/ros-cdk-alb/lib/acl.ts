@@ -15,8 +15,9 @@ export interface AclProps {
     readonly aclEntries?: Array<RosAcl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can contain
-     * letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+     * Property aclName: The name of the ACL. The name must be 2 to 128 characters in length, and can
+     * contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+     * characters. The name must start with a letter, a Chinese character, or a digit.
      */
     readonly aclName?: string | ros.IResolvable;
 
@@ -38,7 +39,7 @@ export interface IAcl extends ros.IResource {
     readonly attrAclId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Acl`, which is used to create an access control list (ACL).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Acl`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAcl`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */

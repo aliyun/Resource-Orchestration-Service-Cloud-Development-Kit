@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::Group`, which is used to create a group in CloudSSO.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::Group`.
 type Group interface {
 	alicloudroscdkcore.Resource
 	IGroup

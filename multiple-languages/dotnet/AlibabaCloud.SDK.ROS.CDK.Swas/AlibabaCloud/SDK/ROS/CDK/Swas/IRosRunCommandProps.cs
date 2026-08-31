@@ -12,7 +12,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
     public interface IRosRunCommandProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: commandContent: The plaintext content of the command to run.
+        /// <strong>Property</strong>: commandContent: The content of the command. Take note of the following items:
+        /// *   If you set `EnableParameter` to true, the custom parameter feature is enabled
+        /// in the command content and you can configure custom parameters based on the
+        /// following rules:
+        /// *   Define custom parameters in the {{}} format. Within `{{}}`, the spaces and
+        /// line feeds before and after the parameter names are ignored.
+        /// *   The number of custom parameters cannot be greater than 20.
+        /// *   A custom parameter name can contain only letters, digits, underscores (_),
+        /// and hyphens (-). The name is case-insensitive.
+        /// *   Each custom parameter name cannot exceed 64 bytes in length.
         /// </remarks>
         [JsiiProperty(name: "commandContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object CommandContent
@@ -140,9 +149,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: workingDir: The directory in which to run the command on the instance. Default value:
-        /// Linux instances: \/root
-        /// Windows instances: C:\ProgramData\aliyun\assist\$(version)
+        /// <strong>Property</strong>: workingDir: The execution path of the command. Custom paths are supported. Default execution
+        /// paths vary based on the operating systems of the servers.
+        /// *   For Linux servers, the default path is \/root of the root user.
+        /// *   For Windows servers, the default path is C:\Windows\system32.
         /// </remarks>
         [JsiiProperty(name: "workingDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -179,7 +189,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: commandContent: The plaintext content of the command to run.
+            /// <strong>Property</strong>: commandContent: The content of the command. Take note of the following items:
+            /// *   If you set `EnableParameter` to true, the custom parameter feature is enabled
+            /// in the command content and you can configure custom parameters based on the
+            /// following rules:
+            /// *   Define custom parameters in the {{}} format. Within `{{}}`, the spaces and
+            /// line feeds before and after the parameter names are ignored.
+            /// *   The number of custom parameters cannot be greater than 20.
+            /// *   A custom parameter name can contain only letters, digits, underscores (_),
+            /// and hyphens (-). The name is case-insensitive.
+            /// *   Each custom parameter name cannot exceed 64 bytes in length.
             /// </remarks>
             [JsiiProperty(name: "commandContent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object CommandContent
@@ -289,9 +308,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Swas
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: workingDir: The directory in which to run the command on the instance. Default value:
-            /// Linux instances: \/root
-            /// Windows instances: C:\ProgramData\aliyun\assist\$(version)
+            /// <strong>Property</strong>: workingDir: The execution path of the command. Custom paths are supported. Default execution
+            /// paths vary based on the operating systems of the servers.
+            /// *   For Linux servers, the default path is \/root of the root user.
+            /// *   For Windows servers, the default path is C:\Windows\system32.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "workingDir", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

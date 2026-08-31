@@ -32,9 +32,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Property bindInstanceType: The cloud resource instance type to be bound.</summary>
+        /// <summary>Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.</summary>
         /// <remarks>
-        /// Valid value: SlbInstance, SLB instance of private network type.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>SlbInstance: CLB instance in a virtual private cloud (VPC).</description>
+        /// <description>NetworkInterface: ENI.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "bindInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object BindInstanceType
@@ -43,6 +48,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <summary>Property associationMode: The association mode.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Default: the default mode. In this mode, the associated cloud resource is the
+        /// default origin server.</description>
+        /// <description>Normal: the normal mode. In this mode, the associated cloud resource is a
+        /// normal origin server.</description>
+        /// </list>
+        ///
+        ///     An Anycast EIP can be associated with cloud resources in multiple regions.
+        ///     However, you can specify only one default origin server and multiple normal
+        ///     origin servers. When you do not specify an access point or add a new access
+        ///     point, requests are forwarded to the default origin server by default.
+        ///
+        /// <list type="bullet">
+        ///     <description>If this is your first time to associate a cloud resource with the Anycast
+        ///     EIP, the association mode is Default by default.</description>
+        ///     <description>If this is not your first time to associate a cloud resource with the Anycast
+        ///     EIP, you can set the association mode to Default. This makes the new cloud
+        ///     resource the default origin server, and the original default origin server
+        ///     becomes a normal origin server.</description>
+        ///     </list>
+        /// </remarks>
         [JsiiProperty(name: "associationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AssociationMode
@@ -64,7 +93,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
         }
 
-        /// <summary>Property privateIpAddress: The private IP address.</summary>
+        /// <summary>Property privateIpAddress: The secondary private IP address of the ENI.</summary>
+        /// <remarks>
+        /// This parameter is required when BindInstanceType is set to NetworkInterface. If
+        /// you do not specify this parameter, the primary private IP address of the ENI is
+        /// used.
+        /// </remarks>
         [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? PrivateIpAddress
@@ -107,9 +141,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property bindInstanceType: The cloud resource instance type to be bound.</summary>
+            /// <summary>Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.</summary>
             /// <remarks>
-            /// Valid value: SlbInstance, SLB instance of private network type.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>SlbInstance: CLB instance in a virtual private cloud (VPC).</description>
+            /// <description>NetworkInterface: ENI.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "bindInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object BindInstanceType
@@ -118,6 +157,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <summary>Property associationMode: The association mode.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Default: the default mode. In this mode, the associated cloud resource is the
+            /// default origin server.</description>
+            /// <description>Normal: the normal mode. In this mode, the associated cloud resource is a
+            /// normal origin server.</description>
+            /// </list>
+            ///
+            ///     An Anycast EIP can be associated with cloud resources in multiple regions.
+            ///     However, you can specify only one default origin server and multiple normal
+            ///     origin servers. When you do not specify an access point or add a new access
+            ///     point, requests are forwarded to the default origin server by default.
+            ///
+            /// <list type="bullet">
+            ///     <description>If this is your first time to associate a cloud resource with the Anycast
+            ///     EIP, the association mode is Default by default.</description>
+            ///     <description>If this is not your first time to associate a cloud resource with the Anycast
+            ///     EIP, you can set the association mode to Default. This makes the new cloud
+            ///     resource the default origin server, and the original default origin server
+            ///     becomes a normal origin server.</description>
+            ///     </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "associationMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AssociationMode
@@ -133,7 +196,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property privateIpAddress: The private IP address.</summary>
+            /// <summary>Property privateIpAddress: The secondary private IP address of the ENI.</summary>
+            /// <remarks>
+            /// This parameter is required when BindInstanceType is set to NetworkInterface. If
+            /// you do not specify this parameter, the primary private IP address of the ENI is
+            /// used.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? PrivateIpAddress

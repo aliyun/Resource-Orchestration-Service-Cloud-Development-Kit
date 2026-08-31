@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`, which is used to create an application monitoring task.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ARMS::XTraceApp`.
 type RosXTraceApp interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

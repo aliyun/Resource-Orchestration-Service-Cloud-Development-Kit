@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Route`The , which resource type creates custom route entries.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::Route`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Route` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
@@ -69,7 +69,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationCidrBlock: The RouteEntry's target network segment.
+        /// <strong>Property</strong>: destinationCidrBlock: The destination CIDR block of the custom route entry. IPv4 CIDR blocks, IPv6 CIDR
+        /// blocks, and prefix lists are supported. You must specify one of the following
+        /// parameters: `DestinationCidrBlock` and `DestinationPrefixListId`. The following
+        /// requirements apply:
+        /// - The destination CIDR block cannot be 100.64.0.0\/10 or a subset of
+        /// 100.64.0.0\/10.
+        /// - The destination CIDR block of a route entry cannot be the same as the
+        /// destination CIDR block of another route entry in the same route table.
         /// </remarks>
         [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object DestinationCidrBlock
@@ -136,7 +143,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
+        /// <strong>Property</strong>: nextHopId: The ID of the next hop.
+        /// > ## If `NextHopType` is set to `Ecr`, you can obtain the `AssociationId` by
+        /// calling the DescribeExpressConnectRouterAssociation operation and use the ID
+        /// as the next hop ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "nextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

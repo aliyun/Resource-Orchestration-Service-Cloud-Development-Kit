@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hdr;
 /**
  * Represents a <code>SitePair</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:27:50.010Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:35:53.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hdr.$Module.class, fqn = "@alicloud/ros-cdk-hdr.ISitePair")
 @software.amazon.jsii.Jsii.Proxy(ISitePair.Jsii$Proxy.class)
 public interface ISitePair extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

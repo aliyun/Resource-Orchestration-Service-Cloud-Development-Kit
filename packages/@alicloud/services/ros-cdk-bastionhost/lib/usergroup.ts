@@ -15,12 +15,14 @@ export interface UserGroupProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * Property userGroupName: The name of the user group.
+     * Property userGroupName: The name of the user group that you want to create. This name can be a up to 128
+     * characters in length.
      */
     readonly userGroupName: string | ros.IResolvable;
 
     /**
-     * Property comment: The comment of the user group.
+     * Property comment: The description of the user group. The description can be up to 500 characters in
+     * length.
      */
     readonly comment?: string | ros.IResolvable;
 }

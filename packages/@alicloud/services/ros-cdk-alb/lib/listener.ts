@@ -10,7 +10,7 @@ export { RosListener as ListenerProperty };
 export interface ListenerProps {
 
     /**
-     * Property defaultActions: The actions of the rule.
+     * Property defaultActions: The default actions for the listener.
      */
     readonly defaultActions: Array<RosListener.DefaultActionsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -32,7 +32,7 @@ export interface ListenerProps {
     readonly loadBalancerId: string | ros.IResolvable;
 
     /**
-     * Property caCertificates: List of configured CA certificates for listener.
+     * Property caCertificates: A list of CA certificates for the listener. Only one CA certificate is supported.
      */
     readonly caCertificates?: Array<RosListener.CaCertificatesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -42,7 +42,7 @@ export interface ListenerProps {
     readonly caEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property certificates: The list of SSL certificates for listener.
+     * Property certificates: A list of server certificates.
      */
     readonly certificates?: Array<RosListener.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -62,16 +62,21 @@ export interface ListenerProps {
     readonly http2Enabled?: boolean | ros.IResolvable;
 
     /**
-     * Property idleTimeout: The timeout period of idle connections.
-     * Valid values: 1 to 3600. Unit: seconds.
+     * Property idleTimeout: The idle timeout in seconds.
+     * Valid values: 1 to 600.
      * Default value: 15.
-     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+     * If no requests are received on a connection within the idle timeout, the load
+     * balancer closes the connection. A new connection is established for the next
+     * request.
+     * > You can request a quota increase to a maximum of 3,600 seconds.
      */
     readonly idleTimeout?: number | ros.IResolvable;
 
     /**
-     * Property listenerDescription: The description of the listener. 
-     * The description must be 2 to 256 characters in length.
+     * Property listenerDescription: A custom name for the listener.
+     * The name must be 2 to 256 characters long and can contain letters, digits,
+     * hyphens (-), forward slashes (\/), periods (.), underscores (_), and Chinese
+     * characters.
      */
     readonly listenerDescription?: string | ros.IResolvable;
 
@@ -91,11 +96,12 @@ export interface ListenerProps {
     readonly quicConfig?: RosListener.QuicConfigProperty | ros.IResolvable;
 
     /**
-     * Property requestTimeout: The timeout period of the request.
-     * Valid values: 1 to 900. Unit: seconds.
+     * Property requestTimeout: The request timeout in seconds.
+     * Valid values: 1 to 600.
      * Default value: 60.
-     * If no response is received from the backend server during the request timeout period,
-     * ALB sends an HTTP 504 error code to the client.
+     * If a backend server does not respond within the timeout period, the load balancer
+     * returns an `HTTP 504` error to the client.
+     * > You can request a quota increase to a maximum of 3,600 seconds.
      */
     readonly requestTimeout?: number | ros.IResolvable;
 
@@ -108,7 +114,7 @@ export interface ListenerProps {
     readonly securityPolicyId?: string | ros.IResolvable;
 
     /**
-     * Property xForwardedForConfig: The configuration of the XForward field.
+     * Property xForwardedForConfig: The configuration of `X-Forwarded-*` headers.
      */
     readonly xForwardedForConfig?: RosListener.XForwardedForConfigProperty | ros.IResolvable;
 }
@@ -130,7 +136,7 @@ export interface IListener extends ros.IResource {
     readonly attrLoadBalancerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`The , which resource type creates an HTTP, HTTPS, or QUIC listener for an Application Load Balancer (ALB) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::Listener`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosListener`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */

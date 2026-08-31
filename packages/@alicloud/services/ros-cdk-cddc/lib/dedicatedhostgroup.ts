@@ -187,7 +187,7 @@ export interface IDedicatedHostGroup extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`, which is used to create a dedicated cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDedicatedHostGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
  */

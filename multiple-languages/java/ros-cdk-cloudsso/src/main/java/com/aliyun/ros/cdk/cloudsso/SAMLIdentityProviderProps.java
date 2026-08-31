@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudsso;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-samlidentityprovider
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.966Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.386Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.SAMLIdentityProviderProps")
 @software.amazon.jsii.Jsii.Proxy(SAMLIdentityProviderProps.Jsii$Proxy.class)
 public interface SAMLIdentityProviderProps extends software.amazon.jsii.JsiiSerializable {
@@ -68,7 +68,7 @@ public interface SAMLIdentityProviderProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
-     * Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.
+     * Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getX509Certificate() {
         return null;
@@ -242,7 +242,7 @@ public interface SAMLIdentityProviderProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SAMLIdentityProviderProps#getX509Certificate}
-         * @param x509Certificate Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.
+         * @param x509Certificate Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.
          * @return {@code this}
          */
         public Builder x509Certificate(java.lang.String x509Certificate) {
@@ -252,7 +252,7 @@ public interface SAMLIdentityProviderProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link SAMLIdentityProviderProps#getX509Certificate}
-         * @param x509Certificate Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.
+         * @param x509Certificate Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.
          * @return {@code this}
          */
         public Builder x509Certificate(com.aliyun.ros.cdk.core.IResolvable x509Certificate) {

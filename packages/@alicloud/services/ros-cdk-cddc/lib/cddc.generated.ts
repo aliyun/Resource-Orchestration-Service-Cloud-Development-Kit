@@ -129,7 +129,7 @@ function rosDedicatedHostPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHost`, which is used to create a host in a dedicated cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHost`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhost
  */
@@ -444,7 +444,14 @@ export interface RosDedicatedHostAccountProps {
     readonly accountName: string | ros.IResolvable;
 
     /**
-     * @Property accountPassword: The password of the account.
+     * @Property accountPassword: The password for the host account. The password must meet the following
+     * requirements:
+     * - The password must be 6 to 32 characters in length.
+     * - It must contain uppercase letters, lowercase letters, digits, and special
+     * characters.
+     * - Supported special characters: `!@#$%^&*()_+-=`
+     * > If your engine is SQL Server, the password cannot contain the account name
+     * (case-insensitive).
      */
     readonly accountPassword: string | ros.IResolvable;
 
@@ -546,7 +553,14 @@ export class RosDedicatedHostAccount extends ros.RosResource {
     public accountName: string | ros.IResolvable;
 
     /**
-     * @Property accountPassword: The password of the account.
+     * @Property accountPassword: The password for the host account. The password must meet the following
+     * requirements:
+     * - The password must be 6 to 32 characters in length.
+     * - It must contain uppercase letters, lowercase letters, digits, and special
+     * characters.
+     * - Supported special characters: `!@#$%^&*()_+-=`
+     * > If your engine is SQL Server, the password cannot contain the account name
+     * (case-insensitive).
      */
     public accountPassword: string | ros.IResolvable;
 
@@ -699,7 +713,7 @@ function rosDedicatedHostGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`, which is used to create a dedicated cluster.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::DedicatedHostGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DedicatedHostGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-dedicatedhostgroup
  */
@@ -958,7 +972,9 @@ export interface RosMyBaseProps {
     readonly ecsClassList: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
-     * @Property engine: Database type.
+     * @Property engine: The database type. Valid values:
+     * - mysql
+     * - tair
      */
     readonly engine: string | ros.IResolvable;
 
@@ -973,7 +989,8 @@ export interface RosMyBaseProps {
     readonly period: number | ros.IResolvable;
 
     /**
-     * @Property securityGroupId: The ID of the security group.
+     * @Property securityGroupId: The security group ID. Specify multiple security groups, separated by commas (,).
+     * Format: sg-t4neld965n89ocvt,sg-t4neld965n89ocvu
      */
     readonly securityGroupId: string | ros.IResolvable;
 
@@ -1013,36 +1030,54 @@ export interface RosMyBaseProps {
     readonly ecsDeploymentSetId?: string | ros.IResolvable;
 
     /**
-     * @Property ecsHostName: The host name of the ECS instance.
+     * @Property ecsHostName: For Windows operating systems: The host name must be 2 to 15 characters in length
+     * and can contain uppercase letters, lowercase letters, and digits. It cannot
+     * consist of only digits.
+     * For other operating systems (such as Linux): The host name must be 2 to 64
+     * characters in length and can contain periods (.) to separate multiple segments.
+     * Each segment can contain uppercase letters, lowercase letters, and digits.
+     * Consecutive periods (.) are not allowed. The host name cannot start or end with a
+     * period (.).
      */
     readonly ecsHostName?: string | ros.IResolvable;
 
     /**
-     * @Property ecsInstanceName: The name of the ECS instance.
+     * @Property ecsInstanceName: The instance name. It must be 2 to 128 characters in length. It must start with
+     * an uppercase letter, a lowercase letter, or a Chinese character. It cannot start
+     * with http\:\/\/ or https\:\/\/. It can contain Chinese characters, English letters,
+     * digits, colons (:), underscores (_), periods (.), or hyphens (-). The default
+     * value is the instance ID.
      */
     readonly ecsInstanceName?: string | ros.IResolvable;
 
     /**
-     * @Property ecsUniqueSuffix: The unique suffix of the ECS instance.
+     * @Property ecsUniqueSuffix: Automatically add a sequential suffix to the HostName and InstanceName when you
+     * create multiple instances. The sequential suffix starts from 001 and increments
+     * up to 999. Valid values:
+     * - true: Add.
+     * - false (default): Do not add.
+     * If HostName or InstanceName is set in a specific sorting format, and the
+     * name_suffix is not set (i.e., the naming format is
+     * name_prefix\[begin_number,bits]), UniqueSuffix does not take effect. The names
+     * are sorted only in the specified order.
      */
     readonly ecsUniqueSuffix?: boolean | ros.IResolvable;
 
     /**
-     * @Property imageId: The image ID.
+     * @Property imageId: The custom image ID.
+     * > If you want to use the default image, do not specify this parameter.
      */
     readonly imageId?: string | ros.IResolvable;
 
     /**
-     * @Property internetChargeType: Network billing type. Value range: 
-     * PayByBandwidth: billed based on fixed bandwidth. 
-     * PayByTraffic: Pay by traffic usage.
+     * @Property internetChargeType: The network billing method. Valid values include the following:
      */
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). 
-     * Range is [0,200]. Default is 1. 
-     * While the property is not 0, public ip will be assigned for instance.
+     * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth, in Mbit\/s. Valid values: 0 to 100.
+     * Default value: 0. If you set this parameter to a value greater than 0, a public
+     * IP address is automatically created.
      */
     readonly internetMaxBandwidthOut?: number | ros.IResolvable;
 
@@ -1052,12 +1087,25 @@ export interface RosMyBaseProps {
     readonly keyPairName?: string | ros.IResolvable;
 
     /**
-     * @Property osPassword: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
+     * @Property osPassword: The logon password for the host. You can set it later. The password must meet the
+     * following requirements:
+     * - It must be 8 to 30 characters in length.
+     * - It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.
+     * - Special characters: `()\`\~!@#$%^&\*-_+=|{}\[]:;'<>,.?\/\`
+     * > * If you want to set the logon password later, leave this parameter empty.
+     * >
+     * > * If you want to set the logon password, use HTTPS to send requests to prevent
+     * password leakage.
      */
     readonly osPassword?: string | ros.IResolvable;
 
     /**
-     * @Property passwordInherit: Whether to inherit the password from the parent cluster.
+     * @Property passwordInherit: Use the default password of the image.
+     * - false (default): Do not use.
+     * - true: Use.
+     * > If you use the default password of the image, do not specify the OSPassword
+     * parameter.
      */
     readonly passwordInherit?: boolean | ros.IResolvable;
 
@@ -1077,7 +1125,7 @@ export interface RosMyBaseProps {
     readonly userData?: string | ros.IResolvable;
 
     /**
-     * @Property userDataInBase64: The user data of the ECS instance.
+     * @Property userDataInBase64: Indicates whether the custom data is Base64-encoded.
      */
     readonly userDataInBase64?: boolean | ros.IResolvable;
 }
@@ -1204,7 +1252,7 @@ function rosMyBasePropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::MyBase`, which is used to create a host in a Proprietary MyBase dedicated cluster in ApsaraDB for MyBase.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CDDC::MyBase`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MyBase` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cddc-mybase
  */
@@ -1233,7 +1281,9 @@ export class RosMyBase extends ros.RosResource {
     public ecsClassList: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
-     * @Property engine: Database type.
+     * @Property engine: The database type. Valid values:
+     * - mysql
+     * - tair
      */
     public engine: string | ros.IResolvable;
 
@@ -1248,7 +1298,8 @@ export class RosMyBase extends ros.RosResource {
     public period: number | ros.IResolvable;
 
     /**
-     * @Property securityGroupId: The ID of the security group.
+     * @Property securityGroupId: The security group ID. Specify multiple security groups, separated by commas (,).
+     * Format: sg-t4neld965n89ocvt,sg-t4neld965n89ocvu
      */
     public securityGroupId: string | ros.IResolvable;
 
@@ -1288,36 +1339,54 @@ export class RosMyBase extends ros.RosResource {
     public ecsDeploymentSetId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ecsHostName: The host name of the ECS instance.
+     * @Property ecsHostName: For Windows operating systems: The host name must be 2 to 15 characters in length
+     * and can contain uppercase letters, lowercase letters, and digits. It cannot
+     * consist of only digits.
+     * For other operating systems (such as Linux): The host name must be 2 to 64
+     * characters in length and can contain periods (.) to separate multiple segments.
+     * Each segment can contain uppercase letters, lowercase letters, and digits.
+     * Consecutive periods (.) are not allowed. The host name cannot start or end with a
+     * period (.).
      */
     public ecsHostName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ecsInstanceName: The name of the ECS instance.
+     * @Property ecsInstanceName: The instance name. It must be 2 to 128 characters in length. It must start with
+     * an uppercase letter, a lowercase letter, or a Chinese character. It cannot start
+     * with http\:\/\/ or https\:\/\/. It can contain Chinese characters, English letters,
+     * digits, colons (:), underscores (_), periods (.), or hyphens (-). The default
+     * value is the instance ID.
      */
     public ecsInstanceName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ecsUniqueSuffix: The unique suffix of the ECS instance.
+     * @Property ecsUniqueSuffix: Automatically add a sequential suffix to the HostName and InstanceName when you
+     * create multiple instances. The sequential suffix starts from 001 and increments
+     * up to 999. Valid values:
+     * - true: Add.
+     * - false (default): Do not add.
+     * If HostName or InstanceName is set in a specific sorting format, and the
+     * name_suffix is not set (i.e., the naming format is
+     * name_prefix\[begin_number,bits]), UniqueSuffix does not take effect. The names
+     * are sorted only in the specified order.
      */
     public ecsUniqueSuffix: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property imageId: The image ID.
+     * @Property imageId: The custom image ID.
+     * > If you want to use the default image, do not specify this parameter.
      */
     public imageId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetChargeType: Network billing type. Value range: 
-     * PayByBandwidth: billed based on fixed bandwidth. 
-     * PayByTraffic: Pay by traffic usage.
+     * @Property internetChargeType: The network billing method. Valid values include the following:
      */
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property internetMaxBandwidthOut: Set internet output bandwidth of instance. Unit is Mbps(Mega bit per second). 
-     * Range is [0,200]. Default is 1. 
-     * While the property is not 0, public ip will be assigned for instance.
+     * @Property internetMaxBandwidthOut: The maximum outbound public bandwidth, in Mbit\/s. Valid values: 0 to 100.
+     * Default value: 0. If you set this parameter to a value greater than 0, a public
+     * IP address is automatically created.
      */
     public internetMaxBandwidthOut: number | ros.IResolvable | undefined;
 
@@ -1327,12 +1396,25 @@ export class RosMyBase extends ros.RosResource {
     public keyPairName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property osPassword: Password of created ecs instance. Must contain at least 3 types of special character, lower character, upper character, number.
+     * @Property osPassword: The logon password for the host. You can set it later. The password must meet the
+     * following requirements:
+     * - It must be 8 to 30 characters in length.
+     * - It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.
+     * - Special characters: `()\`\~!@#$%^&\*-_+=|{}\[]:;'<>,.?\/\`
+     * > * If you want to set the logon password later, leave this parameter empty.
+     * >
+     * > * If you want to set the logon password, use HTTPS to send requests to prevent
+     * password leakage.
      */
     public osPassword: string | ros.IResolvable | undefined;
 
     /**
-     * @Property passwordInherit: Whether to inherit the password from the parent cluster.
+     * @Property passwordInherit: Use the default password of the image.
+     * - false (default): Do not use.
+     * - true: Use.
+     * > If you use the default password of the image, do not specify the OSPassword
+     * parameter.
      */
     public passwordInherit: boolean | ros.IResolvable | undefined;
 
@@ -1352,7 +1434,7 @@ export class RosMyBase extends ros.RosResource {
     public userData: string | ros.IResolvable | undefined;
 
     /**
-     * @Property userDataInBase64: The user data of the ECS instance.
+     * @Property userDataInBase64: Indicates whether the custom data is Base64-encoded.
      */
     public userDataInBase64: boolean | ros.IResolvable | undefined;
 

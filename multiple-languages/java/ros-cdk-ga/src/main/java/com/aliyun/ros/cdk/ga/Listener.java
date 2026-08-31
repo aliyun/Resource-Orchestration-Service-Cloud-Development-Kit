@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::Listener</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::GA::Listener</code>Creates a listener for a Global Accelerator (GA) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.820Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.799Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.Listener")
 public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ga.IListener {
 
@@ -260,6 +260,74 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
+         * Property httpVersion: The maximum version of the HTTP protocol.
+         * <p>
+         * Valid values:
+         * http1.1
+         * http2
+         * http3
+         * Note Only HTTPS listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param httpVersion Property httpVersion: The maximum version of the HTTP protocol. This parameter is required.
+         */
+        public Builder httpVersion(final java.lang.String httpVersion) {
+            this.props.httpVersion(httpVersion);
+            return this;
+        }
+        /**
+         * Property httpVersion: The maximum version of the HTTP protocol.
+         * <p>
+         * Valid values:
+         * http1.1
+         * http2
+         * http3
+         * Note Only HTTPS listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param httpVersion Property httpVersion: The maximum version of the HTTP protocol. This parameter is required.
+         */
+        public Builder httpVersion(final com.aliyun.ros.cdk.core.IResolvable httpVersion) {
+            this.props.httpVersion(httpVersion);
+            return this;
+        }
+
+        /**
+         * Property idleTimeout: The connection idle timeout period.
+         * <p>
+         * Unit: seconds.
+         * Valid values:
+         * TCP listener: 10 to 900
+         * UDP listener: 10 to 20
+         * HTTP or HTTPS listener: 1 to 60
+         * Note Only listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param idleTimeout Property idleTimeout: The connection idle timeout period. This parameter is required.
+         */
+        public Builder idleTimeout(final java.lang.Number idleTimeout) {
+            this.props.idleTimeout(idleTimeout);
+            return this;
+        }
+        /**
+         * Property idleTimeout: The connection idle timeout period.
+         * <p>
+         * Unit: seconds.
+         * Valid values:
+         * TCP listener: 10 to 900
+         * UDP listener: 10 to 20
+         * HTTP or HTTPS listener: 1 to 60
+         * Note Only listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param idleTimeout Property idleTimeout: The connection idle timeout period. This parameter is required.
+         */
+        public Builder idleTimeout(final com.aliyun.ros.cdk.core.IResolvable idleTimeout) {
+            this.props.idleTimeout(idleTimeout);
+            return this;
+        }
+
+        /**
          * Property name: The name of the listener.
          * <p>
          * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
@@ -316,6 +384,33 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
+         * Property requestTimeout: The HTTP request timeout period.
+         * <p>
+         * Unit: seconds. Valid values: 1 to 180. Default value: 60.
+         * Note Only HTTP and HTTPS listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param requestTimeout Property requestTimeout: The HTTP request timeout period. This parameter is required.
+         */
+        public Builder requestTimeout(final java.lang.Number requestTimeout) {
+            this.props.requestTimeout(requestTimeout);
+            return this;
+        }
+        /**
+         * Property requestTimeout: The HTTP request timeout period.
+         * <p>
+         * Unit: seconds. Valid values: 1 to 180. Default value: 60.
+         * Note Only HTTP and HTTPS listeners support this parameter.
+         * <p>
+         * @return {@code this}
+         * @param requestTimeout Property requestTimeout: The HTTP request timeout period. This parameter is required.
+         */
+        public Builder requestTimeout(final com.aliyun.ros.cdk.core.IResolvable requestTimeout) {
+            this.props.requestTimeout(requestTimeout);
+            return this;
+        }
+
+        /**
          * Property securityPolicyId: The ID of the security policy.
          * <p>
          * Valid values:
@@ -349,6 +444,35 @@ public class Listener extends com.aliyun.ros.cdk.core.Resource implements com.al
          */
         public Builder securityPolicyId(final com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
             this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+
+        /**
+         * Property type: The listener routing type.
+         * <p>
+         * Valid values:
+         * Standard: the standard routing type
+         * CustomRouting: the custom routing type
+         * <p>
+         * @return {@code this}
+         * @param type Property type: The listener routing type. This parameter is required.
+         */
+        public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * Property type: The listener routing type.
+         * <p>
+         * Valid values:
+         * Standard: the standard routing type
+         * CustomRouting: the custom routing type
+         * <p>
+         * @return {@code this}
+         * @param type Property type: The listener routing type. This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
+            this.props.type(type);
             return this;
         }
 

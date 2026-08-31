@@ -27,12 +27,15 @@ export interface LoadBalancerProps {
     readonly zoneMappings: Array<RosLoadBalancer.ZoneMappingsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+     * Property addressIpVersion: The version of IP addresses used for the NLB instance. Valid values:
+     * - ipv4 (default)
+     * - DualStack
      */
     readonly addressIpVersion?: string | ros.IResolvable;
 
     /**
-     * Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+     * Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the
+     * Internet-facing NLB instance.
      */
     readonly bandwidthPackageId?: string | ros.IResolvable;
 
@@ -58,7 +61,8 @@ export interface LoadBalancerProps {
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerType: The type of the NLB instance.
+     * Property loadBalancerType: The type of the Server Load Balancer (SLB) instance. Set the value to network,
+     * which indicates an NLB instance.
      */
     readonly loadBalancerType?: string | ros.IResolvable;
 

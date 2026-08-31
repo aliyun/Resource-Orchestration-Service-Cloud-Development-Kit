@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SSHKeyPairAttachment</code>, which is used to bind an SSH key pair to Elastic Compute Service (ECS) instances.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SSHKeyPairAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPairAttachment")
 public class SSHKeyPairAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ISSHKeyPairAttachment {
 
@@ -104,24 +104,28 @@ public class SSHKeyPairAttachment extends com.aliyun.ros.cdk.core.Resource imple
         }
 
         /**
-         * Property instanceIds: The comma delimited ECS instance id list.
+         * Property instanceIds: The IDs of instances to which you want to bind the SSH key pair.
          * <p>
-         * Only support Linux.
+         * The value can be
+         * a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+         * IDs with commas (,).
          * <p>
          * @return {@code this}
-         * @param instanceIds Property instanceIds: The comma delimited ECS instance id list. This parameter is required.
+         * @param instanceIds Property instanceIds: The IDs of instances to which you want to bind the SSH key pair. This parameter is required.
          */
         public Builder instanceIds(final java.util.List<? extends java.lang.Object> instanceIds) {
             this.props.instanceIds(instanceIds);
             return this;
         }
         /**
-         * Property instanceIds: The comma delimited ECS instance id list.
+         * Property instanceIds: The IDs of instances to which you want to bind the SSH key pair.
          * <p>
-         * Only support Linux.
+         * The value can be
+         * a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+         * IDs with commas (,).
          * <p>
          * @return {@code this}
-         * @param instanceIds Property instanceIds: The comma delimited ECS instance id list. This parameter is required.
+         * @param instanceIds Property instanceIds: The IDs of instances to which you want to bind the SSH key pair. This parameter is required.
          */
         public Builder instanceIds(final com.aliyun.ros.cdk.core.IResolvable instanceIds) {
             this.props.instanceIds(instanceIds);

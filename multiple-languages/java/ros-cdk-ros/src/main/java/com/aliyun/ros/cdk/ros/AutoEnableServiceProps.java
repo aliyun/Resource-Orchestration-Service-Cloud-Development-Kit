@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-autoenableservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:42:02.061Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:23:14.428Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.AutoEnableServiceProps")
 @software.amazon.jsii.Jsii.Proxy(AutoEnableServiceProps.Jsii$Proxy.class)
 public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -31,9 +31,11 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      * DCDN: Dynamic Route for CDN
      * EDAS: Enterprise Distributed Application Service
      * EMAS: Enterprise Mobile Application Studio
+     * EMR/AICenter: EMR Serverless Spark AI Center
      * FC: Function Compute
      * FNF: Serverless Workflow
      * MaxCompute: MaxCompute
+     * Milvus/Function: Milvus Function
      * NAS: Network Attached Storage
      * MNS: Message Service (MNS)
      * HBR: Hybrid Backup Recovery
@@ -64,6 +66,15 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
     @org.jetbrains.annotations.NotNull java.lang.Object getServiceName();
 
     /**
+     * Property serviceParameters: The parameters that are required to enable the service.
+     * <p>
+     * WorkspaceId is required when ServiceName is EMR/AICenter.
+     */
+    default @org.jetbrains.annotations.Nullable java.lang.Object getServiceParameters() {
+        return null;
+    }
+
+    /**
      * @return a {@link Builder} of {@link AutoEnableServiceProps}
      */
     static Builder builder() {
@@ -74,6 +85,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
      */
     public static final class Builder implements software.amazon.jsii.Builder<AutoEnableServiceProps> {
         java.lang.Object serviceName;
+        java.lang.Object serviceParameters;
 
         /**
          * Sets the value of {@link AutoEnableServiceProps#getServiceName}
@@ -96,9 +108,11 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    DCDN: Dynamic Route for CDN
          *                    EDAS: Enterprise Distributed Application Service
          *                    EMAS: Enterprise Mobile Application Studio
+         *                    EMR/AICenter: EMR Serverless Spark AI Center
          *                    FC: Function Compute
          *                    FNF: Serverless Workflow
          *                    MaxCompute: MaxCompute
+         *                    Milvus/Function: Milvus Function
          *                    NAS: Network Attached Storage
          *                    MNS: Message Service (MNS)
          *                    HBR: Hybrid Backup Recovery
@@ -153,9 +167,11 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
          *                    DCDN: Dynamic Route for CDN
          *                    EDAS: Enterprise Distributed Application Service
          *                    EMAS: Enterprise Mobile Application Studio
+         *                    EMR/AICenter: EMR Serverless Spark AI Center
          *                    FC: Function Compute
          *                    FNF: Serverless Workflow
          *                    MaxCompute: MaxCompute
+         *                    Milvus/Function: Milvus Function
          *                    NAS: Network Attached Storage
          *                    MNS: Message Service (MNS)
          *                    HBR: Hybrid Backup Recovery
@@ -190,6 +206,28 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
         }
 
         /**
+         * Sets the value of {@link AutoEnableServiceProps#getServiceParameters}
+         * @param serviceParameters Property serviceParameters: The parameters that are required to enable the service.
+         *                          WorkspaceId is required when ServiceName is EMR/AICenter.
+         * @return {@code this}
+         */
+        public Builder serviceParameters(com.aliyun.ros.cdk.core.IResolvable serviceParameters) {
+            this.serviceParameters = serviceParameters;
+            return this;
+        }
+
+        /**
+         * Sets the value of {@link AutoEnableServiceProps#getServiceParameters}
+         * @param serviceParameters Property serviceParameters: The parameters that are required to enable the service.
+         *                          WorkspaceId is required when ServiceName is EMR/AICenter.
+         * @return {@code this}
+         */
+        public Builder serviceParameters(com.aliyun.ros.cdk.ros.RosAutoEnableService.ServiceParametersProperty serviceParameters) {
+            this.serviceParameters = serviceParameters;
+            return this;
+        }
+
+        /**
          * Builds the configured instance.
          * @return a new instance of {@link AutoEnableServiceProps}
          * @throws NullPointerException if any required attribute was not provided
@@ -206,6 +244,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
     @software.amazon.jsii.Internal
     final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements AutoEnableServiceProps {
         private final java.lang.Object serviceName;
+        private final java.lang.Object serviceParameters;
 
         /**
          * Constructor that initializes the object based on values retrieved from the JsiiObject.
@@ -214,6 +253,7 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
         protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
             super(objRef);
             this.serviceName = software.amazon.jsii.Kernel.get(this, "serviceName", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            this.serviceParameters = software.amazon.jsii.Kernel.get(this, "serviceParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
         }
 
         /**
@@ -222,11 +262,17 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
         protected Jsii$Proxy(final Builder builder) {
             super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
             this.serviceName = java.util.Objects.requireNonNull(builder.serviceName, "serviceName is required");
+            this.serviceParameters = builder.serviceParameters;
         }
 
         @Override
         public final java.lang.Object getServiceName() {
             return this.serviceName;
+        }
+
+        @Override
+        public final java.lang.Object getServiceParameters() {
+            return this.serviceParameters;
         }
 
         @Override
@@ -236,6 +282,9 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
             final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
 
             data.set("serviceName", om.valueToTree(this.getServiceName()));
+            if (this.getServiceParameters() != null) {
+                data.set("serviceParameters", om.valueToTree(this.getServiceParameters()));
+            }
 
             final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
             struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ros.AutoEnableServiceProps"));
@@ -254,12 +303,14 @@ public interface AutoEnableServiceProps extends software.amazon.jsii.JsiiSeriali
 
             AutoEnableServiceProps.Jsii$Proxy that = (AutoEnableServiceProps.Jsii$Proxy) o;
 
-            return this.serviceName.equals(that.serviceName);
+            if (!serviceName.equals(that.serviceName)) return false;
+            return this.serviceParameters != null ? this.serviceParameters.equals(that.serviceParameters) : that.serviceParameters == null;
         }
 
         @Override
         public final int hashCode() {
             int result = this.serviceName.hashCode();
+            result = 31 * result + (this.serviceParameters != null ? this.serviceParameters.hashCode() : 0);
             return result;
         }
     }

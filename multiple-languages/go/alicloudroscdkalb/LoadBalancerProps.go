@@ -28,11 +28,15 @@ type LoadBalancerProps struct {
 	ZoneMappings interface{} `field:"required" json:"zoneMappings" yaml:"zoneMappings"`
 	// Property accessLogConfig:.
 	AccessLogConfig interface{} `field:"optional" json:"accessLogConfig" yaml:"accessLogConfig"`
-	// Property addressAllocatedMode: The mode in which IP addresses are assigned.
+	// Property addressAllocatedMode: Address allocation mode.
 	//
 	// Valid values:
-	// Fixed: The ALB instance uses a static IP address.
-	// Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+	// - Fixed (Default): A fixed IP address is allocated to each zone.
+	// - Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.
+	// > Starting from , when you create a new instance by using this interface, it is
+	// created as an upgraded ALB instance regardless of the mode you specify. The
+	// distinction between IP modes is removed, and the allocated IP addresses are
+	// automatically elastic. ALB instances created before the upgrade are not affected.
 	AddressAllocatedMode interface{} `field:"optional" json:"addressAllocatedMode" yaml:"addressAllocatedMode"`
 	// Property addressIpVersion: The protocol version.
 	//
@@ -54,11 +58,13 @@ type LoadBalancerProps struct {
 	// Internet: The ALB instance uses a public IPv6 address. The domain name of the ALB instance is resolved to the public IPv6 address.
 	// Intranet: The ALB instance uses a private IPv6 address. The domain name of the ALB instance is resolved to the private IP address.
 	Ipv6AddressType interface{} `field:"optional" json:"ipv6AddressType" yaml:"ipv6AddressType"`
-	// Property loadBalancerName: The name of the ALB instance.
+	// Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
 	//
-	// The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+	// The name must be 2 to 128 characters long, must start with a letter, digit, or
+	// Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+	// (-), and spaces.
 	LoadBalancerName interface{} `field:"optional" json:"loadBalancerName" yaml:"loadBalancerName"`
-	// Property modificationProtectionConfig: The configuration of modification protection.
+	// Property modificationProtectionConfig: The modification protection configuration.
 	ModificationProtectionConfig interface{} `field:"optional" json:"modificationProtectionConfig" yaml:"modificationProtectionConfig"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

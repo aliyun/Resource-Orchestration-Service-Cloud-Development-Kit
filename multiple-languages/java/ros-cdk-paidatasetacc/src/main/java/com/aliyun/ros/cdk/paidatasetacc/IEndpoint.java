@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.paidatasetacc;
 /**
  * Represents a <code>Endpoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:21:38.050Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:30:48.501Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.paidatasetacc.$Module.class, fqn = "@alicloud/ros-cdk-paidatasetacc.IEndpoint")
 @software.amazon.jsii.Jsii.Proxy(IEndpoint.Jsii$Proxy.class)
 public interface IEndpoint extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

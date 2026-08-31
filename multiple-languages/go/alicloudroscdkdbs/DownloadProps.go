@@ -5,9 +5,17 @@ package alicloudroscdkdbs
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-download
 type DownloadProps struct {
-	// Property formatType: The format to which the downloaded backup set is converted.
+	// Property formatType: The target format of the downloaded data.
 	//
-	// Valid values: CSV|SQL|Parquet.
+	// Valid values:
+	// - CSV
+	// - SQL
+	// - Parquet
+	// - Bson
+	// - qp.xb
+	// > This parameter is required. The `Bson` format is available only for MongoDB
+	// instances. The `qp.xb` format is available only for ApsaraDB RDS for MySQL
+	// instances.
 	FormatType interface{} `field:"required" json:"formatType" yaml:"formatType"`
 	// Property instanceName: The ID of the instance.
 	InstanceName interface{} `field:"required" json:"instanceName" yaml:"instanceName"`

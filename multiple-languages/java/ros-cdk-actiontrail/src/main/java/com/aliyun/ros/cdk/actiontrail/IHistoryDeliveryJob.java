@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.actiontrail;
 /**
  * Represents a <code>HistoryDeliveryJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:13:01.927Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:51:46.195Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.actiontrail.$Module.class, fqn = "@alicloud/ros-cdk-actiontrail.IHistoryDeliveryJob")
 @software.amazon.jsii.Jsii.Proxy(IHistoryDeliveryJob.Jsii$Proxy.class)
 public interface IHistoryDeliveryJob extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -18,6 +18,12 @@ type ClusterAddonsProps struct {
 	// If true, when creating, only install addons that are not yet installed. When deleting, only uninstall addons that are installed during the creation stage.
 	// Default false.
 	InstalledIgnore interface{} `field:"optional" json:"installedIgnore" yaml:"installedIgnore"`
+	// Property overrideExisting: Whether to override configuration of already installed addons when creating.
+	//
+	// If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+	// Cannot be used together with InstalledIgnore.
+	// Default false.
+	OverrideExisting interface{} `field:"optional" json:"overrideExisting" yaml:"overrideExisting"`
 	// Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user.
 	//
 	// Valid values:

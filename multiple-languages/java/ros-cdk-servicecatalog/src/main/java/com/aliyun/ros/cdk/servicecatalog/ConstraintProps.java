@@ -5,18 +5,22 @@ package com.aliyun.ros.cdk.servicecatalog;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-servicecatalog-constraint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:53:18.324Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:37:42.560Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.servicecatalog.$Module.class, fqn = "@alicloud/ros-cdk-servicecatalog.ConstraintProps")
 @software.amazon.jsii.Jsii.Proxy(ConstraintProps.Jsii$Proxy.class)
 public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property config: The configuration of the constraint.
+     * <p>
+     * Format: { "LocalRoleName": "&lt;role_name&gt;" }.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getConfig();
 
     /**
      * Property constraintType: The type of the constraint.
+     * <p>
+     * The value is fixed as Launch, which specifies the launch constraint.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getConstraintType();
 
@@ -32,6 +36,8 @@ public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property description: The description of the constraint.
+     * <p>
+     * The value must be 1 to 128 characters in length.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -56,6 +62,7 @@ public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ConstraintProps#getConfig}
          * @param config Property config: The configuration of the constraint. This parameter is required.
+         *               Format: { "LocalRoleName": "&lt;role_name&gt;" }.
          * @return {@code this}
          */
         public Builder config(java.util.Map<java.lang.String, ? extends java.lang.Object> config) {
@@ -66,6 +73,7 @@ public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ConstraintProps#getConfig}
          * @param config Property config: The configuration of the constraint. This parameter is required.
+         *               Format: { "LocalRoleName": "&lt;role_name&gt;" }.
          * @return {@code this}
          */
         public Builder config(com.aliyun.ros.cdk.core.IResolvable config) {
@@ -76,6 +84,7 @@ public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ConstraintProps#getConstraintType}
          * @param constraintType Property constraintType: The type of the constraint. This parameter is required.
+         *                       The value is fixed as Launch, which specifies the launch constraint.
          * @return {@code this}
          */
         public Builder constraintType(java.lang.String constraintType) {
@@ -86,6 +95,7 @@ public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ConstraintProps#getConstraintType}
          * @param constraintType Property constraintType: The type of the constraint. This parameter is required.
+         *                       The value is fixed as Launch, which specifies the launch constraint.
          * @return {@code this}
          */
         public Builder constraintType(com.aliyun.ros.cdk.core.IResolvable constraintType) {
@@ -136,6 +146,7 @@ public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ConstraintProps#getDescription}
          * @param description Property description: The description of the constraint.
+         *                    The value must be 1 to 128 characters in length.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -146,6 +157,7 @@ public interface ConstraintProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ConstraintProps#getDescription}
          * @param description Property description: The description of the constraint.
+         *                    The value must be 1 to 128 characters in length.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

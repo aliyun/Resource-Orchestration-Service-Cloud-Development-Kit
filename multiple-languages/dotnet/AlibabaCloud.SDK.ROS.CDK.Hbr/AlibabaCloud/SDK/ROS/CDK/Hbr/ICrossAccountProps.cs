@@ -11,7 +11,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
     [JsiiInterface(nativeType: typeof(ICrossAccountProps), fullyQualifiedName: "@alicloud/ros-cdk-hbr.CrossAccountProps")]
     public interface ICrossAccountProps
     {
-        /// <summary>Property alias: The alias of the cross-account authorization.</summary>
+        /// <summary>Property alias: The alias.</summary>
+        /// <remarks>
+        /// The maximum length is 32 characters. This parameter is not required
+        /// for cross-account backups that are configured based on a resource directory.
+        /// </remarks>
         [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Alias
@@ -22,7 +26,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
         }
 
-        /// <summary>Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.</summary>
+        /// <summary>Property crossAccountRoleName: The name of the RAM role for the account to back up.</summary>
+        /// <remarks>
+        /// This parameter is used when
+        /// you configure a cross-account backup by assuming a RAM role.
+        /// </remarks>
         [JsiiProperty(name: "crossAccountRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? CrossAccountRoleName
@@ -69,7 +77,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             {
             }
 
-            /// <summary>Property alias: The alias of the cross-account authorization.</summary>
+            /// <summary>Property alias: The alias.</summary>
+            /// <remarks>
+            /// The maximum length is 32 characters. This parameter is not required
+            /// for cross-account backups that are configured based on a resource directory.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "alias", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Alias
@@ -77,7 +89,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.</summary>
+            /// <summary>Property crossAccountRoleName: The name of the RAM role for the account to back up.</summary>
+            /// <remarks>
+            /// This parameter is used when
+            /// you configure a cross-account backup by assuming a RAM role.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "crossAccountRoleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? CrossAccountRoleName

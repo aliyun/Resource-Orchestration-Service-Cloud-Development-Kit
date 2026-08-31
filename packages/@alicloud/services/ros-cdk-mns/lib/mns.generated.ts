@@ -37,8 +37,10 @@ export interface RosQueueProps {
     readonly maximumMessageSize?: number | ros.IResolvable;
 
     /**
-     * @Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds. After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
-     * An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+     * @Property messageRetentionPeriod: The maximum time to live (TTL) for a message in the queue. After the specified
+     * period, the message is deleted, regardless of whether it has been retrieved.
+     * Valid values: 60 to 604800. Unit: seconds.
+     * Default value: 345600.
      */
     readonly messageRetentionPeriod?: number | ros.IResolvable;
 
@@ -216,8 +218,10 @@ export class RosQueue extends ros.RosResource {
     public maximumMessageSize: number | ros.IResolvable | undefined;
 
     /**
-     * @Property messageRetentionPeriod: Maximum lifetime of the message in the queue, measured in seconds. After the time specified by this parameter expires, the message will be deleted no matter whether it has been consumed or not.
-     * An integer between 60 (1 minute) and 1296000 (15 days). The default value is 345600 (4 days)
+     * @Property messageRetentionPeriod: The maximum time to live (TTL) for a message in the queue. After the specified
+     * period, the message is deleted, regardless of whether it has been retrieved.
+     * Valid values: 60 to 604800. Unit: seconds.
+     * Default value: 345600.
      */
     public messageRetentionPeriod: number | ros.IResolvable | undefined;
 
@@ -391,12 +395,23 @@ function rosQueueTagsPropertyToRosTemplate(properties: any): any {
 export interface RosSubscriptionProps {
 
     /**
-     * @Property endpoint: Terminal address of the message recipient for the created subscription.
-     * Currently, four types of endpoints are supported: 
-     * 1. HttpEndpoint, which must be prefixed with "http:\/\/"; 
-     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName}; 
-     * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
-     * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
+     * @Property endpoint: ## The message delivery endpoint.
+     * The format varies based on the `PushType` value:
+     * - If `PushType` is `http`: An HTTP\/HTTPS callback URL, such as
+     * `http:\/\/example.com\/callback` or `https:\/\/example.com\/callback`.
+     * - If `PushType` is `queue`: The ARN of the destination queue, in the format
+     * `acs:mns:{RegionId}:{account ID}:queues\/{QueueName}`.
+     * - If `PushType` is `dm`: The endpoint for email push, in the fixed format
+     * `smq-ep:dm:{account ID}:__dynamic`. Replace `{account
+     * ID}` with your account ID.
+     * - If `PushType` is `dysms`: The endpoint for SMS push, in the format
+     * `smq-ep:dysms:{account ID}:{MobileNumber}`.
+     * - If `PushType` is `kafka`: The Kafka push endpoint.
+     * - If `PushType` is `fc`: The endpoint for Function Compute, in the format
+     * `acs:fc:{RegionId}:{account
+     * ID}:services\/{ServiceName}\/functions\/{FunctionName}`.
+     * - If `PushType` is `eventbus`: The endpoint for EventBridge, in the format
+     * `acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}`.
      */
     readonly endpoint: string | ros.IResolvable;
 
@@ -528,7 +543,7 @@ function rosSubscriptionPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to describe a subscription relationship, including the subscribed topic and the endpoint that the subscriber uses to receive messages.
  * @Note This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
@@ -557,12 +572,23 @@ export class RosSubscription extends ros.RosResource {
 
 
     /**
-     * @Property endpoint: Terminal address of the message recipient for the created subscription.
-     * Currently, four types of endpoints are supported: 
-     * 1. HttpEndpoint, which must be prefixed with "http:\/\/"; 
-     * 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName}; 
-     * 3. MailEndpoint, in the format of mail:directmail:{MailAddress}; 
-     * 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
+     * @Property endpoint: ## The message delivery endpoint.
+     * The format varies based on the `PushType` value:
+     * - If `PushType` is `http`: An HTTP\/HTTPS callback URL, such as
+     * `http:\/\/example.com\/callback` or `https:\/\/example.com\/callback`.
+     * - If `PushType` is `queue`: The ARN of the destination queue, in the format
+     * `acs:mns:{RegionId}:{account ID}:queues\/{QueueName}`.
+     * - If `PushType` is `dm`: The endpoint for email push, in the fixed format
+     * `smq-ep:dm:{account ID}:__dynamic`. Replace `{account
+     * ID}` with your account ID.
+     * - If `PushType` is `dysms`: The endpoint for SMS push, in the format
+     * `smq-ep:dysms:{account ID}:{MobileNumber}`.
+     * - If `PushType` is `kafka`: The Kafka push endpoint.
+     * - If `PushType` is `fc`: The endpoint for Function Compute, in the format
+     * `acs:fc:{RegionId}:{account
+     * ID}:services\/{ServiceName}\/functions\/{FunctionName}`.
+     * - If `PushType` is `eventbus`: The endpoint for EventBridge, in the format
+     * `acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}`.
      */
     public endpoint: string | ros.IResolvable;
 

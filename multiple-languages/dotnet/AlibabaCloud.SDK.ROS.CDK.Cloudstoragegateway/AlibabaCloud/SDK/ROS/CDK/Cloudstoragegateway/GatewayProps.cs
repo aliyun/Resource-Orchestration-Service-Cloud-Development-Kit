@@ -16,6 +16,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
         private object _category;
 
         /// <summary>Property category: The category of the gateway.</summary>
+        /// <remarks>
+        /// The default value is <c>Cloud</c>.
+        /// </remarks>
         [JsiiProperty(name: "category", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Category
         {
@@ -76,6 +79,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
         private object _name;
 
         /// <summary>Property name: The name of the gateway.</summary>
+        /// <remarks>
+        /// The name must be 60 characters in length. The name must
+        /// start with a letter or a Chinese character. The name can contain letters, Chinese
+        /// characters, digits, underscores (_), hyphens (-), and periods (.).
+        /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name
         {
@@ -166,7 +174,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
 
         private object? _gatewayClass;
 
-        /// <summary>Property gatewayClass: The class of the gateway.</summary>
+        /// <summary>Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter.</summary>
+        /// <remarks>
+        /// If your gateway is deployed on the cloud, which is a cloud gateway, valid
+        /// values are:
+        ///
+        /// <list type="bullet">
+        /// <description>Basic: Basic</description>
+        /// <description>Standard: Medium</description>
+        /// <description>Enhanced: Enhanced</description>
+        /// <description>Advanced: Performance</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "gatewayClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? GatewayClass
@@ -197,7 +216,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
 
         private object? _postPaid;
 
-        /// <summary>Property postPaid: Whether the gateway is pay-as-you-go.</summary>
+        /// <summary>Property postPaid: Valid values: - true: pay-as-you-go.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>false: subscription.
+        /// Default value: false (subscription).</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "postPaid", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PostPaid
@@ -228,7 +253,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
 
         private object? _publicNetworkBandwidth;
 
-        /// <summary>Property publicNetworkBandwidth: The public network bandwidth of the gateway.</summary>
+        /// <summary>Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways.</summary>
+        /// <remarks>
+        /// You can ignore this
+        /// parameter for on-premises gateways.
+        ///
+        ///     <list type="bullet">
+        ///     <description>Configure this parameter only when you need to mount an OSS bucket across
+        ///     regions.</description>
+        ///     <description>If you specify 0 or do not specify this parameter, the default value is 5.</description>
+        ///     </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "publicNetworkBandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PublicNetworkBandwidth
@@ -279,7 +314,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
 
         private object? _releaseAfterExpiration;
 
-        /// <summary>Property releaseAfterExpiration: Whether to release the gateway after expiration.</summary>
+        /// <summary>Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires.</summary>
+        /// <remarks>
+        /// Valid
+        /// values:
+        /// true: The gateway is automatically released.
+        /// false: The billing method of the gateway is automatically changed to
+        /// pay-as-you-go after the subscription expires.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "releaseAfterExpiration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ReleaseAfterExpiration
@@ -372,7 +414,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
 
         private object? _storageBundleId;
 
-        /// <summary>Property storageBundleId: The ID of the storage bundle.</summary>
+        /// <summary>Property storageBundleId: The ID of the gateway cluster.</summary>
+        /// <remarks>
+        /// You must specify this parameter if you do not
+        /// specify ResourceRegionId.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "storageBundleId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? StorageBundleId
@@ -465,7 +511,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudstoragegateway
 
         private object? _vSwitchId;
 
-        /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
+        /// <summary>Property vSwitchId: The ID of the virtual switch.</summary>
+        /// <remarks>
+        /// If your gateway is deployed in a data center, you
+        /// can ignore this parameter.
+        ///
+        /// <list type="bullet">
+        /// <description>The vSwitch must be in the same VPC as the ECS instance that you want to
+        /// attach.</description>
+        /// <description>If no gateway resources can be allocated in the zone where the vSwitch resides,
+        /// create a vSwitch in another zone.</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? VSwitchId

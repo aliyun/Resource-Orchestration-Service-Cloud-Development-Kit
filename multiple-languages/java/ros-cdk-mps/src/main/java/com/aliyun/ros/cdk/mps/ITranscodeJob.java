@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * Represents a <code>TranscodeJob</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:55:13.142Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:11:47.206Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.ITranscodeJob")
 @software.amazon.jsii.Jsii.Proxy(ITranscodeJob.Jsii$Proxy.class)
 public interface ITranscodeJob extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

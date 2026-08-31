@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudfw;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-vpcfirewallcontrolpolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.152Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.210Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.VpcFirewallControlPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(VpcFirewallControlPolicyProps.Jsii$Proxy.class)
 public interface VpcFirewallControlPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -175,11 +175,14 @@ public interface VpcFirewallControlPolicyProps extends software.amazon.jsii.Jsii
     }
 
     /**
-     * Property lang: The natural language of the request and response.
+     * Property lang: The language of the request and response.
      * <p>
      * Valid values:
-     * zh: Chinese
-     * en: English
+     * <p>
+     * <ul>
+     * <li>zh (default): Chinese</li>
+     * <li>en: English</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLang() {
         return null;
@@ -747,10 +750,13 @@ public interface VpcFirewallControlPolicyProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link VpcFirewallControlPolicyProps#getLang}
-         * @param lang Property lang: The natural language of the request and response.
+         * @param lang Property lang: The language of the request and response.
          *             Valid values:
-         *             zh: Chinese
-         *             en: English
+         *             <p>
+         *             <ul>
+         *             <li>zh (default): Chinese</li>
+         *             <li>en: English</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder lang(java.lang.String lang) {
@@ -760,10 +766,13 @@ public interface VpcFirewallControlPolicyProps extends software.amazon.jsii.Jsii
 
         /**
          * Sets the value of {@link VpcFirewallControlPolicyProps#getLang}
-         * @param lang Property lang: The natural language of the request and response.
+         * @param lang Property lang: The language of the request and response.
          *             Valid values:
-         *             zh: Chinese
-         *             en: English
+         *             <p>
+         *             <ul>
+         *             <li>zh (default): Chinese</li>
+         *             <li>en: English</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder lang(com.aliyun.ros.cdk.core.IResolvable lang) {

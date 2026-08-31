@@ -7,13 +7,16 @@ package alicloudroscdksag
 type CloudConnectNetworkProps struct {
 	// Property description: The description of the CCN instance.
 	//
-	// The description can contain 2 to 256 characters. The description cannot start with http:\/\/ or https:\/\/.
+	// The description must be 2 to 256 characters in length and can contain letters,
+	// digits, underscores (_), and hyphens (-). The description must start with a
+	// letter.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property isDefault: Whether is created by system.
 	IsDefault interface{} `field:"optional" json:"isDefault" yaml:"isDefault"`
 	// Property name: The name of the CCN instance.
 	//
-	// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:\/\/ or https:\/\/.
+	// The name must be 2 to 128 characters in length and can contain letters, digits,
+	// periods (.), underscores (_),and hyphens (-). The name must start with a letter.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property tags: Tags to attach to instance.
 	//

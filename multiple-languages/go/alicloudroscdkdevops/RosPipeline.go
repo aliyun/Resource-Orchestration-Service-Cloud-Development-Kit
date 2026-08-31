@@ -9,9 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`, which is used to create a pipeline.
-//
-// YAML-based pipelines are supported.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DEVOPS::Pipeline`.
 type RosPipeline interface {
 	alicloudroscdkcore.RosResource
 	AttrPipelineId() alicloudroscdkcore.IResolvable

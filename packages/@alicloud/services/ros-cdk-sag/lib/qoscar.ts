@@ -34,33 +34,36 @@ export interface QosCarProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property maxBandwidthAbs: The maximum bandwidth. This parameter is required when LimitType is set to Absolute.
+     * Property maxBandwidthAbs: The maximum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+     * This parameter is returned when LimitType is set to Absolute.
+     * >  The maximum bandwidth value must be greater than the minimum bandwidth value.
      */
     readonly maxBandwidthAbs?: number | ros.IResolvable;
 
     /**
-     * Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG
-     * instance.
-     * This parameter is required when LimitType is set to Percent.
+     * Property maxBandwidthPercent: The maximum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
+     * >  The maximum bandwidth percentage must be greater than the minimum bandwidth
+     * percentage.
      */
     readonly maxBandwidthPercent?: number | ros.IResolvable;
 
     /**
-     * Property minBandwidthAbs: The minimum bandwidth. This parameter is required when LimitType is set to Absolute.
+     * Property minBandwidthAbs: The minimum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+     * This parameter is returned when LimitType is set to Absolute.
      */
     readonly minBandwidthAbs?: number | ros.IResolvable;
 
     /**
-     * Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG
-     * instance.
-     * This parameter is required when LimitType is set to Percent.
+     * Property minBandwidthPercent: The minimum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+     * This parameter is required when you set LimitType to Percent.
      */
     readonly minBandwidthPercent?: number | ros.IResolvable;
 
     /**
-     * Property name: The name of the traffic throttling policy. The name must be 2 to 128 characters in
-     * length, and can contain Chinese characters, letters, digits, periods (.), underscores
-     * (_), and hyphens (-).
+     * Property name: The name of the traffic throttling rule.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * periods (.), underscores (_), and hyphens (-). The name must start with a letter.
      */
     readonly name?: string | ros.IResolvable;
 

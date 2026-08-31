@@ -29,6 +29,13 @@ export interface ClusterAddonsProps {
     readonly installedIgnore?: boolean | ros.IResolvable;
 
     /**
+     * Property overrideExisting: Whether to override configuration of already installed addons when creating. If true, when creating, addons that already exist will have their configuration overridden, and addons that do not exist will be installed. When deleting, only uninstall addons that are installed during the creation stage.
+     * Cannot be used together with InstalledIgnore.
+     * Default false.
+     */
+    readonly overrideExisting?: boolean | ros.IResolvable;
+
+    /**
      * Property rolePolicy: Before deploying the application, check the policies associated with the roles of the current user. Valid values:
      * - EnsureAdminRoleAndBinding: Automatically create a role named "ros:application-admin:${user-id}" with administrator permissions and bind it to the current user.
      * - None: Do nothing.
@@ -66,7 +73,7 @@ export interface IClusterAddons extends ros.IResource {
     readonly attrWaitUntilData: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterAddons`, which is used to install components in a cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CS::ClusterAddons`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClusterAddons`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cs-clusteraddons
  */
@@ -102,6 +109,7 @@ export class ClusterAddons extends ros.Resource implements IClusterAddons {
             rolePolicy: props.rolePolicy === undefined || props.rolePolicy === null ? 'EnsureAdminRoleAndBinding' : props.rolePolicy,
             clusterId: props.clusterId,
             addons: props.addons,
+            overrideExisting: props.overrideExisting === undefined || props.overrideExisting === null ? false : props.overrideExisting,
             validationMode: props.validationMode === undefined || props.validationMode === null ? 'Strict' : props.validationMode,
             waitUntil: props.waitUntil,
             installedIgnore: props.installedIgnore === undefined || props.installedIgnore === null ? false : props.installedIgnore,

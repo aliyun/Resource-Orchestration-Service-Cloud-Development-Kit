@@ -95,7 +95,7 @@ export interface ISecurityGroup extends ros.IResource {
     readonly attrVpcId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroup`, which is used to query the information about a security group.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECS::SecurityGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroup
  */

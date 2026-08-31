@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsso;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::UserToGroupAddition</code>, which is used to add a user to a group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::UserToGroupAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.980Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.403Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.UserToGroupAddition")
 public class UserToGroupAddition extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudsso.IUserToGroupAddition {
 

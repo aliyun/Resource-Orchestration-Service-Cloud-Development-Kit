@@ -5,9 +5,7 @@ package alicloudroscdkcloudphone
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
 type RunCommandProps struct {
-	// Property command: The command to be executed.
-	//
-	// The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (\/), colon (:), medium line (-).
+	// Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (\/), colons (:), and hyphens (-).
 	Command interface{} `field:"required" json:"command" yaml:"command"`
 	// Property instanceIds: ID of the instance executing the command.
 	//

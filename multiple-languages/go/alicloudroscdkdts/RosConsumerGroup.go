@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`, which is used to create a consumer group for a change tracking instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::ConsumerGroup`.
 type RosConsumerGroup interface {
 	alicloudroscdkcore.RosResource
 	AttrConsumerGroupId() alicloudroscdkcore.IResolvable

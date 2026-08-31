@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-healthchecktemplate
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.187Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.378Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.HealthCheckTemplateProps")
 @software.amazon.jsii.Jsii.Proxy(HealthCheckTemplateProps.Jsii$Proxy.class)
 public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,18 +13,14 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
     /**
      * Property healthCheckTemplateName: The name of the health check template.
      * <p>
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters in length, must start with a letter, a
+     * digit, or a Chinese character, and can contain digits, periods (.), underscores
+     * (_), hyphens (-), and spaces.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getHealthCheckTemplateName();
 
     /**
-     * Property healthCheckCodes: The HTTP status code for a successful health check.
-     * <p>
-     * If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with commas (,).
-     * If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges and must separate
-     * them with commas (,).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * Property healthCheckCodes: The HTTP status codes that indicate a successful health check.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckCodes() {
         return null;
@@ -41,17 +37,24 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property healthCheckHost: The domain name that is used for health checks.
+     * Property healthCheckHost: The domain name used for the health check.
      * <p>
-     * Default value: $SERVER_IP. The domain name is 1 to 80 characters in length. Make sure that the destination
-     * CIDR block meets the following requirements:
-     * The domain name can contain lowercase letters, digits, hyphens (-), and periods (.).
-     * The domain name contains at least one period (.) but does not start or end with a
-     * period (.).
-     * The rightmost domain label can contain only letters, and cannot contain digits or
-     * hyphens (-).
-     * Other domain labels cannot start or end with a hyphen (-).
-     * This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>$SERVER_IP: The private IP address of a backend server. If you set this
+     * parameter to <code>$SERVER_IP</code> or leave it empty, the load balancer uses the private
+     * IP address of the backend server as the domain name for the health check.</li>
+     * <li>domain: The domain name must be 1 to 80 characters in length and can contain
+     * letters, digits, periods (.), and hyphens (-).</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+     * set to HTTP or HTTPS.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckHost() {
         return null;
@@ -80,44 +83,61 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property healthCheckMethod: The HTTP method that is used for health checks.
+     * Property healthCheckMethod: The method used for the health check.
      * <p>
      * Valid values:
-     * HEAD: By default, the ALB instance sends HEAD requests to a backend server to perform
-     * HTTP health checks.
-     * POST: By default, gRPC health checks use the POST method.
-     * GET: If the length of a response exceeds 8 KB, the response is truncated. However, the
-     * health check result is not affected.
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * <p>
+     * <ul>
+     * <li>HEAD (default): For HTTP and HTTPS listeners, the default health check method
+     * is HEAD.</li>
+     * <li>POST: For gRPC listeners, the default health check method is POST.</li>
+     * <li>GET: If the response body exceeds 8 KB, it is truncated. This does not affect
+     * the health check result.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+     * set to HTTP, HTTPS, or gRPC.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckMethod() {
         return null;
     }
 
     /**
-     * Property healthCheckPath: The URL path that is used for health checks.
+     * Property healthCheckPath: The URL that is used for health checks.
      * <p>
-     * It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-     * (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
-     * signs (#), and ampersands (&amp;). It can also contain the following extended characters:
-     * _ ; ~ ! ( ) * [ ] &#64; $ ^ : ' , +. The URL path must start with a forward slash (/).
-     * Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+     * The URL must be 1 to 80 characters in length. It must start with a forward slash
+     * (/) and can contain letters, digits, and the following special characters: <code>- \/ . % ? # &amp; _;~!()*[]&#64;$^:',+</code>.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+     * set to HTTP or HTTPS.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckPath() {
         return null;
     }
 
     /**
-     * Property healthCheckProtocol: The protocol that is used for health checks.
+     * Property healthCheckProtocol: The protocol used for the health check.
      * <p>
      * Valid values:
-     * HTTP: The ALB instance sends HEAD or GET requests to a backend server to simulate access
-     * from a browser and check whether the backend server is healthy. This is the default
-     * protocol.
-     * TCP: To perform TCP health checks, ALB sends SYN packets to a backend server to check
-     * whether the port of the backend server is available to receive requests.
-     * GRPC: To perform gRPC health checks, ALB sends POST or GET requests to a backend server
-     * to check whether the backend server is healthy.
+     * <p>
+     * <ul>
+     * <li>HTTP (default): simulates browser access by sending HEAD or GET requests to
+     * check whether the server application is healthy.</li>
+     * <li>HTTPS: simulates browser access by sending HEAD or GET requests to check
+     * whether the server application is healthy. HTTPS provides encrypted data
+     * transmission and is more secure than HTTP.</li>
+     * <li>TCP: checks whether the server port is responsive by sending SYN packets.</li>
+     * <li>gRPC: checks whether the server application is healthy by sending POST or GET
+     * requests.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getHealthCheckProtocol() {
         return null;
@@ -193,8 +213,9 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckTemplateName}
          * @param healthCheckTemplateName Property healthCheckTemplateName: The name of the health check template. This parameter is required.
-         *                                The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         *                                (.), underscores (_), and hyphens (-). The name must start with a letter.
+         *                                The name must be 2 to 128 characters in length, must start with a letter, a
+         *                                digit, or a Chinese character, and can contain digits, periods (.), underscores
+         *                                (_), hyphens (-), and spaces.
          * @return {@code this}
          */
         public Builder healthCheckTemplateName(java.lang.String healthCheckTemplateName) {
@@ -205,8 +226,9 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckTemplateName}
          * @param healthCheckTemplateName Property healthCheckTemplateName: The name of the health check template. This parameter is required.
-         *                                The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         *                                (.), underscores (_), and hyphens (-). The name must start with a letter.
+         *                                The name must be 2 to 128 characters in length, must start with a letter, a
+         *                                digit, or a Chinese character, and can contain digits, periods (.), underscores
+         *                                (_), hyphens (-), and spaces.
          * @return {@code this}
          */
         public Builder healthCheckTemplateName(com.aliyun.ros.cdk.core.IResolvable healthCheckTemplateName) {
@@ -216,11 +238,7 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckCodes}
-         * @param healthCheckCodes Property healthCheckCodes: The HTTP status code for a successful health check.
-         *                         If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with commas (,).
-         *                         If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges and must separate
-         *                         them with commas (,).
-         *                         Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         * @param healthCheckCodes Property healthCheckCodes: The HTTP status codes that indicate a successful health check.
          * @return {@code this}
          */
         public Builder healthCheckCodes(com.aliyun.ros.cdk.core.IResolvable healthCheckCodes) {
@@ -230,11 +248,7 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckCodes}
-         * @param healthCheckCodes Property healthCheckCodes: The HTTP status code for a successful health check.
-         *                         If HealthCheckProtocol is set to HTTP, HealthCheckCodes can be set to http_2xx (default), http_3xx, http_4xx, and http_5xx. Separate multiple HTTP status codes with commas (,).
-         *                         If HealthCheckProtocol is set to gRPC, HealthCheckCodes can be set to 0 to 99. Default value: 0. Value ranges are supported. You can enter at most 20 value ranges and must separate
-         *                         them with commas (,).
-         *                         Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         * @param healthCheckCodes Property healthCheckCodes: The HTTP status codes that indicate a successful health check.
          * @return {@code this}
          */
         public Builder healthCheckCodes(java.util.List<? extends java.lang.Object> healthCheckCodes) {
@@ -268,16 +282,23 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckHost}
-         * @param healthCheckHost Property healthCheckHost: The domain name that is used for health checks.
-         *                        Default value: $SERVER_IP. The domain name is 1 to 80 characters in length. Make sure that the destination
-         *                        CIDR block meets the following requirements:
-         *                        The domain name can contain lowercase letters, digits, hyphens (-), and periods (.).
-         *                        The domain name contains at least one period (.) but does not start or end with a
-         *                        period (.).
-         *                        The rightmost domain label can contain only letters, and cannot contain digits or
-         *                        hyphens (-).
-         *                        Other domain labels cannot start or end with a hyphen (-).
-         *                        This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         * @param healthCheckHost Property healthCheckHost: The domain name used for the health check.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>$SERVER_IP: The private IP address of a backend server. If you set this
+         *                        parameter to <code>$SERVER_IP</code> or leave it empty, the load balancer uses the private
+         *                        IP address of the backend server as the domain name for the health check.</li>
+         *                        <li>domain: The domain name must be 1 to 80 characters in length and can contain
+         *                        letters, digits, periods (.), and hyphens (-).</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+         *                        set to HTTP or HTTPS.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder healthCheckHost(java.lang.String healthCheckHost) {
@@ -287,16 +308,23 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckHost}
-         * @param healthCheckHost Property healthCheckHost: The domain name that is used for health checks.
-         *                        Default value: $SERVER_IP. The domain name is 1 to 80 characters in length. Make sure that the destination
-         *                        CIDR block meets the following requirements:
-         *                        The domain name can contain lowercase letters, digits, hyphens (-), and periods (.).
-         *                        The domain name contains at least one period (.) but does not start or end with a
-         *                        period (.).
-         *                        The rightmost domain label can contain only letters, and cannot contain digits or
-         *                        hyphens (-).
-         *                        Other domain labels cannot start or end with a hyphen (-).
-         *                        This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         * @param healthCheckHost Property healthCheckHost: The domain name used for the health check.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>$SERVER_IP: The private IP address of a backend server. If you set this
+         *                        parameter to <code>$SERVER_IP</code> or leave it empty, the load balancer uses the private
+         *                        IP address of the backend server as the domain name for the health check.</li>
+         *                        <li>domain: The domain name must be 1 to 80 characters in length and can contain
+         *                        letters, digits, periods (.), and hyphens (-).</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+         *                        set to HTTP or HTTPS.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder healthCheckHost(com.aliyun.ros.cdk.core.IResolvable healthCheckHost) {
@@ -358,14 +386,23 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckMethod}
-         * @param healthCheckMethod Property healthCheckMethod: The HTTP method that is used for health checks.
+         * @param healthCheckMethod Property healthCheckMethod: The method used for the health check.
          *                          Valid values:
-         *                          HEAD: By default, the ALB instance sends HEAD requests to a backend server to perform
-         *                          HTTP health checks.
-         *                          POST: By default, gRPC health checks use the POST method.
-         *                          GET: If the length of a response exceeds 8 KB, the response is truncated. However, the
-         *                          health check result is not affected.
-         *                          Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         *                          <p>
+         *                          <ul>
+         *                          <li>HEAD (default): For HTTP and HTTPS listeners, the default health check method
+         *                          is HEAD.</li>
+         *                          <li>POST: For gRPC listeners, the default health check method is POST.</li>
+         *                          <li>GET: If the response body exceeds 8 KB, it is truncated. This does not affect
+         *                          the health check result.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+         *                          set to HTTP, HTTPS, or gRPC.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder healthCheckMethod(java.lang.String healthCheckMethod) {
@@ -375,14 +412,23 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckMethod}
-         * @param healthCheckMethod Property healthCheckMethod: The HTTP method that is used for health checks.
+         * @param healthCheckMethod Property healthCheckMethod: The method used for the health check.
          *                          Valid values:
-         *                          HEAD: By default, the ALB instance sends HEAD requests to a backend server to perform
-         *                          HTTP health checks.
-         *                          POST: By default, gRPC health checks use the POST method.
-         *                          GET: If the length of a response exceeds 8 KB, the response is truncated. However, the
-         *                          health check result is not affected.
-         *                          Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         *                          <p>
+         *                          <ul>
+         *                          <li>HEAD (default): For HTTP and HTTPS listeners, the default health check method
+         *                          is HEAD.</li>
+         *                          <li>POST: For gRPC listeners, the default health check method is POST.</li>
+         *                          <li>GET: If the response body exceeds 8 KB, it is truncated. This does not affect
+         *                          the health check result.</li>
+         *                          </ul>
+         *                          <p>
+         *                          <blockquote>
+         *                          <p>
+         *                          This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+         *                          set to HTTP, HTTPS, or gRPC.
+         *                          <p>
+         *                          </blockquote>
          * @return {@code this}
          */
         public Builder healthCheckMethod(com.aliyun.ros.cdk.core.IResolvable healthCheckMethod) {
@@ -392,12 +438,16 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckPath}
-         * @param healthCheckPath Property healthCheckPath: The URL path that is used for health checks.
-         *                        It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-         *                        (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
-         *                        signs (#), and ampersands (&amp;). It can also contain the following extended characters:
-         *                        _ ; ~ ! ( ) * [ ] &#64; $ ^ : ' , +. The URL path must start with a forward slash (/).
-         *                        Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         * @param healthCheckPath Property healthCheckPath: The URL that is used for health checks.
+         *                        The URL must be 1 to 80 characters in length. It must start with a forward slash
+         *                        (/) and can contain letters, digits, and the following special characters: <code>- \/ . % ? # &amp; _;~!()*[]&#64;$^:',+</code>.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+         *                        set to HTTP or HTTPS.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder healthCheckPath(java.lang.String healthCheckPath) {
@@ -407,12 +457,16 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckPath}
-         * @param healthCheckPath Property healthCheckPath: The URL path that is used for health checks.
-         *                        It must be 1 to 80 characters in length, and can contain letters, digits, hyphens
-         *                        (-), forward slashes (/), periods (.), percent signs (%), question marks (?), number
-         *                        signs (#), and ampersands (&amp;). It can also contain the following extended characters:
-         *                        _ ; ~ ! ( ) * [ ] &#64; $ ^ : ' , +. The URL path must start with a forward slash (/).
-         *                        Note This parameter is required only if the HealthCheckProtocol parameter is set to HTTP.
+         * @param healthCheckPath Property healthCheckPath: The URL that is used for health checks.
+         *                        The URL must be 1 to 80 characters in length. It must start with a forward slash
+         *                        (/) and can contain letters, digits, and the following special characters: <code>- \/ . % ? # &amp; _;~!()*[]&#64;$^:',+</code>.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter takes effect only when the <code>HealthCheckProtocol</code> parameter is
+         *                        set to HTTP or HTTPS.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder healthCheckPath(com.aliyun.ros.cdk.core.IResolvable healthCheckPath) {
@@ -422,15 +476,19 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckProtocol}
-         * @param healthCheckProtocol Property healthCheckProtocol: The protocol that is used for health checks.
+         * @param healthCheckProtocol Property healthCheckProtocol: The protocol used for the health check.
          *                            Valid values:
-         *                            HTTP: The ALB instance sends HEAD or GET requests to a backend server to simulate access
-         *                            from a browser and check whether the backend server is healthy. This is the default
-         *                            protocol.
-         *                            TCP: To perform TCP health checks, ALB sends SYN packets to a backend server to check
-         *                            whether the port of the backend server is available to receive requests.
-         *                            GRPC: To perform gRPC health checks, ALB sends POST or GET requests to a backend server
-         *                            to check whether the backend server is healthy.
+         *                            <p>
+         *                            <ul>
+         *                            <li>HTTP (default): simulates browser access by sending HEAD or GET requests to
+         *                            check whether the server application is healthy.</li>
+         *                            <li>HTTPS: simulates browser access by sending HEAD or GET requests to check
+         *                            whether the server application is healthy. HTTPS provides encrypted data
+         *                            transmission and is more secure than HTTP.</li>
+         *                            <li>TCP: checks whether the server port is responsive by sending SYN packets.</li>
+         *                            <li>gRPC: checks whether the server application is healthy by sending POST or GET
+         *                            requests.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder healthCheckProtocol(java.lang.String healthCheckProtocol) {
@@ -440,15 +498,19 @@ public interface HealthCheckTemplateProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link HealthCheckTemplateProps#getHealthCheckProtocol}
-         * @param healthCheckProtocol Property healthCheckProtocol: The protocol that is used for health checks.
+         * @param healthCheckProtocol Property healthCheckProtocol: The protocol used for the health check.
          *                            Valid values:
-         *                            HTTP: The ALB instance sends HEAD or GET requests to a backend server to simulate access
-         *                            from a browser and check whether the backend server is healthy. This is the default
-         *                            protocol.
-         *                            TCP: To perform TCP health checks, ALB sends SYN packets to a backend server to check
-         *                            whether the port of the backend server is available to receive requests.
-         *                            GRPC: To perform gRPC health checks, ALB sends POST or GET requests to a backend server
-         *                            to check whether the backend server is healthy.
+         *                            <p>
+         *                            <ul>
+         *                            <li>HTTP (default): simulates browser access by sending HEAD or GET requests to
+         *                            check whether the server application is healthy.</li>
+         *                            <li>HTTPS: simulates browser access by sending HEAD or GET requests to check
+         *                            whether the server application is healthy. HTTPS provides encrypted data
+         *                            transmission and is more secure than HTTP.</li>
+         *                            <li>TCP: checks whether the server port is responsive by sending SYN packets.</li>
+         *                            <li>gRPC: checks whether the server application is healthy by sending POST or GET
+         *                            requests.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder healthCheckProtocol(com.aliyun.ros.cdk.core.IResolvable healthCheckProtocol) {

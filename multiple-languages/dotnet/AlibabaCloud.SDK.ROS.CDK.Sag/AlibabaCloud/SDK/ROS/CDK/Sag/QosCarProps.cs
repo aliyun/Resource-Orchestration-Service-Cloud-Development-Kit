@@ -166,9 +166,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         private object? _maxBandwidthAbs;
 
-        /// <summary>Property maxBandwidthAbs: The maximum bandwidth.</summary>
+        /// <summary>Property maxBandwidthAbs: The maximum bandwidth value.</summary>
         /// <remarks>
-        /// This parameter is required when LimitType is set to Absolute.
+        /// The value must be an integer. Unit: Mbit/s.
+        /// This parameter is returned when LimitType is set to Absolute.
+        ///
+        ///     The maximum bandwidth value must be greater than the minimum bandwidth value.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxBandwidthAbs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -220,9 +223,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         private object? _maxBandwidthPercent;
 
-        /// <summary>Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance.</summary>
+        /// <summary>Property maxBandwidthPercent: The maximum bandwidth percentage.</summary>
         /// <remarks>
-        /// This parameter is required when LimitType is set to Percent.
+        /// Unit: percent (%). Valid values: 1 to 100.
+        /// This parameter is required when you set LimitType to Percent.
+        ///
+        ///     The maximum bandwidth percentage must be greater than the minimum bandwidth
+        ///     percentage.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxBandwidthPercent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -274,9 +281,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         private object? _minBandwidthAbs;
 
-        /// <summary>Property minBandwidthAbs: The minimum bandwidth.</summary>
+        /// <summary>Property minBandwidthAbs: The minimum bandwidth value.</summary>
         /// <remarks>
-        /// This parameter is required when LimitType is set to Absolute.
+        /// The value must be an integer. Unit: Mbit/s.
+        /// This parameter is returned when LimitType is set to Absolute.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "minBandwidthAbs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -328,9 +336,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         private object? _minBandwidthPercent;
 
-        /// <summary>Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance.</summary>
+        /// <summary>Property minBandwidthPercent: The minimum bandwidth percentage.</summary>
         /// <remarks>
-        /// This parameter is required when LimitType is set to Percent.
+        /// Unit: percent (%). Valid values: 1 to 100.
+        /// This parameter is required when you set LimitType to Percent.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "minBandwidthPercent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -382,11 +391,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         private object? _name;
 
-        /// <summary>Property name: The name of the traffic throttling policy.</summary>
+        /// <summary>Property name: The name of the traffic throttling rule.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in
-        /// length, and can contain Chinese characters, letters, digits, periods (.), underscores
-        /// (_), and hyphens (-).
+        /// The name must be 2 to 128 characters in length, and can contain letters, digits,
+        /// periods (.), underscores (_), and hyphens (-). The name must start with a letter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -14,6 +14,7 @@ export * from './resourceshare';
 export * from './resourceshareassociation';
 export * from './role';
 export * from './savedquery';
+export * from './servicelinkedrole';
 export * from './sharedtarget';
 
 // ALIYUN::ResourceManager Resources:

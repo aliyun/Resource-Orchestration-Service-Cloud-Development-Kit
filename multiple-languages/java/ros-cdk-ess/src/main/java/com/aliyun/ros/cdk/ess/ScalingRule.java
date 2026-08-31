@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingRule</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingRule</code>Creates a scaling rule for Auto Scaling (ESS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.539Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.686Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingRule")
 public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IScalingRule {
 
@@ -141,36 +141,46 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property adjustmentType: Adjustment mode of a scaling rule.
+         * Property adjustmentType: The adjustment method of the scaling rule.
          * <p>
-         * Optional values:
+         * If you set ScalingRuleType to
+         * SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+         * values:
          * <p>
          * <ul>
-         * <li>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</li>
-         * <li>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</li>
-         * <li>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</li>
+         * <li>QuantityChangeInCapacity: adds the specified number of ECS instances to or
+         * removes the specified number of ECS instances from the scaling group.</li>
+         * <li>PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+         * removes the specified percentage of ECS instances from the scaling group.</li>
+         * <li>TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+         * specified number.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param adjustmentType Property adjustmentType: Adjustment mode of a scaling rule. This parameter is required.
+         * @param adjustmentType Property adjustmentType: The adjustment method of the scaling rule. This parameter is required.
          */
         public Builder adjustmentType(final java.lang.String adjustmentType) {
             this.props.adjustmentType(adjustmentType);
             return this;
         }
         /**
-         * Property adjustmentType: Adjustment mode of a scaling rule.
+         * Property adjustmentType: The adjustment method of the scaling rule.
          * <p>
-         * Optional values:
+         * If you set ScalingRuleType to
+         * SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+         * values:
          * <p>
          * <ul>
-         * <li>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</li>
-         * <li>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</li>
-         * <li>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</li>
+         * <li>QuantityChangeInCapacity: adds the specified number of ECS instances to or
+         * removes the specified number of ECS instances from the scaling group.</li>
+         * <li>PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+         * removes the specified percentage of ECS instances from the scaling group.</li>
+         * <li>TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+         * specified number.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param adjustmentType Property adjustmentType: Adjustment mode of a scaling rule. This parameter is required.
+         * @param adjustmentType Property adjustmentType: The adjustment method of the scaling rule. This parameter is required.
          */
         public Builder adjustmentType(final com.aliyun.ros.cdk.core.IResolvable adjustmentType) {
             this.props.adjustmentType(adjustmentType);
@@ -178,36 +188,72 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property adjustmentValue: Adjusted value of a scaling rule.
+         * Property adjustmentValue: The number of instances that must be scaled based on the scaling rule.
          * <p>
-         * Value range:
+         * If you set
+         * ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+         * parameter. The number of ECS instances that must be scaled in a scaling activity
+         * cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+         * AdjustmentType.
          * <p>
          * <ul>
-         * <li>QuantityChangeInCapacity: [-500, 500]</li>
-         * <li>PercentChangeInCapacity: [-100, 10000]</li>
-         * <li>TotalCapacity: [0, 1000]</li>
+         * <li>Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param adjustmentValue Property adjustmentValue: Adjusted value of a scaling rule. This parameter is required.
+         * @param adjustmentValue Property adjustmentValue: The number of instances that must be scaled based on the scaling rule. This parameter is required.
          */
         public Builder adjustmentValue(final java.lang.Number adjustmentValue) {
             this.props.adjustmentValue(adjustmentValue);
             return this;
         }
         /**
-         * Property adjustmentValue: Adjusted value of a scaling rule.
+         * Property adjustmentValue: The number of instances that must be scaled based on the scaling rule.
          * <p>
-         * Value range:
+         * If you set
+         * ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+         * parameter. The number of ECS instances that must be scaled in a scaling activity
+         * cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+         * AdjustmentType.
          * <p>
          * <ul>
-         * <li>QuantityChangeInCapacity: [-500, 500]</li>
-         * <li>PercentChangeInCapacity: [-100, 10000]</li>
-         * <li>TotalCapacity: [0, 1000]</li>
+         * <li>Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param adjustmentValue Property adjustmentValue: Adjusted value of a scaling rule. This parameter is required.
+         * @param adjustmentValue Property adjustmentValue: The number of instances that must be scaled based on the scaling rule. This parameter is required.
          */
         public Builder adjustmentValue(final com.aliyun.ros.cdk.core.IResolvable adjustmentValue) {
             this.props.adjustmentValue(adjustmentValue);
@@ -215,24 +261,30 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property cooldown: Cool-down time of a scaling rule.
+         * Property cooldown: The cooldown period of the scaling rule.
          * <p>
-         * Value range: [0, 86,400], in seconds. The default value is empty.
+         * This parameter is available only if you
+         * set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+         * seconds.
+         * You can leave this parameter empty.
          * <p>
          * @return {@code this}
-         * @param cooldown Property cooldown: Cool-down time of a scaling rule. This parameter is required.
+         * @param cooldown Property cooldown: The cooldown period of the scaling rule. This parameter is required.
          */
         public Builder cooldown(final java.lang.Number cooldown) {
             this.props.cooldown(cooldown);
             return this;
         }
         /**
-         * Property cooldown: Cool-down time of a scaling rule.
+         * Property cooldown: The cooldown period of the scaling rule.
          * <p>
-         * Value range: [0, 86,400], in seconds. The default value is empty.
+         * This parameter is available only if you
+         * set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+         * seconds.
+         * You can leave this parameter empty.
          * <p>
          * @return {@code this}
-         * @param cooldown Property cooldown: Cool-down time of a scaling rule. This parameter is required.
+         * @param cooldown Property cooldown: The cooldown period of the scaling rule. This parameter is required.
          */
         public Builder cooldown(final com.aliyun.ros.cdk.core.IResolvable cooldown) {
             this.props.cooldown(cooldown);
@@ -591,24 +643,44 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.
+         * Property scalingRuleName: The name of the scaling rule.
          * <p>
-         * It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+         * The name must be 2 to 64 characters in length, and
+         * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+         * name must start with a letter or a digit.
+         * The name of a scaling rule must be unique within an account in a
+         * region.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you leave this parameter empty, the scaling rule ID is used.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scalingRuleName Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. This parameter is required.
+         * @param scalingRuleName Property scalingRuleName: The name of the scaling rule. This parameter is required.
          */
         public Builder scalingRuleName(final java.lang.String scalingRuleName) {
             this.props.scalingRuleName(scalingRuleName);
             return this;
         }
         /**
-         * Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.
+         * Property scalingRuleName: The name of the scaling rule.
          * <p>
-         * It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+         * The name must be 2 to 64 characters in length, and
+         * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+         * name must start with a letter or a digit.
+         * The name of a scaling rule must be unique within an account in a
+         * region.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you leave this parameter empty, the scaling rule ID is used.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scalingRuleName Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. This parameter is required.
+         * @param scalingRuleName Property scalingRuleName: The name of the scaling rule. This parameter is required.
          */
         public Builder scalingRuleName(final com.aliyun.ros.cdk.core.IResolvable scalingRuleName) {
             this.props.scalingRuleName(scalingRuleName);
@@ -657,20 +729,20 @@ public class ScalingRule extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property stepAdjustment:.
+         * Property stepAdjustment: Details of the step adjustments.
          * <p>
          * @return {@code this}
-         * @param stepAdjustment Property stepAdjustment:. This parameter is required.
+         * @param stepAdjustment Property stepAdjustment: Details of the step adjustments. This parameter is required.
          */
         public Builder stepAdjustment(final com.aliyun.ros.cdk.core.IResolvable stepAdjustment) {
             this.props.stepAdjustment(stepAdjustment);
             return this;
         }
         /**
-         * Property stepAdjustment:.
+         * Property stepAdjustment: Details of the step adjustments.
          * <p>
          * @return {@code this}
-         * @param stepAdjustment Property stepAdjustment:. This parameter is required.
+         * @param stepAdjustment Property stepAdjustment: Details of the step adjustments. This parameter is required.
          */
         public Builder stepAdjustment(final java.util.List<? extends java.lang.Object> stepAdjustment) {
             this.props.stepAdjustment(stepAdjustment);

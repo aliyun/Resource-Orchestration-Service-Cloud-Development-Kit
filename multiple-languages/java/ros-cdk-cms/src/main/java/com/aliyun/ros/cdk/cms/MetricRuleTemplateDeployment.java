@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MetricRuleTemplateDeployment</code>, which is used to apply an alert template to an application group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::MetricRuleTemplateDeployment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.970Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.258Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MetricRuleTemplateDeployment")
 public class MetricRuleTemplateDeployment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IMetricRuleTemplateDeployment {
 
@@ -254,20 +254,28 @@ public class MetricRuleTemplateDeployment extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
-         * Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.
+         * Property notifyLevel: The alert notification method.
+         * <p>
+         * Valid values:
+         * Set the value to 4. A value of 4 indicates that alert notifications are sent by
+         * using TradeManager and DingTalk chatbots.
          * <p>
          * @return {@code this}
-         * @param notifyLevel Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot. This parameter is required.
+         * @param notifyLevel Property notifyLevel: The alert notification method. This parameter is required.
          */
         public Builder notifyLevel(final java.lang.Number notifyLevel) {
             this.props.notifyLevel(notifyLevel);
             return this;
         }
         /**
-         * Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot.
+         * Property notifyLevel: The alert notification method.
+         * <p>
+         * Valid values:
+         * Set the value to 4. A value of 4 indicates that alert notifications are sent by
+         * using TradeManager and DingTalk chatbots.
          * <p>
          * @return {@code this}
-         * @param notifyLevel Property notifyLevel: Alarm notification method.Value: 2: Phone + SMS + Email + Wangwang + DingTalk Robot. 3: SMS + Email + Wangwang + DingTalk Robot. 4: Wangwang + Dingding Robot. This parameter is required.
+         * @param notifyLevel Property notifyLevel: The alert notification method. This parameter is required.
          */
         public Builder notifyLevel(final com.aliyun.ros.cdk.core.IResolvable notifyLevel) {
             this.props.notifyLevel(notifyLevel);

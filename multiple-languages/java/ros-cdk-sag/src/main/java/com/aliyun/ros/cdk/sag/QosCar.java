@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::QosCar</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.992Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.114Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.QosCar")
 public class QosCar extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.IQosCar {
 
@@ -212,24 +212,38 @@ public class QosCar extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property maxBandwidthAbs: The maximum bandwidth.
+         * Property maxBandwidthAbs: The maximum bandwidth value.
          * <p>
-         * This parameter is required when LimitType is set to Absolute.
+         * The value must be an integer. Unit: Mbit/s.
+         * This parameter is returned when LimitType is set to Absolute.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The maximum bandwidth value must be greater than the minimum bandwidth value.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth. This parameter is required.
+         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth value. This parameter is required.
          */
         public Builder maxBandwidthAbs(final java.lang.Number maxBandwidthAbs) {
             this.props.maxBandwidthAbs(maxBandwidthAbs);
             return this;
         }
         /**
-         * Property maxBandwidthAbs: The maximum bandwidth.
+         * Property maxBandwidthAbs: The maximum bandwidth value.
          * <p>
-         * This parameter is required when LimitType is set to Absolute.
+         * The value must be an integer. Unit: Mbit/s.
+         * This parameter is returned when LimitType is set to Absolute.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The maximum bandwidth value must be greater than the minimum bandwidth value.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth. This parameter is required.
+         * @param maxBandwidthAbs Property maxBandwidthAbs: The maximum bandwidth value. This parameter is required.
          */
         public Builder maxBandwidthAbs(final com.aliyun.ros.cdk.core.IResolvable maxBandwidthAbs) {
             this.props.maxBandwidthAbs(maxBandwidthAbs);
@@ -237,24 +251,40 @@ public class QosCar extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+         * Property maxBandwidthPercent: The maximum bandwidth percentage.
          * <p>
-         * This parameter is required when LimitType is set to Percent.
+         * Unit: percent (%). Valid values: 1 to 100.
+         * This parameter is required when you set LimitType to Percent.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The maximum bandwidth percentage must be greater than the minimum bandwidth
+         * percentage.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance. This parameter is required.
+         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum bandwidth percentage. This parameter is required.
          */
         public Builder maxBandwidthPercent(final java.lang.Number maxBandwidthPercent) {
             this.props.maxBandwidthPercent(maxBandwidthPercent);
             return this;
         }
         /**
-         * Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+         * Property maxBandwidthPercent: The maximum bandwidth percentage.
          * <p>
-         * This parameter is required when LimitType is set to Percent.
+         * Unit: percent (%). Valid values: 1 to 100.
+         * This parameter is required when you set LimitType to Percent.
+         * <p>
+         * <blockquote>
+         * <p>
+         * The maximum bandwidth percentage must be greater than the minimum bandwidth
+         * percentage.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG instance. This parameter is required.
+         * @param maxBandwidthPercent Property maxBandwidthPercent: The maximum bandwidth percentage. This parameter is required.
          */
         public Builder maxBandwidthPercent(final com.aliyun.ros.cdk.core.IResolvable maxBandwidthPercent) {
             this.props.maxBandwidthPercent(maxBandwidthPercent);
@@ -262,24 +292,26 @@ public class QosCar extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property minBandwidthAbs: The minimum bandwidth.
+         * Property minBandwidthAbs: The minimum bandwidth value.
          * <p>
-         * This parameter is required when LimitType is set to Absolute.
+         * The value must be an integer. Unit: Mbit/s.
+         * This parameter is returned when LimitType is set to Absolute.
          * <p>
          * @return {@code this}
-         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth. This parameter is required.
+         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth value. This parameter is required.
          */
         public Builder minBandwidthAbs(final java.lang.Number minBandwidthAbs) {
             this.props.minBandwidthAbs(minBandwidthAbs);
             return this;
         }
         /**
-         * Property minBandwidthAbs: The minimum bandwidth.
+         * Property minBandwidthAbs: The minimum bandwidth value.
          * <p>
-         * This parameter is required when LimitType is set to Absolute.
+         * The value must be an integer. Unit: Mbit/s.
+         * This parameter is returned when LimitType is set to Absolute.
          * <p>
          * @return {@code this}
-         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth. This parameter is required.
+         * @param minBandwidthAbs Property minBandwidthAbs: The minimum bandwidth value. This parameter is required.
          */
         public Builder minBandwidthAbs(final com.aliyun.ros.cdk.core.IResolvable minBandwidthAbs) {
             this.props.minBandwidthAbs(minBandwidthAbs);
@@ -287,24 +319,26 @@ public class QosCar extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+         * Property minBandwidthPercent: The minimum bandwidth percentage.
          * <p>
-         * This parameter is required when LimitType is set to Percent.
+         * Unit: percent (%). Valid values: 1 to 100.
+         * This parameter is required when you set LimitType to Percent.
          * <p>
          * @return {@code this}
-         * @param minBandwidthPercent Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance. This parameter is required.
+         * @param minBandwidthPercent Property minBandwidthPercent: The minimum bandwidth percentage. This parameter is required.
          */
         public Builder minBandwidthPercent(final java.lang.Number minBandwidthPercent) {
             this.props.minBandwidthPercent(minBandwidthPercent);
             return this;
         }
         /**
-         * Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance.
+         * Property minBandwidthPercent: The minimum bandwidth percentage.
          * <p>
-         * This parameter is required when LimitType is set to Percent.
+         * Unit: percent (%). Valid values: 1 to 100.
+         * This parameter is required when you set LimitType to Percent.
          * <p>
          * @return {@code this}
-         * @param minBandwidthPercent Property minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG instance. This parameter is required.
+         * @param minBandwidthPercent Property minBandwidthPercent: The minimum bandwidth percentage. This parameter is required.
          */
         public Builder minBandwidthPercent(final com.aliyun.ros.cdk.core.IResolvable minBandwidthPercent) {
             this.props.minBandwidthPercent(minBandwidthPercent);
@@ -312,28 +346,26 @@ public class QosCar extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property name: The name of the traffic throttling policy.
+         * Property name: The name of the traffic throttling rule.
          * <p>
-         * The name must be 2 to 128 characters in
-         * length, and can contain Chinese characters, letters, digits, periods (.), underscores
-         * (_), and hyphens (-).
+         * The name must be 2 to 128 characters in length, and can contain letters, digits,
+         * periods (.), underscores (_), and hyphens (-). The name must start with a letter.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the traffic throttling policy. This parameter is required.
+         * @param name Property name: The name of the traffic throttling rule. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the traffic throttling policy.
+         * Property name: The name of the traffic throttling rule.
          * <p>
-         * The name must be 2 to 128 characters in
-         * length, and can contain Chinese characters, letters, digits, periods (.), underscores
-         * (_), and hyphens (-).
+         * The name must be 2 to 128 characters in length, and can contain letters, digits,
+         * periods (.), underscores (_), and hyphens (-). The name must start with a letter.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the traffic throttling policy. This parameter is required.
+         * @param name Property name: The name of the traffic throttling rule. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);

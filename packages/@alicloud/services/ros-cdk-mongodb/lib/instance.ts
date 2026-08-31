@@ -24,7 +24,12 @@ export interface InstanceProps {
     readonly dbInstanceStorage: number | ros.IResolvable;
 
     /**
-     * Property accountPassword: Root account password, can contain the letters, numbers or underscores the composition, length of 6~32 bit.
+     * Property accountPassword: The password of the root account. The password must meet the following
+     * requirements:
+     * - It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.
+     * - Special characters include !@#$%^&\*()_+-=
+     * - It must be 8 to 32 characters in length.
      */
     readonly accountPassword?: string | ros.IResolvable;
 
@@ -34,12 +39,20 @@ export interface InstanceProps {
     readonly auditPolicyOptions?: RosInstance.AuditPolicyOptionsProperty | ros.IResolvable;
 
     /**
-     * Property autoRenew: Indicates whether automatic renewal is enabled for the instance. Valid values:true: Automatic renewal is enabled.false: Automatic renewal is not enabled. You must renew the instance manually.Default value: false.
+     * Property autoRenew: Specifies whether to enable auto-renewal for the instance. Valid values:
+     * - true: Auto-renewal is enabled.
+     * - false: Auto-renewal is disabled. You must manually renew the instance. This is
+     * the default value.
+     * > This parameter is optional and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * Property backupId: Specific backup set Id.
+     * Property backupId: The backup point ID. To query the backup point ID, call the [DescribeBackups]()
+     * operation.
+     * > You must specify this parameter and the SrcDBInstanceId parameter only when you
+     * clone an instance based on a backup point.
      */
     readonly backupId?: string | ros.IResolvable;
 
@@ -64,17 +77,26 @@ export interface InstanceProps {
     readonly clusterId?: string | ros.IResolvable;
 
     /**
-     * Property couponNo: The coupon code. Default value:youhuiquan_promotion_option_id_for_blank.
+     * Property couponNo: Specifies whether to use a coupon. Valid values:
+     * - default or null (default): Uses a coupon.
+     * - youhuiquan_promotion_option_id_for_blank: Does not use a coupon.
      */
     readonly couponNo?: string | ros.IResolvable;
 
     /**
-     * Property databaseNames: The name of the database.
+     * Property databaseNames: The database name.
+     * > When you clone an instance, you can specify this parameter to clone specific
+     * databases. If you do not specify this parameter, all databases of the instance
+     * are cloned.
      */
     readonly databaseNames?: string | ros.IResolvable;
 
     /**
-     * Property dbInstanceDescription: Description of created database instance.
+     * Property dbInstanceDescription: The name of the instance. The name must meet the following requirements:
+     * - It must start with a Chinese character or a letter.
+     * - It can contain digits, Chinese characters, letters, underscores (_), periods
+     * (.), and hyphens (-).
+     * - It must be 2 to 256 characters in length.
      */
     readonly dbInstanceDescription?: string | ros.IResolvable;
 
@@ -96,7 +118,16 @@ export interface InstanceProps {
     readonly encryptionKey?: string | ros.IResolvable;
 
     /**
-     * Property engineVersion: Database instance version.
+     * Property engineVersion: The database version. Valid values:
+     * - 8.0
+     * - 7.0
+     * - 6.0
+     * - 5.0
+     * - 4.4
+     * - 4.2
+     * - 4.0
+     * > * When you clone an instance by calling this operation, the value of this
+     * parameter must be the same as that of the source instance.
      */
     readonly engineVersion?: string | ros.IResolvable;
 
@@ -108,7 +139,10 @@ export interface InstanceProps {
     readonly hiddenZoneId?: string | ros.IResolvable;
 
     /**
-     * Property period: The subscription period of the instance.Default Unit: Month.Valid values: [1~9], 12, 24, 36. Default to 1.
+     * Property period: The subscription duration of the instance. Unit: month.
+     * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+     * > This parameter is required and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -123,7 +157,8 @@ export interface InstanceProps {
     readonly provisionedIops?: number | ros.IResolvable;
 
     /**
-     * Property readonlyReplicas: Number of read-only nodes, in the range of 1-5.
+     * Property readonlyReplicas: The number of read-only nodes in the replica set instance. Valid values are
+     * integers from 0 to 5. The default value is 0.
      */
     readonly readonlyReplicas?: number | ros.IResolvable;
 
@@ -143,11 +178,11 @@ export interface InstanceProps {
     readonly restoreTime?: string | ros.IResolvable;
 
     /**
-     * Property restoreType: Backup recovery instance.
-     * - 0: Restore instance to specified backup set
-     * - 1: Restore instance to specified point in time
-     * - 2: Restore released instance to specified backup set
-     * - 3: Restore instance to specified backup set
+     * Property restoreType: The method to restore an instance from a backup.
+     * - 0: Restores the instance to a specified backup set.
+     * - 1: Restores the instance to a specified point in time.
+     * - 2: Restores a released instance to a specified backup set.
+     * - 3: Restores the instance to a specified geo-redundant backup set.
      */
     readonly restoreType?: number | ros.IResolvable;
 
@@ -170,7 +205,9 @@ export interface InstanceProps {
     readonly securityIpArray?: string | ros.IResolvable;
 
     /**
-     * Property srcDbInstanceId: Create an instance of the backup set based on an instance.
+     * Property srcDbInstanceId: The source instance ID.
+     * > This parameter is required only when you clone an instance by calling this
+     * operation. You must also specify the RestoreTime parameter.
      */
     readonly srcDbInstanceId?: string | ros.IResolvable;
 

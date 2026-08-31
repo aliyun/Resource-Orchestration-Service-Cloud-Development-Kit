@@ -30,11 +30,15 @@ export interface RosClusterProps {
     readonly engineVersion: string | ros.IResolvable;
 
     /**
-     * @Property nodeCount: The number of nodes. Valid values: 1 to 100.
-     * ApsaraDB for HBase in single-node mode: one node
-     * ApsaraDB for HBase that runs in cluster mode and uses disks: at least two nodes
-     * ApsaraDB for HBase that runs in cluster mode and uses local disks: at least three
-     * nodes
+     * @Property nodeCount: The number of core nodes. Valid values are as follows:
+     * <ul>
+     * <li>If the instance is a single node, the number of core nodes is fixed at
+     * 1.<\/li>
+     * <li>If the instance uses disks, the number of core nodes ranges from 2 to
+     * 100.<\/li>
+     * <li>If the instance uses local disks, the number of core nodes ranges from 4 to
+     * 100.<\/li>
+     * <\/ul>
      */
     readonly nodeCount: number | ros.IResolvable;
 
@@ -60,17 +64,19 @@ export interface RosClusterProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
-     * @Property clusterName: The name of the instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * @Property clusterName: Instance name. The naming convention is as follows:
+     * - Length must be 2 to 128 characters.
+     * - Must start with a letter (uppercase or lowercase) or a Chinese character.
+     * - Can contain digits or special characters. Valid special characters include the
+     * period (.), hyphen (-), and underscore (_).
      */
     readonly clusterName?: string | ros.IResolvable;
 
     /**
-     * @Property coldStorageSize: The size of cold data storage.
-     * If this parameter is set to 0, cold data storage is disabled.
-     * If this parameter is set to a value greater than 0, cold data storage is enabled.
-     * The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
+     * @Property coldStorageSize: The cold storage capacity of the instance, in GB. Valid values are as follows:
+     * - 0: Indicates that cold storage is disabled.
+     * - 800 to 1 000 000: Indicates that cold storage is enabled.
+     * > Cold storage is effective only when the engine type of the instance is hbaseue.
      */
     readonly coldStorageSize?: number | ros.IResolvable;
 
@@ -122,19 +128,20 @@ export interface RosClusterProps {
     readonly masterInstanceType?: string | ros.IResolvable;
 
     /**
-     * @Property period: The subscription period.
-     * This parameter only takes effect when the PayType parameter is set to Prepaid.
-     * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-     * from 1 to 5.
-     * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-     * from 1 to 9.
+     * @Property period: The subscription duration of a subscription instance. Valid values:
+     * - When PeriodUnit is year, the value range is 1 to 3.
+     * - When PeriodUnit is month, the value range is 1 to 9.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: The unit of the subscription period. Valid values:
-     * year
-     * month
+     * @Property periodUnit: The purchase unit for subscription instances. Valid values:
+     * - year: Year.
+     * - month: Month.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -146,8 +153,11 @@ export interface RosClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: The IP addresses in the whitelist. Example: 192.168.*.*\/24. The 0.0.0.0\/0 value cannot
-     * be added to the whitelist. Separate multiple IP addresses with commas (,).
+     * @Property securityIpList: The IP addresses to add to the instance whitelist. Separate multiple IP addresses
+     * with commas (,).
+     * > If the IP address is set to 127.0.0.1, access to the instance from all IP
+     * addresses is denied. For example, if the IP address is set to 192.168.0.0\/24, all
+     * IP addresses in the range 192.168.0.XX are allowed to access the instance.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -275,7 +285,7 @@ function rosClusterPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::HBase::Cluster`, which is used to create an ApsaraDB for HBase cluster.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbase-cluster
  */
@@ -340,11 +350,15 @@ export class RosCluster extends ros.RosResource {
     public engineVersion: string | ros.IResolvable;
 
     /**
-     * @Property nodeCount: The number of nodes. Valid values: 1 to 100.
-     * ApsaraDB for HBase in single-node mode: one node
-     * ApsaraDB for HBase that runs in cluster mode and uses disks: at least two nodes
-     * ApsaraDB for HBase that runs in cluster mode and uses local disks: at least three
-     * nodes
+     * @Property nodeCount: The number of core nodes. Valid values are as follows:
+     * <ul>
+     * <li>If the instance is a single node, the number of core nodes is fixed at
+     * 1.<\/li>
+     * <li>If the instance uses disks, the number of core nodes ranges from 2 to
+     * 100.<\/li>
+     * <li>If the instance uses local disks, the number of core nodes ranges from 4 to
+     * 100.<\/li>
+     * <\/ul>
      */
     public nodeCount: number | ros.IResolvable;
 
@@ -370,17 +384,19 @@ export class RosCluster extends ros.RosResource {
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
-     * @Property clusterName: The name of the instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * @Property clusterName: Instance name. The naming convention is as follows:
+     * - Length must be 2 to 128 characters.
+     * - Must start with a letter (uppercase or lowercase) or a Chinese character.
+     * - Can contain digits or special characters. Valid special characters include the
+     * period (.), hyphen (-), and underscore (_).
      */
     public clusterName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property coldStorageSize: The size of cold data storage.
-     * If this parameter is set to 0, cold data storage is disabled.
-     * If this parameter is set to a value greater than 0, cold data storage is enabled.
-     * The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
+     * @Property coldStorageSize: The cold storage capacity of the instance, in GB. Valid values are as follows:
+     * - 0: Indicates that cold storage is disabled.
+     * - 800 to 1 000 000: Indicates that cold storage is enabled.
+     * > Cold storage is effective only when the engine type of the instance is hbaseue.
      */
     public coldStorageSize: number | ros.IResolvable | undefined;
 
@@ -432,19 +448,20 @@ export class RosCluster extends ros.RosResource {
     public masterInstanceType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The subscription period.
-     * This parameter only takes effect when the PayType parameter is set to Prepaid.
-     * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-     * from 1 to 5.
-     * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-     * from 1 to 9.
+     * @Property period: The subscription duration of a subscription instance. Valid values:
+     * - When PeriodUnit is year, the value range is 1 to 3.
+     * - When PeriodUnit is month, the value range is 1 to 9.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: The unit of the subscription period. Valid values:
-     * year
-     * month
+     * @Property periodUnit: The purchase unit for subscription instances. Valid values:
+     * - year: Year.
+     * - month: Month.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -456,8 +473,11 @@ export class RosCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: The IP addresses in the whitelist. Example: 192.168.*.*\/24. The 0.0.0.0\/0 value cannot
-     * be added to the whitelist. Separate multiple IP addresses with commas (,).
+     * @Property securityIpList: The IP addresses to add to the instance whitelist. Separate multiple IP addresses
+     * with commas (,).
+     * > If the IP address is set to 127.0.0.1, access to the instance from all IP
+     * addresses is denied. For example, if the IP address is set to 192.168.0.0\/24, all
+     * IP addresses in the range 192.168.0.XX are allowed to access the instance.
      */
     public securityIpList: string | ros.IResolvable | undefined;
 
@@ -609,7 +629,8 @@ export interface RosMultiZoneClusterProps {
     readonly logDiskType: string | ros.IResolvable;
 
     /**
-     * @Property logInstanceType: Log instance type.
+     * @Property logInstanceType: The node specifications for log nodes. You can query available specifications by
+     * calling the [DescribeInstanceType]() API.
      */
     readonly logInstanceType: string | ros.IResolvable;
 
@@ -619,7 +640,8 @@ export interface RosMultiZoneClusterProps {
     readonly logNodeCount: number | ros.IResolvable;
 
     /**
-     * @Property multiZoneCombination: Availability zone combination.
+     * @Property multiZoneCombination: The zone combination. You can check the supported zone combinations on the buy
+     * page or by calling the [DescribeMultiZoneAvailableRegions]() API.
      */
     readonly multiZoneCombination: string | ros.IResolvable;
 
@@ -660,9 +682,11 @@ export interface RosMultiZoneClusterProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
-     * @Property clusterName: The name of the instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * @Property clusterName: Instance name. The naming convention is as follows:
+     * - Length must be 2 to 128 characters.
+     * - Must start with a letter (uppercase or lowercase) or a Chinese character.
+     * - Can contain digits or special characters. Valid special characters include the
+     * period (.), hyphen (-), and underscore (_).
      */
     readonly clusterName?: string | ros.IResolvable;
 
@@ -677,19 +701,20 @@ export interface RosMultiZoneClusterProps {
     readonly masterInstanceType?: string | ros.IResolvable;
 
     /**
-     * @Property period: The subscription period.
-     * This parameter only takes effect when the PayType parameter is set to Prepaid.
-     * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-     * from 1 to 5.
-     * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-     * from 1 to 9.
+     * @Property period: The subscription duration of a subscription instance. Valid values:
+     * - When PeriodUnit is year, the value range is 1 to 3.
+     * - When PeriodUnit is month, the value range is 1 to 9.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property periodUnit: The unit of the subscription period. Valid values:
-     * year
-     * month
+     * @Property periodUnit: The purchase unit for subscription instances. Valid values:
+     * - year: Year.
+     * - month: Month.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
@@ -701,8 +726,11 @@ export interface RosMultiZoneClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: The IP addresses in the whitelist. Example: 192.168.*.*\/24. The 0.0.0.0\/0 value cannot
-     * be added to the whitelist. Separate multiple IP addresses with commas (,).
+     * @Property securityIpList: The IP addresses to add to the instance whitelist. Separate multiple IP addresses
+     * with commas (,).
+     * > If the IP address is set to 127.0.0.1, access to the instance from all IP
+     * addresses is denied. For example, if the IP address is set to 192.168.0.0\/24, all
+     * IP addresses in the range 192.168.0.XX are allowed to access the instance.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -962,7 +990,8 @@ export class RosMultiZoneCluster extends ros.RosResource {
     public logDiskType: string | ros.IResolvable;
 
     /**
-     * @Property logInstanceType: Log instance type.
+     * @Property logInstanceType: The node specifications for log nodes. You can query available specifications by
+     * calling the [DescribeInstanceType]() API.
      */
     public logInstanceType: string | ros.IResolvable;
 
@@ -972,7 +1001,8 @@ export class RosMultiZoneCluster extends ros.RosResource {
     public logNodeCount: number | ros.IResolvable;
 
     /**
-     * @Property multiZoneCombination: Availability zone combination.
+     * @Property multiZoneCombination: The zone combination. You can check the supported zone combinations on the buy
+     * page or by calling the [DescribeMultiZoneAvailableRegions]() API.
      */
     public multiZoneCombination: string | ros.IResolvable;
 
@@ -1013,9 +1043,11 @@ export class RosMultiZoneCluster extends ros.RosResource {
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
-     * @Property clusterName: The name of the instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * @Property clusterName: Instance name. The naming convention is as follows:
+     * - Length must be 2 to 128 characters.
+     * - Must start with a letter (uppercase or lowercase) or a Chinese character.
+     * - Can contain digits or special characters. Valid special characters include the
+     * period (.), hyphen (-), and underscore (_).
      */
     public clusterName: string | ros.IResolvable | undefined;
 
@@ -1030,19 +1062,20 @@ export class RosMultiZoneCluster extends ros.RosResource {
     public masterInstanceType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The subscription period.
-     * This parameter only takes effect when the PayType parameter is set to Prepaid.
-     * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-     * from 1 to 5.
-     * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-     * from 1 to 9.
+     * @Property period: The subscription duration of a subscription instance. Valid values:
+     * - When PeriodUnit is year, the value range is 1 to 3.
+     * - When PeriodUnit is month, the value range is 1 to 9.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property periodUnit: The unit of the subscription period. Valid values:
-     * year
-     * month
+     * @Property periodUnit: The purchase unit for subscription instances. Valid values:
+     * - year: Year.
+     * - month: Month.
+     * > This parameter is required only when the payment type of the instance is
+     * Prepaid.
      */
     public periodUnit: string | ros.IResolvable | undefined;
 
@@ -1054,8 +1087,11 @@ export class RosMultiZoneCluster extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: The IP addresses in the whitelist. Example: 192.168.*.*\/24. The 0.0.0.0\/0 value cannot
-     * be added to the whitelist. Separate multiple IP addresses with commas (,).
+     * @Property securityIpList: The IP addresses to add to the instance whitelist. Separate multiple IP addresses
+     * with commas (,).
+     * > If the IP address is set to 127.0.0.1, access to the instance from all IP
+     * addresses is denied. For example, if the IP address is set to 192.168.0.0\/24, all
+     * IP addresses in the range 192.168.0.XX are allowed to access the instance.
      */
     public securityIpList: string | ros.IResolvable | undefined;
 

@@ -14,11 +14,19 @@ type ExecutionProps struct {
 	// - FirstBatchPause: The first batch of pauses.
 	// - EveryBatchPause: pause each batch.
 	LoopMode interface{} `field:"optional" json:"loopMode" yaml:"loopMode"`
-	// Property mode: Execution mode.
+	// Property mode: The execution mode.
+	//
+	// Valid values:
+	// - Automatic (default): The execution is automatically run.
+	// - FailurePause: The execution is paused if a task fails.
+	// - Debug: The execution is run in single-step mode.
 	Mode interface{} `field:"optional" json:"mode" yaml:"mode"`
-	// Property parameters: Parameters for the execution of template.
+	// Property parameters: The JSON string that consists of a collection of parameters.
+	//
+	// The default value is
+	// {}.
 	Parameters interface{} `field:"optional" json:"parameters" yaml:"parameters"`
-	// Property parentExecutionId: Parent execution ID.
+	// Property parentExecutionId: The ID of the parent execution.
 	ParentExecutionId interface{} `field:"optional" json:"parentExecutionId" yaml:"parentExecutionId"`
 	// Property resourceGroupId: Resource group id.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
@@ -36,9 +44,10 @@ type ExecutionProps struct {
 	//
 	// This parameter is the same as the Content parameter that you can specify when you call the CreateTemplate operation. You can use this parameter to specify the tasks that you want to run. This way, you do not need to create a template before you start an execution. If you select an existing template, you do not need to specify this parameter.
 	TemplateContent interface{} `field:"optional" json:"templateContent" yaml:"templateContent"`
-	// Property templateName: Template name.
+	// Property templateName: The name of the template.
 	//
-	// Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+	// The name can contain letters, digits, hyphens (-), and
+	// underscores (_). The name can be up to 200 characters in length.
 	TemplateName interface{} `field:"optional" json:"templateName" yaml:"templateName"`
 	// Property templateUrl: The Object Storage Service (OSS) URL of the object that stores the content of the Operation Orchestration Service (OOS) template.
 	//

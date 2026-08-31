@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone.Datasource
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Images`, which is used to query the information about available images.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudPhone::Images`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Images` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudphone-images

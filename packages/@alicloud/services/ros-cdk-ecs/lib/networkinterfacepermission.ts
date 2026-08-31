@@ -10,7 +10,8 @@ export { RosNetworkInterfacePermission as NetworkInterfacePermissionProperty };
 export interface NetworkInterfacePermissionProps {
 
     /**
-     * Property accountId: the account id
+     * Property accountId: The ID of the account to which the permission is granted. The
+     * account can be a cloud partner (certified ISV) or an individual user.
      */
     readonly accountId: string | ros.IResolvable;
 
@@ -20,7 +21,10 @@ export interface NetworkInterfacePermissionProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * Property permission: the permission
+     * Property permission: The permission to grant. The only supported value is InstanceAttach.
+     * InstanceAttach: Allows an authorized account to attach your elastic network
+     * interface to one of its ECS instances. The ECS instance and the elastic network
+     * interface must be in the same availability zone.
      */
     readonly permission: string | ros.IResolvable;
 }
@@ -37,7 +41,7 @@ export interface INetworkInterfacePermission extends ros.IResource {
     readonly attrNetworkInterfacePermissionId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`, which is used to grant an account the permission to attach an elastic network interface (ENI) to an instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterfacePermission`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterfacePermission`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterfacepermission
  */

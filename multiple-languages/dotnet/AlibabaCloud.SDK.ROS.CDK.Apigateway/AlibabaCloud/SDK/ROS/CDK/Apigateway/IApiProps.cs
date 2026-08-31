@@ -213,7 +213,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
             }
         }
 
-        /// <summary>Property resultSample: The sample of the result.</summary>
+        /// <summary>Property resultSample: An example of a response returned by the backend service.</summary>
+        /// <remarks>
+        /// This value is used only
+        /// to generate documentation. The actually returned result shall prevail.(Support up
+        /// to 32KB)
+        /// </remarks>
         [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ResultSample
@@ -476,7 +481,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property resultSample: The sample of the result.</summary>
+            /// <summary>Property resultSample: An example of a response returned by the backend service.</summary>
+            /// <remarks>
+            /// This value is used only
+            /// to generate documentation. The actually returned result shall prevail.(Support up
+            /// to 32KB)
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ResultSample

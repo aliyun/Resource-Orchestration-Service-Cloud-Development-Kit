@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.esa;
 /**
  * Represents a <code>WafRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.712Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:03:27.586Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.IWafRule")
 @software.amazon.jsii.Jsii.Proxy(IWafRule.Jsii$Proxy.class)
 public interface IWafRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -5,13 +5,21 @@ package com.aliyun.ros.cdk.imm;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:33:54.526Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:43:10.694Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.imm.$Module.class, fqn = "@alicloud/ros-cdk-imm.Project2Props")
 @software.amazon.jsii.Jsii.Proxy(Project2Props.Jsii$Proxy.class)
 public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property projectName: The name of project.
+     * Property projectName: The project name.
+     * <p>
+     * The naming convention is as follows:
+     * <p>
+     * <ul>
+     * <li>The name must be 1 to 128 characters in length.</li>
+     * <li>It can contain only letters, digits, hyphens (-), and underscores (_).</li>
+     * <li>It must start with a letter or an underscore (_).</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getProjectName();
 
@@ -27,7 +35,14 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.
      * <p>
-     * Default value: 10000000000.
+     * The default value is
+     * 10,000,000,000.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This configuration is reserved and is not currently enforced.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDatasetMaxEntityCount() {
         return null;
@@ -43,9 +58,16 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.
+     * Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.
      * <p>
-     * Default value: 100000000000.
+     * The default value is
+     * 100,000,000,000.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This configuration is reserved and is not currently enforced.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDatasetMaxRelationCount() {
         return null;
@@ -117,7 +139,14 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Project2Props#getProjectName}
-         * @param projectName Property projectName: The name of project. This parameter is required.
+         * @param projectName Property projectName: The project name. This parameter is required.
+         *                    The naming convention is as follows:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The name must be 1 to 128 characters in length.</li>
+         *                    <li>It can contain only letters, digits, hyphens (-), and underscores (_).</li>
+         *                    <li>It must start with a letter or an underscore (_).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder projectName(java.lang.String projectName) {
@@ -127,7 +156,14 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Project2Props#getProjectName}
-         * @param projectName Property projectName: The name of project. This parameter is required.
+         * @param projectName Property projectName: The project name. This parameter is required.
+         *                    The naming convention is as follows:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The name must be 1 to 128 characters in length.</li>
+         *                    <li>It can contain only letters, digits, hyphens (-), and underscores (_).</li>
+         *                    <li>It must start with a letter or an underscore (_).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder projectName(com.aliyun.ros.cdk.core.IResolvable projectName) {
@@ -160,7 +196,14 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link Project2Props#getDatasetMaxEntityCount}
          * @param datasetMaxEntityCount Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.
-         *                              Default value: 10000000000.
+         *                              The default value is
+         *                              10,000,000,000.
+         *                              <p>
+         *                              <blockquote>
+         *                              <p>
+         *                              This configuration is reserved and is not currently enforced.
+         *                              <p>
+         *                              </blockquote>
          * @return {@code this}
          */
         public Builder datasetMaxEntityCount(java.lang.Number datasetMaxEntityCount) {
@@ -171,7 +214,14 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link Project2Props#getDatasetMaxEntityCount}
          * @param datasetMaxEntityCount Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.
-         *                              Default value: 10000000000.
+         *                              The default value is
+         *                              10,000,000,000.
+         *                              <p>
+         *                              <blockquote>
+         *                              <p>
+         *                              This configuration is reserved and is not currently enforced.
+         *                              <p>
+         *                              </blockquote>
          * @return {@code this}
          */
         public Builder datasetMaxEntityCount(com.aliyun.ros.cdk.core.IResolvable datasetMaxEntityCount) {
@@ -203,8 +253,15 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Project2Props#getDatasetMaxRelationCount}
-         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.
-         *                                Default value: 100000000000.
+         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.
+         *                                The default value is
+         *                                100,000,000,000.
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                This configuration is reserved and is not currently enforced.
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder datasetMaxRelationCount(java.lang.Number datasetMaxRelationCount) {
@@ -214,8 +271,15 @@ public interface Project2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link Project2Props#getDatasetMaxRelationCount}
-         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.
-         *                                Default value: 100000000000.
+         * @param datasetMaxRelationCount Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.
+         *                                The default value is
+         *                                100,000,000,000.
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                This configuration is reserved and is not currently enforced.
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder datasetMaxRelationCount(com.aliyun.ros.cdk.core.IResolvable datasetMaxRelationCount) {

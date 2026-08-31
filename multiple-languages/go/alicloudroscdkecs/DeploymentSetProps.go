@@ -22,20 +22,22 @@ type DeploymentSetProps struct {
 	// Default value: 3.
 	// This parameter only takes effect when Strategy=AvailabilityGroup.
 	GroupCount interface{} `field:"optional" json:"groupCount" yaml:"groupCount"`
-	// Property onUnableToRedeployFailedInstance: The emergency solution to redeploy failed instances in the deployment set.
+	// Property onUnableToRedeployFailedInstance: The policy to use when an instance fails over but cannot be redeployed due to insufficient resources.
 	//
 	// Valid values:
-	// CancelMembershipAndStart: restarts the instances immediately after they are shut down
-	// and migrated to other deployment sets. This is the default value.
-	// KeepStopped: keeps the instances shut down and restarts them after the deployment
-	// set is replenished.
+	// - CancelMembershipAndStart: Removes the instance from the deployment set and
+	// starts the instance immediately after failover.
+	// - KeepStopped: Keeps the instance's deployment set membership and leaves it in
+	// the Stopped state.
+	// Default value: CancelMembershipAndStart.
 	OnUnableToRedeployFailedInstance interface{} `field:"optional" json:"onUnableToRedeployFailedInstance" yaml:"onUnableToRedeployFailedInstance"`
-	// Property strategy: Deployment strategy.
+	// Property strategy: The deployment strategy.
 	//
-	// Ranges:
-	// Availability: High availability strategy.
-	// AvailabilityGroup: Deployment group high availability strategy.
-	// LowLatency: Network low latency strategy.
+	// Valid values:
+	// - Availability: A high availability strategy.
+	// - AvailabilityGroup: A high availability strategy for a deployment set group.
+	// - LowLatency: A low-latency strategy.
+	// Default value: Availability.
 	Strategy interface{} `field:"optional" json:"strategy" yaml:"strategy"`
 }
 

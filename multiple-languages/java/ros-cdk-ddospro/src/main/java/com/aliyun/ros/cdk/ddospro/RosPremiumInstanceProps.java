@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ddospro;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddospro-premiuminstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:17:14.293Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:11:23.642Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddospro.$Module.class, fqn = "@alicloud/ros-cdk-ddospro.RosPremiumInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(RosPremiumInstanceProps.Jsii$Proxy.class)
 public interface RosPremiumInstanceProps extends software.amazon.jsii.JsiiSerializable {

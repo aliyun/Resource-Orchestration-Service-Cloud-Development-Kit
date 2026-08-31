@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.alb;
 /**
  * Represents a <code>Rule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.203Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.397Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.IRule")
 @software.amazon.jsii.Jsii.Proxy(IRule.Jsii$Proxy.class)
 public interface IRule extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

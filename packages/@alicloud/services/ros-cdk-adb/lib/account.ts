@@ -10,16 +10,20 @@ export { RosAccount as AccountProperty };
 export interface AccountProps {
 
     /**
-     * Property accountName: The name of the account.
+     * Property accountName: The database account name. The name must meet the following requirements:
+     * - Start with a lowercase letter and end with a lowercase letter or digit.
+     * - Contain only lowercase letters, digits, or underscores (_).
+     * - Be 2 to 16 characters long.
+     * - Not use reserved usernames such as root, admin, or opsadmin.
      */
     readonly accountName: string | ros.IResolvable;
 
     /**
-     * Property accountPassword: The password of the account.
-     * The password must contain uppercase letters, lowercase letters, digits, and special
-     * characters.
-     * Special characters include ! @ # $ % ^ & * ()  _ + - and =
-     * The password must be 8 to 32 characters in length.
+     * Property accountPassword: The database account password.
+     * - Use any three of the following character types: uppercase letters, lowercase
+     * letters, digits, and special characters.
+     * - Special characters include the following: `!@#$%^&*()_+-=`
+     * - Be 8 to 32 characters long.
      */
     readonly accountPassword: string | ros.IResolvable;
 
@@ -64,7 +68,7 @@ export interface IAccount extends ros.IResource {
     readonly attrDbClusterId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::Account`, which is used to create a database account for an AnalyticDB for MySQL cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ADB::Account`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAccount`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-account
  */

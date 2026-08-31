@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.983Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.361Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -93,7 +93,17 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property dedicatedHostId: which dedicated host will be deployed.
+     * Property dedicatedHostId: The ID of the dedicated host.
+     * <p>
+     * You can call the <a href="">DescribeDedicatedHosts</a> operation to query the list of
+     * dedicated host IDs.
+     * <p>
+     * <blockquote>
+     * <p>
+     * Spot instances cannot be created on dedicated hosts. If you specify
+     * DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostId() {
         return null;
@@ -252,7 +262,17 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property imageId: Image ID to create ecs instance.
+     * Property imageId: The image ID.
+     * <p>
+     * <details>
+     * <summary>
+     * Naming convention for image IDs
+     * <\/summary>
+     * - Public images: Named based on the operating system version, architecture,
+     * language, and published date.
+     * - Custom images, shared images, cloud marketplace images, and community
+     * images: Start with the letter `m`.
+     * <\/details>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getImageId() {
         return null;
@@ -289,18 +309,26 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
+     * Property internetMaxBandwidthOut: The maximum outbound public bandwidth.
      * <p>
-     * Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+     * Unit: Mbit/s. Valid values: 0 to 100.
+     * Default value: 0.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetMaxBandwidthOut() {
         return null;
     }
 
     /**
-     * Property ioOptimized: The 'optimized' instance can provide better IO performance.
+     * Property ioOptimized: Specifies whether the instance is I/O optimized.
      * <p>
-     * Support 'none' and 'optimized' only, default is 'optimized'.
+     * For instances of <a href="">retired
+     * instance types</a>, the default value is none. For instances of other instance
+     * types, the default value is optimized. Valid values:
+     * <p>
+     * <ul>
+     * <li>none: The instance is not I/O optimized.</li>
+     * <li>optimized: The instance is I/O optimized.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIoOptimized() {
         return null;
@@ -468,7 +496,16 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property securityEnhancementStrategy:.
+     * Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Active: enables security hardening. This value is applicable only to public
+     * images.</li>
+     * <li>Deactive: does not enable security hardening. This value is applicable to all
+     * images.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityEnhancementStrategy() {
         return null;
@@ -500,21 +537,45 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property spotDuration: The protection period of the preemptible instance.
+     * Property spotDuration: The protection period of the spot instance.
      * <p>
-     * Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-     * Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-     * If this parameter is set to 0, no protection period is configured for the preemptible instance.
-     * Default value: 1.
+     * Unit: hours. Valid values:
+     * <p>
+     * <ul>
+     * <li>1: After a spot instance is created, the system ensures that the instance is not
+     * automatically released within 1 hour. After the 1-hour protection period ends, the system
+     * compares the bid price with the market price and checks the resource inventory to
+     * determine whether to retain or release the instance.</li>
+     * <li>0: After a spot instance is created, the system does not ensure that the instance
+     * can run for one hour. The system compares the biding price with the market prices and
+     * checks the resource inventory to determine whether to retain or release the instance.
+     * Default value: 1.</li>
+     * </ul>
+     * <p>
+     * <blockquote></blockquote>
+     * <p>
+     * <ul>
+     * <li>You can set this parameter only to 0 or 1.</li>
+     * <li>The spot instance is billed by second. Specify an appropriate protection period.</li>
+     * <li>The system sends an ECS system event to notify you 5 minutes before the instance is
+     * released.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpotDuration() {
         return null;
     }
 
     /**
-     * Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
+     * Property spotInterruptionBehavior: The interruption mode of the spot instance.
      * <p>
-     * Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Terminate: The instance is released.</li>
+     * <li>Stop: The instance is stopped in economical mode.
+     * For information about the economical mode, see <a href="">Economical mode</a>.
+     * Default value: Terminate.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpotInterruptionBehavior() {
         return null;
@@ -548,7 +609,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     /**
      * Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
      * <p>
-     * The value must be greater than or equal to 2.
+     * Valid values: integers
+     * greater than or equal to 2.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageSetPartitionNumber() {
         return null;
@@ -730,9 +792,22 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property userData: User data to pass to instance.
+     * Property userData: The user data of the instance.
      * <p>
-     * [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+     * You must specify Base64-encoded data. The instance
+     * user data cannot exceed 32 KB in size before Base64 encoding.
+     * For information about the limits, formats, and running frequencies of instance
+     * user data, see <a href="">Instance user data</a>.
+     * <p>
+     * <blockquote>
+     * <p>
+     * To ensure security, we recommend that you do not use plaintext to pass in
+     * confidential information, such as passwords or private keys, as user data. If you
+     * need to pass in confidential information, we recommend that you encrypt and
+     * encode the information in Base64 and then decode and decrypt the information in
+     * the same manner in the instance.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUserData() {
         return null;
@@ -746,7 +821,22 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property vSwitchId: The vSwitch Id to create ecs instance.
+     * Property vSwitchId: The ID of the vSwitch to which to connect to the instance.
+     * <p>
+     * You must set this
+     * parameter when you create an instance of the VPC type. The specified vSwitch and
+     * security group must belong to the same VPC. You can call the
+     * <a href="">DescribeVSwitches</a> operation to query available vSwitches.
+     * Take note of the following items:
+     * <p>
+     * <ul>
+     * <li>If you specify the <code>VSwitchId</code> parameter, the zone specified by the <code>ZoneId</code>
+     * parameter must be the zone where the specified vSwitch is located. You can also
+     * leave the <code>ZoneId</code> parameter empty. Then, the system selects the zone where the
+     * specified vSwitch resides.</li>
+     * <li>If <code>NetworkInterface.N.InstanceType</code> is set to <code>Primary</code>, you cannot specify
+     * <code>VSwitchId</code> but can specify <code>NetworkInterface.N.VSwitchId</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
@@ -1078,7 +1168,16 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getDedicatedHostId}
-         * @param dedicatedHostId Property dedicatedHostId: which dedicated host will be deployed.
+         * @param dedicatedHostId Property dedicatedHostId: The ID of the dedicated host.
+         *                        You can call the <a href="">DescribeDedicatedHosts</a> operation to query the list of
+         *                        dedicated host IDs.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        Spot instances cannot be created on dedicated hosts. If you specify
+         *                        DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder dedicatedHostId(java.lang.String dedicatedHostId) {
@@ -1088,7 +1187,16 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getDedicatedHostId}
-         * @param dedicatedHostId Property dedicatedHostId: which dedicated host will be deployed.
+         * @param dedicatedHostId Property dedicatedHostId: The ID of the dedicated host.
+         *                        You can call the <a href="">DescribeDedicatedHosts</a> operation to query the list of
+         *                        dedicated host IDs.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        Spot instances cannot be created on dedicated hosts. If you specify
+         *                        DedicatedHostId, SpotStrategy and SpotPriceLimit are automatically ignored.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder dedicatedHostId(com.aliyun.ros.cdk.core.IResolvable dedicatedHostId) {
@@ -1458,7 +1566,16 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getImageId}
-         * @param imageId Property imageId: Image ID to create ecs instance.
+         * @param imageId Property imageId: The image ID.
+         *                <details>
+         *                <summary>
+         *                Naming convention for image IDs
+         *                <\/summary>
+         *                - Public images: Named based on the operating system version, architecture,
+         *                language, and published date.
+         *                - Custom images, shared images, cloud marketplace images, and community
+         *                images: Start with the letter `m`.
+         *                <\/details>
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
@@ -1468,7 +1585,16 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getImageId}
-         * @param imageId Property imageId: Image ID to create ecs instance.
+         * @param imageId Property imageId: The image ID.
+         *                <details>
+         *                <summary>
+         *                Naming convention for image IDs
+         *                <\/summary>
+         *                - Public images: Named based on the operating system version, architecture,
+         *                language, and published date.
+         *                - Custom images, shared images, cloud marketplace images, and community
+         *                images: Start with the letter `m`.
+         *                <\/details>
          * @return {@code this}
          */
         public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
@@ -1560,8 +1686,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getInternetMaxBandwidthOut}
-         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
-         *                                Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: The maximum outbound public bandwidth.
+         *                                Unit: Mbit/s. Valid values: 0 to 100.
+         *                                Default value: 0.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(java.lang.Number internetMaxBandwidthOut) {
@@ -1571,8 +1698,9 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getInternetMaxBandwidthOut}
-         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: Set internet output bandwidth of instance.
-         *                                Unit is Mbps(Mega bit per second). Range is [0,200]. Default is 1.While the property is not 0, public ip will be assigned for instance.
+         * @param internetMaxBandwidthOut Property internetMaxBandwidthOut: The maximum outbound public bandwidth.
+         *                                Unit: Mbit/s. Valid values: 0 to 100.
+         *                                Default value: 0.
          * @return {@code this}
          */
         public Builder internetMaxBandwidthOut(com.aliyun.ros.cdk.core.IResolvable internetMaxBandwidthOut) {
@@ -1582,8 +1710,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getIoOptimized}
-         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance.
-         *                    Support 'none' and 'optimized' only, default is 'optimized'.
+         * @param ioOptimized Property ioOptimized: Specifies whether the instance is I/O optimized.
+         *                    For instances of <a href="">retired
+         *                    instance types</a>, the default value is none. For instances of other instance
+         *                    types, the default value is optimized. Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>none: The instance is not I/O optimized.</li>
+         *                    <li>optimized: The instance is I/O optimized.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder ioOptimized(java.lang.String ioOptimized) {
@@ -1593,8 +1728,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getIoOptimized}
-         * @param ioOptimized Property ioOptimized: The 'optimized' instance can provide better IO performance.
-         *                    Support 'none' and 'optimized' only, default is 'optimized'.
+         * @param ioOptimized Property ioOptimized: Specifies whether the instance is I/O optimized.
+         *                    For instances of <a href="">retired
+         *                    instance types</a>, the default value is none. For instances of other instance
+         *                    types, the default value is optimized. Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>none: The instance is not I/O optimized.</li>
+         *                    <li>optimized: The instance is I/O optimized.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder ioOptimized(com.aliyun.ros.cdk.core.IResolvable ioOptimized) {
@@ -2008,7 +2150,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getSecurityEnhancementStrategy}
-         * @param securityEnhancementStrategy Property securityEnhancementStrategy:.
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+         *                                    Valid values:
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li>Active: enables security hardening. This value is applicable only to public
+         *                                    images.</li>
+         *                                    <li>Deactive: does not enable security hardening. This value is applicable to all
+         *                                    images.</li>
+         *                                    </ul>
          * @return {@code this}
          */
         public Builder securityEnhancementStrategy(java.lang.String securityEnhancementStrategy) {
@@ -2018,7 +2168,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getSecurityEnhancementStrategy}
-         * @param securityEnhancementStrategy Property securityEnhancementStrategy:.
+         * @param securityEnhancementStrategy Property securityEnhancementStrategy: Specifies whether to enable security hardening.
+         *                                    Valid values:
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li>Active: enables security hardening. This value is applicable only to public
+         *                                    images.</li>
+         *                                    <li>Deactive: does not enable security hardening. This value is applicable to all
+         *                                    images.</li>
+         *                                    </ul>
          * @return {@code this}
          */
         public Builder securityEnhancementStrategy(com.aliyun.ros.cdk.core.IResolvable securityEnhancementStrategy) {
@@ -2092,11 +2250,28 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getSpotDuration}
-         * @param spotDuration Property spotDuration: The protection period of the preemptible instance.
-         *                     Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-         *                     Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-         *                     If this parameter is set to 0, no protection period is configured for the preemptible instance.
-         *                     Default value: 1.
+         * @param spotDuration Property spotDuration: The protection period of the spot instance.
+         *                     Unit: hours. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>1: After a spot instance is created, the system ensures that the instance is not
+         *                     automatically released within 1 hour. After the 1-hour protection period ends, the system
+         *                     compares the bid price with the market price and checks the resource inventory to
+         *                     determine whether to retain or release the instance.</li>
+         *                     <li>0: After a spot instance is created, the system does not ensure that the instance
+         *                     can run for one hour. The system compares the biding price with the market prices and
+         *                     checks the resource inventory to determine whether to retain or release the instance.
+         *                     Default value: 1.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote></blockquote>
+         *                     <p>
+         *                     <ul>
+         *                     <li>You can set this parameter only to 0 or 1.</li>
+         *                     <li>The spot instance is billed by second. Specify an appropriate protection period.</li>
+         *                     <li>The system sends an ECS system event to notify you 5 minutes before the instance is
+         *                     released.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder spotDuration(java.lang.Number spotDuration) {
@@ -2106,11 +2281,28 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getSpotDuration}
-         * @param spotDuration Property spotDuration: The protection period of the preemptible instance.
-         *                     Unit: hours. Valid values: 0, 1, 2, 3, 4, 5, and 6.
-         *                     Protection periods of 2, 3, 4, 5, and 6 hours are in invitational preview. If you want to set this parameter to one of these values, submit a ticket.
-         *                     If this parameter is set to 0, no protection period is configured for the preemptible instance.
-         *                     Default value: 1.
+         * @param spotDuration Property spotDuration: The protection period of the spot instance.
+         *                     Unit: hours. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>1: After a spot instance is created, the system ensures that the instance is not
+         *                     automatically released within 1 hour. After the 1-hour protection period ends, the system
+         *                     compares the bid price with the market price and checks the resource inventory to
+         *                     determine whether to retain or release the instance.</li>
+         *                     <li>0: After a spot instance is created, the system does not ensure that the instance
+         *                     can run for one hour. The system compares the biding price with the market prices and
+         *                     checks the resource inventory to determine whether to retain or release the instance.
+         *                     Default value: 1.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote></blockquote>
+         *                     <p>
+         *                     <ul>
+         *                     <li>You can set this parameter only to 0 or 1.</li>
+         *                     <li>The spot instance is billed by second. Specify an appropriate protection period.</li>
+         *                     <li>The system sends an ECS system event to notify you 5 minutes before the instance is
+         *                     released.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder spotDuration(com.aliyun.ros.cdk.core.IResolvable spotDuration) {
@@ -2120,8 +2312,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getSpotInterruptionBehavior}
-         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
-         *                                 Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the spot instance.
+         *                                 Valid values:
+         *                                 <p>
+         *                                 <ul>
+         *                                 <li>Terminate: The instance is released.</li>
+         *                                 <li>Stop: The instance is stopped in economical mode.
+         *                                 For information about the economical mode, see <a href="">Economical mode</a>.
+         *                                 Default value: Terminate.</li>
+         *                                 </ul>
          * @return {@code this}
          */
         public Builder spotInterruptionBehavior(java.lang.String spotInterruptionBehavior) {
@@ -2131,8 +2330,15 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getSpotInterruptionBehavior}
-         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the preemptible instance.
-         *                                 Default value: Terminate. Set the value to Terminate, which specifies to release the instance.
+         * @param spotInterruptionBehavior Property spotInterruptionBehavior: The interruption mode of the spot instance.
+         *                                 Valid values:
+         *                                 <p>
+         *                                 <ul>
+         *                                 <li>Terminate: The instance is released.</li>
+         *                                 <li>Stop: The instance is stopped in economical mode.
+         *                                 For information about the economical mode, see <a href="">Economical mode</a>.
+         *                                 Default value: Terminate.</li>
+         *                                 </ul>
          * @return {@code this}
          */
         public Builder spotInterruptionBehavior(com.aliyun.ros.cdk.core.IResolvable spotInterruptionBehavior) {
@@ -2207,7 +2413,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceGroupProps#getStorageSetPartitionNumber}
          * @param storageSetPartitionNumber Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
-         *                                  The value must be greater than or equal to 2.
+         *                                  Valid values: integers
+         *                                  greater than or equal to 2.
          * @return {@code this}
          */
         public Builder storageSetPartitionNumber(java.lang.Number storageSetPartitionNumber) {
@@ -2218,7 +2425,8 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
         /**
          * Sets the value of {@link InstanceGroupProps#getStorageSetPartitionNumber}
          * @param storageSetPartitionNumber Property storageSetPartitionNumber: The maximum number of partitions in the storage set.
-         *                                  The value must be greater than or equal to 2.
+         *                                  Valid values: integers
+         *                                  greater than or equal to 2.
          * @return {@code this}
          */
         public Builder storageSetPartitionNumber(com.aliyun.ros.cdk.core.IResolvable storageSetPartitionNumber) {
@@ -2654,8 +2862,21 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getUserData}
-         * @param userData Property userData: User data to pass to instance.
-         *                 [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+         * @param userData Property userData: The user data of the instance.
+         *                 You must specify Base64-encoded data. The instance
+         *                 user data cannot exceed 32 KB in size before Base64 encoding.
+         *                 For information about the limits, formats, and running frequencies of instance
+         *                 user data, see <a href="">Instance user data</a>.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 To ensure security, we recommend that you do not use plaintext to pass in
+         *                 confidential information, such as passwords or private keys, as user data. If you
+         *                 need to pass in confidential information, we recommend that you encrypt and
+         *                 encode the information in Base64 and then decode and decrypt the information in
+         *                 the same manner in the instance.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder userData(java.lang.String userData) {
@@ -2665,8 +2886,21 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getUserData}
-         * @param userData Property userData: User data to pass to instance.
-         *                 [1, 16KB] characters.User data should not be base64 encoded. If you want to pass base64 encoded string to the property, use function Fn::Base64Decode to decode the base64 string first.
+         * @param userData Property userData: The user data of the instance.
+         *                 You must specify Base64-encoded data. The instance
+         *                 user data cannot exceed 32 KB in size before Base64 encoding.
+         *                 For information about the limits, formats, and running frequencies of instance
+         *                 user data, see <a href="">Instance user data</a>.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 To ensure security, we recommend that you do not use plaintext to pass in
+         *                 confidential information, such as passwords or private keys, as user data. If you
+         *                 need to pass in confidential information, we recommend that you encrypt and
+         *                 encode the information in Base64 and then decode and decrypt the information in
+         *                 the same manner in the instance.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder userData(com.aliyun.ros.cdk.core.IResolvable userData) {
@@ -2696,7 +2930,21 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The vSwitch Id to create ecs instance.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which to connect to the instance.
+         *                  You must set this
+         *                  parameter when you create an instance of the VPC type. The specified vSwitch and
+         *                  security group must belong to the same VPC. You can call the
+         *                  <a href="">DescribeVSwitches</a> operation to query available vSwitches.
+         *                  Take note of the following items:
+         *                  <p>
+         *                  <ul>
+         *                  <li>If you specify the <code>VSwitchId</code> parameter, the zone specified by the <code>ZoneId</code>
+         *                  parameter must be the zone where the specified vSwitch is located. You can also
+         *                  leave the <code>ZoneId</code> parameter empty. Then, the system selects the zone where the
+         *                  specified vSwitch resides.</li>
+         *                  <li>If <code>NetworkInterface.N.InstanceType</code> is set to <code>Primary</code>, you cannot specify
+         *                  <code>VSwitchId</code> but can specify <code>NetworkInterface.N.VSwitchId</code>.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -2706,7 +2954,21 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The vSwitch Id to create ecs instance.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which to connect to the instance.
+         *                  You must set this
+         *                  parameter when you create an instance of the VPC type. The specified vSwitch and
+         *                  security group must belong to the same VPC. You can call the
+         *                  <a href="">DescribeVSwitches</a> operation to query available vSwitches.
+         *                  Take note of the following items:
+         *                  <p>
+         *                  <ul>
+         *                  <li>If you specify the <code>VSwitchId</code> parameter, the zone specified by the <code>ZoneId</code>
+         *                  parameter must be the zone where the specified vSwitch is located. You can also
+         *                  leave the <code>ZoneId</code> parameter empty. Then, the system selects the zone where the
+         *                  specified vSwitch resides.</li>
+         *                  <li>If <code>NetworkInterface.N.InstanceType</code> is set to <code>Primary</code>, you cannot specify
+         *                  <code>VSwitchId</code> but can specify <code>NetworkInterface.N.VSwitchId</code>.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.edas;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::EDAS::UserDefineRegion</code>, which is used to create or edit a custom namespace.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EDAS::UserDefineRegion</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:38:16.827Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:39:57.435Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.edas.$Module.class, fqn = "@alicloud/ros-cdk-edas.UserDefineRegion")
 public class UserDefineRegion extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.edas.IUserDefineRegion {
 

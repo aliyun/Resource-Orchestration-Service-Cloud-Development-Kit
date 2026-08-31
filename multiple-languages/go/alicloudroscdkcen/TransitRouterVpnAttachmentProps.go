@@ -23,13 +23,24 @@ type TransitRouterVpnAttachmentProps struct {
 	//
 	// Max support 20 tags to add during create TransitRouterVpnAttachment. Each tag with two properties Key and Value, and Key is required.
 	Tags *[]*RosTransitRouterVpnAttachment_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
-	// Property transitRouterAttachmentDescription: Description of the VPN connection.
+	// Property transitRouterAttachmentDescription: The description of the VPN connection.
+	//
+	// The description can be empty or 1 to 256 characters in length, and cannot start
+	// with http:\/\/ or https:\/\/.
 	TransitRouterAttachmentDescription interface{} `field:"optional" json:"transitRouterAttachmentDescription" yaml:"transitRouterAttachmentDescription"`
 	// Property transitRouterAttachmentName: The name of the VPN connection.
+	//
+	// The name can be empty or 1 to 128 characters in length, and cannot start with
+	// http:\/\/ or https:\/\/.
 	TransitRouterAttachmentName interface{} `field:"optional" json:"transitRouterAttachmentName" yaml:"transitRouterAttachmentName"`
 	// Property transitRouterId: Forwarding router instance ID.
 	TransitRouterId interface{} `field:"optional" json:"transitRouterId" yaml:"transitRouterId"`
-	// Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+	// Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+	//
+	// - If you do not specify this parameter, the ID of the current account
+	// is used.
+	// - This parameter is required if you want to connect to a cross-account IPsec-VPN
+	// connection.
 	VpnOwnerId interface{} `field:"optional" json:"vpnOwnerId" yaml:"vpnOwnerId"`
 	// Property zoneId: Availability zone ID in the current region.
 	ZoneId interface{} `field:"optional" json:"zoneId" yaml:"zoneId"`

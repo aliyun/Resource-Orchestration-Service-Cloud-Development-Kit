@@ -218,7 +218,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         private object _vSwitchId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The vSwitch ID of the instance.
+        /// <strong>Property</strong>: vSwitchId: The vSwitch ID.
+        /// > - This parameter is required.
+        /// >
+        /// > - The vSwitch must be in the zone specified by `ZoneId`.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VSwitchId
@@ -316,8 +319,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         private object? _dbInstanceCategory;
 
         /// <remarks>
-        /// <strong>Property</strong>: dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-        /// This parameter must be passed in to create a storage reservation mode instance.
+        /// <strong>Property</strong>: dbInstanceCategory: The instance edition. Valid values:
+        /// - HighAvailability: High-availability Edition
+        /// - Basic: Basic Edition
+        /// > This parameter is required for instances in elastic storage mode.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbInstanceCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -659,7 +664,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         private object? _privateIpAddress;
 
         /// <remarks>
-        /// <strong>Property</strong>: privateIpAddress: Private IP address.
+        /// <strong>Property</strong>: privateIpAddress: This parameter is deprecated.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "privateIpAddress", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -692,8 +697,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         private object? _securityIpList;
 
         /// <remarks>
-        /// <strong>Property</strong>: securityIpList: The whitelist of IP addresses that are allowed to access the instance. Default value:
-        /// 127.0.0.1.
+        /// <strong>Property</strong>: securityIpList: The IP address whitelist for the instance.
+        /// A value of 127.0.0.1 blocks all external access. After you create the instance,
+        /// you can call the [ModifySecurityIps]() operation to modify the IP address
+        /// whitelist.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

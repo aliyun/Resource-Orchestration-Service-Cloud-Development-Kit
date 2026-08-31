@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::Gateway2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.305Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.653Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.Gateway2")
 public class Gateway2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.IGateway2 {
 
@@ -220,20 +220,20 @@ public class Gateway2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+         * Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
          * <p>
          * @return {@code this}
-         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis. This parameter is required.
+         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration. This parameter is required.
          */
         public Builder enableHardwareAcceleration(final java.lang.Boolean enableHardwareAcceleration) {
             this.props.enableHardwareAcceleration(enableHardwareAcceleration);
             return this;
         }
         /**
-         * Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+         * Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
          * <p>
          * @return {@code this}
-         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis. This parameter is required.
+         * @param enableHardwareAcceleration Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration. This parameter is required.
          */
         public Builder enableHardwareAcceleration(final com.aliyun.ros.cdk.core.IResolvable enableHardwareAcceleration) {
             this.props.enableHardwareAcceleration(enableHardwareAcceleration);
@@ -283,20 +283,20 @@ public class Gateway2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+         * Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
          * <p>
          * @return {@code this}
-         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration. This parameter is required.
+         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group. This parameter is required.
          */
         public Builder enterpriseSecurityGroup(final java.lang.Boolean enterpriseSecurityGroup) {
             this.props.enterpriseSecurityGroup(enterpriseSecurityGroup);
             return this;
         }
         /**
-         * Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+         * Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
          * <p>
          * @return {@code this}
-         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration. This parameter is required.
+         * @param enterpriseSecurityGroup Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group. This parameter is required.
          */
         public Builder enterpriseSecurityGroup(final com.aliyun.ros.cdk.core.IResolvable enterpriseSecurityGroup) {
             this.props.enterpriseSecurityGroup(enterpriseSecurityGroup);
@@ -362,28 +362,32 @@ public class Gateway2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property mserVersion: The MSE gateway instance type.
+         * Property mserVersion: The edition of the gateway.
          * <p>
-         * Valid values:
-         * mse_pro: normal instance
-         * mse_premium: professional normal instancemse_serverless: serverless instance
+         * <ul>
+         * <li><code>mse_premium</code>: Professional Edition</li>
+         * <li><code>mse_pro</code>: Standard Edition</li>
+         * <li><code>mse_serverless</code>: Serverless Edition</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mserVersion Property mserVersion: The MSE gateway instance type. This parameter is required.
+         * @param mserVersion Property mserVersion: The edition of the gateway. This parameter is required.
          */
         public Builder mserVersion(final java.lang.String mserVersion) {
             this.props.mserVersion(mserVersion);
             return this;
         }
         /**
-         * Property mserVersion: The MSE gateway instance type.
+         * Property mserVersion: The edition of the gateway.
          * <p>
-         * Valid values:
-         * mse_pro: normal instance
-         * mse_premium: professional normal instancemse_serverless: serverless instance
+         * <ul>
+         * <li><code>mse_premium</code>: Professional Edition</li>
+         * <li><code>mse_pro</code>: Standard Edition</li>
+         * <li><code>mse_serverless</code>: Serverless Edition</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mserVersion Property mserVersion: The MSE gateway instance type. This parameter is required.
+         * @param mserVersion Property mserVersion: The edition of the gateway. This parameter is required.
          */
         public Builder mserVersion(final com.aliyun.ros.cdk.core.IResolvable mserVersion) {
             this.props.mserVersion(mserVersion);

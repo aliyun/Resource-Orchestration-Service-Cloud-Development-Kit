@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::WaitingRoom`The , which type is used to create a waiting room.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::WaitingRoom`.
 type RosWaitingRoom interface {
 	alicloudroscdkcore.RosResource
 	AttrCookieName() alicloudroscdkcore.IResolvable

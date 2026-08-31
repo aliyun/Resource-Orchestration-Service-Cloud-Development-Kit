@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`, which is used to apply an alert template to an application group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplateDeployment` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
@@ -352,10 +352,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: notifyLevel: Alarm notification method.Value:
-        /// 2: Phone + SMS + Email + Wangwang + DingTalk Robot.
-        /// 3: SMS + Email + Wangwang + DingTalk Robot.
-        /// 4: Wangwang + Dingding Robot.
+        /// <strong>Property</strong>: notifyLevel: The alert notification method. Valid values:
+        /// Set the value to 4. A value of 4 indicates that alert notifications are sent by
+        /// using TradeManager and DingTalk chatbots.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "notifyLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

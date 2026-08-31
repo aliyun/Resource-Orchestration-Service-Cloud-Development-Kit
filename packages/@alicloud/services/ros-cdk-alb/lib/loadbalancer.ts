@@ -45,9 +45,13 @@ export interface LoadBalancerProps {
     readonly accessLogConfig?: RosLoadBalancer.AccessLogConfigProperty | ros.IResolvable;
 
     /**
-     * Property addressAllocatedMode: The mode in which IP addresses are assigned. Valid values:
-     * Fixed: The ALB instance uses a static IP address.
-     * Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+     * Property addressAllocatedMode: Address allocation mode. Valid values:
+     * - Fixed (Default): A fixed IP address is allocated to each zone.
+     * - Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.
+     * > Starting from , when you create a new instance by using this interface, it is
+     * created as an upgraded ALB instance regardless of the mode you specify. The
+     * distinction between IP modes is removed, and the allocated IP addresses are
+     * automatically elastic. ALB instances created before the upgrade are not affected.
      */
     readonly addressAllocatedMode?: string | ros.IResolvable;
 
@@ -76,13 +80,15 @@ export interface LoadBalancerProps {
     readonly ipv6AddressType?: string | ros.IResolvable;
 
     /**
-     * Property loadBalancerName: The name of the ALB instance.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+     * Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.
+     * The name must be 2 to 128 characters long, must start with a letter, digit, or
+     * Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+     * (-), and spaces.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
-     * Property modificationProtectionConfig: The configuration of modification protection.
+     * Property modificationProtectionConfig: The modification protection configuration.
      */
     readonly modificationProtectionConfig?: RosLoadBalancer.ModificationProtectionConfigProperty | ros.IResolvable;
 
@@ -144,7 +150,7 @@ export interface ILoadBalancer extends ros.IResource {
     readonly attrZoneMappings: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`The , which type is used to create an Application Load Balancer (ALB) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::LoadBalancer`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosLoadBalancer`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-loadbalancer
  */

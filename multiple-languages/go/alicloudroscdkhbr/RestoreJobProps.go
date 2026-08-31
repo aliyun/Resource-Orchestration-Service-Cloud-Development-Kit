@@ -27,9 +27,10 @@ type RestoreJobProps struct {
 	//
 	// It should be provided when RestoreType=ECS_FILE.
 	TargetInstanceId interface{} `field:"required" json:"targetInstanceId" yaml:"targetInstanceId"`
-	// Property targetPath: Target path.
+	// Property targetPath: The destination path for the restore.
 	//
-	// For instance, "\/".
+	// This parameter is valid only when
+	// RestoreType is set to ECS_FILE.
 	TargetPath interface{} `field:"required" json:"targetPath" yaml:"targetPath"`
 	// Property vaultId: Vault ID.
 	VaultId interface{} `field:"required" json:"vaultId" yaml:"vaultId"`

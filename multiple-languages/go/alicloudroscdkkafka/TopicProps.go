@@ -18,11 +18,12 @@ type TopicProps struct {
 	Remark interface{} `field:"required" json:"remark" yaml:"remark"`
 	// Property topic: The name of the topic.
 	//
-	// The value of this parameter must meet the following requirements:
-	// The name can only contain letters, digits, hyphens (-), and underscores (_).
-	// The name must be 3 to 64 characters in length, and will be automatically truncated
-	// if it contains more characters.
-	// The name cannot be modified after being created.
+	// - Reserved instance: The name can contain uppercase letters, lowercase letters,
+	// digits, underscores (_), hyphens (-), and periods (.). The name must be 3 to 64
+	// characters in length.
+	// - Serverless instance: The name can contain uppercase letters, lowercase letters,
+	// digits, underscores (_), hyphens (-), and periods (.). The name must be 1 to 249
+	// characters in length.
 	Topic interface{} `field:"required" json:"topic" yaml:"topic"`
 	// Property compactTopic: The log cleanup policy for the topic.
 	//
@@ -30,11 +31,32 @@ type TopicProps struct {
 	// false: uses the default log cleanup policy.
 	// true: uses the Apache Kafka log compaction policy.
 	CompactTopic interface{} `field:"optional" json:"compactTopic" yaml:"compactTopic"`
-	// Property config: Supplementary configuration.
+	// Property config: The advanced configurations of the topic.
 	//
-	// Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
-	// This parameter can only be specified if the LocalTopic value is true.
-	// NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+	// - Configure this parameter in the JSON format.
+	// - This parameter is available only if LocalTopic is set to true.
+	// - The following configurations are supported for reserved instances:
+	// - retention.ms: The message retention period. The value must be an integer from
+	// 3,600,000 to 31,536,000,000. Unit: milliseconds.
+	// - max.message.bytes: The maximum size of a message that can be sent. The value
+	// must be an integer from 1,048,576 to 10,485,760. Unit: bytes.
+	// - message.timestamp.type: The timestamp type of a message. Valid values:
+	// CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+	// the time when the producer creates the message. If you do not specify a
+	// timestamp, the client time is used. LogAppendTime indicates that the message
+	// timestamp is the time when the server stores the message. The default value is
+	// CreateTime. We recommend that you set this parameter to LogAppendTime.
+	// - The following configurations are supported for Serverless instances:
+	// - retention.hours: The message retention period. The value is of the string type.
+	// The value must be an integer from 24 to 8,760.
+	// - max.message.bytes: The maximum size of a message that can be sent. The value is
+	// of the string type. The value must be an integer from 1,048,576 to 10,485,760.
+	// - message.timestamp.type: The timestamp type of a message. Valid values:
+	// CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+	// the time when the producer creates the message. If you do not specify a
+	// timestamp, the client time is used. LogAppendTime indicates that the message
+	// timestamp is the time when the server stores the message. The default value is
+	// CreateTime. We recommend that you set this parameter to LogAppendTime.
 	Config interface{} `field:"optional" json:"config" yaml:"config"`
 	// Property localTopic: The storage engine of the topic.
 	//
@@ -50,10 +72,12 @@ type TopicProps struct {
 	MinInsyncReplicas interface{} `field:"optional" json:"minInsyncReplicas" yaml:"minInsyncReplicas"`
 	// Property partitionNum: The number of partitions in the topic.
 	//
-	// Valid values:
-	// 1 to 48
-	// We recommend that you set the number of partitions to a multiple of 6 to reduce the
-	// risk of data skew.Note:For special requirements,submit a ticket.
+	// - The value must be an integer from 1 to 360.
+	// - The console suggests a number of partitions based on the instance type. Follow
+	// the suggestion to reduce the risk of data skew.
+	// Default value:
+	// - Reserved instance: 12
+	// - Serverless instance: 3.
 	PartitionNum interface{} `field:"optional" json:"partitionNum" yaml:"partitionNum"`
 	// Property replicationFactor: The number of copies of the topic.
 	//

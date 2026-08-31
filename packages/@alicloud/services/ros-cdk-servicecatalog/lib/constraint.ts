@@ -11,11 +11,13 @@ export interface ConstraintProps {
 
     /**
      * Property config: The configuration of the constraint.
+     * Format: { "LocalRoleName": "\<role_name>" }.
      */
     readonly config: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * Property constraintType: The type of the constraint.
+     * The value is fixed as Launch, which specifies the launch constraint.
      */
     readonly constraintType: string | ros.IResolvable;
 
@@ -31,6 +33,7 @@ export interface ConstraintProps {
 
     /**
      * Property description: The description of the constraint.
+     * The value must be 1 to 128 characters in length.
      */
     readonly description?: string | ros.IResolvable;
 }

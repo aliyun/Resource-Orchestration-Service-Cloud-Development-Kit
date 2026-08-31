@@ -258,7 +258,7 @@ function rosHostPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::BastionHost::Host`, which is used to create a host for O&M in a bastion host.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BastionHost::Host`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Host` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-host
  */
@@ -387,7 +387,7 @@ export class RosHost extends ros.RosResource {
 export interface RosHostAccountProps {
 
     /**
-     * @Property hostAccountName: The name of the host account.
+     * @Property hostAccountName: The name of the new host account. The name can be up to 128 characters long.
      */
     readonly hostAccountName: string | ros.IResolvable;
 
@@ -422,17 +422,29 @@ export interface RosHostAccountProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property privateKey: The private key of the host account. This parameter is required when the protocol is SSH.
+     * @Property privateKey: The private key of the new host account. The value is a Base64-encoded string.
+     * > This parameter is used only when ProtocolName is set to SSH. You do not need to
+     * set this parameter if ProtocolName is set to RDP. You can set both a password and
+     * a private key for the host account. When connecting to the asset, Bastionhost
+     * prioritizes the private key for the connection.
      */
     readonly privateKey?: string | ros.IResolvable;
 
     /**
-     * @Property privilegeType: The privilege type of the host account. Valid values: Normal, Administrator.
+     * @Property privilegeType: The permission type of the account. If you do not set this parameter, the default
+     * value is Normal.
+     * - Privileged: privileged account
+     * - Normal: normal account
+     * > This parameter is supported only in Bastionhost V3.2.47 and later.
      */
     readonly privilegeType?: string | ros.IResolvable;
 
     /**
-     * @Property rotationMode: The rotation mode of the host account. Valid values: Manual, Automatic.
+     * @Property rotationMode: The password change mode for the account. If you do not set this parameter, the
+     * default value is Self.
+     * - Privileged: Use a privileged account to change the password.
+     * - Self: Do not use a privileged account to change the password.
+     * > This parameter is supported only in Bastionhost V3.2.47 and later.
      */
     readonly rotationMode?: string | ros.IResolvable;
 }
@@ -511,7 +523,7 @@ export class RosHostAccount extends ros.RosResource {
 
 
     /**
-     * @Property hostAccountName: The name of the host account.
+     * @Property hostAccountName: The name of the new host account. The name can be up to 128 characters long.
      */
     public hostAccountName: string | ros.IResolvable;
 
@@ -546,17 +558,29 @@ export class RosHostAccount extends ros.RosResource {
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property privateKey: The private key of the host account. This parameter is required when the protocol is SSH.
+     * @Property privateKey: The private key of the new host account. The value is a Base64-encoded string.
+     * > This parameter is used only when ProtocolName is set to SSH. You do not need to
+     * set this parameter if ProtocolName is set to RDP. You can set both a password and
+     * a private key for the host account. When connecting to the asset, Bastionhost
+     * prioritizes the private key for the connection.
      */
     public privateKey: string | ros.IResolvable | undefined;
 
     /**
-     * @Property privilegeType: The privilege type of the host account. Valid values: Normal, Administrator.
+     * @Property privilegeType: The permission type of the account. If you do not set this parameter, the default
+     * value is Normal.
+     * - Privileged: privileged account
+     * - Normal: normal account
+     * > This parameter is supported only in Bastionhost V3.2.47 and later.
      */
     public privilegeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property rotationMode: The rotation mode of the host account. Valid values: Manual, Automatic.
+     * @Property rotationMode: The password change mode for the account. If you do not set this parameter, the
+     * default value is Self.
+     * - Privileged: Use a privileged account to change the password.
+     * - Self: Do not use a privileged account to change the password.
+     * > This parameter is supported only in Bastionhost V3.2.47 and later.
      */
     public rotationMode: string | ros.IResolvable | undefined;
 
@@ -947,7 +971,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::BastionHost::Instance`, which is used to create a bastion host.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::BastionHost::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-instance
  */
@@ -1464,12 +1488,14 @@ export interface RosUserGroupProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * @Property userGroupName: The name of the user group.
+     * @Property userGroupName: The name of the user group that you want to create. This name can be a up to 128
+     * characters in length.
      */
     readonly userGroupName: string | ros.IResolvable;
 
     /**
-     * @Property comment: The comment of the user group.
+     * @Property comment: The description of the user group. The description can be up to 500 characters in
+     * length.
      */
     readonly comment?: string | ros.IResolvable;
 }
@@ -1537,12 +1563,14 @@ export class RosUserGroup extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * @Property userGroupName: The name of the user group.
+     * @Property userGroupName: The name of the user group that you want to create. This name can be a up to 128
+     * characters in length.
      */
     public userGroupName: string | ros.IResolvable;
 
     /**
-     * @Property comment: The comment of the user group.
+     * @Property comment: The description of the user group. The description can be up to 500 characters in
+     * length.
      */
     public comment: string | ros.IResolvable | undefined;
 

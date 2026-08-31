@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`, which is used to configure a change tracking task.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DTS::SubscriptionJob2`.
 type SubscriptionJob2 interface {
 	alicloudroscdkcore.Resource
 	ISubscriptionJob2

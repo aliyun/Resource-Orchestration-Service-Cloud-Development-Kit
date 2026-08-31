@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-instancegroupclone
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.976Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.354Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.InstanceGroupCloneProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupCloneProps.Jsii$Proxy.class)
 public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerializable {
@@ -66,7 +66,24 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.
+     * Property deletionProtection: Specifies whether to enable release protection for the instance.
+     * <p>
+     * This parameter
+     * determines whether you can use the ECS console or call the <a href="">DeleteInstance</a>
+     * operation to release the instance. Valid values:
+     * <p>
+     * <ul>
+     * <li>true: enables release protection for the instance.</li>
+     * <li>false: disables release protection for the instance.
+     * Default value: false.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is applicable to only pay-as-you-go instances. It can protect
+     * instances against manual releases, but not against automatic releases.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeletionProtection() {
         return null;
@@ -706,7 +723,23 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getDeletionProtection}
-         * @param deletionProtection Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable release protection for the instance.
+         *                           This parameter
+         *                           determines whether you can use the ECS console or call the <a href="">DeleteInstance</a>
+         *                           operation to release the instance. Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>true: enables release protection for the instance.</li>
+         *                           <li>false: disables release protection for the instance.
+         *                           Default value: false.</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is applicable to only pay-as-you-go instances. It can protect
+         *                           instances against manual releases, but not against automatic releases.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder deletionProtection(java.lang.Boolean deletionProtection) {
@@ -716,7 +749,23 @@ public interface InstanceGroupCloneProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link InstanceGroupCloneProps#getDeletionProtection}
-         * @param deletionProtection Property deletionProtection: Whether an instance can be released manually through the console or API, deletion protection only support postPaid instance.
+         * @param deletionProtection Property deletionProtection: Specifies whether to enable release protection for the instance.
+         *                           This parameter
+         *                           determines whether you can use the ECS console or call the <a href="">DeleteInstance</a>
+         *                           operation to release the instance. Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>true: enables release protection for the instance.</li>
+         *                           <li>false: disables release protection for the instance.
+         *                           Default value: false.</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is applicable to only pay-as-you-go instances. It can protect
+         *                           instances against manual releases, but not against automatic releases.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder deletionProtection(com.aliyun.ros.cdk.core.IResolvable deletionProtection) {

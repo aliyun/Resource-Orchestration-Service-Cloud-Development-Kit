@@ -50,7 +50,7 @@ export interface IClientInstanceAttachment extends ros.IResource {
     readonly attrVSwitchId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EAIS::ClientInstanceAttachment`, which is used to query the information about an Elastic Accelerated Computing Instances (EAIS) instance attached to an Elastic Compute Service (ECS) instance or elastic container instance.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EAIS::ClientInstanceAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosClientInstanceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eais-clientinstanceattachment
  */

@@ -62,7 +62,7 @@ export interface ITransitRouterRouteTable extends ros.IResource {
     readonly attrTransitRouterRouteTableType: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`, which is used to create a custom route table for an Enterprise Edition transit router.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTable`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterRouteTable`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitrouterroutetable
  */

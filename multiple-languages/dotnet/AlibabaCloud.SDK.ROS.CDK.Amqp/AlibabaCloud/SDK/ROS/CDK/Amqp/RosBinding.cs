@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Amqp
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or an exchange to an exchange.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Binding` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
@@ -60,9 +60,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: argument: X-match Attributes. Valid Values:
-        /// "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-        /// "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+        /// <strong>Property</strong>: argument: The key-value pairs for the message header attributes. The message header
+        /// attributes consist of one or more key-value pairs. The x-match attribute is
+        /// required. Other attributes are custom. The x-match attribute supports the
+        /// following values:
+        /// - all: This is the default value. All key-value pairs in the message header must
+        /// match.
+        /// - any: At least one key-value pair in the message header must match.
+        /// Separate attributes with semicolons (;) and separate keys from values with colons
+        /// (:). Example: x-match:all;type:report;format:pdf
+        /// This parameter is valid only for headers exchanges. For other types of exchanges,
+        /// this parameter is ignored.
         /// </remarks>
         [JsiiProperty(name: "argument", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Argument
@@ -92,7 +100,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bindingKey: The Binding Key.
+        /// <strong></strong>: ).
+        /// - The key cannot start or end with a period (.). If the key starts with a number
+        /// sign (#) or an asterisk (\*), a period (.) must immediately follow. If the key
+        /// ends with a number sign (#) or an asterisk (\*), a period (.) must immediately
+        /// precede it. If a number sign (#) or an asterisk (\*) is in the middle of the key,
+        /// it must have a period (.) on both sides.
+        /// - The length must be 1 to 255 characters.
+        ///
+        /// <strong>Property</strong>: bindingKey: The binding key.
+        /// - If the source exchange is not a topic exchange:
+        /// - It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+        /// forward slashes (\/), and at signs (
         /// </remarks>
         [JsiiProperty(name: "bindingKey", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object BindingKey
@@ -122,7 +141,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bindingType: The Target Binding Types. Valid values: EXCHANGE, QUEUE.
+        /// <strong>Property</strong>: bindingType: The type of the destination object. Valid values:
+        /// - 0: Queue
+        /// - 1: Exchange
         /// </remarks>
         [JsiiProperty(name: "bindingType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object BindingType
@@ -152,7 +173,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Amqp
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: destinationName: The Target Queue Or Exchange of the Name.
+        /// <strong>Property</strong>: destinationName: The name of the binding destination. The destination must be created in the
+        /// console. It must belong to the same vhost as `SourceExchange`. The `VirtualHost`
+        /// parameter specifies the vhost.
         /// </remarks>
         [JsiiProperty(name: "destinationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object DestinationName

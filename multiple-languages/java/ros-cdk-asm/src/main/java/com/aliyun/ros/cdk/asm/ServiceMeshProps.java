@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.asm;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:33:01.858Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:14:20.523Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.asm.$Module.class, fqn = "@alicloud/ros-cdk-asm.ServiceMeshProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceMeshProps.Jsii$Proxy.class)
 public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,7 +21,15 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitches();
 
     /**
-     * Property accessLogEnabled: Specifies whether to enable access logging.
+     * Property accessLogEnabled: Specifies whether to enable access log.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables access log.</li>
+     * <li><code>false</code>: Disables access log.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccessLogEnabled() {
         return null;
@@ -42,7 +50,16 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property accessLogFormat: The format of access logs.
+     * Property accessLogFormat: The custom format of access logs.
+     * <p>
+     * This parameter is available only if you enable
+     * access log. The value must be a JSON string that contains the following keys:
+     * authority_for, bytes_received, bytes_sent, downstream_local_address,
+     * downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+     * requested_server_name, response_code, response_flags, route_name, start_time,
+     * trace_id, upstream_cluster, upstream_host, upstream_local_address,
+     * upstream_service_time, upstream_transport_failure_reason, user_agent, and
+     * x_forwarded_for.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccessLogFormat() {
         return null;
@@ -128,9 +145,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property autoRenewPeriod: ChargeType is a PrePay.
+     * Property autoRenewPeriod: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
      * <p>
-     * Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+     * The
+     * auto-renewal period. If the subscription duration is less than one year, the
+     * value of this parameter indicates the number of months for which you want to
+     * renew the instance. If the subscription duration is more than one year, the value
+     * of this parameter indicates the number of years for which you want to renew the
+     * instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenewPeriod() {
         return null;
@@ -192,7 +214,15 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+     * Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables control plane log collection.</li>
+     * <li><code>false</code>: Disables control plane log collection.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getControlPlaneLogEnabled() {
         return null;
@@ -213,28 +243,60 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property customizedPrometheus: Specifies whether to use a customized Prometheus system.
+     * Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Uses a self-managed Prometheus system.</li>
+     * <li><code>false</code>: Does not use a self-managed Prometheus system.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCustomizedPrometheus() {
         return null;
     }
 
     /**
-     * Property customizedZipkin: Specifies whether to use a user-created Zipkin system.
+     * Property customizedZipkin: Specifies whether to use a self-managed Zipkin system.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Uses a self-managed Zipkin system.</li>
+     * <li><code>false</code>: Uses Tracing Analysis.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCustomizedZipkin() {
         return null;
     }
 
     /**
-     * Property dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+     * Property dnsProxyingEnabled: Specifies whether to enable DNS proxy.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables DNS proxy.</li>
+     * <li><code>false</code>: Disables DNS proxy.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDnsProxyingEnabled() {
         return null;
     }
 
     /**
-     * Property dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+     * Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the Dubbo filter.</li>
+     * <li><code>false</code>: Disables the Dubbo filter.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDubboFilterEnabled() {
         return null;
@@ -273,14 +335,30 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property enableCrHistory: Specifies whether to enable CR history.
+     * Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the history version management feature.</li>
+     * <li><code>false</code>: Disables the history version management feature.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableCrHistory() {
         return null;
     }
 
     /**
-     * Property enableSdsServer: Specifies whether to enable SDS server.
+     * Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS).
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables SDS.</li>
+     * <li><code>false</code>: Disables SDS.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableSdsServer() {
         return null;
@@ -322,7 +400,18 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property existingCaType: The type of existing CA.
+     * Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod.
+     * <p>
+     * This corresponds to the istio-ca-secret
+     * secret in the istio-system namespace. If you use this type, you must also provide
+     * the <code>ExistingCaCert</code> and <code>ExsitingCaKey</code> parameters.
+     * <p>
+     * <ul>
+     * <li>2: An external certificate of Istiod. For more information, see plugin ca cert.
+     * This generally corresponds to the cacerts secret in the istio-system namespace.
+     * If you use this type, you must also provide the <code>ExisingRootCaCert</code> and
+     * <code>ExisingRootCaKey</code> parameters.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getExistingCaType() {
         return null;
@@ -343,28 +432,48 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+     * Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables gateway configuration filtering.</li>
+     * <li><code>false</code>: Disables gateway configuration filtering.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFilterGatewayClusterConfig() {
         return null;
     }
 
     /**
-     * Property gatewayApiEnabled: Specifies whether to enable Gateway API.
+     * Property gatewayApiEnabled: Specifies whether to enable the Gateway API.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the Gateway API.</li>
+     * <li><code>false</code>: Disables the Gateway API.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGatewayApiEnabled() {
         return null;
     }
 
     /**
-     * Property guestCluster: The guest cluster configuration.
+     * Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+     * <p>
+     * If you do not specify this parameter, no cluster is added. The cluster must be in
+     * the same VPC and vSwitch as the Service Mesh instance, and must have the same
+     * domain name.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGuestCluster() {
         return null;
     }
 
     /**
-     * Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services.
+     * Property includeIpRanges: The IP address ranges that are allowed to access the proxy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIncludeIpRanges() {
         return null;
@@ -378,7 +487,17 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property kialiEnabled: Specifies whether to enable Kiali.
+     * Property kialiEnabled: Specifies whether to enable the mesh topology feature.
+     * <p>
+     * To enable this feature,
+     * you must first enable Prometheus monitoring. If Prometheus monitoring is
+     * disabled, this feature is forcibly disabled. Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the mesh topology feature.</li>
+     * <li><code>false</code>: Disables the mesh topology feature.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getKialiEnabled() {
         return null;
@@ -401,28 +520,55 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property mseEnabled: Specifies whether to enable MSE.
+     * Property mseEnabled: Specifies whether to enable Microservices Engine (MSE).
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables MSE.</li>
+     * <li><code>false</code>: Disables MSE.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMseEnabled() {
         return null;
     }
 
     /**
-     * Property multiBufferEnabled: Specifies whether to enable multi-buffer.
+     * Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the feature.</li>
+     * <li><code>false</code>: Disables the feature.
+     * Default value: <code>true</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMultiBufferEnabled() {
         return null;
     }
 
     /**
-     * Property multiBufferPollDelay: The poll delay for multi-buffer.
+     * Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status.
+     * <p>
+     * Default value:
+     * <code>30s</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMultiBufferPollDelay() {
         return null;
     }
 
     /**
-     * Property mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+     * Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the MySQL filter.</li>
+     * <li><code>false</code>: Disables the MySQL filter.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMysqlFilterEnabled() {
         return null;
@@ -444,6 +590,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
     /**
      * Property opaEnabled: Specifies whether to enable OPA.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables OPA.</li>
+     * <li><code>false</code>: Disables OPA.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getOpaEnabled() {
         return null;
@@ -457,14 +611,21 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property period: The subscription period.
+     * Property period: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
+     * <p>
+     * The
+     * subscription duration of the SLB instance. Unit: months. If you want to purchase
+     * the instance for one year, enter 12.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
-     * Property pilotLoadBalancerSpec: The specification for the pilot load balancer.
+     * Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane.
+     * <p>
+     * Valid values: <code>slb.s1.small</code>, <code>slb.s2.small</code>, <code>slb.s2.medium</code>,
+     * <code>slb.s3.small</code>, <code>slb.s3.medium</code>, and <code>slb.s3.large</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPilotLoadBalancerSpec() {
         return null;
@@ -482,7 +643,15 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property playgroundScene: The playground scene configuration.
+     * Property playgroundScene: The playground scenario.
+     * <p>
+     * If you specify this parameter, an ASM playground
+     * instance is created. Valid value:
+     * <p>
+     * <ul>
+     * <li>ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+     * scenario</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPlaygroundScene() {
         return null;
@@ -505,7 +674,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     /**
      * Property telemetry: Specifies whether to enable Prometheus monitoring.
      * <p>
-     * We recommend that you use Application Real-Time Monitoring Service (ARMS).
+     * We recommend that you use
+     * Managed Service for Prometheus. Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables Prometheus monitoring.</li>
+     * <li><code>false</code>: Disables Prometheus monitoring.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTelemetry() {
         return null;
@@ -537,7 +713,15 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+     * Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the WebAssembly filter.</li>
+     * <li><code>false</code>: Disables the WebAssembly filter.
+     * Default value: <code>false</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWebAssemblyFilterEnabled() {
         return null;
@@ -663,7 +847,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getAccessLogEnabled}
-         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access logging.
+         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access log.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><code>true</code>: Enables access log.</li>
+         *                         <li><code>false</code>: Disables access log.
+         *                         Default value: <code>false</code>.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder accessLogEnabled(java.lang.Boolean accessLogEnabled) {
@@ -673,7 +864,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getAccessLogEnabled}
-         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access logging.
+         * @param accessLogEnabled Property accessLogEnabled: Specifies whether to enable access log.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><code>true</code>: Enables access log.</li>
+         *                         <li><code>false</code>: Disables access log.
+         *                         Default value: <code>false</code>.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder accessLogEnabled(com.aliyun.ros.cdk.core.IResolvable accessLogEnabled) {
@@ -715,7 +913,15 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getAccessLogFormat}
-         * @param accessLogFormat Property accessLogFormat: The format of access logs.
+         * @param accessLogFormat Property accessLogFormat: The custom format of access logs.
+         *                        This parameter is available only if you enable
+         *                        access log. The value must be a JSON string that contains the following keys:
+         *                        authority_for, bytes_received, bytes_sent, downstream_local_address,
+         *                        downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+         *                        requested_server_name, response_code, response_flags, route_name, start_time,
+         *                        trace_id, upstream_cluster, upstream_host, upstream_local_address,
+         *                        upstream_service_time, upstream_transport_failure_reason, user_agent, and
+         *                        x_forwarded_for.
          * @return {@code this}
          */
         public Builder accessLogFormat(java.lang.String accessLogFormat) {
@@ -725,7 +931,15 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getAccessLogFormat}
-         * @param accessLogFormat Property accessLogFormat: The format of access logs.
+         * @param accessLogFormat Property accessLogFormat: The custom format of access logs.
+         *                        This parameter is available only if you enable
+         *                        access log. The value must be a JSON string that contains the following keys:
+         *                        authority_for, bytes_received, bytes_sent, downstream_local_address,
+         *                        downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+         *                        requested_server_name, response_code, response_flags, route_name, start_time,
+         *                        trace_id, upstream_cluster, upstream_host, upstream_local_address,
+         *                        upstream_service_time, upstream_transport_failure_reason, user_agent, and
+         *                        x_forwarded_for.
          * @return {@code this}
          */
         public Builder accessLogFormat(com.aliyun.ros.cdk.core.IResolvable accessLogFormat) {
@@ -931,8 +1145,13 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: ChargeType is a PrePay.
-         *                        Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+         * @param autoRenewPeriod Property autoRenewPeriod: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
+         *                        The
+         *                        auto-renewal period. If the subscription duration is less than one year, the
+         *                        value of this parameter indicates the number of months for which you want to
+         *                        renew the instance. If the subscription duration is more than one year, the value
+         *                        of this parameter indicates the number of years for which you want to renew the
+         *                        instance.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(java.lang.Number autoRenewPeriod) {
@@ -942,8 +1161,13 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getAutoRenewPeriod}
-         * @param autoRenewPeriod Property autoRenewPeriod: ChargeType is a PrePay.
-         *                        Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+         * @param autoRenewPeriod Property autoRenewPeriod: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
+         *                        The
+         *                        auto-renewal period. If the subscription duration is less than one year, the
+         *                        value of this parameter indicates the number of months for which you want to
+         *                        renew the instance. If the subscription duration is more than one year, the value
+         *                        of this parameter indicates the number of years for which you want to renew the
+         *                        instance.
          * @return {@code this}
          */
         public Builder autoRenewPeriod(com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
@@ -1087,7 +1311,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getControlPlaneLogEnabled}
-         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection.
+         *                               Valid values:
+         *                               <p>
+         *                               <ul>
+         *                               <li><code>true</code>: Enables control plane log collection.</li>
+         *                               <li><code>false</code>: Disables control plane log collection.
+         *                               Default value: <code>false</code>.</li>
+         *                               </ul>
          * @return {@code this}
          */
         public Builder controlPlaneLogEnabled(java.lang.Boolean controlPlaneLogEnabled) {
@@ -1097,7 +1328,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getControlPlaneLogEnabled}
-         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+         * @param controlPlaneLogEnabled Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection.
+         *                               Valid values:
+         *                               <p>
+         *                               <ul>
+         *                               <li><code>true</code>: Enables control plane log collection.</li>
+         *                               <li><code>false</code>: Disables control plane log collection.
+         *                               Default value: <code>false</code>.</li>
+         *                               </ul>
          * @return {@code this}
          */
         public Builder controlPlaneLogEnabled(com.aliyun.ros.cdk.core.IResolvable controlPlaneLogEnabled) {
@@ -1147,7 +1385,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getCustomizedPrometheus}
-         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a customized Prometheus system.
+         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system.
+         *                             Valid values:
+         *                             <p>
+         *                             <ul>
+         *                             <li><code>true</code>: Uses a self-managed Prometheus system.</li>
+         *                             <li><code>false</code>: Does not use a self-managed Prometheus system.
+         *                             Default value: <code>false</code>.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder customizedPrometheus(java.lang.Boolean customizedPrometheus) {
@@ -1157,7 +1402,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getCustomizedPrometheus}
-         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a customized Prometheus system.
+         * @param customizedPrometheus Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system.
+         *                             Valid values:
+         *                             <p>
+         *                             <ul>
+         *                             <li><code>true</code>: Uses a self-managed Prometheus system.</li>
+         *                             <li><code>false</code>: Does not use a self-managed Prometheus system.
+         *                             Default value: <code>false</code>.</li>
+         *                             </ul>
          * @return {@code this}
          */
         public Builder customizedPrometheus(com.aliyun.ros.cdk.core.IResolvable customizedPrometheus) {
@@ -1167,7 +1419,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getCustomizedZipkin}
-         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a user-created Zipkin system.
+         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a self-managed Zipkin system.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><code>true</code>: Uses a self-managed Zipkin system.</li>
+         *                         <li><code>false</code>: Uses Tracing Analysis.
+         *                         Default value: <code>false</code>.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder customizedZipkin(java.lang.Boolean customizedZipkin) {
@@ -1177,7 +1436,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getCustomizedZipkin}
-         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a user-created Zipkin system.
+         * @param customizedZipkin Property customizedZipkin: Specifies whether to use a self-managed Zipkin system.
+         *                         Valid values:
+         *                         <p>
+         *                         <ul>
+         *                         <li><code>true</code>: Uses a self-managed Zipkin system.</li>
+         *                         <li><code>false</code>: Uses Tracing Analysis.
+         *                         Default value: <code>false</code>.</li>
+         *                         </ul>
          * @return {@code this}
          */
         public Builder customizedZipkin(com.aliyun.ros.cdk.core.IResolvable customizedZipkin) {
@@ -1187,7 +1453,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getDnsProxyingEnabled}
-         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxy.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables DNS proxy.</li>
+         *                           <li><code>false</code>: Disables DNS proxy.
+         *                           Default value: <code>false</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder dnsProxyingEnabled(java.lang.Boolean dnsProxyingEnabled) {
@@ -1197,7 +1470,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getDnsProxyingEnabled}
-         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+         * @param dnsProxyingEnabled Property dnsProxyingEnabled: Specifies whether to enable DNS proxy.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables DNS proxy.</li>
+         *                           <li><code>false</code>: Disables DNS proxy.
+         *                           Default value: <code>false</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder dnsProxyingEnabled(com.aliyun.ros.cdk.core.IResolvable dnsProxyingEnabled) {
@@ -1207,7 +1487,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getDubboFilterEnabled}
-         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables the Dubbo filter.</li>
+         *                           <li><code>false</code>: Disables the Dubbo filter.
+         *                           Default value: <code>false</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder dubboFilterEnabled(java.lang.Boolean dubboFilterEnabled) {
@@ -1217,7 +1504,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getDubboFilterEnabled}
-         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+         * @param dubboFilterEnabled Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables the Dubbo filter.</li>
+         *                           <li><code>false</code>: Disables the Dubbo filter.
+         *                           Default value: <code>false</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder dubboFilterEnabled(com.aliyun.ros.cdk.core.IResolvable dubboFilterEnabled) {
@@ -1313,7 +1607,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getEnableCrHistory}
-         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable CR history.
+         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li><code>true</code>: Enables the history version management feature.</li>
+         *                        <li><code>false</code>: Disables the history version management feature.
+         *                        Default value: <code>false</code>.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder enableCrHistory(java.lang.Boolean enableCrHistory) {
@@ -1323,7 +1624,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getEnableCrHistory}
-         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable CR history.
+         * @param enableCrHistory Property enableCrHistory: Specifies whether to enable the history version management feature for Istio resources in ASM.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li><code>true</code>: Enables the history version management feature.</li>
+         *                        <li><code>false</code>: Disables the history version management feature.
+         *                        Default value: <code>false</code>.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder enableCrHistory(com.aliyun.ros.cdk.core.IResolvable enableCrHistory) {
@@ -1333,7 +1641,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getEnableSdsServer}
-         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable SDS server.
+         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS).
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li><code>true</code>: Enables SDS.</li>
+         *                        <li><code>false</code>: Disables SDS.
+         *                        Default value: <code>false</code>.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder enableSdsServer(java.lang.Boolean enableSdsServer) {
@@ -1343,7 +1658,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getEnableSdsServer}
-         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable SDS server.
+         * @param enableSdsServer Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS).
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li><code>true</code>: Enables SDS.</li>
+         *                        <li><code>false</code>: Disables SDS.
+         *                        Default value: <code>false</code>.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder enableSdsServer(com.aliyun.ros.cdk.core.IResolvable enableSdsServer) {
@@ -1453,7 +1775,17 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getExistingCaType}
-         * @param existingCaType Property existingCaType: The type of existing CA.
+         * @param existingCaType Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod.
+         *                       This corresponds to the istio-ca-secret
+         *                       secret in the istio-system namespace. If you use this type, you must also provide
+         *                       the <code>ExistingCaCert</code> and <code>ExsitingCaKey</code> parameters.
+         *                       <p>
+         *                       <ul>
+         *                       <li>2: An external certificate of Istiod. For more information, see plugin ca cert.
+         *                       This generally corresponds to the cacerts secret in the istio-system namespace.
+         *                       If you use this type, you must also provide the <code>ExisingRootCaCert</code> and
+         *                       <code>ExisingRootCaKey</code> parameters.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder existingCaType(java.lang.String existingCaType) {
@@ -1463,7 +1795,17 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getExistingCaType}
-         * @param existingCaType Property existingCaType: The type of existing CA.
+         * @param existingCaType Property existingCaType: The type of the existing certificate: - 1: A self-signed certificate of Istiod.
+         *                       This corresponds to the istio-ca-secret
+         *                       secret in the istio-system namespace. If you use this type, you must also provide
+         *                       the <code>ExistingCaCert</code> and <code>ExsitingCaKey</code> parameters.
+         *                       <p>
+         *                       <ul>
+         *                       <li>2: An external certificate of Istiod. For more information, see plugin ca cert.
+         *                       This generally corresponds to the cacerts secret in the istio-system namespace.
+         *                       If you use this type, you must also provide the <code>ExisingRootCaCert</code> and
+         *                       <code>ExisingRootCaKey</code> parameters.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder existingCaType(com.aliyun.ros.cdk.core.IResolvable existingCaType) {
@@ -1513,7 +1855,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getFilterGatewayClusterConfig}
-         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering.
+         *                                   Valid values:
+         *                                   <p>
+         *                                   <ul>
+         *                                   <li><code>true</code>: Enables gateway configuration filtering.</li>
+         *                                   <li><code>false</code>: Disables gateway configuration filtering.
+         *                                   Default value: <code>false</code>.</li>
+         *                                   </ul>
          * @return {@code this}
          */
         public Builder filterGatewayClusterConfig(java.lang.Boolean filterGatewayClusterConfig) {
@@ -1523,7 +1872,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getFilterGatewayClusterConfig}
-         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+         * @param filterGatewayClusterConfig Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering.
+         *                                   Valid values:
+         *                                   <p>
+         *                                   <ul>
+         *                                   <li><code>true</code>: Enables gateway configuration filtering.</li>
+         *                                   <li><code>false</code>: Disables gateway configuration filtering.
+         *                                   Default value: <code>false</code>.</li>
+         *                                   </ul>
          * @return {@code this}
          */
         public Builder filterGatewayClusterConfig(com.aliyun.ros.cdk.core.IResolvable filterGatewayClusterConfig) {
@@ -1533,7 +1889,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getGatewayApiEnabled}
-         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable Gateway API.
+         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable the Gateway API.
+         *                          Valid values:
+         *                          <p>
+         *                          <ul>
+         *                          <li><code>true</code>: Enables the Gateway API.</li>
+         *                          <li><code>false</code>: Disables the Gateway API.
+         *                          Default value: <code>false</code>.</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder gatewayApiEnabled(java.lang.Boolean gatewayApiEnabled) {
@@ -1543,7 +1906,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getGatewayApiEnabled}
-         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable Gateway API.
+         * @param gatewayApiEnabled Property gatewayApiEnabled: Specifies whether to enable the Gateway API.
+         *                          Valid values:
+         *                          <p>
+         *                          <ul>
+         *                          <li><code>true</code>: Enables the Gateway API.</li>
+         *                          <li><code>false</code>: Disables the Gateway API.
+         *                          Default value: <code>false</code>.</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder gatewayApiEnabled(com.aliyun.ros.cdk.core.IResolvable gatewayApiEnabled) {
@@ -1553,7 +1923,10 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getGuestCluster}
-         * @param guestCluster Property guestCluster: The guest cluster configuration.
+         * @param guestCluster Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+         *                     If you do not specify this parameter, no cluster is added. The cluster must be in
+         *                     the same VPC and vSwitch as the Service Mesh instance, and must have the same
+         *                     domain name.
          * @return {@code this}
          */
         public Builder guestCluster(java.lang.String guestCluster) {
@@ -1563,7 +1936,10 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getGuestCluster}
-         * @param guestCluster Property guestCluster: The guest cluster configuration.
+         * @param guestCluster Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+         *                     If you do not specify this parameter, no cluster is added. The cluster must be in
+         *                     the same VPC and vSwitch as the Service Mesh instance, and must have the same
+         *                     domain name.
          * @return {@code this}
          */
         public Builder guestCluster(com.aliyun.ros.cdk.core.IResolvable guestCluster) {
@@ -1573,7 +1949,7 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getIncludeIpRanges}
-         * @param includeIpRanges Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services.
+         * @param includeIpRanges Property includeIpRanges: The IP address ranges that are allowed to access the proxy.
          * @return {@code this}
          */
         public Builder includeIpRanges(java.lang.String includeIpRanges) {
@@ -1583,7 +1959,7 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getIncludeIpRanges}
-         * @param includeIpRanges Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied to access external services.
+         * @param includeIpRanges Property includeIpRanges: The IP address ranges that are allowed to access the proxy.
          * @return {@code this}
          */
         public Builder includeIpRanges(com.aliyun.ros.cdk.core.IResolvable includeIpRanges) {
@@ -1613,7 +1989,16 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getKialiEnabled}
-         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable Kiali.
+         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable the mesh topology feature.
+         *                     To enable this feature,
+         *                     you must first enable Prometheus monitoring. If Prometheus monitoring is
+         *                     disabled, this feature is forcibly disabled. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>true</code>: Enables the mesh topology feature.</li>
+         *                     <li><code>false</code>: Disables the mesh topology feature.
+         *                     Default value: <code>false</code>.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder kialiEnabled(java.lang.Boolean kialiEnabled) {
@@ -1623,7 +2008,16 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getKialiEnabled}
-         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable Kiali.
+         * @param kialiEnabled Property kialiEnabled: Specifies whether to enable the mesh topology feature.
+         *                     To enable this feature,
+         *                     you must first enable Prometheus monitoring. If Prometheus monitoring is
+         *                     disabled, this feature is forcibly disabled. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>true</code>: Enables the mesh topology feature.</li>
+         *                     <li><code>false</code>: Disables the mesh topology feature.
+         *                     Default value: <code>false</code>.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder kialiEnabled(com.aliyun.ros.cdk.core.IResolvable kialiEnabled) {
@@ -1675,7 +2069,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMseEnabled}
-         * @param mseEnabled Property mseEnabled: Specifies whether to enable MSE.
+         * @param mseEnabled Property mseEnabled: Specifies whether to enable Microservices Engine (MSE).
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>true</code>: Enables MSE.</li>
+         *                   <li><code>false</code>: Disables MSE.
+         *                   Default value: <code>false</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder mseEnabled(java.lang.Boolean mseEnabled) {
@@ -1685,7 +2086,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMseEnabled}
-         * @param mseEnabled Property mseEnabled: Specifies whether to enable MSE.
+         * @param mseEnabled Property mseEnabled: Specifies whether to enable Microservices Engine (MSE).
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>true</code>: Enables MSE.</li>
+         *                   <li><code>false</code>: Disables MSE.
+         *                   Default value: <code>false</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder mseEnabled(com.aliyun.ros.cdk.core.IResolvable mseEnabled) {
@@ -1695,7 +2103,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMultiBufferEnabled}
-         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable multi-buffer.
+         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables the feature.</li>
+         *                           <li><code>false</code>: Disables the feature.
+         *                           Default value: <code>true</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder multiBufferEnabled(java.lang.Boolean multiBufferEnabled) {
@@ -1705,7 +2120,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMultiBufferEnabled}
-         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable multi-buffer.
+         * @param multiBufferEnabled Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on MultiBuffer.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables the feature.</li>
+         *                           <li><code>false</code>: Disables the feature.
+         *                           Default value: <code>true</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder multiBufferEnabled(com.aliyun.ros.cdk.core.IResolvable multiBufferEnabled) {
@@ -1715,7 +2137,9 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMultiBufferPollDelay}
-         * @param multiBufferPollDelay Property multiBufferPollDelay: The poll delay for multi-buffer.
+         * @param multiBufferPollDelay Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status.
+         *                             Default value:
+         *                             <code>30s</code>.
          * @return {@code this}
          */
         public Builder multiBufferPollDelay(java.lang.String multiBufferPollDelay) {
@@ -1725,7 +2149,9 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMultiBufferPollDelay}
-         * @param multiBufferPollDelay Property multiBufferPollDelay: The poll delay for multi-buffer.
+         * @param multiBufferPollDelay Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status.
+         *                             Default value:
+         *                             <code>30s</code>.
          * @return {@code this}
          */
         public Builder multiBufferPollDelay(com.aliyun.ros.cdk.core.IResolvable multiBufferPollDelay) {
@@ -1735,7 +2161,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMysqlFilterEnabled}
-         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables the MySQL filter.</li>
+         *                           <li><code>false</code>: Disables the MySQL filter.
+         *                           Default value: <code>false</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder mysqlFilterEnabled(java.lang.Boolean mysqlFilterEnabled) {
@@ -1745,7 +2178,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getMysqlFilterEnabled}
-         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+         * @param mysqlFilterEnabled Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>true</code>: Enables the MySQL filter.</li>
+         *                           <li><code>false</code>: Disables the MySQL filter.
+         *                           Default value: <code>false</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder mysqlFilterEnabled(com.aliyun.ros.cdk.core.IResolvable mysqlFilterEnabled) {
@@ -1796,6 +2236,13 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ServiceMeshProps#getOpaEnabled}
          * @param opaEnabled Property opaEnabled: Specifies whether to enable OPA.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>true</code>: Enables OPA.</li>
+         *                   <li><code>false</code>: Disables OPA.
+         *                   Default value: <code>false</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder opaEnabled(java.lang.Boolean opaEnabled) {
@@ -1806,6 +2253,13 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ServiceMeshProps#getOpaEnabled}
          * @param opaEnabled Property opaEnabled: Specifies whether to enable OPA.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>true</code>: Enables OPA.</li>
+         *                   <li><code>false</code>: Disables OPA.
+         *                   Default value: <code>false</code>.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder opaEnabled(com.aliyun.ros.cdk.core.IResolvable opaEnabled) {
@@ -1835,7 +2289,10 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getPeriod}
-         * @param period Property period: The subscription period.
+         * @param period Property period: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
+         *               The
+         *               subscription duration of the SLB instance. Unit: months. If you want to purchase
+         *               the instance for one year, enter 12.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -1845,7 +2302,10 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getPeriod}
-         * @param period Property period: The subscription period.
+         * @param period Property period: This parameter is valid only if you set <code>ChargeType</code> to <code>PrePay</code>.
+         *               The
+         *               subscription duration of the SLB instance. Unit: months. If you want to purchase
+         *               the instance for one year, enter 12.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -1855,7 +2315,9 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getPilotLoadBalancerSpec}
-         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification for the pilot load balancer.
+         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane.
+         *                              Valid values: <code>slb.s1.small</code>, <code>slb.s2.small</code>, <code>slb.s2.medium</code>,
+         *                              <code>slb.s3.small</code>, <code>slb.s3.medium</code>, and <code>slb.s3.large</code>.
          * @return {@code this}
          */
         public Builder pilotLoadBalancerSpec(java.lang.String pilotLoadBalancerSpec) {
@@ -1865,7 +2327,9 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getPilotLoadBalancerSpec}
-         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification for the pilot load balancer.
+         * @param pilotLoadBalancerSpec Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control plane.
+         *                              Valid values: <code>slb.s1.small</code>, <code>slb.s2.small</code>, <code>slb.s2.medium</code>,
+         *                              <code>slb.s3.small</code>, <code>slb.s3.medium</code>, and <code>slb.s3.large</code>.
          * @return {@code this}
          */
         public Builder pilotLoadBalancerSpec(com.aliyun.ros.cdk.core.IResolvable pilotLoadBalancerSpec) {
@@ -1901,7 +2365,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getPlaygroundScene}
-         * @param playgroundScene Property playgroundScene: The playground scene configuration.
+         * @param playgroundScene Property playgroundScene: The playground scenario.
+         *                        If you specify this parameter, an ASM playground
+         *                        instance is created. Valid value:
+         *                        <p>
+         *                        <ul>
+         *                        <li>ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+         *                        scenario</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder playgroundScene(java.lang.String playgroundScene) {
@@ -1911,7 +2382,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getPlaygroundScene}
-         * @param playgroundScene Property playgroundScene: The playground scene configuration.
+         * @param playgroundScene Property playgroundScene: The playground scenario.
+         *                        If you specify this parameter, an ASM playground
+         *                        instance is created. Valid value:
+         *                        <p>
+         *                        <ul>
+         *                        <li>ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+         *                        scenario</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder playgroundScene(com.aliyun.ros.cdk.core.IResolvable playgroundScene) {
@@ -1962,7 +2440,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ServiceMeshProps#getTelemetry}
          * @param telemetry Property telemetry: Specifies whether to enable Prometheus monitoring.
-         *                  We recommend that you use Application Real-Time Monitoring Service (ARMS).
+         *                  We recommend that you use
+         *                  Managed Service for Prometheus. Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li><code>true</code>: Enables Prometheus monitoring.</li>
+         *                  <li><code>false</code>: Disables Prometheus monitoring.
+         *                  Default value: <code>false</code>.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder telemetry(java.lang.Boolean telemetry) {
@@ -1973,7 +2458,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ServiceMeshProps#getTelemetry}
          * @param telemetry Property telemetry: Specifies whether to enable Prometheus monitoring.
-         *                  We recommend that you use Application Real-Time Monitoring Service (ARMS).
+         *                  We recommend that you use
+         *                  Managed Service for Prometheus. Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li><code>true</code>: Enables Prometheus monitoring.</li>
+         *                  <li><code>false</code>: Disables Prometheus monitoring.
+         *                  Default value: <code>false</code>.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder telemetry(com.aliyun.ros.cdk.core.IResolvable telemetry) {
@@ -2049,7 +2541,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getWebAssemblyFilterEnabled}
-         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter.
+         *                                 Valid values:
+         *                                 <p>
+         *                                 <ul>
+         *                                 <li><code>true</code>: Enables the WebAssembly filter.</li>
+         *                                 <li><code>false</code>: Disables the WebAssembly filter.
+         *                                 Default value: <code>false</code>.</li>
+         *                                 </ul>
          * @return {@code this}
          */
         public Builder webAssemblyFilterEnabled(java.lang.Boolean webAssemblyFilterEnabled) {
@@ -2059,7 +2558,14 @@ public interface ServiceMeshProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ServiceMeshProps#getWebAssemblyFilterEnabled}
-         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+         * @param webAssemblyFilterEnabled Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter.
+         *                                 Valid values:
+         *                                 <p>
+         *                                 <ul>
+         *                                 <li><code>true</code>: Enables the WebAssembly filter.</li>
+         *                                 <li><code>false</code>: Disables the WebAssembly filter.
+         *                                 Default value: <code>false</code>.</li>
+         *                                 </ul>
          * @return {@code this}
          */
         public Builder webAssemblyFilterEnabled(com.aliyun.ros.cdk.core.IResolvable webAssemblyFilterEnabled) {

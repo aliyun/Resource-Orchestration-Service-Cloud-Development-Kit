@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::APIG::Service</code>, which is used to query the information about a service.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::APIG::Service</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.766Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.346Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.datasource.RosService")
 public class RosService extends com.aliyun.ros.cdk.core.RosResource {
 

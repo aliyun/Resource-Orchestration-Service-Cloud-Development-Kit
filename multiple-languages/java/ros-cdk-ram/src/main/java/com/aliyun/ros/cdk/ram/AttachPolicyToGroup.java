@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::AttachPolicyToGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.249Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.189Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.AttachPolicyToGroup")
 public class AttachPolicyToGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IAttachPolicyToGroup {
 
@@ -141,20 +141,26 @@ public class AttachPolicyToGroup extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property policyName: Authorization policy name.
+         * Property policyName: The name of the policy.
+         * <p>
+         * The name must be 1 to 128 characters in length and can contain letters, digits,
+         * and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param policyName Property policyName: Authorization policy name. This parameter is required.
+         * @param policyName Property policyName: The name of the policy. This parameter is required.
          */
         public Builder policyName(final java.lang.String policyName) {
             this.props.policyName(policyName);
             return this;
         }
         /**
-         * Property policyName: Authorization policy name.
+         * Property policyName: The name of the policy.
+         * <p>
+         * The name must be 1 to 128 characters in length and can contain letters, digits,
+         * and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param policyName Property policyName: Authorization policy name. This parameter is required.
+         * @param policyName Property policyName: The name of the policy. This parameter is required.
          */
         public Builder policyName(final com.aliyun.ros.cdk.core.IResolvable policyName) {
             this.props.policyName(policyName);

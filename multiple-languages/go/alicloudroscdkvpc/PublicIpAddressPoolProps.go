@@ -7,9 +7,10 @@ package alicloudroscdkvpc
 type PublicIpAddressPoolProps struct {
 	// Property bizType: The business type of IP address pool.Value: Cloudbox: Cloud Box.Cloud box users support to select this type. Default (default): default, indicating non -special types.
 	BizType interface{} `field:"optional" json:"bizType" yaml:"bizType"`
-	// Property description: Description of the address pool instance.
+	// Property description: The description of the IP address pool.
 	//
-	// The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+	// The description must be 0 to 256 characters in length and cannot start with
+	// `http:\/\/` or `https:\/\/`.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property isp: The line type.
 	//
@@ -28,9 +29,10 @@ type PublicIpAddressPoolProps struct {
 	// ChinaMobile_L2: China Mobile L2
 	// If your services are deployed in China East 1 Finance, you must set this parameter to BGP_FinanceCloud.
 	Isp interface{} `field:"optional" json:"isp" yaml:"isp"`
-	// Property name: The name of the address pool instance.
+	// Property name: The name of the IP address pool.
 	//
-	// The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+	// The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+	// `https:\/\/`.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property resourceGroupId: The ID of the resource group that the IP address pool belongs to.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

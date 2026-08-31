@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRuleTargets</code>, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::EventRuleTargets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.927Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.200Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleTargets")
 public class EventRuleTargets extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IEventRuleTargets {
 
@@ -125,20 +125,20 @@ public class EventRuleTargets extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
+         * Property contactParameters: The information about the alert contact groups that receive alert notifications.
          * <p>
          * @return {@code this}
-         * @param contactParameters Property contactParameters: CONTACT configuration.A maximum of 5 parameters. This parameter is required.
+         * @param contactParameters Property contactParameters: The information about the alert contact groups that receive alert notifications. This parameter is required.
          */
         public Builder contactParameters(final com.aliyun.ros.cdk.core.IResolvable contactParameters) {
             this.props.contactParameters(contactParameters);
             return this;
         }
         /**
-         * Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
+         * Property contactParameters: The information about the alert contact groups that receive alert notifications.
          * <p>
          * @return {@code this}
-         * @param contactParameters Property contactParameters: CONTACT configuration.A maximum of 5 parameters. This parameter is required.
+         * @param contactParameters Property contactParameters: The information about the alert contact groups that receive alert notifications. This parameter is required.
          */
         public Builder contactParameters(final java.util.List<? extends java.lang.Object> contactParameters) {
             this.props.contactParameters(contactParameters);
@@ -230,20 +230,20 @@ public class EventRuleTargets extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+         * Property webhookParameters: The information about the callback URLs that are used to receive alert notifications.
          * <p>
          * @return {@code this}
-         * @param webhookParameters Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters. This parameter is required.
+         * @param webhookParameters Property webhookParameters: The information about the callback URLs that are used to receive alert notifications. This parameter is required.
          */
         public Builder webhookParameters(final com.aliyun.ros.cdk.core.IResolvable webhookParameters) {
             this.props.webhookParameters(webhookParameters);
             return this;
         }
         /**
-         * Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+         * Property webhookParameters: The information about the callback URLs that are used to receive alert notifications.
          * <p>
          * @return {@code this}
-         * @param webhookParameters Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters. This parameter is required.
+         * @param webhookParameters Property webhookParameters: The information about the callback URLs that are used to receive alert notifications. This parameter is required.
          */
         public Builder webhookParameters(final java.util.List<? extends java.lang.Object> webhookParameters) {
             this.props.webhookParameters(webhookParameters);

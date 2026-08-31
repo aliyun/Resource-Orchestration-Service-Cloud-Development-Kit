@@ -10,7 +10,13 @@ export { RosImageSharePermission as ImageSharePermissionProperty };
 export interface ImageSharePermissionProps {
 
     /**
-     * Property imageId: The shared custom image ID.
+     * Property imageId: The ID of the custom image.
+     * ><notice>
+     * You can no longer share images that are encrypted by using a service key. You can
+     * share only images that are encrypted by using a customer managed key (CMK). If
+     * you attempt to share an image that is encrypted by using a service key, the
+     * request fails.
+     * ><\/notice>
      */
     readonly imageId: string | ros.IResolvable;
 
@@ -20,8 +26,11 @@ export interface ImageSharePermissionProps {
     readonly accounts?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property isPublic: Whether to publish or remove community mirrors. 
-     * If this property is not set, no changes will be made to the community image
+     * Property isPublic: Specifies whether to publish or unpublish the community image. Valid values:
+     * - true: publishes the image as a community image.
+     * - false: unpublishes the community image. The image becomes a custom image. If
+     * the image is a custom image, this setting has no effect.
+     * Default value: false.
      */
     readonly isPublic?: boolean | ros.IResolvable;
 

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Alb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`Use , which to create a server group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::ServerGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `ServerGroup` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-servergroup
@@ -115,9 +115,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: serverGroupName: The name of the server group. The name must be 2 to 128 characters in length, and
-        /// can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name
-        /// must start with a letter.
+        /// <strong>Property</strong>: serverGroupName: The name of the server group. The name must be 2 to 128 characters in length,
+        /// start with a letter, digit, or Chinese character, and can contain digits, periods
+        /// (.), underscores (_), hyphens (-), and spaces.
         /// </remarks>
         [JsiiProperty(name: "serverGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ServerGroupName
@@ -179,13 +179,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: crossZoneEnabled: Specifies whether to enable cross-zone load balancing. Valid values:
-        /// true (default)
-        /// false
-        /// Note:
-        /// Basic ALB instances do not support server groups that have cross-zone load balancing disabled. Only Standard and WAF-enabled ALB instances support server groups that have cross-zone load balancing.
-        /// Cross-zone load balancing can be disabled for server groups of the server and IP type, but not for server groups of the Function Compute type.
-        /// When cross-zone load balancing is disabled, session persistence cannot be enabled.
+        /// <strong>Property</strong>: crossZoneEnabled: Specifies whether to enable cross-zone load balancing for the server group. Valid
+        /// values:
+        /// - true (default): Enables cross-zone load balancing.
+        /// - false: Disables cross-zone load balancing.
+        /// > * Basic ALB instances cannot be associated with server groups for which
+        /// cross-zone load balancing is disabled. This feature is supported only by standard
+        /// and WAF-enabled ALB instances.
+        /// >
+        /// > * You can disable cross-zone load balancing for instance-type and IP-type
+        /// server groups, but not for function-type server groups.
+        /// >
+        /// > * You cannot enable sticky sessions if you disable cross-zone load balancing.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "crossZoneEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -550,10 +555,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: vpcId: The ID of the virtual private cloud (VPC). You can add only servers that are deployed
-        /// in the specified VPC to the server group.
-        /// Note: This parameter is required if the ServerGroupType parameter is set to Instance or Ip.
-        /// Note: This parameter takes effect when the ServerGroupType parameter is set to Instance or Ip.
+        /// <strong>Property</strong>: vpcId: The ID of the VPC where the server group is created. You can add only servers
+        /// within this VPC to the server group.
+        /// > This parameter is valid only when ServerGroupType is set to Instance or Ip.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vpcId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

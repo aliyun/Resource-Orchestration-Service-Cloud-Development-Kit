@@ -10,7 +10,10 @@ export { RosUserVpcAuthorization as UserVpcAuthorizationProperty };
 export interface UserVpcAuthorizationProps {
 
     /**
-     * Property authorizedUserId: The account ID of the user who authorizes the resource.
+     * Property authorizedUserId: The ID of the account that owns the authorized resources.
+     * > Only cloud accounts are supported. RAM users are not supported. You can
+     * associate accounts only if they are on the same site. Cross-site association
+     * is not supported.
      */
     readonly authorizedUserId: string | ros.IResolvable;
 
@@ -27,7 +30,9 @@ export interface UserVpcAuthorizationProps {
     readonly authCode?: string | ros.IResolvable;
 
     /**
-     * Property authType: Authorization type.
+     * Property authType: The authorization type. Valid values:
+     * - NORMAL: standard authorization.
+     * - CLOUD_PRODUCT: cloud product authorization.
      */
     readonly authType?: string | ros.IResolvable;
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mse;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MSE::NacosService</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.352Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.717Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.NacosService")
 public class NacosService extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mse.INacosService {
 
@@ -106,6 +106,13 @@ public class NacosService extends com.aliyun.ros.cdk.core.Resource implements co
         /**
          * Property instanceId: The ID of the instance.
          * <p>
+         * <blockquote>
+         * <p>
+         * This operation contains both the InstanceId and ClusterId parameters. You must
+         * specify one of them.
+         * <p>
+         * </blockquote>
+         * <p>
          * @return {@code this}
          * @param instanceId Property instanceId: The ID of the instance. This parameter is required.
          */
@@ -115,6 +122,13 @@ public class NacosService extends com.aliyun.ros.cdk.core.Resource implements co
         }
         /**
          * Property instanceId: The ID of the instance.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This operation contains both the InstanceId and ClusterId parameters. You must
+         * specify one of them.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param instanceId Property instanceId: The ID of the instance. This parameter is required.

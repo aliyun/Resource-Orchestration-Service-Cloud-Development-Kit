@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-rule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.283Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.480Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,16 +36,31 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property ruleName: The name of the forwarding rule.
      * <p>
-     * The name must be 2 to 128 characters in length.
-     * It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-     * must start with a letter.
+     * <ul>
+     * <li>The length must be 2 to 128 English or Chinese characters.</li>
+     * <li>The name must start with a letter, a Chinese character, or a number, and can
+     * contain numbers, periods (.), underscores (_), hyphens (-), and spaces.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
     /**
-     * Property direction: Rule direction.
+     * Property direction: The direction in which the forwarding rule is applied.
      * <p>
-     * Valid values: Request or Response.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Request (default): The rule matches and processes requests sent from the client
+     * to the ALB instance.</li>
+     * <li>Response: The rule matches and processes responses returned from server groups
+     * to the ALB instance.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Basic ALB instances support only forwarding rules whose Direction is Request.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDirection() {
         return null;
@@ -155,9 +170,11 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RuleProps#getRuleName}
          * @param ruleName Property ruleName: The name of the forwarding rule. This parameter is required.
-         *                 The name must be 2 to 128 characters in length.
-         *                 It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-         *                 must start with a letter.
+         *                 <ul>
+         *                 <li>The length must be 2 to 128 English or Chinese characters.</li>
+         *                 <li>The name must start with a letter, a Chinese character, or a number, and can
+         *                 contain numbers, periods (.), underscores (_), hyphens (-), and spaces.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder ruleName(java.lang.String ruleName) {
@@ -168,9 +185,11 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link RuleProps#getRuleName}
          * @param ruleName Property ruleName: The name of the forwarding rule. This parameter is required.
-         *                 The name must be 2 to 128 characters in length.
-         *                 It can contain letters, digits, periods (.), underscores (_), and hyphens (-). It
-         *                 must start with a letter.
+         *                 <ul>
+         *                 <li>The length must be 2 to 128 English or Chinese characters.</li>
+         *                 <li>The name must start with a letter, a Chinese character, or a number, and can
+         *                 contain numbers, periods (.), underscores (_), hyphens (-), and spaces.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder ruleName(com.aliyun.ros.cdk.core.IResolvable ruleName) {
@@ -180,8 +199,21 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getDirection}
-         * @param direction Property direction: Rule direction.
-         *                  Valid values: Request or Response.
+         * @param direction Property direction: The direction in which the forwarding rule is applied.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>Request (default): The rule matches and processes requests sent from the client
+         *                  to the ALB instance.</li>
+         *                  <li>Response: The rule matches and processes responses returned from server groups
+         *                  to the ALB instance.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  Basic ALB instances support only forwarding rules whose Direction is Request.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder direction(java.lang.String direction) {
@@ -191,8 +223,21 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getDirection}
-         * @param direction Property direction: Rule direction.
-         *                  Valid values: Request or Response.
+         * @param direction Property direction: The direction in which the forwarding rule is applied.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>Request (default): The rule matches and processes requests sent from the client
+         *                  to the ALB instance.</li>
+         *                  <li>Response: The rule matches and processes responses returned from server groups
+         *                  to the ALB instance.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  Basic ALB instances support only forwarding rules whose Direction is Request.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder direction(com.aliyun.ros.cdk.core.IResolvable direction) {

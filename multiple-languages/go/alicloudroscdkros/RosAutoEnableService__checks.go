@@ -263,6 +263,30 @@ func (j *jsiiProxy_RosAutoEnableService) validateSetServiceNameParameters(val in
 	return nil
 }
 
+func (j *jsiiProxy_RosAutoEnableService) validateSetServiceParametersParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *RosAutoEnableService_ServiceParametersProperty:
+		val := val.(*RosAutoEnableService_ServiceParametersProperty)
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	case RosAutoEnableService_ServiceParametersProperty:
+		val_ := val.(RosAutoEnableService_ServiceParametersProperty)
+		val := &val_
+		if err := _jsii_.ValidateStruct(val, func() string { return "parameter val" }); err != nil {
+			return err
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosAutoEnableService_ServiceParametersProperty; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func validateNewRosAutoEnableServiceParameters(scope alicloudroscdkcore.Construct, id *string, props *RosAutoEnableServiceProps, enableResourcePropertyConstraint *bool) error {
 	if scope == nil {
 		return fmt.Errorf("parameter scope is required, but nil was provided")

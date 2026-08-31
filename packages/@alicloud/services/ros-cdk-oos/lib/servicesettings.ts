@@ -35,7 +35,7 @@ export interface ServiceSettingsProps {
     readonly deliverySlsProjectName?: string | ros.IResolvable;
 
     /**
-     * Property rdcEnterpriseId: Enterprise ID.
+     * Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
      */
     readonly rdcEnterpriseId?: string | ros.IResolvable;
 }

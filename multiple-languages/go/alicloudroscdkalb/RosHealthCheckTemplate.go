@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`The , which resource type creates a health check template.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::HealthCheckTemplate`.
 type RosHealthCheckTemplate interface {
 	alicloudroscdkcore.RosResource
 	AttrHealthCheckTemplateId() alicloudroscdkcore.IResolvable

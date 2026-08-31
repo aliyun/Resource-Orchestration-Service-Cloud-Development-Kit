@@ -46,10 +46,9 @@ export interface MetricRuleTemplateDeploymentProps {
     readonly enableStartTime?: number | ros.IResolvable;
 
     /**
-     * Property notifyLevel: Alarm notification method.Value:
-     * 2: Phone + SMS + Email + Wangwang + DingTalk Robot.
-     * 3: SMS + Email + Wangwang + DingTalk Robot.
-     * 4: Wangwang + Dingding Robot.
+     * Property notifyLevel: The alert notification method. Valid values:
+     * Set the value to 4. A value of 4 indicates that alert notifications are sent by
+     * using TradeManager and DingTalk chatbots.
      */
     readonly notifyLevel?: number | ros.IResolvable;
 
@@ -82,7 +81,7 @@ export interface IMetricRuleTemplateDeployment extends ros.IResource {
     readonly attrRuleIds: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`, which is used to apply an alert template to an application group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMetricRuleTemplateDeployment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
  */

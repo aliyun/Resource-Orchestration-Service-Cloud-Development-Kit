@@ -48,6 +48,7 @@
 @alicloud/ros-cdk-ess.RosLoadBalancerAttachment.LoadBalancerConfigsProperty=com.aliyun.ros.cdk.ess.RosLoadBalancerAttachment$LoadBalancerConfigsProperty
 @alicloud/ros-cdk-ess.RosLoadBalancerAttachmentProps=com.aliyun.ros.cdk.ess.RosLoadBalancerAttachmentProps
 @alicloud/ros-cdk-ess.RosScalingConfiguration=com.aliyun.ros.cdk.ess.RosScalingConfiguration
+@alicloud/ros-cdk-ess.RosScalingConfiguration.CpuOptionsProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$CpuOptionsProperty
 @alicloud/ros-cdk-ess.RosScalingConfiguration.DiskMappingsProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$DiskMappingsProperty
 @alicloud/ros-cdk-ess.RosScalingConfiguration.InstancePatternInfosProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$InstancePatternInfosProperty
 @alicloud/ros-cdk-ess.RosScalingConfiguration.InstanceTypeOverridesProperty=com.aliyun.ros.cdk.ess.RosScalingConfiguration$InstanceTypeOverridesProperty

@@ -5,13 +5,15 @@ package com.aliyun.ros.cdk.appflow;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.462Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:10:07.401Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.UserAuthConfigProps")
 @software.amazon.jsii.Jsii.Proxy(UserAuthConfigProps.Jsii$Proxy.class)
 public interface UserAuthConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property authConfig: AuthConfig.
+     * Property authConfig: The details of the authentication configuration.
+     * <p>
+     * The value is a JSON string.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAuthConfig();
 
@@ -41,7 +43,8 @@ public interface UserAuthConfigProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link UserAuthConfigProps#getAuthConfig}
-         * @param authConfig Property authConfig: AuthConfig. This parameter is required.
+         * @param authConfig Property authConfig: The details of the authentication configuration. This parameter is required.
+         *                   The value is a JSON string.
          * @return {@code this}
          */
         public Builder authConfig(com.aliyun.ros.cdk.core.IResolvable authConfig) {
@@ -51,7 +54,8 @@ public interface UserAuthConfigProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link UserAuthConfigProps#getAuthConfig}
-         * @param authConfig Property authConfig: AuthConfig. This parameter is required.
+         * @param authConfig Property authConfig: The details of the authentication configuration. This parameter is required.
+         *                   The value is a JSON string.
          * @return {@code this}
          */
         public Builder authConfig(java.util.Map<java.lang.String, ? extends java.lang.Object> authConfig) {

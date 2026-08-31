@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::AlarmTask`, which is used to create a metric-based alarm task.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESS::AlarmTask`.
 type AlarmTask interface {
 	alicloudroscdkcore.Resource
 	IAlarmTask

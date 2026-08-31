@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nlb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NLB::SecurityPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:01:45.103Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:17:42.372Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nlb.$Module.class, fqn = "@alicloud/ros-cdk-nlb.SecurityPolicy")
 public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nlb.ISecurityPolicy {
 
@@ -120,24 +120,28 @@ public class SecurityPolicy extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version.
+         * Property ciphers: The cipher suites supported by the security policy.
          * <p>
-         * You can specify at most 32 cipher suites.
+         * Valid values of this
+         * parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+         * suites.
          * <p>
          * @return {@code this}
-         * @param ciphers Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
+         * @param ciphers Property ciphers: The cipher suites supported by the security policy. This parameter is required.
          */
         public Builder ciphers(final com.aliyun.ros.cdk.core.IResolvable ciphers) {
             this.props.ciphers(ciphers);
             return this;
         }
         /**
-         * Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version.
+         * Property ciphers: The cipher suites supported by the security policy.
          * <p>
-         * You can specify at most 32 cipher suites.
+         * Valid values of this
+         * parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+         * suites.
          * <p>
          * @return {@code this}
-         * @param ciphers Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. This parameter is required.
+         * @param ciphers Property ciphers: The cipher suites supported by the security policy. This parameter is required.
          */
         public Builder ciphers(final java.util.List<? extends java.lang.Object> ciphers) {
             this.props.ciphers(ciphers);

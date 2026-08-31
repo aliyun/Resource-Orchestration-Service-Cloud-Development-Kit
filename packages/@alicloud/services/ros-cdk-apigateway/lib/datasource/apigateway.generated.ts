@@ -104,7 +104,7 @@ function rosApisPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Apis`, which is used to query APIs in API Gateway.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Apis`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Apis` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apis
  */
@@ -270,7 +270,7 @@ function rosAppsPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Apps`, which is used to query applications.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Apps`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Apps` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-apps
  */
@@ -428,7 +428,7 @@ function rosGroupsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Groups`, which is used to query the information about existing API groups.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Groups`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Groups` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-groups
  */
@@ -574,7 +574,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Instance`, which is used to query the information about an instance.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instance
  */
@@ -861,7 +861,7 @@ function rosInstancesPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Instances`, which is used to query instances.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::ApiGateway::Instances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apigateway-instances
  */

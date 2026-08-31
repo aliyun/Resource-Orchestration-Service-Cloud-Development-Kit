@@ -25,7 +25,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             get;
         }
 
-        /// <summary>Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).</summary>
+        /// <summary>Property clusterType: The cluster type.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>DATALAKE: new data lake.</description>
+        /// <description>OLAP: data analytics.</description>
+        /// <description>DATAFLOW: real-time data stream.</description>
+        /// <description>DATASERVING: data serving.</description>
+        /// <description>CUSTOM: custom cluster.</description>
+        /// <description>HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+        /// If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+        /// 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+        /// cluster type.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ClusterType
         {
@@ -46,7 +61,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
             get;
         }
 
-        /// <summary>Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.</summary>
+        /// <summary>Property releaseVersion: The EMR release version.</summary>
+        /// <remarks>
+        /// You can find the EMR release versions on the EMR cluster
+        /// purchase page.
+        /// </remarks>
         [JsiiProperty(name: "releaseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ReleaseVersion
         {
@@ -175,7 +194,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).</summary>
+            /// <summary>Property clusterType: The cluster type.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>DATALAKE: new data lake.</description>
+            /// <description>OLAP: data analytics.</description>
+            /// <description>DATAFLOW: real-time data stream.</description>
+            /// <description>DATASERVING: data serving.</description>
+            /// <description>CUSTOM: custom cluster.</description>
+            /// <description>HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+            /// If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+            /// 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+            /// cluster type.</description>
+            /// </list>
+            /// </remarks>
             [JsiiProperty(name: "clusterType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ClusterType
             {
@@ -196,7 +230,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Emr
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.</summary>
+            /// <summary>Property releaseVersion: The EMR release version.</summary>
+            /// <remarks>
+            /// You can find the EMR release versions on the EMR cluster
+            /// purchase page.
+            /// </remarks>
             [JsiiProperty(name: "releaseVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ReleaseVersion
             {

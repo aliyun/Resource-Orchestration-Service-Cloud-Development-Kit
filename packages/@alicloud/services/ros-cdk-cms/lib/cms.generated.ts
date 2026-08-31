@@ -64,7 +64,7 @@ function rosContactPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Contact`, which is used to create an alert contact.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Contact`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Contact` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contact
  */
@@ -260,7 +260,7 @@ function rosContactGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ContactGroup`, which is used to create an alert contact group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ContactGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ContactGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-contactgroup
  */
@@ -335,7 +335,13 @@ export class RosContactGroup extends ros.RosResource {
 export interface RosDynamicTagGroupProps {
 
     /**
-     * @Property contactGroupList: Alarm contacts.
+     * @Property contactGroupList: The alert contact groups. The value of N can be from 1 to 100. Alert
+     * notifications for the application group are sent to the alert contacts in these
+     * alert contact groups.
+     * An alert contact group can contain one or more alert contacts. For more
+     * information about how to create alert contacts and alert contact groups, see
+     * PutContact and PutContactGroup. For more information about how to obtain
+     * alert contact groups, see DescribeContactGroupList.
      */
     readonly contactGroupList: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -353,28 +359,31 @@ export interface RosDynamicTagGroupProps {
     readonly enableInstallAgent?: boolean | ros.IResolvable;
 
     /**
-     * @Property enableSubscribeEvent: Whether the event subscription is enabled. Values are
-     * :true: enable event subscription
-     * false: disable event subscription
+     * @Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the
+     * application group. When a critical or warning event occurs on a resource in the
+     * application group, CloudMonitor sends an alert notification. Valid values:
+     * - true: enabled.
+     * - false (default): disabled.
      */
     readonly enableSubscribeEvent?: boolean | ros.IResolvable;
 
     /**
-     * @Property matchExpress: Matching list. Only supports one currently.
+     * @Property matchExpress: The match expressions that are used to create an application group from tags.
      */
     readonly matchExpress?: Array<RosDynamicTagGroup.MatchExpressProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property matchExpressFilterRelation: The relationship between the conditional expressions. Values are:
-     * and: the relationship between
-     * or: the relationship or the
-     * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+     * @Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values. Valid
+     * values:
+     * - and (default)
+     * - or
      */
     readonly matchExpressFilterRelation?: string | ros.IResolvable;
 
     /**
-     * @Property templateIdList: Alarm template ID list.
-     * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+     * @Property templateIdList: The ID of the alert template.
+     * For more information about how to query the IDs of alert templates, see
+     * DescribeMetricRuleTemplateList.
      */
     readonly templateIdList?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
@@ -446,7 +455,7 @@ function rosDynamicTagGroupPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`, which is used to create a tag rule based on which cloud resources are automatically added to an application group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::DynamicTagGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DynamicTagGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
  */
@@ -470,7 +479,13 @@ export class RosDynamicTagGroup extends ros.RosResource {
 
 
     /**
-     * @Property contactGroupList: Alarm contacts.
+     * @Property contactGroupList: The alert contact groups. The value of N can be from 1 to 100. Alert
+     * notifications for the application group are sent to the alert contacts in these
+     * alert contact groups.
+     * An alert contact group can contain one or more alert contacts. For more
+     * information about how to create alert contacts and alert contact groups, see
+     * PutContact and PutContactGroup. For more information about how to obtain
+     * alert contact groups, see DescribeContactGroupList.
      */
     public contactGroupList: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -488,28 +503,31 @@ export class RosDynamicTagGroup extends ros.RosResource {
     public enableInstallAgent: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property enableSubscribeEvent: Whether the event subscription is enabled. Values are
-     * :true: enable event subscription
-     * false: disable event subscription
+     * @Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the
+     * application group. When a critical or warning event occurs on a resource in the
+     * application group, CloudMonitor sends an alert notification. Valid values:
+     * - true: enabled.
+     * - false (default): disabled.
      */
     public enableSubscribeEvent: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property matchExpress: Matching list. Only supports one currently.
+     * @Property matchExpress: The match expressions that are used to create an application group from tags.
      */
     public matchExpress: Array<RosDynamicTagGroup.MatchExpressProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property matchExpressFilterRelation: The relationship between the conditional expressions. Values are:
-     * and: the relationship between
-     * or: the relationship or the
-     * Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+     * @Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values. Valid
+     * values:
+     * - and (default)
+     * - or
      */
     public matchExpressFilterRelation: string | ros.IResolvable | undefined;
 
     /**
-     * @Property templateIdList: Alarm template ID list.
-     * When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+     * @Property templateIdList: The ID of the alert template.
+     * For more information about how to query the IDs of alert templates, see
+     * DescribeMetricRuleTemplateList.
      */
     public templateIdList: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -618,7 +636,7 @@ function rosDynamicTagGroupMatchExpressPropertyToRosTemplate(properties: any): a
 export interface RosEventRuleProps {
 
     /**
-     * @Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+     * @Property eventPattern: The pattern of the event-triggered alert rule.
      */
     readonly eventPattern: Array<RosEventRule.EventPatternProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -633,9 +651,9 @@ export interface RosEventRuleProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property eventType: The type of the event alert. Valid values:
-     * SYSTEM
-     * CUSTOM
+     * @Property eventType: The type of the event. Valid values:
+     * - SYSTEM: a system event.
+     * - CUSTOM: a custom event.
      */
     readonly eventType?: string | ros.IResolvable;
 
@@ -650,9 +668,9 @@ export interface RosEventRuleProps {
     readonly silenceTime?: number | ros.IResolvable;
 
     /**
-     * @Property state: The status of the alert rule. Valid values:
-     * ENABLED
-     * DISABLED
+     * @Property state: The status of the event-triggered alert rule. Valid values:
+     * - ENABLED: The rule is enabled.
+     * - DISABLED: The rule is disabled.
      */
     readonly state?: string | ros.IResolvable;
 }
@@ -678,7 +696,19 @@ function RosEventRulePropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('eventPattern', ros.listValidator(RosEventRule_EventPatternPropertyValidator))(properties.eventPattern));
     errors.collect(ros.propertyValidator('silenceTime', ros.validateNumber)(properties.silenceTime));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.eventType && (typeof properties.eventType) !== 'object') {
+        errors.collect(ros.propertyValidator('eventType', ros.validateAllowedValues)({
+          data: properties.eventType,
+          allowedValues: ["SYSTEM","CUSTOM"],
+        }));
+    }
     errors.collect(ros.propertyValidator('eventType', ros.validateString)(properties.eventType));
+    if(properties.state && (typeof properties.state) !== 'object') {
+        errors.collect(ros.propertyValidator('state', ros.validateAllowedValues)({
+          data: properties.state,
+          allowedValues: ["ENABLED","DISABLED"],
+        }));
+    }
     errors.collect(ros.propertyValidator('state', ros.validateString)(properties.state));
     errors.collect(ros.propertyValidator('ruleName', ros.requiredValidator)(properties.ruleName));
     errors.collect(ros.propertyValidator('ruleName', ros.validateString)(properties.ruleName));
@@ -711,7 +741,7 @@ function rosEventRulePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule. If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EventRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */
@@ -730,7 +760,7 @@ export class RosEventRule extends ros.RosResource {
 
 
     /**
-     * @Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+     * @Property eventPattern: The pattern of the event-triggered alert rule.
      */
     public eventPattern: Array<RosEventRule.EventPatternProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -745,9 +775,9 @@ export class RosEventRule extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property eventType: The type of the event alert. Valid values:
-     * SYSTEM
-     * CUSTOM
+     * @Property eventType: The type of the event. Valid values:
+     * - SYSTEM: a system event.
+     * - CUSTOM: a custom event.
      */
     public eventType: string | ros.IResolvable | undefined;
 
@@ -762,9 +792,9 @@ export class RosEventRule extends ros.RosResource {
     public silenceTime: number | ros.IResolvable | undefined;
 
     /**
-     * @Property state: The status of the alert rule. Valid values:
-     * ENABLED
-     * DISABLED
+     * @Property state: The status of the event-triggered alert rule. Valid values:
+     * - ENABLED: The rule is enabled.
+     * - DISABLED: The rule is disabled.
      */
     public state: string | ros.IResolvable | undefined;
 
@@ -954,7 +984,7 @@ export interface RosEventRuleTargetsProps {
     readonly ruleName: string | ros.IResolvable;
 
     /**
-     * @Property contactParameters: CONTACT configuration.A maximum of 5 parameters
+     * @Property contactParameters: The information about the alert contact groups that receive alert notifications.
      */
     readonly contactParameters?: Array<RosEventRuleTargets.ContactParametersProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -979,7 +1009,8 @@ export interface RosEventRuleTargetsProps {
     readonly slsParameters?: Array<RosEventRuleTargets.SlsParametersProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+     * @Property webhookParameters: The information about the callback URLs that are used to receive alert
+     * notifications.
      */
     readonly webhookParameters?: Array<RosEventRuleTargets.WebhookParametersProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -1072,7 +1103,7 @@ function rosEventRuleTargetsPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRuleTargets`, which is used to add or change the recipients to which alert notifications are sent based on an event-triggered alert rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::EventRuleTargets`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EventRuleTargets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
@@ -1091,7 +1122,7 @@ export class RosEventRuleTargets extends ros.RosResource {
     public ruleName: string | ros.IResolvable;
 
     /**
-     * @Property contactParameters: CONTACT configuration.A maximum of 5 parameters
+     * @Property contactParameters: The information about the alert contact groups that receive alert notifications.
      */
     public contactParameters: Array<RosEventRuleTargets.ContactParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1116,7 +1147,8 @@ export class RosEventRuleTargets extends ros.RosResource {
     public slsParameters: Array<RosEventRuleTargets.SlsParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+     * @Property webhookParameters: The information about the callback URLs that are used to receive alert
+     * notifications.
      */
     public webhookParameters: Array<RosEventRuleTargets.WebhookParametersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -1617,7 +1649,9 @@ export interface RosGroupMetricRuleProps {
     readonly contactGroups?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property dimensions: The expended resource dimensions.
+     * @Property dimensions: The dimensions that specify the resources to be monitored.
+     * The value is a collection of key-value pairs. Format: `key:value`. For example,
+     * `{"userId":"120886317861**"}` and `{"instanceId":"i-2ze2d6j5uhg20x47**"}`.
      */
     readonly dimensions?: string | ros.IResolvable;
 
@@ -1641,7 +1675,10 @@ export interface RosGroupMetricRuleProps {
     readonly extraDimensionJson?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property interval: The detection period of alerts.
+     * @Property interval: The interval at which the alert rule is triggered. Unit: seconds.
+     * > Set the alert detection interval to the same value as the data reporting
+     * interval. If the alert detection interval is shorter than the data reporting
+     * interval, alerts may not be triggered due to insufficient data.
      */
     readonly interval?: number | ros.IResolvable;
 
@@ -1666,7 +1703,9 @@ export interface RosGroupMetricRuleProps {
     readonly options?: string | ros.IResolvable;
 
     /**
-     * @Property period: The aggregation period. Unite: second.
+     * @Property period: The statistical period of the metric.
+     * The value of `Period` must be an integral multiple of 60. Unit: seconds. Default
+     * value: 300.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -1677,7 +1716,10 @@ export interface RosGroupMetricRuleProps {
     readonly silenceTime?: number | ros.IResolvable;
 
     /**
-     * @Property webhook: The URL of the callback triggered when an alert occurs.
+     * @Property webhook: The callback URL to which alert notifications are sent.
+     * Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+     * notifications to the URL using POST requests. Only the HTTP protocol is
+     * supported.
      */
     readonly webhook?: string | ros.IResolvable;
 }
@@ -1771,7 +1813,7 @@ function rosGroupMetricRulePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`The , which resource creates an alert rule for an application group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::GroupMetricRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `GroupMetricRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-groupmetricrule
  */
@@ -1867,7 +1909,9 @@ export class RosGroupMetricRule extends ros.RosResource {
     public contactGroups: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property dimensions: The expended resource dimensions.
+     * @Property dimensions: The dimensions that specify the resources to be monitored.
+     * The value is a collection of key-value pairs. Format: `key:value`. For example,
+     * `{"userId":"120886317861**"}` and `{"instanceId":"i-2ze2d6j5uhg20x47**"}`.
      */
     public dimensions: string | ros.IResolvable | undefined;
 
@@ -1891,7 +1935,10 @@ export class RosGroupMetricRule extends ros.RosResource {
     public extraDimensionJson: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * @Property interval: The detection period of alerts.
+     * @Property interval: The interval at which the alert rule is triggered. Unit: seconds.
+     * > Set the alert detection interval to the same value as the data reporting
+     * interval. If the alert detection interval is shorter than the data reporting
+     * interval, alerts may not be triggered due to insufficient data.
      */
     public interval: number | ros.IResolvable | undefined;
 
@@ -1916,7 +1963,9 @@ export class RosGroupMetricRule extends ros.RosResource {
     public options: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The aggregation period. Unite: second.
+     * @Property period: The statistical period of the metric.
+     * The value of `Period` must be an integral multiple of 60. Unit: seconds. Default
+     * value: 300.
      */
     public period: number | ros.IResolvable | undefined;
 
@@ -1927,7 +1976,10 @@ export class RosGroupMetricRule extends ros.RosResource {
     public silenceTime: number | ros.IResolvable | undefined;
 
     /**
-     * @Property webhook: The URL of the callback triggered when an alert occurs.
+     * @Property webhook: The callback URL to which alert notifications are sent.
+     * Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+     * notifications to the URL using POST requests. Only the HTTP protocol is
+     * supported.
      */
     public webhook: string | ros.IResolvable | undefined;
 
@@ -2331,7 +2383,7 @@ function rosMetricRuleTargetsPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`, which is used to add or modify one or more message resources for an alert rule.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTargets`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTargets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletargets
  */
@@ -2470,7 +2522,7 @@ export interface RosMetricRuleTemplateProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * @Property alertTemplates: Valid values of N: 0 to 200.
+     * @Property alertTemplates: The details of the alert template.
      */
     readonly alertTemplates?: Array<RosMetricRuleTemplate.AlertTemplatesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -2541,7 +2593,7 @@ function rosMetricRuleTemplatePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`, which is used to create an alert template.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplate
  */
@@ -2565,7 +2617,7 @@ export class RosMetricRuleTemplate extends ros.RosResource {
     public name: string | ros.IResolvable;
 
     /**
-     * @Property alertTemplates: Valid values of N: 0 to 200.
+     * @Property alertTemplates: The details of the alert template.
      */
     public alertTemplates: Array<RosMetricRuleTemplate.AlertTemplatesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -3083,10 +3135,9 @@ export interface RosMetricRuleTemplateDeploymentProps {
     readonly enableStartTime?: number | ros.IResolvable;
 
     /**
-     * @Property notifyLevel: Alarm notification method.Value:
-     * 2: Phone + SMS + Email + Wangwang + DingTalk Robot.
-     * 3: SMS + Email + Wangwang + DingTalk Robot.
-     * 4: Wangwang + Dingding Robot.
+     * @Property notifyLevel: The alert notification method. Valid values:
+     * Set the value to 4. A value of 4 indicates that alert notifications are sent by
+     * using TradeManager and DingTalk chatbots.
      */
     readonly notifyLevel?: number | ros.IResolvable;
 
@@ -3206,7 +3257,7 @@ function rosMetricRuleTemplateDeploymentPropsToRosTemplate(properties: any, enab
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`, which is used to apply an alert template to an application group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MetricRuleTemplateDeployment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MetricRuleTemplateDeployment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-metricruletemplatedeployment
  */
@@ -3266,10 +3317,9 @@ export class RosMetricRuleTemplateDeployment extends ros.RosResource {
     public enableStartTime: number | ros.IResolvable | undefined;
 
     /**
-     * @Property notifyLevel: Alarm notification method.Value:
-     * 2: Phone + SMS + Email + Wangwang + DingTalk Robot.
-     * 3: SMS + Email + Wangwang + DingTalk Robot.
-     * 4: Wangwang + Dingding Robot.
+     * @Property notifyLevel: The alert notification method. Valid values:
+     * Set the value to 4. A value of 4 indicates that alert notifications are sent by
+     * using TradeManager and DingTalk chatbots.
      */
     public notifyLevel: number | ros.IResolvable | undefined;
 
@@ -3379,7 +3429,7 @@ function rosMonitorGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroup`, which is used to create an application group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroup
  */
@@ -3446,7 +3496,7 @@ export interface RosMonitorGroupInstancesProps {
     readonly groupId: string | ros.IResolvable;
 
     /**
-     * @Property instances:
+     * @Property instances: The instances that you want to add to the application group.
      */
     readonly instances: Array<RosMonitorGroupInstances.InstancesProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -3495,7 +3545,7 @@ function rosMonitorGroupInstancesPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`, which is used to add instances to an application group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitorGroupInstances`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitorGroupInstances` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
@@ -3519,7 +3569,7 @@ export class RosMonitorGroupInstances extends ros.RosResource {
     public groupId: string | ros.IResolvable;
 
     /**
-     * @Property instances:
+     * @Property instances: The instances that you want to add to the application group.
      */
     public instances: Array<RosMonitorGroupInstances.InstancesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -3727,7 +3777,7 @@ function rosMonitoringAgentPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgent`, which is used to install the CloudMonitor agent on Alibaba Cloud hosts.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgent`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitoringAgent` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagent
  */
@@ -3850,7 +3900,7 @@ function rosMonitoringAgentProcessPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`, which is used to create a process monitoring task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::MonitoringAgentProcess`.
  * @Note This class does not contain additional functions, so it is recommended to use the `MonitoringAgentProcess` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitoringagentprocess
  */
@@ -3990,7 +4040,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Namespace`, which is used to create a namespace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::Namespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */
@@ -4124,8 +4174,9 @@ export interface RosResourceMetricRuleProps {
     readonly resources: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
-     * @Property compositeExpression: The trigger conditions for multiple metrics.
-     * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+     * @Property compositeExpression: The alert conditions for multiple metrics.
+     * > The settings for a single metric and multiple metrics are mutually exclusive.
+     * You cannot configure both.
      */
     readonly compositeExpression?: RosResourceMetricRule.CompositeExpressionProperty | ros.IResolvable;
 
@@ -4156,7 +4207,9 @@ export interface RosResourceMetricRuleProps {
     readonly interval?: number | ros.IResolvable;
 
     /**
-     * @Property labels:
+     * @Property labels: Labels to add to a triggered alert. These labels appear in the alert
+     * notification.
+     * > This feature is equivalent to the `label` feature in Prometheus alerting.
      */
     readonly labels?: Array<RosResourceMetricRule.LabelsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -4180,8 +4233,9 @@ export interface RosResourceMetricRuleProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property prometheus: The Prometheus alert rule.
-     * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+     * @Property prometheus: The configurations for a Prometheus alert rule.
+     * > You need to configure this parameter only when you create a Prometheus alert
+     * rule for CloudMonitor for Enterprise.
      */
     readonly prometheus?: RosResourceMetricRule.PrometheusProperty | ros.IResolvable;
 
@@ -4304,7 +4358,7 @@ function rosResourceMetricRulePropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create a threshold-triggered alert rule for a metric of a resource.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::ResourceMetricRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ResourceMetricRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */
@@ -4356,8 +4410,9 @@ export class RosResourceMetricRule extends ros.RosResource {
     public resources: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
-     * @Property compositeExpression: The trigger conditions for multiple metrics.
-     * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+     * @Property compositeExpression: The alert conditions for multiple metrics.
+     * > The settings for a single metric and multiple metrics are mutually exclusive.
+     * You cannot configure both.
      */
     public compositeExpression: RosResourceMetricRule.CompositeExpressionProperty | ros.IResolvable | undefined;
 
@@ -4388,7 +4443,9 @@ export class RosResourceMetricRule extends ros.RosResource {
     public interval: number | ros.IResolvable | undefined;
 
     /**
-     * @Property labels:
+     * @Property labels: Labels to add to a triggered alert. These labels appear in the alert
+     * notification.
+     * > This feature is equivalent to the `label` feature in Prometheus alerting.
      */
     public labels: Array<RosResourceMetricRule.LabelsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -4412,8 +4469,9 @@ export class RosResourceMetricRule extends ros.RosResource {
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property prometheus: The Prometheus alert rule.
-     * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+     * @Property prometheus: The configurations for a Prometheus alert rule.
+     * > You need to configure this parameter only when you create a Prometheus alert
+     * rule for CloudMonitor for Enterprise.
      */
     public prometheus: RosResourceMetricRule.PrometheusProperty | ros.IResolvable | undefined;
 
@@ -5206,14 +5264,16 @@ export interface RosSiteMonitorProps {
     readonly address: string | ros.IResolvable;
 
     /**
-     * @Property taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
-     * It can contain letters, digits, and underscores (_).
+     * @Property taskName: The name of the monitoring task.
+     * The name must be 4 to 100 characters long and can contain letters, digits,
+     * underscores (_), and Chinese characters.
      */
     readonly taskName: string | ros.IResolvable;
 
     /**
-     * @Property taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
-     * UDP, DNS, SMTP, POP3, and FTP.
+     * @Property taskType: The type of monitoring task.
+     * Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+     * WEBSOCKET.
      */
     readonly taskType: string | ros.IResolvable;
 
@@ -5223,8 +5283,9 @@ export interface RosSiteMonitorProps {
     readonly alertIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property interval: The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit:
-     * minutes. Default value: 1.
+     * @Property interval: The monitoring frequency in minutes.
+     * Valid values: 1, 5, 15, 30, and 60.
+     * Default: 1.
      */
     readonly interval?: number | ros.IResolvable;
 
@@ -5293,7 +5354,7 @@ function rosSiteMonitorPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SiteMonitor` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
  */
@@ -5317,14 +5378,16 @@ export class RosSiteMonitor extends ros.RosResource {
     public address: string | ros.IResolvable;
 
     /**
-     * @Property taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
-     * It can contain letters, digits, and underscores (_).
+     * @Property taskName: The name of the monitoring task.
+     * The name must be 4 to 100 characters long and can contain letters, digits,
+     * underscores (_), and Chinese characters.
      */
     public taskName: string | ros.IResolvable;
 
     /**
-     * @Property taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
-     * UDP, DNS, SMTP, POP3, and FTP.
+     * @Property taskType: The type of monitoring task.
+     * Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+     * WEBSOCKET.
      */
     public taskType: string | ros.IResolvable;
 
@@ -5334,8 +5397,9 @@ export class RosSiteMonitor extends ros.RosResource {
     public alertIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property interval: The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit:
-     * minutes. Default value: 1.
+     * @Property interval: The monitoring frequency in minutes.
+     * Valid values: 1, 5, 15, 30, and 60.
+     * Default: 1.
      */
     public interval: number | ros.IResolvable | undefined;
 
@@ -5501,7 +5565,7 @@ function rosSlsGroupPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SlsGroup`, which is used to create a Logstore group for the metrics of Simple Log Service logs.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SlsGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SlsGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup
  */

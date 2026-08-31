@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`, which is used to create an auto provisioning group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AutoProvisioningGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AutoProvisioningGroup` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-autoprovisioninggroup
@@ -85,11 +85,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: totalTargetCapacity: The total target capacity of the auto provisioning group. The target capacity consists
-        /// of the following three parts:
-        /// The target capacity of pay-as-you-go instances specified by the PayAsYouGoTargetCapacity parameter
-        /// The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
-        /// The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
+        /// <strong>Property</strong>: totalTargetCapacity: The total target capacity of the auto provisioning group. Valid values: Positive
+        /// integers.
+        /// The total capacity must be greater than or equal to the sum of
+        /// `PayAsYouGoTargetCapacity` (target capacity for pay-as-you-go instances) and
+        /// `SpotTargetCapacity` (target capacity for spot instances).
         /// </remarks>
         [JsiiProperty(name: "totalTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TotalTargetCapacity
@@ -152,16 +152,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoProvisioningGroupType: The type of the auto provisioning group. Valid values:
-        /// request: One-time delivery. After the auto provisioning group is started, it only attempts
-        /// to create an instance cluster once. If the cluster fails to be created, the group
-        /// does not try again.
-        /// maintain: The continuous delivery and maintain capacity type. After the auto provisioning group
-        /// is started, it continuously attempts to create and maintain the instance cluster.
-        /// The auto provisioning group compares the real-time and target capacity of the cluster.
-        /// If the cluster does not meet the target capacity, the group will create instances
-        /// until the cluster meets the target capacity.
-        /// Default value: maintain
+        /// <strong>Property</strong>: autoProvisioningGroupType: The delivery type of the auto provisioning group. Valid values:
+        /// - request: One-time asynchronous delivery. The group delivers the instance
+        /// cluster only at startup. If scheduling fails, no retry occurs.
+        /// - instant: One-time synchronous delivery. The group creates instances
+        /// synchronously at startup and returns the list of successfully created instances
+        /// and reasons for failures in the response.
+        /// - maintain: Continuous provisioning. The group attempts to deliver the instance
+        /// cluster at startup and monitors real-time capacity. If the target capacity is not
+        /// met, it continues creating ECS instances.
+        /// Default value: maintain.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoProvisioningGroupType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -271,11 +271,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: defaultTargetCapacityType: The type of supplemental instances. When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
-        /// the capacity requirements. Valid values:
-        /// PayAsYouGo: Pay-as-you-go instances.
-        /// Spot: Preemptible instances.
-        /// Default value: Spot
+        /// <strong>Property</strong>: defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of
+        /// `PayAsYouGoTargetCapacity` and `SpotTargetCapacity` is less than
+        /// `TotalTargetCapacity`. Valid values:
+        /// - PayAsYouGo: Pay-as-you-go instances.
+        /// - Spot: Spot instances.
+        /// Default value: Spot.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "defaultTargetCapacityType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -337,12 +338,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of
-        /// the auto provisioning group exceeds the target capacity. Valid values:
-        /// no-termination: Excess preemptible instances are not shut down.
-        /// termination: Excess preemptible instances are to be shut down. The action to be performed on these
-        /// shutdown instances is specified by the SpotInstanceInterruptionBehavior parameter.
-        /// Default value: no-termination
+        /// <strong>Property</strong>: excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto
+        /// provisioning group exceeds the target capacity and scale-in is triggered. Valid
+        /// values:
+        /// - termination: Releases scaled-in instances.
+        /// - no-termination: Only removes scaled-in instances from the auto provisioning
+        /// group.
+        /// Default value: no-termination.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "excessCapacityTerminationPolicy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -487,8 +489,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: launchTemplateVersion: The version of the instance launch template associated with the auto provisioning
-        /// group. You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
+        /// <strong>Property</strong>: launchTemplateVersion: The version of the launch template associated with the auto provisioning group.
+        /// Call [DescribeLaunchTemplateVersions]() to query available launch template
+        /// versions.
+        /// Default value: The default version of the launch template.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "launchTemplateVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -642,7 +646,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
+        /// <strong>Property</strong>: payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group.
+        /// Valid values: Integers less than or equal to the value of `TotalTargetCapacity`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "payAsYouGoTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -737,12 +742,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: spotAllocationStrategy: The scale-out policy for preemptible instances. Valid values:
-        /// lowest-price: The cost optimization policy the auto provisioning group follows to select instance
-        /// types of the lowest cost to create instances.
-        /// diversified: The distribution balancing policy the auto provisioning group follows to evenly create
-        /// instances across zones specified in multiple extended template configurations.
-        /// Default value: lowest-price
+        /// <strong>Property</strong>: spotAllocationStrategy: The strategy for creating spot instances. Valid values:
+        /// - lowest-price: Cost optimization strategy. Selects the instance type with the
+        /// lowest price.
+        /// - diversified: Balanced zone distribution strategy. Creates instances across the
+        /// zones specified in the launch template configurations and distributes them
+        /// evenly.
+        /// - capacity-optimized: Capacity optimization strategy. Selects the optimal
+        /// instance type and zone based on inventory availability.
+        /// Default value: lowest-price.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "spotAllocationStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -773,10 +781,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down. Value values:
-        /// stop: stops preemptible instances.
-        /// terminate: releases preemptible instances.
-        /// Default value: stop
+        /// <strong>Property</strong>: spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted. Valid values:
+        /// - stop: Stops the instance.
+        /// - terminate: Releases the instance.
+        /// Default value: terminate.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "spotInstanceInterruptionBehavior", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -807,8 +815,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price. The auto provisioning group selects instance types of the lowest cost to create
-        /// instances.
+        /// <strong>Property</strong>: spotInstancePoolsToUseCount: Takes effect only when `SpotAllocationStrategy` is set to `lowest-price`.
+        /// Specifies the number of lowest-priced instance types from which the auto
+        /// provisioning group creates instances.
+        /// Valid values: Less than the value of N in `LaunchTemplateConfig.N`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "spotInstancePoolsToUseCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -859,7 +869,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
+        /// <strong>Property</strong>: spotTargetCapacity: The target capacity for spot instances in the auto provisioning group. Valid
+        /// values: Integers less than or equal to the value of `TotalTargetCapacity`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "spotTargetCapacity", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -938,10 +949,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: terminateInstances: Specifies whether to release instances of the auto provisioning group. Valid values:
-        /// true
-        /// false
-        /// Default: false
+        /// <strong>Property</strong>: terminateInstances: Specifies whether to release instances in the group when you delete the auto
+        /// provisioning group. Valid values:
+        /// - true: Releases instances in the group.
+        /// - false: Retains instances in the group.
+        /// Default value: false.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "terminateInstances", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -972,12 +984,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires.
-        /// Valid values:
-        /// true: shuts down preemptible instances. The action to be performed on these shutdown instances
-        /// is specified by the SpotInstanceInterruptionBehavior parameter.
-        /// false: does not shut down preemptible instances.
-        /// Default: false
+        /// <strong>Property</strong>: terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning
+        /// group expires. Valid values:
+        /// - true: Releases instances in the group.
+        /// - false: Only removes instances from the auto provisioning group.
+        /// Default value: false.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "terminateInstancesWithExpiration", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1008,9 +1019,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: validFrom: The time when the auto provisioning group is started. The period of time between this
-        /// point in time and the point in time specified by the ValidUntil parameter is the effective time period of the auto provisioning group.
-        /// By default, an auto provisioning group is immediately started after creation.
+        /// <strong>Property</strong>: validFrom: The start time of the auto provisioning group. Used together with `ValidUntil` to
+        /// define the validity period.
+        /// Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+        /// yyyy-MM-ddTHH:mm:ssZ.
+        /// Default value: The timestamp when the API call takes effect immediately.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "validFrom", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1041,9 +1054,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: validUntil: The time when the auto provisioning group expires. The period of time between this
-        /// point in time and the point in time specified by the ValidFrom parameter is the effective time period of the auto provisioning group.
-        /// By default, an auto provisioning group never expires.
+        /// <strong>Property</strong>: validUntil: The expiration time of the auto provisioning group. Used together with
+        /// `ValidFrom` to define the validity period.
+        /// Specify the time in [ISO 8601]() format using UTC+0 time. Format:
+        /// yyyy-MM-ddTHH:mm:ssZ.
+        /// Default value: 2099-12-31T23:59:59Z.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "validUntil", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

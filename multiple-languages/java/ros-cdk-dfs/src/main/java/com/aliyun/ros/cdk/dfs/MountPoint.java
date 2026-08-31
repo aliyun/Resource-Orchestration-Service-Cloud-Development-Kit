@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dfs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::MountPoint</code>, which is used to create a mount target.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::MountPoint</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:20:44.379Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:15:26.644Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.MountPoint")
 public class MountPoint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dfs.IMountPoint {
 
@@ -221,20 +221,24 @@ public class MountPoint extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property description: The description of the Mount Point.
+         * Property description: Description of the mount target.
+         * <p>
+         * The length cannot exceed 32 characters.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the Mount Point. This parameter is required.
+         * @param description Property description: Description of the mount target. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: The description of the Mount Point.
+         * Property description: Description of the mount target.
+         * <p>
+         * The length cannot exceed 32 characters.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the Mount Point. This parameter is required.
+         * @param description Property description: Description of the mount target. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);

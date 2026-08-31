@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::POLARDB::Account</code>The , which resource type creates accounts for PolarDB databases.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.475Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.590Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.RosAccount")
 public class RosAccount extends com.aliyun.ros.cdk.core.RosResource {
 

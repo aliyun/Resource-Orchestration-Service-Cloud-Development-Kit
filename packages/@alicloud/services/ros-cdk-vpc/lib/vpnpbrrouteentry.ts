@@ -37,17 +37,22 @@ export interface VpnPbrRouteEntryProps {
     readonly vpnGatewayId: string | ros.IResolvable;
 
     /**
-     * Property weight: The weight of the destination route. Valid values: 0|100.
+     * Property weight: The weight of the destination-based route. Valid values:
+     * *   100: a high priority
+     * *   0: a low priority
      */
     readonly weight: number | ros.IResolvable;
 
     /**
-     * Property description: The description of the VPN destination route.
+     * Property description: The description of the destination-based route.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property overlayMode: The overlay mode.
+     * Property overlayMode: The tunneling protocol. The value is set to Ipsec, which indicates the IPsec
+     * tunneling protocol.
      */
     readonly overlayMode?: string | ros.IResolvable;
 

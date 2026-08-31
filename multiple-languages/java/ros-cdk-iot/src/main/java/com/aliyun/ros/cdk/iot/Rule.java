@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.iot;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::IOT::Rule</code>, which is used to create a rule for a specific topic.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::IOT::Rule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.735Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.694Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.Rule")
 public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.iot.IRule {
 
@@ -120,28 +120,26 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property name: The name of the rule.
+         * Property name: The name of the data forwarding rule.
          * <p>
-         * The name must be 1 to 30 characters in length and can contain
-         * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-         * supported. Each Chinese symbol occupies 2 characters.
+         * The rule name must be 1 to 30 characters in
+         * length, and can contain letters, digits, underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the rule. This parameter is required.
+         * @param name Property name: The name of the data forwarding rule. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the rule.
+         * Property name: The name of the data forwarding rule.
          * <p>
-         * The name must be 1 to 30 characters in length and can contain
-         * English letters, digits, underscores (_), and hyphens (-). Chinese language is also
-         * supported. Each Chinese symbol occupies 2 characters.
+         * The rule name must be 1 to 30 characters in
+         * length, and can contain letters, digits, underscores (_), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the rule. This parameter is required.
+         * @param name Property name: The name of the data forwarding rule. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);
@@ -236,10 +234,17 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property resourceGroupId: The ID of the resource group to which the rule is assigned.
          * <p>
-         * You can view the resource
-         * group information in the Resource Management console.
-         * If you do not specify this parameter, the rule is assigned to the default resource
-         * group.
+         * You can view the
+         * resource group information in the Resource Management console.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify a value for this parameter only if you have activated Resource
+         * Management.
+         * If you do not specify this parameter, the rule is assigned to the default
+         * resource group.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the rule is assigned. This parameter is required.
@@ -251,10 +256,17 @@ public class Rule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property resourceGroupId: The ID of the resource group to which the rule is assigned.
          * <p>
-         * You can view the resource
-         * group information in the Resource Management console.
-         * If you do not specify this parameter, the rule is assigned to the default resource
-         * group.
+         * You can view the
+         * resource group information in the Resource Management console.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify a value for this parameter only if you have activated Resource
+         * Management.
+         * If you do not specify this parameter, the rule is assigned to the default
+         * resource group.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group to which the rule is assigned. This parameter is required.

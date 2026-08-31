@@ -10,8 +10,6 @@ type SitePairProps struct {
 	// Property primarySiteRegionId: The region ID of the primary site.
 	PrimarySiteRegionId interface{} `field:"required" json:"primarySiteRegionId" yaml:"primarySiteRegionId"`
 	// Property primarySiteType: The type of the primary site.
-	//
-	// Valid values: VPC, VSwitch, VRouter.
 	PrimarySiteType interface{} `field:"required" json:"primarySiteType" yaml:"primarySiteType"`
 	// Property primarySiteVpcId: The VPC ID of the primary site.
 	PrimarySiteVpcId interface{} `field:"required" json:"primarySiteVpcId" yaml:"primarySiteVpcId"`
@@ -20,14 +18,18 @@ type SitePairProps struct {
 	// Property secondarySiteRegionId: The region ID of the secondary site.
 	SecondarySiteRegionId interface{} `field:"required" json:"secondarySiteRegionId" yaml:"secondarySiteRegionId"`
 	// Property secondarySiteType: The type of the secondary site.
-	//
-	// Valid values: VPC, VSwitch, VRouter.
 	SecondarySiteType interface{} `field:"required" json:"secondarySiteType" yaml:"secondarySiteType"`
 	// Property secondarySiteVpcId: The VPC ID of the secondary site.
 	SecondarySiteVpcId interface{} `field:"required" json:"secondarySiteVpcId" yaml:"secondarySiteVpcId"`
 	// Property primarySiteZoneId: The zone ID of the primary site.
+	//
+	// This parameter is valid only when the site pair
+	// type is cross-zone disaster recovery.
 	PrimarySiteZoneId interface{} `field:"optional" json:"primarySiteZoneId" yaml:"primarySiteZoneId"`
 	// Property secondarySiteZoneId: The zone ID of the secondary site.
+	//
+	// This parameter is valid only when the site
+	// pair type is cross-zone disaster recovery.
 	SecondarySiteZoneId interface{} `field:"optional" json:"secondarySiteZoneId" yaml:"secondarySiteZoneId"`
 	// Property sitePairType: The type of the site pair.
 	SitePairType interface{} `field:"optional" json:"sitePairType" yaml:"sitePairType"`

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceClone`, which is used to clone an Elastic Compute Service (ECS) instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::InstanceClone`.
 type InstanceClone interface {
 	alicloudroscdkcore.Resource
 	IInstanceClone

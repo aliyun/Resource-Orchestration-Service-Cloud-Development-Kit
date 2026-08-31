@@ -407,9 +407,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
         private object? _maxNodesInCluster;
 
-        /// <summary>Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.</summary>
+        /// <summary>Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster.</summary>
         /// <remarks>
-        /// Default value: 100
+        /// Valid
+        /// values: 0 to 500.
+        /// Default value: 100.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxNodesInCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -461,7 +463,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
         private object? _queues;
 
-        /// <summary>Property queues:.</summary>
+        /// <summary>Property queues: The information about the queue.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "queues", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosAutoScaleConfig.QueuesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Queues
@@ -563,10 +565,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
 
         private object? _shrinkIntervalInMinutes;
 
-        /// <summary>Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in.</summary>
+        /// <summary>Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in.</summary>
         /// <remarks>
         /// Unit: minutes.
-        /// Default value: 2
+        /// Valid values: 2 to 10.
+        /// Default value: 2.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "shrinkIntervalInMinutes", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

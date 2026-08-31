@@ -5,9 +5,15 @@ package alicloudroscdkhbr
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-crossaccount
 type CrossAccountProps struct {
-	// Property alias: The alias of the cross-account authorization.
+	// Property alias: The alias.
+	//
+	// The maximum length is 32 characters. This parameter is not required
+	// for cross-account backups that are configured based on a resource directory.
 	Alias interface{} `field:"optional" json:"alias" yaml:"alias"`
-	// Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+	// Property crossAccountRoleName: The name of the RAM role for the account to back up.
+	//
+	// This parameter is used when
+	// you configure a cross-account backup by assuming a RAM role.
 	CrossAccountRoleName interface{} `field:"optional" json:"crossAccountRoleName" yaml:"crossAccountRoleName"`
 	// Property crossAccountType: The type of the cross-account authorization.
 	//

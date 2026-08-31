@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Api</code>, which is used to create an API.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Api</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.515Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.899Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Api")
 public class Api extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apigateway.IApi {
 
@@ -534,20 +534,28 @@ public class Api extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property resultSample: The sample of the result.
+         * Property resultSample: An example of a response returned by the backend service.
+         * <p>
+         * This value is used only
+         * to generate documentation. The actually returned result shall prevail.(Support up
+         * to 32KB)
          * <p>
          * @return {@code this}
-         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
+         * @param resultSample Property resultSample: An example of a response returned by the backend service. This parameter is required.
          */
         public Builder resultSample(final java.lang.String resultSample) {
             this.props.resultSample(resultSample);
             return this;
         }
         /**
-         * Property resultSample: The sample of the result.
+         * Property resultSample: An example of a response returned by the backend service.
+         * <p>
+         * This value is used only
+         * to generate documentation. The actually returned result shall prevail.(Support up
+         * to 32KB)
          * <p>
          * @return {@code this}
-         * @param resultSample Property resultSample: The sample of the result. This parameter is required.
+         * @param resultSample Property resultSample: An example of a response returned by the backend service. This parameter is required.
          */
         public Builder resultSample(final com.aliyun.ros.cdk.core.IResolvable resultSample) {
             this.props.resultSample(resultSample);

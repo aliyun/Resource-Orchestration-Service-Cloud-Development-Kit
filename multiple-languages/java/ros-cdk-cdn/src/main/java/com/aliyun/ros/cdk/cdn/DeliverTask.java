@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CDN::DeliverTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.219Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.556Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.DeliverTask")
 public class DeliverTask extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cdn.IDeliverTask {
 
@@ -112,20 +112,26 @@ public class DeliverTask extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property deliver: The deliver of the CDN deliver task.
+         * Property deliver: The method that is used to send operations reports.
+         * <p>
+         * Operations reports are sent
+         * to you only by email. The settings must be escaped in JSON.
          * <p>
          * @return {@code this}
-         * @param deliver Property deliver: The deliver of the CDN deliver task. This parameter is required.
+         * @param deliver Property deliver: The method that is used to send operations reports. This parameter is required.
          */
         public Builder deliver(final com.aliyun.ros.cdk.core.IResolvable deliver) {
             this.props.deliver(deliver);
             return this;
         }
         /**
-         * Property deliver: The deliver of the CDN deliver task.
+         * Property deliver: The method that is used to send operations reports.
+         * <p>
+         * Operations reports are sent
+         * to you only by email. The settings must be escaped in JSON.
          * <p>
          * @return {@code this}
-         * @param deliver Property deliver: The deliver of the CDN deliver task. This parameter is required.
+         * @param deliver Property deliver: The method that is used to send operations reports. This parameter is required.
          */
         public Builder deliver(final java.util.Map<java.lang.String, ? extends java.lang.Object> deliver) {
             this.props.deliver(deliver);
@@ -154,20 +160,26 @@ public class DeliverTask extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property reports: The reports of the CDN deliver task.
+         * Property reports: The operations reports that are tracked by the task.
+         * <p>
+         * The data must be escaped in
+         * JSON.
          * <p>
          * @return {@code this}
-         * @param reports Property reports: The reports of the CDN deliver task. This parameter is required.
+         * @param reports Property reports: The operations reports that are tracked by the task. This parameter is required.
          */
         public Builder reports(final java.util.List<? extends java.lang.Object> reports) {
             this.props.reports(reports);
             return this;
         }
         /**
-         * Property reports: The reports of the CDN deliver task.
+         * Property reports: The operations reports that are tracked by the task.
+         * <p>
+         * The data must be escaped in
+         * JSON.
          * <p>
          * @return {@code this}
-         * @param reports Property reports: The reports of the CDN deliver task. This parameter is required.
+         * @param reports Property reports: The operations reports that are tracked by the task. This parameter is required.
          */
         public Builder reports(final com.aliyun.ros.cdk.core.IResolvable reports) {
             this.props.reports(reports);
@@ -175,20 +187,24 @@ public class DeliverTask extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property schedule: The schedule of the CDN deliver task.
+         * Property schedule: The parameters that specify the time interval at which the tracking task sends operations reports.
+         * <p>
+         * The settings must be escaped in JSON.
          * <p>
          * @return {@code this}
-         * @param schedule Property schedule: The schedule of the CDN deliver task. This parameter is required.
+         * @param schedule Property schedule: The parameters that specify the time interval at which the tracking task sends operations reports. This parameter is required.
          */
         public Builder schedule(final com.aliyun.ros.cdk.core.IResolvable schedule) {
             this.props.schedule(schedule);
             return this;
         }
         /**
-         * Property schedule: The schedule of the CDN deliver task.
+         * Property schedule: The parameters that specify the time interval at which the tracking task sends operations reports.
+         * <p>
+         * The settings must be escaped in JSON.
          * <p>
          * @return {@code this}
-         * @param schedule Property schedule: The schedule of the CDN deliver task. This parameter is required.
+         * @param schedule Property schedule: The parameters that specify the time interval at which the tracking task sends operations reports. This parameter is required.
          */
         public Builder schedule(final java.util.Map<java.lang.String, ? extends java.lang.Object> schedule) {
             this.props.schedule(schedule);

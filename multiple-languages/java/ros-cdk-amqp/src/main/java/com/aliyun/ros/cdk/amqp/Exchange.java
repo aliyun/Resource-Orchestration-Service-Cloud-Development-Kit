@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Exchange</code>, which is used to create an exchange.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Exchange</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.796Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.227Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Exchange")
 public class Exchange extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.amqp.IExchange {
 
@@ -143,6 +143,16 @@ public class Exchange extends com.aliyun.ros.cdk.core.Resource implements com.al
         /**
          * Property exchangeName: The name of the exchange.
          * <p>
+         * Note:
+         * <p>
+         * <ul>
+         * <li>The name can contain only letters, digits, hyphens (-), underscores (_),
+         * periods (.), number signs (#), forward slashes (/), and at signs (&#64;). The name
+         * must be 1 to 255 characters in length.</li>
+         * <li>The name of an exchange cannot be changed after the exchange is created. To
+         * change the name, delete the exchange and create a new one.</li>
+         * </ul>
+         * <p>
          * @return {@code this}
          * @param exchangeName Property exchangeName: The name of the exchange. This parameter is required.
          */
@@ -152,6 +162,16 @@ public class Exchange extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
         /**
          * Property exchangeName: The name of the exchange.
+         * <p>
+         * Note:
+         * <p>
+         * <ul>
+         * <li>The name can contain only letters, digits, hyphens (-), underscores (_),
+         * periods (.), number signs (#), forward slashes (/), and at signs (&#64;). The name
+         * must be 1 to 255 characters in length.</li>
+         * <li>The name of an exchange cannot be changed after the exchange is created. To
+         * change the name, delete the exchange and create a new one.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param exchangeName Property exchangeName: The name of the exchange. This parameter is required.
@@ -165,10 +185,22 @@ public class Exchange extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Property exchangeType: The type of the exchange.
          * <p>
          * Valid values:
-         * FANOUT: An exchange of this type routes all the received messages to all the queues bound to this exchange. You can use a fanout exchange to broadcast messages.
-         * DIRECT: An exchange of this type routes a message to the queue whose binding key is exactly the same as the routing key of the message.
-         * TOPIC: This type is similar to the direct exchange type. An exchange of this type routes a message to one or more queues based on the fuzzy match or multi-condition match result between the routing key of the message and the binding keys of the current exchange.
-         * HEADERS: Headers Exchange uses the Headers property instead of Routing Key for routing matching. When binding Headers Exchange and Queue, set the key-value pair of the binding property; when sending a message to the Headers Exchange, set the message's Headers property key-value pair and use the message Headers The message is routed to the bound Queue by comparing the attribute key-value pair and the bound attribute key-value pair.
+         * <p>
+         * <ul>
+         * <li>DIRECT: This routing rule type routes messages to a queue whose binding key
+         * exactly matches the routing key of the message.</li>
+         * <li>TOPIC: This type is similar to the DIRECT type. It routes messages to bound
+         * queues using routing key pattern matching and string comparison.</li>
+         * <li>FANOUT: This routing rule type is simple. It routes all messages sent to the
+         * exchange to all queues that are bound to the exchange. This works like a
+         * broadcast feature.</li>
+         * <li>HEADERS: This type is similar to the DIRECT type. It uses header properties
+         * instead of a routing key for routing. When a queue is bound to a headers
+         * exchange, key-value pairs are defined for the binding. When a message is sent to
+         * the exchange, key-value pairs are defined in the message header. The exchange
+         * routes the message by comparing the key-value pairs in the header with the
+         * key-value pairs of the binding.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param exchangeType Property exchangeType: The type of the exchange. This parameter is required.
@@ -181,10 +213,22 @@ public class Exchange extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Property exchangeType: The type of the exchange.
          * <p>
          * Valid values:
-         * FANOUT: An exchange of this type routes all the received messages to all the queues bound to this exchange. You can use a fanout exchange to broadcast messages.
-         * DIRECT: An exchange of this type routes a message to the queue whose binding key is exactly the same as the routing key of the message.
-         * TOPIC: This type is similar to the direct exchange type. An exchange of this type routes a message to one or more queues based on the fuzzy match or multi-condition match result between the routing key of the message and the binding keys of the current exchange.
-         * HEADERS: Headers Exchange uses the Headers property instead of Routing Key for routing matching. When binding Headers Exchange and Queue, set the key-value pair of the binding property; when sending a message to the Headers Exchange, set the message's Headers property key-value pair and use the message Headers The message is routed to the bound Queue by comparing the attribute key-value pair and the bound attribute key-value pair.
+         * <p>
+         * <ul>
+         * <li>DIRECT: This routing rule type routes messages to a queue whose binding key
+         * exactly matches the routing key of the message.</li>
+         * <li>TOPIC: This type is similar to the DIRECT type. It routes messages to bound
+         * queues using routing key pattern matching and string comparison.</li>
+         * <li>FANOUT: This routing rule type is simple. It routes all messages sent to the
+         * exchange to all queues that are bound to the exchange. This works like a
+         * broadcast feature.</li>
+         * <li>HEADERS: This type is similar to the DIRECT type. It uses header properties
+         * instead of a routing key for routing. When a queue is bound to a headers
+         * exchange, key-value pairs are defined for the binding. When a message is sent to
+         * the exchange, key-value pairs are defined in the message header. The exchange
+         * routes the message by comparing the key-value pairs in the header with the
+         * key-value pairs of the binding.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param exchangeType Property exchangeType: The type of the exchange. This parameter is required.

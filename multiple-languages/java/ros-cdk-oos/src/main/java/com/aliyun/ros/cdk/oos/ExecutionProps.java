@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-execution
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.909Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.844Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ExecutionProps")
 @software.amazon.jsii.Jsii.Proxy(ExecutionProps.Jsii$Proxy.class)
 public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,21 +33,32 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property mode: Execution mode.
+     * Property mode: The execution mode.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Automatic (default): The execution is automatically run.</li>
+     * <li>FailurePause: The execution is paused if a task fails.</li>
+     * <li>Debug: The execution is run in single-step mode.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMode() {
         return null;
     }
 
     /**
-     * Property parameters: Parameters for the execution of template.
+     * Property parameters: The JSON string that consists of a collection of parameters.
+     * <p>
+     * The default value is
+     * {}.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParameters() {
         return null;
     }
 
     /**
-     * Property parentExecutionId: Parent execution ID.
+     * Property parentExecutionId: The ID of the parent execution.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getParentExecutionId() {
         return null;
@@ -98,9 +109,10 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property templateName: Template name.
+     * Property templateName: The name of the template.
      * <p>
-     * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+     * The name can contain letters, digits, hyphens (-), and
+     * underscores (_). The name can be up to 200 characters in length.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTemplateName() {
         return null;
@@ -204,7 +216,14 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getMode}
-         * @param mode Property mode: Execution mode.
+         * @param mode Property mode: The execution mode.
+         *             Valid values:
+         *             <p>
+         *             <ul>
+         *             <li>Automatic (default): The execution is automatically run.</li>
+         *             <li>FailurePause: The execution is paused if a task fails.</li>
+         *             <li>Debug: The execution is run in single-step mode.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder mode(java.lang.String mode) {
@@ -214,7 +233,14 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getMode}
-         * @param mode Property mode: Execution mode.
+         * @param mode Property mode: The execution mode.
+         *             Valid values:
+         *             <p>
+         *             <ul>
+         *             <li>Automatic (default): The execution is automatically run.</li>
+         *             <li>FailurePause: The execution is paused if a task fails.</li>
+         *             <li>Debug: The execution is run in single-step mode.</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder mode(com.aliyun.ros.cdk.core.IResolvable mode) {
@@ -224,7 +250,9 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getParameters}
-         * @param parameters Property parameters: Parameters for the execution of template.
+         * @param parameters Property parameters: The JSON string that consists of a collection of parameters.
+         *                   The default value is
+         *                   {}.
          * @return {@code this}
          */
         public Builder parameters(com.aliyun.ros.cdk.core.IResolvable parameters) {
@@ -234,7 +262,9 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getParameters}
-         * @param parameters Property parameters: Parameters for the execution of template.
+         * @param parameters Property parameters: The JSON string that consists of a collection of parameters.
+         *                   The default value is
+         *                   {}.
          * @return {@code this}
          */
         public Builder parameters(java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
@@ -244,7 +274,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getParentExecutionId}
-         * @param parentExecutionId Property parentExecutionId: Parent execution ID.
+         * @param parentExecutionId Property parentExecutionId: The ID of the parent execution.
          * @return {@code this}
          */
         public Builder parentExecutionId(java.lang.String parentExecutionId) {
@@ -254,7 +284,7 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getParentExecutionId}
-         * @param parentExecutionId Property parentExecutionId: Parent execution ID.
+         * @param parentExecutionId Property parentExecutionId: The ID of the parent execution.
          * @return {@code this}
          */
         public Builder parentExecutionId(com.aliyun.ros.cdk.core.IResolvable parentExecutionId) {
@@ -369,8 +399,9 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getTemplateName}
-         * @param templateName Property templateName: Template name.
-         *                     Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+         * @param templateName Property templateName: The name of the template.
+         *                     The name can contain letters, digits, hyphens (-), and
+         *                     underscores (_). The name can be up to 200 characters in length.
          * @return {@code this}
          */
         public Builder templateName(java.lang.String templateName) {
@@ -380,8 +411,9 @@ public interface ExecutionProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ExecutionProps#getTemplateName}
-         * @param templateName Property templateName: Template name.
-         *                     Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+         * @param templateName Property templateName: The name of the template.
+         *                     The name can contain letters, digits, hyphens (-), and
+         *                     underscores (_). The name can be up to 200 characters in length.
          * @return {@code this}
          */
         public Builder templateName(com.aliyun.ros.cdk.core.IResolvable templateName) {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`The , which type creates ACK managed clusters.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CS::ManagedKubernetesCluster`.
 type RosManagedKubernetesCluster interface {
 	alicloudroscdkcore.RosResource
 	Addons() interface{}

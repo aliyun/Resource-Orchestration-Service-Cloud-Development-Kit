@@ -28,6 +28,23 @@ type ListenerProps struct {
 	ClientAffinity interface{} `field:"optional" json:"clientAffinity" yaml:"clientAffinity"`
 	// Property description: The description of the listener.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
+	// Property httpVersion: The maximum version of the HTTP protocol.
+	//
+	// Valid values:
+	// http1.1
+	// http2
+	// http3
+	// Note Only HTTPS listeners support this parameter.
+	HttpVersion interface{} `field:"optional" json:"httpVersion" yaml:"httpVersion"`
+	// Property idleTimeout: The connection idle timeout period.
+	//
+	// Unit: seconds.
+	// Valid values:
+	// TCP listener: 10 to 900
+	// UDP listener: 10 to 20
+	// HTTP or HTTPS listener: 1 to 60
+	// Note Only listeners support this parameter.
+	IdleTimeout interface{} `field:"optional" json:"idleTimeout" yaml:"idleTimeout"`
 	// Property name: The name of the listener.
 	//
 	// The name must be 2 to 128 characters in length and can contain letters, digits, underscores
@@ -39,6 +56,11 @@ type ListenerProps struct {
 	// true: preserves client IP addresses. After this feature is enabled, backend servers can retrieve client IP addresses.
 	// false (default): does not preserve client IP addresses.
 	ProxyProtocol interface{} `field:"optional" json:"proxyProtocol" yaml:"proxyProtocol"`
+	// Property requestTimeout: The HTTP request timeout period.
+	//
+	// Unit: seconds. Valid values: 1 to 180. Default value: 60.
+	// Note Only HTTP and HTTPS listeners support this parameter.
+	RequestTimeout interface{} `field:"optional" json:"requestTimeout" yaml:"requestTimeout"`
 	// Property securityPolicyId: The ID of the security policy.
 	//
 	// Valid values:
@@ -49,6 +71,12 @@ type ListenerProps struct {
 	// tls_cipher_policy_1_2_strict_with_1_3
 	// Note Only HTTPS listeners support this parameter.
 	SecurityPolicyId interface{} `field:"optional" json:"securityPolicyId" yaml:"securityPolicyId"`
+	// Property type: The listener routing type.
+	//
+	// Valid values:
+	// Standard: the standard routing type
+	// CustomRouting: the custom routing type.
+	Type interface{} `field:"optional" json:"type" yaml:"type"`
 	// Property xForwardedForConfig: The configuration of the XForward field.
 	XForwardedForConfig interface{} `field:"optional" json:"xForwardedForConfig" yaml:"xForwardedForConfig"`
 }

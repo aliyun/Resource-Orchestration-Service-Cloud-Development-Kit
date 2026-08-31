@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mps;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mps-pipeline
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:55:13.153Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:11:47.218Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.PipelineProps")
 @software.amazon.jsii.Jsii.Proxy(PipelineProps.Jsii$Proxy.class)
 public interface PipelineProps extends software.amazon.jsii.JsiiSerializable {
@@ -53,7 +53,9 @@ public interface PipelineProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property speedLevel: Speed level.
+     * Property speedLevel: The level of the MPS queue.
+     * <p>
+     * Valid values: 1 to 3.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSpeedLevel() {
         return null;
@@ -192,7 +194,8 @@ public interface PipelineProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link PipelineProps#getSpeedLevel}
-         * @param speedLevel Property speedLevel: Speed level.
+         * @param speedLevel Property speedLevel: The level of the MPS queue.
+         *                   Valid values: 1 to 3.
          * @return {@code this}
          */
         public Builder speedLevel(java.lang.Number speedLevel) {
@@ -202,7 +205,8 @@ public interface PipelineProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link PipelineProps#getSpeedLevel}
-         * @param speedLevel Property speedLevel: Speed level.
+         * @param speedLevel Property speedLevel: The level of the MPS queue.
+         *                   Valid values: 1 to 3.
          * @return {@code this}
          */
         public Builder speedLevel(com.aliyun.ros.cdk.core.IResolvable speedLevel) {

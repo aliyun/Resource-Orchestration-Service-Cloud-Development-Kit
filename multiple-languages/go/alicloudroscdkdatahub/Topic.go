@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DATAHUB::Topic`, which is used to create a topic.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DATAHUB::Topic`.
 type Topic interface {
 	alicloudroscdkcore.Resource
 	ITopic

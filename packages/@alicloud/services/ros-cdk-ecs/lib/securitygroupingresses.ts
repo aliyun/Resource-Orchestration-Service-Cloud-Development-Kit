@@ -27,7 +27,7 @@ export interface ISecurityGroupIngresses extends ros.IResource {
     readonly props: SecurityGroupIngressesProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupIngresses`, which is used to associate multiple inbound rules with a security group at a time.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::SecurityGroupIngresses`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityGroupIngresses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-securitygroupingresses
  */

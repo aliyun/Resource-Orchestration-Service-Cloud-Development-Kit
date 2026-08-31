@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ImageComponent</code>, which is used to create an image component.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ImageComponent</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.928Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.299Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ImageComponent")
 public class ImageComponent extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IImageComponent {
 
@@ -114,7 +114,10 @@ public class ImageComponent extends com.aliyun.ros.cdk.core.Resource implements 
         /**
          * Property content: The content of the image component.
          * <p>
-         * The content consists of up to 127 commands.
+         * The image component consists of multiple
+         * commands. The command content cannot exceed 16 KB in size. For information about
+         * the commands supported by Image Builder and the formats of the commands, see
+         * <a href="">Commands supported by Image Builder</a>.
          * <p>
          * @return {@code this}
          * @param content Property content: The content of the image component. This parameter is required.
@@ -126,7 +129,10 @@ public class ImageComponent extends com.aliyun.ros.cdk.core.Resource implements 
         /**
          * Property content: The content of the image component.
          * <p>
-         * The content consists of up to 127 commands.
+         * The image component consists of multiple
+         * commands. The command content cannot exceed 16 KB in size. For information about
+         * the commands supported by Image Builder and the formats of the commands, see
+         * <a href="">Commands supported by Image Builder</a>.
          * <p>
          * @return {@code this}
          * @param content Property content: The content of the image component. This parameter is required.
@@ -139,7 +145,22 @@ public class ImageComponent extends com.aliyun.ros.cdk.core.Resource implements 
         /**
          * Property componentType: The type of the image component.
          * <p>
-         * Only image build components are supported. Set the value to Build.Default value: Build.
+         * Only image building components and image test
+         * components are supported.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Build</li>
+         * <li>Test
+         * Default value: Build.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Image building components can be used only in image building templates. Image
+         * test components can be used only in image test templates.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param componentType Property componentType: The type of the image component. This parameter is required.
@@ -151,7 +172,22 @@ public class ImageComponent extends com.aliyun.ros.cdk.core.Resource implements 
         /**
          * Property componentType: The type of the image component.
          * <p>
-         * Only image build components are supported. Set the value to Build.Default value: Build.
+         * Only image building components and image test
+         * components are supported.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Build</li>
+         * <li>Test
+         * Default value: Build.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Image building components can be used only in image building templates. Image
+         * test components can be used only in image test templates.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param componentType Property componentType: The type of the image component. This parameter is required.
@@ -235,24 +271,36 @@ public class ImageComponent extends com.aliyun.ros.cdk.core.Resource implements 
         }
 
         /**
-         * Property systemType: The operating system type supported by the image component.
+         * Property systemType: The type of the operating system supported by the image component.
          * <p>
-         * Only Linux is supported. Set the value to Linux.Default value: Linux.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Linux</li>
+         * <li>Windows
+         * Default value: Linux.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param systemType Property systemType: The operating system type supported by the image component. This parameter is required.
+         * @param systemType Property systemType: The type of the operating system supported by the image component. This parameter is required.
          */
         public Builder systemType(final java.lang.String systemType) {
             this.props.systemType(systemType);
             return this;
         }
         /**
-         * Property systemType: The operating system type supported by the image component.
+         * Property systemType: The type of the operating system supported by the image component.
          * <p>
-         * Only Linux is supported. Set the value to Linux.Default value: Linux.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Linux</li>
+         * <li>Windows
+         * Default value: Linux.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param systemType Property systemType: The operating system type supported by the image component. This parameter is required.
+         * @param systemType Property systemType: The type of the operating system supported by the image component. This parameter is required.
          */
         public Builder systemType(final com.aliyun.ros.cdk.core.IResolvable systemType) {
             this.props.systemType(systemType);

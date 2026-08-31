@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::VPC</code>Use , which to create a virtual private cloud (VPC).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::VPC</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.270Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.667Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Vpc")
 public class Vpc extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IVpc {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DNS::RecoveryPlan</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.909Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.517Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RosRecoveryPlan")
 public class RosRecoveryPlan extends com.aliyun.ros.cdk.core.RosResource {
 

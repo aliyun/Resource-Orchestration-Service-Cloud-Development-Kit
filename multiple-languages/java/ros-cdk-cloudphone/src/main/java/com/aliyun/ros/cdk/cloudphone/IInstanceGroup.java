@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudphone;
 /**
  * Represents a <code>InstanceGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:49:40.167Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:37:59.528Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.IInstanceGroup")
 @software.amazon.jsii.Jsii.Proxy(IInstanceGroup.Jsii$Proxy.class)
 public interface IInstanceGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

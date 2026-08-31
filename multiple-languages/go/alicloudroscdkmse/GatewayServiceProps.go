@@ -51,7 +51,14 @@ type GatewayServiceProps struct {
 	//
 	// Used when specifying a source to add services.
 	SourceId interface{} `field:"optional" json:"sourceId" yaml:"sourceId"`
-	// Property tlsSetting: TLS settings for the service.
+	// Property tlsSetting: The TLS settings, specified as a JSON string.
+	//
+	// The following fields are supported:
+	// - `mode`: The TLS mode.
+	// - `certId`: The certificate ID.
+	// - `caCertId`: The CA certificate ID.
+	// - `caCertContent`: The public key of the CA certificate.
+	// - `sni`: The Server Name Indication (SNI).
 	TlsSetting interface{} `field:"optional" json:"tlsSetting" yaml:"tlsSetting"`
 }
 

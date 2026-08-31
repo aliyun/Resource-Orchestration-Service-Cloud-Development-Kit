@@ -5,34 +5,68 @@ package alicloudroscdknas
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
 type DataFlowProps struct {
-	// Property fileSystemId: File system ID.
-	FileSystemId interface{} `field:"required" json:"fileSystemId" yaml:"fileSystemId"`
-	// Property fsetId: Fileset ID.
-	FsetId interface{} `field:"required" json:"fsetId" yaml:"fsetId"`
-	// Property sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: \/\/ and https: \/\/. Explain that the OSS BUCKET must be the bucket that exists in the region.
-	SourceStorage interface{} `field:"required" json:"sourceStorage" yaml:"sourceStorage"`
-	// Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s. Value:  600 1200 1500.
+	// Property fileSystemId: The ID of the file system.
 	//
-	// Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+	// *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+	// cpfs-125487\*\*\*\*.
+	// *   The IDs of CPFS for Lingjun file systems must start with `bmcpfs-`. Example:
+	// bmcpfs-0015\*\*\*\*.
+	FileSystemId interface{} `field:"required" json:"fileSystemId" yaml:"fileSystemId"`
+	// Property fsetId: The fileset ID.
+	//
+	// >  This parameter is required for CPFS file systems.
+	FsetId interface{} `field:"required" json:"fsetId" yaml:"fsetId"`
+	// Property sourceStorage: The access path of the source storage.
+	//
+	// Format: `<storage type>:\/\/[<account
+	// id>:]<path>`.
+	// Parameters:
+	// *   storage type: Only OSS is supported.
+	// *   account id (optional): the UID of the account of the source storage. This
+	// parameter is required when you use OSS buckets across accounts.
+	// *   path: the name of the OSS bucket. Limits:
+	// *   The name can contain only lowercase letters, digits, and hyphens (-). The
+	// name must start and end with a lowercase letter or digit.
+	// *   The name can be up to 128 characters in length.
+	// *   The name must be encoded in UTF-8.
+	// > *   The OSS bucket must be an existing bucket in the region.
+	// > *   Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.
+	SourceStorage interface{} `field:"required" json:"sourceStorage" yaml:"sourceStorage"`
+	// Property throughput: The maximum data flow throughput.
+	//
+	// Unit: MB\/s. Valid values:
+	// *   600
+	// *   1200
+	// *   1500
+	// >  The data flow throughput must be less than the I\/O throughput of the file
+	// system. This parameter is required for CPFS file systems.
 	Throughput interface{} `field:"required" json:"throughput" yaml:"throughput"`
 	// Property autoRefreshInterval: The automatic update interval time, every time the interval, the CPFS checks whether there is a data update in the directory.
 	//
 	// If there is data update, start the automatic update task, unit: minute.
 	// Scope of value: 5 ~ 525600, default value: 10.
 	AutoRefreshInterval interface{} `field:"optional" json:"autoRefreshInterval" yaml:"autoRefreshInterval"`
-	// Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
+	// Property autoRefreshPolicy: The automatic update policy.
 	//
-	// None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-	// Importchanged: The data update at the source automatically imports CPFS.
+	// The updated data in the source storage is imported
+	// into the CPFS file system based on the policy.
+	// *   None (default): Updated data in the source storage is not automatically
+	// imported into the CPFS file system. You can run a data flow task to import the
+	// updated data from the source storage.
+	// *   ImportChanged: Updated data in the source storage is automatically imported
+	// into the CPFS file system.
+	// >  This parameter takes effect only for CPFS file systems.
 	AutoRefreshPolicy interface{} `field:"optional" json:"autoRefreshPolicy" yaml:"autoRefreshPolicy"`
 	// Property autoRefreshs:.
 	AutoRefreshs interface{} `field:"optional" json:"autoRefreshs" yaml:"autoRefreshs"`
-	// Property description: Description of data flow.
+	// Property description: The description of the dataflow.
 	//
-	// limit:
-	// The length is 2 to 128 English or Chinese characters.
-	// Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-	// It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+	// Limits:
+	// *   The description must be 2 to 128 characters in length.
+	// *   The description must start with a letter but cannot start with `http:\/\/` or
+	// `https:\/\/`.
+	// *   The description can contain letters, digits, colons (:), underscores (_), and
+	// hyphens (-).
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property sourceSecurityType: The type of safety protection types of the source storage.
 	//

@@ -12,7 +12,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
     public interface IRosAliasProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
+        /// <strong>Property</strong>: aliasName: The alias of the CMK.
+        /// The alias must be 1 to 255 characters in length and must contain the prefix
+        /// `alias\/`. The alias cannot be prefixed with the reserved word `alias\/acs`.
         /// </remarks>
         [JsiiProperty(name: "aliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AliasName
@@ -41,7 +43,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
+            /// <strong>Property</strong>: aliasName: The alias of the CMK.
+            /// The alias must be 1 to 255 characters in length and must contain the prefix
+            /// `alias\/`. The alias cannot be prefixed with the reserved word `alias\/acs`.
             /// </remarks>
             [JsiiProperty(name: "aliasName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AliasName

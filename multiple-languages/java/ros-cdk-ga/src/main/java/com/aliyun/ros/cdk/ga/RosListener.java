@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::Listener</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::Listener</code>Creates a listener for a Global Accelerator (GA) instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.866Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.862Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosListener")
 public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -201,6 +201,42 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getHttpVersion() {
+        return software.amazon.jsii.Kernel.get(this, "httpVersion", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setHttpVersion(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "httpVersion", value);
+    }
+
+    /**
+     */
+    public void setHttpVersion(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "httpVersion", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getIdleTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "idleTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setIdleTimeout(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "idleTimeout", value);
+    }
+
+    /**
+     */
+    public void setIdleTimeout(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "idleTimeout", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return software.amazon.jsii.Kernel.get(this, "name", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -237,6 +273,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
     /**
      */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getRequestTimeout() {
+        return software.amazon.jsii.Kernel.get(this, "requestTimeout", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setRequestTimeout(final @org.jetbrains.annotations.Nullable java.lang.Number value) {
+        software.amazon.jsii.Kernel.set(this, "requestTimeout", value);
+    }
+
+    /**
+     */
+    public void setRequestTimeout(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "requestTimeout", value);
+    }
+
+    /**
+     */
     public @org.jetbrains.annotations.Nullable java.lang.Object getSecurityPolicyId() {
         return software.amazon.jsii.Kernel.get(this, "securityPolicyId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
     }
@@ -251,6 +305,24 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
      */
     public void setSecurityPolicyId(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
         software.amazon.jsii.Kernel.set(this, "securityPolicyId", value);
+    }
+
+    /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getType() {
+        return software.amazon.jsii.Kernel.get(this, "type", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setType(final @org.jetbrains.annotations.Nullable java.lang.String value) {
+        software.amazon.jsii.Kernel.set(this, "type", value);
+    }
+
+    /**
+     */
+    public void setType(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "type", value);
     }
 
     /**
@@ -991,6 +1063,40 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param httpVersion This parameter is required.
+         */
+        public Builder httpVersion(final java.lang.String httpVersion) {
+            this.props.httpVersion(httpVersion);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param httpVersion This parameter is required.
+         */
+        public Builder httpVersion(final com.aliyun.ros.cdk.core.IResolvable httpVersion) {
+            this.props.httpVersion(httpVersion);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param idleTimeout This parameter is required.
+         */
+        public Builder idleTimeout(final java.lang.Number idleTimeout) {
+            this.props.idleTimeout(idleTimeout);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param idleTimeout This parameter is required.
+         */
+        public Builder idleTimeout(final com.aliyun.ros.cdk.core.IResolvable idleTimeout) {
+            this.props.idleTimeout(idleTimeout);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param name This parameter is required.
          */
         public Builder name(final java.lang.String name) {
@@ -1025,6 +1131,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
 
         /**
          * @return {@code this}
+         * @param requestTimeout This parameter is required.
+         */
+        public Builder requestTimeout(final java.lang.Number requestTimeout) {
+            this.props.requestTimeout(requestTimeout);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param requestTimeout This parameter is required.
+         */
+        public Builder requestTimeout(final com.aliyun.ros.cdk.core.IResolvable requestTimeout) {
+            this.props.requestTimeout(requestTimeout);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
          * @param securityPolicyId This parameter is required.
          */
         public Builder securityPolicyId(final java.lang.String securityPolicyId) {
@@ -1037,6 +1160,23 @@ public class RosListener extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder securityPolicyId(final com.aliyun.ros.cdk.core.IResolvable securityPolicyId) {
             this.props.securityPolicyId(securityPolicyId);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param type This parameter is required.
+         */
+        public Builder type(final java.lang.String type) {
+            this.props.type(type);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param type This parameter is required.
+         */
+        public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
+            this.props.type(type);
             return this;
         }
 

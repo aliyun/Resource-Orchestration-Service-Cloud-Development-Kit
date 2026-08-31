@@ -38,7 +38,7 @@ export interface Gateway2Props {
     readonly clbNetworkType?: string | ros.IResolvable;
 
     /**
-     * Property enableHardwareAcceleration: Specifies whether to activate Tracing Analysis.
+     * Property enableHardwareAcceleration: Specifies whether to enable hardware acceleration.
      */
     readonly enableHardwareAcceleration?: boolean | ros.IResolvable;
 
@@ -53,7 +53,7 @@ export interface Gateway2Props {
     readonly enableXtrace?: boolean | ros.IResolvable;
 
     /**
-     * Property enterpriseSecurityGroup: Specifies whether to enable hardware acceleration.
+     * Property enterpriseSecurityGroup: Specifies whether to use an Enterprise Security Group.
      */
     readonly enterpriseSecurityGroup?: boolean | ros.IResolvable;
 
@@ -78,9 +78,10 @@ export interface Gateway2Props {
     readonly managedEntryNetworkType?: string | ros.IResolvable;
 
     /**
-     * Property mserVersion: The MSE gateway instance type. Valid values:
-     * mse_pro: normal instance
-     * mse_premium: professional normal instancemse_serverless: serverless instance
+     * Property mserVersion: The edition of the gateway.
+     * - `mse_premium`: Professional Edition
+     * - `mse_pro`: Standard Edition
+     * - `mse_serverless`: Serverless Edition
      */
     readonly mserVersion?: string | ros.IResolvable;
 

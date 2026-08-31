@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::SynDb`, which is used to create a synchronization task for an ApsaraDB for ClickHouse Community-compatible Edition cluster.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ClickHouse::SynDb`.
 type RosSynDb interface {
 	alicloudroscdkcore.RosResource
 	AttrDbClusterId() alicloudroscdkcore.IResolvable

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.schedulerx;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SchedulerX::Job</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:46:20.755Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:28:51.459Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.schedulerx.$Module.class, fqn = "@alicloud/ros-cdk-schedulerx.Job")
 public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.schedulerx.IJob {
 
@@ -252,20 +252,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property attemptInterval: The attempt interval of the job.
+         * Property attemptInterval: The retry interval for a failed job, in seconds.
+         * <p>
+         * Defaults to 30.
          * <p>
          * @return {@code this}
-         * @param attemptInterval Property attemptInterval: The attempt interval of the job. This parameter is required.
+         * @param attemptInterval Property attemptInterval: The retry interval for a failed job, in seconds. This parameter is required.
          */
         public Builder attemptInterval(final java.lang.Number attemptInterval) {
             this.props.attemptInterval(attemptInterval);
             return this;
         }
         /**
-         * Property attemptInterval: The attempt interval of the job.
+         * Property attemptInterval: The retry interval for a failed job, in seconds.
+         * <p>
+         * Defaults to 30.
          * <p>
          * @return {@code this}
-         * @param attemptInterval Property attemptInterval: The attempt interval of the job. This parameter is required.
+         * @param attemptInterval Property attemptInterval: The retry interval for a failed job, in seconds. This parameter is required.
          */
         public Builder attemptInterval(final com.aliyun.ros.cdk.core.IResolvable attemptInterval) {
             this.props.attemptInterval(attemptInterval);
@@ -273,20 +277,20 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property calendar: The calendar of the job.
+         * Property calendar: For a <code>cron</code> job, you can specify a custom calendar.
          * <p>
          * @return {@code this}
-         * @param calendar Property calendar: The calendar of the job. This parameter is required.
+         * @param calendar Property calendar: For a <code>cron</code> job, you can specify a custom calendar. This parameter is required.
          */
         public Builder calendar(final java.lang.String calendar) {
             this.props.calendar(calendar);
             return this;
         }
         /**
-         * Property calendar: The calendar of the job.
+         * Property calendar: For a <code>cron</code> job, you can specify a custom calendar.
          * <p>
          * @return {@code this}
-         * @param calendar Property calendar: The calendar of the job. This parameter is required.
+         * @param calendar Property calendar: For a <code>cron</code> job, you can specify a custom calendar. This parameter is required.
          */
         public Builder calendar(final com.aliyun.ros.cdk.core.IResolvable calendar) {
             this.props.calendar(calendar);
@@ -294,20 +298,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property className: The class name of the job.
+         * Property className: The fully qualified class name of the job interface.
+         * <p>
+         * Required for <code>java</code> jobs.
          * <p>
          * @return {@code this}
-         * @param className Property className: The class name of the job. This parameter is required.
+         * @param className Property className: The fully qualified class name of the job interface. This parameter is required.
          */
         public Builder className(final java.lang.String className) {
             this.props.className(className);
             return this;
         }
         /**
-         * Property className: The class name of the job.
+         * Property className: The fully qualified class name of the job interface.
+         * <p>
+         * Required for <code>java</code> jobs.
          * <p>
          * @return {@code this}
-         * @param className Property className: The class name of the job. This parameter is required.
+         * @param className Property className: The fully qualified class name of the job interface. This parameter is required.
          */
         public Builder className(final com.aliyun.ros.cdk.core.IResolvable className) {
             this.props.className(className);
@@ -315,20 +323,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property consumerSize: The consumer size of the job.
+         * Property consumerSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of consumer threads per machine for processing subtasks.
+         * <p>
+         * Defaults to 5.
          * <p>
          * @return {@code this}
-         * @param consumerSize Property consumerSize: The consumer size of the job. This parameter is required.
+         * @param consumerSize Property consumerSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of consumer threads per machine for processing subtasks. This parameter is required.
          */
         public Builder consumerSize(final java.lang.Number consumerSize) {
             this.props.consumerSize(consumerSize);
             return this;
         }
         /**
-         * Property consumerSize: The consumer size of the job.
+         * Property consumerSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of consumer threads per machine for processing subtasks.
+         * <p>
+         * Defaults to 5.
          * <p>
          * @return {@code this}
-         * @param consumerSize Property consumerSize: The consumer size of the job. This parameter is required.
+         * @param consumerSize Property consumerSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of consumer threads per machine for processing subtasks. This parameter is required.
          */
         public Builder consumerSize(final com.aliyun.ros.cdk.core.IResolvable consumerSize) {
             this.props.consumerSize(consumerSize);
@@ -336,20 +348,32 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property contactInfo: The contact info of the job.
+         * Property contactInfo: The contact information for the job.
+         * <p>
+         * <blockquote><notice></blockquote>
+         * <p>
+         * This parameter is deprecated.
+         * <p>
+         * <blockquote></notice></blockquote>
          * <p>
          * @return {@code this}
-         * @param contactInfo Property contactInfo: The contact info of the job. This parameter is required.
+         * @param contactInfo Property contactInfo: The contact information for the job. This parameter is required.
          */
         public Builder contactInfo(final com.aliyun.ros.cdk.core.IResolvable contactInfo) {
             this.props.contactInfo(contactInfo);
             return this;
         }
         /**
-         * Property contactInfo: The contact info of the job.
+         * Property contactInfo: The contact information for the job.
+         * <p>
+         * <blockquote><notice></blockquote>
+         * <p>
+         * This parameter is deprecated.
+         * <p>
+         * <blockquote></notice></blockquote>
          * <p>
          * @return {@code this}
-         * @param contactInfo Property contactInfo: The contact info of the job. This parameter is required.
+         * @param contactInfo Property contactInfo: The contact information for the job. This parameter is required.
          */
         public Builder contactInfo(final java.util.List<? extends java.lang.Object> contactInfo) {
             this.props.contactInfo(contactInfo);
@@ -357,20 +381,30 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property content: The content of the job.
+         * Property content: - For a <code>python</code>, <code>shell</code>, or <code>k8s</code> job, this parameter specifies the script content.
+         * <p>
+         * <ul>
+         * <li>For a <code>go</code> job, the content must be in the following format:
+         * {"jobName":"HelloWorld"}</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param content Property content: The content of the job. This parameter is required.
+         * @param content Property content: - For a <code>python</code>, <code>shell</code>, or <code>k8s</code> job, this parameter specifies the script content. This parameter is required.
          */
         public Builder content(final java.lang.String content) {
             this.props.content(content);
             return this;
         }
         /**
-         * Property content: The content of the job.
+         * Property content: - For a <code>python</code>, <code>shell</code>, or <code>k8s</code> job, this parameter specifies the script content.
+         * <p>
+         * <ul>
+         * <li>For a <code>go</code> job, the content must be in the following format:
+         * {"jobName":"HelloWorld"}</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param content Property content: The content of the job. This parameter is required.
+         * @param content Property content: - For a <code>python</code>, <code>shell</code>, or <code>k8s</code> job, this parameter specifies the script content. This parameter is required.
          */
         public Builder content(final com.aliyun.ros.cdk.core.IResolvable content) {
             this.props.content(content);
@@ -378,20 +412,20 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property dataOffset: The data offset of the job.
+         * Property dataOffset: The time offset in seconds for a <code>cron</code> job.
          * <p>
          * @return {@code this}
-         * @param dataOffset Property dataOffset: The data offset of the job. This parameter is required.
+         * @param dataOffset Property dataOffset: The time offset in seconds for a <code>cron</code> job. This parameter is required.
          */
         public Builder dataOffset(final java.lang.Number dataOffset) {
             this.props.dataOffset(dataOffset);
             return this;
         }
         /**
-         * Property dataOffset: The data offset of the job.
+         * Property dataOffset: The time offset in seconds for a <code>cron</code> job.
          * <p>
          * @return {@code this}
-         * @param dataOffset Property dataOffset: The data offset of the job. This parameter is required.
+         * @param dataOffset Property dataOffset: The time offset in seconds for a <code>cron</code> job. This parameter is required.
          */
         public Builder dataOffset(final com.aliyun.ros.cdk.core.IResolvable dataOffset) {
             this.props.dataOffset(dataOffset);
@@ -420,20 +454,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property dispatcherSize: The dispatcher size of the job.
+         * Property dispatcherSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of threads for dispatching subtasks.
+         * <p>
+         * Defaults to 5.
          * <p>
          * @return {@code this}
-         * @param dispatcherSize Property dispatcherSize: The dispatcher size of the job. This parameter is required.
+         * @param dispatcherSize Property dispatcherSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of threads for dispatching subtasks. This parameter is required.
          */
         public Builder dispatcherSize(final java.lang.Number dispatcherSize) {
             this.props.dispatcherSize(dispatcherSize);
             return this;
         }
         /**
-         * Property dispatcherSize: The dispatcher size of the job.
+         * Property dispatcherSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of threads for dispatching subtasks.
+         * <p>
+         * Defaults to 5.
          * <p>
          * @return {@code this}
-         * @param dispatcherSize Property dispatcherSize: The dispatcher size of the job. This parameter is required.
+         * @param dispatcherSize Property dispatcherSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of threads for dispatching subtasks. This parameter is required.
          */
         public Builder dispatcherSize(final com.aliyun.ros.cdk.core.IResolvable dispatcherSize) {
             this.props.dispatcherSize(dispatcherSize);
@@ -441,20 +479,34 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property failEnable: Whether fail is enabled for the job.
+         * Property failEnable: Specifies whether to enable alerts for failed jobs.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Enables failure alerts.</li>
+         * <li>false: Disables failure alerts.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param failEnable Property failEnable: Whether fail is enabled for the job. This parameter is required.
+         * @param failEnable Property failEnable: Specifies whether to enable alerts for failed jobs. This parameter is required.
          */
         public Builder failEnable(final java.lang.Boolean failEnable) {
             this.props.failEnable(failEnable);
             return this;
         }
         /**
-         * Property failEnable: Whether fail is enabled for the job.
+         * Property failEnable: Specifies whether to enable alerts for failed jobs.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Enables failure alerts.</li>
+         * <li>false: Disables failure alerts.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param failEnable Property failEnable: Whether fail is enabled for the job. This parameter is required.
+         * @param failEnable Property failEnable: Specifies whether to enable alerts for failed jobs. This parameter is required.
          */
         public Builder failEnable(final com.aliyun.ros.cdk.core.IResolvable failEnable) {
             this.props.failEnable(failEnable);
@@ -462,20 +514,20 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property failTimes: The fail times of the job.
+         * Property failTimes: The number of consecutive failures that triggers an alert.
          * <p>
          * @return {@code this}
-         * @param failTimes Property failTimes: The fail times of the job. This parameter is required.
+         * @param failTimes Property failTimes: The number of consecutive failures that triggers an alert. This parameter is required.
          */
         public Builder failTimes(final java.lang.Number failTimes) {
             this.props.failTimes(failTimes);
             return this;
         }
         /**
-         * Property failTimes: The fail times of the job.
+         * Property failTimes: The number of consecutive failures that triggers an alert.
          * <p>
          * @return {@code this}
-         * @param failTimes Property failTimes: The fail times of the job. This parameter is required.
+         * @param failTimes Property failTimes: The number of consecutive failures that triggers an alert. This parameter is required.
          */
         public Builder failTimes(final com.aliyun.ros.cdk.core.IResolvable failTimes) {
             this.props.failTimes(failTimes);
@@ -483,20 +535,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property maxAttempt: The max attempt of the job.
+         * Property maxAttempt: The maximum number of retries for a failed job.
+         * <p>
+         * Defaults to 0.
          * <p>
          * @return {@code this}
-         * @param maxAttempt Property maxAttempt: The max attempt of the job. This parameter is required.
+         * @param maxAttempt Property maxAttempt: The maximum number of retries for a failed job. This parameter is required.
          */
         public Builder maxAttempt(final java.lang.Number maxAttempt) {
             this.props.maxAttempt(maxAttempt);
             return this;
         }
         /**
-         * Property maxAttempt: The max attempt of the job.
+         * Property maxAttempt: The maximum number of retries for a failed job.
+         * <p>
+         * Defaults to 0.
          * <p>
          * @return {@code this}
-         * @param maxAttempt Property maxAttempt: The max attempt of the job. This parameter is required.
+         * @param maxAttempt Property maxAttempt: The maximum number of retries for a failed job. This parameter is required.
          */
         public Builder maxAttempt(final com.aliyun.ros.cdk.core.IResolvable maxAttempt) {
             this.props.maxAttempt(maxAttempt);
@@ -504,20 +560,28 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property maxConcurrency: The max concurrency of the job.
+         * Property maxConcurrency: The maximum number of concurrent job instances.
+         * <p>
+         * Defaults to 1. If an existing job
+         * instance is still running, a new one will not be triggered, even if its scheduled
+         * time has passed.
          * <p>
          * @return {@code this}
-         * @param maxConcurrency Property maxConcurrency: The max concurrency of the job. This parameter is required.
+         * @param maxConcurrency Property maxConcurrency: The maximum number of concurrent job instances. This parameter is required.
          */
         public Builder maxConcurrency(final java.lang.Number maxConcurrency) {
             this.props.maxConcurrency(maxConcurrency);
             return this;
         }
         /**
-         * Property maxConcurrency: The max concurrency of the job.
+         * Property maxConcurrency: The maximum number of concurrent job instances.
+         * <p>
+         * Defaults to 1. If an existing job
+         * instance is still running, a new one will not be triggered, even if its scheduled
+         * time has passed.
          * <p>
          * @return {@code this}
-         * @param maxConcurrency Property maxConcurrency: The max concurrency of the job. This parameter is required.
+         * @param maxConcurrency Property maxConcurrency: The maximum number of concurrent job instances. This parameter is required.
          */
         public Builder maxConcurrency(final com.aliyun.ros.cdk.core.IResolvable maxConcurrency) {
             this.props.maxConcurrency(maxConcurrency);
@@ -525,20 +589,30 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property missWorkerEnable: Whether miss worker is enabled for the job.
+         * Property missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job.
+         * <p>
+         * <ul>
+         * <li>true: Enables the alert.</li>
+         * <li>false: Disables the alert.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param missWorkerEnable Property missWorkerEnable: Whether miss worker is enabled for the job. This parameter is required.
+         * @param missWorkerEnable Property missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job. This parameter is required.
          */
         public Builder missWorkerEnable(final java.lang.Boolean missWorkerEnable) {
             this.props.missWorkerEnable(missWorkerEnable);
             return this;
         }
         /**
-         * Property missWorkerEnable: Whether miss worker is enabled for the job.
+         * Property missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job.
+         * <p>
+         * <ul>
+         * <li>true: Enables the alert.</li>
+         * <li>false: Disables the alert.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param missWorkerEnable Property missWorkerEnable: Whether miss worker is enabled for the job. This parameter is required.
+         * @param missWorkerEnable Property missWorkerEnable: Specifies whether to send an alert when no worker is available to run the job. This parameter is required.
          */
         public Builder missWorkerEnable(final com.aliyun.ros.cdk.core.IResolvable missWorkerEnable) {
             this.props.missWorkerEnable(missWorkerEnable);
@@ -546,20 +620,20 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property namespaceSource: The namespace source of the job.
+         * Property namespaceSource: This parameter is required only for specific third-party integrations.
          * <p>
          * @return {@code this}
-         * @param namespaceSource Property namespaceSource: The namespace source of the job. This parameter is required.
+         * @param namespaceSource Property namespaceSource: This parameter is required only for specific third-party integrations. This parameter is required.
          */
         public Builder namespaceSource(final java.lang.String namespaceSource) {
             this.props.namespaceSource(namespaceSource);
             return this;
         }
         /**
-         * Property namespaceSource: The namespace source of the job.
+         * Property namespaceSource: This parameter is required only for specific third-party integrations.
          * <p>
          * @return {@code this}
-         * @param namespaceSource Property namespaceSource: The namespace source of the job. This parameter is required.
+         * @param namespaceSource Property namespaceSource: This parameter is required only for specific third-party integrations. This parameter is required.
          */
         public Builder namespaceSource(final com.aliyun.ros.cdk.core.IResolvable namespaceSource) {
             this.props.namespaceSource(namespaceSource);
@@ -567,20 +641,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100.
+         * Property pageSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of subtasks retrieved per pull.
+         * <p>
+         * Defaults to 100.
          * <p>
          * @return {@code this}
-         * @param pageSize Property pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100. This parameter is required.
+         * @param pageSize Property pageSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of subtasks retrieved per pull. This parameter is required.
          */
         public Builder pageSize(final java.lang.Number pageSize) {
             this.props.pageSize(pageSize);
             return this;
         }
         /**
-         * Property pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100.
+         * Property pageSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of subtasks retrieved per pull.
+         * <p>
+         * Defaults to 100.
          * <p>
          * @return {@code this}
-         * @param pageSize Property pageSize: Advanced configuration for parallel grid tasks, the default number of sub-tasks pulled at a time is 100. This parameter is required.
+         * @param pageSize Property pageSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the number of subtasks retrieved per pull. This parameter is required.
          */
         public Builder pageSize(final com.aliyun.ros.cdk.core.IResolvable pageSize) {
             this.props.pageSize(pageSize);
@@ -609,20 +687,38 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property priority: The priority of the job.
+         * Property priority: The job priority.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>1: Low</li>
+         * <li>5: Medium</li>
+         * <li>10: High</li>
+         * <li>15: Very High</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param priority Property priority: The priority of the job. This parameter is required.
+         * @param priority Property priority: The job priority. This parameter is required.
          */
         public Builder priority(final java.lang.Number priority) {
             this.props.priority(priority);
             return this;
         }
         /**
-         * Property priority: The priority of the job.
+         * Property priority: The job priority.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>1: Low</li>
+         * <li>5: Medium</li>
+         * <li>10: High</li>
+         * <li>15: Very High</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param priority Property priority: The priority of the job. This parameter is required.
+         * @param priority Property priority: The job priority. This parameter is required.
          */
         public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
             this.props.priority(priority);
@@ -630,20 +726,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property queueSize: The queue size of the job.
+         * Property queueSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of subtasks the queue can hold.
+         * <p>
+         * Defaults to 10000.
          * <p>
          * @return {@code this}
-         * @param queueSize Property queueSize: The queue size of the job. This parameter is required.
+         * @param queueSize Property queueSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of subtasks the queue can hold. This parameter is required.
          */
         public Builder queueSize(final java.lang.Number queueSize) {
             this.props.queueSize(queueSize);
             return this;
         }
         /**
-         * Property queueSize: The queue size of the job.
+         * Property queueSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of subtasks the queue can hold.
+         * <p>
+         * Defaults to 10000.
          * <p>
          * @return {@code this}
-         * @param queueSize Property queueSize: The queue size of the job. This parameter is required.
+         * @param queueSize Property queueSize: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of subtasks the queue can hold. This parameter is required.
          */
         public Builder queueSize(final com.aliyun.ros.cdk.core.IResolvable queueSize) {
             this.props.queueSize(queueSize);
@@ -651,20 +751,30 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property sendChannel: The send channel of the job.
+         * Property sendChannel: The channel for sending alerts.
+         * <p>
+         * <ul>
+         * <li>For the default channel of the application group, use <code>default</code>.</li>
+         * <li>For a specific channel for the job, use <code>sms</code>, <code>mail</code>, <code>phone</code>, or <code>webhook</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sendChannel Property sendChannel: The send channel of the job. This parameter is required.
+         * @param sendChannel Property sendChannel: The channel for sending alerts. This parameter is required.
          */
         public Builder sendChannel(final java.lang.String sendChannel) {
             this.props.sendChannel(sendChannel);
             return this;
         }
         /**
-         * Property sendChannel: The send channel of the job.
+         * Property sendChannel: The channel for sending alerts.
+         * <p>
+         * <ul>
+         * <li>For the default channel of the application group, use <code>default</code>.</li>
+         * <li>For a specific channel for the job, use <code>sms</code>, <code>mail</code>, <code>phone</code>, or <code>webhook</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sendChannel Property sendChannel: The send channel of the job. This parameter is required.
+         * @param sendChannel Property sendChannel: The channel for sending alerts. This parameter is required.
          */
         public Builder sendChannel(final com.aliyun.ros.cdk.core.IResolvable sendChannel) {
             this.props.sendChannel(sendChannel);
@@ -693,20 +803,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property taskAttemptInterval: The task attempt interval of the job.
+         * Property taskAttemptInterval: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the retry interval in seconds for a failed subtask.
+         * <p>
+         * Defaults to 0.
          * <p>
          * @return {@code this}
-         * @param taskAttemptInterval Property taskAttemptInterval: The task attempt interval of the job. This parameter is required.
+         * @param taskAttemptInterval Property taskAttemptInterval: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the retry interval in seconds for a failed subtask. This parameter is required.
          */
         public Builder taskAttemptInterval(final java.lang.Number taskAttemptInterval) {
             this.props.taskAttemptInterval(taskAttemptInterval);
             return this;
         }
         /**
-         * Property taskAttemptInterval: The task attempt interval of the job.
+         * Property taskAttemptInterval: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the retry interval in seconds for a failed subtask.
+         * <p>
+         * Defaults to 0.
          * <p>
          * @return {@code this}
-         * @param taskAttemptInterval Property taskAttemptInterval: The task attempt interval of the job. This parameter is required.
+         * @param taskAttemptInterval Property taskAttemptInterval: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the retry interval in seconds for a failed subtask. This parameter is required.
          */
         public Builder taskAttemptInterval(final com.aliyun.ros.cdk.core.IResolvable taskAttemptInterval) {
             this.props.taskAttemptInterval(taskAttemptInterval);
@@ -714,20 +828,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property taskMaxAttempt: The task max attempt of the job.
+         * Property taskMaxAttempt: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of retries for a failed subtask.
+         * <p>
+         * Defaults to 0.
          * <p>
          * @return {@code this}
-         * @param taskMaxAttempt Property taskMaxAttempt: The task max attempt of the job. This parameter is required.
+         * @param taskMaxAttempt Property taskMaxAttempt: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of retries for a failed subtask. This parameter is required.
          */
         public Builder taskMaxAttempt(final java.lang.Number taskMaxAttempt) {
             this.props.taskMaxAttempt(taskMaxAttempt);
             return this;
         }
         /**
-         * Property taskMaxAttempt: The task max attempt of the job.
+         * Property taskMaxAttempt: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of retries for a failed subtask.
+         * <p>
+         * Defaults to 0.
          * <p>
          * @return {@code this}
-         * @param taskMaxAttempt Property taskMaxAttempt: The task max attempt of the job. This parameter is required.
+         * @param taskMaxAttempt Property taskMaxAttempt: [Advanced] For <code>parallel</code> and <code>grid</code> jobs, this specifies the maximum number of retries for a failed subtask. This parameter is required.
          */
         public Builder taskMaxAttempt(final com.aliyun.ros.cdk.core.IResolvable taskMaxAttempt) {
             this.props.taskMaxAttempt(taskMaxAttempt);
@@ -735,20 +853,42 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property timeExpression: The time expression of the job.
+         * Property timeExpression: The time expression, which depends on the value of <code>TimeType</code>.
+         * <p>
+         * <ul>
+         * <li>cron: A standard cron expression.</li>
+         * <li>api: No time expression is required.</li>
+         * <li>fixed_rate: A fixed interval in seconds. For example, a value of 30 triggers
+         * the job every 30 seconds.</li>
+         * <li>second_delay: A fixed delay in seconds before the job is executed. Valid
+         * values: 1 to 60.</li>
+         * <li>one_time: A specific time in <code>yyyy-MM-dd HH:mm:ss</code> format or a Unix timestamp
+         * in milliseconds. Example: "2022-10-10 10:10:00".</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param timeExpression Property timeExpression: The time expression of the job. This parameter is required.
+         * @param timeExpression Property timeExpression: The time expression, which depends on the value of <code>TimeType</code>. This parameter is required.
          */
         public Builder timeExpression(final java.lang.String timeExpression) {
             this.props.timeExpression(timeExpression);
             return this;
         }
         /**
-         * Property timeExpression: The time expression of the job.
+         * Property timeExpression: The time expression, which depends on the value of <code>TimeType</code>.
+         * <p>
+         * <ul>
+         * <li>cron: A standard cron expression.</li>
+         * <li>api: No time expression is required.</li>
+         * <li>fixed_rate: A fixed interval in seconds. For example, a value of 30 triggers
+         * the job every 30 seconds.</li>
+         * <li>second_delay: A fixed delay in seconds before the job is executed. Valid
+         * values: 1 to 60.</li>
+         * <li>one_time: A specific time in <code>yyyy-MM-dd HH:mm:ss</code> format or a Unix timestamp
+         * in milliseconds. Example: "2022-10-10 10:10:00".</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param timeExpression Property timeExpression: The time expression of the job. This parameter is required.
+         * @param timeExpression Property timeExpression: The time expression, which depends on the value of <code>TimeType</code>. This parameter is required.
          */
         public Builder timeExpression(final com.aliyun.ros.cdk.core.IResolvable timeExpression) {
             this.props.timeExpression(timeExpression);
@@ -756,20 +896,24 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property timeout: The timeout of the job.
+         * Property timeout: The timeout threshold in seconds.
+         * <p>
+         * Defaults to 7200.
          * <p>
          * @return {@code this}
-         * @param timeout Property timeout: The timeout of the job. This parameter is required.
+         * @param timeout Property timeout: The timeout threshold in seconds. This parameter is required.
          */
         public Builder timeout(final java.lang.Number timeout) {
             this.props.timeout(timeout);
             return this;
         }
         /**
-         * Property timeout: The timeout of the job.
+         * Property timeout: The timeout threshold in seconds.
+         * <p>
+         * Defaults to 7200.
          * <p>
          * @return {@code this}
-         * @param timeout Property timeout: The timeout of the job. This parameter is required.
+         * @param timeout Property timeout: The timeout threshold in seconds. This parameter is required.
          */
         public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
             this.props.timeout(timeout);
@@ -777,20 +921,34 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property timeoutEnable: Whether timeout is enabled for the job.
+         * Property timeoutEnable: Specifies whether to enable timeout alerts.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Enables timeout alerts.</li>
+         * <li>false: Disables timeout alerts.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param timeoutEnable Property timeoutEnable: Whether timeout is enabled for the job. This parameter is required.
+         * @param timeoutEnable Property timeoutEnable: Specifies whether to enable timeout alerts. This parameter is required.
          */
         public Builder timeoutEnable(final java.lang.Boolean timeoutEnable) {
             this.props.timeoutEnable(timeoutEnable);
             return this;
         }
         /**
-         * Property timeoutEnable: Whether timeout is enabled for the job.
+         * Property timeoutEnable: Specifies whether to enable timeout alerts.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Enables timeout alerts.</li>
+         * <li>false: Disables timeout alerts.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param timeoutEnable Property timeoutEnable: Whether timeout is enabled for the job. This parameter is required.
+         * @param timeoutEnable Property timeoutEnable: Specifies whether to enable timeout alerts. This parameter is required.
          */
         public Builder timeoutEnable(final com.aliyun.ros.cdk.core.IResolvable timeoutEnable) {
             this.props.timeoutEnable(timeoutEnable);
@@ -798,20 +956,34 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property timeoutKillEnable: Whether timeout kill is enabled for the job.
+         * Property timeoutKillEnable: Specifies whether to terminate the job upon timeout.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Terminates the job if it times out.</li>
+         * <li>false: The job is not terminated if it times out.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param timeoutKillEnable Property timeoutKillEnable: Whether timeout kill is enabled for the job. This parameter is required.
+         * @param timeoutKillEnable Property timeoutKillEnable: Specifies whether to terminate the job upon timeout. This parameter is required.
          */
         public Builder timeoutKillEnable(final java.lang.Boolean timeoutKillEnable) {
             this.props.timeoutKillEnable(timeoutKillEnable);
             return this;
         }
         /**
-         * Property timeoutKillEnable: Whether timeout kill is enabled for the job.
+         * Property timeoutKillEnable: Specifies whether to terminate the job upon timeout.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: Terminates the job if it times out.</li>
+         * <li>false: The job is not terminated if it times out.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param timeoutKillEnable Property timeoutKillEnable: Whether timeout kill is enabled for the job. This parameter is required.
+         * @param timeoutKillEnable Property timeoutKillEnable: Specifies whether to terminate the job upon timeout. This parameter is required.
          */
         public Builder timeoutKillEnable(final com.aliyun.ros.cdk.core.IResolvable timeoutKillEnable) {
             this.props.timeoutKillEnable(timeoutKillEnable);
@@ -840,20 +1012,20 @@ public class Job extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property xAttrs: The extended attributes of the job.
+         * Property xAttrs: This parameter is required for <code>k8s</code> jobs.<br>For job tasks: {"resource":"job"}<br>For shell tasks: {"image":"busybox","resource":"shell"}<br><br>.
          * <p>
          * @return {@code this}
-         * @param xAttrs Property xAttrs: The extended attributes of the job. This parameter is required.
+         * @param xAttrs Property xAttrs: This parameter is required for <code>k8s</code> jobs.<br>For job tasks: {"resource":"job"}<br>For shell tasks: {"image":"busybox","resource":"shell"}<br><br>. This parameter is required.
          */
         public Builder xAttrs(final com.aliyun.ros.cdk.core.IResolvable xAttrs) {
             this.props.xAttrs(xAttrs);
             return this;
         }
         /**
-         * Property xAttrs: The extended attributes of the job.
+         * Property xAttrs: This parameter is required for <code>k8s</code> jobs.<br>For job tasks: {"resource":"job"}<br>For shell tasks: {"image":"busybox","resource":"shell"}<br><br>.
          * <p>
          * @return {@code this}
-         * @param xAttrs Property xAttrs: The extended attributes of the job. This parameter is required.
+         * @param xAttrs Property xAttrs: This parameter is required for <code>k8s</code> jobs.<br>For job tasks: {"resource":"job"}<br>For shell tasks: {"image":"busybox","resource":"shell"}<br><br>. This parameter is required.
          */
         public Builder xAttrs(final java.util.Map<java.lang.String, ? extends java.lang.Object> xAttrs) {
             this.props.xAttrs(xAttrs);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.config;
 /**
  * Represents a <code>ReportTemplate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:01:48.329Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:52:04.585Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.IReportTemplate")
 @software.amazon.jsii.Jsii.Proxy(IReportTemplate.Jsii$Proxy.class)
 public interface IReportTemplate extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

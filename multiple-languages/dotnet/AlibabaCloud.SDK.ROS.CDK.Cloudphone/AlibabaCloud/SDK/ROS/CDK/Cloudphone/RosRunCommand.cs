@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`, which is used to run a command on cloud phones.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CloudPhone::RunCommand`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `RunCommand` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
@@ -60,8 +60,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: command: The command to be executed.
-        /// The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (\/), colon (:), medium line (-).
+        /// <strong>Property</strong>: command: The command that you want to run.\
+        /// The name can be up to 1024 bytes in length and can contain only letters, digits,
+        /// underscores (_), periods (.), slashes (\/), colons (:), and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Command

@@ -76,7 +76,10 @@ export interface SupabaseProjectProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * Property period: The billing period.
+     * Property period: The unit of the subscription duration. Valid values:
+     * - Month
+     * - Year
+     * > This parameter is required if you use the subscription billing method.
      */
     readonly period?: string | ros.IResolvable;
 
@@ -86,7 +89,10 @@ export interface SupabaseProjectProps {
     readonly storageSize?: number | ros.IResolvable;
 
     /**
-     * Property usedTime: The subscription period of the instance. Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+     * Property usedTime: The subscription duration. Valid values:
+     * - If Period is set to Month, the valid values are 1 to 11.
+     * - If Period is set to Year, the valid values are 1 to 3.
+     * > This parameter is required if you use the subscription billing method.
      */
     readonly usedTime?: number | ros.IResolvable;
 }
@@ -123,7 +129,7 @@ export interface ISupabaseProject extends ros.IResource {
     readonly attrPublicConnectUrl: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSupabaseProject`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
  */

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.rocketmq5;
 /**
  * Represents a <code>Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:40:34.087Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:21:18.859Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.rocketmq5.$Module.class, fqn = "@alicloud/ros-cdk-rocketmq5.IInstance")
 @software.amazon.jsii.Jsii.Proxy(IInstance.Jsii$Proxy.class)
 public interface IInstance extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

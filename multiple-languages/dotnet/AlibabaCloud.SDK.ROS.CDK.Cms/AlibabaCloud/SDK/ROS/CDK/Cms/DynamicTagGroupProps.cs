@@ -15,7 +15,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
     {
         private object _contactGroupList;
 
-        /// <summary>Property contactGroupList: Alarm contacts.</summary>
+        /// <summary>Property contactGroupList: The alert contact groups.</summary>
+        /// <remarks>
+        /// The value of N can be from 1 to 100. Alert
+        /// notifications for the application group are sent to the alert contacts in these
+        /// alert contact groups.
+        /// An alert contact group can contain one or more alert contacts. For more
+        /// information about how to create alert contacts and alert contact groups, see
+        /// PutContact and PutContactGroup. For more information about how to obtain
+        /// alert contact groups, see DescribeContactGroupList.
+        /// </remarks>
         [JsiiProperty(name: "contactGroupList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public object ContactGroupList
         {
@@ -129,11 +138,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         private object? _enableSubscribeEvent;
 
-        /// <summary>Property enableSubscribeEvent: Whether the event subscription is enabled.</summary>
+        /// <summary>Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the application group.</summary>
         /// <remarks>
-        /// Values are
-        /// :true: enable event subscription
-        /// false: disable event subscription
+        /// When a critical or warning event occurs on a resource in the
+        /// application group, CloudMonitor sends an alert notification. Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: enabled.</description>
+        /// <description>false (default): disabled.</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "enableSubscribeEvent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -165,10 +178,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         private object? _matchExpress;
 
-        /// <summary>Property matchExpress: Matching list.</summary>
-        /// <remarks>
-        /// Only supports one currently.
-        /// </remarks>
+        /// <summary>Property matchExpress: The match expressions that are used to create an application group from tags.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "matchExpress", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cms.RosDynamicTagGroup.MatchExpressProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? MatchExpress
@@ -216,12 +226,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         private object? _matchExpressFilterRelation;
 
-        /// <summary>Property matchExpressFilterRelation: The relationship between the conditional expressions.</summary>
+        /// <summary>Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values.</summary>
         /// <remarks>
-        /// Values are:
-        /// and: the relationship between
-        /// or: the relationship or the
-        /// Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+        /// Valid
+        /// values:
+        ///
+        /// <list type="bullet">
+        /// <description>and (default)</description>
+        /// <description>or</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "matchExpressFilterRelation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -253,9 +266,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
 
         private object? _templateIdList;
 
-        /// <summary>Property templateIdList: Alarm template ID list.</summary>
+        /// <summary>Property templateIdList: The ID of the alert template.</summary>
         /// <remarks>
-        /// When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+        /// For more information about how to query the IDs of alert templates, see
+        /// DescribeMetricRuleTemplateList.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "templateIdList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

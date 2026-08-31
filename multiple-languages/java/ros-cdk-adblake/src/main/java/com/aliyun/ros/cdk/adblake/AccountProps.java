@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adblake;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-account
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.671Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:55:45.890Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.AccountProps")
 @software.amazon.jsii.Jsii.Proxy(AccountProps.Jsii$Proxy.class)
 public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
@@ -36,7 +36,12 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getEngine();
 
     /**
-     * Property accountDescription: The description of the account.
+     * Property accountDescription: The account description.
+     * <p>
+     * <ul>
+     * <li>Must not start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+     * <li>Be no longer than 256 characters.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAccountDescription() {
         return null;
@@ -169,7 +174,11 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AccountProps#getAccountDescription}
-         * @param accountDescription Property accountDescription: The description of the account.
+         * @param accountDescription Property accountDescription: The account description.
+         *                           <ul>
+         *                           <li>Must not start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                           <li>Be no longer than 256 characters.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder accountDescription(java.lang.String accountDescription) {
@@ -179,7 +188,11 @@ public interface AccountProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AccountProps#getAccountDescription}
-         * @param accountDescription Property accountDescription: The description of the account.
+         * @param accountDescription Property accountDescription: The account description.
+         *                           <ul>
+         *                           <li>Must not start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                           <li>Be no longer than 256 characters.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder accountDescription(com.aliyun.ros.cdk.core.IResolvable accountDescription) {

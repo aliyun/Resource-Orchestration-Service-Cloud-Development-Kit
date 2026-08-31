@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::QosPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.995Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.119Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.QosPolicy")
 public class QosPolicy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.IQosPolicy {
 
@@ -197,20 +197,24 @@ public class QosPolicy extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs.
+         * Property priority: The priority of the throttling rule to which the stream classification rule belongs.
+         * <p>
+         * Valid values: 1 to 3. A smaller value indicates a higher priority.
          * <p>
          * @return {@code this}
-         * @param priority Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs. This parameter is required.
+         * @param priority Property priority: The priority of the throttling rule to which the stream classification rule belongs. This parameter is required.
          */
         public Builder priority(final java.lang.Number priority) {
             this.props.priority(priority);
             return this;
         }
         /**
-         * Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs.
+         * Property priority: The priority of the throttling rule to which the stream classification rule belongs.
+         * <p>
+         * Valid values: 1 to 3. A smaller value indicates a higher priority.
          * <p>
          * @return {@code this}
-         * @param priority Property priority: The priority of the traffic throttling policy to which the traffic classification rule belongs. This parameter is required.
+         * @param priority Property priority: The priority of the throttling rule to which the stream classification rule belongs. This parameter is required.
          */
         public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
             this.props.priority(priority);
@@ -297,26 +301,28 @@ public class QosPolicy extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property description: The description of the traffic classification rule.
+         * Property description: The description of the stream classification rule for the QoS policy.
          * <p>
-         * The description must be 1 to 512 characters in length and can contain letters, digits,
-         * underscores (_), and hyphens (-). It must start with a letter.
+         * The description must be 1 to 512 characters in length. It must start with a
+         * letter or a Chinese character and can contain digits, underscores (_), and
+         * hyphens (-).
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the traffic classification rule. This parameter is required.
+         * @param description Property description: The description of the stream classification rule for the QoS policy. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: The description of the traffic classification rule.
+         * Property description: The description of the stream classification rule for the QoS policy.
          * <p>
-         * The description must be 1 to 512 characters in length and can contain letters, digits,
-         * underscores (_), and hyphens (-). It must start with a letter.
+         * The description must be 1 to 512 characters in length. It must start with a
+         * letter or a Chinese character and can contain digits, underscores (_), and
+         * hyphens (-).
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the traffic classification rule. This parameter is required.
+         * @param description Property description: The description of the stream classification rule for the QoS policy. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -405,26 +411,26 @@ public class QosPolicy extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property name: The name of the traffic classification rule.
+         * Property name: The name of the stream classification rule.
          * <p>
-         * The name must be 2 to 100 characters in length, and can contain digits, underscores
-         * (_), and hyphens (-). It must start with a letter.
+         * The name must be 2 to 100 characters in length. It must start with a letter or a
+         * Chinese character and can contain digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the traffic classification rule. This parameter is required.
+         * @param name Property name: The name of the stream classification rule. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the traffic classification rule.
+         * Property name: The name of the stream classification rule.
          * <p>
-         * The name must be 2 to 100 characters in length, and can contain digits, underscores
-         * (_), and hyphens (-). It must start with a letter.
+         * The name must be 2 to 100 characters in length. It must start with a letter or a
+         * Chinese character and can contain digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the traffic classification rule. This parameter is required.
+         * @param name Property name: The name of the stream classification rule. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);

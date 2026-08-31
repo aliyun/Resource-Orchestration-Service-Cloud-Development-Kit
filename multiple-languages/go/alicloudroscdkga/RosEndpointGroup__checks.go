@@ -380,6 +380,40 @@ func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointGroupTypeParameters(val 
 	return nil
 }
 
+func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointIpVersionParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointProtocolVersionParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
 func (j *jsiiProxy_RosEndpointGroup) validateSetEndpointRequestProtocolParameters(val interface{}) error {
 	switch val.(type) {
 	case *string:
@@ -408,6 +442,23 @@ func (j *jsiiProxy_RosEndpointGroup) validateSetHealthCheckEnabledParameters(val
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *bool, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetHealthCheckHostParameters(val interface{}) error {
+	switch val.(type) {
+	case *string:
+		// ok
+	case string:
+		// ok
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
 		}
 	}
 
@@ -593,6 +644,76 @@ func (j *jsiiProxy_RosEndpointGroup) validateSetNameParameters(val interface{}) 
 	default:
 		if !_jsii_.IsAnonymousProxy(val) {
 			return fmt.Errorf("parameter val must be one of the allowed types: *string, alicloudroscdkcore.IResolvable; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetPortOverridesParameters(val interface{}) error {
+	switch val.(type) {
+	case alicloudroscdkcore.IResolvable:
+		// ok
+	case *[]interface{}:
+		val := val.(*[]interface{})
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosEndpointGroup_PortOverridesProperty:
+				v := v.(*RosEndpointGroup_PortOverridesProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosEndpointGroup_PortOverridesProperty:
+				v_ := v.(RosEndpointGroup_PortOverridesProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosEndpointGroup_PortOverridesProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	case []interface{}:
+		val_ := val.([]interface{})
+		val := &val_
+		for idx_97dfc6, v := range *val {
+			switch v.(type) {
+			case alicloudroscdkcore.IResolvable:
+				// ok
+			case *RosEndpointGroup_PortOverridesProperty:
+				v := v.(*RosEndpointGroup_PortOverridesProperty)
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			case RosEndpointGroup_PortOverridesProperty:
+				v_ := v.(RosEndpointGroup_PortOverridesProperty)
+				v := &v_
+				if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+					return err
+				}
+			default:
+				if !_jsii_.IsAnonymousProxy(v) {
+					return fmt.Errorf("parameter val[%#v] must be one of the allowed types: alicloudroscdkcore.IResolvable, *RosEndpointGroup_PortOverridesProperty; received %#v (a %T)", idx_97dfc6, v, v)
+				}
+			}
+		}
+	default:
+		if !_jsii_.IsAnonymousProxy(val) {
+			return fmt.Errorf("parameter val must be one of the allowed types: alicloudroscdkcore.IResolvable, *[]interface{}; received %#v (a %T)", val, val)
+		}
+	}
+
+	return nil
+}
+
+func (j *jsiiProxy_RosEndpointGroup) validateSetTagsParameters(val *[]*RosEndpointGroup_TagsProperty) error {
+	for idx_97dfc6, v := range *val {
+		if err := _jsii_.ValidateStruct(v, func() string { return fmt.Sprintf("parameter val[%#v]", idx_97dfc6) }); err != nil {
+			return err
 		}
 	}
 

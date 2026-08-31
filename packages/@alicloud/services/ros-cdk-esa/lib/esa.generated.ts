@@ -854,7 +854,7 @@ function rosCertificatePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Certificate`The , which type configures a website certificate.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Certificate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Certificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-certificate
  */
@@ -1134,7 +1134,7 @@ function rosClientCaCertificatePropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCaCertificate`The , which type uploads a client CA certificate.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCaCertificate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClientCaCertificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-clientcacertificate
  */
@@ -1347,7 +1347,7 @@ function rosClientCertificatePropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCertificate`The , which type is used to create a client certificate.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ClientCertificate`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ClientCertificate` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-clientcertificate
  */
@@ -1904,7 +1904,7 @@ function rosCustomListPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::CustomList`Use , which to create a custom list.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::CustomList`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomList` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-customlist
  */
@@ -2344,7 +2344,7 @@ function rosCustomScenePolicyPropsToRosTemplate(properties: any, enableResourceP
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::CustomScenePolicy`The , which resource type is used to create scenario-specific policies.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::CustomScenePolicy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomScenePolicy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-customscenepolicy
  */
@@ -2652,7 +2652,7 @@ function rosEdgeContainerAppPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerApp`Use the , which resource type to create an edge container application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerApp`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EdgeContainerApp` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-edgecontainerapp
  */
@@ -2978,7 +2978,7 @@ function rosEdgeContainerAppRecordPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`The , which type creates an associated domain name for an edge container application.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::EdgeContainerAppRecord`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EdgeContainerAppRecord` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-edgecontainerapprecord
  */
@@ -3810,7 +3810,7 @@ function rosHttpRequestHeaderModificationRulePropsToRosTemplate(properties: any,
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpRequestHeaderModificationRule`The , which type is used to create configurations that modify HTTP request headers.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpRequestHeaderModificationRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpRequestHeaderModificationRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httprequestheadermodificationrule
  */
@@ -4122,7 +4122,7 @@ function rosHttpResponseHeaderModificationRulePropsToRosTemplate(properties: any
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpResponseHeaderModificationRule`The , which resource type is used to create a configuration for modifying HTTP response headers.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpResponseHeaderModificationRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpResponseHeaderModificationRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpresponseheadermodificationrule
  */
@@ -4606,7 +4606,7 @@ function rosHttpsApplicationConfigurationPropsToRosTemplate(properties: any, ena
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsApplicationConfiguration`The , which resource is used to add an HTTPS application configuration for a website.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsApplicationConfiguration`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpsApplicationConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsapplicationconfiguration
  */
@@ -5153,7 +5153,7 @@ function rosHttpsBasicConfigurationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`The , which type is used to add a basic HTTPS configuration for a website.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::HttpsBasicConfiguration`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpsBasicConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-httpsbasicconfiguration
  */
@@ -5524,7 +5524,7 @@ function rosImageTransformPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ImageTransform`You can use the , which resource type to add an image transform configuration for a website.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::ImageTransform`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ImageTransform` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-imagetransform
  */
@@ -5744,7 +5744,7 @@ function rosKvPropsToRosTemplate(properties: any, enableResourcePropertyConstrai
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Kv`Use the , which resource type to set a single key-value pair in a KV bucket.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Kv`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Kv` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kv
  */
@@ -5872,7 +5872,7 @@ function rosKvNamespacePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::KvNamespace`The , which resource is used to create a key-value (KV) namespace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::KvNamespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `KvNamespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-kvnamespace
  */
@@ -6885,7 +6885,7 @@ function rosOriginPoolPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginPool`The , which type creates an origin address pool.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginPool`.
  * @Note This class does not contain additional functions, so it is recommended to use the `OriginPool` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-originpool
  */
@@ -7594,7 +7594,7 @@ function rosOriginRulePropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginRule`The , which type is used to add origin rules to a website.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::OriginRule`.
  * @Note This class does not contain additional functions, so it is recommended to use the `OriginRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-originrule
  */
@@ -8016,7 +8016,7 @@ function rosPagePropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Page`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Page`The , which type is used to create a custom response page.
  * @Note This class does not contain additional functions, so it is recommended to use the `Page` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-page
  */
@@ -8278,7 +8278,7 @@ function rosRecordPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Record`The , which type is used to create a DNS record.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::Record`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Record` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-record
  */
@@ -10549,7 +10549,7 @@ function rosSiteDeliveryTaskPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`The , which type is used to create a real-time log delivery task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::SiteDeliveryTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `SiteDeliveryTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-sitedeliverytask
  */
@@ -14081,7 +14081,7 @@ function rosWaitingRoomPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::WaitingRoom`The , which type is used to create a waiting room.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESA::WaitingRoom`.
  * @Note This class does not contain additional functions, so it is recommended to use the `WaitingRoom` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-esa-waitingroom
  */

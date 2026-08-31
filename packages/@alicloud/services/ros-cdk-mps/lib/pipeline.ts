@@ -39,7 +39,7 @@ export interface PipelineProps {
     readonly speed?: string | ros.IResolvable;
 
     /**
-     * Property speedLevel: Speed level.
+     * Property speedLevel: The level of the MPS queue. Valid values: 1 to 3.
      */
     readonly speedLevel?: number | ros.IResolvable;
 

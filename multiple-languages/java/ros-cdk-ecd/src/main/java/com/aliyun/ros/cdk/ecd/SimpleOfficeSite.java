@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecd;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::SimpleOfficeSite</code>, which is used to create a workspace of the convenience account type.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::SimpleOfficeSite</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.466Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:33:34.872Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.SimpleOfficeSite")
 public class SimpleOfficeSite extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecd.ISimpleOfficeSite {
 
@@ -199,24 +199,42 @@ public class SimpleOfficeSite extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace.
+         * Property cidrBlock: The IPv4 CIDR block for the office site's Virtual Private Cloud (VPC).
          * <p>
-         * The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+         * This
+         * parameter is required for standard office sites. The system automatically creates
+         * a VPC based on the specified IPv4 CIDR block. Use one of the following CIDR
+         * blocks or their subnets:
+         * <p>
+         * <ul>
+         * <li><code>10.0.0.0\/12</code> (The valid mask range is 12 to 24 bits.)</li>
+         * <li><code>172.16.0.0\/12</code> (The valid mask range is 12 to 24 bits.)</li>
+         * <li><code>192.168.0.0\/16</code> (The valid mask range is 16 to 24 bits.)</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param cidrBlock Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. This parameter is required.
+         * @param cidrBlock Property cidrBlock: The IPv4 CIDR block for the office site's Virtual Private Cloud (VPC). This parameter is required.
          */
         public Builder cidrBlock(final java.lang.String cidrBlock) {
             this.props().cidrBlock(cidrBlock);
             return this;
         }
         /**
-         * Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace.
+         * Property cidrBlock: The IPv4 CIDR block for the office site's Virtual Private Cloud (VPC).
          * <p>
-         * The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0/12, 172.16.0.0/12, 192.168.0.0/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0/12 or 172.16.0.0/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0/16, the mask is 1624 bits in length.
+         * This
+         * parameter is required for standard office sites. The system automatically creates
+         * a VPC based on the specified IPv4 CIDR block. Use one of the following CIDR
+         * blocks or their subnets:
+         * <p>
+         * <ul>
+         * <li><code>10.0.0.0\/12</code> (The valid mask range is 12 to 24 bits.)</li>
+         * <li><code>172.16.0.0\/12</code> (The valid mask range is 12 to 24 bits.)</li>
+         * <li><code>192.168.0.0\/16</code> (The valid mask range is 16 to 24 bits.)</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param cidrBlock Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. This parameter is required.
+         * @param cidrBlock Property cidrBlock: The IPv4 CIDR block for the office site's Virtual Private Cloud (VPC). This parameter is required.
          */
         public Builder cidrBlock(final com.aliyun.ros.cdk.core.IResolvable cidrBlock) {
             this.props().cidrBlock(cidrBlock);

@@ -10,6 +10,7 @@ export * from './basicacceleratoripendpointrelation';
 export * from './basicendpoint';
 export * from './basicendpointgroup';
 export * from './basicipset';
+export * from './certificateslistenerassociation';
 export * from './domain';
 export * from './endpointgroup';
 export * from './endpointgroups';
@@ -17,6 +18,7 @@ export * from './forwardingrules';
 export * from './ipsets';
 export * from './listener';
 export * from './logstoretoendpointgroupattachment';
+export * from './resourceattachment';
 
 // ALIYUN::GA Resources:
 export * from './ga.generated';

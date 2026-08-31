@@ -5,15 +5,15 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-loadbalancer
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.290Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.096Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.LoadBalancerProps")
 @software.amazon.jsii.Jsii.Proxy(LoadBalancerProps.Jsii$Proxy.class)
 public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
+     * Property addressIpVersion: The IP version of the CLB instance.
      * <p>
-     * If 'ipv6' is selected, please note that the zone and the specification are supported.
+     * Valid values: ipv4 and ipv6.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
         return null;
@@ -50,14 +50,20 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property instanceChargeType: Instance billing method.
+     * Property instanceChargeType: The resource metering method for the CLB instance.
      * <p>
      * Valid value:
      * <p>
      * <ul>
-     * <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
-     * <li><strong>PayByCLCU</strong>: billed by usage.</li>
+     * <li>PayByCLCU: pay-by-data-transfer</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
@@ -79,9 +85,12 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property loadBalancerName: Name of created load balancer.
+     * Property loadBalancerName: The CLB instance name.
      * <p>
-     * Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerName() {
         return null;
@@ -93,15 +102,24 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
      * Valid values:
      * <p>
      * <ul>
-     * <li><strong>slb.s1.small</strong></li>
-     * <li><strong>slb.s2.small</strong></li>
-     * <li><strong>slb.s2.medium</strong></li>
-     * <li><strong>slb.s3.small</strong></li>
-     * <li><strong>slb.s3.medium</strong></li>
-     * <li><strong>slb.s3.large</strong>
-     * <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-     * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+     * <li>slb.s1.small</li>
+     * <li>slb.s2.small</li>
+     * <li>slb.s2.medium</li>
+     * <li>slb.s3.small</li>
+     * <li>slb.s3.medium</li>
+     * <li>slb.s3.large</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.</li>
+     * <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLoadBalancerSpec() {
         return null;
@@ -115,17 +133,42 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property modificationProtectionReason: Set the reason for modifying the protection status.
+     * Property modificationProtectionReason: The reason for enabling the configuration read-only mode.
      * <p>
-     * The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-     * Only valid when ModificationProtectionStatus is ConsoleProtection.
+     * The reason must be 1 to
+     * 80 characters in length. It must start with a letter and can contain letters,
+     * digits, periods (.), underscores (_), and hyphens (-).
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter takes effect only when ModificationProtectionStatus is set to
+     * ConsoleProtection.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionReason() {
         return null;
     }
 
     /**
-     * Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
+     * Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>NonProtection: disables the configuration read-only mode. After you disable the
+     * configuration read-only mode, the value of ModificationProtectionReason is
+     * cleared.</li>
+     * <li>ConsoleProtection: enables the configuration read-only mode.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you set this parameter to ConsoleProtection, you cannot modify instance
+     * configurations in the CLB console. However, you can modify instance
+     * configurations by calling API operations.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getModificationProtectionStatus() {
         return null;
@@ -164,9 +207,16 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property vSwitchId: The VSwitch id to create load balancer instance.
+     * Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
      * <p>
-     * For VPC network only.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The vSwitch must be in the primary zone.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
@@ -201,8 +251,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
-         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
-         *                         If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * @param addressIpVersion Property addressIpVersion: The IP version of the CLB instance.
+         *                         Valid values: ipv4 and ipv6.
          * @return {@code this}
          */
         public Builder addressIpVersion(java.lang.String addressIpVersion) {
@@ -212,8 +262,8 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getAddressIpVersion}
-         * @param addressIpVersion Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'.
-         *                         If 'ipv6' is selected, please note that the zone and the specification are supported.
+         * @param addressIpVersion Property addressIpVersion: The IP version of the CLB instance.
+         *                         Valid values: ipv4 and ipv6.
          * @return {@code this}
          */
         public Builder addressIpVersion(com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {
@@ -297,13 +347,19 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Instance billing method.
+         * @param instanceChargeType Property instanceChargeType: The resource metering method for the CLB instance.
          *                           Valid value:
          *                           <p>
          *                           <ul>
-         *                           <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
-         *                           <li><strong>PayByCLCU</strong>: billed by usage.</li>
+         *                           <li>PayByCLCU: pay-by-data-transfer</li>
          *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+         *                           no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -313,13 +369,19 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Instance billing method.
+         * @param instanceChargeType Property instanceChargeType: The resource metering method for the CLB instance.
          *                           Valid value:
          *                           <p>
          *                           <ul>
-         *                           <li><strong>PayBySpec</strong> (default): Pay by spec.</li>
-         *                           <li><strong>PayByCLCU</strong>: billed by usage.</li>
+         *                           <li>PayByCLCU: pay-by-data-transfer</li>
          *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+         *                           no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
@@ -363,8 +425,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
-         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * @param loadBalancerName Property loadBalancerName: The CLB instance name.
+         *                         The name must be 1 to 80 characters in length, and can contain digits, periods
+         *                         (.), underscores (_), and hyphens (-). It must start with a letter.
+         *                         If you do not specify this parameter, the system automatically assigns a name to
+         *                         the CLB instance.
          * @return {@code this}
          */
         public Builder loadBalancerName(java.lang.String loadBalancerName) {
@@ -374,8 +439,11 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getLoadBalancerName}
-         * @param loadBalancerName Property loadBalancerName: Name of created load balancer.
-         *                         Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, /, _,.' When not specified, a default name will be assigned.
+         * @param loadBalancerName Property loadBalancerName: The CLB instance name.
+         *                         The name must be 1 to 80 characters in length, and can contain digits, periods
+         *                         (.), underscores (_), and hyphens (-). It must start with a letter.
+         *                         If you do not specify this parameter, the system automatically assigns a name to
+         *                         the CLB instance.
          * @return {@code this}
          */
         public Builder loadBalancerName(com.aliyun.ros.cdk.core.IResolvable loadBalancerName) {
@@ -389,15 +457,24 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          *                         Valid values:
          *                         <p>
          *                         <ul>
-         *                         <li><strong>slb.s1.small</strong></li>
-         *                         <li><strong>slb.s2.small</strong></li>
-         *                         <li><strong>slb.s2.medium</strong></li>
-         *                         <li><strong>slb.s3.small</strong></li>
-         *                         <li><strong>slb.s3.medium</strong></li>
-         *                         <li><strong>slb.s3.large</strong>
-         *                         <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-         *                         If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+         *                         <li>slb.s1.small</li>
+         *                         <li>slb.s2.small</li>
+         *                         <li>slb.s2.medium</li>
+         *                         <li>slb.s3.small</li>
+         *                         <li>slb.s3.medium</li>
+         *                         <li>slb.s3.large</li>
          *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+         *                         do not need to specify this parameter.</li>
+         *                         <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+         *                         are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder loadBalancerSpec(java.lang.String loadBalancerSpec) {
@@ -411,15 +488,24 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
          *                         Valid values:
          *                         <p>
          *                         <ul>
-         *                         <li><strong>slb.s1.small</strong></li>
-         *                         <li><strong>slb.s2.small</strong></li>
-         *                         <li><strong>slb.s2.medium</strong></li>
-         *                         <li><strong>slb.s3.small</strong></li>
-         *                         <li><strong>slb.s3.medium</strong></li>
-         *                         <li><strong>slb.s3.large</strong>
-         *                         <strong>Note</strong> If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-         *                         If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.</li>
+         *                         <li>slb.s1.small</li>
+         *                         <li>slb.s2.small</li>
+         *                         <li>slb.s2.medium</li>
+         *                         <li>slb.s3.small</li>
+         *                         <li>slb.s3.medium</li>
+         *                         <li>slb.s3.large</li>
          *                         </ul>
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+         *                         do not need to specify this parameter.</li>
+         *                         <li>As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+         *                         are no longer available for purchase. For more details, see <a href="t2857909.xdita#"></a>.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder loadBalancerSpec(com.aliyun.ros.cdk.core.IResolvable loadBalancerSpec) {
@@ -449,9 +535,17 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionReason}
-         * @param modificationProtectionReason Property modificationProtectionReason: Set the reason for modifying the protection status.
-         *                                     The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-         *                                     Only valid when ModificationProtectionStatus is ConsoleProtection.
+         * @param modificationProtectionReason Property modificationProtectionReason: The reason for enabling the configuration read-only mode.
+         *                                     The reason must be 1 to
+         *                                     80 characters in length. It must start with a letter and can contain letters,
+         *                                     digits, periods (.), underscores (_), and hyphens (-).
+         *                                     <p>
+         *                                     <blockquote>
+         *                                     <p>
+         *                                     This parameter takes effect only when ModificationProtectionStatus is set to
+         *                                     ConsoleProtection.
+         *                                     <p>
+         *                                     </blockquote>
          * @return {@code this}
          */
         public Builder modificationProtectionReason(java.lang.String modificationProtectionReason) {
@@ -461,9 +555,17 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionReason}
-         * @param modificationProtectionReason Property modificationProtectionReason: Set the reason for modifying the protection status.
-         *                                     The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-         *                                     Only valid when ModificationProtectionStatus is ConsoleProtection.
+         * @param modificationProtectionReason Property modificationProtectionReason: The reason for enabling the configuration read-only mode.
+         *                                     The reason must be 1 to
+         *                                     80 characters in length. It must start with a letter and can contain letters,
+         *                                     digits, periods (.), underscores (_), and hyphens (-).
+         *                                     <p>
+         *                                     <blockquote>
+         *                                     <p>
+         *                                     This parameter takes effect only when ModificationProtectionStatus is set to
+         *                                     ConsoleProtection.
+         *                                     <p>
+         *                                     </blockquote>
          * @return {@code this}
          */
         public Builder modificationProtectionReason(com.aliyun.ros.cdk.core.IResolvable modificationProtectionReason) {
@@ -473,7 +575,23 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionStatus}
-         * @param modificationProtectionStatus Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
+         * @param modificationProtectionStatus Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode.
+         *                                     Valid values:
+         *                                     <p>
+         *                                     <ul>
+         *                                     <li>NonProtection: disables the configuration read-only mode. After you disable the
+         *                                     configuration read-only mode, the value of ModificationProtectionReason is
+         *                                     cleared.</li>
+         *                                     <li>ConsoleProtection: enables the configuration read-only mode.</li>
+         *                                     </ul>
+         *                                     <p>
+         *                                     <blockquote>
+         *                                     <p>
+         *                                     If you set this parameter to ConsoleProtection, you cannot modify instance
+         *                                     configurations in the CLB console. However, you can modify instance
+         *                                     configurations by calling API operations.
+         *                                     <p>
+         *                                     </blockquote>
          * @return {@code this}
          */
         public Builder modificationProtectionStatus(java.lang.String modificationProtectionStatus) {
@@ -483,7 +601,23 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getModificationProtectionStatus}
-         * @param modificationProtectionStatus Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection ConsoleProtection: Modify instance protection status by console Default value is empty.
+         * @param modificationProtectionStatus Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode.
+         *                                     Valid values:
+         *                                     <p>
+         *                                     <ul>
+         *                                     <li>NonProtection: disables the configuration read-only mode. After you disable the
+         *                                     configuration read-only mode, the value of ModificationProtectionReason is
+         *                                     cleared.</li>
+         *                                     <li>ConsoleProtection: enables the configuration read-only mode.</li>
+         *                                     </ul>
+         *                                     <p>
+         *                                     <blockquote>
+         *                                     <p>
+         *                                     If you set this parameter to ConsoleProtection, you cannot modify instance
+         *                                     configurations in the CLB console. However, you can modify instance
+         *                                     configurations by calling API operations.
+         *                                     <p>
+         *                                     </blockquote>
          * @return {@code this}
          */
         public Builder modificationProtectionStatus(com.aliyun.ros.cdk.core.IResolvable modificationProtectionStatus) {
@@ -567,8 +701,15 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The VSwitch id to create load balancer instance.
-         *                  For VPC network only.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+         *                  If you want to deploy the CLB instance in a VPC, this parameter is required. If
+         *                  this parameter is specified, AddessType is set to intranet by default.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The vSwitch must be in the primary zone.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -578,8 +719,15 @@ public interface LoadBalancerProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoadBalancerProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The VSwitch id to create load balancer instance.
-         *                  For VPC network only.
+         * @param vSwitchId Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+         *                  If you want to deploy the CLB instance in a VPC, this parameter is required. If
+         *                  this parameter is specified, AddessType is set to intranet by default.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The vSwitch must be in the primary zone.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {

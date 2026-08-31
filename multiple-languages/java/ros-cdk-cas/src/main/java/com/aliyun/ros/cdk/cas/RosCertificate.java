@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cas;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CAS::Certificate</code>, which is used to add a certificate.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CAS::Certificate</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:39:53.075Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:24:27.060Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cas.$Module.class, fqn = "@alicloud/ros-cdk-cas.RosCertificate")
 public class RosCertificate extends com.aliyun.ros.cdk.core.RosResource {
 

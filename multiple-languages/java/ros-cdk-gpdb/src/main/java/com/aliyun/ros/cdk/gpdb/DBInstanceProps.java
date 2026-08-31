@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.701Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,7 +18,16 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getEngineVersion();
 
     /**
-     * Property vSwitchId: The vSwitch ID of the instance.
+     * Property vSwitchId: The vSwitch ID.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter is required.</li>
+     * <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
@@ -47,7 +56,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property cacheStorageSize: Cache storage size.
+     * Property cacheStorageSize: The cache size for a serverless instance, in GB.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCacheStorageSize() {
         return null;
@@ -65,9 +74,20 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
+     * Property dbInstanceCategory: The instance edition.
      * <p>
-     * This parameter must be passed in to create a storage reservation mode instance.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>HighAvailability: High-availability Edition</li>
+     * <li>Basic: Basic Edition</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for instances in elastic storage mode.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceCategory() {
         return null;
@@ -75,6 +95,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property dbInstanceClass: The instance type.
+     * <p>
+     * For more information, see the description of the
+     * <code>DBInstanceClass</code> parameter.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for instances in reserved storage mode.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceClass() {
         return null;
@@ -90,9 +119,16 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property dbInstanceGroupCount: The number of compute nodes in the instance.
+     * Property dbInstanceGroupCount: The number of compute groups.
      * <p>
-     * The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+     * Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+     * 128.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for instances in reserved storage mode.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceGroupCount() {
         return null;
@@ -108,7 +144,24 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property deployMode: The deployment mode of the instance.
+     * Property deployMode: The deployment mode.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>multiple: multi-AZ deployment.</li>
+     * <li>single: single-AZ deployment.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>If this parameter is not specified, the default value is single.</li>
+     * <li>Defaults to <code>single</code> (single-AZ deployment), which is the only mode currently
+     * supported.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeployMode() {
         return null;
@@ -145,23 +198,46 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property idleTime: Idle release wait time.
+     * Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle.
      * <p>
-     * That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+     * Minimum value: 60. Default value: 600.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required only for serverless instances that use
+     * auto-scheduling.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIdleTime() {
         return null;
     }
 
     /**
-     * Property instanceSpec: The specification of segment nodes.
+     * Property instanceSpec: The instance type for the compute nodes.
+     * <p>
+     * Valid values for a High-availability Edition instance in elastic storage mode:
      * <p>
      * <ul>
-     * <li>When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.</li>
-     * <li>When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.</li>
-     * <li>When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-     * This parameter must be passed to create a storage elastic mode instance and a serverless version instance.</li>
+     * <li>2C16G</li>
+     * <li>4C32G</li>
+     * <li>16C128G
+     * Valid values for a Basic Edition instance in elastic storage mode:</li>
+     * <li>2C8G</li>
+     * <li>4C16G</li>
+     * <li>8C32G</li>
+     * <li>16C64G
+     * Valid values for a serverless instance:</li>
+     * <li>4C16G</li>
+     * <li>8C32G</li>
      * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for instances in elastic storage mode or serverless
+     * mode.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceSpec() {
         return null;
@@ -177,9 +253,23 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property masterCu: Master resources.
+     * Property masterCu: The resources for the coordinator node.
      * <p>
-     * Default is 8.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>2 CU</li>
+     * <li>4 CU</li>
+     * <li>8 CU</li>
+     * <li>16 CU</li>
+     * <li>32 CU</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You are charged for coordinator node resources of 8 CUs or more.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMasterCu() {
         return null;
@@ -224,7 +314,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property privateIpAddress: Private IP address.
+     * Property privateIpAddress: This parameter is deprecated.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateIpAddress() {
         return null;
@@ -247,20 +337,35 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
+     * Property securityIpList: The IP address whitelist for the instance.
      * <p>
-     * Default value:
-     * 127.0.0.1.
+     * A value of 127.0.0.1 blocks all external access. After you create the instance,
+     * you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+     * whitelist.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
         return null;
     }
 
     /**
-     * Property segDiskPerformanceLevel: Seg disk performance level.
+     * Property segDiskPerformanceLevel: The performance level of the ESSDs.
      * <p>
-     * The value can be:
-     * pl0、pl1 and pl2
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>pl0: PL0</li>
+     * <li>pl1: PL1</li>
+     * <li>pl2: PL2</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter applies only if the segment node storage type is ESSD.</li>
+     * <li>If this parameter is not specified, pl1 is used by default.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSegDiskPerformanceLevel() {
         return null;
@@ -304,10 +409,17 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property serverlessResource: Computing resource threshold.
+     * Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs).
      * <p>
-     * The value ranges from 8 to 32. The step length is 8.
-     * The unit is ACU. The default value is 32.
+     * The
+     * value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required only for serverless instances that use
+     * auto-scheduling.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServerlessResource() {
         return null;
@@ -323,23 +435,49 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property standbyVSwitchId: The standby VSwitch ID of the instance.
+     * Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter is required only for a multi-AZ deployment.</li>
+     * <li>The vSwitch must be in the standby zone specified in <code>StandbyZoneId</code>.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyVSwitchId() {
         return null;
     }
 
     /**
-     * Property standbyZoneId: The standby zone ID of the instance.
+     * Property standbyZoneId: The ID of the standby zone.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>This parameter is required only for a multi-AZ deployment.</li>
+     * <li>You can call the <a href="">DescribeRegions</a> operation to query the IDs of available
+     * zones.</li>
+     * <li>The standby zone must be different from the primary zone.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStandbyZoneId() {
         return null;
     }
 
     /**
-     * Property storageSize: The storage capacity of per segment node.
+     * Property storageSize: The storage capacity for the instance, in GB.
      * <p>
-     * Unit: GB. Minimum is 50, max is 4000, step is 50.
+     * Valid values: .
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required for instances in elastic storage mode.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStorageSize() {
         return null;
@@ -449,7 +587,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
+         *                  <blockquote>
+         *                  <p>
+         *                  <ul>
+         *                  <li>This parameter is required.</li>
+         *                  <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         *                  </ul>
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -459,7 +605,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The vSwitch ID of the instance. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID. This parameter is required.
+         *                  <blockquote>
+         *                  <p>
+         *                  <ul>
+         *                  <li>This parameter is required.</li>
+         *                  <li>The vSwitch must be in the zone specified by <code>ZoneId</code>.</li>
+         *                  </ul>
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -535,7 +689,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getCacheStorageSize}
-         * @param cacheStorageSize Property cacheStorageSize: Cache storage size.
+         * @param cacheStorageSize Property cacheStorageSize: The cache size for a serverless instance, in GB.
          * @return {@code this}
          */
         public Builder cacheStorageSize(java.lang.String cacheStorageSize) {
@@ -545,7 +699,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getCacheStorageSize}
-         * @param cacheStorageSize Property cacheStorageSize: Cache storage size.
+         * @param cacheStorageSize Property cacheStorageSize: The cache size for a serverless instance, in GB.
          * @return {@code this}
          */
         public Builder cacheStorageSize(com.aliyun.ros.cdk.core.IResolvable cacheStorageSize) {
@@ -581,8 +735,19 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbInstanceCategory}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-         *                           This parameter must be passed in to create a storage reservation mode instance.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>HighAvailability: High-availability Edition</li>
+         *                           <li>Basic: Basic Edition</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is required for instances in elastic storage mode.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceCategory(java.lang.String dbInstanceCategory) {
@@ -592,8 +757,19 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbInstanceCategory}
-         * @param dbInstanceCategory Property dbInstanceCategory: DB instance category, valid values: Basic, HighAvailability.
-         *                           This parameter must be passed in to create a storage reservation mode instance.
+         * @param dbInstanceCategory Property dbInstanceCategory: The instance edition.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>HighAvailability: High-availability Edition</li>
+         *                           <li>Basic: Basic Edition</li>
+         *                           </ul>
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is required for instances in elastic storage mode.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceCategory(com.aliyun.ros.cdk.core.IResolvable dbInstanceCategory) {
@@ -604,6 +780,14 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBInstanceProps#getDbInstanceClass}
          * @param dbInstanceClass Property dbInstanceClass: The instance type.
+         *                        For more information, see the description of the
+         *                        <code>DBInstanceClass</code> parameter.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is required for instances in reserved storage mode.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceClass(java.lang.String dbInstanceClass) {
@@ -614,6 +798,14 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link DBInstanceProps#getDbInstanceClass}
          * @param dbInstanceClass Property dbInstanceClass: The instance type.
+         *                        For more information, see the description of the
+         *                        <code>DBInstanceClass</code> parameter.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        This parameter is required for instances in reserved storage mode.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceClass(com.aliyun.ros.cdk.core.IResolvable dbInstanceClass) {
@@ -645,8 +837,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbInstanceGroupCount}
-         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance.
-         *                             The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute groups.
+         *                             Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+         *                             128.
+         *                             <p>
+         *                             <blockquote>
+         *                             <p>
+         *                             This parameter is required for instances in reserved storage mode.
+         *                             <p>
+         *                             </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceGroupCount(java.lang.Number dbInstanceGroupCount) {
@@ -656,8 +855,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbInstanceGroupCount}
-         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute nodes in the instance.
-         *                             The value can be 2, 4, 8, 12, 16, 24, 32, 64, 96, or 128.
+         * @param dbInstanceGroupCount Property dbInstanceGroupCount: The number of compute groups.
+         *                             Valid values: 2, 4, 8, 12, 16, 24, 32, 64, 96, and
+         *                             128.
+         *                             <p>
+         *                             <blockquote>
+         *                             <p>
+         *                             This parameter is required for instances in reserved storage mode.
+         *                             <p>
+         *                             </blockquote>
          * @return {@code this}
          */
         public Builder dbInstanceGroupCount(com.aliyun.ros.cdk.core.IResolvable dbInstanceGroupCount) {
@@ -689,7 +895,23 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDeployMode}
-         * @param deployMode Property deployMode: The deployment mode of the instance.
+         * @param deployMode Property deployMode: The deployment mode.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>multiple: multi-AZ deployment.</li>
+         *                   <li>single: single-AZ deployment.</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   <ul>
+         *                   <li>If this parameter is not specified, the default value is single.</li>
+         *                   <li>Defaults to <code>single</code> (single-AZ deployment), which is the only mode currently
+         *                   supported.</li>
+         *                   </ul>
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder deployMode(java.lang.String deployMode) {
@@ -699,7 +921,23 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDeployMode}
-         * @param deployMode Property deployMode: The deployment mode of the instance.
+         * @param deployMode Property deployMode: The deployment mode.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>multiple: multi-AZ deployment.</li>
+         *                   <li>single: single-AZ deployment.</li>
+         *                   </ul>
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   <ul>
+         *                   <li>If this parameter is not specified, the default value is single.</li>
+         *                   <li>Defaults to <code>single</code> (single-AZ deployment), which is the only mode currently
+         *                   supported.</li>
+         *                   </ul>
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder deployMode(com.aliyun.ros.cdk.core.IResolvable deployMode) {
@@ -781,8 +1019,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getIdleTime}
-         * @param idleTime Property idleTime: Idle release wait time.
-         *                 That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+         * @param idleTime Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle.
+         *                 Minimum value: 60. Default value: 600.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required only for serverless instances that use
+         *                 auto-scheduling.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder idleTime(java.lang.Number idleTime) {
@@ -792,8 +1037,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getIdleTime}
-         * @param idleTime Property idleTime: Idle release wait time.
-         *                 That is, when the period of no service traffic reaches the specified period, the instance becomes idle. The unit is second. The minimum value is 60. The default value is 600.
+         * @param idleTime Property idleTime: The period of inactivity, in seconds, after which the instance is considered idle.
+         *                 Minimum value: 60. Default value: 600.
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required only for serverless instances that use
+         *                 auto-scheduling.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder idleTime(com.aliyun.ros.cdk.core.IResolvable idleTime) {
@@ -803,13 +1055,29 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getInstanceSpec}
-         * @param instanceSpec Property instanceSpec: The specification of segment nodes.
+         * @param instanceSpec Property instanceSpec: The instance type for the compute nodes.
+         *                     Valid values for a High-availability Edition instance in elastic storage mode:
+         *                     <p>
          *                     <ul>
-         *                     <li>When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.</li>
-         *                     <li>When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.</li>
-         *                     <li>When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-         *                     This parameter must be passed to create a storage elastic mode instance and a serverless version instance.</li>
+         *                     <li>2C16G</li>
+         *                     <li>4C32G</li>
+         *                     <li>16C128G
+         *                     Valid values for a Basic Edition instance in elastic storage mode:</li>
+         *                     <li>2C8G</li>
+         *                     <li>4C16G</li>
+         *                     <li>8C32G</li>
+         *                     <li>16C64G
+         *                     Valid values for a serverless instance:</li>
+         *                     <li>4C16G</li>
+         *                     <li>8C32G</li>
          *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is required for instances in elastic storage mode or serverless
+         *                     mode.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder instanceSpec(java.lang.String instanceSpec) {
@@ -819,13 +1087,29 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getInstanceSpec}
-         * @param instanceSpec Property instanceSpec: The specification of segment nodes.
+         * @param instanceSpec Property instanceSpec: The instance type for the compute nodes.
+         *                     Valid values for a High-availability Edition instance in elastic storage mode:
+         *                     <p>
          *                     <ul>
-         *                     <li>When DBInstanceCategory is HighAvailability, Valid values: 2C16G, 4C32G, 8C64G, 16C128G.</li>
-         *                     <li>When DBInstanceCategory is Basic, Valid values: 2C8G, 4C16G, 8C32G, 16C64G.</li>
-         *                     <li>When DBInstanceCategory is Serverless, Valid values: 4C16G, 8C32G.
-         *                     This parameter must be passed to create a storage elastic mode instance and a serverless version instance.</li>
+         *                     <li>2C16G</li>
+         *                     <li>4C32G</li>
+         *                     <li>16C128G
+         *                     Valid values for a Basic Edition instance in elastic storage mode:</li>
+         *                     <li>2C8G</li>
+         *                     <li>4C16G</li>
+         *                     <li>8C32G</li>
+         *                     <li>16C64G
+         *                     Valid values for a serverless instance:</li>
+         *                     <li>4C16G</li>
+         *                     <li>8C32G</li>
          *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is required for instances in elastic storage mode or serverless
+         *                     mode.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder instanceSpec(com.aliyun.ros.cdk.core.IResolvable instanceSpec) {
@@ -857,8 +1141,22 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getMasterCu}
-         * @param masterCu Property masterCu: Master resources.
-         *                 Default is 8.
+         * @param masterCu Property masterCu: The resources for the coordinator node.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>2 CU</li>
+         *                 <li>4 CU</li>
+         *                 <li>8 CU</li>
+         *                 <li>16 CU</li>
+         *                 <li>32 CU</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 You are charged for coordinator node resources of 8 CUs or more.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder masterCu(java.lang.Number masterCu) {
@@ -868,8 +1166,22 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getMasterCu}
-         * @param masterCu Property masterCu: Master resources.
-         *                 Default is 8.
+         * @param masterCu Property masterCu: The resources for the coordinator node.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>2 CU</li>
+         *                 <li>4 CU</li>
+         *                 <li>8 CU</li>
+         *                 <li>16 CU</li>
+         *                 <li>32 CU</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 You are charged for coordinator node resources of 8 CUs or more.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder masterCu(com.aliyun.ros.cdk.core.IResolvable masterCu) {
@@ -971,7 +1283,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getPrivateIpAddress}
-         * @param privateIpAddress Property privateIpAddress: Private IP address.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated.
          * @return {@code this}
          */
         public Builder privateIpAddress(java.lang.String privateIpAddress) {
@@ -981,7 +1293,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getPrivateIpAddress}
-         * @param privateIpAddress Property privateIpAddress: Private IP address.
+         * @param privateIpAddress Property privateIpAddress: This parameter is deprecated.
          * @return {@code this}
          */
         public Builder privateIpAddress(com.aliyun.ros.cdk.core.IResolvable privateIpAddress) {
@@ -1033,9 +1345,10 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
-         *                       Default value:
-         *                       127.0.0.1.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance.
+         *                       A value of 127.0.0.1 blocks all external access. After you create the instance,
+         *                       you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         *                       whitelist.
          * @return {@code this}
          */
         public Builder securityIpList(java.lang.String securityIpList) {
@@ -1045,9 +1358,10 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The whitelist of IP addresses that are allowed to access the instance.
-         *                       Default value:
-         *                       127.0.0.1.
+         * @param securityIpList Property securityIpList: The IP address whitelist for the instance.
+         *                       A value of 127.0.0.1 blocks all external access. After you create the instance,
+         *                       you can call the <a href="">ModifySecurityIps</a> operation to modify the IP address
+         *                       whitelist.
          * @return {@code this}
          */
         public Builder securityIpList(com.aliyun.ros.cdk.core.IResolvable securityIpList) {
@@ -1057,9 +1371,23 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getSegDiskPerformanceLevel}
-         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: Seg disk performance level.
-         *                                The value can be:
-         *                                pl0、pl1 and pl2
+         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: The performance level of the ESSDs.
+         *                                Valid values:
+         *                                <p>
+         *                                <ul>
+         *                                <li>pl0: PL0</li>
+         *                                <li>pl1: PL1</li>
+         *                                <li>pl2: PL2</li>
+         *                                </ul>
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                <ul>
+         *                                <li>This parameter applies only if the segment node storage type is ESSD.</li>
+         *                                <li>If this parameter is not specified, pl1 is used by default.</li>
+         *                                </ul>
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder segDiskPerformanceLevel(java.lang.String segDiskPerformanceLevel) {
@@ -1069,9 +1397,23 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getSegDiskPerformanceLevel}
-         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: Seg disk performance level.
-         *                                The value can be:
-         *                                pl0、pl1 and pl2
+         * @param segDiskPerformanceLevel Property segDiskPerformanceLevel: The performance level of the ESSDs.
+         *                                Valid values:
+         *                                <p>
+         *                                <ul>
+         *                                <li>pl0: PL0</li>
+         *                                <li>pl1: PL1</li>
+         *                                <li>pl2: PL2</li>
+         *                                </ul>
+         *                                <p>
+         *                                <blockquote>
+         *                                <p>
+         *                                <ul>
+         *                                <li>This parameter applies only if the segment node storage type is ESSD.</li>
+         *                                <li>If this parameter is not specified, pl1 is used by default.</li>
+         *                                </ul>
+         *                                <p>
+         *                                </blockquote>
          * @return {@code this}
          */
         public Builder segDiskPerformanceLevel(com.aliyun.ros.cdk.core.IResolvable segDiskPerformanceLevel) {
@@ -1167,9 +1509,16 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getServerlessResource}
-         * @param serverlessResource Property serverlessResource: Computing resource threshold.
-         *                           The value ranges from 8 to 32. The step length is 8.
-         *                           The unit is ACU. The default value is 32.
+         * @param serverlessResource Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs).
+         *                           The
+         *                           value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is required only for serverless instances that use
+         *                           auto-scheduling.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder serverlessResource(java.lang.Number serverlessResource) {
@@ -1179,9 +1528,16 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getServerlessResource}
-         * @param serverlessResource Property serverlessResource: Computing resource threshold.
-         *                           The value ranges from 8 to 32. The step length is 8.
-         *                           The unit is ACU. The default value is 32.
+         * @param serverlessResource Property serverlessResource: The threshold for computing resources, in AnalyticDB Compute Units (ACUs).
+         *                           The
+         *                           value must be a multiple of 8, ranging from 8 to 32. The default value is 32.
+         *                           <p>
+         *                           <blockquote>
+         *                           <p>
+         *                           This parameter is required only for serverless instances that use
+         *                           auto-scheduling.
+         *                           <p>
+         *                           </blockquote>
          * @return {@code this}
          */
         public Builder serverlessResource(com.aliyun.ros.cdk.core.IResolvable serverlessResource) {
@@ -1213,7 +1569,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getStandbyVSwitchId}
-         * @param standbyVSwitchId Property standbyVSwitchId: The standby VSwitch ID of the instance.
+         * @param standbyVSwitchId Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>This parameter is required only for a multi-AZ deployment.</li>
+         *                         <li>The vSwitch must be in the standby zone specified in <code>StandbyZoneId</code>.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder standbyVSwitchId(java.lang.String standbyVSwitchId) {
@@ -1223,7 +1587,15 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getStandbyVSwitchId}
-         * @param standbyVSwitchId Property standbyVSwitchId: The standby VSwitch ID of the instance.
+         * @param standbyVSwitchId Property standbyVSwitchId: The ID of the vSwitch in the standby zone.
+         *                         <blockquote>
+         *                         <p>
+         *                         <ul>
+         *                         <li>This parameter is required only for a multi-AZ deployment.</li>
+         *                         <li>The vSwitch must be in the standby zone specified in <code>StandbyZoneId</code>.</li>
+         *                         </ul>
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder standbyVSwitchId(com.aliyun.ros.cdk.core.IResolvable standbyVSwitchId) {
@@ -1233,7 +1605,17 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getStandbyZoneId}
-         * @param standbyZoneId Property standbyZoneId: The standby zone ID of the instance.
+         * @param standbyZoneId Property standbyZoneId: The ID of the standby zone.
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>This parameter is required only for a multi-AZ deployment.</li>
+         *                      <li>You can call the <a href="">DescribeRegions</a> operation to query the IDs of available
+         *                      zones.</li>
+         *                      <li>The standby zone must be different from the primary zone.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder standbyZoneId(java.lang.String standbyZoneId) {
@@ -1243,7 +1625,17 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getStandbyZoneId}
-         * @param standbyZoneId Property standbyZoneId: The standby zone ID of the instance.
+         * @param standbyZoneId Property standbyZoneId: The ID of the standby zone.
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>This parameter is required only for a multi-AZ deployment.</li>
+         *                      <li>You can call the <a href="">DescribeRegions</a> operation to query the IDs of available
+         *                      zones.</li>
+         *                      <li>The standby zone must be different from the primary zone.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder standbyZoneId(com.aliyun.ros.cdk.core.IResolvable standbyZoneId) {
@@ -1253,8 +1645,14 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getStorageSize}
-         * @param storageSize Property storageSize: The storage capacity of per segment node.
-         *                    Unit: GB. Minimum is 50, max is 4000, step is 50.
+         * @param storageSize Property storageSize: The storage capacity for the instance, in GB.
+         *                    Valid values: .
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    This parameter is required for instances in elastic storage mode.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder storageSize(java.lang.Number storageSize) {
@@ -1264,8 +1662,14 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getStorageSize}
-         * @param storageSize Property storageSize: The storage capacity of per segment node.
-         *                    Unit: GB. Minimum is 50, max is 4000, step is 50.
+         * @param storageSize Property storageSize: The storage capacity for the instance, in GB.
+         *                    Valid values: .
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    This parameter is required for instances in elastic storage mode.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder storageSize(com.aliyun.ros.cdk.core.IResolvable storageSize) {

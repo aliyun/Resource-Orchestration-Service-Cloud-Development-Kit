@@ -75,9 +75,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: addressAllocatedMode: The mode in which IP addresses are assigned. Valid values:
-        /// Fixed: The ALB instance uses a static IP address.
-        /// Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+        /// <strong>Property</strong>: addressAllocatedMode: Address allocation mode. Valid values:
+        /// - Fixed (Default): A fixed IP address is allocated to each zone.
+        /// - Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.
+        /// > Starting from , when you create a new instance by using this interface, it is
+        /// created as an upgraded ALB instance regardless of the mode you specify. The
+        /// distinction between IP modes is removed, and the allocated IP addresses are
+        /// automatically elastic. ALB instances created before the upgrade are not affected.
         /// </remarks>
         [JsiiProperty(name: "addressAllocatedMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -146,8 +150,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: loadBalancerName: The name of the ALB instance.
-        /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+        /// <strong>Property</strong>: loadBalancerName: The name of the Application Load Balancer (ALB) instance.
+        /// The name must be 2 to 128 characters long, must start with a letter, digit, or
+        /// Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+        /// (-), and spaces.
         /// </remarks>
         [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -160,7 +166,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: modificationProtectionConfig: The configuration of modification protection.
+        /// <strong>Property</strong>: modificationProtectionConfig: The modification protection configuration.
         /// </remarks>
         [JsiiProperty(name: "modificationProtectionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosLoadBalancer.ModificationProtectionConfigProperty\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -283,9 +289,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: addressAllocatedMode: The mode in which IP addresses are assigned. Valid values:
-            /// Fixed: The ALB instance uses a static IP address.
-            /// Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+            /// <strong>Property</strong>: addressAllocatedMode: Address allocation mode. Valid values:
+            /// - Fixed (Default): A fixed IP address is allocated to each zone.
+            /// - Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.
+            /// > Starting from , when you create a new instance by using this interface, it is
+            /// created as an upgraded ALB instance regardless of the mode you specify. The
+            /// distinction between IP modes is removed, and the allocated IP addresses are
+            /// automatically elastic. ALB instances created before the upgrade are not affected.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "addressAllocatedMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -339,8 +349,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: loadBalancerName: The name of the ALB instance.
-            /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+            /// <strong>Property</strong>: loadBalancerName: The name of the Application Load Balancer (ALB) instance.
+            /// The name must be 2 to 128 characters long, must start with a letter, digit, or
+            /// Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+            /// (-), and spaces.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -350,7 +362,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: modificationProtectionConfig: The configuration of modification protection.
+            /// <strong>Property</strong>: modificationProtectionConfig: The modification protection configuration.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "modificationProtectionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosLoadBalancer.ModificationProtectionConfigProperty\"}]}}", isOptional: true)]

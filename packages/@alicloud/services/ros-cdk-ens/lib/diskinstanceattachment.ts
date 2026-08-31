@@ -46,7 +46,7 @@ export interface IDiskInstanceAttachment extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskInstanceAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
  */

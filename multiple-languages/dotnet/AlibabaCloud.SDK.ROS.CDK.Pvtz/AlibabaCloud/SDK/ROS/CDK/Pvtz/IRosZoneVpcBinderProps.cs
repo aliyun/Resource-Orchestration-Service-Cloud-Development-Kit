@@ -12,7 +12,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
     public interface IRosZoneVpcBinderProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: vpcs:
+        /// <strong>Property</strong>: vpcs: The VPCs.
+        /// > If you leave this parameter empty, all VPCs bound to the zone are unbound.
         /// </remarks>
         [JsiiProperty(name: "vpcs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-pvtz.RosZoneVpcBinder.VpcsProperty\"}]}},\"kind\":\"array\"}}]}}")]
         object Vpcs
@@ -41,7 +42,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: vpcs:
+            /// <strong>Property</strong>: vpcs: The VPCs.
+            /// > If you leave this parameter empty, all VPCs bound to the zone are unbound.
             /// </remarks>
             [JsiiProperty(name: "vpcs", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-pvtz.RosZoneVpcBinder.VpcsProperty\"}]}},\"kind\":\"array\"}}]}}")]
             public object Vpcs

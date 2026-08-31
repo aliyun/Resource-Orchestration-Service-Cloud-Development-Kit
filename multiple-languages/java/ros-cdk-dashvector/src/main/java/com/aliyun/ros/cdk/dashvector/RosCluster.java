@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dashvector;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DashVector::Cluster</code>, which is used to create a DashVector cluster.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::DashVector::Cluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:05:56.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:58:08.331Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dashvector.$Module.class, fqn = "@alicloud/ros-cdk-dashvector.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 

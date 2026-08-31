@@ -9,7 +9,10 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAccessControlProps {
 
     /**
-     * @Property aclName: The name of the access control list.
+     * @Property aclName: The name of the ACL. The name must be 1 to 80 characters in length, and can
+     * contain letters, digits, periods (.), hyphens (-), forward slashes (\/), and
+     * underscores (_). The name of the ACL that you create must be unique within each
+     * region.
      */
     readonly aclName: string | ros.IResolvable;
 
@@ -19,7 +22,7 @@ export interface RosAccessControlProps {
     readonly aclEntries?: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
+     * @Property addressIpVersion: The IP version. Valid values: ipv4 and ipv6.
      */
     readonly addressIpVersion?: string | ros.IResolvable;
 
@@ -120,7 +123,10 @@ export class RosAccessControl extends ros.RosResource {
 
 
     /**
-     * @Property aclName: The name of the access control list.
+     * @Property aclName: The name of the ACL. The name must be 1 to 80 characters in length, and can
+     * contain letters, digits, periods (.), hyphens (-), forward slashes (\/), and
+     * underscores (_). The name of the ACL that you create must be unique within each
+     * region.
      */
     public aclName: string | ros.IResolvable;
 
@@ -130,7 +136,7 @@ export class RosAccessControl extends ros.RosResource {
     public aclEntries: Array<RosAccessControl.AclEntriesProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property addressIpVersion: IP version. Could be "ipv4" or "ipv6".
+     * @Property addressIpVersion: The IP version. Valid values: ipv4 and ipv6.
      */
     public addressIpVersion: string | ros.IResolvable | undefined;
 
@@ -2651,7 +2657,7 @@ function rosListenerTagsPropertyToRosTemplate(properties: any): any {
 export interface RosLoadBalancerProps {
 
     /**
-     * @Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. If 'ipv6' is selected, please note that the zone and the specification are supported.
+     * @Property addressIpVersion: The IP version of the CLB instance. Valid values: ipv4 and ipv6.
      */
     readonly addressIpVersion?: string | ros.IResolvable;
 
@@ -2673,9 +2679,10 @@ export interface RosLoadBalancerProps {
     readonly deletionProtection?: boolean | ros.IResolvable;
 
     /**
-     * @Property instanceChargeType: Instance billing method. Valid value:
-     * - **PayBySpec** (default): Pay by spec.
-     * - **PayByCLCU**: billed by usage.
+     * @Property instanceChargeType: The resource metering method for the CLB instance. Valid value:
+     * - PayByCLCU: pay-by-data-transfer
+     * > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
@@ -2688,20 +2695,27 @@ export interface RosLoadBalancerProps {
     readonly internetChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: The CLB instance name.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
      * @Property loadBalancerSpec: The specification of the CLB instance. Valid values:
-     * - **slb.s1.small**
-     * - **slb.s2.small**
-     * - **slb.s2.medium**
-     * - **slb.s3.small**
-     * - **slb.s3.medium**
-     * - **slb.s3.large**
-     * **Note** If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-     * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.
+     * - slb.s1.small
+     * - slb.s2.small
+     * - slb.s2.medium
+     * - slb.s3.small
+     * - slb.s3.medium
+     * - slb.s3.large
+     * > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.
+     * >
+     * > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly loadBalancerSpec?: string | ros.IResolvable;
 
@@ -2711,15 +2725,23 @@ export interface RosLoadBalancerProps {
     readonly masterZoneId?: string | ros.IResolvable;
 
     /**
-     * @Property modificationProtectionReason: Set the reason for modifying the protection status. The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-     * Only valid when ModificationProtectionStatus is ConsoleProtection.
+     * @Property modificationProtectionReason: The reason for enabling the configuration read-only mode. The reason must be 1 to
+     * 80 characters in length. It must start with a letter and can contain letters,
+     * digits, periods (.), underscores (_), and hyphens (-).
+     * > This parameter takes effect only when ModificationProtectionStatus is set to
+     * ConsoleProtection.
      */
     readonly modificationProtectionReason?: string | ros.IResolvable;
 
     /**
-     * @Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection
-     * ConsoleProtection: Modify instance protection status by console
-     * Default value is empty.
+     * @Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode. Valid values:
+     * - NonProtection: disables the configuration read-only mode. After you disable the
+     * configuration read-only mode, the value of ModificationProtectionReason is
+     * cleared.
+     * - ConsoleProtection: enables the configuration read-only mode.
+     * > If you set this parameter to ConsoleProtection, you cannot modify instance
+     * configurations in the CLB console. However, you can modify instance
+     * configurations by calling API operations.
      */
     readonly modificationProtectionStatus?: string | ros.IResolvable;
 
@@ -2744,7 +2766,10 @@ export interface RosLoadBalancerProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The VSwitch id to create load balancer instance. For VPC network only.
+     * @Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * > The vSwitch must be in the primary zone.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }
@@ -2952,7 +2977,7 @@ export class RosLoadBalancer extends ros.RosResource {
 
 
     /**
-     * @Property addressIpVersion: IP version, support 'ipv4' or 'ipv6'. If 'ipv6' is selected, please note that the zone and the specification are supported.
+     * @Property addressIpVersion: The IP version of the CLB instance. Valid values: ipv4 and ipv6.
      */
     public addressIpVersion: string | ros.IResolvable | undefined;
 
@@ -2974,9 +2999,10 @@ export class RosLoadBalancer extends ros.RosResource {
     public deletionProtection: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceChargeType: Instance billing method. Valid value:
-     * - **PayBySpec** (default): Pay by spec.
-     * - **PayByCLCU**: billed by usage.
+     * @Property instanceChargeType: The resource metering method for the CLB instance. Valid value:
+     * - PayByCLCU: pay-by-data-transfer
+     * > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
 
@@ -2989,20 +3015,27 @@ export class RosLoadBalancer extends ros.RosResource {
     public internetChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: The CLB instance name.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     public loadBalancerName: string | ros.IResolvable | undefined;
 
     /**
      * @Property loadBalancerSpec: The specification of the CLB instance. Valid values:
-     * - **slb.s1.small**
-     * - **slb.s2.small**
-     * - **slb.s2.medium**
-     * - **slb.s3.small**
-     * - **slb.s3.medium**
-     * - **slb.s3.large**
-     * **Note** If you do not specify this parameter, a shared-resource CLB instance is created. Shared-resource CLB instances are no longer available for purchase. Therefore, you must specify this parameter.
-     * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you do not need to specify this parameter.
+     * - slb.s1.small
+     * - slb.s2.small
+     * - slb.s2.medium
+     * - slb.s3.small
+     * - slb.s3.medium
+     * - slb.s3.large
+     * > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.
+     * >
+     * > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     public loadBalancerSpec: string | ros.IResolvable | undefined;
 
@@ -3012,15 +3045,23 @@ export class RosLoadBalancer extends ros.RosResource {
     public masterZoneId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property modificationProtectionReason: Set the reason for modifying the protection status. The length is 1-80 English or Chinese characters, must start with upper and lower letters or Chinese, and can include numbers, periods (.), underscores (_) and dashes (-).
-     * Only valid when ModificationProtectionStatus is ConsoleProtection.
+     * @Property modificationProtectionReason: The reason for enabling the configuration read-only mode. The reason must be 1 to
+     * 80 characters in length. It must start with a letter and can contain letters,
+     * digits, periods (.), underscores (_), and hyphens (-).
+     * > This parameter takes effect only when ModificationProtectionStatus is set to
+     * ConsoleProtection.
      */
     public modificationProtectionReason: string | ros.IResolvable | undefined;
 
     /**
-     * @Property modificationProtectionStatus: NonProtection or empty: means no restriction on modification protection
-     * ConsoleProtection: Modify instance protection status by console
-     * Default value is empty.
+     * @Property modificationProtectionStatus: Specifies whether to enable the configuration read-only mode. Valid values:
+     * - NonProtection: disables the configuration read-only mode. After you disable the
+     * configuration read-only mode, the value of ModificationProtectionReason is
+     * cleared.
+     * - ConsoleProtection: enables the configuration read-only mode.
+     * > If you set this parameter to ConsoleProtection, you cannot modify instance
+     * configurations in the CLB console. However, you can modify instance
+     * configurations by calling API operations.
      */
     public modificationProtectionStatus: string | ros.IResolvable | undefined;
 
@@ -3045,7 +3086,10 @@ export class RosLoadBalancer extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The VSwitch id to create load balancer instance. For VPC network only.
+     * @Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * > The vSwitch must be in the primary zone.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -3187,20 +3231,35 @@ export interface RosLoadBalancerCloneProps {
     readonly backendServersPolicy?: string | ros.IResolvable;
 
     /**
-     * @Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
-     * PayByCLCU: billed by usage.
-     * If not specified, it is same with the source load balancer.
+     * @Property instanceChargeType: The resource metering method for the CLB instance. Valid value:
+     * - PayByCLCU: pay-by-data-transfer
+     * > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: The CLB instance name.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     readonly loadBalancerName?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
-     * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+     * @Property loadBalancerSpec: The specification of the CLB instance. Valid values:
+     * - slb.s1.small
+     * - slb.s2.small
+     * - slb.s2.medium
+     * - slb.s3.small
+     * - slb.s3.medium
+     * - slb.s3.large
+     * > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.
+     * >
+     * > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     readonly loadBalancerSpec?: string | ros.IResolvable;
 
@@ -3221,7 +3280,10 @@ export interface RosLoadBalancerCloneProps {
     readonly tagsPolicy?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+     * @Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * > The vSwitch must be in the primary zone.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }
@@ -3337,20 +3399,35 @@ export class RosLoadBalancerClone extends ros.RosResource {
     public backendServersPolicy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceChargeType: Instance billing method. Value:PayBySpec: Pay by spec.
-     * PayByCLCU: billed by usage.
-     * If not specified, it is same with the source load balancer.
+     * @Property instanceChargeType: The resource metering method for the CLB instance. Valid value:
+     * - PayByCLCU: pay-by-data-transfer
+     * > As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances are
+     * no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     public instanceChargeType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerName: Name of created load balancer. Length is limited to 1-80 characters, allowed to contain letters, numbers, '-, \/, _,.' When not specified, a default name will be assigned.
+     * @Property loadBalancerName: The CLB instance name.
+     * The name must be 1 to 80 characters in length, and can contain digits, periods
+     * (.), underscores (_), and hyphens (-). It must start with a letter.
+     * If you do not specify this parameter, the system automatically assigns a name to
+     * the CLB instance.
      */
     public loadBalancerName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerSpec: The specification of the load balancer. If not specified, it is same with the source load balancer.
-     * Note If InstanceChargeType is set to PayByCLCU, the LoadBalancerSpec parameter is invalid and you do not need to set this parameter.
+     * @Property loadBalancerSpec: The specification of the CLB instance. Valid values:
+     * - slb.s1.small
+     * - slb.s2.small
+     * - slb.s2.medium
+     * - slb.s3.small
+     * - slb.s3.medium
+     * - slb.s3.large
+     * > * If InstanceChargeType is set to PayByCLCU, this parameter is invalid and you
+     * do not need to specify this parameter.
+     * >
+     * > * As of 00:00:00 (UTC+8) on June 1, 2025, pay-by-specification CLB instances
+     * are no longer available for purchase. For more details, see [](t2857909.xdita#).
      */
     public loadBalancerSpec: string | ros.IResolvable | undefined;
 
@@ -3371,7 +3448,10 @@ export class RosLoadBalancerClone extends ros.RosResource {
     public tagsPolicy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The new VSwitch ID to create load balancer instance. For VPC network only and the VSwitch should belong to the VPC which source load balancer is located.When not specified, source load balancer VSwitch ID will be used.
+     * @Property vSwitchId: The ID of the vSwitch to which the CLB instance belongs.
+     * If you want to deploy the CLB instance in a VPC, this parameter is required. If
+     * this parameter is specified, AddessType is set to intranet by default.
+     * > The vSwitch must be in the primary zone.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -3551,8 +3631,33 @@ export interface RosMasterSlaveServerGroupProps {
     readonly loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property masterSlaveBackendServers: A list of active\/standby server group.
-     * An active\/standby server group can only contain two backend servers.
+     * @Property masterSlaveBackendServers: The backend servers in the primary\/secondary server group. Each primary\/secondary
+     * server group consists of two backend servers.
+     * Configure the following parameters:
+     * - ServerId: required. The IDs of the backend servers. Specify the IDs in a
+     * string. You can specify the IDs of Elastic Compute Service (ECS) instances,
+     * elastic network interfaces (ENIs), and elastic container instances. If you set
+     * ServerId to the IDs of ENIs or elastic container instances, you must configure
+     * the Type parameter.
+     * - Weight: the weight of the backend server. Valid values: 0 to 100. Default
+     * value: 100. If you set the weight of a backend server to 0, no requests are
+     * forwarded to the backend server.
+     * - Description: optional. The description of the backend servers. Specify the
+     * description in a string. The description must be 1 to 80 characters in length,
+     * and can contain letters, digits, hyphens (-), forward slashes (\/). periods (.),
+     * and underscores (_).
+     * - Type: the type of the backend server. Valid values:
+     * - ecs (default): ECS instance
+     * - eni: ENI
+     * - eci: elastic container instance
+     * > You can specify ENIs and elastic container instances as backend servers only
+     * for high-performance CLB instances.
+     * - ServerIp: the IP address of the ENI or elastic container instance.
+     * - Port: the backend port.
+     * - ServerType: Specify the primary and secondary backend servers in a string.
+     * Valid values:
+     * - Master: primary server
+     * - Slave: secondary server
      */
     readonly masterSlaveBackendServers: Array<RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -3632,8 +3737,33 @@ export class RosMasterSlaveServerGroup extends ros.RosResource {
     public loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property masterSlaveBackendServers: A list of active\/standby server group.
-     * An active\/standby server group can only contain two backend servers.
+     * @Property masterSlaveBackendServers: The backend servers in the primary\/secondary server group. Each primary\/secondary
+     * server group consists of two backend servers.
+     * Configure the following parameters:
+     * - ServerId: required. The IDs of the backend servers. Specify the IDs in a
+     * string. You can specify the IDs of Elastic Compute Service (ECS) instances,
+     * elastic network interfaces (ENIs), and elastic container instances. If you set
+     * ServerId to the IDs of ENIs or elastic container instances, you must configure
+     * the Type parameter.
+     * - Weight: the weight of the backend server. Valid values: 0 to 100. Default
+     * value: 100. If you set the weight of a backend server to 0, no requests are
+     * forwarded to the backend server.
+     * - Description: optional. The description of the backend servers. Specify the
+     * description in a string. The description must be 1 to 80 characters in length,
+     * and can contain letters, digits, hyphens (-), forward slashes (\/). periods (.),
+     * and underscores (_).
+     * - Type: the type of the backend server. Valid values:
+     * - ecs (default): ECS instance
+     * - eni: ENI
+     * - eci: elastic container instance
+     * > You can specify ENIs and elastic container instances as backend servers only
+     * for high-performance CLB instances.
+     * - ServerIp: the IP address of the ENI or elastic container instance.
+     * - Port: the backend port.
+     * - ServerType: Specify the primary and secondary backend servers in a string.
+     * Valid values:
+     * - Master: primary server
+     * - Slave: secondary server
      */
     public masterSlaveBackendServers: Array<RosMasterSlaveServerGroup.MasterSlaveBackendServersProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -3784,12 +3914,30 @@ export interface RosRuleProps {
     readonly loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property ruleList: The forwarding rules to add.
+     * @Property ruleList: The forwarding rules to add. You can add up to 10 forwarding rules in a single
+     * request. Each forwarding rule consists of the following parameters:
+     * - RuleName (Required): String. The name of the forwarding rule. The name must be
+     * 1 to 40 characters in length and can contain letters, digits, hyphens (-),
+     * forward slashes (\/), periods (.), and underscores (_). Rule names must be unique
+     * within the same listener.
+     * - Domain (Optional): String. The domain name to associate with the forwarding
+     * rule. You must specify at least one of this parameter and the Url parameter.
+     * - Url (Optional): String. The URL path. The path must be 1 to 80 characters in
+     * length. It can contain Chinese characters, letters, digits, and the following
+     * special characters: `- \/ . % ? # &`. The URL path must start with a forward slash
+     * (\/), but cannot be a single forward slash (\/). You must specify at least one of
+     * this parameter and the Domain parameter.
+     * - VServerGroupId (Required): String. The ID of the target vServer group for the
+     * forwarding rule.
+     * > You must specify the `Domain` parameter, the `Url` parameter, or both. The
+     * combination of a `Domain` and a `Url` must be unique within the same listener.
      */
     readonly ruleList: Array<RosRule.RuleListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+     * @Property listenerProtocol: The frontend protocol of the listener.
+     * > This parameter is required if you configure listeners that use different
+     * protocols on the same port.
      */
     readonly listenerProtocol?: string | ros.IResolvable;
 }
@@ -3880,12 +4028,30 @@ export class RosRule extends ros.RosResource {
     public loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property ruleList: The forwarding rules to add.
+     * @Property ruleList: The forwarding rules to add. You can add up to 10 forwarding rules in a single
+     * request. Each forwarding rule consists of the following parameters:
+     * - RuleName (Required): String. The name of the forwarding rule. The name must be
+     * 1 to 40 characters in length and can contain letters, digits, hyphens (-),
+     * forward slashes (\/), periods (.), and underscores (_). Rule names must be unique
+     * within the same listener.
+     * - Domain (Optional): String. The domain name to associate with the forwarding
+     * rule. You must specify at least one of this parameter and the Url parameter.
+     * - Url (Optional): String. The URL path. The path must be 1 to 80 characters in
+     * length. It can contain Chinese characters, letters, digits, and the following
+     * special characters: `- \/ . % ? # &`. The URL path must start with a forward slash
+     * (\/), but cannot be a single forward slash (\/). You must specify at least one of
+     * this parameter and the Domain parameter.
+     * - VServerGroupId (Required): String. The ID of the target vServer group for the
+     * forwarding rule.
+     * > You must specify the `Domain` parameter, the `Url` parameter, or both. The
+     * combination of a `Domain` and a `Url` must be unique within the same listener.
      */
     public ruleList: Array<RosRule.RuleListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property listenerProtocol: The frontend protocol that is used by the SLB instance.
+     * @Property listenerProtocol: The frontend protocol of the listener.
+     * > This parameter is required if you configure listeners that use different
+     * protocols on the same port.
      */
     public listenerProtocol: string | ros.IResolvable | undefined;
 
@@ -4388,12 +4554,51 @@ export interface RosVServerGroupProps {
     readonly loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property vServerGroupName: Display name of the VServerGroup.
+     * @Property vServerGroupName: The name of the vServer group.
+     * The name must be 1 to 80 characters in length, and can contain letters, digits,
+     * hyphens (-), forward slashes (\/), periods (.),and underscores (_).
      */
     readonly vServerGroupName: string | ros.IResolvable;
 
     /**
-     * @Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+     * @Property backendServers: The backend servers that you want to add. Configure the following parameters:
+     * - ServerId: required. The ID of the backend server. Specify the ID in a string.
+     * You can specify the ID of an Elastic Compute Service (ECS) instance, an elastic
+     * network interface (ENI), or an elastic container instance. If you set ServerId to
+     * the ID of an ENI or an elastic container instance, you must configure the Type
+     * parameter.
+     * - Weight: the weight of the backend server. Valid values: 0 to 100. Default
+     * value: 100. If you set the weight of a backend server to 0, no requests are
+     * forwarded to the backend server.
+     * - Description: optional. The description of the backend server. Specify the
+     * description in a string. The description must be 1 to 80 characters in length,
+     * and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.),
+     * and underscores (_).
+     * - Type: the type of the backend server. Valid values:
+     * - ecs (default): ECS instance
+     * - eni: ENI.
+     * - eni: elastic container instance.
+     * > You can specify ENIs and elastic container instances as backend servers only
+     * for high-performance SLB instances.
+     * - ServerIp: The IP address of the ECS instance or ENI.
+     * - Port: the backend port.
+     * Examples:
+     * - Add an ECS instance:
+     * `[{ "ServerId": "i-xxxxxxxxx", "Weight": "100", "Type": "ecs",
+     * "Port":"80","Description":"test-112" }]`
+     * - Add an ENI:
+     * `[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp":
+     * "192.168..", "Port":"80","Description":"test-112" }]`
+     * - Add an ENI with multiple IP addresses:
+     * `[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp":
+     * "192.168..", "Port":"80","Description":"test-113" },{ "ServerId":
+     * "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "172.166..",
+     * "Port":"80","Description":"test-113" }]`
+     * - Add an elastic container instance:
+     * `[{ "ServerId": "eci-xxxxxxxxx", "Weight": "100", "Type": "eci", "ServerIp":
+     * "192.168..", "Port":"80","Description":"test-114" }]`
+     * > You can add only running backend servers to SLB instances. You can specify at
+     * most 20 backend servers.
      */
     readonly backendServers?: Array<RosVServerGroup.BackendServersProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -4490,12 +4695,51 @@ export class RosVServerGroup extends ros.RosResource {
     public loadBalancerId: string | ros.IResolvable;
 
     /**
-     * @Property vServerGroupName: Display name of the VServerGroup.
+     * @Property vServerGroupName: The name of the vServer group.
+     * The name must be 1 to 80 characters in length, and can contain letters, digits,
+     * hyphens (-), forward slashes (\/), periods (.),and underscores (_).
      */
     public vServerGroupName: string | ros.IResolvable;
 
     /**
-     * @Property backendServers: The list of a combination of ECS Instance-Port-Weight.Same ecs instance with different port is allowed, but same ecs instance with same port isn't.
+     * @Property backendServers: The backend servers that you want to add. Configure the following parameters:
+     * - ServerId: required. The ID of the backend server. Specify the ID in a string.
+     * You can specify the ID of an Elastic Compute Service (ECS) instance, an elastic
+     * network interface (ENI), or an elastic container instance. If you set ServerId to
+     * the ID of an ENI or an elastic container instance, you must configure the Type
+     * parameter.
+     * - Weight: the weight of the backend server. Valid values: 0 to 100. Default
+     * value: 100. If you set the weight of a backend server to 0, no requests are
+     * forwarded to the backend server.
+     * - Description: optional. The description of the backend server. Specify the
+     * description in a string. The description must be 1 to 80 characters in length,
+     * and can contain letters, digits, hyphens (-), forward slashes (\/), periods (.),
+     * and underscores (_).
+     * - Type: the type of the backend server. Valid values:
+     * - ecs (default): ECS instance
+     * - eni: ENI.
+     * - eni: elastic container instance.
+     * > You can specify ENIs and elastic container instances as backend servers only
+     * for high-performance SLB instances.
+     * - ServerIp: The IP address of the ECS instance or ENI.
+     * - Port: the backend port.
+     * Examples:
+     * - Add an ECS instance:
+     * `[{ "ServerId": "i-xxxxxxxxx", "Weight": "100", "Type": "ecs",
+     * "Port":"80","Description":"test-112" }]`
+     * - Add an ENI:
+     * `[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp":
+     * "192.168..", "Port":"80","Description":"test-112" }]`
+     * - Add an ENI with multiple IP addresses:
+     * `[{ "ServerId": "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp":
+     * "192.168..", "Port":"80","Description":"test-113" },{ "ServerId":
+     * "eni-xxxxxxxxx", "Weight": "100", "Type": "eni", "ServerIp": "172.166..",
+     * "Port":"80","Description":"test-113" }]`
+     * - Add an elastic container instance:
+     * `[{ "ServerId": "eci-xxxxxxxxx", "Weight": "100", "Type": "eci", "ServerIp":
+     * "192.168..", "Port":"80","Description":"test-114" }]`
+     * > You can add only running backend servers to SLB instances. You can specify at
+     * most 20 backend servers.
      */
     public backendServers: Array<RosVServerGroup.BackendServersProperty | ros.IResolvable> | ros.IResolvable | undefined;
 

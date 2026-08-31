@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.selectdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-selectdb-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:49:12.839Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:32:10.908Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.selectdb.$Module.class, fqn = "@alicloud/ros-cdk-selectdb.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -28,7 +28,14 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDbInstanceClass();
 
     /**
-     * Property engineVersion: Database version.
+     * Property engineVersion: The database version.
+     * <p>
+     * The default value is 4.1. Valid values:
+     * <p>
+     * <ul>
+     * <li>4.0</li>
+     * <li>4.1</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEngineVersion();
 
@@ -106,7 +113,21 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid.
+     * Property usedTime: The subscription duration of the subscription instance.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>If Period is set to Year, valid values are 1, 2, 3, 4, and 5.</li>
+     * <li>If Period is set to Month, valid values are integers from 1 to 12.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required and takes effect only when ChargeType is set to
+     * Prepaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return null;
@@ -203,7 +224,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
+         *                      The default value is 4.1. Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>4.0</li>
+         *                      <li>4.1</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -213,7 +240,13 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: Database version. This parameter is required.
+         * @param engineVersion Property engineVersion: The database version. This parameter is required.
+         *                      The default value is 4.1. Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>4.0</li>
+         *                      <li>4.1</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
@@ -435,7 +468,20 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getUsedTime}
-         * @param usedTime Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid.
+         * @param usedTime Property usedTime: The subscription duration of the subscription instance.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>If Period is set to Year, valid values are 1, 2, 3, 4, and 5.</li>
+         *                 <li>If Period is set to Month, valid values are integers from 1 to 12.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required and takes effect only when ChargeType is set to
+         *                 Prepaid.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder usedTime(java.lang.Number usedTime) {
@@ -445,7 +491,20 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getUsedTime}
-         * @param usedTime Property usedTime: Specifies the purchase duration of the prepaid instance.Value description: When Period is Year, UsedTime values range: 1, 2, 3, 5 (integral). When Period is Month, the UsedTime value range is: 1~9 (integral). Note This parameter takes effect and is required only if ChargeType is Prepaid.
+         * @param usedTime Property usedTime: The subscription duration of the subscription instance.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>If Period is set to Year, valid values are 1, 2, 3, 4, and 5.</li>
+         *                 <li>If Period is set to Month, valid values are integers from 1 to 12.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required and takes effect only when ChargeType is set to
+         *                 Prepaid.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder usedTime(com.aliyun.ros.cdk.core.IResolvable usedTime) {

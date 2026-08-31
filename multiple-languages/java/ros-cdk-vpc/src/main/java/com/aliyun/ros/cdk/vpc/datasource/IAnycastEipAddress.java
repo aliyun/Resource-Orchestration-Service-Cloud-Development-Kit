@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
 /**
  * Represents a <code>AnycastEipAddress</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.788Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.591Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.IAnycastEipAddress")
 @software.amazon.jsii.Jsii.Proxy(IAnycastEipAddress.Jsii$Proxy.class)
 public interface IAnycastEipAddress extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

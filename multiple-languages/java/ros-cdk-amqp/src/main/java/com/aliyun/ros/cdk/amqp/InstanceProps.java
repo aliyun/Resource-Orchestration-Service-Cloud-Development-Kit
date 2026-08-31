@@ -5,22 +5,31 @@ package com.aliyun.ros.cdk.amqp;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.815Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.248Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property instanceName: The instance name.
+     * Property instanceName: The name of the instance.
+     * <p>
+     * The name can be up to 64 characters long.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceName() {
         return null;
     }
 
     /**
-     * Property instanceType: The Instance Type.
+     * Property instanceType: The instance type.
      * <p>
-     * Valid values: professional, enterprise, vip.
+     * This parameter is required for subscription instances. Valid values:
+     * <p>
+     * <ul>
+     * <li><code>professional</code>: Professional Edition</li>
+     * <li><code>enterprise</code>: Enterprise Edition</li>
+     * <li><code>vip</code>: Platinum Edition
+     * You do not need to specify this parameter for serverless instances.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceType() {
         return null;
@@ -106,30 +115,58 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property supportEip: Whether to support EIP.
+     * Property supportEip: Specifies whether to enable access over the public network.
      * <p>
-     * Valid values: true, false.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables access over the public network.</li>
+     * <li><code>false</code>: Disables access over the public network.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSupportEip() {
         return null;
     }
 
     /**
-     * Property supportTracing: Whether to support tracing.
+     * Property supportTracing: Specifies whether to enable the message trace feature.
      * <p>
-     * Valid values: true, false.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>true</code>: Enables the message trace feature.</li>
+     * <li><code>false</code>: Disables the message trace feature.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>The message trace feature is included for 15 days at no charge on Platinum
+     * Edition instances. For these instances, you must enable this feature and set the
+     * retention period to 15 days.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
+     * <p>
+     * <ul>
+     * <li>For other instance types, you can enable or disable this feature.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSupportTracing() {
         return null;
     }
 
     /**
-     * Property tracingStorageTime: The retention period of message traces was set.
+     * Property tracingStorageTime: The retention period of message traces.
      * <p>
-     * Valid values: 3, 7, 15.
-     * If instance_type=vip, the valid values is 15.
-     * If instance_type!=vip, the valid values is 3, 7, 15.
-     * If support_tracing == tracing_false, the valid values is 0.
+     * Unit: days. Valid values:
+     * <p>
+     * <ul>
+     * <li><code>3</code></li>
+     * <li><code>7</code></li>
+     * <li><code>15</code>
+     * This parameter is required if you set <code>SupportTracing</code> to <code>true</code>.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTracingStorageTime() {
         return null;
@@ -161,7 +198,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceName}
-         * @param instanceName Property instanceName: The instance name.
+         * @param instanceName Property instanceName: The name of the instance.
+         *                     The name can be up to 64 characters long.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -171,7 +209,8 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceName}
-         * @param instanceName Property instanceName: The instance name.
+         * @param instanceName Property instanceName: The name of the instance.
+         *                     The name can be up to 64 characters long.
          * @return {@code this}
          */
         public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
@@ -181,8 +220,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceType}
-         * @param instanceType Property instanceType: The Instance Type.
-         *                     Valid values: professional, enterprise, vip.
+         * @param instanceType Property instanceType: The instance type.
+         *                     This parameter is required for subscription instances. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>professional</code>: Professional Edition</li>
+         *                     <li><code>enterprise</code>: Enterprise Edition</li>
+         *                     <li><code>vip</code>: Platinum Edition
+         *                     You do not need to specify this parameter for serverless instances.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder instanceType(java.lang.String instanceType) {
@@ -192,8 +238,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getInstanceType}
-         * @param instanceType Property instanceType: The Instance Type.
-         *                     Valid values: professional, enterprise, vip.
+         * @param instanceType Property instanceType: The instance type.
+         *                     This parameter is required for subscription instances. Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>professional</code>: Professional Edition</li>
+         *                     <li><code>enterprise</code>: Enterprise Edition</li>
+         *                     <li><code>vip</code>: Platinum Edition
+         *                     You do not need to specify this parameter for serverless instances.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder instanceType(com.aliyun.ros.cdk.core.IResolvable instanceType) {
@@ -395,8 +448,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getSupportEip}
-         * @param supportEip Property supportEip: Whether to support EIP.
-         *                   Valid values: true, false.
+         * @param supportEip Property supportEip: Specifies whether to enable access over the public network.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>true</code>: Enables access over the public network.</li>
+         *                   <li><code>false</code>: Disables access over the public network.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder supportEip(java.lang.String supportEip) {
@@ -406,8 +464,13 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getSupportEip}
-         * @param supportEip Property supportEip: Whether to support EIP.
-         *                   Valid values: true, false.
+         * @param supportEip Property supportEip: Specifies whether to enable access over the public network.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li><code>true</code>: Enables access over the public network.</li>
+         *                   <li><code>false</code>: Disables access over the public network.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder supportEip(com.aliyun.ros.cdk.core.IResolvable supportEip) {
@@ -417,8 +480,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getSupportTracing}
-         * @param supportTracing Property supportTracing: Whether to support tracing.
-         *                       Valid values: true, false.
+         * @param supportTracing Property supportTracing: Specifies whether to enable the message trace feature.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>true</code>: Enables the message trace feature.</li>
+         *                       <li><code>false</code>: Disables the message trace feature.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       <ul>
+         *                       <li>The message trace feature is included for 15 days at no charge on Platinum
+         *                       Edition instances. For these instances, you must enable this feature and set the
+         *                       retention period to 15 days.</li>
+         *                       </ul>
+         *                       <p>
+         *                       </blockquote>
+         *                       <p>
+         *                       <ul>
+         *                       <li>For other instance types, you can enable or disable this feature.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder supportTracing(java.lang.String supportTracing) {
@@ -428,8 +510,27 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getSupportTracing}
-         * @param supportTracing Property supportTracing: Whether to support tracing.
-         *                       Valid values: true, false.
+         * @param supportTracing Property supportTracing: Specifies whether to enable the message trace feature.
+         *                       Valid values:
+         *                       <p>
+         *                       <ul>
+         *                       <li><code>true</code>: Enables the message trace feature.</li>
+         *                       <li><code>false</code>: Disables the message trace feature.</li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       <ul>
+         *                       <li>The message trace feature is included for 15 days at no charge on Platinum
+         *                       Edition instances. For these instances, you must enable this feature and set the
+         *                       retention period to 15 days.</li>
+         *                       </ul>
+         *                       <p>
+         *                       </blockquote>
+         *                       <p>
+         *                       <ul>
+         *                       <li>For other instance types, you can enable or disable this feature.</li>
+         *                       </ul>
          * @return {@code this}
          */
         public Builder supportTracing(com.aliyun.ros.cdk.core.IResolvable supportTracing) {
@@ -439,11 +540,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getTracingStorageTime}
-         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set.
-         *                           Valid values: 3, 7, 15.
-         *                           If instance_type=vip, the valid values is 15.
-         *                           If instance_type!=vip, the valid values is 3, 7, 15.
-         *                           If support_tracing == tracing_false, the valid values is 0.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces.
+         *                           Unit: days. Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>3</code></li>
+         *                           <li><code>7</code></li>
+         *                           <li><code>15</code>
+         *                           This parameter is required if you set <code>SupportTracing</code> to <code>true</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder tracingStorageTime(java.lang.Number tracingStorageTime) {
@@ -453,11 +558,15 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getTracingStorageTime}
-         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set.
-         *                           Valid values: 3, 7, 15.
-         *                           If instance_type=vip, the valid values is 15.
-         *                           If instance_type!=vip, the valid values is 3, 7, 15.
-         *                           If support_tracing == tracing_false, the valid values is 0.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces.
+         *                           Unit: days. Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>3</code></li>
+         *                           <li><code>7</code></li>
+         *                           <li><code>15</code>
+         *                           This parameter is required if you set <code>SupportTracing</code> to <code>true</code>.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder tracingStorageTime(com.aliyun.ros.cdk.core.IResolvable tracingStorageTime) {

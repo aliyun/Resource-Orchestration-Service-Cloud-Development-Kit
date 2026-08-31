@@ -23,11 +23,11 @@ type DiskProps struct {
 	Size interface{} `field:"required" json:"size" yaml:"size"`
 	// Property diskName: The name of the disk.
 	DiskName interface{} `field:"optional" json:"diskName" yaml:"diskName"`
-	// Property encrypted: Specifies whether to encrypt the new system disk.
+	// Property encrypted: Specifies whether to encrypt the disk.
 	//
 	// Valid values:
-	// true
-	// false (default): no.
+	// - true
+	// - false (default).
 	Encrypted interface{} `field:"optional" json:"encrypted" yaml:"encrypted"`
 	// Property instanceBillingCycle: The billing cycle of the instance.
 	InstanceBillingCycle interface{} `field:"optional" json:"instanceBillingCycle" yaml:"instanceBillingCycle"`

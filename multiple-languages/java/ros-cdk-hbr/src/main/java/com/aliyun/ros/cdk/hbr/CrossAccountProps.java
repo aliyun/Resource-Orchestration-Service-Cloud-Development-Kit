@@ -5,20 +5,26 @@ package com.aliyun.ros.cdk.hbr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-crossaccount
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.703Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.086Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.CrossAccountProps")
 @software.amazon.jsii.Jsii.Proxy(CrossAccountProps.Jsii$Proxy.class)
 public interface CrossAccountProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property alias: The alias of the cross-account authorization.
+     * Property alias: The alias.
+     * <p>
+     * The maximum length is 32 characters. This parameter is not required
+     * for cross-account backups that are configured based on a resource directory.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAlias() {
         return null;
     }
 
     /**
-     * Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+     * Property crossAccountRoleName: The name of the RAM role for the account to back up.
+     * <p>
+     * This parameter is used when
+     * you configure a cross-account backup by assuming a RAM role.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCrossAccountRoleName() {
         return null;
@@ -57,7 +63,9 @@ public interface CrossAccountProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link CrossAccountProps#getAlias}
-         * @param alias Property alias: The alias of the cross-account authorization.
+         * @param alias Property alias: The alias.
+         *              The maximum length is 32 characters. This parameter is not required
+         *              for cross-account backups that are configured based on a resource directory.
          * @return {@code this}
          */
         public Builder alias(java.lang.String alias) {
@@ -67,7 +75,9 @@ public interface CrossAccountProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link CrossAccountProps#getAlias}
-         * @param alias Property alias: The alias of the cross-account authorization.
+         * @param alias Property alias: The alias.
+         *              The maximum length is 32 characters. This parameter is not required
+         *              for cross-account backups that are configured based on a resource directory.
          * @return {@code this}
          */
         public Builder alias(com.aliyun.ros.cdk.core.IResolvable alias) {
@@ -77,7 +87,9 @@ public interface CrossAccountProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link CrossAccountProps#getCrossAccountRoleName}
-         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role for the account to back up.
+         *                             This parameter is used when
+         *                             you configure a cross-account backup by assuming a RAM role.
          * @return {@code this}
          */
         public Builder crossAccountRoleName(java.lang.String crossAccountRoleName) {
@@ -87,7 +99,9 @@ public interface CrossAccountProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link CrossAccountProps#getCrossAccountRoleName}
-         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role that is used to grant permissions to the authorized account.
+         * @param crossAccountRoleName Property crossAccountRoleName: The name of the RAM role for the account to back up.
+         *                             This parameter is used when
+         *                             you configure a cross-account backup by assuming a RAM role.
          * @return {@code this}
          */
         public Builder crossAccountRoleName(com.aliyun.ros.cdk.core.IResolvable crossAccountRoleName) {

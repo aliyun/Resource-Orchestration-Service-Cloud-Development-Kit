@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ENS::Snapshot`.
 type Snapshot interface {
 	alicloudroscdkcore.Resource
 	ISnapshot

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dataworks;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dataworks-resourcegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:09:51.231Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:03:57.053Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dataworks.$Module.class, fqn = "@alicloud/ros-cdk-dataworks.RosResourceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceGroupProps.Jsii$Proxy.class)
 public interface RosResourceGroupProps extends software.amazon.jsii.JsiiSerializable {

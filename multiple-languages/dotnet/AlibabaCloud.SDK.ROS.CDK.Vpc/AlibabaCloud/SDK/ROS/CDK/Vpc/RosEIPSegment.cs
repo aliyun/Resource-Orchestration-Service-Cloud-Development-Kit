@@ -232,10 +232,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// - **BGP_PRO**: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
         /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
         /// India (Jakarta), and Thailand (Bangkok).
-        ///
-        /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-        /// see [EIP Line Type](~~32321~~).
-        ///
         /// If you are a single-bandwidth whitelist user, you can also choose:
         /// - **ChinaTelecom**: China Telecom
         /// - **ChinaUnicom**: China Unicom

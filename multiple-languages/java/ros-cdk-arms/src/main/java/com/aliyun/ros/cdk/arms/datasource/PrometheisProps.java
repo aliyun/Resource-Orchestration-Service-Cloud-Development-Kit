@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.arms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-arms-prometheis
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.152Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:12:12.786Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.datasource.PrometheisProps")
 @software.amazon.jsii.Jsii.Proxy(PrometheisProps.Jsii$Proxy.class)
 public interface PrometheisProps extends software.amazon.jsii.JsiiSerializable {

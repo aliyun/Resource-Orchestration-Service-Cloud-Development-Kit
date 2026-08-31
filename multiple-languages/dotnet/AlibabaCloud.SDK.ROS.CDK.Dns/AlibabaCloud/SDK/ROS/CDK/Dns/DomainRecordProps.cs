@@ -45,7 +45,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         private object _rr;
 
-        /// <summary>Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty.</summary>
+        /// <summary>Property rr: The host record.</summary>
+        /// <remarks>
+        /// To resolve example.com, set the host record to "@" instead of leaving it empty.
+        /// </remarks>
         [JsiiProperty(name: "rr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Rr
         {
@@ -169,7 +172,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         private object? _priority;
 
-        /// <summary>Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be.</summary>
+        /// <summary>Property priority: The priority of the MX record.</summary>
+        /// <remarks>
+        /// Valid values: <c>[1,50]</c>.
+        /// This parameter is required if the record type is MX. A smaller value indicates a
+        /// higher priority.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Priority
@@ -220,9 +228,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
 
         private object? _ttl;
 
-        /// <summary>Property ttl: The resolution time is valid.</summary>
+        /// <summary>Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record.</summary>
         /// <remarks>
-        /// The default is 600 seconds (10 minutes). See the TTL definition.
+        /// Default
+        /// value: 600. Unit: seconds.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

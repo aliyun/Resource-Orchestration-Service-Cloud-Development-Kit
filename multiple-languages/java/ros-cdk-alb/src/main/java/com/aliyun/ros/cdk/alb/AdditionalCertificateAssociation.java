@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::AdditionalCertificateAssociation</code>, which is used to add additional certificates to a listener.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::AdditionalCertificateAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.179Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.362Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.AdditionalCertificateAssociation")
 public class AdditionalCertificateAssociation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IAdditionalCertificateAssociation {
 

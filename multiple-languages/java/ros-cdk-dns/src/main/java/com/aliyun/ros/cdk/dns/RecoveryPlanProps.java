@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-recoveryplan
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.886Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.486Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.RecoveryPlanProps")
 @software.amazon.jsii.Jsii.Proxy(RecoveryPlanProps.Jsii$Proxy.class)
 public interface RecoveryPlanProps extends software.amazon.jsii.JsiiSerializable {

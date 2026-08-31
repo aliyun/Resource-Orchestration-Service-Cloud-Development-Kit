@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apigateway.datasource;
 /**
  * Represents a <code>Apps</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.639Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:57.037Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.datasource.IApps")
 @software.amazon.jsii.Jsii.Proxy(IApps.Jsii$Proxy.class)
 public interface IApps extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

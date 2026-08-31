@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.eventbridge;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EventBridge::ApiDestination</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:01:25.380Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:09:00.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.ApiDestination")
 public class ApiDestination extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.eventbridge.IApiDestination {
 

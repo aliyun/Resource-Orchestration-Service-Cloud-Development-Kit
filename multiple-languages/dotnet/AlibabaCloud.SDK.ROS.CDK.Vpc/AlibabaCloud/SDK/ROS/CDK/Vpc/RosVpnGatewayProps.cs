@@ -16,8 +16,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object _bandwidth;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
-        /// Value: 5|10|20|50|100|200.
+        /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the VPN gateway. Unit: Mbit\/s.
+        /// *   If you want to create a public VPN gateway, valid values are 10, 100, 200,
+        /// 500, and 1000.
+        /// *   If you want to create a private VPN gateway, valid values are 200 and 1000.
+        /// >  The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit\/s.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Bandwidth
@@ -101,10 +104,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _autoPay;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
-        /// true: Automatically pays the bill for the VPN gateway.
-        /// false: Does not automatically pay the bill for the VPN gateway.
-        /// Default true.
+        /// <strong>Property</strong>: autoPay: Specifies whether to enable automatic payment. Valid values:
+        /// *   true
+        /// *   false (default)
+        /// > To create a VPN gateway, we recommend that you enable automatic payment. If you
+        /// disable automatic payment, you must manually pay the bill to create the VPN
+        /// gateway.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -278,8 +283,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _instanceChargeType;
 
         /// <remarks>
-        /// <strong>Property</strong>: instanceChargeType: Accounting type of the VPN gateway, the value is:
-        /// PREPAY, POSTPAY
+        /// <strong>Property</strong>: instanceChargeType: The billing method of the VPN gateway. Set the value to POSTPAY, which specifies
+        /// the pay-as-you-go billing method.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -346,7 +351,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _networkType;
 
         /// <remarks>
-        /// <strong>Property</strong>: networkType: The network type of the VPN gateway. Valid values: public|private
+        /// <strong>Property</strong>: networkType: The network type of the VPN gateway. Valid values:
+        /// *   public (default)
+        /// *   private
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "networkType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -470,7 +477,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _sslConnections;
 
         /// <remarks>
-        /// <strong>Property</strong>: sslConnections: The maximum number of clients allowed to connect at the same time.
+        /// <strong>Property</strong>: sslConnections: The maximum number of clients that can be connected at the same time. Valid
+        /// values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sslConnections", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -534,7 +542,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _vpnType;
 
         /// <remarks>
-        /// <strong>Property</strong>: vpnType: VPN gateway type.
+        /// <strong>Property</strong>: vpnType: The type of the VPN gateway. Valid values:
+        /// Set the value to Normal (default), which specifies a standard NAT gateway.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vpnType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -567,7 +576,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _vSwitchId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+        /// <strong>Property</strong>: vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+        /// *   If you call this operation in a region that supports the IPsec-VPN
+        /// connections in dual-tunnel mode, this parameter is required. You must specify a
+        /// vSwitch and specify DisasterRecoveryVSwitchId.
+        /// *   If you call this operation in a region that supports the IPsec-VPN
+        /// connections in single-tunnel mode and do not specify a vSwitch, the system
+        /// automatically specifies a vSwitch.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

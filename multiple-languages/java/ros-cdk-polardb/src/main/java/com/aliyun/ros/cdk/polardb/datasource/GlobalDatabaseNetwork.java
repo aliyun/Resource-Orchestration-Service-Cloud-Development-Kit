@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::POLARDB::GlobalDatabaseNetwork</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.516Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.datasource.GlobalDatabaseNetwork")
 public class GlobalDatabaseNetwork extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.datasource.IGlobalDatabaseNetwork {
 

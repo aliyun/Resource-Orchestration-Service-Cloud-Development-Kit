@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.appflow;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::AppFlow::Flow</code>, which is used to create a flow.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::AppFlow::Flow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.437Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:10:07.376Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.Flow")
 public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.appflow.IFlow {
 
@@ -164,6 +164,9 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property flowId: The ID of the flow.
          * <p>
+         * This parameter is required when you update a flow or create a
+         * new flow version.
+         * <p>
          * @return {@code this}
          * @param flowId Property flowId: The ID of the flow. This parameter is required.
          */
@@ -173,6 +176,9 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
         /**
          * Property flowId: The ID of the flow.
+         * <p>
+         * This parameter is required when you update a flow or create a
+         * new flow version.
          * <p>
          * @return {@code this}
          * @param flowId Property flowId: The ID of the flow. This parameter is required.
@@ -233,20 +239,38 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
 
         /**
-         * Property parameters: The parameters of the flow.
+         * Property parameters: The parameters for the template.
+         * <p>
+         * You can specify up to 200 parameters.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is optional. If you use this parameter, you must specify both
+         * ParameterKey and ParameterValue for each entry.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param parameters Property parameters: The parameters of the flow. This parameter is required.
+         * @param parameters Property parameters: The parameters for the template. This parameter is required.
          */
         public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props.parameters(parameters);
             return this;
         }
         /**
-         * Property parameters: The parameters of the flow.
+         * Property parameters: The parameters for the template.
+         * <p>
+         * You can specify up to 200 parameters.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is optional. If you use this parameter, you must specify both
+         * ParameterKey and ParameterValue for each entry.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param parameters Property parameters: The parameters of the flow. This parameter is required.
+         * @param parameters Property parameters: The parameters for the template. This parameter is required.
          */
         public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.props.parameters(parameters);
@@ -277,6 +301,9 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         /**
          * Property templateId: The ID of the template.
          * <p>
+         * Specify this parameter when you create a flow from a
+         * template in the Template Center.
+         * <p>
          * @return {@code this}
          * @param templateId Property templateId: The ID of the template. This parameter is required.
          */
@@ -286,6 +313,9 @@ public class Flow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun
         }
         /**
          * Property templateId: The ID of the template.
+         * <p>
+         * Specify this parameter when you create a flow from a
+         * template in the Template Center.
          * <p>
          * @return {@code this}
          * @param templateId Property templateId: The ID of the template. This parameter is required.

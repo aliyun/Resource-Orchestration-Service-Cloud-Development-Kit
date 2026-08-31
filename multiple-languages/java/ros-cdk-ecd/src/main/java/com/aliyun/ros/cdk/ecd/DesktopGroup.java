@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecd;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::DesktopGroup</code>, which is used to create a cloud computer pool.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::DesktopGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.405Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:33:34.801Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.DesktopGroup")
 public class DesktopGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecd.IDesktopGroup {
 

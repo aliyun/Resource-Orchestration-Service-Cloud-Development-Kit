@@ -9,11 +9,12 @@ type InstanceV2Props struct {
 	//
 	// PRE: subscription.
 	ChargeType interface{} `field:"required" json:"chargeType" yaml:"chargeType"`
-	// Property instanceName: The name of instance.
-	InstanceName interface{} `field:"required" json:"instanceName" yaml:"instanceName"`
-	// Property storage: Resource specifications.
+	// Property instanceName: The name of the workspace.
 	//
-	// When ChargeType is configured as PRE, the resource specification parameters must be filled.
+	// The name must start with a lowercase letter, can
+	// contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
+	InstanceName interface{} `field:"required" json:"instanceName" yaml:"instanceName"`
+	// Property storage: The storage parameters.
 	Storage interface{} `field:"required" json:"storage" yaml:"storage"`
 	// Property vpcId: VPC ID.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
@@ -21,9 +22,12 @@ type InstanceV2Props struct {
 	VSwitchIds interface{} `field:"required" json:"vSwitchIds" yaml:"vSwitchIds"`
 	// Property architectureType: The architecture type, the value of the value is as follows: X86, ARM.
 	ArchitectureType interface{} `field:"optional" json:"architectureType" yaml:"architectureType"`
-	// Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
+	// Property autoRenew: Specifies whether to enable auto-renewal.
 	//
-	// false: Manual renewal.
+	// Valid values:
+	// - true: Auto-renewal is enabled.
+	// - false: Auto-renewal is disabled. This is the default value.
+	// > This parameter does not take effect for pay-as-you-go instances.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
 	// Property duration: Number of order cycle.
 	//

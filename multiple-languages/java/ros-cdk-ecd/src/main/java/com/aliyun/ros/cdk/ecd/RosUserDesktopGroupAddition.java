@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecd;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECD::UserDesktopGroupAddition</code>, which is used grant the permissions on a cloud computer pool to users.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ECD::UserDesktopGroupAddition</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.465Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:33:34.870Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.RosUserDesktopGroupAddition")
 public class RosUserDesktopGroupAddition extends com.aliyun.ros.cdk.core.RosResource {
 

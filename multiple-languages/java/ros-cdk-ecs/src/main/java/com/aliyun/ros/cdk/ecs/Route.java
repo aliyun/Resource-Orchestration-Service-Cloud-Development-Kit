@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Route</code>The , which resource type creates custom route entries.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::Route</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.215Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.604Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.Route")
 public class Route extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IRoute {
 
@@ -112,20 +112,44 @@ public class Route extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property destinationCidrBlock: The RouteEntry's target network segment.
+         * Property destinationCidrBlock: The destination CIDR block of the custom route entry.
+         * <p>
+         * IPv4 CIDR blocks, IPv6 CIDR
+         * blocks, and prefix lists are supported. You must specify one of the following
+         * parameters: <code>DestinationCidrBlock</code> and <code>DestinationPrefixListId</code>. The following
+         * requirements apply:
+         * <p>
+         * <ul>
+         * <li>The destination CIDR block cannot be 100.64.0.0/10 or a subset of
+         * 100.64.0.0/10.</li>
+         * <li>The destination CIDR block of a route entry cannot be the same as the
+         * destination CIDR block of another route entry in the same route table.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
+         * @param destinationCidrBlock Property destinationCidrBlock: The destination CIDR block of the custom route entry. This parameter is required.
          */
         public Builder destinationCidrBlock(final java.lang.String destinationCidrBlock) {
             this.props.destinationCidrBlock(destinationCidrBlock);
             return this;
         }
         /**
-         * Property destinationCidrBlock: The RouteEntry's target network segment.
+         * Property destinationCidrBlock: The destination CIDR block of the custom route entry.
+         * <p>
+         * IPv4 CIDR blocks, IPv6 CIDR
+         * blocks, and prefix lists are supported. You must specify one of the following
+         * parameters: <code>DestinationCidrBlock</code> and <code>DestinationPrefixListId</code>. The following
+         * requirements apply:
+         * <p>
+         * <ul>
+         * <li>The destination CIDR block cannot be 100.64.0.0/10 or a subset of
+         * 100.64.0.0/10.</li>
+         * <li>The destination CIDR block of a route entry cannot be the same as the
+         * destination CIDR block of another route entry in the same route table.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param destinationCidrBlock Property destinationCidrBlock: The RouteEntry's target network segment. This parameter is required.
+         * @param destinationCidrBlock Property destinationCidrBlock: The destination CIDR block of the custom route entry. This parameter is required.
          */
         public Builder destinationCidrBlock(final com.aliyun.ros.cdk.core.IResolvable destinationCidrBlock) {
             this.props.destinationCidrBlock(destinationCidrBlock);
@@ -154,24 +178,38 @@ public class Route extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property nextHopId: The route entry's next hop.
+         * Property nextHopId: The ID of the next hop.
          * <p>
-         * When the NextHopList is specified, the value will be ignored.
+         * <blockquote>
+         * <p>
+         * <h2>If <code>NextHopType</code> is set to <code>Ecr</code>, you can obtain the <code>AssociationId</code> by</h2>
+         * <p>
+         * </blockquote>
+         * <p>
+         * calling the DescribeExpressConnectRouterAssociation operation and use the ID
+         * as the next hop ID.
          * <p>
          * @return {@code this}
-         * @param nextHopId Property nextHopId: The route entry's next hop. This parameter is required.
+         * @param nextHopId Property nextHopId: The ID of the next hop. This parameter is required.
          */
         public Builder nextHopId(final java.lang.String nextHopId) {
             this.props.nextHopId(nextHopId);
             return this;
         }
         /**
-         * Property nextHopId: The route entry's next hop.
+         * Property nextHopId: The ID of the next hop.
          * <p>
-         * When the NextHopList is specified, the value will be ignored.
+         * <blockquote>
+         * <p>
+         * <h2>If <code>NextHopType</code> is set to <code>Ecr</code>, you can obtain the <code>AssociationId</code> by</h2>
+         * <p>
+         * </blockquote>
+         * <p>
+         * calling the DescribeExpressConnectRouterAssociation operation and use the ID
+         * as the next hop ID.
          * <p>
          * @return {@code this}
-         * @param nextHopId Property nextHopId: The route entry's next hop. This parameter is required.
+         * @param nextHopId Property nextHopId: The ID of the next hop. This parameter is required.
          */
         public Builder nextHopId(final com.aliyun.ros.cdk.core.IResolvable nextHopId) {
             this.props.nextHopId(nextHopId);

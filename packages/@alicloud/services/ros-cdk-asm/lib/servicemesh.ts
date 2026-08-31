@@ -20,7 +20,10 @@ export interface ServiceMeshProps {
     readonly vSwitches: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property accessLogEnabled: Specifies whether to enable access logging.
+     * Property accessLogEnabled: Specifies whether to enable access log. Valid values:
+     * - `true`: Enables access log.
+     * - `false`: Disables access log.
+     * Default value: `false`.
      */
     readonly accessLogEnabled?: boolean | ros.IResolvable;
 
@@ -32,7 +35,14 @@ export interface ServiceMeshProps {
     readonly accessLogFile?: string | ros.IResolvable;
 
     /**
-     * Property accessLogFormat: The format of access logs.
+     * Property accessLogFormat: The custom format of access logs. This parameter is available only if you enable
+     * access log. The value must be a JSON string that contains the following keys:
+     * authority_for, bytes_received, bytes_sent, downstream_local_address,
+     * downstream_remote_address, duration, istio_policy_status, method, path, protocol,
+     * requested_server_name, response_code, response_flags, route_name, start_time,
+     * trace_id, upstream_cluster, upstream_host, upstream_local_address,
+     * upstream_service_time, upstream_transport_failure_reason, user_agent, and
+     * x_forwarded_for.
      */
     readonly accessLogFormat?: string | ros.IResolvable;
 
@@ -86,7 +96,12 @@ export interface ServiceMeshProps {
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * Property autoRenewPeriod: ChargeType is a PrePay. Indicates the automatic renewal time when purchasing a CLB of the year and month type. If the purchase is less than 1 year old, this parameter indicates how many months the auto-renewal will take. If the purchase is longer than 1 year, this parameter indicates how many years the automatic renewal will be made.
+     * Property autoRenewPeriod: This parameter is valid only if you set `ChargeType` to `PrePay`. The
+     * auto-renewal period. If the subscription duration is less than one year, the
+     * value of this parameter indicates the number of months for which you want to
+     * renew the instance. If the subscription duration is more than one year, the value
+     * of this parameter indicates the number of years for which you want to renew the
+     * instance.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -124,7 +139,10 @@ export interface ServiceMeshProps {
     readonly configSourceNacosId?: string | ros.IResolvable;
 
     /**
-     * Property controlPlaneLogEnabled: Specifies whether to enable control plane logging.
+     * Property controlPlaneLogEnabled: Specifies whether to enable control plane log collection. Valid values:
+     * - `true`: Enables control plane log collection.
+     * - `false`: Disables control plane log collection.
+     * Default value: `false`.
      */
     readonly controlPlaneLogEnabled?: boolean | ros.IResolvable;
 
@@ -142,22 +160,34 @@ export interface ServiceMeshProps {
     readonly crAggregationEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property customizedPrometheus: Specifies whether to use a customized Prometheus system.
+     * Property customizedPrometheus: Specifies whether to use a self-managed Prometheus system. Valid values:
+     * - `true`: Uses a self-managed Prometheus system.
+     * - `false`: Does not use a self-managed Prometheus system.
+     * Default value: `false`.
      */
     readonly customizedPrometheus?: boolean | ros.IResolvable;
 
     /**
-     * Property customizedZipkin: Specifies whether to use a user-created Zipkin system.
+     * Property customizedZipkin: Specifies whether to use a self-managed Zipkin system. Valid values:
+     * - `true`: Uses a self-managed Zipkin system.
+     * - `false`: Uses Tracing Analysis.
+     * Default value: `false`.
      */
     readonly customizedZipkin?: boolean | ros.IResolvable;
 
     /**
-     * Property dnsProxyingEnabled: Specifies whether to enable DNS proxying.
+     * Property dnsProxyingEnabled: Specifies whether to enable DNS proxy. Valid values:
+     * - `true`: Enables DNS proxy.
+     * - `false`: Disables DNS proxy.
+     * Default value: `false`.
      */
     readonly dnsProxyingEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property dubboFilterEnabled: Specifies whether to enable Dubbo filter.
+     * Property dubboFilterEnabled: Specifies whether to enable the Dubbo filter. Valid values:
+     * - `true`: Enables the Dubbo filter.
+     * - `false`: Disables the Dubbo filter.
+     * Default value: `false`.
      */
     readonly dubboFilterEnabled?: boolean | ros.IResolvable;
 
@@ -184,12 +214,19 @@ export interface ServiceMeshProps {
     readonly enableAudit?: boolean | ros.IResolvable;
 
     /**
-     * Property enableCrHistory: Specifies whether to enable CR history.
+     * Property enableCrHistory: Specifies whether to enable the history version management feature for Istio
+     * resources in ASM. Valid values:
+     * - `true`: Enables the history version management feature.
+     * - `false`: Disables the history version management feature.
+     * Default value: `false`.
      */
     readonly enableCrHistory?: boolean | ros.IResolvable;
 
     /**
-     * Property enableSdsServer: Specifies whether to enable SDS server.
+     * Property enableSdsServer: Specifies whether to enable the Secret Discovery Service (SDS). Valid values:
+     * - `true`: Enables SDS.
+     * - `false`: Disables SDS.
+     * Default value: `false`.
      */
     readonly enableSdsServer?: boolean | ros.IResolvable;
 
@@ -219,7 +256,14 @@ export interface ServiceMeshProps {
     readonly existingCaKey?: string | ros.IResolvable;
 
     /**
-     * Property existingCaType: The type of existing CA.
+     * Property existingCaType: The type of the existing certificate:
+     * - 1: A self-signed certificate of Istiod. This corresponds to the istio-ca-secret
+     * secret in the istio-system namespace. If you use this type, you must also provide
+     * the `ExistingCaCert` and `ExsitingCaKey` parameters.
+     * - 2: An external certificate of Istiod. For more information, see plugin ca cert.
+     * This generally corresponds to the cacerts secret in the istio-system namespace.
+     * If you use this type, you must also provide the `ExisingRootCaCert` and
+     * `ExisingRootCaKey` parameters.
      */
     readonly existingCaType?: string | ros.IResolvable;
 
@@ -234,23 +278,31 @@ export interface ServiceMeshProps {
     readonly existingRootCaKey?: string | ros.IResolvable;
 
     /**
-     * Property filterGatewayClusterConfig: Specifies whether to filter gateway cluster configuration.
+     * Property filterGatewayClusterConfig: Specifies whether to enable gateway configuration filtering. Valid values:
+     * - `true`: Enables gateway configuration filtering.
+     * - `false`: Disables gateway configuration filtering.
+     * Default value: `false`.
      */
     readonly filterGatewayClusterConfig?: boolean | ros.IResolvable;
 
     /**
-     * Property gatewayApiEnabled: Specifies whether to enable Gateway API.
+     * Property gatewayApiEnabled: Specifies whether to enable the Gateway API. Valid values:
+     * - `true`: Enables the Gateway API.
+     * - `false`: Disables the Gateway API.
+     * Default value: `false`.
      */
     readonly gatewayApiEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property guestCluster: The guest cluster configuration.
+     * Property guestCluster: When you create a Service Mesh instance, you can add a cluster to the instance.
+     * If you do not specify this parameter, no cluster is added. The cluster must be in
+     * the same VPC and vSwitch as the Service Mesh instance, and must have the same
+     * domain name.
      */
     readonly guestCluster?: string | ros.IResolvable;
 
     /**
-     * Property includeIpRanges: The Classless Inter-Domain Routing (CIDR) block in the ASM instance that are denied
-     * to access external services.
+     * Property includeIpRanges: The IP address ranges that are allowed to access the proxy.
      */
     readonly includeIpRanges?: string | ros.IResolvable;
 
@@ -260,7 +312,12 @@ export interface ServiceMeshProps {
     readonly istioVersion?: string | ros.IResolvable;
 
     /**
-     * Property kialiEnabled: Specifies whether to enable Kiali.
+     * Property kialiEnabled: Specifies whether to enable the mesh topology feature. To enable this feature,
+     * you must first enable Prometheus monitoring. If Prometheus monitoring is
+     * disabled, this feature is forcibly disabled. Valid values:
+     * - `true`: Enables the mesh topology feature.
+     * - `false`: Disables the mesh topology feature.
+     * Default value: `false`.
      */
     readonly kialiEnabled?: boolean | ros.IResolvable;
 
@@ -276,22 +333,33 @@ export interface ServiceMeshProps {
     readonly localityLoadBalancing?: boolean | ros.IResolvable;
 
     /**
-     * Property mseEnabled: Specifies whether to enable MSE.
+     * Property mseEnabled: Specifies whether to enable Microservices Engine (MSE). Valid values:
+     * - `true`: Enables MSE.
+     * - `false`: Disables MSE.
+     * Default value: `false`.
      */
     readonly mseEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property multiBufferEnabled: Specifies whether to enable multi-buffer.
+     * Property multiBufferEnabled: Specifies whether to enable TLS performance optimization that is based on
+     * MultiBuffer. Valid values:
+     * - `true`: Enables the feature.
+     * - `false`: Disables the feature.
+     * Default value: `true`.
      */
     readonly multiBufferEnabled?: boolean | ros.IResolvable;
 
     /**
-     * Property multiBufferPollDelay: The poll delay for multi-buffer.
+     * Property multiBufferPollDelay: The synchronization period of the MultiBuffer enabling status. Default value:
+     * `30s`.
      */
     readonly multiBufferPollDelay?: string | ros.IResolvable;
 
     /**
-     * Property mysqlFilterEnabled: Specifies whether to enable MySQL filter.
+     * Property mysqlFilterEnabled: Specifies whether to enable the MySQL filter. Valid values:
+     * - `true`: Enables the MySQL filter.
+     * - `false`: Disables the MySQL filter.
+     * Default value: `false`.
      */
     readonly mysqlFilterEnabled?: boolean | ros.IResolvable;
 
@@ -306,7 +374,10 @@ export interface ServiceMeshProps {
     readonly opa?: RosServiceMesh.OPAProperty | ros.IResolvable;
 
     /**
-     * Property opaEnabled: Specifies whether to enable OPA.
+     * Property opaEnabled: Specifies whether to enable OPA. Valid values:
+     * - `true`: Enables OPA.
+     * - `false`: Disables OPA.
+     * Default value: `false`.
      */
     readonly opaEnabled?: boolean | ros.IResolvable;
 
@@ -316,12 +387,16 @@ export interface ServiceMeshProps {
     readonly outboundTrafficPolicy?: string | ros.IResolvable;
 
     /**
-     * Property period: The subscription period.
+     * Property period: This parameter is valid only if you set `ChargeType` to `PrePay`. The
+     * subscription duration of the SLB instance. Unit: months. If you want to purchase
+     * the instance for one year, enter 12.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property pilotLoadBalancerSpec: The specification for the pilot load balancer.
+     * Property pilotLoadBalancerSpec: The specification of the SLB instance that is bound to Istio Pilot of the control
+     * plane. Valid values: `slb.s1.small`, `slb.s2.small`, `slb.s2.medium`,
+     * `slb.s3.small`, `slb.s3.medium`, and `slb.s3.large`.
      */
     readonly pilotLoadBalancerSpec?: string | ros.IResolvable;
 
@@ -334,7 +409,10 @@ export interface ServiceMeshProps {
     readonly pilotPublicEip?: boolean | ros.IResolvable;
 
     /**
-     * Property playgroundScene: The playground scene configuration.
+     * Property playgroundScene: The playground scenario. If you specify this parameter, an ASM playground
+     * instance is created. Valid value:
+     * - ewmaLb: the exponentially weighted moving average (EWMA) load balancing
+     * scenario
      */
     readonly playgroundScene?: string | ros.IResolvable;
 
@@ -349,7 +427,11 @@ export interface ServiceMeshProps {
     readonly proxy?: RosServiceMesh.ProxyProperty | ros.IResolvable;
 
     /**
-     * Property telemetry: Specifies whether to enable Prometheus monitoring. We recommend that you use Application Real-Time Monitoring Service (ARMS).
+     * Property telemetry: Specifies whether to enable Prometheus monitoring. We recommend that you use
+     * Managed Service for Prometheus. Valid values:
+     * - `true`: Enables Prometheus monitoring.
+     * - `false`: Disables Prometheus monitoring.
+     * Default value: `false`.
      */
     readonly telemetry?: boolean | ros.IResolvable;
 
@@ -371,7 +453,10 @@ export interface ServiceMeshProps {
     readonly useExistingCa?: boolean | ros.IResolvable;
 
     /**
-     * Property webAssemblyFilterEnabled: Specifies whether to enable WebAssembly filter.
+     * Property webAssemblyFilterEnabled: Specifies whether to enable the WebAssembly filter. Valid values:
+     * - `true`: Enables the WebAssembly filter.
+     * - `false`: Disables the WebAssembly filter.
+     * Default value: `false`.
      */
     readonly webAssemblyFilterEnabled?: boolean | ros.IResolvable;
 }
@@ -388,7 +473,7 @@ export interface IServiceMesh extends ros.IResource {
     readonly attrServiceMeshId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`, which is used to create a Service Mesh (ASM) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ASM::ServiceMesh`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosServiceMesh`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-asm-servicemesh
  */

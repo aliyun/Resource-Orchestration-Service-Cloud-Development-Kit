@@ -38,8 +38,9 @@ export interface ResourceMetricRuleProps {
     readonly resources: Array<{ [key: string]: any }> | ros.IResolvable;
 
     /**
-     * Property compositeExpression: The trigger conditions for multiple metrics.
-     * Note: The trigger conditions for a single metric and multiple metrics are mutually exclusive. You cannot specify trigger conditions for a single metric and multiple metrics at the same time.
+     * Property compositeExpression: The alert conditions for multiple metrics.
+     * > The settings for a single metric and multiple metrics are mutually exclusive.
+     * You cannot configure both.
      */
     readonly compositeExpression?: RosResourceMetricRule.CompositeExpressionProperty | ros.IResolvable;
 
@@ -70,7 +71,9 @@ export interface ResourceMetricRuleProps {
     readonly interval?: number | ros.IResolvable;
 
     /**
-     * Property labels:
+     * Property labels: Labels to add to a triggered alert. These labels appear in the alert
+     * notification.
+     * > This feature is equivalent to the `label` feature in Prometheus alerting.
      */
     readonly labels?: Array<RosResourceMetricRule.LabelsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -94,8 +97,9 @@ export interface ResourceMetricRuleProps {
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property prometheus: The Prometheus alert rule.
-     * Note: This parameter is required only when you create a Prometheus alert rule for Hybrid Cloud Monitoring.
+     * Property prometheus: The configurations for a Prometheus alert rule.
+     * > You need to configure this parameter only when you create a Prometheus alert
+     * rule for CloudMonitor for Enterprise.
      */
     readonly prometheus?: RosResourceMetricRule.PrometheusProperty | ros.IResolvable;
 
@@ -142,7 +146,7 @@ export interface IResourceMetricRule extends ros.IResource {
     readonly attrRuleName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ResourceMetricRule`, which is used to create a threshold-triggered alert rule for a metric of a resource.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::ResourceMetricRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosResourceMetricRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-resourcemetricrule
  */

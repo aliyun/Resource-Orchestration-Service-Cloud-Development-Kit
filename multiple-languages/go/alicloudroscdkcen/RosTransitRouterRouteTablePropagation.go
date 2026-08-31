@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`, which is used to create a route learning correlation.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::TransitRouterRouteTablePropagation`.
 type RosTransitRouterRouteTablePropagation interface {
 	alicloudroscdkcore.RosResource
 	AttrResourceId() alicloudroscdkcore.IResolvable

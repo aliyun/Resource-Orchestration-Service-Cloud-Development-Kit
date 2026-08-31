@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.dns;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::DNS::MonitorConfig</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.876Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.479Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.MonitorConfig")
 public class MonitorConfig extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dns.IMonitorConfig {
 
@@ -154,20 +154,24 @@ public class MonitorConfig extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property interval: The interval of the monitor.
+         * Property interval: The health check interval.
+         * <p>
+         * Unit: seconds.
          * <p>
          * @return {@code this}
-         * @param interval Property interval: The interval of the monitor. This parameter is required.
+         * @param interval Property interval: The health check interval. This parameter is required.
          */
         public Builder interval(final java.lang.Number interval) {
             this.props.interval(interval);
             return this;
         }
         /**
-         * Property interval: The interval of the monitor.
+         * Property interval: The health check interval.
+         * <p>
+         * Unit: seconds.
          * <p>
          * @return {@code this}
-         * @param interval Property interval: The interval of the monitor. This parameter is required.
+         * @param interval Property interval: The health check interval. This parameter is required.
          */
         public Builder interval(final com.aliyun.ros.cdk.core.IResolvable interval) {
             this.props.interval(interval);
@@ -196,20 +200,102 @@ public class MonitorConfig extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property monitorExtendInfo: The extend info of the monitor.
+         * Property monitorExtendInfo: The extended information.
+         * <p>
+         * The parameters vary based on the protocol type.
+         * <p>
+         * <ul>
+         * <li>HTTP or HTTPS</li>
+         * <li>port: The health check port.</li>
+         * <li>host: The Host header.</li>
+         * <li>path: The URL path.</li>
+         * <li>code: The health check is considered abnormal if the returned HTTP status code
+         * is greater than this value.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         * is used only when the health check protocol is HTTPS. Valid values:</li>
+         * <li>true</li>
+         * <li>false</li>
+         * <li>nodeType: The type of the monitoring node. This parameter is used when the
+         * address pool type is DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>PING</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>packetNum: The number of ping packets.</li>
+         * <li>packetLossRate: The packet loss rate.</li>
+         * <li>nodeType: The type of the monitoring node. This parameter is used when the
+         * address pool type is DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>TCP</li>
+         * <li>port: The health check port.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>nodeType: The type of the monitoring node. This parameter is used when the
+         * address pool type is DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter must be a JSON string.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extend info of the monitor. This parameter is required.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information. This parameter is required.
          */
         public Builder monitorExtendInfo(final com.aliyun.ros.cdk.core.IResolvable monitorExtendInfo) {
             this.props.monitorExtendInfo(monitorExtendInfo);
             return this;
         }
         /**
-         * Property monitorExtendInfo: The extend info of the monitor.
+         * Property monitorExtendInfo: The extended information.
+         * <p>
+         * The parameters vary based on the protocol type.
+         * <p>
+         * <ul>
+         * <li>HTTP or HTTPS</li>
+         * <li>port: The health check port.</li>
+         * <li>host: The Host header.</li>
+         * <li>path: The URL path.</li>
+         * <li>code: The health check is considered abnormal if the returned HTTP status code
+         * is greater than this value.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         * is used only when the health check protocol is HTTPS. Valid values:</li>
+         * <li>true</li>
+         * <li>false</li>
+         * <li>nodeType: The type of the monitoring node. This parameter is used when the
+         * address pool type is DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>PING</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>packetNum: The number of ping packets.</li>
+         * <li>packetLossRate: The packet loss rate.</li>
+         * <li>nodeType: The type of the monitoring node. This parameter is used when the
+         * address pool type is DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * <li>TCP</li>
+         * <li>port: The health check port.</li>
+         * <li>failureRate: The failure rate.</li>
+         * <li>nodeType: The type of the monitoring node. This parameter is used when the
+         * address pool type is DOMAIN. Valid values:</li>
+         * <li>IPV4</li>
+         * <li>IPV6</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter must be a JSON string.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extend info of the monitor. This parameter is required.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information. This parameter is required.
          */
         public Builder monitorExtendInfo(final java.util.Map<java.lang.String, ? extends java.lang.Object> monitorExtendInfo) {
             this.props.monitorExtendInfo(monitorExtendInfo);
@@ -217,20 +303,38 @@ public class MonitorConfig extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property protocolType: The protocol type of the monitor.
+         * Property protocolType: The health check protocol.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>HTTP</li>
+         * <li>HTTPS</li>
+         * <li>PING</li>
+         * <li>TCP</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param protocolType Property protocolType: The protocol type of the monitor. This parameter is required.
+         * @param protocolType Property protocolType: The health check protocol. This parameter is required.
          */
         public Builder protocolType(final java.lang.String protocolType) {
             this.props.protocolType(protocolType);
             return this;
         }
         /**
-         * Property protocolType: The protocol type of the monitor.
+         * Property protocolType: The health check protocol.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>HTTP</li>
+         * <li>HTTPS</li>
+         * <li>PING</li>
+         * <li>TCP</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param protocolType Property protocolType: The protocol type of the monitor. This parameter is required.
+         * @param protocolType Property protocolType: The health check protocol. This parameter is required.
          */
         public Builder protocolType(final com.aliyun.ros.cdk.core.IResolvable protocolType) {
             this.props.protocolType(protocolType);
@@ -238,20 +342,24 @@ public class MonitorConfig extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property timeout: The timeout of the monitor.
+         * Property timeout: The timeout period.
+         * <p>
+         * Unit: milliseconds.
          * <p>
          * @return {@code this}
-         * @param timeout Property timeout: The timeout of the monitor. This parameter is required.
+         * @param timeout Property timeout: The timeout period. This parameter is required.
          */
         public Builder timeout(final java.lang.Number timeout) {
             this.props.timeout(timeout);
             return this;
         }
         /**
-         * Property timeout: The timeout of the monitor.
+         * Property timeout: The timeout period.
+         * <p>
+         * Unit: milliseconds.
          * <p>
          * @return {@code this}
-         * @param timeout Property timeout: The timeout of the monitor. This parameter is required.
+         * @param timeout Property timeout: The timeout period. This parameter is required.
          */
         public Builder timeout(final com.aliyun.ros.cdk.core.IResolvable timeout) {
             this.props.timeout(timeout);

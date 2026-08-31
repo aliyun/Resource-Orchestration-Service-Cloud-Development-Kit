@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * Represents a <code>Users</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.694Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:50:32.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.IUsers")
 @software.amazon.jsii.Jsii.Proxy(IUsers.Jsii$Proxy.class)
 public interface IUsers extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

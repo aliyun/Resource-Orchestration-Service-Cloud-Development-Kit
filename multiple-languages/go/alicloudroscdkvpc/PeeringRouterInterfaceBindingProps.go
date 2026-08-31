@@ -7,7 +7,7 @@ package alicloudroscdkvpc
 type PeeringRouterInterfaceBindingProps struct {
 	// Property oppositeInterfaceId: The connection peer RouterInterface ID.
 	OppositeInterfaceId interface{} `field:"required" json:"oppositeInterfaceId" yaml:"oppositeInterfaceId"`
-	// Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
+	// Property routerInterfaceId: The ID of the router interface.
 	RouterInterfaceId interface{} `field:"required" json:"routerInterfaceId" yaml:"routerInterfaceId"`
 	// Property oppositeInterfaceOwnerId: Owner account ID of the connection peer RouterInterface.
 	OppositeInterfaceOwnerId interface{} `field:"optional" json:"oppositeInterfaceOwnerId" yaml:"oppositeInterfaceOwnerId"`

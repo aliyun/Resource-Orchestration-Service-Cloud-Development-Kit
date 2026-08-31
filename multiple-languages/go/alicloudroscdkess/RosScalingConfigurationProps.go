@@ -8,6 +8,7 @@ type RosScalingConfigurationProps struct {
 	ScalingGroupId interface{} `field:"required" json:"scalingGroupId" yaml:"scalingGroupId"`
 	Affinity interface{} `field:"optional" json:"affinity" yaml:"affinity"`
 	Cpu interface{} `field:"optional" json:"cpu" yaml:"cpu"`
+	CpuOptions interface{} `field:"optional" json:"cpuOptions" yaml:"cpuOptions"`
 	CreditSpecification interface{} `field:"optional" json:"creditSpecification" yaml:"creditSpecification"`
 	DedicatedHostId interface{} `field:"optional" json:"dedicatedHostId" yaml:"dedicatedHostId"`
 	DeploymentSetId interface{} `field:"optional" json:"deploymentSetId" yaml:"deploymentSetId"`

@@ -76,7 +76,7 @@ function rosApiAttachmentPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::ApiAttachment`, which is used to attach an API.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::ApiAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApiAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-apiattachment
  */
@@ -1109,7 +1109,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`, which is used to create a domain name.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Domain`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-domain
  */
@@ -1546,7 +1546,7 @@ function rosGatewayPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Gateway`, which is used to create a Cloud-native API Gateway.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Gateway`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Gateway` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-gateway
  */
@@ -2290,7 +2290,7 @@ function rosHttpApiPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::HttpApi`, which is used to create an HTTP API.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::HttpApi`.
  * @Note This class does not contain additional functions, so it is recommended to use the `HttpApi` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-httpapi
  */
@@ -5939,7 +5939,7 @@ function rosOperationPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Operation`, which is used to create an operation for an HTTP API.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Operation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Operation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-operation
  */
@@ -6165,7 +6165,7 @@ function rosPluginPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Plugin`, which is used to create a plug-in.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Plugin`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Plugin` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-plugin
  */
@@ -6325,7 +6325,7 @@ function rosPluginAttachmentPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginAttachment`, which is used to bind a plug-in.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-pluginattachment
  */
@@ -6651,7 +6651,7 @@ function rosPluginClassPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginClass`, which is used to create a plug-in class.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::PluginClass`.
  * @Note This class does not contain additional functions, so it is recommended to use the `PluginClass` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-pluginclass
  */
@@ -6910,7 +6910,7 @@ function rosPolicyPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Policy`, which is used to create a policy.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Policy`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Policy` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-policy
  */
@@ -7129,7 +7129,7 @@ function rosRoutePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Route`, which is used to create a route for an HTTP API.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Route`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Route` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-route
  */
@@ -8023,7 +8023,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Service`, which is used to create a service.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::APIG::Service`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apig-service
  */

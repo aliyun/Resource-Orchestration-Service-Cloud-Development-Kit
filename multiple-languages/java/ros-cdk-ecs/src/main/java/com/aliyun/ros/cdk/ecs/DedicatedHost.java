@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::DedicatedHost</code>, which is used to create dedicated hosts.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::DedicatedHost</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.855Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.213Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHost")
 public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IDedicatedHost {
 
@@ -128,20 +128,26 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property dedicatedHostType: The instance type of host.
+         * Property dedicatedHostType: The dedicated host type.
+         * <p>
+         * You can call the <a href="">DescribeDedicatedHostTypes</a>
+         * operation to query the most recent list of dedicated host types.
          * <p>
          * @return {@code this}
-         * @param dedicatedHostType Property dedicatedHostType: The instance type of host. This parameter is required.
+         * @param dedicatedHostType Property dedicatedHostType: The dedicated host type. This parameter is required.
          */
         public Builder dedicatedHostType(final java.lang.String dedicatedHostType) {
             this.props.dedicatedHostType(dedicatedHostType);
             return this;
         }
         /**
-         * Property dedicatedHostType: The instance type of host.
+         * Property dedicatedHostType: The dedicated host type.
+         * <p>
+         * You can call the <a href="">DescribeDedicatedHostTypes</a>
+         * operation to query the most recent list of dedicated host types.
          * <p>
          * @return {@code this}
-         * @param dedicatedHostType Property dedicatedHostType: The instance type of host. This parameter is required.
+         * @param dedicatedHostType Property dedicatedHostType: The dedicated host type. This parameter is required.
          */
         public Builder dedicatedHostType(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostType) {
             this.props.dedicatedHostType(dedicatedHostType);
@@ -149,20 +155,42 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+         * Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the dedicated host fails or needs to be repaired online.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Migrate: The instances are migrated to another physical machine and then
+         * restarted.
+         * If cloud disks are attached to the dedicated host, the default value is Migrate.</li>
+         * <li>Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+         * instances are migrated to another physical machine and then restarted.
+         * If local disks are attached to the dedicated host, the default value is Stop.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param actionOnMaintenance Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop. This parameter is required.
+         * @param actionOnMaintenance Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the dedicated host fails or needs to be repaired online. This parameter is required.
          */
         public Builder actionOnMaintenance(final java.lang.String actionOnMaintenance) {
             this.props.actionOnMaintenance(actionOnMaintenance);
             return this;
         }
         /**
-         * Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+         * Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the dedicated host fails or needs to be repaired online.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Migrate: The instances are migrated to another physical machine and then
+         * restarted.
+         * If cloud disks are attached to the dedicated host, the default value is Migrate.</li>
+         * <li>Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+         * instances are migrated to another physical machine and then restarted.
+         * If local disks are attached to the dedicated host, the default value is Stop.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param actionOnMaintenance Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop. This parameter is required.
+         * @param actionOnMaintenance Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the dedicated host fails or needs to be repaired online. This parameter is required.
          */
         public Builder actionOnMaintenance(final com.aliyun.ros.cdk.core.IResolvable actionOnMaintenance) {
             this.props.actionOnMaintenance(actionOnMaintenance);
@@ -195,24 +223,44 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
+         * Property autoReleaseTime: The time when to automatically release the dedicated host.
          * <p>
-         * format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+         * Specify the time in
+         * the <code>ISO 8601</code> standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+         * UTC.
+         * <p>
+         * <blockquote></blockquote>
+         * <p>
+         * <ul>
+         * <li>It must be at least half an hour later than the current time.</li>
+         * <li>It must be at most three years later than the current time.</li>
+         * <li>If the value of seconds (ss) is not 00, it is automatically set to 00.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time. This parameter is required.
+         * @param autoReleaseTime Property autoReleaseTime: The time when to automatically release the dedicated host. This parameter is required.
          */
         public Builder autoReleaseTime(final java.lang.String autoReleaseTime) {
             this.props.autoReleaseTime(autoReleaseTime);
             return this;
         }
         /**
-         * Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
+         * Property autoReleaseTime: The time when to automatically release the dedicated host.
          * <p>
-         * format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+         * Specify the time in
+         * the <code>ISO 8601</code> standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+         * UTC.
+         * <p>
+         * <blockquote></blockquote>
+         * <p>
+         * <ul>
+         * <li>It must be at least half an hour later than the current time.</li>
+         * <li>It must be at most three years later than the current time.</li>
+         * <li>If the value of seconds (ss) is not 00, it is automatically set to 00.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time. This parameter is required.
+         * @param autoReleaseTime Property autoReleaseTime: The time when to automatically release the dedicated host. This parameter is required.
          */
         public Builder autoReleaseTime(final com.aliyun.ros.cdk.core.IResolvable autoReleaseTime) {
             this.props.autoReleaseTime(autoReleaseTime);
@@ -295,20 +343,48 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+         * Property cpuOverCommitRatio: The CPU overcommit ratio.
+         * <p>
+         * You can configure CPU overcommit ratios only for the
+         * following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+         * The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+         * host. You can use the following formula to calculate the number of available
+         * vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+         * cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+         * on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+         * dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+         * For scenarios that have minimal requirements on CPU stability or where CPU load
+         * is not heavy, such as development and test environments, you can increase the
+         * number of available vCPUs on a dedicated host by increasing the CPU overcommit
+         * ratio. This way, you can deploy more ECS instances of the same specifications on
+         * the dedicated host and reduce the unit deployment cost.
          * <p>
          * @return {@code this}
-         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host. This parameter is required.
+         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio. This parameter is required.
          */
         public Builder cpuOverCommitRatio(final java.lang.Number cpuOverCommitRatio) {
             this.props.cpuOverCommitRatio(cpuOverCommitRatio);
             return this;
         }
         /**
-         * Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+         * Property cpuOverCommitRatio: The CPU overcommit ratio.
+         * <p>
+         * You can configure CPU overcommit ratios only for the
+         * following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+         * The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+         * host. You can use the following formula to calculate the number of available
+         * vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+         * cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+         * on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+         * dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+         * For scenarios that have minimal requirements on CPU stability or where CPU load
+         * is not heavy, such as development and test environments, you can increase the
+         * number of available vCPUs on a dedicated host by increasing the CPU overcommit
+         * ratio. This way, you can deploy more ECS instances of the same specifications on
+         * the dedicated host and reduce the unit deployment cost.
          * <p>
          * @return {@code this}
-         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host. This parameter is required.
+         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio. This parameter is required.
          */
         public Builder cpuOverCommitRatio(final com.aliyun.ros.cdk.core.IResolvable cpuOverCommitRatio) {
             this.props.cpuOverCommitRatio(cpuOverCommitRatio);
@@ -337,24 +413,28 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
+         * Property dedicatedHostName: The name of the dedicated host.
          * <p>
-         * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * The name must be 2 to 128 characters in length
+         * and can contain letters and digits. The name can contain colons (:), underscores
+         * (_), periods (.), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. This parameter is required.
+         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host. This parameter is required.
          */
         public Builder dedicatedHostName(final java.lang.String dedicatedHostName) {
             this.props.dedicatedHostName(dedicatedHostName);
             return this;
         }
         /**
-         * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
+         * Property dedicatedHostName: The name of the dedicated host.
          * <p>
-         * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * The name must be 2 to 128 characters in length
+         * and can contain letters and digits. The name can contain colons (:), underscores
+         * (_), periods (.), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters. This parameter is required.
+         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host. This parameter is required.
          */
         public Builder dedicatedHostName(final com.aliyun.ros.cdk.core.IResolvable dedicatedHostName) {
             this.props.dedicatedHostName(dedicatedHostName);
@@ -362,20 +442,26 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property description: The description of host.
+         * Property description: The description of the dedicated host.
+         * <p>
+         * The description must be 2 to 256
+         * characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of host. This parameter is required.
+         * @param description Property description: The description of the dedicated host. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: The description of host.
+         * Property description: The description of the dedicated host.
+         * <p>
+         * The description must be 2 to 256
+         * characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of host. This parameter is required.
+         * @param description Property description: The description of the dedicated host. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -383,20 +469,38 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property minQuantity: The minimum number of dedicated hosts that you want to create.
+         * Property minQuantity: The minimum number of dedicated hosts to create.
+         * <p>
+         * Valid values: 1 to 100.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the number of available dedicated hosts is less than the minimum number of
+         * dedicated hosts to create, the dedicated hosts fail to be created.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts that you want to create. This parameter is required.
+         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts to create. This parameter is required.
          */
         public Builder minQuantity(final java.lang.Number minQuantity) {
             this.props.minQuantity(minQuantity);
             return this;
         }
         /**
-         * Property minQuantity: The minimum number of dedicated hosts that you want to create.
+         * Property minQuantity: The minimum number of dedicated hosts to create.
+         * <p>
+         * Valid values: 1 to 100.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the number of available dedicated hosts is less than the minimum number of
+         * dedicated hosts to create, the dedicated hosts fail to be created.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts that you want to create. This parameter is required.
+         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts to create. This parameter is required.
          */
         public Builder minQuantity(final com.aliyun.ros.cdk.core.IResolvable minQuantity) {
             this.props.minQuantity(minQuantity);
@@ -563,20 +667,26 @@ public class DedicatedHost extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property zoneId: The zone to create the host.
+         * Property zoneId: The ID of the zone in which to create the dedicated host.
+         * <p>
+         * This parameter is empty by default. If you do not specify a zone, the system
+         * selects a zone.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The zone to create the host. This parameter is required.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the dedicated host. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }
         /**
-         * Property zoneId: The zone to create the host.
+         * Property zoneId: The ID of the zone in which to create the dedicated host.
+         * <p>
+         * This parameter is empty by default. If you do not specify a zone, the system
+         * selects a zone.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: The zone to create the host. This parameter is required.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the dedicated host. This parameter is required.
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);

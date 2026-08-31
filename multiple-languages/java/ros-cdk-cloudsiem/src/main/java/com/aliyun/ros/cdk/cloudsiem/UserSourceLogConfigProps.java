@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudsiem;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsiem-usersourcelogconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:51:36.518Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:39:59.125Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsiem.$Module.class, fqn = "@alicloud/ros-cdk-cloudsiem.UserSourceLogConfigProps")
 @software.amazon.jsii.Jsii.Proxy(UserSourceLogConfigProps.Jsii$Proxy.class)
 public interface UserSourceLogConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -18,7 +18,9 @@ public interface UserSourceLogConfigProps extends software.amazon.jsii.JsiiSeria
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceLogCode();
 
     /**
-     * Property sourceLogInfo: The info of log to be added.
+     * Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected.
+     * <p>
+     * The value is a JSON string.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceLogInfo();
 
@@ -73,7 +75,8 @@ public interface UserSourceLogConfigProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link UserSourceLogConfigProps#getSourceLogInfo}
-         * @param sourceLogInfo Property sourceLogInfo: The info of log to be added. This parameter is required.
+         * @param sourceLogInfo Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected. This parameter is required.
+         *                      The value is a JSON string.
          * @return {@code this}
          */
         public Builder sourceLogInfo(com.aliyun.ros.cdk.core.IResolvable sourceLogInfo) {
@@ -83,7 +86,8 @@ public interface UserSourceLogConfigProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link UserSourceLogConfigProps#getSourceLogInfo}
-         * @param sourceLogInfo Property sourceLogInfo: The info of log to be added. This parameter is required.
+         * @param sourceLogInfo Property sourceLogInfo: The detailed information about the Simple Log Service (SLS) log to be collected. This parameter is required.
+         *                      The value is a JSON string.
          * @return {@code this}
          */
         public Builder sourceLogInfo(com.aliyun.ros.cdk.cloudsiem.RosUserSourceLogConfig.SourceLogInfoProperty sourceLogInfo) {

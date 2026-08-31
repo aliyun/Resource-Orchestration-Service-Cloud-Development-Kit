@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudstoragegateway.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CloudStorageGateway::StorageBundle</code>, which is used to query the information about a gateway cluster.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::CloudStorageGateway::StorageBundle</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:55:20.354Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:43:59.820Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.datasource.RosStorageBundle")
 public class RosStorageBundle extends com.aliyun.ros.cdk.core.RosResource {
 

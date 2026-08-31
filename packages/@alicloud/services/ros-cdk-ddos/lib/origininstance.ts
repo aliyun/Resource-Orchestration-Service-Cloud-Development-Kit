@@ -90,7 +90,7 @@ export interface IOriginInstance extends ros.IResource {
     readonly attrInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DDoS::OriginInstance`, which is used to create an Anti-DDoS Origin instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DDoS::OriginInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosOriginInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-origininstance
  */

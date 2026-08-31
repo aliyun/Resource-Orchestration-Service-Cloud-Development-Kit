@@ -18,14 +18,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             get;
         }
 
-        /// <summary>Property adjustmentType: Adjustment mode of a scaling rule.</summary>
+        /// <summary>Property adjustmentType: The adjustment method of the scaling rule.</summary>
         /// <remarks>
-        /// Optional values:
+        /// If you set ScalingRuleType to
+        /// SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+        /// values:
         ///
         /// <list type="bullet">
-        /// <description>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</description>
-        /// <description>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</description>
-        /// <description>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</description>
+        /// <description>QuantityChangeInCapacity: adds the specified number of ECS instances to or
+        /// removes the specified number of ECS instances from the scaling group.</description>
+        /// <description>PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+        /// removes the specified percentage of ECS instances from the scaling group.</description>
+        /// <description>TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+        /// specified number.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "adjustmentType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -38,14 +43,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property adjustmentValue: Adjusted value of a scaling rule.</summary>
+        /// <summary>Property adjustmentValue: The number of instances that must be scaled based on the scaling rule.</summary>
         /// <remarks>
-        /// Value range:
+        /// If you set
+        /// ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+        /// parameter. The number of ECS instances that must be scaled in a scaling activity
+        /// cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+        /// AdjustmentType.
         ///
         /// <list type="bullet">
-        /// <description>QuantityChangeInCapacity: [-500, 500]</description>
-        /// <description>PercentChangeInCapacity: [-100, 10000]</description>
-        /// <description>TotalCapacity: [0, 1000]</description>
+        /// <description>Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to</description>
+        /// </list>
+        ///
+        /// <list type="number">
+        /// <description></description>
+        /// </list>
+        ///
+        /// <list type="bullet">
+        /// <description>Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to</description>
+        /// </list>
+        ///
+        /// <list type="number">
+        /// <description></description>
+        /// </list>
+        ///
+        /// <list type="bullet">
+        /// <description>Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "adjustmentValue", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -58,9 +81,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property cooldown: Cool-down time of a scaling rule.</summary>
+        /// <summary>Property cooldown: The cooldown period of the scaling rule.</summary>
         /// <remarks>
-        /// Value range: [0, 86,400], in seconds. The default value is empty.
+        /// This parameter is available only if you
+        /// set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+        /// seconds.
+        /// You can leave this parameter empty.
         /// </remarks>
         [JsiiProperty(name: "cooldown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -264,9 +290,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.</summary>
+        /// <summary>Property scalingRuleName: The name of the scaling rule.</summary>
         /// <remarks>
-        /// It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+        /// The name must be 2 to 64 characters in length, and
+        /// can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+        /// name must start with a letter or a digit.
+        /// The name of a scaling rule must be unique within an account in a
+        /// region.
+        ///
+        ///     If you leave this parameter empty, the scaling rule ID is used.
         /// </remarks>
         [JsiiProperty(name: "scalingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -300,7 +332,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
             }
         }
 
-        /// <summary>Property stepAdjustment:.</summary>
+        /// <summary>Property stepAdjustment: Details of the step adjustments.</summary>
         [JsiiProperty(name: "stepAdjustment", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingRule.StepAdjustmentProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? StepAdjustment
@@ -343,14 +375,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property adjustmentType: Adjustment mode of a scaling rule.</summary>
+            /// <summary>Property adjustmentType: The adjustment method of the scaling rule.</summary>
             /// <remarks>
-            /// Optional values:
+            /// If you set ScalingRuleType to
+            /// SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+            /// values:
             ///
             /// <list type="bullet">
-            /// <description>QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.</description>
-            /// <description>PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.</description>
-            /// <description>TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.</description>
+            /// <description>QuantityChangeInCapacity: adds the specified number of ECS instances to or
+            /// removes the specified number of ECS instances from the scaling group.</description>
+            /// <description>PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+            /// removes the specified percentage of ECS instances from the scaling group.</description>
+            /// <description>TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+            /// specified number.</description>
             /// </list>
             /// </remarks>
             [JsiiOptional]
@@ -360,14 +397,32 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property adjustmentValue: Adjusted value of a scaling rule.</summary>
+            /// <summary>Property adjustmentValue: The number of instances that must be scaled based on the scaling rule.</summary>
             /// <remarks>
-            /// Value range:
+            /// If you set
+            /// ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+            /// parameter. The number of ECS instances that must be scaled in a scaling activity
+            /// cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+            /// AdjustmentType.
             ///
             /// <list type="bullet">
-            /// <description>QuantityChangeInCapacity: [-500, 500]</description>
-            /// <description>PercentChangeInCapacity: [-100, 10000]</description>
-            /// <description>TotalCapacity: [0, 1000]</description>
+            /// <description>Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to</description>
+            /// </list>
+            ///
+            /// <list type="number">
+            /// <description></description>
+            /// </list>
+            ///
+            /// <list type="bullet">
+            /// <description>Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to</description>
+            /// </list>
+            ///
+            /// <list type="number">
+            /// <description></description>
+            /// </list>
+            ///
+            /// <list type="bullet">
+            /// <description>Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.</description>
             /// </list>
             /// </remarks>
             [JsiiOptional]
@@ -377,9 +432,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property cooldown: Cool-down time of a scaling rule.</summary>
+            /// <summary>Property cooldown: The cooldown period of the scaling rule.</summary>
             /// <remarks>
-            /// Value range: [0, 86,400], in seconds. The default value is empty.
+            /// This parameter is available only if you
+            /// set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+            /// seconds.
+            /// You can leave this parameter empty.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cooldown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -547,9 +605,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters.</summary>
+            /// <summary>Property scalingRuleName: The name of the scaling rule.</summary>
             /// <remarks>
-            /// It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+            /// The name must be 2 to 64 characters in length, and
+            /// can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+            /// name must start with a letter or a digit.
+            /// The name of a scaling rule must be unique within an account in a
+            /// region.
+            ///
+            ///     If you leave this parameter empty, the scaling rule ID is used.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scalingRuleName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -577,7 +641,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ess
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property stepAdjustment:.</summary>
+            /// <summary>Property stepAdjustment: Details of the step adjustments.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "stepAdjustment", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ess.RosScalingRule.StepAdjustmentProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? StepAdjustment

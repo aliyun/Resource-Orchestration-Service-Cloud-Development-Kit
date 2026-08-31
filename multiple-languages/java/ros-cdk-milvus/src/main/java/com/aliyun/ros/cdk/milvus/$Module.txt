@@ -1,0 +1,9 @@
+@alicloud/ros-cdk-milvus.IInstance=com.aliyun.ros.cdk.milvus.IInstance
+@alicloud/ros-cdk-milvus.Instance=com.aliyun.ros.cdk.milvus.Instance
+@alicloud/ros-cdk-milvus.InstanceProps=com.aliyun.ros.cdk.milvus.InstanceProps
+@alicloud/ros-cdk-milvus.RosInstance=com.aliyun.ros.cdk.milvus.RosInstance
+@alicloud/ros-cdk-milvus.RosInstance.BackupRestoreInfoProperty=com.aliyun.ros.cdk.milvus.RosInstance$BackupRestoreInfoProperty
+@alicloud/ros-cdk-milvus.RosInstance.ComponentsProperty=com.aliyun.ros.cdk.milvus.RosInstance$ComponentsProperty
+@alicloud/ros-cdk-milvus.RosInstance.TagsProperty=com.aliyun.ros.cdk.milvus.RosInstance$TagsProperty
+@alicloud/ros-cdk-milvus.RosInstance.VSwitchIdsProperty=com.aliyun.ros.cdk.milvus.RosInstance$VSwitchIdsProperty
+@alicloud/ros-cdk-milvus.RosInstanceProps=com.aliyun.ros.cdk.milvus.RosInstanceProps

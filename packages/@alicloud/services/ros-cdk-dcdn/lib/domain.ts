@@ -20,7 +20,7 @@ export interface DomainProps {
     readonly sources: Array<RosDomain.SourcesProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property checkUrl: The validation of the origin.
+     * Property checkUrl: The health check URL.
      */
     readonly checkUrl?: string | ros.IResolvable;
 

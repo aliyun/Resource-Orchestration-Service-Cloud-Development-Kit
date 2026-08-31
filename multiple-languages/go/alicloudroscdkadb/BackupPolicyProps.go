@@ -11,21 +11,28 @@ type BackupPolicyProps struct {
 	//
 	// Valid values: Monday, Tuesday, Wednesday, Thursday, Friday, Saturday, Sunday.
 	PreferredBackupPeriod interface{} `field:"required" json:"preferredBackupPeriod" yaml:"preferredBackupPeriod"`
-	// Property preferredBackupTime: The preferred backup time.
+	// Property preferredBackupTime: The start time of the full backup within a time range.
 	//
-	// Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+	// Specify the time range in
+	// the HH:mmZ-HH:mmZ format. The time must be in UTC.
+	// >  The time range is 1 hour.
 	PreferredBackupTime interface{} `field:"required" json:"preferredBackupTime" yaml:"preferredBackupTime"`
-	// Property backupRetentionPeriod: The number of days for which backup files are retained.
+	// Property backupRetentionPeriod: The number of days for which to retain full backup files.
 	//
 	// Valid values: 7 to 730.
+	// >  If you do not specify this parameter, the default value 7 is used.
 	BackupRetentionPeriod interface{} `field:"optional" json:"backupRetentionPeriod" yaml:"backupRetentionPeriod"`
-	// Property enableBackupLog: Whether to enable log backup.
+	// Property enableBackupLog: Specifies whether to enable real-time log backup.
 	//
-	// Valid values: Enable, Disable.
+	// Valid values:
+	// *   Enable
+	// *   Disable
+	// > If you leave this parameter empty, the default value Enable is used.
 	EnableBackupLog interface{} `field:"optional" json:"enableBackupLog" yaml:"enableBackupLog"`
-	// Property logBackupRetentionPeriod: The number of days for which log backup files are retained.
+	// Property logBackupRetentionPeriod: The number of days for which to retain log backup files.
 	//
 	// Valid values: 7 to 730.
+	// >  If you do not specify this parameter, the default value 7 is used.
 	LogBackupRetentionPeriod interface{} `field:"optional" json:"logBackupRetentionPeriod" yaml:"logBackupRetentionPeriod"`
 }
 

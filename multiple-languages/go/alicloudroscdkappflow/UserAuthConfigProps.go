@@ -5,7 +5,9 @@ package alicloudroscdkappflow
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
 type UserAuthConfigProps struct {
-	// Property authConfig: AuthConfig.
+	// Property authConfig: The details of the authentication configuration.
+	//
+	// The value is a JSON string.
 	AuthConfig interface{} `field:"required" json:"authConfig" yaml:"authConfig"`
 	// Property authConfigName: The name of the config.
 	AuthConfigName interface{} `field:"required" json:"authConfigName" yaml:"authConfigName"`

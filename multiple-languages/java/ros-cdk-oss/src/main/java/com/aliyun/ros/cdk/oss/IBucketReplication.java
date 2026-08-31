@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss;
 /**
  * Represents a <code>BucketReplication</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.873Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:18:25.404Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.IBucketReplication")
 @software.amazon.jsii.Jsii.Proxy(IBucketReplication.Jsii$Proxy.class)
 public interface IBucketReplication extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

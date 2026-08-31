@@ -5,23 +5,25 @@ package com.aliyun.ros.cdk.polardbx;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardbx-dbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:29:50.440Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:43:55.802Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardbx.$Module.class, fqn = "@alicloud/ros-cdk-polardbx.DBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(DBInstanceProps.Jsii$Proxy.class)
 public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property dbNodeClass: The specification of the nodes in the instance you want to create.
+     * Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbNodeClass();
 
     /**
-     * Property dbNodeCount: The number of nodes in the instance you want to create.
+     * Property dbNodeCount: Number of instance nodes.
+     * <p>
+     * Minimum value is 2.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDbNodeCount();
 
     /**
-     * Property engineVersion: The version of the database engine.
+     * Property engineVersion: MySQL engine version, either 5.7 or 8.0.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEngineVersion();
 
@@ -82,7 +84,9 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property resourceGroupId: The ID of resource group.
+     * Property resourceGroupId: Can be empty.
+     * <p>
+     * Resource group ID. Not supported for now.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
@@ -147,7 +151,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbNodeClass}
-         * @param dbNodeClass Property dbNodeClass: The specification of the nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeClass Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB. This parameter is required.
          * @return {@code this}
          */
         public Builder dbNodeClass(java.lang.String dbNodeClass) {
@@ -157,7 +161,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbNodeClass}
-         * @param dbNodeClass Property dbNodeClass: The specification of the nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeClass Property dbNodeClass: Node specifications: - polarx.x4.medium.2e: 2 vCPUs, 8 GB - polarx.x4.large.2e: 4 vCPUs, 16 GB - polarx.x8.large.2e: 4 vCPUs, 32 GB - polarx.x4.xlarge.2e: 8 vCPUs, 32 GB - polarx.x8.xlarge.2e: 8 vCPUs, 64 GB - polarx.x4.2xlarge.2e: 16 vCPUs, 64 GB - polarx.x8.2xlarge.2e: 16 vCPUs, 128 GB - polarx.x4.4xlarge.2e: 32 vCPUs, 128 GB - polarx.x8.4xlarge.2e: 32 vCPUs, 256 GB - polarx.st.8xlarge.2e: 60 vCPUs, 470 GB - polarx.st.12xlarge.2e: 90 vCPUs, 720 GB. This parameter is required.
          * @return {@code this}
          */
         public Builder dbNodeClass(com.aliyun.ros.cdk.core.IResolvable dbNodeClass) {
@@ -167,7 +171,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbNodeCount}
-         * @param dbNodeCount Property dbNodeCount: The number of nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: Number of instance nodes. This parameter is required.
+         *                    Minimum value is 2.
          * @return {@code this}
          */
         public Builder dbNodeCount(java.lang.Number dbNodeCount) {
@@ -177,7 +182,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getDbNodeCount}
-         * @param dbNodeCount Property dbNodeCount: The number of nodes in the instance you want to create. This parameter is required.
+         * @param dbNodeCount Property dbNodeCount: Number of instance nodes. This parameter is required.
+         *                    Minimum value is 2.
          * @return {@code this}
          */
         public Builder dbNodeCount(com.aliyun.ros.cdk.core.IResolvable dbNodeCount) {
@@ -187,7 +193,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
+         * @param engineVersion Property engineVersion: MySQL engine version, either 5.7 or 8.0. This parameter is required.
          * @return {@code this}
          */
         public Builder engineVersion(java.lang.String engineVersion) {
@@ -197,7 +203,7 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getEngineVersion}
-         * @param engineVersion Property engineVersion: The version of the database engine. This parameter is required.
+         * @param engineVersion Property engineVersion: MySQL engine version, either 5.7 or 8.0. This parameter is required.
          * @return {@code this}
          */
         public Builder engineVersion(com.aliyun.ros.cdk.core.IResolvable engineVersion) {
@@ -375,7 +381,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The ID of resource group.
+         * @param resourceGroupId Property resourceGroupId: Can be empty.
+         *                        Resource group ID. Not supported for now.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -385,7 +392,8 @@ public interface DBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBInstanceProps#getResourceGroupId}
-         * @param resourceGroupId Property resourceGroupId: The ID of resource group.
+         * @param resourceGroupId Property resourceGroupId: Can be empty.
+         *                        Resource group ID. Not supported for now.
          * @return {@code this}
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {

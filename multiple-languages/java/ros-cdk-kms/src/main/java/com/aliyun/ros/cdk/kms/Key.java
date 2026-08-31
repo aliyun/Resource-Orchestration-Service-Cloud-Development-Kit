@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Key</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:39:52.862Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:55:06.325Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Key")
 public class Key extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.IKey {
 
@@ -172,20 +172,34 @@ public class Key extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * Property dkmsInstanceId: The ID of the KMS instance.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when you create a key for a KMS instance. This
+         * parameter is not required when you create a default key (master key).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance. This parameter is required.
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the KMS instance. This parameter is required.
          */
         public Builder dkmsInstanceId(final java.lang.String dkmsInstanceId) {
             this.props().dkmsInstanceId(dkmsInstanceId);
             return this;
         }
         /**
-         * Property dkmsInstanceId: The ID of the dedicated KMS instance.
+         * Property dkmsInstanceId: The ID of the KMS instance.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when you create a key for a KMS instance. This
+         * parameter is not required when you create a default key (master key).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the dedicated KMS instance. This parameter is required.
+         * @param dkmsInstanceId Property dkmsInstanceId: The ID of the KMS instance. This parameter is required.
          */
         public Builder dkmsInstanceId(final com.aliyun.ros.cdk.core.IResolvable dkmsInstanceId) {
             this.props().dkmsInstanceId(dkmsInstanceId);
@@ -345,28 +359,72 @@ public class Key extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property protectionLevel: The protection level of the CMK to create.
+         * Property protectionLevel: You do not need to specify this parameter.
          * <p>
-         * Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-         * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-         * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+         * KMS automatically sets an appropriate
+         * protection level for your key.
+         * The protection level of the key. Valid values:
+         * <p>
+         * <ul>
+         * <li>SOFTWARE</li>
+         * <li>HSM</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+         * a software key management instance, the protection level is SOFTWARE. If the
+         * instance is a hardware key management instance, the protection level is HSM.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+         * protection level. If a managed HSM is available in the region, KMS sets this
+         * parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+         * information, see <a href="">Managed HSM overview</a>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param protectionLevel Property protectionLevel: The protection level of the CMK to create. This parameter is required.
+         * @param protectionLevel Property protectionLevel: You do not need to specify this parameter. This parameter is required.
          */
         public Builder protectionLevel(final java.lang.String protectionLevel) {
             this.props().protectionLevel(protectionLevel);
             return this;
         }
         /**
-         * Property protectionLevel: The protection level of the CMK to create.
+         * Property protectionLevel: You do not need to specify this parameter.
          * <p>
-         * Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-         * If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-         * If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+         * KMS automatically sets an appropriate
+         * protection level for your key.
+         * The protection level of the key. Valid values:
+         * <p>
+         * <ul>
+         * <li>SOFTWARE</li>
+         * <li>HSM</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+         * a software key management instance, the protection level is SOFTWARE. If the
+         * instance is a hardware key management instance, the protection level is HSM.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+         * protection level. If a managed HSM is available in the region, KMS sets this
+         * parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+         * information, see <a href="">Managed HSM overview</a>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param protectionLevel Property protectionLevel: The protection level of the CMK to create. This parameter is required.
+         * @param protectionLevel Property protectionLevel: You do not need to specify this parameter. This parameter is required.
          */
         public Builder protectionLevel(final com.aliyun.ros.cdk.core.IResolvable protectionLevel) {
             this.props().protectionLevel(protectionLevel);
@@ -374,24 +432,54 @@ public class Key extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         }
 
         /**
-         * Property rotationInterval: The time period for automatic rotation.
+         * Property rotationInterval: The automatic rotation period.
          * <p>
-         * The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+         * The format is <code>integer[unit]</code>. <code>integer</code>
+         * indicates the length of the period. <code>unit</code> indicates the unit of time. Valid
+         * units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+         * 604800s represent a period of 7 days.
+         * <p>
+         * <ul>
+         * <li>If the key is a default key, the value is 365d.</li>
+         * <li>If the key is a software-protected key, the value can be from 7d to 365d.</li>
+         * <li>If the key is a hardware-protected key, automatic rotation is not supported.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set EnableAutomaticRotation to true.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param rotationInterval Property rotationInterval: The time period for automatic rotation. This parameter is required.
+         * @param rotationInterval Property rotationInterval: The automatic rotation period. This parameter is required.
          */
         public Builder rotationInterval(final java.lang.String rotationInterval) {
             this.props().rotationInterval(rotationInterval);
             return this;
         }
         /**
-         * Property rotationInterval: The time period for automatic rotation.
+         * Property rotationInterval: The automatic rotation period.
          * <p>
-         * The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+         * The format is <code>integer[unit]</code>. <code>integer</code>
+         * indicates the length of the period. <code>unit</code> indicates the unit of time. Valid
+         * units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+         * 604800s represent a period of 7 days.
+         * <p>
+         * <ul>
+         * <li>If the key is a default key, the value is 365d.</li>
+         * <li>If the key is a software-protected key, the value can be from 7d to 365d.</li>
+         * <li>If the key is a hardware-protected key, automatic rotation is not supported.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set EnableAutomaticRotation to true.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param rotationInterval Property rotationInterval: The time period for automatic rotation. This parameter is required.
+         * @param rotationInterval Property rotationInterval: The automatic rotation period. This parameter is required.
          */
         public Builder rotationInterval(final com.aliyun.ros.cdk.core.IResolvable rotationInterval) {
             this.props().rotationInterval(rotationInterval);

@@ -30,15 +30,21 @@ type ClusterProps struct {
 	// ldap
 	// Default value: nis.
 	AccountType interface{} `field:"optional" json:"accountType" yaml:"accountType"`
-	// Property additionalVolumes:.
+	// Property additionalVolumes: The information of the NAS file system.
 	AdditionalVolumes interface{} `field:"optional" json:"additionalVolumes" yaml:"additionalVolumes"`
 	// Property application: Application software tag (SoftwareTag) list, You can call ListSoftwares API to query.
 	Application interface{} `field:"optional" json:"application" yaml:"application"`
-	// Property autoRenew: true: automatic renewals;
+	// Property autoRenew: Specifies whether to enable auto-renewal.
 	//
-	// false: no automatic renewals.
+	// Valid values:
+	// *   true
+	// *   false
+	// Default value: false.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+	// Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes.
+	//
+	// The parameter takes
+	// effect when AutoRenew is set to true.
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	// Property clientVersion: The version of the E-HPC client.
 	//
@@ -52,9 +58,21 @@ type ClusterProps struct {
 	// false: Hyper-threading is not supported.
 	// Default value: true.
 	ComputeEnableHt interface{} `field:"optional" json:"computeEnableHt" yaml:"computeEnableHt"`
-	// Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+	// Property computeSpotPriceLimit: The maximum hourly price of the compute nodes.
+	//
+	// A maximum of three decimal places
+	// can be used in the value of the parameter. The parameter is valid only when the
+	// ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
 	ComputeSpotPriceLimit interface{} `field:"optional" json:"computeSpotPriceLimit" yaml:"computeSpotPriceLimit"`
-	// Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo.
+	// Property computeSpotStrategy: The bidding method of the compute nodes.
+	//
+	// Valid values:
+	// *   NoSpot: The compute nodes are pay-as-you-go instances.
+	// *   SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+	// user-defined maximum hourly price.
+	// *   SpotAsPriceGo: The compute nodes are preemptible instances for which the
+	// market price at the time of purchase is used as the bid price.
+	// Default value: NoSpot.
 	ComputeSpotStrategy interface{} `field:"optional" json:"computeSpotStrategy" yaml:"computeSpotStrategy"`
 	// Property deployMode: The mode in which the cluster is deployed.
 	//
@@ -64,7 +82,10 @@ type ClusterProps struct {
 	// Tiny: A management node and multiple compute nodes are deployed. The management node consists of an account node, a scheduling node, and a logon node. The compute nodes are separately deployed.
 	// Default value: Standard.
 	DeployMode interface{} `field:"optional" json:"deployMode" yaml:"deployMode"`
-	// Property description: Cluster description, 2 to 128 characters.
+	// Property description: The description of the E-HPC cluster.
+	//
+	// The description must be 2 to 256 characters
+	// in length and cannot start with `http:\/\/` or `https:\/\/`.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property ecsChargeType: ECS instance payment type, PostPaid: Pay-As-You-Go.PrePaid: Subscription.If you choose PrePaid, automatic renewal will be enabled by default, and closed when node is released.
 	EcsChargeType interface{} `field:"optional" json:"ecsChargeType" yaml:"ecsChargeType"`
@@ -82,9 +103,10 @@ type ClusterProps struct {
 	// Default value: false
 	// Note If high availability is enabled, primary management nodes and secondary management nodes are used.
 	HaEnable interface{} `field:"optional" json:"haEnable" yaml:"haEnable"`
-	// Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag;
+	// Property imageId: The image IDs.
 	//
-	// if self, others, or marketplace, ImageId is mandatory.
+	// You can call the [ListImages]() and [ListCustomImages]() operations to query the
+	// images that are supported by E-HPC.
 	ImageId interface{} `field:"optional" json:"imageId" yaml:"imageId"`
 	// Property imageOwnerAlias: Mirror type: system, self, others or marketplace.
 	ImageOwnerAlias interface{} `field:"optional" json:"imageOwnerAlias" yaml:"imageOwnerAlias"`
@@ -111,19 +133,35 @@ type ClusterProps struct {
 	//
 	// You can call ListImages API to query.
 	OsTag interface{} `field:"optional" json:"osTag" yaml:"osTag"`
-	// Property password: Root password of jump server (login node).
+	// Property password: The root password of the logon node.
 	//
-	// 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+	// The password must be 8 to 30 characters in
+	// length and contain at least three of the following items: uppercase letters,
+	// lowercase letters, digits, and special characters. Special characters include:
+	// `( ) ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ‘ < > , . ? \/`
+	// You must specify either Password or KeyPairName. If both are specified, the
+	// Password parameter prevails.
+	// > We recommend that you use HTTPS to call the API operation to prevent password
+	// leakage.
 	Password interface{} `field:"optional" json:"password" yaml:"password"`
-	// Property period: The purchase of long resources, units: week \/ month \/ year.
+	// Property period: The duration of the subscription.
 	//
-	// When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+	// The unit of the duration is specified by the
+	// `PeriodUnit` parameter.
+	// *   Valid values if PriceUnit is set to Year: 1, 2, and 3.
+	// *   Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+	// *   Valid value if PriceUnit is set to Hour: 1.
+	// Default value: 1.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property periodUnit: The purchase of long-resources unit.
+	// Property periodUnit: The unit of the subscription duration.
 	//
-	// Alternatively value Week \/ Month \/ year.
+	// Valid values:
+	// *   Year
+	// *   Month
+	// *   Hour
+	// Default value: Month.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
-	// Property postInstallScript:.
+	// Property postInstallScript: The information of the post-installation script.
 	PostInstallScript interface{} `field:"optional" json:"postInstallScript" yaml:"postInstallScript"`
 	// Property ramNodeTypes: When authorizing instance configuration, the node type to which the RAM role is bound.
 	//
@@ -150,7 +188,9 @@ type ClusterProps struct {
 	//
 	// You can call the ListResourceGroups operation to obtain the ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+	// Property sccClusterId: The Super Computing Cluster (SCC) instance ID.
+	//
+	// If you specify the parameter, the SCC instance is moved to a new SCC cluster.
 	SccClusterId interface{} `field:"optional" json:"sccClusterId" yaml:"sccClusterId"`
 	// Property schedulerType: The type of the scheduler.
 	//
@@ -163,9 +203,9 @@ type ClusterProps struct {
 	SchedulerType interface{} `field:"optional" json:"schedulerType" yaml:"schedulerType"`
 	// Property securityGroupId: Security group ID.
 	SecurityGroupId interface{} `field:"optional" json:"securityGroupId" yaml:"securityGroupId"`
-	// Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy.
+	// Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a new security group.
 	//
-	// Format Requirements Reference ECS security group name.
+	// A default policy is applied to the new security group.
 	SecurityGroupName interface{} `field:"optional" json:"securityGroupName" yaml:"securityGroupName"`
 	// Property systemDiskLevel: The performance level of the ESSD that is created as the system disk.
 	//

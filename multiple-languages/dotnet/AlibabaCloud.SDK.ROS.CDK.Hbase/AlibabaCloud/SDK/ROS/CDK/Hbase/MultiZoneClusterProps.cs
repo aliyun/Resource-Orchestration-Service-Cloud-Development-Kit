@@ -441,7 +441,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
         private object _logInstanceType;
 
-        /// <summary>Property logInstanceType: Log instance type.</summary>
+        /// <summary>Property logInstanceType: The node specifications for log nodes.</summary>
+        /// <remarks>
+        /// You can query available specifications by
+        /// calling the <a href="">DescribeInstanceType</a> API.
+        /// </remarks>
         [JsiiProperty(name: "logInstanceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object LogInstanceType
         {
@@ -524,7 +528,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
         private object _multiZoneCombination;
 
-        /// <summary>Property multiZoneCombination: Availability zone combination.</summary>
+        /// <summary>Property multiZoneCombination: The zone combination.</summary>
+        /// <remarks>
+        /// You can check the supported zone combinations on the buy
+        /// page or by calling the <a href="">DescribeMultiZoneAvailableRegions</a> API.
+        /// </remarks>
         [JsiiProperty(name: "multiZoneCombination", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object MultiZoneCombination
         {
@@ -766,10 +774,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
         private object? _clusterName;
 
-        /// <summary>Property clusterName: The name of the instance.</summary>
+        /// <summary>Property clusterName: Instance name.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-        /// (.), underscores (_), and hyphens (-). It must start with a letter.
+        /// The naming convention is as follows:
+        ///
+        /// <list type="bullet">
+        /// <description>Length must be 2 to 128 characters.</description>
+        /// <description>Must start with a letter (uppercase or lowercase) or a Chinese character.</description>
+        /// <description>Can contain digits or special characters. Valid special characters include the
+        /// period (.), hyphen (-), and underscore (_).</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "clusterName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -869,13 +883,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
         private object? _period;
 
-        /// <summary>Property period: The subscription period.</summary>
+        /// <summary>Property period: The subscription duration of a subscription instance.</summary>
         /// <remarks>
-        /// This parameter only takes effect when the PayType parameter is set to Prepaid.
-        /// When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-        /// from 1 to 5.
-        /// When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-        /// from 1 to 9.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>When PeriodUnit is year, the value range is 1 to 3.</description>
+        /// <description>When PeriodUnit is month, the value range is 1 to 9.</description>
+        /// </list>
+        ///
+        ///     This parameter is required only when the payment type of the instance is
+        ///     Prepaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -927,11 +945,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
         private object? _periodUnit;
 
-        /// <summary>Property periodUnit: The unit of the subscription period.</summary>
+        /// <summary>Property periodUnit: The purchase unit for subscription instances.</summary>
         /// <remarks>
         /// Valid values:
-        /// year
-        /// month
+        ///
+        /// <list type="bullet">
+        /// <description>year: Year.</description>
+        /// <description>month: Month.</description>
+        /// </list>
+        ///
+        ///     This parameter is required only when the payment type of the instance is
+        ///     Prepaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -999,10 +1023,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbase
 
         private object? _securityIpList;
 
-        /// <summary>Property securityIpList: The IP addresses in the whitelist.</summary>
+        /// <summary>Property securityIpList: The IP addresses to add to the instance whitelist.</summary>
         /// <remarks>
-        /// Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-        /// be added to the whitelist. Separate multiple IP addresses with commas (,).
+        /// Separate multiple IP addresses
+        /// with commas (,).
+        ///
+        ///     If the IP address is set to 127.0.0.1, access to the instance from all IP
+        ///     addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+        ///     IP addresses in the range 192.168.0.XX are allowed to access the instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

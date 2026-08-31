@@ -10,7 +10,14 @@ export { RosRoute as RouteProperty };
 export interface RouteProps {
 
     /**
-     * Property destinationCidrBlock: The RouteEntry's target network segment.
+     * Property destinationCidrBlock: The destination CIDR block of the custom route entry. IPv4 CIDR blocks, IPv6 CIDR
+     * blocks, and prefix lists are supported. You must specify one of the following
+     * parameters: `DestinationCidrBlock` and `DestinationPrefixListId`. The following
+     * requirements apply:
+     * - The destination CIDR block cannot be 100.64.0.0\/10 or a subset of
+     * 100.64.0.0\/10.
+     * - The destination CIDR block of a route entry cannot be the same as the
+     * destination CIDR block of another route entry in the same route table.
      */
     readonly destinationCidrBlock: string | ros.IResolvable;
 
@@ -20,7 +27,10 @@ export interface RouteProps {
     readonly routeTableId: string | ros.IResolvable;
 
     /**
-     * Property nextHopId: The route entry's next hop. When the NextHopList is specified, the value will be ignored.
+     * Property nextHopId: The ID of the next hop.
+     * > ## If `NextHopType` is set to `Ecr`, you can obtain the `AssociationId` by
+     * calling the DescribeExpressConnectRouterAssociation operation and use the ID
+     * as the next hop ID.
      */
     readonly nextHopId?: string | ros.IResolvable;
 
@@ -62,7 +72,7 @@ export interface IRoute extends ros.IResource {
     readonly attrRouteEntryId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`The , which resource type creates custom route entries.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Route`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosRoute`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-route
  */

@@ -34,8 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 
         /// <summary>Property endpointName: The name of the endpoint.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length and can contain digits, underscores
-        /// (_), and hyphens (-). The name must start with a letter.
+        /// The name must be 2 to 128 characters long, start with a letter or a Chinese
+        /// character, and can contain digits, hyphens (-), and underscores (_).
         /// </remarks>
         [JsiiProperty(name: "endpointName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -47,7 +47,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
-        /// <summary>Property endpointType: Endpoint type.</summary>
+        /// <summary>Property endpointType: The type of the endpoint.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+        /// CLB, and Network Load Balancer (NLB) instances as service
+        /// resources.</description>
+        /// <description>Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+        /// resource.</description>
+        /// <description>GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+        /// Load Balancer (GWLB) as a service resource.</description>
+        /// </list>
+        ///
+        ///     Services that support reverse endpoints are provided exclusively by the cloud
+        ///     platform and its partners. You cannot create them by default. To request access,
+        ///     contact your account manager.
+        /// </remarks>
         [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? EndpointType
@@ -130,7 +147,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
         }
 
-        /// <summary>Property zone:.</summary>
+        /// <summary>Property zone: The list of zones for the endpoint.</summary>
         [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpoint.ZoneProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Zone
@@ -186,8 +203,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
 
             /// <summary>Property endpointName: The name of the endpoint.</summary>
             /// <remarks>
-            /// The name must be 2 to 128 characters in length and can contain digits, underscores
-            /// (_), and hyphens (-). The name must start with a letter.
+            /// The name must be 2 to 128 characters long, start with a letter or a Chinese
+            /// character, and can contain digits, hyphens (-), and underscores (_).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "endpointName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -196,7 +213,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property endpointType: Endpoint type.</summary>
+            /// <summary>Property endpointType: The type of the endpoint.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+            /// CLB, and Network Load Balancer (NLB) instances as service
+            /// resources.</description>
+            /// <description>Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+            /// resource.</description>
+            /// <description>GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+            /// Load Balancer (GWLB) as a service resource.</description>
+            /// </list>
+            ///
+            ///     Services that support reverse endpoints are provided exclusively by the cloud
+            ///     platform and its partners. You cannot create them by default. To request access,
+            ///     contact your account manager.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "endpointType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? EndpointType
@@ -261,7 +295,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
                 get => GetInstanceProperty<AlibabaCloud.SDK.ROS.CDK.Privatelink.RosVpcEndpoint.ITagsProperty[]?>();
             }
 
-            /// <summary>Property zone:.</summary>
+            /// <summary>Property zone: The list of zones for the endpoint.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "zone", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-privatelink.RosVpcEndpoint.ZoneProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
             public object? Zone

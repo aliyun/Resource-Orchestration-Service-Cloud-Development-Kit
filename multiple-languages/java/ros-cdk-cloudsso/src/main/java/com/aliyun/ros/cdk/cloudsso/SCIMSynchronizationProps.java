@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudsso;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-scimsynchronization
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.971Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.SCIMSynchronizationProps")
 @software.amazon.jsii.Jsii.Proxy(SCIMSynchronizationProps.Jsii$Proxy.class)
 public interface SCIMSynchronizationProps extends software.amazon.jsii.JsiiSerializable {

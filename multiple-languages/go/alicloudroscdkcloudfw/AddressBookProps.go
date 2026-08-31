@@ -38,7 +38,7 @@ type AddressBookProps struct {
 	//
 	// Default to cn-hangzhou.
 	RegionId interface{} `field:"optional" json:"regionId" yaml:"regionId"`
-	// Property tagList:.
+	// Property tagList: The list of ECS tags.
 	TagList interface{} `field:"optional" json:"tagList" yaml:"tagList"`
 	// Property tagRelation: The relationship between the labels to be matched more ECS.
 	//

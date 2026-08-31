@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Signature`, which is used to create a backend signature.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::Signature`.
 type Signature interface {
 	alicloudroscdkcore.Resource
 	ISignature

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dfs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::FileSystem</code>, which is used to create a file system.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DFS::FileSystem</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:20:44.365Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:15:26.621Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dfs.$Module.class, fqn = "@alicloud/ros-cdk-dfs.FileSystem")
 public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dfs.IFileSystem {
 
@@ -135,8 +135,9 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property spaceCapacity: Capacity of the file system.
          * <p>
-         * When the actual data volume reaches the file system capacity, data cannot be written.
-         * Unit: GB
+         * When the actual storage data size reaches the file system capacity, no further
+         * data can be written.
+         * Unit: GiB
          * <p>
          * @return {@code this}
          * @param spaceCapacity Property spaceCapacity: Capacity of the file system. This parameter is required.
@@ -148,8 +149,9 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property spaceCapacity: Capacity of the file system.
          * <p>
-         * When the actual data volume reaches the file system capacity, data cannot be written.
-         * Unit: GB
+         * When the actual storage data size reaches the file system capacity, no further
+         * data can be written.
+         * Unit: GiB
          * <p>
          * @return {@code this}
          * @param spaceCapacity Property spaceCapacity: Capacity of the file system. This parameter is required.
@@ -210,28 +212,38 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property dataRedundancyType: Redundancy mode of the file system.
+         * Property dataRedundancyType: Data redundancy mode of the file system.
          * <p>
-         * Values:
-         * LRS (default) : local redundancy.
-         * ZRS: in-city redundancy.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>LRS (default): locally redundant storage</li>
+         * <li>ZRS: zone-redundant storage. When ZRS is selected, the zoneId parameter must be
+         * a string containing a list of multiple zone IDs for zone-redundant deployment,
+         * for example, <codeph><code>zoneId1,zoneId2</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dataRedundancyType Property dataRedundancyType: Redundancy mode of the file system. This parameter is required.
+         * @param dataRedundancyType Property dataRedundancyType: Data redundancy mode of the file system. This parameter is required.
          */
         public Builder dataRedundancyType(final java.lang.String dataRedundancyType) {
             this.props.dataRedundancyType(dataRedundancyType);
             return this;
         }
         /**
-         * Property dataRedundancyType: Redundancy mode of the file system.
+         * Property dataRedundancyType: Data redundancy mode of the file system.
          * <p>
-         * Values:
-         * LRS (default) : local redundancy.
-         * ZRS: in-city redundancy.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>LRS (default): locally redundant storage</li>
+         * <li>ZRS: zone-redundant storage. When ZRS is selected, the zoneId parameter must be
+         * a string containing a list of multiple zone IDs for zone-redundant deployment,
+         * for example, <codeph><code>zoneId1,zoneId2</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param dataRedundancyType Property dataRedundancyType: Redundancy mode of the file system. This parameter is required.
+         * @param dataRedundancyType Property dataRedundancyType: Data redundancy mode of the file system. This parameter is required.
          */
         public Builder dataRedundancyType(final com.aliyun.ros.cdk.core.IResolvable dataRedundancyType) {
             this.props.dataRedundancyType(dataRedundancyType);
@@ -260,30 +272,38 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property fileSystemName: Name of the file system.
+         * Property fileSystemName: File system name.
          * <p>
-         * The naming rules are as follows:
-         * The value contains 6 to 100 characters.
-         * Globally unique and cannot be an empty string.
-         * The value can contain letters and digits and underscores (_).
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>Length must be 6 to 64 characters.</li>
+         * <li>Must be globally unique and cannot be an empty string.</li>
+         * <li>Supports English letters and can contain digits, underscores (_), and hyphens
+         * (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param fileSystemName Property fileSystemName: Name of the file system. This parameter is required.
+         * @param fileSystemName Property fileSystemName: File system name. This parameter is required.
          */
         public Builder fileSystemName(final java.lang.String fileSystemName) {
             this.props.fileSystemName(fileSystemName);
             return this;
         }
         /**
-         * Property fileSystemName: Name of the file system.
+         * Property fileSystemName: File system name.
          * <p>
-         * The naming rules are as follows:
-         * The value contains 6 to 100 characters.
-         * Globally unique and cannot be an empty string.
-         * The value can contain letters and digits and underscores (_).
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>Length must be 6 to 64 characters.</li>
+         * <li>Must be globally unique and cannot be an empty string.</li>
+         * <li>Supports English letters and can contain digits, underscores (_), and hyphens
+         * (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param fileSystemName Property fileSystemName: Name of the file system. This parameter is required.
+         * @param fileSystemName Property fileSystemName: File system name. This parameter is required.
          */
         public Builder fileSystemName(final com.aliyun.ros.cdk.core.IResolvable fileSystemName) {
             this.props.fileSystemName(fileSystemName);
@@ -312,24 +332,30 @@ public class FileSystem extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property provisionedThroughputInMiBps: Preset handling capacity.
+         * Property provisionedThroughputInMiBps: Preset throughput.
          * <p>
-         * Unit: MB/sdata range: 1-5120
+         * This parameter is required when the ThroughputMode parameter
+         * is set to Provisioned.
+         * Unit: MB/s
+         * Valid values: 1 to 5120
          * <p>
          * @return {@code this}
-         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset handling capacity. This parameter is required.
+         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset throughput. This parameter is required.
          */
         public Builder provisionedThroughputInMiBps(final java.lang.Number provisionedThroughputInMiBps) {
             this.props.provisionedThroughputInMiBps(provisionedThroughputInMiBps);
             return this;
         }
         /**
-         * Property provisionedThroughputInMiBps: Preset handling capacity.
+         * Property provisionedThroughputInMiBps: Preset throughput.
          * <p>
-         * Unit: MB/sdata range: 1-5120
+         * This parameter is required when the ThroughputMode parameter
+         * is set to Provisioned.
+         * Unit: MB/s
+         * Valid values: 1 to 5120
          * <p>
          * @return {@code this}
-         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset handling capacity. This parameter is required.
+         * @param provisionedThroughputInMiBps Property provisionedThroughputInMiBps: Preset throughput. This parameter is required.
          */
         public Builder provisionedThroughputInMiBps(final com.aliyun.ros.cdk.core.IResolvable provisionedThroughputInMiBps) {
             this.props.provisionedThroughputInMiBps(provisionedThroughputInMiBps);

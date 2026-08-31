@@ -53,7 +53,7 @@ export interface ClusterProps {
     readonly accountType?: string | ros.IResolvable;
 
     /**
-     * Property additionalVolumes:
+     * Property additionalVolumes: The information of the NAS file system.
      */
     readonly additionalVolumes?: Array<RosCluster.AdditionalVolumesProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -63,12 +63,16 @@ export interface ClusterProps {
     readonly application?: Array<RosCluster.ApplicationProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property autoRenew: true: automatic renewals; false: no automatic renewals.
+     * Property autoRenew: Specifies whether to enable auto-renewal. Valid values:
+     * *   true
+     * *   false
+     * Default value: false.
      */
     readonly autoRenew?: boolean | ros.IResolvable;
 
     /**
-     * Property autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+     * Property autoRenewPeriod: The auto-renewal period of the subscription compute nodes. The parameter takes
+     * effect when AutoRenew is set to true.
      */
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
@@ -87,12 +91,20 @@ export interface ClusterProps {
     readonly computeEnableHt?: boolean | ros.IResolvable;
 
     /**
-     * Property computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+     * Property computeSpotPriceLimit: The maximum hourly price of the compute nodes. A maximum of three decimal places
+     * can be used in the value of the parameter. The parameter is valid only when the
+     * ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
      */
     readonly computeSpotPriceLimit?: string | ros.IResolvable;
 
     /**
-     * Property computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo
+     * Property computeSpotStrategy: The bidding method of the compute nodes. Valid values:
+     * *   NoSpot: The compute nodes are pay-as-you-go instances.
+     * *   SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+     * user-defined maximum hourly price.
+     * *   SpotAsPriceGo: The compute nodes are preemptible instances for which the
+     * market price at the time of purchase is used as the bid price.
+     * Default value: NoSpot.
      */
     readonly computeSpotStrategy?: string | ros.IResolvable;
 
@@ -106,7 +118,8 @@ export interface ClusterProps {
     readonly deployMode?: string | ros.IResolvable;
 
     /**
-     * Property description: Cluster description, 2 to 128 characters.
+     * Property description: The description of the E-HPC cluster. The description must be 2 to 256 characters
+     * in length and cannot start with `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -135,7 +148,9 @@ export interface ClusterProps {
     readonly haEnable?: boolean | ros.IResolvable;
 
     /**
-     * Property imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag; if self, others, or marketplace, ImageId is mandatory.
+     * Property imageId: The image IDs.
+     * You can call the [ListImages]() and [ListCustomImages]() operations to query the
+     * images that are supported by E-HPC.
      */
     readonly imageId?: string | ros.IResolvable;
 
@@ -180,22 +195,38 @@ export interface ClusterProps {
     readonly osTag?: string | ros.IResolvable;
 
     /**
-     * Property password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+     * Property password: The root password of the logon node. The password must be 8 to 30 characters in
+     * length and contain at least three of the following items: uppercase letters,
+     * lowercase letters, digits, and special characters. Special characters include:
+     * `( ) ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ‘ < > , . ? \/`
+     * You must specify either Password or KeyPairName. If both are specified, the
+     * Password parameter prevails.
+     * > We recommend that you use HTTPS to call the API operation to prevent password
+     * leakage.
      */
     readonly password?: string | ros.IResolvable;
 
     /**
-     * Property period: The purchase of long resources, units: week \/ month \/ year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+     * Property period: The duration of the subscription. The unit of the duration is specified by the
+     * `PeriodUnit` parameter.
+     * *   Valid values if PriceUnit is set to Year: 1, 2, and 3.
+     * *   Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+     * *   Valid value if PriceUnit is set to Hour: 1.
+     * Default value: 1.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property periodUnit: The purchase of long-resources unit. Alternatively value Week \/ Month \/ year.
+     * Property periodUnit: The unit of the subscription duration. Valid values:
+     * *   Year
+     * *   Month
+     * *   Hour
+     * Default value: Month.
      */
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * Property postInstallScript:
+     * Property postInstallScript: The information of the post-installation script.
      */
     readonly postInstallScript?: Array<RosCluster.PostInstallScriptProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -233,7 +264,8 @@ export interface ClusterProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+     * Property sccClusterId: The Super Computing Cluster (SCC) instance ID.
+     * If you specify the parameter, the SCC instance is moved to a new SCC cluster.
      */
     readonly sccClusterId?: string | ros.IResolvable;
 
@@ -253,7 +285,8 @@ export interface ClusterProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy. Format Requirements Reference ECS security group name.
+     * Property securityGroupName: If you do not use an existing security group, set the parameter to the name of a
+     * new security group. A default policy is applied to the new security group.
      */
     readonly securityGroupName?: string | ros.IResolvable;
 
@@ -352,7 +385,7 @@ You will get results similar to the following: EcsInfo: {"Manager": {"Count": 2,
     readonly attrSecurityGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`, which is used to create an Elastic High Performance Computing (E-HPC) cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::Cluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-cluster
  */

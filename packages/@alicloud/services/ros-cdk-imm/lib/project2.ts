@@ -10,7 +10,10 @@ export { RosProject2 as Project2Property };
 export interface Project2Props {
 
     /**
-     * Property projectName: The name of project.
+     * Property projectName: The project name. The naming convention is as follows:
+     * - The name must be 1 to 128 characters in length.
+     * - It can contain only letters, digits, hyphens (-), and underscores (_).
+     * - It must start with a letter or an underscore (_).
      */
     readonly projectName: string | ros.IResolvable;
 
@@ -20,7 +23,9 @@ export interface Project2Props {
     readonly datasetMaxBindCount?: number | ros.IResolvable;
 
     /**
-     * Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset. Default value: 10000000000.
+     * Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset. The default value is
+     * 10,000,000,000.
+     * > This configuration is reserved and is not currently enforced.
      */
     readonly datasetMaxEntityCount?: number | ros.IResolvable;
 
@@ -30,7 +35,9 @@ export interface Project2Props {
     readonly datasetMaxFileCount?: number | ros.IResolvable;
 
     /**
-     * Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset. Default value: 100000000000.
+     * Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset. The default value is
+     * 100,000,000,000.
+     * > This configuration is reserved and is not currently enforced.
      */
     readonly datasetMaxRelationCount?: number | ros.IResolvable;
 

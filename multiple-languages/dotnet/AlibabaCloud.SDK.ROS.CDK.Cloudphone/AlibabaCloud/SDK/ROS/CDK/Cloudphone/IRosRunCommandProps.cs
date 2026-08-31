@@ -12,8 +12,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
     public interface IRosRunCommandProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: command: The command to be executed.
-        /// The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (\/), colon (:), medium line (-).
+        /// <strong>Property</strong>: command: The command that you want to run.\
+        /// The name can be up to 1024 bytes in length and can contain only letters, digits,
+        /// underscores (_), periods (.), slashes (\/), colons (:), and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Command
@@ -56,8 +57,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: command: The command to be executed.
-            /// The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (\/), colon (:), medium line (-).
+            /// <strong>Property</strong>: command: The command that you want to run.\
+            /// The name can be up to 1024 bytes in length and can contain only letters, digits,
+            /// underscores (_), periods (.), slashes (\/), colons (:), and hyphens (-).
             /// </remarks>
             [JsiiProperty(name: "command", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Command

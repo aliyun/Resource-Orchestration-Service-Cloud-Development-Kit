@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbase;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBase::MultiZoneCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:23:49.979Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:29:16.504Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbase.$Module.class, fqn = "@alicloud/ros-cdk-hbase.MultiZoneCluster")
 public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbase.IMultiZoneCluster {
 
@@ -437,20 +437,26 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property logInstanceType: Log instance type.
+         * Property logInstanceType: The node specifications for log nodes.
+         * <p>
+         * You can query available specifications by
+         * calling the <a href="">DescribeInstanceType</a> API.
          * <p>
          * @return {@code this}
-         * @param logInstanceType Property logInstanceType: Log instance type. This parameter is required.
+         * @param logInstanceType Property logInstanceType: The node specifications for log nodes. This parameter is required.
          */
         public Builder logInstanceType(final java.lang.String logInstanceType) {
             this.props.logInstanceType(logInstanceType);
             return this;
         }
         /**
-         * Property logInstanceType: Log instance type.
+         * Property logInstanceType: The node specifications for log nodes.
+         * <p>
+         * You can query available specifications by
+         * calling the <a href="">DescribeInstanceType</a> API.
          * <p>
          * @return {@code this}
-         * @param logInstanceType Property logInstanceType: Log instance type. This parameter is required.
+         * @param logInstanceType Property logInstanceType: The node specifications for log nodes. This parameter is required.
          */
         public Builder logInstanceType(final com.aliyun.ros.cdk.core.IResolvable logInstanceType) {
             this.props.logInstanceType(logInstanceType);
@@ -483,20 +489,26 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property multiZoneCombination: Availability zone combination.
+         * Property multiZoneCombination: The zone combination.
+         * <p>
+         * You can check the supported zone combinations on the buy
+         * page or by calling the <a href="">DescribeMultiZoneAvailableRegions</a> API.
          * <p>
          * @return {@code this}
-         * @param multiZoneCombination Property multiZoneCombination: Availability zone combination. This parameter is required.
+         * @param multiZoneCombination Property multiZoneCombination: The zone combination. This parameter is required.
          */
         public Builder multiZoneCombination(final java.lang.String multiZoneCombination) {
             this.props.multiZoneCombination(multiZoneCombination);
             return this;
         }
         /**
-         * Property multiZoneCombination: Availability zone combination.
+         * Property multiZoneCombination: The zone combination.
+         * <p>
+         * You can check the supported zone combinations on the buy
+         * page or by calling the <a href="">DescribeMultiZoneAvailableRegions</a> API.
          * <p>
          * @return {@code this}
-         * @param multiZoneCombination Property multiZoneCombination: Availability zone combination. This parameter is required.
+         * @param multiZoneCombination Property multiZoneCombination: The zone combination. This parameter is required.
          */
         public Builder multiZoneCombination(final com.aliyun.ros.cdk.core.IResolvable multiZoneCombination) {
             this.props.multiZoneCombination(multiZoneCombination);
@@ -648,26 +660,38 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property clusterName: The name of the instance.
+         * Property clusterName: Instance name.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         * (.), underscores (_), and hyphens (-). It must start with a letter.
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>Length must be 2 to 128 characters.</li>
+         * <li>Must start with a letter (uppercase or lowercase) or a Chinese character.</li>
+         * <li>Can contain digits or special characters. Valid special characters include the
+         * period (.), hyphen (-), and underscore (_).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterName Property clusterName: The name of the instance. This parameter is required.
+         * @param clusterName Property clusterName: Instance name. This parameter is required.
          */
         public Builder clusterName(final java.lang.String clusterName) {
             this.props.clusterName(clusterName);
             return this;
         }
         /**
-         * Property clusterName: The name of the instance.
+         * Property clusterName: Instance name.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-         * (.), underscores (_), and hyphens (-). It must start with a letter.
+         * The naming convention is as follows:
+         * <p>
+         * <ul>
+         * <li>Length must be 2 to 128 characters.</li>
+         * <li>Must start with a letter (uppercase or lowercase) or a Chinese character.</li>
+         * <li>Can contain digits or special characters. Valid special characters include the
+         * period (.), hyphen (-), and underscore (_).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterName Property clusterName: The name of the instance. This parameter is required.
+         * @param clusterName Property clusterName: Instance name. This parameter is required.
          */
         public Builder clusterName(final com.aliyun.ros.cdk.core.IResolvable clusterName) {
             this.props.clusterName(clusterName);
@@ -725,32 +749,48 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property period: The subscription period.
+         * Property period: The subscription duration of a subscription instance.
          * <p>
-         * This parameter only takes effect when the PayType parameter is set to Prepaid.
-         * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-         * from 1 to 5.
-         * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-         * from 1 to 9.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>When PeriodUnit is year, the value range is 1 to 3.</li>
+         * <li>When PeriodUnit is month, the value range is 1 to 9.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: The subscription duration of a subscription instance. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The subscription period.
+         * Property period: The subscription duration of a subscription instance.
          * <p>
-         * This parameter only takes effect when the PayType parameter is set to Prepaid.
-         * When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-         * from 1 to 5.
-         * When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-         * from 1 to 9.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>When PeriodUnit is year, the value range is 1 to 3.</li>
+         * <li>When PeriodUnit is month, the value range is 1 to 9.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription period. This parameter is required.
+         * @param period Property period: The subscription duration of a subscription instance. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -758,28 +798,48 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property periodUnit: The unit of the subscription period.
+         * Property periodUnit: The purchase unit for subscription instances.
          * <p>
          * Valid values:
-         * year
-         * month
+         * <p>
+         * <ul>
+         * <li>year: Year.</li>
+         * <li>month: Month.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the subscription period. This parameter is required.
+         * @param periodUnit Property periodUnit: The purchase unit for subscription instances. This parameter is required.
          */
         public Builder periodUnit(final java.lang.String periodUnit) {
             this.props.periodUnit(periodUnit);
             return this;
         }
         /**
-         * Property periodUnit: The unit of the subscription period.
+         * Property periodUnit: The purchase unit for subscription instances.
          * <p>
          * Valid values:
-         * year
-         * month
+         * <p>
+         * <ul>
+         * <li>year: Year.</li>
+         * <li>month: Month.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required only when the payment type of the instance is
+         * Prepaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the subscription period. This parameter is required.
+         * @param periodUnit Property periodUnit: The purchase unit for subscription instances. This parameter is required.
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
@@ -816,26 +876,42 @@ public class MultiZoneCluster extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property securityIpList: The IP addresses in the whitelist.
+         * Property securityIpList: The IP addresses to add to the instance whitelist.
          * <p>
-         * Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-         * be added to the whitelist. Separate multiple IP addresses with commas (,).
+         * Separate multiple IP addresses
+         * with commas (,).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the IP address is set to 127.0.0.1, access to the instance from all IP
+         * addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+         * IP addresses in the range 192.168.0.XX are allowed to access the instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The IP addresses in the whitelist. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP addresses to add to the instance whitelist. This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
             this.props.securityIpList(securityIpList);
             return this;
         }
         /**
-         * Property securityIpList: The IP addresses in the whitelist.
+         * Property securityIpList: The IP addresses to add to the instance whitelist.
          * <p>
-         * Example: 192.168.<em>.</em>/24. The 0.0.0.0/0 value cannot
-         * be added to the whitelist. Separate multiple IP addresses with commas (,).
+         * Separate multiple IP addresses
+         * with commas (,).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the IP address is set to 127.0.0.1, access to the instance from all IP
+         * addresses is denied. For example, if the IP address is set to 192.168.0.0/24, all
+         * IP addresses in the range 192.168.0.XX are allowed to access the instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The IP addresses in the whitelist. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP addresses to add to the instance whitelist. This parameter is required.
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);

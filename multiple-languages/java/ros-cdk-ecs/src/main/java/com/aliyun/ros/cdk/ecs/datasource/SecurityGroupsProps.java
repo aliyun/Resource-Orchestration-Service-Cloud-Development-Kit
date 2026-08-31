@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-ecs-securitygroups
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.462Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.860Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.SecurityGroupsProps")
 @software.amazon.jsii.Jsii.Proxy(SecurityGroupsProps.Jsii$Proxy.class)
 public interface SecurityGroupsProps extends software.amazon.jsii.JsiiSerializable {

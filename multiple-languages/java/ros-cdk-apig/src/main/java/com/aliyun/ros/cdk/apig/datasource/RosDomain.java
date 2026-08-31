@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::APIG::Domain</code>Use DATASOURCE::APIG::Query domain names using domain type.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::APIG::Domain</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.746Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.328Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.datasource.RosDomain")
 public class RosDomain extends com.aliyun.ros.cdk.core.RosResource {
 

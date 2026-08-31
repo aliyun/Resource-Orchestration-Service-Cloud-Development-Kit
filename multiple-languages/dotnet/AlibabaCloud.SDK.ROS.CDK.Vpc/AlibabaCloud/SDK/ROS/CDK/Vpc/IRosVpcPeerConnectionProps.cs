@@ -143,8 +143,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <remarks>
         /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
-        ///
-        /// For more information about resource groups, see [What is Resource Group](~~94475~~).
         /// </remarks>
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -278,8 +276,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
             /// <remarks>
             /// <strong>Property</strong>: resourceGroupId: The ID of the resource group.
-            ///
-            /// For more information about resource groups, see [What is Resource Group](~~94475~~).
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

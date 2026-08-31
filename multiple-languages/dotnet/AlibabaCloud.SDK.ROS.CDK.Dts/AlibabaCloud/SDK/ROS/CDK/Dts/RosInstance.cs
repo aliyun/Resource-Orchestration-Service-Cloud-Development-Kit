@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Dts
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`Use the , which resource to create a new DTS instance.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::DTS::Instance`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-instance
@@ -119,8 +119,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <remarks>
         /// <strong>Property</strong>: payType: The billing method. Valid values:
-        /// - **PrePaid**: subscription
-        /// - **PostPaid**: pay-as-you-go
+        /// *   PrePaid: subscription
+        /// *   PostPaid: pay-as-you-go
+        /// >  This parameter must be specified.
         /// </remarks>
         [JsiiProperty(name: "payType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object PayType
@@ -151,9 +152,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <remarks>
         /// <strong>Property</strong>: type: The type of the DTS instance. Valid values:
-        /// - **MIGRATION*: data migration instance
-        /// - **SYNC**: data synchronization instance
-        /// - **SUBSCRIBE**: change tracking instance
+        /// *   MIGRATION: data migration instance
+        /// *   SYNC: data synchronization instance
+        /// *   SUBSCRIBE: change tracking instance
+        /// > You must specify one of this parameter and the JobId parameter.
         /// </remarks>
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Type
@@ -216,9 +218,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. Valid values:
-        /// - **false**: does not automatically start the task after the DTS instance is purchased. This is the default value.
-        /// - **true**: automatically starts the task after the DTS instance is purchased.
+        /// <strong>Property</strong>: autoStart: Specifies whether to automatically start the task after the DTS instance is
+        /// purchased. Valid values:
+        /// *   false (default)
+        /// *   true
+        /// >  This parameter can be set to true and take effect only if you specify a valid
+        /// value for JobId.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoStart", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -249,7 +254,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: computeUnit: The specifications of the extract, transform, and load (ETL) instance. The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+        /// <strong>Property</strong>: computeUnit: The specification of the extract, transform, and load (ETL) instance. The unit is
+        /// compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+        /// this parameter must be an integer greater than or equal to 2.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "computeUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -584,8 +591,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: maxDu: The upper limit of DU.
-        /// > Only Serverless instances are supported.
+        /// <strong>Property</strong>: maxDu: Upper limit of DU.
+        /// > Only supported by Serverless instances.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -636,8 +643,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: minDu: The lower limit of DU.
-        /// > Only Serverless instances are supported.
+        /// <strong>Property</strong>: minDu: Lower limit of DU.
+        /// > Only supported by Serverless instances.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "minDu", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -869,9 +876,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dts
 
         /// <remarks>
         /// <strong>Property</strong>: usedTime: The subscription duration.
-        /// - Valid values if the **Period** parameter is set to **Month**: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-        /// - Valid values if the **Period** parameter is set to **Year**: 1, 2, 3, and 5.
-        /// **Note**: You must specify this parameter only if the **PayType** parameter is set to **PrePaid**. You can set the **Period** parameter to specify the unit of the subscription duration.
+        /// *   Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+        /// *   Valid values if Period is set to Year: 1, 2, 3, and 5.
+        /// >
+        /// *   This parameter is valid and required only if PayType is set to PrePaid.
+        /// *   You can configure Period to specify the unit of the subscription duration.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

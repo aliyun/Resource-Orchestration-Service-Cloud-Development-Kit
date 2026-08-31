@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::SslVpnClientCert</code>, which is used to call the CreateSslVpnClientCert operation to create an SSL-VPN client certificate.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.688Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.492Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.SslVpnClientCert")
 public class SslVpnClientCert extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.ISslVpnClientCert {
 
@@ -133,24 +133,26 @@ public class SslVpnClientCert extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property name: The name of the client certificate.
+         * Property name: The name of the SSL client certificate.
          * <p>
-         * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+         * The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+         * or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the client certificate. This parameter is required.
+         * @param name Property name: The name of the SSL client certificate. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props.name(name);
             return this;
         }
         /**
-         * Property name: The name of the client certificate.
+         * Property name: The name of the SSL client certificate.
          * <p>
-         * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+         * The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+         * or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the client certificate. This parameter is required.
+         * @param name Property name: The name of the SSL client certificate. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props.name(name);

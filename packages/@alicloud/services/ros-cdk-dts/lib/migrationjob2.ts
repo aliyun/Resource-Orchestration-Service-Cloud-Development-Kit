@@ -10,17 +10,25 @@ export { RosMigrationJob2 as MigrationJob2Property };
 export interface MigrationJob2Props {
 
     /**
-     * Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. Default value: **true**. Valid values: **true** and **false**.
+     * Property dataInitialization: Specifies whether to perform full data migration or full data synchronization.
+     * Valid values:
+     * *   true (default)
+     * *   false
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     readonly dataInitialization: boolean | ros.IResolvable;
 
     /**
-     * Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. Default value: **false**. Valid values: **true** and **false**.
+     * Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data
+     * synchronization. Valid values:
+     * *   false (default)
+     * *   true
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     readonly dataSynchronization: boolean | ros.IResolvable;
 
     /**
-     * Property dbList: The objects that you want to migrate or synchronize.
+     * Property dbList: The objects that you want to migrate or synchronize. The value is a JSON string.
      */
     readonly dbList: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -40,7 +48,11 @@ export interface MigrationJob2Props {
     readonly sourceEndpoint: RosMigrationJob2.SourceEndpointProperty | ros.IResolvable;
 
     /**
-     * Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Default value: true. Valid values: **true** and **false**.
+     * Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. Valid
+     * values:
+     * *   true (default)
+     * *   false
+     * > If JobType is set to CHECK, set this parameter to false.
      */
     readonly structureInitialization: boolean | ros.IResolvable;
 
@@ -71,7 +83,11 @@ export interface MigrationJob2Props {
     readonly delayPhone?: string | ros.IResolvable;
 
     /**
-     * Property delayRuleTime: The threshold for latency alerts. Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * Property delayRuleTime: The threshold for latency alerts. Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * > If DelayNotice is set to true, this parameter is required.
      */
     readonly delayRuleTime?: number | ros.IResolvable;
 
@@ -122,17 +138,23 @@ export interface MigrationJob2Props {
     readonly fileOssUrl?: string | ros.IResolvable;
 
     /**
-     * Property maxDu: The upper limit of DU. This parameter is supported only for serverless instances.
+     * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     readonly maxDu?: number | ros.IResolvable;
 
     /**
-     * Property minDu: The lower limit of DU. This parameter is supported only for serverless instances.
+     * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8,
+     * 16.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     readonly minDu?: number | ros.IResolvable;
 
     /**
-     * Property reserve: The reserved parameter of DTS. You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     * Property reserve: The reserved parameter of DTS. The value is a JSON string. You can specify this
+     * parameter to add more configurations of the source or destination instance to the
+     * DTS task. For example, you can specify the data storage format of the destination
+     * Kafka database and the CEN instance ID.
      */
     readonly reserve?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -182,7 +204,7 @@ export interface IMigrationJob2 extends ros.IResource {
     readonly attrDtsJobName: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`, which is used to purchase a data migration instance and configure a data migration task of the new version.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::MigrationJob2`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosMigrationJob2`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-migrationjob2
  */

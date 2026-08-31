@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::NetworkInterface`.
 type RosNetworkInterface interface {
 	alicloudroscdkcore.RosResource
 	AttrArn() alicloudroscdkcore.IResolvable

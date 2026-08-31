@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Binding</code>, which is used to bind a queue or an exchange to an exchange.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Binding</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.791Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.209Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Binding")
 public class Binding extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.amqp.IBinding {
 
@@ -104,28 +104,50 @@ public class Binding extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property argument: X-match Attributes.
+         * Property argument: The key-value pairs for the message header attributes.
          * <p>
-         * Valid Values:
-         * "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-         * "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+         * The message header
+         * attributes consist of one or more key-value pairs. The x-match attribute is
+         * required. Other attributes are custom. The x-match attribute supports the
+         * following values:
+         * <p>
+         * <ul>
+         * <li>all: This is the default value. All key-value pairs in the message header must
+         * match.</li>
+         * <li>any: At least one key-value pair in the message header must match.
+         * Separate attributes with semicolons (;) and separate keys from values with colons
+         * (:). Example: x-match:all;type:report;format:pdf
+         * This parameter is valid only for headers exchanges. For other types of exchanges,
+         * this parameter is ignored.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param argument Property argument: X-match Attributes. This parameter is required.
+         * @param argument Property argument: The key-value pairs for the message header attributes. This parameter is required.
          */
         public Builder argument(final java.lang.String argument) {
             this.props.argument(argument);
             return this;
         }
         /**
-         * Property argument: X-match Attributes.
+         * Property argument: The key-value pairs for the message header attributes.
          * <p>
-         * Valid Values:
-         * "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-         * "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+         * The message header
+         * attributes consist of one or more key-value pairs. The x-match attribute is
+         * required. Other attributes are custom. The x-match attribute supports the
+         * following values:
+         * <p>
+         * <ul>
+         * <li>all: This is the default value. All key-value pairs in the message header must
+         * match.</li>
+         * <li>any: At least one key-value pair in the message header must match.
+         * Separate attributes with semicolons (;) and separate keys from values with colons
+         * (:). Example: x-match:all;type:report;format:pdf
+         * This parameter is valid only for headers exchanges. For other types of exchanges,
+         * this parameter is ignored.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param argument Property argument: X-match Attributes. This parameter is required.
+         * @param argument Property argument: The key-value pairs for the message header attributes. This parameter is required.
          */
         public Builder argument(final com.aliyun.ros.cdk.core.IResolvable argument) {
             this.props.argument(argument);
@@ -133,20 +155,52 @@ public class Binding extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property bindingKey: The Binding Key.
+         * Property bindingKey: The binding key.
+         * <p>
+         * <ul>
+         * <li>If the source exchange is not a topic exchange:</li>
+         * <li>It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+         * forward slashes (/), and at signs (&#64;).</li>
+         * <li>The length must be 1 to 255 characters.</li>
+         * <li>If the source exchange is a topic exchange:</li>
+         * <li>It can contain letters, digits, hyphens (-), underscores (_), asterisks (*),
+         * periods (.), number signs (#), forward slashes (/), and at signs (&#64;).</li>
+         * <li>The key cannot start or end with a period (.). If the key starts with a number
+         * sign (#) or an asterisk (<em>), a period (.) must immediately follow. If the key
+         * ends with a number sign (#) or an asterisk (</em>), a period (.) must immediately
+         * precede it. If a number sign (#) or an asterisk (*) is in the middle of the key,
+         * it must have a period (.) on both sides.</li>
+         * <li>The length must be 1 to 255 characters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bindingKey Property bindingKey: The Binding Key. This parameter is required.
+         * @param bindingKey Property bindingKey: The binding key. This parameter is required.
          */
         public Builder bindingKey(final java.lang.String bindingKey) {
             this.props.bindingKey(bindingKey);
             return this;
         }
         /**
-         * Property bindingKey: The Binding Key.
+         * Property bindingKey: The binding key.
+         * <p>
+         * <ul>
+         * <li>If the source exchange is not a topic exchange:</li>
+         * <li>It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+         * forward slashes (/), and at signs (&#64;).</li>
+         * <li>The length must be 1 to 255 characters.</li>
+         * <li>If the source exchange is a topic exchange:</li>
+         * <li>It can contain letters, digits, hyphens (-), underscores (_), asterisks (*),
+         * periods (.), number signs (#), forward slashes (/), and at signs (&#64;).</li>
+         * <li>The key cannot start or end with a period (.). If the key starts with a number
+         * sign (#) or an asterisk (<em>), a period (.) must immediately follow. If the key
+         * ends with a number sign (#) or an asterisk (</em>), a period (.) must immediately
+         * precede it. If a number sign (#) or an asterisk (*) is in the middle of the key,
+         * it must have a period (.) on both sides.</li>
+         * <li>The length must be 1 to 255 characters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bindingKey Property bindingKey: The Binding Key. This parameter is required.
+         * @param bindingKey Property bindingKey: The binding key. This parameter is required.
          */
         public Builder bindingKey(final com.aliyun.ros.cdk.core.IResolvable bindingKey) {
             this.props.bindingKey(bindingKey);
@@ -154,24 +208,34 @@ public class Binding extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property bindingType: The Target Binding Types.
+         * Property bindingType: The type of the destination object.
          * <p>
-         * Valid values: EXCHANGE, QUEUE.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>0: Queue</li>
+         * <li>1: Exchange</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bindingType Property bindingType: The Target Binding Types. This parameter is required.
+         * @param bindingType Property bindingType: The type of the destination object. This parameter is required.
          */
         public Builder bindingType(final java.lang.String bindingType) {
             this.props.bindingType(bindingType);
             return this;
         }
         /**
-         * Property bindingType: The Target Binding Types.
+         * Property bindingType: The type of the destination object.
          * <p>
-         * Valid values: EXCHANGE, QUEUE.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>0: Queue</li>
+         * <li>1: Exchange</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bindingType Property bindingType: The Target Binding Types. This parameter is required.
+         * @param bindingType Property bindingType: The type of the destination object. This parameter is required.
          */
         public Builder bindingType(final com.aliyun.ros.cdk.core.IResolvable bindingType) {
             this.props.bindingType(bindingType);
@@ -179,20 +243,28 @@ public class Binding extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property destinationName: The Target Queue Or Exchange of the Name.
+         * Property destinationName: The name of the binding destination.
+         * <p>
+         * The destination must be created in the
+         * console. It must belong to the same vhost as <code>SourceExchange</code>. The <code>VirtualHost</code>
+         * parameter specifies the vhost.
          * <p>
          * @return {@code this}
-         * @param destinationName Property destinationName: The Target Queue Or Exchange of the Name. This parameter is required.
+         * @param destinationName Property destinationName: The name of the binding destination. This parameter is required.
          */
         public Builder destinationName(final java.lang.String destinationName) {
             this.props.destinationName(destinationName);
             return this;
         }
         /**
-         * Property destinationName: The Target Queue Or Exchange of the Name.
+         * Property destinationName: The name of the binding destination.
+         * <p>
+         * The destination must be created in the
+         * console. It must belong to the same vhost as <code>SourceExchange</code>. The <code>VirtualHost</code>
+         * parameter specifies the vhost.
          * <p>
          * @return {@code this}
-         * @param destinationName Property destinationName: The Target Queue Or Exchange of the Name. This parameter is required.
+         * @param destinationName Property destinationName: The name of the binding destination. This parameter is required.
          */
         public Builder destinationName(final com.aliyun.ros.cdk.core.IResolvable destinationName) {
             this.props.destinationName(destinationName);

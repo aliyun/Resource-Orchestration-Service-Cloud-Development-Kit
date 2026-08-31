@@ -5,13 +5,15 @@ package com.aliyun.ros.cdk.cdn;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-stagingconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.271Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.627Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.StagingConfigProps")
 @software.amazon.jsii.Jsii.Proxy(StagingConfigProps.Jsii$Proxy.class)
 public interface StagingConfigProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property domainName: The domain name of the CDN.
+     * Property domainName: The accelerated domain name.
+     * <p>
+     * Only one domain name can be configured at a time.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDomainName();
 
@@ -35,7 +37,8 @@ public interface StagingConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link StagingConfigProps#getDomainName}
-         * @param domainName Property domainName: The domain name of the CDN. This parameter is required.
+         * @param domainName Property domainName: The accelerated domain name. This parameter is required.
+         *                   Only one domain name can be configured at a time.
          * @return {@code this}
          */
         public Builder domainName(java.lang.String domainName) {
@@ -45,7 +48,8 @@ public interface StagingConfigProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link StagingConfigProps#getDomainName}
-         * @param domainName Property domainName: The domain name of the CDN. This parameter is required.
+         * @param domainName Property domainName: The accelerated domain name. This parameter is required.
+         *                   Only one domain name can be configured at a time.
          * @return {@code this}
          */
         public Builder domainName(com.aliyun.ros.cdk.core.IResolvable domainName) {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-eipsegment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.385Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.198Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.EIPSegmentProps")
 @software.amazon.jsii.Jsii.Proxy(EIPSegmentProps.Jsii$Proxy.class)
 public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,15 +54,8 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
      * <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
      * <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
      * Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
-     * India (Jakarta), and Thailand (Bangkok).</li>
-     * </ul>
-     * <p>
-     * For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-     * see <a href="~~32321~~">EIP Line Type</a>.
-     * <p>
-     * If you are a single-bandwidth whitelist user, you can also choose:
-     * <p>
-     * <ul>
+     * India (Jakarta), and Thailand (Bangkok).
+     * If you are a single-bandwidth whitelist user, you can also choose:</li>
      * <li><strong>ChinaTelecom</strong>: China Telecom</li>
      * <li><strong>ChinaUnicom</strong>: China Unicom</li>
      * <li><strong>ChinaMobile</strong>: China Mobile</li>
@@ -219,15 +212,8 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
          *            <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
          *            <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
          *            Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
-         *            India (Jakarta), and Thailand (Bangkok).</li>
-         *            </ul>
-         *            <p>
-         *            For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-         *            see <a href="~~32321~~">EIP Line Type</a>.
-         *            <p>
-         *            If you are a single-bandwidth whitelist user, you can also choose:
-         *            <p>
-         *            <ul>
+         *            India (Jakarta), and Thailand (Bangkok).
+         *            If you are a single-bandwidth whitelist user, you can also choose:</li>
          *            <li><strong>ChinaTelecom</strong>: China Telecom</li>
          *            <li><strong>ChinaUnicom</strong>: China Unicom</li>
          *            <li><strong>ChinaMobile</strong>: China Mobile</li>
@@ -253,15 +239,8 @@ public interface EIPSegmentProps extends software.amazon.jsii.JsiiSerializable {
          *            <li><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</li>
          *            <li><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
          *            Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
-         *            India (Jakarta), and Thailand (Bangkok).</li>
-         *            </ul>
-         *            <p>
-         *            For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-         *            see <a href="~~32321~~">EIP Line Type</a>.
-         *            <p>
-         *            If you are a single-bandwidth whitelist user, you can also choose:
-         *            <p>
-         *            <ul>
+         *            India (Jakarta), and Thailand (Bangkok).
+         *            If you are a single-bandwidth whitelist user, you can also choose:</li>
          *            <li><strong>ChinaTelecom</strong>: China Telecom</li>
          *            <li><strong>ChinaUnicom</strong>: China Unicom</li>
          *            <li><strong>ChinaMobile</strong>: China Mobile</li>

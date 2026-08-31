@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ehpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-autoscaleconfig
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.647Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:50:32.894Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.AutoScaleConfigProps")
 @software.amazon.jsii.Jsii.Proxy(AutoScaleConfigProps.Jsii$Proxy.class)
 public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializable {
@@ -98,16 +98,18 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
+     * Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster.
      * <p>
-     * Default value: 100
+     * Valid
+     * values: 0 to 500.
+     * Default value: 100.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxNodesInCluster() {
         return null;
     }
 
     /**
-     * Property queues:.
+     * Property queues: The information about the queue.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getQueues() {
         return null;
@@ -123,10 +125,11 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in.
+     * Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in.
      * <p>
      * Unit: minutes.
-     * Default value: 2
+     * Valid values: 2 to 10.
+     * Default value: 2.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getShrinkIntervalInMinutes() {
         return null;
@@ -398,8 +401,10 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link AutoScaleConfigProps#getMaxNodesInCluster}
-         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
-         *                          Default value: 100
+         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster.
+         *                          Valid
+         *                          values: 0 to 500.
+         *                          Default value: 100.
          * @return {@code this}
          */
         public Builder maxNodesInCluster(java.lang.Number maxNodesInCluster) {
@@ -409,8 +414,10 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link AutoScaleConfigProps#getMaxNodesInCluster}
-         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added in the cluster.
-         *                          Default value: 100
+         * @param maxNodesInCluster Property maxNodesInCluster: The maximum number of compute nodes that can be added to the cluster.
+         *                          Valid
+         *                          values: 0 to 500.
+         *                          Default value: 100.
          * @return {@code this}
          */
         public Builder maxNodesInCluster(com.aliyun.ros.cdk.core.IResolvable maxNodesInCluster) {
@@ -420,7 +427,7 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link AutoScaleConfigProps#getQueues}
-         * @param queues Property queues:.
+         * @param queues Property queues: The information about the queue.
          * @return {@code this}
          */
         public Builder queues(com.aliyun.ros.cdk.core.IResolvable queues) {
@@ -430,7 +437,7 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link AutoScaleConfigProps#getQueues}
-         * @param queues Property queues:.
+         * @param queues Property queues: The information about the queue.
          * @return {@code this}
          */
         public Builder queues(java.util.List<? extends java.lang.Object> queues) {
@@ -462,9 +469,10 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link AutoScaleConfigProps#getShrinkIntervalInMinutes}
-         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in.
+         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in.
          *                                Unit: minutes.
-         *                                Default value: 2
+         *                                Valid values: 2 to 10.
+         *                                Default value: 2.
          * @return {@code this}
          */
         public Builder shrinkIntervalInMinutes(java.lang.Number shrinkIntervalInMinutes) {
@@ -474,9 +482,10 @@ public interface AutoScaleConfigProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link AutoScaleConfigProps#getShrinkIntervalInMinutes}
-         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: SThe interval between two consecutive rounds of scale-in.
+         * @param shrinkIntervalInMinutes Property shrinkIntervalInMinutes: The interval between two consecutive rounds of scale-in.
          *                                Unit: minutes.
-         *                                Default value: 2
+         *                                Valid values: 2 to 10.
+         *                                Default value: 2.
          * @return {@code this}
          */
         public Builder shrinkIntervalInMinutes(com.aliyun.ros.cdk.core.IResolvable shrinkIntervalInMinutes) {

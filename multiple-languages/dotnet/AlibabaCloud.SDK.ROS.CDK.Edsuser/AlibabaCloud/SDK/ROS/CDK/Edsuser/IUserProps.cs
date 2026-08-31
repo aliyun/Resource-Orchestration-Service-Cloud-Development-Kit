@@ -35,7 +35,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
             }
         }
 
-        /// <summary>Property businessChannel: The channel.</summary>
+        /// <summary>Property businessChannel: The business channel.</summary>
         [JsiiProperty(name: "businessChannel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? BusinessChannel
@@ -193,7 +193,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Edsuser
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property businessChannel: The channel.</summary>
+            /// <summary>Property businessChannel: The business channel.</summary>
             [JsiiOptional]
             [JsiiProperty(name: "businessChannel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? BusinessChannel

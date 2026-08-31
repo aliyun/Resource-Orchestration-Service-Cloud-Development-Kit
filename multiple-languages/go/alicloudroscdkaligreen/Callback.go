@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::Callback`, which is used to create a callback.
+// This class encapsulates and extends the ROS resource type `ALIYUN::Aligreen::Callback`.
 type Callback interface {
 	alicloudroscdkcore.Resource
 	ICallback

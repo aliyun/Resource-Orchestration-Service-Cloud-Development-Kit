@@ -59,7 +59,11 @@ type ApiProps struct {
 	ResultBodyModel interface{} `field:"optional" json:"resultBodyModel" yaml:"resultBodyModel"`
 	// Property resultDescriptions: The return description of the API.
 	ResultDescriptions interface{} `field:"optional" json:"resultDescriptions" yaml:"resultDescriptions"`
-	// Property resultSample: The sample of the result.
+	// Property resultSample: An example of a response returned by the backend service.
+	//
+	// This value is used only
+	// to generate documentation. The actually returned result shall prevail.(Support up
+	// to 32KB).
 	ResultSample interface{} `field:"optional" json:"resultSample" yaml:"resultSample"`
 	// Property resultType: The format of service's response, "JSON", "TEXT", "BINARY", "XML", "HTML" or "PASSTHROUGH".
 	//

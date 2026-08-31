@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mns;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MNS::Subscription</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MNS::Subscription</code>, which is used to describe a subscription relationship, including the subscribed topic and the endpoint that the subscriber uses to receive messages.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:51:02.119Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:07:59.962Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.RosSubscription")
 public class RosSubscription extends com.aliyun.ros.cdk.core.RosResource {
 

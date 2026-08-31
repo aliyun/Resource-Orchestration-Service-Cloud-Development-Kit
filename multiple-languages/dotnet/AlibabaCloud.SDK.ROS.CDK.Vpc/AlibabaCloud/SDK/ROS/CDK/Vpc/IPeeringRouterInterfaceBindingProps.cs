@@ -18,7 +18,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             get;
         }
 
-        /// <summary>Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.</summary>
+        /// <summary>Property routerInterfaceId: The ID of the router interface.</summary>
         [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object RouterInterfaceId
         {
@@ -65,7 +65,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.</summary>
+            /// <summary>Property routerInterfaceId: The ID of the router interface.</summary>
             [JsiiProperty(name: "routerInterfaceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object RouterInterfaceId
             {

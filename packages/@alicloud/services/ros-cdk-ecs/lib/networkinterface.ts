@@ -10,7 +10,13 @@ export { RosNetworkInterface as NetworkInterfaceProperty };
 export interface NetworkInterfaceProps {
 
     /**
-     * Property vSwitchId: VSwitch ID of the specified VPC. Specifies the switch ID for the VPC.
+     * Property vSwitchId: The ID of the VSwitch for the elastic network interface. The private IP addresses
+     * for the elastic network interface are assigned from the available CIDR block of
+     * the VSwitch.
+     * ><notice>
+     * The elastic network interface and the instance to be attached must be in the same
+     * availability zone but can belong to different VSwitches.
+     * ><\/notice>
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -20,7 +26,9 @@ export interface NetworkInterfaceProps {
     readonly deleteOnRelease?: boolean | ros.IResolvable;
 
     /**
-     * Property description: Description of your ENI. It is a string of [2, 256] English or Chinese characters.
+     * Property description: The description of the elastic network interface. The description must be 2 to
+     * 256 characters long and cannot start with `http:\/\/` or `https:\/\/`.
+     * Default value: empty.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -36,7 +44,10 @@ export interface NetworkInterfaceProps {
     readonly ipv4Prefixes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+     * Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+     * Valid values: 1 to 10.
+     * > You must specify either `Ipv6Address.N` or `Ipv6AddressCount`, but not both, to
+     * assign IPv6 addresses.
      */
     readonly ipv6AddressCount?: number | ros.IResolvable;
 
@@ -62,9 +73,13 @@ export interface NetworkInterfaceProps {
     readonly networkInterfaceName?: string | ros.IResolvable;
 
     /**
-     * Property networkInterfaceTrafficMode: The communication mode of the ENI. Valid values:
-     * Standard: uses the TCP communication mode.
-     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+     * Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface. Valid values:
+     * - `Standard`: uses the TCP traffic mode.
+     * - `HighPerformance`: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+     * traffic mode.
+     * > An elastic network interface in RDMA traffic mode can be attached only to an
+     * ERI-supported instance type. The number of these elastic network interfaces that
+     * can be attached is limited by the instance family. Default value: `Standard`.
      */
     readonly networkInterfaceTrafficMode?: string | ros.IResolvable;
 
@@ -103,12 +118,20 @@ export interface NetworkInterfaceProps {
     readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
 
     /**
-     * Property securityGroupId: The ID of the security group that the ENI joins. The security group and the ENI must be in a same VPC.
+     * Property securityGroupId: The ID of the security group for the elastic network interface. The security
+     * group and the elastic network interface must be in the same VPC.
+     * > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+     * both.
      */
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityGroupIds: The IDs of the security groups that the ENI joins. The security groups and the ENI must belong to the same VPC.
+     * Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network
+     * interface. The security groups and the elastic network interface must be in the
+     * same VPC. The valid values of N depend on the maximum number of security groups
+     * to which an elastic network interface can be added. 
+     * > You must specify either `SecurityGroupId` or `SecurityGroupIds.N`, but not
+     * both.
      */
     readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -157,7 +180,7 @@ export interface INetworkInterface extends ros.IResource {
     readonly attrSecondaryPrivateIpAddresses: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`, which is used to create an elastic network interface (ENI).
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::NetworkInterface`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNetworkInterface`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */

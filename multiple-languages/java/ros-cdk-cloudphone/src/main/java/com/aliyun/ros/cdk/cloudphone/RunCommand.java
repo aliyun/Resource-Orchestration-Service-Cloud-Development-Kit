@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudphone;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::RunCommand</code>, which is used to run a command on cloud phones.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudPhone::RunCommand</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:49:40.208Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:37:59.568Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RunCommand")
 public class RunCommand extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudphone.IRunCommand {
 
@@ -104,24 +104,20 @@ public class RunCommand extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property command: The command to be executed.
-         * <p>
-         * The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (/), colon (:), medium line (-).
+         * Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (/), colons (:), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param command Property command: The command to be executed. This parameter is required.
+         * @param command Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (/), colons (:), and hyphens (-). This parameter is required.
          */
         public Builder command(final java.lang.String command) {
             this.props.command(command);
             return this;
         }
         /**
-         * Property command: The command to be executed.
-         * <p>
-         * The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (/), colon (:), medium line (-).
+         * Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (/), colons (:), and hyphens (-).
          * <p>
          * @return {@code this}
-         * @param command Property command: The command to be executed. This parameter is required.
+         * @param command Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (/), colons (:), and hyphens (-). This parameter is required.
          */
         public Builder command(final com.aliyun.ros.cdk.core.IResolvable command) {
             this.props.command(command);

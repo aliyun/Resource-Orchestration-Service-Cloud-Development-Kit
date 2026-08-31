@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sag;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-aclrule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.963Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.062Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.ACLRuleProps")
 @software.amazon.jsii.Jsii.Proxy(ACLRuleProps.Jsii$Proxy.class)
 public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,14 +21,24 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getDestCidr();
 
     /**
-     * Property destPortRange: Destination port range, 80/80.
+     * Property destPortRange: The destination port range.
+     * <p>
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDestPortRange();
 
     /**
-     * Property direction: Regular direction.
+     * Property direction: The direction of traffic to which the ACL rule applies.
      * <p>
-     * Value: in|out
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>in: inbound. Traffic from an external network to the local branch where the SAG
+     * instance is deployed.</li>
+     * <li>out: outbound. Traffic from the local branch where the SAG instance is deployed
+     * to an external network.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDirection();
 
@@ -48,7 +58,10 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceCidr();
 
     /**
-     * Property sourcePortRange: Source port range, 80/80.
+     * Property sourcePortRange: The source port range.
+     * <p>
+     * Valid values: -1 and 1 to 65535.
+     * Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSourcePortRange();
 
@@ -82,17 +95,20 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property name: The name of the ACL rule.
      * <p>
-     * The name must be 2 to 100 characters in length, and can contain digits, underscores
-     * (_), and hyphens (-). It must start with a letter.
+     * The name must be 2 to 100 characters in length, start with a letter, and can
+     * contain digits, periods (.), underscores (_), and hyphens (-).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
-     * Property priority: Priority, ranging from 1 to 100.
+     * Property priority: The priority of the ACL rule.
      * <p>
-     * Default: 1
+     * A smaller value indicates a higher priority. If multiple rules have the same
+     * priority, the rule that is first delivered to the Smart Access Gateway device
+     * takes precedence.
+     * Valid values: 1 to 100. Default value: 1.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPriority() {
         return null;
@@ -175,7 +191,9 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getDestPortRange}
-         * @param destPortRange Property destPortRange: Destination port range, 80/80. This parameter is required.
+         * @param destPortRange Property destPortRange: The destination port range. This parameter is required.
+         *                      Valid values: -1 and 1 to 65535.
+         *                      Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * @return {@code this}
          */
         public Builder destPortRange(java.lang.String destPortRange) {
@@ -185,7 +203,9 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getDestPortRange}
-         * @param destPortRange Property destPortRange: Destination port range, 80/80. This parameter is required.
+         * @param destPortRange Property destPortRange: The destination port range. This parameter is required.
+         *                      Valid values: -1 and 1 to 65535.
+         *                      Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * @return {@code this}
          */
         public Builder destPortRange(com.aliyun.ros.cdk.core.IResolvable destPortRange) {
@@ -195,8 +215,15 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getDirection}
-         * @param direction Property direction: Regular direction. This parameter is required.
-         *                  Value: in|out
+         * @param direction Property direction: The direction of traffic to which the ACL rule applies. This parameter is required.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>in: inbound. Traffic from an external network to the local branch where the SAG
+         *                  instance is deployed.</li>
+         *                  <li>out: outbound. Traffic from the local branch where the SAG instance is deployed
+         *                  to an external network.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder direction(java.lang.String direction) {
@@ -206,8 +233,15 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getDirection}
-         * @param direction Property direction: Regular direction. This parameter is required.
-         *                  Value: in|out
+         * @param direction Property direction: The direction of traffic to which the ACL rule applies. This parameter is required.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>in: inbound. Traffic from an external network to the local branch where the SAG
+         *                  instance is deployed.</li>
+         *                  <li>out: outbound. Traffic from the local branch where the SAG instance is deployed
+         *                  to an external network.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder direction(com.aliyun.ros.cdk.core.IResolvable direction) {
@@ -277,7 +311,9 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getSourcePortRange}
-         * @param sourcePortRange Property sourcePortRange: Source port range, 80/80. This parameter is required.
+         * @param sourcePortRange Property sourcePortRange: The source port range. This parameter is required.
+         *                        Valid values: -1 and 1 to 65535.
+         *                        Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * @return {@code this}
          */
         public Builder sourcePortRange(java.lang.String sourcePortRange) {
@@ -287,7 +323,9 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getSourcePortRange}
-         * @param sourcePortRange Property sourcePortRange: Source port range, 80/80. This parameter is required.
+         * @param sourcePortRange Property sourcePortRange: The source port range. This parameter is required.
+         *                        Valid values: -1 and 1 to 65535.
+         *                        Use the format 1/200 or 80/80. A value of -1/-1 means all ports.
          * @return {@code this}
          */
         public Builder sourcePortRange(com.aliyun.ros.cdk.core.IResolvable sourcePortRange) {
@@ -366,8 +404,8 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ACLRuleProps#getName}
          * @param name Property name: The name of the ACL rule.
-         *             The name must be 2 to 100 characters in length, and can contain digits, underscores
-         *             (_), and hyphens (-). It must start with a letter.
+         *             The name must be 2 to 100 characters in length, start with a letter, and can
+         *             contain digits, periods (.), underscores (_), and hyphens (-).
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -378,8 +416,8 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link ACLRuleProps#getName}
          * @param name Property name: The name of the ACL rule.
-         *             The name must be 2 to 100 characters in length, and can contain digits, underscores
-         *             (_), and hyphens (-). It must start with a letter.
+         *             The name must be 2 to 100 characters in length, start with a letter, and can
+         *             contain digits, periods (.), underscores (_), and hyphens (-).
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -389,8 +427,11 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getPriority}
-         * @param priority Property priority: Priority, ranging from 1 to 100.
-         *                 Default: 1
+         * @param priority Property priority: The priority of the ACL rule.
+         *                 A smaller value indicates a higher priority. If multiple rules have the same
+         *                 priority, the rule that is first delivered to the Smart Access Gateway device
+         *                 takes precedence.
+         *                 Valid values: 1 to 100. Default value: 1.
          * @return {@code this}
          */
         public Builder priority(java.lang.Number priority) {
@@ -400,8 +441,11 @@ public interface ACLRuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ACLRuleProps#getPriority}
-         * @param priority Property priority: Priority, ranging from 1 to 100.
-         *                 Default: 1
+         * @param priority Property priority: The priority of the ACL rule.
+         *                 A smaller value indicates a higher priority. If multiple rules have the same
+         *                 priority, the rule that is first delivered to the Smart Access Gateway device
+         *                 takes precedence.
+         *                 Valid values: 1 to 100. Default value: 1.
          * @return {@code this}
          */
         public Builder priority(com.aliyun.ros.cdk.core.IResolvable priority) {

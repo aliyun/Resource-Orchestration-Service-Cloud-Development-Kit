@@ -5,13 +5,13 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-listener
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.217Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.405Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.ListenerProps")
 @software.amazon.jsii.Jsii.Proxy(ListenerProps.Jsii$Proxy.class)
 public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property defaultActions: The actions of the rule.
+     * Property defaultActions: The default actions for the listener.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDefaultActions();
 
@@ -35,7 +35,9 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getLoadBalancerId();
 
     /**
-     * Property caCertificates: List of configured CA certificates for listener.
+     * Property caCertificates: A list of CA certificates for the listener.
+     * <p>
+     * Only one CA certificate is supported.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCaCertificates() {
         return null;
@@ -51,7 +53,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property certificates: The list of SSL certificates for listener.
+     * Property certificates: A list of server certificates.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCertificates() {
         return null;
@@ -80,20 +82,30 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property idleTimeout: The timeout period of idle connections.
+     * Property idleTimeout: The idle timeout in seconds.
      * <p>
-     * Valid values: 1 to 3600. Unit: seconds.
+     * Valid values: 1 to 600.
      * Default value: 15.
-     * If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+     * If no requests are received on a connection within the idle timeout, the load
+     * balancer closes the connection. A new connection is established for the next
+     * request.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can request a quota increase to a maximum of 3,600 seconds.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIdleTimeout() {
         return null;
     }
 
     /**
-     * Property listenerDescription: The description of the listener.
+     * Property listenerDescription: A custom name for the listener.
      * <p>
-     * The description must be 2 to 256 characters in length.
+     * The name must be 2 to 256 characters long and can contain letters, digits,
+     * hyphens (-), forward slashes (/), periods (.), underscores (_), and Chinese
+     * characters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getListenerDescription() {
         return null;
@@ -121,12 +133,18 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property requestTimeout: The timeout period of the request.
+     * Property requestTimeout: The request timeout in seconds.
      * <p>
-     * Valid values: 1 to 900. Unit: seconds.
+     * Valid values: 1 to 600.
      * Default value: 60.
-     * If no response is received from the backend server during the request timeout period,
-     * ALB sends an HTTP 504 error code to the client.
+     * If a backend server does not respond within the timeout period, the load balancer
+     * returns an <code>HTTP 504</code> error to the client.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can request a quota increase to a maximum of 3,600 seconds.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRequestTimeout() {
         return null;
@@ -145,7 +163,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property xForwardedForConfig: The configuration of the XForward field.
+     * Property xForwardedForConfig: The configuration of <code>X-Forwarded-*</code> headers.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getXForwardedForConfig() {
         return null;
@@ -181,7 +199,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getDefaultActions}
-         * @param defaultActions Property defaultActions: The actions of the rule. This parameter is required.
+         * @param defaultActions Property defaultActions: The default actions for the listener. This parameter is required.
          * @return {@code this}
          */
         public Builder defaultActions(com.aliyun.ros.cdk.core.IResolvable defaultActions) {
@@ -191,7 +209,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getDefaultActions}
-         * @param defaultActions Property defaultActions: The actions of the rule. This parameter is required.
+         * @param defaultActions Property defaultActions: The default actions for the listener. This parameter is required.
          * @return {@code this}
          */
         public Builder defaultActions(java.util.List<? extends java.lang.Object> defaultActions) {
@@ -265,7 +283,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getCaCertificates}
-         * @param caCertificates Property caCertificates: List of configured CA certificates for listener.
+         * @param caCertificates Property caCertificates: A list of CA certificates for the listener.
+         *                       Only one CA certificate is supported.
          * @return {@code this}
          */
         public Builder caCertificates(com.aliyun.ros.cdk.core.IResolvable caCertificates) {
@@ -275,7 +294,8 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getCaCertificates}
-         * @param caCertificates Property caCertificates: List of configured CA certificates for listener.
+         * @param caCertificates Property caCertificates: A list of CA certificates for the listener.
+         *                       Only one CA certificate is supported.
          * @return {@code this}
          */
         public Builder caCertificates(java.util.List<? extends java.lang.Object> caCertificates) {
@@ -307,7 +327,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getCertificates}
-         * @param certificates Property certificates: The list of SSL certificates for listener.
+         * @param certificates Property certificates: A list of server certificates.
          * @return {@code this}
          */
         public Builder certificates(com.aliyun.ros.cdk.core.IResolvable certificates) {
@@ -317,7 +337,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getCertificates}
-         * @param certificates Property certificates: The list of SSL certificates for listener.
+         * @param certificates Property certificates: A list of server certificates.
          * @return {@code this}
          */
         public Builder certificates(java.util.List<? extends java.lang.Object> certificates) {
@@ -379,10 +399,18 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getIdleTimeout}
-         * @param idleTimeout Property idleTimeout: The timeout period of idle connections.
-         *                    Valid values: 1 to 3600. Unit: seconds.
+         * @param idleTimeout Property idleTimeout: The idle timeout in seconds.
+         *                    Valid values: 1 to 600.
          *                    Default value: 15.
-         *                    If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+         *                    If no requests are received on a connection within the idle timeout, the load
+         *                    balancer closes the connection. A new connection is established for the next
+         *                    request.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    You can request a quota increase to a maximum of 3,600 seconds.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder idleTimeout(java.lang.Number idleTimeout) {
@@ -392,10 +420,18 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getIdleTimeout}
-         * @param idleTimeout Property idleTimeout: The timeout period of idle connections.
-         *                    Valid values: 1 to 3600. Unit: seconds.
+         * @param idleTimeout Property idleTimeout: The idle timeout in seconds.
+         *                    Valid values: 1 to 600.
          *                    Default value: 15.
-         *                    If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+         *                    If no requests are received on a connection within the idle timeout, the load
+         *                    balancer closes the connection. A new connection is established for the next
+         *                    request.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    You can request a quota increase to a maximum of 3,600 seconds.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder idleTimeout(com.aliyun.ros.cdk.core.IResolvable idleTimeout) {
@@ -405,8 +441,10 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getListenerDescription}
-         * @param listenerDescription Property listenerDescription: The description of the listener.
-         *                            The description must be 2 to 256 characters in length.
+         * @param listenerDescription Property listenerDescription: A custom name for the listener.
+         *                            The name must be 2 to 256 characters long and can contain letters, digits,
+         *                            hyphens (-), forward slashes (/), periods (.), underscores (_), and Chinese
+         *                            characters.
          * @return {@code this}
          */
         public Builder listenerDescription(java.lang.String listenerDescription) {
@@ -416,8 +454,10 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getListenerDescription}
-         * @param listenerDescription Property listenerDescription: The description of the listener.
-         *                            The description must be 2 to 256 characters in length.
+         * @param listenerDescription Property listenerDescription: A custom name for the listener.
+         *                            The name must be 2 to 256 characters long and can contain letters, digits,
+         *                            hyphens (-), forward slashes (/), periods (.), underscores (_), and Chinese
+         *                            characters.
          * @return {@code this}
          */
         public Builder listenerDescription(com.aliyun.ros.cdk.core.IResolvable listenerDescription) {
@@ -487,11 +527,17 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getRequestTimeout}
-         * @param requestTimeout Property requestTimeout: The timeout period of the request.
-         *                       Valid values: 1 to 900. Unit: seconds.
+         * @param requestTimeout Property requestTimeout: The request timeout in seconds.
+         *                       Valid values: 1 to 600.
          *                       Default value: 60.
-         *                       If no response is received from the backend server during the request timeout period,
-         *                       ALB sends an HTTP 504 error code to the client.
+         *                       If a backend server does not respond within the timeout period, the load balancer
+         *                       returns an <code>HTTP 504</code> error to the client.
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can request a quota increase to a maximum of 3,600 seconds.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder requestTimeout(java.lang.Number requestTimeout) {
@@ -501,11 +547,17 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getRequestTimeout}
-         * @param requestTimeout Property requestTimeout: The timeout period of the request.
-         *                       Valid values: 1 to 900. Unit: seconds.
+         * @param requestTimeout Property requestTimeout: The request timeout in seconds.
+         *                       Valid values: 1 to 600.
          *                       Default value: 60.
-         *                       If no response is received from the backend server during the request timeout period,
-         *                       ALB sends an HTTP 504 error code to the client.
+         *                       If a backend server does not respond within the timeout period, the load balancer
+         *                       returns an <code>HTTP 504</code> error to the client.
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can request a quota increase to a maximum of 3,600 seconds.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder requestTimeout(com.aliyun.ros.cdk.core.IResolvable requestTimeout) {
@@ -543,7 +595,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getXForwardedForConfig}
-         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of the XForward field.
+         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of <code>X-Forwarded-*</code> headers.
          * @return {@code this}
          */
         public Builder xForwardedForConfig(com.aliyun.ros.cdk.core.IResolvable xForwardedForConfig) {
@@ -553,7 +605,7 @@ public interface ListenerProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ListenerProps#getXForwardedForConfig}
-         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of the XForward field.
+         * @param xForwardedForConfig Property xForwardedForConfig: The configuration of <code>X-Forwarded-*</code> headers.
          * @return {@code this}
          */
         public Builder xForwardedForConfig(com.aliyun.ros.cdk.alb.RosListener.XForwardedForConfigProperty xForwardedForConfig) {

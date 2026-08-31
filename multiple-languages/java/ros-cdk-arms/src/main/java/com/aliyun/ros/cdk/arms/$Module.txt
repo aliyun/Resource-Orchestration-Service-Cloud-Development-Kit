@@ -25,6 +25,7 @@
 @alicloud/ros-cdk-arms.IManagedPrometheus=com.aliyun.ros.cdk.arms.IManagedPrometheus
 @alicloud/ros-cdk-arms.IRetcodeApp=com.aliyun.ros.cdk.arms.IRetcodeApp
 @alicloud/ros-cdk-arms.IRum=com.aliyun.ros.cdk.arms.IRum
+@alicloud/ros-cdk-arms.ITraceResource=com.aliyun.ros.cdk.arms.ITraceResource
 @alicloud/ros-cdk-arms.IXTraceApp=com.aliyun.ros.cdk.arms.IXTraceApp
 @alicloud/ros-cdk-arms.ManagedPrometheus=com.aliyun.ros.cdk.arms.ManagedPrometheus
 @alicloud/ros-cdk-arms.ManagedPrometheusProps=com.aliyun.ros.cdk.arms.ManagedPrometheusProps
@@ -55,11 +56,15 @@
 @alicloud/ros-cdk-arms.RosRum=com.aliyun.ros.cdk.arms.RosRum
 @alicloud/ros-cdk-arms.RosRum.TagsProperty=com.aliyun.ros.cdk.arms.RosRum$TagsProperty
 @alicloud/ros-cdk-arms.RosRumProps=com.aliyun.ros.cdk.arms.RosRumProps
+@alicloud/ros-cdk-arms.RosTraceResource=com.aliyun.ros.cdk.arms.RosTraceResource
+@alicloud/ros-cdk-arms.RosTraceResourceProps=com.aliyun.ros.cdk.arms.RosTraceResourceProps
 @alicloud/ros-cdk-arms.RosXTraceApp=com.aliyun.ros.cdk.arms.RosXTraceApp
 @alicloud/ros-cdk-arms.RosXTraceApp.TagsProperty=com.aliyun.ros.cdk.arms.RosXTraceApp$TagsProperty
 @alicloud/ros-cdk-arms.RosXTraceAppProps=com.aliyun.ros.cdk.arms.RosXTraceAppProps
 @alicloud/ros-cdk-arms.Rum=com.aliyun.ros.cdk.arms.Rum
 @alicloud/ros-cdk-arms.RumProps=com.aliyun.ros.cdk.arms.RumProps
+@alicloud/ros-cdk-arms.TraceResource=com.aliyun.ros.cdk.arms.TraceResource
+@alicloud/ros-cdk-arms.TraceResourceProps=com.aliyun.ros.cdk.arms.TraceResourceProps
 @alicloud/ros-cdk-arms.XTraceApp=com.aliyun.ros.cdk.arms.XTraceApp
 @alicloud/ros-cdk-arms.XTraceAppProps=com.aliyun.ros.cdk.arms.XTraceAppProps
 @alicloud/ros-cdk-arms.datasource.Environment=com.aliyun.ros.cdk.arms.datasource.Environment

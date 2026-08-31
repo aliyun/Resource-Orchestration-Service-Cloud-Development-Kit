@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Config
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Config::AggregateCompliancePack`, which is used to create a compliance package for an account group.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::Config::AggregateCompliancePack`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AggregateCompliancePack` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregatecompliancepack
@@ -166,10 +166,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Config
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: riskLevel: Compliance package risk level. Value:
-        /// 1: High risk.
-        /// 2: Medium risk.
-        /// 3: Low risk.
+        /// <strong>Property</strong>: riskLevel: The risk level of the compliance pack. Valid values:
+        /// - 1: High
+        /// - 2 (default): Medium
+        /// - 3: Low
         /// </remarks>
         [JsiiProperty(name: "riskLevel", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object RiskLevel

@@ -5,18 +5,32 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-dedicatedhost
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.860Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.218Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.DedicatedHostProps")
 @software.amazon.jsii.Jsii.Proxy(DedicatedHostProps.Jsii$Proxy.class)
 public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property dedicatedHostType: The instance type of host.
+     * Property dedicatedHostType: The dedicated host type.
+     * <p>
+     * You can call the <a href="">DescribeDedicatedHostTypes</a>
+     * operation to query the most recent list of dedicated host types.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDedicatedHostType();
 
     /**
-     * Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+     * Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the dedicated host fails or needs to be repaired online.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Migrate: The instances are migrated to another physical machine and then
+     * restarted.
+     * If cloud disks are attached to the dedicated host, the default value is Migrate.</li>
+     * <li>Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+     * instances are migrated to another physical machine and then restarted.
+     * If local disks are attached to the dedicated host, the default value is Stop.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getActionOnMaintenance() {
         return null;
@@ -32,9 +46,19 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
+     * Property autoReleaseTime: The time when to automatically release the dedicated host.
      * <p>
-     * format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+     * Specify the time in
+     * the <code>ISO 8601</code> standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+     * UTC.
+     * <p>
+     * <blockquote></blockquote>
+     * <p>
+     * <ul>
+     * <li>It must be at least half an hour later than the current time.</li>
+     * <li>It must be at most three years later than the current time.</li>
+     * <li>If the value of seconds (ss) is not 00, it is automatically set to 00.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoReleaseTime() {
         return null;
@@ -68,7 +92,21 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+     * Property cpuOverCommitRatio: The CPU overcommit ratio.
+     * <p>
+     * You can configure CPU overcommit ratios only for the
+     * following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+     * The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+     * host. You can use the following formula to calculate the number of available
+     * vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+     * cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+     * on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+     * dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+     * For scenarios that have minimal requirements on CPU stability or where CPU load
+     * is not heavy, such as development and test environments, you can increase the
+     * number of available vCPUs on a dedicated host by increasing the CPU overcommit
+     * ratio. This way, you can deploy more ECS instances of the same specifications on
+     * the dedicated host and reduce the unit deployment cost.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getCpuOverCommitRatio() {
         return null;
@@ -82,23 +120,37 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
+     * Property dedicatedHostName: The name of the dedicated host.
      * <p>
-     * It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+     * The name must be 2 to 128 characters in length
+     * and can contain letters and digits. The name can contain colons (:), underscores
+     * (_), periods (.), and hyphens (-).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDedicatedHostName() {
         return null;
     }
 
     /**
-     * Property description: The description of host.
+     * Property description: The description of the dedicated host.
+     * <p>
+     * The description must be 2 to 256
+     * characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property minQuantity: The minimum number of dedicated hosts that you want to create.
+     * Property minQuantity: The minimum number of dedicated hosts to create.
+     * <p>
+     * Valid values: 1 to 100.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If the number of available dedicated hosts is less than the minimum number of
+     * dedicated hosts to create, the dedicated hosts fail to be created.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMinQuantity() {
         return null;
@@ -166,7 +218,10 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property zoneId: The zone to create the host.
+     * Property zoneId: The ID of the zone in which to create the dedicated host.
+     * <p>
+     * This parameter is empty by default. If you do not specify a zone, the system
+     * selects a zone.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
@@ -205,7 +260,9 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getDedicatedHostType}
-         * @param dedicatedHostType Property dedicatedHostType: The instance type of host. This parameter is required.
+         * @param dedicatedHostType Property dedicatedHostType: The dedicated host type. This parameter is required.
+         *                          You can call the <a href="">DescribeDedicatedHostTypes</a>
+         *                          operation to query the most recent list of dedicated host types.
          * @return {@code this}
          */
         public Builder dedicatedHostType(java.lang.String dedicatedHostType) {
@@ -215,7 +272,9 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getDedicatedHostType}
-         * @param dedicatedHostType Property dedicatedHostType: The instance type of host. This parameter is required.
+         * @param dedicatedHostType Property dedicatedHostType: The dedicated host type. This parameter is required.
+         *                          You can call the <a href="">DescribeDedicatedHostTypes</a>
+         *                          operation to query the most recent list of dedicated host types.
          * @return {@code this}
          */
         public Builder dedicatedHostType(com.aliyun.ros.cdk.core.IResolvable dedicatedHostType) {
@@ -225,7 +284,17 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getActionOnMaintenance}
-         * @param actionOnMaintenance Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+         * @param actionOnMaintenance Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the dedicated host fails or needs to be repaired online.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>Migrate: The instances are migrated to another physical machine and then
+         *                            restarted.
+         *                            If cloud disks are attached to the dedicated host, the default value is Migrate.</li>
+         *                            <li>Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+         *                            instances are migrated to another physical machine and then restarted.
+         *                            If local disks are attached to the dedicated host, the default value is Stop.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder actionOnMaintenance(java.lang.String actionOnMaintenance) {
@@ -235,7 +304,17 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getActionOnMaintenance}
-         * @param actionOnMaintenance Property actionOnMaintenance: The policy used to migrate the instances from the dedicated hostwhen the dedicated host fails or needs to be repaired online.Valid values: Migrate: Instances are migrated to another physical server and restarted.If the dedicated host is attached with disks that are not local disks, the default value is Migrate.Stop: Instances on the dedicated host are stopped. If the dedicated host cannot be repaired,the instances are migrated to another physical server and restarted.If the dedicated host is attached with local disks, the default value is Stop.
+         * @param actionOnMaintenance Property actionOnMaintenance: The policy for migrating the instances deployed on the dedicated host when the dedicated host fails or needs to be repaired online.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>Migrate: The instances are migrated to another physical machine and then
+         *                            restarted.
+         *                            If cloud disks are attached to the dedicated host, the default value is Migrate.</li>
+         *                            <li>Stop: The instances are stopped. If the dedicated host cannot be repaired, the
+         *                            instances are migrated to another physical machine and then restarted.
+         *                            If local disks are attached to the dedicated host, the default value is Stop.</li>
+         *                            </ul>
          * @return {@code this}
          */
         public Builder actionOnMaintenance(com.aliyun.ros.cdk.core.IResolvable actionOnMaintenance) {
@@ -267,8 +346,18 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getAutoReleaseTime}
-         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
-         *                        format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+         * @param autoReleaseTime Property autoReleaseTime: The time when to automatically release the dedicated host.
+         *                        Specify the time in
+         *                        the <code>ISO 8601</code> standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+         *                        UTC.
+         *                        <p>
+         *                        <blockquote></blockquote>
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must be at least half an hour later than the current time.</li>
+         *                        <li>It must be at most three years later than the current time.</li>
+         *                        <li>If the value of seconds (ss) is not 00, it is automatically set to 00.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder autoReleaseTime(java.lang.String autoReleaseTime) {
@@ -278,8 +367,18 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getAutoReleaseTime}
-         * @param autoReleaseTime Property autoReleaseTime: Auto release time for created host, Follow ISO8601 standard using UTC time.
-         *                        format is 'yyyy-MM-ddTHH:mm:ssZ'. Not bigger than 3 years from this day onwards
+         * @param autoReleaseTime Property autoReleaseTime: The time when to automatically release the dedicated host.
+         *                        Specify the time in
+         *                        the <code>ISO 8601</code> standard in the yyyy-MM-ddTHH:mm:ssZ format. The time must be in
+         *                        UTC.
+         *                        <p>
+         *                        <blockquote></blockquote>
+         *                        <p>
+         *                        <ul>
+         *                        <li>It must be at least half an hour later than the current time.</li>
+         *                        <li>It must be at most three years later than the current time.</li>
+         *                        <li>If the value of seconds (ss) is not 00, it is automatically set to 00.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder autoReleaseTime(com.aliyun.ros.cdk.core.IResolvable autoReleaseTime) {
@@ -355,7 +454,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getCpuOverCommitRatio}
-         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio.
+         *                           You can configure CPU overcommit ratios only for the
+         *                           following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+         *                           The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+         *                           host. You can use the following formula to calculate the number of available
+         *                           vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+         *                           cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+         *                           on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+         *                           dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+         *                           For scenarios that have minimal requirements on CPU stability or where CPU load
+         *                           is not heavy, such as development and test environments, you can increase the
+         *                           number of available vCPUs on a dedicated host by increasing the CPU overcommit
+         *                           ratio. This way, you can deploy more ECS instances of the same specifications on
+         *                           the dedicated host and reduce the unit deployment cost.
          * @return {@code this}
          */
         public Builder cpuOverCommitRatio(java.lang.Number cpuOverCommitRatio) {
@@ -365,7 +477,20 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getCpuOverCommitRatio}
-         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio of the dedicated host.
+         * @param cpuOverCommitRatio Property cpuOverCommitRatio: The CPU overcommit ratio.
+         *                           You can configure CPU overcommit ratios only for the
+         *                           following dedicated host types: g6s, c6s, and r6s. Valid values: 1 to 5.
+         *                           The CPU overcommit ratio affects the number of available vCPUs on a dedicated
+         *                           host. You can use the following formula to calculate the number of available
+         *                           vCPUs on a dedicated host: Number of available vCPUs = Number of physical CPU
+         *                           cores * 2 * CPU overcommit ratio. For example, the number of physical CPU cores
+         *                           on each g6s dedicated host is 52. If you set the CPU overcommit ratio of a g6s
+         *                           dedicated host to 4, the number of available vCPUs on the dedicated host is 416.
+         *                           For scenarios that have minimal requirements on CPU stability or where CPU load
+         *                           is not heavy, such as development and test environments, you can increase the
+         *                           number of available vCPUs on a dedicated host by increasing the CPU overcommit
+         *                           ratio. This way, you can deploy more ECS instances of the same specifications on
+         *                           the dedicated host and reduce the unit deployment cost.
          * @return {@code this}
          */
         public Builder cpuOverCommitRatio(com.aliyun.ros.cdk.core.IResolvable cpuOverCommitRatio) {
@@ -395,8 +520,10 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getDedicatedHostName}
-         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
-         *                          It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host.
+         *                          The name must be 2 to 128 characters in length
+         *                          and can contain letters and digits. The name can contain colons (:), underscores
+         *                          (_), periods (.), and hyphens (-).
          * @return {@code this}
          */
         public Builder dedicatedHostName(java.lang.String dedicatedHostName) {
@@ -406,8 +533,10 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getDedicatedHostName}
-         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host, [2, 128] English or Chinese characters.
-         *                          It must begin with an uppercase/lowercase letter or a Chinese character, and may contain numbers, '_' or '-'. It cannot begin with http:// or https://.
+         * @param dedicatedHostName Property dedicatedHostName: The name of the dedicated host.
+         *                          The name must be 2 to 128 characters in length
+         *                          and can contain letters and digits. The name can contain colons (:), underscores
+         *                          (_), periods (.), and hyphens (-).
          * @return {@code this}
          */
         public Builder dedicatedHostName(com.aliyun.ros.cdk.core.IResolvable dedicatedHostName) {
@@ -417,7 +546,9 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getDescription}
-         * @param description Property description: The description of host.
+         * @param description Property description: The description of the dedicated host.
+         *                    The description must be 2 to 256
+         *                    characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -427,7 +558,9 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getDescription}
-         * @param description Property description: The description of host.
+         * @param description Property description: The description of the dedicated host.
+         *                    The description must be 2 to 256
+         *                    characters in length and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -437,7 +570,15 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getMinQuantity}
-         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts that you want to create.
+         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts to create.
+         *                    Valid values: 1 to 100.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    If the number of available dedicated hosts is less than the minimum number of
+         *                    dedicated hosts to create, the dedicated hosts fail to be created.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder minQuantity(java.lang.Number minQuantity) {
@@ -447,7 +588,15 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getMinQuantity}
-         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts that you want to create.
+         * @param minQuantity Property minQuantity: The minimum number of dedicated hosts to create.
+         *                    Valid values: 1 to 100.
+         *                    <p>
+         *                    <blockquote>
+         *                    <p>
+         *                    If the number of available dedicated hosts is less than the minimum number of
+         *                    dedicated hosts to create, the dedicated hosts fail to be created.
+         *                    <p>
+         *                    </blockquote>
          * @return {@code this}
          */
         public Builder minQuantity(com.aliyun.ros.cdk.core.IResolvable minQuantity) {
@@ -599,7 +748,9 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getZoneId}
-         * @param zoneId Property zoneId: The zone to create the host.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the dedicated host.
+         *               This parameter is empty by default. If you do not specify a zone, the system
+         *               selects a zone.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -609,7 +760,9 @@ public interface DedicatedHostProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link DedicatedHostProps#getZoneId}
-         * @param zoneId Property zoneId: The zone to create the host.
+         * @param zoneId Property zoneId: The ID of the zone in which to create the dedicated host.
+         *               This parameter is empty by default. If you do not specify a zone, the system
+         *               selects a zone.
          * @return {@code this}
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {

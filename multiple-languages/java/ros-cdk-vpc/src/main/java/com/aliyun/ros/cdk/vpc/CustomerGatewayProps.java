@@ -5,36 +5,73 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-customergateway
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.368Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.175Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CustomerGatewayProps")
 @software.amazon.jsii.Jsii.Proxy(CustomerGatewayProps.Jsii$Proxy.class)
 public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property ipAddress: The IP address of the user gateway.
+     * Property ipAddress: The static IP address of the gateway device in the data center.
+     * <p>
+     * <ul>
+     * <li>If you want to create a public IPsec-VPN connection, enter a public IP
+     * address.</li>
+     * <li>If you want to create a private IPsec-VPN connection, enter a private IP
+     * address.
+     * You cannot use the following IP addresses. Otherwise, a IPsec-VPN connection
+     * cannot be established:</li>
+     * <li>100.64.0.0~100.127.255.255</li>
+     * <li>127.0.0.0~127.255.255.255</li>
+     * <li>169.254.0.0~169.254.255.255</li>
+     * <li>224.0.0.0~239.255.255.255</li>
+     * <li>255.0.0.0~255.255.255.255</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getIpAddress();
 
     /**
-     * Property asn: The autonomous system number of the local data center gateway device.
+     * Property asn: The autonomous system number (ASN) of the gateway device in your data center.
+     * <p>
+     * This parameter is required If you want to use Border Gateway Protocol (BGP) for
+     * the IPsec-VPN connection. Valid values: 1 to 4294967295. 45104 is not supported.
+     * Asn is a 4-byte number. You can enter it in two segments and separate the first
+     * 16 bits from the following 16 bits with a period (.). Enter the number in each
+     * segment in decimal format.
+     * For example, if you enter 123.456, the ASN is 8061384. The ASN is calculated by
+     * using the following formula: 123 × 65536 + 456 = 8061384.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>We recommend that you use a private ASN to establish BGP connections to
+     * the cloud platform. For information about the range of private ASNs, see the relevant
+     * documentation.</li>
+     * <li>45104 is a unique identifier assigned by IANA to the cloud platform. It is used to
+     * identify the cloud platform during route selection and data transmission over the
+     * Internet.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAsn() {
         return null;
     }
 
     /**
-     * Property description: Description of the user gateway.
+     * Property description: The description of the customer gateway.
      * <p>
-     * The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+     * The description must be 1 to 100 characters in length, and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property name: The name of the user gateway.
+     * Property name: The name of the customer gateway.
      * <p>
-     * The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+     * The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+     * or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -70,7 +107,20 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getIpAddress}
-         * @param ipAddress Property ipAddress: The IP address of the user gateway. This parameter is required.
+         * @param ipAddress Property ipAddress: The static IP address of the gateway device in the data center. This parameter is required.
+         *                  <ul>
+         *                  <li>If you want to create a public IPsec-VPN connection, enter a public IP
+         *                  address.</li>
+         *                  <li>If you want to create a private IPsec-VPN connection, enter a private IP
+         *                  address.
+         *                  You cannot use the following IP addresses. Otherwise, a IPsec-VPN connection
+         *                  cannot be established:</li>
+         *                  <li>100.64.0.0~100.127.255.255</li>
+         *                  <li>127.0.0.0~127.255.255.255</li>
+         *                  <li>169.254.0.0~169.254.255.255</li>
+         *                  <li>224.0.0.0~239.255.255.255</li>
+         *                  <li>255.0.0.0~255.255.255.255</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder ipAddress(java.lang.String ipAddress) {
@@ -80,7 +130,20 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getIpAddress}
-         * @param ipAddress Property ipAddress: The IP address of the user gateway. This parameter is required.
+         * @param ipAddress Property ipAddress: The static IP address of the gateway device in the data center. This parameter is required.
+         *                  <ul>
+         *                  <li>If you want to create a public IPsec-VPN connection, enter a public IP
+         *                  address.</li>
+         *                  <li>If you want to create a private IPsec-VPN connection, enter a private IP
+         *                  address.
+         *                  You cannot use the following IP addresses. Otherwise, a IPsec-VPN connection
+         *                  cannot be established:</li>
+         *                  <li>100.64.0.0~100.127.255.255</li>
+         *                  <li>127.0.0.0~127.255.255.255</li>
+         *                  <li>169.254.0.0~169.254.255.255</li>
+         *                  <li>224.0.0.0~239.255.255.255</li>
+         *                  <li>255.0.0.0~255.255.255.255</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder ipAddress(com.aliyun.ros.cdk.core.IResolvable ipAddress) {
@@ -90,7 +153,27 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getAsn}
-         * @param asn Property asn: The autonomous system number of the local data center gateway device.
+         * @param asn Property asn: The autonomous system number (ASN) of the gateway device in your data center.
+         *            This parameter is required If you want to use Border Gateway Protocol (BGP) for
+         *            the IPsec-VPN connection. Valid values: 1 to 4294967295. 45104 is not supported.
+         *            Asn is a 4-byte number. You can enter it in two segments and separate the first
+         *            16 bits from the following 16 bits with a period (.). Enter the number in each
+         *            segment in decimal format.
+         *            For example, if you enter 123.456, the ASN is 8061384. The ASN is calculated by
+         *            using the following formula: 123 × 65536 + 456 = 8061384.
+         *            <p>
+         *            <blockquote>
+         *            <p>
+         *            <ul>
+         *            <li>We recommend that you use a private ASN to establish BGP connections to
+         *            the cloud platform. For information about the range of private ASNs, see the relevant
+         *            documentation.</li>
+         *            <li>45104 is a unique identifier assigned by IANA to the cloud platform. It is used to
+         *            identify the cloud platform during route selection and data transmission over the
+         *            Internet.</li>
+         *            </ul>
+         *            <p>
+         *            </blockquote>
          * @return {@code this}
          */
         public Builder asn(java.lang.Number asn) {
@@ -100,7 +183,27 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getAsn}
-         * @param asn Property asn: The autonomous system number of the local data center gateway device.
+         * @param asn Property asn: The autonomous system number (ASN) of the gateway device in your data center.
+         *            This parameter is required If you want to use Border Gateway Protocol (BGP) for
+         *            the IPsec-VPN connection. Valid values: 1 to 4294967295. 45104 is not supported.
+         *            Asn is a 4-byte number. You can enter it in two segments and separate the first
+         *            16 bits from the following 16 bits with a period (.). Enter the number in each
+         *            segment in decimal format.
+         *            For example, if you enter 123.456, the ASN is 8061384. The ASN is calculated by
+         *            using the following formula: 123 × 65536 + 456 = 8061384.
+         *            <p>
+         *            <blockquote>
+         *            <p>
+         *            <ul>
+         *            <li>We recommend that you use a private ASN to establish BGP connections to
+         *            the cloud platform. For information about the range of private ASNs, see the relevant
+         *            documentation.</li>
+         *            <li>45104 is a unique identifier assigned by IANA to the cloud platform. It is used to
+         *            identify the cloud platform during route selection and data transmission over the
+         *            Internet.</li>
+         *            </ul>
+         *            <p>
+         *            </blockquote>
          * @return {@code this}
          */
         public Builder asn(com.aliyun.ros.cdk.core.IResolvable asn) {
@@ -110,8 +213,9 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getDescription}
-         * @param description Property description: Description of the user gateway.
-         *                    The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+         * @param description Property description: The description of the customer gateway.
+         *                    The description must be 1 to 100 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -121,8 +225,9 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getDescription}
-         * @param description Property description: Description of the user gateway.
-         *                    The length is 2-256 characters and must start with a letter or Chinese, but cannot start with http:// or https://.
+         * @param description Property description: The description of the customer gateway.
+         *                    The description must be 1 to 100 characters in length, and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -132,8 +237,9 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getName}
-         * @param name Property name: The name of the user gateway.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+         * @param name Property name: The name of the customer gateway.
+         *             The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+         *             or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -143,8 +249,9 @@ public interface CustomerGatewayProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link CustomerGatewayProps#getName}
-         * @param name Property name: The name of the user gateway.
-         *             The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_), and dashes (-). But it can't start with http:// or https://.
+         * @param name Property name: The name of the customer gateway.
+         *             The name must be 1 to 100 characters in length, and cannot start with <code>http:\/\/</code>
+         *             or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

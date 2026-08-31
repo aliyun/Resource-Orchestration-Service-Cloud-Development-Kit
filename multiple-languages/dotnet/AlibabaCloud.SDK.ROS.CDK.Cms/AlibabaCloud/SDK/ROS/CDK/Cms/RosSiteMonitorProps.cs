@@ -48,8 +48,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object _taskName;
 
         /// <remarks>
-        /// <strong>Property</strong>: taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
-        /// It can contain letters, digits, and underscores (_).
+        /// <strong>Property</strong>: taskName: The name of the monitoring task.
+        /// The name must be 4 to 100 characters long and can contain letters, digits,
+        /// underscores (_), and Chinese characters.
         /// </remarks>
         [JsiiProperty(name: "taskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TaskName
@@ -81,8 +82,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object _taskType;
 
         /// <remarks>
-        /// <strong>Property</strong>: taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
-        /// UDP, DNS, SMTP, POP3, and FTP.
+        /// <strong>Property</strong>: taskType: The type of monitoring task.
+        /// Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+        /// WEBSOCKET.
         /// </remarks>
         [JsiiProperty(name: "taskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object TaskType
@@ -164,8 +166,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         private object? _interval;
 
         /// <remarks>
-        /// <strong>Property</strong>: interval: The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit:
-        /// minutes. Default value: 1.
+        /// <strong>Property</strong>: interval: The monitoring frequency in minutes.
+        /// Valid values: 1, 5, 15, 30, and 60.
+        /// Default: 1.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

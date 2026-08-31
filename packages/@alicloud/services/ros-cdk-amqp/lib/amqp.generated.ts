@@ -65,7 +65,7 @@ function rosAccountPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Account`The , which type creates username and password for ApsaraMQ for RabbitMQ.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Account`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Account` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-account
  */
@@ -152,24 +152,49 @@ export class RosAccount extends ros.RosResource {
 export interface RosBindingProps {
 
     /**
-     * @Property argument: X-match Attributes. Valid Values:
-     * "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-     * "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+     * @Property argument: The key-value pairs for the message header attributes. The message header
+     * attributes consist of one or more key-value pairs. The x-match attribute is
+     * required. Other attributes are custom. The x-match attribute supports the
+     * following values:
+     * - all: This is the default value. All key-value pairs in the message header must
+     * match.
+     * - any: At least one key-value pair in the message header must match.
+     * Separate attributes with semicolons (;) and separate keys from values with colons
+     * (:). Example: x-match:all;type:report;format:pdf
+     * This parameter is valid only for headers exchanges. For other types of exchanges,
+     * this parameter is ignored.
      */
     readonly argument: string | ros.IResolvable;
 
     /**
-     * @Property bindingKey: The Binding Key.
+     * @Property bindingKey: The binding key.
+     * - If the source exchange is not a topic exchange:
+     * - It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+     * forward slashes (\/), and at signs (@).
+     * - The length must be 1 to 255 characters.
+     * - If the source exchange is a topic exchange:
+     * - It can contain letters, digits, hyphens (-), underscores (_), asterisks (\*),
+     * periods (.), number signs (#), forward slashes (\/), and at signs (@).
+     * - The key cannot start or end with a period (.). If the key starts with a number
+     * sign (#) or an asterisk (\*), a period (.) must immediately follow. If the key
+     * ends with a number sign (#) or an asterisk (\*), a period (.) must immediately
+     * precede it. If a number sign (#) or an asterisk (\*) is in the middle of the key,
+     * it must have a period (.) on both sides.
+     * - The length must be 1 to 255 characters.
      */
     readonly bindingKey: string | ros.IResolvable;
 
     /**
-     * @Property bindingType: The Target Binding Types. Valid values: EXCHANGE, QUEUE.
+     * @Property bindingType: The type of the destination object. Valid values:
+     * - 0: Queue
+     * - 1: Exchange
      */
     readonly bindingType: string | ros.IResolvable;
 
     /**
-     * @Property destinationName: The Target Queue Or Exchange of the Name.
+     * @Property destinationName: The name of the binding destination. The destination must be created in the
+     * console. It must belong to the same vhost as `SourceExchange`. The `VirtualHost`
+     * parameter specifies the vhost.
      */
     readonly destinationName: string | ros.IResolvable;
 
@@ -247,7 +272,7 @@ function rosBindingPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`, which is used to bind a queue or an exchange to an exchange.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Binding`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Binding` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
@@ -261,24 +286,49 @@ export class RosBinding extends ros.RosResource {
 
 
     /**
-     * @Property argument: X-match Attributes. Valid Values:
-     * "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-     * "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+     * @Property argument: The key-value pairs for the message header attributes. The message header
+     * attributes consist of one or more key-value pairs. The x-match attribute is
+     * required. Other attributes are custom. The x-match attribute supports the
+     * following values:
+     * - all: This is the default value. All key-value pairs in the message header must
+     * match.
+     * - any: At least one key-value pair in the message header must match.
+     * Separate attributes with semicolons (;) and separate keys from values with colons
+     * (:). Example: x-match:all;type:report;format:pdf
+     * This parameter is valid only for headers exchanges. For other types of exchanges,
+     * this parameter is ignored.
      */
     public argument: string | ros.IResolvable;
 
     /**
-     * @Property bindingKey: The Binding Key.
+     * @Property bindingKey: The binding key.
+     * - If the source exchange is not a topic exchange:
+     * - It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+     * forward slashes (\/), and at signs (@).
+     * - The length must be 1 to 255 characters.
+     * - If the source exchange is a topic exchange:
+     * - It can contain letters, digits, hyphens (-), underscores (_), asterisks (\*),
+     * periods (.), number signs (#), forward slashes (\/), and at signs (@).
+     * - The key cannot start or end with a period (.). If the key starts with a number
+     * sign (#) or an asterisk (\*), a period (.) must immediately follow. If the key
+     * ends with a number sign (#) or an asterisk (\*), a period (.) must immediately
+     * precede it. If a number sign (#) or an asterisk (\*) is in the middle of the key,
+     * it must have a period (.) on both sides.
+     * - The length must be 1 to 255 characters.
      */
     public bindingKey: string | ros.IResolvable;
 
     /**
-     * @Property bindingType: The Target Binding Types. Valid values: EXCHANGE, QUEUE.
+     * @Property bindingType: The type of the destination object. Valid values:
+     * - 0: Queue
+     * - 1: Exchange
      */
     public bindingType: string | ros.IResolvable;
 
     /**
-     * @Property destinationName: The Target Queue Or Exchange of the Name.
+     * @Property destinationName: The name of the binding destination. The destination must be created in the
+     * console. It must belong to the same vhost as `SourceExchange`. The `VirtualHost`
+     * parameter specifies the vhost.
      */
     public destinationName: string | ros.IResolvable;
 
@@ -346,16 +396,30 @@ export interface RosExchangeProps {
     readonly autoDeleteState: boolean | ros.IResolvable;
 
     /**
-     * @Property exchangeName: The name of the exchange.
+     * @Property exchangeName: The name of the exchange. Note:
+     * - The name can contain only letters, digits, hyphens (-), underscores (_),
+     * periods (.), number signs (#), forward slashes (\/), and at signs (@). The name
+     * must be 1 to 255 characters in length.
+     * - The name of an exchange cannot be changed after the exchange is created. To
+     * change the name, delete the exchange and create a new one.
      */
     readonly exchangeName: string | ros.IResolvable;
 
     /**
      * @Property exchangeType: The type of the exchange. Valid values:
-     * FANOUT: An exchange of this type routes all the received messages to all the queues bound to this exchange. You can use a fanout exchange to broadcast messages.
-     * DIRECT: An exchange of this type routes a message to the queue whose binding key is exactly the same as the routing key of the message.
-     * TOPIC: This type is similar to the direct exchange type. An exchange of this type routes a message to one or more queues based on the fuzzy match or multi-condition match result between the routing key of the message and the binding keys of the current exchange.
-     * HEADERS: Headers Exchange uses the Headers property instead of Routing Key for routing matching. When binding Headers Exchange and Queue, set the key-value pair of the binding property; when sending a message to the Headers Exchange, set the message's Headers property key-value pair and use the message Headers The message is routed to the bound Queue by comparing the attribute key-value pair and the bound attribute key-value pair.
+     * - DIRECT: This routing rule type routes messages to a queue whose binding key
+     * exactly matches the routing key of the message.
+     * - TOPIC: This type is similar to the DIRECT type. It routes messages to bound
+     * queues using routing key pattern matching and string comparison.
+     * - FANOUT: This routing rule type is simple. It routes all messages sent to the
+     * exchange to all queues that are bound to the exchange. This works like a
+     * broadcast feature.
+     * - HEADERS: This type is similar to the DIRECT type. It uses header properties
+     * instead of a routing key for routing. When a queue is bound to a headers
+     * exchange, key-value pairs are defined for the binding. When a message is sent to
+     * the exchange, key-value pairs are defined in the message header. The exchange
+     * routes the message by comparing the key-value pairs in the header with the
+     * key-value pairs of the binding.
      */
     readonly exchangeType: string | ros.IResolvable;
 
@@ -464,7 +528,7 @@ function rosExchangePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`, which is used to create an exchange.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Exchange`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Exchange` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-exchange
  */
@@ -490,16 +554,30 @@ export class RosExchange extends ros.RosResource {
     public autoDeleteState: boolean | ros.IResolvable;
 
     /**
-     * @Property exchangeName: The name of the exchange.
+     * @Property exchangeName: The name of the exchange. Note:
+     * - The name can contain only letters, digits, hyphens (-), underscores (_),
+     * periods (.), number signs (#), forward slashes (\/), and at signs (@). The name
+     * must be 1 to 255 characters in length.
+     * - The name of an exchange cannot be changed after the exchange is created. To
+     * change the name, delete the exchange and create a new one.
      */
     public exchangeName: string | ros.IResolvable;
 
     /**
      * @Property exchangeType: The type of the exchange. Valid values:
-     * FANOUT: An exchange of this type routes all the received messages to all the queues bound to this exchange. You can use a fanout exchange to broadcast messages.
-     * DIRECT: An exchange of this type routes a message to the queue whose binding key is exactly the same as the routing key of the message.
-     * TOPIC: This type is similar to the direct exchange type. An exchange of this type routes a message to one or more queues based on the fuzzy match or multi-condition match result between the routing key of the message and the binding keys of the current exchange.
-     * HEADERS: Headers Exchange uses the Headers property instead of Routing Key for routing matching. When binding Headers Exchange and Queue, set the key-value pair of the binding property; when sending a message to the Headers Exchange, set the message's Headers property key-value pair and use the message Headers The message is routed to the bound Queue by comparing the attribute key-value pair and the bound attribute key-value pair.
+     * - DIRECT: This routing rule type routes messages to a queue whose binding key
+     * exactly matches the routing key of the message.
+     * - TOPIC: This type is similar to the DIRECT type. It routes messages to bound
+     * queues using routing key pattern matching and string comparison.
+     * - FANOUT: This routing rule type is simple. It routes all messages sent to the
+     * exchange to all queues that are bound to the exchange. This works like a
+     * broadcast feature.
+     * - HEADERS: This type is similar to the DIRECT type. It uses header properties
+     * instead of a routing key for routing. When a queue is bound to a headers
+     * exchange, key-value pairs are defined for the binding. When a message is sent to
+     * the exchange, key-value pairs are defined in the message header. The exchange
+     * routes the message by comparing the key-value pairs in the header with the
+     * key-value pairs of the binding.
      */
     public exchangeType: string | ros.IResolvable;
 
@@ -580,12 +658,17 @@ export class RosExchange extends ros.RosResource {
 export interface RosInstanceProps {
 
     /**
-     * @Property instanceName: The instance name.
+     * @Property instanceName: The name of the instance. The name can be up to 64 characters long.
      */
     readonly instanceName?: string | ros.IResolvable;
 
     /**
-     * @Property instanceType: The Instance Type. Valid values: professional, enterprise, vip.
+     * @Property instanceType: The instance type.
+     * This parameter is required for subscription instances. Valid values:
+     * - `professional`: Professional Edition
+     * - `enterprise`: Enterprise Edition
+     * - `vip`: Platinum Edition
+     * You do not need to specify this parameter for serverless instances.
      */
     readonly instanceType?: string | ros.IResolvable;
 
@@ -642,20 +725,29 @@ export interface RosInstanceProps {
     readonly storageSize?: number | ros.IResolvable;
 
     /**
-     * @Property supportEip: Whether to support EIP. Valid values: true, false.
+     * @Property supportEip: Specifies whether to enable access over the public network. Valid values:
+     * - `true`: Enables access over the public network.
+     * - `false`: Disables access over the public network.
      */
     readonly supportEip?: string | ros.IResolvable;
 
     /**
-     * @Property supportTracing: Whether to support tracing. Valid values: true, false.
+     * @Property supportTracing: Specifies whether to enable the message trace feature. Valid values:
+     * - `true`: Enables the message trace feature.
+     * - `false`: Disables the message trace feature.
+     * > * The message trace feature is included for 15 days at no charge on Platinum
+     * Edition instances. For these instances, you must enable this feature and set the
+     * retention period to 15 days.
+     * - For other instance types, you can enable or disable this feature.
      */
     readonly supportTracing?: string | ros.IResolvable;
 
     /**
-     * @Property tracingStorageTime: The retention period of message traces was set. Valid values: 3, 7, 15.
-     * If instance_type=vip, the valid values is 15.
-     * If instance_type!=vip, the valid values is 3, 7, 15.
-     * If support_tracing == tracing_false, the valid values is 0.
+     * @Property tracingStorageTime: The retention period of message traces. Unit: days. Valid values:
+     * - `3`
+     * - `7`
+     * - `15`
+     * This parameter is required if you set `SupportTracing` to `true`.
      */
     readonly tracingStorageTime?: number | ros.IResolvable;
 }
@@ -793,7 +885,7 @@ function rosInstancePropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Instance`, which is used to create an ApsaraMQ for RabbitMQ instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Instance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Instance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-instance
  */
@@ -827,12 +919,17 @@ export class RosInstance extends ros.RosResource {
 
 
     /**
-     * @Property instanceName: The instance name.
+     * @Property instanceName: The name of the instance. The name can be up to 64 characters long.
      */
     public instanceName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceType: The Instance Type. Valid values: professional, enterprise, vip.
+     * @Property instanceType: The instance type.
+     * This parameter is required for subscription instances. Valid values:
+     * - `professional`: Professional Edition
+     * - `enterprise`: Enterprise Edition
+     * - `vip`: Platinum Edition
+     * You do not need to specify this parameter for serverless instances.
      */
     public instanceType: string | ros.IResolvable | undefined;
 
@@ -889,20 +986,29 @@ export class RosInstance extends ros.RosResource {
     public storageSize: number | ros.IResolvable | undefined;
 
     /**
-     * @Property supportEip: Whether to support EIP. Valid values: true, false.
+     * @Property supportEip: Specifies whether to enable access over the public network. Valid values:
+     * - `true`: Enables access over the public network.
+     * - `false`: Disables access over the public network.
      */
     public supportEip: string | ros.IResolvable | undefined;
 
     /**
-     * @Property supportTracing: Whether to support tracing. Valid values: true, false.
+     * @Property supportTracing: Specifies whether to enable the message trace feature. Valid values:
+     * - `true`: Enables the message trace feature.
+     * - `false`: Disables the message trace feature.
+     * > * The message trace feature is included for 15 days at no charge on Platinum
+     * Edition instances. For these instances, you must enable this feature and set the
+     * retention period to 15 days.
+     * - For other instance types, you can enable or disable this feature.
      */
     public supportTracing: string | ros.IResolvable | undefined;
 
     /**
-     * @Property tracingStorageTime: The retention period of message traces was set. Valid values: 3, 7, 15.
-     * If instance_type=vip, the valid values is 15.
-     * If instance_type!=vip, the valid values is 3, 7, 15.
-     * If support_tracing == tracing_false, the valid values is 0.
+     * @Property tracingStorageTime: The retention period of message traces. Unit: days. Valid values:
+     * - `3`
+     * - `7`
+     * - `15`
+     * This parameter is required if you set `SupportTracing` to `true`.
      */
     public tracingStorageTime: number | ros.IResolvable | undefined;
 
@@ -969,12 +1075,20 @@ export interface RosQueueProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * @Property queueName: The name of the queue.
+     * @Property queueName: The name of the queue to create.
+     * - The queue name can contain only letters, digits, hyphens (-), underscores (_),
+     * periods (.), number signs (#), forward slashes (\/), and at signs (@). The name
+     * must be 1 to 255 characters in length.
+     * - After a queue is created, its name cannot be changed. To change the name,
+     * delete the queue and create a new one.
      */
     readonly queueName: string | ros.IResolvable;
 
     /**
-     * @Property virtualHost: The name of the virtual host.
+     * @Property virtualHost: The name of the vhost to which the queue belongs.
+     * The name can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (\/), and at signs (@). The name must be 1
+     * to 255 characters in length.
      */
     readonly virtualHost: string | ros.IResolvable;
 
@@ -986,8 +1100,11 @@ export interface RosQueueProps {
     readonly autoDeleteState?: boolean | ros.IResolvable;
 
     /**
-     * @Property autoExpireState: The validity period after which the queue is automatically deleted.
-     * If the queue is not accessed within a specified period of time, it is automatically deleted.
+     * @Property autoExpireState: The auto-expiration time for the queue. The queue is automatically deleted if it
+     * is not accessed within the specified time period.
+     * Unit: milliseconds.
+     * > This feature must be enabled before you can use this parameter. To enable the
+     * feature, .
      */
     readonly autoExpireState?: number | ros.IResolvable;
 
@@ -999,25 +1116,34 @@ export interface RosQueueProps {
     readonly deadLetterExchange?: string | ros.IResolvable;
 
     /**
-     * @Property deadLetterRoutingKey: The dead letter routing key.
+     * @Property deadLetterRoutingKey: The dead-letter routing key.
+     * The key can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (\/), and at signs (@). The key must be 1
+     * to 255 characters in length.
      */
     readonly deadLetterRoutingKey?: string | ros.IResolvable;
 
     /**
      * @Property exclusiveState: Specifies whether the queue is an exclusive queue. Valid values:
-     * true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-     * false: The Auto Delete attribute is not configured.
+     * - true: The queue is an exclusive queue. An exclusive queue can be used only by
+     * the connection that declares it. The queue is automatically deleted after the
+     * connection is closed.
+     * - false: The queue is not an exclusive queue.
      */
     readonly exclusiveState?: boolean | ros.IResolvable;
 
     /**
-     * @Property maximumPriority: The priority function is not supported.
+     * @Property maximumPriority: The priority of the queue. The recommended value is an integer from 1 to 10.
+     * > This parameter is used for message priority. It is supported only by dedicated
+     * instances and can be used only after the message priority feature is enabled. To
+     * enable the feature, .
      */
     readonly maximumPriority?: number | ros.IResolvable;
 
     /**
-     * @Property maxLength: The maximum number of messages that can be stored in the queue. 
-     * If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+     * @Property maxLength: This parameter is not supported in the current version.
+     * The maximum number of messages that can be stored in the queue. If this limit is
+     * exceeded, the earliest messages in the queue are deleted.
      */
     readonly maxLength?: number | ros.IResolvable;
 
@@ -1093,7 +1219,7 @@ function rosQueuePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Queue`, which is used to create a queue.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::Queue`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Queue` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-queue
  */
@@ -1117,12 +1243,20 @@ export class RosQueue extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * @Property queueName: The name of the queue.
+     * @Property queueName: The name of the queue to create.
+     * - The queue name can contain only letters, digits, hyphens (-), underscores (_),
+     * periods (.), number signs (#), forward slashes (\/), and at signs (@). The name
+     * must be 1 to 255 characters in length.
+     * - After a queue is created, its name cannot be changed. To change the name,
+     * delete the queue and create a new one.
      */
     public queueName: string | ros.IResolvable;
 
     /**
-     * @Property virtualHost: The name of the virtual host.
+     * @Property virtualHost: The name of the vhost to which the queue belongs.
+     * The name can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (\/), and at signs (@). The name must be 1
+     * to 255 characters in length.
      */
     public virtualHost: string | ros.IResolvable;
 
@@ -1134,8 +1268,11 @@ export class RosQueue extends ros.RosResource {
     public autoDeleteState: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property autoExpireState: The validity period after which the queue is automatically deleted.
-     * If the queue is not accessed within a specified period of time, it is automatically deleted.
+     * @Property autoExpireState: The auto-expiration time for the queue. The queue is automatically deleted if it
+     * is not accessed within the specified time period.
+     * Unit: milliseconds.
+     * > This feature must be enabled before you can use this parameter. To enable the
+     * feature, .
      */
     public autoExpireState: number | ros.IResolvable | undefined;
 
@@ -1147,25 +1284,34 @@ export class RosQueue extends ros.RosResource {
     public deadLetterExchange: string | ros.IResolvable | undefined;
 
     /**
-     * @Property deadLetterRoutingKey: The dead letter routing key.
+     * @Property deadLetterRoutingKey: The dead-letter routing key.
+     * The key can contain only letters, digits, hyphens (-), underscores (_), periods
+     * (.), number signs (#), forward slashes (\/), and at signs (@). The key must be 1
+     * to 255 characters in length.
      */
     public deadLetterRoutingKey: string | ros.IResolvable | undefined;
 
     /**
      * @Property exclusiveState: Specifies whether the queue is an exclusive queue. Valid values:
-     * true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-     * false: The Auto Delete attribute is not configured.
+     * - true: The queue is an exclusive queue. An exclusive queue can be used only by
+     * the connection that declares it. The queue is automatically deleted after the
+     * connection is closed.
+     * - false: The queue is not an exclusive queue.
      */
     public exclusiveState: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property maximumPriority: The priority function is not supported.
+     * @Property maximumPriority: The priority of the queue. The recommended value is an integer from 1 to 10.
+     * > This parameter is used for message priority. It is supported only by dedicated
+     * instances and can be used only after the message priority feature is enabled. To
+     * enable the feature, .
      */
     public maximumPriority: number | ros.IResolvable | undefined;
 
     /**
-     * @Property maxLength: The maximum number of messages that can be stored in the queue. 
-     * If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+     * @Property maxLength: This parameter is not supported in the current version.
+     * The maximum number of messages that can be stored in the queue. If this limit is
+     * exceeded, the earliest messages in the queue are deleted.
      */
     public maxLength: number | ros.IResolvable | undefined;
 
@@ -1282,7 +1428,7 @@ function rosVirtualHostPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::VirtualHost`, which is used to create a vhost.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AMQP::VirtualHost`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VirtualHost` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-virtualhost
  */

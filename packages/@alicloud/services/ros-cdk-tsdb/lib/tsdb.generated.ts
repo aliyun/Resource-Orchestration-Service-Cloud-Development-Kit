@@ -9,7 +9,7 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosHiTSDBInstanceProps {
 
     /**
-     * @Property instanceClass: The type of the instance.
+     * @Property instanceClass: The storage capacity of the instance. Unit: GB.
      */
     readonly instanceClass: string | ros.IResolvable;
 
@@ -34,7 +34,7 @@ export interface RosHiTSDBInstanceProps {
     readonly zoneId: string | ros.IResolvable;
 
     /**
-     * @Property diskCategory: The category of disk.
+     * @Property diskCategory: The ID of the request.
      */
     readonly diskCategory?: string | ros.IResolvable;
 
@@ -49,8 +49,7 @@ export interface RosHiTSDBInstanceProps {
     readonly instanceAlias?: string | ros.IResolvable;
 
     /**
-     * @Property payType: The billing method. Valid values: 
-     * - **prepay**: The prepay value indicates the subscription method.
+     * @Property payType: The ID of the VPC in which the instances reside.
      */
     readonly payType?: string | ros.IResolvable;
 
@@ -197,7 +196,7 @@ export class RosHiTSDBInstance extends ros.RosResource {
 
 
     /**
-     * @Property instanceClass: The type of the instance.
+     * @Property instanceClass: The storage capacity of the instance. Unit: GB.
      */
     public instanceClass: string | ros.IResolvable;
 
@@ -222,7 +221,7 @@ export class RosHiTSDBInstance extends ros.RosResource {
     public zoneId: string | ros.IResolvable;
 
     /**
-     * @Property diskCategory: The category of disk.
+     * @Property diskCategory: The ID of the request.
      */
     public diskCategory: string | ros.IResolvable | undefined;
 
@@ -237,8 +236,7 @@ export class RosHiTSDBInstance extends ros.RosResource {
     public instanceAlias: string | ros.IResolvable | undefined;
 
     /**
-     * @Property payType: The billing method. Valid values: 
-     * - **prepay**: The prepay value indicates the subscription method.
+     * @Property payType: The ID of the VPC in which the instances reside.
      */
     public payType: string | ros.IResolvable | undefined;
 

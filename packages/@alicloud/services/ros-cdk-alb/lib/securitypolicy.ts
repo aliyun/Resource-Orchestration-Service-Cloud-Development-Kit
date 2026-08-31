@@ -10,16 +10,14 @@ export { RosSecurityPolicy as SecurityPolicyProperty };
 export interface SecurityPolicyProps {
 
     /**
-     * Property ciphers: The supported cipher suites, which are determined by the TLS protocol version.
-     * The specified cipher suites must be supported by at least one TLS protocol version that you specify.
-     * Note For example, if you set the TLSVersions parameter to TLSv1.3, you must specify cipher suites that are supported by TLS 1.3.
+     * Property ciphers: The supported cipher suites.
      */
     readonly ciphers: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
      * Property securityPolicyName: The name of the security policy.
-     * The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * Chinese characters, periods (.), underscores (_), hyphens (-), and spaces.
      */
     readonly securityPolicyName: string | ros.IResolvable;
 
@@ -46,7 +44,7 @@ export interface ISecurityPolicy extends ros.IResource {
     readonly attrSecurityPolicyId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::SecurityPolicy`, which is used to create a custom security policy.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::SecurityPolicy`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSecurityPolicy`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-securitypolicy
  */

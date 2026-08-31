@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::Policy</code>, which is used to create a policy.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::APIG::Policy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.671Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.256Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.RosPolicy")
 public class RosPolicy extends com.aliyun.ros.cdk.core.RosResource {
 

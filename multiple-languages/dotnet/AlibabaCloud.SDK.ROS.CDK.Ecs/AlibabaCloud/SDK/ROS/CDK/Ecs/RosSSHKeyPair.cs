@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`, which is used to create an SSH key pair or import an existing SSH key pair.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPair`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SSHKeyPair` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypair
@@ -103,7 +103,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: keyPairName: SSH key pair name. It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http:\/\/, or https:\/\/. It can contain digits, ".", "_", or "-".
+        /// <strong>Property</strong>: keyPairName: The name of the key pair. The name must be unique. It must be 2 to 128 characters
+        /// in length. It must start with a letter and cannot start with http\:\/\/ or
+        /// https\:\/\/. It can contain letters, digits, colons (:), underscores (_), and
+        /// hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "keyPairName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object KeyPairName

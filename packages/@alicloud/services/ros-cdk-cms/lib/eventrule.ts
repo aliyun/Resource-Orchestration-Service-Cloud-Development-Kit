@@ -10,7 +10,7 @@ export { RosEventRule as EventRuleProperty };
 export interface EventRuleProps {
 
     /**
-     * Property eventPattern: Event pattern configuration.A maximum of 20 event patterns.
+     * Property eventPattern: The pattern of the event-triggered alert rule.
      */
     readonly eventPattern: Array<RosEventRule.EventPatternProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -25,9 +25,9 @@ export interface EventRuleProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property eventType: The type of the event alert. Valid values:
-     * SYSTEM
-     * CUSTOM
+     * Property eventType: The type of the event. Valid values:
+     * - SYSTEM: a system event.
+     * - CUSTOM: a custom event.
      */
     readonly eventType?: string | ros.IResolvable;
 
@@ -42,9 +42,9 @@ export interface EventRuleProps {
     readonly silenceTime?: number | ros.IResolvable;
 
     /**
-     * Property state: The status of the alert rule. Valid values:
-     * ENABLED
-     * DISABLED
+     * Property state: The status of the event-triggered alert rule. Valid values:
+     * - ENABLED: The rule is enabled.
+     * - DISABLED: The rule is disabled.
      */
     readonly state?: string | ros.IResolvable;
 }
@@ -61,7 +61,7 @@ export interface IEventRule extends ros.IResource {
     readonly attrData: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRule`, which is used to create or modify an event-triggered alert rule. If the specified rule name does not exist, an event-triggered alert rule is created. If the specified rule name exists, the specified event-triggered alert rule is modified.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::EventRule`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosEventRule`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventrule
  */

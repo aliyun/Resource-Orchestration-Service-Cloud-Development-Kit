@@ -36,7 +36,8 @@ export interface VpcEndpointServiceProps {
     readonly payer?: string | ros.IResolvable;
 
     /**
-     * Property resource:
+     * Property resource: A collection of service resources. You can add up to 10 resources in a single
+     * request. An endpoint service can have a maximum of 20 service resources.
      */
     readonly resource?: Array<RosVpcEndpointService.ResourceProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -51,7 +52,13 @@ export interface VpcEndpointServiceProps {
     readonly serviceDescription?: string | ros.IResolvable;
 
     /**
-     * Property serviceResourceType: Service resource type.
+     * Property serviceResourceType: The type of the service resource. Valid values:
+     * - slb: a Classic Load Balancer (CLB) instance.
+     * - alb: an Application Load Balancer (ALB) instance.
+     * - nlb: a Network Load Balancer (NLB) instance.
+     * - gwlb: a Gateway Load Balancer (GWLB) instance.
+     * > PrivateLink does not support connections to TCPSSL listeners on Network Load
+     * Balancer (NLB) instances.
      */
     readonly serviceResourceType?: string | ros.IResolvable;
 

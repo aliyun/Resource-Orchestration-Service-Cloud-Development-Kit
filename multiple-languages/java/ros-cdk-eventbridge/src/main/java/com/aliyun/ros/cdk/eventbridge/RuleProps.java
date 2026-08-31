@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.eventbridge;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-eventbridge-rule
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:01:25.424Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:09:00.282Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.eventbridge.$Module.class, fqn = "@alicloud/ros-cdk-eventbridge.RuleProps")
 @software.amazon.jsii.Jsii.Proxy(RuleProps.Jsii$Proxy.class)
 public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,11 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getEventBusName();
 
     /**
-     * Property filterPattern: The event pattern, in the JSON format.
+     * Property filterPattern: The event pattern, in JSON format.
+     * <p>
+     * Supported pattern types are <code>stringEqual</code> and
+     * <code>stringExpression</code>. Each field can contain a maximum of five expressions in a map
+     * structure.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getFilterPattern();
 
@@ -87,7 +91,10 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getFilterPattern}
-         * @param filterPattern Property filterPattern: The event pattern, in the JSON format. This parameter is required.
+         * @param filterPattern Property filterPattern: The event pattern, in JSON format. This parameter is required.
+         *                      Supported pattern types are <code>stringEqual</code> and
+         *                      <code>stringExpression</code>. Each field can contain a maximum of five expressions in a map
+         *                      structure.
          * @return {@code this}
          */
         public Builder filterPattern(com.aliyun.ros.cdk.core.IResolvable filterPattern) {
@@ -97,7 +104,10 @@ public interface RuleProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RuleProps#getFilterPattern}
-         * @param filterPattern Property filterPattern: The event pattern, in the JSON format. This parameter is required.
+         * @param filterPattern Property filterPattern: The event pattern, in JSON format. This parameter is required.
+         *                      Supported pattern types are <code>stringEqual</code> and
+         *                      <code>stringExpression</code>. Each field can contain a maximum of five expressions in a map
+         *                      structure.
          * @return {@code this}
          */
         public Builder filterPattern(java.util.Map<java.lang.String, ? extends java.lang.Object> filterPattern) {

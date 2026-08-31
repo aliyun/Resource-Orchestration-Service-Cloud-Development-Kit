@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.privatelink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpoint
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:31:09.942Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:47:52.280Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointProps.Jsii$Proxy.class)
 public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable {
@@ -27,15 +27,35 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
     /**
      * Property endpointName: The name of the endpoint.
      * <p>
-     * The name must be 2 to 128 characters in length and can contain digits, underscores
-     * (_), and hyphens (-). The name must start with a letter.
+     * The name must be 2 to 128 characters long, start with a letter or a Chinese
+     * character, and can contain digits, hyphens (-), and underscores (_).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointName() {
         return null;
     }
 
     /**
-     * Property endpointType: Endpoint type.
+     * Property endpointType: The type of the endpoint.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+     * CLB, and Network Load Balancer (NLB) instances as service
+     * resources.</li>
+     * <li>Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+     * resource.</li>
+     * <li>GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+     * Load Balancer (GWLB) as a service resource.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Services that support reverse endpoints are provided exclusively by the cloud
+     * platform and its partners. You cannot create them by default. To request access,
+     * contact your account manager.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEndpointType() {
         return null;
@@ -89,7 +109,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property zone:.
+     * Property zone: The list of zones for the endpoint.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
         return null;
@@ -171,8 +191,8 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link VpcEndpointProps#getEndpointName}
          * @param endpointName Property endpointName: The name of the endpoint.
-         *                     The name must be 2 to 128 characters in length and can contain digits, underscores
-         *                     (_), and hyphens (-). The name must start with a letter.
+         *                     The name must be 2 to 128 characters long, start with a letter or a Chinese
+         *                     character, and can contain digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder endpointName(java.lang.String endpointName) {
@@ -183,8 +203,8 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link VpcEndpointProps#getEndpointName}
          * @param endpointName Property endpointName: The name of the endpoint.
-         *                     The name must be 2 to 128 characters in length and can contain digits, underscores
-         *                     (_), and hyphens (-). The name must start with a letter.
+         *                     The name must be 2 to 128 characters long, start with a letter or a Chinese
+         *                     character, and can contain digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder endpointName(com.aliyun.ros.cdk.core.IResolvable endpointName) {
@@ -194,7 +214,26 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link VpcEndpointProps#getEndpointType}
-         * @param endpointType Property endpointType: Endpoint type.
+         * @param endpointType Property endpointType: The type of the endpoint.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+         *                     CLB, and Network Load Balancer (NLB) instances as service
+         *                     resources.</li>
+         *                     <li>Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+         *                     resource.</li>
+         *                     <li>GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+         *                     Load Balancer (GWLB) as a service resource.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     Services that support reverse endpoints are provided exclusively by the cloud
+         *                     platform and its partners. You cannot create them by default. To request access,
+         *                     contact your account manager.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder endpointType(java.lang.String endpointType) {
@@ -204,7 +243,26 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link VpcEndpointProps#getEndpointType}
-         * @param endpointType Property endpointType: Endpoint type.
+         * @param endpointType Property endpointType: The type of the endpoint.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+         *                     CLB, and Network Load Balancer (NLB) instances as service
+         *                     resources.</li>
+         *                     <li>Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+         *                     resource.</li>
+         *                     <li>GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+         *                     Load Balancer (GWLB) as a service resource.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     Services that support reverse endpoints are provided exclusively by the cloud
+         *                     platform and its partners. You cannot create them by default. To request access,
+         *                     contact your account manager.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder endpointType(com.aliyun.ros.cdk.core.IResolvable endpointType) {
@@ -318,7 +376,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link VpcEndpointProps#getZone}
-         * @param zone Property zone:.
+         * @param zone Property zone: The list of zones for the endpoint.
          * @return {@code this}
          */
         public Builder zone(com.aliyun.ros.cdk.core.IResolvable zone) {
@@ -328,7 +386,7 @@ public interface VpcEndpointProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link VpcEndpointProps#getZone}
-         * @param zone Property zone:.
+         * @param zone Property zone: The list of zones for the endpoint.
          * @return {@code this}
          */
         public Builder zone(java.util.List<? extends java.lang.Object> zone) {

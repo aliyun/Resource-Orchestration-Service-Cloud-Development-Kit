@@ -45,7 +45,8 @@ export interface TrafficMirrorSessionProps {
     readonly enabled?: boolean | ros.IResolvable;
 
     /**
-     * Property packetLength: The maximum transmission unit (MTU). Default value: **1500**.
+     * Property packetLength: The maximum transmission unit.
+     * Valid values: 64 to 9600. Default value: 1500.
      */
     readonly packetLength?: number | ros.IResolvable;
 

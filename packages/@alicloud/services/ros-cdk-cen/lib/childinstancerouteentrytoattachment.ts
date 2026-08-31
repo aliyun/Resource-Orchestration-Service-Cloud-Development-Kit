@@ -57,7 +57,7 @@ export interface IChildInstanceRouteEntryToAttachment extends ros.IResource {
     readonly attrTransitRouterAttachmentId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`, which is used to add a route to a network instance that is connected to an Enterprise Edition transit router.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::ChildInstanceRouteEntryToAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosChildInstanceRouteEntryToAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-childinstancerouteentrytoattachment
  */

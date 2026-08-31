@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::BastionHost::Instance`, which is used to create a bastion host.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::BastionHost::Instance`.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceId() alicloudroscdkcore.IResolvable

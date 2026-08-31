@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-eventruletargets
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.203Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.EventRuleTargetsProps")
 @software.amazon.jsii.Jsii.Proxy(EventRuleTargetsProps.Jsii$Proxy.class)
 public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
     @org.jetbrains.annotations.NotNull java.lang.Object getRuleName();
 
     /**
-     * Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
+     * Property contactParameters: The information about the alert contact groups that receive alert notifications.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getContactParameters() {
         return null;
@@ -51,7 +51,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+     * Property webhookParameters: The information about the callback URLs that are used to receive alert notifications.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getWebhookParameters() {
         return null;
@@ -97,7 +97,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getContactParameters}
-         * @param contactParameters Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
+         * @param contactParameters Property contactParameters: The information about the alert contact groups that receive alert notifications.
          * @return {@code this}
          */
         public Builder contactParameters(com.aliyun.ros.cdk.core.IResolvable contactParameters) {
@@ -107,7 +107,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getContactParameters}
-         * @param contactParameters Property contactParameters: CONTACT configuration.A maximum of 5 parameters.
+         * @param contactParameters Property contactParameters: The information about the alert contact groups that receive alert notifications.
          * @return {@code this}
          */
         public Builder contactParameters(java.util.List<? extends java.lang.Object> contactParameters) {
@@ -197,7 +197,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getWebhookParameters}
-         * @param webhookParameters Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+         * @param webhookParameters Property webhookParameters: The information about the callback URLs that are used to receive alert notifications.
          * @return {@code this}
          */
         public Builder webhookParameters(com.aliyun.ros.cdk.core.IResolvable webhookParameters) {
@@ -207,7 +207,7 @@ public interface EventRuleTargetsProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link EventRuleTargetsProps#getWebhookParameters}
-         * @param webhookParameters Property webhookParameters: WEBHOOK configuration.A maximum of 5 parameters.
+         * @param webhookParameters Property webhookParameters: The information about the callback URLs that are used to receive alert notifications.
          * @return {@code this}
          */
         public Builder webhookParameters(java.util.List<? extends java.lang.Object> webhookParameters) {

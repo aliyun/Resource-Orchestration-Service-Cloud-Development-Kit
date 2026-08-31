@@ -17,8 +17,9 @@ export interface PublicIpAddressPoolProps {
     readonly bizType?: string | ros.IResolvable;
 
     /**
-     * Property description: Description of the address pool instance.
-     * The length is 0-256 characters, and you cannot start with http:\/\/ or https: \/\/.
+     * Property description: The description of the IP address pool.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * `http:\/\/` or `https:\/\/`.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -41,8 +42,9 @@ export interface PublicIpAddressPoolProps {
     readonly isp?: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the address pool instance.
-     * The length is 0-128 characters, and you cannot start with http: \/\/ or https: \/\/.
+     * Property name: The name of the IP address pool.
+     * The name must be 0 to 128 characters in length and cannot start with `http:\/\/` or
+     * `https:\/\/`.
      */
     readonly name?: string | ros.IResolvable;
 

@@ -36,9 +36,9 @@ export interface RosDiskProps {
     readonly diskName?: string | ros.IResolvable;
 
     /**
-     * @Property encrypted: Specifies whether to encrypt the new system disk. Valid values:
-     * true
-     * false (default): no
+     * @Property encrypted: Specifies whether to encrypt the disk. Valid values:
+     * - true
+     * - false (default)
      */
     readonly encrypted?: boolean | ros.IResolvable;
 
@@ -81,6 +81,12 @@ function RosDiskPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
     errors.collect(ros.propertyValidator('size', ros.requiredValidator)(properties.size));
     errors.collect(ros.propertyValidator('size', ros.validateString)(properties.size));
+    if(properties.instanceBillingCycle && (typeof properties.instanceBillingCycle) !== 'object') {
+        errors.collect(ros.propertyValidator('instanceBillingCycle', ros.validateAllowedValues)({
+          data: properties.instanceBillingCycle,
+          allowedValues: ["Hour","Day","Month"],
+        }));
+    }
     errors.collect(ros.propertyValidator('instanceBillingCycle', ros.validateString)(properties.instanceBillingCycle));
     errors.collect(ros.propertyValidator('diskName', ros.validateString)(properties.diskName));
     errors.collect(ros.propertyValidator('ensRegionId', ros.requiredValidator)(properties.ensRegionId));
@@ -115,7 +121,7 @@ function rosDiskPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`, which is used to create a pay-as-you-go or subscription data disk.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Disk`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Disk` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
@@ -161,9 +167,9 @@ export class RosDisk extends ros.RosResource {
     public diskName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property encrypted: Specifies whether to encrypt the new system disk. Valid values:
-     * true
-     * false (default): no
+     * @Property encrypted: Specifies whether to encrypt the disk. Valid values:
+     * - true
+     * - false (default)
      */
     public encrypted: boolean | ros.IResolvable | undefined;
 
@@ -291,7 +297,7 @@ function rosDiskInstanceAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`, which is used to attach a data disk to an Edge Node Service (ENS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::DiskInstanceAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DiskInstanceAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-diskinstanceattachment
  */
@@ -429,7 +435,7 @@ function rosImagePropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Image`, which is used to create an image from an instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Image`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Image` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-image
  */
@@ -1115,7 +1121,7 @@ function rosInstanceSecurityGroupAttachmentPropsToRosTemplate(properties: any, e
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`, which is used to add an Edge Node Service (ENS) instance to a security group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::InstanceSecurityGroupAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `InstanceSecurityGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-instancesecuritygroupattachment
  */
@@ -1373,7 +1379,7 @@ function rosNetworkPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Network`, which is used to create a virtual private cloud (VPC).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Network`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Network` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-network
  */
@@ -1516,7 +1522,7 @@ function rosNetworkAclPropsToRosTemplate(properties: any, enableResourceProperty
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAcl`, which is used to create a network access control list (ACL).
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAcl`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAcl` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-networkacl
  */
@@ -1761,7 +1767,7 @@ function rosNetworkAclAssociationPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`, which is used to associate a network access control list (ACL) with networks.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::NetworkAclAssociation`.
  * @Note This class does not contain additional functions, so it is recommended to use the `NetworkAclAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-networkaclassociation
  */
@@ -1961,7 +1967,7 @@ export namespace RosSecurityGroup {
          */
         readonly portRange: string | ros.IResolvable;
         /**
-         * @Property description: The description of the security group. The description must be 2 to 256 characters in length. It must start with a letter but cannot start with http:\/\/ or https:\/\/.
+         * @Property description: The rules of the security group. Valid values of N: 0 to 200.
          */
         readonly description?: string | ros.IResolvable;
         /**
@@ -2098,7 +2104,9 @@ export interface RosSnapshotProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property snapshotName: The name of the snapshot. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     * @Property snapshotName: The name of the snapshot. The name must be 2 to 128 characters in length. It must
+     * start with a letter or a Chinese character, but cannot start with `http:\/\/` or
+     * `https:\/\/`. It can contain digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly snapshotName?: string | ros.IResolvable;
 }
@@ -2144,7 +2152,7 @@ function rosSnapshotPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`, which is used to create a snapshot.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::Snapshot`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Snapshot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-snapshot
  */
@@ -2179,7 +2187,9 @@ export class RosSnapshot extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property snapshotName: The name of the snapshot. The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+     * @Property snapshotName: The name of the snapshot. The name must be 2 to 128 characters in length. It must
+     * start with a letter or a Chinese character, but cannot start with `http:\/\/` or
+     * `https:\/\/`. It can contain digits, colons (:), underscores (_), and hyphens (-).
      */
     public snapshotName: string | ros.IResolvable | undefined;
 
@@ -2296,7 +2306,7 @@ function rosVSwitchPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::VSwitch`, which is used to create a vSwitch.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ENS::VSwitch`.
  * @Note This class does not contain additional functions, so it is recommended to use the `VSwitch` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-vswitch
  */

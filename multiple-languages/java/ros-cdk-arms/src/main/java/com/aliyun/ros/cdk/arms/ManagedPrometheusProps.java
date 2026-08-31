@@ -5,15 +5,22 @@ package com.aliyun.ros.cdk.arms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-arms-managedprometheus
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:31:39.084Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:12:12.721Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.arms.$Module.class, fqn = "@alicloud/ros-cdk-arms.ManagedPrometheusProps")
 @software.amazon.jsii.Jsii.Proxy(ManagedPrometheusProps.Jsii$Proxy.class)
 public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property clusterType: The type of the cluster.
+     * Property clusterType: The cluster type.
      * <p>
-     * Currently, only ask, ecs and one clusters are supported. Default is ecs.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>ecs: ECS</li>
+     * <li>one: ACK One</li>
+     * <li>ask: ASK</li>
+     * <li>pro: Container Monitoring Pro</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterType();
 
@@ -49,9 +56,11 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
     }
 
     /**
-     * Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster.
+     * Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster.
      * <p>
-     * When empty or "free", binds to the shared version of Grafana.
+     * If
+     * you set this parameter to free or leave this parameter empty, the cluster is
+     * associated with a shared Grafana workspace.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getGrafanaInstanceId() {
         return null;
@@ -77,8 +86,15 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ManagedPrometheusProps#getClusterType}
-         * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
-         *                    Currently, only ask, ecs and one clusters are supported. Default is ecs.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>ecs: ECS</li>
+         *                    <li>one: ACK One</li>
+         *                    <li>ask: ASK</li>
+         *                    <li>pro: Container Monitoring Pro</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder clusterType(java.lang.String clusterType) {
@@ -88,8 +104,15 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ManagedPrometheusProps#getClusterType}
-         * @param clusterType Property clusterType: The type of the cluster. This parameter is required.
-         *                    Currently, only ask, ecs and one clusters are supported. Default is ecs.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>ecs: ECS</li>
+         *                    <li>one: ACK One</li>
+         *                    <li>ask: ASK</li>
+         *                    <li>pro: Container Monitoring Pro</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder clusterType(com.aliyun.ros.cdk.core.IResolvable clusterType) {
@@ -201,8 +224,10 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ManagedPrometheusProps#getGrafanaInstanceId}
-         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster.
-         *                          When empty or "free", binds to the shared version of Grafana.
+         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster.
+         *                          If
+         *                          you set this parameter to free or leave this parameter empty, the cluster is
+         *                          associated with a shared Grafana workspace.
          * @return {@code this}
          */
         public Builder grafanaInstanceId(java.lang.String grafanaInstanceId) {
@@ -212,8 +237,10 @@ public interface ManagedPrometheusProps extends software.amazon.jsii.JsiiSeriali
 
         /**
          * Sets the value of {@link ManagedPrometheusProps#getGrafanaInstanceId}
-         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace bound to the cluster.
-         *                          When empty or "free", binds to the shared version of Grafana.
+         * @param grafanaInstanceId Property grafanaInstanceId: The ID of the managed Grafana workspace that is associated with the cluster.
+         *                          If
+         *                          you set this parameter to free or leave this parameter empty, the cluster is
+         *                          associated with a shared Grafana workspace.
          * @return {@code this}
          */
         public Builder grafanaInstanceId(com.aliyun.ros.cdk.core.IResolvable grafanaInstanceId) {

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::NetworkInterfacePermission</code>, which is used to grant an account the permission to attach an elastic network interface (ENI) to an instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::NetworkInterfacePermission</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.032Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.413Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfacePermission")
 public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.INetworkInterfacePermission {
 
@@ -112,20 +112,26 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property accountId: the account id.
+         * Property accountId: The ID of the account to which the permission is granted.
+         * <p>
+         * The
+         * account can be a cloud partner (certified ISV) or an individual user.
          * <p>
          * @return {@code this}
-         * @param accountId Property accountId: the account id. This parameter is required.
+         * @param accountId Property accountId: The ID of the account to which the permission is granted. This parameter is required.
          */
         public Builder accountId(final java.lang.String accountId) {
             this.props.accountId(accountId);
             return this;
         }
         /**
-         * Property accountId: the account id.
+         * Property accountId: The ID of the account to which the permission is granted.
+         * <p>
+         * The
+         * account can be a cloud partner (certified ISV) or an individual user.
          * <p>
          * @return {@code this}
-         * @param accountId Property accountId: the account id. This parameter is required.
+         * @param accountId Property accountId: The ID of the account to which the permission is granted. This parameter is required.
          */
         public Builder accountId(final com.aliyun.ros.cdk.core.IResolvable accountId) {
             this.props.accountId(accountId);
@@ -154,20 +160,30 @@ public class NetworkInterfacePermission extends com.aliyun.ros.cdk.core.Resource
         }
 
         /**
-         * Property permission: the permission.
+         * Property permission: The permission to grant.
+         * <p>
+         * The only supported value is InstanceAttach.
+         * InstanceAttach: Allows an authorized account to attach your elastic network
+         * interface to one of its ECS instances. The ECS instance and the elastic network
+         * interface must be in the same availability zone.
          * <p>
          * @return {@code this}
-         * @param permission Property permission: the permission. This parameter is required.
+         * @param permission Property permission: The permission to grant. This parameter is required.
          */
         public Builder permission(final java.lang.String permission) {
             this.props.permission(permission);
             return this;
         }
         /**
-         * Property permission: the permission.
+         * Property permission: The permission to grant.
+         * <p>
+         * The only supported value is InstanceAttach.
+         * InstanceAttach: Allows an authorized account to attach your elastic network
+         * interface to one of its ECS instances. The ECS instance and the elastic network
+         * interface must be in the same availability zone.
          * <p>
          * @return {@code this}
-         * @param permission Property permission: the permission. This parameter is required.
+         * @param permission Property permission: The permission to grant. This parameter is required.
          */
         public Builder permission(final com.aliyun.ros.cdk.core.IResolvable permission) {
             this.props.permission(permission);

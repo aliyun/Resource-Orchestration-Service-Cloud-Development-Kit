@@ -10,7 +10,7 @@ export { RosUserAuthConfig as UserAuthConfigProperty };
 export interface UserAuthConfigProps {
 
     /**
-     * Property authConfig: AuthConfig
+     * Property authConfig: The details of the authentication configuration. The value is a JSON string.
      */
     readonly authConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -42,7 +42,7 @@ export interface IUserAuthConfig extends ros.IResource {
     readonly attrAuthConfigId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`, which is used to create configurations for a user credential.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserAuthConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
  */

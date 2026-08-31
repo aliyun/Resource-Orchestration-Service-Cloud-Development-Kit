@@ -15,9 +15,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
     {
         private object _localSubnet;
 
-        /// <summary>Property localSubnet: A network segment on the VPC side that needs to be interconnected with the local IDC for the second phase negotiation.</summary>
+        /// <summary>Property localSubnet: The CIDR block of the virtual private cloud (VPC) that needs to communicate with the on-premises database.</summary>
         /// <remarks>
-        /// Multiple network segments are separated by commas, for example: 192.168.1.0/24, 192.168.2.0/24.
+        /// The CIDR block is used in Phase 2 negotiations.
+        /// Separate multiple CIDR blocks with commas (,). Example:
+        /// 192.168.1.0/24,192.168.2.0/24.
+        /// The following routing modes are supported:
+        ///
+        /// <list type="bullet">
+        /// <description>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0, the routing mode of the
+        /// IPsec-VPN connection is set to Destination Routing Mode.</description>
+        /// <description>If you set LocalSubnet and RemoteSubnet to specific CIDR blocks, the routing
+        /// mode of the IPsec-VPN connection is set to Protected Data Flows.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "localSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object LocalSubnet
@@ -48,9 +58,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object _remoteSubnet;
 
-        /// <summary>Property remoteSubnet: The network segment of the local IDC is used for the second phase negotiation.</summary>
+        /// <summary>Property remoteSubnet: The CIDR block of the on-premises database that needs to communicate with the VPC.</summary>
         /// <remarks>
-        /// Multiple network segments are separated by commas, for example: 192.168.3.0/24, 192.168.4.0/24.
+        /// The CIDR block is used in Phase 2 negotiations.
+        /// Separate multiple CIDR blocks with commas (,). Example:
+        /// 192.168.3.0/24,192.168.4.0/24.
+        /// The following routing modes are supported:
+        ///
+        /// <list type="bullet">
+        /// <description>If you set LocalSubnet and RemoteSubnet to 0.0.0.0/0...</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "remoteSubnet", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object RemoteSubnet
@@ -357,7 +374,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _healthCheckConfig;
 
-        /// <summary>Property healthCheckConfig: Whether to enable the health check configuration.</summary>
+        /// <summary>Property healthCheckConfig: This parameter is available if you create an IPsec-VPN connection in single-tunnel mode.</summary>
+        /// <remarks>
+        /// The health check configuration:
+        ///
+        /// <list type="bullet">
+        /// <description>HealthCheckConfig.enable: ... Default value: false.</description>
+        /// <description>HealthCheckConfig.dip / sip / interval (Default: 3) / retry (Default: 3) /
+        /// Policy (revoke_route default / reserve_route).</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "healthCheckConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-vpc.RosVpnConnection.HealthCheckConfigProperty\"}]}}", isOptional: true)]
         public object? HealthCheckConfig
@@ -450,9 +476,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _name;
 
-        /// <summary>Property name: The name of the IPsec connection.</summary>
+        /// <summary>Property name: The name of the IPsec-VPN connection.</summary>
         /// <remarks>
-        /// The length is 2-128 characters and must start with a letter or Chinese. It can contain numbers, periods (.), underscores (_) and dashes (-), but cannot start with http:// or https:// .
+        /// The name must be 1 to 100 characters in length and cannot start with <c>http:\/\/</c> or
+        /// <c>https:\/\/</c>.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

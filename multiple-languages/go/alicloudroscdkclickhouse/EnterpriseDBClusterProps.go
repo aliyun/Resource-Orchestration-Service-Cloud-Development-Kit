@@ -8,6 +8,10 @@ type EnterpriseDBClusterProps struct {
 	// Property engine: The engine type.
 	Engine interface{} `field:"required" json:"engine" yaml:"engine"`
 	// Property nodeCount: The number of nodes.
+	//
+	// Valid values: 2 to 16. This parameter is required when you
+	// configure an elastic scaling range by using the `NodeScaleMin` and `NodeScaleMax`
+	// parameters.
 	NodeCount interface{} `field:"required" json:"nodeCount" yaml:"nodeCount"`
 	// Property nodeScaleMax: The maximum number of nodes for scaling.
 	NodeScaleMax interface{} `field:"required" json:"nodeScaleMax" yaml:"nodeScaleMax"`
@@ -23,7 +27,7 @@ type EnterpriseDBClusterProps struct {
 	BackupSetId interface{} `field:"optional" json:"backupSetId" yaml:"backupSetId"`
 	// Property dbInstanceDescription: The description of the database instance.
 	DbInstanceDescription interface{} `field:"optional" json:"dbInstanceDescription" yaml:"dbInstanceDescription"`
-	// Property dbTimeZone: The time zone of the database.
+	// Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
 	DbTimeZone interface{} `field:"optional" json:"dbTimeZone" yaml:"dbTimeZone"`
 	// Property deploySchema: The deployment schema.
 	DeploySchema interface{} `field:"optional" json:"deploySchema" yaml:"deploySchema"`
@@ -33,7 +37,10 @@ type EnterpriseDBClusterProps struct {
 	PublicConnectionSetting interface{} `field:"optional" json:"publicConnectionSetting" yaml:"publicConnectionSetting"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property sourceDbInstanceId: The ID of the source database instance.
+	// Property sourceDbInstanceId: The ID of the source instance.
+	//
+	// This parameter is required when restoring from a
+	// backup.
 	SourceDbInstanceId interface{} `field:"optional" json:"sourceDbInstanceId" yaml:"sourceDbInstanceId"`
 	// Property storageQuota: The storage quota.
 	StorageQuota interface{} `field:"optional" json:"storageQuota" yaml:"storageQuota"`

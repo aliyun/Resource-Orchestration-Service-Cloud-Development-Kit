@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::AlarmContact</code>, which is used to query the information about an alert contact.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::CMS::AlarmContact</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.061Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.374Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.AlarmContact")
 public class AlarmContact extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.datasource.IAlarmContact {
 

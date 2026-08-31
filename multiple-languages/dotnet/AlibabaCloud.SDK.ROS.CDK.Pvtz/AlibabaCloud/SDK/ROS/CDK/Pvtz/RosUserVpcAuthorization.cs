@@ -78,7 +78,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: authorizedUserId: The account ID of the user who authorizes the resource.
+        /// <strong>Property</strong>: authorizedUserId: The ID of the account that owns the authorized resources.
+        /// > Only cloud accounts are supported. RAM users are not supported. You can
+        /// associate accounts only if they are on the same site. Cross-site association
+        /// is not supported.
         /// </remarks>
         [JsiiProperty(name: "authorizedUserId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AuthorizedUserId
@@ -179,7 +182,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: authType: Authorization type.
+        /// <strong>Property</strong>: authType: The authorization type. Valid values:
+        /// - NORMAL: standard authorization.
+        /// - CLOUD_PRODUCT: cloud product authorization.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "authType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -5,13 +5,18 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-virtualborderrouter
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.726Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.521Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VirtualBorderRouterProps")
 @software.amazon.jsii.Jsii.Proxy(VirtualBorderRouterProps.Jsii$Proxy.class)
 public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+     * Property localGatewayIp: The IP address of the VBR.
+     * <p>
+     * Only the owner of the VBR can set or modify this
+     * parameter.
+     * When you create a VBR for the owner of the Express Connect circuit, this
+     * parameter is required.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLocalGatewayIp();
 
@@ -79,8 +84,8 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
     /**
      * Property name: The name of the VBR.
      * <p>
-     * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-     * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+     * The name must be 2 to 128 characters in length, and can contain letters, digits,
+     * underscores (_), and hyphens (-). The name must start with a letter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -116,7 +121,11 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link VirtualBorderRouterProps#getLocalGatewayIp}
-         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side. This parameter is required.
+         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR. This parameter is required.
+         *                       Only the owner of the VBR can set or modify this
+         *                       parameter.
+         *                       When you create a VBR for the owner of the Express Connect circuit, this
+         *                       parameter is required.
          * @return {@code this}
          */
         public Builder localGatewayIp(java.lang.String localGatewayIp) {
@@ -126,7 +135,11 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link VirtualBorderRouterProps#getLocalGatewayIp}
-         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side. This parameter is required.
+         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR. This parameter is required.
+         *                       Only the owner of the VBR can set or modify this
+         *                       parameter.
+         *                       When you create a VBR for the owner of the Express Connect circuit, this
+         *                       parameter is required.
          * @return {@code this}
          */
         public Builder localGatewayIp(com.aliyun.ros.cdk.core.IResolvable localGatewayIp) {
@@ -305,8 +318,8 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link VirtualBorderRouterProps#getName}
          * @param name Property name: The name of the VBR.
-         *             The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-         *             underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+         *             The name must be 2 to 128 characters in length, and can contain letters, digits,
+         *             underscores (_), and hyphens (-). The name must start with a letter.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -317,8 +330,8 @@ public interface VirtualBorderRouterProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link VirtualBorderRouterProps#getName}
          * @param name Property name: The name of the VBR.
-         *             The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-         *             underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+         *             The name must be 2 to 128 characters in length, and can contain letters, digits,
+         *             underscores (_), and hyphens (-). The name must start with a letter.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

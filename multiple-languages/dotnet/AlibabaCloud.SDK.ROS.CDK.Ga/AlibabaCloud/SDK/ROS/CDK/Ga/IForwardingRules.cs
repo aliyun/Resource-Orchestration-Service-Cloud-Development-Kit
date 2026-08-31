@@ -8,7 +8,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
     [JsiiInterface(nativeType: typeof(IForwardingRules), fullyQualifiedName: "@alicloud/ros-cdk-ga.IForwardingRules")]
     public interface IForwardingRules : AlibabaCloud.SDK.ROS.CDK.Core.IResource
     {
-        /// <summary>Attribute ForwardingRuleIds: The IDs of the endpoint groups.</summary>
+        /// <summary>Attribute ForwardingRuleIds: The IDs of the forwarding rules.</summary>
         [JsiiProperty(name: "attrForwardingRuleIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AttrForwardingRuleIds
         {
@@ -29,7 +29,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             {
             }
 
-            /// <summary>Attribute ForwardingRuleIds: The IDs of the endpoint groups.</summary>
+            /// <summary>Attribute ForwardingRuleIds: The IDs of the forwarding rules.</summary>
             [JsiiProperty(name: "attrForwardingRuleIds", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AttrForwardingRuleIds
             {

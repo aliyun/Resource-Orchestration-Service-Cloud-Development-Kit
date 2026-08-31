@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ddos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ddos-policy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:15:30.749Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:09:29.477Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ddos.$Module.class, fqn = "@alicloud/ros-cdk-ddos.RosPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(RosPolicyProps.Jsii$Proxy.class)
 public interface RosPolicyProps extends software.amazon.jsii.JsiiSerializable {

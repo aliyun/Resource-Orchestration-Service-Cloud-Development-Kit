@@ -46,6 +46,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _associateType;
 
         /// <summary>Property associateType: The type of the route table.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>VSwitch (default): vSwitch route table</description>
+        /// <description>Gateway: gateway route table</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "associateType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? AssociateType
@@ -78,7 +86,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property description: The description of the route table.</summary>
         /// <remarks>
-        /// The description must be 2 to 256 characters in length. The description must start with a letter, but cannot start with http:// or https://.
+        /// The description must be 1 to 256 characters in length, and cannot start with
+        /// <c>http:\/\/</c> or <c>https:\/\/</c>.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -112,7 +121,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property routeTableName: The name of the route table.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length. It can contain letters, numbers, periods (.), underscores (_), and hyphens (-). It must start with a letter and cannot start with http:// or https://.
+        /// The name must be 1 to 128 characters in length, and cannot start with <c>http:\/\/</c>
+        /// or <c>https:\/\/</c>.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "routeTableName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -15,7 +15,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property dhcpOptionsSetDescription: The description of the DHCP options set.</summary>
         /// <remarks>
-        /// The description must be 2 to 256 characters in length and cannot start with http:// or https://.
+        /// The description must be 1 to 256 characters in length. It must start with a
+        /// letter and cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dhcpOptionsSetDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -49,7 +50,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         /// <summary>Property dhcpOptionsSetName: The name of the DHCP options set.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length and can contain letters, Chinese characters, digits, underscores (_), and hyphens (-). It must start with a letter or a Chinese character.
+        /// The name must be 1 to 128 characters in length and can contain letters, digits,
+        /// underscores (_), and hyphens (-). It must start with a letter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dhcpOptionsSetName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -163,14 +165,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _ipv6LeaseTime;
 
-        /// <summary>Property ipv6LeaseTime: The lease time of the IPv6 DHCP options set.</summary>
+        /// <summary>Property ipv6LeaseTime: The lease time of the IPv6 addresses for the DHCP options set.</summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <description>When setting lease time in hours: unit: h. Valid values: <strong>24h~1176h</strong>, <strong>87600h~175200h</strong>. Default value: <strong>24h</strong>.</description>
-        /// <description>When setting lease time in days: unit: d. Valid values: <strong>1d~49d</strong>, <strong>3650d~7300d</strong>. Default value: <strong>1d</strong>.</description>
+        /// <description>If you use hours as the unit, valid values are 24h to 1176h and 87600h to
+        /// 175200h. Default value: 87600h.</description>
+        /// <description>If you use days as the unit, valid values are 1d to 49d and 3650d to 7300d.
+        /// Default value: 3650d.</description>
         /// </list>
         ///
-        /// When specifying parameter values, you must include the unit.
+        ///     When you enter a value, you must also specify the unit.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ipv6LeaseTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

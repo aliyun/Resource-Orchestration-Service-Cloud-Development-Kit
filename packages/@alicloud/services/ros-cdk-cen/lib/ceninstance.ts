@@ -10,21 +10,23 @@ export { RosCenInstance as CenInstanceProperty };
 export interface CenInstanceProps {
 
     /**
-     * Property description: The description of the instance.
-     * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
+     * Property description: The description of the CEN instance.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http:\/\/ or https:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the instance.
-     * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:\/\/ or https:\/\/.
+     * Property name: The name of the CEN instance.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http:\/\/ or https:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * Property protectionLevel: The level of CIDR block overlapping. 
-     * Set the value to REDUCED. REDUCED indicates that the 
-     * CIDR blocks can overlap with each other but must not be the same.
+     * Property protectionLevel: The level of CIDR block overlap.
+     * Set the value to REDUCED. This is the default value. This value specifies that
+     * CIDR blocks can overlap but cannot be identical.
      */
     readonly protectionLevel?: string | ros.IResolvable;
 
@@ -56,7 +58,7 @@ export interface ICenInstance extends ros.IResource {
     readonly attrCenId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstance`, which is used to create a Cloud Enterprise Network (CEN) instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenInstance`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenInstance`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-ceninstance
  */

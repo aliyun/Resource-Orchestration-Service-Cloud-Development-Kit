@@ -227,11 +227,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _addressAllocatedMode;
 
-        /// <summary>Property addressAllocatedMode: The mode in which IP addresses are assigned.</summary>
+        /// <summary>Property addressAllocatedMode: Address allocation mode.</summary>
         /// <remarks>
         /// Valid values:
-        /// Fixed: The ALB instance uses a static IP address.
-        /// Dynamic: An IP address is dynamically assigned to the ALB instance in each zone. This is the default value.
+        ///
+        /// <list type="bullet">
+        /// <description>Fixed (Default): A fixed IP address is allocated to each zone.</description>
+        /// <description>Dynamic: Dynamic IP mode. IP addresses are dynamically allocated for each zone.</description>
+        /// </list>
+        ///
+        ///     Starting from , when you create a new instance by using this interface, it is
+        ///     created as an upgraded ALB instance regardless of the mode you specify. The
+        ///     distinction between IP modes is removed, and the allocated IP addresses are
+        ///     automatically elastic. ALB instances created before the upgrade are not affected.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "addressAllocatedMode", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -403,9 +411,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _loadBalancerName;
 
-        /// <summary>Property loadBalancerName: The name of the ALB instance.</summary>
+        /// <summary>Property loadBalancerName: The name of the Application Load Balancer (ALB) instance.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
+        /// The name must be 2 to 128 characters long, must start with a letter, digit, or
+        /// Chinese character, and can contain digits, periods (.), underscores (_), hyphens
+        /// (-), and spaces.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "loadBalancerName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -437,7 +447,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _modificationProtectionConfig;
 
-        /// <summary>Property modificationProtectionConfig: The configuration of modification protection.</summary>
+        /// <summary>Property modificationProtectionConfig: The modification protection configuration.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "modificationProtectionConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosLoadBalancer.ModificationProtectionConfigProperty\"}]}}", isOptional: true)]
         public object? ModificationProtectionConfig

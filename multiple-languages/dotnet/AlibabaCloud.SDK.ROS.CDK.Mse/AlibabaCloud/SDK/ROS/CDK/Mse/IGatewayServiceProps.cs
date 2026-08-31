@@ -179,7 +179,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
             }
         }
 
-        /// <summary>Property tlsSetting: TLS settings for the service.</summary>
+        /// <summary>Property tlsSetting: The TLS settings, specified as a JSON string.</summary>
+        /// <remarks>
+        /// The following fields are supported:
+        ///
+        /// <list type="bullet">
+        /// <description><c>mode</c>: The TLS mode.</description>
+        /// <description><c>certId</c>: The certificate ID.</description>
+        /// <description><c>caCertId</c>: The CA certificate ID.</description>
+        /// <description><c>caCertContent</c>: The public key of the CA certificate.</description>
+        /// <description><c>sni</c>: The Server Name Indication (SNI).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "tlsSetting", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? TlsSetting
@@ -336,7 +347,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property tlsSetting: TLS settings for the service.</summary>
+            /// <summary>Property tlsSetting: The TLS settings, specified as a JSON string.</summary>
+            /// <remarks>
+            /// The following fields are supported:
+            ///
+            /// <list type="bullet">
+            /// <description><c>mode</c>: The TLS mode.</description>
+            /// <description><c>certId</c>: The certificate ID.</description>
+            /// <description><c>caCertId</c>: The CA certificate ID.</description>
+            /// <description><c>caCertContent</c>: The public key of the CA certificate.</description>
+            /// <description><c>sni</c>: The Server Name Indication (SNI).</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "tlsSetting", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? TlsSetting

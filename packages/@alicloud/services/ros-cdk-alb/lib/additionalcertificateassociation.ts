@@ -32,7 +32,7 @@ export interface IAdditionalCertificateAssociation extends ros.IResource {
     readonly attrListenerId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`, which is used to add additional certificates to a listener.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::AdditionalCertificateAssociation`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAdditionalCertificateAssociation`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-additionalcertificateassociation
  */

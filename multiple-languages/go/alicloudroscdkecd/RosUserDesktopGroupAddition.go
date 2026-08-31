@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`, which is used grant the permissions on a cloud computer pool to users.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECD::UserDesktopGroupAddition`.
 type RosUserDesktopGroupAddition interface {
 	alicloudroscdkcore.RosResource
 	AttrDesktopGroupId() alicloudroscdkcore.IResolvable

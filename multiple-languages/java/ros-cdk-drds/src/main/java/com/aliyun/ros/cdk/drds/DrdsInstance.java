@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.drds;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DRDS::DrdsInstance</code>, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DRDS::DrdsInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:28:31.235Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:25:12.231Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsInstance")
 public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.drds.IDrdsInstance {
 
@@ -144,20 +144,42 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property description: Description of the DRDS instance, 2-128 characters.
+         * Property description: Specifies the description of the instance.
+         * <p>
+         * The description must meet the
+         * following requirements:
+         * <p>
+         * <ul>
+         * <li>The description cannot contain the prefix http:// or https://.</li>
+         * <li>The description must start with a letter or a Chinese character, and can
+         * contain uppercase and lowercase letters, Chinese characters, digits, underscores
+         * (_), and hyphens (-).</li>
+         * <li>The description must be 2 to 256 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the DRDS instance, 2-128 characters. This parameter is required.
+         * @param description Property description: Specifies the description of the instance. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Description of the DRDS instance, 2-128 characters.
+         * Property description: Specifies the description of the instance.
+         * <p>
+         * The description must meet the
+         * following requirements:
+         * <p>
+         * <ul>
+         * <li>The description cannot contain the prefix http:// or https://.</li>
+         * <li>The description must start with a letter or a Chinese character, and can
+         * contain uppercase and lowercase letters, Chinese characters, digits, underscores
+         * (_), and hyphens (-).</li>
+         * <li>The description must be 2 to 256 characters in length.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the DRDS instance, 2-128 characters. This parameter is required.
+         * @param description Property description: Specifies the description of the instance. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -165,20 +187,36 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition.
+         * Property instanceSeries: Specifies the instance type of the instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>drds.sn2.4c16g: The instance is of the Starter Edition.</li>
+         * <li>drds.sn2.8c32g: The instance is of the Standard Edition</li>
+         * <li>drds.sn2.16c64g: The instance is of the Enterprise Edition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceSeries Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition. This parameter is required.
+         * @param instanceSeries Property instanceSeries: Specifies the instance type of the instance. This parameter is required.
          */
         public Builder instanceSeries(final java.lang.String instanceSeries) {
             this.props.instanceSeries(instanceSeries);
             return this;
         }
         /**
-         * Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition.
+         * Property instanceSeries: Specifies the instance type of the instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>drds.sn2.4c16g: The instance is of the Starter Edition.</li>
+         * <li>drds.sn2.8c32g: The instance is of the Standard Edition</li>
+         * <li>drds.sn2.16c64g: The instance is of the Enterprise Edition.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceSeries Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition. This parameter is required.
+         * @param instanceSeries Property instanceSeries: Specifies the instance type of the instance. This parameter is required.
          */
         public Builder instanceSeries(final com.aliyun.ros.cdk.core.IResolvable instanceSeries) {
             this.props.instanceSeries(instanceSeries);
@@ -186,20 +224,38 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property payType: For the type of payment, see "Payment Type Parameter Table".
+         * Property payType: Specifies the billing method of the instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>drdsPre: The instance uses the subscription billing method.</li>
+         * <li>drdsPost: The instance uses the pay-as-you-go billing method.</li>
+         * <li>drdsRo: By default, the pay-as-you-go billing method is used when you create
+         * read-only instances.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param payType Property payType: For the type of payment, see "Payment Type Parameter Table". This parameter is required.
+         * @param payType Property payType: Specifies the billing method of the instance. This parameter is required.
          */
         public Builder payType(final java.lang.String payType) {
             this.props.payType(payType);
             return this;
         }
         /**
-         * Property payType: For the type of payment, see "Payment Type Parameter Table".
+         * Property payType: Specifies the billing method of the instance.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>drdsPre: The instance uses the subscription billing method.</li>
+         * <li>drdsPost: The instance uses the pay-as-you-go billing method.</li>
+         * <li>drdsRo: By default, the pay-as-you-go billing method is used when you create
+         * read-only instances.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param payType Property payType: For the type of payment, see "Payment Type Parameter Table". This parameter is required.
+         * @param payType Property payType: Specifies the billing method of the instance. This parameter is required.
          */
         public Builder payType(final com.aliyun.ros.cdk.core.IResolvable payType) {
             this.props.payType(payType);
@@ -207,20 +263,28 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing.
+         * Property specification: Specifies the specification code of the instance.
+         * <p>
+         * The value consists of the
+         * instance type and the specified instance specification. For example, you can set
+         * the value to drds.sn2.4c16g.8c32g.
          * <p>
          * @return {@code this}
-         * @param specification Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing. This parameter is required.
+         * @param specification Property specification: Specifies the specification code of the instance. This parameter is required.
          */
         public Builder specification(final java.lang.String specification) {
             this.props.specification(specification);
             return this;
         }
         /**
-         * Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing.
+         * Property specification: Specifies the specification code of the instance.
+         * <p>
+         * The value consists of the
+         * instance type and the specified instance specification. For example, you can set
+         * the value to drds.sn2.4c16g.8c32g.
          * <p>
          * @return {@code this}
-         * @param specification Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing. This parameter is required.
+         * @param specification Property specification: Specifies the specification code of the instance. This parameter is required.
          */
         public Builder specification(final com.aliyun.ros.cdk.core.IResolvable specification) {
             this.props.specification(specification);
@@ -228,20 +292,40 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively.
+         * Property type: Specifies the type of the instance.
+         * <p>
+         * Set the value to PRIVATE. The value PRIVATE
+         * specifies that the instance is a dedicated instance.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can also set the value to 1 to specify that the instance is a dedicated
+         * instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param type Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively. This parameter is required.
+         * @param type Property type: Specifies the type of the instance. This parameter is required.
          */
         public Builder type(final java.lang.String type) {
             this.props.type(type);
             return this;
         }
         /**
-         * Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively.
+         * Property type: Specifies the type of the instance.
+         * <p>
+         * Set the value to PRIVATE. The value PRIVATE
+         * specifies that the instance is a dedicated instance.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can also set the value to 1 to specify that the instance is a dedicated
+         * instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param type Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively. This parameter is required.
+         * @param type Property type: Specifies the type of the instance. This parameter is required.
          */
         public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
             this.props.type(type);
@@ -295,24 +379,50 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year.
+         * Property isAutoRenew: Specifies whether to enable automatic renewal.
          * <p>
-         * The parameter takes effect when the payment type is drdsPre.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: If the PricingCycle parameter is set to month, the subscription is
+         * automatically renewed for one month. If the PricingCycle parameter is set to
+         * year, the subscription is automatically renewed for one year.</li>
+         * <li>false: The auto-renewal feature is disabled for the instance.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter only takes effect when the PayType parameter is set to drdsPre.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param isAutoRenew Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year. This parameter is required.
+         * @param isAutoRenew Property isAutoRenew: Specifies whether to enable automatic renewal. This parameter is required.
          */
         public Builder isAutoRenew(final java.lang.Boolean isAutoRenew) {
             this.props.isAutoRenew(isAutoRenew);
             return this;
         }
         /**
-         * Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year.
+         * Property isAutoRenew: Specifies whether to enable automatic renewal.
          * <p>
-         * The parameter takes effect when the payment type is drdsPre.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: If the PricingCycle parameter is set to month, the subscription is
+         * automatically renewed for one month. If the PricingCycle parameter is set to
+         * year, the subscription is automatically renewed for one year.</li>
+         * <li>false: The auto-renewal feature is disabled for the instance.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter only takes effect when the PayType parameter is set to drdsPre.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param isAutoRenew Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year. This parameter is required.
+         * @param isAutoRenew Property isAutoRenew: Specifies whether to enable automatic renewal. This parameter is required.
          */
         public Builder isAutoRenew(final com.aliyun.ros.cdk.core.IResolvable isAutoRenew) {
             this.props.isAutoRenew(isAutoRenew);
@@ -320,24 +430,52 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property mySqlVersion: The MySQL protocol version supported by DRDS.
+         * Property mySqlVersion: Specifies the MySQL version that is supported by the instance.
          * <p>
-         * Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>5: The instance is fully compatible with MySQL 5.x. This value is the default
+         * value.</li>
+         * <li>8: The instance is fully compatible with MySQL 8.0.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter only takes effect when you create a primary instance. By
+         * default, the MySQL version of the read-only instance is the same as that of the
+         * primary instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param mySqlVersion Property mySqlVersion: The MySQL protocol version supported by DRDS. This parameter is required.
+         * @param mySqlVersion Property mySqlVersion: Specifies the MySQL version that is supported by the instance. This parameter is required.
          */
         public Builder mySqlVersion(final java.lang.String mySqlVersion) {
             this.props.mySqlVersion(mySqlVersion);
             return this;
         }
         /**
-         * Property mySqlVersion: The MySQL protocol version supported by DRDS.
+         * Property mySqlVersion: Specifies the MySQL version that is supported by the instance.
          * <p>
-         * Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>5: The instance is fully compatible with MySQL 5.x. This value is the default
+         * value.</li>
+         * <li>8: The instance is fully compatible with MySQL 8.0.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter only takes effect when you create a primary instance. By
+         * default, the MySQL version of the read-only instance is the same as that of the
+         * primary instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param mySqlVersion Property mySqlVersion: The MySQL protocol version supported by DRDS. This parameter is required.
+         * @param mySqlVersion Property mySqlVersion: Specifies the MySQL version that is supported by the instance. This parameter is required.
          */
         public Builder mySqlVersion(final com.aliyun.ros.cdk.core.IResolvable mySqlVersion) {
             this.props.mySqlVersion(mySqlVersion);
@@ -345,24 +483,46 @@ public class DrdsInstance extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property pricingCycle: The unit of the order period, year: year, month: month.
+         * Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
          * <p>
-         * The parameter takes effect when the payment type is drdsPre.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>year: The unit of the subscription duration is year.</li>
+         * <li>month: The unit of the subscription duration is month.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set the PayType parameter to drdsPre.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param pricingCycle Property pricingCycle: The unit of the order period, year: year, month: month. This parameter is required.
+         * @param pricingCycle Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance. This parameter is required.
          */
         public Builder pricingCycle(final java.lang.String pricingCycle) {
             this.props.pricingCycle(pricingCycle);
             return this;
         }
         /**
-         * Property pricingCycle: The unit of the order period, year: year, month: month.
+         * Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
          * <p>
-         * The parameter takes effect when the payment type is drdsPre.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>year: The unit of the subscription duration is year.</li>
+         * <li>month: The unit of the subscription duration is month.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set the PayType parameter to drdsPre.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param pricingCycle Property pricingCycle: The unit of the order period, year: year, month: month. This parameter is required.
+         * @param pricingCycle Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance. This parameter is required.
          */
         public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.props.pricingCycle(pricingCycle);

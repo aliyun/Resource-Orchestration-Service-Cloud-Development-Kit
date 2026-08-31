@@ -112,7 +112,7 @@ function rosCluster2PropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::Cluster2`, which is used to query E-MapReduce (EMR) clusters.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::Cluster2`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Cluster2` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-cluster2
  */
@@ -333,7 +333,7 @@ function rosFlowProjectsPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::FlowProjects`, which is used to query projects.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::EMR::FlowProjects`.
  * @Note This class does not contain additional functions, so it is recommended to use the `FlowProjects` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-emr-flowprojects
  */

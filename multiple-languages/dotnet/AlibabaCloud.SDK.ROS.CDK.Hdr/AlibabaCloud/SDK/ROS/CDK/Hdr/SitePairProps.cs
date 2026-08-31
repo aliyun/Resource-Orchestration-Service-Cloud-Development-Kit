@@ -76,9 +76,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         private object _primarySiteType;
 
         /// <summary>Property primarySiteType: The type of the primary site.</summary>
-        /// <remarks>
-        /// Valid values: VPC, VSwitch, VRouter.
-        /// </remarks>
         [JsiiProperty(name: "primarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object PrimarySiteType
         {
@@ -199,9 +196,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         private object _secondarySiteType;
 
         /// <summary>Property secondarySiteType: The type of the secondary site.</summary>
-        /// <remarks>
-        /// Valid values: VPC, VSwitch, VRouter.
-        /// </remarks>
         [JsiiProperty(name: "secondarySiteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SecondarySiteType
         {
@@ -262,6 +256,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         private object? _primarySiteZoneId;
 
         /// <summary>Property primarySiteZoneId: The zone ID of the primary site.</summary>
+        /// <remarks>
+        /// This parameter is valid only when the site pair
+        /// type is cross-zone disaster recovery.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "primarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PrimarySiteZoneId
@@ -293,6 +291,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hdr
         private object? _secondarySiteZoneId;
 
         /// <summary>Property secondarySiteZoneId: The zone ID of the secondary site.</summary>
+        /// <remarks>
+        /// This parameter is valid only when the site
+        /// pair type is cross-zone disaster recovery.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "secondarySiteZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SecondarySiteZoneId

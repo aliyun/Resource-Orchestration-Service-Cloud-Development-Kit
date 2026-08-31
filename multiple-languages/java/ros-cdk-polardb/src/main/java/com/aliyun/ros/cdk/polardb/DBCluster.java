@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.polardb;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::POLARDB::DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.518Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.DBCluster")
 public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.polardb.IDBCluster {
 
@@ -216,24 +216,72 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property dbNodeClass: The node specifications of the cluster.
+         * Property dbNodeClass: The node specification.
          * <p>
-         * For more information, see Specifications and pricing.
+         * For more information, see the following topics:
+         * <p>
+         * <ul>
+         * <li>PolarDB for MySQL: Compute node specifications</li>
+         * <li>PolarDB for PostgreSQL (compatible with Oracle): Compute node
+         * specifications</li>
+         * <li>PolarDB for PostgreSQL: Compute node specifications</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>To create a PolarDB for MySQL Cluster Edition serverless cluster, set this
+         * parameter to polar.mysql.sl.small.</li>
+         * <li>To create a PolarDB for MySQL Standard Edition serverless cluster, set this
+         * parameter to polar.mysql.sl.small.c.</li>
+         * <li>To create a PolarDB for PostgreSQL Cluster Edition serverless cluster, set
+         * this parameter to polar.pg.sl.small.</li>
+         * <li>To create a PolarDB for PostgreSQL Standard Edition serverless cluster, set
+         * this parameter to polar.pg.sl.small.c.</li>
+         * <li>To create a PolarDB for PostgreSQL (compatible with Oracle) serverless
+         * cluster, set this parameter to polar.o.sl.small.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbNodeClass Property dbNodeClass: The node specifications of the cluster. This parameter is required.
+         * @param dbNodeClass Property dbNodeClass: The node specification. This parameter is required.
          */
         public Builder dbNodeClass(final java.lang.String dbNodeClass) {
             this.props.dbNodeClass(dbNodeClass);
             return this;
         }
         /**
-         * Property dbNodeClass: The node specifications of the cluster.
+         * Property dbNodeClass: The node specification.
          * <p>
-         * For more information, see Specifications and pricing.
+         * For more information, see the following topics:
+         * <p>
+         * <ul>
+         * <li>PolarDB for MySQL: Compute node specifications</li>
+         * <li>PolarDB for PostgreSQL (compatible with Oracle): Compute node
+         * specifications</li>
+         * <li>PolarDB for PostgreSQL: Compute node specifications</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>To create a PolarDB for MySQL Cluster Edition serverless cluster, set this
+         * parameter to polar.mysql.sl.small.</li>
+         * <li>To create a PolarDB for MySQL Standard Edition serverless cluster, set this
+         * parameter to polar.mysql.sl.small.c.</li>
+         * <li>To create a PolarDB for PostgreSQL Cluster Edition serverless cluster, set
+         * this parameter to polar.pg.sl.small.</li>
+         * <li>To create a PolarDB for PostgreSQL Standard Edition serverless cluster, set
+         * this parameter to polar.pg.sl.small.c.</li>
+         * <li>To create a PolarDB for PostgreSQL (compatible with Oracle) serverless
+         * cluster, set this parameter to polar.o.sl.small.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbNodeClass Property dbNodeClass: The node specifications of the cluster. This parameter is required.
+         * @param dbNodeClass Property dbNodeClass: The node specification. This parameter is required.
          */
         public Builder dbNodeClass(final com.aliyun.ros.cdk.core.IResolvable dbNodeClass) {
             this.props.dbNodeClass(dbNodeClass);
@@ -262,30 +310,68 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property dbVersion: The version of the database.
+         * Property dbVersion: The version of the database engine.
          * <p>
-         * Valid values:
-         * MySQL: 5.6, 5.7 or 8.0
-         * PostgreSQL: 11, 14, 15
-         * Oracle: 11, 14
+         * <ul>
+         * <li>Valid values for MySQL:</li>
+         * <li>5.6</li>
+         * <li>5.7</li>
+         * <li>8.0</li>
+         * <li>Valid values for PostgreSQL:</li>
+         * <li>11</li>
+         * <li>14</li>
+         * <li>15</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you create a serverless cluster for PolarDB for PostgreSQL, you must set
+         * this parameter to <code>14</code>.
+         * <p>
+         * <ul>
+         * <li>Valid values for Oracle:</li>
+         * <li>11</li>
+         * <li>14</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbVersion Property dbVersion: The version of the database. This parameter is required.
+         * @param dbVersion Property dbVersion: The version of the database engine. This parameter is required.
          */
         public Builder dbVersion(final java.lang.String dbVersion) {
             this.props.dbVersion(dbVersion);
             return this;
         }
         /**
-         * Property dbVersion: The version of the database.
+         * Property dbVersion: The version of the database engine.
          * <p>
-         * Valid values:
-         * MySQL: 5.6, 5.7 or 8.0
-         * PostgreSQL: 11, 14, 15
-         * Oracle: 11, 14
+         * <ul>
+         * <li>Valid values for MySQL:</li>
+         * <li>5.6</li>
+         * <li>5.7</li>
+         * <li>8.0</li>
+         * <li>Valid values for PostgreSQL:</li>
+         * <li>11</li>
+         * <li>14</li>
+         * <li>15</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you create a serverless cluster for PolarDB for PostgreSQL, you must set
+         * this parameter to <code>14</code>.
+         * <p>
+         * <ul>
+         * <li>Valid values for Oracle:</li>
+         * <li>11</li>
+         * <li>14</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbVersion Property dbVersion: The version of the database. This parameter is required.
+         * @param dbVersion Property dbVersion: The version of the database engine. This parameter is required.
          */
         public Builder dbVersion(final com.aliyun.ros.cdk.core.IResolvable dbVersion) {
             this.props.dbVersion(dbVersion);
@@ -322,24 +408,46 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property allowShutDown: Whether to turn on No activity pause.
+         * Property allowShutDown: Specifies whether to enable pause on inactivity.
          * <p>
-         * The default is false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: enables pause on inactivity.</li>
+         * <li>false (default): disables pause on inactivity.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param allowShutDown Property allowShutDown: Whether to turn on No activity pause. This parameter is required.
+         * @param allowShutDown Property allowShutDown: Specifies whether to enable pause on inactivity. This parameter is required.
          */
         public Builder allowShutDown(final java.lang.Boolean allowShutDown) {
             this.props.allowShutDown(allowShutDown);
             return this;
         }
         /**
-         * Property allowShutDown: Whether to turn on No activity pause.
+         * Property allowShutDown: Specifies whether to enable pause on inactivity.
          * <p>
-         * The default is false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true: enables pause on inactivity.</li>
+         * <li>false (default): disables pause on inactivity.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param allowShutDown Property allowShutDown: Whether to turn on No activity pause. This parameter is required.
+         * @param allowShutDown Property allowShutDown: Specifies whether to enable pause on inactivity. This parameter is required.
          */
         public Builder allowShutDown(final com.aliyun.ros.cdk.core.IResolvable allowShutDown) {
             this.props.allowShutDown(allowShutDown);
@@ -401,30 +509,58 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows: ALL: Keep all backups permanently.
+         * Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted.
          * <p>
-         * LATEST: Permanently keep the last backup (automatic backup before deletion).
-         * NONE: The backup set is not retained when the cluster is deleted.
-         * When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
-         * Note: This parameter takes effect only when the value of DBType is MySQL.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ALL: retains all backup sets.</li>
+         * <li>LATEST: retains only the last backup set. An automatic backup is performed
+         * before the cluster is deleted.</li>
+         * <li>NONE: does not retain backup sets.
+         * Default value: NONE.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is valid only if DBType is set to MySQL.</li>
+         * <li>Serverless clusters do not support this parameter.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param backupRetentionPolicyOnClusterDeletion Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows: ALL: Keep all backups permanently. This parameter is required.
+         * @param backupRetentionPolicyOnClusterDeletion Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted. This parameter is required.
          */
         public Builder backupRetentionPolicyOnClusterDeletion(final java.lang.String backupRetentionPolicyOnClusterDeletion) {
             this.props.backupRetentionPolicyOnClusterDeletion(backupRetentionPolicyOnClusterDeletion);
             return this;
         }
         /**
-         * Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows: ALL: Keep all backups permanently.
+         * Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted.
          * <p>
-         * LATEST: Permanently keep the last backup (automatic backup before deletion).
-         * NONE: The backup set is not retained when the cluster is deleted.
-         * When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
-         * Note: This parameter takes effect only when the value of DBType is MySQL.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ALL: retains all backup sets.</li>
+         * <li>LATEST: retains only the last backup set. An automatic backup is performed
+         * before the cluster is deleted.</li>
+         * <li>NONE: does not retain backup sets.
+         * Default value: NONE.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is valid only if DBType is set to MySQL.</li>
+         * <li>Serverless clusters do not support this parameter.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param backupRetentionPolicyOnClusterDeletion Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows: ALL: Keep all backups permanently. This parameter is required.
+         * @param backupRetentionPolicyOnClusterDeletion Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted. This parameter is required.
          */
         public Builder backupRetentionPolicyOnClusterDeletion(final com.aliyun.ros.cdk.core.IResolvable backupRetentionPolicyOnClusterDeletion) {
             this.props.backupRetentionPolicyOnClusterDeletion(backupRetentionPolicyOnClusterDeletion);
@@ -432,40 +568,54 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property cloneDataPoint: The time point of data to be cloned.
+         * Property cloneDataPoint: The point in time for the clone.
          * <p>
          * Valid values:
-         * LATEST: clones data of the latest time point.
-         * <BackupID>: clones historical backup data. Specify the ID of the specific backup set.
-         * <Timestamp>: clones data of a historical time point. Specify the specific time in
-         * the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.
-         * Default value: LATEST.
-         * Note
-         * This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
-         * If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
+         * <p>
+         * <ul>
+         * <li>LATEST: The latest point in time.</li>
+         * <li>BackupID: The ID of a historical backup set.</li>
+         * <li>Timestamp: A specific point in time in the <code>YYYY-MM-DDThh:mm:ssZ</code> format. The
+         * time must be in UTC.
+         * Default value: LATEST.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set CreationOption to CloneFromRDS, you can set this parameter only to
+         * LATEST.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param cloneDataPoint Property cloneDataPoint: The time point of data to be cloned. This parameter is required.
+         * @param cloneDataPoint Property cloneDataPoint: The point in time for the clone. This parameter is required.
          */
         public Builder cloneDataPoint(final java.lang.String cloneDataPoint) {
             this.props.cloneDataPoint(cloneDataPoint);
             return this;
         }
         /**
-         * Property cloneDataPoint: The time point of data to be cloned.
+         * Property cloneDataPoint: The point in time for the clone.
          * <p>
          * Valid values:
-         * LATEST: clones data of the latest time point.
-         * <BackupID>: clones historical backup data. Specify the ID of the specific backup set.
-         * <Timestamp>: clones data of a historical time point. Specify the specific time in
-         * the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.
-         * Default value: LATEST.
-         * Note
-         * This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
-         * If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
+         * <p>
+         * <ul>
+         * <li>LATEST: The latest point in time.</li>
+         * <li>BackupID: The ID of a historical backup set.</li>
+         * <li>Timestamp: A specific point in time in the <code>YYYY-MM-DDThh:mm:ssZ</code> format. The
+         * time must be in UTC.
+         * Default value: LATEST.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set CreationOption to CloneFromRDS, you can set this parameter only to
+         * LATEST.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param cloneDataPoint Property cloneDataPoint: The time point of data to be cloned. This parameter is required.
+         * @param cloneDataPoint Property cloneDataPoint: The point in time for the clone. This parameter is required.
          */
         public Builder cloneDataPoint(final com.aliyun.ros.cdk.core.IResolvable cloneDataPoint) {
             this.props.cloneDataPoint(cloneDataPoint);
@@ -519,24 +669,68 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property creationCategory: Cluster series.
+         * Property creationCategory: The edition of the cluster.
          * <p>
-         * The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Normal: Cluster Edition (default)</li>
+         * <li>Basic: Single-node Edition</li>
+         * <li>ArchiveNormal: X-Engine Edition</li>
+         * <li>NormalMultimaster: Multi-master Cluster Edition</li>
+         * <li>SENormal: Standard Edition</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>The Basic edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0;
+         * PolarDB for PostgreSQL 14; and PolarDB for PostgreSQL (compatible with Oracle)
+         * 2.0.</li>
+         * <li>The ArchiveNormal and NormalMultimaster editions are supported for PolarDB
+         * for MySQL 8.0.</li>
+         * <li>The SENormal edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0 and
+         * PolarDB for PostgreSQL 14.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param creationCategory Property creationCategory: Cluster series. This parameter is required.
+         * @param creationCategory Property creationCategory: The edition of the cluster. This parameter is required.
          */
         public Builder creationCategory(final java.lang.String creationCategory) {
             this.props.creationCategory(creationCategory);
             return this;
         }
         /**
-         * Property creationCategory: Cluster series.
+         * Property creationCategory: The edition of the cluster.
          * <p>
-         * The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Normal: Cluster Edition (default)</li>
+         * <li>Basic: Single-node Edition</li>
+         * <li>ArchiveNormal: X-Engine Edition</li>
+         * <li>NormalMultimaster: Multi-master Cluster Edition</li>
+         * <li>SENormal: Standard Edition</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>The Basic edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0;
+         * PolarDB for PostgreSQL 14; and PolarDB for PostgreSQL (compatible with Oracle)
+         * 2.0.</li>
+         * <li>The ArchiveNormal and NormalMultimaster editions are supported for PolarDB
+         * for MySQL 8.0.</li>
+         * <li>The SENormal edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0 and
+         * PolarDB for PostgreSQL 14.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param creationCategory Property creationCategory: Cluster series. This parameter is required.
+         * @param creationCategory Property creationCategory: The edition of the cluster. This parameter is required.
          */
         public Builder creationCategory(final com.aliyun.ros.cdk.core.IResolvable creationCategory) {
             this.props.creationCategory(creationCategory);
@@ -678,26 +872,64 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property dbNodeNum: The number of Standard Edition nodes.
+         * Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster.
          * <p>
-         * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
-         * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>Standard Edition: 1 to 8. A cluster of this edition includes one read/write
+         * node and up to seven read-only nodes.</li>
+         * <li>Enterprise Edition: 1 to 16. A cluster of this edition includes one read/write
+         * node and up to 15 read-only nodes.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>By default, an Enterprise Edition cluster has two nodes and a Standard
+         * Edition cluster has one node.</li>
+         * <li>This parameter is supported only for PolarDB for MySQL.</li>
+         * <li>You cannot change the number of nodes in a Multi-master Cluster Edition
+         * cluster.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes. This parameter is required.
+         * @param dbNodeNum Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster. This parameter is required.
          */
         public Builder dbNodeNum(final java.lang.Number dbNodeNum) {
             this.props.dbNodeNum(dbNodeNum);
             return this;
         }
         /**
-         * Property dbNodeNum: The number of Standard Edition nodes.
+         * Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster.
          * <p>
-         * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
-         * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>Standard Edition: 1 to 8. A cluster of this edition includes one read/write
+         * node and up to seven read-only nodes.</li>
+         * <li>Enterprise Edition: 1 to 16. A cluster of this edition includes one read/write
+         * node and up to 15 read-only nodes.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>By default, an Enterprise Edition cluster has two nodes and a Standard
+         * Edition cluster has one node.</li>
+         * <li>This parameter is supported only for PolarDB for MySQL.</li>
+         * <li>You cannot change the number of nodes in a Multi-master Cluster Edition
+         * cluster.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param dbNodeNum Property dbNodeNum: The number of Standard Edition nodes. This parameter is required.
+         * @param dbNodeNum Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster. This parameter is required.
          */
         public Builder dbNodeNum(final com.aliyun.ros.cdk.core.IResolvable dbNodeNum) {
             this.props.dbNodeNum(dbNodeNum);
@@ -784,32 +1016,52 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature.
+         * Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature.
          * <p>
-         * Default value: ON. Valid values:
-         * ON: enables the hot standby storage cluster feature.
-         * OFF: disables the hot standby storage cluster feature
-         * STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
-         * The default value for Standard Edition clusters is STANDBY.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ON (default): enables a hot standby storage cluster.</li>
+         * <li>OFF: disables the hot standby cluster feature.</li>
+         * <li>STANDBY: enables a hot standby cluster.</li>
+         * <li>EQUAL: enables hot standby for both storage and computing resources.</li>
+         * <li>3AZ: enables multi-AZ strong consistency.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The value STANDBY is valid only for PolarDB for PostgreSQL.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param hotStandbyCluster Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. This parameter is required.
+         * @param hotStandbyCluster Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature. This parameter is required.
          */
         public Builder hotStandbyCluster(final java.lang.String hotStandbyCluster) {
             this.props.hotStandbyCluster(hotStandbyCluster);
             return this;
         }
         /**
-         * Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature.
+         * Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature.
          * <p>
-         * Default value: ON. Valid values:
-         * ON: enables the hot standby storage cluster feature.
-         * OFF: disables the hot standby storage cluster feature
-         * STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
-         * The default value for Standard Edition clusters is STANDBY.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ON (default): enables a hot standby storage cluster.</li>
+         * <li>OFF: disables the hot standby cluster feature.</li>
+         * <li>STANDBY: enables a hot standby cluster.</li>
+         * <li>EQUAL: enables hot standby for both storage and computing resources.</li>
+         * <li>3AZ: enables multi-AZ strong consistency.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The value STANDBY is valid only for PolarDB for PostgreSQL.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param hotStandbyCluster Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. This parameter is required.
+         * @param hotStandbyCluster Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature. This parameter is required.
          */
         public Builder hotStandbyCluster(final com.aliyun.ros.cdk.core.IResolvable hotStandbyCluster) {
             this.props.hotStandbyCluster(hotStandbyCluster);
@@ -838,20 +1090,50 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+         * Property looseXEngine: Specifies whether to enable the X-Engine storage engine.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ON: enables the X-Engine storage engine.</li>
+         * <li>OFF: disables the X-Engine storage engine.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only if the CreationOption parameter is not set to
+         * CreateGdnStandby, DBType is set to MySQL, and DBVersion is set to 8.0. To enable
+         * the X-Engine storage engine, the node must have at least 8 GB of memory.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param looseXEngine Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB. This parameter is required.
+         * @param looseXEngine Property looseXEngine: Specifies whether to enable the X-Engine storage engine. This parameter is required.
          */
         public Builder looseXEngine(final java.lang.String looseXEngine) {
             this.props.looseXEngine(looseXEngine);
             return this;
         }
         /**
-         * Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+         * Property looseXEngine: Specifies whether to enable the X-Engine storage engine.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ON: enables the X-Engine storage engine.</li>
+         * <li>OFF: disables the X-Engine storage engine.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only if the CreationOption parameter is not set to
+         * CreateGdnStandby, DBType is set to MySQL, and DBVersion is set to 8.0. To enable
+         * the X-Engine storage engine, the node must have at least 8 GB of memory.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param looseXEngine Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB. This parameter is required.
+         * @param looseXEngine Property looseXEngine: Specifies whether to enable the X-Engine storage engine. This parameter is required.
          */
         public Builder looseXEngine(final com.aliyun.ros.cdk.core.IResolvable looseXEngine) {
             this.props.looseXEngine(looseXEngine);
@@ -1011,26 +1293,26 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+         * Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk.
          * <p>
-         * Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
-         * Baseline performance =min{1,800+50* capacity, 50000}.
+         * Valid values: 0 to
+         * min{50,000, 1,000 × Capacity - Baseline IOPS}.
          * <p>
          * @return {@code this}
-         * @param provisionedIops Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. This parameter is required.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk. This parameter is required.
          */
         public Builder provisionedIops(final java.lang.Number provisionedIops) {
             this.props.provisionedIops(provisionedIops);
             return this;
         }
         /**
-         * Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.
+         * Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk.
          * <p>
-         * Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
-         * Baseline performance =min{1,800+50* capacity, 50000}.
+         * Valid values: 0 to
+         * min{50,000, 1,000 × Capacity - Baseline IOPS}.
          * <p>
          * @return {@code this}
-         * @param provisionedIops Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. This parameter is required.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk. This parameter is required.
          */
         public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
             this.props.provisionedIops(provisionedIops);
@@ -1077,30 +1359,62 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property proxyType: The type of PolarProxy.
+         * Property proxyType: The type of the database proxy.
          * <p>
-         * Default value: OFF. Valid values:
-         * OFF: disables PolarProxy.
-         * EXCLUSIVE: Dedicated Enterprise Edition
-         * GENERAL: Standard Enterprise Edition
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>EXCLUSIVE: Enterprise Dedicated</li>
+         * <li>GENERAL: Enterprise General-purpose</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The proxy type must be consistent with the type that corresponds to the node
+         * specification of the cluster:
+         * <p>
+         * <ul>
+         * <li>If the node specification is general-purpose, the proxy type must be
+         * Enterprise General-purpose.</li>
+         * <li>If the node specification is dedicated, the proxy type must be Enterprise
+         * Dedicated.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param proxyType Property proxyType: The type of PolarProxy. This parameter is required.
+         * @param proxyType Property proxyType: The type of the database proxy. This parameter is required.
          */
         public Builder proxyType(final java.lang.String proxyType) {
             this.props.proxyType(proxyType);
             return this;
         }
         /**
-         * Property proxyType: The type of PolarProxy.
+         * Property proxyType: The type of the database proxy.
          * <p>
-         * Default value: OFF. Valid values:
-         * OFF: disables PolarProxy.
-         * EXCLUSIVE: Dedicated Enterprise Edition
-         * GENERAL: Standard Enterprise Edition
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>EXCLUSIVE: Enterprise Dedicated</li>
+         * <li>GENERAL: Enterprise General-purpose</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The proxy type must be consistent with the type that corresponds to the node
+         * specification of the cluster:
+         * <p>
+         * <ul>
+         * <li>If the node specification is general-purpose, the proxy type must be
+         * Enterprise General-purpose.</li>
+         * <li>If the node specification is dedicated, the proxy type must be Enterprise
+         * Dedicated.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param proxyType Property proxyType: The type of PolarProxy. This parameter is required.
+         * @param proxyType Property proxyType: The type of the database proxy. This parameter is required.
          */
         public Builder proxyType(final com.aliyun.ros.cdk.core.IResolvable proxyType) {
             this.props.proxyType(proxyType);
@@ -1185,20 +1499,36 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property scaleMax: Maximum limit of single-node scaling.
+         * Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to.
+         * <p>
+         * Valid values: 1 to 32.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleMax Property scaleMax: Maximum limit of single-node scaling. This parameter is required.
+         * @param scaleMax Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to. This parameter is required.
          */
         public Builder scaleMax(final java.lang.Number scaleMax) {
             this.props.scaleMax(scaleMax);
             return this;
         }
         /**
-         * Property scaleMax: Maximum limit of single-node scaling.
+         * Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to.
+         * <p>
+         * Valid values: 1 to 32.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleMax Property scaleMax: Maximum limit of single-node scaling. This parameter is required.
+         * @param scaleMax Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to. This parameter is required.
          */
         public Builder scaleMax(final com.aliyun.ros.cdk.core.IResolvable scaleMax) {
             this.props.scaleMax(scaleMax);
@@ -1206,20 +1536,36 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property scaleMin: Minimum limit of single-node scaling.
+         * Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless cluster to scale down to.
+         * <p>
+         * Valid values: 1 to 31.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleMin Property scaleMin: Minimum limit of single-node scaling. This parameter is required.
+         * @param scaleMin Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless cluster to scale down to. This parameter is required.
          */
         public Builder scaleMin(final java.lang.Number scaleMin) {
             this.props.scaleMin(scaleMin);
             return this;
         }
         /**
-         * Property scaleMin: Minimum limit of single-node scaling.
+         * Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless cluster to scale down to.
+         * <p>
+         * Valid values: 1 to 31.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleMin Property scaleMin: Minimum limit of single-node scaling. This parameter is required.
+         * @param scaleMin Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless cluster to scale down to. This parameter is required.
          */
         public Builder scaleMin(final com.aliyun.ros.cdk.core.IResolvable scaleMin) {
             this.props.scaleMin(scaleMin);
@@ -1227,20 +1573,36 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+         * Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to.
+         * <p>
+         * Valid values: 0 to 15.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleRoNumMax Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes. This parameter is required.
+         * @param scaleRoNumMax Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to. This parameter is required.
          */
         public Builder scaleRoNumMax(final java.lang.Number scaleRoNumMax) {
             this.props.scaleRoNumMax(scaleRoNumMax);
             return this;
         }
         /**
-         * Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+         * Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to.
+         * <p>
+         * Valid values: 0 to 15.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleRoNumMax Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes. This parameter is required.
+         * @param scaleRoNumMax Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to. This parameter is required.
          */
         public Builder scaleRoNumMax(final com.aliyun.ros.cdk.core.IResolvable scaleRoNumMax) {
             this.props.scaleRoNumMax(scaleRoNumMax);
@@ -1248,20 +1610,36 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+         * Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to.
+         * <p>
+         * Valid values: 0 to 15.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleRoNumMin Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes. This parameter is required.
+         * @param scaleRoNumMin Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to. This parameter is required.
          */
         public Builder scaleRoNumMin(final java.lang.Number scaleRoNumMin) {
             this.props.scaleRoNumMin(scaleRoNumMin);
             return this;
         }
         /**
-         * Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+         * Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to.
+         * <p>
+         * Valid values: 0 to 15.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is supported only for serverless clusters.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param scaleRoNumMin Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes. This parameter is required.
+         * @param scaleRoNumMin Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to. This parameter is required.
          */
         public Builder scaleRoNumMin(final com.aliyun.ros.cdk.core.IResolvable scaleRoNumMin) {
             this.props.scaleRoNumMin(scaleRoNumMin);
@@ -1294,20 +1672,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property securityIpList: The whitelist of the Apsara PolarDB cluster.
+         * Property securityIpList: The IP whitelist of the PolarDB cluster.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify multiple IP addresses in the IP whitelist. Separate the IP
+         * addresses with commas (,).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The whitelist of the Apsara PolarDB cluster. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP whitelist of the PolarDB cluster. This parameter is required.
          */
         public Builder securityIpList(final java.lang.String securityIpList) {
             this.props.securityIpList(securityIpList);
             return this;
         }
         /**
-         * Property securityIpList: The whitelist of the Apsara PolarDB cluster.
+         * Property securityIpList: The IP whitelist of the PolarDB cluster.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You can specify multiple IP addresses in the IP whitelist. Separate the IP
+         * addresses with commas (,).
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityIpList Property securityIpList: The whitelist of the Apsara PolarDB cluster. This parameter is required.
+         * @param securityIpList Property securityIpList: The IP whitelist of the PolarDB cluster. This parameter is required.
          */
         public Builder securityIpList(final com.aliyun.ros.cdk.core.IResolvable securityIpList) {
             this.props.securityIpList(securityIpList);
@@ -1336,28 +1728,54 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
+         * Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster.
          * <p>
-         * Note
-         * This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
-         * This parameter is required if the CreationOption parameter is not set to Normal.
+         * This
+         * parameter is required only if CreationOption is set to MigrationFromRDS,
+         * CloneFromRDS, CloneFromPolarDB, or RecoverFromRecyclebin.
+         * <p>
+         * <ul>
+         * <li>If CreationOption is set to MigrationFromRDS or CloneFromRDS, specify the ID of
+         * the source ApsaraDB RDS instance. The source ApsaraDB RDS instance must be
+         * ApsaraDB RDS for MySQL 5.6, 5.7, or 8.0 High-availability Edition.</li>
+         * <li>If CreationOption is set to CloneFromPolarDB, specify the ID of the source
+         * PolarDB cluster. The new cluster must use the same database engine as the source
+         * cluster. For example, if the source cluster runs MySQL 8.0, you must set DBType
+         * to MySQL and DBVersion to 8.0 for the new cluster.</li>
+         * <li>If CreationOption is set to RecoverFromRecyclebin, specify the ID of the
+         * released source PolarDB cluster. The restored cluster must use the same database
+         * engine as the source cluster.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sourceResourceId Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster. This parameter is required.
+         * @param sourceResourceId Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster. This parameter is required.
          */
         public Builder sourceResourceId(final java.lang.String sourceResourceId) {
             this.props.sourceResourceId(sourceResourceId);
             return this;
         }
         /**
-         * Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
+         * Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster.
          * <p>
-         * Note
-         * This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
-         * This parameter is required if the CreationOption parameter is not set to Normal.
+         * This
+         * parameter is required only if CreationOption is set to MigrationFromRDS,
+         * CloneFromRDS, CloneFromPolarDB, or RecoverFromRecyclebin.
+         * <p>
+         * <ul>
+         * <li>If CreationOption is set to MigrationFromRDS or CloneFromRDS, specify the ID of
+         * the source ApsaraDB RDS instance. The source ApsaraDB RDS instance must be
+         * ApsaraDB RDS for MySQL 5.6, 5.7, or 8.0 High-availability Edition.</li>
+         * <li>If CreationOption is set to CloneFromPolarDB, specify the ID of the source
+         * PolarDB cluster. The new cluster must use the same database engine as the source
+         * cluster. For example, if the source cluster runs MySQL 8.0, you must set DBType
+         * to MySQL and DBVersion to 8.0 for the new cluster.</li>
+         * <li>If CreationOption is set to RecoverFromRecyclebin, specify the ID of the
+         * released source PolarDB cluster. The restored cluster must use the same database
+         * engine as the source cluster.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param sourceResourceId Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster. This parameter is required.
+         * @param sourceResourceId Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster. This parameter is required.
          */
         public Builder sourceResourceId(final com.aliyun.ros.cdk.core.IResolvable sourceResourceId) {
             this.props.sourceResourceId(sourceResourceId);
@@ -1396,26 +1814,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property standbyAz: The zone where the hot standby storage cluster is stored.
+         * Property standbyAz: The zone for the hot standby cluster.
          * <p>
-         * This is valid for Standard Edition clusters of Multi-zone Edition.
-         * This parameter takes effect only when the multi-zone data consistency feature is enabled.
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when the hot standby cluster feature or multi-AZ
+         * strong consistency is enabled.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param standbyAz Property standbyAz: The zone where the hot standby storage cluster is stored. This parameter is required.
+         * @param standbyAz Property standbyAz: The zone for the hot standby cluster. This parameter is required.
          */
         public Builder standbyAz(final java.lang.String standbyAz) {
             this.props.standbyAz(standbyAz);
             return this;
         }
         /**
-         * Property standbyAz: The zone where the hot standby storage cluster is stored.
+         * Property standbyAz: The zone for the hot standby cluster.
          * <p>
-         * This is valid for Standard Edition clusters of Multi-zone Edition.
-         * This parameter takes effect only when the multi-zone data consistency feature is enabled.
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when the hot standby cluster feature or multi-AZ
+         * strong consistency is enabled.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param standbyAz Property standbyAz: The zone where the hot standby storage cluster is stored. This parameter is required.
+         * @param standbyAz Property standbyAz: The zone for the hot standby cluster. This parameter is required.
          */
         public Builder standbyAz(final com.aliyun.ros.cdk.core.IResolvable standbyAz) {
             this.props.standbyAz(standbyAz);
@@ -1452,20 +1878,34 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property storagePayType: The storage pay type.
+         * Property storagePayType: The billing method for storage.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Postpaid: pay-by-capacity (a pay-as-you-go method).</li>
+         * <li>Prepaid: pay-by-space (a subscription method).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param storagePayType Property storagePayType: The storage pay type. This parameter is required.
+         * @param storagePayType Property storagePayType: The billing method for storage. This parameter is required.
          */
         public Builder storagePayType(final java.lang.String storagePayType) {
             this.props.storagePayType(storagePayType);
             return this;
         }
         /**
-         * Property storagePayType: The storage pay type.
+         * Property storagePayType: The billing method for storage.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Postpaid: pay-by-capacity (a pay-as-you-go method).</li>
+         * <li>Prepaid: pay-by-space (a subscription method).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param storagePayType Property storagePayType: The storage pay type. This parameter is required.
+         * @param storagePayType Property storagePayType: The billing method for storage. This parameter is required.
          */
         public Builder storagePayType(final com.aliyun.ros.cdk.core.IResolvable storagePayType) {
             this.props.storagePayType(storagePayType);
@@ -1473,26 +1913,46 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property storageSpace: The storage space that uses the subscription billing method.
+         * Property storageSpace: The storage space for a pay-by-space (subscription) cluster.
          * <p>
          * Unit: GB.
-         * Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>Valid values for a PolarDB for MySQL Enterprise Edition cluster: 10 to 50000.</li>
+         * <li>Valid values for a PolarDB for MySQL Standard Edition cluster: 20 to 64000.</li>
+         * <li>If the storage type of a Standard Edition cluster is ESSD AutoPL, the storage
+         * space must be a multiple of 10 between 40 and 64000.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param storageSpace Property storageSpace: The storage space that uses the subscription billing method. This parameter is required.
+         * @param storageSpace Property storageSpace: The storage space for a pay-by-space (subscription) cluster. This parameter is required.
          */
         public Builder storageSpace(final java.lang.Number storageSpace) {
             this.props.storageSpace(storageSpace);
             return this;
         }
         /**
-         * Property storageSpace: The storage space that uses the subscription billing method.
+         * Property storageSpace: The storage space for a pay-by-space (subscription) cluster.
          * <p>
          * Unit: GB.
-         * Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>Valid values for a PolarDB for MySQL Enterprise Edition cluster: 10 to 50000.</li>
+         * <li>Valid values for a PolarDB for MySQL Standard Edition cluster: 20 to 64000.</li>
+         * <li>If the storage type of a Standard Edition cluster is ESSD AutoPL, the storage
+         * space must be a multiple of 10 between 40 and 64000.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param storageSpace Property storageSpace: The storage space that uses the subscription billing method. This parameter is required.
+         * @param storageSpace Property storageSpace: The storage space for a pay-by-space (subscription) cluster. This parameter is required.
          */
         public Builder storageSpace(final com.aliyun.ros.cdk.core.IResolvable storageSpace) {
             this.props.storageSpace(storageSpace);
@@ -1662,20 +2122,32 @@ public class DBCluster extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property vSwitchId: The ID of the VSwitch to connect to.
+         * Property vSwitchId: The ID of the VSwitch.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you specify the VPCId parameter, you must also specify this parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch to connect to. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The ID of the VSwitch to connect to.
+         * Property vSwitchId: The ID of the VSwitch.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you specify the VPCId parameter, you must also specify this parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch to connect to. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);

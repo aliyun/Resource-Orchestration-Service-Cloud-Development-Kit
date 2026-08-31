@@ -45,7 +45,17 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 
         private object? _deployResourceType;
 
-        /// <summary>Property deployResourceType: The type of the deploy resource.</summary>
+        /// <summary>Property deployResourceType: The type of the deployment resource.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><c>Kubernetes</c>: A Kubernetes cluster.</description>
+        /// <description><c>Ecs</c>: An ECS instance.</description>
+        /// <description><c>FC</c>: A Function Compute service.</description>
+        /// <description><c>SWAS</c>: A Simple Application Server instance.</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "deployResourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DeployResourceType
@@ -169,7 +179,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Oos
 
         private object? _revisionType;
 
-        /// <summary>Property revisionType: The type of the revision.</summary>
+        /// <summary>Property revisionType: The type of the deployment revision.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description><c>Command</c>: A command.</description>
+        /// <description><c>GitRepo</c>: A Git repository.</description>
+        /// <description><c>HelmChart</c>: A Helm chart.</description>
+        /// <description><c>Oss</c>: An object in Object Storage Service (OSS).</description>
+        /// <description><c>EcsImage</c>: An ECS image.</description>
+        /// <description><c>DockerImage</c>: A Docker image.</description>
+        /// <description><c>Yaml</c>: A YAML file.</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "revisionType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? RevisionType

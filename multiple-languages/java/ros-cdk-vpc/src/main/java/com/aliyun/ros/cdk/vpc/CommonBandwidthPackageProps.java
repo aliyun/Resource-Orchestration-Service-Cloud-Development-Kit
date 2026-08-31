@@ -5,15 +5,16 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-commonbandwidthpackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.355Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.171Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CommonBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(CommonBandwidthPackageProps.Jsii$Proxy.class)
 public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance.
+     * Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance.
      * <p>
      * Unit: Mbit/s.
+     * Valid values: 1 to 1000. Default value: 1.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
@@ -29,26 +30,44 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
     /**
      * Property description: The description of the Internet Shared Bandwidth instance.
      * <p>
-     * The description must be 2 to 256 characters in length. It must start with a letter,
-     * and cannot start with http:// or https://.
+     * The description must be 0 to 256 characters in length and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.
+     * Property internetChargeType: The billing method of the Internet Shared Bandwidth instance.
      * <p>
-     * Allowed values:
-     * PayByBandwidth (default): Billed by bandwidth.
-     * PayBy95: Charged at Enhanced 95.
+     * Set the value to
+     * PayByTraffic, which specifies the pay-by-data-transfer billing method.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
-     * Property isp: Line type of EIP, value: BGP (multi-line).
+     * Property isp: The line type.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>BGP (default) All regions support BGP (Multi-ISP).</li>
+     * <li>BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+     * Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+     * Indonesia (Jakarta), and Thailand (Bangkok) regions.
+     * If you are allowed to use single-ISP bandwidth, you can also use one of the
+     * following values:</li>
+     * <li>ChinaTelecom</li>
+     * <li>ChinaUnicom</li>
+     * <li>ChinaMobile</li>
+     * <li>ChinaTelecom_L2</li>
+     * <li>ChinaUnicom_L2</li>
+     * <li>ChinaMobile_L2
+     * If your services are deployed in China East 1 Finance, this parameter is required
+     * and you must set the value to BGP_FinanceCloud.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIsp() {
         return null;
@@ -57,19 +76,17 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
     /**
      * Property name: The name of the Internet Shared Bandwidth instance.
      * <p>
-     * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-     * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-     * start with http:// or https://.
+     * The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+     * <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
-     * Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.
+     * Property ratio: The percentage of the minimum bandwidth commitment.
      * <p>
-     * Default to 100.
-     * Note This parameter is only supported on the China site.
+     * Set the parameter to 20.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRatio() {
         return null;
@@ -92,7 +109,10 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
     }
 
     /**
-     * Property zone: Zone Id.
+     * Property zone: The zone of the Internet Shared Bandwidth instance.
+     * <p>
+     * This parameter is required if
+     * you create an Internet Shared Bandwidth instance for a cloud box.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZone() {
         return null;
@@ -121,8 +141,9 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
          *                  Unit: Mbit/s.
+         *                  Valid values: 1 to 1000. Default value: 1.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -132,8 +153,9 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
          *                  Unit: Mbit/s.
+         *                  Valid values: 1 to 1000. Default value: 1.
          * @return {@code this}
          */
         public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
@@ -166,8 +188,8 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getDescription}
          * @param description Property description: The description of the Internet Shared Bandwidth instance.
-         *                    The description must be 2 to 256 characters in length. It must start with a letter,
-         *                    and cannot start with http:// or https://.
+         *                    The description must be 0 to 256 characters in length and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -178,8 +200,8 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getDescription}
          * @param description Property description: The description of the Internet Shared Bandwidth instance.
-         *                    The description must be 2 to 256 characters in length. It must start with a letter,
-         *                    and cannot start with http:// or https://.
+         *                    The description must be 0 to 256 characters in length and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -189,10 +211,9 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.
-         *                           Allowed values:
-         *                           PayByBandwidth (default): Billed by bandwidth.
-         *                           PayBy95: Charged at Enhanced 95.
+         * @param internetChargeType Property internetChargeType: The billing method of the Internet Shared Bandwidth instance.
+         *                           Set the value to
+         *                           PayByTraffic, which specifies the pay-by-data-transfer billing method.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -202,10 +223,9 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.
-         *                           Allowed values:
-         *                           PayByBandwidth (default): Billed by bandwidth.
-         *                           PayBy95: Charged at Enhanced 95.
+         * @param internetChargeType Property internetChargeType: The billing method of the Internet Shared Bandwidth instance.
+         *                           Set the value to
+         *                           PayByTraffic, which specifies the pay-by-data-transfer billing method.
          * @return {@code this}
          */
         public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
@@ -215,7 +235,25 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getIsp}
-         * @param isp Property isp: Line type of EIP, value: BGP (multi-line).
+         * @param isp Property isp: The line type.
+         *            Valid values:
+         *            <p>
+         *            <ul>
+         *            <li>BGP (default) All regions support BGP (Multi-ISP).</li>
+         *            <li>BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+         *            Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+         *            Indonesia (Jakarta), and Thailand (Bangkok) regions.
+         *            If you are allowed to use single-ISP bandwidth, you can also use one of the
+         *            following values:</li>
+         *            <li>ChinaTelecom</li>
+         *            <li>ChinaUnicom</li>
+         *            <li>ChinaMobile</li>
+         *            <li>ChinaTelecom_L2</li>
+         *            <li>ChinaUnicom_L2</li>
+         *            <li>ChinaMobile_L2
+         *            If your services are deployed in China East 1 Finance, this parameter is required
+         *            and you must set the value to BGP_FinanceCloud.</li>
+         *            </ul>
          * @return {@code this}
          */
         public Builder isp(java.lang.String isp) {
@@ -225,7 +263,25 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getIsp}
-         * @param isp Property isp: Line type of EIP, value: BGP (multi-line).
+         * @param isp Property isp: The line type.
+         *            Valid values:
+         *            <p>
+         *            <ul>
+         *            <li>BGP (default) All regions support BGP (Multi-ISP).</li>
+         *            <li>BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+         *            Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+         *            Indonesia (Jakarta), and Thailand (Bangkok) regions.
+         *            If you are allowed to use single-ISP bandwidth, you can also use one of the
+         *            following values:</li>
+         *            <li>ChinaTelecom</li>
+         *            <li>ChinaUnicom</li>
+         *            <li>ChinaMobile</li>
+         *            <li>ChinaTelecom_L2</li>
+         *            <li>ChinaUnicom_L2</li>
+         *            <li>ChinaMobile_L2
+         *            If your services are deployed in China East 1 Finance, this parameter is required
+         *            and you must set the value to BGP_FinanceCloud.</li>
+         *            </ul>
          * @return {@code this}
          */
         public Builder isp(com.aliyun.ros.cdk.core.IResolvable isp) {
@@ -236,9 +292,8 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getName}
          * @param name Property name: The name of the Internet Shared Bandwidth instance.
-         *             The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-         *             (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-         *             start with http:// or https://.
+         *             The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -249,9 +304,8 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getName}
          * @param name Property name: The name of the Internet Shared Bandwidth instance.
-         *             The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-         *             (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-         *             start with http:// or https://.
+         *             The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         *             <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -261,9 +315,8 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getRatio}
-         * @param ratio Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.
-         *              Default to 100.
-         *              Note This parameter is only supported on the China site.
+         * @param ratio Property ratio: The percentage of the minimum bandwidth commitment.
+         *              Set the parameter to 20.
          * @return {@code this}
          */
         public Builder ratio(java.lang.Number ratio) {
@@ -273,9 +326,8 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getRatio}
-         * @param ratio Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.
-         *              Default to 100.
-         *              Note This parameter is only supported on the China site.
+         * @param ratio Property ratio: The percentage of the minimum bandwidth commitment.
+         *              Set the parameter to 20.
          * @return {@code this}
          */
         public Builder ratio(com.aliyun.ros.cdk.core.IResolvable ratio) {
@@ -317,7 +369,9 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getZone}
-         * @param zone Property zone: Zone Id.
+         * @param zone Property zone: The zone of the Internet Shared Bandwidth instance.
+         *             This parameter is required if
+         *             you create an Internet Shared Bandwidth instance for a cloud box.
          * @return {@code this}
          */
         public Builder zone(java.lang.String zone) {
@@ -327,7 +381,9 @@ public interface CommonBandwidthPackageProps extends software.amazon.jsii.JsiiSe
 
         /**
          * Sets the value of {@link CommonBandwidthPackageProps#getZone}
-         * @param zone Property zone: Zone Id.
+         * @param zone Property zone: The zone of the Internet Shared Bandwidth instance.
+         *             This parameter is required if
+         *             you create an Internet Shared Bandwidth instance for a cloud box.
          * @return {@code this}
          */
         public Builder zone(com.aliyun.ros.cdk.core.IResolvable zone) {

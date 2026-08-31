@@ -10,7 +10,8 @@ export { RosDeliverTask as DeliverTaskProperty };
 export interface DeliverTaskProps {
 
     /**
-     * Property deliver: The deliver of the CDN deliver task.
+     * Property deliver: The method that is used to send operations reports. Operations reports are sent
+     * to you only by email. The settings must be escaped in JSON.
      */
     readonly deliver: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -20,12 +21,14 @@ export interface DeliverTaskProps {
     readonly name: string | ros.IResolvable;
 
     /**
-     * Property reports: The reports of the CDN deliver task.
+     * Property reports: The operations reports that are tracked by the task. The data must be escaped in
+     * JSON.
      */
     readonly reports: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property schedule: The schedule of the CDN deliver task.
+     * Property schedule: The parameters that specify the time interval at which the tracking task sends
+     * operations reports. The settings must be escaped in JSON.
      */
     readonly schedule: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 

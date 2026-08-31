@@ -208,7 +208,7 @@ export interface RosPipelineProps {
     readonly speed?: string | ros.IResolvable;
 
     /**
-     * @Property speedLevel: Speed level.
+     * @Property speedLevel: The level of the MPS queue. Valid values: 1 to 3.
      */
     readonly speedLevel?: number | ros.IResolvable;
 
@@ -318,7 +318,7 @@ export class RosPipeline extends ros.RosResource {
     public speed: string | ros.IResolvable | undefined;
 
     /**
-     * @Property speedLevel: Speed level.
+     * @Property speedLevel: The level of the MPS queue. Valid values: 1 to 3.
      */
     public speedLevel: number | ros.IResolvable | undefined;
 
@@ -417,7 +417,10 @@ function rosPipelineNotifyConfigPropertyToRosTemplate(properties: any): any {
 export interface RosTranscodeJobProps {
 
     /**
-     * @Property input: The input configuration of the job. For more information, see Input details.
+     * @Property input: Job input.
+     * > - In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+     * using UTF-8 encoding.
+     * - The OSS region must match the region where MPS is deployed.
      */
     readonly input: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -437,7 +440,10 @@ export interface RosTranscodeJobProps {
     readonly pipelineId: string | ros.IResolvable;
 
     /**
-     * @Property outputLocation: The region of the OSS bucket where the output files are stored.
+     * @Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+     * - The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+     * service.
+     * - Follows the OSS bucket definition.
      */
     readonly outputLocation?: string | ros.IResolvable;
 }
@@ -506,7 +512,10 @@ export class RosTranscodeJob extends ros.RosResource {
 
 
     /**
-     * @Property input: The input configuration of the job. For more information, see Input details.
+     * @Property input: Job input.
+     * > - In ApsaraVideo Media Processing APIs, the Object value must be URL-encoded
+     * using UTF-8 encoding.
+     * - The OSS region must match the region where MPS is deployed.
      */
     public input: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -526,7 +535,10 @@ export class RosTranscodeJob extends ros.RosResource {
     public pipelineId: string | ros.IResolvable;
 
     /**
-     * @Property outputLocation: The region of the OSS bucket where the output files are stored.
+     * @Property outputLocation: The OSS region (OSS Region) where the output bucket resides.
+     * - The OSS bucket must be in the same region as the ApsaraVideo Media Processing
+     * service.
+     * - Follows the OSS bucket definition.
      */
     public outputLocation: string | ros.IResolvable | undefined;
 

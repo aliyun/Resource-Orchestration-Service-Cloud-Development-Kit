@@ -37,10 +37,16 @@ type ControlPolicyProps struct {
 	// Priority number increments sequentially from 1, lower the priority number, the higher the priority.
 	// Description -1 indicates the lowest priority.
 	NewOrder interface{} `field:"required" json:"newOrder" yaml:"newOrder"`
-	// Property proto: The type of security protocol for traffic access in the security access control policy.
+	// Property proto: The protocol type of the traffic in the access control policy.
 	//
-	// Can be set to ANY when you are not sure of the specific protocol type.
-	// Allowed values: ANY, TCP, UDP, ICMP.
+	// Valid values:
+	// - ANY (any protocol)
+	// - TCP
+	// - UDP
+	// - ICMP
+	// > If the traffic direction is \`out\` and the destination is a domain-based
+	// threat intelligence or cloud service address book, you can set the protocol only
+	// to \`TCP\`. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
 	Proto interface{} `field:"required" json:"proto" yaml:"proto"`
 	// Property source: Security access control source address policy.
 	//
@@ -54,17 +60,46 @@ type ControlPolicyProps struct {
 	// group: source address book
 	// location: the source area.
 	SourceType interface{} `field:"required" json:"sourceType" yaml:"sourceType"`
-	// Property applicationName: Application types supported by the security policy.
+	// Property applicationName: The application type that the access control policy supports.
 	//
-	// The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-	// NOTE ANY indicates that the policy is applied to all types of applications.
-	// Either ApplicationNameList or ApplicationName must be passed, not both.
+	// Valid values:
+	// - FTP
+	// - HTTP
+	// - HTTPS
+	// - Memcache
+	// - MongoDB
+	// - MQTT
+	// - MySQL
+	// - RDP
+	// - Redis
+	// - SMTP
+	// - SMTPS
+	// - SSH
+	// - SSL_No_Cert
+	// - SSL
+	// - VNC
+	// - ANY (all application types)
+	// > The available application types depend on the protocol type (\`Proto\`). If you
+	// set \`Proto\` to \`TCP\`, you can set \`ApplicationName\` to any of the listed
+	// application types. If you set \`Proto\` to \`UDP\`, \`ICMP\`, or \`ANY\`, you can
+	// set \`ApplicationName\` only to \`ANY\`. Specify either \`ApplicationNameList\`
+	// or \`ApplicationName\`.
 	ApplicationName interface{} `field:"optional" json:"applicationName" yaml:"applicationName"`
 	// Property applicationNameList: List of application types supported by the access control policy.
 	ApplicationNameList interface{} `field:"optional" json:"applicationNameList" yaml:"applicationNameList"`
-	// Property destPort: Security access control policy access traffic destination port.
+	// Property destPort: The destination port in the access control policy.
 	//
-	// Note When DestPortType to port, set the item.
+	// Valid values:
+	// - If \`Proto\` is \`ICMP\`, leave this parameter empty.
+	// > If the protocol type is ICMP, you cannot control access based on the
+	// destination port.
+	// - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is
+	// \`group\`, leave this parameter empty.
+	// > If you set \`DestPortType\` to \`group\` (port address book), you do not need
+	// to specify a destination port number. The port address book contains all the
+	// destination ports that the policy manages.
+	// - If \`Proto\` is \`TCP\`, \`UDP\`, or \`ANY\`, and \`DestPortType\` is \`port\`,
+	// set this parameter to the destination port number.
 	DestPort interface{} `field:"optional" json:"destPort" yaml:"destPort"`
 	// Property destPortGroup: Security access control policy access traffic destination port address book name.
 	//

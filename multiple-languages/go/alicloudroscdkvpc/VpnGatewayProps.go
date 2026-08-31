@@ -5,16 +5,24 @@ package alicloudroscdkvpc
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpngateway
 type VpnGatewayProps struct {
-	// Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
+	// Property bandwidth: The maximum bandwidth of the VPN gateway.
 	//
-	// Value: 5|10|20|50|100|200.
+	// Unit: Mbit\/s.
+	// *   If you want to create a public VPN gateway, valid values are 10, 100, 200,
+	// 500, and 1000.
+	// *   If you want to create a private VPN gateway, valid values are 200 and 1000.
+	// >  The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit\/s.
 	Bandwidth interface{} `field:"required" json:"bandwidth" yaml:"bandwidth"`
 	// Property vpcId: VPC ID to which the VPN gateway belongs.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
-	// Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
+	// Property autoPay: Specifies whether to enable automatic payment.
 	//
-	// false: Does not automatically pay the bill for the VPN gateway.
-	// Default true.
+	// Valid values:
+	// *   true
+	// *   false (default)
+	// > To create a VPN gateway, we recommend that you enable automatic payment. If you
+	// disable automatic payment, you must manually pay the bill to create the VPN
+	// gateway.
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	// Property description: Description of the VPN gateway.
 	//
@@ -39,7 +47,10 @@ type VpnGatewayProps struct {
 	// True: Enable SSL-VPN.
 	// False (default): Does not enable SSL-VPN.
 	EnableSsl interface{} `field:"optional" json:"enableSsl" yaml:"enableSsl"`
-	// Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY.
+	// Property instanceChargeType: The billing method of the VPN gateway.
+	//
+	// Set the value to POSTPAY, which specifies
+	// the pay-as-you-go billing method.
 	InstanceChargeType interface{} `field:"optional" json:"instanceChargeType" yaml:"instanceChargeType"`
 	// Property name: Name of the VPN gateway.
 	//
@@ -48,7 +59,9 @@ type VpnGatewayProps struct {
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
 	// Property networkType: The network type of the VPN gateway.
 	//
-	// Valid values: public|private.
+	// Valid values:
+	// *   public (default)
+	// *   private.
 	NetworkType interface{} `field:"optional" json:"networkType" yaml:"networkType"`
 	// Property period: Purchase time, value: 1~9|12|24|36.
 	//
@@ -61,15 +74,28 @@ type VpnGatewayProps struct {
 	//
 	// If you change the resource group of the VPN gateway, the resource group of the above resources will also be changed.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property sslConnections: The maximum number of clients allowed to connect at the same time.
+	// Property sslConnections: The maximum number of clients that can be connected at the same time.
+	//
+	// Valid
+	// values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
 	SslConnections interface{} `field:"optional" json:"sslConnections" yaml:"sslConnections"`
 	// Property tags: Tags to attach to instance.
 	//
 	// Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
 	Tags *[]*RosVpnGateway_TagsProperty `field:"optional" json:"tags" yaml:"tags"`
-	// Property vpnType: VPN gateway type.
+	// Property vpnType: The type of the VPN gateway.
+	//
+	// Valid values:
+	// Set the value to Normal (default), which specifies a standard NAT gateway.
 	VpnType interface{} `field:"optional" json:"vpnType" yaml:"vpnType"`
-	// Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+	// Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+	//
+	// *   If you call this operation in a region that supports the IPsec-VPN
+	// connections in dual-tunnel mode, this parameter is required. You must specify a
+	// vSwitch and specify DisasterRecoveryVSwitchId.
+	// *   If you call this operation in a region that supports the IPsec-VPN
+	// connections in single-tunnel mode and do not specify a vSwitch, the system
+	// automatically specifies a vSwitch.
 	VSwitchId interface{} `field:"optional" json:"vSwitchId" yaml:"vSwitchId"`
 }
 

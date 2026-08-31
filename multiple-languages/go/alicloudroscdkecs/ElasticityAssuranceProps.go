@@ -17,34 +17,57 @@ type ElasticityAssuranceProps struct {
 	//
 	// Currently, an elasticity assurance can be used to reserve resources within a single zone.
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
-	// Property autoRenew: Whether to enable automatic renewal.
+	// Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance.
+	//
+	// Valid
+	// values:
+	// - true
+	// - false
+	// Default value: false.
 	AutoRenew interface{} `field:"optional" json:"autoRenew" yaml:"autoRenew"`
-	// Property autoRenewPeriod: The period for automatic renewal.
+	// Property autoRenewPeriod: The auto-renewal period.
+	//
+	// Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+	// - Default value when `PeriodUnit` is set to Month: 1.
+	// - Default value when `PeriodUnit` is set to Year: 12.
+	// > If you set `AutoRenew` to `true`, you must specify this parameter.
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
 	// Property description: The description of the elasticity assurance.
 	//
 	// The description must be 2 to 256 characters in length and cannot start with http:\/\/ or https:\/\/.
 	// This parameter is empty by default.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	// Property instanceCpuCoreCount: The number of CPU cores for the instance.
+	// Property instanceCpuCoreCount: > This parameter is no longer used.
 	InstanceCpuCoreCount interface{} `field:"optional" json:"instanceCpuCoreCount" yaml:"instanceCpuCoreCount"`
-	// Property period: The effective duration of the elasticity assurance.
+	// Property period: The validity period of the elasticity assurance.
 	//
-	// The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-	// When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-	// When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
+	// The unit of the validity period
+	// is determined by the value of `PeriodUnit`. Specifies whether to check the image
+	// used by the instance supports hot migration. Valid values:
+	// - When the value of `PeriodUnit` is `Month`, the valid values are 1, 2, 3, 4, 5,
+	// 6, 7, 8, and 9.
+	// - When the value of `PeriodUnit` is `Year`, the valid values are 1, 2, 3, 4, and
+	// 5.
+	// - When the value of `PeriodUnit` is `Day`, the valid values are 1 to 365.
 	// Default value: 1.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property periodUnit: The unit of the effective duration of the elasticity assurance.
+	// Property periodUnit: The unit of the validity period of the elasticity assurance.
 	//
 	// Valid values:
-	// Month
-	// Year
+	// - Month
+	// - Year
+	// - Day
+	// \*\*
+	// Note If you set `PeriodUnit` to `Day`, you must specify RecurrenceRules to create
+	// a time-segmented elasticity assurance.
 	// Default value: Year.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	// Property privatePoolOptions:.
 	PrivatePoolOptions interface{} `field:"optional" json:"privatePoolOptions" yaml:"privatePoolOptions"`
-	// Property recurrenceRules: Recurrence rules for the elasticity assurance.
+	// Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+	//
+	// > Time-segmented elasticity assurances are available only in specific regions and
+	// to specific users. To use time-segmented elasticity assurances, submit a ticket.
 	RecurrenceRules interface{} `field:"optional" json:"recurrenceRules" yaml:"recurrenceRules"`
 	// Property resourceGroupId: The ID of the resource group to which to assign the elasticity assurance.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`

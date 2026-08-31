@@ -11,7 +11,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     [JsiiInterface(nativeType: typeof(INetworkInterfacePermissionProps), fullyQualifiedName: "@alicloud/ros-cdk-ecs.NetworkInterfacePermissionProps")]
     public interface INetworkInterfacePermissionProps
     {
-        /// <summary>Property accountId: the account id.</summary>
+        /// <summary>Property accountId: The ID of the account to which the permission is granted.</summary>
+        /// <remarks>
+        /// The
+        /// account can be a cloud partner (certified ISV) or an individual user.
+        /// </remarks>
         [JsiiProperty(name: "accountId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AccountId
         {
@@ -25,7 +29,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             get;
         }
 
-        /// <summary>Property permission: the permission.</summary>
+        /// <summary>Property permission: The permission to grant.</summary>
+        /// <remarks>
+        /// The only supported value is InstanceAttach.
+        /// InstanceAttach: Allows an authorized account to attach your elastic network
+        /// interface to one of its ECS instances. The ECS instance and the elastic network
+        /// interface must be in the same availability zone.
+        /// </remarks>
         [JsiiProperty(name: "permission", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Permission
         {
@@ -43,7 +53,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
             {
             }
 
-            /// <summary>Property accountId: the account id.</summary>
+            /// <summary>Property accountId: The ID of the account to which the permission is granted.</summary>
+            /// <remarks>
+            /// The
+            /// account can be a cloud partner (certified ISV) or an individual user.
+            /// </remarks>
             [JsiiProperty(name: "accountId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AccountId
             {
@@ -57,7 +71,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property permission: the permission.</summary>
+            /// <summary>Property permission: The permission to grant.</summary>
+            /// <remarks>
+            /// The only supported value is InstanceAttach.
+            /// InstanceAttach: Allows an authorized account to attach your elastic network
+            /// interface to one of its ECS instances. The ECS instance and the elastic network
+            /// interface must be in the same availability zone.
+            /// </remarks>
             [JsiiProperty(name: "permission", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Permission
             {

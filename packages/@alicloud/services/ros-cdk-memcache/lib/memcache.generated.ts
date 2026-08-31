@@ -17,13 +17,8 @@ export interface RosInstanceProps {
     readonly autoRenew?: string | ros.IResolvable;
 
     /**
-     * @Property autoRenewPeriod: The period of the auto renewal. Unit: months. Valid values:
-     * 1
-     * 2
-     * 3
-     * 6
-     * 12
-     * Note You must specify this parameter if the value of the AutoRenew parameter is true.
+     * @Property autoRenewPeriod: The auto-renewal duration, in months. Valid values: 1, 2, 3, 6, and 12.
+     * > This parameter is required when AutoRenew is set to true.
      */
     readonly autoRenewPeriod?: string | ros.IResolvable;
 
@@ -62,7 +57,7 @@ export interface RosInstanceProps {
     readonly config?: string | ros.IResolvable;
 
     /**
-     * @Property couponNo: The coupon number. Default value: youhuiquan_promotion_option_id_for_blank.
+     * @Property couponNo: The coupon code. Default value: `default`.
      */
     readonly couponNo?: string | ros.IResolvable;
 
@@ -74,9 +69,9 @@ export interface RosInstanceProps {
     readonly instanceClass?: string | ros.IResolvable;
 
     /**
-     * @Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
-     * with a letter. The following characters are not supported: at signs (@), forward slashes (\/), colons (:), equal signs (=), double quotation marks
-     * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
+     * @Property instanceName: The name of the instance. The name must be 2 to 80 characters long, start with a
+     * letter (uppercase or lowercase) or a Chinese character, and not contain spaces or
+     * the characters `@\/:=”<>{[]}`.
      */
     readonly instanceName?: string | ros.IResolvable;
 
@@ -89,19 +84,17 @@ export interface RosInstanceProps {
     readonly networkType?: string | ros.IResolvable;
 
     /**
-     * @Property password: The password of the instance. The password can be 8 to 32 characters in length and
-     * must contain at least three types of the following characters: uppercase letters,
-     * lowercase letters, digits, and special characters. Special characters include ! at signs (@), number signs (#), dollar signs ($), percent signs (%), carets (^),
-     * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
-     * hyphens (-), and equal signs (=).
+     * @Property password: The password for the instance. The password must be 8 to 32 characters long and
+     * contain at least three of the following character types: uppercase letters,
+     * lowercase letters, digits, and special characters. The allowed special characters
+     * are `!@#$%^&*()_+-=`.
      */
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property period: The subscription period. You must specify this parameter if the value of the ChargeType
-     * parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
-     * and 36.
-     * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
+     * @Property period: The subscription duration, in months. Valid values: 1 to 9, 12, 24, 36, and 60.
+     * > This parameter is available and required only when ChargeType is set to
+     * PrePaid.
      */
     readonly period?: string | ros.IResolvable;
 
@@ -135,7 +128,11 @@ export interface RosInstanceProps {
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
-     * @Property zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
+     * @Property zoneId: The ID of the primary zone for the instance. You can call the [DescribeZones]()
+     * operation to query available zones.
+     * > You can also specify a secondary zone by using the `SecondaryZoneId` parameter.
+     * The primary and replica nodes are then deployed in the specified primary and
+     * secondary zones to create a dual-zone architecture for in-city disaster recovery.
      */
     readonly zoneId?: string | ros.IResolvable;
 }
@@ -262,13 +259,8 @@ export class RosInstance extends ros.RosResource {
     public autoRenew: string | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRenewPeriod: The period of the auto renewal. Unit: months. Valid values:
-     * 1
-     * 2
-     * 3
-     * 6
-     * 12
-     * Note You must specify this parameter if the value of the AutoRenew parameter is true.
+     * @Property autoRenewPeriod: The auto-renewal duration, in months. Valid values: 1, 2, 3, 6, and 12.
+     * > This parameter is required when AutoRenew is set to true.
      */
     public autoRenewPeriod: string | ros.IResolvable | undefined;
 
@@ -307,7 +299,7 @@ export class RosInstance extends ros.RosResource {
     public config: string | ros.IResolvable | undefined;
 
     /**
-     * @Property couponNo: The coupon number. Default value: youhuiquan_promotion_option_id_for_blank.
+     * @Property couponNo: The coupon code. Default value: `default`.
      */
     public couponNo: string | ros.IResolvable | undefined;
 
@@ -319,9 +311,9 @@ export class RosInstance extends ros.RosResource {
     public instanceClass: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instanceName: The name of the instance. The name can be 2 to 128 characters in length and must start
-     * with a letter. The following characters are not supported: at signs (@), forward slashes (\/), colons (:), equal signs (=), double quotation marks
-     * ("), angle brackets (<>), braces ([]), curly brackets ({}) and spaces.
+     * @Property instanceName: The name of the instance. The name must be 2 to 80 characters long, start with a
+     * letter (uppercase or lowercase) or a Chinese character, and not contain spaces or
+     * the characters `@\/:=”<>{[]}`.
      */
     public instanceName: string | ros.IResolvable | undefined;
 
@@ -334,19 +326,17 @@ export class RosInstance extends ros.RosResource {
     public networkType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property password: The password of the instance. The password can be 8 to 32 characters in length and
-     * must contain at least three types of the following characters: uppercase letters,
-     * lowercase letters, digits, and special characters. Special characters include ! at signs (@), number signs (#), dollar signs ($), percent signs (%), carets (^),
-     * ampersands (&), asterisks (*), parentheses (()), underscores (_), plus signs (+),
-     * hyphens (-), and equal signs (=).
+     * @Property password: The password for the instance. The password must be 8 to 32 characters long and
+     * contain at least three of the following character types: uppercase letters,
+     * lowercase letters, digits, and special characters. The allowed special characters
+     * are `!@#$%^&*()_+-=`.
      */
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The subscription period. You must specify this parameter if the value of the ChargeType
-     * parameter is PrePaid. Unit: months. Valid values: 1, 2, 3, 4, 5, 6, 7, 8, 9, 12, 24,
-     * and 36.
-     * Note This parameter is invalid if the value of the ChargeType parameter is PostPaid.
+     * @Property period: The subscription duration, in months. Valid values: 1 to 9, 12, 24, 36, and 60.
+     * > This parameter is available and required only when ChargeType is set to
+     * PrePaid.
      */
     public period: string | ros.IResolvable | undefined;
 
@@ -380,7 +370,11 @@ export class RosInstance extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property zoneId: The ID of the zone in which the instance is created. You can call the DescribeRegions operation to query the latest region list.
+     * @Property zoneId: The ID of the primary zone for the instance. You can call the [DescribeZones]()
+     * operation to query available zones.
+     * > You can also specify a secondary zone by using the `SecondaryZoneId` parameter.
+     * The primary and replica nodes are then deployed in the specified primary and
+     * secondary zones to create a dual-zone architecture for in-city disaster recovery.
      */
     public zoneId: string | ros.IResolvable | undefined;
 
@@ -517,7 +511,11 @@ export interface RosWhitelistProps {
     readonly instanceId: string | ros.IResolvable;
 
     /**
-     * @Property securityIps: IP address whitelist to be modified
+     * @Property securityIps: The IP addresses in the whitelist. Up to 1,000 IP addresses can be specified in a
+     * whitelist. Separate multiple IP addresses with a comma (,). Specify an IP address
+     * in the 0.0.0.0\/0, 10.23.12.24, or 10.23.12.24\/24 format. In CIDR block
+     * 10.23.12.24\/24, \/24 specifies the length of the prefix of an IP address. The
+     * prefix length ranges from 1 to 32.
      */
     readonly securityIps: string | ros.IResolvable;
 
@@ -527,7 +525,10 @@ export interface RosWhitelistProps {
     readonly securityIpGroupAttribute?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpGroupName: Whitelist group
+     * @Property securityIpGroupName: The name of the IP address whitelist.
+     * ><warning>You cannot modify the whitelist that is generated by the system. If you
+     * do not specify this parameter, the default whitelist is modified by
+     * default.><\/warning>
      */
     readonly securityIpGroupName?: string | ros.IResolvable;
 }
@@ -620,7 +621,11 @@ export class RosWhitelist extends ros.RosResource {
     public instanceId: string | ros.IResolvable;
 
     /**
-     * @Property securityIps: IP address whitelist to be modified
+     * @Property securityIps: The IP addresses in the whitelist. Up to 1,000 IP addresses can be specified in a
+     * whitelist. Separate multiple IP addresses with a comma (,). Specify an IP address
+     * in the 0.0.0.0\/0, 10.23.12.24, or 10.23.12.24\/24 format. In CIDR block
+     * 10.23.12.24\/24, \/24 specifies the length of the prefix of an IP address. The
+     * prefix length ranges from 1 to 32.
      */
     public securityIps: string | ros.IResolvable;
 
@@ -630,7 +635,10 @@ export class RosWhitelist extends ros.RosResource {
     public securityIpGroupAttribute: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpGroupName: Whitelist group
+     * @Property securityIpGroupName: The name of the IP address whitelist.
+     * ><warning>You cannot modify the whitelist that is generated by the system. If you
+     * do not specify this parameter, the default whitelist is modified by
+     * default.><\/warning>
      */
     public securityIpGroupName: string | ros.IResolvable | undefined;
 

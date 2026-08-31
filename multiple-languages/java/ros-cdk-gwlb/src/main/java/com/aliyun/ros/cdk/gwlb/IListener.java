@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.gwlb;
 /**
  * Represents a <code>Listener</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:21:47.000Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:27:17.655Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gwlb.$Module.class, fqn = "@alicloud/ros-cdk-gwlb.IListener")
 @software.amazon.jsii.Jsii.Proxy(IListener.Jsii$Proxy.class)
 public interface IListener extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

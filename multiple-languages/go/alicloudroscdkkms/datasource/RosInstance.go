@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Instance`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::KMS::Instance`, which is used to query the information about a Key Management Service (KMS) instance.
 type RosInstance interface {
 	alicloudroscdkcore.RosResource
 	AttrCreateTime() alicloudroscdkcore.IResolvable

@@ -1,0 +1,323 @@
+import * as ros from '@alicloud/ros-cdk-core';
+import { RosInstance } from './mongodb.generated';
+export { RosInstance as InstanceProperty };
+import * as ram from "@alicloud/ros-cdk-ram";
+/**
+ * Properties for defining a `Instance`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
+ */
+export interface InstanceProps {
+    /**
+     * Property dbInstanceClass: MongoDB instance supported instance type, make sure it should be correct.
+     */
+    readonly dbInstanceClass: string | ros.IResolvable;
+    /**
+     * Property dbInstanceStorage: Database instance storage size. MongoDB is [5,3000], increased every 10 GB, Unit in GB
+     */
+    readonly dbInstanceStorage: number | ros.IResolvable;
+    /**
+     * Property accountPassword: The password of the root account. The password must meet the following
+     * requirements:
+     * - It must contain at least three of the following character types: uppercase
+     * letters, lowercase letters, digits, and special characters.
+     * - Special characters include !@#$%^&\*()_+-=
+     * - It must be 8 to 32 characters in length.
+     */
+    readonly accountPassword?: string | ros.IResolvable;
+    /**
+     * Property auditPolicyOptions: Audit policy options.
+     */
+    readonly auditPolicyOptions?: RosInstance.AuditPolicyOptionsProperty | ros.IResolvable;
+    /**
+     * Property autoRenew: Specifies whether to enable auto-renewal for the instance. Valid values:
+     * - true: Auto-renewal is enabled.
+     * - false: Auto-renewal is disabled. You must manually renew the instance. This is
+     * the default value.
+     * > This parameter is optional and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
+     */
+    readonly autoRenew?: boolean | ros.IResolvable;
+    /**
+     * Property backupId: The backup point ID. To query the backup point ID, call the [DescribeBackups]()
+     * operation.
+     * > You must specify this parameter and the SrcDBInstanceId parameter only when you
+     * clone an instance based on a backup point.
+     */
+    readonly backupId?: string | ros.IResolvable;
+    /**
+     * Property backupPolicyOptions: Backup policy options.
+     */
+    readonly backupPolicyOptions?: RosInstance.BackupPolicyOptionsProperty | ros.IResolvable;
+    /**
+     * Property businessInfo: The business information. It is an additional parameter.
+     */
+    readonly businessInfo?: string | ros.IResolvable;
+    /**
+     * Property chargeType: The billing method of the instance.values:PostPaid: Pay-As-You-Go.PrePaid: Subscription.Default value: PostPaid
+     */
+    readonly chargeType?: string | ros.IResolvable;
+    /**
+     * Property clusterId: The dedicated cluster ID.
+     */
+    readonly clusterId?: string | ros.IResolvable;
+    /**
+     * Property couponNo: Specifies whether to use a coupon. Valid values:
+     * - default or null (default): Uses a coupon.
+     * - youhuiquan_promotion_option_id_for_blank: Does not use a coupon.
+     */
+    readonly couponNo?: string | ros.IResolvable;
+    /**
+     * Property databaseNames: The database name.
+     * > When you clone an instance, you can specify this parameter to clone specific
+     * databases. If you do not specify this parameter, all databases of the instance
+     * are cloned.
+     */
+    readonly databaseNames?: string | ros.IResolvable;
+    /**
+     * Property dbInstanceDescription: The name of the instance. The name must meet the following requirements:
+     * - It must start with a Chinese character or a letter.
+     * - It can contain digits, Chinese characters, letters, underscores (_), periods
+     * (.), and hyphens (-).
+     * - It must be 2 to 256 characters in length.
+     */
+    readonly dbInstanceDescription?: string | ros.IResolvable;
+    /**
+     * Property dbInstanceReleaseProtection: Enables instance release protection. Values:
+     * - true: Enabled.
+     * - false: Not enabled.
+     */
+    readonly dbInstanceReleaseProtection?: boolean | ros.IResolvable;
+    /**
+     * Property encrypted: Whether to enable cloud disk encryption.
+     */
+    readonly encrypted?: boolean | ros.IResolvable;
+    /**
+     * Property encryptionKey: Custom key ID.
+     */
+    readonly encryptionKey?: string | ros.IResolvable;
+    /**
+     * Property engineVersion: The database version. Valid values:
+     * - 8.0
+     * - 7.0
+     * - 6.0
+     * - 5.0
+     * - 4.4
+     * - 4.2
+     * - 4.0
+     * > * When you clone an instance by calling this operation, the value of this
+     * parameter must be the same as that of the source instance.
+     */
+    readonly engineVersion?: string | ros.IResolvable;
+    /**
+     * Property hiddenZoneId: Configure the zone where the hidden node resides to implement multi-availability zone deployment.
+     * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.
+     * The value of this parameter cannot be the same as that of ZoneId and SecondaryZoneId.
+     */
+    readonly hiddenZoneId?: string | ros.IResolvable;
+    /**
+     * Property period: The subscription duration of the instance. Unit: month.
+     * Valid values: 1 to 9 (integer), 12, 24, 36, and 60.
+     * > This parameter is required and takes effect only when you set the ChargeType
+     * parameter to PrePaid.
+     */
+    readonly period?: number | ros.IResolvable;
+    /**
+     * Property privateConnections: Connection configs of private connection.
+     */
+    readonly privateConnections?: RosInstance.PrivateConnectionsProperty | ros.IResolvable;
+    /**
+     * Property provisionedIops: Provisioned IOPS. The value range is 0 to 50000.
+     */
+    readonly provisionedIops?: number | ros.IResolvable;
+    /**
+     * Property readonlyReplicas: The number of read-only nodes in the replica set instance. Valid values are
+     * integers from 0 to 5. The default value is 0.
+     */
+    readonly readonlyReplicas?: number | ros.IResolvable;
+    /**
+     * Property replicationFactor: The number of nodes in the replica set. Allowed values: [3, 5, 7], default to 3.
+     */
+    readonly replicationFactor?: number | ros.IResolvable;
+    /**
+     * Property resourceGroupId: The ID of the resource group.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+    /**
+     * Property restoreTime: The time to restore the cloned instance to. The format is yyyy-MM-ddTHH:mm:ssZ.This parameter can only be specified when this operation is called to clone instances.You must also specify theSrcDBInstanceIdparameter and theBackupIdparameter.You can clone instances to any restore time in the past seven days.
+     */
+    readonly restoreTime?: string | ros.IResolvable;
+    /**
+     * Property restoreType: The method to restore an instance from a backup.
+     * - 0: Restores the instance to a specified backup set.
+     * - 1: Restores the instance to a specified point in time.
+     * - 2: Restores a released instance to a specified backup set.
+     * - 3: Restores the instance to a specified geo-redundant backup set.
+     */
+    readonly restoreType?: number | ros.IResolvable;
+    /**
+     * Property secondaryZoneId: Configure the zone where the secondary node resides to implement multi-availability zone deployment.
+     * When the value of the EngineVersion is 4.4 and later, this parameter is available and required.The value of this parameter cannot be the same as that of ZoneId and HiddenZoneId.
+     */
+    readonly secondaryZoneId?: string | ros.IResolvable;
+    /**
+     * Property securityGroupId: The ID of the ECS security group.
+     * Each ApsaraDB for MongoDB instance can be added in up to 10 security group.
+     * You can call the ECS DescribeSecurityGroup to describe the ID of the security group in the target region.
+     */
+    readonly securityGroupId?: string | ros.IResolvable;
+    /**
+     * Property securityIpArray: Security ips to add or remove. Update to this property will cover the current security ips.
+     */
+    readonly securityIpArray?: string | ros.IResolvable;
+    /**
+     * Property srcDbInstanceId: The source instance ID.
+     * > This parameter is required only when you clone an instance by calling this
+     * operation. You must also specify the RestoreTime parameter.
+     */
+    readonly srcDbInstanceId?: string | ros.IResolvable;
+    /**
+     * Property srcRegion: The source instance region.
+     *
+     * >- When the backup recovery type is 2 or 3, this parameter is required.
+     */
+    readonly srcRegion?: string | ros.IResolvable;
+    /**
+     * Property sslOptions: SSL options.
+     */
+    readonly sslOptions?: RosInstance.SSLOptionsProperty | ros.IResolvable;
+    /**
+     * Property storageEngine: Database storage engine.Support WiredTiger, RocksDB, TerarkDB
+     */
+    readonly storageEngine?: string | ros.IResolvable;
+    /**
+     * Property storageType: The storage type of the instance.
+     * Instances of MongoDB 4.4 and later only support cloud disks. cloud_essd1 is selected if you leave this parameter empty.
+     * Instances of MongoDB 4.2 and earlier support only local disks. local_ssd is selected if you leave this parameter empty.
+     */
+    readonly storageType?: string | ros.IResolvable;
+    /**
+     * Property tags: Tags to attach to instance. Max support 20 tags to add during create instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosInstance.TagsProperty[];
+    /**
+     * Property tdeStatus: Specifies whether to enable Transparent Data Encryption (TDE). Valid values:
+     * true: enable TDE
+     * false: disable TDE (default)
+     * Note: You cannot disable TDE after it is enabled.
+     */
+    readonly tdeStatus?: boolean | ros.IResolvable;
+    /**
+     * Property vpcId: The VPC id to create mongodb instance.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+    /**
+     * Property vpcPasswordFree: Specifies whether to enable password free for access within the VPC. If set to:
+     * - true: enables password free.
+     * - false: disables password free.
+     */
+    readonly vpcPasswordFree?: boolean | ros.IResolvable;
+    /**
+     * Property vSwitchId: The vSwitch Id to create mongodb instance.
+     */
+    readonly vSwitchId?: string | ros.IResolvable;
+    /**
+     * Property zoneId: On which zone to create the instance. If VpcId and VSwitchId is specified, ZoneId is required and VSwitch should be in same zone.
+     */
+    readonly zoneId?: string | ros.IResolvable;
+}
+/**
+ * Represents a `Instance`.
+ */
+export interface IInstance extends ros.IResource {
+    readonly props: InstanceProps;
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+    /**
+     * Attribute ConnectionURI: Connection uri.
+     */
+    readonly attrConnectionUri: ros.IResolvable | string;
+    /**
+     * Attribute DBInstanceId: The instance id of created mongodb instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+    /**
+     * Attribute DBInstanceStatus: Status of mongodb instance.
+     */
+    readonly attrDbInstanceStatus: ros.IResolvable | string;
+    /**
+     * Attribute OrderId: Order Id of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+    /**
+     * Attribute ReplicaSetName: Name of replica set
+     */
+    readonly attrReplicaSetName: ros.IResolvable | string;
+}
+/**
+ * This class encapsulates and extends the ROS resource type `ALIYUN::MONGODB::Instance`.
+ * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosInstance`for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mongodb-instance
+ */
+export declare class Instance extends ros.Resource implements IInstance {
+    protected scope: ros.Construct;
+    protected id: string;
+    readonly props: InstanceProps;
+    protected enableResourcePropertyConstraint: boolean;
+    /**
+     * Attribute Arn: The Alibaba Cloud Resource Name (ARN).
+     */
+    readonly attrArn: ros.IResolvable | string;
+    /**
+     * Attribute ConnectionURI: Connection uri.
+     */
+    readonly attrConnectionUri: ros.IResolvable | string;
+    /**
+     * Attribute DBInstanceId: The instance id of created mongodb instance.
+     */
+    readonly attrDbInstanceId: ros.IResolvable | string;
+    /**
+     * Attribute DBInstanceStatus: Status of mongodb instance.
+     */
+    readonly attrDbInstanceStatus: ros.IResolvable | string;
+    /**
+     * Attribute OrderId: Order Id of created instance.
+     */
+    readonly attrOrderId: ros.IResolvable | string;
+    /**
+     * Attribute ReplicaSetName: Name of replica set
+     */
+    readonly attrReplicaSetName: ros.IResolvable | string;
+    private grant;
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list resources for this MongoDB instance.
+     *
+     * @param identity The principal
+     */
+    grantList(identity: ram.IPrincipal): ram.ManagedPolicy;
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to list and get resources for this MongoDB instance.
+     *
+     * @param identity The principal
+     */
+    grantRead(identity: ram.IPrincipal): ram.ManagedPolicy;
+    /**
+     * Grant an RAM principal (Role/Group/User) permission to create, update and delete resources for this MongoDB instance.
+     *
+     * @param identity The principal
+     */
+    grantReadWrite(identity: ram.IPrincipal): ram.ManagedPolicy;
+    /**
+     * Grant an RAM principal (Role/Group/User) full control over this MongoDB instance.
+     *
+     * @param identity The principal
+     */
+    grantFullAccess(identity: ram.IPrincipal): ram.ManagedPolicy;
+    /**
+     * Param scope - scope in which this resource is defined
+     * Param id    - scoped id of the resource
+     * Param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: InstanceProps, enableResourcePropertyConstraint?: boolean);
+}

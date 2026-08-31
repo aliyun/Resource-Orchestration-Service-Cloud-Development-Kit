@@ -5,7 +5,12 @@ package alicloudroscdkapigateway
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
 type GroupProps struct {
-	// Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+	// Property groupName: The name of the API group.
+	//
+	// The name must be unique and 4 to 50 characters in
+	// length. It must start with a letter or a Chinese character and can contain
+	// letters, digits, underscores (_), and Chinese characters. If you do not specify
+	// this parameter, the name is not modified.
 	GroupName interface{} `field:"required" json:"groupName" yaml:"groupName"`
 	// Property basePath: The base path of API.
 	BasePath interface{} `field:"optional" json:"basePath" yaml:"basePath"`

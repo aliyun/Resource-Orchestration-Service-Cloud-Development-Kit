@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dbs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DBS::Download</code>, which is used to create an advanced download task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DBS::Download</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:11:33.656Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:05:56.012Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.Download")
 public class Download extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dbs.IDownload {
 
@@ -136,24 +136,56 @@ public class Download extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property formatType: The format to which the downloaded backup set is converted.
+         * Property formatType: The target format of the downloaded data.
          * <p>
-         * Valid values: CSV|SQL|Parquet
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>CSV</li>
+         * <li>SQL</li>
+         * <li>Parquet</li>
+         * <li>Bson</li>
+         * <li>qp.xb</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required. The <code>Bson</code> format is available only for MongoDB
+         * instances. The <code>qp.xb</code> format is available only for ApsaraDB RDS for MySQL
+         * instances.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param formatType Property formatType: The format to which the downloaded backup set is converted. This parameter is required.
+         * @param formatType Property formatType: The target format of the downloaded data. This parameter is required.
          */
         public Builder formatType(final java.lang.String formatType) {
             this.props.formatType(formatType);
             return this;
         }
         /**
-         * Property formatType: The format to which the downloaded backup set is converted.
+         * Property formatType: The target format of the downloaded data.
          * <p>
-         * Valid values: CSV|SQL|Parquet
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>CSV</li>
+         * <li>SQL</li>
+         * <li>Parquet</li>
+         * <li>Bson</li>
+         * <li>qp.xb</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required. The <code>Bson</code> format is available only for MongoDB
+         * instances. The <code>qp.xb</code> format is available only for ApsaraDB RDS for MySQL
+         * instances.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param formatType Property formatType: The format to which the downloaded backup set is converted. This parameter is required.
+         * @param formatType Property formatType: The target format of the downloaded data. This parameter is required.
          */
         public Builder formatType(final com.aliyun.ros.cdk.core.IResolvable formatType) {
             this.props.formatType(formatType);

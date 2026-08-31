@@ -5,13 +5,15 @@ package com.aliyun.ros.cdk.bastionhost;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-hostaccount
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.478Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.188Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.HostAccountProps")
 @software.amazon.jsii.Jsii.Proxy(HostAccountProps.Jsii$Proxy.class)
 public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property hostAccountName: The name of the host account.
+     * Property hostAccountName: The name of the new host account.
+     * <p>
+     * The name can be up to 128 characters long.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getHostAccountName();
 
@@ -60,27 +62,60 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property privateKey: The private key of the host account.
+     * Property privateKey: The private key of the new host account.
      * <p>
-     * This parameter is required when the protocol is SSH.
+     * The value is a Base64-encoded string.
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is used only when ProtocolName is set to SSH. You do not need to
+     * set this parameter if ProtocolName is set to RDP. You can set both a password and
+     * a private key for the host account. When connecting to the asset, Bastionhost
+     * prioritizes the private key for the connection.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivateKey() {
         return null;
     }
 
     /**
-     * Property privilegeType: The privilege type of the host account.
+     * Property privilegeType: The permission type of the account.
      * <p>
-     * Valid values: Normal, Administrator.
+     * If you do not set this parameter, the default
+     * value is Normal.
+     * <p>
+     * <ul>
+     * <li>Privileged: privileged account</li>
+     * <li>Normal: normal account</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is supported only in Bastionhost V3.2.47 and later.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrivilegeType() {
         return null;
     }
 
     /**
-     * Property rotationMode: The rotation mode of the host account.
+     * Property rotationMode: The password change mode for the account.
      * <p>
-     * Valid values: Manual, Automatic.
+     * If you do not set this parameter, the
+     * default value is Self.
+     * <p>
+     * <ul>
+     * <li>Privileged: Use a privileged account to change the password.</li>
+     * <li>Self: Do not use a privileged account to change the password.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is supported only in Bastionhost V3.2.47 and later.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRotationMode() {
         return null;
@@ -109,7 +144,8 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getHostAccountName}
-         * @param hostAccountName Property hostAccountName: The name of the host account. This parameter is required.
+         * @param hostAccountName Property hostAccountName: The name of the new host account. This parameter is required.
+         *                        The name can be up to 128 characters long.
          * @return {@code this}
          */
         public Builder hostAccountName(java.lang.String hostAccountName) {
@@ -119,7 +155,8 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getHostAccountName}
-         * @param hostAccountName Property hostAccountName: The name of the host account. This parameter is required.
+         * @param hostAccountName Property hostAccountName: The name of the new host account. This parameter is required.
+         *                        The name can be up to 128 characters long.
          * @return {@code this}
          */
         public Builder hostAccountName(com.aliyun.ros.cdk.core.IResolvable hostAccountName) {
@@ -257,8 +294,17 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getPrivateKey}
-         * @param privateKey Property privateKey: The private key of the host account.
-         *                   This parameter is required when the protocol is SSH.
+         * @param privateKey Property privateKey: The private key of the new host account.
+         *                   The value is a Base64-encoded string.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is used only when ProtocolName is set to SSH. You do not need to
+         *                   set this parameter if ProtocolName is set to RDP. You can set both a password and
+         *                   a private key for the host account. When connecting to the asset, Bastionhost
+         *                   prioritizes the private key for the connection.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder privateKey(java.lang.String privateKey) {
@@ -268,8 +314,17 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getPrivateKey}
-         * @param privateKey Property privateKey: The private key of the host account.
-         *                   This parameter is required when the protocol is SSH.
+         * @param privateKey Property privateKey: The private key of the new host account.
+         *                   The value is a Base64-encoded string.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   This parameter is used only when ProtocolName is set to SSH. You do not need to
+         *                   set this parameter if ProtocolName is set to RDP. You can set both a password and
+         *                   a private key for the host account. When connecting to the asset, Bastionhost
+         *                   prioritizes the private key for the connection.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder privateKey(com.aliyun.ros.cdk.core.IResolvable privateKey) {
@@ -279,8 +334,20 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getPrivilegeType}
-         * @param privilegeType Property privilegeType: The privilege type of the host account.
-         *                      Valid values: Normal, Administrator.
+         * @param privilegeType Property privilegeType: The permission type of the account.
+         *                      If you do not set this parameter, the default
+         *                      value is Normal.
+         *                      <p>
+         *                      <ul>
+         *                      <li>Privileged: privileged account</li>
+         *                      <li>Normal: normal account</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      This parameter is supported only in Bastionhost V3.2.47 and later.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder privilegeType(java.lang.String privilegeType) {
@@ -290,8 +357,20 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getPrivilegeType}
-         * @param privilegeType Property privilegeType: The privilege type of the host account.
-         *                      Valid values: Normal, Administrator.
+         * @param privilegeType Property privilegeType: The permission type of the account.
+         *                      If you do not set this parameter, the default
+         *                      value is Normal.
+         *                      <p>
+         *                      <ul>
+         *                      <li>Privileged: privileged account</li>
+         *                      <li>Normal: normal account</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      This parameter is supported only in Bastionhost V3.2.47 and later.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder privilegeType(com.aliyun.ros.cdk.core.IResolvable privilegeType) {
@@ -301,8 +380,20 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getRotationMode}
-         * @param rotationMode Property rotationMode: The rotation mode of the host account.
-         *                     Valid values: Manual, Automatic.
+         * @param rotationMode Property rotationMode: The password change mode for the account.
+         *                     If you do not set this parameter, the
+         *                     default value is Self.
+         *                     <p>
+         *                     <ul>
+         *                     <li>Privileged: Use a privileged account to change the password.</li>
+         *                     <li>Self: Do not use a privileged account to change the password.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is supported only in Bastionhost V3.2.47 and later.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder rotationMode(java.lang.String rotationMode) {
@@ -312,8 +403,20 @@ public interface HostAccountProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link HostAccountProps#getRotationMode}
-         * @param rotationMode Property rotationMode: The rotation mode of the host account.
-         *                     Valid values: Manual, Automatic.
+         * @param rotationMode Property rotationMode: The password change mode for the account.
+         *                     If you do not set this parameter, the
+         *                     default value is Self.
+         *                     <p>
+         *                     <ul>
+         *                     <li>Privileged: Use a privileged account to change the password.</li>
+         *                     <li>Self: Do not use a privileged account to change the password.</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is supported only in Bastionhost V3.2.47 and later.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder rotationMode(com.aliyun.ros.cdk.core.IResolvable rotationMode) {

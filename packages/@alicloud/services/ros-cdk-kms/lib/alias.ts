@@ -10,7 +10,9 @@ export { RosAlias as AliasProperty };
 export interface AliasProps {
 
     /**
-     * Property aliasName: - The display name of the key. You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias\/ must be included.
+     * Property aliasName: The alias of the CMK.
+     * The alias must be 1 to 255 characters in length and must contain the prefix
+     * `alias\/`. The alias cannot be prefixed with the reserved word `alias\/acs`.
      */
     readonly aliasName: string | ros.IResolvable;
 
@@ -27,7 +29,7 @@ export interface IAlias extends ros.IResource {
     readonly props: AliasProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Alias`.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::KMS::Alias`Creates an alias for a customer master key (CMK) in Key Management Service (KMS).
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAlias`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-kms-alias
  */

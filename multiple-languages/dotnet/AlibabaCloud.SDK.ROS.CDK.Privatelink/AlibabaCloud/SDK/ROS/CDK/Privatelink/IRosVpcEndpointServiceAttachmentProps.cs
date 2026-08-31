@@ -21,10 +21,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: resourceType: The resource type. Allowed values:
-        /// - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
-        /// - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
-        /// - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
+        /// <strong>Property</strong>: resourceType: The type of the service resource. Valid values:
+        /// - slb: Classic Load Balancer (CLB).
+        /// - alb: Application Load Balancer (ALB).
+        /// - nlb: Network Load Balancer (NLB).
+        /// - gwlb: Gateway Load Balancer (GWLB).
         /// </remarks>
         [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object ResourceType
@@ -42,7 +43,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: zoneId: Zone id of the service resource.
+        /// <strong>Property</strong>: zoneId: The zone where the service resource is located. This parameter is required if the
+        /// service resource is an ALB, NLB, or GWLB instance.
         /// </remarks>
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -75,10 +77,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: resourceType: The resource type. Allowed values:
-            /// - slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.
-            /// - alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.
-            /// - nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.
+            /// <strong>Property</strong>: resourceType: The type of the service resource. Valid values:
+            /// - slb: Classic Load Balancer (CLB).
+            /// - alb: Application Load Balancer (ALB).
+            /// - nlb: Network Load Balancer (NLB).
+            /// - gwlb: Gateway Load Balancer (GWLB).
             /// </remarks>
             [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object ResourceType
@@ -96,7 +99,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: zoneId: Zone id of the service resource.
+            /// <strong>Property</strong>: zoneId: The zone where the service resource is located. This parameter is required if the
+            /// service resource is an ALB, NLB, or GWLB instance.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

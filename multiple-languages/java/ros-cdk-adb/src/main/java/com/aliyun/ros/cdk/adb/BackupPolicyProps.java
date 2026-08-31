@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adb-backuppolicy
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:14:30.207Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:53:53.089Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adb.$Module.class, fqn = "@alicloud/ros-cdk-adb.BackupPolicyProps")
 @software.amazon.jsii.Jsii.Proxy(BackupPolicyProps.Jsii$Proxy.class)
 public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,34 +23,64 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getPreferredBackupPeriod();
 
     /**
-     * Property preferredBackupTime: The preferred backup time.
+     * Property preferredBackupTime: The start time of the full backup within a time range.
      * <p>
-     * Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+     * Specify the time range in
+     * the HH:mmZ-HH:mmZ format. The time must be in UTC.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The time range is 1 hour.
+     * <p>
+     * </blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPreferredBackupTime();
 
     /**
-     * Property backupRetentionPeriod: The number of days for which backup files are retained.
+     * Property backupRetentionPeriod: The number of days for which to retain full backup files.
      * <p>
      * Valid values: 7 to 730.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you do not specify this parameter, the default value 7 is used.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBackupRetentionPeriod() {
         return null;
     }
 
     /**
-     * Property enableBackupLog: Whether to enable log backup.
+     * Property enableBackupLog: Specifies whether to enable real-time log backup.
      * <p>
-     * Valid values: Enable, Disable.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Enable</li>
+     * <li>Disable</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you leave this parameter empty, the default value Enable is used.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEnableBackupLog() {
         return null;
     }
 
     /**
-     * Property logBackupRetentionPeriod: The number of days for which log backup files are retained.
+     * Property logBackupRetentionPeriod: The number of days for which to retain log backup files.
      * <p>
      * Valid values: 7 to 730.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you do not specify this parameter, the default value 7 is used.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLogBackupRetentionPeriod() {
         return null;
@@ -117,8 +147,15 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getPreferredBackupTime}
-         * @param preferredBackupTime Property preferredBackupTime: The preferred backup time. This parameter is required.
-         *                            Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+         * @param preferredBackupTime Property preferredBackupTime: The start time of the full backup within a time range. This parameter is required.
+         *                            Specify the time range in
+         *                            the HH:mmZ-HH:mmZ format. The time must be in UTC.
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            The time range is 1 hour.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder preferredBackupTime(java.lang.String preferredBackupTime) {
@@ -128,8 +165,15 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getPreferredBackupTime}
-         * @param preferredBackupTime Property preferredBackupTime: The preferred backup time. This parameter is required.
-         *                            Format: HH:mmZ-HH:mmZ. Example: 02:00Z-03:00Z
+         * @param preferredBackupTime Property preferredBackupTime: The start time of the full backup within a time range. This parameter is required.
+         *                            Specify the time range in
+         *                            the HH:mmZ-HH:mmZ format. The time must be in UTC.
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            The time range is 1 hour.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder preferredBackupTime(com.aliyun.ros.cdk.core.IResolvable preferredBackupTime) {
@@ -139,8 +183,14 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getBackupRetentionPeriod}
-         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which backup files are retained.
+         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which to retain full backup files.
          *                              Valid values: 7 to 730.
+         *                              <p>
+         *                              <blockquote>
+         *                              <p>
+         *                              If you do not specify this parameter, the default value 7 is used.
+         *                              <p>
+         *                              </blockquote>
          * @return {@code this}
          */
         public Builder backupRetentionPeriod(java.lang.Number backupRetentionPeriod) {
@@ -150,8 +200,14 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getBackupRetentionPeriod}
-         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which backup files are retained.
+         * @param backupRetentionPeriod Property backupRetentionPeriod: The number of days for which to retain full backup files.
          *                              Valid values: 7 to 730.
+         *                              <p>
+         *                              <blockquote>
+         *                              <p>
+         *                              If you do not specify this parameter, the default value 7 is used.
+         *                              <p>
+         *                              </blockquote>
          * @return {@code this}
          */
         public Builder backupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable backupRetentionPeriod) {
@@ -161,8 +217,19 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getEnableBackupLog}
-         * @param enableBackupLog Property enableBackupLog: Whether to enable log backup.
-         *                        Valid values: Enable, Disable.
+         * @param enableBackupLog Property enableBackupLog: Specifies whether to enable real-time log backup.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Enable</li>
+         *                        <li>Disable</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If you leave this parameter empty, the default value Enable is used.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder enableBackupLog(java.lang.String enableBackupLog) {
@@ -172,8 +239,19 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getEnableBackupLog}
-         * @param enableBackupLog Property enableBackupLog: Whether to enable log backup.
-         *                        Valid values: Enable, Disable.
+         * @param enableBackupLog Property enableBackupLog: Specifies whether to enable real-time log backup.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>Enable</li>
+         *                        <li>Disable</li>
+         *                        </ul>
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        If you leave this parameter empty, the default value Enable is used.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder enableBackupLog(com.aliyun.ros.cdk.core.IResolvable enableBackupLog) {
@@ -183,8 +261,14 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getLogBackupRetentionPeriod}
-         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which log backup files are retained.
+         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which to retain log backup files.
          *                                 Valid values: 7 to 730.
+         *                                 <p>
+         *                                 <blockquote>
+         *                                 <p>
+         *                                 If you do not specify this parameter, the default value 7 is used.
+         *                                 <p>
+         *                                 </blockquote>
          * @return {@code this}
          */
         public Builder logBackupRetentionPeriod(java.lang.Number logBackupRetentionPeriod) {
@@ -194,8 +278,14 @@ public interface BackupPolicyProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link BackupPolicyProps#getLogBackupRetentionPeriod}
-         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which log backup files are retained.
+         * @param logBackupRetentionPeriod Property logBackupRetentionPeriod: The number of days for which to retain log backup files.
          *                                 Valid values: 7 to 730.
+         *                                 <p>
+         *                                 <blockquote>
+         *                                 <p>
+         *                                 If you do not specify this parameter, the default value 7 is used.
+         *                                 <p>
+         *                                 </blockquote>
          * @return {@code this}
          */
         public Builder logBackupRetentionPeriod(com.aliyun.ros.cdk.core.IResolvable logBackupRetentionPeriod) {

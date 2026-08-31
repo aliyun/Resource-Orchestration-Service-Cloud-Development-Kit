@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.mps;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::MPS::Pipeline</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:55:13.150Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:11:47.215Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mps.$Module.class, fqn = "@alicloud/ros-cdk-mps.Pipeline")
 public class Pipeline extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.mps.IPipeline {
 
@@ -228,20 +228,24 @@ public class Pipeline extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property speedLevel: Speed level.
+         * Property speedLevel: The level of the MPS queue.
+         * <p>
+         * Valid values: 1 to 3.
          * <p>
          * @return {@code this}
-         * @param speedLevel Property speedLevel: Speed level. This parameter is required.
+         * @param speedLevel Property speedLevel: The level of the MPS queue. This parameter is required.
          */
         public Builder speedLevel(final java.lang.Number speedLevel) {
             this.props.speedLevel(speedLevel);
             return this;
         }
         /**
-         * Property speedLevel: Speed level.
+         * Property speedLevel: The level of the MPS queue.
+         * <p>
+         * Valid values: 1 to 3.
          * <p>
          * @return {@code this}
-         * @param speedLevel Property speedLevel: Speed level. This parameter is required.
+         * @param speedLevel Property speedLevel: The level of the MPS queue. This parameter is required.
          */
         public Builder speedLevel(final com.aliyun.ros.cdk.core.IResolvable speedLevel) {
             this.props.speedLevel(speedLevel);

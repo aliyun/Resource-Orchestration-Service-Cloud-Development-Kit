@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Queue</code>, which is used to create a queue.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Queue</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.252Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Queue")
 public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.amqp.IQueue {
 
@@ -133,20 +133,36 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property queueName: The name of the queue.
+         * Property queueName: The name of the queue to create.
+         * <p>
+         * <ul>
+         * <li>The queue name can contain only letters, digits, hyphens (-), underscores (_),
+         * periods (.), number signs (#), forward slashes (/), and at signs (&#64;). The name
+         * must be 1 to 255 characters in length.</li>
+         * <li>After a queue is created, its name cannot be changed. To change the name,
+         * delete the queue and create a new one.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param queueName Property queueName: The name of the queue. This parameter is required.
+         * @param queueName Property queueName: The name of the queue to create. This parameter is required.
          */
         public Builder queueName(final java.lang.String queueName) {
             this.props.queueName(queueName);
             return this;
         }
         /**
-         * Property queueName: The name of the queue.
+         * Property queueName: The name of the queue to create.
+         * <p>
+         * <ul>
+         * <li>The queue name can contain only letters, digits, hyphens (-), underscores (_),
+         * periods (.), number signs (#), forward slashes (/), and at signs (&#64;). The name
+         * must be 1 to 255 characters in length.</li>
+         * <li>After a queue is created, its name cannot be changed. To change the name,
+         * delete the queue and create a new one.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param queueName Property queueName: The name of the queue. This parameter is required.
+         * @param queueName Property queueName: The name of the queue to create. This parameter is required.
          */
         public Builder queueName(final com.aliyun.ros.cdk.core.IResolvable queueName) {
             this.props.queueName(queueName);
@@ -154,20 +170,28 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property virtualHost: The name of the virtual host.
+         * Property virtualHost: The name of the vhost to which the queue belongs.
+         * <p>
+         * The name can contain only letters, digits, hyphens (-), underscores (_), periods
+         * (.), number signs (#), forward slashes (/), and at signs (&#64;). The name must be 1
+         * to 255 characters in length.
          * <p>
          * @return {@code this}
-         * @param virtualHost Property virtualHost: The name of the virtual host. This parameter is required.
+         * @param virtualHost Property virtualHost: The name of the vhost to which the queue belongs. This parameter is required.
          */
         public Builder virtualHost(final java.lang.String virtualHost) {
             this.props.virtualHost(virtualHost);
             return this;
         }
         /**
-         * Property virtualHost: The name of the virtual host.
+         * Property virtualHost: The name of the vhost to which the queue belongs.
+         * <p>
+         * The name can contain only letters, digits, hyphens (-), underscores (_), periods
+         * (.), number signs (#), forward slashes (/), and at signs (&#64;). The name must be 1
+         * to 255 characters in length.
          * <p>
          * @return {@code this}
-         * @param virtualHost Property virtualHost: The name of the virtual host. This parameter is required.
+         * @param virtualHost Property virtualHost: The name of the vhost to which the queue belongs. This parameter is required.
          */
         public Builder virtualHost(final com.aliyun.ros.cdk.core.IResolvable virtualHost) {
             this.props.virtualHost(virtualHost);
@@ -204,24 +228,42 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property autoExpireState: The validity period after which the queue is automatically deleted.
+         * Property autoExpireState: The auto-expiration time for the queue.
          * <p>
-         * If the queue is not accessed within a specified period of time, it is automatically deleted.
+         * The queue is automatically deleted if it
+         * is not accessed within the specified time period.
+         * Unit: milliseconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This feature must be enabled before you can use this parameter. To enable the
+         * feature, .
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoExpireState Property autoExpireState: The validity period after which the queue is automatically deleted. This parameter is required.
+         * @param autoExpireState Property autoExpireState: The auto-expiration time for the queue. This parameter is required.
          */
         public Builder autoExpireState(final java.lang.Number autoExpireState) {
             this.props.autoExpireState(autoExpireState);
             return this;
         }
         /**
-         * Property autoExpireState: The validity period after which the queue is automatically deleted.
+         * Property autoExpireState: The auto-expiration time for the queue.
          * <p>
-         * If the queue is not accessed within a specified period of time, it is automatically deleted.
+         * The queue is automatically deleted if it
+         * is not accessed within the specified time period.
+         * Unit: milliseconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This feature must be enabled before you can use this parameter. To enable the
+         * feature, .
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoExpireState Property autoExpireState: The validity period after which the queue is automatically deleted. This parameter is required.
+         * @param autoExpireState Property autoExpireState: The auto-expiration time for the queue. This parameter is required.
          */
         public Builder autoExpireState(final com.aliyun.ros.cdk.core.IResolvable autoExpireState) {
             this.props.autoExpireState(autoExpireState);
@@ -258,20 +300,28 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property deadLetterRoutingKey: The dead letter routing key.
+         * Property deadLetterRoutingKey: The dead-letter routing key.
+         * <p>
+         * The key can contain only letters, digits, hyphens (-), underscores (_), periods
+         * (.), number signs (#), forward slashes (/), and at signs (&#64;). The key must be 1
+         * to 255 characters in length.
          * <p>
          * @return {@code this}
-         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead letter routing key. This parameter is required.
+         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead-letter routing key. This parameter is required.
          */
         public Builder deadLetterRoutingKey(final java.lang.String deadLetterRoutingKey) {
             this.props.deadLetterRoutingKey(deadLetterRoutingKey);
             return this;
         }
         /**
-         * Property deadLetterRoutingKey: The dead letter routing key.
+         * Property deadLetterRoutingKey: The dead-letter routing key.
+         * <p>
+         * The key can contain only letters, digits, hyphens (-), underscores (_), periods
+         * (.), number signs (#), forward slashes (/), and at signs (&#64;). The key must be 1
+         * to 255 characters in length.
          * <p>
          * @return {@code this}
-         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead letter routing key. This parameter is required.
+         * @param deadLetterRoutingKey Property deadLetterRoutingKey: The dead-letter routing key. This parameter is required.
          */
         public Builder deadLetterRoutingKey(final com.aliyun.ros.cdk.core.IResolvable deadLetterRoutingKey) {
             this.props.deadLetterRoutingKey(deadLetterRoutingKey);
@@ -282,8 +332,13 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
          * Property exclusiveState: Specifies whether the queue is an exclusive queue.
          * <p>
          * Valid values:
-         * true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-         * false: The Auto Delete attribute is not configured.
+         * <p>
+         * <ul>
+         * <li>true: The queue is an exclusive queue. An exclusive queue can be used only by
+         * the connection that declares it. The queue is automatically deleted after the
+         * connection is closed.</li>
+         * <li>false: The queue is not an exclusive queue.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param exclusiveState Property exclusiveState: Specifies whether the queue is an exclusive queue. This parameter is required.
@@ -296,8 +351,13 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
          * Property exclusiveState: Specifies whether the queue is an exclusive queue.
          * <p>
          * Valid values:
-         * true: The queue is an exclusive queue. It can be used only for the connection that declares the exclusive queue. After the connection is closed, the exclusive queue is automatically deleted.
-         * false: The Auto Delete attribute is not configured.
+         * <p>
+         * <ul>
+         * <li>true: The queue is an exclusive queue. An exclusive queue can be used only by
+         * the connection that declares it. The queue is automatically deleted after the
+         * connection is closed.</li>
+         * <li>false: The queue is not an exclusive queue.</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param exclusiveState Property exclusiveState: Specifies whether the queue is an exclusive queue. This parameter is required.
@@ -308,20 +368,40 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property maximumPriority: The priority function is not supported.
+         * Property maximumPriority: The priority of the queue.
+         * <p>
+         * The recommended value is an integer from 1 to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is used for message priority. It is supported only by dedicated
+         * instances and can be used only after the message priority feature is enabled. To
+         * enable the feature, .
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maximumPriority Property maximumPriority: The priority function is not supported. This parameter is required.
+         * @param maximumPriority Property maximumPriority: The priority of the queue. This parameter is required.
          */
         public Builder maximumPriority(final java.lang.Number maximumPriority) {
             this.props.maximumPriority(maximumPriority);
             return this;
         }
         /**
-         * Property maximumPriority: The priority function is not supported.
+         * Property maximumPriority: The priority of the queue.
+         * <p>
+         * The recommended value is an integer from 1 to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is used for message priority. It is supported only by dedicated
+         * instances and can be used only after the message priority feature is enabled. To
+         * enable the feature, .
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maximumPriority Property maximumPriority: The priority function is not supported. This parameter is required.
+         * @param maximumPriority Property maximumPriority: The priority of the queue. This parameter is required.
          */
         public Builder maximumPriority(final com.aliyun.ros.cdk.core.IResolvable maximumPriority) {
             this.props.maximumPriority(maximumPriority);
@@ -329,24 +409,26 @@ public class Queue extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property maxLength: The maximum number of messages that can be stored in the queue.
+         * Property maxLength: This parameter is not supported in the current version.
          * <p>
-         * If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+         * The maximum number of messages that can be stored in the queue. If this limit is
+         * exceeded, the earliest messages in the queue are deleted.
          * <p>
          * @return {@code this}
-         * @param maxLength Property maxLength: The maximum number of messages that can be stored in the queue. This parameter is required.
+         * @param maxLength Property maxLength: This parameter is not supported in the current version. This parameter is required.
          */
         public Builder maxLength(final java.lang.Number maxLength) {
             this.props.maxLength(maxLength);
             return this;
         }
         /**
-         * Property maxLength: The maximum number of messages that can be stored in the queue.
+         * Property maxLength: This parameter is not supported in the current version.
          * <p>
-         * If this threshold is exceeded, the earliest messages that are routed to the queue are discarded.
+         * The maximum number of messages that can be stored in the queue. If this limit is
+         * exceeded, the earliest messages in the queue are deleted.
          * <p>
          * @return {@code this}
-         * @param maxLength Property maxLength: The maximum number of messages that can be stored in the queue. This parameter is required.
+         * @param maxLength Property maxLength: This parameter is not supported in the current version. This parameter is required.
          */
         public Builder maxLength(final com.aliyun.ros.cdk.core.IResolvable maxLength) {
             this.props.maxLength(maxLength);

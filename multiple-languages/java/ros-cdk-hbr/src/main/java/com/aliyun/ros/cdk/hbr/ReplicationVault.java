@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBR::ReplicationVault</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.781Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.171Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.ReplicationVault")
 public class ReplicationVault extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbr.IReplicationVault {
 
@@ -196,20 +196,38 @@ public class ReplicationVault extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property encryptType: The encryption type of the vault.
+         * Property encryptType: The method that is used to encrypt the source data.
+         * <p>
+         * This parameter is valid only
+         * if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+         * <p>
+         * <ul>
+         * <li>HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+         * method of Hybrid Backup Recovery (HBR).</li>
+         * <li>KMS: The source data is encrypted by using Key Management Service (KMS).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param encryptType Property encryptType: The encryption type of the vault. This parameter is required.
+         * @param encryptType Property encryptType: The method that is used to encrypt the source data. This parameter is required.
          */
         public Builder encryptType(final java.lang.String encryptType) {
             this.props.encryptType(encryptType);
             return this;
         }
         /**
-         * Property encryptType: The encryption type of the vault.
+         * Property encryptType: The method that is used to encrypt the source data.
+         * <p>
+         * This parameter is valid only
+         * if you set the VaultType parameter to STANDARD or OTS_BACKUP. Valid values:
+         * <p>
+         * <ul>
+         * <li>HBR_PRIVATE: The source data is encrypted by using the built-in encryption
+         * method of Hybrid Backup Recovery (HBR).</li>
+         * <li>KMS: The source data is encrypted by using Key Management Service (KMS).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param encryptType Property encryptType: The encryption type of the vault. This parameter is required.
+         * @param encryptType Property encryptType: The method that is used to encrypt the source data. This parameter is required.
          */
         public Builder encryptType(final com.aliyun.ros.cdk.core.IResolvable encryptType) {
             this.props.encryptType(encryptType);
@@ -217,20 +235,26 @@ public class ReplicationVault extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property kmsKeyId: The KMS key ID used for encryption.
+         * Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key.
+         * <p>
+         * This
+         * parameter is required only if you set the EncryptType parameter to KMS.
          * <p>
          * @return {@code this}
-         * @param kmsKeyId Property kmsKeyId: The KMS key ID used for encryption. This parameter is required.
+         * @param kmsKeyId Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key. This parameter is required.
          */
         public Builder kmsKeyId(final java.lang.String kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
             return this;
         }
         /**
-         * Property kmsKeyId: The KMS key ID used for encryption.
+         * Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key.
+         * <p>
+         * This
+         * parameter is required only if you set the EncryptType parameter to KMS.
          * <p>
          * @return {@code this}
-         * @param kmsKeyId Property kmsKeyId: The KMS key ID used for encryption. This parameter is required.
+         * @param kmsKeyId Property kmsKeyId: The customer master key (CMK) created in KMS or the alias of the key. This parameter is required.
          */
         public Builder kmsKeyId(final com.aliyun.ros.cdk.core.IResolvable kmsKeyId) {
             this.props.kmsKeyId(kmsKeyId);
@@ -238,20 +262,44 @@ public class ReplicationVault extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property redundancyType: The redundancy type of the vault.
+         * Property redundancyType: The data redundancy type of the backup vault.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+         * of each object on multiple devices of different facilities in the same zone. This
+         * way, Cloud Backup ensures data durability and availability even if hardware
+         * failures occur.</li>
+         * <li>ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+         * mechanism to distribute data across three zones within the same region. If a zone
+         * fails, the data that is stored in the other two zones is still accessible.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param redundancyType Property redundancyType: The redundancy type of the vault. This parameter is required.
+         * @param redundancyType Property redundancyType: The data redundancy type of the backup vault. This parameter is required.
          */
         public Builder redundancyType(final java.lang.String redundancyType) {
             this.props.redundancyType(redundancyType);
             return this;
         }
         /**
-         * Property redundancyType: The redundancy type of the vault.
+         * Property redundancyType: The data redundancy type of the backup vault.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>LRS: standard locally redundant storage (LRS). Cloud Backup stores the copies
+         * of each object on multiple devices of different facilities in the same zone. This
+         * way, Cloud Backup ensures data durability and availability even if hardware
+         * failures occur.</li>
+         * <li>ZRS: standard zone-redundant storage (ZRS). Cloud Backup uses the multi-zone
+         * mechanism to distribute data across three zones within the same region. If a zone
+         * fails, the data that is stored in the other two zones is still accessible.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param redundancyType Property redundancyType: The redundancy type of the vault. This parameter is required.
+         * @param redundancyType Property redundancyType: The data redundancy type of the backup vault. This parameter is required.
          */
         public Builder redundancyType(final com.aliyun.ros.cdk.core.IResolvable redundancyType) {
             this.props.redundancyType(redundancyType);
@@ -259,20 +307,26 @@ public class ReplicationVault extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property vaultStorageClass: The storage class of the vault.
+         * Property vaultStorageClass: The storage type of the backup vault.
+         * <p>
+         * Valid value: STANDARD, which indicates
+         * standard storage.
          * <p>
          * @return {@code this}
-         * @param vaultStorageClass Property vaultStorageClass: The storage class of the vault. This parameter is required.
+         * @param vaultStorageClass Property vaultStorageClass: The storage type of the backup vault. This parameter is required.
          */
         public Builder vaultStorageClass(final java.lang.String vaultStorageClass) {
             this.props.vaultStorageClass(vaultStorageClass);
             return this;
         }
         /**
-         * Property vaultStorageClass: The storage class of the vault.
+         * Property vaultStorageClass: The storage type of the backup vault.
+         * <p>
+         * Valid value: STANDARD, which indicates
+         * standard storage.
          * <p>
          * @return {@code this}
-         * @param vaultStorageClass Property vaultStorageClass: The storage class of the vault. This parameter is required.
+         * @param vaultStorageClass Property vaultStorageClass: The storage type of the backup vault. This parameter is required.
          */
         public Builder vaultStorageClass(final com.aliyun.ros.cdk.core.IResolvable vaultStorageClass) {
             this.props.vaultStorageClass(vaultStorageClass);

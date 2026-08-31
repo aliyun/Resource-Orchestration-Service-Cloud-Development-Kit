@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * Represents a <code>InstanceGroupClone</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.913Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.275Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.IInstanceGroupClone")
 @software.amazon.jsii.Jsii.Proxy(IInstanceGroupClone.Jsii$Proxy.class)
 public interface IInstanceGroupClone extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

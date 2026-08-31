@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-deployrevision
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.893Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.838Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.DeployRevisionProps")
 @software.amazon.jsii.Jsii.Proxy(DeployRevisionProps.Jsii$Proxy.class)
 public interface DeployRevisionProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,16 @@ public interface DeployRevisionProps extends software.amazon.jsii.JsiiSerializab
     @org.jetbrains.annotations.NotNull java.lang.Object getApplicationName();
 
     /**
-     * Property deployResourceType: The type of the deploy resource.
+     * Property deployResourceType: The type of the deployment resource.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>Kubernetes</code>: A Kubernetes cluster.</li>
+     * <li><code>Ecs</code>: An ECS instance.</li>
+     * <li><code>FC</code>: A Function Compute service.</li>
+     * <li><code>SWAS</code>: A Simple Application Server instance.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeployResourceType() {
         return null;
@@ -44,7 +53,19 @@ public interface DeployRevisionProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property revisionType: The type of the revision.
+     * Property revisionType: The type of the deployment revision.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li><code>Command</code>: A command.</li>
+     * <li><code>GitRepo</code>: A Git repository.</li>
+     * <li><code>HelmChart</code>: A Helm chart.</li>
+     * <li><code>Oss</code>: An object in Object Storage Service (OSS).</li>
+     * <li><code>EcsImage</code>: An ECS image.</li>
+     * <li><code>DockerImage</code>: A Docker image.</li>
+     * <li><code>Yaml</code>: A YAML file.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRevisionType() {
         return null;
@@ -89,7 +110,15 @@ public interface DeployRevisionProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link DeployRevisionProps#getDeployResourceType}
-         * @param deployResourceType Property deployResourceType: The type of the deploy resource.
+         * @param deployResourceType Property deployResourceType: The type of the deployment resource.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>Kubernetes</code>: A Kubernetes cluster.</li>
+         *                           <li><code>Ecs</code>: An ECS instance.</li>
+         *                           <li><code>FC</code>: A Function Compute service.</li>
+         *                           <li><code>SWAS</code>: A Simple Application Server instance.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder deployResourceType(java.lang.String deployResourceType) {
@@ -99,7 +128,15 @@ public interface DeployRevisionProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link DeployRevisionProps#getDeployResourceType}
-         * @param deployResourceType Property deployResourceType: The type of the deploy resource.
+         * @param deployResourceType Property deployResourceType: The type of the deployment resource.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li><code>Kubernetes</code>: A Kubernetes cluster.</li>
+         *                           <li><code>Ecs</code>: An ECS instance.</li>
+         *                           <li><code>FC</code>: A Function Compute service.</li>
+         *                           <li><code>SWAS</code>: A Simple Application Server instance.</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder deployResourceType(com.aliyun.ros.cdk.core.IResolvable deployResourceType) {
@@ -169,7 +206,18 @@ public interface DeployRevisionProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link DeployRevisionProps#getRevisionType}
-         * @param revisionType Property revisionType: The type of the revision.
+         * @param revisionType Property revisionType: The type of the deployment revision.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>Command</code>: A command.</li>
+         *                     <li><code>GitRepo</code>: A Git repository.</li>
+         *                     <li><code>HelmChart</code>: A Helm chart.</li>
+         *                     <li><code>Oss</code>: An object in Object Storage Service (OSS).</li>
+         *                     <li><code>EcsImage</code>: An ECS image.</li>
+         *                     <li><code>DockerImage</code>: A Docker image.</li>
+         *                     <li><code>Yaml</code>: A YAML file.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder revisionType(java.lang.String revisionType) {
@@ -179,7 +227,18 @@ public interface DeployRevisionProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link DeployRevisionProps#getRevisionType}
-         * @param revisionType Property revisionType: The type of the revision.
+         * @param revisionType Property revisionType: The type of the deployment revision.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li><code>Command</code>: A command.</li>
+         *                     <li><code>GitRepo</code>: A Git repository.</li>
+         *                     <li><code>HelmChart</code>: A Helm chart.</li>
+         *                     <li><code>Oss</code>: An object in Object Storage Service (OSS).</li>
+         *                     <li><code>EcsImage</code>: An ECS image.</li>
+         *                     <li><code>DockerImage</code>: A Docker image.</li>
+         *                     <li><code>Yaml</code>: A YAML file.</li>
+         *                     </ul>
          * @return {@code this}
          */
         public Builder revisionType(com.aliyun.ros.cdk.core.IResolvable revisionType) {

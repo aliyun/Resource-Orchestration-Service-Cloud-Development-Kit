@@ -48,7 +48,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         private object _policyType;
 
         /// <remarks>
-        /// <strong>Property</strong>: policyType: The type of the policy.
+        /// <strong>Property</strong>: policyType: The type of the backup policy. Valid values:
+        /// - STANDARD: A standard backup policy. It supports data sources other than ECS
+        /// instance backup.
+        /// - UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+        /// If you do not specify this parameter, Cloud Backup automatically sets the policy
+        /// type based on whether a backup vault is specified in the policy rules:
+        /// - If a backup vault is specified in the rules, the policy type is set to
+        /// STANDARD.
+        /// - If no backup vault is specified in the rules, the policy type is set to
+        /// UDM_ECS_ONLY.
         /// </remarks>
         [JsiiProperty(name: "policyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object PolicyType

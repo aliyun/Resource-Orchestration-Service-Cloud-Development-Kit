@@ -11,9 +11,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
     [JsiiInterface(nativeType: typeof(IDBClusterProps), fullyQualifiedName: "@alicloud/ros-cdk-polardb.DBClusterProps")]
     public interface IDBClusterProps
     {
-        /// <summary>Property dbNodeClass: The node specifications of the cluster.</summary>
+        /// <summary>Property dbNodeClass: The node specification.</summary>
         /// <remarks>
-        /// For more information, see Specifications and pricing.
+        /// For more information, see the following topics:
+        ///
+        /// <list type="bullet">
+        /// <description>PolarDB for MySQL: Compute node specifications</description>
+        /// <description>PolarDB for PostgreSQL (compatible with Oracle): Compute node
+        /// specifications</description>
+        /// <description>PolarDB for PostgreSQL: Compute node specifications</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>To create a PolarDB for MySQL Cluster Edition serverless cluster, set this
+        ///     parameter to polar.mysql.sl.small.</description>
+        ///     <description>To create a PolarDB for MySQL Standard Edition serverless cluster, set this
+        ///     parameter to polar.mysql.sl.small.c.</description>
+        ///     <description>To create a PolarDB for PostgreSQL Cluster Edition serverless cluster, set
+        ///     this parameter to polar.pg.sl.small.</description>
+        ///     <description>To create a PolarDB for PostgreSQL Standard Edition serverless cluster, set
+        ///     this parameter to polar.pg.sl.small.c.</description>
+        ///     <description>To create a PolarDB for PostgreSQL (compatible with Oracle) serverless
+        ///     cluster, set this parameter to polar.o.sl.small.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "dbNodeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DbNodeClass
@@ -28,12 +48,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
         }
 
-        /// <summary>Property dbVersion: The version of the database.</summary>
+        /// <summary>Property dbVersion: The version of the database engine.</summary>
         /// <remarks>
-        /// Valid values:
-        /// MySQL: 5.6, 5.7 or 8.0
-        /// PostgreSQL: 11, 14, 15
-        /// Oracle: 11, 14
+        /// <list type="bullet">
+        /// <description>Valid values for MySQL:</description>
+        /// <description>5.6</description>
+        /// <description>5.7</description>
+        /// <description>8.0</description>
+        /// <description>Valid values for PostgreSQL:</description>
+        /// <description>11</description>
+        /// <description>14</description>
+        /// <description>15</description>
+        /// </list>
+        ///
+        ///     If you create a serverless cluster for PolarDB for PostgreSQL, you must set
+        ///     this parameter to <c>14</c>.
+        ///
+        /// <list type="bullet">
+        ///     <description>Valid values for Oracle:</description>
+        ///     <description>11</description>
+        ///     <description>14</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object DbVersion
@@ -53,9 +88,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             get;
         }
 
-        /// <summary>Property allowShutDown: Whether to turn on No activity pause.</summary>
+        /// <summary>Property allowShutDown: Specifies whether to enable pause on inactivity.</summary>
         /// <remarks>
-        /// The default is false.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true: enables pause on inactivity.</description>
+        /// <description>false (default): disables pause on inactivity.</description>
+        /// </list>
+        ///
+        ///     This parameter is supported only for serverless clusters.
         /// </remarks>
         [JsiiProperty(name: "allowShutDown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -97,12 +139,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows: ALL: Keep all backups permanently.</summary>
+        /// <summary>Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted.</summary>
         /// <remarks>
-        /// LATEST: Permanently keep the last backup (automatic backup before deletion).
-        /// NONE: The backup set is not retained when the cluster is deleted.
-        /// When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
-        /// Note: This parameter takes effect only when the value of DBType is MySQL.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ALL: retains all backup sets.</description>
+        /// <description>LATEST: retains only the last backup set. An automatic backup is performed
+        /// before the cluster is deleted.</description>
+        /// <description>NONE: does not retain backup sets.
+        /// Default value: NONE.</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>This parameter is valid only if DBType is set to MySQL.</description>
+        ///     <description>Serverless clusters do not support this parameter.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -114,17 +166,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property cloneDataPoint: The time point of data to be cloned.</summary>
+        /// <summary>Property cloneDataPoint: The point in time for the clone.</summary>
         /// <remarks>
         /// Valid values:
-        /// LATEST: clones data of the latest time point.
-        /// <BackupID xmlns="http://www.w3.org/1999/xhtml"></BackupID>: clones historical backup data. Specify the ID of the specific backup set.
-        /// <Timestamp xmlns="http://www.w3.org/1999/xhtml"></Timestamp>: clones data of a historical time point. Specify the specific time in
-        /// the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.
-        /// Default value: LATEST.
-        /// Note
-        /// This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
-        /// If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
+        ///
+        /// <list type="bullet">
+        /// <description>LATEST: The latest point in time.</description>
+        /// <description>BackupID: The ID of a historical backup set.</description>
+        /// <description>Timestamp: A specific point in time in the <c>YYYY-MM-DDThh:mm:ssZ</c> format. The
+        /// time must be in UTC.
+        /// Default value: LATEST.</description>
+        /// </list>
+        ///
+        ///     If you set CreationOption to CloneFromRDS, you can set this parameter only to
+        ///     LATEST.
         /// </remarks>
         [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -161,9 +216,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property creationCategory: Cluster series.</summary>
+        /// <summary>Property creationCategory: The edition of the cluster.</summary>
         /// <remarks>
-        /// The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Normal: Cluster Edition (default)</description>
+        /// <description>Basic: Single-node Edition</description>
+        /// <description>ArchiveNormal: X-Engine Edition</description>
+        /// <description>NormalMultimaster: Multi-master Cluster Edition</description>
+        /// <description>SENormal: Standard Edition</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>The Basic edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0;
+        ///     PolarDB for PostgreSQL 14; and PolarDB for PostgreSQL (compatible with Oracle)
+        ///     2.0.</description>
+        ///     <description>The ArchiveNormal and NormalMultimaster editions are supported for PolarDB
+        ///     for MySQL 8.0.</description>
+        ///     <description>The SENormal edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0 and
+        ///     PolarDB for PostgreSQL 14.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -247,10 +320,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property dbNodeNum: The number of Standard Edition nodes.</summary>
+        /// <summary>Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster.</summary>
         /// <remarks>
-        /// Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
-        /// Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
+        /// Valid
+        /// values:
+        ///
+        /// <list type="bullet">
+        /// <description>Standard Edition: 1 to 8. A cluster of this edition includes one read/write
+        /// node and up to seven read-only nodes.</description>
+        /// <description>Enterprise Edition: 1 to 16. A cluster of this edition includes one read/write
+        /// node and up to 15 read-only nodes.</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>By default, an Enterprise Edition cluster has two nodes and a Standard
+        ///     Edition cluster has one node.</description>
+        ///     <description>This parameter is supported only for PolarDB for MySQL.</description>
+        ///     <description>You cannot change the number of nodes in a Multi-master Cluster Edition
+        ///     cluster.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "dbNodeNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -306,13 +394,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature.</summary>
+        /// <summary>Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature.</summary>
         /// <remarks>
-        /// Default value: ON. Valid values:
-        /// ON: enables the hot standby storage cluster feature.
-        /// OFF: disables the hot standby storage cluster feature
-        /// STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
-        /// The default value for Standard Edition clusters is STANDBY.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ON (default): enables a hot standby storage cluster.</description>
+        /// <description>OFF: disables the hot standby cluster feature.</description>
+        /// <description>STANDBY: enables a hot standby cluster.</description>
+        /// <description>EQUAL: enables hot standby for both storage and computing resources.</description>
+        /// <description>3AZ: enables multi-AZ strong consistency.</description>
+        /// </list>
+        ///
+        ///     The value STANDBY is valid only for PolarDB for PostgreSQL.
         /// </remarks>
         [JsiiProperty(name: "hotStandbyCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -335,7 +429,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.</summary>
+        /// <summary>Property looseXEngine: Specifies whether to enable the X-Engine storage engine.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ON: enables the X-Engine storage engine.</description>
+        /// <description>OFF: disables the X-Engine storage engine.</description>
+        /// </list>
+        ///
+        ///     This parameter is valid only if the CreationOption parameter is not set to
+        ///     CreateGdnStandby, DBType is set to MySQL, and DBVersion is set to 8.0. To enable
+        ///     the X-Engine storage engine, the node must have at least 8 GB of memory.
+        /// </remarks>
         [JsiiProperty(name: "looseXEngine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? LooseXEngine
@@ -430,10 +536,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.</summary>
+        /// <summary>Property provisionedIops: The provisioned read\/write IOPS of the ESSD AutoPL cloud disk.</summary>
         /// <remarks>
-        /// Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
-        /// Baseline performance =min{1,800+50* capacity, 50000}.
+        /// Valid values: 0 to
+        /// min{50,000, 1,000 × Capacity - Baseline IOPS}.
         /// </remarks>
         [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -466,12 +572,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property proxyType: The type of PolarProxy.</summary>
+        /// <summary>Property proxyType: The type of the database proxy.</summary>
         /// <remarks>
-        /// Default value: OFF. Valid values:
-        /// OFF: disables PolarProxy.
-        /// EXCLUSIVE: Dedicated Enterprise Edition
-        /// GENERAL: Standard Enterprise Edition
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>EXCLUSIVE: Enterprise Dedicated</description>
+        /// <description>GENERAL: Enterprise General-purpose</description>
+        /// </list>
+        ///
+        ///     The proxy type must be consistent with the type that corresponds to the node
+        ///     specification of the cluster:
+        ///
+        /// <list type="bullet">
+        ///     <description>If the node specification is general-purpose, the proxy type must be
+        ///     Enterprise General-purpose.</description>
+        ///     <description>If the node specification is dedicated, the proxy type must be Enterprise
+        ///     Dedicated.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "proxyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -524,7 +642,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property scaleMax: Maximum limit of single-node scaling.</summary>
+        /// <summary>Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to.</summary>
+        /// <remarks>
+        /// Valid values: 1 to 32.
+        ///
+        ///     This parameter is supported only for serverless clusters.
+        /// </remarks>
         [JsiiProperty(name: "scaleMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ScaleMax
@@ -535,7 +658,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property scaleMin: Minimum limit of single-node scaling.</summary>
+        /// <summary>Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless cluster to scale down to.</summary>
+        /// <remarks>
+        /// Valid values: 1 to 31.
+        ///
+        ///     This parameter is supported only for serverless clusters.
+        /// </remarks>
         [JsiiProperty(name: "scaleMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ScaleMin
@@ -546,7 +674,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.</summary>
+        /// <summary>Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to.</summary>
+        /// <remarks>
+        /// Valid values: 0 to 15.
+        ///
+        ///     This parameter is supported only for serverless clusters.
+        /// </remarks>
         [JsiiProperty(name: "scaleRoNumMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ScaleRoNumMax
@@ -557,7 +690,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.</summary>
+        /// <summary>Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to.</summary>
+        /// <remarks>
+        /// Valid values: 0 to 15.
+        ///
+        ///     This parameter is supported only for serverless clusters.
+        /// </remarks>
         [JsiiProperty(name: "scaleRoNumMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ScaleRoNumMin
@@ -582,7 +720,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property securityIpList: The whitelist of the Apsara PolarDB cluster.</summary>
+        /// <summary>Property securityIpList: The IP whitelist of the PolarDB cluster.</summary>
+        /// <remarks>
+        ///     You can specify multiple IP addresses in the IP whitelist. Separate the IP
+        ///     addresses with commas (,).
+        /// </remarks>
         [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? SecurityIpList
@@ -604,11 +746,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.</summary>
+        /// <summary>Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster.</summary>
         /// <remarks>
-        /// Note
-        /// This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
-        /// This parameter is required if the CreationOption parameter is not set to Normal.
+        /// This
+        /// parameter is required only if CreationOption is set to MigrationFromRDS,
+        /// CloneFromRDS, CloneFromPolarDB, or RecoverFromRecyclebin.
+        ///
+        /// <list type="bullet">
+        /// <description>If CreationOption is set to MigrationFromRDS or CloneFromRDS, specify the ID of
+        /// the source ApsaraDB RDS instance. The source ApsaraDB RDS instance must be
+        /// ApsaraDB RDS for MySQL 5.6, 5.7, or 8.0 High-availability Edition.</description>
+        /// <description>If CreationOption is set to CloneFromPolarDB, specify the ID of the source
+        /// PolarDB cluster. The new cluster must use the same database engine as the source
+        /// cluster. For example, if the source cluster runs MySQL 8.0, you must set DBType
+        /// to MySQL and DBVersion to 8.0 for the new cluster.</description>
+        /// <description>If CreationOption is set to RecoverFromRecyclebin, specify the ID of the
+        /// released source PolarDB cluster. The restored cluster must use the same database
+        /// engine as the source cluster.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -637,10 +792,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property standbyAz: The zone where the hot standby storage cluster is stored.</summary>
+        /// <summary>Property standbyAz: The zone for the hot standby cluster.</summary>
         /// <remarks>
-        /// This is valid for Standard Edition clusters of Multi-zone Edition.
-        /// This parameter takes effect only when the multi-zone data consistency feature is enabled.
+        ///     This parameter is valid only when the hot standby cluster feature or multi-AZ
+        ///     strong consistency is enabled.
         /// </remarks>
         [JsiiProperty(name: "standbyAz", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -668,7 +823,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property storagePayType: The storage pay type.</summary>
+        /// <summary>Property storagePayType: The billing method for storage.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Postpaid: pay-by-capacity (a pay-as-you-go method).</description>
+        /// <description>Prepaid: pay-by-space (a subscription method).</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "storagePayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? StoragePayType
@@ -679,10 +842,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property storageSpace: The storage space that uses the subscription billing method.</summary>
+        /// <summary>Property storageSpace: The storage space for a pay-by-space (subscription) cluster.</summary>
         /// <remarks>
         /// Unit: GB.
-        /// Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+        ///
+        ///     <list type="bullet">
+        ///     <description>Valid values for a PolarDB for MySQL Enterprise Edition cluster: 10 to 50000.</description>
+        ///     <description>Valid values for a PolarDB for MySQL Standard Edition cluster: 20 to 64000.</description>
+        ///     <description>If the storage type of a Standard Edition cluster is ESSD AutoPL, the storage
+        ///     space must be a multiple of 10 between 40 and 64000.</description>
+        ///     </list>
         /// </remarks>
         [JsiiProperty(name: "storageSpace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -789,7 +958,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             }
         }
 
-        /// <summary>Property vSwitchId: The ID of the VSwitch to connect to.</summary>
+        /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
+        /// <remarks>
+        ///     If you specify the VPCId parameter, you must also specify this parameter.
+        /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? VSwitchId
@@ -825,9 +997,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
             {
             }
 
-            /// <summary>Property dbNodeClass: The node specifications of the cluster.</summary>
+            /// <summary>Property dbNodeClass: The node specification.</summary>
             /// <remarks>
-            /// For more information, see Specifications and pricing.
+            /// For more information, see the following topics:
+            ///
+            /// <list type="bullet">
+            /// <description>PolarDB for MySQL: Compute node specifications</description>
+            /// <description>PolarDB for PostgreSQL (compatible with Oracle): Compute node
+            /// specifications</description>
+            /// <description>PolarDB for PostgreSQL: Compute node specifications</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>To create a PolarDB for MySQL Cluster Edition serverless cluster, set this
+            ///     parameter to polar.mysql.sl.small.</description>
+            ///     <description>To create a PolarDB for MySQL Standard Edition serverless cluster, set this
+            ///     parameter to polar.mysql.sl.small.c.</description>
+            ///     <description>To create a PolarDB for PostgreSQL Cluster Edition serverless cluster, set
+            ///     this parameter to polar.pg.sl.small.</description>
+            ///     <description>To create a PolarDB for PostgreSQL Standard Edition serverless cluster, set
+            ///     this parameter to polar.pg.sl.small.c.</description>
+            ///     <description>To create a PolarDB for PostgreSQL (compatible with Oracle) serverless
+            ///     cluster, set this parameter to polar.o.sl.small.</description>
+            ///     </list>
             /// </remarks>
             [JsiiProperty(name: "dbNodeClass", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DbNodeClass
@@ -842,12 +1034,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property dbVersion: The version of the database.</summary>
+            /// <summary>Property dbVersion: The version of the database engine.</summary>
             /// <remarks>
-            /// Valid values:
-            /// MySQL: 5.6, 5.7 or 8.0
-            /// PostgreSQL: 11, 14, 15
-            /// Oracle: 11, 14
+            /// <list type="bullet">
+            /// <description>Valid values for MySQL:</description>
+            /// <description>5.6</description>
+            /// <description>5.7</description>
+            /// <description>8.0</description>
+            /// <description>Valid values for PostgreSQL:</description>
+            /// <description>11</description>
+            /// <description>14</description>
+            /// <description>15</description>
+            /// </list>
+            ///
+            ///     If you create a serverless cluster for PolarDB for PostgreSQL, you must set
+            ///     this parameter to <c>14</c>.
+            ///
+            /// <list type="bullet">
+            ///     <description>Valid values for Oracle:</description>
+            ///     <description>11</description>
+            ///     <description>14</description>
+            ///     </list>
             /// </remarks>
             [JsiiProperty(name: "dbVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object DbVersion
@@ -867,9 +1074,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property allowShutDown: Whether to turn on No activity pause.</summary>
+            /// <summary>Property allowShutDown: Specifies whether to enable pause on inactivity.</summary>
             /// <remarks>
-            /// The default is false.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>true: enables pause on inactivity.</description>
+            /// <description>false (default): disables pause on inactivity.</description>
+            /// </list>
+            ///
+            ///     This parameter is supported only for serverless clusters.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "allowShutDown", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -902,12 +1116,22 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows: ALL: Keep all backups permanently.</summary>
+            /// <summary>Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted.</summary>
             /// <remarks>
-            /// LATEST: Permanently keep the last backup (automatic backup before deletion).
-            /// NONE: The backup set is not retained when the cluster is deleted.
-            /// When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
-            /// Note: This parameter takes effect only when the value of DBType is MySQL.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>ALL: retains all backup sets.</description>
+            /// <description>LATEST: retains only the last backup set. An automatic backup is performed
+            /// before the cluster is deleted.</description>
+            /// <description>NONE: does not retain backup sets.
+            /// Default value: NONE.</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>This parameter is valid only if DBType is set to MySQL.</description>
+            ///     <description>Serverless clusters do not support this parameter.</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "backupRetentionPolicyOnClusterDeletion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -916,17 +1140,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property cloneDataPoint: The time point of data to be cloned.</summary>
+            /// <summary>Property cloneDataPoint: The point in time for the clone.</summary>
             /// <remarks>
             /// Valid values:
-            /// LATEST: clones data of the latest time point.
-            /// <BackupID xmlns="http://www.w3.org/1999/xhtml"></BackupID>: clones historical backup data. Specify the ID of the specific backup set.
-            /// <Timestamp xmlns="http://www.w3.org/1999/xhtml"></Timestamp>: clones data of a historical time point. Specify the specific time in
-            /// the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.
-            /// Default value: LATEST.
-            /// Note
-            /// This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
-            /// If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
+            ///
+            /// <list type="bullet">
+            /// <description>LATEST: The latest point in time.</description>
+            /// <description>BackupID: The ID of a historical backup set.</description>
+            /// <description>Timestamp: A specific point in time in the <c>YYYY-MM-DDThh:mm:ssZ</c> format. The
+            /// time must be in UTC.
+            /// Default value: LATEST.</description>
+            /// </list>
+            ///
+            ///     If you set CreationOption to CloneFromRDS, you can set this parameter only to
+            ///     LATEST.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "cloneDataPoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -954,9 +1181,27 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property creationCategory: Cluster series.</summary>
+            /// <summary>Property creationCategory: The edition of the cluster.</summary>
             /// <remarks>
-            /// The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Normal: Cluster Edition (default)</description>
+            /// <description>Basic: Single-node Edition</description>
+            /// <description>ArchiveNormal: X-Engine Edition</description>
+            /// <description>NormalMultimaster: Multi-master Cluster Edition</description>
+            /// <description>SENormal: Standard Edition</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>The Basic edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0;
+            ///     PolarDB for PostgreSQL 14; and PolarDB for PostgreSQL (compatible with Oracle)
+            ///     2.0.</description>
+            ///     <description>The ArchiveNormal and NormalMultimaster editions are supported for PolarDB
+            ///     for MySQL 8.0.</description>
+            ///     <description>The SENormal edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0 and
+            ///     PolarDB for PostgreSQL 14.</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "creationCategory", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1025,10 +1270,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property dbNodeNum: The number of Standard Edition nodes.</summary>
+            /// <summary>Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster.</summary>
             /// <remarks>
-            /// Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
-            /// Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
+            /// Valid
+            /// values:
+            ///
+            /// <list type="bullet">
+            /// <description>Standard Edition: 1 to 8. A cluster of this edition includes one read/write
+            /// node and up to seven read-only nodes.</description>
+            /// <description>Enterprise Edition: 1 to 16. A cluster of this edition includes one read/write
+            /// node and up to 15 read-only nodes.</description>
+            /// </list>
+            ///
+            ///     <list type="bullet">
+            ///     <description>By default, an Enterprise Edition cluster has two nodes and a Standard
+            ///     Edition cluster has one node.</description>
+            ///     <description>This parameter is supported only for PolarDB for MySQL.</description>
+            ///     <description>You cannot change the number of nodes in a Multi-master Cluster Edition
+            ///     cluster.</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "dbNodeNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1072,13 +1332,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature.</summary>
+            /// <summary>Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature.</summary>
             /// <remarks>
-            /// Default value: ON. Valid values:
-            /// ON: enables the hot standby storage cluster feature.
-            /// OFF: disables the hot standby storage cluster feature
-            /// STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
-            /// The default value for Standard Edition clusters is STANDBY.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>ON (default): enables a hot standby storage cluster.</description>
+            /// <description>OFF: disables the hot standby cluster feature.</description>
+            /// <description>STANDBY: enables a hot standby cluster.</description>
+            /// <description>EQUAL: enables hot standby for both storage and computing resources.</description>
+            /// <description>3AZ: enables multi-AZ strong consistency.</description>
+            /// </list>
+            ///
+            ///     The value STANDBY is valid only for PolarDB for PostgreSQL.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "hotStandbyCluster", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1095,7 +1361,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows: ON: The cluster starts the X-Engine enginen OFF: The cluster shuts down the X-Engine engine This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.</summary>
+            /// <summary>Property looseXEngine: Specifies whether to enable the X-Engine storage engine.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>ON: enables the X-Engine storage engine.</description>
+            /// <description>OFF: disables the X-Engine storage engine.</description>
+            /// </list>
+            ///
+            ///     This parameter is valid only if the CreationOption parameter is not set to
+            ///     CreateGdnStandby, DBType is set to MySQL, and DBVersion is set to 8.0. To enable
+            ///     the X-Engine storage engine, the node must have at least 8 GB of memory.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "looseXEngine", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? LooseXEngine
@@ -1169,10 +1447,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk.</summary>
+            /// <summary>Property provisionedIops: The provisioned read\/write IOPS of the ESSD AutoPL cloud disk.</summary>
             /// <remarks>
-            /// Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
-            /// Baseline performance =min{1,800+50* capacity, 50000}.
+            /// Valid values: 0 to
+            /// min{50,000, 1,000 × Capacity - Baseline IOPS}.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1199,12 +1477,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property proxyType: The type of PolarProxy.</summary>
+            /// <summary>Property proxyType: The type of the database proxy.</summary>
             /// <remarks>
-            /// Default value: OFF. Valid values:
-            /// OFF: disables PolarProxy.
-            /// EXCLUSIVE: Dedicated Enterprise Edition
-            /// GENERAL: Standard Enterprise Edition
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>EXCLUSIVE: Enterprise Dedicated</description>
+            /// <description>GENERAL: Enterprise General-purpose</description>
+            /// </list>
+            ///
+            ///     The proxy type must be consistent with the type that corresponds to the node
+            ///     specification of the cluster:
+            ///
+            /// <list type="bullet">
+            ///     <description>If the node specification is general-purpose, the proxy type must be
+            ///     Enterprise General-purpose.</description>
+            ///     <description>If the node specification is dedicated, the proxy type must be Enterprise
+            ///     Dedicated.</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "proxyType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1245,7 +1535,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scaleMax: Maximum limit of single-node scaling.</summary>
+            /// <summary>Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to.</summary>
+            /// <remarks>
+            /// Valid values: 1 to 32.
+            ///
+            ///     This parameter is supported only for serverless clusters.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scaleMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ScaleMax
@@ -1253,7 +1548,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scaleMin: Minimum limit of single-node scaling.</summary>
+            /// <summary>Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless cluster to scale down to.</summary>
+            /// <remarks>
+            /// Valid values: 1 to 31.
+            ///
+            ///     This parameter is supported only for serverless clusters.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scaleMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ScaleMin
@@ -1261,7 +1561,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.</summary>
+            /// <summary>Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to.</summary>
+            /// <remarks>
+            /// Valid values: 0 to 15.
+            ///
+            ///     This parameter is supported only for serverless clusters.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scaleRoNumMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ScaleRoNumMax
@@ -1269,7 +1574,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.</summary>
+            /// <summary>Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to.</summary>
+            /// <remarks>
+            /// Valid values: 0 to 15.
+            ///
+            ///     This parameter is supported only for serverless clusters.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "scaleRoNumMin", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ScaleRoNumMin
@@ -1288,7 +1598,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property securityIpList: The whitelist of the Apsara PolarDB cluster.</summary>
+            /// <summary>Property securityIpList: The IP whitelist of the PolarDB cluster.</summary>
+            /// <remarks>
+            ///     You can specify multiple IP addresses in the IP whitelist. Separate the IP
+            ///     addresses with commas (,).
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "securityIpList", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? SecurityIpList
@@ -1304,11 +1618,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.</summary>
+            /// <summary>Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster.</summary>
             /// <remarks>
-            /// Note
-            /// This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
-            /// This parameter is required if the CreationOption parameter is not set to Normal.
+            /// This
+            /// parameter is required only if CreationOption is set to MigrationFromRDS,
+            /// CloneFromRDS, CloneFromPolarDB, or RecoverFromRecyclebin.
+            ///
+            /// <list type="bullet">
+            /// <description>If CreationOption is set to MigrationFromRDS or CloneFromRDS, specify the ID of
+            /// the source ApsaraDB RDS instance. The source ApsaraDB RDS instance must be
+            /// ApsaraDB RDS for MySQL 5.6, 5.7, or 8.0 High-availability Edition.</description>
+            /// <description>If CreationOption is set to CloneFromPolarDB, specify the ID of the source
+            /// PolarDB cluster. The new cluster must use the same database engine as the source
+            /// cluster. For example, if the source cluster runs MySQL 8.0, you must set DBType
+            /// to MySQL and DBVersion to 8.0 for the new cluster.</description>
+            /// <description>If CreationOption is set to RecoverFromRecyclebin, specify the ID of the
+            /// released source PolarDB cluster. The restored cluster must use the same database
+            /// engine as the source cluster.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "sourceResourceId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1331,10 +1658,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property standbyAz: The zone where the hot standby storage cluster is stored.</summary>
+            /// <summary>Property standbyAz: The zone for the hot standby cluster.</summary>
             /// <remarks>
-            /// This is valid for Standard Edition clusters of Multi-zone Edition.
-            /// This parameter takes effect only when the multi-zone data consistency feature is enabled.
+            ///     This parameter is valid only when the hot standby cluster feature or multi-AZ
+            ///     strong consistency is enabled.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "standbyAz", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1356,7 +1683,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property storagePayType: The storage pay type.</summary>
+            /// <summary>Property storagePayType: The billing method for storage.</summary>
+            /// <remarks>
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>Postpaid: pay-by-capacity (a pay-as-you-go method).</description>
+            /// <description>Prepaid: pay-by-space (a subscription method).</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "storagePayType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? StoragePayType
@@ -1364,10 +1699,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property storageSpace: The storage space that uses the subscription billing method.</summary>
+            /// <summary>Property storageSpace: The storage space for a pay-by-space (subscription) cluster.</summary>
             /// <remarks>
             /// Unit: GB.
-            /// Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+            ///
+            ///     <list type="bullet">
+            ///     <description>Valid values for a PolarDB for MySQL Enterprise Edition cluster: 10 to 50000.</description>
+            ///     <description>Valid values for a PolarDB for MySQL Standard Edition cluster: 20 to 64000.</description>
+            ///     <description>If the storage type of a Standard Edition cluster is ESSD AutoPL, the storage
+            ///     space must be a multiple of 10 between 40 and 64000.</description>
+            ///     </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "storageSpace", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1453,7 +1794,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property vSwitchId: The ID of the VSwitch to connect to.</summary>
+            /// <summary>Property vSwitchId: The ID of the VSwitch.</summary>
+            /// <remarks>
+            ///     If you specify the VPCId parameter, you must also specify this parameter.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VSwitchId

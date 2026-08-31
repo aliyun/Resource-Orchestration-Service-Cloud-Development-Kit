@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::SAG::CloudConnectNetwork</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.974Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.076Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.CloudConnectNetwork")
 public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.sag.ICloudConnectNetwork {
 
@@ -132,7 +132,9 @@ public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property description: The description of the CCN instance.
          * <p>
-         * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+         * The description must be 2 to 256 characters in length and can contain letters,
+         * digits, underscores (_), and hyphens (-). The description must start with a
+         * letter.
          * <p>
          * @return {@code this}
          * @param description Property description: The description of the CCN instance. This parameter is required.
@@ -144,7 +146,9 @@ public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property description: The description of the CCN instance.
          * <p>
-         * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+         * The description must be 2 to 256 characters in length and can contain letters,
+         * digits, underscores (_), and hyphens (-). The description must start with a
+         * letter.
          * <p>
          * @return {@code this}
          * @param description Property description: The description of the CCN instance. This parameter is required.
@@ -178,7 +182,8 @@ public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property name: The name of the CCN instance.
          * <p>
-         * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+         * The name must be 2 to 128 characters in length and can contain letters, digits,
+         * periods (.), underscores (_),and hyphens (-). The name must start with a letter.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the CCN instance. This parameter is required.
@@ -190,7 +195,8 @@ public class CloudConnectNetwork extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property name: The name of the CCN instance.
          * <p>
-         * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+         * The name must be 2 to 128 characters in length and can contain letters, digits,
+         * periods (.), underscores (_),and hyphens (-). The name must start with a letter.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the CCN instance. This parameter is required.

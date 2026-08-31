@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sls.datasource;
 /**
  * Represents a <code>Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:57:03.293Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:47:38.991Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sls.$Module.class, fqn = "@alicloud/ros-cdk-sls.datasource.IProject")
 @software.amazon.jsii.Jsii.Proxy(IProject.Jsii$Proxy.class)
 public interface IProject extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

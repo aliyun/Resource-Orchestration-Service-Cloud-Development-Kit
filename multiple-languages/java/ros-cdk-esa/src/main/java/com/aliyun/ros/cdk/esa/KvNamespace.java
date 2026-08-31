@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.esa;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::KvNamespace</code>The , which resource is used to create a key-value (KV) namespace.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::KvNamespace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.720Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:03:27.605Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.KvNamespace")
 public class KvNamespace extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.esa.IKvNamespace {
 

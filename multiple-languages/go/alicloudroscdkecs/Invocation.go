@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`, which is used to run a Cloud Assistant command on Elastic Compute Service (ECS) instances.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ECS::Invocation`.
 type Invocation interface {
 	alicloudroscdkcore.Resource
 	IInvocation

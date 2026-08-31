@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::Instances</code>, which is used to query the information about Elastic Compute Service (ECS) instances.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ECS::Instances</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.426Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.819Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.datasource.RosInstances")
 public class RosInstances extends com.aliyun.ros.cdk.core.RosResource {
 

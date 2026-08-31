@@ -459,8 +459,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudphone
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: Prepaid time period. While PeriodUnit is month, it could be 1, 2, 3, 6.
-        /// While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+        /// <strong>Property</strong>: period: The subscription duration. Default value: 1.
+        /// *   Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.
+        /// *   Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

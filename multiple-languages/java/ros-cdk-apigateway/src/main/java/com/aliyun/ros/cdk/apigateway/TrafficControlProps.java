@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.630Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:57.028Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.TrafficControlProps")
 @software.amazon.jsii.Jsii.Proxy(TrafficControlProps.Jsii$Proxy.class)
 public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,12 +16,25 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
     @org.jetbrains.annotations.NotNull java.lang.Object getApiDefault();
 
     /**
-     * Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * Property trafficControlName: The name of the throttling policy.
+     * <p>
+     * The name must be 4 to 50 characters in length
+     * and can contain letters, digits, and underscores (_). It cannot start with an
+     * underscore.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlName();
 
     /**
-     * Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE.
+     * Property trafficControlUnit: The unit to be used in the throttling policy.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>SECOND</li>
+     * <li>MINUTE</li>
+     * <li>HOUR</li>
+     * <li>DAY</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getTrafficControlUnit();
 
@@ -93,7 +106,10 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlName}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the throttling policy. This parameter is required.
+         *                           The name must be 4 to 50 characters in length
+         *                           and can contain letters, digits, and underscores (_). It cannot start with an
+         *                           underscore.
          * @return {@code this}
          */
         public Builder trafficControlName(java.lang.String trafficControlName) {
@@ -103,7 +119,10 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlName}
-         * @param trafficControlName Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param trafficControlName Property trafficControlName: The name of the throttling policy. This parameter is required.
+         *                           The name must be 4 to 50 characters in length
+         *                           and can contain letters, digits, and underscores (_). It cannot start with an
+         *                           underscore.
          * @return {@code this}
          */
         public Builder trafficControlName(com.aliyun.ros.cdk.core.IResolvable trafficControlName) {
@@ -113,7 +132,15 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlUnit}
-         * @param trafficControlUnit Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE. This parameter is required.
+         * @param trafficControlUnit Property trafficControlUnit: The unit to be used in the throttling policy. This parameter is required.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>SECOND</li>
+         *                           <li>MINUTE</li>
+         *                           <li>HOUR</li>
+         *                           <li>DAY</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder trafficControlUnit(java.lang.String trafficControlUnit) {
@@ -123,7 +150,15 @@ public interface TrafficControlProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link TrafficControlProps#getTrafficControlUnit}
-         * @param trafficControlUnit Property trafficControlUnit: Traffic control unit, DAY/HOUR/MINUTE. This parameter is required.
+         * @param trafficControlUnit Property trafficControlUnit: The unit to be used in the throttling policy. This parameter is required.
+         *                           Valid values:
+         *                           <p>
+         *                           <ul>
+         *                           <li>SECOND</li>
+         *                           <li>MINUTE</li>
+         *                           <li>HOUR</li>
+         *                           <li>DAY</li>
+         *                           </ul>
          * @return {@code this}
          */
         public Builder trafficControlUnit(com.aliyun.ros.cdk.core.IResolvable trafficControlUnit) {

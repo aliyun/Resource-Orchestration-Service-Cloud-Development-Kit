@@ -141,9 +141,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: deployType: The deployment mode of the Message Queue for Apache Kafka instance. Valid values:
-        /// 4: Instance of the public type
-        /// 5: Instance of the VPC type
+        /// <strong>Property</strong>: deployType: The deployment type. Valid values:
+        /// - 4: Internet\/VPC instance
+        /// - 5: VPC instance
+        /// > If you are creating a Confluent series instance, you cannot select the
+        /// deployment type. You can only set the value to 5. After the purchase, you can
+        /// adjust whether each component is open to the Internet.
         /// </remarks>
         [JsiiProperty(name: "deployType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object DeployType
@@ -398,8 +401,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.
-        /// For more information about the value range, see Billing.
+        /// <strong>Property</strong>: ioMax: The traffic peak (not recommended).
+        /// - You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+        /// IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.
+        /// - For the valid values, see [Billing]().
+        /// > If you are creating a Confluent series instance, you do not need to pass this
+        /// parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ioMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -600,7 +607,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: serverlessConfig: Serverless instance related settings.
+        /// <strong>Property</strong>: serverlessConfig: The settings of the Serverless instance. This parameter is required if you create
+        /// a Serverless instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serverlessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.ServerlessConfigProperty\"}]}}", isOptional: true)]
@@ -737,29 +745,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
         public interface IDeployOptionProperty
         {
             /// <remarks>
-            /// <strong>Property</strong>: deployModule: The deployment mode of the instance. Valid values:
-            /// vpc: virtual private cloud (VPC)
-            /// eip: Internet and VPC
-            /// The deployment mode of the instance must be consistent with the instance type.
-            /// Set this value to vpc if your instance type is VPC.
-            /// Set this value to eip if your instance type is Internet and VPC.
-            /// </remarks>
-            [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object DeployModule
-            {
-                get;
-            }
-
-            /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch associated with the VPC.
-            /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            object VSwitchId
-            {
-                get;
-            }
-
-            /// <remarks>
             /// <strong>Property</strong>: config: The initial configurations of the Message Queue for Apache Kafka instance. If you do not specify this parameter, it is left empty.The Config parameter supports the following parameters:
             /// enable.vpc_sasl_ssl: specifies whether to enable VPC transmission encryption. Valid values:
             /// true: indicates that VPC transmission encryption is enabled. If you enable VPC transmission encryption, enable access control list (ACL).
@@ -791,6 +776,24 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             [JsiiProperty(name: "crossZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             [Amazon.JSII.Runtime.Deputy.JsiiOptional]
             object? CrossZone
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
+            /// <strong>Property</strong>: deployModule: The deployment mode of the instance. Valid values:
+            /// vpc: virtual private cloud (VPC)
+            /// eip: Internet and VPC
+            /// The deployment mode of the instance must be consistent with the instance type.
+            /// Set this value to vpc if your instance type is VPC.
+            /// Set this value to eip if your instance type is Internet and VPC.
+            /// </remarks>
+            [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? DeployModule
             {
                 get
                 {
@@ -984,6 +987,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
 
             /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch associated with the VPC. This parameter is not supported for Serverless instances, please use VSwitchIds instead.
+            /// </remarks>
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            [Amazon.JSII.Runtime.Deputy.JsiiOptional]
+            object? VSwitchId
+            {
+                get
+                {
+                    return null;
+                }
+            }
+
+            /// <remarks>
             /// <strong>Property</strong>: vSwitchIds: List of vSwitch IDs deployed by the instance. This parameter is required for V2 and V3 series instances. Confluent type instances support this parameter, and at least one of VSwitchIds and VSwitchId needs to be filled in. When both are filled in, VSwitchIds is used first.
             /// </remarks>
             [JsiiProperty(name: "vSwitchIds", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1018,29 +1034,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 }
 
                 /// <remarks>
-                /// <strong>Property</strong>: deployModule: The deployment mode of the instance. Valid values:
-                /// vpc: virtual private cloud (VPC)
-                /// eip: Internet and VPC
-                /// The deployment mode of the instance must be consistent with the instance type.
-                /// Set this value to vpc if your instance type is VPC.
-                /// Set this value to eip if your instance type is Internet and VPC.
-                /// </remarks>
-                [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object DeployModule
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
-                /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch associated with the VPC.
-                /// </remarks>
-                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-                public object VSwitchId
-                {
-                    get => GetInstanceProperty<object>()!;
-                }
-
-                /// <remarks>
                 /// <strong>Property</strong>: config: The initial configurations of the Message Queue for Apache Kafka instance. If you do not specify this parameter, it is left empty.The Config parameter supports the following parameters:
                 /// enable.vpc_sasl_ssl: specifies whether to enable VPC transmission encryption. Valid values:
                 /// true: indicates that VPC transmission encryption is enabled. If you enable VPC transmission encryption, enable access control list (ACL).
@@ -1069,6 +1062,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 [JsiiOptional]
                 [JsiiProperty(name: "crossZone", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
                 public object? CrossZone
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
+                /// <strong>Property</strong>: deployModule: The deployment mode of the instance. Valid values:
+                /// vpc: virtual private cloud (VPC)
+                /// eip: Internet and VPC
+                /// The deployment mode of the instance must be consistent with the instance type.
+                /// Set this value to vpc if your instance type is VPC.
+                /// Set this value to eip if your instance type is Internet and VPC.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? DeployModule
                 {
                     get => GetInstanceProperty<object?>();
                 }
@@ -1220,6 +1228,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 }
 
                 /// <remarks>
+                /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch associated with the VPC. This parameter is not supported for Serverless instances, please use VSwitchIds instead.
+                /// </remarks>
+                [JsiiOptional]
+                [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+                public object? VSwitchId
+                {
+                    get => GetInstanceProperty<object?>();
+                }
+
+                /// <remarks>
                 /// <strong>Property</strong>: vSwitchIds: List of vSwitch IDs deployed by the instance. This parameter is required for V2 and V3 series instances. Confluent type instances support this parameter, and at least one of VSwitchIds and VSwitchId needs to be filled in. When both are filled in, VSwitchIds is used first.
                 /// </remarks>
                 [JsiiOptional]
@@ -1241,80 +1259,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 }
             }
         }
-        #pragma warning disable CS8618
-
         [JsiiByValue(fqn: "@alicloud/ros-cdk-kafka.RosInstance.DeployOptionProperty")]
         public class DeployOptionProperty : AlibabaCloud.SDK.ROS.CDK.Kafka.RosInstance.IDeployOptionProperty
         {
-            private object _deployModule;
-
-            /// <remarks>
-            /// <strong>Property</strong>: deployModule: The deployment mode of the instance. Valid values:
-            /// vpc: virtual private cloud (VPC)
-            /// eip: Internet and VPC
-            /// The deployment mode of the instance must be consistent with the instance type.
-            /// Set this value to vpc if your instance type is VPC.
-            /// Set this value to eip if your instance type is Internet and VPC.
-            /// </remarks>
-            [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object DeployModule
-            {
-                get => _deployModule;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _deployModule = value;
-                }
-            }
-
-            private object _vSwitchId;
-
-            /// <remarks>
-            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch associated with the VPC.
-            /// </remarks>
-            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
-            public object VSwitchId
-            {
-                get => _vSwitchId;
-                set
-                {
-                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
-                    {
-                        switch (value)
-                        {
-                            case string cast_cd4240:
-                                break;
-                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
-                                break;
-                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
-                                // Not enough information to type-check...
-                                break;
-                            case null:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received null", nameof(value));
-                            default:
-                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
-                        }
-                    }
-                    _vSwitchId = value;
-                }
-            }
-
             private object? _config;
 
             /// <remarks>
@@ -1391,6 +1338,44 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                         }
                     }
                     _crossZone = value;
+                }
+            }
+
+            private object? _deployModule;
+
+            /// <remarks>
+            /// <strong>Property</strong>: deployModule: The deployment mode of the instance. Valid values:
+            /// vpc: virtual private cloud (VPC)
+            /// eip: Internet and VPC
+            /// The deployment mode of the instance must be consistent with the instance type.
+            /// Set this value to vpc if your instance type is VPC.
+            /// Set this value to eip if your instance type is Internet and VPC.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "deployModule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? DeployModule
+            {
+                get => _deployModule;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _deployModule = value;
                 }
             }
 
@@ -1853,6 +1838,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                         }
                     }
                     _vpcId = value;
+                }
+            }
+
+            private object? _vSwitchId;
+
+            /// <remarks>
+            /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch associated with the VPC. This parameter is not supported for Serverless instances, please use VSwitchIds instead.
+            /// </remarks>
+            [JsiiOptional]
+            [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+            public object? VSwitchId
+            {
+                get => _vSwitchId;
+                set
+                {
+                    if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                    {
+                        switch (value)
+                        {
+                            case string cast_cd4240:
+                                break;
+                            case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                                break;
+                            case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                                // Not enough information to type-check...
+                                break;
+                            case null:
+                                break;
+                            default:
+                                throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                        }
+                    }
+                    _vSwitchId = value;
                 }
             }
 

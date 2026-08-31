@@ -100,7 +100,7 @@ export interface IImageCache extends ros.IResource {
     readonly attrSnapshotId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCache`, which is used to query the information about an image cache.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::ECI::ImageCache`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageCache`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-eci-imagecache
  */

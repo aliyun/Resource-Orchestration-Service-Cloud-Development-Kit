@@ -34,9 +34,9 @@ export interface TransitRouterGrantAttachmentProps {
     readonly instanceType: string | ros.IResolvable;
 
     /**
-     * Property orderType: The billing method for the network instance. Valid values:
-     * - PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.
-     * - PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.
+     * Property orderType: The entity that pays the fees of the network instance. Valid values:
+     * - PayByCenOwner: the account that owns the CEN instance.
+     * - PayByResourceOwner: the account that owns the network instance.
      */
     readonly orderType?: string | ros.IResolvable;
 }
@@ -48,7 +48,7 @@ export interface ITransitRouterGrantAttachment extends ros.IResource {
     readonly props: TransitRouterGrantAttachmentProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`The , which resource grants a transit router permissions on a network instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterGrantAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosTransitRouterGrantAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutergrantattachment
  */

@@ -17,11 +17,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         /// <summary>Property accountName: The name of the database account.</summary>
         /// <remarks>
-        /// The name must comply with the following rules:
+        /// The name must meet the following requirements:
         ///
         /// <list type="bullet">
-        /// <description>It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).</description>
-        /// <description>It can be up to 16 characters in length.</description>
+        /// <description>It must start with a lowercase letter and end with a letter or a digit.</description>
+        /// <description>It can contain lowercase letters, digits, and underscores (_).</description>
+        /// <description>It must be 1 to 16 characters in length.</description>
+        /// <description>It cannot be a reserved keyword, such as root or admin.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "accountName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -161,16 +163,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         private object? _accountPrivilege;
 
-        /// <summary>Property accountPrivilege: The permissions of the database account on the database.</summary>
+        /// <summary>Property accountPrivilege: The privilege level to grant on the specified databases.</summary>
         /// <remarks>
         /// Valid values:
-        /// ReadWrite: has read and write permissions on the database.
-        /// ReadOnly: has the read-only permission on the database.
-        /// DMLOnly: runs only data manipulation language (DML) statements.
-        /// DDLOnly: runs only data definition language (DDL) statements.
-        /// ReadIndex: has read and index permissions on the database.
-        /// Default value: ReadWrite.
-        /// Separate multiple permissions with a comma (,).
+        ///
+        /// <list type="bullet">
+        /// <description>ReadWrite: read and write permissions</description>
+        /// <description>ReadOnly: read-only permissions</description>
+        /// <description>DMLOnly: DML permissions only</description>
+        /// <description>DDLOnly: DDL permissions only</description>
+        /// <description>ReadIndex: read-only and index permissions</description>
+        /// </list>
+        ///
+        ///     <list type="bullet">
+        ///     <description>This parameter takes effect only when you specify the <c>DBName</c> parameter.</description>
+        ///     <description>If you specify multiple databases in <c>DBName</c>, you must specify a
+        ///     corresponding permission for each in <c>AccountPrivilege</c>, separated by commas. The
+        ///     <c>AccountPrivilege</c> string cannot exceed 900 characters. For example, to grant
+        ///     read and write permissions to database DB1 and read-only permissions to database
+        ///     DB2, set <c>DBName</c> to <c>DB1,DB2</c> and set <c>AccountPrivilege</c> to
+        ///     <c>ReadWrite,ReadOnly</c>.</description>
+        ///     <description>This parameter applies only to standard accounts on PolarDB for MySQL
+        ///     clusters.</description>
+        ///     </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "accountPrivilege", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -244,9 +259,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Polardb
 
         private object? _dbName;
 
-        /// <summary>Property dbName: The name of the database whose access permissions are to be granted to the database account.</summary>
+        /// <summary>Property dbName: The name of the database that the account can access.</summary>
         /// <remarks>
-        /// Separate multiple databases with a comma (,).
+        /// To specify multiple
+        /// databases, separate the database names with a comma (,).
+        ///
+        ///     This parameter applies only to standard accounts on PolarDB for MySQL clusters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "dbName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

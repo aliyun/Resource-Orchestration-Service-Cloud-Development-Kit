@@ -67,15 +67,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         /// <description><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</description>
         /// <description><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
         /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
-        /// India (Jakarta), and Thailand (Bangkok).</description>
-        /// </list>
-        ///
-        /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-        /// see <a href="~~32321~~">EIP Line Type</a>.
-        ///
-        /// If you are a single-bandwidth whitelist user, you can also choose:
-        ///
-        /// <list type="bullet">
+        /// India (Jakarta), and Thailand (Bangkok).
+        /// If you are a single-bandwidth whitelist user, you can also choose:</description>
         /// <description><strong>ChinaTelecom</strong>: China Telecom</description>
         /// <description><strong>ChinaUnicom</strong>: China Unicom</description>
         /// <description><strong>ChinaMobile</strong>: China Mobile</description>
@@ -199,15 +192,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             /// <description><strong>BGP</strong> (default): BGP (multi-line). All regions support BGP (multi-line) EIPs.</description>
             /// <description><strong>BGP_PRO</strong>: BGP (multi-line)_Premium. Currently supported only in China (Hong Kong),
             /// Singapore, Japan (Tokyo), Malaysia (Kuala Lumpur), Philippines (Manila),
-            /// India (Jakarta), and Thailand (Bangkok).</description>
-            /// </list>
-            ///
-            /// For more information about BGP (multi-line) and BGP (multi-line)_Premium,
-            /// see <a href="~~32321~~">EIP Line Type</a>.
-            ///
-            /// If you are a single-bandwidth whitelist user, you can also choose:
-            ///
-            /// <list type="bullet">
+            /// India (Jakarta), and Thailand (Bangkok).
+            /// If you are a single-bandwidth whitelist user, you can also choose:</description>
             /// <description><strong>ChinaTelecom</strong>: China Telecom</description>
             /// <description><strong>ChinaUnicom</strong>: China Unicom</description>
             /// <description><strong>ChinaMobile</strong>: China Mobile</description>

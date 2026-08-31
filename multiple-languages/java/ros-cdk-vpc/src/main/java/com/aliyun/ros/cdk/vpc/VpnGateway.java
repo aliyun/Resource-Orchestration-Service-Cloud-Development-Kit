@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VpnGateway</code>The , which resource creates a vpn gateway.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.746Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.544Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpnGateway")
 public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVpnGateway {
 
@@ -200,24 +200,48 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
+         * Property bandwidth: The maximum bandwidth of the VPN gateway.
          * <p>
-         * Value: 5|10|20|50|100|200.
+         * Unit: Mbit/s.
+         * <p>
+         * <ul>
+         * <li>If you want to create a public VPN gateway, valid values are 10, 100, 200,
+         * 500, and 1000.</li>
+         * <li>If you want to create a private VPN gateway, valid values are 200 and 1000.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit/s.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the VPN gateway. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props.bandwidth(bandwidth);
             return this;
         }
         /**
-         * Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
+         * Property bandwidth: The maximum bandwidth of the VPN gateway.
          * <p>
-         * Value: 5|10|20|50|100|200.
+         * Unit: Mbit/s.
+         * <p>
+         * <ul>
+         * <li>If you want to create a public VPN gateway, valid values are 10, 100, 200,
+         * 500, and 1000.</li>
+         * <li>If you want to create a private VPN gateway, valid values are 200 and 1000.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit/s.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the VPN gateway. This parameter is required.
          */
         public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.props.bandwidth(bandwidth);
@@ -246,26 +270,50 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
+         * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
-         * false: Does not automatically pay the bill for the VPN gateway.
-         * Default true.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false (default)</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * To create a VPN gateway, we recommend that you enable automatic payment. If you
+         * disable automatic payment, you must manually pay the bill to create the VPN
+         * gateway.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
          */
         public Builder autoPay(final java.lang.Boolean autoPay) {
             this.props.autoPay(autoPay);
             return this;
         }
         /**
-         * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway.
+         * Property autoPay: Specifies whether to enable automatic payment.
          * <p>
-         * false: Does not automatically pay the bill for the VPN gateway.
-         * Default true.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false (default)</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * To create a VPN gateway, we recommend that you enable automatic payment. If you
+         * disable automatic payment, you must manually pay the bill to create the VPN
+         * gateway.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value: true: Automatically pays the bill for the VPN gateway. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment. This parameter is required.
          */
         public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
             this.props.autoPay(autoPay);
@@ -387,20 +435,26 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY.
+         * Property instanceChargeType: The billing method of the VPN gateway.
+         * <p>
+         * Set the value to POSTPAY, which specifies
+         * the pay-as-you-go billing method.
          * <p>
          * @return {@code this}
-         * @param instanceChargeType Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY. This parameter is required.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the VPN gateway. This parameter is required.
          */
         public Builder instanceChargeType(final java.lang.String instanceChargeType) {
             this.props.instanceChargeType(instanceChargeType);
             return this;
         }
         /**
-         * Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY.
+         * Property instanceChargeType: The billing method of the VPN gateway.
+         * <p>
+         * Set the value to POSTPAY, which specifies
+         * the pay-as-you-go billing method.
          * <p>
          * @return {@code this}
-         * @param instanceChargeType Property instanceChargeType: Accounting type of the VPN gateway, the value is: PREPAY, POSTPAY. This parameter is required.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the VPN gateway. This parameter is required.
          */
         public Builder instanceChargeType(final com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
             this.props.instanceChargeType(instanceChargeType);
@@ -437,7 +491,12 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property networkType: The network type of the VPN gateway.
          * <p>
-         * Valid values: public|private
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>public (default)</li>
+         * <li>private</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param networkType Property networkType: The network type of the VPN gateway. This parameter is required.
@@ -449,7 +508,12 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property networkType: The network type of the VPN gateway.
          * <p>
-         * Valid values: public|private
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>public (default)</li>
+         * <li>private</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param networkType Property networkType: The network type of the VPN gateway. This parameter is required.
@@ -520,20 +584,26 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property sslConnections: The maximum number of clients allowed to connect at the same time.
+         * Property sslConnections: The maximum number of clients that can be connected at the same time.
+         * <p>
+         * Valid
+         * values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
          * <p>
          * @return {@code this}
-         * @param sslConnections Property sslConnections: The maximum number of clients allowed to connect at the same time. This parameter is required.
+         * @param sslConnections Property sslConnections: The maximum number of clients that can be connected at the same time. This parameter is required.
          */
         public Builder sslConnections(final java.lang.Number sslConnections) {
             this.props.sslConnections(sslConnections);
             return this;
         }
         /**
-         * Property sslConnections: The maximum number of clients allowed to connect at the same time.
+         * Property sslConnections: The maximum number of clients that can be connected at the same time.
+         * <p>
+         * Valid
+         * values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
          * <p>
          * @return {@code this}
-         * @param sslConnections Property sslConnections: The maximum number of clients allowed to connect at the same time. This parameter is required.
+         * @param sslConnections Property sslConnections: The maximum number of clients that can be connected at the same time. This parameter is required.
          */
         public Builder sslConnections(final com.aliyun.ros.cdk.core.IResolvable sslConnections) {
             this.props.sslConnections(sslConnections);
@@ -554,20 +624,26 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property vpnType: VPN gateway type.
+         * Property vpnType: The type of the VPN gateway.
+         * <p>
+         * Valid values:
+         * Set the value to Normal (default), which specifies a standard NAT gateway.
          * <p>
          * @return {@code this}
-         * @param vpnType Property vpnType: VPN gateway type. This parameter is required.
+         * @param vpnType Property vpnType: The type of the VPN gateway. This parameter is required.
          */
         public Builder vpnType(final java.lang.String vpnType) {
             this.props.vpnType(vpnType);
             return this;
         }
         /**
-         * Property vpnType: VPN gateway type.
+         * Property vpnType: The type of the VPN gateway.
+         * <p>
+         * Valid values:
+         * Set the value to Normal (default), which specifies a standard NAT gateway.
          * <p>
          * @return {@code this}
-         * @param vpnType Property vpnType: VPN gateway type. This parameter is required.
+         * @param vpnType Property vpnType: The type of the VPN gateway. This parameter is required.
          */
         public Builder vpnType(final com.aliyun.ros.cdk.core.IResolvable vpnType) {
             this.props.vpnType(vpnType);
@@ -575,20 +651,38 @@ public class VpnGateway extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+         * Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+         * <p>
+         * <ul>
+         * <li>If you call this operation in a region that supports the IPsec-VPN
+         * connections in dual-tunnel mode, this parameter is required. You must specify a
+         * vSwitch and specify DisasterRecoveryVSwitchId.</li>
+         * <li>If you call this operation in a region that supports the IPsec-VPN
+         * connections in single-tunnel mode and do not specify a vSwitch, the system
+         * automatically specifies a vSwitch.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch with which you want to associate the VPN gateway. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+         * Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+         * <p>
+         * <ul>
+         * <li>If you call this operation in a region that supports the IPsec-VPN
+         * connections in dual-tunnel mode, this parameter is required. You must specify a
+         * vSwitch and specify DisasterRecoveryVSwitchId.</li>
+         * <li>If you call this operation in a region that supports the IPsec-VPN
+         * connections in single-tunnel mode and do not specify a vSwitch, the system
+         * automatically specifies a vSwitch.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch with which you want to associate the VPN gateway. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.clickhouse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-enterprisedbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:45.032Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:34:08.089Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.EnterpriseDBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(EnterpriseDBClusterProps.Jsii$Proxy.class)
 public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -17,6 +17,10 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
 
     /**
      * Property nodeCount: The number of nodes.
+     * <p>
+     * Valid values: 2 to 16. This parameter is required when you
+     * configure an elastic scaling range by using the <code>NodeScaleMin</code> and <code>NodeScaleMax</code>
+     * parameters.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getNodeCount();
 
@@ -60,7 +64,7 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property dbTimeZone: The time zone of the database.
+     * Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbTimeZone() {
         return null;
@@ -95,7 +99,10 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property sourceDbInstanceId: The ID of the source database instance.
+     * Property sourceDbInstanceId: The ID of the source instance.
+     * <p>
+     * This parameter is required when restoring from a
+     * backup.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSourceDbInstanceId() {
         return null;
@@ -176,6 +183,9 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link EnterpriseDBClusterProps#getNodeCount}
          * @param nodeCount Property nodeCount: The number of nodes. This parameter is required.
+         *                  Valid values: 2 to 16. This parameter is required when you
+         *                  configure an elastic scaling range by using the <code>NodeScaleMin</code> and <code>NodeScaleMax</code>
+         *                  parameters.
          * @return {@code this}
          */
         public Builder nodeCount(java.lang.Number nodeCount) {
@@ -186,6 +196,9 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link EnterpriseDBClusterProps#getNodeCount}
          * @param nodeCount Property nodeCount: The number of nodes. This parameter is required.
+         *                  Valid values: 2 to 16. This parameter is required when you
+         *                  configure an elastic scaling range by using the <code>NodeScaleMin</code> and <code>NodeScaleMax</code>
+         *                  parameters.
          * @return {@code this}
          */
         public Builder nodeCount(com.aliyun.ros.cdk.core.IResolvable nodeCount) {
@@ -335,7 +348,7 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link EnterpriseDBClusterProps#getDbTimeZone}
-         * @param dbTimeZone Property dbTimeZone: The time zone of the database.
+         * @param dbTimeZone Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
          * @return {@code this}
          */
         public Builder dbTimeZone(java.lang.String dbTimeZone) {
@@ -345,7 +358,7 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link EnterpriseDBClusterProps#getDbTimeZone}
-         * @param dbTimeZone Property dbTimeZone: The time zone of the database.
+         * @param dbTimeZone Property dbTimeZone: The time zone of the database, which must be an IANA time zone identifier.
          * @return {@code this}
          */
         public Builder dbTimeZone(com.aliyun.ros.cdk.core.IResolvable dbTimeZone) {
@@ -435,7 +448,9 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link EnterpriseDBClusterProps#getSourceDbInstanceId}
-         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source database instance.
+         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source instance.
+         *                           This parameter is required when restoring from a
+         *                           backup.
          * @return {@code this}
          */
         public Builder sourceDbInstanceId(java.lang.String sourceDbInstanceId) {
@@ -445,7 +460,9 @@ public interface EnterpriseDBClusterProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link EnterpriseDBClusterProps#getSourceDbInstanceId}
-         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source database instance.
+         * @param sourceDbInstanceId Property sourceDbInstanceId: The ID of the source instance.
+         *                           This parameter is required when restoring from a
+         *                           backup.
          * @return {@code this}
          */
         public Builder sourceDbInstanceId(com.aliyun.ros.cdk.core.IResolvable sourceDbInstanceId) {

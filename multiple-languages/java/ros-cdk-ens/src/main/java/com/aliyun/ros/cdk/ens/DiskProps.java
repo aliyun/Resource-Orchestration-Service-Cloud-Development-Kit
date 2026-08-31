@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ens;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ens-disk
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:47:31.654Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:01:13.929Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ens.$Module.class, fqn = "@alicloud/ros-cdk-ens.DiskProps")
 @software.amazon.jsii.Jsii.Proxy(DiskProps.Jsii$Proxy.class)
 public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
@@ -46,11 +46,14 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property encrypted: Specifies whether to encrypt the new system disk.
+     * Property encrypted: Specifies whether to encrypt the disk.
      * <p>
      * Valid values:
-     * true
-     * false (default): no
+     * <p>
+     * <ul>
+     * <li>true</li>
+     * <li>false (default)</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncrypted() {
         return null;
@@ -215,10 +218,13 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getEncrypted}
-         * @param encrypted Property encrypted: Specifies whether to encrypt the new system disk.
+         * @param encrypted Property encrypted: Specifies whether to encrypt the disk.
          *                  Valid values:
-         *                  true
-         *                  false (default): no
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false (default)</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder encrypted(java.lang.Boolean encrypted) {
@@ -228,10 +234,13 @@ public interface DiskProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DiskProps#getEncrypted}
-         * @param encrypted Property encrypted: Specifies whether to encrypt the new system disk.
+         * @param encrypted Property encrypted: Specifies whether to encrypt the disk.
          *                  Valid values:
-         *                  true
-         *                  false (default): no
+         *                  <p>
+         *                  <ul>
+         *                  <li>true</li>
+         *                  <li>false (default)</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder encrypted(com.aliyun.ros.cdk.core.IResolvable encrypted) {

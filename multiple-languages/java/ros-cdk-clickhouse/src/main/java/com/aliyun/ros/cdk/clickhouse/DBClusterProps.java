@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.clickhouse;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:45.009Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:34:08.062Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.DBClusterProps")
 @software.amazon.jsii.Jsii.Proxy(DBClusterProps.Jsii$Proxy.class)
 public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
@@ -103,7 +103,19 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property period: The unit of the subscription duration.
+     * Property period: The subscription duration unit.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <notice>This parameter is required only when <code>PayType</code> is set to
+     * <code>Prepaid</code>.&gt;</notice>
+     * <p>
+     * </blockquote>
+     * <p>
+     * <ul>
+     * <li>Year: Measured in years.</li>
+     * <li>Month: Measured in months.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -472,7 +484,18 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: The unit of the subscription duration.
+         * @param period Property period: The subscription duration unit.
+         *               <blockquote>
+         *               <p>
+         *               <notice>This parameter is required only when <code>PayType</code> is set to
+         *               <code>Prepaid</code>.&gt;</notice>
+         *               <p>
+         *               </blockquote>
+         *               <p>
+         *               <ul>
+         *               <li>Year: Measured in years.</li>
+         *               <li>Month: Measured in months.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(java.lang.String period) {
@@ -482,7 +505,18 @@ public interface DBClusterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DBClusterProps#getPeriod}
-         * @param period Property period: The unit of the subscription duration.
+         * @param period Property period: The subscription duration unit.
+         *               <blockquote>
+         *               <p>
+         *               <notice>This parameter is required only when <code>PayType</code> is set to
+         *               <code>Prepaid</code>.&gt;</notice>
+         *               <p>
+         *               </blockquote>
+         *               <p>
+         *               <ul>
+         *               <li>Year: Measured in years.</li>
+         *               <li>Month: Measured in months.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {

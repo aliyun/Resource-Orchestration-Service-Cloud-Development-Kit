@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.privatelink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-privatelink-vpcendpointservice
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:31:09.950Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:47:52.292Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceProps")
 @software.amazon.jsii.Jsii.Proxy(VpcEndpointServiceProps.Jsii$Proxy.class)
 public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerializable {
@@ -54,7 +54,10 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property resource:.
+     * Property resource: A collection of service resources.
+     * <p>
+     * You can add up to 10 resources in a single
+     * request. An endpoint service can have a maximum of 20 service resources.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResource() {
         return null;
@@ -75,7 +78,23 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
     }
 
     /**
-     * Property serviceResourceType: Service resource type.
+     * Property serviceResourceType: The type of the service resource.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>slb: a Classic Load Balancer (CLB) instance.</li>
+     * <li>alb: an Application Load Balancer (ALB) instance.</li>
+     * <li>nlb: a Network Load Balancer (NLB) instance.</li>
+     * <li>gwlb: a Gateway Load Balancer (GWLB) instance.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * PrivateLink does not support connections to TCPSSL listeners on Network Load
+     * Balancer (NLB) instances.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getServiceResourceType() {
         return null;
@@ -233,7 +252,9 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link VpcEndpointServiceProps#getResource}
-         * @param resource Property resource:.
+         * @param resource Property resource: A collection of service resources.
+         *                 You can add up to 10 resources in a single
+         *                 request. An endpoint service can have a maximum of 20 service resources.
          * @return {@code this}
          */
         public Builder resource(com.aliyun.ros.cdk.core.IResolvable resource) {
@@ -243,7 +264,9 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link VpcEndpointServiceProps#getResource}
-         * @param resource Property resource:.
+         * @param resource Property resource: A collection of service resources.
+         *                 You can add up to 10 resources in a single
+         *                 request. An endpoint service can have a maximum of 20 service resources.
          * @return {@code this}
          */
         public Builder resource(java.util.List<? extends java.lang.Object> resource) {
@@ -293,7 +316,22 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link VpcEndpointServiceProps#getServiceResourceType}
-         * @param serviceResourceType Property serviceResourceType: Service resource type.
+         * @param serviceResourceType Property serviceResourceType: The type of the service resource.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>slb: a Classic Load Balancer (CLB) instance.</li>
+         *                            <li>alb: an Application Load Balancer (ALB) instance.</li>
+         *                            <li>nlb: a Network Load Balancer (NLB) instance.</li>
+         *                            <li>gwlb: a Gateway Load Balancer (GWLB) instance.</li>
+         *                            </ul>
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            PrivateLink does not support connections to TCPSSL listeners on Network Load
+         *                            Balancer (NLB) instances.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder serviceResourceType(java.lang.String serviceResourceType) {
@@ -303,7 +341,22 @@ public interface VpcEndpointServiceProps extends software.amazon.jsii.JsiiSerial
 
         /**
          * Sets the value of {@link VpcEndpointServiceProps#getServiceResourceType}
-         * @param serviceResourceType Property serviceResourceType: Service resource type.
+         * @param serviceResourceType Property serviceResourceType: The type of the service resource.
+         *                            Valid values:
+         *                            <p>
+         *                            <ul>
+         *                            <li>slb: a Classic Load Balancer (CLB) instance.</li>
+         *                            <li>alb: an Application Load Balancer (ALB) instance.</li>
+         *                            <li>nlb: a Network Load Balancer (NLB) instance.</li>
+         *                            <li>gwlb: a Gateway Load Balancer (GWLB) instance.</li>
+         *                            </ul>
+         *                            <p>
+         *                            <blockquote>
+         *                            <p>
+         *                            PrivateLink does not support connections to TCPSSL listeners on Network Load
+         *                            Balancer (NLB) instances.
+         *                            <p>
+         *                            </blockquote>
          * @return {@code this}
          */
         public Builder serviceResourceType(com.aliyun.ros.cdk.core.IResolvable serviceResourceType) {

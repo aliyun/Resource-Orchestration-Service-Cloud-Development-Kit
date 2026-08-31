@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::App`, which is used to create an Elasticsearch serverless application.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ElasticSearchServerless::App`.
 type App interface {
 	alicloudroscdkcore.Resource
 	IApp

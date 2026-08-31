@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsso;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudSSO::AccessAssignment</code>, which is used to assign access permissions on an account in your resource directory to a user or group by using an access configuration.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CloudSSO::AccessAssignment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.932Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.340Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.RosAccessAssignment")
 public class RosAccessAssignment extends com.aliyun.ros.cdk.core.RosResource {
 

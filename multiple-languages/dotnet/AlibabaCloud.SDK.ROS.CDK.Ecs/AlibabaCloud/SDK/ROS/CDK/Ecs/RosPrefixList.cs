@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::PrefixList`, which is used to create a prefix list.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::PrefixList`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `PrefixList` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
@@ -69,7 +69,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: addressFamily: The IP address family. Valid values: IPv4 IPv6
+        /// <strong>Property</strong>: addressFamily: The IP address family. Valid values:
+        /// - IPv4
+        /// - IPv6
         /// </remarks>
         [JsiiProperty(name: "addressFamily", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object AddressFamily

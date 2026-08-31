@@ -75,7 +75,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: targetPath: Target path. For instance, "\/".
+        /// <strong>Property</strong>: targetPath: The destination path for the restore. This parameter is valid only when
+        /// RestoreType is set to ECS_FILE.
         /// </remarks>
         [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object TargetPath
@@ -167,7 +168,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: targetPath: Target path. For instance, "\/".
+            /// <strong>Property</strong>: targetPath: The destination path for the restore. This parameter is valid only when
+            /// RestoreType is set to ECS_FILE.
             /// </remarks>
             [JsiiProperty(name: "targetPath", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object TargetPath

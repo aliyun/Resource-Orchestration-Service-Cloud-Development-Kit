@@ -5,34 +5,70 @@ package com.aliyun.ros.cdk.amqp;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-amqp-binding
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.794Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.213Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.BindingProps")
 @software.amazon.jsii.Jsii.Proxy(BindingProps.Jsii$Proxy.class)
 public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property argument: X-match Attributes.
+     * Property argument: The key-value pairs for the message header attributes.
      * <p>
-     * Valid Values:
-     * "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-     * "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+     * The message header
+     * attributes consist of one or more key-value pairs. The x-match attribute is
+     * required. Other attributes are custom. The x-match attribute supports the
+     * following values:
+     * <p>
+     * <ul>
+     * <li>all: This is the default value. All key-value pairs in the message header must
+     * match.</li>
+     * <li>any: At least one key-value pair in the message header must match.
+     * Separate attributes with semicolons (;) and separate keys from values with colons
+     * (:). Example: x-match:all;type:report;format:pdf
+     * This parameter is valid only for headers exchanges. For other types of exchanges,
+     * this parameter is ignored.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getArgument();
 
     /**
-     * Property bindingKey: The Binding Key.
+     * Property bindingKey: The binding key.
+     * <p>
+     * <ul>
+     * <li>If the source exchange is not a topic exchange:</li>
+     * <li>It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+     * forward slashes (/), and at signs (&#64;).</li>
+     * <li>The length must be 1 to 255 characters.</li>
+     * <li>If the source exchange is a topic exchange:</li>
+     * <li>It can contain letters, digits, hyphens (-), underscores (_), asterisks (*),
+     * periods (.), number signs (#), forward slashes (/), and at signs (&#64;).</li>
+     * <li>The key cannot start or end with a period (.). If the key starts with a number
+     * sign (#) or an asterisk (<em>), a period (.) must immediately follow. If the key
+     * ends with a number sign (#) or an asterisk (</em>), a period (.) must immediately
+     * precede it. If a number sign (#) or an asterisk (*) is in the middle of the key,
+     * it must have a period (.) on both sides.</li>
+     * <li>The length must be 1 to 255 characters.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBindingKey();
 
     /**
-     * Property bindingType: The Target Binding Types.
+     * Property bindingType: The type of the destination object.
      * <p>
-     * Valid values: EXCHANGE, QUEUE.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>0: Queue</li>
+     * <li>1: Exchange</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBindingType();
 
     /**
-     * Property destinationName: The Target Queue Or Exchange of the Name.
+     * Property destinationName: The name of the binding destination.
+     * <p>
+     * The destination must be created in the
+     * console. It must belong to the same vhost as <code>SourceExchange</code>. The <code>VirtualHost</code>
+     * parameter specifies the vhost.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDestinationName();
 
@@ -71,10 +107,21 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getArgument}
-         * @param argument Property argument: X-match Attributes. This parameter is required.
-         *                 Valid Values:
-         *                 "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-         *                 "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+         * @param argument Property argument: The key-value pairs for the message header attributes. This parameter is required.
+         *                 The message header
+         *                 attributes consist of one or more key-value pairs. The x-match attribute is
+         *                 required. Other attributes are custom. The x-match attribute supports the
+         *                 following values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>all: This is the default value. All key-value pairs in the message header must
+         *                 match.</li>
+         *                 <li>any: At least one key-value pair in the message header must match.
+         *                 Separate attributes with semicolons (;) and separate keys from values with colons
+         *                 (:). Example: x-match:all;type:report;format:pdf
+         *                 This parameter is valid only for headers exchanges. For other types of exchanges,
+         *                 this parameter is ignored.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder argument(java.lang.String argument) {
@@ -84,10 +131,21 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getArgument}
-         * @param argument Property argument: X-match Attributes. This parameter is required.
-         *                 Valid Values:
-         *                 "x-match:all": Default Value, All the Message Header of Key-Value Pairs Stored in the Must Match.
-         *                 "x-match:any": at Least One Pair of the Message Header of Key-Value Pairs Stored in the Must Match.
+         * @param argument Property argument: The key-value pairs for the message header attributes. This parameter is required.
+         *                 The message header
+         *                 attributes consist of one or more key-value pairs. The x-match attribute is
+         *                 required. Other attributes are custom. The x-match attribute supports the
+         *                 following values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>all: This is the default value. All key-value pairs in the message header must
+         *                 match.</li>
+         *                 <li>any: At least one key-value pair in the message header must match.
+         *                 Separate attributes with semicolons (;) and separate keys from values with colons
+         *                 (:). Example: x-match:all;type:report;format:pdf
+         *                 This parameter is valid only for headers exchanges. For other types of exchanges,
+         *                 this parameter is ignored.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder argument(com.aliyun.ros.cdk.core.IResolvable argument) {
@@ -97,7 +155,22 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getBindingKey}
-         * @param bindingKey Property bindingKey: The Binding Key. This parameter is required.
+         * @param bindingKey Property bindingKey: The binding key. This parameter is required.
+         *                   <ul>
+         *                   <li>If the source exchange is not a topic exchange:</li>
+         *                   <li>It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+         *                   forward slashes (/), and at signs (&#64;).</li>
+         *                   <li>The length must be 1 to 255 characters.</li>
+         *                   <li>If the source exchange is a topic exchange:</li>
+         *                   <li>It can contain letters, digits, hyphens (-), underscores (_), asterisks (*),
+         *                   periods (.), number signs (#), forward slashes (/), and at signs (&#64;).</li>
+         *                   <li>The key cannot start or end with a period (.). If the key starts with a number
+         *                   sign (#) or an asterisk (<em>), a period (.) must immediately follow. If the key
+         *                   ends with a number sign (#) or an asterisk (</em>), a period (.) must immediately
+         *                   precede it. If a number sign (#) or an asterisk (*) is in the middle of the key,
+         *                   it must have a period (.) on both sides.</li>
+         *                   <li>The length must be 1 to 255 characters.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder bindingKey(java.lang.String bindingKey) {
@@ -107,7 +180,22 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getBindingKey}
-         * @param bindingKey Property bindingKey: The Binding Key. This parameter is required.
+         * @param bindingKey Property bindingKey: The binding key. This parameter is required.
+         *                   <ul>
+         *                   <li>If the source exchange is not a topic exchange:</li>
+         *                   <li>It can contain letters, digits, hyphens (-), underscores (_), periods (.),
+         *                   forward slashes (/), and at signs (&#64;).</li>
+         *                   <li>The length must be 1 to 255 characters.</li>
+         *                   <li>If the source exchange is a topic exchange:</li>
+         *                   <li>It can contain letters, digits, hyphens (-), underscores (_), asterisks (*),
+         *                   periods (.), number signs (#), forward slashes (/), and at signs (&#64;).</li>
+         *                   <li>The key cannot start or end with a period (.). If the key starts with a number
+         *                   sign (#) or an asterisk (<em>), a period (.) must immediately follow. If the key
+         *                   ends with a number sign (#) or an asterisk (</em>), a period (.) must immediately
+         *                   precede it. If a number sign (#) or an asterisk (*) is in the middle of the key,
+         *                   it must have a period (.) on both sides.</li>
+         *                   <li>The length must be 1 to 255 characters.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder bindingKey(com.aliyun.ros.cdk.core.IResolvable bindingKey) {
@@ -117,8 +205,13 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getBindingType}
-         * @param bindingType Property bindingType: The Target Binding Types. This parameter is required.
-         *                    Valid values: EXCHANGE, QUEUE.
+         * @param bindingType Property bindingType: The type of the destination object. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>0: Queue</li>
+         *                    <li>1: Exchange</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder bindingType(java.lang.String bindingType) {
@@ -128,8 +221,13 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getBindingType}
-         * @param bindingType Property bindingType: The Target Binding Types. This parameter is required.
-         *                    Valid values: EXCHANGE, QUEUE.
+         * @param bindingType Property bindingType: The type of the destination object. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>0: Queue</li>
+         *                    <li>1: Exchange</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder bindingType(com.aliyun.ros.cdk.core.IResolvable bindingType) {
@@ -139,7 +237,10 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getDestinationName}
-         * @param destinationName Property destinationName: The Target Queue Or Exchange of the Name. This parameter is required.
+         * @param destinationName Property destinationName: The name of the binding destination. This parameter is required.
+         *                        The destination must be created in the
+         *                        console. It must belong to the same vhost as <code>SourceExchange</code>. The <code>VirtualHost</code>
+         *                        parameter specifies the vhost.
          * @return {@code this}
          */
         public Builder destinationName(java.lang.String destinationName) {
@@ -149,7 +250,10 @@ public interface BindingProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BindingProps#getDestinationName}
-         * @param destinationName Property destinationName: The Target Queue Or Exchange of the Name. This parameter is required.
+         * @param destinationName Property destinationName: The name of the binding destination. This parameter is required.
+         *                        The destination must be created in the
+         *                        console. It must belong to the same vhost as <code>SourceExchange</code>. The <code>VirtualHost</code>
+         *                        parameter specifies the vhost.
          * @return {@code this}
          */
         public Builder destinationName(com.aliyun.ros.cdk.core.IResolvable destinationName) {

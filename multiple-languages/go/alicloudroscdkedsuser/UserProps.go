@@ -13,7 +13,7 @@ type UserProps struct {
 	//
 	// Format: yyyy-MM-dd HH:mm:ss.
 	AutoLockTime interface{} `field:"optional" json:"autoLockTime" yaml:"autoLockTime"`
-	// Property businessChannel: The channel.
+	// Property businessChannel: The business channel.
 	BusinessChannel interface{} `field:"optional" json:"businessChannel" yaml:"businessChannel"`
 	// Property email: The email address of the end user.
 	//

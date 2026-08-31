@@ -15,7 +15,10 @@ export interface AssignPrivateIpAddressesProps {
     readonly networkInterfaceId: string | ros.IResolvable;
 
     /**
-     * Property ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+     * Property ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI. Valid values: 1
+     * to 10.
+     * > To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+     * Ipv4PrefixCount parameter, but not both.
      */
     readonly ipv4PrefixCount?: number | ros.IResolvable;
 
@@ -35,7 +38,10 @@ export interface AssignPrivateIpAddressesProps {
     readonly privateIpAddresses?: Array<any | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+     * Property secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR
+     * block of the vSwitch that is connected to the ENI.
+     * To assign secondary private IP addresses to the ENI, you must specify
+     * `PrivateIpAddress.N` or `SecondaryPrivateIpAddressCount` but not both.
      */
     readonly secondaryPrivateIpAddressCount?: number | ros.IResolvable;
 }
@@ -57,7 +63,7 @@ export interface IAssignPrivateIpAddresses extends ros.IResource {
     readonly attrPrivateIpAddresses: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign secondary private IP addresses to an elastic network interface (ENI). You can specify available private IP addresses within the CIDR block of the vSwitch that is associated with the ENI. Alternatively, you can specify a number to have the specified number of private IP addresses automatically assigned to the ENI.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosAssignPrivateIpAddresses`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
  */

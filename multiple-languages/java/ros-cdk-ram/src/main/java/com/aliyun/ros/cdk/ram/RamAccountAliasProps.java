@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-ramaccountalias
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.293Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.236Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.RamAccountAliasProps")
 @software.amazon.jsii.Jsii.Proxy(RamAccountAliasProps.Jsii$Proxy.class)
 public interface RamAccountAliasProps extends software.amazon.jsii.JsiiSerializable {

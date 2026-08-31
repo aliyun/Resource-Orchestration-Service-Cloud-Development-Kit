@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.mse;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::Cluster</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::MSE::Cluster</code>Use , which to create a cluster.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:57:24.356Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:13:41.722Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mse.$Module.class, fqn = "@alicloud/ros-cdk-mse.RosCluster")
 public class RosCluster extends com.aliyun.ros.cdk.core.RosResource {
 

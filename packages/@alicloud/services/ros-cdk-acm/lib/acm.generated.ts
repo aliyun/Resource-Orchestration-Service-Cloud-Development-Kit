@@ -108,7 +108,7 @@ function rosConfigurationPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACM::Configuration`, which is used to create a configuration.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACM::Configuration`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Configuration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
  */
@@ -265,7 +265,7 @@ function rosNamespacePropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ACM::Namespace`, which is used to create a namespace.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ACM::Namespace`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Namespace` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-namespace
  */

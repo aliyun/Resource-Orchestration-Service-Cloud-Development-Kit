@@ -5,13 +5,22 @@ package com.aliyun.ros.cdk.cloudstoragegateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudstoragegateway-expresssync
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:55:20.323Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:43:59.767Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.ExpressSyncProps")
 @software.amazon.jsii.Jsii.Proxy(ExpressSyncProps.Jsii$Proxy.class)
 public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property bucketName: The name of the OSS bucket.
+     * Property bucketName: The name of the bucket.
+     * <p>
+     * Note:
+     * <p>
+     * <ul>
+     * <li>You can specify only one OSS bucket for a synchronization group. All data
+     * changes in the bucket are synchronized to your on-premises environment.</li>
+     * <li>If you have not created a share for the OSS bucket, you must first create a
+     * share between the file gateway and the OSS bucket.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBucketName();
 
@@ -21,7 +30,12 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getBucketRegion();
 
     /**
-     * Property name: The name of the ExpressSync.
+     * Property name: The name of the express synchronization group.
+     * <p>
+     * The name must be 1 to 128
+     * characters in length and can contain letters, Chinese characters, digits, periods
+     * (.), underscores (_), and hyphens (-). The name must start with a letter or a
+     * Chinese character.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getName();
 
@@ -33,7 +47,10 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property description: The description of the ExpressSync.
+     * Property description: The description of the express synchronization group.
+     * <p>
+     * The description can be up
+     * to 255 characters in length.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -57,7 +74,15 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ExpressSyncProps#getBucketName}
-         * @param bucketName Property bucketName: The name of the OSS bucket. This parameter is required.
+         * @param bucketName Property bucketName: The name of the bucket. This parameter is required.
+         *                   Note:
+         *                   <p>
+         *                   <ul>
+         *                   <li>You can specify only one OSS bucket for a synchronization group. All data
+         *                   changes in the bucket are synchronized to your on-premises environment.</li>
+         *                   <li>If you have not created a share for the OSS bucket, you must first create a
+         *                   share between the file gateway and the OSS bucket.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder bucketName(java.lang.String bucketName) {
@@ -67,7 +92,15 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ExpressSyncProps#getBucketName}
-         * @param bucketName Property bucketName: The name of the OSS bucket. This parameter is required.
+         * @param bucketName Property bucketName: The name of the bucket. This parameter is required.
+         *                   Note:
+         *                   <p>
+         *                   <ul>
+         *                   <li>You can specify only one OSS bucket for a synchronization group. All data
+         *                   changes in the bucket are synchronized to your on-premises environment.</li>
+         *                   <li>If you have not created a share for the OSS bucket, you must first create a
+         *                   share between the file gateway and the OSS bucket.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder bucketName(com.aliyun.ros.cdk.core.IResolvable bucketName) {
@@ -97,7 +130,11 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ExpressSyncProps#getName}
-         * @param name Property name: The name of the ExpressSync. This parameter is required.
+         * @param name Property name: The name of the express synchronization group. This parameter is required.
+         *             The name must be 1 to 128
+         *             characters in length and can contain letters, Chinese characters, digits, periods
+         *             (.), underscores (_), and hyphens (-). The name must start with a letter or a
+         *             Chinese character.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -107,7 +144,11 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ExpressSyncProps#getName}
-         * @param name Property name: The name of the ExpressSync. This parameter is required.
+         * @param name Property name: The name of the express synchronization group. This parameter is required.
+         *             The name must be 1 to 128
+         *             characters in length and can contain letters, Chinese characters, digits, periods
+         *             (.), underscores (_), and hyphens (-). The name must start with a letter or a
+         *             Chinese character.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -137,7 +178,9 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ExpressSyncProps#getDescription}
-         * @param description Property description: The description of the ExpressSync.
+         * @param description Property description: The description of the express synchronization group.
+         *                    The description can be up
+         *                    to 255 characters in length.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -147,7 +190,9 @@ public interface ExpressSyncProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ExpressSyncProps#getDescription}
-         * @param description Property description: The description of the ExpressSync.
+         * @param description Property description: The description of the express synchronization group.
+         *                    The description can be up
+         *                    to 255 characters in length.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {

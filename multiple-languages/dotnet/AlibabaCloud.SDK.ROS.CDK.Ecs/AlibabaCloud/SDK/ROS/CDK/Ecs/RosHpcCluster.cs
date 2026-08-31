@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::HpcCluster`, which is used to create a High Performance Computing (HPC) cluster.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::HpcCluster`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `HpcCluster` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-hpccluster
@@ -85,9 +85,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the HPC cluster. The name must be 2 to 128 characters in length. It must
-        /// start with a letter but cannot start with http:\/\/ or https:\/\/. It can contain letters,
-        /// digits, colons (:), underscores (_), and hyphens (-).
+        /// <strong>Property</strong>: name: The name of the HPC cluster. The name must be 2 to 128 characters in length, and
+        /// can contain letters, digits, underscores (_), and hyphens (-). The name must
+        /// start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Name

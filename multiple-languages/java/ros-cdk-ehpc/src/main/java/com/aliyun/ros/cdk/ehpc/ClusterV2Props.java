@@ -5,15 +5,16 @@ package com.aliyun.ros.cdk.ehpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ehpc-clusterv2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.683Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:50:32.941Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterV2Props")
 @software.amazon.jsii.Jsii.Proxy(ClusterV2Props.Jsii$Proxy.class)
 public interface ClusterV2Props extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property clusterName: Cluster name.
+     * Property clusterName: The cluster name.
      * <p>
-     * The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     * The name must be 1 to 128 characters in length and can contain
+     * letters, digits, hyphens (-), and underscores (_).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getClusterName();
 
@@ -86,9 +87,10 @@ public interface ClusterV2Props extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property clusterDescription: Cluster description.
+     * Property clusterDescription: The cluster description.
      * <p>
-     * The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+     * The description must be 1 to 128 characters in length
+     * and can contain letters, digits, hyphens (-), and underscores (_).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterDescription() {
         return null;
@@ -223,8 +225,9 @@ public interface ClusterV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterV2Props#getClusterName}
-         * @param clusterName Property clusterName: Cluster name. This parameter is required.
-         *                    The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * @param clusterName Property clusterName: The cluster name. This parameter is required.
+         *                    The name must be 1 to 128 characters in length and can contain
+         *                    letters, digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder clusterName(java.lang.String clusterName) {
@@ -234,8 +237,9 @@ public interface ClusterV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterV2Props#getClusterName}
-         * @param clusterName Property clusterName: Cluster name. This parameter is required.
-         *                    The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * @param clusterName Property clusterName: The cluster name. This parameter is required.
+         *                    The name must be 1 to 128 characters in length and can contain
+         *                    letters, digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder clusterName(com.aliyun.ros.cdk.core.IResolvable clusterName) {
@@ -441,8 +445,9 @@ public interface ClusterV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterV2Props#getClusterDescription}
-         * @param clusterDescription Property clusterDescription: Cluster description.
-         *                           The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * @param clusterDescription Property clusterDescription: The cluster description.
+         *                           The description must be 1 to 128 characters in length
+         *                           and can contain letters, digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder clusterDescription(java.lang.String clusterDescription) {
@@ -452,8 +457,9 @@ public interface ClusterV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ClusterV2Props#getClusterDescription}
-         * @param clusterDescription Property clusterDescription: Cluster description.
-         *                           The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * @param clusterDescription Property clusterDescription: The cluster description.
+         *                           The description must be 1 to 128 characters in length
+         *                           and can contain letters, digits, hyphens (-), and underscores (_).
          * @return {@code this}
          */
         public Builder clusterDescription(com.aliyun.ros.cdk.core.IResolvable clusterDescription) {

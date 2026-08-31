@@ -7,9 +7,19 @@ package alicloudroscdkapigateway
 type TrafficControlProps struct {
 	// Property apiDefault: Default API traffic value.
 	ApiDefault interface{} `field:"required" json:"apiDefault" yaml:"apiDefault"`
-	// Property trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+	// Property trafficControlName: The name of the throttling policy.
+	//
+	// The name must be 4 to 50 characters in length
+	// and can contain letters, digits, and underscores (_). It cannot start with an
+	// underscore.
 	TrafficControlName interface{} `field:"required" json:"trafficControlName" yaml:"trafficControlName"`
-	// Property trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
+	// Property trafficControlUnit: The unit to be used in the throttling policy.
+	//
+	// Valid values:
+	// - SECOND
+	// - MINUTE
+	// - HOUR
+	// - DAY.
 	TrafficControlUnit interface{} `field:"required" json:"trafficControlUnit" yaml:"trafficControlUnit"`
 	// Property appDefault: Default APP traffic value.
 	AppDefault interface{} `field:"optional" json:"appDefault" yaml:"appDefault"`

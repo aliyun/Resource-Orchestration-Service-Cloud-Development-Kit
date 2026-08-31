@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`, which is used to associate a virtual private cloud (VPC) with a Container Registry instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CR::InstanceVpcEndpointLinkedVpc`.
 type InstanceVpcEndpointLinkedVpc interface {
 	alicloudroscdkcore.Resource
 	IInstanceVpcEndpointLinkedVpc

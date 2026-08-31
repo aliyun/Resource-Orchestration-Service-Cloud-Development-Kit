@@ -83,7 +83,7 @@ function rosChatbotPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Chatbot`The , which resource is used to create a chatbot.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Chatbot`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Chatbot` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbot
  */
@@ -409,7 +409,7 @@ function rosChatbotFlowPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`The , which type is used to create a chatbot flow.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotFlow`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChatbotFlow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbotflow
  */
@@ -564,7 +564,7 @@ function rosChatbotModelPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotModel`The , which is used to create a chatbot model.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::ChatbotModel`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ChatbotModel` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-chatbotmodel
  */
@@ -663,7 +663,8 @@ export interface RosFlowProps {
     readonly flowDesc?: string | ros.IResolvable;
 
     /**
-     * @Property flowId: The ID of the flow.
+     * @Property flowId: The ID of the flow. This parameter is required when you update a flow or create a
+     * new flow version.
      */
     readonly flowId?: string | ros.IResolvable;
 
@@ -680,7 +681,10 @@ export interface RosFlowProps {
     readonly launchFlow?: boolean | ros.IResolvable;
 
     /**
-     * @Property parameters: The parameters of the flow.
+     * @Property parameters: The parameters for the template.
+     * You can specify up to 200 parameters.
+     * > This parameter is optional. If you use this parameter, you must specify both
+     * ParameterKey and ParameterValue for each entry.
      */
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -690,7 +694,8 @@ export interface RosFlowProps {
     readonly template?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * @Property templateId: The ID of the template.
+     * @Property templateId: The ID of the template. Specify this parameter when you create a flow from a
+     * template in the Template Center.
      */
     readonly templateId?: string | ros.IResolvable;
 }
@@ -749,7 +754,7 @@ function rosFlowPropsToRosTemplate(properties: any, enableResourcePropertyConstr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Flow`, which is used to create a flow.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::Flow`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-flow
  */
@@ -783,7 +788,8 @@ export class RosFlow extends ros.RosResource {
     public flowDesc: string | ros.IResolvable | undefined;
 
     /**
-     * @Property flowId: The ID of the flow.
+     * @Property flowId: The ID of the flow. This parameter is required when you update a flow or create a
+     * new flow version.
      */
     public flowId: string | ros.IResolvable | undefined;
 
@@ -800,7 +806,10 @@ export class RosFlow extends ros.RosResource {
     public launchFlow: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property parameters: The parameters of the flow.
+     * @Property parameters: The parameters for the template.
+     * You can specify up to 200 parameters.
+     * > This parameter is optional. If you use this parameter, you must specify both
+     * ParameterKey and ParameterValue for each entry.
      */
     public parameters: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
@@ -810,7 +819,8 @@ export class RosFlow extends ros.RosResource {
     public template: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 
     /**
-     * @Property templateId: The ID of the template.
+     * @Property templateId: The ID of the template. Specify this parameter when you create a flow from a
+     * template in the Template Center.
      */
     public templateId: string | ros.IResolvable | undefined;
 
@@ -860,7 +870,7 @@ export class RosFlow extends ros.RosResource {
 export interface RosUserAuthConfigProps {
 
     /**
-     * @Property authConfig: AuthConfig
+     * @Property authConfig: The details of the authentication configuration. The value is a JSON string.
      */
     readonly authConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -915,7 +925,7 @@ function rosUserAuthConfigPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`, which is used to create configurations for a user credential.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::AppFlow::UserAuthConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `UserAuthConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-appflow-userauthconfig
  */
@@ -939,7 +949,7 @@ export class RosUserAuthConfig extends ros.RosResource {
 
 
     /**
-     * @Property authConfig: AuthConfig
+     * @Property authConfig: The details of the authentication configuration. The value is a JSON string.
      */
     public authConfig: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 

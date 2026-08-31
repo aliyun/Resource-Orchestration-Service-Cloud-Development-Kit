@@ -115,7 +115,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: policyName: Authorization policy name.
+        /// <strong>Property</strong>: policyName: The name of the policy.
+        /// The name must be 1 to 128 characters in length and can contain letters, digits,
+        /// and hyphens (-).
         /// </remarks>
         [JsiiProperty(name: "policyName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object PolicyName

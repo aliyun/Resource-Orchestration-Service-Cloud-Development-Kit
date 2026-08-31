@@ -15,7 +15,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
     {
         private object _rr;
 
-        /// <summary>Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty.</summary>
+        /// <summary>Property rr: The host record.</summary>
+        /// <remarks>
+        /// A host record is the prefix of a domain name. Common host
+        /// records include www, @, * (for wildcard DNS), and mail (for mailboxes).
+        /// For example, to resolve @.example.com, set the host record to "@", not an empty
+        /// string.
+        /// </remarks>
         [JsiiProperty(name: "rr", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Rr
         {
@@ -45,7 +51,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 
         private object _status;
 
-        /// <summary>Property status: Allowed values: [ENABLE, DISABLE].</summary>
+        /// <summary>Property status: The status of the DNS record.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ENABLE: Enables DNS resolution.</description>
+        /// <description>DISABLE: Pauses DNS resolution.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Status
         {
@@ -75,7 +89,25 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 
         private object _type;
 
-        /// <summary>Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV.</summary>
+        /// <summary>Property type: The type of the DNS record.</summary>
+        /// <remarks>
+        /// The following types are supported:
+        ///
+        /// <list type="bullet">
+        /// <description>A: Maps a domain name to an IPv4 address in dotted decimal notation.</description>
+        /// <description>AAAA: Maps a domain name to an IPv6 address.</description>
+        /// <description>CNAME: Maps a domain name to another domain name.</description>
+        /// <description>TXT: A text record. The text can be up to 255 characters in length. TXT records
+        /// are often used for Sender Policy Framework (SPF) records to prevent spam.</description>
+        /// <description>MX: Maps a domain name to the domain name of a mail server.</description>
+        /// <description>PTR: Maps an IP address to a domain name.</description>
+        /// <description>SRV: Specifies the server for a specific service. The format is: Priority
+        /// Weight Port Target. Separate each value with a space.</description>
+        /// </list>
+        ///
+        ///     Before adding a PTR record, configure a reverse lookup zone. For more
+        ///     information, see <a href="">Reverse DNS lookups and PTR records</a>.
+        /// </remarks>
         [JsiiProperty(name: "type", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Type
         {
@@ -165,9 +197,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 
         private object? _priority;
 
-        /// <summary>Property priority: MX record priority, value range [1,99].</summary>
+        /// <summary>Property priority: The priority of the MX record.</summary>
         /// <remarks>
-        /// Default to 10.
+        /// A smaller value indicates a higher priority. Valid
+        /// values: [1, 99].
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "priority", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -219,7 +252,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Pvtz
 
         private object? _ttl;
 
-        /// <summary>Property ttl: Survival time, default is 60.</summary>
+        /// <summary>Property ttl: The time to live (TTL).</summary>
+        /// <remarks>
+        /// The unit is seconds (s). Valid values are 5, 30, 60, 3600
+        /// (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ttl", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Ttl

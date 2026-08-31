@@ -10,7 +10,11 @@ export { RosDomainConfig as DomainConfigProperty };
 export interface DomainConfigProps {
 
     /**
-     * Property domainNames: Your accelerated domain name, separated by commas in English.
+     * Property domainNames: The domain names to configure for acceleration. Separate multiple domain names
+     * with a comma (,). Note the following limits:
+     * - You can specify up to 20 domain names.
+     * - The number of domain names multiplied by the number of features cannot exceed
+     * 50.
      */
     readonly domainNames: string | ros.IResolvable;
 
@@ -27,7 +31,7 @@ export interface IDomainConfig extends ros.IResource {
     readonly props: DomainConfigProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`, which is used to configure multiple domain names at a time.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CDN::DomainConfig`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainConfig`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cdn-domainconfig
  */

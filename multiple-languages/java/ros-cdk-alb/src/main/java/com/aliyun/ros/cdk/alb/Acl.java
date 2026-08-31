@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.alb;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Acl</code>, which is used to create an access control list (ACL).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ALB::Acl</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.173Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.357Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.Acl")
 public class Acl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.alb.IAcl {
 
@@ -145,8 +145,9 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         /**
          * Property aclName: The name of the ACL.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain
-         * letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+         * The name must be 2 to 128 characters in length, and can
+         * contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+         * characters. The name must start with a letter, a Chinese character, or a digit.
          * <p>
          * @return {@code this}
          * @param aclName Property aclName: The name of the ACL. This parameter is required.
@@ -158,8 +159,9 @@ public class Acl extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.
         /**
          * Property aclName: The name of the ACL.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain
-         * letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+         * The name must be 2 to 128 characters in length, and can
+         * contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+         * characters. The name must start with a letter, a Chinese character, or a digit.
          * <p>
          * @return {@code this}
          * @param aclName Property aclName: The name of the ACL. This parameter is required.

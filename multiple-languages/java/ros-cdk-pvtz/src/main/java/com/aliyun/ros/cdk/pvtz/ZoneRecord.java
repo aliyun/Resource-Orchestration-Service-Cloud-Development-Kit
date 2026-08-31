@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pvtz;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PVTZ::ZoneRecord</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:32:30.946Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:52:38.658Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pvtz.$Module.class, fqn = "@alicloud/ros-cdk-pvtz.ZoneRecord")
 public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.pvtz.IZoneRecord {
 
@@ -128,20 +128,30 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
+         * Property rr: The host record.
+         * <p>
+         * A host record is the prefix of a domain name. Common host
+         * records include www, &#64;, * (for wildcard DNS), and mail (for mailboxes).
+         * For example, to resolve &#64;.example.com, set the host record to "&#64;", not an empty
+         * string.
          * <p>
          * @return {@code this}
-         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
+         * @param rr Property rr: The host record. This parameter is required.
          */
         public Builder rr(final java.lang.String rr) {
             this.props.rr(rr);
             return this;
         }
         /**
-         * Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty.
+         * Property rr: The host record.
+         * <p>
+         * A host record is the prefix of a domain name. Common host
+         * records include www, &#64;, * (for wildcard DNS), and mail (for mailboxes).
+         * For example, to resolve &#64;.example.com, set the host record to "&#64;", not an empty
+         * string.
          * <p>
          * @return {@code this}
-         * @param rr Property rr: Host record, if you want to resolve &#64;.exmaple.com, the host record should fill in "&#64;" instead of empty. This parameter is required.
+         * @param rr Property rr: The host record. This parameter is required.
          */
         public Builder rr(final com.aliyun.ros.cdk.core.IResolvable rr) {
             this.props.rr(rr);
@@ -149,20 +159,34 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property status: Allowed values: [ENABLE, DISABLE].
+         * Property status: The status of the DNS record.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ENABLE: Enables DNS resolution.</li>
+         * <li>DISABLE: Pauses DNS resolution.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param status Property status: Allowed values: [ENABLE, DISABLE]. This parameter is required.
+         * @param status Property status: The status of the DNS record. This parameter is required.
          */
         public Builder status(final java.lang.String status) {
             this.props.status(status);
             return this;
         }
         /**
-         * Property status: Allowed values: [ENABLE, DISABLE].
+         * Property status: The status of the DNS record.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>ENABLE: Enables DNS resolution.</li>
+         * <li>DISABLE: Pauses DNS resolution.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param status Property status: Allowed values: [ENABLE, DISABLE]. This parameter is required.
+         * @param status Property status: The status of the DNS record. This parameter is required.
          */
         public Builder status(final com.aliyun.ros.cdk.core.IResolvable status) {
             this.props.status(status);
@@ -170,20 +194,62 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV.
+         * Property type: The type of the DNS record.
+         * <p>
+         * The following types are supported:
+         * <p>
+         * <ul>
+         * <li>A: Maps a domain name to an IPv4 address in dotted decimal notation.</li>
+         * <li>AAAA: Maps a domain name to an IPv6 address.</li>
+         * <li>CNAME: Maps a domain name to another domain name.</li>
+         * <li>TXT: A text record. The text can be up to 255 characters in length. TXT records
+         * are often used for Sender Policy Framework (SPF) records to prevent spam.</li>
+         * <li>MX: Maps a domain name to the domain name of a mail server.</li>
+         * <li>PTR: Maps an IP address to a domain name.</li>
+         * <li>SRV: Specifies the server for a specific service. The format is: Priority
+         * Weight Port Target. Separate each value with a space.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Before adding a PTR record, configure a reverse lookup zone. For more
+         * information, see <a href="">Reverse DNS lookups and PTR records</a>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param type Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV. This parameter is required.
+         * @param type Property type: The type of the DNS record. This parameter is required.
          */
         public Builder type(final java.lang.String type) {
             this.props.type(type);
             return this;
         }
         /**
-         * Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV.
+         * Property type: The type of the DNS record.
+         * <p>
+         * The following types are supported:
+         * <p>
+         * <ul>
+         * <li>A: Maps a domain name to an IPv4 address in dotted decimal notation.</li>
+         * <li>AAAA: Maps a domain name to an IPv6 address.</li>
+         * <li>CNAME: Maps a domain name to another domain name.</li>
+         * <li>TXT: A text record. The text can be up to 255 characters in length. TXT records
+         * are often used for Sender Policy Framework (SPF) records to prevent spam.</li>
+         * <li>MX: Maps a domain name to the domain name of a mail server.</li>
+         * <li>PTR: Maps an IP address to a domain name.</li>
+         * <li>SRV: Specifies the server for a specific service. The format is: Priority
+         * Weight Port Target. Separate each value with a space.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Before adding a PTR record, configure a reverse lookup zone. For more
+         * information, see <a href="">Reverse DNS lookups and PTR records</a>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param type Property type: Analyze record type, currently only supports A, AAAA, CNAME, TXT, MX, PTR, SRV. This parameter is required.
+         * @param type Property type: The type of the DNS record. This parameter is required.
          */
         public Builder type(final com.aliyun.ros.cdk.core.IResolvable type) {
             this.props.type(type);
@@ -233,24 +299,26 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property priority: MX record priority, value range [1,99].
+         * Property priority: The priority of the MX record.
          * <p>
-         * Default to 10.
+         * A smaller value indicates a higher priority. Valid
+         * values: [1, 99].
          * <p>
          * @return {@code this}
-         * @param priority Property priority: MX record priority, value range [1,99]. This parameter is required.
+         * @param priority Property priority: The priority of the MX record. This parameter is required.
          */
         public Builder priority(final java.lang.Number priority) {
             this.props.priority(priority);
             return this;
         }
         /**
-         * Property priority: MX record priority, value range [1,99].
+         * Property priority: The priority of the MX record.
          * <p>
-         * Default to 10.
+         * A smaller value indicates a higher priority. Valid
+         * values: [1, 99].
          * <p>
          * @return {@code this}
-         * @param priority Property priority: MX record priority, value range [1,99]. This parameter is required.
+         * @param priority Property priority: The priority of the MX record. This parameter is required.
          */
         public Builder priority(final com.aliyun.ros.cdk.core.IResolvable priority) {
             this.props.priority(priority);
@@ -258,20 +326,26 @@ public class ZoneRecord extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property ttl: Survival time, default is 60.
+         * Property ttl: The time to live (TTL).
+         * <p>
+         * The unit is seconds (s). Valid values are 5, 30, 60, 3600
+         * (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
          * <p>
          * @return {@code this}
-         * @param ttl Property ttl: Survival time, default is 60. This parameter is required.
+         * @param ttl Property ttl: The time to live (TTL). This parameter is required.
          */
         public Builder ttl(final java.lang.Number ttl) {
             this.props.ttl(ttl);
             return this;
         }
         /**
-         * Property ttl: Survival time, default is 60.
+         * Property ttl: The time to live (TTL).
+         * <p>
+         * The unit is seconds (s). Valid values are 5, 30, 60, 3600
+         * (1 hour), 43200 (12 hours), and 86400 (1 day). The default value is 60.
          * <p>
          * @return {@code this}
-         * @param ttl Property ttl: Survival time, default is 60. This parameter is required.
+         * @param ttl Property ttl: The time to live (TTL). This parameter is required.
          */
         public Builder ttl(final com.aliyun.ros.cdk.core.IResolvable ttl) {
             this.props.ttl(ttl);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::Execution</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.893Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.840Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.Execution")
 public class Execution extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IExecution {
 
@@ -246,20 +246,36 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property mode: Execution mode.
+         * Property mode: The execution mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Automatic (default): The execution is automatically run.</li>
+         * <li>FailurePause: The execution is paused if a task fails.</li>
+         * <li>Debug: The execution is run in single-step mode.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mode Property mode: Execution mode. This parameter is required.
+         * @param mode Property mode: The execution mode. This parameter is required.
          */
         public Builder mode(final java.lang.String mode) {
             this.props().mode(mode);
             return this;
         }
         /**
-         * Property mode: Execution mode.
+         * Property mode: The execution mode.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Automatic (default): The execution is automatically run.</li>
+         * <li>FailurePause: The execution is paused if a task fails.</li>
+         * <li>Debug: The execution is run in single-step mode.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param mode Property mode: Execution mode. This parameter is required.
+         * @param mode Property mode: The execution mode. This parameter is required.
          */
         public Builder mode(final com.aliyun.ros.cdk.core.IResolvable mode) {
             this.props().mode(mode);
@@ -267,20 +283,26 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property parameters: Parameters for the execution of template.
+         * Property parameters: The JSON string that consists of a collection of parameters.
+         * <p>
+         * The default value is
+         * {}.
          * <p>
          * @return {@code this}
-         * @param parameters Property parameters: Parameters for the execution of template. This parameter is required.
+         * @param parameters Property parameters: The JSON string that consists of a collection of parameters. This parameter is required.
          */
         public Builder parameters(final com.aliyun.ros.cdk.core.IResolvable parameters) {
             this.props().parameters(parameters);
             return this;
         }
         /**
-         * Property parameters: Parameters for the execution of template.
+         * Property parameters: The JSON string that consists of a collection of parameters.
+         * <p>
+         * The default value is
+         * {}.
          * <p>
          * @return {@code this}
-         * @param parameters Property parameters: Parameters for the execution of template. This parameter is required.
+         * @param parameters Property parameters: The JSON string that consists of a collection of parameters. This parameter is required.
          */
         public Builder parameters(final java.util.Map<java.lang.String, ? extends java.lang.Object> parameters) {
             this.props().parameters(parameters);
@@ -288,20 +310,20 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property parentExecutionId: Parent execution ID.
+         * Property parentExecutionId: The ID of the parent execution.
          * <p>
          * @return {@code this}
-         * @param parentExecutionId Property parentExecutionId: Parent execution ID. This parameter is required.
+         * @param parentExecutionId Property parentExecutionId: The ID of the parent execution. This parameter is required.
          */
         public Builder parentExecutionId(final java.lang.String parentExecutionId) {
             this.props().parentExecutionId(parentExecutionId);
             return this;
         }
         /**
-         * Property parentExecutionId: Parent execution ID.
+         * Property parentExecutionId: The ID of the parent execution.
          * <p>
          * @return {@code this}
-         * @param parentExecutionId Property parentExecutionId: Parent execution ID. This parameter is required.
+         * @param parentExecutionId Property parentExecutionId: The ID of the parent execution. This parameter is required.
          */
         public Builder parentExecutionId(final com.aliyun.ros.cdk.core.IResolvable parentExecutionId) {
             this.props().parentExecutionId(parentExecutionId);
@@ -422,24 +444,26 @@ public class Execution extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property templateName: Template name.
+         * Property templateName: The name of the template.
          * <p>
-         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+         * The name can contain letters, digits, hyphens (-), and
+         * underscores (_). The name can be up to 200 characters in length.
          * <p>
          * @return {@code this}
-         * @param templateName Property templateName: Template name. This parameter is required.
+         * @param templateName Property templateName: The name of the template. This parameter is required.
          */
         public Builder templateName(final java.lang.String templateName) {
             this.props().templateName(templateName);
             return this;
         }
         /**
-         * Property templateName: Template name.
+         * Property templateName: The name of the template.
          * <p>
-         * Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+         * The name can contain letters, digits, hyphens (-), and
+         * underscores (_). The name can be up to 200 characters in length.
          * <p>
          * @return {@code this}
-         * @param templateName Property templateName: Template name. This parameter is required.
+         * @param templateName Property templateName: The name of the template. This parameter is required.
          */
         public Builder templateName(final com.aliyun.ros.cdk.core.IResolvable templateName) {
             this.props().templateName(templateName);

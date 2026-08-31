@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.flink;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::Namespace</code>, which is used to create a project.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::Flink::Namespace</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:06:21.250Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:13:20.926Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.Namespace")
 public class Namespace extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.flink.INamespace {
 

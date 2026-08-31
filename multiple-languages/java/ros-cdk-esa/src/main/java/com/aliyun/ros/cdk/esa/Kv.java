@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.esa;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::Kv</code>Use the , which resource type to set a single key-value pair in a KV bucket.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESA::Kv</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:49:07.719Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:03:27.603Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.esa.$Module.class, fqn = "@alicloud/ros-cdk-esa.Kv")
 public class Kv extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.esa.IKv {
 

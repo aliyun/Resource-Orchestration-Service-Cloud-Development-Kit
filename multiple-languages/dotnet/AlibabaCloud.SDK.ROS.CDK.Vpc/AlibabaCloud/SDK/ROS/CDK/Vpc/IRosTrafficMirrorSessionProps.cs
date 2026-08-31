@@ -75,7 +75,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: packetLength: The maximum transmission unit (MTU). Default value: **1500**.
+        /// <strong>Property</strong>: packetLength: The maximum transmission unit.
+        /// Valid values: 64 to 9600. Default value: 1500.
         /// </remarks>
         [JsiiProperty(name: "packetLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -227,7 +228,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: packetLength: The maximum transmission unit (MTU). Default value: **1500**.
+            /// <strong>Property</strong>: packetLength: The maximum transmission unit.
+            /// Valid values: 64 to 9600. Default value: 1500.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "packetLength", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

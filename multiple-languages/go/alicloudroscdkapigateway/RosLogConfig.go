@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::LogConfig`, which is used to create a log configuration.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::LogConfig`.
 type RosLogConfig interface {
 	alicloudroscdkcore.RosResource
 	AttrSlsLogStore() alicloudroscdkcore.IResolvable

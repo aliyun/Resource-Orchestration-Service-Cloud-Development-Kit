@@ -9,7 +9,14 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAccessGroupProps {
 
     /**
-     * @Property accessGroupName: Permission group name
+     * @Property accessGroupName: The name of the permission group.
+     * Limits:
+     * *   The name must be 3 to 64 characters in length.
+     * *   The name must start with a letter and can contain letters, digits,
+     * underscores (_), and hyphens (-).
+     * *   The name must be different from the name of the default permission group.
+     * The default permission group for virtual private clouds (VPCs) is named
+     * DEFAULT_VPC_GROUP_NAME.
      */
     readonly accessGroupName: string | ros.IResolvable;
 
@@ -19,7 +26,14 @@ export interface RosAccessGroupProps {
     readonly accessGroupType: string | ros.IResolvable;
 
     /**
-     * @Property description: Permission group description. It is the same as the permission group name by default.
+     * @Property description: The description of the permission group.
+     * Limits:
+     * *   By default, the description of a permission group is the same as the name of
+     * the permission group. The description must be 2 to 128 characters in length.
+     * *   The name must start with a letter and cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain digits, colons (:), underscores (_), and hyphens
+     * (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -108,7 +122,14 @@ export class RosAccessGroup extends ros.RosResource {
 
 
     /**
-     * @Property accessGroupName: Permission group name
+     * @Property accessGroupName: The name of the permission group.
+     * Limits:
+     * *   The name must be 3 to 64 characters in length.
+     * *   The name must start with a letter and can contain letters, digits,
+     * underscores (_), and hyphens (-).
+     * *   The name must be different from the name of the default permission group.
+     * The default permission group for virtual private clouds (VPCs) is named
+     * DEFAULT_VPC_GROUP_NAME.
      */
     public accessGroupName: string | ros.IResolvable;
 
@@ -118,7 +139,14 @@ export class RosAccessGroup extends ros.RosResource {
     public accessGroupType: string | ros.IResolvable;
 
     /**
-     * @Property description: Permission group description. It is the same as the permission group name by default.
+     * @Property description: The description of the permission group.
+     * Limits:
+     * *   By default, the description of a permission group is the same as the name of
+     * the permission group. The description must be 2 to 128 characters in length.
+     * *   The name must start with a letter and cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain digits, colons (:), underscores (_), and hyphens
+     * (-).
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -377,36 +405,44 @@ export class RosAccessRule extends ros.RosResource {
 export interface RosDataFlowProps {
 
     /**
-     * @Property fileSystemId: File system ID.
+     * @Property fileSystemId: The ID of the file system.
+     * *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+     * cpfs-125487\*\*\*\*.
+     * *   The IDs of CPFS for Lingjun file systems must start with `bmcpfs-`. Example:
+     * bmcpfs-0015\*\*\*\*.
      */
     readonly fileSystemId: string | ros.IResolvable;
 
     /**
-     * @Property fsetId: Fileset ID.
+     * @Property fsetId: The fileset ID.
+     * >  This parameter is required for CPFS file systems.
      */
     readonly fsetId: string | ros.IResolvable;
 
     /**
-     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
-     * in:
-     * Storage Type: Currently only supports OSS.
-     * PATH: OSS's bucket name.Limit the following.
-     * Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
-     * The length is 8 ~ 128 English characters.
-     * Use UTF-8 encoding.
-     * Can't start with http: \/\/ and https: \/\/.
-     * Explain that the OSS BUCKET must be the bucket that exists in the region.
+     * @Property sourceStorage: The access path of the source storage. Format: `<storage type>:\/\/[<account
+     * id>:]<path>`.
+     * Parameters:
+     * *   storage type: Only OSS is supported.
+     * *   account id (optional): the UID of the account of the source storage. This
+     * parameter is required when you use OSS buckets across accounts.
+     * *   path: the name of the OSS bucket. Limits:
+     * *   The name can contain only lowercase letters, digits, and hyphens (-). The
+     * name must start and end with a lowercase letter or digit.
+     * *   The name can be up to 128 characters in length.
+     * *   The name must be encoded in UTF-8.
+     * > *   The OSS bucket must be an existing bucket in the region.
+     * > *   Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.
      */
     readonly sourceStorage: string | ros.IResolvable;
 
     /**
-     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
-     * Value: 
-     * 600
-     * 1200
-     * 1500
-     * 
-     * Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+     * @Property throughput: The maximum data flow throughput. Unit: MB\/s. Valid values:
+     * *   600
+     * *   1200
+     * *   1500
+     * >  The data flow throughput must be less than the I\/O throughput of the file
+     * system. This parameter is required for CPFS file systems.
      */
     readonly throughput: number | ros.IResolvable;
 
@@ -417,9 +453,14 @@ export interface RosDataFlowProps {
     readonly autoRefreshInterval?: number | ros.IResolvable;
 
     /**
-     * @Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
-     * None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-     * Importchanged: The data update at the source automatically imports CPFS.
+     * @Property autoRefreshPolicy: The automatic update policy. The updated data in the source storage is imported
+     * into the CPFS file system based on the policy.
+     * *   None (default): Updated data in the source storage is not automatically
+     * imported into the CPFS file system. You can run a data flow task to import the
+     * updated data from the source storage.
+     * *   ImportChanged: Updated data in the source storage is automatically imported
+     * into the CPFS file system.
+     * >  This parameter takes effect only for CPFS file systems.
      */
     readonly autoRefreshPolicy?: string | ros.IResolvable;
 
@@ -429,11 +470,13 @@ export interface RosDataFlowProps {
     readonly autoRefreshs?: Array<RosDataFlow.AutoRefreshsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property description: Description of data flow.
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the dataflow.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -458,6 +501,13 @@ function RosDataFlowPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('fsetId', ros.requiredValidator)(properties.fsetId));
     errors.collect(ros.propertyValidator('fsetId', ros.validateString)(properties.fsetId));
     errors.collect(ros.propertyValidator('sourceStorage', ros.requiredValidator)(properties.sourceStorage));
+    if(properties.sourceStorage && (Array.isArray(properties.sourceStorage) || (typeof properties.sourceStorage) === 'string')) {
+        errors.collect(ros.propertyValidator('sourceStorage', ros.validateLength)({
+            data: properties.sourceStorage.length,
+            min: undefined,
+            max: 128,
+          }));
+    }
     errors.collect(ros.propertyValidator('sourceStorage', ros.validateString)(properties.sourceStorage));
     if(properties.description && (typeof properties.description) !== 'object') {
         errors.collect(ros.propertyValidator('description', ros.validateAllowedPattern)({
@@ -484,6 +534,12 @@ function RosDataFlowPropsValidator(properties: any): ros.ValidationResult {
     }
     errors.collect(ros.propertyValidator('throughput', ros.validateNumber)(properties.throughput));
     errors.collect(ros.propertyValidator('autoRefreshs', ros.listValidator(RosDataFlow_AutoRefreshsPropertyValidator))(properties.autoRefreshs));
+    if(properties.autoRefreshPolicy && (typeof properties.autoRefreshPolicy) !== 'object') {
+        errors.collect(ros.propertyValidator('autoRefreshPolicy', ros.validateAllowedValues)({
+          data: properties.autoRefreshPolicy,
+          allowedValues: ["None","ImportChanged"],
+        }));
+    }
     errors.collect(ros.propertyValidator('autoRefreshPolicy', ros.validateString)(properties.autoRefreshPolicy));
     if(properties.autoRefreshInterval && (typeof properties.autoRefreshInterval) !== 'object') {
         errors.collect(ros.propertyValidator('autoRefreshInterval', ros.validateRange)({
@@ -523,7 +579,7 @@ function rosDataFlowPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::DataFlow`Creates a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
  * @Note This class does not contain additional functions, so it is recommended to use the `DataFlow` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-dataflow
  */
@@ -547,36 +603,44 @@ export class RosDataFlow extends ros.RosResource {
 
 
     /**
-     * @Property fileSystemId: File system ID.
+     * @Property fileSystemId: The ID of the file system.
+     * *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+     * cpfs-125487\*\*\*\*.
+     * *   The IDs of CPFS for Lingjun file systems must start with `bmcpfs-`. Example:
+     * bmcpfs-0015\*\*\*\*.
      */
     public fileSystemId: string | ros.IResolvable;
 
     /**
-     * @Property fsetId: Fileset ID.
+     * @Property fsetId: The fileset ID.
+     * >  This parameter is required for CPFS file systems.
      */
     public fsetId: string | ros.IResolvable;
 
     /**
-     * @Property sourceStorage: Access path stored at the source.Format: <storage Type>: \/\/ <PATH>.
-     * in:
-     * Storage Type: Currently only supports OSS.
-     * PATH: OSS's bucket name.Limit the following.
-     * Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number.
-     * The length is 8 ~ 128 English characters.
-     * Use UTF-8 encoding.
-     * Can't start with http: \/\/ and https: \/\/.
-     * Explain that the OSS BUCKET must be the bucket that exists in the region.
+     * @Property sourceStorage: The access path of the source storage. Format: `<storage type>:\/\/[<account
+     * id>:]<path>`.
+     * Parameters:
+     * *   storage type: Only OSS is supported.
+     * *   account id (optional): the UID of the account of the source storage. This
+     * parameter is required when you use OSS buckets across accounts.
+     * *   path: the name of the OSS bucket. Limits:
+     * *   The name can contain only lowercase letters, digits, and hyphens (-). The
+     * name must start and end with a lowercase letter or digit.
+     * *   The name can be up to 128 characters in length.
+     * *   The name must be encoded in UTF-8.
+     * > *   The OSS bucket must be an existing bucket in the region.
+     * > *   Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.
      */
     public sourceStorage: string | ros.IResolvable;
 
     /**
-     * @Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB\/s.
-     * Value: 
-     * 600
-     * 1200
-     * 1500
-     * 
-     * Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+     * @Property throughput: The maximum data flow throughput. Unit: MB\/s. Valid values:
+     * *   600
+     * *   1200
+     * *   1500
+     * >  The data flow throughput must be less than the I\/O throughput of the file
+     * system. This parameter is required for CPFS file systems.
      */
     public throughput: number | ros.IResolvable;
 
@@ -587,9 +651,14 @@ export class RosDataFlow extends ros.RosResource {
     public autoRefreshInterval: number | ros.IResolvable | undefined;
 
     /**
-     * @Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
-     * None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-     * Importchanged: The data update at the source automatically imports CPFS.
+     * @Property autoRefreshPolicy: The automatic update policy. The updated data in the source storage is imported
+     * into the CPFS file system based on the policy.
+     * *   None (default): Updated data in the source storage is not automatically
+     * imported into the CPFS file system. You can run a data flow task to import the
+     * updated data from the source storage.
+     * *   ImportChanged: Updated data in the source storage is automatically imported
+     * into the CPFS file system.
+     * >  This parameter takes effect only for CPFS file systems.
      */
     public autoRefreshPolicy: string | ros.IResolvable | undefined;
 
@@ -599,11 +668,13 @@ export class RosDataFlow extends ros.RosResource {
     public autoRefreshs: Array<RosDataFlow.AutoRefreshsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Description of data flow.
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the dataflow.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -729,7 +800,11 @@ export interface RosFileSystemProps {
     readonly bandwidth?: number | ros.IResolvable;
 
     /**
-     * @Property capacity: File system capacity, the unit is GB. Required and valid when FileSystemType=extreme or cpfs.
+     * @Property capacity: Specify the capacity of the file system. Unit: GiB. This parameter is required
+     * and valid when FileSystemType is set to extreme, cpfs, or cpfsse.
+     * Specify a value based on the specifications on the following buy page:
+     * *   Extreme NAS (Pay-as-you-go)
+     * *   CPFS (Pay-as-you-go)
      */
     readonly capacity?: number | ros.IResolvable;
 
@@ -746,7 +821,11 @@ export interface RosFileSystemProps {
     readonly deletionForce?: boolean | ros.IResolvable;
 
     /**
-     * @Property description: File system description (space characters are not allowed)
+     * @Property description: The description of the file system.
+     * Limits:
+     * *   Must be 2 to 128 characters in length.
+     * *   Must start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
+     * *   Can contain digits, colons (:), underscores (_), and hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -757,9 +836,20 @@ export interface RosFileSystemProps {
     readonly duration?: number | ros.IResolvable;
 
     /**
-     * @Property encryptType: Specifies whether to encrypt data. You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
-     * 0: specifies that no encryption is applied to data on the file system.
-     * 1: specifies that encryption is applied to data on the file system.
+     * @Property encryptType: Specifies whether to encrypt data in the file system.
+     * You can use the keys that are managed by Key Management Service (KMS) to encrypt
+     * data in a file system. When you read and write the encrypted data, the data is
+     * automatically decrypted.
+     * Valid values:
+     * *   0 (default): The data in the file system is not encrypted.
+     * *   1: A NAS-managed key is used to encrypt the data in the file system. This
+     * value is valid if FileSystemType is set to standard or extreme.
+     * *   2: A KMS-managed key is used to encrypt the data in the file system. This
+     * value is valid if the FileSystemType parameter is set to standard or extreme.
+     * >
+     * *   Extreme NAS: All regions except China East 1 Finance support KMS-managed
+     * keys.
+     * *   General-purpose NAS: All regions support KMS-managed keys.
      */
     readonly encryptType?: number | ros.IResolvable;
 
@@ -774,7 +864,13 @@ export interface RosFileSystemProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property snapshotId: Snapshot ID.
+     * @Property snapshotId: The snapshot ID.
+     * This parameter is available only for advanced Extreme NAS file systems.
+     * > You can create a file system from a snapshot. The version of the file system is
+     * the same as that of the source file system. For example, the source file system
+     * of the snapshot uses version 1. To create a file system of version 2, create File
+     * System A from the snapshot and create File System B of version 2. Then copy the
+     * data and migrate your business from File System A to File System B.
      */
     readonly snapshotId?: string | ros.IResolvable;
 
@@ -784,17 +880,33 @@ export interface RosFileSystemProps {
     readonly tags?: RosFileSystem.TagsProperty[];
 
     /**
-     * @Property vpcId: Vpc ID.
+     * @Property vpcId: The VPC ID.
+     * *   This parameter is required if FileSystemType is set to cpfs or cpfsse.
+     * *   This parameter is reserved and not required if FileSystemType is set to
+     * standard or extreme.
      */
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: VSwitch ID.
+     * @Property vSwitchId: The vSwitch ID.
+     * *   This parameter is required if FileSystemType is set to cpfs.
+     * *   If FileSystemType is not set to cpfs, this parameter is reserved and not
+     * required.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
-     * @Property zoneId: Zone ID.
+     * @Property zoneId: The ID of the zone.
+     * Each region has multiple isolated locations known as zones. Each zone has its own
+     * independent power supply and network.
+     * This parameter is not required if FileSystemType is set to standard. By default,
+     * a random zone is selected based on the protocol type and storage type.
+     * This parameter is required if FileSystemType is set to extreme or cpfs.
+     * >
+     * *   An Elastic Compute Service (ECS) instance and a file system that reside in
+     * different zones of the same region can access each other.
+     * *   We recommend that you select the zone where the ECS instance resides. This
+     * prevents cross-zone latency between the file system and the ECS instance.
      */
     readonly zoneId?: string | ros.IResolvable;
 }
@@ -825,6 +937,12 @@ function RosFileSystemPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('snapshotId', ros.validateString)(properties.snapshotId));
     errors.collect(ros.propertyValidator('deletionForce', ros.validateBoolean)(properties.deletionForce));
     errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.encryptType && (typeof properties.encryptType) !== 'object') {
+        errors.collect(ros.propertyValidator('encryptType', ros.validateAllowedValues)({
+          data: properties.encryptType,
+          allowedValues: [0,1,2],
+        }));
+    }
     errors.collect(ros.propertyValidator('encryptType', ros.validateNumber)(properties.encryptType));
     errors.collect(ros.propertyValidator('capacity', ros.validateNumber)(properties.capacity));
     errors.collect(ros.propertyValidator('protocolType', ros.requiredValidator)(properties.protocolType));
@@ -933,7 +1051,11 @@ export class RosFileSystem extends ros.RosResource {
     public bandwidth: number | ros.IResolvable | undefined;
 
     /**
-     * @Property capacity: File system capacity, the unit is GB. Required and valid when FileSystemType=extreme or cpfs.
+     * @Property capacity: Specify the capacity of the file system. Unit: GiB. This parameter is required
+     * and valid when FileSystemType is set to extreme, cpfs, or cpfsse.
+     * Specify a value based on the specifications on the following buy page:
+     * *   Extreme NAS (Pay-as-you-go)
+     * *   CPFS (Pay-as-you-go)
      */
     public capacity: number | ros.IResolvable | undefined;
 
@@ -950,7 +1072,11 @@ export class RosFileSystem extends ros.RosResource {
     public deletionForce: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property description: File system description (space characters are not allowed)
+     * @Property description: The description of the file system.
+     * Limits:
+     * *   Must be 2 to 128 characters in length.
+     * *   Must start with a letter but cannot start with `http:\/\/` or `https:\/\/`.
+     * *   Can contain digits, colons (:), underscores (_), and hyphens (-).
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -961,9 +1087,20 @@ export class RosFileSystem extends ros.RosResource {
     public duration: number | ros.IResolvable | undefined;
 
     /**
-     * @Property encryptType: Specifies whether to encrypt data. You can use keys that are hosted by Key Management Service (KMS) to encrypt data stored on a file system. Data is automatically decrypted when you access encrypted data. Valid values:
-     * 0: specifies that no encryption is applied to data on the file system.
-     * 1: specifies that encryption is applied to data on the file system.
+     * @Property encryptType: Specifies whether to encrypt data in the file system.
+     * You can use the keys that are managed by Key Management Service (KMS) to encrypt
+     * data in a file system. When you read and write the encrypted data, the data is
+     * automatically decrypted.
+     * Valid values:
+     * *   0 (default): The data in the file system is not encrypted.
+     * *   1: A NAS-managed key is used to encrypt the data in the file system. This
+     * value is valid if FileSystemType is set to standard or extreme.
+     * *   2: A KMS-managed key is used to encrypt the data in the file system. This
+     * value is valid if the FileSystemType parameter is set to standard or extreme.
+     * >
+     * *   Extreme NAS: All regions except China East 1 Finance support KMS-managed
+     * keys.
+     * *   General-purpose NAS: All regions support KMS-managed keys.
      */
     public encryptType: number | ros.IResolvable | undefined;
 
@@ -978,7 +1115,13 @@ export class RosFileSystem extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property snapshotId: Snapshot ID.
+     * @Property snapshotId: The snapshot ID.
+     * This parameter is available only for advanced Extreme NAS file systems.
+     * > You can create a file system from a snapshot. The version of the file system is
+     * the same as that of the source file system. For example, the source file system
+     * of the snapshot uses version 1. To create a file system of version 2, create File
+     * System A from the snapshot and create File System B of version 2. Then copy the
+     * data and migrate your business from File System A to File System B.
      */
     public snapshotId: string | ros.IResolvable | undefined;
 
@@ -988,17 +1131,33 @@ export class RosFileSystem extends ros.RosResource {
     public tags: RosFileSystem.TagsProperty[] | undefined;
 
     /**
-     * @Property vpcId: Vpc ID.
+     * @Property vpcId: The VPC ID.
+     * *   This parameter is required if FileSystemType is set to cpfs or cpfsse.
+     * *   This parameter is reserved and not required if FileSystemType is set to
+     * standard or extreme.
      */
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: VSwitch ID.
+     * @Property vSwitchId: The vSwitch ID.
+     * *   This parameter is required if FileSystemType is set to cpfs.
+     * *   If FileSystemType is not set to cpfs, this parameter is reserved and not
+     * required.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property zoneId: Zone ID.
+     * @Property zoneId: The ID of the zone.
+     * Each region has multiple isolated locations known as zones. Each zone has its own
+     * independent power supply and network.
+     * This parameter is not required if FileSystemType is set to standard. By default,
+     * a random zone is selected based on the protocol type and storage type.
+     * This parameter is required if FileSystemType is set to extreme or cpfs.
+     * >
+     * *   An Elastic Compute Service (ECS) instance and a file system that reside in
+     * different zones of the same region can access each other.
+     * *   We recommend that you select the zone where the ECS instance resides. This
+     * prevents cross-zone latency between the file system and the ECS instance.
      */
     public zoneId: string | ros.IResolvable | undefined;
 
@@ -1111,23 +1270,44 @@ function rosFileSystemTagsPropertyToRosTemplate(properties: any): any {
 export interface RosFilesetProps {
 
     /**
-     * @Property fileSystemId: File system ID.
+     * @Property fileSystemId: The ID of the file system.
+     * *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+     * cpfs-099394bd928c\*\*\*\*.
+     * *   The IDs of CPFS for Lingjun file systems must start with `bmcpfs-`. Example:
+     * bmcpfs-290w65p03ok64ya\*\*\*\*.
      */
     readonly fileSystemId: string | ros.IResolvable;
 
     /**
-     * @Property fileSystemPath: The absolute path of Fileset to be created.
-     * The parent catalog of specified the directory must be a directory in the file system.
-     * The length is 2 to 1024 characters.
-     * Specify the directory must start with positive (\/).
+     * @Property fileSystemPath: The absolute path of the fileset.
+     * *   CPFS path limits.
+     * *   The parent directory of the path that you specify must be an existing
+     * directory in the file system.
+     * *   The path must be 2 to 1024 characters in length.
+     * *   The path must start and end with a forward slash (\/).
+     * *   Path limit of CPFS for Lingjun
+     * *   The path must be 2 to 1024 characters in length.
+     * *   The path must start and end with a forward slash (\/).
+     * *   The fileset path must be a new path and cannot be an existing path. Fileset
+     * paths cannot be renamed and cannot be symbolic links.
+     * *   The maximum depth supported by a fileset path is eight levels. The depth of
+     * the root directory \/ is 0 levels. For example, the fileset path \/test\/aaa\/ccc\/
+     * has three levels.
+     * *   If the fileset path is a multi-level path, the parent directory must be an
+     * existing directory.
+     * *   Nested filesets are not supported. If a fileset is specified as a parent
+     * directory, its subdirectory cannot be a fileset. A fileset path supports only one
+     * quota.
+     * *   The path cannot exceed 990 characters in length.
      */
     readonly fileSystemPath: string | ros.IResolvable;
 
     /**
-     * @Property description: Fileset description information.
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the fileset.
+     * *   The description must be 2 to 128 characters in length.
+     * *   The name must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     * *   The description can contain letters, digits, colons (:), underscores (_),
+     * periods (.), and hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 }
@@ -1200,23 +1380,44 @@ export class RosFileset extends ros.RosResource {
 
 
     /**
-     * @Property fileSystemId: File system ID.
+     * @Property fileSystemId: The ID of the file system.
+     * *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+     * cpfs-099394bd928c\*\*\*\*.
+     * *   The IDs of CPFS for Lingjun file systems must start with `bmcpfs-`. Example:
+     * bmcpfs-290w65p03ok64ya\*\*\*\*.
      */
     public fileSystemId: string | ros.IResolvable;
 
     /**
-     * @Property fileSystemPath: The absolute path of Fileset to be created.
-     * The parent catalog of specified the directory must be a directory in the file system.
-     * The length is 2 to 1024 characters.
-     * Specify the directory must start with positive (\/).
+     * @Property fileSystemPath: The absolute path of the fileset.
+     * *   CPFS path limits.
+     * *   The parent directory of the path that you specify must be an existing
+     * directory in the file system.
+     * *   The path must be 2 to 1024 characters in length.
+     * *   The path must start and end with a forward slash (\/).
+     * *   Path limit of CPFS for Lingjun
+     * *   The path must be 2 to 1024 characters in length.
+     * *   The path must start and end with a forward slash (\/).
+     * *   The fileset path must be a new path and cannot be an existing path. Fileset
+     * paths cannot be renamed and cannot be symbolic links.
+     * *   The maximum depth supported by a fileset path is eight levels. The depth of
+     * the root directory \/ is 0 levels. For example, the fileset path \/test\/aaa\/ccc\/
+     * has three levels.
+     * *   If the fileset path is a multi-level path, the parent directory must be an
+     * existing directory.
+     * *   Nested filesets are not supported. If a fileset is specified as a parent
+     * directory, its subdirectory cannot be a fileset. A fileset path supports only one
+     * quota.
+     * *   The path cannot exceed 990 characters in length.
      */
     public fileSystemPath: string | ros.IResolvable;
 
     /**
-     * @Property description: Fileset description information.
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the fileset.
+     * *   The description must be 2 to 128 characters in length.
+     * *   The name must start with a letter and cannot start with http:\/\/ or https:\/\/.
+     * *   The description can contain letters, digits, colons (:), underscores (_),
+     * periods (.), and hyphens (-).
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -1257,12 +1458,21 @@ export class RosFileset extends ros.RosResource {
 export interface RosMountTargetProps {
 
     /**
-     * @Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
+     * @Property accessGroupName: The name of the permission group.
+     * This parameter is required if you create a mount target for a General-purpose NAS
+     * file system or an Extreme NAS file system.
+     * The default permission group for virtual private clouds (VPCs) is named
+     * DEFAULT_VPC_GROUP_NAME.
      */
     readonly accessGroupName: string | ros.IResolvable;
 
     /**
-     * @Property fileSystemId: File system ID
+     * @Property fileSystemId: The ID of the file system.
+     * *   Sample ID of a General-purpose NAS file system: 31a8e4\*\*\*\*.
+     * *   The IDs of Extreme NAS file systems must start with `extreme-`, for example,
+     * extreme-0015\*\*\*\*.
+     * *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+     * cpfs-125487\*\*\*\*.
      */
     readonly fileSystemId: string | ros.IResolvable;
 
@@ -1381,12 +1591,21 @@ export class RosMountTarget extends ros.RosResource {
 
 
     /**
-     * @Property accessGroupName: Permission group name. Default to DEFAULT_VPC_GROUP_NAME.
+     * @Property accessGroupName: The name of the permission group.
+     * This parameter is required if you create a mount target for a General-purpose NAS
+     * file system or an Extreme NAS file system.
+     * The default permission group for virtual private clouds (VPCs) is named
+     * DEFAULT_VPC_GROUP_NAME.
      */
     public accessGroupName: string | ros.IResolvable;
 
     /**
-     * @Property fileSystemId: File system ID
+     * @Property fileSystemId: The ID of the file system.
+     * *   Sample ID of a General-purpose NAS file system: 31a8e4\*\*\*\*.
+     * *   The IDs of Extreme NAS file systems must start with `extreme-`, for example,
+     * extreme-0015\*\*\*\*.
+     * *   The IDs of CPFS file systems must start with `cpfs-`. Example:
+     * cpfs-125487\*\*\*\*.
      */
     public fileSystemId: string | ros.IResolvable;
 
@@ -1483,7 +1702,9 @@ export interface RosProtocolMountTargetProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: Switch ID exported by the protocol service.
+     * @Property vSwitchId: The vSwitch ID of the export directory.
+     * If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+     * the VpcId is set, this field is required.
      */
     readonly vSwitchId: string | ros.IResolvable;
 
@@ -1494,11 +1715,14 @@ export interface RosProtocolMountTargetProps {
     readonly accessGroupName?: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the export directory for the protocol service. The name of the
+     * export directory appears in the console.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -1512,15 +1736,16 @@ export interface RosProtocolMountTargetProps {
     readonly fsetId?: string | ros.IResolvable;
 
     /**
-     * @Property path: The path of the CPFS directory that needs to be exported.
-     * limit:
-     * This directory must be existing directory on CPFS.
-     * The same directory allows only one export.
-     * Fileset and Path can only specify one.
+     * @Property path: The path of the CPFS directory that you want to export.
+     * Limits:
+     * *   The directory already exists in the CPFS file system.
+     * *   You can create only one export directory for a directory.
+     * *   You can specify either a fileset or a path.
      * Format:
-     * The length is 1 to 1024 characters.
-     * Use UTF-8 encoding.
-     * It must start with the positive oblique line (\/), and the root directory must be\/.
+     * *   The path must be 1 to 1,024 characters in length.
+     * *   The path must be encoded in UTF-8.
+     * *   The path must start and end with a forward slash (\/). The root directory is
+     * `\/`.
      */
     readonly path?: string | ros.IResolvable;
 }
@@ -1536,6 +1761,13 @@ function RosProtocolMountTargetPropsValidator(properties: any): ros.ValidationRe
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('fsetId', ros.validateString)(properties.fsetId));
+    if(properties.path && (Array.isArray(properties.path) || (typeof properties.path) === 'string')) {
+        errors.collect(ros.propertyValidator('path', ros.validateLength)({
+            data: properties.path.length,
+            min: 1,
+            max: 1024,
+          }));
+    }
     errors.collect(ros.propertyValidator('path', ros.validateString)(properties.path));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('vpcId', ros.requiredValidator)(properties.vpcId));
@@ -1576,7 +1808,7 @@ function rosProtocolMountTargetPropsToRosTemplate(properties: any, enableResourc
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::NAS::ProtocolMountTarget`Creates an export directory for a NAS protocol service.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProtocolMountTarget` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nas-protocolmounttarget
  */
@@ -1625,7 +1857,9 @@ export class RosProtocolMountTarget extends ros.RosResource {
     public vpcId: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: Switch ID exported by the protocol service.
+     * @Property vSwitchId: The vSwitch ID of the export directory.
+     * If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+     * the VpcId is set, this field is required.
      */
     public vSwitchId: string | ros.IResolvable;
 
@@ -1636,11 +1870,14 @@ export class RosProtocolMountTarget extends ros.RosResource {
     public accessGroupName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name.
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the export directory for the protocol service. The name of the
+     * export directory appears in the console.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -1654,15 +1891,16 @@ export class RosProtocolMountTarget extends ros.RosResource {
     public fsetId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property path: The path of the CPFS directory that needs to be exported.
-     * limit:
-     * This directory must be existing directory on CPFS.
-     * The same directory allows only one export.
-     * Fileset and Path can only specify one.
+     * @Property path: The path of the CPFS directory that you want to export.
+     * Limits:
+     * *   The directory already exists in the CPFS file system.
+     * *   You can create only one export directory for a directory.
+     * *   You can specify either a fileset or a path.
      * Format:
-     * The length is 1 to 1024 characters.
-     * Use UTF-8 encoding.
-     * It must start with the positive oblique line (\/), and the root directory must be\/.
+     * *   The path must be 1 to 1,024 characters in length.
+     * *   The path must be encoded in UTF-8.
+     * *   The path must start and end with a forward slash (\/). The root directory is
+     * `\/`.
      */
     public path: string | ros.IResolvable | undefined;
 
@@ -1724,10 +1962,8 @@ export interface RosProtocolServiceProps {
     readonly protocolSpec: string | ros.IResolvable;
 
     /**
-     * @Property protocolType: The protocol type of agreement service.
-     * Ranges:
-     * NFS: Agreement service supports NFS protocol access.
-     * The default value: NFS.
+     * @Property protocolType: The protocol type of the protocol service.
+     * Valid value: NFS (default). Only NFSv3 is supported.
      */
     readonly protocolType: string | ros.IResolvable;
 
@@ -1742,11 +1978,14 @@ export interface RosProtocolServiceProps {
     readonly vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of protocol service.The console shows the "protocol service name".
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the protocol service. The name of the protocol service appears
+     * in the console.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     readonly description?: string | ros.IResolvable;
 
@@ -1853,10 +2092,8 @@ export class RosProtocolService extends ros.RosResource {
     public protocolSpec: string | ros.IResolvable;
 
     /**
-     * @Property protocolType: The protocol type of agreement service.
-     * Ranges:
-     * NFS: Agreement service supports NFS protocol access.
-     * The default value: NFS.
+     * @Property protocolType: The protocol type of the protocol service.
+     * Valid value: NFS (default). Only NFSv3 is supported.
      */
     public protocolType: string | ros.IResolvable;
 
@@ -1871,11 +2108,14 @@ export class RosProtocolService extends ros.RosResource {
     public vSwitchId: string | ros.IResolvable;
 
     /**
-     * @Property description: Description of protocol service.The console shows the "protocol service name".
-     * limit:
-     * The length is 2 to 128 English or Chinese characters.
-     * Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/.
-     * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+     * @Property description: The description of the protocol service. The name of the protocol service appears
+     * in the console.
+     * Limits:
+     * *   The description must be 2 to 128 characters in length.
+     * *   The description must start with a letter but cannot start with `http:\/\/` or
+     * `https:\/\/`.
+     * *   The description can contain letters, digits, colons (:), underscores (_), and
+     * hyphens (-).
      */
     public description: string | ros.IResolvable | undefined;
 

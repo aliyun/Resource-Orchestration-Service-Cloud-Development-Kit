@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ess.datasource;
 /**
  * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::ESS::ScalingGroups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.566Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.712Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.datasource.RosScalingGroups")
 public class RosScalingGroups extends com.aliyun.ros.cdk.core.RosResource {
 

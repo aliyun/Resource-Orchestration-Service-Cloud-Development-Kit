@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-addresspool
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.841Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.434Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.AddressPoolProps")
 @software.amazon.jsii.Jsii.Proxy(AddressPoolProps.Jsii$Proxy.class)
 public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable {
@@ -21,9 +21,14 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceId();
 
     /**
-     * Property lbaStrategy: The load balancing strategy.
+     * Property lbaStrategy: The load balancing policy.
      * <p>
-     * Valid values: RoundRobin, Weighted, FallbackToFirst.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>ALL_RR: returns all addresses.</li>
+     * <li>RATIO: returns addresses by weight.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getLbaStrategy();
 
@@ -35,7 +40,13 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
     /**
      * Property type: The type of the address pool.
      * <p>
-     * Valid values: Ipv4, Ipv6, Domain.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>IPV4: IPv4 address</li>
+     * <li>IPV6: IPv6 address</li>
+     * <li>DOMAIN: domain name</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getType();
 
@@ -61,14 +72,59 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property monitorExtendInfo: The extended information of the health check.
+     * Property monitorExtendInfo: The extended information.
+     * <p>
+     * This parameter is a JSON string. The required
+     * parameters vary based on the health check protocol:
+     * <p>
+     * <ul>
+     * <li>HTTP and HTTPS:</li>
+     * <li>port: The health check port.</li>
+     * <li>host: The host settings.</li>
+     * <li>path: The URL path.</li>
+     * <li>code: The return code. A response with a status code greater than this value is
+     * considered abnormal. Valid values: 400 and 500.</li>
+     * <li>failureRate: The failure rate.</li>
+     * <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+     * is available only for the HTTPS protocol.</li>
+     * <li>true: Enable SNI.</li>
+     * <li>Other values: Disable SNI.</li>
+     * <li>nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:</li>
+     * <li>IPV4</li>
+     * <li>IPV6</li>
+     * <li>PING:</li>
+     * <li>failureRate: The failure rate.</li>
+     * <li>packetNum: The number of ping packets.</li>
+     * <li>packetLossRate: The packet loss rate.</li>
+     * <li>nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:</li>
+     * <li>IPV4</li>
+     * <li>IPV6</li>
+     * <li>TCP:</li>
+     * <li>port: The health check port.</li>
+     * <li>failureRate: The failure rate.</li>
+     * <li>nodeType: The type of the health check node when the address pool type is
+     * DOMAIN. Valid values:</li>
+     * <li>IPV4</li>
+     * <li>IPV6</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMonitorExtendInfo() {
         return null;
     }
 
     /**
-     * Property monitorStatus: The monitoring status of the address pool.
+     * Property monitorStatus: The status of the health check feature.
+     * <p>
+     * Default value: CLOSE. If you set this
+     * parameter to OPEN, the health check configuration is verified. Otherwise, the
+     * configuration is ignored.
+     * <p>
+     * <ul>
+     * <li>OPEN: enabled</li>
+     * <li>CLOSE: disabled</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMonitorStatus() {
         return null;
@@ -153,8 +209,13 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressPoolProps#getLbaStrategy}
-         * @param lbaStrategy Property lbaStrategy: The load balancing strategy. This parameter is required.
-         *                    Valid values: RoundRobin, Weighted, FallbackToFirst.
+         * @param lbaStrategy Property lbaStrategy: The load balancing policy. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>ALL_RR: returns all addresses.</li>
+         *                    <li>RATIO: returns addresses by weight.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder lbaStrategy(java.lang.String lbaStrategy) {
@@ -164,8 +225,13 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressPoolProps#getLbaStrategy}
-         * @param lbaStrategy Property lbaStrategy: The load balancing strategy. This parameter is required.
-         *                    Valid values: RoundRobin, Weighted, FallbackToFirst.
+         * @param lbaStrategy Property lbaStrategy: The load balancing policy. This parameter is required.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>ALL_RR: returns all addresses.</li>
+         *                    <li>RATIO: returns addresses by weight.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder lbaStrategy(com.aliyun.ros.cdk.core.IResolvable lbaStrategy) {
@@ -196,7 +262,13 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link AddressPoolProps#getType}
          * @param type Property type: The type of the address pool. This parameter is required.
-         *             Valid values: Ipv4, Ipv6, Domain.
+         *             Valid values:
+         *             <p>
+         *             <ul>
+         *             <li>IPV4: IPv4 address</li>
+         *             <li>IPV6: IPv6 address</li>
+         *             <li>DOMAIN: domain name</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder type(java.lang.String type) {
@@ -207,7 +279,13 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link AddressPoolProps#getType}
          * @param type Property type: The type of the address pool. This parameter is required.
-         *             Valid values: Ipv4, Ipv6, Domain.
+         *             Valid values:
+         *             <p>
+         *             <ul>
+         *             <li>IPV4: IPv4 address</li>
+         *             <li>IPV6: IPv6 address</li>
+         *             <li>DOMAIN: domain name</li>
+         *             </ul>
          * @return {@code this}
          */
         public Builder type(com.aliyun.ros.cdk.core.IResolvable type) {
@@ -277,7 +355,42 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressPoolProps#getMonitorExtendInfo}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extended information of the health check.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information.
+         *                          This parameter is a JSON string. The required
+         *                          parameters vary based on the health check protocol:
+         *                          <p>
+         *                          <ul>
+         *                          <li>HTTP and HTTPS:</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>host: The host settings.</li>
+         *                          <li>path: The URL path.</li>
+         *                          <li>code: The return code. A response with a status code greater than this value is
+         *                          considered abnormal. Valid values: 400 and 500.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         *                          is available only for the HTTPS protocol.</li>
+         *                          <li>true: Enable SNI.</li>
+         *                          <li>Other values: Disable SNI.</li>
+         *                          <li>nodeType: The type of the health check node when the address pool type is
+         *                          DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>PING:</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>packetNum: The number of ping packets.</li>
+         *                          <li>packetLossRate: The packet loss rate.</li>
+         *                          <li>nodeType: The type of the health check node when the address pool type is
+         *                          DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>TCP:</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>nodeType: The type of the health check node when the address pool type is
+         *                          DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder monitorExtendInfo(com.aliyun.ros.cdk.core.IResolvable monitorExtendInfo) {
@@ -287,7 +400,42 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressPoolProps#getMonitorExtendInfo}
-         * @param monitorExtendInfo Property monitorExtendInfo: The extended information of the health check.
+         * @param monitorExtendInfo Property monitorExtendInfo: The extended information.
+         *                          This parameter is a JSON string. The required
+         *                          parameters vary based on the health check protocol:
+         *                          <p>
+         *                          <ul>
+         *                          <li>HTTP and HTTPS:</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>host: The host settings.</li>
+         *                          <li>path: The URL path.</li>
+         *                          <li>code: The return code. A response with a status code greater than this value is
+         *                          considered abnormal. Valid values: 400 and 500.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+         *                          is available only for the HTTPS protocol.</li>
+         *                          <li>true: Enable SNI.</li>
+         *                          <li>Other values: Disable SNI.</li>
+         *                          <li>nodeType: The type of the health check node when the address pool type is
+         *                          DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>PING:</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>packetNum: The number of ping packets.</li>
+         *                          <li>packetLossRate: The packet loss rate.</li>
+         *                          <li>nodeType: The type of the health check node when the address pool type is
+         *                          DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          <li>TCP:</li>
+         *                          <li>port: The health check port.</li>
+         *                          <li>failureRate: The failure rate.</li>
+         *                          <li>nodeType: The type of the health check node when the address pool type is
+         *                          DOMAIN. Valid values:</li>
+         *                          <li>IPV4</li>
+         *                          <li>IPV6</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder monitorExtendInfo(java.util.Map<java.lang.String, ? extends java.lang.Object> monitorExtendInfo) {
@@ -297,7 +445,15 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressPoolProps#getMonitorStatus}
-         * @param monitorStatus Property monitorStatus: The monitoring status of the address pool.
+         * @param monitorStatus Property monitorStatus: The status of the health check feature.
+         *                      Default value: CLOSE. If you set this
+         *                      parameter to OPEN, the health check configuration is verified. Otherwise, the
+         *                      configuration is ignored.
+         *                      <p>
+         *                      <ul>
+         *                      <li>OPEN: enabled</li>
+         *                      <li>CLOSE: disabled</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder monitorStatus(java.lang.String monitorStatus) {
@@ -307,7 +463,15 @@ public interface AddressPoolProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link AddressPoolProps#getMonitorStatus}
-         * @param monitorStatus Property monitorStatus: The monitoring status of the address pool.
+         * @param monitorStatus Property monitorStatus: The status of the health check feature.
+         *                      Default value: CLOSE. If you set this
+         *                      parameter to OPEN, the health check configuration is verified. Otherwise, the
+         *                      configuration is ignored.
+         *                      <p>
+         *                      <ul>
+         *                      <li>OPEN: enabled</li>
+         *                      <li>CLOSE: disabled</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder monitorStatus(com.aliyun.ros.cdk.core.IResolvable monitorStatus) {

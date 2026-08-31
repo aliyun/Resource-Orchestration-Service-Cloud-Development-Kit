@@ -112,12 +112,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _autoPay;
 
-        /// <summary>Property autoPay: Indicates whether automatic payment is enabled.</summary>
+        /// <summary>Property autoPay: Specifies whether to enable automatic payment.</summary>
         /// <remarks>
         /// Valid values:
-        /// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-        /// true: Automatic payment is enabled. The payment is automatically made.
-        /// Default: true.
+        ///
+        /// <list type="bullet">
+        /// <description>false (default): The automatic payment is disabled. If you select this
+        /// option, you must go to the Order Center to complete the payment after an order is
+        /// generated.</description>
+        /// <description>true: The automatic payment is enabled. Payments are automatically complete
+        /// after an order is generated.</description>
+        /// </list>
+        ///
+        ///     This parameter is required if InstanceChargeType is set to PrePaid.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -322,9 +329,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _instanceChargeType;
 
         /// <summary>Property instanceChargeType: The billing method of the router interface.</summary>
-        /// <remarks>
-        /// Valid values: PrePaid (Subscription), PostPaid (default, Pay-As-You-Go)
-        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "instanceChargeType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? InstanceChargeType
@@ -703,9 +707,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _routerType;
 
-        /// <summary>Property routerType: Router type.</summary>
+        /// <summary>Property routerType: The type of router that is associated with the router interface.</summary>
         /// <remarks>
-        /// Now support 'VRouter|VBR'
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>VRouter</description>
+        /// <description>VBR</description>
+        /// </list>
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "routerType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -737,9 +746,29 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
 
         private object? _spec;
 
-        /// <summary>Property spec: RouterInterface specification.</summary>
+        /// <summary>Property spec: The specification of the router interface and the corresponding bandwidth.</summary>
         /// <remarks>
-        /// If 'Role' is specified as 'InitiatingSide', the value is required. If 'Role' is specified as 'AcceptingSide', the value is set as 'Negative' by default.
+        /// Valid
+        /// values:
+        ///
+        /// <list type="bullet">
+        /// <description>Mini.2: 2 Mbit/s</description>
+        /// <description>Mini.5: 5 Mbit/s</description>
+        /// <description>Small.1: 10 Mbit/s</description>
+        /// <description>Small.2: 20 Mbit/s</description>
+        /// <description>Small.5: 50 Mbit/s</description>
+        /// <description>Middle.1: 100 Mbit/s</description>
+        /// <description>Middle.2: 200 Mbit/s</description>
+        /// <description>Middle.5: 500 Mbit/s</description>
+        /// <description>Large.1: 1,000 Mbit/s</description>
+        /// <description>Large.2: 2,000 Mbit/s</description>
+        /// <description>Large.5: 5,000 Mbit/s</description>
+        /// <description>Xlarge.1: 10,000 Mbit/s</description>
+        /// </list>
+        ///
+        ///     If Role is set to AcceptingSide, set Spec to Negative. This indicates that you
+        ///     do not need to specify the specification when you create an acceptor router
+        ///     interface.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "spec", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

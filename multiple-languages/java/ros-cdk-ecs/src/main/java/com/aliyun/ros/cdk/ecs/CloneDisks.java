@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ecs;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::CloneDisks</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.843Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.CloneDisks")
 public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ICloneDisks {
 
@@ -112,20 +112,60 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property diskCategory: The category of the disk.
+         * Property diskCategory: The type of the new disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>cloud_essd</code>: ESSD cloud disk.</li>
+         * <li><code>cloud_auto</code>: ESSD AutoPL cloud disk.</li>
+         * <li><code>cloud_essd_entry</code>: ESSD Entry cloud disk.</li>
+         * <li><code>cloud_regional_disk_auto</code>: regional disk.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Disk type limits for cloning
+         * <p>
+         * <ul>
+         * <li>A non-regional disk can be cloned only as a non-regional disk.</li>
+         * <li>A regional disk can be cloned only as a regional disk.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The category of the disk. This parameter is required.
+         * @param diskCategory Property diskCategory: The type of the new disk. This parameter is required.
          */
         public Builder diskCategory(final java.lang.String diskCategory) {
             this.props.diskCategory(diskCategory);
             return this;
         }
         /**
-         * Property diskCategory: The category of the disk.
+         * Property diskCategory: The type of the new disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>cloud_essd</code>: ESSD cloud disk.</li>
+         * <li><code>cloud_auto</code>: ESSD AutoPL cloud disk.</li>
+         * <li><code>cloud_essd_entry</code>: ESSD Entry cloud disk.</li>
+         * <li><code>cloud_regional_disk_auto</code>: regional disk.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Disk type limits for cloning
+         * <p>
+         * <ul>
+         * <li>A non-regional disk can be cloned only as a non-regional disk.</li>
+         * <li>A regional disk can be cloned only as a regional disk.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param diskCategory Property diskCategory: The category of the disk. This parameter is required.
+         * @param diskCategory Property diskCategory: The type of the new disk. This parameter is required.
          */
         public Builder diskCategory(final com.aliyun.ros.cdk.core.IResolvable diskCategory) {
             this.props.diskCategory(diskCategory);
@@ -133,24 +173,38 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property multiAttach: Whether to enable multi-attach for the disk.
+         * Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk.
          * <p>
-         * Valid values: Enabled, Disabled.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li><code>Disabled</code>: Disables the multi-attach feature.</li>
+         * <li><code>Enabled</code>: Enables the multi-attach feature. You can set this parameter to
+         * <code>Enabled</code> only for ESSD cloud disks.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param multiAttach Property multiAttach: Whether to enable multi-attach for the disk. This parameter is required.
+         * @param multiAttach Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk. This parameter is required.
          */
         public Builder multiAttach(final java.lang.String multiAttach) {
             this.props.multiAttach(multiAttach);
             return this;
         }
         /**
-         * Property multiAttach: Whether to enable multi-attach for the disk.
+         * Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk.
          * <p>
-         * Valid values: Enabled, Disabled.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li><code>Disabled</code>: Disables the multi-attach feature.</li>
+         * <li><code>Enabled</code>: Enables the multi-attach feature. You can set this parameter to
+         * <code>Enabled</code> only for ESSD cloud disks.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param multiAttach Property multiAttach: Whether to enable multi-attach for the disk. This parameter is required.
+         * @param multiAttach Property multiAttach: Specifies whether to enable the multi-attach feature for the new disk. This parameter is required.
          */
         public Builder multiAttach(final com.aliyun.ros.cdk.core.IResolvable multiAttach) {
             this.props.multiAttach(multiAttach);
@@ -158,20 +212,50 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property size: The size of the disk in GiB.
+         * Property size: The size of the new disk, in GiB.
+         * <p>
+         * The value must be greater than or equal to the
+         * size of the source disk. The value range varies based on the <code>DiskCategory</code>
+         * value:
+         * <p>
+         * <ul>
+         * <li><code>cloud_essd</code>: The value range depends on the <code>PerformanceLevel</code> value.</li>
+         * <li><code>PL0</code>: 1 to 65,536</li>
+         * <li><code>PL1</code>: 20 to 65,536</li>
+         * <li><code>PL2</code>: 461 to 65,536</li>
+         * <li><code>PL3</code>: 1,261 to 65,536</li>
+         * <li><code>cloud_auto</code>: 1 to 65,536</li>
+         * <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         * <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param size Property size: The size of the disk in GiB. This parameter is required.
+         * @param size Property size: The size of the new disk, in GiB. This parameter is required.
          */
         public Builder size(final java.lang.Number size) {
             this.props.size(size);
             return this;
         }
         /**
-         * Property size: The size of the disk in GiB.
+         * Property size: The size of the new disk, in GiB.
+         * <p>
+         * The value must be greater than or equal to the
+         * size of the source disk. The value range varies based on the <code>DiskCategory</code>
+         * value:
+         * <p>
+         * <ul>
+         * <li><code>cloud_essd</code>: The value range depends on the <code>PerformanceLevel</code> value.</li>
+         * <li><code>PL0</code>: 1 to 65,536</li>
+         * <li><code>PL1</code>: 20 to 65,536</li>
+         * <li><code>PL2</code>: 461 to 65,536</li>
+         * <li><code>PL3</code>: 1,261 to 65,536</li>
+         * <li><code>cloud_auto</code>: 1 to 65,536</li>
+         * <li><code>cloud_essd_entry</code>: 10 to 32,768</li>
+         * <li><code>cloud_regional_disk_auto</code>: 10 to 65,536</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param size Property size: The size of the disk in GiB. This parameter is required.
+         * @param size Property size: The size of the new disk, in GiB. This parameter is required.
          */
         public Builder size(final com.aliyun.ros.cdk.core.IResolvable size) {
             this.props.size(size);
@@ -200,20 +284,48 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property burstingEnabled: Whether to enable bursting for the disk.
+         * Property burstingEnabled: Specifies whether to enable performance bursting for the new disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables performance bursting.</li>
+         * <li><code>false</code>: Disables performance bursting.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         * more information, see ESSD AutoPL cloud disks.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting for the disk. This parameter is required.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting for the new disk. This parameter is required.
          */
         public Builder burstingEnabled(final java.lang.Boolean burstingEnabled) {
             this.props.burstingEnabled(burstingEnabled);
             return this;
         }
         /**
-         * Property burstingEnabled: Whether to enable bursting for the disk.
+         * Property burstingEnabled: Specifies whether to enable performance bursting for the new disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables performance bursting.</li>
+         * <li><code>false</code>: Disables performance bursting.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         * more information, see ESSD AutoPL cloud disks.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param burstingEnabled Property burstingEnabled: Whether to enable bursting for the disk. This parameter is required.
+         * @param burstingEnabled Property burstingEnabled: Specifies whether to enable performance bursting for the new disk. This parameter is required.
          */
         public Builder burstingEnabled(final com.aliyun.ros.cdk.core.IResolvable burstingEnabled) {
             this.props.burstingEnabled(burstingEnabled);
@@ -221,20 +333,30 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property diskName: The name of the disk.
+         * Property diskName: The name of the new disk.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must
+         * start with a letter and can contain letters, digits, colons (:), underscores (_),
+         * periods (.), and hyphens (-).
+         * Default value: none.
          * <p>
          * @return {@code this}
-         * @param diskName Property diskName: The name of the disk. This parameter is required.
+         * @param diskName Property diskName: The name of the new disk. This parameter is required.
          */
         public Builder diskName(final java.lang.String diskName) {
             this.props.diskName(diskName);
             return this;
         }
         /**
-         * Property diskName: The name of the disk.
+         * Property diskName: The name of the new disk.
+         * <p>
+         * The name must be 2 to 128 characters in length. It must
+         * start with a letter and can contain letters, digits, colons (:), underscores (_),
+         * periods (.), and hyphens (-).
+         * Default value: none.
          * <p>
          * @return {@code this}
-         * @param diskName Property diskName: The name of the disk. This parameter is required.
+         * @param diskName Property diskName: The name of the new disk. This parameter is required.
          */
         public Builder diskName(final com.aliyun.ros.cdk.core.IResolvable diskName) {
             this.props.diskName(diskName);
@@ -242,20 +364,36 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property encrypted: Whether to encrypt the disk.
+         * Property encrypted: Specifies whether to encrypt the new disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: The disk is encrypted.</li>
+         * <li><code>false</code>: The disk is not encrypted.
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param encrypted Property encrypted: Whether to encrypt the disk. This parameter is required.
+         * @param encrypted Property encrypted: Specifies whether to encrypt the new disk. This parameter is required.
          */
         public Builder encrypted(final java.lang.Boolean encrypted) {
             this.props.encrypted(encrypted);
             return this;
         }
         /**
-         * Property encrypted: Whether to encrypt the disk.
+         * Property encrypted: Specifies whether to encrypt the new disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: The disk is encrypted.</li>
+         * <li><code>false</code>: The disk is not encrypted.
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param encrypted Property encrypted: Whether to encrypt the disk. This parameter is required.
+         * @param encrypted Property encrypted: Specifies whether to encrypt the new disk. This parameter is required.
          */
         public Builder encrypted(final com.aliyun.ros.cdk.core.IResolvable encrypted) {
             this.props.encrypted(encrypted);
@@ -284,20 +422,50 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property performanceLevel: The performance level of the disk.
+         * Property performanceLevel: The performance level of the new ESSD cloud disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>PL0</code>: A single disk can deliver up to 10,000 random read/write IOPS.</li>
+         * <li><code>PL1</code>: A single disk can deliver up to 50,000 random read/write IOPS.</li>
+         * <li><code>PL2</code>: A single disk can deliver up to 100,000 random read/write IOPS.</li>
+         * <li><code>PL3</code>: A single disk can deliver up to 1,000,000 random read/write IOPS.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when <code>DiskCategory</code> is set to <code>cloud_essd</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param performanceLevel Property performanceLevel: The performance level of the disk. This parameter is required.
+         * @param performanceLevel Property performanceLevel: The performance level of the new ESSD cloud disk. This parameter is required.
          */
         public Builder performanceLevel(final java.lang.String performanceLevel) {
             this.props.performanceLevel(performanceLevel);
             return this;
         }
         /**
-         * Property performanceLevel: The performance level of the disk.
+         * Property performanceLevel: The performance level of the new ESSD cloud disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>PL0</code>: A single disk can deliver up to 10,000 random read/write IOPS.</li>
+         * <li><code>PL1</code>: A single disk can deliver up to 50,000 random read/write IOPS.</li>
+         * <li><code>PL2</code>: A single disk can deliver up to 100,000 random read/write IOPS.</li>
+         * <li><code>PL3</code>: A single disk can deliver up to 1,000,000 random read/write IOPS.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required when <code>DiskCategory</code> is set to <code>cloud_essd</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param performanceLevel Property performanceLevel: The performance level of the disk. This parameter is required.
+         * @param performanceLevel Property performanceLevel: The performance level of the new ESSD cloud disk. This parameter is required.
          */
         public Builder performanceLevel(final com.aliyun.ros.cdk.core.IResolvable performanceLevel) {
             this.props.performanceLevel(performanceLevel);
@@ -305,20 +473,52 @@ public class CloneDisks extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property provisionedIops: The provisioned IOPS for the disk.
+         * Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>You cannot set this parameter for disks that are 3 GiB or smaller in size.</li>
+         * <li>For disks that are 4 GiB or larger in size, the value must be in the range of
+         * <code>[0, min(1000 * Size - baseline performance, 50000)]</code>.
+         * baseline performance = <code>max(min(1800 + 50 * Size, 50000), 3000)</code>.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         * more information, see ESSD AutoPL cloud disks.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param provisionedIops Property provisionedIops: The provisioned IOPS for the disk. This parameter is required.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk. This parameter is required.
          */
         public Builder provisionedIops(final java.lang.Number provisionedIops) {
             this.props.provisionedIops(provisionedIops);
             return this;
         }
         /**
-         * Property provisionedIops: The provisioned IOPS for the disk.
+         * Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>You cannot set this parameter for disks that are 3 GiB or smaller in size.</li>
+         * <li>For disks that are 4 GiB or larger in size, the value must be in the range of
+         * <code>[0, min(1000 * Size - baseline performance, 50000)]</code>.
+         * baseline performance = <code>max(min(1800 + 50 * Size, 50000), 3000)</code>.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is valid only when <code>DiskCategory</code> is set to <code>cloud_auto</code>. For
+         * more information, see ESSD AutoPL cloud disks.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param provisionedIops Property provisionedIops: The provisioned IOPS for the disk. This parameter is required.
+         * @param provisionedIops Property provisionedIops: The provisioned read/write IOPS of the ESSD AutoPL cloud disk. This parameter is required.
          */
         public Builder provisionedIops(final com.aliyun.ros.cdk.core.IResolvable provisionedIops) {
             this.props.provisionedIops(provisionedIops);

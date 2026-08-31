@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.appflow;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AppFlow::ChatbotFlow</code>The , which type is used to create a chatbot flow.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::AppFlow::ChatbotFlow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.452Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:10:07.391Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.RosChatbotFlow")
 public class RosChatbotFlow extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -115,7 +115,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 
         private object? _password;
 
-        /// <summary>Property password: The password of the RAM user.</summary>
+        /// <summary>Property password: The logon password for the RAM user.</summary>
+        /// <remarks>
+        /// The password must meet the password policy.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Password
@@ -177,13 +180,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
 
         private object? _status;
 
-        /// <summary>Property status: Enable or disable console password login.</summary>
+        /// <summary>Property status: Specifies whether to enable password-based logon to the console.</summary>
         /// <remarks>
         /// Valid values:
         ///
         /// <list type="bullet">
-        /// <description>Activate (default): Enable.</description>
-        /// <description>Inactivate: Disable.</description>
+        /// <description>Active (default): Enable</description>
+        /// <description>Inactive: Disable</description>
         /// </list>
         /// </remarks>
         [JsiiOptional]

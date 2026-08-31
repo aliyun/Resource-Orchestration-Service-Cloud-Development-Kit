@@ -45,9 +45,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
             get;
         }
 
-        /// <summary>Property schedule: Backup strategy.</summary>
+        /// <summary>Property schedule: The backup policy.</summary>
         /// <remarks>
-        /// Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+        /// The format is <c>I|{startTime}|{interval}</c>. This specifies that
+        /// a backup job runs at an interval of <c>{interval}</c>, starting from <c>{startTime}</c>.
+        /// Overdue backup jobs are not retried. If the previous backup job is not complete,
+        /// the next backup job is not triggered. For example, <c>I|1631685600|P1D</c> indicates
+        /// that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+        ///
+        /// <list type="bullet">
+        /// <description>startTime: The start time for the backup, specified as a UNIX timestamp in
+        /// seconds.</description>
+        /// <description>interval: The backup interval, specified in the ISO 8601 duration format. For
+        /// example, <c>PT1H</c> represents one hour and <c>P1D</c> represents one day.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "schedule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Schedule
@@ -171,9 +182,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Hbr
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property schedule: Backup strategy.</summary>
+            /// <summary>Property schedule: The backup policy.</summary>
             /// <remarks>
-            /// Optional format: I|{startTime}|{interval}. It means to execute a backup task every {interval} starting from {startTime}. The backup task for the elapsed time will not be compensated. If the last backup task has not completed yet, the next backup task will not be triggered.
+            /// The format is <c>I|{startTime}|{interval}</c>. This specifies that
+            /// a backup job runs at an interval of <c>{interval}</c>, starting from <c>{startTime}</c>.
+            /// Overdue backup jobs are not retried. If the previous backup job is not complete,
+            /// the next backup job is not triggered. For example, <c>I|1631685600|P1D</c> indicates
+            /// that a backup job runs daily starting from 14:00:00 on September 15, 2021.
+            ///
+            /// <list type="bullet">
+            /// <description>startTime: The start time for the backup, specified as a UNIX timestamp in
+            /// seconds.</description>
+            /// <description>interval: The backup interval, specified in the ISO 8601 duration format. For
+            /// example, <c>PT1H</c> represents one hour and <c>P1D</c> represents one day.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "schedule", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Schedule

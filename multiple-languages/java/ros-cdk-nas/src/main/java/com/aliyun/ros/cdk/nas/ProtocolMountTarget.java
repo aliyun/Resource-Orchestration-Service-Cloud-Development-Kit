@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::ProtocolMountTarget</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::ProtocolMountTarget</code>Creates an export directory for a NAS protocol service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.518Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.335Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.ProtocolMountTarget")
 public class ProtocolMountTarget extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IProtocolMountTarget {
 
@@ -199,20 +199,26 @@ public class ProtocolMountTarget extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property vSwitchId: Switch ID exported by the protocol service.
+         * Property vSwitchId: The vSwitch ID of the export directory.
+         * <p>
+         * If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+         * the VpcId is set, this field is required.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: Switch ID exported by the protocol service. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID of the export directory. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: Switch ID exported by the protocol service.
+         * Property vSwitchId: The vSwitch ID of the export directory.
+         * <p>
+         * If the storage redundancy type of the file system is not zone-redundant (ZRS) and
+         * the VpcId is set, this field is required.
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: Switch ID exported by the protocol service. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The vSwitch ID of the export directory. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
@@ -245,20 +251,44 @@ public class ProtocolMountTarget extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * Property description: The description of the export directory for the protocol service.
+         * <p>
+         * The name of the
+         * export directory appears in the console.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The description must be 2 to 128 characters in length.</li>
+         * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-). This parameter is required.
+         * @param description Property description: The description of the export directory for the protocol service. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * Property description: The description of the export directory for the protocol service.
+         * <p>
+         * The name of the
+         * export directory appears in the console.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The description must be 2 to 128 characters in length.</li>
+         * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the protocol service to export the directory.The console is displayed as the export directory name. limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //. It can contain numbers, half-horn colon (:), down line (_) or short lines (-). This parameter is required.
+         * @param description Property description: The description of the export directory for the protocol service. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -297,38 +327,46 @@ public class ProtocolMountTarget extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property path: The path of the CPFS directory that needs to be exported.
+         * Property path: The path of the CPFS directory that you want to export.
          * <p>
-         * limit:
-         * This directory must be existing directory on CPFS.
-         * The same directory allows only one export.
-         * Fileset and Path can only specify one.
-         * Format:
-         * The length is 1 to 1024 characters.
-         * Use UTF-8 encoding.
-         * It must start with the positive oblique line (/), and the root directory must be/.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The directory already exists in the CPFS file system.</li>
+         * <li>You can create only one export directory for a directory.</li>
+         * <li>You can specify either a fileset or a path.
+         * Format:</li>
+         * <li>The path must be 1 to 1,024 characters in length.</li>
+         * <li>The path must be encoded in UTF-8.</li>
+         * <li>The path must start and end with a forward slash (/). The root directory is
+         * <code>\/</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param path Property path: The path of the CPFS directory that needs to be exported. This parameter is required.
+         * @param path Property path: The path of the CPFS directory that you want to export. This parameter is required.
          */
         public Builder path(final java.lang.String path) {
             this.props.path(path);
             return this;
         }
         /**
-         * Property path: The path of the CPFS directory that needs to be exported.
+         * Property path: The path of the CPFS directory that you want to export.
          * <p>
-         * limit:
-         * This directory must be existing directory on CPFS.
-         * The same directory allows only one export.
-         * Fileset and Path can only specify one.
-         * Format:
-         * The length is 1 to 1024 characters.
-         * Use UTF-8 encoding.
-         * It must start with the positive oblique line (/), and the root directory must be/.
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The directory already exists in the CPFS file system.</li>
+         * <li>You can create only one export directory for a directory.</li>
+         * <li>You can specify either a fileset or a path.
+         * Format:</li>
+         * <li>The path must be 1 to 1,024 characters in length.</li>
+         * <li>The path must be encoded in UTF-8.</li>
+         * <li>The path must start and end with a forward slash (/). The root directory is
+         * <code>\/</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param path Property path: The path of the CPFS directory that needs to be exported. This parameter is required.
+         * @param path Property path: The path of the CPFS directory that you want to export. This parameter is required.
          */
         public Builder path(final com.aliyun.ros.cdk.core.IResolvable path) {
             this.props.path(path);

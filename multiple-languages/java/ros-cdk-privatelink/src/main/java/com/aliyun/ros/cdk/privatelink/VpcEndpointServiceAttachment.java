@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpointServiceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:31:09.947Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:47:52.288Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpointServiceAttachment")
 public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.privatelink.IVpcEndpointServiceAttachment {
 
@@ -149,36 +149,38 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
-         * Property resourceType: The resource type.
+         * Property resourceType: The type of the service resource.
          * <p>
-         * Allowed values:
+         * Valid values:
          * <p>
          * <ul>
-         * <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
-         * <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
-         * <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         * <li>slb: Classic Load Balancer (CLB).</li>
+         * <li>alb: Application Load Balancer (ALB).</li>
+         * <li>nlb: Network Load Balancer (NLB).</li>
+         * <li>gwlb: Gateway Load Balancer (GWLB).</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param resourceType Property resourceType: The resource type. This parameter is required.
+         * @param resourceType Property resourceType: The type of the service resource. This parameter is required.
          */
         public Builder resourceType(final java.lang.String resourceType) {
             this.props.resourceType(resourceType);
             return this;
         }
         /**
-         * Property resourceType: The resource type.
+         * Property resourceType: The type of the service resource.
          * <p>
-         * Allowed values:
+         * Valid values:
          * <p>
          * <ul>
-         * <li>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</li>
-         * <li>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</li>
-         * <li>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</li>
+         * <li>slb: Classic Load Balancer (CLB).</li>
+         * <li>alb: Application Load Balancer (ALB).</li>
+         * <li>nlb: Network Load Balancer (NLB).</li>
+         * <li>gwlb: Gateway Load Balancer (GWLB).</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param resourceType Property resourceType: The resource type. This parameter is required.
+         * @param resourceType Property resourceType: The type of the service resource. This parameter is required.
          */
         public Builder resourceType(final com.aliyun.ros.cdk.core.IResolvable resourceType) {
             this.props.resourceType(resourceType);
@@ -207,20 +209,26 @@ public class VpcEndpointServiceAttachment extends com.aliyun.ros.cdk.core.Resour
         }
 
         /**
-         * Property zoneId: Zone id of the service resource.
+         * Property zoneId: The zone where the service resource is located.
+         * <p>
+         * This parameter is required if the
+         * service resource is an ALB, NLB, or GWLB instance.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: Zone id of the service resource. This parameter is required.
+         * @param zoneId Property zoneId: The zone where the service resource is located. This parameter is required.
          */
         public Builder zoneId(final java.lang.String zoneId) {
             this.props.zoneId(zoneId);
             return this;
         }
         /**
-         * Property zoneId: Zone id of the service resource.
+         * Property zoneId: The zone where the service resource is located.
+         * <p>
+         * This parameter is required if the
+         * service resource is an ALB, NLB, or GWLB instance.
          * <p>
          * @return {@code this}
-         * @param zoneId Property zoneId: Zone id of the service resource. This parameter is required.
+         * @param zoneId Property zoneId: The zone where the service resource is located. This parameter is required.
          */
         public Builder zoneId(final com.aliyun.ros.cdk.core.IResolvable zoneId) {
             this.props.zoneId(zoneId);

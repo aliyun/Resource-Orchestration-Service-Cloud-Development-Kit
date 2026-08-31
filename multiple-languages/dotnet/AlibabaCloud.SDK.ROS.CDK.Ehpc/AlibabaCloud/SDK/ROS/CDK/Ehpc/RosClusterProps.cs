@@ -316,7 +316,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _additionalVolumes;
 
         /// <remarks>
-        /// <strong>Property</strong>: additionalVolumes:
+        /// <strong>Property</strong>: additionalVolumes: The information of the NAS file system.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "additionalVolumes", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosCluster.AdditionalVolumesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -416,7 +416,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _autoRenew;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoRenew: true: automatic renewals; false: no automatic renewals.
+        /// <strong>Property</strong>: autoRenew: Specifies whether to enable auto-renewal. Valid values:
+        /// *   true
+        /// *   false
+        /// Default value: false.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenew", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -449,7 +452,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _autoRenewPeriod;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoRenewPeriod: Duration of each automatic renewals, AutoRenew take effect when AutoRenew is True.
+        /// <strong>Property</strong>: autoRenewPeriod: The auto-renewal period of the subscription compute nodes. The parameter takes
+        /// effect when AutoRenew is set to true.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoRenewPeriod", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -572,7 +576,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _computeSpotPriceLimit;
 
         /// <remarks>
-        /// <strong>Property</strong>: computeSpotPriceLimit: Set an example of the highest price per hour, are floating-point values, in the range of the current price range.
+        /// <strong>Property</strong>: computeSpotPriceLimit: The maximum hourly price of the compute nodes. A maximum of three decimal places
+        /// can be used in the value of the parameter. The parameter is valid only when the
+        /// ComputeSpotStrategy parameter is set to SpotWithPriceLimit.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "computeSpotPriceLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -605,7 +611,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _computeSpotStrategy;
 
         /// <remarks>
-        /// <strong>Property</strong>: computeSpotStrategy: Compute nodes bidding strategy, value NoSpot, SpotWithPriceLimit or SpotAsPriceGo
+        /// <strong>Property</strong>: computeSpotStrategy: The bidding method of the compute nodes. Valid values:
+        /// *   NoSpot: The compute nodes are pay-as-you-go instances.
+        /// *   SpotWithPriceLimit: The compute nodes are preemptible instances that have a
+        /// user-defined maximum hourly price.
+        /// *   SpotAsPriceGo: The compute nodes are preemptible instances for which the
+        /// market price at the time of purchase is used as the bid price.
+        /// Default value: NoSpot.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "computeSpotStrategy", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -675,7 +687,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: Cluster description, 2 to 128 characters.
+        /// <strong>Property</strong>: description: The description of the E-HPC cluster. The description must be 2 to 256 characters
+        /// in length and cannot start with `http:\/\/` or `https:\/\/`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -864,7 +877,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _imageId;
 
         /// <remarks>
-        /// <strong>Property</strong>: imageId: Mirror Id, if ImageType a system, based on the image ID is determined only according OsTag; if self, others, or marketplace, ImageId is mandatory.
+        /// <strong>Property</strong>: imageId: The image IDs.
+        /// You can call the [ListImages]() and [ListCustomImages]() operations to query the
+        /// images that are supported by E-HPC.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "imageId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1133,7 +1148,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _password;
 
         /// <remarks>
-        /// <strong>Property</strong>: password: Root password of jump server (login node). 8 to 30 characters, must contain three (upper and lower case letters, numbers and special symbols). ! Supports the following special characters :() `~ @ # $% ^ & * - + = | {} []:; '<>, \/ Be sure to use the HTTPS protocol API call to avoid password leaks that may occur.?.
+        /// <strong>Property</strong>: password: The root password of the logon node. The password must be 8 to 30 characters in
+        /// length and contain at least three of the following items: uppercase letters,
+        /// lowercase letters, digits, and special characters. Special characters include:
+        /// `( ) ~ ! @ # $ % ^ & * - + = | { } [ ] : ; ‘ < > , . ? \/`
+        /// You must specify either Password or KeyPairName. If both are specified, the
+        /// Password parameter prevails.
+        /// > We recommend that you use HTTPS to call the API operation to prevent password
+        /// leakage.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1166,7 +1188,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The purchase of long resources, units: week \/ month \/ year. When the value of the parameter EcsChargeType when PrePaid take effect and for the selected value will be.
+        /// <strong>Property</strong>: period: The duration of the subscription. The unit of the duration is specified by the
+        /// `PeriodUnit` parameter.
+        /// *   Valid values if PriceUnit is set to Year: 1, 2, and 3.
+        /// *   Valid values if PriceUnit is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.
+        /// *   Valid value if PriceUnit is set to Hour: 1.
+        /// Default value: 1.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1219,7 +1246,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _periodUnit;
 
         /// <remarks>
-        /// <strong>Property</strong>: periodUnit: The purchase of long-resources unit. Alternatively value Week \/ Month \/ year.
+        /// <strong>Property</strong>: periodUnit: The unit of the subscription duration. Valid values:
+        /// *   Year
+        /// *   Month
+        /// *   Hour
+        /// Default value: Month.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "periodUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1252,7 +1283,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _postInstallScript;
 
         /// <remarks>
-        /// <strong>Property</strong>: postInstallScript:
+        /// <strong>Property</strong>: postInstallScript: The information of the post-installation script.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "postInstallScript", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ehpc.RosCluster.PostInstallScriptProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -1492,7 +1523,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _sccClusterId;
 
         /// <remarks>
-        /// <strong>Property</strong>: sccClusterId: When SCC models, if you pass this field, then the specified SccCluster create Scc instance, otherwise it will create an instance for the user.
+        /// <strong>Property</strong>: sccClusterId: The Super Computing Cluster (SCC) instance ID.
+        /// If you specify the parameter, the SCC instance is moved to a new SCC cluster.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "sccClusterId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -1596,7 +1628,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ehpc
         private object? _securityGroupName;
 
         /// <remarks>
-        /// <strong>Property</strong>: securityGroupName: If you do not use an existing security group (SecurityGroupId is empty), then use this name to create a new security group, the default policy. Format Requirements Reference ECS security group name.
+        /// <strong>Property</strong>: securityGroupName: If you do not use an existing security group, set the parameter to the name of a
+        /// new security group. A default policy is applied to the new security group.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "securityGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

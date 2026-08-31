@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`, which is used to bind a plug-in to an API.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::ApiGateway::PluginAttachment`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPluginAttachment`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-pluginattachment

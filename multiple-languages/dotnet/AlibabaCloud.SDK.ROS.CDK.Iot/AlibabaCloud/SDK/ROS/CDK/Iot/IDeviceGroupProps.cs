@@ -13,7 +13,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
     {
         /// <summary>Property groupName: The name of the group.</summary>
         /// <remarks>
-        /// The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+        /// The alias must be 4 to 30 characters in length, and can
+        /// contain letters, digits, and underscores (_).
         /// </remarks>
         [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object GroupName
@@ -76,7 +77,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Iot
 
             /// <summary>Property groupName: The name of the group.</summary>
             /// <remarks>
-            /// The name can contain Chinese characters, English letters, digits, and underscores (_). The length must be 4 to 30 characters (a Chinese character counts as two characters).
+            /// The alias must be 4 to 30 characters in length, and can
+            /// contain letters, digits, and underscores (_).
             /// </remarks>
             [JsiiProperty(name: "groupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object GroupName

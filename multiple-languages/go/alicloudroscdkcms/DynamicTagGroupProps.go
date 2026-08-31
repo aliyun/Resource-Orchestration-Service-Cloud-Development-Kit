@@ -5,7 +5,15 @@ package alicloudroscdkcms
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-dynamictaggroup
 type DynamicTagGroupProps struct {
-	// Property contactGroupList: Alarm contacts.
+	// Property contactGroupList: The alert contact groups.
+	//
+	// The value of N can be from 1 to 100. Alert
+	// notifications for the application group are sent to the alert contacts in these
+	// alert contact groups.
+	// An alert contact group can contain one or more alert contacts. For more
+	// information about how to create alert contacts and alert contact groups, see
+	// PutContact and PutContactGroup. For more information about how to obtain
+	// alert contact groups, see DescribeContactGroupList.
 	ContactGroupList interface{} `field:"required" json:"contactGroupList" yaml:"contactGroupList"`
 	// Property tagKey: Tag key.
 	TagKey interface{} `field:"required" json:"tagKey" yaml:"tagKey"`
@@ -16,26 +24,26 @@ type DynamicTagGroupProps struct {
 	// Note If ECS generated instances group does not monitor plug-in installed will attempt to automatically install.
 	// false: disable installation.
 	EnableInstallAgent interface{} `field:"optional" json:"enableInstallAgent" yaml:"enableInstallAgent"`
-	// Property enableSubscribeEvent: Whether the event subscription is enabled.
+	// Property enableSubscribeEvent: Specifies whether to automatically subscribe to event notifications for the application group.
 	//
-	// Values are
-	// :true: enable event subscription
-	// false: disable event subscription.
+	// When a critical or warning event occurs on a resource in the
+	// application group, CloudMonitor sends an alert notification. Valid values:
+	// - true: enabled.
+	// - false (default): disabled.
 	EnableSubscribeEvent interface{} `field:"optional" json:"enableSubscribeEvent" yaml:"enableSubscribeEvent"`
-	// Property matchExpress: Matching list.
-	//
-	// Only supports one currently.
+	// Property matchExpress: The match expressions that are used to create an application group from tags.
 	MatchExpress interface{} `field:"optional" json:"matchExpress" yaml:"matchExpress"`
-	// Property matchExpressFilterRelation: The relationship between the conditional expressions.
+	// Property matchExpressFilterRelation: The relationship between the conditional expressions for the tag values.
 	//
-	// Values are:
-	// and: the relationship between
-	// or: the relationship or the
-	// Description currently supports only one combination of conditions, the follow-up Ali cloud will support a variety of combinations of conditions.
+	// Valid
+	// values:
+	// - and (default)
+	// - or.
 	MatchExpressFilterRelation interface{} `field:"optional" json:"matchExpressFilterRelation" yaml:"matchExpressFilterRelation"`
-	// Property templateIdList: Alarm template ID list.
+	// Property templateIdList: The ID of the alert template.
 	//
-	// When the automatically generated application group synchronizes tags, it will generate alarm rules according to the specified alarm template.
+	// For more information about how to query the IDs of alert templates, see
+	// DescribeMetricRuleTemplateList.
 	TemplateIdList interface{} `field:"optional" json:"templateIdList" yaml:"templateIdList"`
 }
 

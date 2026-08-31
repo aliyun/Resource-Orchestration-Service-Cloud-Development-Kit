@@ -137,7 +137,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
             }
         }
 
-        /// <summary>Property period: The unit of the subscription duration.</summary>
+        /// <summary>Property period: The subscription duration unit.</summary>
+        /// <remarks>
+        ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>This parameter is required only when <c>PayType</c> is set to
+        ///     <c>Prepaid</c>.&gt;
+        ///
+        /// <list type="bullet">
+        /// <description>Year: Measured in years.</description>
+        /// <description>Month: Measured in months.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? Period
@@ -369,7 +378,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Clickhouse
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property period: The unit of the subscription duration.</summary>
+            /// <summary>Property period: The subscription duration unit.</summary>
+            /// <remarks>
+            ///     <notice xmlns="http://www.w3.org/1999/xhtml"></notice>This parameter is required only when <c>PayType</c> is set to
+            ///     <c>Prepaid</c>.&gt;
+            ///
+            /// <list type="bullet">
+            /// <description>Year: Measured in years.</description>
+            /// <description>Month: Measured in months.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? Period

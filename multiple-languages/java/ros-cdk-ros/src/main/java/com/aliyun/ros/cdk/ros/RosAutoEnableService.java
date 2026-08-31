@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ROS::AutoEnableService</code>, which is used to automatically activate an Alibaba Cloud service or feature.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:42:02.101Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:23:14.470Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosAutoEnableService")
 public class RosAutoEnableService extends com.aliyun.ros.cdk.core.RosResource {
 
@@ -72,6 +72,149 @@ public class RosAutoEnableService extends com.aliyun.ros.cdk.core.RosResource {
     }
 
     /**
+     */
+    public @org.jetbrains.annotations.Nullable java.lang.Object getServiceParameters() {
+        return software.amazon.jsii.Kernel.get(this, "serviceParameters", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+    }
+
+    /**
+     */
+    public void setServiceParameters(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.core.IResolvable value) {
+        software.amazon.jsii.Kernel.set(this, "serviceParameters", value);
+    }
+
+    /**
+     */
+    public void setServiceParameters(final @org.jetbrains.annotations.Nullable com.aliyun.ros.cdk.ros.RosAutoEnableService.ServiceParametersProperty value) {
+        software.amazon.jsii.Kernel.set(this, "serviceParameters", value);
+    }
+    /**
+     */
+    @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty")
+    @software.amazon.jsii.Jsii.Proxy(ServiceParametersProperty.Jsii$Proxy.class)
+    @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+    public static interface ServiceParametersProperty extends software.amazon.jsii.JsiiSerializable {
+
+        /**
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @org.jetbrains.annotations.NotNull java.lang.Object getWorkspaceId();
+
+        /**
+         * @return a {@link Builder} of {@link ServiceParametersProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        static Builder builder() {
+            return new Builder();
+        }
+        /**
+         * A builder for {@link ServiceParametersProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        public static final class Builder implements software.amazon.jsii.Builder<ServiceParametersProperty> {
+            java.lang.Object workspaceId;
+
+            /**
+             * Sets the value of {@link ServiceParametersProperty#getWorkspaceId}
+             * @param workspaceId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder workspaceId(java.lang.String workspaceId) {
+                this.workspaceId = workspaceId;
+                return this;
+            }
+
+            /**
+             * Sets the value of {@link ServiceParametersProperty#getWorkspaceId}
+             * @param workspaceId the value to be set. This parameter is required.
+             * @return {@code this}
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            public Builder workspaceId(com.aliyun.ros.cdk.core.IResolvable workspaceId) {
+                this.workspaceId = workspaceId;
+                return this;
+            }
+
+            /**
+             * Builds the configured instance.
+             * @return a new instance of {@link ServiceParametersProperty}
+             * @throws NullPointerException if any required attribute was not provided
+             */
+            @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+            @Override
+            public ServiceParametersProperty build() {
+                return new Jsii$Proxy(this);
+            }
+        }
+
+        /**
+         * An implementation for {@link ServiceParametersProperty}
+         */
+        @software.amazon.jsii.Stability(software.amazon.jsii.Stability.Level.Stable)
+        @software.amazon.jsii.Internal
+        final class Jsii$Proxy extends software.amazon.jsii.JsiiObject implements ServiceParametersProperty {
+            private final java.lang.Object workspaceId;
+
+            /**
+             * Constructor that initializes the object based on values retrieved from the JsiiObject.
+             * @param objRef Reference to the JSII managed object.
+             */
+            protected Jsii$Proxy(final software.amazon.jsii.JsiiObjectRef objRef) {
+                super(objRef);
+                this.workspaceId = software.amazon.jsii.Kernel.get(this, "workspaceId", software.amazon.jsii.NativeType.forClass(java.lang.Object.class));
+            }
+
+            /**
+             * Constructor that initializes the object based on literal property values passed by the {@link Builder}.
+             */
+            protected Jsii$Proxy(final Builder builder) {
+                super(software.amazon.jsii.JsiiObject.InitializationMode.JSII);
+                this.workspaceId = java.util.Objects.requireNonNull(builder.workspaceId, "workspaceId is required");
+            }
+
+            @Override
+            public final java.lang.Object getWorkspaceId() {
+                return this.workspaceId;
+            }
+
+            @Override
+            @software.amazon.jsii.Internal
+            public com.fasterxml.jackson.databind.JsonNode $jsii$toJson() {
+                final com.fasterxml.jackson.databind.ObjectMapper om = software.amazon.jsii.JsiiObjectMapper.INSTANCE;
+                final com.fasterxml.jackson.databind.node.ObjectNode data = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+
+                data.set("workspaceId", om.valueToTree(this.getWorkspaceId()));
+
+                final com.fasterxml.jackson.databind.node.ObjectNode struct = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                struct.set("fqn", om.valueToTree("@alicloud/ros-cdk-ros.RosAutoEnableService.ServiceParametersProperty"));
+                struct.set("data", data);
+
+                final com.fasterxml.jackson.databind.node.ObjectNode obj = com.fasterxml.jackson.databind.node.JsonNodeFactory.instance.objectNode();
+                obj.set("$jsii.struct", struct);
+
+                return obj;
+            }
+
+            @Override
+            public final boolean equals(final Object o) {
+                if (this == o) return true;
+                if (o == null || getClass() != o.getClass()) return false;
+
+                ServiceParametersProperty.Jsii$Proxy that = (ServiceParametersProperty.Jsii$Proxy) o;
+
+                return this.workspaceId.equals(that.workspaceId);
+            }
+
+            @Override
+            public final int hashCode() {
+                int result = this.workspaceId.hashCode();
+                return result;
+            }
+        }
+    }
+
+    /**
      * A fluent builder for {@link com.aliyun.ros.cdk.ros.RosAutoEnableService}.
      */
     public static final class Builder implements software.amazon.jsii.Builder<com.aliyun.ros.cdk.ros.RosAutoEnableService> {
@@ -111,6 +254,23 @@ public class RosAutoEnableService extends com.aliyun.ros.cdk.core.RosResource {
          */
         public Builder serviceName(final com.aliyun.ros.cdk.core.IResolvable serviceName) {
             this.props.serviceName(serviceName);
+            return this;
+        }
+
+        /**
+         * @return {@code this}
+         * @param serviceParameters This parameter is required.
+         */
+        public Builder serviceParameters(final com.aliyun.ros.cdk.core.IResolvable serviceParameters) {
+            this.props.serviceParameters(serviceParameters);
+            return this;
+        }
+        /**
+         * @return {@code this}
+         * @param serviceParameters This parameter is required.
+         */
+        public Builder serviceParameters(final com.aliyun.ros.cdk.ros.RosAutoEnableService.ServiceParametersProperty serviceParameters) {
+            this.props.serviceParameters(serviceParameters);
             return this;
         }
 

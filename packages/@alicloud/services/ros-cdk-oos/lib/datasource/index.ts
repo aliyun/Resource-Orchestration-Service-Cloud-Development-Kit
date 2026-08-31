@@ -1,4 +1,5 @@
 export * from './gitcoderepo';
+export * from './parameter';
 export * from './patchbaseline';
 export * from './patchbaselines';
 export * from './secretparameter';

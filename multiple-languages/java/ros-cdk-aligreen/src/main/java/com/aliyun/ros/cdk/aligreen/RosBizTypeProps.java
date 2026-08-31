@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.aligreen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-aligreen-biztype
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:24:00.784Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:01:32.987Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.aligreen.$Module.class, fqn = "@alicloud/ros-cdk-aligreen.RosBizTypeProps")
 @software.amazon.jsii.Jsii.Proxy(RosBizTypeProps.Jsii$Proxy.class)
 public interface RosBizTypeProps extends software.amazon.jsii.JsiiSerializable {

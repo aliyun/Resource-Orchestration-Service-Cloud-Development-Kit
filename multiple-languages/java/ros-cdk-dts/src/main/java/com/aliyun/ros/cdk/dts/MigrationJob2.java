@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::MigrationJob2</code>, which is used to purchase a data migration instance and configure a data migration task of the new version.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::MigrationJob2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.788Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.949Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.MigrationJob2")
 public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.IMigrationJob2 {
 
@@ -130,7 +130,18 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property dataInitialization: Specifies whether to perform full data migration or full data synchronization.
          * <p>
-         * Default value: <strong>true</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true (default)</li>
+         * <li>false</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If JobType is set to CHECK, set this parameter to false.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dataInitialization Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. This parameter is required.
@@ -142,7 +153,18 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property dataInitialization: Specifies whether to perform full data migration or full data synchronization.
          * <p>
-         * Default value: <strong>true</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>true (default)</li>
+         * <li>false</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If JobType is set to CHECK, set this parameter to false.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dataInitialization Property dataInitialization: Specifies whether to perform full data migration or full data synchronization. This parameter is required.
@@ -155,7 +177,18 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization.
          * <p>
-         * Default value: <strong>false</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>false (default)</li>
+         * <li>true</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If JobType is set to CHECK, set this parameter to false.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dataSynchronization Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. This parameter is required.
@@ -167,7 +200,18 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization.
          * <p>
-         * Default value: <strong>false</strong>. Valid values: <strong>true</strong> and <strong>false</strong>.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>false (default)</li>
+         * <li>true</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If JobType is set to CHECK, set this parameter to false.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param dataSynchronization Property dataSynchronization: Specifies whether to perform incremental data migration or incremental data synchronization. This parameter is required.
@@ -180,6 +224,8 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property dbList: The objects that you want to migrate or synchronize.
          * <p>
+         * The value is a JSON string.
+         * <p>
          * @return {@code this}
          * @param dbList Property dbList: The objects that you want to migrate or synchronize. This parameter is required.
          */
@@ -189,6 +235,8 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         }
         /**
          * Property dbList: The objects that you want to migrate or synchronize.
+         * <p>
+         * The value is a JSON string.
          * <p>
          * @return {@code this}
          * @param dbList Property dbList: The objects that you want to migrate or synchronize. This parameter is required.
@@ -264,7 +312,19 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property structureInitialization: Specifies whether to perform schema migration or schema synchronization.
          * <p>
-         * Default value: true. Valid values: <strong>true</strong> and <strong>false</strong>.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>true (default)</li>
+         * <li>false</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If JobType is set to CHECK, set this parameter to false.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param structureInitialization Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. This parameter is required.
@@ -276,7 +336,19 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property structureInitialization: Specifies whether to perform schema migration or schema synchronization.
          * <p>
-         * Default value: true. Valid values: <strong>true</strong> and <strong>false</strong>.
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>true (default)</li>
+         * <li>false</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If JobType is set to CHECK, set this parameter to false.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param structureInitialization Property structureInitialization: Specifies whether to perform schema migration or schema synchronization. This parameter is required.
@@ -408,7 +480,16 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property delayRuleTime: The threshold for latency alerts.
          * <p>
-         * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         * Unit: seconds. The value must be an integer.
+         * You can set the threshold based on your business requirements. To prevent
+         * unstable latency caused by network and database overloads, we recommend that you
+         * set the threshold to more than 10 seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If DelayNotice is set to true, this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts. This parameter is required.
@@ -420,7 +501,16 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property delayRuleTime: The threshold for latency alerts.
          * <p>
-         * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         * Unit: seconds. The value must be an integer.
+         * You can set the threshold based on your business requirements. To prevent
+         * unstable latency caused by network and database overloads, we recommend that you
+         * set the threshold to more than 10 seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If DelayNotice is set to true, this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts. This parameter is required.
@@ -638,24 +728,24 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * Currently, this feature is not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16. This parameter is required.
          */
         public Builder maxDu(final java.lang.Number maxDu) {
             this.props.maxDu(maxDu);
             return this;
         }
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * Currently, this feature is not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16. This parameter is required.
          */
         public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
             this.props.maxDu(maxDu);
@@ -663,24 +753,24 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         }
 
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * This feature is currently not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16. This parameter is required.
          */
         public Builder minDu(final java.lang.Number minDu) {
             this.props.minDu(minDu);
             return this;
         }
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * This feature is currently not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16. This parameter is required.
          */
         public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
             this.props.minDu(minDu);
@@ -690,7 +780,10 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property reserve: The reserved parameter of DTS.
          * <p>
-         * You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         * The value is a JSON string. You can specify this
+         * parameter to add more configurations of the source or destination instance to the
+         * DTS task. For example, you can specify the data storage format of the destination
+         * Kafka database and the CEN instance ID.
          * <p>
          * @return {@code this}
          * @param reserve Property reserve: The reserved parameter of DTS. This parameter is required.
@@ -702,7 +795,10 @@ public class MigrationJob2 extends com.aliyun.ros.cdk.core.Resource implements c
         /**
          * Property reserve: The reserved parameter of DTS.
          * <p>
-         * You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         * The value is a JSON string. You can specify this
+         * parameter to add more configurations of the source or destination instance to the
+         * DTS task. For example, you can specify the data storage format of the destination
+         * Kafka database and the CEN instance ID.
          * <p>
          * @return {@code this}
          * @param reserve Property reserve: The reserved parameter of DTS. This parameter is required.

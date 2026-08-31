@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instances`, which is used to query the information about created Elastic Accelerated Computing Instances (EAIS) instances.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::EAIS::Instances`.
 type RosInstances interface {
 	alicloudroscdkcore.RosResource
 	AttrInstanceIds() alicloudroscdkcore.IResolvable

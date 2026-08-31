@@ -13,7 +13,11 @@ import { IPrincipal } from './principals.cdk'
 export interface RoleProps {
 
     /**
-     * Property assumeRolePolicyDocument: The RAM assume role policy that is associated with this role.
+     * Property assumeRolePolicyDocument: The trust policy that specifies one or more trusted entities allowed to assume
+     * the RAM role. Trusted entities can be cloud accounts, cloud
+     * services, or identity providers (IdPs).
+     * > RAM users cannot assume RAM roles whose trusted entity is a cloud
+     * service.
      */
     readonly assumeRolePolicyDocument: RosRole.AssumeRolePolicyDocumentProperty | ros.IResolvable;
 

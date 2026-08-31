@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::KeywordLib`, which is used to create a custom text library.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::Aligreen::KeywordLib`.
 type RosKeywordLib interface {
 	alicloudroscdkcore.RosResource
 	AttrBizTypes() alicloudroscdkcore.IResolvable

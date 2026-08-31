@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.nas;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::DataFlow</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::DataFlow</code>Creates a data flow between a Cloud Parallel File Storage (CPFS) file system and an Object Storage Service (OSS) bucket.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.478Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.294Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.DataFlow")
 public class DataFlow extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IDataFlow {
 
@@ -120,20 +120,34 @@ public class DataFlow extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property fileSystemId: File system ID.
+         * Property fileSystemId: The ID of the file system.
+         * <p>
+         * <ul>
+         * <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         * cpfs-125487****.</li>
+         * <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+         * bmcpfs-0015****.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
          */
         public Builder fileSystemId(final java.lang.String fileSystemId) {
             this.props.fileSystemId(fileSystemId);
             return this;
         }
         /**
-         * Property fileSystemId: File system ID.
+         * Property fileSystemId: The ID of the file system.
+         * <p>
+         * <ul>
+         * <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         * cpfs-125487****.</li>
+         * <li>The IDs of CPFS for Lingjun file systems must start with <code>bmcpfs-</code>. Example:
+         * bmcpfs-0015****.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
          */
         public Builder fileSystemId(final com.aliyun.ros.cdk.core.IResolvable fileSystemId) {
             this.props.fileSystemId(fileSystemId);
@@ -141,20 +155,32 @@ public class DataFlow extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property fsetId: Fileset ID.
+         * Property fsetId: The fileset ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for CPFS file systems.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param fsetId Property fsetId: Fileset ID. This parameter is required.
+         * @param fsetId Property fsetId: The fileset ID. This parameter is required.
          */
         public Builder fsetId(final java.lang.String fsetId) {
             this.props.fsetId(fsetId);
             return this;
         }
         /**
-         * Property fsetId: Fileset ID.
+         * Property fsetId: The fileset ID.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required for CPFS file systems.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param fsetId Property fsetId: Fileset ID. This parameter is required.
+         * @param fsetId Property fsetId: The fileset ID. This parameter is required.
          */
         public Builder fsetId(final com.aliyun.ros.cdk.core.IResolvable fsetId) {
             this.props.fsetId(fsetId);
@@ -162,20 +188,66 @@ public class DataFlow extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region.
+         * Property sourceStorage: The access path of the source storage.
+         * <p>
+         * Format: <code>&lt;storage type&gt;:\/\/[&lt;account id&gt;:]&lt;path&gt;</code>.
+         * Parameters:
+         * <p>
+         * <ul>
+         * <li>storage type: Only OSS is supported.</li>
+         * <li>account id (optional): the UID of the account of the source storage. This
+         * parameter is required when you use OSS buckets across accounts.</li>
+         * <li>path: the name of the OSS bucket. Limits:</li>
+         * <li>The name can contain only lowercase letters, digits, and hyphens (-). The
+         * name must start and end with a lowercase letter or digit.</li>
+         * <li>The name can be up to 128 characters in length.</li>
+         * <li>The name must be encoded in UTF-8.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>The OSS bucket must be an existing bucket in the region.</li>
+         * <li>Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param sourceStorage Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region. This parameter is required.
+         * @param sourceStorage Property sourceStorage: The access path of the source storage. This parameter is required.
          */
         public Builder sourceStorage(final java.lang.String sourceStorage) {
             this.props.sourceStorage(sourceStorage);
             return this;
         }
         /**
-         * Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region.
+         * Property sourceStorage: The access path of the source storage.
+         * <p>
+         * Format: <code>&lt;storage type&gt;:\/\/[&lt;account id&gt;:]&lt;path&gt;</code>.
+         * Parameters:
+         * <p>
+         * <ul>
+         * <li>storage type: Only OSS is supported.</li>
+         * <li>account id (optional): the UID of the account of the source storage. This
+         * parameter is required when you use OSS buckets across accounts.</li>
+         * <li>path: the name of the OSS bucket. Limits:</li>
+         * <li>The name can contain only lowercase letters, digits, and hyphens (-). The
+         * name must start and end with a lowercase letter or digit.</li>
+         * <li>The name can be up to 128 characters in length.</li>
+         * <li>The name must be encoded in UTF-8.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>The OSS bucket must be an existing bucket in the region.</li>
+         * <li>Only CPFS for LINGJUN V2.6.0 and later support the account id parameter.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param sourceStorage Property sourceStorage: Access path stored at the source.Format: <storage Type>: // <PATH>. in: Storage Type: Currently only supports OSS. PATH: OSS's bucket name.Limit the following. Only support the lowercase letters, numbers and short strokes (-) and must start with a lowercase letter or number. The length is 8 ~ 128 English characters. Use UTF-8 encoding. Can't start with http: // and https: //. Explain that the OSS BUCKET must be the bucket that exists in the region. This parameter is required.
+         * @param sourceStorage Property sourceStorage: The access path of the source storage. This parameter is required.
          */
         public Builder sourceStorage(final com.aliyun.ros.cdk.core.IResolvable sourceStorage) {
             this.props.sourceStorage(sourceStorage);
@@ -183,24 +255,50 @@ public class DataFlow extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500.
+         * Property throughput: The maximum data flow throughput.
          * <p>
-         * Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+         * Unit: MB/s. Valid values:
+         * <p>
+         * <ul>
+         * <li>600</li>
+         * <li>1200</li>
+         * <li>1500</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The data flow throughput must be less than the I/O throughput of the file
+         * system. This parameter is required for CPFS file systems.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param throughput Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500. This parameter is required.
+         * @param throughput Property throughput: The maximum data flow throughput. This parameter is required.
          */
         public Builder throughput(final java.lang.Number throughput) {
             this.props.throughput(throughput);
             return this;
         }
         /**
-         * Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500.
+         * Property throughput: The maximum data flow throughput.
          * <p>
-         * Explanation The transmission bandwidth of the data flow must be smaller than the IO bandwidth of the file system.
+         * Unit: MB/s. Valid values:
+         * <p>
+         * <ul>
+         * <li>600</li>
+         * <li>1200</li>
+         * <li>1500</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * The data flow throughput must be less than the I/O throughput of the file
+         * system. This parameter is required for CPFS file systems.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param throughput Property throughput: The upper limit of transmission bandwidth for data flow, unit: MB/s. Value:  600 1200 1500. This parameter is required.
+         * @param throughput Property throughput: The maximum data flow throughput. This parameter is required.
          */
         public Builder throughput(final com.aliyun.ros.cdk.core.IResolvable throughput) {
             this.props.throughput(throughput);
@@ -235,26 +333,54 @@ public class DataFlow extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
+         * Property autoRefreshPolicy: The automatic update policy.
          * <p>
-         * None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-         * Importchanged: The data update at the source automatically imports CPFS.
+         * The updated data in the source storage is imported
+         * into the CPFS file system based on the policy.
+         * <p>
+         * <ul>
+         * <li>None (default): Updated data in the source storage is not automatically
+         * imported into the CPFS file system. You can run a data flow task to import the
+         * updated data from the source storage.</li>
+         * <li>ImportChanged: Updated data in the source storage is automatically imported
+         * into the CPFS file system.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter takes effect only for CPFS file systems.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRefreshPolicy Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy. This parameter is required.
+         * @param autoRefreshPolicy Property autoRefreshPolicy: The automatic update policy. This parameter is required.
          */
         public Builder autoRefreshPolicy(final java.lang.String autoRefreshPolicy) {
             this.props.autoRefreshPolicy(autoRefreshPolicy);
             return this;
         }
         /**
-         * Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy.
+         * Property autoRefreshPolicy: The automatic update policy.
          * <p>
-         * None (default): The data update of the source is not automatically imported into CPFS. Users can import data update at the source end of the source through data flow tasks.
-         * Importchanged: The data update at the source automatically imports CPFS.
+         * The updated data in the source storage is imported
+         * into the CPFS file system based on the policy.
+         * <p>
+         * <ul>
+         * <li>None (default): Updated data in the source storage is not automatically
+         * imported into the CPFS file system. You can run a data flow task to import the
+         * updated data from the source storage.</li>
+         * <li>ImportChanged: Updated data in the source storage is automatically imported
+         * into the CPFS file system.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter takes effect only for CPFS file systems.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRefreshPolicy Property autoRefreshPolicy: Automatic update strategy, after the source data is updated, the data update is introduced to the CPFS strategy. This parameter is required.
+         * @param autoRefreshPolicy Property autoRefreshPolicy: The automatic update policy. This parameter is required.
          */
         public Builder autoRefreshPolicy(final com.aliyun.ros.cdk.core.IResolvable autoRefreshPolicy) {
             this.props.autoRefreshPolicy(autoRefreshPolicy);
@@ -283,30 +409,40 @@ public class DataFlow extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property description: Description of data flow.
+         * Property description: The description of the dataflow.
          * <p>
-         * limit:
-         * The length is 2 to 128 English or Chinese characters.
-         * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-         * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The description must be 2 to 128 characters in length.</li>
+         * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of data flow. This parameter is required.
+         * @param description Property description: The description of the dataflow. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Description of data flow.
+         * Property description: The description of the dataflow.
          * <p>
-         * limit:
-         * The length is 2 to 128 English or Chinese characters.
-         * Start with a lowercase letter or Chinese, and you cannot start with http:// and https: //.
-         * It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+         * Limits:
+         * <p>
+         * <ul>
+         * <li>The description must be 2 to 128 characters in length.</li>
+         * <li>The description must start with a letter but cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.</li>
+         * <li>The description can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of data flow. This parameter is required.
+         * @param description Property description: The description of the dataflow. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);

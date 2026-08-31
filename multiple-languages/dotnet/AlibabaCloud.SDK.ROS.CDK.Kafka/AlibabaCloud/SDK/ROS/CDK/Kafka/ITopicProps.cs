@@ -36,11 +36,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
         /// <summary>Property topic: The name of the topic.</summary>
         /// <remarks>
-        /// The value of this parameter must meet the following requirements:
-        /// The name can only contain letters, digits, hyphens (-), and underscores (_).
-        /// The name must be 3 to 64 characters in length, and will be automatically truncated
-        /// if it contains more characters.
-        /// The name cannot be modified after being created.
+        /// <list type="bullet">
+        /// <description>Reserved instance: The name can contain uppercase letters, lowercase letters,
+        /// digits, underscores (_), hyphens (-), and periods (.). The name must be 3 to 64
+        /// characters in length.</description>
+        /// <description>Serverless instance: The name can contain uppercase letters, lowercase letters,
+        /// digits, underscores (_), hyphens (-), and periods (.). The name must be 1 to 249
+        /// characters in length.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Topic
@@ -64,11 +67,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
             }
         }
 
-        /// <summary>Property config: Supplementary configuration.</summary>
+        /// <summary>Property config: The advanced configurations of the topic.</summary>
         /// <remarks>
-        /// Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
-        /// This parameter can only be specified if the LocalTopic value is true.
-        /// NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+        /// <list type="bullet">
+        /// <description>Configure this parameter in the JSON format.</description>
+        /// <description>This parameter is available only if LocalTopic is set to true.</description>
+        /// <description>The following configurations are supported for reserved instances:</description>
+        /// <description>retention.ms: The message retention period. The value must be an integer from
+        /// 3,600,000 to 31,536,000,000. Unit: milliseconds.</description>
+        /// <description>max.message.bytes: The maximum size of a message that can be sent. The value
+        /// must be an integer from 1,048,576 to 10,485,760. Unit: bytes.</description>
+        /// <description>message.timestamp.type: The timestamp type of a message. Valid values:
+        /// CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+        /// the time when the producer creates the message. If you do not specify a
+        /// timestamp, the client time is used. LogAppendTime indicates that the message
+        /// timestamp is the time when the server stores the message. The default value is
+        /// CreateTime. We recommend that you set this parameter to LogAppendTime.</description>
+        /// <description>The following configurations are supported for Serverless instances:</description>
+        /// <description>retention.hours: The message retention period. The value is of the string type.
+        /// The value must be an integer from 24 to 8,760.</description>
+        /// <description>max.message.bytes: The maximum size of a message that can be sent. The value is
+        /// of the string type. The value must be an integer from 1,048,576 to 10,485,760.</description>
+        /// <description>message.timestamp.type: The timestamp type of a message. Valid values:
+        /// CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+        /// the time when the producer creates the message. If you do not specify a
+        /// timestamp, the client time is used. LogAppendTime indicates that the message
+        /// timestamp is the time when the server stores the message. The default value is
+        /// CreateTime. We recommend that you set this parameter to LogAppendTime.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -114,10 +140,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
         /// <summary>Property partitionNum: The number of partitions in the topic.</summary>
         /// <remarks>
-        /// Valid values:
-        /// 1 to 48
-        /// We recommend that you set the number of partitions to a multiple of 6 to reduce the
-        /// risk of data skew.Note:For special requirements,submit a ticket.
+        /// <list type="bullet">
+        /// <description>The value must be an integer from 1 to 360.</description>
+        /// <description>The console suggests a number of partitions based on the instance type. Follow
+        /// the suggestion to reduce the risk of data skew.
+        /// Default value:</description>
+        /// <description>Reserved instance: 12</description>
+        /// <description>Serverless instance: 3</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -195,11 +225,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
             /// <summary>Property topic: The name of the topic.</summary>
             /// <remarks>
-            /// The value of this parameter must meet the following requirements:
-            /// The name can only contain letters, digits, hyphens (-), and underscores (_).
-            /// The name must be 3 to 64 characters in length, and will be automatically truncated
-            /// if it contains more characters.
-            /// The name cannot be modified after being created.
+            /// <list type="bullet">
+            /// <description>Reserved instance: The name can contain uppercase letters, lowercase letters,
+            /// digits, underscores (_), hyphens (-), and periods (.). The name must be 3 to 64
+            /// characters in length.</description>
+            /// <description>Serverless instance: The name can contain uppercase letters, lowercase letters,
+            /// digits, underscores (_), hyphens (-), and periods (.). The name must be 1 to 249
+            /// characters in length.</description>
+            /// </list>
             /// </remarks>
             [JsiiProperty(name: "topic", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Topic
@@ -220,11 +253,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property config: Supplementary configuration.</summary>
+            /// <summary>Property config: The advanced configurations of the topic.</summary>
             /// <remarks>
-            /// Currently supports Key as replications. Indicates the number of Topic copies, the value type is Integer, and the value limit is 1~3.
-            /// This parameter can only be specified if the LocalTopic value is true.
-            /// NOTE If replications is specified in this parameter, the specified ReplicationFactor parameter no longer takes effect.
+            /// <list type="bullet">
+            /// <description>Configure this parameter in the JSON format.</description>
+            /// <description>This parameter is available only if LocalTopic is set to true.</description>
+            /// <description>The following configurations are supported for reserved instances:</description>
+            /// <description>retention.ms: The message retention period. The value must be an integer from
+            /// 3,600,000 to 31,536,000,000. Unit: milliseconds.</description>
+            /// <description>max.message.bytes: The maximum size of a message that can be sent. The value
+            /// must be an integer from 1,048,576 to 10,485,760. Unit: bytes.</description>
+            /// <description>message.timestamp.type: The timestamp type of a message. Valid values:
+            /// CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+            /// the time when the producer creates the message. If you do not specify a
+            /// timestamp, the client time is used. LogAppendTime indicates that the message
+            /// timestamp is the time when the server stores the message. The default value is
+            /// CreateTime. We recommend that you set this parameter to LogAppendTime.</description>
+            /// <description>The following configurations are supported for Serverless instances:</description>
+            /// <description>retention.hours: The message retention period. The value is of the string type.
+            /// The value must be an integer from 24 to 8,760.</description>
+            /// <description>max.message.bytes: The maximum size of a message that can be sent. The value is
+            /// of the string type. The value must be an integer from 1,048,576 to 10,485,760.</description>
+            /// <description>message.timestamp.type: The timestamp type of a message. Valid values:
+            /// CreateTime or LogAppendTime. CreateTime indicates that the message timestamp is
+            /// the time when the producer creates the message. If you do not specify a
+            /// timestamp, the client time is used. LogAppendTime indicates that the message
+            /// timestamp is the time when the server stores the message. The default value is
+            /// CreateTime. We recommend that you set this parameter to LogAppendTime.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "config", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
@@ -261,10 +317,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
             /// <summary>Property partitionNum: The number of partitions in the topic.</summary>
             /// <remarks>
-            /// Valid values:
-            /// 1 to 48
-            /// We recommend that you set the number of partitions to a multiple of 6 to reduce the
-            /// risk of data skew.Note:For special requirements,submit a ticket.
+            /// <list type="bullet">
+            /// <description>The value must be an integer from 1 to 360.</description>
+            /// <description>The console suggests a number of partitions based on the instance type. Follow
+            /// the suggestion to reduce the risk of data skew.
+            /// Default value:</description>
+            /// <description>Reserved instance: 12</description>
+            /// <description>Serverless instance: 3</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "partitionNum", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

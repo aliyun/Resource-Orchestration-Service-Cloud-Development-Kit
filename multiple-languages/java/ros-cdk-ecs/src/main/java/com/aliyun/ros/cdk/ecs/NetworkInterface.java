@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::NetworkInterface</code>, which is used to create an elastic network interface (ENI).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::NetworkInterface</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.029Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.410Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterface")
 public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.INetworkInterface {
 
@@ -144,24 +144,42 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property vSwitchId: VSwitch ID of the specified VPC.
+         * Property vSwitchId: The ID of the VSwitch for the elastic network interface.
          * <p>
-         * Specifies the switch ID for the VPC.
+         * The private IP addresses
+         * for the elastic network interface are assigned from the available CIDR block of
+         * the VSwitch.
+         * <p>
+         * <blockquote><notice></blockquote>
+         * <p>
+         * The elastic network interface and the instance to be attached must be in the same
+         * availability zone but can belong to different VSwitches.
+         * <p>
+         * <blockquote></notice></blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: VSwitch ID of the specified VPC. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch for the elastic network interface. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: VSwitch ID of the specified VPC.
+         * Property vSwitchId: The ID of the VSwitch for the elastic network interface.
          * <p>
-         * Specifies the switch ID for the VPC.
+         * The private IP addresses
+         * for the elastic network interface are assigned from the available CIDR block of
+         * the VSwitch.
+         * <p>
+         * <blockquote><notice></blockquote>
+         * <p>
+         * The elastic network interface and the instance to be attached must be in the same
+         * availability zone but can belong to different VSwitches.
+         * <p>
+         * <blockquote></notice></blockquote>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: VSwitch ID of the specified VPC. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch for the elastic network interface. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);
@@ -190,24 +208,28 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property description: Description of your ENI.
+         * Property description: The description of the elastic network interface.
          * <p>
-         * It is a string of [2, 256] English or Chinese characters.
+         * The description must be 2 to
+         * 256 characters long and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * Default value: empty.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of your ENI. This parameter is required.
+         * @param description Property description: The description of the elastic network interface. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props.description(description);
             return this;
         }
         /**
-         * Property description: Description of your ENI.
+         * Property description: The description of the elastic network interface.
          * <p>
-         * It is a string of [2, 256] English or Chinese characters.
+         * The description must be 2 to
+         * 256 characters long and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         * Default value: empty.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of your ENI. This parameter is required.
+         * @param description Property description: The description of the elastic network interface. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props.description(description);
@@ -263,20 +285,38 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         * Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+         * <p>
+         * Valid values: 1 to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify either <code>Ipv6Address.N</code> or <code>Ipv6AddressCount</code>, but not both, to
+         * assign IPv6 addresses.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI. This parameter is required.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface. This parameter is required.
          */
         public Builder ipv6AddressCount(final java.lang.Number ipv6AddressCount) {
             this.props.ipv6AddressCount(ipv6AddressCount);
             return this;
         }
         /**
-         * Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         * Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+         * <p>
+         * Valid values: 1 to 10.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify either <code>Ipv6Address.N</code> or <code>Ipv6AddressCount</code>, but not both, to
+         * assign IPv6 addresses.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI. This parameter is required.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface. This parameter is required.
          */
         public Builder ipv6AddressCount(final com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
             this.props.ipv6AddressCount(ipv6AddressCount);
@@ -378,28 +418,52 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property networkInterfaceTrafficMode: The communication mode of the ENI.
+         * Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.
          * <p>
          * Valid values:
-         * Standard: uses the TCP communication mode.
-         * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         * <p>
+         * <ul>
+         * <li><code>Standard</code>: uses the TCP traffic mode.</li>
+         * <li><code>HighPerformance</code>: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+         * traffic mode.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * An elastic network interface in RDMA traffic mode can be attached only to an
+         * ERI-supported instance type. The number of these elastic network interfaces that
+         * can be attached is limited by the instance family. Default value: <code>Standard</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The communication mode of the ENI. This parameter is required.
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface. This parameter is required.
          */
         public Builder networkInterfaceTrafficMode(final java.lang.String networkInterfaceTrafficMode) {
             this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
             return this;
         }
         /**
-         * Property networkInterfaceTrafficMode: The communication mode of the ENI.
+         * Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.
          * <p>
          * Valid values:
-         * Standard: uses the TCP communication mode.
-         * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         * <p>
+         * <ul>
+         * <li><code>Standard</code>: uses the TCP traffic mode.</li>
+         * <li><code>HighPerformance</code>: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+         * traffic mode.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * An elastic network interface in RDMA traffic mode can be attached only to an
+         * ERI-supported instance type. The number of these elastic network interfaces that
+         * can be attached is limited by the instance family. Default value: <code>Standard</code>.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The communication mode of the ENI. This parameter is required.
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface. This parameter is required.
          */
         public Builder networkInterfaceTrafficMode(final com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
             this.props.networkInterfaceTrafficMode(networkInterfaceTrafficMode);
@@ -555,24 +619,40 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property securityGroupId: The ID of the security group that the ENI joins.
+         * Property securityGroupId: The ID of the security group for the elastic network interface.
          * <p>
-         * The security group and the ENI must be in a same VPC.
+         * The security
+         * group and the elastic network interface must be in the same VPC.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         * both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityGroupId Property securityGroupId: The ID of the security group that the ENI joins. This parameter is required.
+         * @param securityGroupId Property securityGroupId: The ID of the security group for the elastic network interface. This parameter is required.
          */
         public Builder securityGroupId(final java.lang.String securityGroupId) {
             this.props.securityGroupId(securityGroupId);
             return this;
         }
         /**
-         * Property securityGroupId: The ID of the security group that the ENI joins.
+         * Property securityGroupId: The ID of the security group for the elastic network interface.
          * <p>
-         * The security group and the ENI must be in a same VPC.
+         * The security
+         * group and the elastic network interface must be in the same VPC.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         * both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityGroupId Property securityGroupId: The ID of the security group that the ENI joins. This parameter is required.
+         * @param securityGroupId Property securityGroupId: The ID of the security group for the elastic network interface. This parameter is required.
          */
         public Builder securityGroupId(final com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
             this.props.securityGroupId(securityGroupId);
@@ -580,24 +660,42 @@ public class NetworkInterface extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property securityGroupIds: The IDs of the security groups that the ENI joins.
+         * Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.
          * <p>
-         * The security groups and the ENI must belong to the same VPC.
+         * The security groups and the elastic network interface must be in the
+         * same VPC. The valid values of N depend on the maximum number of security groups
+         * to which an elastic network interface can be added.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         * both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityGroupIds Property securityGroupIds: The IDs of the security groups that the ENI joins. This parameter is required.
+         * @param securityGroupIds Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface. This parameter is required.
          */
         public Builder securityGroupIds(final com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
             this.props.securityGroupIds(securityGroupIds);
             return this;
         }
         /**
-         * Property securityGroupIds: The IDs of the security groups that the ENI joins.
+         * Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.
          * <p>
-         * The security groups and the ENI must belong to the same VPC.
+         * The security groups and the elastic network interface must be in the
+         * same VPC. The valid values of N depend on the maximum number of security groups
+         * to which an elastic network interface can be added.
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         * both.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param securityGroupIds Property securityGroupIds: The IDs of the security groups that the ENI joins. This parameter is required.
+         * @param securityGroupIds Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface. This parameter is required.
          */
         public Builder securityGroupIds(final java.util.List<? extends java.lang.Object> securityGroupIds) {
             this.props.securityGroupIds(securityGroupIds);

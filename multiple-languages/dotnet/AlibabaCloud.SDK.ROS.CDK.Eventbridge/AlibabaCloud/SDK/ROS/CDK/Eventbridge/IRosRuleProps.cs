@@ -21,7 +21,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: filterPattern: The event pattern, in the JSON format.
+        /// <strong>Property</strong>: filterPattern: The event pattern, in JSON format. Supported pattern types are `stringEqual` and
+        /// `stringExpression`. Each field can contain a maximum of five expressions in a map
+        /// structure.
         /// </remarks>
         [JsiiProperty(name: "filterPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         object FilterPattern
@@ -96,7 +98,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eventbridge
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: filterPattern: The event pattern, in the JSON format.
+            /// <strong>Property</strong>: filterPattern: The event pattern, in JSON format. Supported pattern types are `stringEqual` and
+            /// `stringExpression`. Each field can contain a maximum of five expressions in a map
+            /// structure.
             /// </remarks>
             [JsiiProperty(name: "filterPattern", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
             public object FilterPattern

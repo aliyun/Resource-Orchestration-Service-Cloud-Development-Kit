@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::OIDCProvider</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.290Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.233Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.OIDCProvider")
 public class OIDCProvider extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.IOIDCProvider {
 
@@ -192,20 +192,32 @@ public class OIDCProvider extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property clientIds: The list of the client IDs, max length is 20.
+         * Property clientIds: The ID of the client, which is provided by the external IdP.
+         * <p>
+         * If you want to
+         * specify multiple client IDs, separate the client IDs with commas (,).
+         * The client ID can contain letters, digits, and special characters and cannot
+         * start with the special characters. The special characters are <code>periods (.), hyphens (-), underscores (_), colons (:), and forward slashes (\/)</code>.``
+         * The client ID can be up to 128 characters in length.
          * <p>
          * @return {@code this}
-         * @param clientIds Property clientIds: The list of the client IDs, max length is 20. This parameter is required.
+         * @param clientIds Property clientIds: The ID of the client, which is provided by the external IdP. This parameter is required.
          */
         public Builder clientIds(final com.aliyun.ros.cdk.core.IResolvable clientIds) {
             this.props.clientIds(clientIds);
             return this;
         }
         /**
-         * Property clientIds: The list of the client IDs, max length is 20.
+         * Property clientIds: The ID of the client, which is provided by the external IdP.
+         * <p>
+         * If you want to
+         * specify multiple client IDs, separate the client IDs with commas (,).
+         * The client ID can contain letters, digits, and special characters and cannot
+         * start with the special characters. The special characters are <code>periods (.), hyphens (-), underscores (_), colons (:), and forward slashes (\/)</code>.``
+         * The client ID can be up to 128 characters in length.
          * <p>
          * @return {@code this}
-         * @param clientIds Property clientIds: The list of the client IDs, max length is 20. This parameter is required.
+         * @param clientIds Property clientIds: The ID of the client, which is provided by the external IdP. This parameter is required.
          */
         public Builder clientIds(final java.util.List<? extends java.lang.Object> clientIds) {
             this.props.clientIds(clientIds);

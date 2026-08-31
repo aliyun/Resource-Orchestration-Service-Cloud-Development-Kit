@@ -48,7 +48,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         private object _siteType;
 
-        /// <summary>Property siteType: The type of the website.</summary>
+        /// <summary>Property siteType: The application type.</summary>
+        /// <remarks>
+        /// Valid values: web, miniapp, ios, and android.
+        /// </remarks>
         [JsiiProperty(name: "siteType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object SiteType
         {
@@ -202,7 +205,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         private object? _packageName;
 
-        /// <summary>Property packageName: The package name of the RUM application.</summary>
+        /// <summary>Property packageName: The name of the Android application package.</summary>
+        /// <remarks>
+        /// This parameter is required if you
+        /// create an Android application.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "packageName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? PackageName
@@ -233,7 +240,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         private object? _realRegionId;
 
-        /// <summary>Property realRegionId: The actual region ID for internal use.</summary>
+        /// <summary>Property realRegionId: The region where the application resides.</summary>
+        /// <remarks>
+        /// You can leave this parameter empty or
+        /// set it to China East 2 Finance.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "realRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? RealRegionId
@@ -295,7 +306,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Arms
 
         private object? _source;
 
-        /// <summary>Property source: The source of the RUM application.</summary>
+        /// <summary>Property source: The source.</summary>
+        /// <remarks>
+        /// This is a reserved parameter.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "source", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Source

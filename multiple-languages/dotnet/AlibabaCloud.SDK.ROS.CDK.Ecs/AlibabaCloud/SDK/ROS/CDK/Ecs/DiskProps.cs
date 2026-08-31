@@ -44,7 +44,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _burstingEnabled;
 
-        /// <summary>Property burstingEnabled: Whether enable bursting.</summary>
+        /// <summary>Property burstingEnabled: Specifies whether to enable performance bursting.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>true</description>
+        /// <description>false</description>
+        /// </list>
+        ///
+        ///     This parameter is available only for ESSD AutoPL disks (<c>cloud_auto</c>). For more
+        ///     information, see <a href="">ESSD AutoPL disks</a>.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "burstingEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? BurstingEnabled
@@ -174,7 +185,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _diskName;
 
-        /// <summary>Property diskName: Display name of the disk, [2, 128] English or Chinese characters, must start with a letter or Chinese in size, can contain numbers, '_' or '.', '-'.</summary>
+        /// <summary>Property diskName: The name of the disk.</summary>
+        /// <remarks>
+        /// The name must be 2 to 128 characters in length. It must
+        /// start with a letter as defined by Unicode and can contain letters (including
+        /// English and Chinese characters), digits (0-9), colons (:), underscores (_),
+        /// periods (.), and hyphens (-).
+        /// Default value: empty.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "diskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? DiskName
@@ -236,12 +254,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _instanceId;
 
-        /// <summary>Property instanceId: Create a cloud disk and automatically mount it to the specified InstanceId.</summary>
+        /// <summary>Property instanceId: Creates a subscription disk and automatically attaches it to the specified subscription instance.</summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <description>Once the instance ID is set, the ResourceGroupId, Tags, and KMSKeyId parameters you set are ignored.</description>
-        /// <description>You cannot specify both ZoneId and InstanceId.
-        /// Default value: null, meaning that a pay-as-you-go cloud drive is created, and the region of the drive is defined by the RegionId and ZoneId.</description>
+        /// <description>If you set this parameter, the <c>ResourceGroupId</c>, <c>Tag.N.Key</c>, <c>Tag.N.Value</c>,
+        /// <c>ClientToken</c>, and <c>KMSKeyId</c> parameters are ignored.</description>
+        /// <description>You cannot specify both <c>ZoneId</c> and <c>InstanceId</c>.
+        /// Default value: empty. An empty value indicates that you are creating a
+        /// pay-as-you-go disk. The disk's location is determined by <c>RegionId</c> and <c>ZoneId</c>.</description>
         /// </list>
         /// </remarks>
         [JsiiOptional]
@@ -274,7 +294,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _kmsKeyId;
 
-        /// <summary>Property kmsKeyId: KMS key ID used by the cloud disk.</summary>
+        /// <summary>Property kmsKeyId: The ID of the KMS key to use for the disk.</summary>
+        /// <remarks>
+        ///     If <c>Encrypted</c> is set to true and you do not specify <c>KMSKeyId</c>, a default key
+        ///     is used for encryption. The <c>KMSKeyId</c> is returned in the response after the
+        ///     instance is created.
+        ///
+        /// <list type="bullet">
+        ///     <description><list type="bullet">
+        ///     <description>If the disk is created from an unshared encrypted snapshot, the encryption
+        ///     key used by that snapshot is used by default.</description>
+        ///     </list></description>
+        ///     <description><list type="bullet">
+        ///     <description>If the disk is created from a shared encrypted snapshot, the service key is
+        ///     used by default.</description>
+        ///     </list></description>
+        ///     <description><list type="bullet">
+        ///     <description>If the disk is created in a region with account-level default encryption
+        ///     enabled, the specified account-level key is used by default.</description>
+        ///     </list></description>
+        ///     <description><list type="bullet">
+        ///     <description>In other cases, the service key is used by default.</description>
+        ///     </list></description>
+        ///     </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "kmsKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? KmsKeyId
@@ -373,7 +416,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _provisionedIops;
 
-        /// <summary>Property provisionedIops: Provisioning IOPS.</summary>
+        /// <summary>Property provisionedIops: The provisioned read\/write IOPS of a single ESSD AutoPL disk.</summary>
+        /// <remarks>
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>Capacity &lt;= 3 GiB: You cannot set provisioned performance.</description>
+        /// <description>Capacity &gt;= 4 GiB: 0 to min(1,000 IOPS/GiB × Capacity - Baseline IOPS, 50,000).
+        /// Baseline IOPS = max(min(1,800 + 50 × Capacity, 50,000), 3,000).</description>
+        /// </list>
+        ///
+        ///     This parameter is available only for ESSD AutoPL disks (<c>cloud_auto</c>). For more
+        ///     information, see <a href="">ESSD AutoPL disks</a>.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "provisionedIops", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ProvisionedIops
@@ -455,7 +510,33 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _size;
 
-        /// <summary>Property size: The size of the disk unit in GB.</summary>
+        /// <summary>Property size: The capacity of the disk, in GiB.</summary>
+        /// <remarks>
+        /// You must specify a value for this parameter.
+        /// Value range:
+        ///
+        /// <list type="bullet">
+        /// <description><c>cloud</c>: 5 to 2,000</description>
+        /// <description><c>cloud_efficiency</c>: 20 to 32,768</description>
+        /// <description><c>cloud_ssd</c>: 20 to 32,768</description>
+        /// <description><c>PerformanceLevel</c></description>
+        /// <description>PL0: 1 to 65,536</description>
+        /// <description>PL1: 20 to 65,536</description>
+        /// <description>PL2: 461 to 65,536</description>
+        /// <description>PL3: 1,261 to 65,536</description>
+        /// <description><c>cloud_auto</c>: 1 to 65,536</description>
+        /// <description><c>cloud_essd_entry</c>: 10 to 32,768</description>
+        /// <description><c>cloud_regional_disk_auto</c>: 10 to 65,536</description>
+        /// <description><c>elastic_ephemeral_disk_standard</c>: 64 to 8,192</description>
+        /// <description><c>elastic_ephemeral_disk_premium</c>: 64 to 8,192
+        /// If you specify <c>SnapshotId</c>, the following limits apply to <c>SnapshotId</c> and
+        /// <c>Size</c>:</description>
+        /// <description>If the snapshot capacity is greater than the specified <c>Size</c>, the actual disk
+        /// size is the snapshot capacity.</description>
+        /// <description>If the snapshot capacity is smaller than the specified <c>Size</c>, the actual disk
+        /// size is the specified <c>Size</c>.</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "size", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? Size
@@ -506,7 +587,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _snapshotId;
 
-        /// <summary>Property snapshotId: If specified, the backup used as the source to create disk.</summary>
+        /// <summary>Property snapshotId: The ID of the snapshot used to create the disk.</summary>
+        /// <remarks>
+        /// Snapshots created on or before
+        /// July 15, 2013 cannot be used to create disks.
+        /// The <c>SnapshotId</c> and <c>Size</c> parameters have the following limits:
+        ///
+        /// <list type="bullet">
+        /// <description>If the snapshot capacity is greater than the specified <c>Size</c>, the actual disk
+        /// size is the snapshot capacity.</description>
+        /// <description>If the snapshot capacity is smaller than the specified <c>Size</c>, the actual disk
+        /// size is the specified <c>Size</c>.</description>
+        /// </list>
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "snapshotId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? SnapshotId
@@ -537,7 +630,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _storageSetId;
 
-        /// <summary>Property storageSetId: Storage set ID.</summary>
+        /// <summary>Property storageSetId: The ID of the storage set.</summary>
+        /// <remarks>
+        ///     You can specify either storage set parameters (<c>StorageSetId</c> and
+        ///     <c>StorageSetPartitionNumber</c>) or the dedicated block storage cluster parameter
+        ///     (<c>StorageClusterId</c>), but not both. The request fails if you specify parameters
+        ///     for both.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "storageSetId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? StorageSetId
@@ -568,7 +667,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _storageSetPartitionNumber;
 
-        /// <summary>Property storageSetPartitionNumber: The number of storage set partitions.</summary>
+        /// <summary>Property storageSetPartitionNumber: The number of partitions in the storage set.</summary>
+        /// <remarks>
+        /// The value must be greater than or
+        /// equal to 2 and cannot exceed the quota returned by the
+        /// <a href="">DescribeAccountAttributes</a> operation.
+        /// Default value: 2.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "storageSetPartitionNumber", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? StorageSetPartitionNumber
@@ -631,12 +736,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _zoneId;
 
-        /// <summary>Property zoneId: Create a pay-as-you-go cloud drive within the specified availability area.</summary>
+        /// <summary>Property zoneId: The ID of the zone in which to create the pay-as-you-go disk.</summary>
         /// <remarks>
         /// <list type="bullet">
-        /// <description>If you do not set InstanceId, ZoneId is required.</description>
-        /// <description>You cannot specify both ZoneId and InstanceId.</description>
+        /// <description>If you do not set <c>InstanceId</c>, this parameter is required.</description>
+        /// <description>You cannot specify both <c>ZoneId</c> and <c>InstanceId</c>.</description>
         /// </list>
+        ///
+        ///     ESSD zone-redundant disks (<c>cloud_regional_disk_auto</c>) do not require a zone
+        ///     ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

@@ -11,9 +11,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
     [JsiiInterface(nativeType: typeof(IDownloadProps), fullyQualifiedName: "@alicloud/ros-cdk-dbs.DownloadProps")]
     public interface IDownloadProps
     {
-        /// <summary>Property formatType: The format to which the downloaded backup set is converted.</summary>
+        /// <summary>Property formatType: The target format of the downloaded data.</summary>
         /// <remarks>
-        /// Valid values: CSV|SQL|Parquet
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>CSV</description>
+        /// <description>SQL</description>
+        /// <description>Parquet</description>
+        /// <description>Bson</description>
+        /// <description>qp.xb</description>
+        /// </list>
+        ///
+        ///     This parameter is required. The <c>Bson</c> format is available only for MongoDB
+        ///     instances. The <c>qp.xb</c> format is available only for ApsaraDB RDS for MySQL
+        ///     instances.
         /// </remarks>
         [JsiiProperty(name: "formatType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object FormatType
@@ -188,9 +200,21 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dbs
             {
             }
 
-            /// <summary>Property formatType: The format to which the downloaded backup set is converted.</summary>
+            /// <summary>Property formatType: The target format of the downloaded data.</summary>
             /// <remarks>
-            /// Valid values: CSV|SQL|Parquet
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>CSV</description>
+            /// <description>SQL</description>
+            /// <description>Parquet</description>
+            /// <description>Bson</description>
+            /// <description>qp.xb</description>
+            /// </list>
+            ///
+            ///     This parameter is required. The <c>Bson</c> format is available only for MongoDB
+            ///     instances. The <c>qp.xb</c> format is available only for ApsaraDB RDS for MySQL
+            ///     instances.
             /// </remarks>
             [JsiiProperty(name: "formatType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FormatType

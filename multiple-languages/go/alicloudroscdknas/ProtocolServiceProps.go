@@ -11,17 +11,24 @@ type ProtocolServiceProps struct {
 	//
 	// Default: General. Values: General
 	ProtocolSpec interface{} `field:"required" json:"protocolSpec" yaml:"protocolSpec"`
-	// Property protocolType: The protocol type of agreement service.
+	// Property protocolType: The protocol type of the protocol service.
 	//
-	// Ranges:
-	// NFS: Agreement service supports NFS protocol access.
-	// The default value: NFS.
+	// Valid value: NFS (default). Only NFSv3 is supported.
 	ProtocolType interface{} `field:"required" json:"protocolType" yaml:"protocolType"`
 	// Property vpcId: The protocol service VPCID needs to be consistent with the file system VPC.
 	VpcId interface{} `field:"required" json:"vpcId" yaml:"vpcId"`
 	// Property vSwitchId: Agreement service vswitchid.
 	VSwitchId interface{} `field:"required" json:"vSwitchId" yaml:"vSwitchId"`
-	// Property description: Description of protocol service.The console shows the "protocol service name". limit: The length is 2 to 128 English or Chinese characters. Start with a lowercase letter or Chinese, and you cannot start with http:\/\/ and https: \/\/. It can contain numbers, half-horn colon (:), down line (_) or short lines (-).
+	// Property description: The description of the protocol service.
+	//
+	// The name of the protocol service appears
+	// in the console.
+	// Limits:
+	// *   The description must be 2 to 128 characters in length.
+	// *   The description must start with a letter but cannot start with `http:\/\/` or
+	// `https:\/\/`.
+	// *   The description can contain letters, digits, colons (:), underscores (_), and
+	// hyphens (-).
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property throughput: The bandwidth of the agreement service.
 	//

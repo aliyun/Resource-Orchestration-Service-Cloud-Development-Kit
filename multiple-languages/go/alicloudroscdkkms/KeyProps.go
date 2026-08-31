@@ -13,7 +13,10 @@ type KeyProps struct {
 	//
 	// Length constraints: Minimum length of 0 characters. Maximum length of 8192 characters.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	// Property dkmsInstanceId: The ID of the dedicated KMS instance.
+	// Property dkmsInstanceId: The ID of the KMS instance.
+	//
+	// > This parameter is required when you create a key for a KMS instance. This
+	// parameter is not required when you create a default key (master key).
 	DkmsInstanceId interface{} `field:"optional" json:"dkmsInstanceId" yaml:"dkmsInstanceId"`
 	// Property enable: Specifies whether the key is enabled.
 	//
@@ -40,15 +43,31 @@ type KeyProps struct {
 	PendingWindowInDays interface{} `field:"optional" json:"pendingWindowInDays" yaml:"pendingWindowInDays"`
 	// Property policy: The policy of key.
 	Policy interface{} `field:"optional" json:"policy" yaml:"policy"`
-	// Property protectionLevel: The protection level of the CMK to create.
+	// Property protectionLevel: You do not need to specify this parameter.
 	//
-	// Valid value: SOFTWARE and HSM. When this parameter is set to HSM:
-	// If the Origin parameter is set to Aliyun_KMS, the CMK is created in Managed HSM.
-	// If the Origin parameter is set to EXTERNAL, you can import external keys to Managed HSM.
+	// KMS automatically sets an appropriate
+	// protection level for your key.
+	// The protection level of the key. Valid values:
+	// - SOFTWARE
+	// - HSM
+	// > * If you specify DKMSInstanceId, this parameter is ignored. If the instance is
+	// a software key management instance, the protection level is SOFTWARE. If the
+	// instance is a hardware key management instance, the protection level is HSM.
+	// - If you do not specify DKMSInstanceId, leave this parameter empty. KMS sets the
+	// protection level. If a managed HSM is available in the region, KMS sets this
+	// parameter to HSM. Otherwise, KMS sets this parameter to SOFTWARE. For more
+	// information, see [Managed HSM overview]().
 	ProtectionLevel interface{} `field:"optional" json:"protectionLevel" yaml:"protectionLevel"`
-	// Property rotationInterval: The time period for automatic rotation.
+	// Property rotationInterval: The automatic rotation period.
 	//
-	// The format is integer[unit], where integer represents the length of time and unit represents the time unit. The legal unit units are: d (day), h (hour), m (minute), s (second). 7d or 604800s both represent a 7-day cycle. Value: 7~730 days.
+	// The format is \`integer\[unit]\`. \`integer\`
+	// indicates the length of the period. \`unit\` indicates the unit of time. Valid
+	// units: d (day), h (hour), m (minute), and s (second). For example, both 7d and
+	// 604800s represent a period of 7 days.
+	// - If the key is a default key, the value is 365d.
+	// - If the key is a software-protected key, the value can be from 7d to 365d.
+	// - If the key is a hardware-protected key, automatic rotation is not supported.
+	// > This parameter is required if you set EnableAutomaticRotation to true.
 	RotationInterval interface{} `field:"optional" json:"rotationInterval" yaml:"rotationInterval"`
 	// Property tags: Tags to attach to key.
 	//

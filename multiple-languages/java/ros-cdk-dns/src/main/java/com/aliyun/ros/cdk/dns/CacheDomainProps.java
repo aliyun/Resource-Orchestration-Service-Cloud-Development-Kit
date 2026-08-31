@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-cachedomain
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.847Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.441Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.CacheDomainProps")
 @software.amazon.jsii.Jsii.Proxy(CacheDomainProps.Jsii$Proxy.class)
 public interface CacheDomainProps extends software.amazon.jsii.JsiiSerializable {
@@ -41,7 +41,10 @@ public interface CacheDomainProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceEdns();
 
     /**
-     * Property sourceProtocol: The protocol used by the source DNS server.
+     * Property sourceProtocol: The protocol used for origin fetch.
+     * <p>
+     * Valid values: TCP and UDP. The default value
+     * is UDP.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSourceProtocol();
 
@@ -193,7 +196,9 @@ public interface CacheDomainProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CacheDomainProps#getSourceProtocol}
-         * @param sourceProtocol Property sourceProtocol: The protocol used by the source DNS server. This parameter is required.
+         * @param sourceProtocol Property sourceProtocol: The protocol used for origin fetch. This parameter is required.
+         *                       Valid values: TCP and UDP. The default value
+         *                       is UDP.
          * @return {@code this}
          */
         public Builder sourceProtocol(java.lang.String sourceProtocol) {
@@ -203,7 +208,9 @@ public interface CacheDomainProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link CacheDomainProps#getSourceProtocol}
-         * @param sourceProtocol Property sourceProtocol: The protocol used by the source DNS server. This parameter is required.
+         * @param sourceProtocol Property sourceProtocol: The protocol used for origin fetch. This parameter is required.
+         *                       Valid values: TCP and UDP. The default value
+         *                       is UDP.
          * @return {@code this}
          */
         public Builder sourceProtocol(com.aliyun.ros.cdk.core.IResolvable sourceProtocol) {

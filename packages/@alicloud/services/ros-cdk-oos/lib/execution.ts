@@ -23,17 +23,21 @@ export interface ExecutionProps {
     readonly loopMode?: string | ros.IResolvable;
 
     /**
-     * Property mode: Execution mode.
+     * Property mode: The execution mode. Valid values:
+     * - Automatic (default): The execution is automatically run.
+     * - FailurePause: The execution is paused if a task fails.
+     * - Debug: The execution is run in single-step mode.
      */
     readonly mode?: string | ros.IResolvable;
 
     /**
-     * Property parameters: Parameters for the execution of template.
+     * Property parameters: The JSON string that consists of a collection of parameters. The default value is
+     * {}.
      */
     readonly parameters?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
-     * Property parentExecutionId: Parent execution ID.
+     * Property parentExecutionId: The ID of the parent execution.
      */
     readonly parentExecutionId?: string | ros.IResolvable;
 
@@ -65,7 +69,8 @@ export interface ExecutionProps {
     readonly templateContent?: string | ros.IResolvable;
 
     /**
-     * Property templateName: Template name. Content is limited to letters, numbers, underlined, underline, the length of 200 characters.
+     * Property templateName: The name of the template. The name can contain letters, digits, hyphens (-), and
+     * underscores (_). The name can be up to 200 characters in length.
      */
     readonly templateName?: string | ros.IResolvable;
 

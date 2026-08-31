@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bailian;
 /**
  * Represents a <code>ApiKey</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:34:25.361Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:16:16.804Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bailian.$Module.class, fqn = "@alicloud/ros-cdk-bailian.IApiKey")
 @software.amazon.jsii.Jsii.Proxy(IApiKey.Jsii$Proxy.class)
 public interface IApiKey extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dts;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-subscriptionjob2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.846Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.999Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SubscriptionJob2Props")
 @software.amazon.jsii.Jsii.Proxy(SubscriptionJob2Props.Jsii$Proxy.class)
 public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializable {
@@ -68,7 +68,16 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
     /**
      * Property delayRuleTime: The threshold for latency alerts.
      * <p>
-     * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+     * Unit: seconds. The value must be an integer.
+     * You can set the threshold based on your business requirements. To prevent
+     * unstable latency caused by network and database overloads, we recommend that you
+     * set the threshold to more than 10 seconds.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If DelayNotice is set to true, this parameter is required.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDelayRuleTime() {
         return null;
@@ -131,18 +140,18 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property maxDu: The upper limit of DU.
+     * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
      * <p>
-     * This parameter is supported only for serverless instances.
+     * Currently, this feature is not supported, please do not pass in parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMaxDu() {
         return null;
     }
 
     /**
-     * Property minDu: The lower limit of DU.
+     * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
      * <p>
-     * This parameter is supported only for serverless instances.
+     * This feature is currently not supported, please do not pass in parameters.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getMinDu() {
         return null;
@@ -151,7 +160,10 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
     /**
      * Property reserve: The reserved parameter of DTS.
      * <p>
-     * You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+     * The value is a JSON string. You can specify this
+     * parameter to add more configurations of the source or destination instance to the
+     * DTS task. For example, you can specify the data storage format of the destination
+     * Kafka database and the CEN instance ID.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getReserve() {
         return null;
@@ -406,7 +418,16 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link SubscriptionJob2Props#getDelayRuleTime}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts.
-         *                      Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         *                      Unit: seconds. The value must be an integer.
+         *                      You can set the threshold based on your business requirements. To prevent
+         *                      unstable latency caused by network and database overloads, we recommend that you
+         *                      set the threshold to more than 10 seconds.
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      If DelayNotice is set to true, this parameter is required.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder delayRuleTime(java.lang.Number delayRuleTime) {
@@ -417,7 +438,16 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link SubscriptionJob2Props#getDelayRuleTime}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts.
-         *                      Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         *                      Unit: seconds. The value must be an integer.
+         *                      You can set the threshold based on your business requirements. To prevent
+         *                      unstable latency caused by network and database overloads, we recommend that you
+         *                      set the threshold to more than 10 seconds.
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      If DelayNotice is set to true, this parameter is required.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder delayRuleTime(com.aliyun.ros.cdk.core.IResolvable delayRuleTime) {
@@ -575,8 +605,8 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SubscriptionJob2Props#getMaxDu}
-         * @param maxDu Property maxDu: The upper limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+         *              Currently, this feature is not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder maxDu(java.lang.Number maxDu) {
@@ -586,8 +616,8 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SubscriptionJob2Props#getMaxDu}
-         * @param maxDu Property maxDu: The upper limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
+         *              Currently, this feature is not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder maxDu(com.aliyun.ros.cdk.core.IResolvable maxDu) {
@@ -597,8 +627,8 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SubscriptionJob2Props#getMinDu}
-         * @param minDu Property minDu: The lower limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
+         *              This feature is currently not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder minDu(java.lang.Number minDu) {
@@ -608,8 +638,8 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link SubscriptionJob2Props#getMinDu}
-         * @param minDu Property minDu: The lower limit of DU.
-         *              This parameter is supported only for serverless instances.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
+         *              This feature is currently not supported, please do not pass in parameters.
          * @return {@code this}
          */
         public Builder minDu(com.aliyun.ros.cdk.core.IResolvable minDu) {
@@ -620,7 +650,10 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link SubscriptionJob2Props#getReserve}
          * @param reserve Property reserve: The reserved parameter of DTS.
-         *                You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         *                The value is a JSON string. You can specify this
+         *                parameter to add more configurations of the source or destination instance to the
+         *                DTS task. For example, you can specify the data storage format of the destination
+         *                Kafka database and the CEN instance ID.
          * @return {@code this}
          */
         public Builder reserve(com.aliyun.ros.cdk.core.IResolvable reserve) {
@@ -631,7 +664,10 @@ public interface SubscriptionJob2Props extends software.amazon.jsii.JsiiSerializ
         /**
          * Sets the value of {@link SubscriptionJob2Props#getReserve}
          * @param reserve Property reserve: The reserved parameter of DTS.
-         *                You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         *                The value is a JSON string. You can specify this
+         *                parameter to add more configurations of the source or destination instance to the
+         *                DTS task. For example, you can specify the data storage format of the destination
+         *                Kafka database and the CEN instance ID.
          * @return {@code this}
          */
         public Builder reserve(java.util.Map<java.lang.String, ? extends java.lang.Object> reserve) {

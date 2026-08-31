@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.slb;
 /**
  * Represents a <code>VServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.265Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.064Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.IVServerGroup")
 @software.amazon.jsii.Jsii.Proxy(IVServerGroup.Jsii$Proxy.class)
 public interface IVServerGroup extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

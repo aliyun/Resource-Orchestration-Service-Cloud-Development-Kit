@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ga;
 /**
  * Represents a <code>LogStoreToEndpointGroupAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.787Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.ILogStoreToEndpointGroupAttachment")
 @software.amazon.jsii.Jsii.Proxy(ILogStoreToEndpointGroupAttachment.Jsii$Proxy.class)
 public interface ILogStoreToEndpointGroupAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

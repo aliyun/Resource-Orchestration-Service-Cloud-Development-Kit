@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.gwlb;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GWLB::ServerGroup</code>The , which type is used to create a server group.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GWLB::ServerGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:21:47.031Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:27:17.695Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gwlb.$Module.class, fqn = "@alicloud/ros-cdk-gwlb.RosServerGroup")
 public class RosServerGroup extends com.aliyun.ros.cdk.core.RosResource {
 

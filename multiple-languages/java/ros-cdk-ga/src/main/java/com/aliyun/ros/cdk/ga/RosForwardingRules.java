@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ga;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::ForwardingRules</code>.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::GA::ForwardingRules</code>, which is used to create forwarding rules.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:11:49.862Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:19:27.859Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ga.$Module.class, fqn = "@alicloud/ros-cdk-ga.RosForwardingRules")
 public class RosForwardingRules extends com.aliyun.ros.cdk.core.RosResource {
 

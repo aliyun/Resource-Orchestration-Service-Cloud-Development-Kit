@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`, which is used to create an associated forwarding correlation.
+// This class encapsulates and extends the ROS resource type `ALIYUN::CEN::TransitRouterRouteTableAssociation`.
 type TransitRouterRouteTableAssociation interface {
 	alicloudroscdkcore.Resource
 	ITransitRouterRouteTableAssociation

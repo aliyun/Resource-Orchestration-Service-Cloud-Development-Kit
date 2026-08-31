@@ -5,13 +5,18 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-group
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.540Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.934Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.GroupProps")
 @software.amazon.jsii.Jsii.Proxy(GroupProps.Jsii$Proxy.class)
 public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+     * Property groupName: The name of the API group.
+     * <p>
+     * The name must be unique and 4 to 50 characters in
+     * length. It must start with a letter or a Chinese character and can contain
+     * letters, digits, underscores (_), and Chinese characters. If you do not specify
+     * this parameter, the name is not modified.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupName();
 
@@ -96,7 +101,11 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GroupProps#getGroupName}
-         * @param groupName Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param groupName Property groupName: The name of the API group. This parameter is required.
+         *                  The name must be unique and 4 to 50 characters in
+         *                  length. It must start with a letter or a Chinese character and can contain
+         *                  letters, digits, underscores (_), and Chinese characters. If you do not specify
+         *                  this parameter, the name is not modified.
          * @return {@code this}
          */
         public Builder groupName(java.lang.String groupName) {
@@ -106,7 +115,11 @@ public interface GroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link GroupProps#getGroupName}
-         * @param groupName Property groupName: The name of the Group.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter. This parameter is required.
+         * @param groupName Property groupName: The name of the API group. This parameter is required.
+         *                  The name must be unique and 4 to 50 characters in
+         *                  length. It must start with a letter or a Chinese character and can contain
+         *                  letters, digits, underscores (_), and Chinese characters. If you do not specify
+         *                  this parameter, the name is not modified.
          * @return {@code this}
          */
         public Builder groupName(com.aliyun.ros.cdk.core.IResolvable groupName) {

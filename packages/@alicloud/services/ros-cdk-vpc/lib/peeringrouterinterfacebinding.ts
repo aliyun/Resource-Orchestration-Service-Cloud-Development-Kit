@@ -15,7 +15,7 @@ export interface PeeringRouterInterfaceBindingProps {
     readonly oppositeInterfaceId: string | ros.IResolvable;
 
     /**
-     * Property routerInterfaceId: The RouterInterface is set the parameters of the connection peer RouterInterface.
+     * Property routerInterfaceId: The ID of the router interface.
      */
     readonly routerInterfaceId: string | ros.IResolvable;
 

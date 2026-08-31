@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.adblake;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-adblake-resourcegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.706Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:55:45.925Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.ResourceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(ResourceGroupProps.Jsii$Proxy.class)
 public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,9 +16,14 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
-     * Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine.
+     * Property engine: The database engine.
      * <p>
-     * Sparkwarehouse: Sparkwarehous engine.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>AnalyticDB (default): the AnalyticDB for MySQL engine.</li>
+     * <li>SparkWarehouse: the SparkWarehouse engine.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEngine();
 
@@ -49,9 +54,7 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property clusterMode: The mode of cluster.
-     * <p>
-     * Default: AutoScale.
+     * Property clusterMode: This parameter is reserved.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClusterMode() {
         return null;
@@ -170,8 +173,13 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ResourceGroupProps#getEngine}
-         * @param engine Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine. This parameter is required.
-         *               Sparkwarehouse: Sparkwarehous engine.
+         * @param engine Property engine: The database engine. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>AnalyticDB (default): the AnalyticDB for MySQL engine.</li>
+         *               <li>SparkWarehouse: the SparkWarehouse engine.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder engine(java.lang.String engine) {
@@ -181,8 +189,13 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ResourceGroupProps#getEngine}
-         * @param engine Property engine: Database engine, value: AnalyticDB (default): AnalyticDB for mysql engine. This parameter is required.
-         *               Sparkwarehouse: Sparkwarehous engine.
+         * @param engine Property engine: The database engine. This parameter is required.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>AnalyticDB (default): the AnalyticDB for MySQL engine.</li>
+         *               <li>SparkWarehouse: the SparkWarehouse engine.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder engine(com.aliyun.ros.cdk.core.IResolvable engine) {
@@ -266,8 +279,7 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ResourceGroupProps#getClusterMode}
-         * @param clusterMode Property clusterMode: The mode of cluster.
-         *                    Default: AutoScale.
+         * @param clusterMode Property clusterMode: This parameter is reserved.
          * @return {@code this}
          */
         public Builder clusterMode(java.lang.String clusterMode) {
@@ -277,8 +289,7 @@ public interface ResourceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link ResourceGroupProps#getClusterMode}
-         * @param clusterMode Property clusterMode: The mode of cluster.
-         *                    Default: AutoScale.
+         * @param clusterMode Property clusterMode: This parameter is reserved.
          * @return {@code this}
          */
         public Builder clusterMode(com.aliyun.ros.cdk.core.IResolvable clusterMode) {

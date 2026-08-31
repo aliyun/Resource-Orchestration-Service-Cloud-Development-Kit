@@ -227,12 +227,84 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             }
         }
 
+        private object? _endpointIpVersion;
+
+        /// <remarks>
+        /// <strong>Property</strong>: endpointIpVersion: The IP address protocol version of the backend service. Valid values:
+        /// IPv4
+        /// IPv6
+        /// ProtocolAffinity
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "endpointIpVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EndpointIpVersion
+        {
+            get => _endpointIpVersion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _endpointIpVersion = value;
+            }
+        }
+
+        private object? _endpointProtocolVersion;
+
+        /// <remarks>
+        /// <strong>Property</strong>: endpointProtocolVersion: The protocol version of the backend service. Valid values:
+        /// HTTP1.1
+        /// HTTP2
+        /// Note This parameter is valid only when the listener uses HTTPS.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "endpointProtocolVersion", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? EndpointProtocolVersion
+        {
+            get => _endpointProtocolVersion;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _endpointProtocolVersion = value;
+            }
+        }
+
         private object? _endpointRequestProtocol;
 
         /// <remarks>
         /// <strong>Property</strong>: endpointRequestProtocol: The protocol used by the backend service. Valid values:
-        /// http: This is the default value.
-        /// https
+        /// HTTP: This is the default value.
+        /// HTTPS
         /// Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
         /// For an HTTP listener, the backend service protocol must be HTTP.
         /// </remarks>
@@ -294,6 +366,39 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                     }
                 }
                 _healthCheckEnabled = value;
+            }
+        }
+
+        private object? _healthCheckHost;
+
+        /// <remarks>
+        /// <strong>Property</strong>: healthCheckHost: The domain name that is used for health checks.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "healthCheckHost", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
+        public object? HealthCheckHost
+        {
+            get => _healthCheckHost;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case string cast_cd4240:
+                            break;
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: string, {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _healthCheckHost = value;
             }
         }
 
@@ -503,6 +608,67 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 }
                 _name = value;
             }
+        }
+
+        private object? _portOverrides;
+
+        /// <remarks>
+        /// <strong>Property</strong>: portOverrides: The port mapping relationship of the endpoint group.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "portOverrides", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-ga.RosEndpointGroup.PortOverridesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
+        public object? PortOverrides
+        {
+            get => _portOverrides;
+            set
+            {
+                if (Amazon.JSII.Runtime.Configuration.RuntimeTypeChecking)
+                {
+                    switch (value)
+                    {
+                        case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_cd4240:
+                            break;
+                        case object[] cast_cd4240:
+                            for (var __idx_f64a5c = 0 ; __idx_f64a5c < cast_cd4240.Length ; __idx_f64a5c++)
+                            {
+                                switch (cast_cd4240[__idx_f64a5c])
+                                {
+                                    case AlibabaCloud.SDK.ROS.CDK.Core.IResolvable cast_201718:
+                                        break;
+                                    case AlibabaCloud.SDK.ROS.CDK.Ga.RosEndpointGroup.IPortOverridesProperty cast_201718:
+                                        break;
+                                    case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_201718:
+                                        // Not enough information to type-check...
+                                        break;
+                                    case null:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ga.RosEndpointGroup.IPortOverridesProperty).FullName}; received null", nameof(value));
+                                    default:
+                                        throw new System.ArgumentException($"Expected {nameof(value)}[{__idx_f64a5c}] to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, {typeof(AlibabaCloud.SDK.ROS.CDK.Ga.RosEndpointGroup.IPortOverridesProperty).FullName}; received {cast_cd4240[__idx_f64a5c].GetType().FullName}", nameof(value));
+                                }
+                            }
+                            break;
+                        case Amazon.JSII.Runtime.Deputy.AnonymousObject cast_cd4240:
+                            // Not enough information to type-check...
+                            break;
+                        case null:
+                            break;
+                        default:
+                            throw new System.ArgumentException($"Expected {nameof(value)} to be one of: {typeof(AlibabaCloud.SDK.ROS.CDK.Core.IResolvable).FullName}, object[]; received {value.GetType().FullName}", nameof(value));
+                    }
+                }
+                _portOverrides = value;
+            }
+        }
+
+        /// <remarks>
+        /// <strong>Property</strong>: tags: Tags to attach to endpoint group. Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+        /// </remarks>
+        [JsiiOptional]
+        [JsiiProperty(name: "tags", typeJson: "{\"collection\":{\"elementtype\":{\"fqn\":\"@alicloud/ros-cdk-ga.RosEndpointGroup.TagsProperty\"},\"kind\":\"array\"}}", isOptional: true)]
+        public AlibabaCloud.SDK.ROS.CDK.Ga.RosEndpointGroup.ITagsProperty[]? Tags
+        {
+            get;
+            set;
         }
 
         private object? _thresholdCount;

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::Instance</code>Use the , which resource to create a new DTS instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.755Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.921Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.IInstance {
 
@@ -158,9 +158,15 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Valid values:
          * <p>
          * <ul>
-         * <li><strong>PrePaid</strong>: subscription</li>
-         * <li><strong>PostPaid</strong>: pay-as-you-go</li>
+         * <li>PrePaid: subscription</li>
+         * <li>PostPaid: pay-as-you-go</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter must be specified.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.
@@ -175,9 +181,15 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Valid values:
          * <p>
          * <ul>
-         * <li><strong>PrePaid</strong>: subscription</li>
-         * <li><strong>PostPaid</strong>: pay-as-you-go</li>
+         * <li>PrePaid: subscription</li>
+         * <li>PostPaid: pay-as-you-go</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter must be specified.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param payType Property payType: The billing method. This parameter is required.
@@ -193,10 +205,16 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Valid values:
          * <p>
          * <ul>
-         * <li>*<em>MIGRATION</em>: data migration instance</li>
-         * <li><strong>SYNC</strong>: data synchronization instance</li>
-         * <li><strong>SUBSCRIBE</strong>: change tracking instance</li>
+         * <li>MIGRATION: data migration instance</li>
+         * <li>SYNC: data synchronization instance</li>
+         * <li>SUBSCRIBE: change tracking instance</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify one of this parameter and the JobId parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param type Property type: The type of the DTS instance. This parameter is required.
@@ -211,10 +229,16 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Valid values:
          * <p>
          * <ul>
-         * <li>*<em>MIGRATION</em>: data migration instance</li>
-         * <li><strong>SYNC</strong>: data synchronization instance</li>
-         * <li><strong>SUBSCRIBE</strong>: change tracking instance</li>
+         * <li>MIGRATION: data migration instance</li>
+         * <li>SYNC: data synchronization instance</li>
+         * <li>SUBSCRIBE: change tracking instance</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * You must specify one of this parameter and the JobId parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param type Property type: The type of the DTS instance. This parameter is required.
@@ -265,9 +289,16 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Valid values:
          * <p>
          * <ul>
-         * <li><strong>false</strong>: does not automatically start the task after the DTS instance is purchased. This is the default value.</li>
-         * <li><strong>true</strong>: automatically starts the task after the DTS instance is purchased.</li>
+         * <li>false (default)</li>
+         * <li>true</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter can be set to true and take effect only if you specify a valid
+         * value for JobId.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param autoStart Property autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. This parameter is required.
@@ -282,9 +313,16 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Valid values:
          * <p>
          * <ul>
-         * <li><strong>false</strong>: does not automatically start the task after the DTS instance is purchased. This is the default value.</li>
-         * <li><strong>true</strong>: automatically starts the task after the DTS instance is purchased.</li>
+         * <li>false (default)</li>
+         * <li>true</li>
          * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter can be set to true and take effect only if you specify a valid
+         * value for JobId.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param autoStart Property autoStart: Specifies whether to automatically start the task after the DTS instance is purchased. This parameter is required.
@@ -295,24 +333,28 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property computeUnit: The specifications of the extract, transform, and load (ETL) instance.
+         * Property computeUnit: The specification of the extract, transform, and load (ETL) instance.
          * <p>
-         * The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+         * The unit is
+         * compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+         * this parameter must be an integer greater than or equal to 2.
          * <p>
          * @return {@code this}
-         * @param computeUnit Property computeUnit: The specifications of the extract, transform, and load (ETL) instance. This parameter is required.
+         * @param computeUnit Property computeUnit: The specification of the extract, transform, and load (ETL) instance. This parameter is required.
          */
         public Builder computeUnit(final java.lang.Number computeUnit) {
             this.props.computeUnit(computeUnit);
             return this;
         }
         /**
-         * Property computeUnit: The specifications of the extract, transform, and load (ETL) instance.
+         * Property computeUnit: The specification of the extract, transform, and load (ETL) instance.
          * <p>
-         * The unit is compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of this parameter must be an integer greater than or equal to 2.
+         * The unit is
+         * compute unit (CU). One CU is equal to 1 vCPU and 4 GB of memory. The value of
+         * this parameter must be an integer greater than or equal to 2.
          * <p>
          * @return {@code this}
-         * @param computeUnit Property computeUnit: The specifications of the extract, transform, and load (ETL) instance. This parameter is required.
+         * @param computeUnit Property computeUnit: The specification of the extract, transform, and load (ETL) instance. This parameter is required.
          */
         public Builder computeUnit(final com.aliyun.ros.cdk.core.IResolvable computeUnit) {
             this.props.computeUnit(computeUnit);
@@ -553,32 +595,32 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: Upper limit of DU.
          * <p>
          * <blockquote>
          * <p>
-         * Only Serverless instances are supported.
+         * Only supported by Serverless instances.
          * <p>
          * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: Upper limit of DU. This parameter is required.
          */
         public Builder maxDu(final java.lang.Number maxDu) {
             this.props.maxDu(maxDu);
             return this;
         }
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: Upper limit of DU.
          * <p>
          * <blockquote>
          * <p>
-         * Only Serverless instances are supported.
+         * Only supported by Serverless instances.
          * <p>
          * </blockquote>
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: Upper limit of DU. This parameter is required.
          */
         public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
             this.props.maxDu(maxDu);
@@ -586,32 +628,32 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: Lower limit of DU.
          * <p>
          * <blockquote>
          * <p>
-         * Only Serverless instances are supported.
+         * Only supported by Serverless instances.
          * <p>
          * </blockquote>
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: Lower limit of DU. This parameter is required.
          */
         public Builder minDu(final java.lang.Number minDu) {
             this.props.minDu(minDu);
             return this;
         }
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: Lower limit of DU.
          * <p>
          * <blockquote>
          * <p>
-         * Only Serverless instances are supported.
+         * Only supported by Serverless instances.
          * <p>
          * </blockquote>
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: Lower limit of DU. This parameter is required.
          */
         public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
             this.props.minDu(minDu);
@@ -803,9 +845,15 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Property usedTime: The subscription duration.
          * <p>
          * <ul>
-         * <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Month</strong>: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
-         * <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Year</strong>: 1, 2, 3, and 5.
-         * <strong>Note</strong>: You must specify this parameter only if the <strong>PayType</strong> parameter is set to <strong>PrePaid</strong>. You can set the <strong>Period</strong> parameter to specify the unit of the subscription duration.</li>
+         * <li>Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         * <li>Valid values if Period is set to Year: 1, 2, 3, and 5.</li>
+         * </ul>
+         * <p>
+         * <blockquote></blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is valid and required only if PayType is set to PrePaid.</li>
+         * <li>You can configure Period to specify the unit of the subscription duration.</li>
          * </ul>
          * <p>
          * @return {@code this}
@@ -819,9 +867,15 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
          * Property usedTime: The subscription duration.
          * <p>
          * <ul>
-         * <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Month</strong>: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
-         * <li>Valid values if the <strong>Period</strong> parameter is set to <strong>Year</strong>: 1, 2, 3, and 5.
-         * <strong>Note</strong>: You must specify this parameter only if the <strong>PayType</strong> parameter is set to <strong>PrePaid</strong>. You can set the <strong>Period</strong> parameter to specify the unit of the subscription duration.</li>
+         * <li>Valid values if Period is set to Month: 1, 2, 3, 4, 5, 6, 7, 8, and 9.</li>
+         * <li>Valid values if Period is set to Year: 1, 2, 3, and 5.</li>
+         * </ul>
+         * <p>
+         * <blockquote></blockquote>
+         * <p>
+         * <ul>
+         * <li>This parameter is valid and required only if PayType is set to PrePaid.</li>
+         * <li>You can configure Period to specify the unit of the subscription duration.</li>
          * </ul>
          * <p>
          * @return {@code this}

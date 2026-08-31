@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dns.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DNS::DomainGroups</code>, which is used to query domain name groups.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::DNS::DomainGroups</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:27:10.910Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:23:04.520Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dns.$Module.class, fqn = "@alicloud/ros-cdk-dns.datasource.DomainGroups")
 public class DomainGroups extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dns.datasource.IDomainGroups {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.iot;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::IOT::Device</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.616Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.Device")
 public class Device extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.iot.IDevice {
 
@@ -199,24 +199,24 @@ public class Device extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property devEui: DevEUI LoRaWAN equipment.
+         * Property devEui: The DevEUI of the LoRaWAN device.
          * <p>
-         * When you create a LoRaWAN devices, this will pass.
+         * This parameter is required when you create a LoRaWAN device.
          * <p>
          * @return {@code this}
-         * @param devEui Property devEui: DevEUI LoRaWAN equipment. This parameter is required.
+         * @param devEui Property devEui: The DevEUI of the LoRaWAN device. This parameter is required.
          */
         public Builder devEui(final java.lang.String devEui) {
             this.props.devEui(devEui);
             return this;
         }
         /**
-         * Property devEui: DevEUI LoRaWAN equipment.
+         * Property devEui: The DevEUI of the LoRaWAN device.
          * <p>
-         * When you create a LoRaWAN devices, this will pass.
+         * This parameter is required when you create a LoRaWAN device.
          * <p>
          * @return {@code this}
-         * @param devEui Property devEui: DevEUI LoRaWAN equipment. This parameter is required.
+         * @param devEui Property devEui: The DevEUI of the LoRaWAN device. This parameter is required.
          */
         public Builder devEui(final com.aliyun.ros.cdk.core.IResolvable devEui) {
             this.props.devEui(devEui);
@@ -224,32 +224,46 @@ public class Device extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property deviceName: The name of the device that you want to register.
+         * Property deviceName: The DeviceName of the device.
          * <p>
-         * The device name must consist of
-         * 4 to 32 characters, including English letters, digits, and special characters, for
-         * example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
-         * DeviceName is used with ProductKey to identify a specified device.
-         * Note If you do not specify this parameter, the system will generate a name for the device.
+         * The name must be 4 to 32 characters in length, and
+         * can contain letters, digits, hyphens (-), underscores (_), at signs (&#64;), periods
+         * (.), and colons (:).
+         * You can use a combination of the DeviceName and ProductKey parameters to identify
+         * a device.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, IoT Platform randomly generates a
+         * DeviceName.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deviceName Property deviceName: The name of the device that you want to register. This parameter is required.
+         * @param deviceName Property deviceName: The DeviceName of the device. This parameter is required.
          */
         public Builder deviceName(final java.lang.String deviceName) {
             this.props.deviceName(deviceName);
             return this;
         }
         /**
-         * Property deviceName: The name of the device that you want to register.
+         * Property deviceName: The DeviceName of the device.
          * <p>
-         * The device name must consist of
-         * 4 to 32 characters, including English letters, digits, and special characters, for
-         * example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
-         * DeviceName is used with ProductKey to identify a specified device.
-         * Note If you do not specify this parameter, the system will generate a name for the device.
+         * The name must be 4 to 32 characters in length, and
+         * can contain letters, digits, hyphens (-), underscores (_), at signs (&#64;), periods
+         * (.), and colons (:).
+         * You can use a combination of the DeviceName and ProductKey parameters to identify
+         * a device.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, IoT Platform randomly generates a
+         * DeviceName.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param deviceName Property deviceName: The name of the device that you want to register. This parameter is required.
+         * @param deviceName Property deviceName: The DeviceName of the device. This parameter is required.
          */
         public Builder deviceName(final com.aliyun.ros.cdk.core.IResolvable deviceName) {
             this.props.deviceName(deviceName);
@@ -257,24 +271,48 @@ public class Device extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property iotInstanceId: Public instance does not pass this parameter;
+         * Property iotInstanceId: The ID of the instance.
          * <p>
-         * instance that you need to buy the incoming instance ID.
+         * You can view the instance ID on the Overview page in the
+         * IoT Platform console.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If your instance has an ID, you must configure this parameter. If you do not
+         * set this parameter, the call fails.</li>
+         * <li>If your instance has no Overview page or ID, you do not need to set this
+         * parameter.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;. This parameter is required.
+         * @param iotInstanceId Property iotInstanceId: The ID of the instance. This parameter is required.
          */
         public Builder iotInstanceId(final java.lang.String iotInstanceId) {
             this.props.iotInstanceId(iotInstanceId);
             return this;
         }
         /**
-         * Property iotInstanceId: Public instance does not pass this parameter;
+         * Property iotInstanceId: The ID of the instance.
          * <p>
-         * instance that you need to buy the incoming instance ID.
+         * You can view the instance ID on the Overview page in the
+         * IoT Platform console.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>If your instance has an ID, you must configure this parameter. If you do not
+         * set this parameter, the call fails.</li>
+         * <li>If your instance has no Overview page or ID, you do not need to set this
+         * parameter.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;. This parameter is required.
+         * @param iotInstanceId Property iotInstanceId: The ID of the instance. This parameter is required.
          */
         public Builder iotInstanceId(final com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
             this.props.iotInstanceId(iotInstanceId);
@@ -282,28 +320,40 @@ public class Device extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property nickname: Add a nickname for the device.
+         * Property nickname: The alias of the device.
          * <p>
-         * A nickname can be 4-64 characters in length, and can
-         * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-         * character counts as two characters.
+         * The alias must be 4 to 64 characters in length, and can
+         * contain letters, digits, and underscores (_).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, IoT Platform does not generate an alias
+         * for the device.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param nickname Property nickname: Add a nickname for the device. This parameter is required.
+         * @param nickname Property nickname: The alias of the device. This parameter is required.
          */
         public Builder nickname(final java.lang.String nickname) {
             this.props.nickname(nickname);
             return this;
         }
         /**
-         * Property nickname: Add a nickname for the device.
+         * Property nickname: The alias of the device.
          * <p>
-         * A nickname can be 4-64 characters in length, and can
-         * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-         * character counts as two characters.
+         * The alias must be 4 to 64 characters in length, and can
+         * contain letters, digits, and underscores (_).
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you do not specify this parameter, IoT Platform does not generate an alias
+         * for the device.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param nickname Property nickname: Add a nickname for the device. This parameter is required.
+         * @param nickname Property nickname: The alias of the device. This parameter is required.
          */
         public Builder nickname(final com.aliyun.ros.cdk.core.IResolvable nickname) {
             this.props.nickname(nickname);
@@ -311,24 +361,28 @@ public class Device extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+         * Property pinCode: The PIN code of the LoRaWAN device.
          * <p>
-         * When you create a LoRaWAN devices, this will pass.
+         * This parameter is used to verify the DevEUI.
+         * When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+         * parameter is required.
          * <p>
          * @return {@code this}
-         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI. This parameter is required.
+         * @param pinCode Property pinCode: The PIN code of the LoRaWAN device. This parameter is required.
          */
         public Builder pinCode(final java.lang.String pinCode) {
             this.props.pinCode(pinCode);
             return this;
         }
         /**
-         * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+         * Property pinCode: The PIN code of the LoRaWAN device.
          * <p>
-         * When you create a LoRaWAN devices, this will pass.
+         * This parameter is used to verify the DevEUI.
+         * When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+         * parameter is required.
          * <p>
          * @return {@code this}
-         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI. This parameter is required.
+         * @param pinCode Property pinCode: The PIN code of the LoRaWAN device. This parameter is required.
          */
         public Builder pinCode(final com.aliyun.ros.cdk.core.IResolvable pinCode) {
             this.props.pinCode(pinCode);

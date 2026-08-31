@@ -16,7 +16,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object _bandwidth;
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidth: The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.
+        /// <strong>Property</strong>: bandwidth: The maximum bandwidth of the bandwidth plan. Unit: Mbps. Valid values: 2 to
+        /// 10000.
         /// </remarks>
         [JsiiProperty(name: "bandwidth", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Bandwidth
@@ -134,9 +135,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _autoPay;
 
         /// <remarks>
-        /// <strong>Property</strong>: autoPay: Whether to automatically pay the bill. Valid value:
-        /// true (default)
-        /// false
+        /// <strong>Property</strong>: autoPay: Specifies whether to enable automatic payment. Valid values:
+        /// - true: yes.
+        /// - false (default): no.
+        /// If you disable automatic payment, you must go to the Order Hub in the console to
+        /// complete the payment after you call this operation. Otherwise, the instance
+        /// cannot be created.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "autoPay", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -288,8 +292,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _description;
 
         /// <remarks>
-        /// <strong>Property</strong>: description: The description of the bandwidth package.
-        /// The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+        /// <strong>Property</strong>: description: The description of the bandwidth plan.
+        /// The description can be empty or 1 to 256 characters in length. It cannot start
+        /// with http\:\/\/ or https\:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -322,8 +327,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _name;
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the bandwidth package.
-        /// The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+        /// <strong>Property</strong>: name: The name of the bandwidth plan.
+        /// The name can be empty or 1 to 128 characters in length. It cannot start with
+        /// http\:\/\/ or https\:\/\/.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -356,7 +362,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The purchase period. The default value is 1.
+        /// <strong>Property</strong>: period: The subscription duration of the bandwidth plan. Default value: 1.
+        /// - If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.
+        /// - If you set PricingCycle to Year, valid values for Period are 1 to 3.
+        /// > This parameter is required if you set BandwidthPackageChargeType to PREPAY.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

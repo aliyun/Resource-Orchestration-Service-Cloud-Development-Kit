@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.dts;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::SubscriptionJob2</code>, which is used to configure a change tracking task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DTS::SubscriptionJob2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:29:50.836Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:27:14.996Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dts.$Module.class, fqn = "@alicloud/ros-cdk-dts.SubscriptionJob2")
 public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.dts.ISubscriptionJob2 {
 
@@ -312,7 +312,16 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property delayRuleTime: The threshold for latency alerts.
          * <p>
-         * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         * Unit: seconds. The value must be an integer.
+         * You can set the threshold based on your business requirements. To prevent
+         * unstable latency caused by network and database overloads, we recommend that you
+         * set the threshold to more than 10 seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If DelayNotice is set to true, this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts. This parameter is required.
@@ -324,7 +333,16 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property delayRuleTime: The threshold for latency alerts.
          * <p>
-         * Unit: seconds. You can set the threshold based on your business requirements. To prevent jitters caused by network and database overloads, we recommend that you set the threshold to more than 10 seconds.
+         * Unit: seconds. The value must be an integer.
+         * You can set the threshold based on your business requirements. To prevent
+         * unstable latency caused by network and database overloads, we recommend that you
+         * set the threshold to more than 10 seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If DelayNotice is set to true, this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
          * @param delayRuleTime Property delayRuleTime: The threshold for latency alerts. This parameter is required.
@@ -496,24 +514,24 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * Currently, this feature is not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16. This parameter is required.
          */
         public Builder maxDu(final java.lang.Number maxDu) {
             this.props.maxDu(maxDu);
             return this;
         }
         /**
-         * Property maxDu: The upper limit of DU.
+         * Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * Currently, this feature is not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param maxDu Property maxDu: The upper limit of DU. This parameter is required.
+         * @param maxDu Property maxDu: The DU upper limit of the Serverless instance, with values being: 2, 4, 8, 16. This parameter is required.
          */
         public Builder maxDu(final com.aliyun.ros.cdk.core.IResolvable maxDu) {
             this.props.maxDu(maxDu);
@@ -521,24 +539,24 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         }
 
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * This feature is currently not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16. This parameter is required.
          */
         public Builder minDu(final java.lang.Number minDu) {
             this.props.minDu(minDu);
             return this;
         }
         /**
-         * Property minDu: The lower limit of DU.
+         * Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16.
          * <p>
-         * This parameter is supported only for serverless instances.
+         * This feature is currently not supported, please do not pass in parameters.
          * <p>
          * @return {@code this}
-         * @param minDu Property minDu: The lower limit of DU. This parameter is required.
+         * @param minDu Property minDu: The lower limit of DU for Serverless instances, with values being: 1, 2, 4, 8, 16. This parameter is required.
          */
         public Builder minDu(final com.aliyun.ros.cdk.core.IResolvable minDu) {
             this.props.minDu(minDu);
@@ -548,7 +566,10 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property reserve: The reserved parameter of DTS.
          * <p>
-         * You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         * The value is a JSON string. You can specify this
+         * parameter to add more configurations of the source or destination instance to the
+         * DTS task. For example, you can specify the data storage format of the destination
+         * Kafka database and the CEN instance ID.
          * <p>
          * @return {@code this}
          * @param reserve Property reserve: The reserved parameter of DTS. This parameter is required.
@@ -560,7 +581,10 @@ public class SubscriptionJob2 extends com.aliyun.ros.cdk.core.Resource implement
         /**
          * Property reserve: The reserved parameter of DTS.
          * <p>
-         * You can specify this parameter to add more configurations of the source or destination instance to the DTS task. For example, you can specify the data storage format of the destination Kafka database and the ID of the CEN instance.
+         * The value is a JSON string. You can specify this
+         * parameter to add more configurations of the source or destination instance to the
+         * DTS task. For example, you can specify the data storage format of the destination
+         * Kafka database and the CEN instance ID.
          * <p>
          * @return {@code this}
          * @param reserve Property reserve: The reserved parameter of DTS. This parameter is required.

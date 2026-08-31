@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hdr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hdr-sitepair
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:27:50.029Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:35:53.249Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hdr.$Module.class, fqn = "@alicloud/ros-cdk-hdr.SitePairProps")
 @software.amazon.jsii.Jsii.Proxy(SitePairProps.Jsii$Proxy.class)
 public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
@@ -22,8 +22,6 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property primarySiteType: The type of the primary site.
-     * <p>
-     * Valid values: VPC, VSwitch, VRouter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getPrimarySiteType();
 
@@ -44,8 +42,6 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property secondarySiteType: The type of the secondary site.
-     * <p>
-     * Valid values: VPC, VSwitch, VRouter.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getSecondarySiteType();
 
@@ -56,6 +52,9 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property primarySiteZoneId: The zone ID of the primary site.
+     * <p>
+     * This parameter is valid only when the site pair
+     * type is cross-zone disaster recovery.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPrimarySiteZoneId() {
         return null;
@@ -63,6 +62,9 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
      * Property secondarySiteZoneId: The zone ID of the secondary site.
+     * <p>
+     * This parameter is valid only when the site
+     * pair type is cross-zone disaster recovery.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecondarySiteZoneId() {
         return null;
@@ -140,7 +142,6 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getPrimarySiteType}
          * @param primarySiteType Property primarySiteType: The type of the primary site. This parameter is required.
-         *                        Valid values: VPC, VSwitch, VRouter.
          * @return {@code this}
          */
         public Builder primarySiteType(java.lang.String primarySiteType) {
@@ -151,7 +152,6 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getPrimarySiteType}
          * @param primarySiteType Property primarySiteType: The type of the primary site. This parameter is required.
-         *                        Valid values: VPC, VSwitch, VRouter.
          * @return {@code this}
          */
         public Builder primarySiteType(com.aliyun.ros.cdk.core.IResolvable primarySiteType) {
@@ -222,7 +222,6 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getSecondarySiteType}
          * @param secondarySiteType Property secondarySiteType: The type of the secondary site. This parameter is required.
-         *                          Valid values: VPC, VSwitch, VRouter.
          * @return {@code this}
          */
         public Builder secondarySiteType(java.lang.String secondarySiteType) {
@@ -233,7 +232,6 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getSecondarySiteType}
          * @param secondarySiteType Property secondarySiteType: The type of the secondary site. This parameter is required.
-         *                          Valid values: VPC, VSwitch, VRouter.
          * @return {@code this}
          */
         public Builder secondarySiteType(com.aliyun.ros.cdk.core.IResolvable secondarySiteType) {
@@ -264,6 +262,8 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getPrimarySiteZoneId}
          * @param primarySiteZoneId Property primarySiteZoneId: The zone ID of the primary site.
+         *                          This parameter is valid only when the site pair
+         *                          type is cross-zone disaster recovery.
          * @return {@code this}
          */
         public Builder primarySiteZoneId(java.lang.String primarySiteZoneId) {
@@ -274,6 +274,8 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getPrimarySiteZoneId}
          * @param primarySiteZoneId Property primarySiteZoneId: The zone ID of the primary site.
+         *                          This parameter is valid only when the site pair
+         *                          type is cross-zone disaster recovery.
          * @return {@code this}
          */
         public Builder primarySiteZoneId(com.aliyun.ros.cdk.core.IResolvable primarySiteZoneId) {
@@ -284,6 +286,8 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getSecondarySiteZoneId}
          * @param secondarySiteZoneId Property secondarySiteZoneId: The zone ID of the secondary site.
+         *                            This parameter is valid only when the site
+         *                            pair type is cross-zone disaster recovery.
          * @return {@code this}
          */
         public Builder secondarySiteZoneId(java.lang.String secondarySiteZoneId) {
@@ -294,6 +298,8 @@ public interface SitePairProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link SitePairProps#getSecondarySiteZoneId}
          * @param secondarySiteZoneId Property secondarySiteZoneId: The zone ID of the secondary site.
+         *                            This parameter is valid only when the site
+         *                            pair type is cross-zone disaster recovery.
          * @return {@code this}
          */
         public Builder secondarySiteZoneId(com.aliyun.ros.cdk.core.IResolvable secondarySiteZoneId) {

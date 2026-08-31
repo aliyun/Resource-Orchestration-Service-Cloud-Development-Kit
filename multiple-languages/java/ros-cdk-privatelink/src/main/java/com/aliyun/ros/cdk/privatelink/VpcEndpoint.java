@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.privatelink;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::PrivateLink::VpcEndpoint</code>, which is used to create an endpoint.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:31:09.931Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:47:52.275Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.privatelink.$Module.class, fqn = "@alicloud/ros-cdk-privatelink.VpcEndpoint")
 public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.privatelink.IVpcEndpoint {
 
@@ -224,8 +224,8 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property endpointName: The name of the endpoint.
          * <p>
-         * The name must be 2 to 128 characters in length and can contain digits, underscores
-         * (_), and hyphens (-). The name must start with a letter.
+         * The name must be 2 to 128 characters long, start with a letter or a Chinese
+         * character, and can contain digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
          * @param endpointName Property endpointName: The name of the endpoint. This parameter is required.
@@ -237,8 +237,8 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com
         /**
          * Property endpointName: The name of the endpoint.
          * <p>
-         * The name must be 2 to 128 characters in length and can contain digits, underscores
-         * (_), and hyphens (-). The name must start with a letter.
+         * The name must be 2 to 128 characters long, start with a letter or a Chinese
+         * character, and can contain digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
          * @param endpointName Property endpointName: The name of the endpoint. This parameter is required.
@@ -249,20 +249,60 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property endpointType: Endpoint type.
+         * Property endpointType: The type of the endpoint.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+         * CLB, and Network Load Balancer (NLB) instances as service
+         * resources.</li>
+         * <li>Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+         * resource.</li>
+         * <li>GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+         * Load Balancer (GWLB) as a service resource.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Services that support reverse endpoints are provided exclusively by the cloud
+         * platform and its partners. You cannot create them by default. To request access,
+         * contact your account manager.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param endpointType Property endpointType: Endpoint type. This parameter is required.
+         * @param endpointType Property endpointType: The type of the endpoint. This parameter is required.
          */
         public Builder endpointType(final java.lang.String endpointType) {
             this.props.endpointType(endpointType);
             return this;
         }
         /**
-         * Property endpointType: Endpoint type.
+         * Property endpointType: The type of the endpoint.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>Interface: an interface endpoint. You can add Application Load Balancer (ALB),
+         * CLB, and Network Load Balancer (NLB) instances as service
+         * resources.</li>
+         * <li>Reverse: a reverse endpoint. You can add a VPC NAT Gateway as a service
+         * resource.</li>
+         * <li>GatewayLoadBalancer: a Gateway Load Balancer endpoint. You can add a Gateway
+         * Load Balancer (GWLB) as a service resource.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * Services that support reverse endpoints are provided exclusively by the cloud
+         * platform and its partners. You cannot create them by default. To request access,
+         * contact your account manager.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param endpointType Property endpointType: Endpoint type. This parameter is required.
+         * @param endpointType Property endpointType: The type of the endpoint. This parameter is required.
          */
         public Builder endpointType(final com.aliyun.ros.cdk.core.IResolvable endpointType) {
             this.props.endpointType(endpointType);
@@ -387,20 +427,20 @@ public class VpcEndpoint extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property zone:.
+         * Property zone: The list of zones for the endpoint.
          * <p>
          * @return {@code this}
-         * @param zone Property zone:. This parameter is required.
+         * @param zone Property zone: The list of zones for the endpoint. This parameter is required.
          */
         public Builder zone(final com.aliyun.ros.cdk.core.IResolvable zone) {
             this.props.zone(zone);
             return this;
         }
         /**
-         * Property zone:.
+         * Property zone: The list of zones for the endpoint.
          * <p>
          * @return {@code this}
-         * @param zone Property zone:. This parameter is required.
+         * @param zone Property zone: The list of zones for the endpoint. This parameter is required.
          */
         public Builder zone(final java.util.List<? extends java.lang.Object> zone) {
             this.props.zone(zone);

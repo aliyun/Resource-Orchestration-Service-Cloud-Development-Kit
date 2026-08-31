@@ -64,7 +64,7 @@ function rosAccessGroupPropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::AccessGroup`.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::NAS::AccessGroup`, which is used to query the information about a permission group.
  * @Note This class does not contain additional functions, so it is recommended to use the `AccessGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-nas-accessgroup
  */

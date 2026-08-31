@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.pai;
 /**
  * Represents a <code>Quota</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:20:13.781Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:28:15.137Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.IQuota")
 @software.amazon.jsii.Jsii.Proxy(IQuota.Jsii$Proxy.class)
 public interface IQuota extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

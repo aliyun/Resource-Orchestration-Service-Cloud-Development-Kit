@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-applicationconnectionbind
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.941Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.886Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.RosApplicationConnectionBindProps")
 @software.amazon.jsii.Jsii.Proxy(RosApplicationConnectionBindProps.Jsii$Proxy.class)
 public interface RosApplicationConnectionBindProps extends software.amazon.jsii.JsiiSerializable {

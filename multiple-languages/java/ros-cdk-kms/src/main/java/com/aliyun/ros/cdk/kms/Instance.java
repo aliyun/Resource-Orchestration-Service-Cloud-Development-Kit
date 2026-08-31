@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.kms;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:39:52.856Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:55:06.319Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.IInstance {
 
@@ -242,26 +242,38 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property period: The subscription duration of the KMS instance.
+         * Property period: The subscription duration.
          * <p>
-         * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-         * If PeriodUnit is Year, the valid range is 1, 2, 3
+         * Unit: month. The value must be an integral multiple of
+         * 12.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you create a subscription instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription duration of the KMS instance. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The subscription duration of the KMS instance.
+         * Property period: The subscription duration.
          * <p>
-         * If PeriodUnit is Month, the valid range is 1, 2, 3, 6, 12, 24, 36
-         * If PeriodUnit is Year, the valid range is 1, 2, 3
+         * Unit: month. The value must be an integral multiple of
+         * 12.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you create a subscription instance.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param period Property period: The subscription duration of the KMS instance. This parameter is required.
+         * @param period Property period: The subscription duration. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -300,20 +312,38 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property renewPeriod: Automatic renewal period, in months.
+         * Property renewPeriod: The auto-renewal period.
+         * <p>
+         * Unit: month.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if the RenewalStatus parameter is set to
+         * AutoRenewal.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param renewPeriod Property renewPeriod: Automatic renewal period, in months. This parameter is required.
+         * @param renewPeriod Property renewPeriod: The auto-renewal period. This parameter is required.
          */
         public Builder renewPeriod(final java.lang.Number renewPeriod) {
             this.props.renewPeriod(renewPeriod);
             return this;
         }
         /**
-         * Property renewPeriod: Automatic renewal period, in months.
+         * Property renewPeriod: The auto-renewal period.
+         * <p>
+         * Unit: month.
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if the RenewalStatus parameter is set to
+         * AutoRenewal.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param renewPeriod Property renewPeriod: Automatic renewal period, in months. This parameter is required.
+         * @param renewPeriod Property renewPeriod: The auto-renewal period. This parameter is required.
          */
         public Builder renewPeriod(final com.aliyun.ros.cdk.core.IResolvable renewPeriod) {
             this.props.renewPeriod(renewPeriod);

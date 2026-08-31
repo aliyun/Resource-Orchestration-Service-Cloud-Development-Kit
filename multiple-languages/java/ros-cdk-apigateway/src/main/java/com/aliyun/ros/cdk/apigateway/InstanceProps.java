@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-instance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.569Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.955Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.InstanceProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceProps.Jsii$Proxy.class)
 public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,12 +38,18 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
-     * Property autoPay: Indicates whether automatic payment is enabled.
+     * Property autoPay: Specifies whether to enable auto-payment for renewals.
      * <p>
      * Valid values:
-     * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-     * true: Automatic payment is enabled. The payment is automatically made.
-     * Default true.
+     * <p>
+     * <ul>
+     * <li>True: Auto-payment is enabled. Make sure that your account has a sufficient
+     * balance.</li>
+     * <li>False: Manual payment is required. To pay for an order, log on to the console.
+     * In the upper-right corner, choose Billing &gt; User Center. On the Order Management
+     * page, find the order and complete the payment.
+     * Default value: False.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -68,18 +74,41 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property duration: Prepaid time period.
+     * Property duration: The subscription duration of the instance.
      * <p>
-     * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>If PricingCycle is set to Month, the valid values are 1 to 9.</li>
+     * <li>If PricingCycle is set to Year, the valid values are 1 to 3.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required and takes effect only if you set ChargeType to
+     * PrePaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDuration() {
         return null;
     }
 
     /**
-     * Property pricingCycle: Unit of the payment cycle.
+     * Property pricingCycle: The billing cycle of the subscription instance.
      * <p>
-     * It could be Month (default) or Year.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>year</li>
+     * <li>month</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you set ChargeType to PrePaid.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPricingCycle() {
         return null;
@@ -205,11 +234,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getAutoPay}
-         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
+         * @param autoPay Property autoPay: Specifies whether to enable auto-payment for renewals.
          *                Valid values:
-         *                false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-         *                true: Automatic payment is enabled. The payment is automatically made.
-         *                Default true.
+         *                <p>
+         *                <ul>
+         *                <li>True: Auto-payment is enabled. Make sure that your account has a sufficient
+         *                balance.</li>
+         *                <li>False: Manual payment is required. To pay for an order, log on to the console.
+         *                In the upper-right corner, choose Billing &gt; User Center. On the Order Management
+         *                page, find the order and complete the payment.
+         *                Default value: False.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -219,11 +254,17 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getAutoPay}
-         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled.
+         * @param autoPay Property autoPay: Specifies whether to enable auto-payment for renewals.
          *                Valid values:
-         *                false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-         *                true: Automatic payment is enabled. The payment is automatically made.
-         *                Default true.
+         *                <p>
+         *                <ul>
+         *                <li>True: Auto-payment is enabled. Make sure that your account has a sufficient
+         *                balance.</li>
+         *                <li>False: Manual payment is required. To pay for an order, log on to the console.
+         *                In the upper-right corner, choose Billing &gt; User Center. On the Order Management
+         *                page, find the order and complete the payment.
+         *                Default value: False.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -277,8 +318,20 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDuration}
-         * @param duration Property duration: Prepaid time period.
-         *                 It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         * @param duration Property duration: The subscription duration of the instance.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>If PricingCycle is set to Month, the valid values are 1 to 9.</li>
+         *                 <li>If PricingCycle is set to Year, the valid values are 1 to 3.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required and takes effect only if you set ChargeType to
+         *                 PrePaid.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder duration(java.lang.Number duration) {
@@ -288,8 +341,20 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getDuration}
-         * @param duration Property duration: Prepaid time period.
-         *                 It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         * @param duration Property duration: The subscription duration of the instance.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>If PricingCycle is set to Month, the valid values are 1 to 9.</li>
+         *                 <li>If PricingCycle is set to Year, the valid values are 1 to 3.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required and takes effect only if you set ChargeType to
+         *                 PrePaid.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder duration(com.aliyun.ros.cdk.core.IResolvable duration) {
@@ -299,8 +364,19 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPricingCycle}
-         * @param pricingCycle Property pricingCycle: Unit of the payment cycle.
-         *                     It could be Month (default) or Year.
+         * @param pricingCycle Property pricingCycle: The billing cycle of the subscription instance.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>year</li>
+         *                     <li>month</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is required if you set ChargeType to PrePaid.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder pricingCycle(java.lang.String pricingCycle) {
@@ -310,8 +386,19 @@ public interface InstanceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceProps#getPricingCycle}
-         * @param pricingCycle Property pricingCycle: Unit of the payment cycle.
-         *                     It could be Month (default) or Year.
+         * @param pricingCycle Property pricingCycle: The billing cycle of the subscription instance.
+         *                     Valid values:
+         *                     <p>
+         *                     <ul>
+         *                     <li>year</li>
+         *                     <li>month</li>
+         *                     </ul>
+         *                     <p>
+         *                     <blockquote>
+         *                     <p>
+         *                     This parameter is required if you set ChargeType to PrePaid.
+         *                     <p>
+         *                     </blockquote>
          * @return {@code this}
          */
         public Builder pricingCycle(com.aliyun.ros.cdk.core.IResolvable pricingCycle) {

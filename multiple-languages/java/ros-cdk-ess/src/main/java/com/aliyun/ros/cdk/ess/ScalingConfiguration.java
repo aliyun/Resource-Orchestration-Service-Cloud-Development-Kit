@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ess;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingConfiguration</code>, which is used to create a scaling configuration for a scaling group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ESS::ScalingConfiguration</code>, which creates a scaling configuration for an Auto Scaling group.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:56:08.500Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:06:45.645Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ess.$Module.class, fqn = "@alicloud/ros-cdk-ess.ScalingConfiguration")
 public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ess.IScalingConfiguration {
 
@@ -201,6 +201,27 @@ public class ScalingConfiguration extends com.aliyun.ros.cdk.core.Resource imple
          */
         public Builder cpu(final com.aliyun.ros.cdk.core.IResolvable cpu) {
             this.props.cpu(cpu);
+            return this;
+        }
+
+        /**
+         * Property cpuOptions: CPU options.
+         * <p>
+         * @return {@code this}
+         * @param cpuOptions Property cpuOptions: CPU options. This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.core.IResolvable cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
+            return this;
+        }
+        /**
+         * Property cpuOptions: CPU options.
+         * <p>
+         * @return {@code this}
+         * @param cpuOptions Property cpuOptions: CPU options. This parameter is required.
+         */
+        public Builder cpuOptions(final com.aliyun.ros.cdk.ess.RosScalingConfiguration.CpuOptionsProperty cpuOptions) {
+            this.props.cpuOptions(cpuOptions);
             return this;
         }
 

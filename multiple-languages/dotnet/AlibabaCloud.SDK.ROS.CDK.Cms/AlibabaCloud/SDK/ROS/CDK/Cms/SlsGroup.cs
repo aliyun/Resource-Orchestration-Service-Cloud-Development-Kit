@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SlsGroup`, which is used to create a Logstore group for the metrics of Simple Log Service logs.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::CMS::SlsGroup`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSlsGroup`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-slsgroup

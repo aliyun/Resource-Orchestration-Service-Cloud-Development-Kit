@@ -197,6 +197,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <strong>Property</strong>: type: The type of the endpoint. Valid values:
             /// Domain: a custom domain name
             /// Ip: a custom IP address
+            /// IpTarget: a custom private IP address.
             /// PublicIp: a public IP address provided by Alibaba Cloud
             /// ECS: an Elastic Compute Service (ECS) instance
             /// SLB: a Server Load Balancer (SLB) instance
@@ -253,6 +254,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
                 /// <strong>Property</strong>: type: The type of the endpoint. Valid values:
                 /// Domain: a custom domain name
                 /// Ip: a custom IP address
+                /// IpTarget: a custom private IP address.
                 /// PublicIp: a public IP address provided by Alibaba Cloud
                 /// ECS: an Elastic Compute Service (ECS) instance
                 /// SLB: a Server Load Balancer (SLB) instance
@@ -330,6 +332,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ga
             /// <strong>Property</strong>: type: The type of the endpoint. Valid values:
             /// Domain: a custom domain name
             /// Ip: a custom IP address
+            /// IpTarget: a custom private IP address.
             /// PublicIp: a public IP address provided by Alibaba Cloud
             /// ECS: an Elastic Compute Service (ECS) instance
             /// SLB: a Server Load Balancer (SLB) instance

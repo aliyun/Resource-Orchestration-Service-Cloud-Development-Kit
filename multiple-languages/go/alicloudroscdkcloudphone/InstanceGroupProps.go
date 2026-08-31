@@ -44,10 +44,11 @@ type InstanceGroupProps struct {
 	//
 	// The cloud phone key can be imported through the ImportKeyPair interface.
 	KeyPairName interface{} `field:"optional" json:"keyPairName" yaml:"keyPairName"`
-	// Property period: Prepaid time period.
+	// Property period: The subscription duration.
 	//
-	// While PeriodUnit is month, it could be 1, 2, 3, 6.
-	// While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+	// Default value: 1.
+	// *   Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.
+	// *   Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property periodUnit: Unit of prepaid time period, it could be Month\/Year.
 	//

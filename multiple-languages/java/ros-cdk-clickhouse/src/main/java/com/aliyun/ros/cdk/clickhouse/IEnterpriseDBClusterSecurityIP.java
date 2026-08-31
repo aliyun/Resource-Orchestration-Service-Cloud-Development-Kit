@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Represents a <code>EnterpriseDBClusterSecurityIP</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:45.062Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:34:08.103Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.IEnterpriseDBClusterSecurityIP")
 @software.amazon.jsii.Jsii.Proxy(IEnterpriseDBClusterSecurityIP.Jsii$Proxy.class)
 public interface IEnterpriseDBClusterSecurityIP extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

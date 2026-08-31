@@ -5,13 +5,15 @@ package com.aliyun.ros.cdk.tsdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-tsdb-hitsdbinstance
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:01:33.170Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:56:35.217Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.tsdb.$Module.class, fqn = "@alicloud/ros-cdk-tsdb.HiTSDBInstanceProps")
 @software.amazon.jsii.Jsii.Proxy(HiTSDBInstanceProps.Jsii$Proxy.class)
 public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property instanceClass: The type of the instance.
+     * Property instanceClass: The storage capacity of the instance.
+     * <p>
+     * Unit: GB.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceClass();
 
@@ -38,7 +40,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
     @org.jetbrains.annotations.NotNull java.lang.Object getZoneId();
 
     /**
-     * Property diskCategory: The category of disk.
+     * Property diskCategory: The ID of the request.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDiskCategory() {
         return null;
@@ -61,13 +63,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property payType: The billing method.
-     * <p>
-     * Valid values:
-     * <p>
-     * <ul>
-     * <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
-     * </ul>
+     * Property payType: The ID of the VPC in which the instances reside.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPayType() {
         return null;
@@ -113,7 +109,8 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getInstanceClass}
-         * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
+         * @param instanceClass Property instanceClass: The storage capacity of the instance. This parameter is required.
+         *                      Unit: GB.
          * @return {@code this}
          */
         public Builder instanceClass(java.lang.String instanceClass) {
@@ -123,7 +120,8 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getInstanceClass}
-         * @param instanceClass Property instanceClass: The type of the instance. This parameter is required.
+         * @param instanceClass Property instanceClass: The storage capacity of the instance. This parameter is required.
+         *                      Unit: GB.
          * @return {@code this}
          */
         public Builder instanceClass(com.aliyun.ros.cdk.core.IResolvable instanceClass) {
@@ -215,7 +213,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getDiskCategory}
-         * @param diskCategory Property diskCategory: The category of disk.
+         * @param diskCategory Property diskCategory: The ID of the request.
          * @return {@code this}
          */
         public Builder diskCategory(java.lang.String diskCategory) {
@@ -225,7 +223,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getDiskCategory}
-         * @param diskCategory Property diskCategory: The category of disk.
+         * @param diskCategory Property diskCategory: The ID of the request.
          * @return {@code this}
          */
         public Builder diskCategory(com.aliyun.ros.cdk.core.IResolvable diskCategory) {
@@ -277,12 +275,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getPayType}
-         * @param payType Property payType: The billing method.
-         *                Valid values:
-         *                <p>
-         *                <ul>
-         *                <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
-         *                </ul>
+         * @param payType Property payType: The ID of the VPC in which the instances reside.
          * @return {@code this}
          */
         public Builder payType(java.lang.String payType) {
@@ -292,12 +285,7 @@ public interface HiTSDBInstanceProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link HiTSDBInstanceProps#getPayType}
-         * @param payType Property payType: The billing method.
-         *                Valid values:
-         *                <p>
-         *                <ul>
-         *                <li><strong>prepay</strong>: The prepay value indicates the subscription method.</li>
-         *                </ul>
+         * @param payType Property payType: The ID of the VPC in which the instances reside.
          * @return {@code this}
          */
         public Builder payType(com.aliyun.ros.cdk.core.IResolvable payType) {

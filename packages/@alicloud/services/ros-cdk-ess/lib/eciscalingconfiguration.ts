@@ -15,8 +15,12 @@ export interface EciScalingConfigurationProps {
     readonly containerGroupName: string | ros.IResolvable;
 
     /**
-     * Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-     * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+     * Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in
+     * length and can contain letters, digits, underscores (_), hyphens (-), and periods
+     * (.). The name must start with a letter or a digit.
+     * The name of the scaling configuration must be unique within a scaling group in a
+     * region. If you do not specify this parameter, the value of the
+     * ScalingConfigurationId parameter is used.
      */
     readonly scalingConfigurationName: string | ros.IResolvable;
 
@@ -110,9 +114,10 @@ export interface EciScalingConfigurationProps {
     readonly dataCachePl?: string | ros.IResolvable;
 
     /**
-     * Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-     * Note
-     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     * Property dataCacheProvisionedIops: The provisioned read\/write input\/output operations per second (IOPS) for the ESSD
+     * AutoPL disk when data caching uses an ESSD AutoPL disk. Valid values: 0 to
+     * min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+     * min{1800 + 50 × capacity, 50000}.
      */
     readonly dataCacheProvisionedIops?: number | ros.IResolvable;
 
@@ -139,7 +144,7 @@ export interface EciScalingConfigurationProps {
     readonly dnsPolicy?: string | ros.IResolvable;
 
     /**
-     * Property egressBandwidth: The maximum outbound bandwidth. Unit: bytes.
+     * Property egressBandwidth: The maximum outbound bandwidth. Unit: bit\/s.
      */
     readonly egressBandwidth?: number | ros.IResolvable;
 
@@ -174,7 +179,7 @@ export interface EciScalingConfigurationProps {
     readonly imageSnapshotId?: string | ros.IResolvable;
 
     /**
-     * Property ingressBandwidth: The maximum inbound bandwidth. Unit: bytes.
+     * Property ingressBandwidth: The maximum inbound bandwidth. Unit: bit\/s.
      */
     readonly ingressBandwidth?: number | ros.IResolvable;
 

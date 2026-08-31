@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`, which is used to assign IPv6 addresses to an elastic network interface (ENI).
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignIpv6Addresses`.
 type RosAssignIpv6Addresses interface {
 	alicloudroscdkcore.RosResource
 	AttrIpv6Addresses() alicloudroscdkcore.IResolvable

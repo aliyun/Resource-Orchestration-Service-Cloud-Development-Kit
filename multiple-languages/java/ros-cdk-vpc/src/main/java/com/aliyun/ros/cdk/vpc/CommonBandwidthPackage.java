@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::CommonBandwidthPackage</code>, which is used to create an Internet Shared Bandwidth instance.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.352Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.167Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.CommonBandwidthPackage")
 public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.ICommonBandwidthPackage {
 
@@ -120,24 +120,26 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         }
 
         /**
-         * Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance.
+         * Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance.
          * <p>
          * Unit: Mbit/s.
+         * Valid values: 1 to 1000. Default value: 1.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder bandwidth(final java.lang.Number bandwidth) {
             this.props.bandwidth(bandwidth);
             return this;
         }
         /**
-         * Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance.
+         * Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance.
          * <p>
          * Unit: Mbit/s.
+         * Valid values: 1 to 1000. Default value: 1.
          * <p>
          * @return {@code this}
-         * @param bandwidth Property bandwidth: The peak bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder bandwidth(final com.aliyun.ros.cdk.core.IResolvable bandwidth) {
             this.props.bandwidth(bandwidth);
@@ -172,8 +174,8 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         /**
          * Property description: The description of the Internet Shared Bandwidth instance.
          * <p>
-         * The description must be 2 to 256 characters in length. It must start with a letter,
-         * and cannot start with http:// or https://.
+         * The description must be 0 to 256 characters in length and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param description Property description: The description of the Internet Shared Bandwidth instance. This parameter is required.
@@ -185,8 +187,8 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         /**
          * Property description: The description of the Internet Shared Bandwidth instance.
          * <p>
-         * The description must be 2 to 256 characters in length. It must start with a letter,
-         * and cannot start with http:// or https://.
+         * The description must be 0 to 256 characters in length and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param description Property description: The description of the Internet Shared Bandwidth instance. This parameter is required.
@@ -197,28 +199,26 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         }
 
         /**
-         * Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.
+         * Property internetChargeType: The billing method of the Internet Shared Bandwidth instance.
          * <p>
-         * Allowed values:
-         * PayByBandwidth (default): Billed by bandwidth.
-         * PayBy95: Charged at Enhanced 95.
+         * Set the value to
+         * PayByTraffic, which specifies the pay-by-data-transfer billing method.
          * <p>
          * @return {@code this}
-         * @param internetChargeType Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param internetChargeType Property internetChargeType: The billing method of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder internetChargeType(final java.lang.String internetChargeType) {
             this.props.internetChargeType(internetChargeType);
             return this;
         }
         /**
-         * Property internetChargeType: The billing model of the Internet Shared Bandwidth instance.
+         * Property internetChargeType: The billing method of the Internet Shared Bandwidth instance.
          * <p>
-         * Allowed values:
-         * PayByBandwidth (default): Billed by bandwidth.
-         * PayBy95: Charged at Enhanced 95.
+         * Set the value to
+         * PayByTraffic, which specifies the pay-by-data-transfer billing method.
          * <p>
          * @return {@code this}
-         * @param internetChargeType Property internetChargeType: The billing model of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param internetChargeType Property internetChargeType: The billing method of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder internetChargeType(final com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
             this.props.internetChargeType(internetChargeType);
@@ -226,20 +226,58 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         }
 
         /**
-         * Property isp: Line type of EIP, value: BGP (multi-line).
+         * Property isp: The line type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>BGP (default) All regions support BGP (Multi-ISP).</li>
+         * <li>BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+         * Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+         * Indonesia (Jakarta), and Thailand (Bangkok) regions.
+         * If you are allowed to use single-ISP bandwidth, you can also use one of the
+         * following values:</li>
+         * <li>ChinaTelecom</li>
+         * <li>ChinaUnicom</li>
+         * <li>ChinaMobile</li>
+         * <li>ChinaTelecom_L2</li>
+         * <li>ChinaUnicom_L2</li>
+         * <li>ChinaMobile_L2
+         * If your services are deployed in China East 1 Finance, this parameter is required
+         * and you must set the value to BGP_FinanceCloud.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param isp Property isp: Line type of EIP, value: BGP (multi-line). This parameter is required.
+         * @param isp Property isp: The line type. This parameter is required.
          */
         public Builder isp(final java.lang.String isp) {
             this.props.isp(isp);
             return this;
         }
         /**
-         * Property isp: Line type of EIP, value: BGP (multi-line).
+         * Property isp: The line type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>BGP (default) All regions support BGP (Multi-ISP).</li>
+         * <li>BGP_PRO BGP (Multi-ISP) Pro lines are available in the China (Hong Kong),
+         * Singapore, Japan (Tokyo), Philippines (Manila), Malaysia (Kuala Lumpur),
+         * Indonesia (Jakarta), and Thailand (Bangkok) regions.
+         * If you are allowed to use single-ISP bandwidth, you can also use one of the
+         * following values:</li>
+         * <li>ChinaTelecom</li>
+         * <li>ChinaUnicom</li>
+         * <li>ChinaMobile</li>
+         * <li>ChinaTelecom_L2</li>
+         * <li>ChinaUnicom_L2</li>
+         * <li>ChinaMobile_L2
+         * If your services are deployed in China East 1 Finance, this parameter is required
+         * and you must set the value to BGP_FinanceCloud.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param isp Property isp: Line type of EIP, value: BGP (multi-line). This parameter is required.
+         * @param isp Property isp: The line type. This parameter is required.
          */
         public Builder isp(final com.aliyun.ros.cdk.core.IResolvable isp) {
             this.props.isp(isp);
@@ -249,9 +287,8 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         /**
          * Property name: The name of the Internet Shared Bandwidth instance.
          * <p>
-         * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-         * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-         * start with http:// or https://.
+         * The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the Internet Shared Bandwidth instance. This parameter is required.
@@ -263,9 +300,8 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         /**
          * Property name: The name of the Internet Shared Bandwidth instance.
          * <p>
-         * The name must be 2 to 128 characters in length and can contain letters, numbers, periods
-         * (.), underscores (_), and hyphens (-). The name must start with a letter, and cannot
-         * start with http:// or https://.
+         * The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the Internet Shared Bandwidth instance. This parameter is required.
@@ -276,26 +312,24 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         }
 
         /**
-         * Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.
+         * Property ratio: The percentage of the minimum bandwidth commitment.
          * <p>
-         * Default to 100.
-         * Note This parameter is only supported on the China site.
+         * Set the parameter to 20.
          * <p>
          * @return {@code this}
-         * @param ratio Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param ratio Property ratio: The percentage of the minimum bandwidth commitment. This parameter is required.
          */
         public Builder ratio(final java.lang.Number ratio) {
             this.props.ratio(ratio);
             return this;
         }
         /**
-         * Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance.
+         * Property ratio: The percentage of the minimum bandwidth commitment.
          * <p>
-         * Default to 100.
-         * Note This parameter is only supported on the China site.
+         * Set the parameter to 20.
          * <p>
          * @return {@code this}
-         * @param ratio Property ratio: The minimum consumption ratio of the Internet Shared Bandwidth instance. This parameter is required.
+         * @param ratio Property ratio: The percentage of the minimum bandwidth commitment. This parameter is required.
          */
         public Builder ratio(final com.aliyun.ros.cdk.core.IResolvable ratio) {
             this.props.ratio(ratio);
@@ -337,20 +371,26 @@ public class CommonBandwidthPackage extends com.aliyun.ros.cdk.core.Resource imp
         }
 
         /**
-         * Property zone: Zone Id.
+         * Property zone: The zone of the Internet Shared Bandwidth instance.
+         * <p>
+         * This parameter is required if
+         * you create an Internet Shared Bandwidth instance for a cloud box.
          * <p>
          * @return {@code this}
-         * @param zone Property zone: Zone Id. This parameter is required.
+         * @param zone Property zone: The zone of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder zone(final java.lang.String zone) {
             this.props.zone(zone);
             return this;
         }
         /**
-         * Property zone: Zone Id.
+         * Property zone: The zone of the Internet Shared Bandwidth instance.
+         * <p>
+         * This parameter is required if
+         * you create an Internet Shared Bandwidth instance for a cloud box.
          * <p>
          * @return {@code this}
-         * @param zone Property zone: Zone Id. This parameter is required.
+         * @param zone Property zone: The zone of the Internet Shared Bandwidth instance. This parameter is required.
          */
         public Builder zone(final com.aliyun.ros.cdk.core.IResolvable zone) {
             this.props.zone(zone);

@@ -10,12 +10,22 @@ export { RosImageComponent as ImageComponentProperty };
 export interface ImageComponentProps {
 
     /**
-     * Property content: The content of the image component. The content consists of up to 127 commands.
+     * Property content: The content of the image component. The image component consists of multiple
+     * commands. The command content cannot exceed 16 KB in size. For information about
+     * the commands supported by Image Builder and the formats of the commands, see
+     * [Commands supported by Image Builder]().
      */
     readonly content: string | ros.IResolvable;
 
     /**
-     * Property componentType: The type of the image component. Only image build components are supported. Set the value to Build.Default value: Build.
+     * Property componentType: The type of the image component. Only image building components and image test
+     * components are supported.
+     * Valid values:
+     * - Build
+     * - Test
+     * Default value: Build.
+     * > Image building components can be used only in image building templates. Image
+     * test components can be used only in image test templates.
      */
     readonly componentType?: string | ros.IResolvable;
 
@@ -36,7 +46,11 @@ export interface ImageComponentProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property systemType: The operating system type supported by the image component. Only Linux is supported. Set the value to Linux.Default value: Linux.
+     * Property systemType: The type of the operating system supported by the image component.
+     * Valid values:
+     * - Linux
+     * - Windows
+     * Default value: Linux.
      */
     readonly systemType?: string | ros.IResolvable;
 
@@ -58,7 +72,7 @@ export interface IImageComponent extends ros.IResource {
     readonly attrImageComponentId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageComponent`, which is used to create an image component.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECS::ImageComponent`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosImageComponent`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagecomponent
  */

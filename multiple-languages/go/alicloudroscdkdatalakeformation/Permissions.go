@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::Permissions`The , which resource type is used to grant permissions in a batch.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DataLakeFormation::Permissions`.
 type Permissions interface {
 	alicloudroscdkcore.Resource
 	IPermissions

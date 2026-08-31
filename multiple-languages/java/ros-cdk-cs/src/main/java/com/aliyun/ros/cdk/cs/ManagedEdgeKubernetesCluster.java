@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>Use , which to create an ACK managed edge Kubernetes cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CS::ManagedEdgeKubernetesCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:04:30.588Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:56:05.632Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cs.$Module.class, fqn = "@alicloud/ros-cdk-cs.ManagedEdgeKubernetesCluster")
 public class ManagedEdgeKubernetesCluster extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cs.IManagedEdgeKubernetesCluster {
 

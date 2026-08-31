@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.apigateway;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-api
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.520Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.904Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.ApiProps")
 @software.amazon.jsii.Jsii.Proxy(ApiProps.Jsii$Proxy.class)
 public interface ApiProps extends software.amazon.jsii.JsiiSerializable {
@@ -145,7 +145,11 @@ public interface ApiProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property resultSample: The sample of the result.
+     * Property resultSample: An example of a response returned by the backend service.
+     * <p>
+     * This value is used only
+     * to generate documentation. The actually returned result shall prevail.(Support up
+     * to 32KB)
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResultSample() {
         return null;
@@ -624,7 +628,10 @@ public interface ApiProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ApiProps#getResultSample}
-         * @param resultSample Property resultSample: The sample of the result.
+         * @param resultSample Property resultSample: An example of a response returned by the backend service.
+         *                     This value is used only
+         *                     to generate documentation. The actually returned result shall prevail.(Support up
+         *                     to 32KB)
          * @return {@code this}
          */
         public Builder resultSample(java.lang.String resultSample) {
@@ -634,7 +641,10 @@ public interface ApiProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ApiProps#getResultSample}
-         * @param resultSample Property resultSample: The sample of the result.
+         * @param resultSample Property resultSample: An example of a response returned by the backend service.
+         *                     This value is used only
+         *                     to generate documentation. The actually returned result shall prevail.(Support up
+         *                     to 32KB)
          * @return {@code this}
          */
         public Builder resultSample(com.aliyun.ros.cdk.core.IResolvable resultSample) {

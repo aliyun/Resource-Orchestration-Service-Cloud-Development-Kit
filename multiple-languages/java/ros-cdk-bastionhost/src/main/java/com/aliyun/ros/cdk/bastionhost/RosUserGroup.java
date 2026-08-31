@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bastionhost;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::BastionHost::UserGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.537Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.241Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.RosUserGroup")
 public class RosUserGroup extends com.aliyun.ros.cdk.core.RosResource {
 

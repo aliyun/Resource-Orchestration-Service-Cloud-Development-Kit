@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.drds;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:28:31.232Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:25:12.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsDBProps")
 @software.amazon.jsii.Jsii.Proxy(DrdsDBProps.Jsii$Proxy.class)
 public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
@@ -23,17 +23,14 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+     * Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstanceIsCreating() {
         return null;
     }
 
     /**
-     * Property dbInstType: The type of the attached storage.
-     * <p>
-     * Valid values:
-     * RDS or POLARDB
+     * Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDbInstType() {
         return null;
@@ -47,14 +44,14 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property encode: Encoding used by the database.
+     * Property encode: The encoding method that is used by the database.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getEncode() {
         return null;
     }
 
     /**
-     * Property instDbName:.
+     * Property instDbName: List of databases.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstDbName() {
         return null;
@@ -68,7 +65,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property rdsInstance: This property is required only for vertical partitioning.
+     * Property rdsInstance: List of RDS instances.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRdsInstance() {
         return null;
@@ -149,7 +146,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getDbInstanceIsCreating}
-         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
          * @return {@code this}
          */
         public Builder dbInstanceIsCreating(java.lang.Boolean dbInstanceIsCreating) {
@@ -159,7 +156,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getDbInstanceIsCreating}
-         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
          * @return {@code this}
          */
         public Builder dbInstanceIsCreating(com.aliyun.ros.cdk.core.IResolvable dbInstanceIsCreating) {
@@ -169,9 +166,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getDbInstType}
-         * @param dbInstType Property dbInstType: The type of the attached storage.
-         *                   Valid values:
-         *                   RDS or POLARDB
+         * @param dbInstType Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS.
          * @return {@code this}
          */
         public Builder dbInstType(java.lang.String dbInstType) {
@@ -181,9 +176,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getDbInstType}
-         * @param dbInstType Property dbInstType: The type of the attached storage.
-         *                   Valid values:
-         *                   RDS or POLARDB
+         * @param dbInstType Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS.
          * @return {@code this}
          */
         public Builder dbInstType(com.aliyun.ros.cdk.core.IResolvable dbInstType) {
@@ -213,7 +206,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getEncode}
-         * @param encode Property encode: Encoding used by the database.
+         * @param encode Property encode: The encoding method that is used by the database.
          * @return {@code this}
          */
         public Builder encode(java.lang.String encode) {
@@ -223,7 +216,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getEncode}
-         * @param encode Property encode: Encoding used by the database.
+         * @param encode Property encode: The encoding method that is used by the database.
          * @return {@code this}
          */
         public Builder encode(com.aliyun.ros.cdk.core.IResolvable encode) {
@@ -233,7 +226,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getInstDbName}
-         * @param instDbName Property instDbName:.
+         * @param instDbName Property instDbName: List of databases.
          * @return {@code this}
          */
         public Builder instDbName(com.aliyun.ros.cdk.core.IResolvable instDbName) {
@@ -243,7 +236,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getInstDbName}
-         * @param instDbName Property instDbName:.
+         * @param instDbName Property instDbName: List of databases.
          * @return {@code this}
          */
         public Builder instDbName(java.util.List<? extends java.lang.Object> instDbName) {
@@ -273,7 +266,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getRdsInstance}
-         * @param rdsInstance Property rdsInstance: This property is required only for vertical partitioning.
+         * @param rdsInstance Property rdsInstance: List of RDS instances.
          * @return {@code this}
          */
         public Builder rdsInstance(com.aliyun.ros.cdk.core.IResolvable rdsInstance) {
@@ -283,7 +276,7 @@ public interface DrdsDBProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DrdsDBProps#getRdsInstance}
-         * @param rdsInstance Property rdsInstance: This property is required only for vertical partitioning.
+         * @param rdsInstance Property rdsInstance: List of RDS instances.
          * @return {@code this}
          */
         public Builder rdsInstance(java.util.List<? extends java.lang.Object> rdsInstance) {

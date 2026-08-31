@@ -71,7 +71,7 @@ Unit: milliseconds.
     readonly attrSpecification: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::Namespace`, which is used to create a namespace.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CMS::Namespace`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-namespace
  */

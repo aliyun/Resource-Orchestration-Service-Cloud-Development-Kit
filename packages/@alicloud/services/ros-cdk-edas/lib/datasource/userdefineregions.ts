@@ -35,7 +35,7 @@ export interface IUserDefineRegions extends ros.IResource {
     readonly attrUserDefineRegions: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`, which is used to query custom namespaces.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::EDAS::UserDefineRegions`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosUserDefineRegions`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-edas-userdefineregions
  */

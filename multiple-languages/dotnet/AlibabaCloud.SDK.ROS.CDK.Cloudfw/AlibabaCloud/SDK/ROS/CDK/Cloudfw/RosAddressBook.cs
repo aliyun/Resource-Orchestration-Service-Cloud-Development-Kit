@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`The , which resource type is used to create address books for security access control, such as IP address books, ECS tag-based address books, port address books, and domain name address books.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CLOUDFW::AddressBook`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AddressBook` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudfw-addressbook
@@ -392,7 +392,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: tagList:
+        /// <strong>Property</strong>: tagList: The list of ECS tags.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "tagList", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-cloudfw.RosAddressBook.TagListProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

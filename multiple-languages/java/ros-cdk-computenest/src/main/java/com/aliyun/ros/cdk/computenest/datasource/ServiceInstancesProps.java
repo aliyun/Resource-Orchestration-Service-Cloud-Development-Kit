@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.computenest.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-computenest-serviceinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:00:24.329Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:50:03.135Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.computenest.$Module.class, fqn = "@alicloud/ros-cdk-computenest.datasource.ServiceInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(ServiceInstancesProps.Jsii$Proxy.class)
 public interface ServiceInstancesProps extends software.amazon.jsii.JsiiSerializable {

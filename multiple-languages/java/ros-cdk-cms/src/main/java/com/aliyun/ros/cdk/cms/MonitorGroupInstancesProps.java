@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-monitorgroupinstances
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.267Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.MonitorGroupInstancesProps")
 @software.amazon.jsii.Jsii.Proxy(MonitorGroupInstancesProps.Jsii$Proxy.class)
 public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,7 +16,7 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
     @org.jetbrains.annotations.NotNull java.lang.Object getGroupId();
 
     /**
-     * Property instances:.
+     * Property instances: The instances that you want to add to the application group.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstances();
 
@@ -55,7 +55,7 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link MonitorGroupInstancesProps#getInstances}
-         * @param instances Property instances:. This parameter is required.
+         * @param instances Property instances: The instances that you want to add to the application group. This parameter is required.
          * @return {@code this}
          */
         public Builder instances(com.aliyun.ros.cdk.core.IResolvable instances) {
@@ -65,7 +65,7 @@ public interface MonitorGroupInstancesProps extends software.amazon.jsii.JsiiSer
 
         /**
          * Sets the value of {@link MonitorGroupInstancesProps#getInstances}
-         * @param instances Property instances:. This parameter is required.
+         * @param instances Property instances: The instances that you want to add to the application group. This parameter is required.
          * @return {@code this}
          */
         public Builder instances(java.util.List<? extends java.lang.Object> instances) {

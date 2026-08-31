@@ -28,7 +28,7 @@ type SAMLIdentityProviderProps struct {
 	// - true: yes
 	// - false: no (default).
 	WantRequestSigned interface{} `field:"optional" json:"wantRequestSigned" yaml:"wantRequestSigned"`
-	// Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.
+	// Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.
 	X509Certificate interface{} `field:"optional" json:"x509Certificate" yaml:"x509Certificate"`
 }
 

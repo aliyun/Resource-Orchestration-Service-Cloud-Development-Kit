@@ -20,7 +20,7 @@ export interface UserProps {
     readonly autoLockTime?: string | ros.IResolvable;
 
     /**
-     * Property businessChannel: The channel.
+     * Property businessChannel: The business channel.
      */
     readonly businessChannel?: string | ros.IResolvable;
 

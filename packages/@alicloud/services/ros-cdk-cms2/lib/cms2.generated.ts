@@ -590,6 +590,437 @@ function rosAddonReleaseTagsPropertyToRosTemplate(properties: any): any {
 }
 
 /**
+ * Properties for defining a `RosAggTaskGroup`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-aggtaskgroup
+ */
+export interface RosAggTaskGroupProps {
+
+    /**
+     * @Property aggTaskGroupConfig: The config of the agg task group. Only "RecordingRuleYaml" format is supported, which must conform to the RecordingRule format of the open source Prometheus.
+     */
+    readonly aggTaskGroupConfig: string | ros.IResolvable;
+
+    /**
+     * @Property aggTaskGroupName: The name of the agg task group.
+     */
+    readonly aggTaskGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the source Prometheus instance the agg task group reads data from.
+     */
+    readonly instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property targetPrometheusId: The ID of the target Prometheus instance of the agg task group.
+     */
+    readonly targetPrometheusId: string | ros.IResolvable;
+
+    /**
+     * @Property aggTaskGroupConfigType: The config type of the agg task group. Default: "RecordingRuleYaml".
+     */
+    readonly aggTaskGroupConfigType?: string | ros.IResolvable;
+
+    /**
+     * @Property cronExpr: The cron expression used when ScheduleMode is "Cron". For example, "0\/1 * * * *" means scheduling every 1 minute starting from minute 0.
+     */
+    readonly cronExpr?: string | ros.IResolvable;
+
+    /**
+     * @Property delay: The fixed delay of the schedule, in seconds. Default: 30.
+     */
+    readonly delay?: number | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the agg task group.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property fromTime: The second-level timestamp corresponding to the schedule start time.
+     */
+    readonly fromTime?: number | ros.IResolvable;
+
+    /**
+     * @Property maxRetries: The maximum number of retries for executing the agg task. Default: 20.
+     */
+    readonly maxRetries?: number | ros.IResolvable;
+
+    /**
+     * @Property maxRunTimeInSeconds: The maximum retry time for executing the agg task, in seconds. Default: 600.
+     */
+    readonly maxRunTimeInSeconds?: number | ros.IResolvable;
+
+    /**
+     * @Property overrideIfExists: Whether to override and update an existing agg task group with the same name when creating. Create-only, cannot be updated.
+     */
+    readonly overrideIfExists?: boolean | ros.IResolvable;
+
+    /**
+     * @Property precheckString: The precheck config. Not configured by default.
+     */
+    readonly precheckString?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
+
+    /**
+     * @Property scheduleMode: The schedule mode, "Cron" or "FixedRate". Default: "FixedRate".
+     */
+    readonly scheduleMode?: string | ros.IResolvable;
+
+    /**
+     * @Property scheduleTimeExpr: The schedule time expression, "@s" or "@m" is recommended, indicating the rounding granularity of the schedule time window. Default: "@m".
+     */
+    readonly scheduleTimeExpr?: string | ros.IResolvable;
+
+    /**
+     * @Property status: The status of the agg task group, "Running" or "Stopped". Default: Running.
+     */
+    readonly status?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: The tags of the agg task group.
+     */
+    readonly tags?: RosAggTaskGroup.TagsProperty[];
+
+    /**
+     * @Property toTime: The second-level timestamp corresponding to the schedule end time. 0 means the schedule never stops.
+     */
+    readonly toTime?: number | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosAggTaskGroupProps`
+ *
+ * @param properties - the TypeScript properties of a `RosAggTaskGroupProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosAggTaskGroupPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('maxRetries', ros.validateNumber)(properties.maxRetries));
+    if(properties.status && (typeof properties.status) !== 'object') {
+        errors.collect(ros.propertyValidator('status', ros.validateAllowedValues)({
+          data: properties.status,
+          allowedValues: ["Running","Stopped"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('status', ros.validateString)(properties.status));
+    errors.collect(ros.propertyValidator('scheduleTimeExpr', ros.validateString)(properties.scheduleTimeExpr));
+    errors.collect(ros.propertyValidator('targetPrometheusId', ros.requiredValidator)(properties.targetPrometheusId));
+    errors.collect(ros.propertyValidator('targetPrometheusId', ros.validateString)(properties.targetPrometheusId));
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    errors.collect(ros.propertyValidator('instanceId', ros.requiredValidator)(properties.instanceId));
+    errors.collect(ros.propertyValidator('instanceId', ros.validateString)(properties.instanceId));
+    errors.collect(ros.propertyValidator('cronExpr', ros.validateString)(properties.cronExpr));
+    if(properties.delay && (typeof properties.delay) !== 'object') {
+        errors.collect(ros.propertyValidator('delay', ros.validateRange)({
+            data: properties.delay,
+            min: 0,
+            max: 120,
+          }));
+    }
+    errors.collect(ros.propertyValidator('delay', ros.validateNumber)(properties.delay));
+    errors.collect(ros.propertyValidator('aggTaskGroupName', ros.requiredValidator)(properties.aggTaskGroupName));
+    errors.collect(ros.propertyValidator('aggTaskGroupName', ros.validateString)(properties.aggTaskGroupName));
+    errors.collect(ros.propertyValidator('overrideIfExists', ros.validateBoolean)(properties.overrideIfExists));
+    errors.collect(ros.propertyValidator('toTime', ros.validateNumber)(properties.toTime));
+    errors.collect(ros.propertyValidator('maxRunTimeInSeconds', ros.validateNumber)(properties.maxRunTimeInSeconds));
+    if(properties.aggTaskGroupConfigType && (typeof properties.aggTaskGroupConfigType) !== 'object') {
+        errors.collect(ros.propertyValidator('aggTaskGroupConfigType', ros.validateAllowedValues)({
+          data: properties.aggTaskGroupConfigType,
+          allowedValues: ["RecordingRuleYaml"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('aggTaskGroupConfigType', ros.validateString)(properties.aggTaskGroupConfigType));
+    errors.collect(ros.propertyValidator('aggTaskGroupConfig', ros.requiredValidator)(properties.aggTaskGroupConfig));
+    errors.collect(ros.propertyValidator('aggTaskGroupConfig', ros.validateString)(properties.aggTaskGroupConfig));
+    if(properties.scheduleMode && (typeof properties.scheduleMode) !== 'object') {
+        errors.collect(ros.propertyValidator('scheduleMode', ros.validateAllowedValues)({
+          data: properties.scheduleMode,
+          allowedValues: ["FixedRate","Cron"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('scheduleMode', ros.validateString)(properties.scheduleMode));
+    errors.collect(ros.propertyValidator('precheckString', ros.hashValidator(ros.validateAny))(properties.precheckString));
+    errors.collect(ros.propertyValidator('fromTime', ros.validateNumber)(properties.fromTime));
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosAggTaskGroup_TagsPropertyValidator))(properties.tags));
+    return errors.wrap('supplied properties not correct for "RosAggTaskGroupProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS2::AggTaskGroup` resource
+ *
+ * @param properties - the TypeScript properties of a `RosAggTaskGroupProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS2::AggTaskGroup` resource.
+ */
+// @ts-ignore TS6133
+function rosAggTaskGroupPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosAggTaskGroupPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AggTaskGroupConfig': ros.stringToRosTemplate(properties.aggTaskGroupConfig),
+      'AggTaskGroupName': ros.stringToRosTemplate(properties.aggTaskGroupName),
+      'InstanceId': ros.stringToRosTemplate(properties.instanceId),
+      'TargetPrometheusId': ros.stringToRosTemplate(properties.targetPrometheusId),
+      'AggTaskGroupConfigType': ros.stringToRosTemplate(properties.aggTaskGroupConfigType),
+      'CronExpr': ros.stringToRosTemplate(properties.cronExpr),
+      'Delay': ros.numberToRosTemplate(properties.delay),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'FromTime': ros.numberToRosTemplate(properties.fromTime),
+      'MaxRetries': ros.numberToRosTemplate(properties.maxRetries),
+      'MaxRunTimeInSeconds': ros.numberToRosTemplate(properties.maxRunTimeInSeconds),
+      'OverrideIfExists': ros.booleanToRosTemplate(properties.overrideIfExists),
+      'PrecheckString': ros.hashMapper(ros.objectToRosTemplate)(properties.precheckString),
+      'ScheduleMode': ros.stringToRosTemplate(properties.scheduleMode),
+      'ScheduleTimeExpr': ros.stringToRosTemplate(properties.scheduleTimeExpr),
+      'Status': ros.stringToRosTemplate(properties.status),
+      'Tags': ros.listMapper(rosAggTaskGroupTagsPropertyToRosTemplate)(properties.tags),
+      'ToTime': ros.numberToRosTemplate(properties.toTime),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS2::AggTaskGroup`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `AggTaskGroup` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-aggtaskgroup
+ */
+export class RosAggTaskGroup extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS2::AggTaskGroup";
+
+    /**
+     * @Attribute AggTaskGroupConfigHash: The config hash of the agg task group.
+     */
+    public readonly attrAggTaskGroupConfigHash: ros.IResolvable;
+
+    /**
+     * @Attribute AggTaskGroupId: The ID of the agg task group.
+     */
+    public readonly attrAggTaskGroupId: ros.IResolvable;
+
+    /**
+     * @Attribute AggTaskGroupName: The name of the agg task group.
+     */
+    public readonly attrAggTaskGroupName: ros.IResolvable;
+
+    /**
+     * @Attribute SourcePrometheusId: The ID of the source Prometheus instance of the agg task group.
+     */
+    public readonly attrSourcePrometheusId: ros.IResolvable;
+
+    /**
+     * @Attribute Status: The current status of the agg task group.
+     */
+    public readonly attrStatus: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property aggTaskGroupConfig: The config of the agg task group. Only "RecordingRuleYaml" format is supported, which must conform to the RecordingRule format of the open source Prometheus.
+     */
+    public aggTaskGroupConfig: string | ros.IResolvable;
+
+    /**
+     * @Property aggTaskGroupName: The name of the agg task group.
+     */
+    public aggTaskGroupName: string | ros.IResolvable;
+
+    /**
+     * @Property instanceId: The ID of the source Prometheus instance the agg task group reads data from.
+     */
+    public instanceId: string | ros.IResolvable;
+
+    /**
+     * @Property targetPrometheusId: The ID of the target Prometheus instance of the agg task group.
+     */
+    public targetPrometheusId: string | ros.IResolvable;
+
+    /**
+     * @Property aggTaskGroupConfigType: The config type of the agg task group. Default: "RecordingRuleYaml".
+     */
+    public aggTaskGroupConfigType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property cronExpr: The cron expression used when ScheduleMode is "Cron". For example, "0\/1 * * * *" means scheduling every 1 minute starting from minute 0.
+     */
+    public cronExpr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property delay: The fixed delay of the schedule, in seconds. Default: 30.
+     */
+    public delay: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property description: The description of the agg task group.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property fromTime: The second-level timestamp corresponding to the schedule start time.
+     */
+    public fromTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxRetries: The maximum number of retries for executing the agg task. Default: 20.
+     */
+    public maxRetries: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property maxRunTimeInSeconds: The maximum retry time for executing the agg task, in seconds. Default: 600.
+     */
+    public maxRunTimeInSeconds: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property overrideIfExists: Whether to override and update an existing agg task group with the same name when creating. Create-only, cannot be updated.
+     */
+    public overrideIfExists: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property precheckString: The precheck config. Not configured by default.
+     */
+    public precheckString: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduleMode: The schedule mode, "Cron" or "FixedRate". Default: "FixedRate".
+     */
+    public scheduleMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property scheduleTimeExpr: The schedule time expression, "@s" or "@m" is recommended, indicating the rounding granularity of the schedule time window. Default: "@m".
+     */
+    public scheduleTimeExpr: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property status: The status of the agg task group, "Running" or "Stopped". Default: Running.
+     */
+    public status: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: The tags of the agg task group.
+     */
+    public tags: RosAggTaskGroup.TagsProperty[] | undefined;
+
+    /**
+     * @Property toTime: The second-level timestamp corresponding to the schedule end time. 0 means the schedule never stops.
+     */
+    public toTime: number | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosAggTaskGroupProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosAggTaskGroup.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrAggTaskGroupConfigHash = this.getAtt('AggTaskGroupConfigHash');
+        this.attrAggTaskGroupId = this.getAtt('AggTaskGroupId');
+        this.attrAggTaskGroupName = this.getAtt('AggTaskGroupName');
+        this.attrSourcePrometheusId = this.getAtt('SourcePrometheusId');
+        this.attrStatus = this.getAtt('Status');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.aggTaskGroupConfig = props.aggTaskGroupConfig;
+        this.aggTaskGroupName = props.aggTaskGroupName;
+        this.instanceId = props.instanceId;
+        this.targetPrometheusId = props.targetPrometheusId;
+        this.aggTaskGroupConfigType = props.aggTaskGroupConfigType;
+        this.cronExpr = props.cronExpr;
+        this.delay = props.delay;
+        this.description = props.description;
+        this.fromTime = props.fromTime;
+        this.maxRetries = props.maxRetries;
+        this.maxRunTimeInSeconds = props.maxRunTimeInSeconds;
+        this.overrideIfExists = props.overrideIfExists;
+        this.precheckString = props.precheckString;
+        this.scheduleMode = props.scheduleMode;
+        this.scheduleTimeExpr = props.scheduleTimeExpr;
+        this.status = props.status;
+        this.tags = props.tags;
+        this.toTime = props.toTime;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            aggTaskGroupConfig: this.aggTaskGroupConfig,
+            aggTaskGroupName: this.aggTaskGroupName,
+            instanceId: this.instanceId,
+            targetPrometheusId: this.targetPrometheusId,
+            aggTaskGroupConfigType: this.aggTaskGroupConfigType,
+            cronExpr: this.cronExpr,
+            delay: this.delay,
+            description: this.description,
+            fromTime: this.fromTime,
+            maxRetries: this.maxRetries,
+            maxRunTimeInSeconds: this.maxRunTimeInSeconds,
+            overrideIfExists: this.overrideIfExists,
+            precheckString: this.precheckString,
+            scheduleMode: this.scheduleMode,
+            scheduleTimeExpr: this.scheduleTimeExpr,
+            status: this.status,
+            tags: this.tags,
+            toTime: this.toTime,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosAggTaskGroupPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosAggTaskGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: The value of the tag.
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: The key of the tag.
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAggTaskGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS2::AggTaskGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS2::AggTaskGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosAggTaskGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAggTaskGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
+    };
+}
+
+/**
  * Properties for defining a `RosIntegrationPolicy`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-integrationpolicy
  */
@@ -1336,5 +1767,169 @@ export class RosServiceObservability extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosServiceObservabilityPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosWorkspace`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-workspace
+ */
+export interface RosWorkspaceProps {
+
+    /**
+     * @Property slsProject: The name of the Log Service (SLS) project.
+     */
+    readonly slsProject: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceName: The name of the workspace.
+     */
+    readonly workspaceName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the workspace.
+     */
+    readonly description?: string | ros.IResolvable;
+
+    /**
+     * @Property displayName: The display name of the workspace.
+     */
+    readonly displayName?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosWorkspaceProps`
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosWorkspacePropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('slsProject', ros.requiredValidator)(properties.slsProject));
+    if(properties.slsProject && (Array.isArray(properties.slsProject) || (typeof properties.slsProject) === 'string')) {
+        errors.collect(ros.propertyValidator('slsProject', ros.validateLength)({
+            data: properties.slsProject.length,
+            min: 1,
+            max: 128,
+          }));
+    }
+    errors.collect(ros.propertyValidator('slsProject', ros.validateString)(properties.slsProject));
+    if(properties.description && (Array.isArray(properties.description) || (typeof properties.description) === 'string')) {
+        errors.collect(ros.propertyValidator('description', ros.validateLength)({
+            data: properties.description.length,
+            min: undefined,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
+    if(properties.displayName && (Array.isArray(properties.displayName) || (typeof properties.displayName) === 'string')) {
+        errors.collect(ros.propertyValidator('displayName', ros.validateLength)({
+            data: properties.displayName.length,
+            min: undefined,
+            max: 256,
+          }));
+    }
+    errors.collect(ros.propertyValidator('displayName', ros.validateString)(properties.displayName));
+    errors.collect(ros.propertyValidator('workspaceName', ros.requiredValidator)(properties.workspaceName));
+    if(properties.workspaceName && (Array.isArray(properties.workspaceName) || (typeof properties.workspaceName) === 'string')) {
+        errors.collect(ros.propertyValidator('workspaceName', ros.validateLength)({
+            data: properties.workspaceName.length,
+            min: 1,
+            max: 56,
+          }));
+    }
+    errors.collect(ros.propertyValidator('workspaceName', ros.validateString)(properties.workspaceName));
+    return errors.wrap('supplied properties not correct for "RosWorkspaceProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::CMS2::Workspace` resource
+ *
+ * @param properties - the TypeScript properties of a `RosWorkspaceProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::CMS2::Workspace` resource.
+ */
+// @ts-ignore TS6133
+function rosWorkspacePropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosWorkspacePropsValidator(properties).assertSuccess();
+    }
+    return {
+      'SlsProject': ros.stringToRosTemplate(properties.slsProject),
+      'WorkspaceName': ros.stringToRosTemplate(properties.workspaceName),
+      'Description': ros.stringToRosTemplate(properties.description),
+      'DisplayName': ros.stringToRosTemplate(properties.displayName),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::CMS2::Workspace`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Workspace` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms2-workspace
+ */
+export class RosWorkspace extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::CMS2::Workspace";
+
+    /**
+     * @Attribute WorkspaceName: The name of the workspace.
+     */
+    public readonly attrWorkspaceName: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property slsProject: The name of the Log Service (SLS) project.
+     */
+    public slsProject: string | ros.IResolvable;
+
+    /**
+     * @Property workspaceName: The name of the workspace.
+     */
+    public workspaceName: string | ros.IResolvable;
+
+    /**
+     * @Property description: The description of the workspace.
+     */
+    public description: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property displayName: The display name of the workspace.
+     */
+    public displayName: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosWorkspaceProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosWorkspace.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrWorkspaceName = this.getAtt('WorkspaceName');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.slsProject = props.slsProject;
+        this.workspaceName = props.workspaceName;
+        this.description = props.description;
+        this.displayName = props.displayName;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            slsProject: this.slsProject,
+            workspaceName: this.workspaceName,
+            description: this.description,
+            displayName: this.displayName,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosWorkspacePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

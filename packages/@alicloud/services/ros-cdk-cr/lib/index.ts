@@ -1,6 +1,7 @@
 export * from './artifactlifecyclerule';
 export * from './instance';
 export * from './instanceendpointaclpolicy';
+export * from './instancev2';
 export * from './instancevpcendpointlinkedvpc';
 export * from './namespace';
 export * from './reposyncrule';

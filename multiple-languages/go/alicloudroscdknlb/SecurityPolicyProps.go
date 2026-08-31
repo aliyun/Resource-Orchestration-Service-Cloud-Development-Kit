@@ -5,9 +5,11 @@ package alicloudroscdknlb
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-nlb-securitypolicy
 type SecurityPolicyProps struct {
-	// Property ciphers: TThe supported cipher suites, which are determined by the TLS protocol version.
+	// Property ciphers: The cipher suites supported by the security policy.
 	//
-	// You can specify at most 32 cipher suites.
+	// Valid values of this
+	// parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+	// suites.
 	Ciphers interface{} `field:"required" json:"ciphers" yaml:"ciphers"`
 	// Property tlsVersions: The supported versions of the Transport Layer Security (TLS) protocol.
 	//

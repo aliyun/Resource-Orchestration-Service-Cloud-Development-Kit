@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ros;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ros-resourcecleaner
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:42:02.110Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:23:14.479Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.RosResourceCleanerProps")
 @software.amazon.jsii.Jsii.Proxy(RosResourceCleanerProps.Jsii$Proxy.class)
 public interface RosResourceCleanerProps extends software.amazon.jsii.JsiiSerializable {

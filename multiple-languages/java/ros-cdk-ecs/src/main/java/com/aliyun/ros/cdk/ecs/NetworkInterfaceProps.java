@@ -5,15 +5,24 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-networkinterface
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.033Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.414Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.NetworkInterfaceProps")
 @software.amazon.jsii.Jsii.Proxy(NetworkInterfaceProps.Jsii$Proxy.class)
 public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property vSwitchId: VSwitch ID of the specified VPC.
+     * Property vSwitchId: The ID of the VSwitch for the elastic network interface.
      * <p>
-     * Specifies the switch ID for the VPC.
+     * The private IP addresses
+     * for the elastic network interface are assigned from the available CIDR block of
+     * the VSwitch.
+     * <p>
+     * <blockquote><notice></blockquote>
+     * <p>
+     * The elastic network interface and the instance to be attached must be in the same
+     * availability zone but can belong to different VSwitches.
+     * <p>
+     * <blockquote></notice></blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getVSwitchId();
 
@@ -25,9 +34,11 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property description: Description of your ENI.
+     * Property description: The description of the elastic network interface.
      * <p>
-     * It is a string of [2, 256] English or Chinese characters.
+     * The description must be 2 to
+     * 256 characters long and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+     * Default value: empty.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -51,7 +62,16 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+     * Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+     * <p>
+     * Valid values: 1 to 10.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify either <code>Ipv6Address.N</code> or <code>Ipv6AddressCount</code>, but not both, to
+     * assign IPv6 addresses.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpv6AddressCount() {
         return null;
@@ -91,11 +111,23 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property networkInterfaceTrafficMode: The communication mode of the ENI.
+     * Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.
      * <p>
      * Valid values:
-     * Standard: uses the TCP communication mode.
-     * HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+     * <p>
+     * <ul>
+     * <li><code>Standard</code>: uses the TCP traffic mode.</li>
+     * <li><code>HighPerformance</code>: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+     * traffic mode.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * An elastic network interface in RDMA traffic mode can be attached only to an
+     * ERI-supported instance type. The number of these elastic network interfaces that
+     * can be attached is limited by the instance family. Default value: <code>Standard</code>.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNetworkInterfaceTrafficMode() {
         return null;
@@ -155,18 +187,35 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
     }
 
     /**
-     * Property securityGroupId: The ID of the security group that the ENI joins.
+     * Property securityGroupId: The ID of the security group for the elastic network interface.
      * <p>
-     * The security group and the ENI must be in a same VPC.
+     * The security
+     * group and the elastic network interface must be in the same VPC.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+     * both.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupId() {
         return null;
     }
 
     /**
-     * Property securityGroupIds: The IDs of the security groups that the ENI joins.
+     * Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.
      * <p>
-     * The security groups and the ENI must belong to the same VPC.
+     * The security groups and the elastic network interface must be in the
+     * same VPC. The valid values of N depend on the maximum number of security groups
+     * to which an elastic network interface can be added.
+     * <p>
+     * <blockquote>
+     * <p>
+     * You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+     * both.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityGroupIds() {
         return null;
@@ -225,8 +274,17 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: VSwitch ID of the specified VPC. This parameter is required.
-         *                  Specifies the switch ID for the VPC.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch for the elastic network interface. This parameter is required.
+         *                  The private IP addresses
+         *                  for the elastic network interface are assigned from the available CIDR block of
+         *                  the VSwitch.
+         *                  <p>
+         *                  <blockquote><notice></blockquote>
+         *                  <p>
+         *                  The elastic network interface and the instance to be attached must be in the same
+         *                  availability zone but can belong to different VSwitches.
+         *                  <p>
+         *                  <blockquote></notice></blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -236,8 +294,17 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: VSwitch ID of the specified VPC. This parameter is required.
-         *                  Specifies the switch ID for the VPC.
+         * @param vSwitchId Property vSwitchId: The ID of the VSwitch for the elastic network interface. This parameter is required.
+         *                  The private IP addresses
+         *                  for the elastic network interface are assigned from the available CIDR block of
+         *                  the VSwitch.
+         *                  <p>
+         *                  <blockquote><notice></blockquote>
+         *                  <p>
+         *                  The elastic network interface and the instance to be attached must be in the same
+         *                  availability zone but can belong to different VSwitches.
+         *                  <p>
+         *                  <blockquote></notice></blockquote>
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -267,8 +334,10 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getDescription}
-         * @param description Property description: Description of your ENI.
-         *                    It is a string of [2, 256] English or Chinese characters.
+         * @param description Property description: The description of the elastic network interface.
+         *                    The description must be 2 to
+         *                    256 characters long and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         *                    Default value: empty.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -278,8 +347,10 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getDescription}
-         * @param description Property description: Description of your ENI.
-         *                    It is a string of [2, 256] English or Chinese characters.
+         * @param description Property description: The description of the elastic network interface.
+         *                    The description must be 2 to
+         *                    256 characters long and cannot start with <code>http:\/\/</code> or <code>https:\/\/</code>.
+         *                    Default value: empty.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -333,7 +404,15 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getIpv6AddressCount}
-         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+         *                         Valid values: 1 to 10.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify either <code>Ipv6Address.N</code> or <code>Ipv6AddressCount</code>, but not both, to
+         *                         assign IPv6 addresses.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder ipv6AddressCount(java.lang.Number ipv6AddressCount) {
@@ -343,7 +422,15 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getIpv6AddressCount}
-         * @param ipv6AddressCount Property ipv6AddressCount: The number of randomly generated IPv6 addresses that are assigned to the ENI.
+         * @param ipv6AddressCount Property ipv6AddressCount: The number of random IPv6 addresses to assign to the elastic network interface.
+         *                         Valid values: 1 to 10.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify either <code>Ipv6Address.N</code> or <code>Ipv6AddressCount</code>, but not both, to
+         *                         assign IPv6 addresses.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder ipv6AddressCount(com.aliyun.ros.cdk.core.IResolvable ipv6AddressCount) {
@@ -439,10 +526,22 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getNetworkInterfaceTrafficMode}
-         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The communication mode of the ENI.
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.
          *                                    Valid values:
-         *                                    Standard: uses the TCP communication mode.
-         *                                    HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li><code>Standard</code>: uses the TCP traffic mode.</li>
+         *                                    <li><code>HighPerformance</code>: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+         *                                    traffic mode.</li>
+         *                                    </ul>
+         *                                    <p>
+         *                                    <blockquote>
+         *                                    <p>
+         *                                    An elastic network interface in RDMA traffic mode can be attached only to an
+         *                                    ERI-supported instance type. The number of these elastic network interfaces that
+         *                                    can be attached is limited by the instance family. Default value: <code>Standard</code>.
+         *                                    <p>
+         *                                    </blockquote>
          * @return {@code this}
          */
         public Builder networkInterfaceTrafficMode(java.lang.String networkInterfaceTrafficMode) {
@@ -452,10 +551,22 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getNetworkInterfaceTrafficMode}
-         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The communication mode of the ENI.
+         * @param networkInterfaceTrafficMode Property networkInterfaceTrafficMode: The traffic mode of the elastic network interface.
          *                                    Valid values:
-         *                                    Standard: uses the TCP communication mode.
-         *                                    HighPerformance: enables the Elastic RDMA Interface (ERI) and uses the remote direct memory access (RDMA) communication mode.
+         *                                    <p>
+         *                                    <ul>
+         *                                    <li><code>Standard</code>: uses the TCP traffic mode.</li>
+         *                                    <li><code>HighPerformance</code>: enables the Elastic RDMA Interface (ERI) and uses the RDMA
+         *                                    traffic mode.</li>
+         *                                    </ul>
+         *                                    <p>
+         *                                    <blockquote>
+         *                                    <p>
+         *                                    An elastic network interface in RDMA traffic mode can be attached only to an
+         *                                    ERI-supported instance type. The number of these elastic network interfaces that
+         *                                    can be attached is limited by the instance family. Default value: <code>Standard</code>.
+         *                                    <p>
+         *                                    </blockquote>
          * @return {@code this}
          */
         public Builder networkInterfaceTrafficMode(com.aliyun.ros.cdk.core.IResolvable networkInterfaceTrafficMode) {
@@ -599,8 +710,16 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The ID of the security group that the ENI joins.
-         *                        The security group and the ENI must be in a same VPC.
+         * @param securityGroupId Property securityGroupId: The ID of the security group for the elastic network interface.
+         *                        The security
+         *                        group and the elastic network interface must be in the same VPC.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         *                        both.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder securityGroupId(java.lang.String securityGroupId) {
@@ -610,8 +729,16 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getSecurityGroupId}
-         * @param securityGroupId Property securityGroupId: The ID of the security group that the ENI joins.
-         *                        The security group and the ENI must be in a same VPC.
+         * @param securityGroupId Property securityGroupId: The ID of the security group for the elastic network interface.
+         *                        The security
+         *                        group and the elastic network interface must be in the same VPC.
+         *                        <p>
+         *                        <blockquote>
+         *                        <p>
+         *                        You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         *                        both.
+         *                        <p>
+         *                        </blockquote>
          * @return {@code this}
          */
         public Builder securityGroupId(com.aliyun.ros.cdk.core.IResolvable securityGroupId) {
@@ -621,8 +748,17 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getSecurityGroupIds}
-         * @param securityGroupIds Property securityGroupIds: The IDs of the security groups that the ENI joins.
-         *                         The security groups and the ENI must belong to the same VPC.
+         * @param securityGroupIds Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.
+         *                         The security groups and the elastic network interface must be in the
+         *                         same VPC. The valid values of N depend on the maximum number of security groups
+         *                         to which an elastic network interface can be added.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         *                         both.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder securityGroupIds(com.aliyun.ros.cdk.core.IResolvable securityGroupIds) {
@@ -632,8 +768,17 @@ public interface NetworkInterfaceProps extends software.amazon.jsii.JsiiSerializ
 
         /**
          * Sets the value of {@link NetworkInterfaceProps#getSecurityGroupIds}
-         * @param securityGroupIds Property securityGroupIds: The IDs of the security groups that the ENI joins.
-         *                         The security groups and the ENI must belong to the same VPC.
+         * @param securityGroupIds Property securityGroupIds: The IDs of one or more security groups to which to add the elastic network interface.
+         *                         The security groups and the elastic network interface must be in the
+         *                         same VPC. The valid values of N depend on the maximum number of security groups
+         *                         to which an elastic network interface can be added.
+         *                         <p>
+         *                         <blockquote>
+         *                         <p>
+         *                         You must specify either <code>SecurityGroupId</code> or <code>SecurityGroupIds.N</code>, but not
+         *                         both.
+         *                         <p>
+         *                         </blockquote>
          * @return {@code this}
          */
         public Builder securityGroupIds(java.util.List<? extends java.lang.Object> securityGroupIds) {

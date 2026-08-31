@@ -24,9 +24,24 @@ export interface RosAcceleratorProps {
     readonly autoUseCoupon?: string | ros.IResolvable;
 
     /**
+     * @Property bandwidth: The bandwidth of the global acceleration instance. Unit: Mbps. Valid values: 200 to 5000. This parameter is required when the access mode is set to Anycast.
+     */
+    readonly bandwidth?: number | ros.IResolvable;
+
+    /**
      * @Property bandwidthBillingType: Bandwidth billing method.
      */
     readonly bandwidthBillingType?: string | ros.IResolvable;
+
+    /**
+     * @Property crossBorderMode: The cross-border mode of the global acceleration instance.
+     */
+    readonly crossBorderMode?: string | ros.IResolvable;
+
+    /**
+     * @Property ddosConfigList: The DDoS configuration list of the global acceleration instance.
+     */
+    readonly ddosConfigList?: Array<RosAccelerator.DdosConfigListProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
      * @Property duration: Length of purchase.
@@ -62,6 +77,11 @@ export interface RosAcceleratorProps {
      * @Property spec: Specifications of Global Acceleration Instances.
      */
     readonly spec?: string | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to acceleration instance. Max support 20 tags to add during create acceleration instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosAccelerator.TagsProperty[];
 }
 
 /**
@@ -74,10 +94,7 @@ export interface RosAcceleratorProps {
 function RosAcceleratorPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('bandwidthBillingType', ros.validateString)(properties.bandwidthBillingType));
-    errors.collect(ros.propertyValidator('acceleratorName', ros.validateString)(properties.acceleratorName));
     errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
-    errors.collect(ros.propertyValidator('autoUseCoupon', ros.validateString)(properties.autoUseCoupon));
     errors.collect(ros.propertyValidator('pricingCycle', ros.validateString)(properties.pricingCycle));
     if(properties.instanceChargeType && (typeof properties.instanceChargeType) !== 'object') {
         errors.collect(ros.propertyValidator('instanceChargeType', ros.validateAllowedValues)({
@@ -86,11 +103,44 @@ function RosAcceleratorPropsValidator(properties: any): ros.ValidationResult {
         }));
     }
     errors.collect(ros.propertyValidator('instanceChargeType', ros.validateString)(properties.instanceChargeType));
-    errors.collect(ros.propertyValidator('enableCrossBorder', ros.validateBoolean)(properties.enableCrossBorder));
     errors.collect(ros.propertyValidator('duration', ros.validateString)(properties.duration));
     errors.collect(ros.propertyValidator('autoPay', ros.validateBoolean)(properties.autoPay));
     errors.collect(ros.propertyValidator('ipSetConfig', RosAccelerator_IpSetConfigPropertyValidator)(properties.ipSetConfig));
+    if(properties.crossBorderMode && (typeof properties.crossBorderMode) !== 'object') {
+        errors.collect(ros.propertyValidator('crossBorderMode', ros.validateAllowedValues)({
+          data: properties.crossBorderMode,
+          allowedValues: ["bgpPro","private"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('crossBorderMode', ros.validateString)(properties.crossBorderMode));
+    if(properties.bandwidthBillingType && (typeof properties.bandwidthBillingType) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidthBillingType', ros.validateAllowedValues)({
+          data: properties.bandwidthBillingType,
+          allowedValues: ["BandwidthPackage","CDT"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('bandwidthBillingType', ros.validateString)(properties.bandwidthBillingType));
+    errors.collect(ros.propertyValidator('acceleratorName', ros.validateString)(properties.acceleratorName));
+    errors.collect(ros.propertyValidator('autoUseCoupon', ros.validateString)(properties.autoUseCoupon));
+    errors.collect(ros.propertyValidator('enableCrossBorder', ros.validateBoolean)(properties.enableCrossBorder));
+    if(properties.bandwidth && (typeof properties.bandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('bandwidth', ros.validateRange)({
+            data: properties.bandwidth,
+            min: 200,
+            max: 5000,
+          }));
+    }
+    errors.collect(ros.propertyValidator('bandwidth', ros.validateNumber)(properties.bandwidth));
     errors.collect(ros.propertyValidator('spec', ros.validateString)(properties.spec));
+    errors.collect(ros.propertyValidator('ddosConfigList', ros.listValidator(RosAccelerator_DdosConfigListPropertyValidator))(properties.ddosConfigList));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosAccelerator_TagsPropertyValidator))(properties.tags));
     return errors.wrap('supplied properties not correct for "RosAcceleratorProps"');
 }
 
@@ -111,7 +161,10 @@ function rosAcceleratorPropsToRosTemplate(properties: any, enableResourcePropert
       'AcceleratorName': ros.stringToRosTemplate(properties.acceleratorName),
       'AutoPay': ros.booleanToRosTemplate(properties.autoPay),
       'AutoUseCoupon': ros.stringToRosTemplate(properties.autoUseCoupon),
+      'Bandwidth': ros.numberToRosTemplate(properties.bandwidth),
       'BandwidthBillingType': ros.stringToRosTemplate(properties.bandwidthBillingType),
+      'CrossBorderMode': ros.stringToRosTemplate(properties.crossBorderMode),
+      'DdosConfigList': ros.listMapper(rosAcceleratorDdosConfigListPropertyToRosTemplate)(properties.ddosConfigList),
       'Duration': ros.stringToRosTemplate(properties.duration),
       'EnableCrossBorder': ros.booleanToRosTemplate(properties.enableCrossBorder),
       'InstanceChargeType': ros.stringToRosTemplate(properties.instanceChargeType),
@@ -119,11 +172,12 @@ function rosAcceleratorPropsToRosTemplate(properties: any, enableResourcePropert
       'PricingCycle': ros.stringToRosTemplate(properties.pricingCycle),
       'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
       'Spec': ros.stringToRosTemplate(properties.spec),
+      'Tags': ros.listMapper(rosAcceleratorTagsPropertyToRosTemplate)(properties.tags),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Accelerator`, which is used to create a Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Accelerator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-accelerator
  */
@@ -202,9 +256,24 @@ export class RosAccelerator extends ros.RosResource {
     public autoUseCoupon: string | ros.IResolvable | undefined;
 
     /**
+     * @Property bandwidth: The bandwidth of the global acceleration instance. Unit: Mbps. Valid values: 200 to 5000. This parameter is required when the access mode is set to Anycast.
+     */
+    public bandwidth: number | ros.IResolvable | undefined;
+
+    /**
      * @Property bandwidthBillingType: Bandwidth billing method.
      */
     public bandwidthBillingType: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property crossBorderMode: The cross-border mode of the global acceleration instance.
+     */
+    public crossBorderMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property ddosConfigList: The DDoS configuration list of the global acceleration instance.
+     */
+    public ddosConfigList: Array<RosAccelerator.DdosConfigListProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
      * @Property duration: Length of purchase.
@@ -242,6 +311,11 @@ export class RosAccelerator extends ros.RosResource {
     public spec: string | ros.IResolvable | undefined;
 
     /**
+     * @Property tags: Tags to attach to acceleration instance. Max support 20 tags to add during create acceleration instance. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosAccelerator.TagsProperty[] | undefined;
+
+    /**
      * @param scope - scope in which this resource is defined
      * @param id    - scoped id of the resource
      * @param props - resource properties
@@ -263,7 +337,10 @@ export class RosAccelerator extends ros.RosResource {
         this.acceleratorName = props.acceleratorName;
         this.autoPay = props.autoPay;
         this.autoUseCoupon = props.autoUseCoupon;
+        this.bandwidth = props.bandwidth;
         this.bandwidthBillingType = props.bandwidthBillingType;
+        this.crossBorderMode = props.crossBorderMode;
+        this.ddosConfigList = props.ddosConfigList;
         this.duration = props.duration;
         this.enableCrossBorder = props.enableCrossBorder;
         this.instanceChargeType = props.instanceChargeType;
@@ -271,6 +348,7 @@ export class RosAccelerator extends ros.RosResource {
         this.pricingCycle = props.pricingCycle;
         this.resourceGroupId = props.resourceGroupId;
         this.spec = props.spec;
+        this.tags = props.tags;
     }
 
 
@@ -279,7 +357,10 @@ export class RosAccelerator extends ros.RosResource {
             acceleratorName: this.acceleratorName,
             autoPay: this.autoPay,
             autoUseCoupon: this.autoUseCoupon,
+            bandwidth: this.bandwidth,
             bandwidthBillingType: this.bandwidthBillingType,
+            crossBorderMode: this.crossBorderMode,
+            ddosConfigList: this.ddosConfigList,
             duration: this.duration,
             enableCrossBorder: this.enableCrossBorder,
             instanceChargeType: this.instanceChargeType,
@@ -287,11 +368,67 @@ export class RosAccelerator extends ros.RosResource {
             pricingCycle: this.pricingCycle,
             resourceGroupId: this.resourceGroupId,
             spec: this.spec,
+            tags: this.tags,
         };
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosAcceleratorPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosAccelerator {
+    /**
+     * @stability external
+     */
+    export interface DdosConfigListProperty {
+        /**
+         * @Property ddosId: The ID of the DDoS instance.
+         */
+        readonly ddosId: string | ros.IResolvable;
+        /**
+         * @Property ddosRegionId: The region ID of the DDoS instance.
+         */
+        readonly ddosRegionId: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `DdosConfigListProperty`
+ *
+ * @param properties - the TypeScript properties of a `DdosConfigListProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccelerator_DdosConfigListPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ddosId', ros.requiredValidator)(properties.ddosId));
+    errors.collect(ros.propertyValidator('ddosId', ros.validateString)(properties.ddosId));
+    errors.collect(ros.propertyValidator('ddosRegionId', ros.requiredValidator)(properties.ddosRegionId));
+    if(properties.ddosRegionId && (typeof properties.ddosRegionId) !== 'object') {
+        errors.collect(ros.propertyValidator('ddosRegionId', ros.validateAllowedValues)({
+          data: properties.ddosRegionId,
+          allowedValues: ["cn-hangzhou","ap-southeast-1"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('ddosRegionId', ros.validateString)(properties.ddosRegionId));
+    return errors.wrap('supplied properties not correct for "DdosConfigListProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::Accelerator.DdosConfigList` resource
+ *
+ * @param properties - the TypeScript properties of a `DdosConfigListProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::Accelerator.DdosConfigList` resource.
+ */
+// @ts-ignore TS6133
+function rosAcceleratorDdosConfigListPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAccelerator_DdosConfigListPropertyValidator(properties).assertSuccess();
+    return {
+      'DdosId': ros.stringToRosTemplate(properties.ddosId),
+      'DdosRegionId': ros.stringToRosTemplate(properties.ddosRegionId),
+    };
 }
 
 export namespace RosAccelerator {
@@ -315,6 +452,12 @@ export namespace RosAccelerator {
 function RosAccelerator_IpSetConfigPropertyValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
+    if(properties.accessMode && (typeof properties.accessMode) !== 'object') {
+        errors.collect(ros.propertyValidator('accessMode', ros.validateAllowedValues)({
+          data: properties.accessMode,
+          allowedValues: ["Anycast","UserDefine"],
+        }));
+    }
     errors.collect(ros.propertyValidator('accessMode', ros.validateString)(properties.accessMode));
     return errors.wrap('supplied properties not correct for "IpSetConfigProperty"');
 }
@@ -332,6 +475,54 @@ function rosAcceleratorIpSetConfigPropertyToRosTemplate(properties: any): any {
     RosAccelerator_IpSetConfigPropertyValidator(properties).assertSuccess();
     return {
       'AccessMode': ros.stringToRosTemplate(properties.accessMode),
+    };
+}
+
+export namespace RosAccelerator {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosAccelerator_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::Accelerator.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::Accelerator.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosAcceleratorTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosAccelerator_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -699,7 +890,7 @@ function rosAclsListenerAssociationPropsToRosTemplate(properties: any, enableRes
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::AclsListenerAssociation`, which is used to associate an access control list (ACL) with a listener.
  * @Note This class does not contain additional functions, so it is recommended to use the `AclsListenerAssociation` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-aclslistenerassociation
  */
@@ -900,7 +1091,7 @@ function rosApplicationMonitorPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ApplicationMonitor`, which is used to create an origin probing task.
  * @Note This class does not contain additional functions, so it is recommended to use the `ApplicationMonitor` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-applicationmonitor
  */
@@ -1715,7 +1906,7 @@ function rosBasicAcceleratorPropsToRosTemplate(properties: any, enableResourcePr
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicAccelerator`, which is used to create a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicAccelerator` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicaccelerator
  */
@@ -2367,7 +2558,7 @@ function rosBasicEndpointGroupPropsToRosTemplate(properties: any, enableResource
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::BasicEndpointGroup`, which is used to create an endpoint group for a basic Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `BasicEndpointGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-basicendpointgroup
  */
@@ -2628,6 +2819,191 @@ export class RosBasicIpSet extends ros.RosResource {
 }
 
 /**
+ * Properties for defining a `RosCertificatesListenerAssociation`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-certificateslistenerassociation
+ */
+export interface RosCertificatesListenerAssociationProps {
+
+    /**
+     * @Property acceleratorId: The ID of the Global Accelerator instance.
+     */
+    readonly acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property certificates: The additional certificates to associate with the HTTPS listener.
+     */
+    readonly certificates: Array<RosCertificatesListenerAssociation.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The ID of the HTTPS listener.
+     */
+    readonly listenerId: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosCertificatesListenerAssociationProps`
+ *
+ * @param properties - the TypeScript properties of a `RosCertificatesListenerAssociationProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosCertificatesListenerAssociationPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('certificates', ros.requiredValidator)(properties.certificates));
+    if(properties.certificates && (Array.isArray(properties.certificates) || (typeof properties.certificates) === 'string')) {
+        errors.collect(ros.propertyValidator('certificates', ros.validateLength)({
+            data: properties.certificates.length,
+            min: 1,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('certificates', ros.listValidator(RosCertificatesListenerAssociation_CertificatesPropertyValidator))(properties.certificates));
+    errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
+    errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
+    errors.collect(ros.propertyValidator('listenerId', ros.requiredValidator)(properties.listenerId));
+    errors.collect(ros.propertyValidator('listenerId', ros.validateString)(properties.listenerId));
+    return errors.wrap('supplied properties not correct for "RosCertificatesListenerAssociationProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::CertificatesListenerAssociation` resource
+ *
+ * @param properties - the TypeScript properties of a `RosCertificatesListenerAssociationProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::CertificatesListenerAssociation` resource.
+ */
+// @ts-ignore TS6133
+function rosCertificatesListenerAssociationPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosCertificatesListenerAssociationPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AcceleratorId': ros.stringToRosTemplate(properties.acceleratorId),
+      'Certificates': ros.listMapper(rosCertificatesListenerAssociationCertificatesPropertyToRosTemplate)(properties.certificates),
+      'ListenerId': ros.stringToRosTemplate(properties.listenerId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::CertificatesListenerAssociation`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `CertificatesListenerAssociation` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-certificateslistenerassociation
+ */
+export class RosCertificatesListenerAssociation extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::CertificatesListenerAssociation";
+
+    /**
+     * @Attribute Certificates: The additional certificates.
+     */
+    public readonly attrCertificates: ros.IResolvable;
+
+    /**
+     * @Attribute ListenerId: The ID of the listener.
+     */
+    public readonly attrListenerId: ros.IResolvable;
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property acceleratorId: The ID of the Global Accelerator instance.
+     */
+    public acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property certificates: The additional certificates to associate with the HTTPS listener.
+     */
+    public certificates: Array<RosCertificatesListenerAssociation.CertificatesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property listenerId: The ID of the HTTPS listener.
+     */
+    public listenerId: string | ros.IResolvable;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosCertificatesListenerAssociationProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosCertificatesListenerAssociation.ROS_RESOURCE_TYPE_NAME, properties: props });
+        this.attrCertificates = this.getAtt('Certificates');
+        this.attrListenerId = this.getAtt('ListenerId');
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.acceleratorId = props.acceleratorId;
+        this.certificates = props.certificates;
+        this.listenerId = props.listenerId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            acceleratorId: this.acceleratorId,
+            certificates: this.certificates,
+            listenerId: this.listenerId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosCertificatesListenerAssociationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+export namespace RosCertificatesListenerAssociation {
+    /**
+     * @stability external
+     */
+    export interface CertificatesProperty {
+        /**
+         * @Property domain: The domain name on which the additional certificate takes effect.
+         */
+        readonly domain: string | ros.IResolvable;
+        /**
+         * @Property identity: The ID of the additional certificate.
+         */
+        readonly identity: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CertificatesProperty`
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosCertificatesListenerAssociation_CertificatesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('domain', ros.requiredValidator)(properties.domain));
+    errors.collect(ros.propertyValidator('domain', ros.validateString)(properties.domain));
+    errors.collect(ros.propertyValidator('identity', ros.requiredValidator)(properties.identity));
+    errors.collect(ros.propertyValidator('identity', ros.validateString)(properties.identity));
+    return errors.wrap('supplied properties not correct for "CertificatesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::CertificatesListenerAssociation.Certificates` resource
+ *
+ * @param properties - the TypeScript properties of a `CertificatesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::CertificatesListenerAssociation.Certificates` resource.
+ */
+// @ts-ignore TS6133
+function rosCertificatesListenerAssociationCertificatesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosCertificatesListenerAssociation_CertificatesPropertyValidator(properties).assertSuccess();
+    return {
+      'Domain': ros.stringToRosTemplate(properties.domain),
+      'Id': ros.stringToRosTemplate(properties.identity),
+    };
+}
+
+/**
  * Properties for defining a `RosDomain`.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
  */
@@ -2688,7 +3064,7 @@ function rosDomainPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Domain`, which is used to create a domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `Domain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-domain
  */
@@ -2788,9 +3164,25 @@ export interface RosEndpointGroupProps {
     readonly endpointGroupType?: string | ros.IResolvable;
 
     /**
+     * @Property endpointIpVersion: The IP address protocol version of the backend service. Valid values:
+     * IPv4
+     * IPv6
+     * ProtocolAffinity
+     */
+    readonly endpointIpVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property endpointProtocolVersion: The protocol version of the backend service. Valid values:
+     * HTTP1.1
+     * HTTP2
+     * Note This parameter is valid only when the listener uses HTTPS.
+     */
+    readonly endpointProtocolVersion?: string | ros.IResolvable;
+
+    /**
      * @Property endpointRequestProtocol: The protocol used by the backend service. Valid values:
-     * http: This is the default value.
-     * https
+     * HTTP: This is the default value.
+     * HTTPS
      * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
      * For an HTTP listener, the backend service protocol must be HTTP.
      */
@@ -2800,6 +3192,11 @@ export interface RosEndpointGroupProps {
      * @Property healthCheckEnabled: Specifies whether to enable the health check feature.
      */
     readonly healthCheckEnabled?: boolean | ros.IResolvable;
+
+    /**
+     * @Property healthCheckHost: The domain name that is used for health checks.
+     */
+    readonly healthCheckHost?: string | ros.IResolvable;
 
     /**
      * @Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
@@ -2830,6 +3227,16 @@ export interface RosEndpointGroupProps {
     readonly name?: string | ros.IResolvable;
 
     /**
+     * @Property portOverrides: The port mapping relationship of the endpoint group.
+     */
+    readonly portOverrides?: Array<RosEndpointGroup.PortOverridesProperty | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property tags: Tags to attach to endpoint group. Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+     */
+    readonly tags?: RosEndpointGroup.TagsProperty[];
+
+    /**
      * @Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
      * Valid values: 2 to 10. Default value: 3.
      */
@@ -2856,10 +3263,26 @@ function RosEndpointGroupPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('trafficPercentage', ros.validateNumber)(properties.trafficPercentage));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('healthCheckPath', ros.validateString)(properties.healthCheckPath));
+    errors.collect(ros.propertyValidator('healthCheckHost', ros.validateString)(properties.healthCheckHost));
     errors.collect(ros.propertyValidator('thresholdCount', ros.validateNumber)(properties.thresholdCount));
     errors.collect(ros.propertyValidator('healthCheckEnabled', ros.validateBoolean)(properties.healthCheckEnabled));
     errors.collect(ros.propertyValidator('endpointRequestProtocol', ros.validateString)(properties.endpointRequestProtocol));
     errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.endpointProtocolVersion && (typeof properties.endpointProtocolVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('endpointProtocolVersion', ros.validateAllowedValues)({
+          data: properties.endpointProtocolVersion,
+          allowedValues: ["HTTP1.1","HTTP2"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('endpointProtocolVersion', ros.validateString)(properties.endpointProtocolVersion));
+    if(properties.portOverrides && (Array.isArray(properties.portOverrides) || (typeof properties.portOverrides) === 'string')) {
+        errors.collect(ros.propertyValidator('portOverrides', ros.validateLength)({
+            data: properties.portOverrides.length,
+            min: undefined,
+            max: 100,
+          }));
+    }
+    errors.collect(ros.propertyValidator('portOverrides', ros.listValidator(RosEndpointGroup_PortOverridesPropertyValidator))(properties.portOverrides));
     errors.collect(ros.propertyValidator('endpointGroupRegion', ros.requiredValidator)(properties.endpointGroupRegion));
     errors.collect(ros.propertyValidator('endpointGroupRegion', ros.validateString)(properties.endpointGroupRegion));
     if(properties.healthCheckProtocol && (typeof properties.healthCheckProtocol) !== 'object') {
@@ -2881,7 +3304,22 @@ function RosEndpointGroupPropsValidator(properties: any): ros.ValidationResult {
           }));
     }
     errors.collect(ros.propertyValidator('endpointConfigurations', ros.listValidator(RosEndpointGroup_EndpointConfigurationsPropertyValidator))(properties.endpointConfigurations));
+    if(properties.endpointIpVersion && (typeof properties.endpointIpVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('endpointIpVersion', ros.validateAllowedValues)({
+          data: properties.endpointIpVersion,
+          allowedValues: ["IPv4","IPv6","ProtocolAffinity"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('endpointIpVersion', ros.validateString)(properties.endpointIpVersion));
     errors.collect(ros.propertyValidator('endpointGroupType', ros.validateString)(properties.endpointGroupType));
+    if(properties.tags && (Array.isArray(properties.tags) || (typeof properties.tags) === 'string')) {
+        errors.collect(ros.propertyValidator('tags', ros.validateLength)({
+            data: properties.tags.length,
+            min: undefined,
+            max: 20,
+          }));
+    }
+    errors.collect(ros.propertyValidator('tags', ros.listValidator(RosEndpointGroup_TagsPropertyValidator))(properties.tags));
     errors.collect(ros.propertyValidator('listenerId', ros.requiredValidator)(properties.listenerId));
     errors.collect(ros.propertyValidator('listenerId', ros.validateString)(properties.listenerId));
     return errors.wrap('supplied properties not correct for "RosEndpointGroupProps"');
@@ -2907,20 +3345,25 @@ function rosEndpointGroupPropsToRosTemplate(properties: any, enableResourcePrope
       'ListenerId': ros.stringToRosTemplate(properties.listenerId),
       'Description': ros.stringToRosTemplate(properties.description),
       'EndpointGroupType': ros.stringToRosTemplate(properties.endpointGroupType),
+      'EndpointIpVersion': ros.stringToRosTemplate(properties.endpointIpVersion),
+      'EndpointProtocolVersion': ros.stringToRosTemplate(properties.endpointProtocolVersion),
       'EndpointRequestProtocol': ros.stringToRosTemplate(properties.endpointRequestProtocol),
       'HealthCheckEnabled': ros.booleanToRosTemplate(properties.healthCheckEnabled),
+      'HealthCheckHost': ros.stringToRosTemplate(properties.healthCheckHost),
       'HealthCheckIntervalSeconds': ros.numberToRosTemplate(properties.healthCheckIntervalSeconds),
       'HealthCheckPath': ros.stringToRosTemplate(properties.healthCheckPath),
       'HealthCheckPort': ros.numberToRosTemplate(properties.healthCheckPort),
       'HealthCheckProtocol': ros.stringToRosTemplate(properties.healthCheckProtocol),
       'Name': ros.stringToRosTemplate(properties.name),
+      'PortOverrides': ros.listMapper(rosEndpointGroupPortOverridesPropertyToRosTemplate)(properties.portOverrides),
+      'Tags': ros.listMapper(rosEndpointGroupTagsPropertyToRosTemplate)(properties.tags),
       'ThresholdCount': ros.numberToRosTemplate(properties.thresholdCount),
       'TrafficPercentage': ros.numberToRosTemplate(properties.trafficPercentage),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroup`, which is used to create an endpoint group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::EndpointGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `EndpointGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-endpointgroup
  */
@@ -2972,9 +3415,25 @@ export class RosEndpointGroup extends ros.RosResource {
     public endpointGroupType: string | ros.IResolvable | undefined;
 
     /**
+     * @Property endpointIpVersion: The IP address protocol version of the backend service. Valid values:
+     * IPv4
+     * IPv6
+     * ProtocolAffinity
+     */
+    public endpointIpVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property endpointProtocolVersion: The protocol version of the backend service. Valid values:
+     * HTTP1.1
+     * HTTP2
+     * Note This parameter is valid only when the listener uses HTTPS.
+     */
+    public endpointProtocolVersion: string | ros.IResolvable | undefined;
+
+    /**
      * @Property endpointRequestProtocol: The protocol used by the backend service. Valid values:
-     * http: This is the default value.
-     * https
+     * HTTP: This is the default value.
+     * HTTPS
      * Note: You can set this parameter only when the listener that is associated with the endpoint group uses HTTP or HTTPS.
      * For an HTTP listener, the backend service protocol must be HTTP.
      */
@@ -2984,6 +3443,11 @@ export class RosEndpointGroup extends ros.RosResource {
      * @Property healthCheckEnabled: Specifies whether to enable the health check feature.
      */
     public healthCheckEnabled: boolean | ros.IResolvable | undefined;
+
+    /**
+     * @Property healthCheckHost: The domain name that is used for health checks.
+     */
+    public healthCheckHost: string | ros.IResolvable | undefined;
 
     /**
      * @Property healthCheckIntervalSeconds: The interval between two consecutive health checks. Unit: seconds.
@@ -3014,6 +3478,16 @@ export class RosEndpointGroup extends ros.RosResource {
     public name: string | ros.IResolvable | undefined;
 
     /**
+     * @Property portOverrides: The port mapping relationship of the endpoint group.
+     */
+    public portOverrides: Array<RosEndpointGroup.PortOverridesProperty | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property tags: Tags to attach to endpoint group. Max support 20 tags to add during create endpoint group. Each tag with two properties Key and Value, and Key is required.
+     */
+    public tags: RosEndpointGroup.TagsProperty[] | undefined;
+
+    /**
      * @Property thresholdCount: The number of consecutive health check failures that must occur before a healthy endpoint is considered unhealthy, or the number of consecutive health check successes that must occur before an unhealthy endpoint is considered healthy.
      * Valid values: 2 to 10. Default value: 3.
      */
@@ -3041,13 +3515,18 @@ export class RosEndpointGroup extends ros.RosResource {
         this.listenerId = props.listenerId;
         this.description = props.description;
         this.endpointGroupType = props.endpointGroupType;
+        this.endpointIpVersion = props.endpointIpVersion;
+        this.endpointProtocolVersion = props.endpointProtocolVersion;
         this.endpointRequestProtocol = props.endpointRequestProtocol;
         this.healthCheckEnabled = props.healthCheckEnabled;
+        this.healthCheckHost = props.healthCheckHost;
         this.healthCheckIntervalSeconds = props.healthCheckIntervalSeconds;
         this.healthCheckPath = props.healthCheckPath;
         this.healthCheckPort = props.healthCheckPort;
         this.healthCheckProtocol = props.healthCheckProtocol;
         this.name = props.name;
+        this.portOverrides = props.portOverrides;
+        this.tags = props.tags;
         this.thresholdCount = props.thresholdCount;
         this.trafficPercentage = props.trafficPercentage;
     }
@@ -3061,13 +3540,18 @@ export class RosEndpointGroup extends ros.RosResource {
             listenerId: this.listenerId,
             description: this.description,
             endpointGroupType: this.endpointGroupType,
+            endpointIpVersion: this.endpointIpVersion,
+            endpointProtocolVersion: this.endpointProtocolVersion,
             endpointRequestProtocol: this.endpointRequestProtocol,
             healthCheckEnabled: this.healthCheckEnabled,
+            healthCheckHost: this.healthCheckHost,
             healthCheckIntervalSeconds: this.healthCheckIntervalSeconds,
             healthCheckPath: this.healthCheckPath,
             healthCheckPort: this.healthCheckPort,
             healthCheckProtocol: this.healthCheckProtocol,
             name: this.name,
+            portOverrides: this.portOverrides,
+            tags: this.tags,
             thresholdCount: this.thresholdCount,
             trafficPercentage: this.trafficPercentage,
         };
@@ -3093,11 +3577,14 @@ export namespace RosEndpointGroup {
      * Domain: a custom domain name
      * EIP: eip address
      * Ip: a custom IP address
+     * IpTarget: a custom private IP
      * PublicIp: a public IP address provided by Alibaba Cloud
      * ECS: an Elastic Compute Service (ECS) instance
      * SLB: a Server Load Balancer (SLB) instance
      * ALB: an Application Load Balancer (ALB) instance
+     * NLB: a NLB instance
      * OSS: an Object Storage Service (OSS) bucket
+     * ENI: an elastic network card
          */
         readonly type: string | ros.IResolvable;
         /**
@@ -3110,6 +3597,22 @@ export namespace RosEndpointGroup {
      * false (default): no
          */
         readonly enableClientIpPreservation?: boolean | ros.IResolvable;
+        /**
+         * @Property vpcId: The ID of the VPC associated with the endpoint in the endpoint group.
+         */
+        readonly vpcId?: string | ros.IResolvable;
+        /**
+         * @Property vSwitchIds: The IDs of the VSwitches associated with the endpoint in the endpoint group.
+         */
+        readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
+        /**
+         * @Property proxyProtocolV2Config: The configuration of the Proxy Protocol V2 header.
+         */
+        readonly proxyProtocolV2Config?: RosEndpointGroup.ProxyProtocolV2ConfigProperty | ros.IResolvable;
+        /**
+         * @Property subAddress: The sub-address of the endpoint in the endpoint group.
+         */
+        readonly subAddress?: string | ros.IResolvable;
         /**
          * @Property weight: The weight of endpoint N in the endpoint group.
          */
@@ -3132,6 +3635,17 @@ function RosEndpointGroup_EndpointConfigurationsPropertyValidator(properties: an
     errors.collect(ros.propertyValidator('endpoint', ros.requiredValidator)(properties.endpoint));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
     errors.collect(ros.propertyValidator('enableClientIpPreservation', ros.validateBoolean)(properties.enableClientIpPreservation));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    if(properties.vSwitchIds && (Array.isArray(properties.vSwitchIds) || (typeof properties.vSwitchIds) === 'string')) {
+        errors.collect(ros.propertyValidator('vSwitchIds', ros.validateLength)({
+            data: properties.vSwitchIds.length,
+            min: undefined,
+            max: 10,
+          }));
+    }
+    errors.collect(ros.propertyValidator('vSwitchIds', ros.listValidator(ros.validateString))(properties.vSwitchIds));
+    errors.collect(ros.propertyValidator('proxyProtocolV2Config', RosEndpointGroup_ProxyProtocolV2ConfigPropertyValidator)(properties.proxyProtocolV2Config));
+    errors.collect(ros.propertyValidator('subAddress', ros.validateString)(properties.subAddress));
     errors.collect(ros.propertyValidator('weight', ros.requiredValidator)(properties.weight));
     errors.collect(ros.propertyValidator('weight', ros.validateNumber)(properties.weight));
     return errors.wrap('supplied properties not correct for "EndpointConfigurationsProperty"');
@@ -3153,7 +3667,150 @@ function rosEndpointGroupEndpointConfigurationsPropertyToRosTemplate(properties:
       'Type': ros.stringToRosTemplate(properties.type),
       'Endpoint': ros.stringToRosTemplate(properties.endpoint),
       'EnableClientIPPreservation': ros.booleanToRosTemplate(properties.enableClientIpPreservation),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+      'VSwitchIds': ros.listMapper(ros.stringToRosTemplate)(properties.vSwitchIds),
+      'ProxyProtocolV2Config': rosEndpointGroupProxyProtocolV2ConfigPropertyToRosTemplate(properties.proxyProtocolV2Config),
+      'SubAddress': ros.stringToRosTemplate(properties.subAddress),
       'Weight': ros.numberToRosTemplate(properties.weight),
+    };
+}
+
+export namespace RosEndpointGroup {
+    /**
+     * @stability external
+     */
+    export interface PortOverridesProperty {
+        /**
+         * @Property listenerPort: The listener port.
+         */
+        readonly listenerPort: number | ros.IResolvable;
+        /**
+         * @Property endpointPort: The endpoint port.
+         */
+        readonly endpointPort: number | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `PortOverridesProperty`
+ *
+ * @param properties - the TypeScript properties of a `PortOverridesProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEndpointGroup_PortOverridesPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('listenerPort', ros.requiredValidator)(properties.listenerPort));
+    errors.collect(ros.propertyValidator('listenerPort', ros.validateNumber)(properties.listenerPort));
+    errors.collect(ros.propertyValidator('endpointPort', ros.requiredValidator)(properties.endpointPort));
+    errors.collect(ros.propertyValidator('endpointPort', ros.validateNumber)(properties.endpointPort));
+    return errors.wrap('supplied properties not correct for "PortOverridesProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::EndpointGroup.PortOverrides` resource
+ *
+ * @param properties - the TypeScript properties of a `PortOverridesProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::EndpointGroup.PortOverrides` resource.
+ */
+// @ts-ignore TS6133
+function rosEndpointGroupPortOverridesPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEndpointGroup_PortOverridesPropertyValidator(properties).assertSuccess();
+    return {
+      'ListenerPort': ros.numberToRosTemplate(properties.listenerPort),
+      'EndpointPort': ros.numberToRosTemplate(properties.endpointPort),
+    };
+}
+
+export namespace RosEndpointGroup {
+    /**
+     * @stability external
+     */
+    export interface ProxyProtocolV2ConfigProperty {
+        /**
+         * @Property ppv2GaIdEnabled: Specifies whether to use the Proxy Protocol V2 header to pass the GA instance ID to the endpoint.
+         */
+        readonly ppv2GaIdEnabled: boolean | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `ProxyProtocolV2ConfigProperty`
+ *
+ * @param properties - the TypeScript properties of a `ProxyProtocolV2ConfigProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEndpointGroup_ProxyProtocolV2ConfigPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('ppv2GaIdEnabled', ros.requiredValidator)(properties.ppv2GaIdEnabled));
+    errors.collect(ros.propertyValidator('ppv2GaIdEnabled', ros.validateBoolean)(properties.ppv2GaIdEnabled));
+    return errors.wrap('supplied properties not correct for "ProxyProtocolV2ConfigProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::EndpointGroup.ProxyProtocolV2Config` resource
+ *
+ * @param properties - the TypeScript properties of a `ProxyProtocolV2ConfigProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::EndpointGroup.ProxyProtocolV2Config` resource.
+ */
+// @ts-ignore TS6133
+function rosEndpointGroupProxyProtocolV2ConfigPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEndpointGroup_ProxyProtocolV2ConfigPropertyValidator(properties).assertSuccess();
+    return {
+      'Ppv2GaIdEnabled': ros.booleanToRosTemplate(properties.ppv2GaIdEnabled),
+    };
+}
+
+export namespace RosEndpointGroup {
+    /**
+     * @stability external
+     */
+    export interface TagsProperty {
+        /**
+         * @Property value: undefined
+         */
+        readonly value?: string | ros.IResolvable;
+        /**
+         * @Property key: undefined
+         */
+        readonly key: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `TagsProperty`
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosEndpointGroup_TagsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('value', ros.validateString)(properties.value));
+    errors.collect(ros.propertyValidator('key', ros.requiredValidator)(properties.key));
+    errors.collect(ros.propertyValidator('key', ros.validateString)(properties.key));
+    return errors.wrap('supplied properties not correct for "TagsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::EndpointGroup.Tags` resource
+ *
+ * @param properties - the TypeScript properties of a `TagsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::EndpointGroup.Tags` resource.
+ */
+// @ts-ignore TS6133
+function rosEndpointGroupTagsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosEndpointGroup_TagsPropertyValidator(properties).assertSuccess();
+    return {
+      'Value': ros.stringToRosTemplate(properties.value),
+      'Key': ros.stringToRosTemplate(properties.key),
     };
 }
 
@@ -3296,6 +3953,7 @@ export namespace RosEndpointGroups {
          * @Property type: The type of the endpoint. Valid values:
      * Domain: a custom domain name 
      * Ip: a custom IP address 
+     * IpTarget: a custom private IP address.
      * PublicIp: a public IP address provided by Alibaba Cloud 
      * ECS: an Elastic Compute Service (ECS) instance 
      * SLB: a Server Load Balancer (SLB) instance 
@@ -3330,12 +3988,6 @@ function RosEndpointGroups_EndpointConfigurationsPropertyValidator(properties: a
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
     errors.collect(ros.propertyValidator('type', ros.requiredValidator)(properties.type));
-    if(properties.type && (typeof properties.type) !== 'object') {
-        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
-          data: properties.type,
-          allowedValues: ["Domain","Ip","PublicIpECS","SLBALB","OSS","ENI","NLB"],
-        }));
-    }
     errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('endpoint', ros.requiredValidator)(properties.endpoint));
     errors.collect(ros.propertyValidator('endpoint', ros.validateString)(properties.endpoint));
@@ -3522,7 +4174,7 @@ function RosEndpointGroups_EndpointGroupConfigurationsPropertyValidator(properti
     if(properties.healthCheckProtocol && (typeof properties.healthCheckProtocol) !== 'object') {
         errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateAllowedValues)({
           data: properties.healthCheckProtocol,
-          allowedValues: ["tcp","TCP","httpHTTP","httpsHTTPS"],
+          allowedValues: ["tcp","TCP","http","HTTP","https","HTTPS"],
         }));
     }
     errors.collect(ros.propertyValidator('healthCheckProtocol', ros.validateString)(properties.healthCheckProtocol));
@@ -3758,7 +4410,7 @@ function rosForwardingRulesPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ForwardingRules`, which is used to create forwarding rules.
  * @Note This class does not contain additional functions, so it is recommended to use the `ForwardingRules` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-forwardingrules
  */
@@ -3769,7 +4421,7 @@ export class RosForwardingRules extends ros.RosResource {
     public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::ForwardingRules";
 
     /**
-     * @Attribute ForwardingRuleIds: The IDs of the endpoint groups.
+     * @Attribute ForwardingRuleIds: The IDs of the forwarding rules.
      */
     public readonly attrForwardingRuleIds: ros.IResolvable;
 
@@ -3833,7 +4485,7 @@ export namespace RosForwardingRules {
          */
         readonly priority?: number | ros.IResolvable;
         /**
-         * @Property forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length, and can contain letters, digits, periods (.), underscores (_), and hyphens (-). The name must start with a letter.
+         * @Property forwardingRuleName: The name of the forwarding rule. The name must be 2 to 128 characters in length. It must start with a letter or a Chinese character, and can contain letters, Chinese characters, digits, periods (.), underscores (_), and hyphens (-).
          */
         readonly forwardingRuleName?: string | ros.IResolvable;
         /**
@@ -3932,12 +4584,14 @@ export namespace RosForwardingRules {
      * * FixResponse: returns a fixed response. 
      * * Rewrite: rewrites a request. 
      * * AddHeader: adds a header to a request. 
-     * * RemoveHeaderConfig: deletes the header from a request. 
+     * * RemoveHeader: deletes a header from a request. 
+     * * Drop: drops a request. 
+     * * RemoveHeaderConfig: compatibility alias for RemoveHeader. 
      *
          */
         readonly ruleActionType: string | ros.IResolvable;
         /**
-         * @Property order: The forwarding priority.
+         * @Property order: The priority of the action. This parameter is not in use and can be ignored.
          */
         readonly order: number | ros.IResolvable;
         /**
@@ -3947,24 +4601,25 @@ export namespace RosForwardingRules {
      *   * value: set this parameter to the ID of a virtual endpoint group.
      * * If RuleActionType is set to Redirect, this parameter specifies redirecting configurations. You cannot leave all of the following parameters empty or configure all of these parameters to use the default values for a forwarding action whose type is Redirect: protocol, domain, port, path, and query. Example: {"protocol":"HTTP", "domain":"www.example.com", "port":"80", "path":"\/a","query":"value1", "code":"301" }.
      *   * protocol: the protocol of requests after the requests are redirected. Valid values: ${protocol} (default), HTTP, and HTTPS.
-     *   * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
+     *   * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
      *   * port: the port to which requests are redirected. Default value: ${port}. You can enter a port number that ranges from 1 to 63335.
-     *   * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-     *   * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+     *   * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+     *   * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
      *   * code: the redirecting code. Valid values: 301, 302, 303, 307, and 308.
      * * If RuleActionType is set to FixResponse, this parameter specifies a fixed response. Example: {"code":"200", "type":"text\/plain", "content":"dssacav" }.
      *   * code: the HTTP status code to return. The response status code must be one of the following numeric strings: 2xx, 4xx, and 5xx. The letter x indicates a number from 0 to 9.
      *   * type: the type of the response content. Valid values: text\/plain, text\/css, text\/html, application\/javascript, and application\/json.
      *   * content: the response content. The response content cannot exceed 1,000 characters in length and does not support Chinese characters.
-     * * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"userdefined", "value":"value"}].
+     * * If RuleActionType is set to AddHeader, this parameter specifies an HTTP header to be added. If a forwarding rule contains a forwarding action whose type is AddHeader, you must specify another forwarding action whose type is ForwardGroup. Example: [{"name":"header1","type":"user-defined", "value":"value"}].
      *   * name: the name of the HTTP header. The name must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The name of the HTTP header specified by AddHeader must be unique and cannot be the same as the name of the HTTP header specified by RemoveHeader.
      *   * type: the content type of the HTTP header. Valid values: user-defined, ref, and system-defined.
      *   * value: the content of the HTTP header. You cannot leave this parameter empty. If you set type to user-defined, the content must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The content can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to ref, the content must be 1 to 128 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). The content cannot start or end with a space character. If you set type to system-defined, only ClientSrcIp is supported.
-     * * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"].
+     * * If RuleActionType is set to RemoveHeader, this parameter specifies an HTTP header to be removed. If a forwarding rule contains a forwarding action whose type is RemoveHeader, you must specify another forwarding action whose type is ForwardGroup. The header must be 1 to 40 characters in length, and can contain letters, digits, hyphens (-), and underscores (_). Example: ["header1"]. RemoveHeaderConfig is accepted as a compatibility alias and is sent to the API as RemoveHeader.
      * * If RuleActionType is set to Rewrite, this parameter specifies the rewriting configuration. If a forwarding rule contains a forwarding action whose type is Rewrite, you must specify another forwarding action whose type is ForwardGroup. Example: {"domain":"value1", "path":"value2", "query":"value3"}.
-     *   * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - ? = ~ _ - + \/ ^ * ! $ & | ( ) [ ].
-     *   * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] + |. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
-     *   * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # | &.
+     *   * domain: the domain name to which requests are redirected. Default value: ${host}. You can also enter a domain name. The domain name must be 3 to 128 characters in length, and can contain only lowercase letters, digits, and the following special characters: . - = ~ _ + \/ ^ * ! $ & ( ) [ ] ?.
+     *   * path: the path to which requests are redirected. Default value: ${path}. The path must be 1 to 128 characters in length. To use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? ~ ^ * $ : ( ) [ ] +. The path must start with a tilde (~). If you do not want to use a regular expression, the path can contain letters, digits, and the following special characters: . - _ \/ = ? :. The path must start with a forward slash (\/).
+     *   * query: the query string of the requests to be redirected. Default value: ${query}. You can also specify a query string. The query string must be 1 to 128 characters in length, and can contain printable characters whose ASCII values are greater than or equal to 32 and smaller than 127. The query string cannot contain uppercase letters, space characters, or the following special characters: [ ] { } < > # &.
+     * * If RuleActionType is set to Drop, you do not need to specify this parameter.
          */
         readonly ruleActionValue?: string | ros.IResolvable;
     }
@@ -3983,7 +4638,7 @@ function RosForwardingRules_RuleActionsPropertyValidator(properties: any): ros.V
     if(properties.ruleActionType && (typeof properties.ruleActionType) !== 'object') {
         errors.collect(ros.propertyValidator('ruleActionType', ros.validateAllowedValues)({
           data: properties.ruleActionType,
-          allowedValues: ["ForwardGroup","Redirect","FixResponseRewrite","AddHeaderRemoveHeaderConfig"],
+          allowedValues: ["ForwardGroup","Redirect","FixResponse","Rewrite","AddHeader","RemoveHeader","Drop","RemoveHeaderConfig"],
         }));
     }
     errors.collect(ros.propertyValidator('ruleActionType', ros.validateString)(properties.ruleActionType));
@@ -4028,7 +4683,14 @@ export namespace RosForwardingRules {
          */
         readonly ruleConditionType?: string | ros.IResolvable;
         /**
-         * @Property ruleConditionValue: The endpoint port that is mapped to the listener port.
+         * @Property ruleConditionValue: The value of the rule condition. The value is a JSON-formatted string whose structure depends on RuleConditionType.
+     * * Host: a JSON array of domain names. Example: ["www.example.com", "www.aliyun.com"].
+     * * Path: a JSON array of paths. Example: ["\/a", "\/b\/"].
+     * * RequestHeader: a JSON array of HTTP header key-value pairs. Example: [{"header1":["value1","value2"]}].
+     * * Query: a JSON array of query key-value pairs. Example: [{"query1":["value1"]}, {"query2":["value2"]}].
+     * * Method: a JSON array whose values can be HEAD, GET, POST, OPTIONS, PUT, PATCH, or DELETE. Example: ["GET", "OPTIONS", "POST"].
+     * * Cookie: a JSON array of cookie key-value pairs. Example: [{"cookie1":["value1"]}, {"cookie2":["value2"]}].
+     * * SourceIP: a JSON array of IP addresses or CIDR blocks. Example: ["1.1.XX.XX\/32", "2.2.XX.XX\/24"].
          */
         readonly ruleConditionValue?: string | ros.IResolvable;
     }
@@ -4132,7 +4794,7 @@ function rosIpSetsPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`, which is used to create acceleration regions.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::IpSets`.
  * @Note This class does not contain additional functions, so it is recommended to use the `IpSets` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-ipsets
  */
@@ -4204,7 +4866,11 @@ export namespace RosIpSets {
      */
     export interface AccelerateRegionProperty {
         /**
-         * @Property ipVersion: IP version. Valid values: IPv4, IPv6
+         * @Property ipVersion: IP address protocol for Global Accelerator access, valid values:
+     * - IPv4 (default): IPv4 address protocol.
+     * - IPv6: IPv6 address protocol.
+     * - DUAL_STACK: IPv4 and IPv6 address protocol.
+     * Note: DUAL_STACK is supported only by standard pay-as-you-go Global Accelerator instances.
          */
         readonly ipVersion?: string | ros.IResolvable;
         /**
@@ -4238,7 +4904,7 @@ function RosIpSets_AccelerateRegionPropertyValidator(properties: any): ros.Valid
     if(properties.ipVersion && (typeof properties.ipVersion) !== 'object') {
         errors.collect(ros.propertyValidator('ipVersion', ros.validateAllowedValues)({
           data: properties.ipVersion,
-          allowedValues: ["IPv4","IPv6"],
+          allowedValues: ["IPv4","IPv6","DUAL_STACK"],
         }));
     }
     errors.collect(ros.propertyValidator('ipVersion', ros.validateString)(properties.ipVersion));
@@ -4321,6 +4987,25 @@ export interface RosListenerProps {
     readonly description?: string | ros.IResolvable;
 
     /**
+     * @Property httpVersion: The maximum version of the HTTP protocol. Valid values:
+     * http1.1
+     * http2
+     * http3
+     * Note Only HTTPS listeners support this parameter.
+     */
+    readonly httpVersion?: string | ros.IResolvable;
+
+    /**
+     * @Property idleTimeout: The connection idle timeout period. Unit: seconds.
+     * Valid values:
+     * TCP listener: 10 to 900
+     * UDP listener: 10 to 20
+     * HTTP or HTTPS listener: 1 to 60
+     * Note Only listeners support this parameter.
+     */
+    readonly idleTimeout?: number | ros.IResolvable;
+
+    /**
      * @Property name: The name of the listener.
      * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
      * (_), and hyphens (-). It must start with a letter or Chinese character.
@@ -4335,6 +5020,12 @@ export interface RosListenerProps {
     readonly proxyProtocol?: boolean | ros.IResolvable;
 
     /**
+     * @Property requestTimeout: The HTTP request timeout period. Unit: seconds. Valid values: 1 to 180. Default value: 60.
+     * Note Only HTTP and HTTPS listeners support this parameter.
+     */
+    readonly requestTimeout?: number | ros.IResolvable;
+
+    /**
      * @Property securityPolicyId: The ID of the security policy. Valid values:
      * tls_cipher_policy_1_0
      * tls_cipher_policy_1_1
@@ -4344,6 +5035,13 @@ export interface RosListenerProps {
      * Note Only HTTPS listeners support this parameter.
      */
     readonly securityPolicyId?: string | ros.IResolvable;
+
+    /**
+     * @Property type: The listener routing type. Valid values:
+     * Standard: the standard routing type
+     * CustomRouting: the custom routing type
+     */
+    readonly type?: string | ros.IResolvable;
 
     /**
      * @Property xForwardedForConfig: The configuration of the XForward field.
@@ -4361,7 +5059,14 @@ export interface RosListenerProps {
 function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
     const errors = new ros.ValidationResults();
-    errors.collect(ros.propertyValidator('securityPolicyId', ros.validateString)(properties.securityPolicyId));
+    if(properties.requestTimeout && (typeof properties.requestTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('requestTimeout', ros.validateRange)({
+            data: properties.requestTimeout,
+            min: 1,
+            max: 180,
+          }));
+    }
+    errors.collect(ros.propertyValidator('requestTimeout', ros.validateNumber)(properties.requestTimeout));
     errors.collect(ros.propertyValidator('description', ros.validateString)(properties.description));
     errors.collect(ros.propertyValidator('portRanges', ros.requiredValidator)(properties.portRanges));
     if(properties.portRanges && (Array.isArray(properties.portRanges) || (typeof properties.portRanges) === 'string')) {
@@ -4377,10 +5082,27 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
         errors.collect(ros.propertyValidator('certificates', ros.validateLength)({
             data: properties.certificates.length,
             min: undefined,
-            max: 1,
+            max: 10,
           }));
     }
     errors.collect(ros.propertyValidator('certificates', ros.listValidator(RosListener_CertificatesPropertyValidator))(properties.certificates));
+    if(properties.idleTimeout && (typeof properties.idleTimeout) !== 'object') {
+        errors.collect(ros.propertyValidator('idleTimeout', ros.validateRange)({
+            data: properties.idleTimeout,
+            min: 1,
+            max: 900,
+          }));
+    }
+    errors.collect(ros.propertyValidator('idleTimeout', ros.validateNumber)(properties.idleTimeout));
+    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    errors.collect(ros.propertyValidator('securityPolicyId', ros.validateString)(properties.securityPolicyId));
+    if(properties.type && (typeof properties.type) !== 'object') {
+        errors.collect(ros.propertyValidator('type', ros.validateAllowedValues)({
+          data: properties.type,
+          allowedValues: ["Standard","CustomRouting"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('type', ros.validateString)(properties.type));
     errors.collect(ros.propertyValidator('xForwardedForConfig', RosListener_XForwardedForConfigPropertyValidator)(properties.xForwardedForConfig));
     errors.collect(ros.propertyValidator('protocol', ros.requiredValidator)(properties.protocol));
     if(properties.protocol && (typeof properties.protocol) !== 'object') {
@@ -4392,7 +5114,13 @@ function RosListenerPropsValidator(properties: any): ros.ValidationResult {
     errors.collect(ros.propertyValidator('protocol', ros.validateString)(properties.protocol));
     errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
     errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
-    errors.collect(ros.propertyValidator('name', ros.validateString)(properties.name));
+    if(properties.httpVersion && (typeof properties.httpVersion) !== 'object') {
+        errors.collect(ros.propertyValidator('httpVersion', ros.validateAllowedValues)({
+          data: properties.httpVersion,
+          allowedValues: ["http1.1","http2","http3"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('httpVersion', ros.validateString)(properties.httpVersion));
     if(properties.clientAffinity && (typeof properties.clientAffinity) !== 'object') {
         errors.collect(ros.propertyValidator('clientAffinity', ros.validateAllowedValues)({
           data: properties.clientAffinity,
@@ -4423,15 +5151,19 @@ function rosListenerPropsToRosTemplate(properties: any, enableResourcePropertyCo
       'Certificates': ros.listMapper(rosListenerCertificatesPropertyToRosTemplate)(properties.certificates),
       'ClientAffinity': ros.stringToRosTemplate(properties.clientAffinity),
       'Description': ros.stringToRosTemplate(properties.description),
+      'HttpVersion': ros.stringToRosTemplate(properties.httpVersion),
+      'IdleTimeout': ros.numberToRosTemplate(properties.idleTimeout),
       'Name': ros.stringToRosTemplate(properties.name),
       'ProxyProtocol': ros.booleanToRosTemplate(properties.proxyProtocol),
+      'RequestTimeout': ros.numberToRosTemplate(properties.requestTimeout),
       'SecurityPolicyId': ros.stringToRosTemplate(properties.securityPolicyId),
+      'Type': ros.stringToRosTemplate(properties.type),
       'XForwardedForConfig': rosListenerXForwardedForConfigPropertyToRosTemplate(properties.xForwardedForConfig),
     };
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::Listener`Creates a listener for a Global Accelerator (GA) instance.
  * @Note This class does not contain additional functions, so it is recommended to use the `Listener` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-listener
  */
@@ -4488,6 +5220,25 @@ export class RosListener extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
+     * @Property httpVersion: The maximum version of the HTTP protocol. Valid values:
+     * http1.1
+     * http2
+     * http3
+     * Note Only HTTPS listeners support this parameter.
+     */
+    public httpVersion: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property idleTimeout: The connection idle timeout period. Unit: seconds.
+     * Valid values:
+     * TCP listener: 10 to 900
+     * UDP listener: 10 to 20
+     * HTTP or HTTPS listener: 1 to 60
+     * Note Only listeners support this parameter.
+     */
+    public idleTimeout: number | ros.IResolvable | undefined;
+
+    /**
      * @Property name: The name of the listener.
      * The name must be 2 to 128 characters in length and can contain letters, digits, underscores
      * (_), and hyphens (-). It must start with a letter or Chinese character.
@@ -4502,6 +5253,12 @@ export class RosListener extends ros.RosResource {
     public proxyProtocol: boolean | ros.IResolvable | undefined;
 
     /**
+     * @Property requestTimeout: The HTTP request timeout period. Unit: seconds. Valid values: 1 to 180. Default value: 60.
+     * Note Only HTTP and HTTPS listeners support this parameter.
+     */
+    public requestTimeout: number | ros.IResolvable | undefined;
+
+    /**
      * @Property securityPolicyId: The ID of the security policy. Valid values:
      * tls_cipher_policy_1_0
      * tls_cipher_policy_1_1
@@ -4511,6 +5268,13 @@ export class RosListener extends ros.RosResource {
      * Note Only HTTPS listeners support this parameter.
      */
     public securityPolicyId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property type: The listener routing type. Valid values:
+     * Standard: the standard routing type
+     * CustomRouting: the custom routing type
+     */
+    public type: string | ros.IResolvable | undefined;
 
     /**
      * @Property xForwardedForConfig: The configuration of the XForward field.
@@ -4533,9 +5297,13 @@ export class RosListener extends ros.RosResource {
         this.certificates = props.certificates;
         this.clientAffinity = props.clientAffinity;
         this.description = props.description;
+        this.httpVersion = props.httpVersion;
+        this.idleTimeout = props.idleTimeout;
         this.name = props.name;
         this.proxyProtocol = props.proxyProtocol;
+        this.requestTimeout = props.requestTimeout;
         this.securityPolicyId = props.securityPolicyId;
+        this.type = props.type;
         this.xForwardedForConfig = props.xForwardedForConfig;
     }
 
@@ -4548,9 +5316,13 @@ export class RosListener extends ros.RosResource {
             certificates: this.certificates,
             clientAffinity: this.clientAffinity,
             description: this.description,
+            httpVersion: this.httpVersion,
+            idleTimeout: this.idleTimeout,
             name: this.name,
             proxyProtocol: this.proxyProtocol,
+            requestTimeout: this.requestTimeout,
             securityPolicyId: this.securityPolicyId,
+            type: this.type,
             xForwardedForConfig: this.xForwardedForConfig,
         };
     }
@@ -4898,5 +5670,163 @@ export class RosLogStoreToEndpointGroupAttachment extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosLogStoreToEndpointGroupAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosResourceAttachment`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-resourceattachment
+ */
+export interface RosResourceAttachmentProps {
+
+    /**
+     * @Property acceleratorId: The ID of the GA instance.
+     */
+    readonly acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property associatedResourceId: The ID of the associated resource.
+     */
+    readonly associatedResourceId: string | ros.IResolvable;
+
+    /**
+     * @Property associatedResourceRegionId: The region ID of the associated resource.
+     */
+    readonly associatedResourceRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property associatedResourceType: The type of the associated resource.
+     */
+    readonly associatedResourceType: string | ros.IResolvable;
+
+    /**
+     * @Property associatedMode: The mode of the association.
+     */
+    readonly associatedMode?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosResourceAttachmentProps`
+ *
+ * @param properties - the TypeScript properties of a `RosResourceAttachmentProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosResourceAttachmentPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('associatedResourceRegionId', ros.requiredValidator)(properties.associatedResourceRegionId));
+    errors.collect(ros.propertyValidator('associatedResourceRegionId', ros.validateString)(properties.associatedResourceRegionId));
+    errors.collect(ros.propertyValidator('associatedResourceId', ros.requiredValidator)(properties.associatedResourceId));
+    errors.collect(ros.propertyValidator('associatedResourceId', ros.validateString)(properties.associatedResourceId));
+    if(properties.associatedMode && (typeof properties.associatedMode) !== 'object') {
+        errors.collect(ros.propertyValidator('associatedMode', ros.validateAllowedValues)({
+          data: properties.associatedMode,
+          allowedValues: ["Associated","Managed"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('associatedMode', ros.validateString)(properties.associatedMode));
+    errors.collect(ros.propertyValidator('associatedResourceType', ros.requiredValidator)(properties.associatedResourceType));
+    if(properties.associatedResourceType && (typeof properties.associatedResourceType) !== 'object') {
+        errors.collect(ros.propertyValidator('associatedResourceType', ros.validateAllowedValues)({
+          data: properties.associatedResourceType,
+          allowedValues: ["WAF"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('associatedResourceType', ros.validateString)(properties.associatedResourceType));
+    errors.collect(ros.propertyValidator('acceleratorId', ros.requiredValidator)(properties.acceleratorId));
+    errors.collect(ros.propertyValidator('acceleratorId', ros.validateString)(properties.acceleratorId));
+    return errors.wrap('supplied properties not correct for "RosResourceAttachmentProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::GA::ResourceAttachment` resource
+ *
+ * @param properties - the TypeScript properties of a `RosResourceAttachmentProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::GA::ResourceAttachment` resource.
+ */
+// @ts-ignore TS6133
+function rosResourceAttachmentPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosResourceAttachmentPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AcceleratorId': ros.stringToRosTemplate(properties.acceleratorId),
+      'AssociatedResourceId': ros.stringToRosTemplate(properties.associatedResourceId),
+      'AssociatedResourceRegionId': ros.stringToRosTemplate(properties.associatedResourceRegionId),
+      'AssociatedResourceType': ros.stringToRosTemplate(properties.associatedResourceType),
+      'AssociatedMode': ros.stringToRosTemplate(properties.associatedMode),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::GA::ResourceAttachment`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `ResourceAttachment` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ga-resourceattachment
+ */
+export class RosResourceAttachment extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::GA::ResourceAttachment";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property acceleratorId: The ID of the GA instance.
+     */
+    public acceleratorId: string | ros.IResolvable;
+
+    /**
+     * @Property associatedResourceId: The ID of the associated resource.
+     */
+    public associatedResourceId: string | ros.IResolvable;
+
+    /**
+     * @Property associatedResourceRegionId: The region ID of the associated resource.
+     */
+    public associatedResourceRegionId: string | ros.IResolvable;
+
+    /**
+     * @Property associatedResourceType: The type of the associated resource.
+     */
+    public associatedResourceType: string | ros.IResolvable;
+
+    /**
+     * @Property associatedMode: The mode of the association.
+     */
+    public associatedMode: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosResourceAttachmentProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosResourceAttachment.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.acceleratorId = props.acceleratorId;
+        this.associatedResourceId = props.associatedResourceId;
+        this.associatedResourceRegionId = props.associatedResourceRegionId;
+        this.associatedResourceType = props.associatedResourceType;
+        this.associatedMode = props.associatedMode;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            acceleratorId: this.acceleratorId,
+            associatedResourceId: this.associatedResourceId,
+            associatedResourceRegionId: this.associatedResourceRegionId,
+            associatedResourceType: this.associatedResourceType,
+            associatedMode: this.associatedMode,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosResourceAttachmentPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }

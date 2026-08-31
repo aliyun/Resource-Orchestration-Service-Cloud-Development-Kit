@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.emr;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::EMR::Cluster2</code>, which is used to create an E-MapReduce (EMR) cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::EMR::Cluster2</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:46:06.324Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:59:08.240Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.emr.$Module.class, fqn = "@alicloud/ros-cdk-emr.Cluster2")
 public class Cluster2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.emr.ICluster2 {
 
@@ -162,20 +162,48 @@ public class Cluster2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+         * Property clusterType: The cluster type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>DATALAKE: new data lake.</li>
+         * <li>OLAP: data analytics.</li>
+         * <li>DATAFLOW: real-time data stream.</li>
+         * <li>DATASERVING: data serving.</li>
+         * <li>CUSTOM: custom cluster.</li>
+         * <li>HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+         * If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+         * 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+         * cluster type.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
          */
         public Builder clusterType(final java.lang.String clusterType) {
             this.props.clusterType(clusterType);
             return this;
         }
         /**
-         * Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake).
+         * Property clusterType: The cluster type.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>DATALAKE: new data lake.</li>
+         * <li>OLAP: data analytics.</li>
+         * <li>DATAFLOW: real-time data stream.</li>
+         * <li>DATASERVING: data serving.</li>
+         * <li>CUSTOM: custom cluster.</li>
+         * <li>HADOOP: earlier-version data lake. We recommend that you use the new data lake.
+         * If you create an EMR cluster for the first time after 17:00 (UTC+8) on December
+         * 19, 2022, you cannot select HADOOP, DATA_SCIENCE, PRESTO, or ZOOKEEPER as the
+         * cluster type.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param clusterType Property clusterType: Cluster type.Ranges: DATALAKE: The new version of the data lake. OLAP: Data analysis. DATAFLOW: Real -time data stream. DATASERVING: Data service. HADOOP: The old version of the data lake (not recommended, it is recommended to use the new version of the data lake). This parameter is required.
+         * @param clusterType Property clusterType: The cluster type. This parameter is required.
          */
         public Builder clusterType(final com.aliyun.ros.cdk.core.IResolvable clusterType) {
             this.props.clusterType(clusterType);
@@ -225,20 +253,26 @@ public class Cluster2 extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.
+         * Property releaseVersion: The EMR release version.
+         * <p>
+         * You can find the EMR release versions on the EMR cluster
+         * purchase page.
          * <p>
          * @return {@code this}
-         * @param releaseVersion Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster. This parameter is required.
+         * @param releaseVersion Property releaseVersion: The EMR release version. This parameter is required.
          */
         public Builder releaseVersion(final java.lang.String releaseVersion) {
             this.props.releaseVersion(releaseVersion);
             return this;
         }
         /**
-         * Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster.
+         * Property releaseVersion: The EMR release version.
+         * <p>
+         * You can find the EMR release versions on the EMR cluster
+         * purchase page.
          * <p>
          * @return {@code this}
-         * @param releaseVersion Property releaseVersion: EMR release version.View EMR distribution versions can be viewed through the EMR cluster. This parameter is required.
+         * @param releaseVersion Property releaseVersion: The EMR release version. This parameter is required.
          */
         public Builder releaseVersion(final com.aliyun.ros.cdk.core.IResolvable releaseVersion) {
             this.props.releaseVersion(releaseVersion);

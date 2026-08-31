@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`, which is used to enable or disable trail logging.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ACTIONTRAIL::TrailLogging`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `TrailLogging` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-actiontrail-traillogging
@@ -142,7 +142,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Actiontrail
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the trail to be enabled.
+        /// <strong>Property</strong>: name: The name of the trail.\
+        /// The name must be 6 to 36 characters in length and can contain lowercase letters,
+        /// digits, hyphens (-), and underscores (_). It must start with a lowercase letter.
+        /// >  The name must be unique within an account.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Name

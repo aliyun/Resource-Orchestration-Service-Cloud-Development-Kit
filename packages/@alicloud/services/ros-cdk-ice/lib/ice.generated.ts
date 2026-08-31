@@ -376,8 +376,7 @@ export interface RosMediaInfoProps {
      * video
      * audio
      * text
-     * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-     * .
+     * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
      */
     readonly mediaType?: string | ros.IResolvable;
 
@@ -417,7 +416,10 @@ export interface RosMediaInfoProps {
     readonly title?: string | ros.IResolvable;
 
     /**
-     * @Property userData: The user data. You can specify a custom callback URL.
+     * @Property userData: The user data. You can specify a custom callback URL. 
+     * - The value can be up to 1,024 bytes in length.
+     * - The value must be encoded in UTF-8.
+     * - The value must be in the JSON format.
      */
     readonly userData?: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
@@ -612,8 +614,7 @@ export class RosMediaInfo extends ros.RosResource {
      * video
      * audio
      * text
-     * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-     * .
+     * We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
      */
     public mediaType: string | ros.IResolvable | undefined;
 
@@ -653,7 +654,10 @@ export class RosMediaInfo extends ros.RosResource {
     public title: string | ros.IResolvable | undefined;
 
     /**
-     * @Property userData: The user data. You can specify a custom callback URL.
+     * @Property userData: The user data. You can specify a custom callback URL. 
+     * - The value can be up to 1,024 bytes in length.
+     * - The value must be encoded in UTF-8.
+     * - The value must be in the JSON format.
      */
     public userData: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable | undefined;
 

@@ -11,7 +11,7 @@ type DomainProps struct {
 	DomainName interface{} `field:"required" json:"domainName" yaml:"domainName"`
 	// Property sources: The list of origin URLs.
 	Sources interface{} `field:"required" json:"sources" yaml:"sources"`
-	// Property checkUrl: The validation of the origin.
+	// Property checkUrl: The health check URL.
 	CheckUrl interface{} `field:"optional" json:"checkUrl" yaml:"checkUrl"`
 	// Property resourceGroupId: The ID of the resource group.
 	//

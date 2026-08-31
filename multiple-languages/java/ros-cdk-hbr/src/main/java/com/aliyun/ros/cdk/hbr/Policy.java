@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.hbr;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBR::Policy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.779Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.161Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.Policy")
 public class Policy extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbr.IPolicy {
 
@@ -133,20 +133,48 @@ public class Policy extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property policyType: The type of the policy.
+         * Property policyType: The type of the backup policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>STANDARD: A standard backup policy. It supports data sources other than ECS
+         * instance backup.</li>
+         * <li>UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+         * If you do not specify this parameter, Cloud Backup automatically sets the policy
+         * type based on whether a backup vault is specified in the policy rules:</li>
+         * <li>If a backup vault is specified in the rules, the policy type is set to
+         * STANDARD.</li>
+         * <li>If no backup vault is specified in the rules, the policy type is set to
+         * UDM_ECS_ONLY.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param policyType Property policyType: The type of the policy. This parameter is required.
+         * @param policyType Property policyType: The type of the backup policy. This parameter is required.
          */
         public Builder policyType(final java.lang.String policyType) {
             this.props.policyType(policyType);
             return this;
         }
         /**
-         * Property policyType: The type of the policy.
+         * Property policyType: The type of the backup policy.
+         * <p>
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>STANDARD: A standard backup policy. It supports data sources other than ECS
+         * instance backup.</li>
+         * <li>UDM_ECS_ONLY: A backup policy that supports only ECS instance backups.
+         * If you do not specify this parameter, Cloud Backup automatically sets the policy
+         * type based on whether a backup vault is specified in the policy rules:</li>
+         * <li>If a backup vault is specified in the rules, the policy type is set to
+         * STANDARD.</li>
+         * <li>If no backup vault is specified in the rules, the policy type is set to
+         * UDM_ECS_ONLY.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param policyType Property policyType: The type of the policy. This parameter is required.
+         * @param policyType Property policyType: The type of the backup policy. This parameter is required.
          */
         public Builder policyType(final com.aliyun.ros.cdk.core.IResolvable policyType) {
             this.props.policyType(policyType);

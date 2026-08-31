@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.appflow;
 /**
  * Represents a <code>ChatbotFlow</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:30:09.443Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:10:07.382Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.appflow.$Module.class, fqn = "@alicloud/ros-cdk-appflow.IChatbotFlow")
 @software.amazon.jsii.Jsii.Proxy(IChatbotFlow.Jsii$Proxy.class)
 public interface IChatbotFlow extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

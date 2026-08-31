@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Mns
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::MNS::Subscription`, which is used to describe a subscription relationship, including the subscribed topic and the endpoint that the subscriber uses to receive messages.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Subscription` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
@@ -94,12 +94,23 @@ namespace AlibabaCloud.SDK.ROS.CDK.Mns
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: endpoint: Terminal address of the message recipient for the created subscription.
-        /// Currently, four types of endpoints are supported:
-        /// 1. HttpEndpoint, which must be prefixed with "http:\/\/";
-        /// 2. QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues\/{QueueName};
-        /// 3. MailEndpoint, in the format of mail:directmail:{MailAddress};
-        /// 4. SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.
+        /// <strong>Property</strong>: endpoint: ## The message delivery endpoint.
+        /// The format varies based on the `PushType` value:
+        /// - If `PushType` is `http`: An HTTP\/HTTPS callback URL, such as
+        /// `http:\/\/example.com\/callback` or `https:\/\/example.com\/callback`.
+        /// - If `PushType` is `queue`: The ARN of the destination queue, in the format
+        /// `acs:mns:{RegionId}:{account ID}:queues\/{QueueName}`.
+        /// - If `PushType` is `dm`: The endpoint for email push, in the fixed format
+        /// `smq-ep:dm:{account ID}:__dynamic`. Replace `{account
+        /// ID}` with your account ID.
+        /// - If `PushType` is `dysms`: The endpoint for SMS push, in the format
+        /// `smq-ep:dysms:{account ID}:{MobileNumber}`.
+        /// - If `PushType` is `kafka`: The Kafka push endpoint.
+        /// - If `PushType` is `fc`: The endpoint for Function Compute, in the format
+        /// `acs:fc:{RegionId}:{account
+        /// ID}:services\/{ServiceName}\/functions\/{FunctionName}`.
+        /// - If `PushType` is `eventbus`: The endpoint for EventBridge, in the format
+        /// `acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}`.
         /// </remarks>
         [JsiiProperty(name: "endpoint", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Endpoint

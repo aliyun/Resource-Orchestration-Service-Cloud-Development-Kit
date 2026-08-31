@@ -13,7 +13,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
     {
         /// <summary>Property description: The description of the CCN instance.</summary>
         /// <remarks>
-        /// The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+        /// The description must be 2 to 256 characters in length and can contain letters,
+        /// digits, underscores (_), and hyphens (-). The description must start with a
+        /// letter.
         /// </remarks>
         [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -38,7 +40,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
         /// <summary>Property name: The name of the CCN instance.</summary>
         /// <remarks>
-        /// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+        /// The name must be 2 to 128 characters in length and can contain letters, digits,
+        /// periods (.), underscores (_),and hyphens (-). The name must start with a letter.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -77,7 +80,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
             /// <summary>Property description: The description of the CCN instance.</summary>
             /// <remarks>
-            /// The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+            /// The description must be 2 to 256 characters in length and can contain letters,
+            /// digits, underscores (_), and hyphens (-). The description must start with a
+            /// letter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "description", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -96,7 +101,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
 
             /// <summary>Property name: The name of the CCN instance.</summary>
             /// <remarks>
-            /// The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+            /// The name must be 2 to 128 characters in length and can contain letters, digits,
+            /// periods (.), underscores (_),and hyphens (-). The name must start with a letter.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

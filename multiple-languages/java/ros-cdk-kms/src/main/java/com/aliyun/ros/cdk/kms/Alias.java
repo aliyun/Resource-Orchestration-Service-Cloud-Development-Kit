@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.kms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Alias</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::KMS::Alias</code>Creates an alias for a customer master key (CMK) in Key Management Service (KMS).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:39:52.843Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:55:06.306Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.kms.$Module.class, fqn = "@alicloud/ros-cdk-kms.Alias")
 public class Alias extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.kms.IAlias {
 
@@ -104,24 +104,26 @@ public class Alias extends com.aliyun.ros.cdk.core.Resource implements com.aliyu
         }
 
         /**
-         * Property aliasName: - The display name of the key.
+         * Property aliasName: The alias of the CMK.
          * <p>
-         * You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+         * The alias must be 1 to 255 characters in length and must contain the prefix
+         * <code>alias\/</code>. The alias cannot be prefixed with the reserved word <code>alias\/acs</code>.
          * <p>
          * @return {@code this}
-         * @param aliasName Property aliasName: - The display name of the key. This parameter is required.
+         * @param aliasName Property aliasName: The alias of the CMK. This parameter is required.
          */
         public Builder aliasName(final java.lang.String aliasName) {
             this.props.aliasName(aliasName);
             return this;
         }
         /**
-         * Property aliasName: - The display name of the key.
+         * Property aliasName: The alias of the CMK.
          * <p>
-         * You can use the alias to call APIs such as Encrypt, GenerateDataKey, and DescribeKey. - Not including the prefix, the minimum length of an alias is 1 and the maximum length is 255. - The prefix alias/ must be included.
+         * The alias must be 1 to 255 characters in length and must contain the prefix
+         * <code>alias\/</code>. The alias cannot be prefixed with the reserved word <code>alias\/acs</code>.
          * <p>
          * @return {@code this}
-         * @param aliasName Property aliasName: - The display name of the key. This parameter is required.
+         * @param aliasName Property aliasName: The alias of the CMK. This parameter is required.
          */
         public Builder aliasName(final com.aliyun.ros.cdk.core.IResolvable aliasName) {
             this.props.aliasName(aliasName);

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudsso;
 /**
  * Represents a <code>Directory</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.922Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.325Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.IDirectory")
 @software.amazon.jsii.Jsii.Proxy(IDirectory.Jsii$Proxy.class)
 public interface IDirectory extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

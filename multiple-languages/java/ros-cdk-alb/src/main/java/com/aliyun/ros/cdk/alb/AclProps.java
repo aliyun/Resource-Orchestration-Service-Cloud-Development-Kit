@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.alb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-acl
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:22:24.178Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:59:20.361Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.alb.$Module.class, fqn = "@alicloud/ros-cdk-alb.AclProps")
 @software.amazon.jsii.Jsii.Proxy(AclProps.Jsii$Proxy.class)
 public interface AclProps extends software.amazon.jsii.JsiiSerializable {
@@ -20,8 +20,9 @@ public interface AclProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property aclName: The name of the ACL.
      * <p>
-     * The name must be 2 to 128 characters in length, and can contain
-     * letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+     * The name must be 2 to 128 characters in length, and can
+     * contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+     * characters. The name must start with a letter, a Chinese character, or a digit.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAclName() {
         return null;
@@ -71,8 +72,9 @@ public interface AclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AclProps#getAclName}
          * @param aclName Property aclName: The name of the ACL.
-         *                The name must be 2 to 128 characters in length, and can contain
-         *                letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+         *                The name must be 2 to 128 characters in length, and can
+         *                contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+         *                characters. The name must start with a letter, a Chinese character, or a digit.
          * @return {@code this}
          */
         public Builder aclName(java.lang.String aclName) {
@@ -83,8 +85,9 @@ public interface AclProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link AclProps#getAclName}
          * @param aclName Property aclName: The name of the ACL.
-         *                The name must be 2 to 128 characters in length, and can contain
-         *                letters, digits, hyphens (-) and underscores (_). It must start with a letter.
+         *                The name must be 2 to 128 characters in length, and can
+         *                contain digits, periods (.), underscores (_), hyphens (-), letters, and Chinese
+         *                characters. The name must start with a letter, a Chinese character, or a digit.
          * @return {@code this}
          */
         public Builder aclName(com.aliyun.ros.cdk.core.IResolvable aclName) {

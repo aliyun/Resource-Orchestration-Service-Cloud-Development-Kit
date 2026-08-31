@@ -16,7 +16,9 @@ type SnapshotProps struct {
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
 	// Property snapshotName: The name of the snapshot.
 	//
-	// The name must be 2 to 128 characters in length. It must start with a letter and cannot start with http:\/\/ or https:\/\/. It can contain letters, digits, colons (:), underscores (_), and hyphens (-).
+	// The name must be 2 to 128 characters in length. It must
+	// start with a letter or a Chinese character, but cannot start with `http:\/\/` or
+	// `https:\/\/`. It can contain digits, colons (:), underscores (_), and hyphens (-).
 	SnapshotName interface{} `field:"optional" json:"snapshotName" yaml:"snapshotName"`
 }
 

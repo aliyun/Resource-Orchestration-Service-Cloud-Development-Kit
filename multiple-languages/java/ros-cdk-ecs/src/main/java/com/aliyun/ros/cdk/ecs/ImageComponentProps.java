@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagecomponent
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.929Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.300Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ImageComponentProps")
 @software.amazon.jsii.Jsii.Proxy(ImageComponentProps.Jsii$Proxy.class)
 public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,14 +13,32 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
     /**
      * Property content: The content of the image component.
      * <p>
-     * The content consists of up to 127 commands.
+     * The image component consists of multiple
+     * commands. The command content cannot exceed 16 KB in size. For information about
+     * the commands supported by Image Builder and the formats of the commands, see
+     * <a href="">Commands supported by Image Builder</a>.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getContent();
 
     /**
      * Property componentType: The type of the image component.
      * <p>
-     * Only image build components are supported. Set the value to Build.Default value: Build.
+     * Only image building components and image test
+     * components are supported.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Build</li>
+     * <li>Test
+     * Default value: Build.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * Image building components can be used only in image building templates. Image
+     * test components can be used only in image test templates.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComponentType() {
         return null;
@@ -53,9 +71,15 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
     }
 
     /**
-     * Property systemType: The operating system type supported by the image component.
+     * Property systemType: The type of the operating system supported by the image component.
      * <p>
-     * Only Linux is supported. Set the value to Linux.Default value: Linux.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Linux</li>
+     * <li>Windows
+     * Default value: Linux.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSystemType() {
         return null;
@@ -89,7 +113,10 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ImageComponentProps#getContent}
          * @param content Property content: The content of the image component. This parameter is required.
-         *                The content consists of up to 127 commands.
+         *                The image component consists of multiple
+         *                commands. The command content cannot exceed 16 KB in size. For information about
+         *                the commands supported by Image Builder and the formats of the commands, see
+         *                <a href="">Commands supported by Image Builder</a>.
          * @return {@code this}
          */
         public Builder content(java.lang.String content) {
@@ -100,7 +127,10 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ImageComponentProps#getContent}
          * @param content Property content: The content of the image component. This parameter is required.
-         *                The content consists of up to 127 commands.
+         *                The image component consists of multiple
+         *                commands. The command content cannot exceed 16 KB in size. For information about
+         *                the commands supported by Image Builder and the formats of the commands, see
+         *                <a href="">Commands supported by Image Builder</a>.
          * @return {@code this}
          */
         public Builder content(com.aliyun.ros.cdk.core.IResolvable content) {
@@ -111,7 +141,22 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ImageComponentProps#getComponentType}
          * @param componentType Property componentType: The type of the image component.
-         *                      Only image build components are supported. Set the value to Build.Default value: Build.
+         *                      Only image building components and image test
+         *                      components are supported.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>Build</li>
+         *                      <li>Test
+         *                      Default value: Build.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      Image building components can be used only in image building templates. Image
+         *                      test components can be used only in image test templates.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder componentType(java.lang.String componentType) {
@@ -122,7 +167,22 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
         /**
          * Sets the value of {@link ImageComponentProps#getComponentType}
          * @param componentType Property componentType: The type of the image component.
-         *                      Only image build components are supported. Set the value to Build.Default value: Build.
+         *                      Only image building components and image test
+         *                      components are supported.
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>Build</li>
+         *                      <li>Test
+         *                      Default value: Build.</li>
+         *                      </ul>
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      Image building components can be used only in image building templates. Image
+         *                      test components can be used only in image test templates.
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder componentType(com.aliyun.ros.cdk.core.IResolvable componentType) {
@@ -198,8 +258,14 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ImageComponentProps#getSystemType}
-         * @param systemType Property systemType: The operating system type supported by the image component.
-         *                   Only Linux is supported. Set the value to Linux.Default value: Linux.
+         * @param systemType Property systemType: The type of the operating system supported by the image component.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>Linux</li>
+         *                   <li>Windows
+         *                   Default value: Linux.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder systemType(java.lang.String systemType) {
@@ -209,8 +275,14 @@ public interface ImageComponentProps extends software.amazon.jsii.JsiiSerializab
 
         /**
          * Sets the value of {@link ImageComponentProps#getSystemType}
-         * @param systemType Property systemType: The operating system type supported by the image component.
-         *                   Only Linux is supported. Set the value to Linux.Default value: Linux.
+         * @param systemType Property systemType: The type of the operating system supported by the image component.
+         *                   Valid values:
+         *                   <p>
+         *                   <ul>
+         *                   <li>Linux</li>
+         *                   <li>Windows
+         *                   Default value: Linux.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder systemType(com.aliyun.ros.cdk.core.IResolvable systemType) {

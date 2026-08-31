@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-oidcprovider
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.291Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.234Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.OIDCProviderProps")
 @software.amazon.jsii.Jsii.Proxy(OIDCProviderProps.Jsii$Proxy.class)
 public interface OIDCProviderProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,7 +33,13 @@ public interface OIDCProviderProps extends software.amazon.jsii.JsiiSerializable
     @org.jetbrains.annotations.NotNull java.lang.Object getOidcProviderName();
 
     /**
-     * Property clientIds: The list of the client IDs, max length is 20.
+     * Property clientIds: The ID of the client, which is provided by the external IdP.
+     * <p>
+     * If you want to
+     * specify multiple client IDs, separate the client IDs with commas (,).
+     * The client ID can contain letters, digits, and special characters and cannot
+     * start with the special characters. The special characters are <code>periods (.), hyphens (-), underscores (_), colons (:), and forward slashes (\/)</code>.``
+     * The client ID can be up to 128 characters in length.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getClientIds() {
         return null;
@@ -146,7 +152,12 @@ public interface OIDCProviderProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link OIDCProviderProps#getClientIds}
-         * @param clientIds Property clientIds: The list of the client IDs, max length is 20.
+         * @param clientIds Property clientIds: The ID of the client, which is provided by the external IdP.
+         *                  If you want to
+         *                  specify multiple client IDs, separate the client IDs with commas (,).
+         *                  The client ID can contain letters, digits, and special characters and cannot
+         *                  start with the special characters. The special characters are <code>periods (.), hyphens (-), underscores (_), colons (:), and forward slashes (\/)</code>.``
+         *                  The client ID can be up to 128 characters in length.
          * @return {@code this}
          */
         public Builder clientIds(com.aliyun.ros.cdk.core.IResolvable clientIds) {
@@ -156,7 +167,12 @@ public interface OIDCProviderProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link OIDCProviderProps#getClientIds}
-         * @param clientIds Property clientIds: The list of the client IDs, max length is 20.
+         * @param clientIds Property clientIds: The ID of the client, which is provided by the external IdP.
+         *                  If you want to
+         *                  specify multiple client IDs, separate the client IDs with commas (,).
+         *                  The client ID can contain letters, digits, and special characters and cannot
+         *                  start with the special characters. The special characters are <code>periods (.), hyphens (-), underscores (_), colons (:), and forward slashes (\/)</code>.``
+         *                  The client ID can be up to 128 characters in length.
          * @return {@code this}
          */
         public Builder clientIds(java.util.List<? extends java.lang.Object> clientIds) {

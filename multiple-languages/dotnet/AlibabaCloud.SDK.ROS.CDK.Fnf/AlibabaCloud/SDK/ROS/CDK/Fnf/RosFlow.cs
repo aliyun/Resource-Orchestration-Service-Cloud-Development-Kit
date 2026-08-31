@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`, which is used to create a flow.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::FNF::Flow`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `Flow` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fnf-flow
@@ -133,7 +133,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the flow created. This name is unique under the account.
+        /// <strong>Property</strong>: name: The name of the flow. The name must be unique within the same region and cannot
+        /// be changed after the flow is created. The name must meet the following
+        /// requirements:
+        /// - It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+        /// and hyphens (-).
+        /// - It must start with a letter or an underscore (_).
+        /// - It is case-sensitive.
+        /// - It must be 1 to 128 characters in length.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Name

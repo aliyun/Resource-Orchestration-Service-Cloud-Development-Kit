@@ -15,11 +15,18 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
     {
         private object _deployType;
 
-        /// <summary>Property deployType: The deployment mode of the Message Queue for Apache Kafka instance.</summary>
+        /// <summary>Property deployType: The deployment type.</summary>
         /// <remarks>
         /// Valid values:
-        /// 4: Instance of the public type
-        /// 5: Instance of the VPC type
+        ///
+        /// <list type="bullet">
+        /// <description>4: Internet/VPC instance</description>
+        /// <description>5: VPC instance</description>
+        /// </list>
+        ///
+        ///     If you are creating a Confluent series instance, you cannot select the
+        ///     deployment type. You can only set the value to 5. After the purchase, you can
+        ///     adjust whether each component is open to the Internet.
         /// </remarks>
         [JsiiProperty(name: "deployType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DeployType
@@ -276,9 +283,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
         private object? _ioMax;
 
-        /// <summary>Property ioMax: The peak traffic to be configured for the Message Queue for Apache Kafka instance.</summary>
+        /// <summary>Property ioMax: The traffic peak (not recommended).</summary>
         /// <remarks>
-        /// For more information about the value range, see Billing.
+        /// <list type="bullet">
+        /// <description>You must specify either IoMax or IoMaxSpec. If you specify both parameters,
+        /// IoMaxSpec takes precedence. We recommend that you specify only IoMaxSpec.</description>
+        /// <description>For the valid values, see <a href="">Billing</a>.</description>
+        /// </list>
+        ///
+        ///     If you are creating a Confluent series instance, you do not need to pass this
+        ///     parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ioMax", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -483,7 +497,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kafka
 
         private object? _serverlessConfig;
 
-        /// <summary>Property serverlessConfig: Serverless instance related settings.</summary>
+        /// <summary>Property serverlessConfig: The settings of the Serverless instance.</summary>
+        /// <remarks>
+        /// This parameter is required if you create
+        /// a Serverless instance.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "serverlessConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-kafka.RosInstance.ServerlessConfigProperty\"}]}}", isOptional: true)]
         public object? ServerlessConfig

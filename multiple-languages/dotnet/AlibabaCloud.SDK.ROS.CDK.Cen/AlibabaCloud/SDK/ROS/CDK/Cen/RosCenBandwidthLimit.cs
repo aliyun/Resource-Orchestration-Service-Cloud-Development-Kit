@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cen
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`, which is used to configure the bandwidth for cross-region interconnection in a bandwidth plan.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CEN::CenBandwidthLimit`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `CenBandwidthLimit` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthlimit
@@ -60,7 +60,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidthLimit: The bandwidth configured for the interconnected regions communication. Minimal value: 1
+        /// <strong>Property</strong>: bandwidthLimit: The inter-region bandwidth between the two regions. Unit: Mbps.
         /// </remarks>
         [JsiiProperty(name: "bandwidthLimit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object BandwidthLimit
@@ -207,7 +207,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: bandwidthType: Bandwidth allocation mode. Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+        /// <strong>Property</strong>: bandwidthType: The method used to allocate bandwidth. Valid value:
+        /// - BandwidthPackage (default): allocates bandwidth from a bandwidth plan.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "bandwidthType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

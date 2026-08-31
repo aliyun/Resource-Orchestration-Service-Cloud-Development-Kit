@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenInstance</code>, which is used to create a Cloud Enterprise Network (CEN) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenInstance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.578Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstance")
 public class CenInstance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ICenInstance {
 
@@ -130,24 +130,26 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property description: The description of the instance.
+         * Property description: The description of the CEN instance.
          * <p>
-         * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * The description can be empty or 1 to 256 characters in length. It cannot start
+         * with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the instance. This parameter is required.
+         * @param description Property description: The description of the CEN instance. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props().description(description);
             return this;
         }
         /**
-         * Property description: The description of the instance.
+         * Property description: The description of the CEN instance.
          * <p>
-         * The name can be 2-256 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * The description can be empty or 1 to 256 characters in length. It cannot start
+         * with http:// or https://.
          * <p>
          * @return {@code this}
-         * @param description Property description: The description of the instance. This parameter is required.
+         * @param description Property description: The description of the CEN instance. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props().description(description);
@@ -155,24 +157,26 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property name: The name of the instance.
+         * Property name: The name of the CEN instance.
          * <p>
-         * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * The name can be empty or 1 to 128 characters in length. It cannot start with
+         * http:// or https://.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the instance. This parameter is required.
+         * @param name Property name: The name of the CEN instance. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props().name(name);
             return this;
         }
         /**
-         * Property name: The name of the instance.
+         * Property name: The name of the CEN instance.
          * <p>
-         * The name can be 2-128 characters in length. It can start with an uppercase letter, lowercase letter, or Chinese character. It can contain numbers, underscores (_), and hyphens (-), but cannot start with http:// or https://.
+         * The name can be empty or 1 to 128 characters in length. It cannot start with
+         * http:// or https://.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the instance. This parameter is required.
+         * @param name Property name: The name of the CEN instance. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props().name(name);
@@ -180,26 +184,26 @@ public class CenInstance extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property protectionLevel: The level of CIDR block overlapping.
+         * Property protectionLevel: The level of CIDR block overlap.
          * <p>
-         * Set the value to REDUCED. REDUCED indicates that the
-         * CIDR blocks can overlap with each other but must not be the same.
+         * Set the value to REDUCED. This is the default value. This value specifies that
+         * CIDR blocks can overlap but cannot be identical.
          * <p>
          * @return {@code this}
-         * @param protectionLevel Property protectionLevel: The level of CIDR block overlapping. This parameter is required.
+         * @param protectionLevel Property protectionLevel: The level of CIDR block overlap. This parameter is required.
          */
         public Builder protectionLevel(final java.lang.String protectionLevel) {
             this.props().protectionLevel(protectionLevel);
             return this;
         }
         /**
-         * Property protectionLevel: The level of CIDR block overlapping.
+         * Property protectionLevel: The level of CIDR block overlap.
          * <p>
-         * Set the value to REDUCED. REDUCED indicates that the
-         * CIDR blocks can overlap with each other but must not be the same.
+         * Set the value to REDUCED. This is the default value. This value specifies that
+         * CIDR blocks can overlap but cannot be identical.
          * <p>
          * @return {@code this}
-         * @param protectionLevel Property protectionLevel: The level of CIDR block overlapping. This parameter is required.
+         * @param protectionLevel Property protectionLevel: The level of CIDR block overlap. This parameter is required.
          */
         public Builder protectionLevel(final com.aliyun.ros.cdk.core.IResolvable protectionLevel) {
             this.props().protectionLevel(protectionLevel);

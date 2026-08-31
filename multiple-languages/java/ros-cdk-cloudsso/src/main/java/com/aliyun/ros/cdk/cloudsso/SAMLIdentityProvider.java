@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsso;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::SAMLIdentityProvider</code>, which is used to configure the information about a Security Assertion Markup Language (SAML) identity provider (IdP).
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::SAMLIdentityProvider</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.964Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.383Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.SAMLIdentityProvider")
 public class SAMLIdentityProvider extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudsso.ISAMLIdentityProvider {
 
@@ -264,20 +264,20 @@ public class SAMLIdentityProvider extends com.aliyun.ros.cdk.core.Resource imple
         }
 
         /**
-         * Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.
+         * Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.
          * <p>
          * @return {@code this}
-         * @param x509Certificate Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced. This parameter is required.
+         * @param x509Certificate Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced. This parameter is required.
          */
         public Builder x509Certificate(final java.lang.String x509Certificate) {
             this.props.x509Certificate(x509Certificate);
             return this;
         }
         /**
-         * Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced.
+         * Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced.
          * <p>
          * @return {@code this}
-         * @param x509Certificate Property x509Certificate: The X.509 certificate n the PEM format. If you specify this parameter, all existing certificates are replaced. This parameter is required.
+         * @param x509Certificate Property x509Certificate: The X.509 certificate in the PEM format. If you specify this parameter, all existing certificates are replaced. This parameter is required.
          */
         public Builder x509Certificate(final com.aliyun.ros.cdk.core.IResolvable x509Certificate) {
             this.props.x509Certificate(x509Certificate);

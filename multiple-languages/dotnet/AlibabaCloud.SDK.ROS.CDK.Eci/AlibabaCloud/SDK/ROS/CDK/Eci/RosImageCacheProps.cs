@@ -16,7 +16,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object _image;
 
         /// <remarks>
-        /// <strong>Property</strong>: image: The image list to be cached.
+        /// <strong>Property</strong>: image: The container images used to create the image cache.
         /// </remarks>
         [JsiiProperty(name: "image", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         public object Image
@@ -129,7 +129,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object _vSwitchId;
 
         /// <remarks>
-        /// <strong>Property</strong>: vSwitchId: VSwitch ID.
+        /// <strong>Property</strong>: vSwitchId: The ID of the vSwitch. You can specify up to 10 vSwitch IDs, separated by commas
+        /// (,). For example, `vsw-*,vsw-*`.
         /// </remarks>
         [JsiiProperty(name: "vSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object VSwitchId
@@ -161,7 +162,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _acrRegistryInfo;
 
         /// <remarks>
-        /// <strong>Property</strong>: acrRegistryInfo: Enterprise Edition access credential configuration information.
+        /// <strong>Property</strong>: acrRegistryInfo: The information about the ACR instance.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "acrRegistryInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-eci.RosImageCache.AcrRegistryInfoProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
@@ -334,7 +335,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Eci
         private object? _imageRegistryCredential;
 
         /// <remarks>
-        /// <strong>Property</strong>: imageRegistryCredential: Private image password. Alibaba Cloud ACR image can be left blank.
+        /// <strong>Property</strong>: imageRegistryCredential: The credentials of the image repository.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "imageRegistryCredential", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]

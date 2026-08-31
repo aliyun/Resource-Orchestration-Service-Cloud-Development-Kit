@@ -98,7 +98,7 @@ function rosAliasPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Alias`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Alias`The , which type creates an alias for a service version in Function Compute.
  * @Note This class does not contain additional functions, so it is recommended to use the `Alias` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-alias
  */
@@ -267,7 +267,7 @@ function rosCustomDomainPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::CustomDomain`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::CustomDomain`, which is used to create a custom domain name.
  * @Note This class does not contain additional functions, so it is recommended to use the `CustomDomain` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-customdomain
  */
@@ -765,7 +765,7 @@ function rosFunctionPropsToRosTemplate(properties: any, enableResourcePropertyCo
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`, which is used to create a function. A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Function`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Function` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
  */
@@ -1780,7 +1780,7 @@ function rosFunctionInvokerPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::FunctionInvoker`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::FunctionInvoker`Invokes a Function Compute function.
  * @Note This class does not contain additional functions, so it is recommended to use the `FunctionInvoker` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-functioninvoker
  */
@@ -2061,7 +2061,7 @@ function rosLayerPropsToRosTemplate(properties: any, enableResourcePropertyConst
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Layer`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Layer`Releases a layer version in Function Compute.
  * @Note This class does not contain additional functions, so it is recommended to use the `Layer` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-layer
  */
@@ -2276,7 +2276,7 @@ function rosProvisionConfigPropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::ProvisionConfig`, which is used to create provisioned instances in Function Compute.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::ProvisionConfig`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ProvisionConfig` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-provisionconfig
  */
@@ -2514,7 +2514,7 @@ function rosServicePropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Service`, which is used to create a service in Function Compute.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Service`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Service` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-service
  */
@@ -3448,7 +3448,7 @@ function rosVersionPropsToRosTemplate(properties: any, enableResourcePropertyCon
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Version`, which is used to release a Version.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::FC::Version`.
  * @Note This class does not contain additional functions, so it is recommended to use the `Version` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-version
  */

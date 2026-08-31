@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.clickhouse;
 /**
  * Represents a <code>DBCluster</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:46:45.038Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:34:08.094Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.clickhouse.$Module.class, fqn = "@alicloud/ros-cdk-clickhouse.IDBCluster")
 @software.amazon.jsii.Jsii.Proxy(IDBCluster.Jsii$Proxy.class)
 public interface IDBCluster extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

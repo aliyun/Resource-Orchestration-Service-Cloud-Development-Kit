@@ -7,7 +7,7 @@ package alicloudroscdkcms
 type MetricRuleTemplateProps struct {
 	// Property name: The name of the alert template.
 	Name interface{} `field:"required" json:"name" yaml:"name"`
-	// Property alertTemplates: Valid values of N: 0 to 200.
+	// Property alertTemplates: The details of the alert template.
 	AlertTemplates interface{} `field:"optional" json:"alertTemplates" yaml:"alertTemplates"`
 	// Property description: The description of the alert template.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`

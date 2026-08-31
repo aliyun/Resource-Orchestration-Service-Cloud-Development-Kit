@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.sag;
 /**
  * Represents a <code>ACLAssociation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.978Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.082Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.IACLAssociation")
 @software.amazon.jsii.Jsii.Proxy(IACLAssociation.Jsii$Proxy.class)
 public interface IACLAssociation extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.apig;
 /**
  * Represents a <code>HttpApi</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.579Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.176Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.IHttpApi")
 @software.amazon.jsii.Jsii.Proxy(IHttpApi.Jsii$Proxy.class)
 public interface IHttpApi extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

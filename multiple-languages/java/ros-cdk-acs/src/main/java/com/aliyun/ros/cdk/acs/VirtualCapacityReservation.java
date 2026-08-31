@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.acs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::VirtualCapacityReservation</code>The , which resource type creates a capacity reservation task.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ACS::VirtualCapacityReservation</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:11:47.766Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:43:11.164Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acs.$Module.class, fqn = "@alicloud/ros-cdk-acs.VirtualCapacityReservation")
 public class VirtualCapacityReservation extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.acs.IVirtualCapacityReservation {
 

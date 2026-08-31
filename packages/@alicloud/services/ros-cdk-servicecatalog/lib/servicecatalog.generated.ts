@@ -10,11 +10,13 @@ export interface RosConstraintProps {
 
     /**
      * @Property config: The configuration of the constraint.
+     * Format: { "LocalRoleName": "\<role_name>" }.
      */
     readonly config: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * @Property constraintType: The type of the constraint.
+     * The value is fixed as Launch, which specifies the launch constraint.
      */
     readonly constraintType: string | ros.IResolvable;
 
@@ -30,6 +32,7 @@ export interface RosConstraintProps {
 
     /**
      * @Property description: The description of the constraint.
+     * The value must be 1 to 128 characters in length.
      */
     readonly description?: string | ros.IResolvable;
 }
@@ -99,11 +102,13 @@ export class RosConstraint extends ros.RosResource {
 
     /**
      * @Property config: The configuration of the constraint.
+     * Format: { "LocalRoleName": "\<role_name>" }.
      */
     public config: { [key: string]: (any | ros.IResolvable) } | ros.IResolvable;
 
     /**
      * @Property constraintType: The type of the constraint.
+     * The value is fixed as Launch, which specifies the launch constraint.
      */
     public constraintType: string | ros.IResolvable;
 
@@ -119,6 +124,7 @@ export class RosConstraint extends ros.RosResource {
 
     /**
      * @Property description: The description of the constraint.
+     * The value must be 1 to 128 characters in length.
      */
     public description: string | ros.IResolvable | undefined;
 

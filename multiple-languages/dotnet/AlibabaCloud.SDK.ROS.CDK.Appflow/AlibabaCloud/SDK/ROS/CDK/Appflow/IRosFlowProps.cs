@@ -34,7 +34,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: flowId: The ID of the flow.
+        /// <strong>Property</strong>: flowId: The ID of the flow. This parameter is required when you update a flow or create a
+        /// new flow version.
         /// </remarks>
         [JsiiProperty(name: "flowId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -75,7 +76,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: parameters: The parameters of the flow.
+        /// <strong>Property</strong>: parameters: The parameters for the template.
+        /// You can specify up to 200 parameters.
+        /// > This parameter is optional. If you use this parameter, you must specify both
+        /// ParameterKey and ParameterValue for each entry.
         /// </remarks>
         [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -101,7 +105,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: templateId: The ID of the template.
+        /// <strong>Property</strong>: templateId: The ID of the template. Specify this parameter when you create a flow from a
+        /// template in the Template Center.
         /// </remarks>
         [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -144,7 +149,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: flowId: The ID of the flow.
+            /// <strong>Property</strong>: flowId: The ID of the flow. This parameter is required when you update a flow or create a
+            /// new flow version.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "flowId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -176,7 +182,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: parameters: The parameters of the flow.
+            /// <strong>Property</strong>: parameters: The parameters for the template.
+            /// You can specify up to 200 parameters.
+            /// > This parameter is optional. If you use this parameter, you must specify both
+            /// ParameterKey and ParameterValue for each entry.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "parameters", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
@@ -196,7 +205,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Appflow
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: templateId: The ID of the template.
+            /// <strong>Property</strong>: templateId: The ID of the template. Specify this parameter when you create a flow from a
+            /// template in the Template Center.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "templateId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

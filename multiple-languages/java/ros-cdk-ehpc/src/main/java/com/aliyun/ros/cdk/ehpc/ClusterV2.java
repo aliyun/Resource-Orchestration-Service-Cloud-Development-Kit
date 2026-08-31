@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ehpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::EHPC::ClusterV2</code>, which is used to create a cluster in Elastic High Performance Computing (E-HPC) of the new version.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:42:12.673Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:50:32.936Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ehpc.$Module.class, fqn = "@alicloud/ros-cdk-ehpc.ClusterV2")
 public class ClusterV2 extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ehpc.IClusterV2 {
 
@@ -112,24 +112,26 @@ public class ClusterV2 extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property clusterName: Cluster name.
+         * Property clusterName: The cluster name.
          * <p>
-         * The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * The name must be 1 to 128 characters in length and can contain
+         * letters, digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param clusterName Property clusterName: Cluster name. This parameter is required.
+         * @param clusterName Property clusterName: The cluster name. This parameter is required.
          */
         public Builder clusterName(final java.lang.String clusterName) {
             this.props.clusterName(clusterName);
             return this;
         }
         /**
-         * Property clusterName: Cluster name.
+         * Property clusterName: The cluster name.
          * <p>
-         * The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * The name must be 1 to 128 characters in length and can contain
+         * letters, digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param clusterName Property clusterName: Cluster name. This parameter is required.
+         * @param clusterName Property clusterName: The cluster name. This parameter is required.
          */
         public Builder clusterName(final com.aliyun.ros.cdk.core.IResolvable clusterName) {
             this.props.clusterName(clusterName);
@@ -348,24 +350,26 @@ public class ClusterV2 extends com.aliyun.ros.cdk.core.Resource implements com.a
         }
 
         /**
-         * Property clusterDescription: Cluster description.
+         * Property clusterDescription: The cluster description.
          * <p>
-         * The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * The description must be 1 to 128 characters in length
+         * and can contain letters, digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param clusterDescription Property clusterDescription: Cluster description. This parameter is required.
+         * @param clusterDescription Property clusterDescription: The cluster description. This parameter is required.
          */
         public Builder clusterDescription(final java.lang.String clusterDescription) {
             this.props.clusterDescription(clusterDescription);
             return this;
         }
         /**
-         * Property clusterDescription: Cluster description.
+         * Property clusterDescription: The cluster description.
          * <p>
-         * The length is from 2 to 128 characters, and it supports English, Chinese and numbers. You can include a dash (-) and an underscore (_).
+         * The description must be 1 to 128 characters in length
+         * and can contain letters, digits, hyphens (-), and underscores (_).
          * <p>
          * @return {@code this}
-         * @param clusterDescription Property clusterDescription: Cluster description. This parameter is required.
+         * @param clusterDescription Property clusterDescription: The cluster description. This parameter is required.
          */
         public Builder clusterDescription(final com.aliyun.ros.cdk.core.IResolvable clusterDescription) {
             this.props.clusterDescription(clusterDescription);

@@ -667,7 +667,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         private object? _resultSample;
 
         /// <remarks>
-        /// <strong>Property</strong>: resultSample: The sample of the result.
+        /// <strong>Property</strong>: resultSample: An example of a response returned by the backend service. This value is used only
+        /// to generate documentation. The actually returned result shall prevail.(Support up
+        /// to 32KB)
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "resultSample", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

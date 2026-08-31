@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Cms
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`, which is used to create a site monitoring task.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::CMS::SiteMonitor`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SiteMonitor` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cms-sitemonitor
@@ -106,8 +106,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: taskName: The name of the site monitoring task. The name must be 4 to 100 characters in length.
-        /// It can contain letters, digits, and underscores (_).
+        /// <strong>Property</strong>: taskName: The name of the monitoring task.
+        /// The name must be 4 to 100 characters long and can contain letters, digits,
+        /// underscores (_), and Chinese characters.
         /// </remarks>
         [JsiiProperty(name: "taskName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TaskName
@@ -137,8 +138,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: taskType: The protocol used by the site monitoring task. Valid values: HTTP, HTTPS, PING, TCP,
-        /// UDP, DNS, SMTP, POP3, and FTP.
+        /// <strong>Property</strong>: taskType: The type of monitoring task.
+        /// Valid protocols include HTTP(S), PING, TCP, UDP, DNS, SMTP, POP3, FTP, and
+        /// WEBSOCKET.
         /// </remarks>
         [JsiiProperty(name: "taskType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TaskType
@@ -216,8 +218,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: interval: The interval at which detection requests are sent. Valid values: 1, 5, and 15. Unit:
-        /// minutes. Default value: 1.
+        /// <strong>Property</strong>: interval: The monitoring frequency in minutes.
+        /// Valid values: 1, 5, 15, 30, and 60.
+        /// Default: 1.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

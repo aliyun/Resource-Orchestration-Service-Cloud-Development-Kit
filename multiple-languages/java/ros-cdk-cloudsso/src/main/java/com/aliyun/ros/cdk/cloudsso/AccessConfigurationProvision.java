@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cloudsso;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::AccessConfigurationProvision</code>, which is used to provision an access configuration for an account in your resource directory.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudSSO::AccessConfigurationProvision</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:53:18.912Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:42:02.312Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudsso.$Module.class, fqn = "@alicloud/ros-cdk-cloudsso.AccessConfigurationProvision")
 public class AccessConfigurationProvision extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudsso.IAccessConfigurationProvision {
 

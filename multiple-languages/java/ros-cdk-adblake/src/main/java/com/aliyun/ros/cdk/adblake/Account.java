@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.adblake;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::Account</code>, which is used to create a database account for an AnalyticDB for MySQL Data Lakehouse Edition cluster.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ADBLake::Account</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:17:27.665Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:55:45.884Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.adblake.$Module.class, fqn = "@alicloud/ros-cdk-adblake.Account")
 public class Account extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.adblake.IAccount {
 
@@ -217,20 +217,30 @@ public class Account extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property accountDescription: The description of the account.
+         * Property accountDescription: The account description.
+         * <p>
+         * <ul>
+         * <li>Must not start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         * <li>Be no longer than 256 characters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountDescription Property accountDescription: The description of the account. This parameter is required.
+         * @param accountDescription Property accountDescription: The account description. This parameter is required.
          */
         public Builder accountDescription(final java.lang.String accountDescription) {
             this.props.accountDescription(accountDescription);
             return this;
         }
         /**
-         * Property accountDescription: The description of the account.
+         * Property accountDescription: The account description.
+         * <p>
+         * <ul>
+         * <li>Must not start with <code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         * <li>Be no longer than 256 characters.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param accountDescription Property accountDescription: The description of the account. This parameter is required.
+         * @param accountDescription Property accountDescription: The account description. This parameter is required.
          */
         public Builder accountDescription(final com.aliyun.ros.cdk.core.IResolvable accountDescription) {
             this.props.accountDescription(accountDescription);

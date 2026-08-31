@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apig;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Gateway</code>, which is used to create a Cloud-native API Gateway.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::APIG::Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:26:59.558Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:05:26.155Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apig.$Module.class, fqn = "@alicloud/ros-cdk-apig.Gateway")
 public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apig.IGateway {
 

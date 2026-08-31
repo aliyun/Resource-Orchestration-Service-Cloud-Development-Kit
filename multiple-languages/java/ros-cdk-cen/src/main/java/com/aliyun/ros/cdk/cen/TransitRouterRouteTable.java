@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterRouteTable</code>, which is used to create a custom route table for an Enterprise Edition transit router.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::TransitRouterRouteTable</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.404Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.747Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterRouteTable")
 public class TransitRouterRouteTable extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ITransitRouterRouteTable {
 

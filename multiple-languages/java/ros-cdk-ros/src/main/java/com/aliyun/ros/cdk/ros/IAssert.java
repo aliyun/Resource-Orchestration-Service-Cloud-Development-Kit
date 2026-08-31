@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ros;
 /**
  * Represents a <code>Assert</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:42:02.069Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:23:14.437Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ros.$Module.class, fqn = "@alicloud/ros-cdk-ros.IAssert")
 @software.amazon.jsii.Jsii.Proxy(IAssert.Jsii$Proxy.class)
 public interface IAssert extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

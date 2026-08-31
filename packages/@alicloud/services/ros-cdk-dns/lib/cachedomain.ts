@@ -40,7 +40,8 @@ export interface CacheDomainProps {
     readonly sourceEdns: string | ros.IResolvable;
 
     /**
-     * Property sourceProtocol: The protocol used by the source DNS server.
+     * Property sourceProtocol: The protocol used for origin fetch. Valid values: TCP and UDP. The default value
+     * is UDP.
      */
     readonly sourceProtocol: string | ros.IResolvable;
 

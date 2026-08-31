@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.sag;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-sag-cloudconnectnetwork
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:44:50.975Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:26:52.078Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.sag.$Module.class, fqn = "@alicloud/ros-cdk-sag.CloudConnectNetworkProps")
 @software.amazon.jsii.Jsii.Proxy(CloudConnectNetworkProps.Jsii$Proxy.class)
 public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,9 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
     /**
      * Property description: The description of the CCN instance.
      * <p>
-     * The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+     * The description must be 2 to 256 characters in length and can contain letters,
+     * digits, underscores (_), and hyphens (-). The description must start with a
+     * letter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
@@ -29,7 +31,8 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
     /**
      * Property name: The name of the CCN instance.
      * <p>
-     * The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+     * The name must be 2 to 128 characters in length and can contain letters, digits,
+     * periods (.), underscores (_),and hyphens (-). The name must start with a letter.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -62,7 +65,9 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link CloudConnectNetworkProps#getDescription}
          * @param description Property description: The description of the CCN instance.
-         *                    The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+         *                    The description must be 2 to 256 characters in length and can contain letters,
+         *                    digits, underscores (_), and hyphens (-). The description must start with a
+         *                    letter.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -73,7 +78,9 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link CloudConnectNetworkProps#getDescription}
          * @param description Property description: The description of the CCN instance.
-         *                    The description can contain 2 to 256 characters. The description cannot start with http:// or https://.
+         *                    The description must be 2 to 256 characters in length and can contain letters,
+         *                    digits, underscores (_), and hyphens (-). The description must start with a
+         *                    letter.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -104,7 +111,8 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link CloudConnectNetworkProps#getName}
          * @param name Property name: The name of the CCN instance.
-         *             The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+         *             The name must be 2 to 128 characters in length and can contain letters, digits,
+         *             periods (.), underscores (_),and hyphens (-). The name must start with a letter.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -115,7 +123,8 @@ public interface CloudConnectNetworkProps extends software.amazon.jsii.JsiiSeria
         /**
          * Sets the value of {@link CloudConnectNetworkProps#getName}
          * @param name Property name: The name of the CCN instance.
-         *             The name can contain 2 to 128 characters including a-z, A-Z, 0-9, chinese, underlines, and hyphens. The name must start with an English letter, but cannot start with http:// or https://.
+         *             The name must be 2 to 128 characters in length and can contain letters, digits,
+         *             periods (.), underscores (_),and hyphens (-). The name must start with a letter.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

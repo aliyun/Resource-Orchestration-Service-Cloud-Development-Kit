@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`, which is used to assign secondary private IP addresses to an elastic network interface (ENI).</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::AssignPrivateIpAddresses`.</summary>
     /// <remarks>
-    /// You can specify available private IP addresses within the CIDR block of the vSwitch that is associated with the ENI. Alternatively, you can specify a number to have the specified number of private IP addresses automatically assigned to the ENI.
-    ///
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `AssignPrivateIpAddresses` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-assignprivateipaddresses
     /// </remarks>
@@ -117,7 +115,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: ipv4PrefixCount: The specified number of IPv4 prefixes to be assigned to the ENI.
+        /// <strong>Property</strong>: ipv4PrefixCount: The number of IPv4 prefixes to be randomly generated for the ENI. Valid values: 1
+        /// to 10.
+        /// > To assign IPv4 prefixes to the ENI, you must specify the Ipv4Prefix.N or
+        /// Ipv4PrefixCount parameter, but not both.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "ipv4PrefixCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -235,7 +236,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: secondaryPrivateIpAddressCount: The specified number of private IP addresses to be assigned by the ECS instance.
+        /// <strong>Property</strong>: secondaryPrivateIpAddressCount: The number of private IP addresses to be automatically assigned from the CIDR
+        /// block of the vSwitch that is connected to the ENI.
+        /// To assign secondary private IP addresses to the ENI, you must specify
+        /// `PrivateIpAddress.N` or `SecondaryPrivateIpAddressCount` but not both.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "secondaryPrivateIpAddressCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

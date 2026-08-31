@@ -10,7 +10,8 @@ export { RosCenBandwidthPackage as CenBandwidthPackageProperty };
 export interface CenBandwidthPackageProps {
 
     /**
-     * Property bandwidth: The bandwidth in Mbps of the bandwidth package. The bandwidth cannot be less than 2 Mbps.
+     * Property bandwidth: The maximum bandwidth of the bandwidth plan. Unit: Mbps. Valid values: 2 to
+     * 10000.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -27,9 +28,12 @@ export interface CenBandwidthPackageProps {
     readonly geographicRegionBId: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Whether to automatically pay the bill. Valid value:
-     * true (default)
-     * false
+     * Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * - true: yes.
+     * - false (default): no.
+     * If you disable automatic payment, you must go to the Order Hub in the console to
+     * complete the payment after you call this operation. Otherwise, the instance
+     * cannot be created.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -49,19 +53,24 @@ export interface CenBandwidthPackageProps {
     readonly bandwidthPackageChargeType?: string | ros.IResolvable;
 
     /**
-     * Property description: The description of the bandwidth package.
-     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+     * Property description: The description of the bandwidth plan.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http\:\/\/ or https\:\/\/.
      */
     readonly description?: string | ros.IResolvable;
 
     /**
-     * Property name: The name of the bandwidth package.
-     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+     * Property name: The name of the bandwidth plan.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http\:\/\/ or https\:\/\/.
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * Property period: The purchase period. The default value is 1.
+     * Property period: The subscription duration of the bandwidth plan. Default value: 1.
+     * - If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.
+     * - If you set PricingCycle to Year, valid values for Period are 1 to 3.
+     * > This parameter is required if you set BandwidthPackageChargeType to PREPAY.
      */
     readonly period?: number | ros.IResolvable;
 
@@ -98,7 +107,7 @@ export interface ICenBandwidthPackage extends ros.IResource {
     readonly attrCenBandwidthPackageId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`, which is used to purchase a bandwidth plan before you use Cloud Enterprise Network (CEN) to connect network instances that reside in different regions.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CEN::CenBandwidthPackage`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosCenBandwidthPackage`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */

@@ -30,6 +30,11 @@ export interface ScalingConfigurationProps {
     readonly cpu?: number | ros.IResolvable;
 
     /**
+     * Property cpuOptions: CPU options.
+     */
+    readonly cpuOptions?: RosScalingConfiguration.CpuOptionsProperty | ros.IResolvable;
+
+    /**
      * Property creditSpecification: The performance mode of the burstable instance. Valid values:
      * Standard: the standard mode.
      * Unlimited: the unlimited mode.
@@ -384,7 +389,7 @@ export interface IScalingConfiguration extends ros.IResource {
     readonly attrScalingGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which creates a scaling configuration for an Auto Scaling group.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosScalingConfiguration`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
@@ -436,6 +441,7 @@ export class ScalingConfiguration extends ros.Resource implements IScalingConfig
             instanceId: props.instanceId,
             scalingGroupId: props.scalingGroupId,
             systemDiskKmsKeyId: props.systemDiskKmsKeyId,
+            cpuOptions: props.cpuOptions,
             imageFamily: props.imageFamily,
             securityGroupIds: props.securityGroupIds,
             internetChargeType: props.internetChargeType,

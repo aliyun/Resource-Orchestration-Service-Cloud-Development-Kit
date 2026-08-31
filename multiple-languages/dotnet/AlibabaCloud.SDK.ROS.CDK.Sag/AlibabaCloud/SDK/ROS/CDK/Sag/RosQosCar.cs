@@ -221,7 +221,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: maxBandwidthAbs: The maximum bandwidth. This parameter is required when LimitType is set to Absolute.
+        /// <strong>Property</strong>: maxBandwidthAbs: The maximum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+        /// This parameter is returned when LimitType is set to Absolute.
+        /// >  The maximum bandwidth value must be greater than the minimum bandwidth value.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxBandwidthAbs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -272,9 +274,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: maxBandwidthPercent: The maximum percentage that is based on the maximum upstream bandwidth of the SAG
-        /// instance.
-        /// This parameter is required when LimitType is set to Percent.
+        /// <strong>Property</strong>: maxBandwidthPercent: The maximum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+        /// This parameter is required when you set LimitType to Percent.
+        /// >  The maximum bandwidth percentage must be greater than the minimum bandwidth
+        /// percentage.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "maxBandwidthPercent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -325,7 +328,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: minBandwidthAbs: The minimum bandwidth. This parameter is required when LimitType is set to Absolute.
+        /// <strong>Property</strong>: minBandwidthAbs: The minimum bandwidth value. The value must be an integer. Unit: Mbit\/s.
+        /// This parameter is returned when LimitType is set to Absolute.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "minBandwidthAbs", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -376,9 +380,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: minBandwidthPercent: The minimum percentage that is based on the maximum upstream bandwidth of the SAG
-        /// instance.
-        /// This parameter is required when LimitType is set to Percent.
+        /// <strong>Property</strong>: minBandwidthPercent: The minimum bandwidth percentage. Unit: percent (%). Valid values: 1 to 100.
+        /// This parameter is required when you set LimitType to Percent.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "minBandwidthPercent", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -429,9 +432,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Sag
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: name: The name of the traffic throttling policy. The name must be 2 to 128 characters in
-        /// length, and can contain Chinese characters, letters, digits, periods (.), underscores
-        /// (_), and hyphens (-).
+        /// <strong>Property</strong>: name: The name of the traffic throttling rule.
+        /// The name must be 2 to 128 characters in length, and can contain letters, digits,
+        /// periods (.), underscores (_), and hyphens (-). The name must start with a letter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

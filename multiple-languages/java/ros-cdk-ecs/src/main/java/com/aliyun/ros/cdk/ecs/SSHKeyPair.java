@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SSHKeyPair</code>, which is used to create an SSH key pair or import an existing SSH key pair.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::SSHKeyPair</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.238Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.636Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.SSHKeyPair")
 public class SSHKeyPair extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.ISSHKeyPair {
 
@@ -140,24 +140,30 @@ public class SSHKeyPair extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property keyPairName: SSH key pair name.
+         * Property keyPairName: The name of the key pair.
          * <p>
-         * It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+         * The name must be unique. It must be 2 to 128 characters
+         * in length. It must start with a letter and cannot start with http:// or
+         * https://. It can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).
          * <p>
          * @return {@code this}
-         * @param keyPairName Property keyPairName: SSH key pair name. This parameter is required.
+         * @param keyPairName Property keyPairName: The name of the key pair. This parameter is required.
          */
         public Builder keyPairName(final java.lang.String keyPairName) {
             this.props.keyPairName(keyPairName);
             return this;
         }
         /**
-         * Property keyPairName: SSH key pair name.
+         * Property keyPairName: The name of the key pair.
          * <p>
-         * It must be unique. [2, 128] characters. All character sets are supported. Do not start with a special character, digit, http://, or https://. It can contain digits, ".", "_", or "-".
+         * The name must be unique. It must be 2 to 128 characters
+         * in length. It must start with a letter and cannot start with http:// or
+         * https://. It can contain letters, digits, colons (:), underscores (_), and
+         * hyphens (-).
          * <p>
          * @return {@code this}
-         * @param keyPairName Property keyPairName: SSH key pair name. This parameter is required.
+         * @param keyPairName Property keyPairName: The name of the key pair. This parameter is required.
          */
         public Builder keyPairName(final com.aliyun.ros.cdk.core.IResolvable keyPairName) {
             this.props.keyPairName(keyPairName);

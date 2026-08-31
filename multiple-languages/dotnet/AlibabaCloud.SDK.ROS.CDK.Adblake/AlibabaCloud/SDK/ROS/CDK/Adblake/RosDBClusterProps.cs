@@ -213,7 +213,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _cloneSourceRegionId;
 
         /// <remarks>
-        /// <strong>Property</strong>: cloneSourceRegionId: The ID of the source region where the cluster is located.
+        /// <strong>Property</strong>: cloneSourceRegionId: The region ID of the source cluster.
+        /// > This parameter is required for cross-region cloning.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "cloneSourceRegionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -419,7 +420,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _kmsId;
 
         /// <remarks>
-        /// <strong>Property</strong>: kmsId:
+        /// <strong>Property</strong>: kmsId: The ID of the key used to encrypt data on cloud disks.
+        /// > This parameter takes effect only when disk encryption is enabled for the
+        /// AnalyticDB for MySQL cluster.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "kmsId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -452,10 +455,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _period;
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The subscription duration of the subscription cluster.
-        /// Valid values when Period is set to Year: 1 to 3 (integer).
-        /// Valid values when Period is set to Month: 1 to 9 (integer).
-        /// Note This parameter must be specified when PayType is set to Prepaid.
+        /// <strong>Property</strong>: period: The unit of the subscription duration. Valid values:
+        /// - Year
+        /// - Month
+        /// > This parameter is required if you set `PayType` to `Prepaid`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -524,9 +527,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _productForm;
 
         /// <remarks>
-        /// <strong>Property</strong>: productForm: Valid values:
-        /// IntegrationForm
-        /// LegacyForm
+        /// <strong>Property</strong>: productForm: The product form. Valid values:
+        /// - IntegrationForm: Integration Form.
+        /// - LegacyForm: Data Lakehouse Edition.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "productForm", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -592,8 +595,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _reservedNodeCount;
 
         /// <remarks>
-        /// <strong>Property</strong>: reservedNodeCount: The number of reserved nodes. Must be 1 for basic version and multiple
-        /// of 3 for enterprise version.
+        /// <strong>Property</strong>: reservedNodeCount: The number of reserved nodes.
+        /// - For Enterprise Edition, the value must be a multiple of 3. The default value is
+        /// 3.
+        /// - For Basic Edition, the default value is 1.
+        /// > This parameter is available only when `ProductForm` is set to
+        /// `IntegrationForm`.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "reservedNodeCount", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -646,7 +653,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _reservedNodeSize;
 
         /// <remarks>
-        /// <strong>Property</strong>: reservedNodeSize: The size of each reserved node.
+        /// <strong>Property</strong>: reservedNodeSize: The resource specification of each reserved node, in ACUs.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "reservedNodeSize", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -732,7 +739,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _restoreToTime;
 
         /// <remarks>
-        /// <strong>Property</strong>: restoreToTime: The point in time to which you want to restore data from the backup set.
+        /// <strong>Property</strong>: restoreToTime: The point in time to which you want to restore the cluster. Specify the time in
+        /// the `YYYY-MM-DDThh:mm:ssZ` format. The time must be in UTC.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "restoreToTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -800,7 +808,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _secondaryVSwitchId;
 
         /// <remarks>
-        /// <strong>Property</strong>: secondaryVSwitchId: The secondary vSwitch ID of the cluster.
+        /// <strong>Property</strong>: secondaryVSwitchId: The ID of the secondary vSwitch.
+        /// > The value of this parameter cannot be the same as the value of the `VSwitchId`
+        /// parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "secondaryVSwitchId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -833,7 +843,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Adblake
         private object? _secondaryZoneId;
 
         /// <remarks>
-        /// <strong>Property</strong>: secondaryZoneId: The secondary zone ID.
+        /// <strong>Property</strong>: secondaryZoneId: The ID of the secondary availability zone.
+        /// > The value of this parameter cannot be the same as the value of the `ZoneId`
+        /// parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "secondaryZoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

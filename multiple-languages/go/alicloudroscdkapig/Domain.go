@@ -10,7 +10,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Domain`, which is used to create a domain name.
+// This class encapsulates and extends the ROS resource type `ALIYUN::APIG::Domain`.
 type Domain interface {
 	alicloudroscdkcore.Resource
 	IDomain

@@ -5,7 +5,18 @@ package alicloudroscdkswas
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-swas-runcommand
 type RunCommandProps struct {
-	// Property commandContent: The plaintext content of the command to run.
+	// Property commandContent: The content of the command.
+	//
+	// Take note of the following items:
+	// *   If you set `EnableParameter` to true, the custom parameter feature is enabled
+	// in the command content and you can configure custom parameters based on the
+	// following rules:
+	// *   Define custom parameters in the {{}} format. Within `{{}}`, the spaces and
+	// line feeds before and after the parameter names are ignored.
+	// *   The number of custom parameters cannot be greater than 20.
+	// *   A custom parameter name can contain only letters, digits, underscores (_),
+	// and hyphens (-). The name is case-insensitive.
+	// *   Each custom parameter name cannot exceed 64 bytes in length.
 	CommandContent interface{} `field:"required" json:"commandContent" yaml:"commandContent"`
 	// Property instanceId: The ID of the SWAS instance on which to run the command.
 	//
@@ -51,11 +62,12 @@ type RunCommandProps struct {
 	// The name can be up to 255 characters in length.
 	// If you do not want to use the default System user to run the command on Windows instances, specify both **WindowsPasswordName** and **WorkingUser**. To mitigate the risk of password leaks, the password is stored in plaintext in Operation Orchestration Service (OOS) Parameter Store, and only the name of the password is passed in by using WindowsPasswordName.
 	WindowsPasswordName interface{} `field:"optional" json:"windowsPasswordName" yaml:"windowsPasswordName"`
-	// Property workingDir: The directory in which to run the command on the instance.
+	// Property workingDir: The execution path of the command.
 	//
-	// Default value:
-	// Linux instances: \/root
-	// Windows instances: C:\ProgramData\aliyun\assist\$(version).
+	// Custom paths are supported. Default execution
+	// paths vary based on the operating systems of the servers.
+	// *   For Linux servers, the default path is \/root of the root user.
+	// *   For Windows servers, the default path is C:\Windows\system32.
 	WorkingDir interface{} `field:"optional" json:"workingDir" yaml:"workingDir"`
 	// Property workingUser: The user with which to run the command on the instance.
 	//

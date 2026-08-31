@@ -17,9 +17,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         /// <summary>Property name: The name of the HPC cluster.</summary>
         /// <remarks>
-        /// The name must be 2 to 128 characters in length. It must
-        /// start with a letter but cannot start with http:// or https://. It can contain letters,
-        /// digits, colons (:), underscores (_), and hyphens (-).
+        /// The name must be 2 to 128 characters in length, and
+        /// can contain letters, digits, underscores (_), and hyphens (-). The name must
+        /// start with a letter but cannot start with <c>http:\/\/</c> or <c>https:\/\/</c>.
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name

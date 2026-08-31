@@ -78,10 +78,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             get;
         }
 
-        /// <summary>Property proto: The type of security protocol for traffic access in the security access control policy.</summary>
+        /// <summary>Property proto: The protocol type of the traffic in the access control policy.</summary>
         /// <remarks>
-        /// Can be set to ANY when you are not sure of the specific protocol type.
-        /// Allowed values: ANY, TCP, UDP, ICMP
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>ANY (any protocol)</description>
+        /// <description>TCP</description>
+        /// <description>UDP</description>
+        /// <description>ICMP</description>
+        /// </list>
+        ///
+        ///     If the traffic direction is <c>out</c> and the destination is a domain-based
+        ///     threat intelligence or cloud service address book, you can set the protocol only
+        ///     to <c>TCP</c>. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
         /// </remarks>
         [JsiiProperty(name: "proto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object Proto
@@ -113,11 +123,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             get;
         }
 
-        /// <summary>Property applicationName: Application types supported by the security policy.</summary>
+        /// <summary>Property applicationName: The application type that the access control policy supports.</summary>
         /// <remarks>
-        /// The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-        /// NOTE ANY indicates that the policy is applied to all types of applications.
-        /// Either ApplicationNameList or ApplicationName must be passed, not both.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>FTP</description>
+        /// <description>HTTP</description>
+        /// <description>HTTPS</description>
+        /// <description>Memcache</description>
+        /// <description>MongoDB</description>
+        /// <description>MQTT</description>
+        /// <description>MySQL</description>
+        /// <description>RDP</description>
+        /// <description>Redis</description>
+        /// <description>SMTP</description>
+        /// <description>SMTPS</description>
+        /// <description>SSH</description>
+        /// <description>SSL_No_Cert</description>
+        /// <description>SSL</description>
+        /// <description>VNC</description>
+        /// <description>ANY (all application types)</description>
+        /// </list>
+        ///
+        ///     The available application types depend on the protocol type (<c>Proto</c>). If you
+        ///     set <c>Proto</c> to <c>TCP</c>, you can set <c>ApplicationName</c> to any of the listed
+        ///     application types. If you set <c>Proto</c> to <c>UDP</c>, <c>ICMP</c>, or <c>ANY</c>, you can
+        ///     set <c>ApplicationName</c> only to <c>ANY</c>. Specify either <c>ApplicationNameList</c>
+        ///     or <c>ApplicationName</c>.
         /// </remarks>
         [JsiiProperty(name: "applicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -140,9 +173,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
             }
         }
 
-        /// <summary>Property destPort: Security access control policy access traffic destination port.</summary>
+        /// <summary>Property destPort: The destination port in the access control policy.</summary>
         /// <remarks>
-        /// Note When DestPortType to port, set the item.
+        /// Valid values:
+        ///
+        /// <list type="bullet">
+        /// <description>If <c>Proto</c> is <c>ICMP</c>, leave this parameter empty.</description>
+        /// </list>
+        ///
+        ///     If the protocol type is ICMP, you cannot control access based on the
+        ///     destination port.
+        ///
+        /// <list type="bullet">
+        /// <description>If <c>Proto</c> is <c>TCP</c>, <c>UDP</c>, or <c>ANY</c>, and <c>DestPortType</c> is
+        /// <c>group</c>, leave this parameter empty.</description>
+        /// </list>
+        ///
+        ///     If you set <c>DestPortType</c> to <c>group</c> (port address book), you do not need
+        ///     to specify a destination port number. The port address book contains all the
+        ///     destination ports that the policy manages.
+        ///
+        /// <list type="bullet">
+        /// <description>If <c>Proto</c> is <c>TCP</c>, <c>UDP</c>, or <c>ANY</c>, and <c>DestPortType</c> is <c>port</c>,
+        /// set this parameter to the destination port number.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "destPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -433,10 +487,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property proto: The type of security protocol for traffic access in the security access control policy.</summary>
+            /// <summary>Property proto: The protocol type of the traffic in the access control policy.</summary>
             /// <remarks>
-            /// Can be set to ANY when you are not sure of the specific protocol type.
-            /// Allowed values: ANY, TCP, UDP, ICMP
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>ANY (any protocol)</description>
+            /// <description>TCP</description>
+            /// <description>UDP</description>
+            /// <description>ICMP</description>
+            /// </list>
+            ///
+            ///     If the traffic direction is <c>out</c> and the destination is a domain-based
+            ///     threat intelligence or cloud service address book, you can set the protocol only
+            ///     to <c>TCP</c>. The supported applications are HTTP, HTTPS, SMTP, SMTPS, and SSL.
             /// </remarks>
             [JsiiProperty(name: "proto", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object Proto
@@ -468,11 +532,34 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property applicationName: Application types supported by the security policy.</summary>
+            /// <summary>Property applicationName: The application type that the access control policy supports.</summary>
             /// <remarks>
-            /// The following types of applications are supported: ANY, HTTP, HTTPS, MySQL, SMTP, SMTPS, RDP, VNC, SSH, Redis, MQTT, MongoDB, Memcache, SSL
-            /// NOTE ANY indicates that the policy is applied to all types of applications.
-            /// Either ApplicationNameList or ApplicationName must be passed, not both.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>FTP</description>
+            /// <description>HTTP</description>
+            /// <description>HTTPS</description>
+            /// <description>Memcache</description>
+            /// <description>MongoDB</description>
+            /// <description>MQTT</description>
+            /// <description>MySQL</description>
+            /// <description>RDP</description>
+            /// <description>Redis</description>
+            /// <description>SMTP</description>
+            /// <description>SMTPS</description>
+            /// <description>SSH</description>
+            /// <description>SSL_No_Cert</description>
+            /// <description>SSL</description>
+            /// <description>VNC</description>
+            /// <description>ANY (all application types)</description>
+            /// </list>
+            ///
+            ///     The available application types depend on the protocol type (<c>Proto</c>). If you
+            ///     set <c>Proto</c> to <c>TCP</c>, you can set <c>ApplicationName</c> to any of the listed
+            ///     application types. If you set <c>Proto</c> to <c>UDP</c>, <c>ICMP</c>, or <c>ANY</c>, you can
+            ///     set <c>ApplicationName</c> only to <c>ANY</c>. Specify either <c>ApplicationNameList</c>
+            ///     or <c>ApplicationName</c>.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "applicationName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -489,9 +576,30 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cloudfw
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property destPort: Security access control policy access traffic destination port.</summary>
+            /// <summary>Property destPort: The destination port in the access control policy.</summary>
             /// <remarks>
-            /// Note When DestPortType to port, set the item.
+            /// Valid values:
+            ///
+            /// <list type="bullet">
+            /// <description>If <c>Proto</c> is <c>ICMP</c>, leave this parameter empty.</description>
+            /// </list>
+            ///
+            ///     If the protocol type is ICMP, you cannot control access based on the
+            ///     destination port.
+            ///
+            /// <list type="bullet">
+            /// <description>If <c>Proto</c> is <c>TCP</c>, <c>UDP</c>, or <c>ANY</c>, and <c>DestPortType</c> is
+            /// <c>group</c>, leave this parameter empty.</description>
+            /// </list>
+            ///
+            ///     If you set <c>DestPortType</c> to <c>group</c> (port address book), you do not need
+            ///     to specify a destination port number. The port address book contains all the
+            ///     destination ports that the policy manages.
+            ///
+            /// <list type="bullet">
+            /// <description>If <c>Proto</c> is <c>TCP</c>, <c>UDP</c>, or <c>ANY</c>, and <c>DestPortType</c> is <c>port</c>,
+            /// set this parameter to the destination port number.</description>
+            /// </list>
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "destPort", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

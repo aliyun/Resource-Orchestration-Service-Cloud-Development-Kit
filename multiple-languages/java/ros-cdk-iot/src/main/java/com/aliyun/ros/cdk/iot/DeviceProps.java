@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.iot;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-iot-device
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:35:50.687Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:45:11.638Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.iot.$Module.class, fqn = "@alicloud/ros-cdk-iot.DeviceProps")
 @software.amazon.jsii.Jsii.Proxy(DeviceProps.Jsii$Proxy.class)
 public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,51 +16,78 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getProductKey();
 
     /**
-     * Property devEui: DevEUI LoRaWAN equipment.
+     * Property devEui: The DevEUI of the LoRaWAN device.
      * <p>
-     * When you create a LoRaWAN devices, this will pass.
+     * This parameter is required when you create a LoRaWAN device.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDevEui() {
         return null;
     }
 
     /**
-     * Property deviceName: The name of the device that you want to register.
+     * Property deviceName: The DeviceName of the device.
      * <p>
-     * The device name must consist of
-     * 4 to 32 characters, including English letters, digits, and special characters, for
-     * example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
-     * DeviceName is used with ProductKey to identify a specified device.
-     * Note If you do not specify this parameter, the system will generate a name for the device.
+     * The name must be 4 to 32 characters in length, and
+     * can contain letters, digits, hyphens (-), underscores (_), at signs (&#64;), periods
+     * (.), and colons (:).
+     * You can use a combination of the DeviceName and ProductKey parameters to identify
+     * a device.
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you do not specify this parameter, IoT Platform randomly generates a
+     * DeviceName.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDeviceName() {
         return null;
     }
 
     /**
-     * Property iotInstanceId: Public instance does not pass this parameter;
+     * Property iotInstanceId: The ID of the instance.
      * <p>
-     * instance that you need to buy the incoming instance ID.
+     * You can view the instance ID on the Overview page in the
+     * IoT Platform console.
+     * <p>
+     * <blockquote>
+     * <p>
+     * <ul>
+     * <li>If your instance has an ID, you must configure this parameter. If you do not
+     * set this parameter, the call fails.</li>
+     * <li>If your instance has no Overview page or ID, you do not need to set this
+     * parameter.</li>
+     * </ul>
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIotInstanceId() {
         return null;
     }
 
     /**
-     * Property nickname: Add a nickname for the device.
+     * Property nickname: The alias of the device.
      * <p>
-     * A nickname can be 4-64 characters in length, and can
-     * contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-     * character counts as two characters.
+     * The alias must be 4 to 64 characters in length, and can
+     * contain letters, digits, and underscores (_).
+     * <p>
+     * <blockquote>
+     * <p>
+     * If you do not specify this parameter, IoT Platform does not generate an alias
+     * for the device.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getNickname() {
         return null;
     }
 
     /**
-     * Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
+     * Property pinCode: The PIN code of the LoRaWAN device.
      * <p>
-     * When you create a LoRaWAN devices, this will pass.
+     * This parameter is used to verify the DevEUI.
+     * When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+     * parameter is required.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPinCode() {
         return null;
@@ -105,8 +132,8 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getDevEui}
-         * @param devEui Property devEui: DevEUI LoRaWAN equipment.
-         *               When you create a LoRaWAN devices, this will pass.
+         * @param devEui Property devEui: The DevEUI of the LoRaWAN device.
+         *               This parameter is required when you create a LoRaWAN device.
          * @return {@code this}
          */
         public Builder devEui(java.lang.String devEui) {
@@ -116,8 +143,8 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getDevEui}
-         * @param devEui Property devEui: DevEUI LoRaWAN equipment.
-         *               When you create a LoRaWAN devices, this will pass.
+         * @param devEui Property devEui: The DevEUI of the LoRaWAN device.
+         *               This parameter is required when you create a LoRaWAN device.
          * @return {@code this}
          */
         public Builder devEui(com.aliyun.ros.cdk.core.IResolvable devEui) {
@@ -127,12 +154,19 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getDeviceName}
-         * @param deviceName Property deviceName: The name of the device that you want to register.
-         *                   The device name must consist of
-         *                   4 to 32 characters, including English letters, digits, and special characters, for
-         *                   example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
-         *                   DeviceName is used with ProductKey to identify a specified device.
-         *                   Note If you do not specify this parameter, the system will generate a name for the device.
+         * @param deviceName Property deviceName: The DeviceName of the device.
+         *                   The name must be 4 to 32 characters in length, and
+         *                   can contain letters, digits, hyphens (-), underscores (_), at signs (&#64;), periods
+         *                   (.), and colons (:).
+         *                   You can use a combination of the DeviceName and ProductKey parameters to identify
+         *                   a device.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   If you do not specify this parameter, IoT Platform randomly generates a
+         *                   DeviceName.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder deviceName(java.lang.String deviceName) {
@@ -142,12 +176,19 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getDeviceName}
-         * @param deviceName Property deviceName: The name of the device that you want to register.
-         *                   The device name must consist of
-         *                   4 to 32 characters, including English letters, digits, and special characters, for
-         *                   example, hyphens (-), underscores (_), at signs (&#64;), periods (.) , and colons (:).
-         *                   DeviceName is used with ProductKey to identify a specified device.
-         *                   Note If you do not specify this parameter, the system will generate a name for the device.
+         * @param deviceName Property deviceName: The DeviceName of the device.
+         *                   The name must be 4 to 32 characters in length, and
+         *                   can contain letters, digits, hyphens (-), underscores (_), at signs (&#64;), periods
+         *                   (.), and colons (:).
+         *                   You can use a combination of the DeviceName and ProductKey parameters to identify
+         *                   a device.
+         *                   <p>
+         *                   <blockquote>
+         *                   <p>
+         *                   If you do not specify this parameter, IoT Platform randomly generates a
+         *                   DeviceName.
+         *                   <p>
+         *                   </blockquote>
          * @return {@code this}
          */
         public Builder deviceName(com.aliyun.ros.cdk.core.IResolvable deviceName) {
@@ -157,8 +198,20 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getIotInstanceId}
-         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;.
-         *                      instance that you need to buy the incoming instance ID.
+         * @param iotInstanceId Property iotInstanceId: The ID of the instance.
+         *                      You can view the instance ID on the Overview page in the
+         *                      IoT Platform console.
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>If your instance has an ID, you must configure this parameter. If you do not
+         *                      set this parameter, the call fails.</li>
+         *                      <li>If your instance has no Overview page or ID, you do not need to set this
+         *                      parameter.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder iotInstanceId(java.lang.String iotInstanceId) {
@@ -168,8 +221,20 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getIotInstanceId}
-         * @param iotInstanceId Property iotInstanceId: Public instance does not pass this parameter;.
-         *                      instance that you need to buy the incoming instance ID.
+         * @param iotInstanceId Property iotInstanceId: The ID of the instance.
+         *                      You can view the instance ID on the Overview page in the
+         *                      IoT Platform console.
+         *                      <p>
+         *                      <blockquote>
+         *                      <p>
+         *                      <ul>
+         *                      <li>If your instance has an ID, you must configure this parameter. If you do not
+         *                      set this parameter, the call fails.</li>
+         *                      <li>If your instance has no Overview page or ID, you do not need to set this
+         *                      parameter.</li>
+         *                      </ul>
+         *                      <p>
+         *                      </blockquote>
          * @return {@code this}
          */
         public Builder iotInstanceId(com.aliyun.ros.cdk.core.IResolvable iotInstanceId) {
@@ -179,10 +244,16 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getNickname}
-         * @param nickname Property nickname: Add a nickname for the device.
-         *                 A nickname can be 4-64 characters in length, and can
-         *                 contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-         *                 character counts as two characters.
+         * @param nickname Property nickname: The alias of the device.
+         *                 The alias must be 4 to 64 characters in length, and can
+         *                 contain letters, digits, and underscores (_).
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 If you do not specify this parameter, IoT Platform does not generate an alias
+         *                 for the device.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder nickname(java.lang.String nickname) {
@@ -192,10 +263,16 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getNickname}
-         * @param nickname Property nickname: Add a nickname for the device.
-         *                 A nickname can be 4-64 characters in length, and can
-         *                 contain Chinese characters, English letters, numbers and underscores (_). A Chinese
-         *                 character counts as two characters.
+         * @param nickname Property nickname: The alias of the device.
+         *                 The alias must be 4 to 64 characters in length, and can
+         *                 contain letters, digits, and underscores (_).
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 If you do not specify this parameter, IoT Platform does not generate an alias
+         *                 for the device.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder nickname(com.aliyun.ros.cdk.core.IResolvable nickname) {
@@ -205,8 +282,10 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getPinCode}
-         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
-         *                When you create a LoRaWAN devices, this will pass.
+         * @param pinCode Property pinCode: The PIN code of the LoRaWAN device.
+         *                This parameter is used to verify the DevEUI.
+         *                When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+         *                parameter is required.
          * @return {@code this}
          */
         public Builder pinCode(java.lang.String pinCode) {
@@ -216,8 +295,10 @@ public interface DeviceProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DeviceProps#getPinCode}
-         * @param pinCode Property pinCode: PIN Code LoRaWAN device for checking the legitimacy of DevEUI.
-         *                When you create a LoRaWAN devices, this will pass.
+         * @param pinCode Property pinCode: The PIN code of the LoRaWAN device.
+         *                This parameter is used to verify the DevEUI.
+         *                When you create a LoRaWAN device, set LoraNodeType to CUSTOMDEFINED. This
+         *                parameter is required.
          * @return {@code this}
          */
         public Builder pinCode(com.aliyun.ros.cdk.core.IResolvable pinCode) {

@@ -53,7 +53,7 @@ export interface IDrdsInstances extends ros.IResource {
     readonly attrInstances: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstances`, which is used to query instances.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstances`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsInstances`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstances
  */

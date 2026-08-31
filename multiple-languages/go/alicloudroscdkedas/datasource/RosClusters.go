@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Clusters`, which is used to query clusters in Enterprise Distributed Application Service (EDAS).
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::EDAS::Clusters`.
 type RosClusters interface {
 	alicloudroscdkcore.RosResource
 	AttrClusterIds() alicloudroscdkcore.IResolvable

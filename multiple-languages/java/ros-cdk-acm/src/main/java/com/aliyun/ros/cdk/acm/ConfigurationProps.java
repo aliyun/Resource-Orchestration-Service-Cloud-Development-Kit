@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.acm;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-acm-configuration
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:10:26.789Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T06:37:52.832Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.acm.$Module.class, fqn = "@alicloud/ros-cdk-acm.ConfigurationProps")
 @software.amazon.jsii.Jsii.Proxy(ConfigurationProps.Jsii$Proxy.class)
 public interface ConfigurationProps extends software.amazon.jsii.JsiiSerializable {

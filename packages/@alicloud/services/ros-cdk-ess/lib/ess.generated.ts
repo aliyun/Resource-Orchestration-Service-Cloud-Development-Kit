@@ -9,12 +9,49 @@ import * as ros from '@alicloud/ros-cdk-core';
 export interface RosAlarmTaskProps {
 
     /**
-     * @Property alarmAction: Alarm Actions
+     * @Property alarmAction: The list of unique identifiers of the scaling rules that are associated with the
+     * event-triggered task.
      */
     readonly alarmAction: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property metricName: Metric Name
+     * @Property metricName: The name of the metric. Valid values of MetricName vary based on the value of
+     * MetricType.
+     * *   If you set MetricType to custom, the valid values of MetricName are your
+     * custom metrics.
+     * *   If you set MetricType to system, MetricName has the following valid values:
+     * *   CpuUtilization: (ECS) the CPU utilization. Unit: %.
+     * *   IntranetTx: the outbound traffic over the internal network from an ECS
+     * instance. Unit: KB\/min.
+     * *   IntranetRx: the inbound traffic over the internal network to an ECS instance.
+     * Unit: KB\/min.
+     * *   VpcInternetTx: the outbound traffic over the Internet from an ECS instance
+     * that resides in a virtual private cloud (VPC). Unit: KB\/min.
+     * *   VpcInternetRx: the inbound traffic over the Internet to an ECS instance that
+     * resides in a VPC. Unit: KB\/min.
+     * *   SystemDiskReadBps: the number of bytes read from the system disk that is used
+     * by an ECS instance per second.
+     * *   SystemDiskWriteBps: the number of bytes written to the system disk that is
+     * used by an ECS instance per second.
+     * *   SystemDiskReadOps: the number of read operations on the system disk that is
+     * used by an ECS instance per second.
+     * *   SystemDiskWriteOps: the number of write operations on the system disk that is
+     * used by an ECS instance per second.
+     * *   CpuUtilizationAgent: the CPU utilization of an agent. Unit: %.
+     * *   GpuMemoryFreeUtilizationAgent: the percentage of idle GPU memory of an agent.
+     * *   GpuMemoryUtilizationAgent: the GPU memory usage of an agent. Unit: %.
+     * *   MemoryUtilization: the memory usage of an agent. Unit: %.
+     * *   LoadAverage: the average system load of an agent.
+     * *   TcpConnection: the total number of TCP connections of an agent.
+     * *   TcpConnection: the number of established TCP connections of an agent.
+     * *   PackagesNetOut: the number of packets that are sent by the internal network
+     * interface controller (NIC) used by an agent.
+     * *   PackagesNetIn: the number of packets that are received by the internal NIC
+     * used by an agent.
+     * *   EciPodCpuUtilization: the CPU utilization of an elastic container instance.
+     * Unit: %.
+     * *   EciPodMemoryUtilization: the memory usage of an elastic container instance.
+     * Unit: %.
      */
     readonly metricName: string | ros.IResolvable;
 
@@ -24,17 +61,27 @@ export interface RosAlarmTaskProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
-     * @Property threshold: Threshold
+     * @Property threshold: The threshold of a metric in the multi-metric alert rule. If the threshold is
+     * reached the specified number of times within the specified period, a scaling rule
+     * is executed.
      */
     readonly threshold: number | ros.IResolvable;
 
     /**
-     * @Property comparisonOperator: Comparison Operator
+     * @Property comparisonOperator: The operator that is used to compare the metric value and the metric threshold.
+     * Valid values:
+     * *   If the metric value is greater than or equal to the metric threshold, set the
+     * value to `>=`.
+     * *   If the metric value is less than or equal to the metric threshold, set the
+     * value to `<=`.
+     * *   If the metric value is greater than the metric threshold, set the value to
+     * `>`.
+     * *   If the metric value is less than the metric threshold, set the value to `<`.
      */
     readonly comparisonOperator?: string | ros.IResolvable;
 
     /**
-     * @Property description: Description
+     * @Property description: The description of the event-triggered task.
      */
     readonly description?: string | ros.IResolvable;
 
@@ -44,32 +91,50 @@ export interface RosAlarmTaskProps {
     readonly dimensions?: Array<RosAlarmTask.DimensionsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property evaluationCount: Evaluation Count
+     * @Property evaluationCount: The number of times that the threshold must be reached before a scaling rule can
+     * be executed. For example, if you set this parameter to 3, the average CPU
+     * utilization must reach or exceed 80% three times in a row before a scaling rule
+     * is triggered.
      */
     readonly evaluationCount?: number | ros.IResolvable;
 
     /**
-     * @Property groupId: Group Id
+     * @Property groupId: The ID of the application group to which the custom metric belongs. This
+     * parameter must be specified when MetricType is set to custom.
      */
     readonly groupId?: number | ros.IResolvable;
 
     /**
-     * @Property metricType: Metric Type
+     * @Property metricType: The type of the metric. Valid values:
+     * *   system: system metrics of CloudMonitor
+     * *   custom: custom metrics that are reported to CloudMonitor
      */
     readonly metricType?: string | ros.IResolvable;
 
     /**
-     * @Property name: Name
+     * @Property name: The name of the event-triggered task.
      */
     readonly name?: string | ros.IResolvable;
 
     /**
-     * @Property period: Period
+     * @Property period: The period of time during which statistics about the metric is collected. Unit:
+     * seconds. Valid values:
+     * *   15
+     * *   60
+     * *   120
+     * *   300
+     * *   900
+     * > If your scaling group is of the ECS type and uses CloudMonitor metrics, you can
+     * set Period to 15. In other cases, you can set Period to 60, 120, 300, or 900. In
+     * most cases, the name of a CloudMonitor metric contains Agent.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property statistics: Statistics
+     * @Property statistics: The method that is used to aggregate statistics for the metric. Valid values:
+     * *   Average
+     * *   Minimum
+     * *   Maximum
      */
     readonly statistics?: string | ros.IResolvable;
 }
@@ -180,7 +245,7 @@ function rosAlarmTaskPropsToRosTemplate(properties: any, enableResourcePropertyC
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTask`, which is used to create a metric-based alarm task.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTask`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtask
  */
@@ -199,12 +264,49 @@ export class RosAlarmTask extends ros.RosResource {
 
 
     /**
-     * @Property alarmAction: Alarm Actions
+     * @Property alarmAction: The list of unique identifiers of the scaling rules that are associated with the
+     * event-triggered task.
      */
     public alarmAction: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property metricName: Metric Name
+     * @Property metricName: The name of the metric. Valid values of MetricName vary based on the value of
+     * MetricType.
+     * *   If you set MetricType to custom, the valid values of MetricName are your
+     * custom metrics.
+     * *   If you set MetricType to system, MetricName has the following valid values:
+     * *   CpuUtilization: (ECS) the CPU utilization. Unit: %.
+     * *   IntranetTx: the outbound traffic over the internal network from an ECS
+     * instance. Unit: KB\/min.
+     * *   IntranetRx: the inbound traffic over the internal network to an ECS instance.
+     * Unit: KB\/min.
+     * *   VpcInternetTx: the outbound traffic over the Internet from an ECS instance
+     * that resides in a virtual private cloud (VPC). Unit: KB\/min.
+     * *   VpcInternetRx: the inbound traffic over the Internet to an ECS instance that
+     * resides in a VPC. Unit: KB\/min.
+     * *   SystemDiskReadBps: the number of bytes read from the system disk that is used
+     * by an ECS instance per second.
+     * *   SystemDiskWriteBps: the number of bytes written to the system disk that is
+     * used by an ECS instance per second.
+     * *   SystemDiskReadOps: the number of read operations on the system disk that is
+     * used by an ECS instance per second.
+     * *   SystemDiskWriteOps: the number of write operations on the system disk that is
+     * used by an ECS instance per second.
+     * *   CpuUtilizationAgent: the CPU utilization of an agent. Unit: %.
+     * *   GpuMemoryFreeUtilizationAgent: the percentage of idle GPU memory of an agent.
+     * *   GpuMemoryUtilizationAgent: the GPU memory usage of an agent. Unit: %.
+     * *   MemoryUtilization: the memory usage of an agent. Unit: %.
+     * *   LoadAverage: the average system load of an agent.
+     * *   TcpConnection: the total number of TCP connections of an agent.
+     * *   TcpConnection: the number of established TCP connections of an agent.
+     * *   PackagesNetOut: the number of packets that are sent by the internal network
+     * interface controller (NIC) used by an agent.
+     * *   PackagesNetIn: the number of packets that are received by the internal NIC
+     * used by an agent.
+     * *   EciPodCpuUtilization: the CPU utilization of an elastic container instance.
+     * Unit: %.
+     * *   EciPodMemoryUtilization: the memory usage of an elastic container instance.
+     * Unit: %.
      */
     public metricName: string | ros.IResolvable;
 
@@ -214,17 +316,27 @@ export class RosAlarmTask extends ros.RosResource {
     public scalingGroupId: string | ros.IResolvable;
 
     /**
-     * @Property threshold: Threshold
+     * @Property threshold: The threshold of a metric in the multi-metric alert rule. If the threshold is
+     * reached the specified number of times within the specified period, a scaling rule
+     * is executed.
      */
     public threshold: number | ros.IResolvable;
 
     /**
-     * @Property comparisonOperator: Comparison Operator
+     * @Property comparisonOperator: The operator that is used to compare the metric value and the metric threshold.
+     * Valid values:
+     * *   If the metric value is greater than or equal to the metric threshold, set the
+     * value to `>=`.
+     * *   If the metric value is less than or equal to the metric threshold, set the
+     * value to `<=`.
+     * *   If the metric value is greater than the metric threshold, set the value to
+     * `>`.
+     * *   If the metric value is less than the metric threshold, set the value to `<`.
      */
     public comparisonOperator: string | ros.IResolvable | undefined;
 
     /**
-     * @Property description: Description
+     * @Property description: The description of the event-triggered task.
      */
     public description: string | ros.IResolvable | undefined;
 
@@ -234,32 +346,50 @@ export class RosAlarmTask extends ros.RosResource {
     public dimensions: Array<RosAlarmTask.DimensionsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property evaluationCount: Evaluation Count
+     * @Property evaluationCount: The number of times that the threshold must be reached before a scaling rule can
+     * be executed. For example, if you set this parameter to 3, the average CPU
+     * utilization must reach or exceed 80% three times in a row before a scaling rule
+     * is triggered.
      */
     public evaluationCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property groupId: Group Id
+     * @Property groupId: The ID of the application group to which the custom metric belongs. This
+     * parameter must be specified when MetricType is set to custom.
      */
     public groupId: number | ros.IResolvable | undefined;
 
     /**
-     * @Property metricType: Metric Type
+     * @Property metricType: The type of the metric. Valid values:
+     * *   system: system metrics of CloudMonitor
+     * *   custom: custom metrics that are reported to CloudMonitor
      */
     public metricType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property name: Name
+     * @Property name: The name of the event-triggered task.
      */
     public name: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: Period
+     * @Property period: The period of time during which statistics about the metric is collected. Unit:
+     * seconds. Valid values:
+     * *   15
+     * *   60
+     * *   120
+     * *   300
+     * *   900
+     * > If your scaling group is of the ECS type and uses CloudMonitor metrics, you can
+     * set Period to 15. In other cases, you can set Period to 60, 120, 300, or 900. In
+     * most cases, the name of a CloudMonitor metric contains Agent.
      */
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property statistics: Statistics
+     * @Property statistics: The method that is used to aggregate statistics for the metric. Valid values:
+     * *   Average
+     * *   Minimum
+     * *   Maximum
      */
     public statistics: string | ros.IResolvable | undefined;
 
@@ -414,7 +544,7 @@ function rosAlarmTaskEnablePropsToRosTemplate(properties: any, enableResourcePro
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`, which is used to start an alarm task. You can call this operation to enable alarm tasks when the task is stopped.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::AlarmTaskEnable`.
  * @Note This class does not contain additional functions, so it is recommended to use the `AlarmTaskEnable` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-alarmtaskenable
  */
@@ -474,8 +604,12 @@ export interface RosEciScalingConfigurationProps {
     readonly containerGroupName: string | ros.IResolvable;
 
     /**
-     * @Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-     * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+     * @Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in
+     * length and can contain letters, digits, underscores (_), hyphens (-), and periods
+     * (.). The name must start with a letter or a digit.
+     * The name of the scaling configuration must be unique within a scaling group in a
+     * region. If you do not specify this parameter, the value of the
+     * ScalingConfigurationId parameter is used.
      */
     readonly scalingConfigurationName: string | ros.IResolvable;
 
@@ -569,9 +703,10 @@ export interface RosEciScalingConfigurationProps {
     readonly dataCachePl?: string | ros.IResolvable;
 
     /**
-     * @Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-     * Note
-     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     * @Property dataCacheProvisionedIops: The provisioned read\/write input\/output operations per second (IOPS) for the ESSD
+     * AutoPL disk when data caching uses an ESSD AutoPL disk. Valid values: 0 to
+     * min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+     * min{1800 + 50 × capacity, 50000}.
      */
     readonly dataCacheProvisionedIops?: number | ros.IResolvable;
 
@@ -598,7 +733,7 @@ export interface RosEciScalingConfigurationProps {
     readonly dnsPolicy?: string | ros.IResolvable;
 
     /**
-     * @Property egressBandwidth: The maximum outbound bandwidth. Unit: bytes.
+     * @Property egressBandwidth: The maximum outbound bandwidth. Unit: bit\/s.
      */
     readonly egressBandwidth?: number | ros.IResolvable;
 
@@ -633,7 +768,7 @@ export interface RosEciScalingConfigurationProps {
     readonly imageSnapshotId?: string | ros.IResolvable;
 
     /**
-     * @Property ingressBandwidth: The maximum inbound bandwidth. Unit: bytes.
+     * @Property ingressBandwidth: The maximum inbound bandwidth. Unit: bit\/s.
      */
     readonly ingressBandwidth?: number | ros.IResolvable;
 
@@ -759,11 +894,25 @@ function RosEciScalingConfigurationPropsValidator(properties: any): ros.Validati
     errors.collect(ros.propertyValidator('cpu', ros.validateNumber)(properties.cpu));
     errors.collect(ros.propertyValidator('containerGroupName', ros.requiredValidator)(properties.containerGroupName));
     errors.collect(ros.propertyValidator('containerGroupName', ros.validateString)(properties.containerGroupName));
+    if(properties.ingressBandwidth && (typeof properties.ingressBandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('ingressBandwidth', ros.validateRange)({
+            data: properties.ingressBandwidth,
+            min: 0,
+            max: 9223372036854775807,
+          }));
+    }
     errors.collect(ros.propertyValidator('ingressBandwidth', ros.validateNumber)(properties.ingressBandwidth));
     errors.collect(ros.propertyValidator('imageSnapshotId', ros.validateString)(properties.imageSnapshotId));
     errors.collect(ros.propertyValidator('dataCacheProvisionedIops', ros.validateNumber)(properties.dataCacheProvisionedIops));
     errors.collect(ros.propertyValidator('ramRoleName', ros.validateString)(properties.ramRoleName));
     errors.collect(ros.propertyValidator('volumes', ros.listValidator(RosEciScalingConfiguration_VolumesPropertyValidator))(properties.volumes));
+    if(properties.egressBandwidth && (typeof properties.egressBandwidth) !== 'object') {
+        errors.collect(ros.propertyValidator('egressBandwidth', ros.validateRange)({
+            data: properties.egressBandwidth,
+            min: 0,
+            max: 9223372036854775807,
+          }));
+    }
     errors.collect(ros.propertyValidator('egressBandwidth', ros.validateNumber)(properties.egressBandwidth));
     errors.collect(ros.propertyValidator('autoMatchImageCache', ros.validateBoolean)(properties.autoMatchImageCache));
     errors.collect(ros.propertyValidator('dataCacheBucket', ros.validateString)(properties.dataCacheBucket));
@@ -925,8 +1074,12 @@ export class RosEciScalingConfiguration extends ros.RosResource {
     public containerGroupName: string | ros.IResolvable;
 
     /**
-     * @Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in length and can contain letters, digits, underscores (_), hyphens (-), and periods (.). The name must start with a letter or a digit.
-     * The name of the scaling configuration must be unique in a region. If you do not specify this parameter, the scaling configuration ID is used.
+     * @Property scalingConfigurationName: The name of the scaling configuration. The name must be 2 to 64 characters in
+     * length and can contain letters, digits, underscores (_), hyphens (-), and periods
+     * (.). The name must start with a letter or a digit.
+     * The name of the scaling configuration must be unique within a scaling group in a
+     * region. If you do not specify this parameter, the value of the
+     * ScalingConfigurationId parameter is used.
      */
     public scalingConfigurationName: string | ros.IResolvable;
 
@@ -1020,9 +1173,10 @@ export class RosEciScalingConfiguration extends ros.RosResource {
     public dataCachePl: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dataCacheProvisionedIops: The IOPS provisioned for the ESSD AutoPL disk used for data caching. Valid values: 0 to min{50000, 1000 × Capacity - Baseline IOPS}, where Baseline IOPS = min{1800 + 50 × Capacity - 50000}.
-     * Note
-     * For more information about ESSD AutoPL disks, see ESSD AutoPL disks.
+     * @Property dataCacheProvisionedIops: The provisioned read\/write input\/output operations per second (IOPS) for the ESSD
+     * AutoPL disk when data caching uses an ESSD AutoPL disk. Valid values: 0 to
+     * min{50000, 1000 × capacity − baseline performance}, where baseline performance =
+     * min{1800 + 50 × capacity, 50000}.
      */
     public dataCacheProvisionedIops: number | ros.IResolvable | undefined;
 
@@ -1049,7 +1203,7 @@ export class RosEciScalingConfiguration extends ros.RosResource {
     public dnsPolicy: string | ros.IResolvable | undefined;
 
     /**
-     * @Property egressBandwidth: The maximum outbound bandwidth. Unit: bytes.
+     * @Property egressBandwidth: The maximum outbound bandwidth. Unit: bit\/s.
      */
     public egressBandwidth: number | ros.IResolvable | undefined;
 
@@ -1084,7 +1238,7 @@ export class RosEciScalingConfiguration extends ros.RosResource {
     public imageSnapshotId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property ingressBandwidth: The maximum inbound bandwidth. Unit: bytes.
+     * @Property ingressBandwidth: The maximum inbound bandwidth. Unit: bit\/s.
      */
     public ingressBandwidth: number | ros.IResolvable | undefined;
 
@@ -1429,7 +1583,8 @@ export namespace RosEciScalingConfiguration {
          */
         readonly readinessProbeTcpSocketPort?: number | ros.IResolvable;
         /**
-         * @Property cpu: The number of CPU cores that you want to allocate to the container.
+         * @Property cpu: The number of vCPUs that you want to allocate to the elastic
+     * container instance. Unit: cores.
          */
         readonly cpu?: number | ros.IResolvable;
         /**
@@ -2537,17 +2692,36 @@ export interface RosLifecycleHookProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
-     * @Property defaultResult: The action that the scaling group takes when the lifecycle hook times out. Value range:
-     *  CONTINUE: the scaling group continues with the scale-in or scale-out process.
-     *  ABANDON: the scaling group stops any remaining action of the scale-in or scale-out event.
-     * Default value: CONTINUE
-     * If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
+     * @Property defaultResult: The action that Auto Scaling performs after the lifecycle hook times out. Valid
+     * values:
+     * *   CONTINUE: Auto Scaling continues to respond to a scale-in or scale-out
+     * request.
+     * *   ABANDON: Auto Scaling releases ECS instances that are created during
+     * scale-out activities or removes ECS instances from the scaling group during
+     * scale-in activities.
+     * *   ROLLBACK: For scale-in activities, Auto Scaling rejects the requests to
+     * release ECS instances but rolls back ECS instances. For scale-out activities, the
+     * ROLLBACK setting has the same effect as the `ABANDON` setting.
+     * If a scaling group has multiple lifecycle hooks in effect and you set the
+     * `DefaultResult` parameter for one of the lifecycle hooks to `ABANDON` or
+     * `ROLLBACK`, the following rule applies to scale-in activities: When the lifecycle
+     * hook whose DefaultResult parameter is set to ABANDON or ROLLBACK times out, other
+     * lifecycle hooks time out ahead of schedule. In other cases, Auto Scaling performs
+     * the action only after all lifecycle hooks time out. The action that Auto Scaling
+     * performs is specified by the DefaultResult parameter of the last lifecycle hook
+     * that times out.
+     * Default value: CONTINUE.
      */
     readonly defaultResult?: string | ros.IResolvable;
 
     /**
-     * @Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
-     * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
+     * @Property heartbeatTimeout: The period of time before the lifecycle hook times out. When the lifecycle hook
+     * times out, Auto Scaling performs the action that is specified by the
+     * DefaultResult parameter. Valid values: 30 to 21600. Unit: seconds.
+     * You can call the [RecordLifecycleActionHeartbeat]() operation to extend the
+     * period of time before a lifecycle hook times out. You can also call the
+     * [CompleteLifecycleAction]() operation to end a lifecycle hook ahead of schedule.
+     * Default value: 600.
      */
     readonly heartbeatTimeout?: number | ros.IResolvable;
 
@@ -2574,7 +2748,48 @@ export interface RosLifecycleHookProps {
     readonly notificationArn?: string | ros.IResolvable;
 
     /**
-     * @Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target. The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
+     * @Property notificationMetadata: The fixed string that is included in a notification that Auto Scaling sends when
+     * the lifecycle hook takes effect. Auto Scaling sends the value of the
+     * NotificationMetadata parameter together with the notification. This helps you
+     * categorize your notifications. If you specify this parameter, you must also
+     * specify the `NotificationArn` parameter. The value of this parameter cannot
+     * exceed 4,096 characters in length.
+     * If you use the `NotificationArn` parameter to specify a public or custom OOS
+     * template, the value of the `NotificationMetadata` parameter must be a JSON string
+     * that contains the OOS template parameters.
+     * For example, your OOS template includes the following parameters:
+     * `{"dbInstanceId": "dds-bp17661e0135****", "modifyMode": "Append"}`,
+     * `dbInstanceId`, and `modifyMode`. Specific parameters that are defined in your
+     * OOS template have default values. When you specify the `NotificationMetadata`
+     * parameter, specify parameters that do not have default values. If you specify
+     * parameters that have default values, the default values are overwritten. The
+     * default values of the following parameters must be retained to obtain information
+     * about scaling activities that are in progress:
+     * *   regionId: the region ID of the scaling activity that is in progress. Default
+     * value: ${regionId}.
+     * *   instanceIds: the IDs of ECS instances that are scaled in the scaling
+     * activity. Default value: ${instanceIds}.
+     * *   lifecycleHookId: the ID of the lifecycle hook. Default value:
+     * ${lifecycleHookId}.
+     * *   lifecycleActionToken: the token of the lifecycle hook. You can use the token
+     * to end the timeout period of the lifecycle hook ahead of schedule. Default value:
+     * ${lifecycleActionToken}
+     * *   scalingGroupId: the ID of the scaling group in which the scaling activity is
+     * executed. Default value: ${scalingGroupId}.
+     * *   lifecycleActionResult: the action that Auto Scaling performs after the
+     * lifecycle hook times out. If the OOS template fails to be executed, the lifecycle
+     * hook times out ahead of schedule. If you set the `DefalutResult` parameter to
+     * `ROLLBACK`, the default value of this parameter is `ROLLBACK`. If you set the
+     * `DefaultResult` parameter to other values, the default value of this parameter is
+     * ABANDON.
+     * Note**
+     * *   You can specify a value for the `lifecycleActionResult` parameter to
+     * overwrite the default value. Valid values: ABANDON, CONTINUE, ROLLBACK, and
+     * ${lifecycleActionResult}. A value of `${lifecycleActionResult}` specifies that
+     * the value of the lifecycleActionResult parameter is the same as the value of the
+     * DefaultResult parameter.
+     * *   You can view the details of the OOS template that you specify in the OOS
+     * console.
      */
     readonly notificationMetadata?: string | ros.IResolvable;
 }
@@ -2701,17 +2916,36 @@ export class RosLifecycleHook extends ros.RosResource {
     public scalingGroupId: string | ros.IResolvable;
 
     /**
-     * @Property defaultResult: The action that the scaling group takes when the lifecycle hook times out. Value range:
-     *  CONTINUE: the scaling group continues with the scale-in or scale-out process.
-     *  ABANDON: the scaling group stops any remaining action of the scale-in or scale-out event.
-     * Default value: CONTINUE
-     * If the scaling group has multiple lifecycle hooks and one of them is terminated by the DefaultResult=ABANDON parameter during a scale-in event (SCALE_IN), the remaining lifecycle hooks under the same scaling group will also be terminated. Otherwise, the action following the wait state is the next action, as specified in the parameter DefaultResult, after the last lifecycle event under the same scaling group.
+     * @Property defaultResult: The action that Auto Scaling performs after the lifecycle hook times out. Valid
+     * values:
+     * *   CONTINUE: Auto Scaling continues to respond to a scale-in or scale-out
+     * request.
+     * *   ABANDON: Auto Scaling releases ECS instances that are created during
+     * scale-out activities or removes ECS instances from the scaling group during
+     * scale-in activities.
+     * *   ROLLBACK: For scale-in activities, Auto Scaling rejects the requests to
+     * release ECS instances but rolls back ECS instances. For scale-out activities, the
+     * ROLLBACK setting has the same effect as the `ABANDON` setting.
+     * If a scaling group has multiple lifecycle hooks in effect and you set the
+     * `DefaultResult` parameter for one of the lifecycle hooks to `ABANDON` or
+     * `ROLLBACK`, the following rule applies to scale-in activities: When the lifecycle
+     * hook whose DefaultResult parameter is set to ABANDON or ROLLBACK times out, other
+     * lifecycle hooks time out ahead of schedule. In other cases, Auto Scaling performs
+     * the action only after all lifecycle hooks time out. The action that Auto Scaling
+     * performs is specified by the DefaultResult parameter of the last lifecycle hook
+     * that times out.
+     * Default value: CONTINUE.
      */
     public defaultResult: string | ros.IResolvable | undefined;
 
     /**
-     * @Property heartbeatTimeout: The time, in seconds, that can elapse before the lifecycle hook times out. If the lifecycle hook times out, the scaling group performs the default action (DefaultResult). The range is from 30 to 86400 seconds. The default value is 600 seconds.
-     * You can prevent the lifecycle hook from timing out by calling the RecordLifecycleActionHeartbeat operation. You can also terminate the lifecycle action by calling the CompleteLifecycleAction operation.
+     * @Property heartbeatTimeout: The period of time before the lifecycle hook times out. When the lifecycle hook
+     * times out, Auto Scaling performs the action that is specified by the
+     * DefaultResult parameter. Valid values: 30 to 21600. Unit: seconds.
+     * You can call the [RecordLifecycleActionHeartbeat]() operation to extend the
+     * period of time before a lifecycle hook times out. You can also call the
+     * [CompleteLifecycleAction]() operation to end a lifecycle hook ahead of schedule.
+     * Default value: 600.
      */
     public heartbeatTimeout: number | ros.IResolvable | undefined;
 
@@ -2738,7 +2972,48 @@ export class RosLifecycleHook extends ros.RosResource {
     public notificationArn: string | ros.IResolvable | undefined;
 
     /**
-     * @Property notificationMetadata: The fixed string that you want to include when Auto Scaling sends a message about the wait state of the scaling activity to the notification target. The length of the parameter can be up to 4096 characters. Auto Scaling will send the specified NotificationMetadata parameter along with the notification message so that you can easily categorize your notifications. The NotificationMetadata parameter will only take effect after you specify the NotificationArn parameter.
+     * @Property notificationMetadata: The fixed string that is included in a notification that Auto Scaling sends when
+     * the lifecycle hook takes effect. Auto Scaling sends the value of the
+     * NotificationMetadata parameter together with the notification. This helps you
+     * categorize your notifications. If you specify this parameter, you must also
+     * specify the `NotificationArn` parameter. The value of this parameter cannot
+     * exceed 4,096 characters in length.
+     * If you use the `NotificationArn` parameter to specify a public or custom OOS
+     * template, the value of the `NotificationMetadata` parameter must be a JSON string
+     * that contains the OOS template parameters.
+     * For example, your OOS template includes the following parameters:
+     * `{"dbInstanceId": "dds-bp17661e0135****", "modifyMode": "Append"}`,
+     * `dbInstanceId`, and `modifyMode`. Specific parameters that are defined in your
+     * OOS template have default values. When you specify the `NotificationMetadata`
+     * parameter, specify parameters that do not have default values. If you specify
+     * parameters that have default values, the default values are overwritten. The
+     * default values of the following parameters must be retained to obtain information
+     * about scaling activities that are in progress:
+     * *   regionId: the region ID of the scaling activity that is in progress. Default
+     * value: ${regionId}.
+     * *   instanceIds: the IDs of ECS instances that are scaled in the scaling
+     * activity. Default value: ${instanceIds}.
+     * *   lifecycleHookId: the ID of the lifecycle hook. Default value:
+     * ${lifecycleHookId}.
+     * *   lifecycleActionToken: the token of the lifecycle hook. You can use the token
+     * to end the timeout period of the lifecycle hook ahead of schedule. Default value:
+     * ${lifecycleActionToken}
+     * *   scalingGroupId: the ID of the scaling group in which the scaling activity is
+     * executed. Default value: ${scalingGroupId}.
+     * *   lifecycleActionResult: the action that Auto Scaling performs after the
+     * lifecycle hook times out. If the OOS template fails to be executed, the lifecycle
+     * hook times out ahead of schedule. If you set the `DefalutResult` parameter to
+     * `ROLLBACK`, the default value of this parameter is `ROLLBACK`. If you set the
+     * `DefaultResult` parameter to other values, the default value of this parameter is
+     * ABANDON.
+     * Note**
+     * *   You can specify a value for the `lifecycleActionResult` parameter to
+     * overwrite the default value. Valid values: ABANDON, CONTINUE, ROLLBACK, and
+     * ${lifecycleActionResult}. A value of `${lifecycleActionResult}` specifies that
+     * the value of the lifecycleActionResult parameter is the same as the value of the
+     * DefaultResult parameter.
+     * *   You can view the details of the OOS template that you specify in the OOS
+     * console.
      */
     public notificationMetadata: string | ros.IResolvable | undefined;
 
@@ -2863,7 +3138,7 @@ function rosLoadBalancerAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`, which is used to add one or more Server Load Balancer (SLB) instances.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::LoadBalancerAttachment`.
  * @Note This class does not contain additional functions, so it is recommended to use the `LoadBalancerAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-loadbalancerattachment
  */
@@ -3001,6 +3276,11 @@ export interface RosScalingConfigurationProps {
      * **Note**: You can specify **Cpu** and **Memory** to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
      */
     readonly cpu?: number | ros.IResolvable;
+
+    /**
+     * @Property cpuOptions: CPU options.
+     */
+    readonly cpuOptions?: RosScalingConfiguration.CpuOptionsProperty | ros.IResolvable;
 
     /**
      * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
@@ -3377,6 +3657,7 @@ function RosScalingConfigurationPropsValidator(properties: any): ros.ValidationR
     errors.collect(ros.propertyValidator('scalingGroupId', ros.requiredValidator)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('scalingGroupId', ros.validateString)(properties.scalingGroupId));
     errors.collect(ros.propertyValidator('systemDiskKmsKeyId', ros.validateString)(properties.systemDiskKmsKeyId));
+    errors.collect(ros.propertyValidator('cpuOptions', RosScalingConfiguration_CpuOptionsPropertyValidator)(properties.cpuOptions));
     errors.collect(ros.propertyValidator('imageFamily', ros.validateString)(properties.imageFamily));
     if(properties.securityGroupIds && (Array.isArray(properties.securityGroupIds) || (typeof properties.securityGroupIds) === 'string')) {
         errors.collect(ros.propertyValidator('securityGroupIds', ros.validateLength)({
@@ -3542,6 +3823,7 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
       'ScalingGroupId': ros.stringToRosTemplate(properties.scalingGroupId),
       'Affinity': ros.stringToRosTemplate(properties.affinity),
       'Cpu': ros.numberToRosTemplate(properties.cpu),
+      'CpuOptions': rosScalingConfigurationCpuOptionsPropertyToRosTemplate(properties.cpuOptions),
       'CreditSpecification': ros.stringToRosTemplate(properties.creditSpecification),
       'DedicatedHostId': ros.stringToRosTemplate(properties.dedicatedHostId),
       'DeploymentSetId': ros.stringToRosTemplate(properties.deploymentSetId),
@@ -3601,7 +3883,7 @@ function rosScalingConfigurationPropsToRosTemplate(properties: any, enableResour
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which is used to create a scaling configuration for a scaling group.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingConfiguration`, which creates a scaling configuration for an Auto Scaling group.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingConfiguration` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingconfiguration
  */
@@ -3643,6 +3925,11 @@ export class RosScalingConfiguration extends ros.RosResource {
      * **Note**: You can specify **Cpu** and **Memory** to determine the range of instance types only if you set Scaling Policy to Cost Optimization Policy and you do not specify instance types in the scaling configuration.
      */
     public cpu: number | ros.IResolvable | undefined;
+
+    /**
+     * @Property cpuOptions: CPU options.
+     */
+    public cpuOptions: RosScalingConfiguration.CpuOptionsProperty | ros.IResolvable | undefined;
 
     /**
      * @Property creditSpecification: The performance mode of the burstable instance. Valid values:
@@ -3995,6 +4282,7 @@ export class RosScalingConfiguration extends ros.RosResource {
         this.scalingGroupId = props.scalingGroupId;
         this.affinity = props.affinity;
         this.cpu = props.cpu;
+        this.cpuOptions = props.cpuOptions;
         this.creditSpecification = props.creditSpecification;
         this.dedicatedHostId = props.dedicatedHostId;
         this.deploymentSetId = props.deploymentSetId;
@@ -4058,6 +4346,7 @@ export class RosScalingConfiguration extends ros.RosResource {
             scalingGroupId: this.scalingGroupId,
             affinity: this.affinity,
             cpu: this.cpu,
+            cpuOptions: this.cpuOptions,
             creditSpecification: this.creditSpecification,
             dedicatedHostId: this.dedicatedHostId,
             deploymentSetId: this.deploymentSetId,
@@ -4118,6 +4407,55 @@ export class RosScalingConfiguration extends ros.RosResource {
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosScalingConfigurationPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
+}
+
+export namespace RosScalingConfiguration {
+    /**
+     * @stability external
+     */
+    export interface CpuOptionsProperty {
+        /**
+         * @Property nestedVirtualization: Specifies whether to enable nested virtualization. Valid values:
+     * - **enabled**: enables nested virtualization.
+     * - **disabled**: disables nested virtualization.
+         */
+        readonly nestedVirtualization?: string | ros.IResolvable;
+    }
+}
+/**
+ * Determine whether the given properties match those of a `CpuOptionsProperty`
+ *
+ * @param properties - the TypeScript properties of a `CpuOptionsProperty`
+ *
+ * @returns the result of the validation.
+ */
+function RosScalingConfiguration_CpuOptionsPropertyValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    if(properties.nestedVirtualization && (typeof properties.nestedVirtualization) !== 'object') {
+        errors.collect(ros.propertyValidator('nestedVirtualization', ros.validateAllowedValues)({
+          data: properties.nestedVirtualization,
+          allowedValues: ["enabled","disabled"],
+        }));
+    }
+    errors.collect(ros.propertyValidator('nestedVirtualization', ros.validateString)(properties.nestedVirtualization));
+    return errors.wrap('supplied properties not correct for "CpuOptionsProperty"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.CpuOptions` resource
+ *
+ * @param properties - the TypeScript properties of a `CpuOptionsProperty`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::ESS::ScalingConfiguration.CpuOptions` resource.
+ */
+// @ts-ignore TS6133
+function rosScalingConfigurationCpuOptionsPropertyToRosTemplate(properties: any): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    RosScalingConfiguration_CpuOptionsPropertyValidator(properties).assertSuccess();
+    return {
+      'NestedVirtualization': ros.stringToRosTemplate(properties.nestedVirtualization),
+    };
 }
 
 export namespace RosScalingConfiguration {
@@ -4567,7 +4905,15 @@ function rosScalingConfigurationTagListPropertyToRosTemplate(properties: any): a
 export interface RosScalingGroupProps {
 
     /**
-     * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
+     * @Property maxSize: The maximum number of ECS instances that can be contained in the scaling group.
+     * If the number of ECS instances in the scaling group is greater than the value of
+     * the `MaxSize` parameter, Auto Scaling automatically removes ECS instances until
+     * the number of instances in the scaling group is equal to the maximum number.
+     * The value range of the MaxSize parameter varies based on the instance quota. You
+     * can go to Quota Center to check the maximum number of instances that a scaling
+     * group can contain.
+     * For example, if a scaling group can contain up to 2,000 instances, the value
+     * range of the `MaxSize` parameter is 0 to 2000.
      */
     readonly maxSize: number | ros.IResolvable;
 
@@ -4609,7 +4955,12 @@ export interface RosScalingGroupProps {
     readonly customPolicyArn?: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
+     * @Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling
+     * group. The value can be a JSON array that contains multiple ApsaraDB RDS instance
+     * IDs. Separate multiple IDs with commas (,).
+     * You can associate only a limited number of ApsaraDB RDS instances with a scaling
+     * group. Go to Quota Center to check the maximum number of ApsaraDB RDS instances
+     * that you can associate with a scaling group.
      */
     readonly dbInstanceIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -4644,7 +4995,10 @@ export interface RosScalingGroupProps {
     readonly healthCheckType?: string | ros.IResolvable;
 
     /**
-     * @Property healthCheckTypes: The list of health check type.
+     * @Property healthCheckTypes: The health check method for the scaling group.
+     * > You can specify multiple values for this parameter to enable multiple health
+     * check options. If the `HealthCheckType` parameter is set, this parameter is
+     * ignored.
      */
     readonly healthCheckTypes?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -4673,7 +5027,12 @@ export interface RosScalingGroupProps {
     readonly launchTemplateVersion?: string | ros.IResolvable;
 
     /**
-     * @Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
+     * @Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group.
+     * The value can be a JSON array that contains multiple CLB instance IDs. Separate
+     * multiple IDs with commas (,).
+     * You can associate only a limited number of CLB instances with a scaling group. Go
+     * to Quota Center to check the maximum number of CLB instances that you can
+     * associate with a scaling group.
      */
     readonly loadBalancerIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -4686,12 +5045,29 @@ export interface RosScalingGroupProps {
     readonly maxInstanceLifetime?: number | ros.IResolvable;
 
     /**
-     * @Property multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
-     * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
-     * 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
-     * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
-     * 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
+     * @Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances.
+     * Valid values:
+     * *   PRIORITY: Auto Scaling scales ECS instances based on the priority of the
+     * vSwitch that is specified by the VSwitchIds.N parameter. Auto Scaling
+     * preferentially scales instances in the zone where the vSwitch that has the
+     * highest priority resides. If the scaling fails, Auto Scaling scales instances in
+     * the zone where the vSwitch that has the next highest priority resides.
+     * *   COST_OPTIMIZED: Auto Scaling preferentially creates ECS instances whose vCPUs
+     * are provided at the lowest price and removes ECS instances whose vCPUs are
+     * provided at the highest price. If preemptible instance types are specified in the
+     * scaling configuration, Auto Scaling preferentially creates preemptible instances.
+     * You can use the CompensateWithOnDemand parameter to specify whether to
+     * automatically create pay-as-you-go instances when preemptible instances cannot be
+     * created due to insufficient resources.
+     * Note The COST_OPTIMIZED **setting takes effect only when you specify multiple
+     * instance types or when you specify at least one preemptible instance type.
+     * *   BALANCE: Auto Scaling evenly distributes ECS instances across zones that are
+     * specified for the scaling group. If ECS instances are unevenly distributed across
+     * zones due to insufficient resources, you can call the [RebalanceInstance]()
+     * operation to evenly distribute the instances across the zones.
+     * *   COMPOSABLE: You can combine the preceding policies based on your business
+     * requirements.
+     * Default value: PRIORITY.
      */
     readonly multiAzPolicy?: string | ros.IResolvable;
 
@@ -4737,8 +5113,12 @@ export interface RosScalingGroupProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
-     * If this parameter is not specified, the default value is ScalingGroupId.
+     * @Property scalingGroupName: The name of the scaling group. The name of each scaling group must be unique in a
+     * region. The name must be 2 to 64 characters in length, and can contain letters,
+     * digits, underscores (_), hyphens (-), and periods (.). The name must start with a
+     * letter or a digit.
+     * If you do not specify this parameter, the value of the ScalingGroupId parameter
+     * is used.
      */
     readonly scalingGroupName?: string | ros.IResolvable;
 
@@ -4786,15 +5166,23 @@ export interface RosScalingGroupProps {
     readonly tags?: RosScalingGroup.TagsProperty[];
 
     /**
-     * @Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+     * @Property vSwitchId: The ID of the vSwitch. If you specify the VSwitchId parameter, the network type
+     * of the scaling group is VPC.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
-     * The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC.
-     * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
-     * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
+     * @Property vSwitchIds: The IDs of vSwitches. If you specify the VSwitchIds.N parameter, the VSwitchId
+     * parameter is ignored. If you specify the VSwitchIds.N parameter, the network type
+     * of the scaling group is VPC.
+     * If you specify multiple vSwitches, take note of the following items:
+     * *   The vSwitches must belong to the same VPC.
+     * *   The vSwitches can belong to different zones.
+     * *   The vSwitches are sorted in ascending order of priority. The first vSwitch
+     * that is specified by the VSwitchIds.N parameter has the highest priority. If Auto
+     * Scaling fails to create ECS instances in the zone where the vSwitch that has the
+     * highest priority resides, Auto Scaling creates ECS instances in the zone where
+     * the vSwitch that has the next highest priority resides.
      */
     readonly vSwitchIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 }
@@ -5074,7 +5462,7 @@ function rosScalingGroupPropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`You can use the , which resource to create a scaling group. A scaling group is a collection of ECS instances that are used for the same application scenario. A scaling group does not take effect immediately after it is created. You must use ALIYUN::ESS::ScalingGroupEnable to enable the scaling group. After the scaling group is enabled, it can trigger scaling activities and execute scaling rules.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingGroup`.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingGroup` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalinggroup
  */
@@ -5103,7 +5491,15 @@ export class RosScalingGroup extends ros.RosResource {
 
 
     /**
-     * @Property maxSize: Maximum number of ECS instances in the scaling group. Value range: [0, 2000].
+     * @Property maxSize: The maximum number of ECS instances that can be contained in the scaling group.
+     * If the number of ECS instances in the scaling group is greater than the value of
+     * the `MaxSize` parameter, Auto Scaling automatically removes ECS instances until
+     * the number of instances in the scaling group is equal to the maximum number.
+     * The value range of the MaxSize parameter varies based on the instance quota. You
+     * can go to Quota Center to check the maximum number of instances that a scaling
+     * group can contain.
+     * For example, if a scaling group can contain up to 2,000 instances, the value
+     * range of the `MaxSize` parameter is 0 to 2000.
      */
     public maxSize: number | ros.IResolvable;
 
@@ -5145,7 +5541,12 @@ export class RosScalingGroup extends ros.RosResource {
     public customPolicyArn: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceIds: ID list of an RDS instance. A Json Array with format: [ "rm-id0", "rm-id1", ... "rm-idz" ], support up to 100 RDS instance.
+     * @Property dbInstanceIds: The IDs of the ApsaraDB RDS instances that you want to associate with the scaling
+     * group. The value can be a JSON array that contains multiple ApsaraDB RDS instance
+     * IDs. Separate multiple IDs with commas (,).
+     * You can associate only a limited number of ApsaraDB RDS instances with a scaling
+     * group. Go to Quota Center to check the maximum number of ApsaraDB RDS instances
+     * that you can associate with a scaling group.
      */
     public dbInstanceIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -5180,7 +5581,10 @@ export class RosScalingGroup extends ros.RosResource {
     public healthCheckType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property healthCheckTypes: The list of health check type.
+     * @Property healthCheckTypes: The health check method for the scaling group.
+     * > You can specify multiple values for this parameter to enable multiple health
+     * check options. If the `HealthCheckType` parameter is set, this parameter is
+     * ignored.
      */
     public healthCheckTypes: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -5209,7 +5613,12 @@ export class RosScalingGroup extends ros.RosResource {
     public launchTemplateVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property loadBalancerIds: ID list of a Server Load Balancer instance. A Json Array with format: [ "lb-id0", "lb-id1", ... "lb-idz" ], support up to 100 Load Balancer instance.
+     * @Property loadBalancerIds: The IDs of the CLB instances that you want to associate with the scaling group.
+     * The value can be a JSON array that contains multiple CLB instance IDs. Separate
+     * multiple IDs with commas (,).
+     * You can associate only a limited number of CLB instances with a scaling group. Go
+     * to Quota Center to check the maximum number of CLB instances that you can
+     * associate with a scaling group.
      */
     public loadBalancerIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -5222,12 +5631,29 @@ export class RosScalingGroup extends ros.RosResource {
     public maxInstanceLifetime: number | ros.IResolvable | undefined;
 
     /**
-     * @Property multiAzPolicy: ECS scaling strategy for multi availability zone. Allow value:
-     * 1. PRIORITY: scaling the capacity according to the virtual switch (VSwitchIds.N) you define. ECS instances are automatically created using the next priority virtual switch when the higher priority virtual switch cannot be created in the available zone.
-     * 2. BALANCE: evenly allocate ECS instances between the multiple available zone specified by the scaling group.
-     * 3. COST_OPTIMIZED: During a scale-out activity, Auto Scaling attempts to create ECS instances that have vCPUs provided at the lowest price. During a scale-in activity, Auto Scaling attempts to remove ECS instances that have vCPUs provided at the highest price. Preemptible instances are preferentially created when preemptible instance types are specified in the active scaling configuration. You can configure the CompensateWithOnDemand parameter to specify whether to automatically create pay-as-you-go instances when preemptible instances cannot be created due to insufficient resources.
-     * Note COST_OPTIMIZED is valid when multiple instance types are specified or at least one preemptible instance type is specified.
-     * 4. COMPOSABLE: You can flexibly combine the preceding policies based on your business requirements.
+     * @Property multiAzPolicy: The scaling policy for the multi-zone scaling group that contains ECS instances.
+     * Valid values:
+     * *   PRIORITY: Auto Scaling scales ECS instances based on the priority of the
+     * vSwitch that is specified by the VSwitchIds.N parameter. Auto Scaling
+     * preferentially scales instances in the zone where the vSwitch that has the
+     * highest priority resides. If the scaling fails, Auto Scaling scales instances in
+     * the zone where the vSwitch that has the next highest priority resides.
+     * *   COST_OPTIMIZED: Auto Scaling preferentially creates ECS instances whose vCPUs
+     * are provided at the lowest price and removes ECS instances whose vCPUs are
+     * provided at the highest price. If preemptible instance types are specified in the
+     * scaling configuration, Auto Scaling preferentially creates preemptible instances.
+     * You can use the CompensateWithOnDemand parameter to specify whether to
+     * automatically create pay-as-you-go instances when preemptible instances cannot be
+     * created due to insufficient resources.
+     * Note The COST_OPTIMIZED **setting takes effect only when you specify multiple
+     * instance types or when you specify at least one preemptible instance type.
+     * *   BALANCE: Auto Scaling evenly distributes ECS instances across zones that are
+     * specified for the scaling group. If ECS instances are unevenly distributed across
+     * zones due to insufficient resources, you can call the [RebalanceInstance]()
+     * operation to evenly distribute the instances across the zones.
+     * *   COMPOSABLE: You can combine the preceding policies based on your business
+     * requirements.
+     * Default value: PRIORITY.
      */
     public multiAzPolicy: string | ros.IResolvable | undefined;
 
@@ -5273,8 +5699,12 @@ export class RosScalingGroup extends ros.RosResource {
     public resourceGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property scalingGroupName: Name shown for the scaling group, which must contain 2-40 characters (English or Chinese). The name must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".". The account name is unique in the same region.
-     * If this parameter is not specified, the default value is ScalingGroupId.
+     * @Property scalingGroupName: The name of the scaling group. The name of each scaling group must be unique in a
+     * region. The name must be 2 to 64 characters in length, and can contain letters,
+     * digits, underscores (_), hyphens (-), and periods (.). The name must start with a
+     * letter or a digit.
+     * If you do not specify this parameter, the value of the ScalingGroupId parameter
+     * is used.
      */
     public scalingGroupName: string | ros.IResolvable | undefined;
 
@@ -5322,15 +5752,23 @@ export class RosScalingGroup extends ros.RosResource {
     public tags: RosScalingGroup.TagsProperty[] | undefined;
 
     /**
-     * @Property vSwitchId: If you create a VPC scaling group, you must specify the ID of a VSwitch.
+     * @Property vSwitchId: The ID of the vSwitch. If you specify the VSwitchId parameter, the network type
+     * of the scaling group is VPC.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchIds: Parameter VSwitchIds.N is used to create instance in multiple zones. Parameter VSwitchIds.N has a priority over parameter VSwitchId.
-     * The valid range of N is [1, 8], and you can specify at most 5 VSwitches in a VPC.
-     * The priority of VSwitches descends from 1 to 8, and 1 indicates the highest priority.
-     * When you fail to create an instance in the zone to which a specified VSwitch belongs, another VSwitch with less priority replaces the specified one automatically.
+     * @Property vSwitchIds: The IDs of vSwitches. If you specify the VSwitchIds.N parameter, the VSwitchId
+     * parameter is ignored. If you specify the VSwitchIds.N parameter, the network type
+     * of the scaling group is VPC.
+     * If you specify multiple vSwitches, take note of the following items:
+     * *   The vSwitches must belong to the same VPC.
+     * *   The vSwitches can belong to different zones.
+     * *   The vSwitches are sorted in ascending order of priority. The first vSwitch
+     * that is specified by the VSwitchIds.N parameter has the highest priority. If Auto
+     * Scaling fails to create ECS instances in the zone where the vSwitch that has the
+     * highest priority resides, Auto Scaling creates ECS instances in the zone where
+     * the vSwitch that has the next highest priority resides.
      */
     public vSwitchIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -6097,23 +6535,37 @@ export interface RosScalingRuleProps {
     readonly scalingGroupId: string | ros.IResolvable;
 
     /**
-     * @Property adjustmentType: Adjustment mode of a scaling rule. Optional values:
-     * - QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.
-     * - PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
-     * - TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
+     * @Property adjustmentType: The adjustment method of the scaling rule. If you set ScalingRuleType to
+     * SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+     * values:
+     * *   QuantityChangeInCapacity: adds the specified number of ECS instances to or
+     * removes the specified number of ECS instances from the scaling group.
+     * *   PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+     * removes the specified percentage of ECS instances from the scaling group.
+     * *   TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+     * specified number.
      */
     readonly adjustmentType?: string | ros.IResolvable;
 
     /**
-     * @Property adjustmentValue: Adjusted value of a scaling rule. Value range:
-     * - QuantityChangeInCapacity: [-500, 500]
-     * - PercentChangeInCapacity: [-100, 10000]
-     * - TotalCapacity: [0, 1000]
+     * @Property adjustmentValue: The number of instances that must be scaled based on the scaling rule. If you set
+     * ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+     * parameter. The number of ECS instances that must be scaled in a scaling activity
+     * cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+     * AdjustmentType.
+     * *   Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to
+     * 1000.
+     * *   Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to
+     * 10000.
+     * *   Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.
      */
     readonly adjustmentValue?: number | ros.IResolvable;
 
     /**
-     * @Property cooldown: Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty.
+     * @Property cooldown: The cooldown period of the scaling rule. This parameter is available only if you
+     * set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+     * seconds.
+     * You can leave this parameter empty.
      */
     readonly cooldown?: number | ros.IResolvable;
 
@@ -6200,7 +6652,12 @@ export interface RosScalingRuleProps {
     readonly scaleOutEvaluationCount?: number | ros.IResolvable;
 
     /**
-     * @Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+     * @Property scalingRuleName: The name of the scaling rule. The name must be 2 to 64 characters in length, and
+     * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+     * name must start with a letter or a digit.
+     * The name of a scaling rule must be unique within an account in a
+     * region.
+     * >  If you leave this parameter empty, the scaling rule ID is used.
      */
     readonly scalingRuleName?: string | ros.IResolvable;
 
@@ -6215,7 +6672,7 @@ export interface RosScalingRuleProps {
     readonly scalingRuleType?: string | ros.IResolvable;
 
     /**
-     * @Property stepAdjustment:
+     * @Property stepAdjustment: Details of the step adjustments.
      */
     readonly stepAdjustment?: Array<RosScalingRule.StepAdjustmentProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -6374,7 +6831,7 @@ function rosScalingRulePropsToRosTemplate(properties: any, enableResourcePropert
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScalingRule`Creates a scaling rule for Auto Scaling (ESS).
  * @Note This class does not contain additional functions, so it is recommended to use the `ScalingRule` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scalingrule
  */
@@ -6403,23 +6860,37 @@ export class RosScalingRule extends ros.RosResource {
     public scalingGroupId: string | ros.IResolvable;
 
     /**
-     * @Property adjustmentType: Adjustment mode of a scaling rule. Optional values:
-     * - QuantityChangeInCapacity: It is used to increase or decrease a specified number of ECS instances.
-     * - PercentChangeInCapacity: It is used to increase or decrease a specified proportion of ECS instances.
-     * - TotalCapacity: It is used to adjust the quantity of ECS instances in the current scaling group to a specified value.
+     * @Property adjustmentType: The adjustment method of the scaling rule. If you set ScalingRuleType to
+     * SimpleScalingRule or StepScalingRule, you must specify this parameter. Valid
+     * values:
+     * *   QuantityChangeInCapacity: adds the specified number of ECS instances to or
+     * removes the specified number of ECS instances from the scaling group.
+     * *   PercentChangeInCapacity: adds the specified percentage of ECS instances to or
+     * removes the specified percentage of ECS instances from the scaling group.
+     * *   TotalCapacity: adjusts the number of ECS instances in the scaling group to a
+     * specified number.
      */
     public adjustmentType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property adjustmentValue: Adjusted value of a scaling rule. Value range:
-     * - QuantityChangeInCapacity: [-500, 500]
-     * - PercentChangeInCapacity: [-100, 10000]
-     * - TotalCapacity: [0, 1000]
+     * @Property adjustmentValue: The number of instances that must be scaled based on the scaling rule. If you set
+     * ScalingRuleType to SimpleScalingRule or StepScalingRule, you must specify this
+     * parameter. The number of ECS instances that must be scaled in a scaling activity
+     * cannot exceed 1,000. Valid values of AdjustmentValue vary based on the value of
+     * AdjustmentType.
+     * *   Valid values if AdjustmentType is set to QuantityChangeInCapacity: -1000 to
+     * 1000.
+     * *   Valid values if AdjustmentType is set to PercentChangeInCapacity: -100 to
+     * 10000.
+     * *   Valid values if AdjustmentType is set to TotalCapacity: 0 to 2000.
      */
     public adjustmentValue: number | ros.IResolvable | undefined;
 
     /**
-     * @Property cooldown: Cool-down time of a scaling rule. Value range: [0, 86,400], in seconds. The default value is empty.
+     * @Property cooldown: The cooldown period of the scaling rule. This parameter is available only if you
+     * set ScalingRuleType to SimpleScalingRule. Valid values: 0 to 86400. Unit:
+     * seconds.
+     * You can leave this parameter empty.
      */
     public cooldown: number | ros.IResolvable | undefined;
 
@@ -6506,7 +6977,12 @@ export class RosScalingRule extends ros.RosResource {
     public scaleOutEvaluationCount: number | ros.IResolvable | undefined;
 
     /**
-     * @Property scalingRuleName: Name shown for the scaling group, which is a string containing 2 to 40 English or Chinese characters. It must begin with a number, a letter (case-insensitive) or a Chinese character and can contain numbers, "_", "-" or ".". The account name in the same scaling group is unique in the same region. If this parameter value is not specified, the default value is ScalingRuleId.
+     * @Property scalingRuleName: The name of the scaling rule. The name must be 2 to 64 characters in length, and
+     * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+     * name must start with a letter or a digit.
+     * The name of a scaling rule must be unique within an account in a
+     * region.
+     * >  If you leave this parameter empty, the scaling rule ID is used.
      */
     public scalingRuleName: string | ros.IResolvable | undefined;
 
@@ -6521,7 +6997,7 @@ export class RosScalingRule extends ros.RosResource {
     public scalingRuleType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property stepAdjustment:
+     * @Property stepAdjustment: Details of the step adjustments.
      */
     public stepAdjustment: Array<RosScalingRule.StepAdjustmentProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -6687,7 +7163,10 @@ export interface RosScheduledTaskProps {
     readonly description?: string | ros.IResolvable;
 
     /**
-     * @Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered. If you specify the **ScalingGroupId** parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the **MinValue**, **MaxValue**, and **DesiredCapacity** parameters.
+     * @Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of
+     * the scaling group is to specify the number of instances.
+     * >  You must specify the `DesiredCapacity` parameter when you create a scaling
+     * group.
      */
     readonly desiredCapacity?: number | ros.IResolvable;
 
@@ -6699,31 +7178,33 @@ export interface RosScheduledTaskProps {
     readonly launchExpirationTime?: number | ros.IResolvable;
 
     /**
-     * @Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.
-     * **Note**: You must specify the **DesiredCapacity** parameter when you create a scaling group.
+     * @Property maxValue: The maximum number of instances in the scaling group if the scaling method of the
+     * scaling group is to specify the number of instances.
      */
     readonly maxValue?: number | ros.IResolvable;
 
     /**
-     * @Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.
+     * @Property minValue: The minimum number of instances in the scaling group if the scaling method of the
+     * scaling group is to specify the number of instances.
      */
     readonly minValue?: number | ros.IResolvable;
 
     /**
-     * @Property recurrenceEndTime: End time of the scheduled task to be repeated.
-     * The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
-     * A time point 90 days after creation or modification cannot be entered.
-     * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+     * @Property recurrenceEndTime: The end time of the scheduled task. Specify the time in the ISO 8601 standard in
+     * the YYYY-MM-DDThh:mmZ format.
+     * The time must be in UTC. You cannot enter a point in time that is later than 365
+     * days from the point in time at which the scheduled task is created.
      */
     readonly recurrenceEndTime?: string | ros.IResolvable;
 
     /**
-     * @Property recurrenceType: Type of the scheduled task to be repeated. Optional values:
-     * - Daily: Recurrence interval by day for a scheduled task.
-     * - Weekly: Recurrence interval by week for a scheduled task.
-     * - Monthly: Recurrence interval by month for a scheduled task.
-     * - Cron: The scheduled task is executed based on the specified cron expression.
-     * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+     * @Property recurrenceType: The interval at which the scheduled task is repeatedly executed. Valid values:
+     * *   Daily: The scheduled task is executed once every specified number of days.
+     * *   Weekly: The scheduled task is executed on each specified day of a week.
+     * *   Monthly: The scheduled task is executed on each specified day of a month.
+     * *   Cron: The scheduled task is executed based on the specified cron expression.
+     * You must specify the `RecurrenceType` and `RecurrenceValue` parameters at the
+     * same time.
      */
     readonly recurrenceType?: string | ros.IResolvable;
 
@@ -6738,21 +7219,32 @@ export interface RosScheduledTaskProps {
     readonly recurrenceValue?: string | ros.IResolvable;
 
     /**
-     * @Property scalingGroupId: The globally unique ID of the scheduled task. The globally unique ID is generated by the system.
-     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     * @Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the
+     * scheduled task is triggered. If you specify the `ScalingGroupId` parameter for a
+     * scheduled task, the scaling method of the scheduled task is to specify the number
+     * of instances in the scaling group. In this case, you must specify at least one of
+     * the `MinValue`, `MaxValue`, and `DesiredCapacity` parameters.
+     * >  You cannot specify the `ScheduledAction` and `ScalingGroupId` parameters at
+     * the same time.
      */
     readonly scalingGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
-     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     * @Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered.
+     * Specify the unique identifier of the scaling rule. If you specify the
+     * `ScheduledAction` parameter, you must select an existing scaling rule for the
+     * scheduled task.
+     * >  You cannot specify the `ScheduledAction` and `ScalingGroupId` parameters at
+     * the same time.
      */
     readonly scheduledAction?: string | ros.IResolvable;
 
     /**
-     * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
-     * The account name is unique in the same region.
-     * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
+     * @Property scheduledTaskName: The name of the scheduled task. The name must be 2 to 64 characters in length and
+     * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+     * name must start with a letter or a digit. The name of the scheduled task must be
+     * unique in the region and within the account.
+     * By default, the value of the `ScheduledTaskId` parameter is used.
      */
     readonly scheduledTaskName?: string | ros.IResolvable;
 
@@ -6875,7 +7367,7 @@ function rosScheduledTaskPropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which is used to create a scheduled task by specifying properties.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ScheduledTask`, which creates a scheduled task based on specified properties.
  * @Note This class does not contain additional functions, so it is recommended to use the `ScheduledTask` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-scheduledtask
  */
@@ -6907,7 +7399,10 @@ export class RosScheduledTask extends ros.RosResource {
     public description: string | ros.IResolvable | undefined;
 
     /**
-     * @Property desiredCapacity: The ID of the scaling group whose number of instances must be modified when the scheduled task is triggered. If you specify the **ScalingGroupId** parameter for a scheduled task, you must specify the minimum, maximum, or expected numbers of instances for a scaling group in the scheduled task. That is, you must specify at least one of the **MinValue**, **MaxValue**, and **DesiredCapacity** parameters.
+     * @Property desiredCapacity: The expected number of instances in the scaling group if the scaling method of
+     * the scaling group is to specify the number of instances.
+     * >  You must specify the `DesiredCapacity` parameter when you create a scaling
+     * group.
      */
     public desiredCapacity: number | ros.IResolvable | undefined;
 
@@ -6919,31 +7414,33 @@ export class RosScheduledTask extends ros.RosResource {
     public launchExpirationTime: number | ros.IResolvable | undefined;
 
     /**
-     * @Property maxValue: The expected number of instances in the scaling group if you specify the ScalingGroupId parameter.
-     * **Note**: You must specify the **DesiredCapacity** parameter when you create a scaling group.
+     * @Property maxValue: The maximum number of instances in the scaling group if the scaling method of the
+     * scaling group is to specify the number of instances.
      */
     public maxValue: number | ros.IResolvable | undefined;
 
     /**
-     * @Property minValue: The maximum number of instances in the scaling group if you specify the ScalingGroupId parameter.
+     * @Property minValue: The minimum number of instances in the scaling group if the scaling method of the
+     * scaling group is to specify the number of instances.
      */
     public minValue: number | ros.IResolvable | undefined;
 
     /**
-     * @Property recurrenceEndTime: End time of the scheduled task to be repeated.
-     * The date format follows the ISO8601 standard and uses UTC time. It is in the format of YYYY-MM-DDThh:mmZ.
-     * A time point 90 days after creation or modification cannot be entered.
-     * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+     * @Property recurrenceEndTime: The end time of the scheduled task. Specify the time in the ISO 8601 standard in
+     * the YYYY-MM-DDThh:mmZ format.
+     * The time must be in UTC. You cannot enter a point in time that is later than 365
+     * days from the point in time at which the scheduled task is created.
      */
     public recurrenceEndTime: string | ros.IResolvable | undefined;
 
     /**
-     * @Property recurrenceType: Type of the scheduled task to be repeated. Optional values:
-     * - Daily: Recurrence interval by day for a scheduled task.
-     * - Weekly: Recurrence interval by week for a scheduled task.
-     * - Monthly: Recurrence interval by month for a scheduled task.
-     * - Cron: The scheduled task is executed based on the specified cron expression.
-     * RecurrenceType, RecurrenceValue and RecurrenceEndTime must be specified.
+     * @Property recurrenceType: The interval at which the scheduled task is repeatedly executed. Valid values:
+     * *   Daily: The scheduled task is executed once every specified number of days.
+     * *   Weekly: The scheduled task is executed on each specified day of a week.
+     * *   Monthly: The scheduled task is executed on each specified day of a month.
+     * *   Cron: The scheduled task is executed based on the specified cron expression.
+     * You must specify the `RecurrenceType` and `RecurrenceValue` parameters at the
+     * same time.
      */
     public recurrenceType: string | ros.IResolvable | undefined;
 
@@ -6958,21 +7455,32 @@ export class RosScheduledTask extends ros.RosResource {
     public recurrenceValue: string | ros.IResolvable | undefined;
 
     /**
-     * @Property scalingGroupId: The globally unique ID of the scheduled task. The globally unique ID is generated by the system.
-     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     * @Property scalingGroupId: The ID of the scaling group whose number of instances is changed when the
+     * scheduled task is triggered. If you specify the `ScalingGroupId` parameter for a
+     * scheduled task, the scaling method of the scheduled task is to specify the number
+     * of instances in the scaling group. In this case, you must specify at least one of
+     * the `MinValue`, `MaxValue`, and `DesiredCapacity` parameters.
+     * >  You cannot specify the `ScheduledAction` and `ScalingGroupId` parameters at
+     * the same time.
      */
     public scalingGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property scheduledAction: Operations performed when the scheduled task is triggered. Fill in the unique identifier of the scaling rule.
-     * **Note**: You cannot specify the **ScheduledAction** and **ScalingGroupId** parameters at the same time.
+     * @Property scheduledAction: The scaling rule that you want to execute when the scheduled task is triggered.
+     * Specify the unique identifier of the scaling rule. If you specify the
+     * `ScheduledAction` parameter, you must select an existing scaling rule for the
+     * scheduled task.
+     * >  You cannot specify the `ScheduledAction` and `ScalingGroupId` parameters at
+     * the same time.
      */
     public scheduledAction: string | ros.IResolvable | undefined;
 
     /**
-     * @Property scheduledTaskName: Display name of the scheduled task, which must be 2-40 characters (English or Chinese) long. It must begin with a number, an upper\/lower-case letter or a Chinese character and may contain numbers, "_", "-" or ".".
-     * The account name is unique in the same region.
-     * If this parameter is not specified, the default value ScheduledScalingTaskId is used.
+     * @Property scheduledTaskName: The name of the scheduled task. The name must be 2 to 64 characters in length and
+     * can contain letters, digits, underscores (_), hyphens (-), and periods (.). The
+     * name must start with a letter or a digit. The name of the scheduled task must be
+     * unique in the region and within the account.
+     * By default, the value of the `ScheduledTaskId` parameter is used.
      */
     public scheduledTaskName: string | ros.IResolvable | undefined;
 
@@ -7103,7 +7611,7 @@ function rosServerGroupAttachmentPropsToRosTemplate(properties: any, enableResou
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::ServerGroupAttachment`, which is used to add one or more Server Load Balancer (SLB) server groups to a scaling group. Supported SLB server groups include Application Load Balancer (ALB) server groups and Network Load Balancer (NLB) server groups.
  * @Note This class does not contain additional functions, so it is recommended to use the `ServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-servergroupattachment
  */
@@ -7328,7 +7836,7 @@ function rosVServerGroupAttachmentPropsToRosTemplate(properties: any, enableReso
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::ESS::VServerGroupAttachment`, which is used to associate vServer groups of a Sever Load Balancer (SLB) instance with a scaling group.
  * @Note This class does not contain additional functions, so it is recommended to use the `VServerGroupAttachment` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ess-vservergroupattachment
  */

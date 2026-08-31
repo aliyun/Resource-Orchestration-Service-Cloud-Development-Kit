@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cloudphone;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-instancegroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:49:40.191Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:37:59.546Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.InstanceGroupProps")
 @software.amazon.jsii.Jsii.Proxy(InstanceGroupProps.Jsii$Proxy.class)
 public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -102,10 +102,14 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property period: Prepaid time period.
+     * Property period: The subscription duration.
      * <p>
-     * While PeriodUnit is month, it could be 1, 2, 3, 6.
-     * While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+     * Default value: 1.
+     * <p>
+     * <ul>
+     * <li>Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.</li>
+     * <li>Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -436,9 +440,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getPeriod}
-         * @param period Property period: Prepaid time period.
-         *               While PeriodUnit is month, it could be 1, 2, 3, 6.
-         *               While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+         * @param period Property period: The subscription duration.
+         *               Default value: 1.
+         *               <p>
+         *               <ul>
+         *               <li>Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.</li>
+         *               <li>Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -448,9 +456,13 @@ public interface InstanceGroupProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link InstanceGroupProps#getPeriod}
-         * @param period Property period: Prepaid time period.
-         *               While PeriodUnit is month, it could be 1, 2, 3, 6.
-         *               While PeriodUnit is year, it could be from 1 to 5Default value is 1.
+         * @param period Property period: The subscription duration.
+         *               Default value: 1.
+         *               <p>
+         *               <ul>
+         *               <li>Valid values if you set PeriodUnit to Month: 1, 2, 3, and 6.</li>
+         *               <li>Valid values if you set PeriodUnit to Year: 1, 2, 3, 4, and 5.</li>
+         *               </ul>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {

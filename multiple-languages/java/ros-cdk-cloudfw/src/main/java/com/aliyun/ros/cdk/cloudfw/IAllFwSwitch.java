@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudfw;
 /**
  * Represents a <code>AllFwSwitch</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:48:07.066Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:36:02.125Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudfw.$Module.class, fqn = "@alicloud/ros-cdk-cloudfw.IAllFwSwitch")
 @software.amazon.jsii.Jsii.Proxy(IAllFwSwitch.Jsii$Proxy.class)
 public interface IAllFwSwitch extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

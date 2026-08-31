@@ -15,8 +15,7 @@ export interface BackendServerAttachmentProps {
     readonly serverGroupId: string | ros.IResolvable;
 
     /**
-     * Property servers: The backend servers that you want to add to the server group. You can specify up to
-     * 40 servers in each call.
+     * Property servers: A list of backend servers. You can add up to 200 servers in a single call.
      */
     readonly servers: Array<RosBackendServerAttachment.ServersProperty | ros.IResolvable> | ros.IResolvable;
 }
@@ -33,7 +32,7 @@ export interface IBackendServerAttachment extends ros.IResource {
     readonly attrServerGroupId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::BackendServerAttachment`Use , which to add backend servers to a server group.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ALB::BackendServerAttachment`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosBackendServerAttachment`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-alb-backendserverattachment
  */

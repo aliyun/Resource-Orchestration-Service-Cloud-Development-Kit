@@ -26,13 +26,24 @@ type VpcEndpointServiceProps struct {
 	// Endpoint: the service consumer.
 	// EndpointService: the service provider.
 	Payer interface{} `field:"optional" json:"payer" yaml:"payer"`
-	// Property resource:.
+	// Property resource: A collection of service resources.
+	//
+	// You can add up to 10 resources in a single
+	// request. An endpoint service can have a maximum of 20 service resources.
 	Resource interface{} `field:"optional" json:"resource" yaml:"resource"`
 	// Property resourceGroupId: The ID of the resource group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
 	// Property serviceDescription: The description for the endpoint service.
 	ServiceDescription interface{} `field:"optional" json:"serviceDescription" yaml:"serviceDescription"`
-	// Property serviceResourceType: Service resource type.
+	// Property serviceResourceType: The type of the service resource.
+	//
+	// Valid values:
+	// - slb: a Classic Load Balancer (CLB) instance.
+	// - alb: an Application Load Balancer (ALB) instance.
+	// - nlb: a Network Load Balancer (NLB) instance.
+	// - gwlb: a Gateway Load Balancer (GWLB) instance.
+	// > PrivateLink does not support connections to TCPSSL listeners on Network Load
+	// Balancer (NLB) instances.
 	ServiceResourceType interface{} `field:"optional" json:"serviceResourceType" yaml:"serviceResourceType"`
 	// Property tags: Tags to attach to instance.
 	//

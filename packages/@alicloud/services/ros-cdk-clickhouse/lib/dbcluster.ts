@@ -86,7 +86,11 @@ export interface DBClusterProps {
     readonly encryptionType?: string | ros.IResolvable;
 
     /**
-     * Property period: The unit of the subscription duration.
+     * Property period: The subscription duration unit.
+     * ><notice>This parameter is required only when `PayType` is set to
+     * `Prepaid`.><\/notice>
+     * - Year: Measured in years.
+     * - Month: Measured in months.
      */
     readonly period?: string | ros.IResolvable;
 
@@ -295,7 +299,7 @@ export interface IDBCluster extends ros.IResource {
     readonly attrZoneId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::DBCluster`, which is used to create an ApsaraDB for ClickHouse cluster.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ClickHouse::DBCluster`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDBCluster`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-clickhouse-dbcluster
  */

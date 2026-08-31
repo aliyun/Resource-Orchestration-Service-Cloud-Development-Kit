@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.oos;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-oos-parameter
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.877Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ParameterProps")
 @software.amazon.jsii.Jsii.Proxy(ParameterProps.Jsii$Proxy.class)
 public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
@@ -33,13 +33,19 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getValue();
 
     /**
-     * Property constraints: The constraints of the parameter.
+     * Property constraints: The constraints of the encryption parameter.
      * <p>
-     * By default, this parameter is null. Valid values:
-     * AllowedValues: The value that is allowed for the parameter. It must be an array string.
-     * AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-     * MinLength: The minimum length of the parameter.
-     * MaxLength: The maximum length of the parameter.
+     * By default, this parameter is null.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>AllowedValues: The value that is allowed for the encryption parameter. It
+     * must be an array string.</li>
+     * <li>AllowedPattern: The pattern that is allowed for the encryption parameter. It
+     * must be a regular expression.</li>
+     * <li>MinLength: The minimum length of the encryption parameter.</li>
+     * <li>MaxLength: The maximum length of the encryption parameter.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getConstraints() {
         return null;
@@ -148,12 +154,18 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ParameterProps#getConstraints}
-         * @param constraints Property constraints: The constraints of the parameter.
-         *                    By default, this parameter is null. Valid values:
-         *                    AllowedValues: The value that is allowed for the parameter. It must be an array string.
-         *                    AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-         *                    MinLength: The minimum length of the parameter.
-         *                    MaxLength: The maximum length of the parameter.
+         * @param constraints Property constraints: The constraints of the encryption parameter.
+         *                    By default, this parameter is null.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>AllowedValues: The value that is allowed for the encryption parameter. It
+         *                    must be an array string.</li>
+         *                    <li>AllowedPattern: The pattern that is allowed for the encryption parameter. It
+         *                    must be a regular expression.</li>
+         *                    <li>MinLength: The minimum length of the encryption parameter.</li>
+         *                    <li>MaxLength: The maximum length of the encryption parameter.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder constraints(java.lang.String constraints) {
@@ -163,12 +175,18 @@ public interface ParameterProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link ParameterProps#getConstraints}
-         * @param constraints Property constraints: The constraints of the parameter.
-         *                    By default, this parameter is null. Valid values:
-         *                    AllowedValues: The value that is allowed for the parameter. It must be an array string.
-         *                    AllowedPattern: The pattern that is allowed for the parameter. It must be a regular expression.
-         *                    MinLength: The minimum length of the parameter.
-         *                    MaxLength: The maximum length of the parameter.
+         * @param constraints Property constraints: The constraints of the encryption parameter.
+         *                    By default, this parameter is null.
+         *                    Valid values:
+         *                    <p>
+         *                    <ul>
+         *                    <li>AllowedValues: The value that is allowed for the encryption parameter. It
+         *                    must be an array string.</li>
+         *                    <li>AllowedPattern: The pattern that is allowed for the encryption parameter. It
+         *                    must be a regular expression.</li>
+         *                    <li>MinLength: The minimum length of the encryption parameter.</li>
+         *                    <li>MaxLength: The maximum length of the encryption parameter.</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder constraints(com.aliyun.ros.cdk.core.IResolvable constraints) {

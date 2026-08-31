@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.bpstudio;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::BPStudio::Application</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:37:10.194Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:20:19.432Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bpstudio.$Module.class, fqn = "@alicloud/ros-cdk-bpstudio.Application")
 public class Application extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bpstudio.IApplication {
 

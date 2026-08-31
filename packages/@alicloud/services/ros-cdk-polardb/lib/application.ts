@@ -10,7 +10,10 @@ export { RosApplication as ApplicationProperty };
 export interface ApplicationProps {
 
     /**
-     * Property applicationType: The type of the application. This parameter is required.
+     * Property applicationType: The type of the application. Valid values:
+     * - supabase: Creates a managed Supabase application.
+     * - raycluster: Creates a managed Ray Cluster application.
+     * - polarclaw: Creates a managed PolarClaw application.
      */
     readonly applicationType: string | ros.IResolvable;
 
@@ -25,12 +28,15 @@ export interface ApplicationProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
-     * Property autoCreatePolarFs: Whether to auto create PolarFS.
+     * Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance. Valid
+     * values:
+     * - false (default): Does not automatically create the instance.
+     * - true: Automatically creates the instance.
      */
     readonly autoCreatePolarFs?: boolean | ros.IResolvable;
 
     /**
-     * Property components: The list of components.
+     * Property components: A list of custom child components for the application.
      */
     readonly components?: Array<RosApplication.ComponentsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -47,12 +53,17 @@ export interface ApplicationProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * Property period: The period of the application.
+     * Property period: The subscription period type.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * Property polarFsInstanceId: The ID of the PolarFS instance.
+     * Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance
+     * instance. This parameter is empty by default. If you specify this parameter, the
+     * corresponding storage is mounted to the application.
+     * This feature is currently supported only by the following applications:
+     * - supabase
+     * - raycluster
      */
     readonly polarFsInstanceId?: string | ros.IResolvable;
 
@@ -62,7 +73,8 @@ export interface ApplicationProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * Property securityIpList: The security IP list of the component.
+     * Property securityIpList: The IP address whitelist. If you do not specify this parameter, the default value
+     * `127.0.0.1` is used.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -72,12 +84,13 @@ export interface ApplicationProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The ID of the VSwitch.
+     * Property vSwitchId: The vSwitch. The default value is the current vSwitch in the primary zone of the
+     * instance.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
-     * Property zoneId: The ID of the zone.
+     * Property zoneId: The zone. The default value is the primary zone of the instance.
      */
     readonly zoneId?: string | ros.IResolvable;
 }

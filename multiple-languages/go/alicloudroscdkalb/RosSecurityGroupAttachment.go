@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`, which is used to associate created security groups with an Application Load Balancer (ALB) instance.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ALB::SecurityGroupAttachment`.
 type RosSecurityGroupAttachment interface {
 	alicloudroscdkcore.RosResource
 	// Returns: the stack trace of the point where this Resource was created from, sourced

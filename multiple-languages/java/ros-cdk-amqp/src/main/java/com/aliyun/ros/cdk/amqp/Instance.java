@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.amqp;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Instance</code>, which is used to create an ApsaraMQ for RabbitMQ instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::AMQP::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:25:35.811Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:03:33.243Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.amqp.$Module.class, fqn = "@alicloud/ros-cdk-amqp.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.amqp.IInstance {
 
@@ -146,20 +146,24 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property instanceName: The instance name.
+         * Property instanceName: The name of the instance.
+         * <p>
+         * The name can be up to 64 characters long.
          * <p>
          * @return {@code this}
-         * @param instanceName Property instanceName: The instance name. This parameter is required.
+         * @param instanceName Property instanceName: The name of the instance. This parameter is required.
          */
         public Builder instanceName(final java.lang.String instanceName) {
             this.props().instanceName(instanceName);
             return this;
         }
         /**
-         * Property instanceName: The instance name.
+         * Property instanceName: The name of the instance.
+         * <p>
+         * The name can be up to 64 characters long.
          * <p>
          * @return {@code this}
-         * @param instanceName Property instanceName: The instance name. This parameter is required.
+         * @param instanceName Property instanceName: The name of the instance. This parameter is required.
          */
         public Builder instanceName(final com.aliyun.ros.cdk.core.IResolvable instanceName) {
             this.props().instanceName(instanceName);
@@ -167,24 +171,38 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property instanceType: The Instance Type.
+         * Property instanceType: The instance type.
          * <p>
-         * Valid values: professional, enterprise, vip.
+         * This parameter is required for subscription instances. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>professional</code>: Professional Edition</li>
+         * <li><code>enterprise</code>: Enterprise Edition</li>
+         * <li><code>vip</code>: Platinum Edition
+         * You do not need to specify this parameter for serverless instances.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceType Property instanceType: The Instance Type. This parameter is required.
+         * @param instanceType Property instanceType: The instance type. This parameter is required.
          */
         public Builder instanceType(final java.lang.String instanceType) {
             this.props().instanceType(instanceType);
             return this;
         }
         /**
-         * Property instanceType: The Instance Type.
+         * Property instanceType: The instance type.
          * <p>
-         * Valid values: professional, enterprise, vip.
+         * This parameter is required for subscription instances. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>professional</code>: Professional Edition</li>
+         * <li><code>enterprise</code>: Enterprise Edition</li>
+         * <li><code>vip</code>: Platinum Edition
+         * You do not need to specify this parameter for serverless instances.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param instanceType Property instanceType: The Instance Type. This parameter is required.
+         * @param instanceType Property instanceType: The instance type. This parameter is required.
          */
         public Builder instanceType(final com.aliyun.ros.cdk.core.IResolvable instanceType) {
             this.props().instanceType(instanceType);
@@ -406,24 +424,34 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property supportEip: Whether to support EIP.
+         * Property supportEip: Specifies whether to enable access over the public network.
          * <p>
-         * Valid values: true, false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables access over the public network.</li>
+         * <li><code>false</code>: Disables access over the public network.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param supportEip Property supportEip: Whether to support EIP. This parameter is required.
+         * @param supportEip Property supportEip: Specifies whether to enable access over the public network. This parameter is required.
          */
         public Builder supportEip(final java.lang.String supportEip) {
             this.props().supportEip(supportEip);
             return this;
         }
         /**
-         * Property supportEip: Whether to support EIP.
+         * Property supportEip: Specifies whether to enable access over the public network.
          * <p>
-         * Valid values: true, false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables access over the public network.</li>
+         * <li><code>false</code>: Disables access over the public network.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param supportEip Property supportEip: Whether to support EIP. This parameter is required.
+         * @param supportEip Property supportEip: Specifies whether to enable access over the public network. This parameter is required.
          */
         public Builder supportEip(final com.aliyun.ros.cdk.core.IResolvable supportEip) {
             this.props().supportEip(supportEip);
@@ -431,24 +459,62 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property supportTracing: Whether to support tracing.
+         * Property supportTracing: Specifies whether to enable the message trace feature.
          * <p>
-         * Valid values: true, false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the message trace feature.</li>
+         * <li><code>false</code>: Disables the message trace feature.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>The message trace feature is included for 15 days at no charge on Platinum
+         * Edition instances. For these instances, you must enable this feature and set the
+         * retention period to 15 days.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>For other instance types, you can enable or disable this feature.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param supportTracing Property supportTracing: Whether to support tracing. This parameter is required.
+         * @param supportTracing Property supportTracing: Specifies whether to enable the message trace feature. This parameter is required.
          */
         public Builder supportTracing(final java.lang.String supportTracing) {
             this.props().supportTracing(supportTracing);
             return this;
         }
         /**
-         * Property supportTracing: Whether to support tracing.
+         * Property supportTracing: Specifies whether to enable the message trace feature.
          * <p>
-         * Valid values: true, false.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li><code>true</code>: Enables the message trace feature.</li>
+         * <li><code>false</code>: Disables the message trace feature.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>The message trace feature is included for 15 days at no charge on Platinum
+         * Edition instances. For these instances, you must enable this feature and set the
+         * retention period to 15 days.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
+         * <p>
+         * <ul>
+         * <li>For other instance types, you can enable or disable this feature.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param supportTracing Property supportTracing: Whether to support tracing. This parameter is required.
+         * @param supportTracing Property supportTracing: Specifies whether to enable the message trace feature. This parameter is required.
          */
         public Builder supportTracing(final com.aliyun.ros.cdk.core.IResolvable supportTracing) {
             this.props().supportTracing(supportTracing);
@@ -456,30 +522,38 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property tracingStorageTime: The retention period of message traces was set.
+         * Property tracingStorageTime: The retention period of message traces.
          * <p>
-         * Valid values: 3, 7, 15.
-         * If instance_type=vip, the valid values is 15.
-         * If instance_type!=vip, the valid values is 3, 7, 15.
-         * If support_tracing == tracing_false, the valid values is 0.
+         * Unit: days. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>3</code></li>
+         * <li><code>7</code></li>
+         * <li><code>15</code>
+         * This parameter is required if you set <code>SupportTracing</code> to <code>true</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set. This parameter is required.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces. This parameter is required.
          */
         public Builder tracingStorageTime(final java.lang.Number tracingStorageTime) {
             this.props().tracingStorageTime(tracingStorageTime);
             return this;
         }
         /**
-         * Property tracingStorageTime: The retention period of message traces was set.
+         * Property tracingStorageTime: The retention period of message traces.
          * <p>
-         * Valid values: 3, 7, 15.
-         * If instance_type=vip, the valid values is 15.
-         * If instance_type!=vip, the valid values is 3, 7, 15.
-         * If support_tracing == tracing_false, the valid values is 0.
+         * Unit: days. Valid values:
+         * <p>
+         * <ul>
+         * <li><code>3</code></li>
+         * <li><code>7</code></li>
+         * <li><code>15</code>
+         * This parameter is required if you set <code>SupportTracing</code> to <code>true</code>.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces was set. This parameter is required.
+         * @param tracingStorageTime Property tracingStorageTime: The retention period of message traces. This parameter is required.
          */
         public Builder tracingStorageTime(final com.aliyun.ros.cdk.core.IResolvable tracingStorageTime) {
             this.props().tracingStorageTime(tracingStorageTime);

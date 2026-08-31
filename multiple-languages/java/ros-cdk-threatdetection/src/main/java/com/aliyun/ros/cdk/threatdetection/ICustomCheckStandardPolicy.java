@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.threatdetection;
 /**
  * Represents a <code>CustomCheckStandardPolicy</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:59:58.497Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:53:53.168Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.ICustomCheckStandardPolicy")
 @software.amazon.jsii.Jsii.Proxy(ICustomCheckStandardPolicy.Jsii$Proxy.class)
 public interface ICustomCheckStandardPolicy extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

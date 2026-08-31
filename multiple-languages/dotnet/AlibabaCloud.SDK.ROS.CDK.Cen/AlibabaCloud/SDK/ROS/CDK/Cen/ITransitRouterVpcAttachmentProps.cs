@@ -36,7 +36,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Property autoPublishRouteEnabled: Whether to automatically publish routes.</summary>
+        /// <summary>Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>false (default): Do not automatically advertise routes.</description>
+        /// <description>true: Automatically advertise routes.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "autoPublishRouteEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? AutoPublishRouteEnabled
@@ -102,7 +108,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.</summary>
+        /// <summary>Property transitRouterAttachmentDescription: The description of the VPC connection.</summary>
+        /// <remarks>
+        /// The description can be empty or 1 to 256 characters long, and cannot start with
+        /// <c>http:\/\/</c> or <c>https:\/\/</c>.
+        /// </remarks>
         [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? TransitRouterAttachmentDescription
@@ -113,7 +123,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Property transitRouterAttachmentName: The name of the transit router VPC attachment.</summary>
+        /// <summary>Property transitRouterAttachmentName: The name of the VPC connection.</summary>
+        /// <remarks>
+        /// The name can be empty or 1 to 128 characters long, and cannot start with
+        /// <c>http:\/\/</c> or <c>https:\/\/</c>.
+        /// </remarks>
         [JsiiProperty(name: "transitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? TransitRouterAttachmentName
@@ -135,7 +149,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.</summary>
+        /// <summary>Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.</summary>
+        /// <remarks>
+        /// This parameter is deprecated. We recommend
+        /// that you use the <c>Options</c> parameter instead.
+        /// </remarks>
         [JsiiProperty(name: "transitRouterVpcAttachmentOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? TransitRouterVpcAttachmentOptions
@@ -146,7 +164,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             }
         }
 
-        /// <summary>Property vpcOwnerId: The owner ID of the VPC.</summary>
+        /// <summary>Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.</summary>
+        /// <remarks>
+        /// By
+        /// default, this is the ID of the current account.
+        ///
+        ///     This parameter is required if you want to attach a cross-account network
+        ///     instance.
+        /// </remarks>
         [JsiiProperty(name: "vpcOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? VpcOwnerId
@@ -190,7 +215,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property autoPublishRouteEnabled: Whether to automatically publish routes.</summary>
+            /// <summary>Property autoPublishRouteEnabled: Specifies whether to enable the Enterprise Edition transit router to automatically advertise routes to the VPC instance.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>false (default): Do not automatically advertise routes.</description>
+            /// <description>true: Automatically advertise routes.</description>
+            /// </list>
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "autoPublishRouteEnabled", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? AutoPublishRouteEnabled
@@ -238,7 +269,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property transitRouterAttachmentDescription: The description of the transit router VPC attachment.</summary>
+            /// <summary>Property transitRouterAttachmentDescription: The description of the VPC connection.</summary>
+            /// <remarks>
+            /// The description can be empty or 1 to 256 characters long, and cannot start with
+            /// <c>http:\/\/</c> or <c>https:\/\/</c>.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "transitRouterAttachmentDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TransitRouterAttachmentDescription
@@ -246,7 +281,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property transitRouterAttachmentName: The name of the transit router VPC attachment.</summary>
+            /// <summary>Property transitRouterAttachmentName: The name of the VPC connection.</summary>
+            /// <remarks>
+            /// The name can be empty or 1 to 128 characters long, and cannot start with
+            /// <c>http:\/\/</c> or <c>https:\/\/</c>.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "transitRouterAttachmentName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? TransitRouterAttachmentName
@@ -262,7 +301,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property transitRouterVpcAttachmentOptions: The options for the transit router VPC attachment.</summary>
+            /// <summary>Property transitRouterVpcAttachmentOptions: The properties of the VPC connection.</summary>
+            /// <remarks>
+            /// This parameter is deprecated. We recommend
+            /// that you use the <c>Options</c> parameter instead.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "transitRouterVpcAttachmentOptions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
             public object? TransitRouterVpcAttachmentOptions
@@ -270,7 +313,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object?>();
             }
 
-            /// <summary>Property vpcOwnerId: The owner ID of the VPC.</summary>
+            /// <summary>Property vpcOwnerId: The ID of the account (root account) that owns the VPC instance.</summary>
+            /// <remarks>
+            /// By
+            /// default, this is the ID of the current account.
+            ///
+            ///     This parameter is required if you want to attach a cross-account network
+            ///     instance.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "vpcOwnerId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? VpcOwnerId

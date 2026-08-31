@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.pai;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-pai-datasetversion
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:20:13.761Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:28:15.118Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.pai.$Module.class, fqn = "@alicloud/ros-cdk-pai.DatasetVersionProps")
 @software.amazon.jsii.Jsii.Proxy(DatasetVersionProps.Jsii$Proxy.class)
 public interface DatasetVersionProps extends software.amazon.jsii.JsiiSerializable {

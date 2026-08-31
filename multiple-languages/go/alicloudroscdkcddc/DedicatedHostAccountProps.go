@@ -7,7 +7,16 @@ package alicloudroscdkcddc
 type DedicatedHostAccountProps struct {
 	// Property accountName: The name of the account.
 	AccountName interface{} `field:"required" json:"accountName" yaml:"accountName"`
-	// Property accountPassword: The password of the account.
+	// Property accountPassword: The password for the host account.
+	//
+	// The password must meet the following
+	// requirements:
+	// - The password must be 6 to 32 characters in length.
+	// - It must contain uppercase letters, lowercase letters, digits, and special
+	// characters.
+	// - Supported special characters: `!@#$%^&*()_+-=`
+	// > If your engine is SQL Server, the password cannot contain the account name
+	// (case-insensitive).
 	AccountPassword interface{} `field:"required" json:"accountPassword" yaml:"accountPassword"`
 	// Property dedicatedHostId: The ID of the dedicated host.
 	DedicatedHostId interface{} `field:"required" json:"dedicatedHostId" yaml:"dedicatedHostId"`

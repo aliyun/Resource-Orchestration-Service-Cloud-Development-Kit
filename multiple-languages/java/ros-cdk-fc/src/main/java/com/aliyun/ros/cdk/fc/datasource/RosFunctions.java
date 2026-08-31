@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc.datasource;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::FC::Functions</code>, which is used to query functions.
+ * This class is a base encapsulation around the ROS resource type <code>DATASOURCE::FC::Functions</code>Queries a list of functions in Function Compute (FC).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.454Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:20:02.240Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.RosFunctions")
 public class RosFunctions extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.fnf.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::FNF::Flows</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:08:10.299Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:15:33.504Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fnf.$Module.class, fqn = "@alicloud/ros-cdk-fnf.datasource.Flows")
 public class Flows extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fnf.datasource.IFlows {
 

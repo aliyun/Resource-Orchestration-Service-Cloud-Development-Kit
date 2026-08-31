@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cen;
 /**
  * Represents a <code>CenInstanceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.283Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.631Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.ICenInstanceAttachment")
 @software.amazon.jsii.Jsii.Proxy(ICenInstanceAttachment.Jsii$Proxy.class)
 public interface ICenInstanceAttachment extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

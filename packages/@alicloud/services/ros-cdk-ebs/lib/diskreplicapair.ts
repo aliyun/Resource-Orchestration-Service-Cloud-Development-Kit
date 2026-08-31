@@ -165,7 +165,7 @@ export interface IDiskReplicaPair extends ros.IResource {
     readonly attrTags: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPair`, which is used to create a replication pair.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPair`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDiskReplicaPair`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ebs-diskreplicapair
  */

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.apigateway;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Instance</code>, which is used to create a dedicated instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ApiGateway::Instance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:28:36.567Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:07:56.952Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.apigateway.$Module.class, fqn = "@alicloud/ros-cdk-apigateway.Instance")
 public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.apigateway.IInstance {
 
@@ -274,30 +274,42 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property autoPay: Indicates whether automatic payment is enabled.
+         * Property autoPay: Specifies whether to enable auto-payment for renewals.
          * <p>
          * Valid values:
-         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-         * true: Automatic payment is enabled. The payment is automatically made.
-         * Default true.
+         * <p>
+         * <ul>
+         * <li>True: Auto-payment is enabled. Make sure that your account has a sufficient
+         * balance.</li>
+         * <li>False: Manual payment is required. To pay for an order, log on to the console.
+         * In the upper-right corner, choose Billing &gt; User Center. On the Order Management
+         * page, find the order and complete the payment.
+         * Default value: False.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable auto-payment for renewals. This parameter is required.
          */
         public Builder autoPay(final java.lang.Boolean autoPay) {
             this.props.autoPay(autoPay);
             return this;
         }
         /**
-         * Property autoPay: Indicates whether automatic payment is enabled.
+         * Property autoPay: Specifies whether to enable auto-payment for renewals.
          * <p>
          * Valid values:
-         * false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-         * true: Automatic payment is enabled. The payment is automatically made.
-         * Default true.
+         * <p>
+         * <ul>
+         * <li>True: Auto-payment is enabled. Make sure that your account has a sufficient
+         * balance.</li>
+         * <li>False: Manual payment is required. To pay for an order, log on to the console.
+         * In the upper-right corner, choose Billing &gt; User Center. On the Order Management
+         * page, find the order and complete the payment.
+         * Default value: False.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoPay Property autoPay: Indicates whether automatic payment is enabled. This parameter is required.
+         * @param autoPay Property autoPay: Specifies whether to enable auto-payment for renewals. This parameter is required.
          */
         public Builder autoPay(final com.aliyun.ros.cdk.core.IResolvable autoPay) {
             this.props.autoPay(autoPay);
@@ -355,24 +367,48 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property duration: Prepaid time period.
+         * Property duration: The subscription duration of the instance.
          * <p>
-         * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If PricingCycle is set to Month, the valid values are 1 to 9.</li>
+         * <li>If PricingCycle is set to Year, the valid values are 1 to 3.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only if you set ChargeType to
+         * PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param duration Property duration: Prepaid time period. This parameter is required.
+         * @param duration Property duration: The subscription duration of the instance. This parameter is required.
          */
         public Builder duration(final java.lang.Number duration) {
             this.props.duration(duration);
             return this;
         }
         /**
-         * Property duration: Prepaid time period.
+         * Property duration: The subscription duration of the instance.
          * <p>
-         * It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>If PricingCycle is set to Month, the valid values are 1 to 9.</li>
+         * <li>If PricingCycle is set to Year, the valid values are 1 to 3.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required and takes effect only if you set ChargeType to
+         * PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param duration Property duration: Prepaid time period. This parameter is required.
+         * @param duration Property duration: The subscription duration of the instance. This parameter is required.
          */
         public Builder duration(final com.aliyun.ros.cdk.core.IResolvable duration) {
             this.props.duration(duration);
@@ -380,24 +416,46 @@ public class Instance extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property pricingCycle: Unit of the payment cycle.
+         * Property pricingCycle: The billing cycle of the subscription instance.
          * <p>
-         * It could be Month (default) or Year.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>year</li>
+         * <li>month</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set ChargeType to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param pricingCycle Property pricingCycle: Unit of the payment cycle. This parameter is required.
+         * @param pricingCycle Property pricingCycle: The billing cycle of the subscription instance. This parameter is required.
          */
         public Builder pricingCycle(final java.lang.String pricingCycle) {
             this.props.pricingCycle(pricingCycle);
             return this;
         }
         /**
-         * Property pricingCycle: Unit of the payment cycle.
+         * Property pricingCycle: The billing cycle of the subscription instance.
          * <p>
-         * It could be Month (default) or Year.
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>year</li>
+         * <li>month</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * This parameter is required if you set ChargeType to PrePaid.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param pricingCycle Property pricingCycle: Unit of the payment cycle. This parameter is required.
+         * @param pricingCycle Property pricingCycle: The billing cycle of the subscription instance. This parameter is required.
          */
         public Builder pricingCycle(final com.aliyun.ros.cdk.core.IResolvable pricingCycle) {
             this.props.pricingCycle(pricingCycle);

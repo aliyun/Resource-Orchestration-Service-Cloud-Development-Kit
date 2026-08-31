@@ -5,15 +5,16 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.234Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.573Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthPackageProps")
 @software.amazon.jsii.Jsii.Proxy(CenBandwidthPackageProps.Jsii$Proxy.class)
 public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property bandwidth: The bandwidth in Mbps of the bandwidth package.
+     * Property bandwidth: The maximum bandwidth of the bandwidth plan.
      * <p>
-     * The bandwidth cannot be less than 2 Mbps.
+     * Unit: Mbps. Valid values: 2 to
+     * 10000.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getBandwidth();
 
@@ -32,11 +33,17 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
     @org.jetbrains.annotations.NotNull java.lang.Object getGeographicRegionBId();
 
     /**
-     * Property autoPay: Whether to automatically pay the bill.
+     * Property autoPay: Specifies whether to enable automatic payment.
      * <p>
-     * Valid value:
-     * true (default)
-     * false
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: yes.</li>
+     * <li>false (default): no.
+     * If you disable automatic payment, you must go to the Order Hub in the console to
+     * complete the payment after you call this operation. Otherwise, the instance
+     * cannot be created.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoPay() {
         return null;
@@ -70,27 +77,40 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
     }
 
     /**
-     * Property description: The description of the bandwidth package.
+     * Property description: The description of the bandwidth plan.
      * <p>
-     * The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+     * The description can be empty or 1 to 256 characters in length. It cannot start
+     * with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property name: The name of the bandwidth package.
+     * Property name: The name of the bandwidth plan.
      * <p>
-     * The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+     * The name can be empty or 1 to 128 characters in length. It cannot start with
+     * http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
     }
 
     /**
-     * Property period: The purchase period.
+     * Property period: The subscription duration of the bandwidth plan.
      * <p>
-     * The default value is 1.
+     * Default value: 1.
+     * <p>
+     * <ul>
+     * <li>If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.</li>
+     * <li>If you set PricingCycle to Year, valid values for Period are 1 to 3.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you set BandwidthPackageChargeType to PREPAY.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -145,8 +165,9 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The bandwidth in Mbps of the bandwidth package. This parameter is required.
-         *                  The bandwidth cannot be less than 2 Mbps.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the bandwidth plan. This parameter is required.
+         *                  Unit: Mbps. Valid values: 2 to
+         *                  10000.
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -156,8 +177,9 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getBandwidth}
-         * @param bandwidth Property bandwidth: The bandwidth in Mbps of the bandwidth package. This parameter is required.
-         *                  The bandwidth cannot be less than 2 Mbps.
+         * @param bandwidth Property bandwidth: The maximum bandwidth of the bandwidth plan. This parameter is required.
+         *                  Unit: Mbps. Valid values: 2 to
+         *                  10000.
          * @return {@code this}
          */
         public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
@@ -211,10 +233,16 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getAutoPay}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill.
-         *                Valid value:
-         *                true (default)
-         *                false
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>true: yes.</li>
+         *                <li>false (default): no.
+         *                If you disable automatic payment, you must go to the Order Hub in the console to
+         *                complete the payment after you call this operation. Otherwise, the instance
+         *                cannot be created.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder autoPay(java.lang.Boolean autoPay) {
@@ -224,10 +252,16 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getAutoPay}
-         * @param autoPay Property autoPay: Whether to automatically pay the bill.
-         *                Valid value:
-         *                true (default)
-         *                false
+         * @param autoPay Property autoPay: Specifies whether to enable automatic payment.
+         *                Valid values:
+         *                <p>
+         *                <ul>
+         *                <li>true: yes.</li>
+         *                <li>false (default): no.
+         *                If you disable automatic payment, you must go to the Order Hub in the console to
+         *                complete the payment after you call this operation. Otherwise, the instance
+         *                cannot be created.</li>
+         *                </ul>
          * @return {@code this}
          */
         public Builder autoPay(com.aliyun.ros.cdk.core.IResolvable autoPay) {
@@ -303,8 +337,9 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getDescription}
-         * @param description Property description: The description of the bandwidth package.
-         *                    The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+         * @param description Property description: The description of the bandwidth plan.
+         *                    The description can be empty or 1 to 256 characters in length. It cannot start
+         *                    with http:// or https://.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -314,8 +349,9 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getDescription}
-         * @param description Property description: The description of the bandwidth package.
-         *                    The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:// or https://.
+         * @param description Property description: The description of the bandwidth plan.
+         *                    The description can be empty or 1 to 256 characters in length. It cannot start
+         *                    with http:// or https://.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -325,8 +361,9 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getName}
-         * @param name Property name: The name of the bandwidth package.
-         *             The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+         * @param name Property name: The name of the bandwidth plan.
+         *             The name can be empty or 1 to 128 characters in length. It cannot start with
+         *             http:// or https://.
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -336,8 +373,9 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getName}
-         * @param name Property name: The name of the bandwidth package.
-         *             The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:// or https://.
+         * @param name Property name: The name of the bandwidth plan.
+         *             The name can be empty or 1 to 128 characters in length. It cannot start with
+         *             http:// or https://.
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {
@@ -347,8 +385,19 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getPeriod}
-         * @param period Property period: The purchase period.
-         *               The default value is 1.
+         * @param period Property period: The subscription duration of the bandwidth plan.
+         *               Default value: 1.
+         *               <p>
+         *               <ul>
+         *               <li>If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.</li>
+         *               <li>If you set PricingCycle to Year, valid values for Period are 1 to 3.</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you set BandwidthPackageChargeType to PREPAY.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -358,8 +407,19 @@ public interface CenBandwidthPackageProps extends software.amazon.jsii.JsiiSeria
 
         /**
          * Sets the value of {@link CenBandwidthPackageProps#getPeriod}
-         * @param period Property period: The purchase period.
-         *               The default value is 1.
+         * @param period Property period: The subscription duration of the bandwidth plan.
+         *               Default value: 1.
+         *               <p>
+         *               <ul>
+         *               <li>If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.</li>
+         *               <li>If you set PricingCycle to Year, valid values for Period are 1 to 3.</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you set BandwidthPackageChargeType to PREPAY.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {

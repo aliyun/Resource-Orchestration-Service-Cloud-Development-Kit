@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-vpc-vpcs
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.913Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.723Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.datasource.VpcsProps")
 @software.amazon.jsii.Jsii.Proxy(VpcsProps.Jsii$Proxy.class)
 public interface VpcsProps extends software.amazon.jsii.JsiiSerializable {

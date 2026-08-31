@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.threatdetection;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::ThreatDetection::Group</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:59:58.465Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:53:53.140Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.threatdetection.$Module.class, fqn = "@alicloud/ros-cdk-threatdetection.Group")
 public class Group extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.threatdetection.IGroup {
 

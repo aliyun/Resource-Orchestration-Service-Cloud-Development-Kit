@@ -5,41 +5,63 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-anycasteip
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.342Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.148Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.AnycastEIPProps")
 @software.amazon.jsii.Jsii.Proxy(AnycastEIPProps.Jsii$Proxy.class)
 public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property bandwidth: Anycast EIP instance bandwidth.
+     * Property bandwidth: The peak bandwidth of the Anycast EIP instance.
+     * <p>
+     * Unit: Mbps.
+     * Valid values: 200 to 1000.
+     * Default value: 1000.
+     * <p>
+     * <blockquote>
+     * <p>
+     * The peak bandwidth is for reference only and is not a guaranteed value. It
+     * serves as the upper limit for bandwidth.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getBandwidth() {
         return null;
     }
 
     /**
-     * Property description: Anycast EIP instance description.
+     * Property description: The description of the Anycast EIP instance.
+     * <p>
+     * The description must be 0 to 256 characters in length and cannot start with
+     * <code>http:\/\/</code> or <code>https:\/\/</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDescription() {
         return null;
     }
 
     /**
-     * Property instanceChargeType: Anycast EIP instance charge type.
+     * Property instanceChargeType: The billing method of the Anycast EIP instance.
+     * <p>
+     * Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInstanceChargeType() {
         return null;
     }
 
     /**
-     * Property internetChargeType: Anycast EIP instance access public network billing method.
+     * Property internetChargeType: The metering method for Internet data transfer.
+     * <p>
+     * Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+     * metering method.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getInternetChargeType() {
         return null;
     }
 
     /**
-     * Property name: Anycast EIP instance name.
+     * Property name: The name of the Anycast EIP instance.
+     * <p>
+     * The name must be 0 to 128 characters in length. It must start with a letter or a
+     * Chinese character and can contain digits, underscores (_), and hyphens (-).
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getName() {
         return null;
@@ -79,7 +101,17 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getBandwidth}
-         * @param bandwidth Property bandwidth: Anycast EIP instance bandwidth.
+         * @param bandwidth Property bandwidth: The peak bandwidth of the Anycast EIP instance.
+         *                  Unit: Mbps.
+         *                  Valid values: 200 to 1000.
+         *                  Default value: 1000.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The peak bandwidth is for reference only and is not a guaranteed value. It
+         *                  serves as the upper limit for bandwidth.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder bandwidth(java.lang.Number bandwidth) {
@@ -89,7 +121,17 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getBandwidth}
-         * @param bandwidth Property bandwidth: Anycast EIP instance bandwidth.
+         * @param bandwidth Property bandwidth: The peak bandwidth of the Anycast EIP instance.
+         *                  Unit: Mbps.
+         *                  Valid values: 200 to 1000.
+         *                  Default value: 1000.
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  The peak bandwidth is for reference only and is not a guaranteed value. It
+         *                  serves as the upper limit for bandwidth.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder bandwidth(com.aliyun.ros.cdk.core.IResolvable bandwidth) {
@@ -99,7 +141,9 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getDescription}
-         * @param description Property description: Anycast EIP instance description.
+         * @param description Property description: The description of the Anycast EIP instance.
+         *                    The description must be 0 to 256 characters in length and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(java.lang.String description) {
@@ -109,7 +153,9 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getDescription}
-         * @param description Property description: Anycast EIP instance description.
+         * @param description Property description: The description of the Anycast EIP instance.
+         *                    The description must be 0 to 256 characters in length and cannot start with
+         *                    <code>http:\/\/</code> or <code>https:\/\/</code>.
          * @return {@code this}
          */
         public Builder description(com.aliyun.ros.cdk.core.IResolvable description) {
@@ -119,7 +165,8 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Anycast EIP instance charge type.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the Anycast EIP instance.
+         *                           Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
          * @return {@code this}
          */
         public Builder instanceChargeType(java.lang.String instanceChargeType) {
@@ -129,7 +176,8 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getInstanceChargeType}
-         * @param instanceChargeType Property instanceChargeType: Anycast EIP instance charge type.
+         * @param instanceChargeType Property instanceChargeType: The billing method of the Anycast EIP instance.
+         *                           Set the value to PostPaid. This value specifies the pay-as-you-go billing method.
          * @return {@code this}
          */
         public Builder instanceChargeType(com.aliyun.ros.cdk.core.IResolvable instanceChargeType) {
@@ -139,7 +187,9 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: Anycast EIP instance access public network billing method.
+         * @param internetChargeType Property internetChargeType: The metering method for Internet data transfer.
+         *                           Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+         *                           metering method.
          * @return {@code this}
          */
         public Builder internetChargeType(java.lang.String internetChargeType) {
@@ -149,7 +199,9 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getInternetChargeType}
-         * @param internetChargeType Property internetChargeType: Anycast EIP instance access public network billing method.
+         * @param internetChargeType Property internetChargeType: The metering method for Internet data transfer.
+         *                           Set the value to PayByTraffic. This value specifies the pay-by-data-transfer
+         *                           metering method.
          * @return {@code this}
          */
         public Builder internetChargeType(com.aliyun.ros.cdk.core.IResolvable internetChargeType) {
@@ -159,7 +211,9 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getName}
-         * @param name Property name: Anycast EIP instance name.
+         * @param name Property name: The name of the Anycast EIP instance.
+         *             The name must be 0 to 128 characters in length. It must start with a letter or a
+         *             Chinese character and can contain digits, underscores (_), and hyphens (-).
          * @return {@code this}
          */
         public Builder name(java.lang.String name) {
@@ -169,7 +223,9 @@ public interface AnycastEIPProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AnycastEIPProps#getName}
-         * @param name Property name: Anycast EIP instance name.
+         * @param name Property name: The name of the Anycast EIP instance.
+         *             The name must be 0 to 128 characters in length. It must start with a letter or a
+         *             Chinese character and can contain digits, underscores (_), and hyphens (-).
          * @return {@code this}
          */
         public Builder name(com.aliyun.ros.cdk.core.IResolvable name) {

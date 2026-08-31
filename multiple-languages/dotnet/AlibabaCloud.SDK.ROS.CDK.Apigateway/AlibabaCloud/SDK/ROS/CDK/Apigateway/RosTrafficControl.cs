@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`, which is used to create a custom throttling policy.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::ApiGateway::TrafficControl`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `TrafficControl` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-apigateway-trafficcontrol
@@ -126,7 +126,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: trafficControlName: The name of the traffic control.It must be 4 to 128 characters in length, and can contain letters, digits, underscores (_), dashes (-), spaces and dots (.), It must start with a letter.
+        /// <strong>Property</strong>: trafficControlName: The name of the throttling policy. The name must be 4 to 50 characters in length
+        /// and can contain letters, digits, and underscores (_). It cannot start with an
+        /// underscore.
         /// </remarks>
         [JsiiProperty(name: "trafficControlName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TrafficControlName
@@ -156,7 +158,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Apigateway
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: trafficControlUnit: Traffic control unit, DAY\/HOUR\/MINUTE.
+        /// <strong>Property</strong>: trafficControlUnit: The unit to be used in the throttling policy. Valid values:
+        /// - SECOND
+        /// - MINUTE
+        /// - HOUR
+        /// - DAY
         /// </remarks>
         [JsiiProperty(name: "trafficControlUnit", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object TrafficControlUnit

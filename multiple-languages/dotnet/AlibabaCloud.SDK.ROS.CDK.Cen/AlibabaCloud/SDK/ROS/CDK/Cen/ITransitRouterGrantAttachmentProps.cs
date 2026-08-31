@@ -49,13 +49,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
             get;
         }
 
-        /// <summary>Property orderType: The billing method for the network instance.</summary>
+        /// <summary>Property orderType: The entity that pays the fees of the network instance.</summary>
         /// <remarks>
         /// Valid values:
         ///
         /// <list type="bullet">
-        /// <description>PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.</description>
-        /// <description>PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.</description>
+        /// <description>PayByCenOwner: the account that owns the CEN instance.</description>
+        /// <description>PayByResourceOwner: the account that owns the network instance.</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "orderType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -117,13 +117,13 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cen
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property orderType: The billing method for the network instance.</summary>
+            /// <summary>Property orderType: The entity that pays the fees of the network instance.</summary>
             /// <remarks>
             /// Valid values:
             ///
             /// <list type="bullet">
-            /// <description>PayByCenOwner: The fees incurred by the network instance are paid by the owner of the CEN instance.</description>
-            /// <description>PayByResourceOwner: The fees incurred by the network instance are paid by the owner of the network instance.</description>
+            /// <description>PayByCenOwner: the account that owns the CEN instance.</description>
+            /// <description>PayByResourceOwner: the account that owns the network instance.</description>
             /// </list>
             /// </remarks>
             [JsiiOptional]

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-vpcpeerconnection
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.738Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.529Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VpcPeerConnectionProps")
 @software.amazon.jsii.Jsii.Proxy(VpcPeerConnectionProps.Jsii$Proxy.class)
 public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSerializable {
@@ -98,8 +98,6 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
 
     /**
      * Property resourceGroupId: The ID of the resource group.
-     * <p>
-     * For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getResourceGroupId() {
         return null;
@@ -349,7 +347,6 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Sets the value of {@link VpcPeerConnectionProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
-         *                        For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
          * @return {@code this}
          */
         public Builder resourceGroupId(java.lang.String resourceGroupId) {
@@ -360,7 +357,6 @@ public interface VpcPeerConnectionProps extends software.amazon.jsii.JsiiSeriali
         /**
          * Sets the value of {@link VpcPeerConnectionProps#getResourceGroupId}
          * @param resourceGroupId Property resourceGroupId: The ID of the resource group.
-         *                        For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
          * @return {@code this}
          */
         public Builder resourceGroupId(com.aliyun.ros.cdk.core.IResolvable resourceGroupId) {

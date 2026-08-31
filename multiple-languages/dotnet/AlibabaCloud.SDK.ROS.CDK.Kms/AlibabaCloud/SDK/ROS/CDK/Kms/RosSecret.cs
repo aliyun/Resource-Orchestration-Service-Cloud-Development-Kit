@@ -85,8 +85,31 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: secretData: The value of the secret that you want to create. Secrets Manager encrypts the secret
-        /// value and stores it in the initial version.
+        /// <strong>Property</strong>: secretData: The value of the secret. The value can be up to 30,720 bytes (30 KB) in length.
+        /// KMS encrypts the secret value with the specified key and stores the encrypted
+        /// value in the initial version.
+        /// - If SecretType is set to Generic, you can specify a custom secret value.
+        /// - If SecretType is set to Rds, the secret value must be in the following format:
+        /// `{"Accounts":[{"AccountName":"","AccountPassword":""}]}`. In the format,
+        /// `AccountName` specifies the username of the account for the RDS instance and
+        /// `AccountPassword` specifies the password of the account.
+        /// - If SecretType is set to Redis, set this parameter to `$Auto`.
+        /// - If SecretType is set to RAMCredentials, the secret value must be in the
+        /// following format: `{"AccessKeys":[{"AccessKeyId":"","AccessKeySecret":""}]}`. In
+        /// the format, `AccessKeyId` specifies the AccessKey ID and `AccessKeySecret`
+        /// specifies the AccessKey secret. You must specify all AccessKey pairs of the RAM
+        /// user.
+        /// - If SecretType is set to PolarDB, set this parameter to `$Auto`.
+        /// - If SecretType is set to ECS, the secret value must be in one of the following
+        /// formats:
+        /// - If SecretSubType in the ExtendedConfig parameter is set to Password:
+        /// `{"UserName":"","Password": ""}`. In the format, `UserName` specifies the
+        /// username used to log on to the ECS instance and `Password` specifies the password
+        /// used to log on to the ECS instance.
+        /// - If SecretSubType in the ExtendedConfig parameter is set to SSHKey:
+        /// `{"UserName":"","PublicKey": "", "PrivateKey": ""}`. In the format, `PublicKey`
+        /// specifies the SSH-formatted public key used to log on to the ECS instance and
+        /// `PrivateKey` specifies the private key used to log on to the ECS instance.
         /// </remarks>
         [JsiiProperty(name: "secretData", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SecretData
@@ -116,7 +139,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: secretName: The name of the secret.
+        /// <strong></strong>: ). The following limits apply to secret names
+        /// for different types of secrets:
+        /// - If SecretType is set to Generic, Rds, or Redis, the name cannot start with
+        /// `acs\/`.
+        /// - If SecretType is set to RAMCredentials, set this parameter to the fixed value
+        /// `$Auto`. In this case, KMS automatically generates a secret name that starts with
+        /// `acs\/ram\/user\/` and contains the display name of the RAM user.
+        /// - If SecretType is set to ECS, the name must start with `acs\/ecs\/`.
+        ///
+        /// <strong>Property</strong>: secretName: The name of the secret. The name must be unique in the same region.
+        /// The name can be up to 192 characters in length and can contain letters, digits,
+        /// underscores (_), forward slashes (\/), plus signs (+), equal signs (=), periods
+        /// (.), hyphens (-), and at signs (
         /// </remarks>
         [JsiiProperty(name: "secretName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object SecretName
@@ -146,8 +181,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: versionId: The version number of the initial version. Version numbers are unique in each secret
-        /// object.
+        /// <strong>Property</strong>: versionId: The version number of the initial version. The version number must be unique
+        /// within the secret.
+        /// The version number can be up to 64 characters in length.
         /// </remarks>
         [JsiiProperty(name: "versionId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object VersionId
@@ -240,8 +276,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         /// <remarks>
         /// <strong>Property</strong>: enableAutomaticRotation: Specifies whether to enable automatic rotation. Valid values:
-        /// true: specifies to enable automatic rotation.
-        /// false: specifies to disable automatic rotation. This is the default value.
+        /// - true: enables automatic rotation.
+        /// - false (default): disables automatic rotation.
+        /// > This parameter is valid only if SecretType is set to Rds, PolarDB, Redis,
+        /// RAMCredentials, or ECS. If SecretType is set to Generic, automatic rotation is
+        /// not supported. You can call the [PutSecretValue]() operation to manually rotate
+        /// the secret.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "enableAutomaticRotation", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -272,10 +312,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: encryptionKeyId: The ID of the KMS CMK that is used to encrypt the secret value.
-        /// If you do not specify this parameter, Secrets Manager automatically creates an encryption
-        /// key to encrypt the secret.
-        /// Note The KMS CMK must be a symmetric key.
+        /// <strong>Property</strong>: encryptionKeyId: The ID of the key used to encrypt the secret value.
+        /// > The key and the secret must be in the same KMS instance. The key must be a
+        /// symmetric key.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "encryptionKeyId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -306,7 +345,80 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: extendedConfig: The extended configuration of the secret. This parameter specifies the properties of the secret of the specific type.
+        /// <strong>Property</strong>: extendedConfig: The extended configuration of the secret. This parameter specifies the properties
+        /// of the secret of a specific type. The value can be up to 1,024 characters in
+        /// length.
+        /// - If SecretType is set to Generic, this parameter is ignored.
+        /// - If SecretType is set to Rds, you must specify the following parameters in
+        /// ExtendedConfig:
+        /// - SecretSubType (Required): The subtype of the secret. Valid values:
+        /// - SingleUser: Secrets Manager manages the RDS secret in single-account mode. When
+        /// the secret is rotated, the password of the specified account is reset to a new
+        /// random password.
+        /// - DoubleUsers: Secrets Manager manages the RDS secret in double-account mode.
+        /// ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+        /// rotated, the password of the account pointed to by ACSPrevious is reset to a new
+        /// random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+        /// ACSPrevious point to.
+        /// - DBInstanceId (Required): The ID of the RDS instance to which the account
+        /// belongs.
+        /// - CustomData (Optional): The custom data. The value is a key-value pair in the
+        /// JSON format. You can specify up to 10 key-value pairs. Separate multiple
+        /// key-value pairs with commas (,). Example: `{"Key1": "v1", "fds":"fdsf"}`. The
+        /// default value is `{}`.
+        /// - If SecretType is set to Redis, you must specify the following parameters in
+        /// ExtendedConfig:
+        /// - SecretSubType (Required): The subtype of the secret. Valid values:
+        /// - DoubleUsers: Secrets Manager manages the Redis secret in double-account mode.
+        /// ACSCurrent and ACSPrevious point to one of the accounts. When the secret is
+        /// rotated, the password of the account pointed to by ACSPrevious is reset to a new
+        /// random password. Then, Secrets Manager swaps the accounts that ACSCurrent and
+        /// ACSPrevious point to.
+        /// - AccountName (Required): The database username.
+        /// - CloneAccountName (Required): The database username, which is the value of
+        /// AccountName with the `_clone` suffix.
+        /// - AccountPrivilege (Required): The permissions to access the database.
+        /// - InstanceId (Required): The ID of the Redis instance.
+        /// - RegionId (Required): The ID of the region where the Redis instance resides.
+        /// - CustomData (Optional): The custom data. The value is a key-value pair in the
+        /// JSON format. You can specify up to 10 key-value pairs. Separate multiple
+        /// key-value pairs with commas (,). Example: `{"Key1": "v1", "fds":"fdsf"}`. The
+        /// default value is `{}`.
+        /// - If SecretType is set to RAMCredentials, you must specify the following
+        /// parameters in ExtendedConfig:
+        /// - SecretSubType (Required): The subtype of the secret. The value is
+        /// RamUserAccessKey.
+        /// - UserName (Required): The name of the RAM user.
+        /// - CustomData (Optional): The custom data. The value is a key-value pair in the
+        /// JSON format. You can specify up to 10 key-value pairs. Separate multiple
+        /// key-value pairs with commas (,). The default value is `{}`.
+        /// - If SecretType is set to ECS, you must specify the following parameters in
+        /// ExtendedConfig:
+        /// - SecretSubType (Required): The subtype of the secret. Valid values:
+        /// - Password: an ECS password.
+        /// - SSHKey: an ECS SSH key pair.
+        /// - RegionId (Required): The ID of the region where the ECS instance resides.
+        /// - InstanceId (Required): The ID of the ECS instance.
+        /// - CustomData (Optional): The custom data. The value is a key-value pair in the
+        /// JSON format. You can specify up to 10 key-value pairs. Separate multiple
+        /// key-value pairs with commas (,). The default value is `{}`.
+        /// - If SecretType is set to PolarDB, you must specify the following parameters in
+        /// ExtendedConfig:
+        /// - SecretSubType (Required): The fixed value is DoubleUsers.
+        /// - RegionId (Required): The region.
+        /// - DBClusterId (Required): The ID of the PolarDB instance.
+        /// - DBType (Required): MySQL or PostgreSQL.
+        /// - AccountName (Required): The account name.
+        /// - CloneAccountName: The value is AccountName_clone.
+        /// - AccountType: Only Normal is supported.
+        /// - AccountPrivilege: This parameter is available only for MySQL.
+        /// - DBName: This parameter is available only for MySQL.
+        /// - CustomData (Optional): The custom data. The value is a key-value pair in the
+        /// JSON format. You can specify up to 10 key-value pairs. Separate multiple
+        /// key-value pairs with commas (,). Example: {"Key1": "v1", "fds":"fdsf"}. The
+        /// default value is {}.
+        /// > If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS, you must
+        /// configure this parameter.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "extendedConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}", isOptional: true)]
@@ -464,9 +576,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: rotationInterval: The interval for automatic rotation. Valid values: 6 hours to 8,760 hours (365 days).
-        /// The value is in the integer[unit] format.
-        /// The unit can be d (day), h (hour), m (minute), or s (second). For example, both 7d and 604800s indicate a seven-day interval.
+        /// <strong>Property</strong>: rotationInterval: The interval for automatic rotation. The value is in the range of 6 hours to
+        /// 8,760 hours (365 days).<br>
+        /// The value is in the `integer[unit]` format. `integer` indicates the interval.
+        /// `unit` indicates the unit of time.<br>
+        /// Valid values for unit: d (day), h (hour), m (minute), and s (second). For
+        /// example, both 7d and 604,800s indicate a rotation interval of 7 days.<br><br>
+        /// > You must specify this parameter if you set EnableAutomaticRotation to true. You
+        /// do not need to specify this parameter if you set EnableAutomaticRotation to
+        /// false.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "rotationInterval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -498,8 +616,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         /// <remarks>
         /// <strong>Property</strong>: secretDataType: The type of the secret value. Valid values:
-        /// text (default value)
-        /// binary
+        /// - text (default): The secret value is a text string.
+        /// - binary: The secret value is a binary string.
+        /// > If SecretType is set to Rds, Redis, PolarDB, RAMCredentials, or ECS,
+        /// SecretDataType must be set to text.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "secretDataType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -531,10 +651,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Kms
 
         /// <remarks>
         /// <strong>Property</strong>: secretType: The type of the secret. Valid values:
-        /// Generic: specifies a generic secret.
-        /// Rds: specifies a managed ApsaraDB RDS secret.
-        /// RAMCredentials: specifies a managed RAM secret.
-        /// ECS: specifies a managed ECS secret.
+        /// - Generic (default): a generic secret.
+        /// - Rds: an RDS secret.
+        /// - Redis: a Redis secret.
+        /// - RAMCredentials: a RAM secret.
+        /// - ECS: an ECS secret.
+        /// - PolarDB: a PolarDB secret.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "secretType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

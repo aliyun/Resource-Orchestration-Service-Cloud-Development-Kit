@@ -49,8 +49,7 @@ type MediaInfoProps struct {
 	// video
 	// audio
 	// text
-	// We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension. For more information
-	// .
+	// We recommend that you specify this parameter based on your business requirements. If you set InputURL to an OSS URL, the media asset type can be automatically determined based on the file name extension.
 	MediaType interface{} `field:"optional" json:"mediaType" yaml:"mediaType"`
 	// Property overwrite: Specifies whether to overwrite the media asset that has been registered by using the same URL.
 	//
@@ -84,6 +83,9 @@ type MediaInfoProps struct {
 	// Property userData: The user data.
 	//
 	// You can specify a custom callback URL.
+	// - The value can be up to 1,024 bytes in length.
+	// - The value must be encoded in UTF-8.
+	// - The value must be in the JSON format.
 	UserData interface{} `field:"optional" json:"userData" yaml:"userData"`
 	// Property workflowId: The workflow ID.
 	WorkflowId interface{} `field:"optional" json:"workflowId" yaml:"workflowId"`

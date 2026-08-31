@@ -5,15 +5,13 @@ package com.aliyun.ros.cdk.cloudphone;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudphone-runcommand
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:49:40.209Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:37:59.569Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudphone.$Module.class, fqn = "@alicloud/ros-cdk-cloudphone.RunCommandProps")
 @software.amazon.jsii.Jsii.Proxy(RunCommandProps.Jsii$Proxy.class)
 public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property command: The command to be executed.
-     * <p>
-     * The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (/), colon (:), medium line (-).
+     * Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (/), colons (:), and hyphens (-).
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getCommand();
 
@@ -47,8 +45,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getCommand}
-         * @param command Property command: The command to be executed. This parameter is required.
-         *                The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (/), colon (:), medium line (-).
+         * @param command Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (/), colons (:), and hyphens (-). This parameter is required.
          * @return {@code this}
          */
         public Builder command(java.lang.String command) {
@@ -58,8 +55,7 @@ public interface RunCommandProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link RunCommandProps#getCommand}
-         * @param command Property command: The command to be executed. This parameter is required.
-         *                The maximum length of a command is 1024 bytes, and only supports lowercase letters, numbers, downline (_), points (.), Slanting (/), colon (:), medium line (-).
+         * @param command Property command: The command that you want to run.\ The name can be up to 1024 bytes in length and can contain only letters, digits, underscores (_), periods (.), slashes (/), colons (:), and hyphens (-). This parameter is required.
          * @return {@code this}
          */
         public Builder command(com.aliyun.ros.cdk.core.IResolvable command) {

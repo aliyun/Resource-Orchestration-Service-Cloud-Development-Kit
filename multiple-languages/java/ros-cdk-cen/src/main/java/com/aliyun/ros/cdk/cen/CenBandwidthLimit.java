@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenBandwidthLimit</code>, which is used to configure the bandwidth for cross-region interconnection in a bandwidth plan.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenBandwidthLimit</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.221Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.556Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenBandwidthLimit")
 public class CenBandwidthLimit extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ICenBandwidthLimit {
 
@@ -104,24 +104,24 @@ public class CenBandwidthLimit extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property bandwidthLimit: The bandwidth configured for the interconnected regions communication.
+         * Property bandwidthLimit: The inter-region bandwidth between the two regions.
          * <p>
-         * Minimal value: 1
+         * Unit: Mbps.
          * <p>
          * @return {@code this}
-         * @param bandwidthLimit Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. This parameter is required.
+         * @param bandwidthLimit Property bandwidthLimit: The inter-region bandwidth between the two regions. This parameter is required.
          */
         public Builder bandwidthLimit(final java.lang.Number bandwidthLimit) {
             this.props.bandwidthLimit(bandwidthLimit);
             return this;
         }
         /**
-         * Property bandwidthLimit: The bandwidth configured for the interconnected regions communication.
+         * Property bandwidthLimit: The inter-region bandwidth between the two regions.
          * <p>
-         * Minimal value: 1
+         * Unit: Mbps.
          * <p>
          * @return {@code this}
-         * @param bandwidthLimit Property bandwidthLimit: The bandwidth configured for the interconnected regions communication. This parameter is required.
+         * @param bandwidthLimit Property bandwidthLimit: The inter-region bandwidth between the two regions. This parameter is required.
          */
         public Builder bandwidthLimit(final com.aliyun.ros.cdk.core.IResolvable bandwidthLimit) {
             this.props.bandwidthLimit(bandwidthLimit);
@@ -192,24 +192,32 @@ public class CenBandwidthLimit extends com.aliyun.ros.cdk.core.Resource implemen
         }
 
         /**
-         * Property bandwidthType: Bandwidth allocation mode.
+         * Property bandwidthType: The method used to allocate bandwidth.
          * <p>
-         * Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * Valid value:
+         * <p>
+         * <ul>
+         * <li>BandwidthPackage (default): allocates bandwidth from a bandwidth plan.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode. This parameter is required.
+         * @param bandwidthType Property bandwidthType: The method used to allocate bandwidth. This parameter is required.
          */
         public Builder bandwidthType(final java.lang.String bandwidthType) {
             this.props.bandwidthType(bandwidthType);
             return this;
         }
         /**
-         * Property bandwidthType: Bandwidth allocation mode.
+         * Property bandwidthType: The method used to allocate bandwidth.
          * <p>
-         * Value: BandwidthPackage: Allocates bandwidth from the bandwidth package.
+         * Valid value:
+         * <p>
+         * <ul>
+         * <li>BandwidthPackage (default): allocates bandwidth from a bandwidth plan.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param bandwidthType Property bandwidthType: Bandwidth allocation mode. This parameter is required.
+         * @param bandwidthType Property bandwidthType: The method used to allocate bandwidth. This parameter is required.
          */
         public Builder bandwidthType(final com.aliyun.ros.cdk.core.IResolvable bandwidthType) {
             this.props.bandwidthType(bandwidthType);

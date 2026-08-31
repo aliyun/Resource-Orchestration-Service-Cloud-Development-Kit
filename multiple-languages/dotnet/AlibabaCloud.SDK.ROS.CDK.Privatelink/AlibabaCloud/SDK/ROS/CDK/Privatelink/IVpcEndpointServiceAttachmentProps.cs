@@ -18,14 +18,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             get;
         }
 
-        /// <summary>Property resourceType: The resource type.</summary>
+        /// <summary>Property resourceType: The type of the service resource.</summary>
         /// <remarks>
-        /// Allowed values:
+        /// Valid values:
         ///
         /// <list type="bullet">
-        /// <description>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</description>
-        /// <description>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</description>
-        /// <description>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</description>
+        /// <description>slb: Classic Load Balancer (CLB).</description>
+        /// <description>alb: Application Load Balancer (ALB).</description>
+        /// <description>nlb: Network Load Balancer (NLB).</description>
+        /// <description>gwlb: Gateway Load Balancer (GWLB).</description>
         /// </list>
         /// </remarks>
         [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -41,7 +42,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
             get;
         }
 
-        /// <summary>Property zoneId: Zone id of the service resource.</summary>
+        /// <summary>Property zoneId: The zone where the service resource is located.</summary>
+        /// <remarks>
+        /// This parameter is required if the
+        /// service resource is an ALB, NLB, or GWLB instance.
+        /// </remarks>
         [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
         object? ZoneId
@@ -70,14 +75,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property resourceType: The resource type.</summary>
+            /// <summary>Property resourceType: The type of the service resource.</summary>
             /// <remarks>
-            /// Allowed values:
+            /// Valid values:
             ///
             /// <list type="bullet">
-            /// <description>slb: indicates a Classic Load Balancer (CLB) instance whose service resource type is a private network and supports the PrivateLink function.</description>
-            /// <description>alb: indicates an Application Load Balancer (ALB) instance whose service resources are private networks and which supports the PrivateLink function.</description>
-            /// <description>nlb: indicates a Network Load Balancer (NLB) instance that uses private network resources and supports the PrivateLink function.</description>
+            /// <description>slb: Classic Load Balancer (CLB).</description>
+            /// <description>alb: Application Load Balancer (ALB).</description>
+            /// <description>nlb: Network Load Balancer (NLB).</description>
+            /// <description>gwlb: Gateway Load Balancer (GWLB).</description>
             /// </list>
             /// </remarks>
             [JsiiProperty(name: "resourceType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
@@ -93,7 +99,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Privatelink
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property zoneId: Zone id of the service resource.</summary>
+            /// <summary>Property zoneId: The zone where the service resource is located.</summary>
+            /// <remarks>
+            /// This parameter is required if the
+            /// service resource is an ALB, NLB, or GWLB instance.
+            /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "zoneId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
             public object? ZoneId

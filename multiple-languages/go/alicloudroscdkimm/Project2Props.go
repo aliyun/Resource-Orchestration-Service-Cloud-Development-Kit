@@ -5,7 +5,12 @@ package alicloudroscdkimm
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-imm-project2
 type Project2Props struct {
-	// Property projectName: The name of project.
+	// Property projectName: The project name.
+	//
+	// The naming convention is as follows:
+	// - The name must be 1 to 128 characters in length.
+	// - It can contain only letters, digits, hyphens (-), and underscores (_).
+	// - It must start with a letter or an underscore (_).
 	ProjectName interface{} `field:"required" json:"projectName" yaml:"projectName"`
 	// Property datasetMaxBindCount: The maximum number of bindings for each dataset.
 	//
@@ -13,15 +18,19 @@ type Project2Props struct {
 	DatasetMaxBindCount interface{} `field:"optional" json:"datasetMaxBindCount" yaml:"datasetMaxBindCount"`
 	// Property datasetMaxEntityCount: The maximum number of metadata entities in each dataset.
 	//
-	// Default value: 10000000000.
+	// The default value is
+	// 10,000,000,000.
+	// > This configuration is reserved and is not currently enforced.
 	DatasetMaxEntityCount interface{} `field:"optional" json:"datasetMaxEntityCount" yaml:"datasetMaxEntityCount"`
 	// Property datasetMaxFileCount: The maximum number of files in each dataset.
 	//
 	// Valid values: 1 to 100000000. Default value: 100000000.
 	DatasetMaxFileCount interface{} `field:"optional" json:"datasetMaxFileCount" yaml:"datasetMaxFileCount"`
-	// Property datasetMaxRelationCount: The maximum number of metadata entities in each dataset.
+	// Property datasetMaxRelationCount: The maximum number of metadata relations in each dataset.
 	//
-	// Default value: 100000000000.
+	// The default value is
+	// 100,000,000,000.
+	// > This configuration is reserved and is not currently enforced.
 	DatasetMaxRelationCount interface{} `field:"optional" json:"datasetMaxRelationCount" yaml:"datasetMaxRelationCount"`
 	// Property datasetMaxTotalFileSize: The maximum size of files in each dataset.
 	//

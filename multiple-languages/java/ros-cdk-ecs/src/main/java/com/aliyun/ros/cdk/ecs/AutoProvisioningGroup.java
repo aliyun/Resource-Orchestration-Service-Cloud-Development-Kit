@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoProvisioningGroup</code>, which is used to create an auto provisioning group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::AutoProvisioningGroup</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.818Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.169Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.AutoProvisioningGroup")
 public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IAutoProvisioningGroup {
 
@@ -122,11 +122,11 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         /**
          * Property totalTargetCapacity: The total target capacity of the auto provisioning group.
          * <p>
-         * The target capacity consists
-         * of the following three parts:
-         * The target capacity of pay-as-you-go instances specified by the PayAsYouGoTargetCapacity parameter
-         * The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
-         * The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
+         * Valid values: Positive
+         * integers.
+         * The total capacity must be greater than or equal to the sum of
+         * <code>PayAsYouGoTargetCapacity</code> (target capacity for pay-as-you-go instances) and
+         * <code>SpotTargetCapacity</code> (target capacity for spot instances).
          * <p>
          * @return {@code this}
          * @param totalTargetCapacity Property totalTargetCapacity: The total target capacity of the auto provisioning group. This parameter is required.
@@ -138,11 +138,11 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         /**
          * Property totalTargetCapacity: The total target capacity of the auto provisioning group.
          * <p>
-         * The target capacity consists
-         * of the following three parts:
-         * The target capacity of pay-as-you-go instances specified by the PayAsYouGoTargetCapacity parameter
-         * The target capacity of preemptible instances specified by the SpotTargetCapacity parameter
-         * The supplemental capacity besides PayAsYouGoTargetCapacity and SpotTargetCapacity
+         * Valid values: Positive
+         * integers.
+         * The total capacity must be greater than or equal to the sum of
+         * <code>PayAsYouGoTargetCapacity</code> (target capacity for pay-as-you-go instances) and
+         * <code>SpotTargetCapacity</code> (target capacity for spot instances).
          * <p>
          * @return {@code this}
          * @param totalTargetCapacity Property totalTargetCapacity: The total target capacity of the auto provisioning group. This parameter is required.
@@ -182,42 +182,48 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property autoProvisioningGroupType: The type of the auto provisioning group.
+         * Property autoProvisioningGroupType: The delivery type of the auto provisioning group.
          * <p>
          * Valid values:
-         * request: One-time delivery. After the auto provisioning group is started, it only attempts
-         * to create an instance cluster once. If the cluster fails to be created, the group
-         * does not try again.
-         * maintain: The continuous delivery and maintain capacity type. After the auto provisioning group
-         * is started, it continuously attempts to create and maintain the instance cluster.
-         * The auto provisioning group compares the real-time and target capacity of the cluster.
-         * If the cluster does not meet the target capacity, the group will create instances
-         * until the cluster meets the target capacity.
-         * Default value: maintain
+         * <p>
+         * <ul>
+         * <li>request: One-time asynchronous delivery. The group delivers the instance
+         * cluster only at startup. If scheduling fails, no retry occurs.</li>
+         * <li>instant: One-time synchronous delivery. The group creates instances
+         * synchronously at startup and returns the list of successfully created instances
+         * and reasons for failures in the response.</li>
+         * <li>maintain: Continuous provisioning. The group attempts to deliver the instance
+         * cluster at startup and monitors real-time capacity. If the target capacity is not
+         * met, it continues creating ECS instances.
+         * Default value: maintain.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoProvisioningGroupType Property autoProvisioningGroupType: The type of the auto provisioning group. This parameter is required.
+         * @param autoProvisioningGroupType Property autoProvisioningGroupType: The delivery type of the auto provisioning group. This parameter is required.
          */
         public Builder autoProvisioningGroupType(final java.lang.String autoProvisioningGroupType) {
             this.props.autoProvisioningGroupType(autoProvisioningGroupType);
             return this;
         }
         /**
-         * Property autoProvisioningGroupType: The type of the auto provisioning group.
+         * Property autoProvisioningGroupType: The delivery type of the auto provisioning group.
          * <p>
          * Valid values:
-         * request: One-time delivery. After the auto provisioning group is started, it only attempts
-         * to create an instance cluster once. If the cluster fails to be created, the group
-         * does not try again.
-         * maintain: The continuous delivery and maintain capacity type. After the auto provisioning group
-         * is started, it continuously attempts to create and maintain the instance cluster.
-         * The auto provisioning group compares the real-time and target capacity of the cluster.
-         * If the cluster does not meet the target capacity, the group will create instances
-         * until the cluster meets the target capacity.
-         * Default value: maintain
+         * <p>
+         * <ul>
+         * <li>request: One-time asynchronous delivery. The group delivers the instance
+         * cluster only at startup. If scheduling fails, no retry occurs.</li>
+         * <li>instant: One-time synchronous delivery. The group creates instances
+         * synchronously at startup and returns the list of successfully created instances
+         * and reasons for failures in the response.</li>
+         * <li>maintain: Continuous provisioning. The group attempts to deliver the instance
+         * cluster at startup and monitors real-time capacity. If the target capacity is not
+         * met, it continues creating ECS instances.
+         * Default value: maintain.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoProvisioningGroupType Property autoProvisioningGroupType: The type of the auto provisioning group. This parameter is required.
+         * @param autoProvisioningGroupType Property autoProvisioningGroupType: The delivery type of the auto provisioning group. This parameter is required.
          */
         public Builder autoProvisioningGroupType(final com.aliyun.ros.cdk.core.IResolvable autoProvisioningGroupType) {
             this.props.autoProvisioningGroupType(autoProvisioningGroupType);
@@ -271,32 +277,36 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property defaultTargetCapacityType: The type of supplemental instances.
+         * Property defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of <code>PayAsYouGoTargetCapacity</code> and <code>SpotTargetCapacity</code> is less than <code>TotalTargetCapacity</code>.
          * <p>
-         * When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
-         * the capacity requirements. Valid values:
-         * PayAsYouGo: Pay-as-you-go instances.
-         * Spot: Preemptible instances.
-         * Default value: Spot
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>PayAsYouGo: Pay-as-you-go instances.</li>
+         * <li>Spot: Spot instances.
+         * Default value: Spot.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param defaultTargetCapacityType Property defaultTargetCapacityType: The type of supplemental instances. This parameter is required.
+         * @param defaultTargetCapacityType Property defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of <code>PayAsYouGoTargetCapacity</code> and <code>SpotTargetCapacity</code> is less than <code>TotalTargetCapacity</code>. This parameter is required.
          */
         public Builder defaultTargetCapacityType(final java.lang.String defaultTargetCapacityType) {
             this.props.defaultTargetCapacityType(defaultTargetCapacityType);
             return this;
         }
         /**
-         * Property defaultTargetCapacityType: The type of supplemental instances.
+         * Property defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of <code>PayAsYouGoTargetCapacity</code> and <code>SpotTargetCapacity</code> is less than <code>TotalTargetCapacity</code>.
          * <p>
-         * When the total value of PayAsYouGoTargetCapacity and SpotTargetCapacity is smaller than the value of TotalTargetCapacity, the auto provisioning group will create instances of the specified type to meet
-         * the capacity requirements. Valid values:
-         * PayAsYouGo: Pay-as-you-go instances.
-         * Spot: Preemptible instances.
-         * Default value: Spot
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>PayAsYouGo: Pay-as-you-go instances.</li>
+         * <li>Spot: Spot instances.
+         * Default value: Spot.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param defaultTargetCapacityType Property defaultTargetCapacityType: The type of supplemental instances. This parameter is required.
+         * @param defaultTargetCapacityType Property defaultTargetCapacityType: Specifies the billing method for the capacity difference when the sum of <code>PayAsYouGoTargetCapacity</code> and <code>SpotTargetCapacity</code> is less than <code>TotalTargetCapacity</code>. This parameter is required.
          */
         public Builder defaultTargetCapacityType(final com.aliyun.ros.cdk.core.IResolvable defaultTargetCapacityType) {
             this.props.defaultTargetCapacityType(defaultTargetCapacityType);
@@ -325,32 +335,40 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of the auto provisioning group exceeds the target capacity.
+         * Property excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto provisioning group exceeds the target capacity and scale-in is triggered.
          * <p>
-         * Valid values:
-         * no-termination: Excess preemptible instances are not shut down.
-         * termination: Excess preemptible instances are to be shut down. The action to be performed on these
-         * shutdown instances is specified by the SpotInstanceInterruptionBehavior parameter.
-         * Default value: no-termination
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>termination: Releases scaled-in instances.</li>
+         * <li>no-termination: Only removes scaled-in instances from the auto provisioning
+         * group.
+         * Default value: no-termination.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param excessCapacityTerminationPolicy Property excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of the auto provisioning group exceeds the target capacity. This parameter is required.
+         * @param excessCapacityTerminationPolicy Property excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto provisioning group exceeds the target capacity and scale-in is triggered. This parameter is required.
          */
         public Builder excessCapacityTerminationPolicy(final java.lang.String excessCapacityTerminationPolicy) {
             this.props.excessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
             return this;
         }
         /**
-         * Property excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of the auto provisioning group exceeds the target capacity.
+         * Property excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto provisioning group exceeds the target capacity and scale-in is triggered.
          * <p>
-         * Valid values:
-         * no-termination: Excess preemptible instances are not shut down.
-         * termination: Excess preemptible instances are to be shut down. The action to be performed on these
-         * shutdown instances is specified by the SpotInstanceInterruptionBehavior parameter.
-         * Default value: no-termination
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>termination: Releases scaled-in instances.</li>
+         * <li>no-termination: Only removes scaled-in instances from the auto provisioning
+         * group.
+         * Default value: no-termination.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param excessCapacityTerminationPolicy Property excessCapacityTerminationPolicy: The shutdown policy for excess preemptible instances followed when the capacity of the auto provisioning group exceeds the target capacity. This parameter is required.
+         * @param excessCapacityTerminationPolicy Property excessCapacityTerminationPolicy: Specifies whether to release instances when the real-time capacity of the auto provisioning group exceeds the target capacity and scale-in is triggered. This parameter is required.
          */
         public Builder excessCapacityTerminationPolicy(final com.aliyun.ros.cdk.core.IResolvable excessCapacityTerminationPolicy) {
             this.props.excessCapacityTerminationPolicy(excessCapacityTerminationPolicy);
@@ -431,24 +449,28 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning group.
+         * Property launchTemplateVersion: The version of the launch template associated with the auto provisioning group.
          * <p>
-         * You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
+         * Call <a href="">DescribeLaunchTemplateVersions</a> to query available launch template
+         * versions.
+         * Default value: The default version of the launch template.
          * <p>
          * @return {@code this}
-         * @param launchTemplateVersion Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning group. This parameter is required.
+         * @param launchTemplateVersion Property launchTemplateVersion: The version of the launch template associated with the auto provisioning group. This parameter is required.
          */
         public Builder launchTemplateVersion(final java.lang.String launchTemplateVersion) {
             this.props.launchTemplateVersion(launchTemplateVersion);
             return this;
         }
         /**
-         * Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning group.
+         * Property launchTemplateVersion: The version of the launch template associated with the auto provisioning group.
          * <p>
-         * You can call the DescribeLaunchTemplateVersions operation to query the versions of available instance launch templates.
+         * Call <a href="">DescribeLaunchTemplateVersions</a> to query available launch template
+         * versions.
+         * Default value: The default version of the launch template.
          * <p>
          * @return {@code this}
-         * @param launchTemplateVersion Property launchTemplateVersion: The version of the instance launch template associated with the auto provisioning group. This parameter is required.
+         * @param launchTemplateVersion Property launchTemplateVersion: The version of the launch template associated with the auto provisioning group. This parameter is required.
          */
         public Builder launchTemplateVersion(final com.aliyun.ros.cdk.core.IResolvable launchTemplateVersion) {
             this.props.launchTemplateVersion(launchTemplateVersion);
@@ -549,20 +571,24 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
+         * Property payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group.
+         * <p>
+         * Valid values: Integers less than or equal to the value of <code>TotalTargetCapacity</code>.
          * <p>
          * @return {@code this}
-         * @param payAsYouGoTargetCapacity Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group. This parameter is required.
+         * @param payAsYouGoTargetCapacity Property payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group. This parameter is required.
          */
         public Builder payAsYouGoTargetCapacity(final java.lang.String payAsYouGoTargetCapacity) {
             this.props.payAsYouGoTargetCapacity(payAsYouGoTargetCapacity);
             return this;
         }
         /**
-         * Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group.
+         * Property payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group.
+         * <p>
+         * Valid values: Integers less than or equal to the value of <code>TotalTargetCapacity</code>.
          * <p>
          * @return {@code this}
-         * @param payAsYouGoTargetCapacity Property payAsYouGoTargetCapacity: The target capacity of pay-as-you-go instances in the auto provisioning group. This parameter is required.
+         * @param payAsYouGoTargetCapacity Property payAsYouGoTargetCapacity: The target capacity for pay-as-you-go instances in the auto provisioning group. This parameter is required.
          */
         public Builder payAsYouGoTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable payAsYouGoTargetCapacity) {
             this.props.payAsYouGoTargetCapacity(payAsYouGoTargetCapacity);
@@ -620,34 +646,46 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property spotAllocationStrategy: The scale-out policy for preemptible instances.
+         * Property spotAllocationStrategy: The strategy for creating spot instances.
          * <p>
          * Valid values:
-         * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
-         * types of the lowest cost to create instances.
-         * diversified: The distribution balancing policy the auto provisioning group follows to evenly create
-         * instances across zones specified in multiple extended template configurations.
-         * Default value: lowest-price
+         * <p>
+         * <ul>
+         * <li>lowest-price: Cost optimization strategy. Selects the instance type with the
+         * lowest price.</li>
+         * <li>diversified: Balanced zone distribution strategy. Creates instances across the
+         * zones specified in the launch template configurations and distributes them
+         * evenly.</li>
+         * <li>capacity-optimized: Capacity optimization strategy. Selects the optimal
+         * instance type and zone based on inventory availability.
+         * Default value: lowest-price.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotAllocationStrategy Property spotAllocationStrategy: The scale-out policy for preemptible instances. This parameter is required.
+         * @param spotAllocationStrategy Property spotAllocationStrategy: The strategy for creating spot instances. This parameter is required.
          */
         public Builder spotAllocationStrategy(final java.lang.String spotAllocationStrategy) {
             this.props.spotAllocationStrategy(spotAllocationStrategy);
             return this;
         }
         /**
-         * Property spotAllocationStrategy: The scale-out policy for preemptible instances.
+         * Property spotAllocationStrategy: The strategy for creating spot instances.
          * <p>
          * Valid values:
-         * lowest-price: The cost optimization policy the auto provisioning group follows to select instance
-         * types of the lowest cost to create instances.
-         * diversified: The distribution balancing policy the auto provisioning group follows to evenly create
-         * instances across zones specified in multiple extended template configurations.
-         * Default value: lowest-price
+         * <p>
+         * <ul>
+         * <li>lowest-price: Cost optimization strategy. Selects the instance type with the
+         * lowest price.</li>
+         * <li>diversified: Balanced zone distribution strategy. Creates instances across the
+         * zones specified in the launch template configurations and distributes them
+         * evenly.</li>
+         * <li>capacity-optimized: Capacity optimization strategy. Selects the optimal
+         * instance type and zone based on inventory availability.
+         * Default value: lowest-price.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotAllocationStrategy Property spotAllocationStrategy: The scale-out policy for preemptible instances. This parameter is required.
+         * @param spotAllocationStrategy Property spotAllocationStrategy: The strategy for creating spot instances. This parameter is required.
          */
         public Builder spotAllocationStrategy(final com.aliyun.ros.cdk.core.IResolvable spotAllocationStrategy) {
             this.props.spotAllocationStrategy(spotAllocationStrategy);
@@ -655,30 +693,36 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down.
+         * Property spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted.
          * <p>
-         * Value values:
-         * stop: stops preemptible instances.
-         * terminate: releases preemptible instances.
-         * Default value: stop
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>stop: Stops the instance.</li>
+         * <li>terminate: Releases the instance.
+         * Default value: terminate.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotInstanceInterruptionBehavior Property spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down. This parameter is required.
+         * @param spotInstanceInterruptionBehavior Property spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted. This parameter is required.
          */
         public Builder spotInstanceInterruptionBehavior(final java.lang.String spotInstanceInterruptionBehavior) {
             this.props.spotInstanceInterruptionBehavior(spotInstanceInterruptionBehavior);
             return this;
         }
         /**
-         * Property spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down.
+         * Property spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted.
          * <p>
-         * Value values:
-         * stop: stops preemptible instances.
-         * terminate: releases preemptible instances.
-         * Default value: stop
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>stop: Stops the instance.</li>
+         * <li>terminate: Releases the instance.
+         * Default value: terminate.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param spotInstanceInterruptionBehavior Property spotInstanceInterruptionBehavior: The default behavior after preemptible instances are shut down. This parameter is required.
+         * @param spotInstanceInterruptionBehavior Property spotInstanceInterruptionBehavior: The behavior when a spot instance is interrupted. This parameter is required.
          */
         public Builder spotInstanceInterruptionBehavior(final com.aliyun.ros.cdk.core.IResolvable spotInstanceInterruptionBehavior) {
             this.props.spotInstanceInterruptionBehavior(spotInstanceInterruptionBehavior);
@@ -686,26 +730,28 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price.
+         * Property spotInstancePoolsToUseCount: Takes effect only when <code>SpotAllocationStrategy</code> is set to <code>lowest-price</code>.
          * <p>
-         * The auto provisioning group selects instance types of the lowest cost to create
-         * instances.
+         * Specifies the number of lowest-priced instance types from which the auto
+         * provisioning group creates instances.
+         * Valid values: Less than the value of N in <code>LaunchTemplateConfig.N</code>.
          * <p>
          * @return {@code this}
-         * @param spotInstancePoolsToUseCount Property spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price. This parameter is required.
+         * @param spotInstancePoolsToUseCount Property spotInstancePoolsToUseCount: Takes effect only when <code>SpotAllocationStrategy</code> is set to <code>lowest-price</code>. This parameter is required.
          */
         public Builder spotInstancePoolsToUseCount(final java.lang.Number spotInstancePoolsToUseCount) {
             this.props.spotInstancePoolsToUseCount(spotInstancePoolsToUseCount);
             return this;
         }
         /**
-         * Property spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price.
+         * Property spotInstancePoolsToUseCount: Takes effect only when <code>SpotAllocationStrategy</code> is set to <code>lowest-price</code>.
          * <p>
-         * The auto provisioning group selects instance types of the lowest cost to create
-         * instances.
+         * Specifies the number of lowest-priced instance types from which the auto
+         * provisioning group creates instances.
+         * Valid values: Less than the value of N in <code>LaunchTemplateConfig.N</code>.
          * <p>
          * @return {@code this}
-         * @param spotInstancePoolsToUseCount Property spotInstancePoolsToUseCount: This parameter takes effect when the SpotAllocationStrategy parameter is set to lowest-price. This parameter is required.
+         * @param spotInstancePoolsToUseCount Property spotInstancePoolsToUseCount: Takes effect only when <code>SpotAllocationStrategy</code> is set to <code>lowest-price</code>. This parameter is required.
          */
         public Builder spotInstancePoolsToUseCount(final com.aliyun.ros.cdk.core.IResolvable spotInstancePoolsToUseCount) {
             this.props.spotInstancePoolsToUseCount(spotInstancePoolsToUseCount);
@@ -713,20 +759,26 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
+         * Property spotTargetCapacity: The target capacity for spot instances in the auto provisioning group.
+         * <p>
+         * Valid
+         * values: Integers less than or equal to the value of <code>TotalTargetCapacity</code>.
          * <p>
          * @return {@code this}
-         * @param spotTargetCapacity Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group. This parameter is required.
+         * @param spotTargetCapacity Property spotTargetCapacity: The target capacity for spot instances in the auto provisioning group. This parameter is required.
          */
         public Builder spotTargetCapacity(final java.lang.String spotTargetCapacity) {
             this.props.spotTargetCapacity(spotTargetCapacity);
             return this;
         }
         /**
-         * Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group.
+         * Property spotTargetCapacity: The target capacity for spot instances in the auto provisioning group.
+         * <p>
+         * Valid
+         * values: Integers less than or equal to the value of <code>TotalTargetCapacity</code>.
          * <p>
          * @return {@code this}
-         * @param spotTargetCapacity Property spotTargetCapacity: The target capacity of preemptible instances in the auto provisioning group. This parameter is required.
+         * @param spotTargetCapacity Property spotTargetCapacity: The target capacity for spot instances in the auto provisioning group. This parameter is required.
          */
         public Builder spotTargetCapacity(final com.aliyun.ros.cdk.core.IResolvable spotTargetCapacity) {
             this.props.spotTargetCapacity(spotTargetCapacity);
@@ -755,30 +807,36 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property terminateInstances: Specifies whether to release instances of the auto provisioning group.
+         * Property terminateInstances: Specifies whether to release instances in the group when you delete the auto provisioning group.
          * <p>
          * Valid values:
-         * true
-         * false
-         * Default: false
+         * <p>
+         * <ul>
+         * <li>true: Releases instances in the group.</li>
+         * <li>false: Retains instances in the group.
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param terminateInstances Property terminateInstances: Specifies whether to release instances of the auto provisioning group. This parameter is required.
+         * @param terminateInstances Property terminateInstances: Specifies whether to release instances in the group when you delete the auto provisioning group. This parameter is required.
          */
         public Builder terminateInstances(final java.lang.Boolean terminateInstances) {
             this.props.terminateInstances(terminateInstances);
             return this;
         }
         /**
-         * Property terminateInstances: Specifies whether to release instances of the auto provisioning group.
+         * Property terminateInstances: Specifies whether to release instances in the group when you delete the auto provisioning group.
          * <p>
          * Valid values:
-         * true
-         * false
-         * Default: false
+         * <p>
+         * <ul>
+         * <li>true: Releases instances in the group.</li>
+         * <li>false: Retains instances in the group.
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param terminateInstances Property terminateInstances: Specifies whether to release instances of the auto provisioning group. This parameter is required.
+         * @param terminateInstances Property terminateInstances: Specifies whether to release instances in the group when you delete the auto provisioning group. This parameter is required.
          */
         public Builder terminateInstances(final com.aliyun.ros.cdk.core.IResolvable terminateInstances) {
             this.props.terminateInstances(terminateInstances);
@@ -786,32 +844,36 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires.
+         * Property terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning group expires.
          * <p>
          * Valid values:
-         * true: shuts down preemptible instances. The action to be performed on these shutdown instances
-         * is specified by the SpotInstanceInterruptionBehavior parameter.
-         * false: does not shut down preemptible instances.
-         * Default: false
+         * <p>
+         * <ul>
+         * <li>true: Releases instances in the group.</li>
+         * <li>false: Only removes instances from the auto provisioning group.
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param terminateInstancesWithExpiration Property terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires. This parameter is required.
+         * @param terminateInstancesWithExpiration Property terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning group expires. This parameter is required.
          */
         public Builder terminateInstancesWithExpiration(final java.lang.Boolean terminateInstancesWithExpiration) {
             this.props.terminateInstancesWithExpiration(terminateInstancesWithExpiration);
             return this;
         }
         /**
-         * Property terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires.
+         * Property terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning group expires.
          * <p>
          * Valid values:
-         * true: shuts down preemptible instances. The action to be performed on these shutdown instances
-         * is specified by the SpotInstanceInterruptionBehavior parameter.
-         * false: does not shut down preemptible instances.
-         * Default: false
+         * <p>
+         * <ul>
+         * <li>true: Releases instances in the group.</li>
+         * <li>false: Only removes instances from the auto provisioning group.
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param terminateInstancesWithExpiration Property terminateInstancesWithExpiration: The shutdown policy for preemptible instances when the auto provisioning group expires. This parameter is required.
+         * @param terminateInstancesWithExpiration Property terminateInstancesWithExpiration: Specifies whether to release instances in the group when the auto provisioning group expires. This parameter is required.
          */
         public Builder terminateInstancesWithExpiration(final com.aliyun.ros.cdk.core.IResolvable terminateInstancesWithExpiration) {
             this.props.terminateInstancesWithExpiration(terminateInstancesWithExpiration);
@@ -819,28 +881,32 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property validFrom: The time when the auto provisioning group is started.
+         * Property validFrom: The start time of the auto provisioning group.
          * <p>
-         * The period of time between this
-         * point in time and the point in time specified by the ValidUntil parameter is the effective time period of the auto provisioning group.
-         * By default, an auto provisioning group is immediately started after creation.
+         * Used together with <code>ValidUntil</code> to
+         * define the validity period.
+         * Specify the time in <a href="">ISO 8601</a> format using UTC+0 time. Format:
+         * yyyy-MM-ddTHH:mm:ssZ.
+         * Default value: The timestamp when the API call takes effect immediately.
          * <p>
          * @return {@code this}
-         * @param validFrom Property validFrom: The time when the auto provisioning group is started. This parameter is required.
+         * @param validFrom Property validFrom: The start time of the auto provisioning group. This parameter is required.
          */
         public Builder validFrom(final java.lang.String validFrom) {
             this.props.validFrom(validFrom);
             return this;
         }
         /**
-         * Property validFrom: The time when the auto provisioning group is started.
+         * Property validFrom: The start time of the auto provisioning group.
          * <p>
-         * The period of time between this
-         * point in time and the point in time specified by the ValidUntil parameter is the effective time period of the auto provisioning group.
-         * By default, an auto provisioning group is immediately started after creation.
+         * Used together with <code>ValidUntil</code> to
+         * define the validity period.
+         * Specify the time in <a href="">ISO 8601</a> format using UTC+0 time. Format:
+         * yyyy-MM-ddTHH:mm:ssZ.
+         * Default value: The timestamp when the API call takes effect immediately.
          * <p>
          * @return {@code this}
-         * @param validFrom Property validFrom: The time when the auto provisioning group is started. This parameter is required.
+         * @param validFrom Property validFrom: The start time of the auto provisioning group. This parameter is required.
          */
         public Builder validFrom(final com.aliyun.ros.cdk.core.IResolvable validFrom) {
             this.props.validFrom(validFrom);
@@ -848,28 +914,32 @@ public class AutoProvisioningGroup extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property validUntil: The time when the auto provisioning group expires.
+         * Property validUntil: The expiration time of the auto provisioning group.
          * <p>
-         * The period of time between this
-         * point in time and the point in time specified by the ValidFrom parameter is the effective time period of the auto provisioning group.
-         * By default, an auto provisioning group never expires.
+         * Used together with
+         * <code>ValidFrom</code> to define the validity period.
+         * Specify the time in <a href="">ISO 8601</a> format using UTC+0 time. Format:
+         * yyyy-MM-ddTHH:mm:ssZ.
+         * Default value: 2099-12-31T23:59:59Z.
          * <p>
          * @return {@code this}
-         * @param validUntil Property validUntil: The time when the auto provisioning group expires. This parameter is required.
+         * @param validUntil Property validUntil: The expiration time of the auto provisioning group. This parameter is required.
          */
         public Builder validUntil(final java.lang.String validUntil) {
             this.props.validUntil(validUntil);
             return this;
         }
         /**
-         * Property validUntil: The time when the auto provisioning group expires.
+         * Property validUntil: The expiration time of the auto provisioning group.
          * <p>
-         * The period of time between this
-         * point in time and the point in time specified by the ValidFrom parameter is the effective time period of the auto provisioning group.
-         * By default, an auto provisioning group never expires.
+         * Used together with
+         * <code>ValidFrom</code> to define the validity period.
+         * Specify the time in <a href="">ISO 8601</a> format using UTC+0 time. Format:
+         * yyyy-MM-ddTHH:mm:ssZ.
+         * Default value: 2099-12-31T23:59:59Z.
          * <p>
          * @return {@code this}
-         * @param validUntil Property validUntil: The time when the auto provisioning group expires. This parameter is required.
+         * @param validUntil Property validUntil: The expiration time of the auto provisioning group. This parameter is required.
          */
         public Builder validUntil(final com.aliyun.ros.cdk.core.IResolvable validUntil) {
             this.props.validUntil(validUntil);

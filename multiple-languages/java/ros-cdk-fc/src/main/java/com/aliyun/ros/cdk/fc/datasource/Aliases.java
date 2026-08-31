@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.fc.datasource;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>DATASOURCE::FC::Aliases</code>, which is used to query the aliases of a Function Compute service.
+ * This class encapsulates and extends the ROS resource type <code>DATASOURCE::FC::Aliases</code>Queries the aliases of a Function Compute service.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:13:35.433Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:20:02.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.fc.$Module.class, fqn = "@alicloud/ros-cdk-fc.datasource.Aliases")
 public class Aliases extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.fc.datasource.IAliases {
 

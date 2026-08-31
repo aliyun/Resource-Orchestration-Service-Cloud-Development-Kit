@@ -66,7 +66,10 @@ type GroupMetricRuleProps struct {
 	RuleName interface{} `field:"required" json:"ruleName" yaml:"ruleName"`
 	// Property contactGroups: The alert contact groups.
 	ContactGroups interface{} `field:"optional" json:"contactGroups" yaml:"contactGroups"`
-	// Property dimensions: The expended resource dimensions.
+	// Property dimensions: The dimensions that specify the resources to be monitored.
+	//
+	// The value is a collection of key-value pairs. Format: `key:value`. For example,
+	// `{"userId":"120886317861**"}` and `{"instanceId":"i-2ze2d6j5uhg20x47**"}`.
 	Dimensions interface{} `field:"optional" json:"dimensions" yaml:"dimensions"`
 	// Property effectiveInterval: The period when the alert rule is effective.
 	EffectiveInterval interface{} `field:"optional" json:"effectiveInterval" yaml:"effectiveInterval"`
@@ -78,7 +81,12 @@ type GroupMetricRuleProps struct {
 	//
 	// When the first-level dimension of the alert rule is `{"instanceId":"i-m5e1qg6uo38rztr4****"}`, its secondary dimension is the disk `{"\/dev\/xvda":"d-m5e6yphgzn3aprwu****"}`.
 	ExtraDimensionJson interface{} `field:"optional" json:"extraDimensionJson" yaml:"extraDimensionJson"`
-	// Property interval: The detection period of alerts.
+	// Property interval: The interval at which the alert rule is triggered.
+	//
+	// Unit: seconds.
+	// > Set the alert detection interval to the same value as the data reporting
+	// interval. If the alert detection interval is shorter than the data reporting
+	// interval, alerts may not be triggered due to insufficient data.
 	Interval interface{} `field:"optional" json:"interval" yaml:"interval"`
 	// Property noDataPolicy: The handling method when there is no monitoring data.
 	//
@@ -93,15 +101,20 @@ type GroupMetricRuleProps struct {
 	//
 	// Format: `{"key1":"value1","key2":"value2"}`, for example, `{"NotSendOK":true}`, indicating whether to send alert recovery notifications. The key is `NotSendOK`, and the value is `true` (do not send) or `false` (send by default).
 	Options interface{} `field:"optional" json:"options" yaml:"options"`
-	// Property period: The aggregation period.
+	// Property period: The statistical period of the metric.
 	//
-	// Unite: second.
+	// The value of `Period` must be an integral multiple of 60. Unit: seconds. Default
+	// value: 300.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property silenceTime: The duration of the mute period during which new alerts are not sent even if the trigger conditions are met.
 	//
 	// Unit: second. Default value: 86400. Minimum value: 60.
 	SilenceTime interface{} `field:"optional" json:"silenceTime" yaml:"silenceTime"`
-	// Property webhook: The URL of the callback triggered when an alert occurs.
+	// Property webhook: The callback URL to which alert notifications are sent.
+	//
+	// Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+	// notifications to the URL using POST requests. Only the HTTP protocol is
+	// supported.
 	Webhook interface{} `field:"optional" json:"webhook" yaml:"webhook"`
 }
 

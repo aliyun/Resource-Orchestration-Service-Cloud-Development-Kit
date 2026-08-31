@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.mobi;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mobi-app
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:53:15.185Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:09:57.637Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mobi.$Module.class, fqn = "@alicloud/ros-cdk-mobi.RosAppProps")
 @software.amazon.jsii.Jsii.Proxy(RosAppProps.Jsii$Proxy.class)
 public interface RosAppProps extends software.amazon.jsii.JsiiSerializable {

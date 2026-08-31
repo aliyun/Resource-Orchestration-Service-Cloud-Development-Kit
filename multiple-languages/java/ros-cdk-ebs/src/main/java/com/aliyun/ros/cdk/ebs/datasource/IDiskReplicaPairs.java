@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ebs.datasource;
 /**
  * Represents a <code>DiskReplicaPairs</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:32:36.352Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:31:28.535Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ebs.$Module.class, fqn = "@alicloud/ros-cdk-ebs.datasource.IDiskReplicaPairs")
 @software.amazon.jsii.Jsii.Proxy(IDiskReplicaPairs.Jsii$Proxy.class)
 public interface IDiskReplicaPairs extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {

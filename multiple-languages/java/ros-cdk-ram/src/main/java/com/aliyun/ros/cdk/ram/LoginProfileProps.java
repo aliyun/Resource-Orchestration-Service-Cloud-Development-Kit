@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ram;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ram-loginprofile
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.286Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.229Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.LoginProfileProps")
 @software.amazon.jsii.Jsii.Proxy(LoginProfileProps.Jsii$Proxy.class)
 public interface LoginProfileProps extends software.amazon.jsii.JsiiSerializable {
@@ -37,7 +37,9 @@ public interface LoginProfileProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property password: The password of the RAM user.
+     * Property password: The logon password for the RAM user.
+     * <p>
+     * The password must meet the password policy.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPassword() {
         return null;
@@ -51,13 +53,13 @@ public interface LoginProfileProps extends software.amazon.jsii.JsiiSerializable
     }
 
     /**
-     * Property status: Enable or disable console password login.
+     * Property status: Specifies whether to enable password-based logon to the console.
      * <p>
      * Valid values:
      * <p>
      * <ul>
-     * <li>Activate (default): Enable.</li>
-     * <li>Inactivate: Disable.</li>
+     * <li>Active (default): Enable</li>
+     * <li>Inactive: Disable</li>
      * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getStatus() {
@@ -155,7 +157,8 @@ public interface LoginProfileProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoginProfileProps#getPassword}
-         * @param password Property password: The password of the RAM user.
+         * @param password Property password: The logon password for the RAM user.
+         *                 The password must meet the password policy.
          * @return {@code this}
          */
         public Builder password(java.lang.String password) {
@@ -165,7 +168,8 @@ public interface LoginProfileProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoginProfileProps#getPassword}
-         * @param password Property password: The password of the RAM user.
+         * @param password Property password: The logon password for the RAM user.
+         *                 The password must meet the password policy.
          * @return {@code this}
          */
         public Builder password(com.aliyun.ros.cdk.core.IResolvable password) {
@@ -195,12 +199,12 @@ public interface LoginProfileProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoginProfileProps#getStatus}
-         * @param status Property status: Enable or disable console password login.
+         * @param status Property status: Specifies whether to enable password-based logon to the console.
          *               Valid values:
          *               <p>
          *               <ul>
-         *               <li>Activate (default): Enable.</li>
-         *               <li>Inactivate: Disable.</li>
+         *               <li>Active (default): Enable</li>
+         *               <li>Inactive: Disable</li>
          *               </ul>
          * @return {@code this}
          */
@@ -211,12 +215,12 @@ public interface LoginProfileProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link LoginProfileProps#getStatus}
-         * @param status Property status: Enable or disable console password login.
+         * @param status Property status: Specifies whether to enable password-based logon to the console.
          *               Valid values:
          *               <p>
          *               <ul>
-         *               <li>Activate (default): Enable.</li>
-         *               <li>Inactivate: Disable.</li>
+         *               <li>Active (default): Enable</li>
+         *               <li>Inactive: Disable</li>
          *               </ul>
          * @return {@code this}
          */

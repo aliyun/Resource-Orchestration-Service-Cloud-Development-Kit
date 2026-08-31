@@ -5,13 +5,18 @@ package com.aliyun.ros.cdk.slb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-slb-accesscontrol
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:55:20.231Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:44:47.022Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.slb.$Module.class, fqn = "@alicloud/ros-cdk-slb.AccessControlProps")
 @software.amazon.jsii.Jsii.Proxy(AccessControlProps.Jsii$Proxy.class)
 public interface AccessControlProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property aclName: The name of the access control list.
+     * Property aclName: The name of the ACL.
+     * <p>
+     * The name must be 1 to 80 characters in length, and can
+     * contain letters, digits, periods (.), hyphens (-), forward slashes (/), and
+     * underscores (_). The name of the ACL that you create must be unique within each
+     * region.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAclName();
 
@@ -25,9 +30,9 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
     }
 
     /**
-     * Property addressIpVersion: IP version.
+     * Property addressIpVersion: The IP version.
      * <p>
-     * Could be "ipv4" or "ipv6".
+     * Valid values: ipv4 and ipv6.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAddressIpVersion() {
         return null;
@@ -67,7 +72,11 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AccessControlProps#getAclName}
-         * @param aclName Property aclName: The name of the access control list. This parameter is required.
+         * @param aclName Property aclName: The name of the ACL. This parameter is required.
+         *                The name must be 1 to 80 characters in length, and can
+         *                contain letters, digits, periods (.), hyphens (-), forward slashes (/), and
+         *                underscores (_). The name of the ACL that you create must be unique within each
+         *                region.
          * @return {@code this}
          */
         public Builder aclName(java.lang.String aclName) {
@@ -77,7 +86,11 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AccessControlProps#getAclName}
-         * @param aclName Property aclName: The name of the access control list. This parameter is required.
+         * @param aclName Property aclName: The name of the ACL. This parameter is required.
+         *                The name must be 1 to 80 characters in length, and can
+         *                contain letters, digits, periods (.), hyphens (-), forward slashes (/), and
+         *                underscores (_). The name of the ACL that you create must be unique within each
+         *                region.
          * @return {@code this}
          */
         public Builder aclName(com.aliyun.ros.cdk.core.IResolvable aclName) {
@@ -109,8 +122,8 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AccessControlProps#getAddressIpVersion}
-         * @param addressIpVersion Property addressIpVersion: IP version.
-         *                         Could be "ipv4" or "ipv6".
+         * @param addressIpVersion Property addressIpVersion: The IP version.
+         *                         Valid values: ipv4 and ipv6.
          * @return {@code this}
          */
         public Builder addressIpVersion(java.lang.String addressIpVersion) {
@@ -120,8 +133,8 @@ public interface AccessControlProps extends software.amazon.jsii.JsiiSerializabl
 
         /**
          * Sets the value of {@link AccessControlProps#getAddressIpVersion}
-         * @param addressIpVersion Property addressIpVersion: IP version.
-         *                         Could be "ipv4" or "ipv6".
+         * @param addressIpVersion Property addressIpVersion: The IP version.
+         *                         Valid values: ipv4 and ipv6.
          * @return {@code this}
          */
         public Builder addressIpVersion(com.aliyun.ros.cdk.core.IResolvable addressIpVersion) {

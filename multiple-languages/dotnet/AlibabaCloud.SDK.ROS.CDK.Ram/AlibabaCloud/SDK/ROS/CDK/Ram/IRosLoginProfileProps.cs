@@ -49,7 +49,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: password: The password of the RAM user.
+        /// <strong>Property</strong>: password: The logon password for the RAM user.
+        /// The password must meet the password policy.
         /// </remarks>
         [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -75,9 +76,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: status: Enable or disable console password login. Valid values:
-        /// - Activate (default): Enable.
-        /// - Inactivate: Disable.
+        /// <strong>Property</strong>: status: Specifies whether to enable password-based logon to the console. Valid values:
+        /// - Active (default): Enable
+        /// - Inactive: Disable
         /// </remarks>
         [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         [Amazon.JSII.Runtime.Deputy.JsiiOptional]
@@ -132,7 +133,8 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: password: The password of the RAM user.
+            /// <strong>Property</strong>: password: The logon password for the RAM user.
+            /// The password must meet the password policy.
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "password", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -152,9 +154,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ram
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: status: Enable or disable console password login. Valid values:
-            /// - Activate (default): Enable.
-            /// - Inactivate: Disable.
+            /// <strong>Property</strong>: status: Specifies whether to enable password-based logon to the console. Valid values:
+            /// - Active (default): Enable
+            /// - Inactive: Disable
             /// </remarks>
             [JsiiOptional]
             [JsiiProperty(name: "status", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

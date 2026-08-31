@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.serverlessdev;
 /**
  * This class is a base encapsulation around the ROS resource type <code>ALIYUN::ServerlessDev::Project</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:51:17.902Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T11:35:48.721Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.serverlessdev.$Module.class, fqn = "@alicloud/ros-cdk-serverlessdev.RosProject")
 public class RosProject extends com.aliyun.ros.cdk.core.RosResource {
 

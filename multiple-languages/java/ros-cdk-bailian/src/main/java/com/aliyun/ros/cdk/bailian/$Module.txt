@@ -1,6 +1,12 @@
 @alicloud/ros-cdk-bailian.ApiKey=com.aliyun.ros.cdk.bailian.ApiKey
 @alicloud/ros-cdk-bailian.ApiKeyProps=com.aliyun.ros.cdk.bailian.ApiKeyProps
 @alicloud/ros-cdk-bailian.IApiKey=com.aliyun.ros.cdk.bailian.IApiKey
+@alicloud/ros-cdk-bailian.IIndex=com.aliyun.ros.cdk.bailian.IIndex
+@alicloud/ros-cdk-bailian.Index=com.aliyun.ros.cdk.bailian.Index
+@alicloud/ros-cdk-bailian.IndexProps=com.aliyun.ros.cdk.bailian.IndexProps
 @alicloud/ros-cdk-bailian.RosApiKey=com.aliyun.ros.cdk.bailian.RosApiKey
 @alicloud/ros-cdk-bailian.RosApiKey.AuthSetModelProperty=com.aliyun.ros.cdk.bailian.RosApiKey$AuthSetModelProperty
 @alicloud/ros-cdk-bailian.RosApiKeyProps=com.aliyun.ros.cdk.bailian.RosApiKeyProps
+@alicloud/ros-cdk-bailian.RosIndex=com.aliyun.ros.cdk.bailian.RosIndex
+@alicloud/ros-cdk-bailian.RosIndex.MetaExtractColumnsProperty=com.aliyun.ros.cdk.bailian.RosIndex$MetaExtractColumnsProperty
+@alicloud/ros-cdk-bailian.RosIndexProps=com.aliyun.ros.cdk.bailian.RosIndexProps

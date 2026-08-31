@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cms.datasource;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cms-alarmcontacts
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:29.099Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.415Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.datasource.RosAlarmContactsProps")
 @software.amazon.jsii.Jsii.Proxy(RosAlarmContactsProps.Jsii$Proxy.class)
 public interface RosAlarmContactsProps extends software.amazon.jsii.JsiiSerializable {

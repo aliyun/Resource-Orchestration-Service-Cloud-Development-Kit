@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-prefixlist
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.036Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.418Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.PrefixListProps")
 @software.amazon.jsii.Jsii.Proxy(PrefixListProps.Jsii$Proxy.class)
 public interface PrefixListProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,12 @@ public interface PrefixListProps extends software.amazon.jsii.JsiiSerializable {
     /**
      * Property addressFamily: The IP address family.
      * <p>
-     * Valid values: IPv4 IPv6
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>IPv4</li>
+     * <li>IPv6</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getAddressFamily();
 
@@ -66,7 +71,12 @@ public interface PrefixListProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link PrefixListProps#getAddressFamily}
          * @param addressFamily Property addressFamily: The IP address family. This parameter is required.
-         *                      Valid values: IPv4 IPv6
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>IPv4</li>
+         *                      <li>IPv6</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder addressFamily(java.lang.String addressFamily) {
@@ -77,7 +87,12 @@ public interface PrefixListProps extends software.amazon.jsii.JsiiSerializable {
         /**
          * Sets the value of {@link PrefixListProps#getAddressFamily}
          * @param addressFamily Property addressFamily: The IP address family. This parameter is required.
-         *                      Valid values: IPv4 IPv6
+         *                      Valid values:
+         *                      <p>
+         *                      <ul>
+         *                      <li>IPv4</li>
+         *                      <li>IPv6</li>
+         *                      </ul>
          * @return {@code this}
          */
         public Builder addressFamily(com.aliyun.ros.cdk.core.IResolvable addressFamily) {

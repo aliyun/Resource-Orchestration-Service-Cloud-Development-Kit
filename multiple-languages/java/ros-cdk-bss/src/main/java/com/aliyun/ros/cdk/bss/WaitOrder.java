@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.bss;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::BSS::WaitOrder</code>, which is used to wait for orders to be completed.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::BSS::WaitOrder</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:38:31.680Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:22:20.610Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bss.$Module.class, fqn = "@alicloud/ros-cdk-bss.WaitOrder")
 public class WaitOrder extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.bss.IWaitOrder {
 

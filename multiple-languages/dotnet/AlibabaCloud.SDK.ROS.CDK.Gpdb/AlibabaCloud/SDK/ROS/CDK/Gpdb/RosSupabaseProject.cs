@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
 {
-    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`.</summary>
+    /// <summary>This class is a base encapsulation around the ROS resource type `ALIYUN::GPDB::SupabaseProject`The , which resource creates a Supabase project.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class does not contain additional functions, so it is recommended to use the `SupabaseProject` class instead of this class for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
@@ -433,7 +433,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: period: The billing period.
+        /// <strong>Property</strong>: period: The unit of the subscription duration. Valid values:
+        /// - Month
+        /// - Year
+        /// > This parameter is required if you use the subscription billing method.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "period", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -515,7 +518,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Gpdb
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: usedTime: The subscription period of the instance. Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+        /// <strong>Property</strong>: usedTime: The subscription duration. Valid values:
+        /// - If Period is set to Month, the valid values are 1 to 11.
+        /// - If Period is set to Year, the valid values are 1 to 3.
+        /// > This parameter is required if you use the subscription billing method.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "usedTime", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

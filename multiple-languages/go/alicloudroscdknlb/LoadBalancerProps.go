@@ -17,9 +17,13 @@ type LoadBalancerProps struct {
 	//
 	// You must specify at least two zones.
 	ZoneMappings interface{} `field:"required" json:"zoneMappings" yaml:"zoneMappings"`
-	// Property addressIpVersion: The version of IP address that the NLB instance uses to provide services.
+	// Property addressIpVersion: The version of IP addresses used for the NLB instance.
+	//
+	// Valid values:
+	// - ipv4 (default)
+	// - DualStack.
 	AddressIpVersion interface{} `field:"optional" json:"addressIpVersion" yaml:"addressIpVersion"`
-	// Property bandwidthPackageId: Attach common bandwidth package to load balancer.
+	// Property bandwidthPackageId: The ID of the Internet Shared Bandwidth instance that is associated with the Internet-facing NLB instance.
 	BandwidthPackageId interface{} `field:"optional" json:"bandwidthPackageId" yaml:"bandwidthPackageId"`
 	// Property crossZoneEnabled: Whether enable cross zone.
 	//
@@ -33,7 +37,10 @@ type LoadBalancerProps struct {
 	//
 	// The name must be 2 to 128 characters in length, and can contain letters, digits, periods(.), underscores (_), and hyphens (-). The name must start with a letter.
 	LoadBalancerName interface{} `field:"optional" json:"loadBalancerName" yaml:"loadBalancerName"`
-	// Property loadBalancerType: The type of the NLB instance.
+	// Property loadBalancerType: The type of the Server Load Balancer (SLB) instance.
+	//
+	// Set the value to network,
+	// which indicates an NLB instance.
 	LoadBalancerType interface{} `field:"optional" json:"loadBalancerType" yaml:"loadBalancerType"`
 	// Property modificationProtectionConfig: The configuration of the configuration read-only mode.
 	ModificationProtectionConfig interface{} `field:"optional" json:"modificationProtectionConfig" yaml:"modificationProtectionConfig"`

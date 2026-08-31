@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ElasticityAssurance</code>, which is used to create an elasticity assurance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::ElasticityAssurance</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.880Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.242Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ElasticityAssurance")
 public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IElasticityAssurance {
 
@@ -187,20 +187,38 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property autoRenew: Whether to enable automatic renewal.
+         * Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance.
+         * <p>
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: Whether to enable automatic renewal. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance. This parameter is required.
          */
         public Builder autoRenew(final java.lang.Boolean autoRenew) {
             this.props.autoRenew(autoRenew);
             return this;
         }
         /**
-         * Property autoRenew: Whether to enable automatic renewal.
+         * Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance.
+         * <p>
+         * Valid
+         * values:
+         * <p>
+         * <ul>
+         * <li>true</li>
+         * <li>false
+         * Default value: false.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param autoRenew Property autoRenew: Whether to enable automatic renewal. This parameter is required.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal for the elasticity assurance. This parameter is required.
          */
         public Builder autoRenew(final com.aliyun.ros.cdk.core.IResolvable autoRenew) {
             this.props.autoRenew(autoRenew);
@@ -208,20 +226,46 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property autoRenewPeriod: The period for automatic renewal.
+         * Property autoRenewPeriod: The auto-renewal period.
+         * <p>
+         * Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+         * <p>
+         * <ul>
+         * <li>Default value when <code>PeriodUnit</code> is set to Month: 1.</li>
+         * <li>Default value when <code>PeriodUnit</code> is set to Year: 12.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set <code>AutoRenew</code> to <code>true</code>, you must specify this parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: The period for automatic renewal. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period. This parameter is required.
          */
         public Builder autoRenewPeriod(final java.lang.Number autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
             return this;
         }
         /**
-         * Property autoRenewPeriod: The period for automatic renewal.
+         * Property autoRenewPeriod: The auto-renewal period.
+         * <p>
+         * Unit: month. Valid values: 1, 2, 3, 6, 12, 24, and 36.
+         * <p>
+         * <ul>
+         * <li>Default value when <code>PeriodUnit</code> is set to Month: 1.</li>
+         * <li>Default value when <code>PeriodUnit</code> is set to Year: 12.</li>
+         * </ul>
+         * <p>
+         * <blockquote>
+         * <p>
+         * If you set <code>AutoRenew</code> to <code>true</code>, you must specify this parameter.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param autoRenewPeriod Property autoRenewPeriod: The period for automatic renewal. This parameter is required.
+         * @param autoRenewPeriod Property autoRenewPeriod: The auto-renewal period. This parameter is required.
          */
         public Builder autoRenewPeriod(final com.aliyun.ros.cdk.core.IResolvable autoRenewPeriod) {
             this.props.autoRenewPeriod(autoRenewPeriod);
@@ -256,20 +300,20 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property instanceCpuCoreCount: The number of CPU cores for the instance.
+         * Property instanceCpuCoreCount: &gt; This parameter is no longer used.
          * <p>
          * @return {@code this}
-         * @param instanceCpuCoreCount Property instanceCpuCoreCount: The number of CPU cores for the instance. This parameter is required.
+         * @param instanceCpuCoreCount Property instanceCpuCoreCount: &gt; This parameter is no longer used. This parameter is required.
          */
         public Builder instanceCpuCoreCount(final java.lang.Number instanceCpuCoreCount) {
             this.props.instanceCpuCoreCount(instanceCpuCoreCount);
             return this;
         }
         /**
-         * Property instanceCpuCoreCount: The number of CPU cores for the instance.
+         * Property instanceCpuCoreCount: &gt; This parameter is no longer used.
          * <p>
          * @return {@code this}
-         * @param instanceCpuCoreCount Property instanceCpuCoreCount: The number of CPU cores for the instance. This parameter is required.
+         * @param instanceCpuCoreCount Property instanceCpuCoreCount: &gt; This parameter is no longer used. This parameter is required.
          */
         public Builder instanceCpuCoreCount(final com.aliyun.ros.cdk.core.IResolvable instanceCpuCoreCount) {
             this.props.instanceCpuCoreCount(instanceCpuCoreCount);
@@ -277,30 +321,58 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property period: The effective duration of the elasticity assurance.
+         * Property period: The validity period of the elasticity assurance.
          * <p>
-         * The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-         * When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-         * When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-         * Default value: 1.
+         * The unit of the validity period
+         * is determined by the value of <code>PeriodUnit</code>. Specifies whether to check the image
+         * used by the instance supports hot migration. Valid values:
+         * <p>
+         * <ul>
+         * <li>When the value of <code>PeriodUnit</code> is <code>Month</code>, the valid values are 1, 2, 3, 4, 5,
+         * 6, 7, 8, and 9.</li>
+         * <li>When the value of <code>PeriodUnit</code> is <code>Year</code>, the valid values are 1, 2, 3, 4, and</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>When the value of <code>PeriodUnit</code> is <code>Day</code>, the valid values are 1 to 365.
+         * Default value: 1</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: The effective duration of the elasticity assurance. This parameter is required.
+         * @param period Property period: The validity period of the elasticity assurance. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The effective duration of the elasticity assurance.
+         * Property period: The validity period of the elasticity assurance.
          * <p>
-         * The unit of the effective duration is determined by the PeriodUnit value. Valid values:
-         * When the PeriodUnit parameter is set to Month, the valid values are 1, 2, 3, 4, 5, 6, 7, 8, and 9.
-         * When the PeriodUnit parameter is set to Year, the valid values are 1, 2, 3, 4, and 5.
-         * Default value: 1.
+         * The unit of the validity period
+         * is determined by the value of <code>PeriodUnit</code>. Specifies whether to check the image
+         * used by the instance supports hot migration. Valid values:
+         * <p>
+         * <ul>
+         * <li>When the value of <code>PeriodUnit</code> is <code>Month</code>, the valid values are 1, 2, 3, 4, 5,
+         * 6, 7, 8, and 9.</li>
+         * <li>When the value of <code>PeriodUnit</code> is <code>Year</code>, the valid values are 1, 2, 3, 4, and</li>
+         * </ul>
+         * <p>
+         * <ol>
+         * <li></li>
+         * </ol>
+         * <p>
+         * <ul>
+         * <li>When the value of <code>PeriodUnit</code> is <code>Day</code>, the valid values are 1 to 365.
+         * Default value: 1</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param period Property period: The effective duration of the elasticity assurance. This parameter is required.
+         * @param period Property period: The validity period of the elasticity assurance. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -308,30 +380,44 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property periodUnit: The unit of the effective duration of the elasticity assurance.
+         * Property periodUnit: The unit of the validity period of the elasticity assurance.
          * <p>
          * Valid values:
-         * Month
-         * Year
-         * Default value: Year.
+         * <p>
+         * <ul>
+         * <li>Month</li>
+         * <li>Year</li>
+         * <li>Day
+         * **
+         * Note If you set <code>PeriodUnit</code> to <code>Day</code>, you must specify RecurrenceRules to create
+         * a time-segmented elasticity assurance.
+         * Default value: Year.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the effective duration of the elasticity assurance. This parameter is required.
+         * @param periodUnit Property periodUnit: The unit of the validity period of the elasticity assurance. This parameter is required.
          */
         public Builder periodUnit(final java.lang.String periodUnit) {
             this.props.periodUnit(periodUnit);
             return this;
         }
         /**
-         * Property periodUnit: The unit of the effective duration of the elasticity assurance.
+         * Property periodUnit: The unit of the validity period of the elasticity assurance.
          * <p>
          * Valid values:
-         * Month
-         * Year
-         * Default value: Year.
+         * <p>
+         * <ul>
+         * <li>Month</li>
+         * <li>Year</li>
+         * <li>Day
+         * **
+         * Note If you set <code>PeriodUnit</code> to <code>Day</code>, you must specify RecurrenceRules to create
+         * a time-segmented elasticity assurance.
+         * Default value: Year.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param periodUnit Property periodUnit: The unit of the effective duration of the elasticity assurance. This parameter is required.
+         * @param periodUnit Property periodUnit: The unit of the validity period of the elasticity assurance. This parameter is required.
          */
         public Builder periodUnit(final com.aliyun.ros.cdk.core.IResolvable periodUnit) {
             this.props.periodUnit(periodUnit);
@@ -360,20 +446,34 @@ public class ElasticityAssurance extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property recurrenceRules: Recurrence rules for the elasticity assurance.
+         * Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Time-segmented elasticity assurances are available only in specific regions and
+         * to specific users. To use time-segmented elasticity assurances, submit a ticket.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param recurrenceRules Property recurrenceRules: Recurrence rules for the elasticity assurance. This parameter is required.
+         * @param recurrenceRules Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect. This parameter is required.
          */
         public Builder recurrenceRules(final com.aliyun.ros.cdk.core.IResolvable recurrenceRules) {
             this.props.recurrenceRules(recurrenceRules);
             return this;
         }
         /**
-         * Property recurrenceRules: Recurrence rules for the elasticity assurance.
+         * Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Time-segmented elasticity assurances are available only in specific regions and
+         * to specific users. To use time-segmented elasticity assurances, submit a ticket.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param recurrenceRules Property recurrenceRules: Recurrence rules for the elasticity assurance. This parameter is required.
+         * @param recurrenceRules Property recurrenceRules: The assurance schedules based on which the capacity reservation takes effect. This parameter is required.
          */
         public Builder recurrenceRules(final java.util.List<? extends java.lang.Object> recurrenceRules) {
             this.props.recurrenceRules(recurrenceRules);

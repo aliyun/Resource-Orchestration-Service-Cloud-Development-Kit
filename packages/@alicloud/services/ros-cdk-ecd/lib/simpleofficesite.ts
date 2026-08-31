@@ -28,7 +28,13 @@ export interface SimpleOfficeSiteProps {
     readonly cenOwnerId?: number | ros.IResolvable;
 
     /**
-     * Property cidrBlock: The IPv4 CIDR block in the secure office network of the workspace. The IPv4 CIDR block that the system uses to create a virtual private cloud (VPC) for the workspace. We recommend that you set the IPv4 CIDR block to 10.0.0.0\/12, 172.16.0.0\/12, 192.168.0.0\/16, or a subnet of these CIDR blocks. If you set the IPv4 CIDR block to 10.0.0.0\/12 or 172.16.0.0\/12, the mask is 1224 bits in length. If you set the IPv4 CIDR block to 192.168.0.0\/16, the mask is 1624 bits in length.
+     * Property cidrBlock: The IPv4 CIDR block for the office site's Virtual Private Cloud (VPC). This
+     * parameter is required for standard office sites. The system automatically creates
+     * a VPC based on the specified IPv4 CIDR block. Use one of the following CIDR
+     * blocks or their subnets:
+     * - `10.0.0.0\/12` (The valid mask range is 12 to 24 bits.)
+     * - `172.16.0.0\/12` (The valid mask range is 12 to 24 bits.)
+     * - `192.168.0.0\/16` (The valid mask range is 16 to 24 bits.)
      */
     readonly cidrBlock?: string | ros.IResolvable;
 
@@ -106,7 +112,7 @@ export interface ISimpleOfficeSite extends ros.IResource {
     readonly attrOfficeSiteId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`, which is used to create a workspace of the convenience account type.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::ECD::SimpleOfficeSite`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosSimpleOfficeSite`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-simpleofficesite
  */

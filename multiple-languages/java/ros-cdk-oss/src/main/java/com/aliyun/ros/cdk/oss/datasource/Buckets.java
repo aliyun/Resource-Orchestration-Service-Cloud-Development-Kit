@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oss.datasource;
 /**
  * This class encapsulates and extends the ROS resource type <code>DATASOURCE::OSS::Buckets</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:11:59.935Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:18:25.453Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oss.$Module.class, fqn = "@alicloud/ros-cdk-oss.datasource.Buckets")
 public class Buckets extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oss.datasource.IBuckets {
 

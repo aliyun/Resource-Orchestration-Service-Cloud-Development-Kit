@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cms;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::GroupMetricRule</code>The , which resource creates an alert rule for an application group.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CMS::GroupMetricRule</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:57:28.930Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:45:50.205Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cms.$Module.class, fqn = "@alicloud/ros-cdk-cms.GroupMetricRule")
 public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cms.IGroupMetricRule {
 
@@ -370,20 +370,26 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property dimensions: The expended resource dimensions.
+         * Property dimensions: The dimensions that specify the resources to be monitored.
+         * <p>
+         * The value is a collection of key-value pairs. Format: <code>key:value</code>. For example,
+         * <code>{"userId":"120886317861**"}</code> and <code>{"instanceId":"i-2ze2d6j5uhg20x47**"}</code>.
          * <p>
          * @return {@code this}
-         * @param dimensions Property dimensions: The expended resource dimensions. This parameter is required.
+         * @param dimensions Property dimensions: The dimensions that specify the resources to be monitored. This parameter is required.
          */
         public Builder dimensions(final java.lang.String dimensions) {
             this.props.dimensions(dimensions);
             return this;
         }
         /**
-         * Property dimensions: The expended resource dimensions.
+         * Property dimensions: The dimensions that specify the resources to be monitored.
+         * <p>
+         * The value is a collection of key-value pairs. Format: <code>key:value</code>. For example,
+         * <code>{"userId":"120886317861**"}</code> and <code>{"instanceId":"i-2ze2d6j5uhg20x47**"}</code>.
          * <p>
          * @return {@code this}
-         * @param dimensions Property dimensions: The expended resource dimensions. This parameter is required.
+         * @param dimensions Property dimensions: The dimensions that specify the resources to be monitored. This parameter is required.
          */
         public Builder dimensions(final com.aliyun.ros.cdk.core.IResolvable dimensions) {
             this.props.dimensions(dimensions);
@@ -462,20 +468,40 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property interval: The detection period of alerts.
+         * Property interval: The interval at which the alert rule is triggered.
+         * <p>
+         * Unit: seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Set the alert detection interval to the same value as the data reporting
+         * interval. If the alert detection interval is shorter than the data reporting
+         * interval, alerts may not be triggered due to insufficient data.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param interval Property interval: The detection period of alerts. This parameter is required.
+         * @param interval Property interval: The interval at which the alert rule is triggered. This parameter is required.
          */
         public Builder interval(final java.lang.Number interval) {
             this.props.interval(interval);
             return this;
         }
         /**
-         * Property interval: The detection period of alerts.
+         * Property interval: The interval at which the alert rule is triggered.
+         * <p>
+         * Unit: seconds.
+         * <p>
+         * <blockquote>
+         * <p>
+         * Set the alert detection interval to the same value as the data reporting
+         * interval. If the alert detection interval is shorter than the data reporting
+         * interval, alerts may not be triggered due to insufficient data.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param interval Property interval: The detection period of alerts. This parameter is required.
+         * @param interval Property interval: The interval at which the alert rule is triggered. This parameter is required.
          */
         public Builder interval(final com.aliyun.ros.cdk.core.IResolvable interval) {
             this.props.interval(interval);
@@ -566,24 +592,26 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property period: The aggregation period.
+         * Property period: The statistical period of the metric.
          * <p>
-         * Unite: second.
+         * The value of <code>Period</code> must be an integral multiple of 60. Unit: seconds. Default
+         * value: 300.
          * <p>
          * @return {@code this}
-         * @param period Property period: The aggregation period. This parameter is required.
+         * @param period Property period: The statistical period of the metric. This parameter is required.
          */
         public Builder period(final java.lang.Number period) {
             this.props.period(period);
             return this;
         }
         /**
-         * Property period: The aggregation period.
+         * Property period: The statistical period of the metric.
          * <p>
-         * Unite: second.
+         * The value of <code>Period</code> must be an integral multiple of 60. Unit: seconds. Default
+         * value: 300.
          * <p>
          * @return {@code this}
-         * @param period Property period: The aggregation period. This parameter is required.
+         * @param period Property period: The statistical period of the metric. This parameter is required.
          */
         public Builder period(final com.aliyun.ros.cdk.core.IResolvable period) {
             this.props.period(period);
@@ -616,20 +644,28 @@ public class GroupMetricRule extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property webhook: The URL of the callback triggered when an alert occurs.
+         * Property webhook: The callback URL to which alert notifications are sent.
+         * <p>
+         * Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+         * notifications to the URL using POST requests. Only the HTTP protocol is
+         * supported.
          * <p>
          * @return {@code this}
-         * @param webhook Property webhook: The URL of the callback triggered when an alert occurs. This parameter is required.
+         * @param webhook Property webhook: The callback URL to which alert notifications are sent. This parameter is required.
          */
         public Builder webhook(final java.lang.String webhook) {
             this.props.webhook(webhook);
             return this;
         }
         /**
-         * Property webhook: The URL of the callback triggered when an alert occurs.
+         * Property webhook: The callback URL to which alert notifications are sent.
+         * <p>
+         * Enter a URL that is accessible over the Internet. CloudMonitor sends alert
+         * notifications to the URL using POST requests. Only the HTTP protocol is
+         * supported.
          * <p>
          * @return {@code this}
-         * @param webhook Property webhook: The URL of the callback triggered when an alert occurs. This parameter is required.
+         * @param webhook Property webhook: The callback URL to which alert notifications are sent. This parameter is required.
          */
         public Builder webhook(final com.aliyun.ros.cdk.core.IResolvable webhook) {
             this.props.webhook(webhook);

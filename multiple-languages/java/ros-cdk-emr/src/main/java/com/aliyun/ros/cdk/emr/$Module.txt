@@ -10,7 +10,11 @@
 @alicloud/ros-cdk-emr.ICluster2=com.aliyun.ros.cdk.emr.ICluster2
 @alicloud/ros-cdk-emr.IClusterServiceConfigs=com.aliyun.ros.cdk.emr.IClusterServiceConfigs
 @alicloud/ros-cdk-emr.IFlowProject=com.aliyun.ros.cdk.emr.IFlowProject
+@alicloud/ros-cdk-emr.ILivyCompute=com.aliyun.ros.cdk.emr.ILivyCompute
+@alicloud/ros-cdk-emr.ISparkWorkspace=com.aliyun.ros.cdk.emr.ISparkWorkspace
 @alicloud/ros-cdk-emr.IStarRocksInstance=com.aliyun.ros.cdk.emr.IStarRocksInstance
+@alicloud/ros-cdk-emr.LivyCompute=com.aliyun.ros.cdk.emr.LivyCompute
+@alicloud/ros-cdk-emr.LivyComputeProps=com.aliyun.ros.cdk.emr.LivyComputeProps
 @alicloud/ros-cdk-emr.RosCluster=com.aliyun.ros.cdk.emr.RosCluster
 @alicloud/ros-cdk-emr.RosCluster.BootstrapActionProperty=com.aliyun.ros.cdk.emr.RosCluster$BootstrapActionProperty
 @alicloud/ros-cdk-emr.RosCluster.ConfigProperty=com.aliyun.ros.cdk.emr.RosCluster$ConfigProperty
@@ -37,6 +41,16 @@
 @alicloud/ros-cdk-emr.RosClusterServiceConfigsProps=com.aliyun.ros.cdk.emr.RosClusterServiceConfigsProps
 @alicloud/ros-cdk-emr.RosFlowProject=com.aliyun.ros.cdk.emr.RosFlowProject
 @alicloud/ros-cdk-emr.RosFlowProjectProps=com.aliyun.ros.cdk.emr.RosFlowProjectProps
+@alicloud/ros-cdk-emr.RosLivyCompute=com.aliyun.ros.cdk.emr.RosLivyCompute
+@alicloud/ros-cdk-emr.RosLivyCompute.AutoStartConfigurationProperty=com.aliyun.ros.cdk.emr.RosLivyCompute$AutoStartConfigurationProperty
+@alicloud/ros-cdk-emr.RosLivyCompute.AutoStopConfigurationProperty=com.aliyun.ros.cdk.emr.RosLivyCompute$AutoStopConfigurationProperty
+@alicloud/ros-cdk-emr.RosLivyComputeProps=com.aliyun.ros.cdk.emr.RosLivyComputeProps
+@alicloud/ros-cdk-emr.RosSparkWorkspace=com.aliyun.ros.cdk.emr.RosSparkWorkspace
+@alicloud/ros-cdk-emr.RosSparkWorkspace.GpuSubscriptionProperty=com.aliyun.ros.cdk.emr.RosSparkWorkspace$GpuSubscriptionProperty
+@alicloud/ros-cdk-emr.RosSparkWorkspace.ResourceSpecProperty=com.aliyun.ros.cdk.emr.RosSparkWorkspace$ResourceSpecProperty
+@alicloud/ros-cdk-emr.RosSparkWorkspace.SubscriptionProperty=com.aliyun.ros.cdk.emr.RosSparkWorkspace$SubscriptionProperty
+@alicloud/ros-cdk-emr.RosSparkWorkspace.TagsProperty=com.aliyun.ros.cdk.emr.RosSparkWorkspace$TagsProperty
+@alicloud/ros-cdk-emr.RosSparkWorkspaceProps=com.aliyun.ros.cdk.emr.RosSparkWorkspaceProps
 @alicloud/ros-cdk-emr.RosStarRocksInstance=com.aliyun.ros.cdk.emr.RosStarRocksInstance
 @alicloud/ros-cdk-emr.RosStarRocksInstance.BackendNodeGroupsProperty=com.aliyun.ros.cdk.emr.RosStarRocksInstance$BackendNodeGroupsProperty
 @alicloud/ros-cdk-emr.RosStarRocksInstance.FrontendNodeGroupsProperty=com.aliyun.ros.cdk.emr.RosStarRocksInstance$FrontendNodeGroupsProperty
@@ -44,6 +58,8 @@
 @alicloud/ros-cdk-emr.RosStarRocksInstance.TagsProperty=com.aliyun.ros.cdk.emr.RosStarRocksInstance$TagsProperty
 @alicloud/ros-cdk-emr.RosStarRocksInstance.VswitchesProperty=com.aliyun.ros.cdk.emr.RosStarRocksInstance$VswitchesProperty
 @alicloud/ros-cdk-emr.RosStarRocksInstanceProps=com.aliyun.ros.cdk.emr.RosStarRocksInstanceProps
+@alicloud/ros-cdk-emr.SparkWorkspace=com.aliyun.ros.cdk.emr.SparkWorkspace
+@alicloud/ros-cdk-emr.SparkWorkspaceProps=com.aliyun.ros.cdk.emr.SparkWorkspaceProps
 @alicloud/ros-cdk-emr.StarRocksInstance=com.aliyun.ros.cdk.emr.StarRocksInstance
 @alicloud/ros-cdk-emr.StarRocksInstanceProps=com.aliyun.ros.cdk.emr.StarRocksInstanceProps
 @alicloud/ros-cdk-emr.datasource.Cluster2=com.aliyun.ros.cdk.emr.datasource.Cluster2

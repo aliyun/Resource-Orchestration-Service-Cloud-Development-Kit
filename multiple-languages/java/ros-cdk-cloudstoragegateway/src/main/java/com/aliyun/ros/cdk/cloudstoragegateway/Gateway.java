@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cloudstoragegateway;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::CloudStorageGateway::Gateway</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:55:20.326Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:43:59.773Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cloudstoragegateway.$Module.class, fqn = "@alicloud/ros-cdk-cloudstoragegateway.Gateway")
 public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cloudstoragegateway.IGateway {
 
@@ -114,6 +114,8 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property category: The category of the gateway.
          * <p>
+         * The default value is <code>Cloud</code>.
+         * <p>
          * @return {@code this}
          * @param category Property category: The category of the gateway. This parameter is required.
          */
@@ -123,6 +125,8 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
         /**
          * Property category: The category of the gateway.
+         * <p>
+         * The default value is <code>Cloud</code>.
          * <p>
          * @return {@code this}
          * @param category Property category: The category of the gateway. This parameter is required.
@@ -156,6 +160,10 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         /**
          * Property name: The name of the gateway.
          * <p>
+         * The name must be 60 characters in length. The name must
+         * start with a letter or a Chinese character. The name can contain letters, Chinese
+         * characters, digits, underscores (_), hyphens (-), and periods (.).
+         * <p>
          * @return {@code this}
          * @param name Property name: The name of the gateway. This parameter is required.
          */
@@ -165,6 +173,10 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
         /**
          * Property name: The name of the gateway.
+         * <p>
+         * The name must be 60 characters in length. The name must
+         * start with a letter or a Chinese character. The name can contain letters, Chinese
+         * characters, digits, underscores (_), hyphens (-), and periods (.).
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the gateway. This parameter is required.
@@ -217,20 +229,40 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property gatewayClass: The class of the gateway.
+         * Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter.
+         * <p>
+         * If your gateway is deployed on the cloud, which is a cloud gateway, valid
+         * values are:
+         * <p>
+         * <ul>
+         * <li>Basic: Basic</li>
+         * <li>Standard: Medium</li>
+         * <li>Enhanced: Enhanced</li>
+         * <li>Advanced: Performance</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param gatewayClass Property gatewayClass: The class of the gateway. This parameter is required.
+         * @param gatewayClass Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter. This parameter is required.
          */
         public Builder gatewayClass(final java.lang.String gatewayClass) {
             this.props.gatewayClass(gatewayClass);
             return this;
         }
         /**
-         * Property gatewayClass: The class of the gateway.
+         * Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter.
+         * <p>
+         * If your gateway is deployed on the cloud, which is a cloud gateway, valid
+         * values are:
+         * <p>
+         * <ul>
+         * <li>Basic: Basic</li>
+         * <li>Standard: Medium</li>
+         * <li>Enhanced: Enhanced</li>
+         * <li>Advanced: Performance</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param gatewayClass Property gatewayClass: The class of the gateway. This parameter is required.
+         * @param gatewayClass Property gatewayClass: If your gateway is deployed in a data center, which is an on-premises gateway, you can ignore this parameter. This parameter is required.
          */
         public Builder gatewayClass(final com.aliyun.ros.cdk.core.IResolvable gatewayClass) {
             this.props.gatewayClass(gatewayClass);
@@ -238,20 +270,30 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property postPaid: Whether the gateway is pay-as-you-go.
+         * Property postPaid: Valid values: - true: pay-as-you-go.
+         * <p>
+         * <ul>
+         * <li>false: subscription.
+         * Default value: false (subscription).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param postPaid Property postPaid: Whether the gateway is pay-as-you-go. This parameter is required.
+         * @param postPaid Property postPaid: Valid values: - true: pay-as-you-go. This parameter is required.
          */
         public Builder postPaid(final java.lang.Boolean postPaid) {
             this.props.postPaid(postPaid);
             return this;
         }
         /**
-         * Property postPaid: Whether the gateway is pay-as-you-go.
+         * Property postPaid: Valid values: - true: pay-as-you-go.
+         * <p>
+         * <ul>
+         * <li>false: subscription.
+         * Default value: false (subscription).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param postPaid Property postPaid: Whether the gateway is pay-as-you-go. This parameter is required.
+         * @param postPaid Property postPaid: Valid values: - true: pay-as-you-go. This parameter is required.
          */
         public Builder postPaid(final com.aliyun.ros.cdk.core.IResolvable postPaid) {
             this.props.postPaid(postPaid);
@@ -259,20 +301,46 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+         * Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways.
+         * <p>
+         * You can ignore this
+         * parameter for on-premises gateways.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>Configure this parameter only when you need to mount an OSS bucket across
+         * regions.</li>
+         * <li>If you specify 0 or do not specify this parameter, the default value is 5.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param publicNetworkBandwidth Property publicNetworkBandwidth: The public network bandwidth of the gateway. This parameter is required.
+         * @param publicNetworkBandwidth Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways. This parameter is required.
          */
         public Builder publicNetworkBandwidth(final java.lang.Number publicNetworkBandwidth) {
             this.props.publicNetworkBandwidth(publicNetworkBandwidth);
             return this;
         }
         /**
-         * Property publicNetworkBandwidth: The public network bandwidth of the gateway.
+         * Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways.
+         * <p>
+         * You can ignore this
+         * parameter for on-premises gateways.
+         * <p>
+         * <blockquote>
+         * <p>
+         * <ul>
+         * <li>Configure this parameter only when you need to mount an OSS bucket across
+         * regions.</li>
+         * <li>If you specify 0 or do not specify this parameter, the default value is 5.</li>
+         * </ul>
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param publicNetworkBandwidth Property publicNetworkBandwidth: The public network bandwidth of the gateway. This parameter is required.
+         * @param publicNetworkBandwidth Property publicNetworkBandwidth: &gt; - This parameter is supported only for cloud gateways. This parameter is required.
          */
         public Builder publicNetworkBandwidth(final com.aliyun.ros.cdk.core.IResolvable publicNetworkBandwidth) {
             this.props.publicNetworkBandwidth(publicNetworkBandwidth);
@@ -280,20 +348,32 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property releaseAfterExpiration: Whether to release the gateway after expiration.
+         * Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires.
+         * <p>
+         * Valid
+         * values:
+         * true: The gateway is automatically released.
+         * false: The billing method of the gateway is automatically changed to
+         * pay-as-you-go after the subscription expires.
          * <p>
          * @return {@code this}
-         * @param releaseAfterExpiration Property releaseAfterExpiration: Whether to release the gateway after expiration. This parameter is required.
+         * @param releaseAfterExpiration Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires. This parameter is required.
          */
         public Builder releaseAfterExpiration(final java.lang.Boolean releaseAfterExpiration) {
             this.props.releaseAfterExpiration(releaseAfterExpiration);
             return this;
         }
         /**
-         * Property releaseAfterExpiration: Whether to release the gateway after expiration.
+         * Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires.
+         * <p>
+         * Valid
+         * values:
+         * true: The gateway is automatically released.
+         * false: The billing method of the gateway is automatically changed to
+         * pay-as-you-go after the subscription expires.
          * <p>
          * @return {@code this}
-         * @param releaseAfterExpiration Property releaseAfterExpiration: Whether to release the gateway after expiration. This parameter is required.
+         * @param releaseAfterExpiration Property releaseAfterExpiration: Specifies whether to release the gateway when the subscription expires. This parameter is required.
          */
         public Builder releaseAfterExpiration(final com.aliyun.ros.cdk.core.IResolvable releaseAfterExpiration) {
             this.props.releaseAfterExpiration(releaseAfterExpiration);
@@ -343,20 +423,26 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property storageBundleId: The ID of the storage bundle.
+         * Property storageBundleId: The ID of the gateway cluster.
+         * <p>
+         * You must specify this parameter if you do not
+         * specify ResourceRegionId.
          * <p>
          * @return {@code this}
-         * @param storageBundleId Property storageBundleId: The ID of the storage bundle. This parameter is required.
+         * @param storageBundleId Property storageBundleId: The ID of the gateway cluster. This parameter is required.
          */
         public Builder storageBundleId(final java.lang.String storageBundleId) {
             this.props.storageBundleId(storageBundleId);
             return this;
         }
         /**
-         * Property storageBundleId: The ID of the storage bundle.
+         * Property storageBundleId: The ID of the gateway cluster.
+         * <p>
+         * You must specify this parameter if you do not
+         * specify ResourceRegionId.
          * <p>
          * @return {@code this}
-         * @param storageBundleId Property storageBundleId: The ID of the storage bundle. This parameter is required.
+         * @param storageBundleId Property storageBundleId: The ID of the gateway cluster. This parameter is required.
          */
         public Builder storageBundleId(final com.aliyun.ros.cdk.core.IResolvable storageBundleId) {
             this.props.storageBundleId(storageBundleId);
@@ -406,20 +492,40 @@ public class Gateway extends com.aliyun.ros.cdk.core.Resource implements com.ali
         }
 
         /**
-         * Property vSwitchId: The ID of the VSwitch.
+         * Property vSwitchId: The ID of the virtual switch.
+         * <p>
+         * If your gateway is deployed in a data center, you
+         * can ignore this parameter.
+         * <p>
+         * <ul>
+         * <li>The vSwitch must be in the same VPC as the ECS instance that you want to
+         * attach.</li>
+         * <li>If no gateway resources can be allocated in the zone where the vSwitch resides,
+         * create a vSwitch in another zone.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the virtual switch. This parameter is required.
          */
         public Builder vSwitchId(final java.lang.String vSwitchId) {
             this.props.vSwitchId(vSwitchId);
             return this;
         }
         /**
-         * Property vSwitchId: The ID of the VSwitch.
+         * Property vSwitchId: The ID of the virtual switch.
+         * <p>
+         * If your gateway is deployed in a data center, you
+         * can ignore this parameter.
+         * <p>
+         * <ul>
+         * <li>The vSwitch must be in the same VPC as the ECS instance that you want to
+         * attach.</li>
+         * <li>If no gateway resources can be allocated in the zone where the vSwitch resides,
+         * create a vSwitch in another zone.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch. This parameter is required.
+         * @param vSwitchId Property vSwitchId: The ID of the virtual switch. This parameter is required.
          */
         public Builder vSwitchId(final com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
             this.props.vSwitchId(vSwitchId);

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.hbr;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBR::RestoreJob</code>.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::HBR::RestoreJob</code>, which is used to create a restore job.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.782Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.174Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RestoreJob")
 public class RestoreJob extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.hbr.IRestoreJob {
 
@@ -307,24 +307,26 @@ public class RestoreJob extends com.aliyun.ros.cdk.core.Resource implements com.
         }
 
         /**
-         * Property targetPath: Target path.
+         * Property targetPath: The destination path for the restore.
          * <p>
-         * For instance, "/".
+         * This parameter is valid only when
+         * RestoreType is set to ECS_FILE.
          * <p>
          * @return {@code this}
-         * @param targetPath Property targetPath: Target path. This parameter is required.
+         * @param targetPath Property targetPath: The destination path for the restore. This parameter is required.
          */
         public Builder targetPath(final java.lang.String targetPath) {
             this.props.targetPath(targetPath);
             return this;
         }
         /**
-         * Property targetPath: Target path.
+         * Property targetPath: The destination path for the restore.
          * <p>
-         * For instance, "/".
+         * This parameter is valid only when
+         * RestoreType is set to ECS_FILE.
          * <p>
          * @return {@code this}
-         * @param targetPath Property targetPath: Target path. This parameter is required.
+         * @param targetPath Property targetPath: The destination path for the restore. This parameter is required.
          */
         public Builder targetPath(final com.aliyun.ros.cdk.core.IResolvable targetPath) {
             this.props.targetPath(targetPath);

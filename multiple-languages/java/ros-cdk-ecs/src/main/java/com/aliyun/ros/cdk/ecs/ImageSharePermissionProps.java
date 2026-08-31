@@ -5,13 +5,22 @@ package com.aliyun.ros.cdk.ecs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-imagesharepermission
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:37.943Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.307Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.ImageSharePermissionProps")
 @software.amazon.jsii.Jsii.Proxy(ImageSharePermissionProps.Jsii$Proxy.class)
 public interface ImageSharePermissionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property imageId: The shared custom image ID.
+     * Property imageId: The ID of the custom image.
+     * <p>
+     * <blockquote><notice></blockquote>
+     * <p>
+     * You can no longer share images that are encrypted by using a service key. You can
+     * share only images that are encrypted by using a customer managed key (CMK). If
+     * you attempt to share an image that is encrypted by using a service key, the
+     * request fails.
+     * <p>
+     * <blockquote></notice></blockquote>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getImageId();
 
@@ -23,9 +32,16 @@ public interface ImageSharePermissionProps extends software.amazon.jsii.JsiiSeri
     }
 
     /**
-     * Property isPublic: Whether to publish or remove community mirrors.
+     * Property isPublic: Specifies whether to publish or unpublish the community image.
      * <p>
-     * If this property is not set, no changes will be made to the community image
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: publishes the image as a community image.</li>
+     * <li>false: unpublishes the community image. The image becomes a custom image. If
+     * the image is a custom image, this setting has no effect.
+     * Default value: false.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIsPublic() {
         return null;
@@ -55,7 +71,15 @@ public interface ImageSharePermissionProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ImageSharePermissionProps#getImageId}
-         * @param imageId Property imageId: The shared custom image ID. This parameter is required.
+         * @param imageId Property imageId: The ID of the custom image. This parameter is required.
+         *                <blockquote><notice></blockquote>
+         *                <p>
+         *                You can no longer share images that are encrypted by using a service key. You can
+         *                share only images that are encrypted by using a customer managed key (CMK). If
+         *                you attempt to share an image that is encrypted by using a service key, the
+         *                request fails.
+         *                <p>
+         *                <blockquote></notice></blockquote>
          * @return {@code this}
          */
         public Builder imageId(java.lang.String imageId) {
@@ -65,7 +89,15 @@ public interface ImageSharePermissionProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ImageSharePermissionProps#getImageId}
-         * @param imageId Property imageId: The shared custom image ID. This parameter is required.
+         * @param imageId Property imageId: The ID of the custom image. This parameter is required.
+         *                <blockquote><notice></blockquote>
+         *                <p>
+         *                You can no longer share images that are encrypted by using a service key. You can
+         *                share only images that are encrypted by using a customer managed key (CMK). If
+         *                you attempt to share an image that is encrypted by using a service key, the
+         *                request fails.
+         *                <p>
+         *                <blockquote></notice></blockquote>
          * @return {@code this}
          */
         public Builder imageId(com.aliyun.ros.cdk.core.IResolvable imageId) {
@@ -95,8 +127,15 @@ public interface ImageSharePermissionProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ImageSharePermissionProps#getIsPublic}
-         * @param isPublic Property isPublic: Whether to publish or remove community mirrors.
-         *                 If this property is not set, no changes will be made to the community image
+         * @param isPublic Property isPublic: Specifies whether to publish or unpublish the community image.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>true: publishes the image as a community image.</li>
+         *                 <li>false: unpublishes the community image. The image becomes a custom image. If
+         *                 the image is a custom image, this setting has no effect.
+         *                 Default value: false.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder isPublic(java.lang.Boolean isPublic) {
@@ -106,8 +145,15 @@ public interface ImageSharePermissionProps extends software.amazon.jsii.JsiiSeri
 
         /**
          * Sets the value of {@link ImageSharePermissionProps#getIsPublic}
-         * @param isPublic Property isPublic: Whether to publish or remove community mirrors.
-         *                 If this property is not set, no changes will be made to the community image
+         * @param isPublic Property isPublic: Specifies whether to publish or unpublish the community image.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>true: publishes the image as a community image.</li>
+         *                 <li>false: unpublishes the community image. The image becomes a custom image. If
+         *                 the image is a custom image, this setting has no effect.
+         *                 Default value: false.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder isPublic(com.aliyun.ros.cdk.core.IResolvable isPublic) {

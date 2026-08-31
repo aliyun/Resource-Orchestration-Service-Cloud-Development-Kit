@@ -10,8 +10,11 @@ export { RosVpnGateway as VpnGatewayProperty };
 export interface VpnGatewayProps {
 
     /**
-     * Property bandwidth: The public network bandwidth of the VPN gateway, in Mbps.
-     * Value: 5|10|20|50|100|200.
+     * Property bandwidth: The maximum bandwidth of the VPN gateway. Unit: Mbit\/s.
+     * *   If you want to create a public VPN gateway, valid values are 10, 100, 200,
+     * 500, and 1000.
+     * *   If you want to create a private VPN gateway, valid values are 200 and 1000.
+     * >  The maximum bandwidth supported by VPN gateways in some regions is 500 Mbit\/s.
      */
     readonly bandwidth: number | ros.IResolvable;
 
@@ -21,10 +24,12 @@ export interface VpnGatewayProps {
     readonly vpcId: string | ros.IResolvable;
 
     /**
-     * Property autoPay: Whether to automatically pay the bill of the VPN gateway, the value:
-     * true: Automatically pays the bill for the VPN gateway.
-     * false: Does not automatically pay the bill for the VPN gateway.
-     * Default true.
+     * Property autoPay: Specifies whether to enable automatic payment. Valid values:
+     * *   true
+     * *   false (default)
+     * > To create a VPN gateway, we recommend that you enable automatic payment. If you
+     * disable automatic payment, you must manually pay the bill to create the VPN
+     * gateway.
      */
     readonly autoPay?: boolean | ros.IResolvable;
 
@@ -58,8 +63,8 @@ export interface VpnGatewayProps {
     readonly enableSsl?: boolean | ros.IResolvable;
 
     /**
-     * Property instanceChargeType: Accounting type of the VPN gateway, the value is:
-     * PREPAY, POSTPAY
+     * Property instanceChargeType: The billing method of the VPN gateway. Set the value to POSTPAY, which specifies
+     * the pay-as-you-go billing method.
      */
     readonly instanceChargeType?: string | ros.IResolvable;
 
@@ -70,7 +75,9 @@ export interface VpnGatewayProps {
     readonly name?: string | ros.IResolvable;
 
     /**
-     * Property networkType: The network type of the VPN gateway. Valid values: public|private
+     * Property networkType: The network type of the VPN gateway. Valid values:
+     * *   public (default)
+     * *   private
      */
     readonly networkType?: string | ros.IResolvable;
 
@@ -90,7 +97,8 @@ export interface VpnGatewayProps {
     readonly resourceGroupId?: string | ros.IResolvable;
 
     /**
-     * Property sslConnections: The maximum number of clients allowed to connect at the same time.
+     * Property sslConnections: The maximum number of clients that can be connected at the same time. Valid
+     * values: 5 (default), 10, 20, 50, 100, 200, 500, and 1000.
      */
     readonly sslConnections?: number | ros.IResolvable;
 
@@ -100,12 +108,19 @@ export interface VpnGatewayProps {
     readonly tags?: RosVpnGateway.TagsProperty[];
 
     /**
-     * Property vpnType: VPN gateway type.
+     * Property vpnType: The type of the VPN gateway. Valid values:
+     * Set the value to Normal (default), which specifies a standard NAT gateway.
      */
     readonly vpnType?: string | ros.IResolvable;
 
     /**
-     * Property vSwitchId: The ID of the VSwitch to which the VPN gateway belongs.
+     * Property vSwitchId: The vSwitch with which you want to associate the VPN gateway.
+     * *   If you call this operation in a region that supports the IPsec-VPN
+     * connections in dual-tunnel mode, this parameter is required. You must specify a
+     * vSwitch and specify DisasterRecoveryVSwitchId.
+     * *   If you call this operation in a region that supports the IPsec-VPN
+     * connections in single-tunnel mode and do not specify a vSwitch, the system
+     * automatically specifies a vSwitch.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 }

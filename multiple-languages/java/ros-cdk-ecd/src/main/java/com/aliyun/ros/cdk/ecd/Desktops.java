@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecd;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::Desktops</code>, which is used to create one or more cloud desktops.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECD::Desktops</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.415Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:33:34.813Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.Desktops")
 public class Desktops extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecd.IDesktops {
 
@@ -322,20 +322,40 @@ public class Desktops extends com.aliyun.ros.cdk.core.Resource implements com.al
         }
 
         /**
-         * Property desktopName: The name of the cloud desktop.
+         * Property desktopName: The name of the desktop.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>The name cannot exceed 64 characters in length.</li>
+         * <li>It must start with a letter or a Chinese character. It cannot start
+         * with<code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         * <li>It can contain letters, digits, Chinese characters, colons (:), underscores
+         * (_), periods (.), and hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param desktopName Property desktopName: The name of the cloud desktop. This parameter is required.
+         * @param desktopName Property desktopName: The name of the desktop. This parameter is required.
          */
         public Builder desktopName(final java.lang.String desktopName) {
             this.props.desktopName(desktopName);
             return this;
         }
         /**
-         * Property desktopName: The name of the cloud desktop.
+         * Property desktopName: The name of the desktop.
+         * <p>
+         * The name must meet the following requirements:
+         * <p>
+         * <ul>
+         * <li>The name cannot exceed 64 characters in length.</li>
+         * <li>It must start with a letter or a Chinese character. It cannot start
+         * with<code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         * <li>It can contain letters, digits, Chinese characters, colons (:), underscores
+         * (_), periods (.), and hyphens (-).</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param desktopName Property desktopName: The name of the cloud desktop. This parameter is required.
+         * @param desktopName Property desktopName: The name of the desktop. This parameter is required.
          */
         public Builder desktopName(final com.aliyun.ros.cdk.core.IResolvable desktopName) {
             this.props.desktopName(desktopName);

@@ -12,7 +12,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
     public interface IRosSecurityPolicyProps
     {
         /// <remarks>
-        /// <strong>Property</strong>: ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.
+        /// <strong>Property</strong>: ciphers: The cipher suites supported by the security policy. Valid values of this
+        /// parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+        /// suites.
         /// </remarks>
         [JsiiProperty(name: "ciphers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
         object Ciphers
@@ -81,7 +83,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nlb
             }
 
             /// <remarks>
-            /// <strong>Property</strong>: ciphers: TThe supported cipher suites, which are determined by the TLS protocol version. You can specify at most 32 cipher suites.
+            /// <strong>Property</strong>: ciphers: The cipher suites supported by the security policy. Valid values of this
+            /// parameter vary based on the value of TlsVersions. You can specify up to 32 cipher
+            /// suites.
             /// </remarks>
             [JsiiProperty(name: "ciphers", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}},\"kind\":\"array\"}}]}}")]
             public object Ciphers

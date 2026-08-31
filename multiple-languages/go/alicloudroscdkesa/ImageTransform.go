@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ImageTransform`You can use the , which resource type to add an image transform configuration for a website.
+// This class encapsulates and extends the ROS resource type `ALIYUN::ESA::ImageTransform`.
 type ImageTransform interface {
 	alicloudroscdkcore.Resource
 	IImageTransform

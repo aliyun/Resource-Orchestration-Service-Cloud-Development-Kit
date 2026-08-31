@@ -11,9 +11,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
     [JsiiInterface(nativeType: typeof(IMountTargetProps), fullyQualifiedName: "@alicloud/ros-cdk-nas.MountTargetProps")]
     public interface IMountTargetProps
     {
-        /// <summary>Property accessGroupName: Permission group name.</summary>
+        /// <summary>Property accessGroupName: The name of the permission group.</summary>
         /// <remarks>
-        /// Default to DEFAULT_VPC_GROUP_NAME.
+        /// This parameter is required if you create a mount target for a General-purpose NAS
+        /// file system or an Extreme NAS file system.
+        /// The default permission group for virtual private clouds (VPCs) is named
+        /// DEFAULT_VPC_GROUP_NAME.
         /// </remarks>
         [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object AccessGroupName
@@ -21,7 +24,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             get;
         }
 
-        /// <summary>Property fileSystemId: File system ID.</summary>
+        /// <summary>Property fileSystemId: The ID of the file system.</summary>
+        /// <remarks>
+        /// <list type="bullet">
+        /// <description>Sample ID of a General-purpose NAS file system: 31a8e4****.</description>
+        /// <description>The IDs of Extreme NAS file systems must start with <c>extreme-</c>, for example,
+        /// extreme-0015****.</description>
+        /// <description>The IDs of CPFS file systems must start with <c>cpfs-</c>. Example:
+        /// cpfs-125487****.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "fileSystemId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         object FileSystemId
         {
@@ -101,9 +113,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
             {
             }
 
-            /// <summary>Property accessGroupName: Permission group name.</summary>
+            /// <summary>Property accessGroupName: The name of the permission group.</summary>
             /// <remarks>
-            /// Default to DEFAULT_VPC_GROUP_NAME.
+            /// This parameter is required if you create a mount target for a General-purpose NAS
+            /// file system or an Extreme NAS file system.
+            /// The default permission group for virtual private clouds (VPCs) is named
+            /// DEFAULT_VPC_GROUP_NAME.
             /// </remarks>
             [JsiiProperty(name: "accessGroupName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object AccessGroupName
@@ -111,7 +126,16 @@ namespace AlibabaCloud.SDK.ROS.CDK.Nas
                 get => GetInstanceProperty<object>()!;
             }
 
-            /// <summary>Property fileSystemId: File system ID.</summary>
+            /// <summary>Property fileSystemId: The ID of the file system.</summary>
+            /// <remarks>
+            /// <list type="bullet">
+            /// <description>Sample ID of a General-purpose NAS file system: 31a8e4****.</description>
+            /// <description>The IDs of Extreme NAS file systems must start with <c>extreme-</c>, for example,
+            /// extreme-0015****.</description>
+            /// <description>The IDs of CPFS file systems must start with <c>cpfs-</c>. Example:
+            /// cpfs-125487****.</description>
+            /// </list>
+            /// </remarks>
             [JsiiProperty(name: "fileSystemId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
             public object FileSystemId
             {

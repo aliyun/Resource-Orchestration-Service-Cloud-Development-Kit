@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Drds.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstance`, which is used to query the information about a PolarDB-X 1.0 instance.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::DRDS::DrdsInstance`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDrdsInstance`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-drds-drdsinstance

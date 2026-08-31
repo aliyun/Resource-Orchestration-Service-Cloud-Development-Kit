@@ -20,9 +20,13 @@ export interface PermissionPolicyToAccessConfigurationAdditionProps {
     readonly directoryId: string | ros.IResolvable;
 
     /**
-     * Property permissionPolicyName: The name of the permission policy.
-     * - If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.
-     * - If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.
+     * Property permissionPolicyName: The name of the policy.
+     * - If you set `PermissionPolicyType` to `System`, you must set
+     * PermissionPolicyName to the name of a system policy. You can obtain the name of
+     * the system policy from RAM.
+     * - If you set `PermissionPolicyType` to `Inline`, you must set
+     * PermissionPolicyName to the name of an inline policy. A custom value is
+     * supported. The value can be up to 32 characters in length.
      */
     readonly permissionPolicyName: string | ros.IResolvable;
 
@@ -48,7 +52,7 @@ export interface IPermissionPolicyToAccessConfigurationAddition extends ros.IRes
     readonly props: PermissionPolicyToAccessConfigurationAdditionProps;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`, which is used to add a policy to an access configuration.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::CloudSSO::PermissionPolicyToAccessConfigurationAddition`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosPermissionPolicyToAccessConfigurationAddition`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cloudsso-permissionpolicytoaccessconfigurationaddition
  */

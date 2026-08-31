@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::DDoS::OriginInstance`, which is used to create an Anti-DDoS Origin instance.
+// This class encapsulates and extends the ROS resource type `ALIYUN::DDoS::OriginInstance`.
 type OriginInstance interface {
 	alicloudroscdkcore.Resource
 	IOriginInstance

@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.ecs;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::PrefixList</code>, which is used to create a prefix list.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::ECS::PrefixList</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:36:38.035Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:37:38.417Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecs.$Module.class, fqn = "@alicloud/ros-cdk-ecs.PrefixList")
 public class PrefixList extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ecs.IPrefixList {
 
@@ -114,7 +114,12 @@ public class PrefixList extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property addressFamily: The IP address family.
          * <p>
-         * Valid values: IPv4 IPv6
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IPv4</li>
+         * <li>IPv6</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param addressFamily Property addressFamily: The IP address family. This parameter is required.
@@ -126,7 +131,12 @@ public class PrefixList extends com.aliyun.ros.cdk.core.Resource implements com.
         /**
          * Property addressFamily: The IP address family.
          * <p>
-         * Valid values: IPv4 IPv6
+         * Valid values:
+         * <p>
+         * <ul>
+         * <li>IPv4</li>
+         * <li>IPv6</li>
+         * </ul>
          * <p>
          * @return {@code this}
          * @param addressFamily Property addressFamily: The IP address family. This parameter is required.

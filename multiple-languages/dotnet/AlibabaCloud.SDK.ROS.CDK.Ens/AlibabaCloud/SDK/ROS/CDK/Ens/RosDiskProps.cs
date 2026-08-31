@@ -179,9 +179,9 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ens
         private object? _encrypted;
 
         /// <remarks>
-        /// <strong>Property</strong>: encrypted: Specifies whether to encrypt the new system disk. Valid values:
-        /// true
-        /// false (default): no
+        /// <strong>Property</strong>: encrypted: Specifies whether to encrypt the disk. Valid values:
+        /// - true
+        /// - false (default)
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "encrypted", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"boolean\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

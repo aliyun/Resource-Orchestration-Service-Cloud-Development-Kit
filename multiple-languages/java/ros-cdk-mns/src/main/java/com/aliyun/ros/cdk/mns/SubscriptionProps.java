@@ -5,22 +5,31 @@ package com.aliyun.ros.cdk.mns;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-mns-subscription
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:51:02.131Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:07:59.972Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.mns.$Module.class, fqn = "@alicloud/ros-cdk-mns.SubscriptionProps")
 @software.amazon.jsii.Jsii.Proxy(SubscriptionProps.Jsii$Proxy.class)
 public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable {
 
     /**
-     * Property endpoint: Terminal address of the message recipient for the created subscription.
+     * Property endpoint: ## The message delivery endpoint.
      * <p>
-     * Currently, four types of endpoints are supported:
+     * The format varies based on the <code>PushType</code> value:
      * <p>
-     * <ol>
-     * <li>HttpEndpoint, which must be prefixed with "http://";</li>
-     * <li>QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};</li>
-     * <li>MailEndpoint, in the format of mail:directmail:{MailAddress};</li>
-     * <li>SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.</li>
-     * </ol>
+     * <ul>
+     * <li>If <code>PushType</code> is <code>http</code>: An HTTP/HTTPS callback URL, such as
+     * <code>http:\/\/example.com\/callback</code> or <code>https:\/\/example.com\/callback</code>.</li>
+     * <li>If <code>PushType</code> is <code>queue</code>: The ARN of the destination queue, in the format
+     * <code>acs:mns:{RegionId}:{account ID}:queues\/{QueueName}</code>.</li>
+     * <li>If <code>PushType</code> is <code>dm</code>: The endpoint for email push, in the fixed format
+     * <code>smq-ep:dm:{account ID}:__dynamic</code>. Replace <code>{account ID}</code> with your account ID.</li>
+     * <li>If <code>PushType</code> is <code>dysms</code>: The endpoint for SMS push, in the format
+     * <code>smq-ep:dysms:{account ID}:{MobileNumber}</code>.</li>
+     * <li>If <code>PushType</code> is <code>kafka</code>: The Kafka push endpoint.</li>
+     * <li>If <code>PushType</code> is <code>fc</code>: The endpoint for Function Compute, in the format
+     * <code>acs:fc:{RegionId}:{account ID}:services\/{ServiceName}\/functions\/{FunctionName}</code>.</li>
+     * <li>If <code>PushType</code> is <code>eventbus</code>: The endpoint for EventBridge, in the format
+     * <code>acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}</code>.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getEndpoint();
 
@@ -94,15 +103,24 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SubscriptionProps#getEndpoint}
-         * @param endpoint Property endpoint: Terminal address of the message recipient for the created subscription. This parameter is required.
-         *                 Currently, four types of endpoints are supported:
+         * @param endpoint Property endpoint: ## The message delivery endpoint. This parameter is required.
+         *                 The format varies based on the <code>PushType</code> value:
          *                 <p>
-         *                 <ol>
-         *                 <li>HttpEndpoint, which must be prefixed with "http://";</li>
-         *                 <li>QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};</li>
-         *                 <li>MailEndpoint, in the format of mail:directmail:{MailAddress};</li>
-         *                 <li>SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.</li>
-         *                 </ol>
+         *                 <ul>
+         *                 <li>If <code>PushType</code> is <code>http</code>: An HTTP/HTTPS callback URL, such as
+         *                 <code>http:\/\/example.com\/callback</code> or <code>https:\/\/example.com\/callback</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>queue</code>: The ARN of the destination queue, in the format
+         *                 <code>acs:mns:{RegionId}:{account ID}:queues\/{QueueName}</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>dm</code>: The endpoint for email push, in the fixed format
+         *                 <code>smq-ep:dm:{account ID}:__dynamic</code>. Replace <code>{account ID}</code> with your account ID.</li>
+         *                 <li>If <code>PushType</code> is <code>dysms</code>: The endpoint for SMS push, in the format
+         *                 <code>smq-ep:dysms:{account ID}:{MobileNumber}</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>kafka</code>: The Kafka push endpoint.</li>
+         *                 <li>If <code>PushType</code> is <code>fc</code>: The endpoint for Function Compute, in the format
+         *                 <code>acs:fc:{RegionId}:{account ID}:services\/{ServiceName}\/functions\/{FunctionName}</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>eventbus</code>: The endpoint for EventBridge, in the format
+         *                 <code>acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}</code>.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder endpoint(java.lang.String endpoint) {
@@ -112,15 +130,24 @@ public interface SubscriptionProps extends software.amazon.jsii.JsiiSerializable
 
         /**
          * Sets the value of {@link SubscriptionProps#getEndpoint}
-         * @param endpoint Property endpoint: Terminal address of the message recipient for the created subscription. This parameter is required.
-         *                 Currently, four types of endpoints are supported:
+         * @param endpoint Property endpoint: ## The message delivery endpoint. This parameter is required.
+         *                 The format varies based on the <code>PushType</code> value:
          *                 <p>
-         *                 <ol>
-         *                 <li>HttpEndpoint, which must be prefixed with "http://";</li>
-         *                 <li>QueueEndpoint, in the format of acs:mns:{REGION}:{AccountID}:queues/{QueueName};</li>
-         *                 <li>MailEndpoint, in the format of mail:directmail:{MailAddress};</li>
-         *                 <li>SmsEndpoint, in the format of sms:directsms:anonymous or sms:directsms:{Phone}.</li>
-         *                 </ol>
+         *                 <ul>
+         *                 <li>If <code>PushType</code> is <code>http</code>: An HTTP/HTTPS callback URL, such as
+         *                 <code>http:\/\/example.com\/callback</code> or <code>https:\/\/example.com\/callback</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>queue</code>: The ARN of the destination queue, in the format
+         *                 <code>acs:mns:{RegionId}:{account ID}:queues\/{QueueName}</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>dm</code>: The endpoint for email push, in the fixed format
+         *                 <code>smq-ep:dm:{account ID}:__dynamic</code>. Replace <code>{account ID}</code> with your account ID.</li>
+         *                 <li>If <code>PushType</code> is <code>dysms</code>: The endpoint for SMS push, in the format
+         *                 <code>smq-ep:dysms:{account ID}:{MobileNumber}</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>kafka</code>: The Kafka push endpoint.</li>
+         *                 <li>If <code>PushType</code> is <code>fc</code>: The endpoint for Function Compute, in the format
+         *                 <code>acs:fc:{RegionId}:{account ID}:services\/{ServiceName}\/functions\/{FunctionName}</code>.</li>
+         *                 <li>If <code>PushType</code> is <code>eventbus</code>: The endpoint for EventBridge, in the format
+         *                 <code>acs:eventbridge:{RegionId}:{account ID}:eventbus\/{EventBusName}</code>.</li>
+         *                 </ul>
          * @return {@code this}
          */
         public Builder endpoint(com.aliyun.ros.cdk.core.IResolvable endpoint) {

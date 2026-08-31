@@ -150,9 +150,11 @@ export class RosAITask extends ros.RosResource {
 export interface RosAccountProps {
 
     /**
-     * @Property accountName: The name of the database account. The name must comply with the following rules:
-     * - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
-     * - It can be up to 16 characters in length.
+     * @Property accountName: The name of the database account. The name must meet the following requirements:
+     * - It must start with a lowercase letter and end with a letter or a digit.
+     * - It can contain lowercase letters, digits, and underscores (_).
+     * - It must be 1 to 16 characters in length.
+     * - It cannot be a reserved keyword, such as root or admin.
      */
     readonly accountName: string | ros.IResolvable;
 
@@ -177,14 +179,23 @@ export interface RosAccountProps {
     readonly accountDescription?: string | ros.IResolvable;
 
     /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * ReadIndex: has read and index permissions on the database.
-     * Default value: ReadWrite.
-     * Separate multiple permissions with a comma (,).
+     * @Property accountPrivilege: The privilege level to grant on the specified databases. Valid values:
+     * - ReadWrite: read and write permissions
+     * - ReadOnly: read-only permissions
+     * - DMLOnly: DML permissions only
+     * - DDLOnly: DDL permissions only
+     * - ReadIndex: read-only and index permissions
+     * > * This parameter takes effect only when you specify the `DBName` parameter.
+     * >
+     * > * If you specify multiple databases in `DBName`, you must specify a
+     * corresponding permission for each in `AccountPrivilege`, separated by commas. The
+     * `AccountPrivilege` string cannot exceed 900 characters. For example, to grant
+     * read and write permissions to database DB1 and read-only permissions to database
+     * DB2, set `DBName` to `DB1,DB2` and set `AccountPrivilege` to
+     * `ReadWrite,ReadOnly`.
+     * >
+     * > * This parameter applies only to standard accounts on PolarDB for MySQL
+     * clusters.
      */
     readonly accountPrivilege?: string | ros.IResolvable;
 
@@ -199,7 +210,9 @@ export interface RosAccountProps {
     readonly accountType?: string | ros.IResolvable;
 
     /**
-     * @Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
+     * @Property dbName: The name of the database that the account can access. To specify multiple
+     * databases, separate the database names with a comma (,).
+     * > This parameter applies only to standard accounts on PolarDB for MySQL clusters.
      */
     readonly dbName?: string | ros.IResolvable;
 
@@ -308,9 +321,11 @@ export class RosAccount extends ros.RosResource {
 
 
     /**
-     * @Property accountName: The name of the database account. The name must comply with the following rules:
-     * - It must start with a lowercase letter and consist of lowercase letters, digits, and underscores (_).
-     * - It can be up to 16 characters in length.
+     * @Property accountName: The name of the database account. The name must meet the following requirements:
+     * - It must start with a lowercase letter and end with a letter or a digit.
+     * - It can contain lowercase letters, digits, and underscores (_).
+     * - It must be 1 to 16 characters in length.
+     * - It cannot be a reserved keyword, such as root or admin.
      */
     public accountName: string | ros.IResolvable;
 
@@ -335,14 +350,23 @@ export class RosAccount extends ros.RosResource {
     public accountDescription: string | ros.IResolvable | undefined;
 
     /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * ReadIndex: has read and index permissions on the database.
-     * Default value: ReadWrite.
-     * Separate multiple permissions with a comma (,).
+     * @Property accountPrivilege: The privilege level to grant on the specified databases. Valid values:
+     * - ReadWrite: read and write permissions
+     * - ReadOnly: read-only permissions
+     * - DMLOnly: DML permissions only
+     * - DDLOnly: DDL permissions only
+     * - ReadIndex: read-only and index permissions
+     * > * This parameter takes effect only when you specify the `DBName` parameter.
+     * >
+     * > * If you specify multiple databases in `DBName`, you must specify a
+     * corresponding permission for each in `AccountPrivilege`, separated by commas. The
+     * `AccountPrivilege` string cannot exceed 900 characters. For example, to grant
+     * read and write permissions to database DB1 and read-only permissions to database
+     * DB2, set `DBName` to `DB1,DB2` and set `AccountPrivilege` to
+     * `ReadWrite,ReadOnly`.
+     * >
+     * > * This parameter applies only to standard accounts on PolarDB for MySQL
+     * clusters.
      */
     public accountPrivilege: string | ros.IResolvable | undefined;
 
@@ -357,7 +381,9 @@ export class RosAccount extends ros.RosResource {
     public accountType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbName: The name of the database whose access permissions are to be granted to the database account. Separate multiple databases with a comma (,).
+     * @Property dbName: The name of the database that the account can access. To specify multiple
+     * databases, separate the database names with a comma (,).
+     * > This parameter applies only to standard accounts on PolarDB for MySQL clusters.
      */
     public dbName: string | ros.IResolvable | undefined;
 
@@ -581,7 +607,10 @@ export class RosAccountPrivilege extends ros.RosResource {
 export interface RosApplicationProps {
 
     /**
-     * @Property applicationType: The type of the application. This parameter is required.
+     * @Property applicationType: The type of the application. Valid values:
+     * - supabase: Creates a managed Supabase application.
+     * - raycluster: Creates a managed Ray Cluster application.
+     * - polarclaw: Creates a managed PolarClaw application.
      */
     readonly applicationType: string | ros.IResolvable;
 
@@ -596,12 +625,15 @@ export interface RosApplicationProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property autoCreatePolarFs: Whether to auto create PolarFS.
+     * @Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance. Valid
+     * values:
+     * - false (default): Does not automatically create the instance.
+     * - true: Automatically creates the instance.
      */
     readonly autoCreatePolarFs?: boolean | ros.IResolvable;
 
     /**
-     * @Property components: The list of components.
+     * @Property components: A list of custom child components for the application.
      */
     readonly components?: Array<RosApplication.ComponentsProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -618,12 +650,17 @@ export interface RosApplicationProps {
     readonly payType?: string | ros.IResolvable;
 
     /**
-     * @Property period: The period of the application.
+     * @Property period: The subscription period type.
      */
     readonly period?: number | ros.IResolvable;
 
     /**
-     * @Property polarFsInstanceId: The ID of the PolarFS instance.
+     * @Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance
+     * instance. This parameter is empty by default. If you specify this parameter, the
+     * corresponding storage is mounted to the application.
+     * This feature is currently supported only by the following applications:
+     * - supabase
+     * - raycluster
      */
     readonly polarFsInstanceId?: string | ros.IResolvable;
 
@@ -633,7 +670,8 @@ export interface RosApplicationProps {
     readonly securityGroupId?: string | ros.IResolvable;
 
     /**
-     * @Property securityIpList: The security IP list of the component.
+     * @Property securityIpList: The IP address whitelist. If you do not specify this parameter, the default value
+     * `127.0.0.1` is used.
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -643,12 +681,13 @@ export interface RosApplicationProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch.
+     * @Property vSwitchId: The vSwitch. The default value is the current vSwitch in the primary zone of the
+     * instance.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
     /**
-     * @Property zoneId: The ID of the zone.
+     * @Property zoneId: The zone. The default value is the primary zone of the instance.
      */
     readonly zoneId?: string | ros.IResolvable;
 }
@@ -699,7 +738,7 @@ function RosApplicationPropsValidator(properties: any): ros.ValidationResult {
     if(properties.applicationType && (typeof properties.applicationType) !== 'object') {
         errors.collect(ros.propertyValidator('applicationType', ros.validateAllowedValues)({
           data: properties.applicationType,
-          allowedValues: ["supabase","raycluster"],
+          allowedValues: ["supabase","raycluster","polarclaw"],
         }));
     }
     errors.collect(ros.propertyValidator('applicationType', ros.validateString)(properties.applicationType));
@@ -759,7 +798,10 @@ export class RosApplication extends ros.RosResource {
 
 
     /**
-     * @Property applicationType: The type of the application. This parameter is required.
+     * @Property applicationType: The type of the application. Valid values:
+     * - supabase: Creates a managed Supabase application.
+     * - raycluster: Creates a managed Ray Cluster application.
+     * - polarclaw: Creates a managed PolarClaw application.
      */
     public applicationType: string | ros.IResolvable;
 
@@ -774,12 +816,15 @@ export class RosApplication extends ros.RosResource {
     public dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property autoCreatePolarFs: Whether to auto create PolarFS.
+     * @Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance. Valid
+     * values:
+     * - false (default): Does not automatically create the instance.
+     * - true: Automatically creates the instance.
      */
     public autoCreatePolarFs: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property components: The list of components.
+     * @Property components: A list of custom child components for the application.
      */
     public components: Array<RosApplication.ComponentsProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -796,12 +841,17 @@ export class RosApplication extends ros.RosResource {
     public payType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property period: The period of the application.
+     * @Property period: The subscription period type.
      */
     public period: number | ros.IResolvable | undefined;
 
     /**
-     * @Property polarFsInstanceId: The ID of the PolarFS instance.
+     * @Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance
+     * instance. This parameter is empty by default. If you specify this parameter, the
+     * corresponding storage is mounted to the application.
+     * This feature is currently supported only by the following applications:
+     * - supabase
+     * - raycluster
      */
     public polarFsInstanceId: string | ros.IResolvable | undefined;
 
@@ -811,7 +861,8 @@ export class RosApplication extends ros.RosResource {
     public securityGroupId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: The security IP list of the component.
+     * @Property securityIpList: The IP address whitelist. If you do not specify this parameter, the default value
+     * `127.0.0.1` is used.
      */
     public securityIpList: string | ros.IResolvable | undefined;
 
@@ -821,12 +872,13 @@ export class RosApplication extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch.
+     * @Property vSwitchId: The vSwitch. The default value is the current vSwitch in the primary zone of the
+     * instance.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property zoneId: The ID of the zone.
+     * @Property zoneId: The zone. The default value is the primary zone of the instance.
      */
     public zoneId: string | ros.IResolvable | undefined;
 
@@ -1222,7 +1274,25 @@ export class RosBackup extends ros.RosResource {
 export interface RosDBClusterProps {
 
     /**
-     * @Property dbNodeClass: The node specifications of the cluster. For more information, see Specifications and pricing.
+     * @Property dbNodeClass: The node specification. For more information, see the following topics:
+     * - PolarDB for MySQL: Compute node specifications
+     * - PolarDB for PostgreSQL (compatible with Oracle): Compute node
+     * specifications
+     * - PolarDB for PostgreSQL: Compute node specifications
+     * > * To create a PolarDB for MySQL Cluster Edition serverless cluster, set this
+     * parameter to polar.mysql.sl.small.
+     * >
+     * > * To create a PolarDB for MySQL Standard Edition serverless cluster, set this
+     * parameter to polar.mysql.sl.small.c.
+     * >
+     * > * To create a PolarDB for PostgreSQL Cluster Edition serverless cluster, set
+     * this parameter to polar.pg.sl.small.
+     * >
+     * > * To create a PolarDB for PostgreSQL Standard Edition serverless cluster, set
+     * this parameter to polar.pg.sl.small.c.
+     * >
+     * > * To create a PolarDB for PostgreSQL (compatible with Oracle) serverless
+     * cluster, set this parameter to polar.o.sl.small.
      */
     readonly dbNodeClass: string | ros.IResolvable;
 
@@ -1235,10 +1305,20 @@ export interface RosDBClusterProps {
     readonly dbType: string | ros.IResolvable;
 
     /**
-     * @Property dbVersion: The version of the database. Valid values:
-     * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11, 14, 15
-     * Oracle: 11, 14
+     * @Property dbVersion: The version of the database engine.
+     * - Valid values for MySQL:
+     * - 5.6
+     * - 5.7
+     * - 8.0
+     * - Valid values for PostgreSQL:
+     * - 11
+     * - 14
+     * - 15
+     * > If you create a serverless cluster for PolarDB for PostgreSQL, you must set
+     * this parameter to `14`.
+     * \* Valid values for Oracle:
+     * \* 11
+     * \* 14
      */
     readonly dbVersion: string | ros.IResolvable;
 
@@ -1250,7 +1330,10 @@ export interface RosDBClusterProps {
     readonly payType: string | ros.IResolvable;
 
     /**
-     * @Property allowShutDown: Whether to turn on No activity pause. The default is false.
+     * @Property allowShutDown: Specifies whether to enable pause on inactivity. Valid values:
+     * - true: enables pause on inactivity.
+     * - false (default): disables pause on inactivity.
+     * > This parameter is supported only for serverless clusters.
      */
     readonly allowShutDown?: boolean | ros.IResolvable;
 
@@ -1267,25 +1350,27 @@ export interface RosDBClusterProps {
     readonly autoRenewPeriod?: number | ros.IResolvable;
 
     /**
-     * @Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows:
-     * ALL: Keep all backups permanently.
-     * LATEST: Permanently keep the last backup (automatic backup before deletion).
-     * NONE: The backup set is not retained when the cluster is deleted.
-     * When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
-     * Note: This parameter takes effect only when the value of DBType is MySQL.
+     * @Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted. Valid values:
+     * - ALL: retains all backup sets.
+     * - LATEST: retains only the last backup set. An automatic backup is performed
+     * before the cluster is deleted.
+     * - NONE: does not retain backup sets.
+     * Default value: NONE.
+     * > - This parameter is valid only if DBType is set to MySQL.
+     * >
+     * > - Serverless clusters do not support this parameter.
      */
     readonly backupRetentionPolicyOnClusterDeletion?: string | ros.IResolvable;
 
     /**
-     * @Property cloneDataPoint: The time point of data to be cloned. Valid values:
-     * LATEST: clones data of the latest time point.
-     * <BackupID>: clones historical backup data. Specify the ID of the specific backup set.
-     * <Timestamp>: clones data of a historical time point. Specify the specific time in
-     * the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.
+     * @Property cloneDataPoint: The point in time for the clone. Valid values:
+     * - LATEST: The latest point in time.
+     * - BackupID: The ID of a historical backup set.
+     * - Timestamp: A specific point in time in the `YYYY-MM-DDThh:mm:ssZ` format. The
+     * time must be in UTC.
      * Default value: LATEST.
-     * Note
-     * This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
-     * If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
+     * > If you set CreationOption to CloneFromRDS, you can set this parameter only to
+     * LATEST.
      */
     readonly cloneDataPoint?: string | ros.IResolvable;
 
@@ -1300,7 +1385,21 @@ export interface RosDBClusterProps {
     readonly coldStorageOption?: RosDBCluster.ColdStorageOptionProperty | ros.IResolvable;
 
     /**
-     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
+     * @Property creationCategory: The edition of the cluster. Valid values:
+     * - Normal: Cluster Edition (default)
+     * - Basic: Single-node Edition
+     * - ArchiveNormal: X-Engine Edition
+     * - NormalMultimaster: Multi-master Cluster Edition
+     * - SENormal: Standard Edition
+     * > * The Basic edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0;
+     * PolarDB for PostgreSQL 14; and PolarDB for PostgreSQL (compatible with Oracle)
+     * 2.0.
+     * >
+     * > * The ArchiveNormal and NormalMultimaster editions are supported for PolarDB
+     * for MySQL 8.0.
+     * >
+     * > * The SENormal edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0 and
+     * PolarDB for PostgreSQL 14.
      */
     readonly creationCategory?: string | ros.IResolvable;
 
@@ -1344,9 +1443,19 @@ export interface RosDBClusterProps {
     readonly dbMinorVersion?: string | ros.IResolvable;
 
     /**
-     * @Property dbNodeNum: The number of Standard Edition nodes.
-     * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
-     * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
+     * @Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster. Valid
+     * values:
+     * - Standard Edition: 1 to 8. A cluster of this edition includes one read\/write
+     * node and up to seven read-only nodes.
+     * - Enterprise Edition: 1 to 16. A cluster of this edition includes one read\/write
+     * node and up to 15 read-only nodes.
+     * > * By default, an Enterprise Edition cluster has two nodes and a Standard
+     * Edition cluster has one node.
+     * >
+     * > * This parameter is supported only for PolarDB for MySQL.
+     * >
+     * > * You cannot change the number of nodes in a Multi-master Cluster Edition
+     * cluster.
      */
     readonly dbNodeNum?: number | ros.IResolvable;
 
@@ -1370,11 +1479,13 @@ export interface RosDBClusterProps {
     readonly gdnId?: string | ros.IResolvable;
 
     /**
-     * @Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. Default value: ON. Valid values:
-     * ON: enables the hot standby storage cluster feature.
-     * OFF: disables the hot standby storage cluster feature
-     * STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
-     * The default value for Standard Edition clusters is STANDBY.
+     * @Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature. Valid values:
+     * - ON (default): enables a hot standby storage cluster.
+     * - OFF: disables the hot standby cluster feature.
+     * - STANDBY: enables a hot standby cluster.
+     * - EQUAL: enables hot standby for both storage and computing resources.
+     * - 3AZ: enables multi-AZ strong consistency.
+     * > The value STANDBY is valid only for PolarDB for PostgreSQL.
      */
     readonly hotStandbyCluster?: string | ros.IResolvable;
 
@@ -1387,10 +1498,12 @@ export interface RosDBClusterProps {
     readonly loosePolarLogBin?: string | ros.IResolvable;
 
     /**
-     * @Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows:
-     * ON: The cluster starts the X-Engine enginen
-     * OFF: The cluster shuts down the X-Engine engine
-     * This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+     * @Property looseXEngine: Specifies whether to enable the X-Engine storage engine. Valid values:
+     * - ON: enables the X-Engine storage engine.
+     * - OFF: disables the X-Engine storage engine.
+     * > This parameter is valid only if the CreationOption parameter is not set to
+     * CreateGdnStandby, DBType is set to MySQL, and DBVersion is set to 8.0. To enable
+     * the X-Engine storage engine, the node must have at least 8 GB of memory.
      */
     readonly looseXEngine?: string | ros.IResolvable;
 
@@ -1436,8 +1549,8 @@ export interface RosDBClusterProps {
     readonly periodUnit?: string | ros.IResolvable;
 
     /**
-     * @Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
-     * Baseline performance =min{1,800+50* capacity, 50000}.
+     * @Property provisionedIops: The provisioned read\/write IOPS of the ESSD AutoPL cloud disk. Valid values: 0 to
+     * min{50,000, 1,000 × Capacity - Baseline IOPS}.
      */
     readonly provisionedIops?: number | ros.IResolvable;
 
@@ -1454,10 +1567,17 @@ export interface RosDBClusterProps {
     readonly proxyClass?: string | ros.IResolvable;
 
     /**
-     * @Property proxyType: The type of PolarProxy. Default value: OFF. Valid values:
-     * OFF: disables PolarProxy.
-     * EXCLUSIVE: Dedicated Enterprise Edition
-     * GENERAL: Standard Enterprise Edition
+     * @Property proxyType: The type of the database proxy. Valid values:
+     * - EXCLUSIVE: Enterprise Dedicated
+     * - GENERAL: Enterprise General-purpose
+     * > The proxy type must be consistent with the type that corresponds to the node
+     * specification of the cluster:
+     * >
+     * > - If the node specification is general-purpose, the proxy type must be
+     * Enterprise General-purpose.
+     * >
+     * > - If the node specification is dedicated, the proxy type must be Enterprise
+     * Dedicated.
      */
     readonly proxyType?: string | ros.IResolvable;
 
@@ -1484,22 +1604,30 @@ export interface RosDBClusterProps {
     readonly restartMasterNode?: boolean | ros.IResolvable;
 
     /**
-     * @Property scaleMax: Maximum limit of single-node scaling.
+     * @Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to.
+     * Valid values: 1 to 32.
+     * > This parameter is supported only for serverless clusters.
      */
     readonly scaleMax?: number | ros.IResolvable;
 
     /**
-     * @Property scaleMin: Minimum limit of single-node scaling.
+     * @Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless
+     * cluster to scale down to. Valid values: 1 to 31.
+     * > This parameter is supported only for serverless clusters.
      */
     readonly scaleMin?: number | ros.IResolvable;
 
     /**
-     * @Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+     * @Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to.
+     * Valid values: 0 to 15.
+     * > This parameter is supported only for serverless clusters.
      */
     readonly scaleRoNumMax?: number | ros.IResolvable;
 
     /**
-     * @Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+     * @Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to.
+     * Valid values: 0 to 15.
+     * > This parameter is supported only for serverless clusters.
      */
     readonly scaleRoNumMin?: number | ros.IResolvable;
 
@@ -1511,7 +1639,9 @@ export interface RosDBClusterProps {
     readonly securityGroupIds?: Array<string | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
+     * @Property securityIpList: The IP whitelist of the PolarDB cluster.
+     * > You can specify multiple IP addresses in the IP whitelist. Separate the IP
+     * addresses with commas (,).
      */
     readonly securityIpList?: string | ros.IResolvable;
 
@@ -1521,10 +1651,19 @@ export interface RosDBClusterProps {
     readonly serverlessType?: string | ros.IResolvable;
 
     /**
-     * @Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
-     * Note
-     * This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
-     * This parameter is required if the CreationOption parameter is not set to Normal.
+     * @Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster. This
+     * parameter is required only if CreationOption is set to MigrationFromRDS,
+     * CloneFromRDS, CloneFromPolarDB, or RecoverFromRecyclebin.
+     * - If CreationOption is set to MigrationFromRDS or CloneFromRDS, specify the ID of
+     * the source ApsaraDB RDS instance. The source ApsaraDB RDS instance must be
+     * ApsaraDB RDS for MySQL 5.6, 5.7, or 8.0 High-availability Edition.
+     * - If CreationOption is set to CloneFromPolarDB, specify the ID of the source
+     * PolarDB cluster. The new cluster must use the same database engine as the source
+     * cluster. For example, if the source cluster runs MySQL 8.0, you must set DBType
+     * to MySQL and DBVersion to 8.0 for the new cluster.
+     * - If CreationOption is set to RecoverFromRecyclebin, specify the ID of the
+     * released source PolarDB cluster. The restored cluster must use the same database
+     * engine as the source cluster.
      */
     readonly sourceResourceId?: string | ros.IResolvable;
 
@@ -1537,8 +1676,9 @@ export interface RosDBClusterProps {
     readonly sslEnabled?: string | ros.IResolvable;
 
     /**
-     * @Property standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
-     * This parameter takes effect only when the multi-zone data consistency feature is enabled.
+     * @Property standbyAz: The zone for the hot standby cluster.
+     * > This parameter is valid only when the hot standby cluster feature or multi-AZ
+     * strong consistency is enabled.
      */
     readonly standbyAz?: string | ros.IResolvable;
 
@@ -1550,13 +1690,20 @@ export interface RosDBClusterProps {
     readonly storageAutoScale?: string | ros.IResolvable;
 
     /**
-     * @Property storagePayType: The storage pay type.
+     * @Property storagePayType: The billing method for storage. Valid values:
+     * - Postpaid: pay-by-capacity (a pay-as-you-go method).
+     * - Prepaid: pay-by-space (a subscription method).
      */
     readonly storagePayType?: string | ros.IResolvable;
 
     /**
-     * @Property storageSpace: The storage space that uses the subscription billing method. Unit: GB.
-     * Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+     * @Property storageSpace: The storage space for a pay-by-space (subscription) cluster. Unit: GB.
+     * > - Valid values for a PolarDB for MySQL Enterprise Edition cluster: 10 to 50000.
+     * >
+     * > - Valid values for a PolarDB for MySQL Standard Edition cluster: 20 to 64000.
+     * >
+     * > - If the storage type of a Standard Edition cluster is ESSD AutoPL, the storage
+     * space must be a multiple of 10 between 40 and 64000.
      */
     readonly storageSpace?: number | ros.IResolvable;
 
@@ -1606,7 +1753,8 @@ export interface RosDBClusterProps {
     readonly vpcId?: string | ros.IResolvable;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch to connect to.
+     * @Property vSwitchId: The ID of the VSwitch.
+     * > If you specify the VPCId parameter, you must also specify this parameter.
      */
     readonly vSwitchId?: string | ros.IResolvable;
 
@@ -1975,7 +2123,25 @@ export class RosDBCluster extends ros.RosResource {
 
 
     /**
-     * @Property dbNodeClass: The node specifications of the cluster. For more information, see Specifications and pricing.
+     * @Property dbNodeClass: The node specification. For more information, see the following topics:
+     * - PolarDB for MySQL: Compute node specifications
+     * - PolarDB for PostgreSQL (compatible with Oracle): Compute node
+     * specifications
+     * - PolarDB for PostgreSQL: Compute node specifications
+     * > * To create a PolarDB for MySQL Cluster Edition serverless cluster, set this
+     * parameter to polar.mysql.sl.small.
+     * >
+     * > * To create a PolarDB for MySQL Standard Edition serverless cluster, set this
+     * parameter to polar.mysql.sl.small.c.
+     * >
+     * > * To create a PolarDB for PostgreSQL Cluster Edition serverless cluster, set
+     * this parameter to polar.pg.sl.small.
+     * >
+     * > * To create a PolarDB for PostgreSQL Standard Edition serverless cluster, set
+     * this parameter to polar.pg.sl.small.c.
+     * >
+     * > * To create a PolarDB for PostgreSQL (compatible with Oracle) serverless
+     * cluster, set this parameter to polar.o.sl.small.
      */
     public dbNodeClass: string | ros.IResolvable;
 
@@ -1988,10 +2154,20 @@ export class RosDBCluster extends ros.RosResource {
     public dbType: string | ros.IResolvable;
 
     /**
-     * @Property dbVersion: The version of the database. Valid values:
-     * MySQL: 5.6, 5.7 or 8.0
-     * PostgreSQL: 11, 14, 15
-     * Oracle: 11, 14
+     * @Property dbVersion: The version of the database engine.
+     * - Valid values for MySQL:
+     * - 5.6
+     * - 5.7
+     * - 8.0
+     * - Valid values for PostgreSQL:
+     * - 11
+     * - 14
+     * - 15
+     * > If you create a serverless cluster for PolarDB for PostgreSQL, you must set
+     * this parameter to `14`.
+     * \* Valid values for Oracle:
+     * \* 11
+     * \* 14
      */
     public dbVersion: string | ros.IResolvable;
 
@@ -2003,7 +2179,10 @@ export class RosDBCluster extends ros.RosResource {
     public payType: string | ros.IResolvable;
 
     /**
-     * @Property allowShutDown: Whether to turn on No activity pause. The default is false.
+     * @Property allowShutDown: Specifies whether to enable pause on inactivity. Valid values:
+     * - true: enables pause on inactivity.
+     * - false (default): disables pause on inactivity.
+     * > This parameter is supported only for serverless clusters.
      */
     public allowShutDown: boolean | ros.IResolvable | undefined;
 
@@ -2020,25 +2199,27 @@ export class RosDBCluster extends ros.RosResource {
     public autoRenewPeriod: number | ros.IResolvable | undefined;
 
     /**
-     * @Property backupRetentionPolicyOnClusterDeletion: The backup set retention policy when deleting a cluster, the value range is as follows:
-     * ALL: Keep all backups permanently.
-     * LATEST: Permanently keep the last backup (automatic backup before deletion).
-     * NONE: The backup set is not retained when the cluster is deleted.
-     * When creating a cluster, the default value is NONE, that is, the backup set is not retained when the cluster is deleted.
-     * Note: This parameter takes effect only when the value of DBType is MySQL.
+     * @Property backupRetentionPolicyOnClusterDeletion: The backup retention policy to apply when the cluster is deleted. Valid values:
+     * - ALL: retains all backup sets.
+     * - LATEST: retains only the last backup set. An automatic backup is performed
+     * before the cluster is deleted.
+     * - NONE: does not retain backup sets.
+     * Default value: NONE.
+     * > - This parameter is valid only if DBType is set to MySQL.
+     * >
+     * > - Serverless clusters do not support this parameter.
      */
     public backupRetentionPolicyOnClusterDeletion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property cloneDataPoint: The time point of data to be cloned. Valid values:
-     * LATEST: clones data of the latest time point.
-     * <BackupID>: clones historical backup data. Specify the ID of the specific backup set.
-     * <Timestamp>: clones data of a historical time point. Specify the specific time in
-     * the yyyy-MM-ddTHH:mm:ssZ format. The time must be in UTC.
+     * @Property cloneDataPoint: The point in time for the clone. Valid values:
+     * - LATEST: The latest point in time.
+     * - BackupID: The ID of a historical backup set.
+     * - Timestamp: A specific point in time in the `YYYY-MM-DDThh:mm:ssZ` format. The
+     * time must be in UTC.
      * Default value: LATEST.
-     * Note
-     * This parameter takes effect only when the DBType parameter is set to MySQL, the DBVersion parameter is set to 5.6, and the CreationOption parameter is set to CloneFromRDS or CloneFromPolarDB.
-     * If the CreationOption parameter is set to CloneFromRDS, the value of this parameter must be LATEST.
+     * > If you set CreationOption to CloneFromRDS, you can set this parameter only to
+     * LATEST.
      */
     public cloneDataPoint: string | ros.IResolvable | undefined;
 
@@ -2053,7 +2234,21 @@ export class RosDBCluster extends ros.RosResource {
     public coldStorageOption: RosDBCluster.ColdStorageOptionProperty | ros.IResolvable | undefined;
 
     /**
-     * @Property creationCategory: Cluster series. The value could be Normal (standard version), Basic, ArchiveNormal, NormalMultimaster and SENormal.
+     * @Property creationCategory: The edition of the cluster. Valid values:
+     * - Normal: Cluster Edition (default)
+     * - Basic: Single-node Edition
+     * - ArchiveNormal: X-Engine Edition
+     * - NormalMultimaster: Multi-master Cluster Edition
+     * - SENormal: Standard Edition
+     * > * The Basic edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0;
+     * PolarDB for PostgreSQL 14; and PolarDB for PostgreSQL (compatible with Oracle)
+     * 2.0.
+     * >
+     * > * The ArchiveNormal and NormalMultimaster editions are supported for PolarDB
+     * for MySQL 8.0.
+     * >
+     * > * The SENormal edition is supported for PolarDB for MySQL 5.6, 5.7, and 8.0 and
+     * PolarDB for PostgreSQL 14.
      */
     public creationCategory: string | ros.IResolvable | undefined;
 
@@ -2097,9 +2292,19 @@ export class RosDBCluster extends ros.RosResource {
     public dbMinorVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbNodeNum: The number of Standard Edition nodes.
-     * Valid values for PolarDB for MySQL Standard Edition: 1 to 8.
-     * Valid values for PolarDB for MySQL Enterprise Edition: 1 to 16.
+     * @Property dbNodeNum: The number of nodes for a Standard Edition or Enterprise Edition cluster. Valid
+     * values:
+     * - Standard Edition: 1 to 8. A cluster of this edition includes one read\/write
+     * node and up to seven read-only nodes.
+     * - Enterprise Edition: 1 to 16. A cluster of this edition includes one read\/write
+     * node and up to 15 read-only nodes.
+     * > * By default, an Enterprise Edition cluster has two nodes and a Standard
+     * Edition cluster has one node.
+     * >
+     * > * This parameter is supported only for PolarDB for MySQL.
+     * >
+     * > * You cannot change the number of nodes in a Multi-master Cluster Edition
+     * cluster.
      */
     public dbNodeNum: number | ros.IResolvable | undefined;
 
@@ -2123,11 +2328,13 @@ export class RosDBCluster extends ros.RosResource {
     public gdnId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property hotStandbyCluster: Specifies whether to enable the hot standby storage cluster feature. Default value: ON. Valid values:
-     * ON: enables the hot standby storage cluster feature.
-     * OFF: disables the hot standby storage cluster feature
-     * STANDBY: enables the hot standby storage cluster feature only for Standard Edition clusters.
-     * The default value for Standard Edition clusters is STANDBY.
+     * @Property hotStandbyCluster: Specifies whether to enable the hot standby cluster feature. Valid values:
+     * - ON (default): enables a hot standby storage cluster.
+     * - OFF: disables the hot standby cluster feature.
+     * - STANDBY: enables a hot standby cluster.
+     * - EQUAL: enables hot standby for both storage and computing resources.
+     * - 3AZ: enables multi-AZ strong consistency.
+     * > The value STANDBY is valid only for PolarDB for PostgreSQL.
      */
     public hotStandbyCluster: string | ros.IResolvable | undefined;
 
@@ -2140,10 +2347,12 @@ export class RosDBCluster extends ros.RosResource {
     public loosePolarLogBin: string | ros.IResolvable | undefined;
 
     /**
-     * @Property looseXEngine: Enable the X-Engine storage engine function, the value range is as follows:
-     * ON: The cluster starts the X-Engine enginen
-     * OFF: The cluster shuts down the X-Engine engine
-     * This parameter takes effect only when the parameter CreationOption is not equal to CreateGdnStandby, DBType is MySQL and DBVersion is 8.0. The memory specification of the node with X-Engine enabled must be greater than or equal to 16 GB.
+     * @Property looseXEngine: Specifies whether to enable the X-Engine storage engine. Valid values:
+     * - ON: enables the X-Engine storage engine.
+     * - OFF: disables the X-Engine storage engine.
+     * > This parameter is valid only if the CreationOption parameter is not set to
+     * CreateGdnStandby, DBType is set to MySQL, and DBVersion is set to 8.0. To enable
+     * the X-Engine storage engine, the node must have at least 8 GB of memory.
      */
     public looseXEngine: string | ros.IResolvable | undefined;
 
@@ -2189,8 +2398,8 @@ export class RosDBCluster extends ros.RosResource {
     public periodUnit: string | ros.IResolvable | undefined;
 
     /**
-     * @Property provisionedIops: ESSD AutoPL preconfigured read and write IOPS for cloud disk. Possible values: 0-min {50,000, 1000* capacity - baseline performance}.
-     * Baseline performance =min{1,800+50* capacity, 50000}.
+     * @Property provisionedIops: The provisioned read\/write IOPS of the ESSD AutoPL cloud disk. Valid values: 0 to
+     * min{50,000, 1,000 × Capacity - Baseline IOPS}.
      */
     public provisionedIops: number | ros.IResolvable | undefined;
 
@@ -2207,10 +2416,17 @@ export class RosDBCluster extends ros.RosResource {
     public proxyClass: string | ros.IResolvable | undefined;
 
     /**
-     * @Property proxyType: The type of PolarProxy. Default value: OFF. Valid values:
-     * OFF: disables PolarProxy.
-     * EXCLUSIVE: Dedicated Enterprise Edition
-     * GENERAL: Standard Enterprise Edition
+     * @Property proxyType: The type of the database proxy. Valid values:
+     * - EXCLUSIVE: Enterprise Dedicated
+     * - GENERAL: Enterprise General-purpose
+     * > The proxy type must be consistent with the type that corresponds to the node
+     * specification of the cluster:
+     * >
+     * > - If the node specification is general-purpose, the proxy type must be
+     * Enterprise General-purpose.
+     * >
+     * > - If the node specification is dedicated, the proxy type must be Enterprise
+     * Dedicated.
      */
     public proxyType: string | ros.IResolvable | undefined;
 
@@ -2237,22 +2453,30 @@ export class RosDBCluster extends ros.RosResource {
     public restartMasterNode: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property scaleMax: Maximum limit of single-node scaling.
+     * @Property scaleMax: The maximum number of PCUs for a single-node serverless cluster to scale up to.
+     * Valid values: 1 to 32.
+     * > This parameter is supported only for serverless clusters.
      */
     public scaleMax: number | ros.IResolvable | undefined;
 
     /**
-     * @Property scaleMin: Minimum limit of single-node scaling.
+     * @Property scaleMin: The minimum number of PolarDB compute units (PCUs) for a single-node serverless
+     * cluster to scale down to. Valid values: 1 to 31.
+     * > This parameter is supported only for serverless clusters.
      */
     public scaleMin: number | ros.IResolvable | undefined;
 
     /**
-     * @Property scaleRoNumMax: The maximum scaling limit for the number of read-only nodes.
+     * @Property scaleRoNumMax: The maximum number of read-only nodes that the serverless cluster scales up to.
+     * Valid values: 0 to 15.
+     * > This parameter is supported only for serverless clusters.
      */
     public scaleRoNumMax: number | ros.IResolvable | undefined;
 
     /**
-     * @Property scaleRoNumMin: The minimum scaling limit for the number of read-only nodes.
+     * @Property scaleRoNumMin: The minimum number of read-only nodes that the serverless cluster scales down to.
+     * Valid values: 0 to 15.
+     * > This parameter is supported only for serverless clusters.
      */
     public scaleRoNumMin: number | ros.IResolvable | undefined;
 
@@ -2264,7 +2488,9 @@ export class RosDBCluster extends ros.RosResource {
     public securityGroupIds: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
     /**
-     * @Property securityIpList: The whitelist of the Apsara PolarDB cluster.
+     * @Property securityIpList: The IP whitelist of the PolarDB cluster.
+     * > You can specify multiple IP addresses in the IP whitelist. Separate the IP
+     * addresses with commas (,).
      */
     public securityIpList: string | ros.IResolvable | undefined;
 
@@ -2274,10 +2500,19 @@ export class RosDBCluster extends ros.RosResource {
     public serverlessType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property sourceResourceId: The ID of the source RDS instance or source POLARDB cluster.
-     * Note
-     * This parameter takes effect only when the DBType parameter is set to MySQL and the DBVersion parameter is set to 5.6.
-     * This parameter is required if the CreationOption parameter is not set to Normal.
+     * @Property sourceResourceId: The ID of the source ApsaraDB RDS instance or source PolarDB cluster. This
+     * parameter is required only if CreationOption is set to MigrationFromRDS,
+     * CloneFromRDS, CloneFromPolarDB, or RecoverFromRecyclebin.
+     * - If CreationOption is set to MigrationFromRDS or CloneFromRDS, specify the ID of
+     * the source ApsaraDB RDS instance. The source ApsaraDB RDS instance must be
+     * ApsaraDB RDS for MySQL 5.6, 5.7, or 8.0 High-availability Edition.
+     * - If CreationOption is set to CloneFromPolarDB, specify the ID of the source
+     * PolarDB cluster. The new cluster must use the same database engine as the source
+     * cluster. For example, if the source cluster runs MySQL 8.0, you must set DBType
+     * to MySQL and DBVersion to 8.0 for the new cluster.
+     * - If CreationOption is set to RecoverFromRecyclebin, specify the ID of the
+     * released source PolarDB cluster. The restored cluster must use the same database
+     * engine as the source cluster.
      */
     public sourceResourceId: string | ros.IResolvable | undefined;
 
@@ -2290,8 +2525,9 @@ export class RosDBCluster extends ros.RosResource {
     public sslEnabled: string | ros.IResolvable | undefined;
 
     /**
-     * @Property standbyAz: The zone where the hot standby storage cluster is stored. This is valid for Standard Edition clusters of Multi-zone Edition.
-     * This parameter takes effect only when the multi-zone data consistency feature is enabled.
+     * @Property standbyAz: The zone for the hot standby cluster.
+     * > This parameter is valid only when the hot standby cluster feature or multi-AZ
+     * strong consistency is enabled.
      */
     public standbyAz: string | ros.IResolvable | undefined;
 
@@ -2303,13 +2539,20 @@ export class RosDBCluster extends ros.RosResource {
     public storageAutoScale: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storagePayType: The storage pay type.
+     * @Property storagePayType: The billing method for storage. Valid values:
+     * - Postpaid: pay-by-capacity (a pay-as-you-go method).
+     * - Prepaid: pay-by-space (a subscription method).
      */
     public storagePayType: string | ros.IResolvable | undefined;
 
     /**
-     * @Property storageSpace: The storage space that uses the subscription billing method. Unit: GB.
-     * Valid values for PolarDB for MySQL Standard Edition: 20 to 32000.
+     * @Property storageSpace: The storage space for a pay-by-space (subscription) cluster. Unit: GB.
+     * > - Valid values for a PolarDB for MySQL Enterprise Edition cluster: 10 to 50000.
+     * >
+     * > - Valid values for a PolarDB for MySQL Standard Edition cluster: 20 to 64000.
+     * >
+     * > - If the storage type of a Standard Edition cluster is ESSD AutoPL, the storage
+     * space must be a multiple of 10 between 40 and 64000.
      */
     public storageSpace: number | ros.IResolvable | undefined;
 
@@ -2359,7 +2602,8 @@ export class RosDBCluster extends ros.RosResource {
     public vpcId: string | ros.IResolvable | undefined;
 
     /**
-     * @Property vSwitchId: The ID of the VSwitch to connect to.
+     * @Property vSwitchId: The ID of the VSwitch.
+     * > If you specify the VPCId parameter, you must also specify this parameter.
      */
     public vSwitchId: string | ros.IResolvable | undefined;
 
@@ -3565,26 +3809,41 @@ export interface RosDatabaseProps {
     readonly dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property dbName: The name of the database to be created. The name must comply with the following rules:
-     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-     * (-), and underscores (_).
-     * It must end with a letter or a digit. It can be up to 64 characters in length.
+     * @Property dbName: The name of the database. The name must meet the following requirements:
+     * *   The name can contain lowercase letters, digits, hyphens (-), and underscores
+     * (_).
+     * *   The name must start with a lowercase letter and end with a lowercase letter
+     * or a digit. The name must be 1 to 64 characters in length.
+     * > Do not use reserved words as database names, such as `test` or `mysql`.
      */
     readonly dbName: string | ros.IResolvable;
 
     /**
-     * @Property accountName: The name of the database account to be used.
+     * @Property accountName: The name of the account that is authorized to access the database. You can call
+     * the [DescribeAccounts]() operation to query account information.
+     * >- You can specify only a standard account. By default, privileged accounts have
+     * all permissions on all databases. You do not need to grant privileged accounts
+     * the permissions to access the database.
+     * >- This parameter is required for PolarDB for PostgreSQL (Compatible with Oracle)
+     * clusters or PolarDB for PostgreSQL clusters. This parameter is optional for
+     * PolarDB for MySQL clusters.
      */
     readonly accountName?: string | ros.IResolvable;
 
     /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * ReadIndex: has read and index permissions on the database.
-     * Default value: ReadWrite.
+     * @Property accountPrivilege: The permissions that are granted to the account. Valid values:
+     * *   ReadWrite: read and write permissions.
+     * *   ReadOnly: read-only permissions.
+     * *   DMLOnly: permissions only to execute DML statements on the database.
+     * *   DDLOnly: permissions only to execute DDL statements on the database.
+     * *   ReadIndex: read-only and index permissions.
+     * The default value is ReadWrite.
+     * >
+     * *   This parameter is valid only when the AccountName parameter is specified.
+     * *   For a PolarDB for PostgreSQL (Compatible with Oracle) or PolarDB for
+     * PostgreSQL cluster, this parameter is optional. If AccountName is specified, it
+     * is the account of the database owner.
+     * *   For a PolarDB for MySQL cluster, this parameter is optional.
      */
     readonly accountPrivilege?: string | ros.IResolvable;
 
@@ -3605,9 +3864,12 @@ export interface RosDatabaseProps {
     readonly ctype?: string | ros.IResolvable;
 
     /**
-     * @Property dbDescription: The description of the database. Valid values:
-     * It cannot start with http:\/\/ or https:\/\/.
-     * It must be 2 to 256 characters in length.
+     * @Property dbDescription: The description of the database. The description must meet the following
+     * requirements:
+     * *   It cannot start with `http:\/\/` or `https:\/\/`.
+     * *   It must be 2 to 256 characters in length.
+     * > This parameter is required for a PolarDB for Oracle or PolarDB for PostgreSQL
+     * cluster. This parameter is optional for a PolarDB for MySQL cluster.
      */
     readonly dbDescription?: string | ros.IResolvable;
 }
@@ -3705,26 +3967,41 @@ export class RosDatabase extends ros.RosResource {
     public dbClusterId: string | ros.IResolvable;
 
     /**
-     * @Property dbName: The name of the database to be created. The name must comply with the following rules:
-     * It must start with a lowercase letter and consist of lowercase letters, digits, hyphens
-     * (-), and underscores (_).
-     * It must end with a letter or a digit. It can be up to 64 characters in length.
+     * @Property dbName: The name of the database. The name must meet the following requirements:
+     * *   The name can contain lowercase letters, digits, hyphens (-), and underscores
+     * (_).
+     * *   The name must start with a lowercase letter and end with a lowercase letter
+     * or a digit. The name must be 1 to 64 characters in length.
+     * > Do not use reserved words as database names, such as `test` or `mysql`.
      */
     public dbName: string | ros.IResolvable;
 
     /**
-     * @Property accountName: The name of the database account to be used.
+     * @Property accountName: The name of the account that is authorized to access the database. You can call
+     * the [DescribeAccounts]() operation to query account information.
+     * >- You can specify only a standard account. By default, privileged accounts have
+     * all permissions on all databases. You do not need to grant privileged accounts
+     * the permissions to access the database.
+     * >- This parameter is required for PolarDB for PostgreSQL (Compatible with Oracle)
+     * clusters or PolarDB for PostgreSQL clusters. This parameter is optional for
+     * PolarDB for MySQL clusters.
      */
     public accountName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property accountPrivilege: The permissions of the database account on the database. Valid values:
-     * ReadWrite: has read and write permissions on the database.
-     * ReadOnly: has the read-only permission on the database.
-     * DMLOnly: runs only data manipulation language (DML) statements.
-     * DDLOnly: runs only data definition language (DDL) statements.
-     * ReadIndex: has read and index permissions on the database.
-     * Default value: ReadWrite.
+     * @Property accountPrivilege: The permissions that are granted to the account. Valid values:
+     * *   ReadWrite: read and write permissions.
+     * *   ReadOnly: read-only permissions.
+     * *   DMLOnly: permissions only to execute DML statements on the database.
+     * *   DDLOnly: permissions only to execute DDL statements on the database.
+     * *   ReadIndex: read-only and index permissions.
+     * The default value is ReadWrite.
+     * >
+     * *   This parameter is valid only when the AccountName parameter is specified.
+     * *   For a PolarDB for PostgreSQL (Compatible with Oracle) or PolarDB for
+     * PostgreSQL cluster, this parameter is optional. If AccountName is specified, it
+     * is the account of the database owner.
+     * *   For a PolarDB for MySQL cluster, this parameter is optional.
      */
     public accountPrivilege: string | ros.IResolvable | undefined;
 
@@ -3745,9 +4022,12 @@ export class RosDatabase extends ros.RosResource {
     public ctype: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbDescription: The description of the database. Valid values:
-     * It cannot start with http:\/\/ or https:\/\/.
-     * It must be 2 to 256 characters in length.
+     * @Property dbDescription: The description of the database. The description must meet the following
+     * requirements:
+     * *   It cannot start with `http:\/\/` or `https:\/\/`.
+     * *   It must be 2 to 256 characters in length.
+     * > This parameter is required for a PolarDB for Oracle or PolarDB for PostgreSQL
+     * cluster. This parameter is optional for a PolarDB for MySQL cluster.
      */
     public dbDescription: string | ros.IResolvable | undefined;
 
@@ -3785,6 +4065,179 @@ export class RosDatabase extends ros.RosResource {
     }
     protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
         return rosDatabasePropsToRosTemplate(props, this.enableResourcePropertyConstraint);
+    }
+}
+
+/**
+ * Properties for defining a `RosExtensions`.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-extensions
+ */
+export interface RosExtensionsProps {
+
+    /**
+     * @Property accountName: The account name associated with the database.
+     */
+    readonly accountName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The cluster ID.
+     */
+    readonly dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property dbNames: The database name.
+     */
+    readonly dbNames: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property extensions: The extensions to install.
+     */
+    readonly extensions?: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    readonly resourceGroupId?: string | ros.IResolvable;
+
+    /**
+     * @Property sourceDbName: The source database name.
+     */
+    readonly sourceDbName?: string | ros.IResolvable;
+
+    /**
+     * @Property vpcId: The VPC ID of the access endpoint.
+     */
+    readonly vpcId?: string | ros.IResolvable;
+}
+
+/**
+ * Determine whether the given properties match those of a `RosExtensionsProps`
+ *
+ * @param properties - the TypeScript properties of a `RosExtensionsProps`
+ *
+ * @returns the result of the validation.
+ */
+function RosExtensionsPropsValidator(properties: any): ros.ValidationResult {
+    if (!ros.canInspect(properties)) { return ros.VALIDATION_SUCCESS; }
+    const errors = new ros.ValidationResults();
+    errors.collect(ros.propertyValidator('sourceDbName', ros.validateString)(properties.sourceDbName));
+    errors.collect(ros.propertyValidator('resourceGroupId', ros.validateString)(properties.resourceGroupId));
+    errors.collect(ros.propertyValidator('vpcId', ros.validateString)(properties.vpcId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.requiredValidator)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbClusterId', ros.validateString)(properties.dbClusterId));
+    errors.collect(ros.propertyValidator('dbNames', ros.requiredValidator)(properties.dbNames));
+    errors.collect(ros.propertyValidator('dbNames', ros.listValidator(ros.validateString))(properties.dbNames));
+    errors.collect(ros.propertyValidator('extensions', ros.listValidator(ros.validateString))(properties.extensions));
+    errors.collect(ros.propertyValidator('accountName', ros.requiredValidator)(properties.accountName));
+    errors.collect(ros.propertyValidator('accountName', ros.validateString)(properties.accountName));
+    return errors.wrap('supplied properties not correct for "RosExtensionsProps"');
+}
+
+/**
+ * Renders the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Extensions` resource
+ *
+ * @param properties - the TypeScript properties of a `RosExtensionsProps`
+ *
+ * @returns the AliCloud ROS Resource properties of an `ALIYUN::POLARDB::Extensions` resource.
+ */
+// @ts-ignore TS6133
+function rosExtensionsPropsToRosTemplate(properties: any, enableResourcePropertyConstraint: boolean): any {
+    if (!ros.canInspect(properties)) { return properties; }
+    if(enableResourcePropertyConstraint) {
+        RosExtensionsPropsValidator(properties).assertSuccess();
+    }
+    return {
+      'AccountName': ros.stringToRosTemplate(properties.accountName),
+      'DBClusterId': ros.stringToRosTemplate(properties.dbClusterId),
+      'DBNames': ros.listMapper(ros.stringToRosTemplate)(properties.dbNames),
+      'Extensions': ros.listMapper(ros.stringToRosTemplate)(properties.extensions),
+      'ResourceGroupId': ros.stringToRosTemplate(properties.resourceGroupId),
+      'SourceDBName': ros.stringToRosTemplate(properties.sourceDbName),
+      'VpcId': ros.stringToRosTemplate(properties.vpcId),
+    };
+}
+
+/**
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::POLARDB::Extensions`.
+ * @Note This class does not contain additional functions, so it is recommended to use the `Extensions` class instead of this class for a more convenient development experience.
+ * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-extensions
+ */
+export class RosExtensions extends ros.RosResource {
+    /**
+     * The resource type name for this resource class.
+     */
+    public static readonly ROS_RESOURCE_TYPE_NAME = "ALIYUN::POLARDB::Extensions";
+
+    public enableResourcePropertyConstraint: boolean;
+
+
+    /**
+     * @Property accountName: The account name associated with the database.
+     */
+    public accountName: string | ros.IResolvable;
+
+    /**
+     * @Property dbClusterId: The cluster ID.
+     */
+    public dbClusterId: string | ros.IResolvable;
+
+    /**
+     * @Property dbNames: The database name.
+     */
+    public dbNames: Array<string | ros.IResolvable> | ros.IResolvable;
+
+    /**
+     * @Property extensions: The extensions to install.
+     */
+    public extensions: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
+
+    /**
+     * @Property resourceGroupId: The resource group ID.
+     */
+    public resourceGroupId: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property sourceDbName: The source database name.
+     */
+    public sourceDbName: string | ros.IResolvable | undefined;
+
+    /**
+     * @Property vpcId: The VPC ID of the access endpoint.
+     */
+    public vpcId: string | ros.IResolvable | undefined;
+
+    /**
+     * @param scope - scope in which this resource is defined
+     * @param id    - scoped id of the resource
+     * @param props - resource properties
+     */
+    constructor(scope: ros.Construct, id: string, props: RosExtensionsProps, enableResourcePropertyConstraint: boolean) {
+        super(scope, id, { type: RosExtensions.ROS_RESOURCE_TYPE_NAME, properties: props });
+
+        this.enableResourcePropertyConstraint = enableResourcePropertyConstraint;
+        this.accountName = props.accountName;
+        this.dbClusterId = props.dbClusterId;
+        this.dbNames = props.dbNames;
+        this.extensions = props.extensions;
+        this.resourceGroupId = props.resourceGroupId;
+        this.sourceDbName = props.sourceDbName;
+        this.vpcId = props.vpcId;
+    }
+
+
+    protected get rosProperties(): { [key: string]: any }  {
+        return {
+            accountName: this.accountName,
+            dbClusterId: this.dbClusterId,
+            dbNames: this.dbNames,
+            extensions: this.extensions,
+            resourceGroupId: this.resourceGroupId,
+            sourceDbName: this.sourceDbName,
+            vpcId: this.vpcId,
+        };
+    }
+    protected renderProperties(props: {[key: string]: any}): { [key: string]: any }  {
+        return rosExtensionsPropsToRosTemplate(props, this.enableResourcePropertyConstraint);
     }
 }
 

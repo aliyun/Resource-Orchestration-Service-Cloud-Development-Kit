@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.config;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-config-aggregator
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:01:48.315Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:52:04.561Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.config.$Module.class, fqn = "@alicloud/ros-cdk-config.AggregatorProps")
 @software.amazon.jsii.Jsii.Proxy(AggregatorProps.Jsii$Proxy.class)
 public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
@@ -40,7 +40,11 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property folderId: The folder ID.
+     * Property folderId: The ID of the attached folder.
+     * <p>
+     * You can specify multiple folder IDs. Separate the
+     * IDs with commas (,).
+     * This parameter is required if you set <code>AggregatorType</code> to <code>FOLDER</code>.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getFolderId() {
         return null;
@@ -152,7 +156,10 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AggregatorProps#getFolderId}
-         * @param folderId Property folderId: The folder ID.
+         * @param folderId Property folderId: The ID of the attached folder.
+         *                 You can specify multiple folder IDs. Separate the
+         *                 IDs with commas (,).
+         *                 This parameter is required if you set <code>AggregatorType</code> to <code>FOLDER</code>.
          * @return {@code this}
          */
         public Builder folderId(java.lang.String folderId) {
@@ -162,7 +169,10 @@ public interface AggregatorProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link AggregatorProps#getFolderId}
-         * @param folderId Property folderId: The folder ID.
+         * @param folderId Property folderId: The ID of the attached folder.
+         *                 You can specify multiple folder IDs. Separate the
+         *                 IDs with commas (,).
+         *                 This parameter is required if you set <code>AggregatorType</code> to <code>FOLDER</code>.
          * @return {@code this}
          */
         public Builder folderId(com.aliyun.ros.cdk.core.IResolvable folderId) {

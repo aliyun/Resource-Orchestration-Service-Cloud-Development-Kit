@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.gpdb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-gpdb-supabaseproject
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:13:37.821Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:21:33.514Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.gpdb.$Module.class, fqn = "@alicloud/ros-cdk-gpdb.SupabaseProjectProps")
 @software.amazon.jsii.Jsii.Proxy(SupabaseProjectProps.Jsii$Proxy.class)
 public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializable {
@@ -87,7 +87,20 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property period: The billing period.
+     * Property period: The unit of the subscription duration.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>Month</li>
+     * <li>Year</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you use the subscription billing method.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
@@ -101,9 +114,20 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
     }
 
     /**
-     * Property usedTime: The subscription period of the instance.
+     * Property usedTime: The subscription duration.
      * <p>
-     * Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>If Period is set to Month, the valid values are 1 to 11.</li>
+     * <li>If Period is set to Year, the valid values are 1 to 3.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter is required if you use the subscription billing method.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getUsedTime() {
         return null;
@@ -363,7 +387,19 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link SupabaseProjectProps#getPeriod}
-         * @param period Property period: The billing period.
+         * @param period Property period: The unit of the subscription duration.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>Month</li>
+         *               <li>Year</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you use the subscription billing method.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(java.lang.String period) {
@@ -373,7 +409,19 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link SupabaseProjectProps#getPeriod}
-         * @param period Property period: The billing period.
+         * @param period Property period: The unit of the subscription duration.
+         *               Valid values:
+         *               <p>
+         *               <ul>
+         *               <li>Month</li>
+         *               <li>Year</li>
+         *               </ul>
+         *               <p>
+         *               <blockquote>
+         *               <p>
+         *               This parameter is required if you use the subscription billing method.
+         *               <p>
+         *               </blockquote>
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -403,8 +451,19 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link SupabaseProjectProps#getUsedTime}
-         * @param usedTime Property usedTime: The subscription period of the instance.
-         *                 Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * @param usedTime Property usedTime: The subscription duration.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>If Period is set to Month, the valid values are 1 to 11.</li>
+         *                 <li>If Period is set to Year, the valid values are 1 to 3.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required if you use the subscription billing method.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder usedTime(java.lang.Number usedTime) {
@@ -414,8 +473,19 @@ public interface SupabaseProjectProps extends software.amazon.jsii.JsiiSerializa
 
         /**
          * Sets the value of {@link SupabaseProjectProps#getUsedTime}
-         * @param usedTime Property usedTime: The subscription period of the instance.
-         *                 Unit: month or year. Note When period is set to year, the supported values of this parameter are 1, 2 and 3.
+         * @param usedTime Property usedTime: The subscription duration.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>If Period is set to Month, the valid values are 1 to 11.</li>
+         *                 <li>If Period is set to Year, the valid values are 1 to 3.</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 This parameter is required if you use the subscription billing method.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder usedTime(com.aliyun.ros.cdk.core.IResolvable usedTime) {

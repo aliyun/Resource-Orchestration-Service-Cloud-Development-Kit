@@ -21,13 +21,17 @@ type ClusterProps struct {
 	// hbaseue:2.0
 	// bds:1.0
 	EngineVersion interface{} `field:"required" json:"engineVersion" yaml:"engineVersion"`
-	// Property nodeCount: The number of nodes.
+	// Property nodeCount: The number of core nodes.
 	//
-	// Valid values: 1 to 100.
-	// ApsaraDB for HBase in single-node mode: one node
-	// ApsaraDB for HBase that runs in cluster mode and uses disks: at least two nodes
-	// ApsaraDB for HBase that runs in cluster mode and uses local disks: at least three
-	// nodes.
+	// Valid values are as follows:
+	// <ul>
+	// <li>If the instance is a single node, the number of core nodes is fixed at
+	// 1.<\/li>
+	// <li>If the instance uses disks, the number of core nodes ranges from 2 to
+	// 100.<\/li>
+	// <li>If the instance uses local disks, the number of core nodes ranges from 4 to
+	// 100.<\/li>
+	// <\/ul>.
 	NodeCount interface{} `field:"required" json:"nodeCount" yaml:"nodeCount"`
 	// Property payType: The billing method.
 	//
@@ -44,16 +48,20 @@ type ClusterProps struct {
 	// If this parameter is set to 2, the instance is automatically renewed for a two-month
 	// subscription after the instance expires.
 	AutoRenewPeriod interface{} `field:"optional" json:"autoRenewPeriod" yaml:"autoRenewPeriod"`
-	// Property clusterName: The name of the instance.
+	// Property clusterName: Instance name.
 	//
-	// The name must be 2 to 128 characters in length, and can contain letters, digits, periods
-	// (.), underscores (_), and hyphens (-). It must start with a letter.
+	// The naming convention is as follows:
+	// - Length must be 2 to 128 characters.
+	// - Must start with a letter (uppercase or lowercase) or a Chinese character.
+	// - Can contain digits or special characters. Valid special characters include the
+	// period (.), hyphen (-), and underscore (_).
 	ClusterName interface{} `field:"optional" json:"clusterName" yaml:"clusterName"`
-	// Property coldStorageSize: The size of cold data storage.
+	// Property coldStorageSize: The cold storage capacity of the instance, in GB.
 	//
-	// If this parameter is set to 0, cold data storage is disabled.
-	// If this parameter is set to a value greater than 0, cold data storage is enabled.
-	// The storage size ranges from 800 GB to 100,000 GB and the step size is 10 GB.
+	// Valid values are as follows:
+	// - 0: Indicates that cold storage is disabled.
+	// - 800 to 1 000 000: Indicates that cold storage is enabled.
+	// > Cold storage is effective only when the engine type of the instance is hbaseue.
 	ColdStorageSize interface{} `field:"optional" json:"coldStorageSize" yaml:"coldStorageSize"`
 	// Property deletionProtection: Specifies whether to enable the release protection feature for the cluster.
 	//
@@ -96,19 +104,21 @@ type ClusterProps struct {
 	//
 	// You can call the DescribeAvailableResource operation to obtain the value of this parameter.
 	MasterInstanceType interface{} `field:"optional" json:"masterInstanceType" yaml:"masterInstanceType"`
-	// Property period: The subscription period.
-	//
-	// This parameter only takes effect when the PayType parameter is set to Prepaid.
-	// When the PeriodUnit parameter is set to year, the value of the Period parameter ranges
-	// from 1 to 5.
-	// When the PeriodUnit parameter is set to month, the value of the Period parameter ranges
-	// from 1 to 9.
-	Period interface{} `field:"optional" json:"period" yaml:"period"`
-	// Property periodUnit: The unit of the subscription period.
+	// Property period: The subscription duration of a subscription instance.
 	//
 	// Valid values:
-	// year
-	// month.
+	// - When PeriodUnit is year, the value range is 1 to 3.
+	// - When PeriodUnit is month, the value range is 1 to 9.
+	// > This parameter is required only when the payment type of the instance is
+	// Prepaid.
+	Period interface{} `field:"optional" json:"period" yaml:"period"`
+	// Property periodUnit: The purchase unit for subscription instances.
+	//
+	// Valid values:
+	// - year: Year.
+	// - month: Month.
+	// > This parameter is required only when the payment type of the instance is
+	// Prepaid.
 	PeriodUnit interface{} `field:"optional" json:"periodUnit" yaml:"periodUnit"`
 	// Property resourceGroupId: The ID of the resource group.
 	//
@@ -116,10 +126,13 @@ type ClusterProps struct {
 	// If you leave this parameter empty, the instance is allocated to the default resource
 	// group.
 	ResourceGroupId interface{} `field:"optional" json:"resourceGroupId" yaml:"resourceGroupId"`
-	// Property securityIpList: The IP addresses in the whitelist.
+	// Property securityIpList: The IP addresses to add to the instance whitelist.
 	//
-	// Example: 192.168.*.*\/24. The 0.0.0.0\/0 value cannot
-	// be added to the whitelist. Separate multiple IP addresses with commas (,).
+	// Separate multiple IP addresses
+	// with commas (,).
+	// > If the IP address is set to 127.0.0.1, access to the instance from all IP
+	// addresses is denied. For example, if the IP address is set to 192.168.0.0\/24, all
+	// IP addresses in the range 192.168.0.XX are allowed to access the instance.
 	SecurityIpList interface{} `field:"optional" json:"securityIpList" yaml:"securityIpList"`
 	// Property vpcId: The ID of the virtual private cloud (VPC).
 	//

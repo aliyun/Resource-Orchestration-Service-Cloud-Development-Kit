@@ -15,7 +15,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Cdn
     {
         private object _domainName;
 
-        /// <summary>Property domainName: The domain name of the CDN.</summary>
+        /// <summary>Property domainName: The accelerated domain name.</summary>
+        /// <remarks>
+        /// Only one domain name can be configured at a time.
+        /// </remarks>
         [JsiiProperty(name: "domainName", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DomainName
         {

@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`, which is used to configure the auto scaling settings of a cluster.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EHPC::AutoScaleConfig`.
 type AutoScaleConfig interface {
 	alicloudroscdkcore.Resource
 	IAutoScaleConfig

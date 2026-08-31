@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterPeerAttachment</code>The , which type creates an inter-region connection for an Enterprise Edition transit router.
+ * This class is a base encapsulation around the ROS resource type <code>ALIYUN::CEN::TransitRouterPeerAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.363Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.703Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.RosTransitRouterPeerAttachment")
 public class RosTransitRouterPeerAttachment extends com.aliyun.ros.cdk.core.RosResource {
 

@@ -4,7 +4,7 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Apig.Datasource
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Domains`The , which type is used to query domain list.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `DATASOURCE::APIG::Domains`.</summary>
     /// <remarks>
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/datasource-apig-domains

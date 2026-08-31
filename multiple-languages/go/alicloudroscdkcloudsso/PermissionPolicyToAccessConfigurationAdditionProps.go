@@ -9,10 +9,14 @@ type PermissionPolicyToAccessConfigurationAdditionProps struct {
 	AccessConfigurationId interface{} `field:"required" json:"accessConfigurationId" yaml:"accessConfigurationId"`
 	// Property directoryId: The ID of the directory.
 	DirectoryId interface{} `field:"required" json:"directoryId" yaml:"directoryId"`
-	// Property permissionPolicyName: The name of the permission policy.
+	// Property permissionPolicyName: The name of the policy.
 	//
-	// - If you set PermissionPolicyType to System, you must set this parameter to the name of the system policy. You can obtain the name of the system policy from RAM.
-	// - If you set PermissionPolicyType to Inline, you must set this parameter to the name of the inline policy. A custom value is supported.
+	// - If you set `PermissionPolicyType` to `System`, you must set
+	// PermissionPolicyName to the name of a system policy. You can obtain the name of
+	// the system policy from RAM.
+	// - If you set `PermissionPolicyType` to `Inline`, you must set
+	// PermissionPolicyName to the name of an inline policy. A custom value is
+	// supported. The value can be up to 32 characters in length.
 	PermissionPolicyName interface{} `field:"required" json:"permissionPolicyName" yaml:"permissionPolicyName"`
 	// Property permissionPolicyType: The type of the permission policy.
 	//

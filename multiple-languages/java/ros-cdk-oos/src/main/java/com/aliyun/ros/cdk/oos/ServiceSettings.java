@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.oos;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::OOS::ServiceSettings</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:12:59.970Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:21:57.914Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.oos.$Module.class, fqn = "@alicloud/ros-cdk-oos.ServiceSettings")
 public class ServiceSettings extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.oos.IServiceSettings {
 
@@ -227,20 +227,20 @@ public class ServiceSettings extends com.aliyun.ros.cdk.core.Resource implements
         }
 
         /**
-         * Property rdcEnterpriseId: Enterprise ID.
+         * Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
          * <p>
          * @return {@code this}
-         * @param rdcEnterpriseId Property rdcEnterpriseId: Enterprise ID. This parameter is required.
+         * @param rdcEnterpriseId Property rdcEnterpriseId: The Apsara DevOps enterprise ID. This parameter is required.
          */
         public Builder rdcEnterpriseId(final java.lang.String rdcEnterpriseId) {
             this.props().rdcEnterpriseId(rdcEnterpriseId);
             return this;
         }
         /**
-         * Property rdcEnterpriseId: Enterprise ID.
+         * Property rdcEnterpriseId: The Apsara DevOps enterprise ID.
          * <p>
          * @return {@code this}
-         * @param rdcEnterpriseId Property rdcEnterpriseId: Enterprise ID. This parameter is required.
+         * @param rdcEnterpriseId Property rdcEnterpriseId: The Apsara DevOps enterprise ID. This parameter is required.
          */
         public Builder rdcEnterpriseId(final com.aliyun.ros.cdk.core.IResolvable rdcEnterpriseId) {
             this.props().rdcEnterpriseId(rdcEnterpriseId);

@@ -367,9 +367,6 @@ namespace AlibabaCloud.SDK.ROS.CDK.Vpc
         private object? _resourceGroupId;
 
         /// <summary>Property resourceGroupId: The ID of the resource group.</summary>
-        /// <remarks>
-        /// For more information about resource groups, see <a href="~~94475~~">What is Resource Group</a>.
-        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "resourceGroupId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
         public object? ResourceGroupId

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.polardb;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-polardb-application
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:28:24.406Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:41:17.513Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.polardb.$Module.class, fqn = "@alicloud/ros-cdk-polardb.ApplicationProps")
 @software.amazon.jsii.Jsii.Proxy(ApplicationProps.Jsii$Proxy.class)
 public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable {
@@ -13,7 +13,13 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     /**
      * Property applicationType: The type of the application.
      * <p>
-     * This parameter is required.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>supabase: Creates a managed Supabase application.</li>
+     * <li>raycluster: Creates a managed Ray Cluster application.</li>
+     * <li>polarclaw: Creates a managed PolarClaw application.</li>
+     * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getApplicationType();
 
@@ -30,14 +36,22 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getDbClusterId();
 
     /**
-     * Property autoCreatePolarFs: Whether to auto create PolarFS.
+     * Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance.
+     * <p>
+     * Valid
+     * values:
+     * <p>
+     * <ul>
+     * <li>false (default): Does not automatically create the instance.</li>
+     * <li>true: Automatically creates the instance.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoCreatePolarFs() {
         return null;
     }
 
     /**
-     * Property components: The list of components.
+     * Property components: A list of custom child components for the application.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getComponents() {
         return null;
@@ -62,14 +76,23 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property period: The period of the application.
+     * Property period: The subscription period type.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPeriod() {
         return null;
     }
 
     /**
-     * Property polarFsInstanceId: The ID of the PolarFS instance.
+     * Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance.
+     * <p>
+     * This parameter is empty by default. If you specify this parameter, the
+     * corresponding storage is mounted to the application.
+     * This feature is currently supported only by the following applications:
+     * <p>
+     * <ul>
+     * <li>supabase</li>
+     * <li>raycluster</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getPolarFsInstanceId() {
         return null;
@@ -83,7 +106,10 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property securityIpList: The security IP list of the component.
+     * Property securityIpList: The IP address whitelist.
+     * <p>
+     * If you do not specify this parameter, the default value
+     * <code>127.0.0.1</code> is used.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getSecurityIpList() {
         return null;
@@ -97,14 +123,19 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property vSwitchId: The ID of the VSwitch.
+     * Property vSwitchId: The vSwitch.
+     * <p>
+     * The default value is the current vSwitch in the primary zone of the
+     * instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVSwitchId() {
         return null;
     }
 
     /**
-     * Property zoneId: The ID of the zone.
+     * Property zoneId: The zone.
+     * <p>
+     * The default value is the primary zone of the instance.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getZoneId() {
         return null;
@@ -138,7 +169,13 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ApplicationProps#getApplicationType}
          * @param applicationType Property applicationType: The type of the application. This parameter is required.
-         *                        This parameter is required.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>supabase: Creates a managed Supabase application.</li>
+         *                        <li>raycluster: Creates a managed Ray Cluster application.</li>
+         *                        <li>polarclaw: Creates a managed PolarClaw application.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder applicationType(java.lang.String applicationType) {
@@ -149,7 +186,13 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
         /**
          * Sets the value of {@link ApplicationProps#getApplicationType}
          * @param applicationType Property applicationType: The type of the application. This parameter is required.
-         *                        This parameter is required.
+         *                        Valid values:
+         *                        <p>
+         *                        <ul>
+         *                        <li>supabase: Creates a managed Supabase application.</li>
+         *                        <li>raycluster: Creates a managed Ray Cluster application.</li>
+         *                        <li>polarclaw: Creates a managed PolarClaw application.</li>
+         *                        </ul>
          * @return {@code this}
          */
         public Builder applicationType(com.aliyun.ros.cdk.core.IResolvable applicationType) {
@@ -201,7 +244,14 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getAutoCreatePolarFs}
-         * @param autoCreatePolarFs Property autoCreatePolarFs: Whether to auto create PolarFS.
+         * @param autoCreatePolarFs Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance.
+         *                          Valid
+         *                          values:
+         *                          <p>
+         *                          <ul>
+         *                          <li>false (default): Does not automatically create the instance.</li>
+         *                          <li>true: Automatically creates the instance.</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder autoCreatePolarFs(java.lang.Boolean autoCreatePolarFs) {
@@ -211,7 +261,14 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getAutoCreatePolarFs}
-         * @param autoCreatePolarFs Property autoCreatePolarFs: Whether to auto create PolarFS.
+         * @param autoCreatePolarFs Property autoCreatePolarFs: Specifies whether to automatically create a PolarFS cold storage instance.
+         *                          Valid
+         *                          values:
+         *                          <p>
+         *                          <ul>
+         *                          <li>false (default): Does not automatically create the instance.</li>
+         *                          <li>true: Automatically creates the instance.</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder autoCreatePolarFs(com.aliyun.ros.cdk.core.IResolvable autoCreatePolarFs) {
@@ -221,7 +278,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getComponents}
-         * @param components Property components: The list of components.
+         * @param components Property components: A list of custom child components for the application.
          * @return {@code this}
          */
         public Builder components(com.aliyun.ros.cdk.core.IResolvable components) {
@@ -231,7 +288,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getComponents}
-         * @param components Property components: The list of components.
+         * @param components Property components: A list of custom child components for the application.
          * @return {@code this}
          */
         public Builder components(java.util.List<? extends java.lang.Object> components) {
@@ -287,7 +344,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getPeriod}
-         * @param period Property period: The period of the application.
+         * @param period Property period: The subscription period type.
          * @return {@code this}
          */
         public Builder period(java.lang.Number period) {
@@ -297,7 +354,7 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getPeriod}
-         * @param period Property period: The period of the application.
+         * @param period Property period: The subscription period type.
          * @return {@code this}
          */
         public Builder period(com.aliyun.ros.cdk.core.IResolvable period) {
@@ -307,7 +364,15 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getPolarFsInstanceId}
-         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFS instance.
+         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance.
+         *                          This parameter is empty by default. If you specify this parameter, the
+         *                          corresponding storage is mounted to the application.
+         *                          This feature is currently supported only by the following applications:
+         *                          <p>
+         *                          <ul>
+         *                          <li>supabase</li>
+         *                          <li>raycluster</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder polarFsInstanceId(java.lang.String polarFsInstanceId) {
@@ -317,7 +382,15 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getPolarFsInstanceId}
-         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFS instance.
+         * @param polarFsInstanceId Property polarFsInstanceId: The ID of the PolarFileSystem (PolarFS) cold storage or high-performance instance.
+         *                          This parameter is empty by default. If you specify this parameter, the
+         *                          corresponding storage is mounted to the application.
+         *                          This feature is currently supported only by the following applications:
+         *                          <p>
+         *                          <ul>
+         *                          <li>supabase</li>
+         *                          <li>raycluster</li>
+         *                          </ul>
          * @return {@code this}
          */
         public Builder polarFsInstanceId(com.aliyun.ros.cdk.core.IResolvable polarFsInstanceId) {
@@ -347,7 +420,9 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The security IP list of the component.
+         * @param securityIpList Property securityIpList: The IP address whitelist.
+         *                       If you do not specify this parameter, the default value
+         *                       <code>127.0.0.1</code> is used.
          * @return {@code this}
          */
         public Builder securityIpList(java.lang.String securityIpList) {
@@ -357,7 +432,9 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getSecurityIpList}
-         * @param securityIpList Property securityIpList: The security IP list of the component.
+         * @param securityIpList Property securityIpList: The IP address whitelist.
+         *                       If you do not specify this parameter, the default value
+         *                       <code>127.0.0.1</code> is used.
          * @return {@code this}
          */
         public Builder securityIpList(com.aliyun.ros.cdk.core.IResolvable securityIpList) {
@@ -387,7 +464,9 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
+         * @param vSwitchId Property vSwitchId: The vSwitch.
+         *                  The default value is the current vSwitch in the primary zone of the
+         *                  instance.
          * @return {@code this}
          */
         public Builder vSwitchId(java.lang.String vSwitchId) {
@@ -397,7 +476,9 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getVSwitchId}
-         * @param vSwitchId Property vSwitchId: The ID of the VSwitch.
+         * @param vSwitchId Property vSwitchId: The vSwitch.
+         *                  The default value is the current vSwitch in the primary zone of the
+         *                  instance.
          * @return {@code this}
          */
         public Builder vSwitchId(com.aliyun.ros.cdk.core.IResolvable vSwitchId) {
@@ -407,7 +488,8 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getZoneId}
-         * @param zoneId Property zoneId: The ID of the zone.
+         * @param zoneId Property zoneId: The zone.
+         *               The default value is the primary zone of the instance.
          * @return {@code this}
          */
         public Builder zoneId(java.lang.String zoneId) {
@@ -417,7 +499,8 @@ public interface ApplicationProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link ApplicationProps#getZoneId}
-         * @param zoneId Property zoneId: The ID of the zone.
+         * @param zoneId Property zoneId: The zone.
+         *               The default value is the primary zone of the instance.
          * @return {@code this}
          */
         public Builder zoneId(com.aliyun.ros.cdk.core.IResolvable zoneId) {

@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.ram;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::RAM::LoginProfile</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T13:33:51.284Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:56:20.228Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ram.$Module.class, fqn = "@alicloud/ros-cdk-ram.LoginProfile")
 public class LoginProfile extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.ram.ILoginProfile {
 
@@ -189,20 +189,24 @@ public class LoginProfile extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property password: The password of the RAM user.
+         * Property password: The logon password for the RAM user.
+         * <p>
+         * The password must meet the password policy.
          * <p>
          * @return {@code this}
-         * @param password Property password: The password of the RAM user. This parameter is required.
+         * @param password Property password: The logon password for the RAM user. This parameter is required.
          */
         public Builder password(final java.lang.String password) {
             this.props.password(password);
             return this;
         }
         /**
-         * Property password: The password of the RAM user.
+         * Property password: The logon password for the RAM user.
+         * <p>
+         * The password must meet the password policy.
          * <p>
          * @return {@code this}
-         * @param password Property password: The password of the RAM user. This parameter is required.
+         * @param password Property password: The logon password for the RAM user. This parameter is required.
          */
         public Builder password(final com.aliyun.ros.cdk.core.IResolvable password) {
             this.props.password(password);
@@ -231,34 +235,34 @@ public class LoginProfile extends com.aliyun.ros.cdk.core.Resource implements co
         }
 
         /**
-         * Property status: Enable or disable console password login.
+         * Property status: Specifies whether to enable password-based logon to the console.
          * <p>
          * Valid values:
          * <p>
          * <ul>
-         * <li>Activate (default): Enable.</li>
-         * <li>Inactivate: Disable.</li>
+         * <li>Active (default): Enable</li>
+         * <li>Inactive: Disable</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param status Property status: Enable or disable console password login. This parameter is required.
+         * @param status Property status: Specifies whether to enable password-based logon to the console. This parameter is required.
          */
         public Builder status(final java.lang.String status) {
             this.props.status(status);
             return this;
         }
         /**
-         * Property status: Enable or disable console password login.
+         * Property status: Specifies whether to enable password-based logon to the console.
          * <p>
          * Valid values:
          * <p>
          * <ul>
-         * <li>Activate (default): Enable.</li>
-         * <li>Inactivate: Disable.</li>
+         * <li>Active (default): Enable</li>
+         * <li>Inactive: Disable</li>
          * </ul>
          * <p>
          * @return {@code this}
-         * @param status Property status: Enable or disable console password login. This parameter is required.
+         * @param status Property status: Specifies whether to enable password-based logon to the console. This parameter is required.
          */
         public Builder status(final com.aliyun.ros.cdk.core.IResolvable status) {
             this.props.status(status);

@@ -15,7 +15,8 @@ export interface DomainRecordProps {
     readonly domainName: string | ros.IResolvable;
 
     /**
-     * Property rr: Host record, if you want to resolve @.exmaple.com, the host record should fill in "@" instead of empty
+     * Property rr: The host record.
+     * To resolve example.com, set the host record to "@" instead of leaving it empty.
      */
     readonly rr: string | ros.IResolvable;
 
@@ -35,12 +36,15 @@ export interface DomainRecordProps {
     readonly line?: string | ros.IResolvable;
 
     /**
-     * Property priority: The priority of the MX record, the value range [1,10], when the record type is MX record, this parameter must be
+     * Property priority: The priority of the MX record. Valid values: `[1,50]`.
+     * This parameter is required if the record type is MX. A smaller value indicates a
+     * higher priority.
      */
     readonly priority?: number | ros.IResolvable;
 
     /**
-     * Property ttl: The resolution time is valid. The default is 600 seconds (10 minutes). See the TTL definition.
+     * Property ttl: The time to live (TTL) value of the Domain Name System (DNS) record. Default
+     * value: 600. Unit: seconds.
      */
     readonly ttl?: number | ros.IResolvable;
 }
@@ -57,7 +61,7 @@ export interface IDomainRecord extends ros.IResource {
     readonly attrRecordId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainRecord`, which is used to add a Domain Name System (DNS) record.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DNS::DomainRecord`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomainRecord`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dns-domainrecord
  */

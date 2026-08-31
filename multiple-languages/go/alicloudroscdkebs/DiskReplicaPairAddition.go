@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`, which is used to add a replication pair to a replication pair-consistent group.
+// This class encapsulates and extends the ROS resource type `ALIYUN::EBS::DiskReplicaPairAddition`.
 type DiskReplicaPairAddition interface {
 	alicloudroscdkcore.Resource
 	IDiskReplicaPairAddition

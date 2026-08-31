@@ -64,7 +64,7 @@ function rosStorageBundlePropsToRosTemplate(properties: any, enableResourcePrope
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundle`, which is used to query the information about a gateway cluster.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundle`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StorageBundle` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudstoragegateway-storagebundle
  */
@@ -193,7 +193,7 @@ function rosStorageBundlesPropsToRosTemplate(properties: any, enableResourceProp
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundles`, which is used to query the information about gateway clusters in a region.
+ * This class is a base encapsulation around the ROS resource type `DATASOURCE::CloudStorageGateway::StorageBundles`.
  * @Note This class does not contain additional functions, so it is recommended to use the `StorageBundles` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-cloudstoragegateway-storagebundles
  */

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.dbs;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dbs-restoretask
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:11:33.677Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:05:56.042Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.dbs.$Module.class, fqn = "@alicloud/ros-cdk-dbs.RestoreTaskProps")
 @software.amazon.jsii.Jsii.Proxy(RestoreTaskProps.Jsii$Proxy.class)
 public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable {
@@ -16,20 +16,21 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
     @org.jetbrains.annotations.NotNull java.lang.Object getBackupPlanId();
 
     /**
-     * Property destinationEndpointInstanceType: The location of the database.
+     * Property destinationEndpointInstanceType: The type of the destination endpoint.
      * <p>
      * Valid values:
      * <p>
      * <ul>
-     * <li>rds</li>
-     * <li>ecs</li>
-     * <li>express: a database connected over express connect, VPN Gateway, or smart gateway.</li>
-     * <li>agent: The database connected through the backup Gateway</li>
-     * <li>dds: apsaradb for MongoDB</li>
-     * <li>kvstore</li>
-     * <li>polardb</li>
-     * <li>drds</li>
-     * <li>dg: the database is directly connected through IP Address: Port.</li>
+     * <li>RDS: an ApsaraDB RDS instance.</li>
+     * <li>ECS: a self-managed database hosted on an ECS instance.</li>
+     * <li>Express: a database connected over a leased line, VPN Gateway, or Smart Access
+     * Gateway.</li>
+     * <li>Agent: a database connected via a backup gateway.</li>
+     * <li>DDS: an ApsaraDB for MongoDB (DDS) instance.</li>
+     * <li>Other: a database connected over the internet by using a public IP address and
+     * port.</li>
+     * <li>dg: a self-managed database without a public endpoint, connected via Database
+     * Gateway.</li>
      * </ul>
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getDestinationEndpointInstanceType();
@@ -92,10 +93,15 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property destinationEndpointPassword: The password that is used to log on to the RDS instance.
+     * Property destinationEndpointPassword: The password for the destination database account.
      * <p>
-     * Note You must specify this parameter when the database type is Redis, or the database location
-     * is agent and the database type is MSSQL.
+     * <blockquote>
+     * <p>
+     * This parameter is optional if the database engine is Redis, or if
+     * <code>DestinationEndpointInstanceType</code> is set to <code>Agent</code> and the database engine is
+     * MSSQL. In other scenarios, this parameter is required.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointPassword() {
         return null;
@@ -120,10 +126,15 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property destinationEndpointUserName: The database account.
+     * Property destinationEndpointUserName: The username for the destination database account.
      * <p>
-     * Note You must specify this parameter when the database type is Redis, or the database location
-     * is agent and the database type is MSSQL.
+     * <blockquote>
+     * <p>
+     * This parameter is optional if the database engine is Redis, or if
+     * <code>DestinationEndpointInstanceType</code> is set to <code>Agent</code> and the database engine is
+     * MSSQL. In other scenarios, this parameter is required.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDestinationEndpointUserName() {
         return null;
@@ -141,7 +152,10 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.
+     * Property restoreDir: The restore directory.
+     * <p>
+     * This parameter is required if
+     * DestinationEndpointInstanceType is set to <code>Agent</code> and the database type is MySQL.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreDir() {
         return null;
@@ -155,18 +169,27 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
     }
 
     /**
-     * Property restoreObjects: Restore an object.
+     * Property restoreObjects: The objects to restore.
      * <p>
-     * Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
+     * <ul>
+     * <li>This parameter is optional if <code>DestinationEndpointInstanceType</code> is set to
+     * <code>Agent</code>. In other scenarios, this parameter is required.</li>
+     * <li>The value must be a JSON string in the following format: <code>[{ "DBName": "source_database_name", "NewDBName": "destination_database_name" }]</code></li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * You can use this API operation to restore data only at the database level. To
+     * restore data at the table level, log on to the console.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreObjects() {
         return null;
     }
 
     /**
-     * Property restoreTime: The time when the fault is restored.
-     * <p>
-     * Set the value to 1554560477000.
+     * Property restoreTime: The point-in-time for the restore, specified as a UNIX timestamp in milliseconds.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getRestoreTime() {
         return null;
@@ -231,19 +254,20 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getDestinationEndpointInstanceType}
-         * @param destinationEndpointInstanceType Property destinationEndpointInstanceType: The location of the database. This parameter is required.
+         * @param destinationEndpointInstanceType Property destinationEndpointInstanceType: The type of the destination endpoint. This parameter is required.
          *                                        Valid values:
          *                                        <p>
          *                                        <ul>
-         *                                        <li>rds</li>
-         *                                        <li>ecs</li>
-         *                                        <li>express: a database connected over express connect, VPN Gateway, or smart gateway.</li>
-         *                                        <li>agent: The database connected through the backup Gateway</li>
-         *                                        <li>dds: apsaradb for MongoDB</li>
-         *                                        <li>kvstore</li>
-         *                                        <li>polardb</li>
-         *                                        <li>drds</li>
-         *                                        <li>dg: the database is directly connected through IP Address: Port.</li>
+         *                                        <li>RDS: an ApsaraDB RDS instance.</li>
+         *                                        <li>ECS: a self-managed database hosted on an ECS instance.</li>
+         *                                        <li>Express: a database connected over a leased line, VPN Gateway, or Smart Access
+         *                                        Gateway.</li>
+         *                                        <li>Agent: a database connected via a backup gateway.</li>
+         *                                        <li>DDS: an ApsaraDB for MongoDB (DDS) instance.</li>
+         *                                        <li>Other: a database connected over the internet by using a public IP address and
+         *                                        port.</li>
+         *                                        <li>dg: a self-managed database without a public endpoint, connected via Database
+         *                                        Gateway.</li>
          *                                        </ul>
          * @return {@code this}
          */
@@ -254,19 +278,20 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getDestinationEndpointInstanceType}
-         * @param destinationEndpointInstanceType Property destinationEndpointInstanceType: The location of the database. This parameter is required.
+         * @param destinationEndpointInstanceType Property destinationEndpointInstanceType: The type of the destination endpoint. This parameter is required.
          *                                        Valid values:
          *                                        <p>
          *                                        <ul>
-         *                                        <li>rds</li>
-         *                                        <li>ecs</li>
-         *                                        <li>express: a database connected over express connect, VPN Gateway, or smart gateway.</li>
-         *                                        <li>agent: The database connected through the backup Gateway</li>
-         *                                        <li>dds: apsaradb for MongoDB</li>
-         *                                        <li>kvstore</li>
-         *                                        <li>polardb</li>
-         *                                        <li>drds</li>
-         *                                        <li>dg: the database is directly connected through IP Address: Port.</li>
+         *                                        <li>RDS: an ApsaraDB RDS instance.</li>
+         *                                        <li>ECS: a self-managed database hosted on an ECS instance.</li>
+         *                                        <li>Express: a database connected over a leased line, VPN Gateway, or Smart Access
+         *                                        Gateway.</li>
+         *                                        <li>Agent: a database connected via a backup gateway.</li>
+         *                                        <li>DDS: an ApsaraDB for MongoDB (DDS) instance.</li>
+         *                                        <li>Other: a database connected over the internet by using a public IP address and
+         *                                        port.</li>
+         *                                        <li>dg: a self-managed database without a public endpoint, connected via Database
+         *                                        Gateway.</li>
          *                                        </ul>
          * @return {@code this}
          */
@@ -427,9 +452,14 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getDestinationEndpointPassword}
-         * @param destinationEndpointPassword Property destinationEndpointPassword: The password that is used to log on to the RDS instance.
-         *                                    Note You must specify this parameter when the database type is Redis, or the database location
-         *                                    is agent and the database type is MSSQL.
+         * @param destinationEndpointPassword Property destinationEndpointPassword: The password for the destination database account.
+         *                                    <blockquote>
+         *                                    <p>
+         *                                    This parameter is optional if the database engine is Redis, or if
+         *                                    <code>DestinationEndpointInstanceType</code> is set to <code>Agent</code> and the database engine is
+         *                                    MSSQL. In other scenarios, this parameter is required.
+         *                                    <p>
+         *                                    </blockquote>
          * @return {@code this}
          */
         public Builder destinationEndpointPassword(java.lang.String destinationEndpointPassword) {
@@ -439,9 +469,14 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getDestinationEndpointPassword}
-         * @param destinationEndpointPassword Property destinationEndpointPassword: The password that is used to log on to the RDS instance.
-         *                                    Note You must specify this parameter when the database type is Redis, or the database location
-         *                                    is agent and the database type is MSSQL.
+         * @param destinationEndpointPassword Property destinationEndpointPassword: The password for the destination database account.
+         *                                    <blockquote>
+         *                                    <p>
+         *                                    This parameter is optional if the database engine is Redis, or if
+         *                                    <code>DestinationEndpointInstanceType</code> is set to <code>Agent</code> and the database engine is
+         *                                    MSSQL. In other scenarios, this parameter is required.
+         *                                    <p>
+         *                                    </blockquote>
          * @return {@code this}
          */
         public Builder destinationEndpointPassword(com.aliyun.ros.cdk.core.IResolvable destinationEndpointPassword) {
@@ -495,9 +530,14 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getDestinationEndpointUserName}
-         * @param destinationEndpointUserName Property destinationEndpointUserName: The database account.
-         *                                    Note You must specify this parameter when the database type is Redis, or the database location
-         *                                    is agent and the database type is MSSQL.
+         * @param destinationEndpointUserName Property destinationEndpointUserName: The username for the destination database account.
+         *                                    <blockquote>
+         *                                    <p>
+         *                                    This parameter is optional if the database engine is Redis, or if
+         *                                    <code>DestinationEndpointInstanceType</code> is set to <code>Agent</code> and the database engine is
+         *                                    MSSQL. In other scenarios, this parameter is required.
+         *                                    <p>
+         *                                    </blockquote>
          * @return {@code this}
          */
         public Builder destinationEndpointUserName(java.lang.String destinationEndpointUserName) {
@@ -507,9 +547,14 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getDestinationEndpointUserName}
-         * @param destinationEndpointUserName Property destinationEndpointUserName: The database account.
-         *                                    Note You must specify this parameter when the database type is Redis, or the database location
-         *                                    is agent and the database type is MSSQL.
+         * @param destinationEndpointUserName Property destinationEndpointUserName: The username for the destination database account.
+         *                                    <blockquote>
+         *                                    <p>
+         *                                    This parameter is optional if the database engine is Redis, or if
+         *                                    <code>DestinationEndpointInstanceType</code> is set to <code>Agent</code> and the database engine is
+         *                                    MSSQL. In other scenarios, this parameter is required.
+         *                                    <p>
+         *                                    </blockquote>
          * @return {@code this}
          */
         public Builder destinationEndpointUserName(com.aliyun.ros.cdk.core.IResolvable destinationEndpointUserName) {
@@ -545,7 +590,9 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getRestoreDir}
-         * @param restoreDir Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.
+         * @param restoreDir Property restoreDir: The restore directory.
+         *                   This parameter is required if
+         *                   DestinationEndpointInstanceType is set to <code>Agent</code> and the database type is MySQL.
          * @return {@code this}
          */
         public Builder restoreDir(java.lang.String restoreDir) {
@@ -555,7 +602,9 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getRestoreDir}
-         * @param restoreDir Property restoreDir: DestinationEndpointInstanceType this parameter is required when agent is specified and the backup schedule is MySQL.
+         * @param restoreDir Property restoreDir: The restore directory.
+         *                   This parameter is required if
+         *                   DestinationEndpointInstanceType is set to <code>Agent</code> and the database type is MySQL.
          * @return {@code this}
          */
         public Builder restoreDir(com.aliyun.ros.cdk.core.IResolvable restoreDir) {
@@ -585,8 +634,19 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getRestoreObjects}
-         * @param restoreObjects Property restoreObjects: Restore an object.
-         *                       Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
+         * @param restoreObjects Property restoreObjects: The objects to restore.
+         *                       <ul>
+         *                       <li>This parameter is optional if <code>DestinationEndpointInstanceType</code> is set to
+         *                       <code>Agent</code>. In other scenarios, this parameter is required.</li>
+         *                       <li>The value must be a JSON string in the following format: <code>[{ "DBName": "source_database_name", "NewDBName": "destination_database_name" }]</code></li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can use this API operation to restore data only at the database level. To
+         *                       restore data at the table level, log on to the console.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder restoreObjects(java.lang.String restoreObjects) {
@@ -596,8 +656,19 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getRestoreObjects}
-         * @param restoreObjects Property restoreObjects: Restore an object.
-         *                       Note For details, see the following RestoreObjects if the database is located in an agent, this parameter is required in other scenarios.
+         * @param restoreObjects Property restoreObjects: The objects to restore.
+         *                       <ul>
+         *                       <li>This parameter is optional if <code>DestinationEndpointInstanceType</code> is set to
+         *                       <code>Agent</code>. In other scenarios, this parameter is required.</li>
+         *                       <li>The value must be a JSON string in the following format: <code>[{ "DBName": "source_database_name", "NewDBName": "destination_database_name" }]</code></li>
+         *                       </ul>
+         *                       <p>
+         *                       <blockquote>
+         *                       <p>
+         *                       You can use this API operation to restore data only at the database level. To
+         *                       restore data at the table level, log on to the console.
+         *                       <p>
+         *                       </blockquote>
          * @return {@code this}
          */
         public Builder restoreObjects(com.aliyun.ros.cdk.core.IResolvable restoreObjects) {
@@ -607,8 +678,7 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getRestoreTime}
-         * @param restoreTime Property restoreTime: The time when the fault is restored.
-         *                    Set the value to 1554560477000.
+         * @param restoreTime Property restoreTime: The point-in-time for the restore, specified as a UNIX timestamp in milliseconds.
          * @return {@code this}
          */
         public Builder restoreTime(java.lang.Number restoreTime) {
@@ -618,8 +688,7 @@ public interface RestoreTaskProps extends software.amazon.jsii.JsiiSerializable 
 
         /**
          * Sets the value of {@link RestoreTaskProps#getRestoreTime}
-         * @param restoreTime Property restoreTime: The time when the fault is restored.
-         *                    Set the value to 1554560477000.
+         * @param restoreTime Property restoreTime: The point-in-time for the restore, specified as a UNIX timestamp in milliseconds.
          * @return {@code this}
          */
         public Builder restoreTime(com.aliyun.ros.cdk.core.IResolvable restoreTime) {

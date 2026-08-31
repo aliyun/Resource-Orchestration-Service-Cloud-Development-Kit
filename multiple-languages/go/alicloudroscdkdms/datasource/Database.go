@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class encapsulates and extends the ROS resource type `DATASOURCE::DMS::Database`The , which data source queries the details of a specific database.
+// This class encapsulates and extends the ROS resource type `DATASOURCE::DMS::Database`.
 type Database interface {
 	alicloudroscdkcore.Resource
 	IDatabase

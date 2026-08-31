@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.cen;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-transitroutervpnattachment
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.412Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.774Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.TransitRouterVpnAttachmentProps")
 @software.amazon.jsii.Jsii.Proxy(TransitRouterVpnAttachmentProps.Jsii$Proxy.class)
 public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.JsiiSerializable {
@@ -62,7 +62,10 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
     }
 
     /**
-     * Property transitRouterAttachmentDescription: Description of the VPN connection.
+     * Property transitRouterAttachmentDescription: The description of the VPN connection.
+     * <p>
+     * The description can be empty or 1 to 256 characters in length, and cannot start
+     * with http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterAttachmentDescription() {
         return null;
@@ -70,6 +73,9 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
 
     /**
      * Property transitRouterAttachmentName: The name of the VPN connection.
+     * <p>
+     * The name can be empty or 1 to 128 characters in length, and cannot start with
+     * http:// or https://.
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getTransitRouterAttachmentName() {
         return null;
@@ -83,7 +89,14 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
     }
 
     /**
-     * Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+     * Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+     * <p>
+     * <ul>
+     * <li>If you do not specify this parameter, the ID of the current account
+     * is used.</li>
+     * <li>This parameter is required if you want to connect to a cross-account IPsec-VPN
+     * connection.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getVpnOwnerId() {
         return null;
@@ -255,7 +268,9 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpnAttachmentProps#getTransitRouterAttachmentDescription}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: Description of the VPN connection.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPN connection.
+         *                                           The description can be empty or 1 to 256 characters in length, and cannot start
+         *                                           with http:// or https://.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentDescription(java.lang.String transitRouterAttachmentDescription) {
@@ -265,7 +280,9 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpnAttachmentProps#getTransitRouterAttachmentDescription}
-         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: Description of the VPN connection.
+         * @param transitRouterAttachmentDescription Property transitRouterAttachmentDescription: The description of the VPN connection.
+         *                                           The description can be empty or 1 to 256 characters in length, and cannot start
+         *                                           with http:// or https://.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentDescription(com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentDescription) {
@@ -276,6 +293,8 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
         /**
          * Sets the value of {@link TransitRouterVpnAttachmentProps#getTransitRouterAttachmentName}
          * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPN connection.
+         *                                    The name can be empty or 1 to 128 characters in length, and cannot start with
+         *                                    http:// or https://.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentName(java.lang.String transitRouterAttachmentName) {
@@ -286,6 +305,8 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
         /**
          * Sets the value of {@link TransitRouterVpnAttachmentProps#getTransitRouterAttachmentName}
          * @param transitRouterAttachmentName Property transitRouterAttachmentName: The name of the VPN connection.
+         *                                    The name can be empty or 1 to 128 characters in length, and cannot start with
+         *                                    http:// or https://.
          * @return {@code this}
          */
         public Builder transitRouterAttachmentName(com.aliyun.ros.cdk.core.IResolvable transitRouterAttachmentName) {
@@ -315,7 +336,13 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpnAttachmentProps#getVpnOwnerId}
-         * @param vpnOwnerId Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+         * @param vpnOwnerId Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+         *                   <ul>
+         *                   <li>If you do not specify this parameter, the ID of the current account
+         *                   is used.</li>
+         *                   <li>This parameter is required if you want to connect to a cross-account IPsec-VPN
+         *                   connection.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder vpnOwnerId(java.lang.String vpnOwnerId) {
@@ -325,7 +352,13 @@ public interface TransitRouterVpnAttachmentProps extends software.amazon.jsii.Js
 
         /**
          * Sets the value of {@link TransitRouterVpnAttachmentProps#getVpnOwnerId}
-         * @param vpnOwnerId Property vpnOwnerId: Alibaba Cloud account (main account) ID to which the IPsec connection belongs.
+         * @param vpnOwnerId Property vpnOwnerId: The ID of the account to which the IPsec-VPN connection belongs.
+         *                   <ul>
+         *                   <li>If you do not specify this parameter, the ID of the current account
+         *                   is used.</li>
+         *                   <li>This parameter is required if you want to connect to a cross-account IPsec-VPN
+         *                   connection.</li>
+         *                   </ul>
          * @return {@code this}
          */
         public Builder vpnOwnerId(com.aliyun.ros.cdk.core.IResolvable vpnOwnerId) {

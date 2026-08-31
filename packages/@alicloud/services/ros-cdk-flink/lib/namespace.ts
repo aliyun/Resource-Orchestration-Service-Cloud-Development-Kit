@@ -42,7 +42,7 @@ export interface INamespace extends ros.IResource {
     readonly attrNamespace: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Namespace`, which is used to create a project.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::Flink::Namespace`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosNamespace`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-namespace
  */

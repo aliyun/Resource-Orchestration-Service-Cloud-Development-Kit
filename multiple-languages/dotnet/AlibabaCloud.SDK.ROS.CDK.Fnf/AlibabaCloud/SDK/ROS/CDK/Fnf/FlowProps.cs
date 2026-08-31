@@ -45,9 +45,19 @@ namespace AlibabaCloud.SDK.ROS.CDK.Fnf
 
         private object _name;
 
-        /// <summary>Property name: The name of the flow created.</summary>
+        /// <summary>Property name: The name of the flow.</summary>
         /// <remarks>
-        /// This name is unique under the account.
+        /// The name must be unique within the same region and cannot
+        /// be changed after the flow is created. The name must meet the following
+        /// requirements:
+        ///
+        /// <list type="bullet">
+        /// <description>It can contain letters (a to z and A to Z), digits (0 to 9), underscores (_),
+        /// and hyphens (-).</description>
+        /// <description>It must start with a letter or an underscore (_).</description>
+        /// <description>It is case-sensitive.</description>
+        /// <description>It must be 1 to 128 characters in length.</description>
+        /// </list>
         /// </remarks>
         [JsiiProperty(name: "name", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object Name

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.bastionhost;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-bastionhost-exportconfigjob
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:35:53.468Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:18:29.179Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.bastionhost.$Module.class, fqn = "@alicloud/ros-cdk-bastionhost.ExportConfigJobProps")
 @software.amazon.jsii.Jsii.Proxy(ExportConfigJobProps.Jsii$Proxy.class)
 public interface ExportConfigJobProps extends software.amazon.jsii.JsiiSerializable {

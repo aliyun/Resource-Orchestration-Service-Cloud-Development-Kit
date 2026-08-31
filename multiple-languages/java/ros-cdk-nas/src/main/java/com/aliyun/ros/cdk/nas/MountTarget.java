@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.nas;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::NAS::MountTarget</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:59:40.515Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T10:15:39.331Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.nas.$Module.class, fqn = "@alicloud/ros-cdk-nas.MountTarget")
 public class MountTarget extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.nas.IMountTarget {
 
@@ -112,24 +112,30 @@ public class MountTarget extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property accessGroupName: Permission group name.
+         * Property accessGroupName: The name of the permission group.
          * <p>
-         * Default to DEFAULT_VPC_GROUP_NAME.
+         * This parameter is required if you create a mount target for a General-purpose NAS
+         * file system or an Extreme NAS file system.
+         * The default permission group for virtual private clouds (VPCs) is named
+         * DEFAULT_VPC_GROUP_NAME.
          * <p>
          * @return {@code this}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
          */
         public Builder accessGroupName(final java.lang.String accessGroupName) {
             this.props.accessGroupName(accessGroupName);
             return this;
         }
         /**
-         * Property accessGroupName: Permission group name.
+         * Property accessGroupName: The name of the permission group.
          * <p>
-         * Default to DEFAULT_VPC_GROUP_NAME.
+         * This parameter is required if you create a mount target for a General-purpose NAS
+         * file system or an Extreme NAS file system.
+         * The default permission group for virtual private clouds (VPCs) is named
+         * DEFAULT_VPC_GROUP_NAME.
          * <p>
          * @return {@code this}
-         * @param accessGroupName Property accessGroupName: Permission group name. This parameter is required.
+         * @param accessGroupName Property accessGroupName: The name of the permission group. This parameter is required.
          */
         public Builder accessGroupName(final com.aliyun.ros.cdk.core.IResolvable accessGroupName) {
             this.props.accessGroupName(accessGroupName);
@@ -137,20 +143,36 @@ public class MountTarget extends com.aliyun.ros.cdk.core.Resource implements com
         }
 
         /**
-         * Property fileSystemId: File system ID.
+         * Property fileSystemId: The ID of the file system.
+         * <p>
+         * <ul>
+         * <li>Sample ID of a General-purpose NAS file system: 31a8e4****.</li>
+         * <li>The IDs of Extreme NAS file systems must start with <code>extreme-</code>, for example,
+         * extreme-0015****.</li>
+         * <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         * cpfs-125487****.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
          */
         public Builder fileSystemId(final java.lang.String fileSystemId) {
             this.props.fileSystemId(fileSystemId);
             return this;
         }
         /**
-         * Property fileSystemId: File system ID.
+         * Property fileSystemId: The ID of the file system.
+         * <p>
+         * <ul>
+         * <li>Sample ID of a General-purpose NAS file system: 31a8e4****.</li>
+         * <li>The IDs of Extreme NAS file systems must start with <code>extreme-</code>, for example,
+         * extreme-0015****.</li>
+         * <li>The IDs of CPFS file systems must start with <code>cpfs-</code>. Example:
+         * cpfs-125487****.</li>
+         * </ul>
          * <p>
          * @return {@code this}
-         * @param fileSystemId Property fileSystemId: File system ID. This parameter is required.
+         * @param fileSystemId Property fileSystemId: The ID of the file system. This parameter is required.
          */
         public Builder fileSystemId(final com.aliyun.ros.cdk.core.IResolvable fileSystemId) {
             this.props.fileSystemId(fileSystemId);

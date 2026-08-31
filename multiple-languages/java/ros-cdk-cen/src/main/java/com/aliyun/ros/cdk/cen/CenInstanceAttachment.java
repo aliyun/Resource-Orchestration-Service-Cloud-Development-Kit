@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.cen;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenInstanceAttachment</code>, which is used to attach a network instance to a Cloud Enterprise Network (CEN) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::CEN::CenInstanceAttachment</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:45:17.239Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:32:02.580Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cen.$Module.class, fqn = "@alicloud/ros-cdk-cen.CenInstanceAttachment")
 public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.cen.ICenInstanceAttachment {
 
@@ -146,24 +146,26 @@ public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property childInstanceRegionId: The ID of the region where the network is located.
+         * Property childInstanceRegionId: The ID of the region where the network instance is deployed.
          * <p>
-         * The ID of the region where the network is located.
+         * You can call the <a href="">DescribeRegions</a> operation to query the most recent region
+         * list.
          * <p>
          * @return {@code this}
-         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network is located. This parameter is required.
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network instance is deployed. This parameter is required.
          */
         public Builder childInstanceRegionId(final java.lang.String childInstanceRegionId) {
             this.props.childInstanceRegionId(childInstanceRegionId);
             return this;
         }
         /**
-         * Property childInstanceRegionId: The ID of the region where the network is located.
+         * Property childInstanceRegionId: The ID of the region where the network instance is deployed.
          * <p>
-         * The ID of the region where the network is located.
+         * You can call the <a href="">DescribeRegions</a> operation to query the most recent region
+         * list.
          * <p>
          * @return {@code this}
-         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network is located. This parameter is required.
+         * @param childInstanceRegionId Property childInstanceRegionId: The ID of the region where the network instance is deployed. This parameter is required.
          */
         public Builder childInstanceRegionId(final com.aliyun.ros.cdk.core.IResolvable childInstanceRegionId) {
             this.props.childInstanceRegionId(childInstanceRegionId);
@@ -196,20 +198,34 @@ public class CenInstanceAttachment extends com.aliyun.ros.cdk.core.Resource impl
         }
 
         /**
-         * Property childInstanceOwnerId: The account ID to which the network belongs.
+         * Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the network instance and the CEN instance belong to different accounts,
+         * this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param childInstanceOwnerId Property childInstanceOwnerId: The account ID to which the network belongs. This parameter is required.
+         * @param childInstanceOwnerId Property childInstanceOwnerId: The ID of the account to which the network instance belongs. This parameter is required.
          */
         public Builder childInstanceOwnerId(final java.lang.Number childInstanceOwnerId) {
             this.props.childInstanceOwnerId(childInstanceOwnerId);
             return this;
         }
         /**
-         * Property childInstanceOwnerId: The account ID to which the network belongs.
+         * Property childInstanceOwnerId: The ID of the account to which the network instance belongs.
+         * <p>
+         * <blockquote>
+         * <p>
+         * If the network instance and the CEN instance belong to different accounts,
+         * this parameter is required.
+         * <p>
+         * </blockquote>
          * <p>
          * @return {@code this}
-         * @param childInstanceOwnerId Property childInstanceOwnerId: The account ID to which the network belongs. This parameter is required.
+         * @param childInstanceOwnerId Property childInstanceOwnerId: The ID of the account to which the network instance belongs. This parameter is required.
          */
         public Builder childInstanceOwnerId(final com.aliyun.ros.cdk.core.IResolvable childInstanceOwnerId) {
             this.props.childInstanceOwnerId(childInstanceOwnerId);

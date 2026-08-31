@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`, which is used to bind an SSH key pair to Elastic Compute Service (ECS) instances.
+// This class is a base encapsulation around the ROS resource type `ALIYUN::ECS::SSHKeyPairAttachment`.
 type RosSSHKeyPairAttachment interface {
 	alicloudroscdkcore.RosResource
 	AutoReboot() interface{}

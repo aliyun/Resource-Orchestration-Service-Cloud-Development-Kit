@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::OOS::Templates`The , which type is used to query template lists.
 type RosTemplates interface {
 	alicloudroscdkcore.RosResource
 	AttrTemplateNames() alicloudroscdkcore.IResolvable

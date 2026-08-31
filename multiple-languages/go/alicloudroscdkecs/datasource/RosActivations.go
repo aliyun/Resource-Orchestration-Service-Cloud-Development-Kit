@@ -9,7 +9,7 @@ import (
 	"github.com/aws/constructs-go/constructs/v3"
 )
 
-// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activations`, which is used to query activation codes.
+// This class is a base encapsulation around the ROS resource type `DATASOURCE::ECS::Activations`.
 type RosActivations interface {
 	alicloudroscdkcore.RosResource
 	ActivationId() interface{}

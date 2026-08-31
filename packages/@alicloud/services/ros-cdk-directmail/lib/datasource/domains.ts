@@ -35,7 +35,7 @@ export interface IDomains extends ros.IResource {
     readonly attrDomains: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Domains`, which is used to query the information about domain names.
+ * This class encapsulates and extends the ROS resource type `DATASOURCE::DirectMail::Domains`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosDomains`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/datasource-directmail-domains
  */

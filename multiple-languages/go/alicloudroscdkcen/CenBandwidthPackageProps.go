@@ -5,9 +5,10 @@ package alicloudroscdkcen
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-cen-cenbandwidthpackage
 type CenBandwidthPackageProps struct {
-	// Property bandwidth: The bandwidth in Mbps of the bandwidth package.
+	// Property bandwidth: The maximum bandwidth of the bandwidth plan.
 	//
-	// The bandwidth cannot be less than 2 Mbps.
+	// Unit: Mbps. Valid values: 2 to
+	// 10000.
 	Bandwidth interface{} `field:"required" json:"bandwidth" yaml:"bandwidth"`
 	// Property geographicRegionAId: The other area A to connect.
 	//
@@ -17,11 +18,14 @@ type CenBandwidthPackageProps struct {
 	//
 	// Valid value: China | North-America | Asia-Pacific | Europe | Australia.
 	GeographicRegionBId interface{} `field:"required" json:"geographicRegionBId" yaml:"geographicRegionBId"`
-	// Property autoPay: Whether to automatically pay the bill.
+	// Property autoPay: Specifies whether to enable automatic payment.
 	//
-	// Valid value:
-	// true (default)
-	// false.
+	// Valid values:
+	// - true: yes.
+	// - false (default): no.
+	// If you disable automatic payment, you must go to the Order Hub in the console to
+	// complete the payment after you call this operation. Otherwise, the instance
+	// cannot be created.
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	// Property autoRenew: Indicates whether automatic renewal is enabled.
 	//
@@ -35,17 +39,22 @@ type CenBandwidthPackageProps struct {
 	//
 	// Valid value: PREPAY, POSTPAY (Default).
 	BandwidthPackageChargeType interface{} `field:"optional" json:"bandwidthPackageChargeType" yaml:"bandwidthPackageChargeType"`
-	// Property description: The description of the bandwidth package.
+	// Property description: The description of the bandwidth plan.
 	//
-	// The description can contain [2,256] characters, numbers, underscores, and hyphens, and the name must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+	// The description can be empty or 1 to 256 characters in length. It cannot start
+	// with http\:\/\/ or https\:\/\/.
 	Description interface{} `field:"optional" json:"description" yaml:"description"`
-	// Property name: The name of the bandwidth package.
+	// Property name: The name of the bandwidth plan.
 	//
-	// The name can contain 2-128 characters including a-z, A-Z, 0-9, periods, underlines, and hyphens. It must start with English letters, but cannot start with http:\/\/ or https:\/\/.
+	// The name can be empty or 1 to 128 characters in length. It cannot start with
+	// http\:\/\/ or https\:\/\/.
 	Name interface{} `field:"optional" json:"name" yaml:"name"`
-	// Property period: The purchase period.
+	// Property period: The subscription duration of the bandwidth plan.
 	//
-	// The default value is 1.
+	// Default value: 1.
+	// - If you set PricingCycle to Month, valid values for Period are 1 to 3 and 6.
+	// - If you set PricingCycle to Year, valid values for Period are 1 to 3.
+	// > This parameter is required if you set BandwidthPackageChargeType to PREPAY.
 	Period interface{} `field:"optional" json:"period" yaml:"period"`
 	// Property pricingCycle: The pricing cycle.
 	PricingCycle interface{} `field:"optional" json:"pricingCycle" yaml:"pricingCycle"`

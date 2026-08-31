@@ -5,9 +5,11 @@ package alicloudroscdkecs
 //
 // See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecs-sshkeypairattachment
 type SSHKeyPairAttachmentProps struct {
-	// Property instanceIds: The comma delimited ECS instance id list.
+	// Property instanceIds: The IDs of instances to which you want to bind the SSH key pair.
 	//
-	// Only support Linux.
+	// The value can be
+	// a JSON array that consists of up to 50 instance IDs. Separate multiple instance
+	// IDs with commas (,).
 	InstanceIds interface{} `field:"required" json:"instanceIds" yaml:"instanceIds"`
 	// Property keyPairName: SSH key pair name.
 	KeyPairName interface{} `field:"required" json:"keyPairName" yaml:"keyPairName"`

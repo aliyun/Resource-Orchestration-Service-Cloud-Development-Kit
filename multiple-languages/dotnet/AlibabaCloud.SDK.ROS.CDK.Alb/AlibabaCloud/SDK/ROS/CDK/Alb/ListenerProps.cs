@@ -15,7 +15,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
     {
         private object _defaultActions;
 
-        /// <summary>Property defaultActions: The actions of the rule.</summary>
+        /// <summary>Property defaultActions: The default actions for the listener.</summary>
         [JsiiProperty(name: "defaultActions", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.DefaultActionsProperty\"}]}},\"kind\":\"array\"}}]}}")]
         public object DefaultActions
         {
@@ -178,7 +178,10 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _caCertificates;
 
-        /// <summary>Property caCertificates: List of configured CA certificates for listener.</summary>
+        /// <summary>Property caCertificates: A list of CA certificates for the listener.</summary>
+        /// <remarks>
+        /// Only one CA certificate is supported.
+        /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "caCertificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.CaCertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? CaCertificates
@@ -260,7 +263,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _certificates;
 
-        /// <summary>Property certificates: The list of SSL certificates for listener.</summary>
+        /// <summary>Property certificates: A list of server certificates.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "certificates", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.CertificatesProperty\"}]}},\"kind\":\"array\"}}]}}", isOptional: true)]
         public object? Certificates
@@ -380,11 +383,15 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _idleTimeout;
 
-        /// <summary>Property idleTimeout: The timeout period of idle connections.</summary>
+        /// <summary>Property idleTimeout: The idle timeout in seconds.</summary>
         /// <remarks>
-        /// Valid values: 1 to 3600. Unit: seconds.
+        /// Valid values: 1 to 600.
         /// Default value: 15.
-        /// If no requests are received within the specified timeout period, ALB closes the current connection. When a new request is received, ALB establishes a new connection.
+        /// If no requests are received on a connection within the idle timeout, the load
+        /// balancer closes the connection. A new connection is established for the next
+        /// request.
+        ///
+        ///     You can request a quota increase to a maximum of 3,600 seconds.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "idleTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -436,9 +443,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _listenerDescription;
 
-        /// <summary>Property listenerDescription: The description of the listener.</summary>
+        /// <summary>Property listenerDescription: A custom name for the listener.</summary>
         /// <remarks>
-        /// The description must be 2 to 256 characters in length.
+        /// The name must be 2 to 256 characters long and can contain letters, digits,
+        /// hyphens (-), forward slashes (/), periods (.), underscores (_), and Chinese
+        /// characters.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "listenerDescription", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -563,12 +572,14 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _requestTimeout;
 
-        /// <summary>Property requestTimeout: The timeout period of the request.</summary>
+        /// <summary>Property requestTimeout: The request timeout in seconds.</summary>
         /// <remarks>
-        /// Valid values: 1 to 900. Unit: seconds.
+        /// Valid values: 1 to 600.
         /// Default value: 60.
-        /// If no response is received from the backend server during the request timeout period,
-        /// ALB sends an HTTP 504 error code to the client.
+        /// If a backend server does not respond within the timeout period, the load balancer
+        /// returns an <c>HTTP 504</c> error to the client.
+        ///
+        ///     You can request a quota increase to a maximum of 3,600 seconds.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "requestTimeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]
@@ -657,7 +668,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Alb
 
         private object? _xForwardedForConfig;
 
-        /// <summary>Property xForwardedForConfig: The configuration of the XForward field.</summary>
+        /// <summary>Property xForwardedForConfig: The configuration of `X-Forwarded-*` headers.</summary>
         [JsiiOptional]
         [JsiiProperty(name: "xForwardedForConfig", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"fqn\":\"@alicloud/ros-cdk-alb.RosListener.XForwardedForConfigProperty\"}]}}", isOptional: true)]
         public object? XForwardedForConfig

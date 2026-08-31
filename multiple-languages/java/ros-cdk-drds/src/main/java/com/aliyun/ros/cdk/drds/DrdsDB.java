@@ -1,9 +1,9 @@
 package com.aliyun.ros.cdk.drds;
 
 /**
- * This class encapsulates and extends the ROS resource type <code>ALIYUN::DRDS::DrdsDB</code>, which is used to create a Distributed Relational Database Service (DRDS) instance.
+ * This class encapsulates and extends the ROS resource type <code>ALIYUN::DRDS::DrdsDB</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:28:31.230Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:25:12.226Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.drds.$Module.class, fqn = "@alicloud/ros-cdk-drds.DrdsDB")
 public class DrdsDB extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.drds.IDrdsDB {
 
@@ -146,20 +146,20 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+         * Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
          * <p>
          * @return {@code this}
-         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Check whether the RDS instance is being created. This parameter is required.
+         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created. This parameter is required.
          */
         public Builder dbInstanceIsCreating(final java.lang.Boolean dbInstanceIsCreating) {
             this.props.dbInstanceIsCreating(dbInstanceIsCreating);
             return this;
         }
         /**
-         * Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+         * Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
          * <p>
          * @return {@code this}
-         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Check whether the RDS instance is being created. This parameter is required.
+         * @param dbInstanceIsCreating Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created. This parameter is required.
          */
         public Builder dbInstanceIsCreating(final com.aliyun.ros.cdk.core.IResolvable dbInstanceIsCreating) {
             this.props.dbInstanceIsCreating(dbInstanceIsCreating);
@@ -167,26 +167,20 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property dbInstType: The type of the attached storage.
-         * <p>
-         * Valid values:
-         * RDS or POLARDB
+         * Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS.
          * <p>
          * @return {@code this}
-         * @param dbInstType Property dbInstType: The type of the attached storage. This parameter is required.
+         * @param dbInstType Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS. This parameter is required.
          */
         public Builder dbInstType(final java.lang.String dbInstType) {
             this.props.dbInstType(dbInstType);
             return this;
         }
         /**
-         * Property dbInstType: The type of the attached storage.
-         * <p>
-         * Valid values:
-         * RDS or POLARDB
+         * Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS.
          * <p>
          * @return {@code this}
-         * @param dbInstType Property dbInstType: The type of the attached storage. This parameter is required.
+         * @param dbInstType Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database. Set the value to RDS. This parameter is required.
          */
         public Builder dbInstType(final com.aliyun.ros.cdk.core.IResolvable dbInstType) {
             this.props.dbInstType(dbInstType);
@@ -215,20 +209,20 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property encode: Encoding used by the database.
+         * Property encode: The encoding method that is used by the database.
          * <p>
          * @return {@code this}
-         * @param encode Property encode: Encoding used by the database. This parameter is required.
+         * @param encode Property encode: The encoding method that is used by the database. This parameter is required.
          */
         public Builder encode(final java.lang.String encode) {
             this.props.encode(encode);
             return this;
         }
         /**
-         * Property encode: Encoding used by the database.
+         * Property encode: The encoding method that is used by the database.
          * <p>
          * @return {@code this}
-         * @param encode Property encode: Encoding used by the database. This parameter is required.
+         * @param encode Property encode: The encoding method that is used by the database. This parameter is required.
          */
         public Builder encode(final com.aliyun.ros.cdk.core.IResolvable encode) {
             this.props.encode(encode);
@@ -236,20 +230,20 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property instDbName:.
+         * Property instDbName: List of databases.
          * <p>
          * @return {@code this}
-         * @param instDbName Property instDbName:. This parameter is required.
+         * @param instDbName Property instDbName: List of databases. This parameter is required.
          */
         public Builder instDbName(final com.aliyun.ros.cdk.core.IResolvable instDbName) {
             this.props.instDbName(instDbName);
             return this;
         }
         /**
-         * Property instDbName:.
+         * Property instDbName: List of databases.
          * <p>
          * @return {@code this}
-         * @param instDbName Property instDbName:. This parameter is required.
+         * @param instDbName Property instDbName: List of databases. This parameter is required.
          */
         public Builder instDbName(final java.util.List<? extends java.lang.Object> instDbName) {
             this.props.instDbName(instDbName);
@@ -278,20 +272,20 @@ public class DrdsDB extends com.aliyun.ros.cdk.core.Resource implements com.aliy
         }
 
         /**
-         * Property rdsInstance: This property is required only for vertical partitioning.
+         * Property rdsInstance: List of RDS instances.
          * <p>
          * @return {@code this}
-         * @param rdsInstance Property rdsInstance: This property is required only for vertical partitioning. This parameter is required.
+         * @param rdsInstance Property rdsInstance: List of RDS instances. This parameter is required.
          */
         public Builder rdsInstance(final com.aliyun.ros.cdk.core.IResolvable rdsInstance) {
             this.props.rdsInstance(rdsInstance);
             return this;
         }
         /**
-         * Property rdsInstance: This property is required only for vertical partitioning.
+         * Property rdsInstance: List of RDS instances.
          * <p>
          * @return {@code this}
-         * @param rdsInstance Property rdsInstance: This property is required only for vertical partitioning. This parameter is required.
+         * @param rdsInstance Property rdsInstance: List of RDS instances. This parameter is required.
          */
         public Builder rdsInstance(final java.util.List<? extends java.lang.Object> rdsInstance) {
             this.props.rdsInstance(rdsInstance);

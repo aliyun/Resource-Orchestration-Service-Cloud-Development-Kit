@@ -25,12 +25,31 @@ export interface AnycastEIPAssociationProps {
     readonly bindInstanceRegionId: string | ros.IResolvable;
 
     /**
-     * Property bindInstanceType: The cloud resource instance type to be bound. Valid value: SlbInstance, SLB instance of private network type.
+     * Property bindInstanceType: The type of the cloud resource with which you want to associate the Anycast EIP.
+     * Valid values:
+     * - SlbInstance: CLB instance in a virtual private cloud (VPC).
+     * - NetworkInterface: ENI.
      */
     readonly bindInstanceType: string | ros.IResolvable;
 
     /**
-     * Property associationMode: The association mode.
+     * Property associationMode: The association mode. Valid values:
+     * - Default: the default mode. In this mode, the associated cloud resource is the
+     * default origin server.
+     * - Normal: the normal mode. In this mode, the associated cloud resource is a
+     * normal origin server.
+     * > An Anycast EIP can be associated with cloud resources in multiple regions.
+     * However, you can specify only one default origin server and multiple normal
+     * origin servers. When you do not specify an access point or add a new access
+     * point, requests are forwarded to the default origin server by default.
+     * >
+     * > - If this is your first time to associate a cloud resource with the Anycast
+     * EIP, the association mode is Default by default.
+     * >
+     * > - If this is not your first time to associate a cloud resource with the Anycast
+     * EIP, you can set the association mode to Default. This makes the new cloud
+     * resource the default origin server, and the original default origin server
+     * becomes a normal origin server.
      */
     readonly associationMode?: string | ros.IResolvable;
 
@@ -40,7 +59,10 @@ export interface AnycastEIPAssociationProps {
     readonly popLocations?: Array<RosAnycastEIPAssociation.PopLocationsProperty | ros.IResolvable> | ros.IResolvable;
 
     /**
-     * Property privateIpAddress: The private IP address.
+     * Property privateIpAddress: The secondary private IP address of the ENI.
+     * This parameter is required when BindInstanceType is set to NetworkInterface. If
+     * you do not specify this parameter, the primary private IP address of the ENI is
+     * used.
      */
     readonly privateIpAddress?: string | ros.IResolvable;
 }

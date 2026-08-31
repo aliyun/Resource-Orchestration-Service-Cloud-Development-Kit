@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.flink;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-flink-instancev2
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:06:21.245Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:13:20.920Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.flink.$Module.class, fqn = "@alicloud/ros-cdk-flink.InstanceV2Props")
 @software.amazon.jsii.Jsii.Proxy(InstanceV2Props.Jsii$Proxy.class)
 public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
@@ -18,14 +18,15 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
     @org.jetbrains.annotations.NotNull java.lang.Object getChargeType();
 
     /**
-     * Property instanceName: The name of instance.
+     * Property instanceName: The name of the workspace.
+     * <p>
+     * The name must start with a lowercase letter, can
+     * contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getInstanceName();
 
     /**
-     * Property storage: Resource specifications.
-     * <p>
-     * When ChargeType is configured as PRE, the resource specification parameters must be filled.
+     * Property storage: The storage parameters.
      */
     @org.jetbrains.annotations.NotNull java.lang.Object getStorage();
 
@@ -47,9 +48,20 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
+     * Property autoRenew: Specifies whether to enable auto-renewal.
      * <p>
-     * false: Manual renewal.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>true: Auto-renewal is enabled.</li>
+     * <li>false: Auto-renewal is disabled. This is the default value.</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * This parameter does not take effect for pay-as-you-go instances.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getAutoRenew() {
         return null;
@@ -169,7 +181,9 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceV2Props#getInstanceName}
-         * @param instanceName Property instanceName: The name of instance. This parameter is required.
+         * @param instanceName Property instanceName: The name of the workspace. This parameter is required.
+         *                     The name must start with a lowercase letter, can
+         *                     contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
          * @return {@code this}
          */
         public Builder instanceName(java.lang.String instanceName) {
@@ -179,7 +193,9 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceV2Props#getInstanceName}
-         * @param instanceName Property instanceName: The name of instance. This parameter is required.
+         * @param instanceName Property instanceName: The name of the workspace. This parameter is required.
+         *                     The name must start with a lowercase letter, can
+         *                     contain lowercase letters, digits, and hyphens (-), and cannot end with a hyphen.
          * @return {@code this}
          */
         public Builder instanceName(com.aliyun.ros.cdk.core.IResolvable instanceName) {
@@ -189,8 +205,7 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceV2Props#getStorage}
-         * @param storage Property storage: Resource specifications. This parameter is required.
-         *                When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * @param storage Property storage: The storage parameters. This parameter is required.
          * @return {@code this}
          */
         public Builder storage(com.aliyun.ros.cdk.core.IResolvable storage) {
@@ -200,8 +215,7 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceV2Props#getStorage}
-         * @param storage Property storage: Resource specifications. This parameter is required.
-         *                When ChargeType is configured as PRE, the resource specification parameters must be filled.
+         * @param storage Property storage: The storage parameters. This parameter is required.
          * @return {@code this}
          */
         public Builder storage(com.aliyun.ros.cdk.flink.RosInstanceV2.StorageProperty storage) {
@@ -271,8 +285,19 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceV2Props#getAutoRenew}
-         * @param autoRenew Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
-         *                  false: Manual renewal.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true: Auto-renewal is enabled.</li>
+         *                  <li>false: Auto-renewal is disabled. This is the default value.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter does not take effect for pay-as-you-go instances.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoRenew(java.lang.Boolean autoRenew) {
@@ -282,8 +307,19 @@ public interface InstanceV2Props extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link InstanceV2Props#getAutoRenew}
-         * @param autoRenew Property autoRenew: When the payment type is the monthly package, the value of the value is as follows: true: Automatic renewal.
-         *                  false: Manual renewal.
+         * @param autoRenew Property autoRenew: Specifies whether to enable auto-renewal.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>true: Auto-renewal is enabled.</li>
+         *                  <li>false: Auto-renewal is disabled. This is the default value.</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  This parameter does not take effect for pay-as-you-go instances.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder autoRenew(com.aliyun.ros.cdk.core.IResolvable autoRenew) {

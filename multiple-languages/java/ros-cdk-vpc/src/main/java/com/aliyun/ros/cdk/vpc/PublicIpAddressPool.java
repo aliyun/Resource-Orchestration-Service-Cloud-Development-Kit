@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::PublicIpAddressPool</code>, which is used to create an IP address pool.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.509Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.311Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.PublicIpAddressPool")
 public class PublicIpAddressPool extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IPublicIpAddressPool {
 
@@ -143,24 +143,26 @@ public class PublicIpAddressPool extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property description: Description of the address pool instance.
+         * Property description: The description of the IP address pool.
          * <p>
-         * The length is 0-256 characters, and you cannot start with http:// or https: //.
+         * The description must be 0 to 256 characters in length and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the address pool instance. This parameter is required.
+         * @param description Property description: The description of the IP address pool. This parameter is required.
          */
         public Builder description(final java.lang.String description) {
             this.props().description(description);
             return this;
         }
         /**
-         * Property description: Description of the address pool instance.
+         * Property description: The description of the IP address pool.
          * <p>
-         * The length is 0-256 characters, and you cannot start with http:// or https: //.
+         * The description must be 0 to 256 characters in length and cannot start with
+         * <code>http:\/\/</code> or <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param description Property description: Description of the address pool instance. This parameter is required.
+         * @param description Property description: The description of the IP address pool. This parameter is required.
          */
         public Builder description(final com.aliyun.ros.cdk.core.IResolvable description) {
             this.props().description(description);
@@ -219,24 +221,26 @@ public class PublicIpAddressPool extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property name: The name of the address pool instance.
+         * Property name: The name of the IP address pool.
          * <p>
-         * The length is 0-128 characters, and you cannot start with http: // or https: //.
+         * The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the address pool instance. This parameter is required.
+         * @param name Property name: The name of the IP address pool. This parameter is required.
          */
         public Builder name(final java.lang.String name) {
             this.props().name(name);
             return this;
         }
         /**
-         * Property name: The name of the address pool instance.
+         * Property name: The name of the IP address pool.
          * <p>
-         * The length is 0-128 characters, and you cannot start with http: // or https: //.
+         * The name must be 0 to 128 characters in length and cannot start with <code>http:\/\/</code> or
+         * <code>https:\/\/</code>.
          * <p>
          * @return {@code this}
-         * @param name Property name: The name of the address pool instance. This parameter is required.
+         * @param name Property name: The name of the IP address pool. This parameter is required.
          */
         public Builder name(final com.aliyun.ros.cdk.core.IResolvable name) {
             this.props().name(name);

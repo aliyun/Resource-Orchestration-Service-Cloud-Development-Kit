@@ -27,7 +27,8 @@ export interface LoginProfileProps {
     readonly mfaBindRequired?: boolean | ros.IResolvable;
 
     /**
-     * Property password: The password of the RAM user.
+     * Property password: The logon password for the RAM user.
+     * The password must meet the password policy.
      */
     readonly password?: string | ros.IResolvable;
 
@@ -37,9 +38,9 @@ export interface LoginProfileProps {
     readonly passwordResetRequired?: boolean | ros.IResolvable;
 
     /**
-     * Property status: Enable or disable console password login. Valid values:
-     * - Activate (default): Enable.
-     * - Inactivate: Disable.
+     * Property status: Specifies whether to enable password-based logon to the console. Valid values:
+     * - Active (default): Enable
+     * - Inactive: Disable
      */
     readonly status?: string | ros.IResolvable;
 }

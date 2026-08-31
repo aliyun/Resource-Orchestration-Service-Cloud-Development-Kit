@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.ecd;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-ecd-desktops
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T11:33:58.420Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T08:33:34.820Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.ecd.$Module.class, fqn = "@alicloud/ros-cdk-ecd.DesktopsProps")
 @software.amazon.jsii.Jsii.Proxy(DesktopsProps.Jsii$Proxy.class)
 public interface DesktopsProps extends software.amazon.jsii.JsiiSerializable {
@@ -79,7 +79,17 @@ public interface DesktopsProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property desktopName: The name of the cloud desktop.
+     * Property desktopName: The name of the desktop.
+     * <p>
+     * The name must meet the following requirements:
+     * <p>
+     * <ul>
+     * <li>The name cannot exceed 64 characters in length.</li>
+     * <li>It must start with a letter or a Chinese character. It cannot start
+     * with<code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+     * <li>It can contain letters, digits, Chinese characters, colons (:), underscores
+     * (_), periods (.), and hyphens (-).</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getDesktopName() {
         return null;
@@ -447,7 +457,16 @@ public interface DesktopsProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DesktopsProps#getDesktopName}
-         * @param desktopName Property desktopName: The name of the cloud desktop.
+         * @param desktopName Property desktopName: The name of the desktop.
+         *                    The name must meet the following requirements:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The name cannot exceed 64 characters in length.</li>
+         *                    <li>It must start with a letter or a Chinese character. It cannot start
+         *                    with<code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                    <li>It can contain letters, digits, Chinese characters, colons (:), underscores
+         *                    (_), periods (.), and hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder desktopName(java.lang.String desktopName) {
@@ -457,7 +476,16 @@ public interface DesktopsProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link DesktopsProps#getDesktopName}
-         * @param desktopName Property desktopName: The name of the cloud desktop.
+         * @param desktopName Property desktopName: The name of the desktop.
+         *                    The name must meet the following requirements:
+         *                    <p>
+         *                    <ul>
+         *                    <li>The name cannot exceed 64 characters in length.</li>
+         *                    <li>It must start with a letter or a Chinese character. It cannot start
+         *                    with<code>http:\/\/</code> or <code>https:\/\/</code>.</li>
+         *                    <li>It can contain letters, digits, Chinese characters, colons (:), underscores
+         *                    (_), periods (.), and hyphens (-).</li>
+         *                    </ul>
          * @return {@code this}
          */
         public Builder desktopName(com.aliyun.ros.cdk.core.IResolvable desktopName) {

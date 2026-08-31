@@ -11,6 +11,8 @@ export interface NacosServiceProps {
 
     /**
      * Property instanceId: The ID of the instance.
+     * > This operation contains both the InstanceId and ClusterId parameters. You must
+     * specify one of them.
      */
     readonly instanceId: string | ros.IResolvable;
 

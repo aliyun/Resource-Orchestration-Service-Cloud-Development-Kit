@@ -156,7 +156,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: interval: The interval of the monitor.
+        /// <strong>Property</strong>: interval: The health check interval. Unit: seconds.
         /// </remarks>
         [JsiiProperty(name: "interval", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Interval
@@ -253,7 +253,38 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: monitorExtendInfo: The extend info of the monitor.
+        /// <strong>Property</strong>: monitorExtendInfo: The extended information. The parameters vary based on the protocol type.
+        /// - HTTP or HTTPS
+        /// - port: The health check port.
+        /// - host: The Host header.
+        /// - path: The URL path.
+        /// - code: The health check is considered abnormal if the returned HTTP status code
+        /// is greater than this value.
+        /// - failureRate: The failure rate.
+        /// - sni: Specifies whether to enable Server Name Indication (SNI). This parameter
+        /// is used only when the health check protocol is HTTPS. Valid values:
+        /// - true
+        /// - false
+        /// - nodeType: The type of the monitoring node. This parameter is used when the
+        /// address pool type is DOMAIN. Valid values:
+        /// - IPV4
+        /// - IPV6
+        /// - PING
+        /// - failureRate: The failure rate.
+        /// - packetNum: The number of ping packets.
+        /// - packetLossRate: The packet loss rate.
+        /// - nodeType: The type of the monitoring node. This parameter is used when the
+        /// address pool type is DOMAIN. Valid values:
+        /// - IPV4
+        /// - IPV6
+        /// - TCP
+        /// - port: The health check port.
+        /// - failureRate: The failure rate.
+        /// - nodeType: The type of the monitoring node. This parameter is used when the
+        /// address pool type is DOMAIN. Valid values:
+        /// - IPV4
+        /// - IPV6
+        /// > This parameter must be a JSON string.
         /// </remarks>
         [JsiiProperty(name: "monitorExtendInfo", typeJson: "{\"union\":{\"types\":[{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"},{\"collection\":{\"elementtype\":{\"primitive\":\"any\"},\"kind\":\"map\"}}]}}")]
         public virtual object MonitorExtendInfo
@@ -283,7 +314,11 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: protocolType: The protocol type of the monitor.
+        /// <strong>Property</strong>: protocolType: The health check protocol. Valid values:
+        /// - HTTP
+        /// - HTTPS
+        /// - PING
+        /// - TCP
         /// </remarks>
         [JsiiProperty(name: "protocolType", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object ProtocolType
@@ -313,7 +348,7 @@ namespace AlibabaCloud.SDK.ROS.CDK.Dns
         }
 
         /// <remarks>
-        /// <strong>Property</strong>: timeout: The timeout of the monitor.
+        /// <strong>Property</strong>: timeout: The timeout period. Unit: milliseconds.
         /// </remarks>
         [JsiiProperty(name: "timeout", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"number\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public virtual object Timeout

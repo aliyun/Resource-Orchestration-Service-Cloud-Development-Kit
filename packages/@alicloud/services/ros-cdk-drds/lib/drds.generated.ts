@@ -261,13 +261,13 @@ export interface RosDrdsDBProps {
     readonly accountName?: string | ros.IResolvable;
 
     /**
-     * @Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+     * @Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
      */
     readonly dbInstanceIsCreating?: boolean | ros.IResolvable;
 
     /**
-     * @Property dbInstType: The type of the attached storage. Valid values:
-     * RDS or POLARDB
+     * @Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database.
+     * Set the value to RDS.
      */
     readonly dbInstType?: string | ros.IResolvable;
 
@@ -277,12 +277,12 @@ export interface RosDrdsDBProps {
     readonly dbName?: string | ros.IResolvable;
 
     /**
-     * @Property encode: Encoding used by the database
+     * @Property encode: The encoding method that is used by the database.
      */
     readonly encode?: string | ros.IResolvable;
 
     /**
-     * @Property instDbName:
+     * @Property instDbName: List of databases.
      */
     readonly instDbName?: Array<RosDrdsDB.InstDbNameProperty | ros.IResolvable> | ros.IResolvable;
 
@@ -292,7 +292,7 @@ export interface RosDrdsDBProps {
     readonly password?: string | ros.IResolvable;
 
     /**
-     * @Property rdsInstance: This property is required only for vertical partitioning.
+     * @Property rdsInstance: List of RDS instances.
      */
     readonly rdsInstance?: Array<string | ros.IResolvable> | ros.IResolvable;
 
@@ -383,7 +383,7 @@ function rosDrdsDBPropsToRosTemplate(properties: any, enableResourcePropertyCons
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsDB`, which is used to create a Distributed Relational Database Service (DRDS) instance.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsDB`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DrdsDB` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsdb
  */
@@ -407,13 +407,13 @@ export class RosDrdsDB extends ros.RosResource {
     public accountName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstanceIsCreating: Check whether the RDS instance is being created.
+     * @Property dbInstanceIsCreating: Specifies whether the required ApsaraDB RDS for MySQL instance is being created.
      */
     public dbInstanceIsCreating: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property dbInstType: The type of the attached storage. Valid values:
-     * RDS or POLARDB
+     * @Property dbInstType: The type of the storage instances that are used by the PolarDB-X 1.0 database.
+     * Set the value to RDS.
      */
     public dbInstType: string | ros.IResolvable | undefined;
 
@@ -423,12 +423,12 @@ export class RosDrdsDB extends ros.RosResource {
     public dbName: string | ros.IResolvable | undefined;
 
     /**
-     * @Property encode: Encoding used by the database
+     * @Property encode: The encoding method that is used by the database.
      */
     public encode: string | ros.IResolvable | undefined;
 
     /**
-     * @Property instDbName:
+     * @Property instDbName: List of databases.
      */
     public instDbName: Array<RosDrdsDB.InstDbNameProperty | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -438,7 +438,7 @@ export class RosDrdsDB extends ros.RosResource {
     public password: string | ros.IResolvable | undefined;
 
     /**
-     * @Property rdsInstance: This property is required only for vertical partitioning.
+     * @Property rdsInstance: List of RDS instances.
      */
     public rdsInstance: Array<string | ros.IResolvable> | ros.IResolvable | undefined;
 
@@ -554,27 +554,45 @@ function rosDrdsDBInstDbNamePropertyToRosTemplate(properties: any): any {
 export interface RosDrdsInstanceProps {
 
     /**
-     * @Property description: Description of the DRDS instance, 2-128 characters
+     * @Property description: Specifies the description of the instance. The description must meet the
+     * following requirements:
+     * *   The description cannot contain the prefix http:\/\/ or https:\/\/.
+     * *   The description must start with a letter or a Chinese character, and can
+     * contain uppercase and lowercase letters, Chinese characters, digits, underscores
+     * (_), and hyphens (-).
+     * *   The description must be 2 to 256 characters in length.
      */
     readonly description: string | ros.IResolvable;
 
     /**
-     * @Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition
+     * @Property instanceSeries: Specifies the instance type of the instance. Valid values:
+     * *   drds.sn2.4c16g: The instance is of the Starter Edition.
+     * *   drds.sn2.8c32g: The instance is of the Standard Edition
+     * *   drds.sn2.16c64g: The instance is of the Enterprise Edition.
      */
     readonly instanceSeries: string | ros.IResolvable;
 
     /**
-     * @Property payType: For the type of payment, see "Payment Type Parameter Table"
+     * @Property payType: Specifies the billing method of the instance. Valid values:
+     * *   drdsPre: The instance uses the subscription billing method.
+     * *   drdsPost: The instance uses the pay-as-you-go billing method.
+     * *   drdsRo: By default, the pay-as-you-go billing method is used when you create
+     * read-only instances.
      */
     readonly payType: string | ros.IResolvable;
 
     /**
-     * @Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
+     * @Property specification: Specifies the specification code of the instance. The value consists of the
+     * instance type and the specified instance specification. For example, you can set
+     * the value to drds.sn2.4c16g.8c32g.
      */
     readonly specification: string | ros.IResolvable;
 
     /**
-     * @Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively
+     * @Property type: Specifies the type of the instance. Set the value to PRIVATE. The value PRIVATE
+     * specifies that the instance is a dedicated instance.
+     * >  You can also set the value to 1 to specify that the instance is a dedicated
+     * instance.
      */
     readonly type: string | ros.IResolvable;
 
@@ -589,17 +607,32 @@ export interface RosDrdsInstanceProps {
     readonly duration?: number | ros.IResolvable;
 
     /**
-     * @Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year. The parameter takes effect when the payment type is drdsPre.
+     * @Property isAutoRenew: Specifies whether to enable automatic renewal. Valid values:
+     * *   true: If the PricingCycle parameter is set to month, the subscription is
+     * automatically renewed for one month. If the PricingCycle parameter is set to
+     * year, the subscription is automatically renewed for one year.
+     * *   false: The auto-renewal feature is disabled for the instance.
+     * >  This parameter only takes effect when the PayType parameter is set to drdsPre.
      */
     readonly isAutoRenew?: boolean | ros.IResolvable;
 
     /**
-     * @Property mySqlVersion: The MySQL protocol version supported by DRDS. Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+     * @Property mySqlVersion: Specifies the MySQL version that is supported by the instance. Valid values:
+     * *   5: The instance is fully compatible with MySQL 5.x. This value is the default
+     * value.
+     * *   8: The instance is fully compatible with MySQL 8.0.
+     * >  This parameter only takes effect when you create a primary instance. By
+     * default, the MySQL version of the read-only instance is the same as that of the
+     * primary instance.
      */
     readonly mySqlVersion?: string | ros.IResolvable;
 
     /**
-     * @Property pricingCycle: The unit of the order period, year: year, month: month. The parameter takes effect when the payment type is drdsPre.
+     * @Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
+     * Valid values:
+     * *   year: The unit of the subscription duration is year.
+     * *   month: The unit of the subscription duration is month.
+     * >  This parameter is required if you set the PayType parameter to drdsPre.
      */
     readonly pricingCycle?: string | ros.IResolvable;
 
@@ -721,7 +754,7 @@ function rosDrdsInstancePropsToRosTemplate(properties: any, enableResourceProper
 }
 
 /**
- * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`, which is used to create a PolarDB-X 1.0 instance of specified instance specifications.
+ * This class is a base encapsulation around the ROS resource type `ALIYUN::DRDS::DrdsInstance`.
  * @Note This class does not contain additional functions, so it is recommended to use the `DrdsInstance` class instead of this class for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-drds-drdsinstance
  */
@@ -760,27 +793,45 @@ export class RosDrdsInstance extends ros.RosResource {
 
 
     /**
-     * @Property description: Description of the DRDS instance, 2-128 characters
+     * @Property description: Specifies the description of the instance. The description must meet the
+     * following requirements:
+     * *   The description cannot contain the prefix http:\/\/ or https:\/\/.
+     * *   The description must start with a letter or a Chinese character, and can
+     * contain uppercase and lowercase letters, Chinese characters, digits, underscores
+     * (_), and hyphens (-).
+     * *   The description must be 2 to 256 characters in length.
      */
     public description: string | ros.IResolvable;
 
     /**
-     * @Property instanceSeries: drds.sn1.4c8g Starter Edition; drds.sn1.8c16g Standard Edition; drds.sn1.16c32g Business Edition; drds.sn1.32c64g Ultimate Edition
+     * @Property instanceSeries: Specifies the instance type of the instance. Valid values:
+     * *   drds.sn2.4c16g: The instance is of the Starter Edition.
+     * *   drds.sn2.8c32g: The instance is of the Standard Edition
+     * *   drds.sn2.16c64g: The instance is of the Enterprise Edition.
      */
     public instanceSeries: string | ros.IResolvable;
 
     /**
-     * @Property payType: For the type of payment, see "Payment Type Parameter Table"
+     * @Property payType: Specifies the billing method of the instance. Valid values:
+     * *   drdsPre: The instance uses the subscription billing method.
+     * *   drdsPost: The instance uses the pay-as-you-go billing method.
+     * *   drdsRo: By default, the pay-as-you-go billing method is used when you create
+     * read-only instances.
      */
     public payType: string | ros.IResolvable;
 
     /**
-     * @Property specification: The example specification, for example, drds.sn1.4c8g.8C16G, consists of the DRDS instance series (drds.sn1.4c8g) plus a specific example specification (8C16G). For the DRDS instance specification value range, see: Distributed Relational Database Service Specifications and Pricing
+     * @Property specification: Specifies the specification code of the instance. The value consists of the
+     * instance type and the specified instance specification. For example, you can set
+     * the value to drds.sn2.4c16g.8c32g.
      */
     public specification: string | ros.IResolvable;
 
     /**
-     * @Property type: Instance type, instance type 0 - shared instance 1 - exclusive instance, in addition, this parameter can also pass PRIVATE and PUBLIC to represent exclusive instance and shared instance respectively
+     * @Property type: Specifies the type of the instance. Set the value to PRIVATE. The value PRIVATE
+     * specifies that the instance is a dedicated instance.
+     * >  You can also set the value to 1 to specify that the instance is a dedicated
+     * instance.
      */
     public type: string | ros.IResolvable;
 
@@ -795,17 +846,32 @@ export class RosDrdsInstance extends ros.RosResource {
     public duration: number | ros.IResolvable | undefined;
 
     /**
-     * @Property isAutoRenew: Whether to renew the fee automatically, if it is purchased on a monthly basis, it will automatically renew for one month, and if it is purchased on an annual basis, it will automatically renew for one year. The parameter takes effect when the payment type is drdsPre.
+     * @Property isAutoRenew: Specifies whether to enable automatic renewal. Valid values:
+     * *   true: If the PricingCycle parameter is set to month, the subscription is
+     * automatically renewed for one month. If the PricingCycle parameter is set to
+     * year, the subscription is automatically renewed for one year.
+     * *   false: The auto-renewal feature is disabled for the instance.
+     * >  This parameter only takes effect when the PayType parameter is set to drdsPre.
      */
     public isAutoRenew: boolean | ros.IResolvable | undefined;
 
     /**
-     * @Property mySqlVersion: The MySQL protocol version supported by DRDS. Valid values: 5 and 8. Default value: 5. This parameter is valid only when the primary instance is created. The read-only instance is the same as the primary instance by default.
+     * @Property mySqlVersion: Specifies the MySQL version that is supported by the instance. Valid values:
+     * *   5: The instance is fully compatible with MySQL 5.x. This value is the default
+     * value.
+     * *   8: The instance is fully compatible with MySQL 8.0.
+     * >  This parameter only takes effect when you create a primary instance. By
+     * default, the MySQL version of the read-only instance is the same as that of the
+     * primary instance.
      */
     public mySqlVersion: string | ros.IResolvable | undefined;
 
     /**
-     * @Property pricingCycle: The unit of the order period, year: year, month: month. The parameter takes effect when the payment type is drdsPre.
+     * @Property pricingCycle: Specifies the unit of the subscription duration of the subscription instance.
+     * Valid values:
+     * *   year: The unit of the subscription duration is year.
+     * *   month: The unit of the subscription duration is month.
+     * >  This parameter is required if you set the PayType parameter to drdsPre.
      */
     public pricingCycle: string | ros.IResolvable | undefined;
 

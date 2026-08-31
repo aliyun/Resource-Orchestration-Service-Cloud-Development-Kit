@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.vpc;
 /**
  * This class encapsulates and extends the ROS resource type <code>ALIYUN::VPC::VirtualBorderRouter</code>Use the , which resource to create a virtual border router (VBR).
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.725Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.520Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.VirtualBorderRouter")
 public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource implements com.aliyun.ros.cdk.vpc.IVirtualBorderRouter {
 
@@ -136,20 +136,30 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource implem
         }
 
         /**
-         * Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+         * Property localGatewayIp: The IP address of the VBR.
+         * <p>
+         * Only the owner of the VBR can set or modify this
+         * parameter.
+         * When you create a VBR for the owner of the Express Connect circuit, this
+         * parameter is required.
          * <p>
          * @return {@code this}
-         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side. This parameter is required.
+         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR. This parameter is required.
          */
         public Builder localGatewayIp(final java.lang.String localGatewayIp) {
             this.props.localGatewayIp(localGatewayIp);
             return this;
         }
         /**
-         * Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side.
+         * Property localGatewayIp: The IP address of the VBR.
+         * <p>
+         * Only the owner of the VBR can set or modify this
+         * parameter.
+         * When you create a VBR for the owner of the Express Connect circuit, this
+         * parameter is required.
          * <p>
          * @return {@code this}
-         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR on the Alibaba Cloud side. This parameter is required.
+         * @param localGatewayIp Property localGatewayIp: The IP address of the VBR. This parameter is required.
          */
         public Builder localGatewayIp(final com.aliyun.ros.cdk.core.IResolvable localGatewayIp) {
             this.props.localGatewayIp(localGatewayIp);
@@ -346,8 +356,8 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property name: The name of the VBR.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-         * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+         * The name must be 2 to 128 characters in length, and can contain letters, digits,
+         * underscores (_), and hyphens (-). The name must start with a letter.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the VBR. This parameter is required.
@@ -359,8 +369,8 @@ public class VirtualBorderRouter extends com.aliyun.ros.cdk.core.Resource implem
         /**
          * Property name: The name of the VBR.
          * <p>
-         * The name must be 2 to 128 characters in length, and can contain, digits, periods (.),
-         * underscores (_), and hyphens (-). The name cannot start with http:// or https://.
+         * The name must be 2 to 128 characters in length, and can contain letters, digits,
+         * underscores (_), and hyphens (-). The name must start with a letter.
          * <p>
          * @return {@code this}
          * @param name Property name: The name of the VBR. This parameter is required.

@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.vpc;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-vpc-bgpgroup
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T14:04:31.346Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T12:05:00.152Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.vpc.$Module.class, fqn = "@alicloud/ros-cdk-vpc.BgpGroupProps")
 @software.amazon.jsii.Jsii.Proxy(BgpGroupProps.Jsii$Proxy.class)
 public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
@@ -38,27 +38,60 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
     }
 
     /**
-     * Property ipVersion: The IP version of the BGP group.
+     * Property ipVersion: The IP version.
      * <p>
-     * Valid values: IPv4 and IPv6.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>IPv4: This is the default value.</li>
+     * <li>IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+     * group has IPv6 enabled.</li>
+     * </ul>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIpVersion() {
         return null;
     }
 
     /**
-     * Property isFakeAsn: A router that runs BGP typically belongs to only one AS.
+     * Property isFakeAsn: Specifies whether to use a fake ASN.
      * <p>
-     * In some cases, for example,
-     * the AS needs to be migrated or is merged with another AS, a new AS number replaces
-     * the original one.
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>false (default)</li>
+     * <li>true</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * A router that runs BGP typically belongs to only one AS. If you need to
+     * replace an existing AS with a new AS and you cannot immediately modify BGP
+     * configurations, you can use fake ASNs to ensure service continuity.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getIsFakeAsn() {
         return null;
     }
 
     /**
-     * Property localAsn: The AS number on the Alibaba Cloud side.
+     * Property localAsn: The custom ASN on the cloud side.
+     * <p>
+     * Valid values:
+     * <p>
+     * <ul>
+     * <li>45104</li>
+     * <li>64512~65534</li>
+     * <li>4200000000~4294967294</li>
+     * </ul>
+     * <p>
+     * <blockquote>
+     * <p>
+     * 65025 is reserved by the cloud platform. By default, the system uses 45104 as
+     * LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+     * may occur.
+     * <p>
+     * </blockquote>
      */
     default @org.jetbrains.annotations.Nullable java.lang.Object getLocalAsn() {
         return null;
@@ -190,8 +223,14 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BgpGroupProps#getIpVersion}
-         * @param ipVersion Property ipVersion: The IP version of the BGP group.
-         *                  Valid values: IPv4 and IPv6.
+         * @param ipVersion Property ipVersion: The IP version.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>IPv4: This is the default value.</li>
+         *                  <li>IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+         *                  group has IPv6 enabled.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder ipVersion(java.lang.String ipVersion) {
@@ -201,8 +240,14 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BgpGroupProps#getIpVersion}
-         * @param ipVersion Property ipVersion: The IP version of the BGP group.
-         *                  Valid values: IPv4 and IPv6.
+         * @param ipVersion Property ipVersion: The IP version.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>IPv4: This is the default value.</li>
+         *                  <li>IPv6: IPv6 is supported only if the VBR for which you want to create the BGP
+         *                  group has IPv6 enabled.</li>
+         *                  </ul>
          * @return {@code this}
          */
         public Builder ipVersion(com.aliyun.ros.cdk.core.IResolvable ipVersion) {
@@ -212,10 +257,21 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BgpGroupProps#getIsFakeAsn}
-         * @param isFakeAsn Property isFakeAsn: A router that runs BGP typically belongs to only one AS.
-         *                  In some cases, for example,
-         *                  the AS needs to be migrated or is merged with another AS, a new AS number replaces
-         *                  the original one.
+         * @param isFakeAsn Property isFakeAsn: Specifies whether to use a fake ASN.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>false (default)</li>
+         *                  <li>true</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  A router that runs BGP typically belongs to only one AS. If you need to
+         *                  replace an existing AS with a new AS and you cannot immediately modify BGP
+         *                  configurations, you can use fake ASNs to ensure service continuity.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder isFakeAsn(java.lang.Boolean isFakeAsn) {
@@ -225,10 +281,21 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BgpGroupProps#getIsFakeAsn}
-         * @param isFakeAsn Property isFakeAsn: A router that runs BGP typically belongs to only one AS.
-         *                  In some cases, for example,
-         *                  the AS needs to be migrated or is merged with another AS, a new AS number replaces
-         *                  the original one.
+         * @param isFakeAsn Property isFakeAsn: Specifies whether to use a fake ASN.
+         *                  Valid values:
+         *                  <p>
+         *                  <ul>
+         *                  <li>false (default)</li>
+         *                  <li>true</li>
+         *                  </ul>
+         *                  <p>
+         *                  <blockquote>
+         *                  <p>
+         *                  A router that runs BGP typically belongs to only one AS. If you need to
+         *                  replace an existing AS with a new AS and you cannot immediately modify BGP
+         *                  configurations, you can use fake ASNs to ensure service continuity.
+         *                  <p>
+         *                  </blockquote>
          * @return {@code this}
          */
         public Builder isFakeAsn(com.aliyun.ros.cdk.core.IResolvable isFakeAsn) {
@@ -238,7 +305,22 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BgpGroupProps#getLocalAsn}
-         * @param localAsn Property localAsn: The AS number on the Alibaba Cloud side.
+         * @param localAsn Property localAsn: The custom ASN on the cloud side.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>45104</li>
+         *                 <li>64512~65534</li>
+         *                 <li>4200000000~4294967294</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 65025 is reserved by the cloud platform. By default, the system uses 45104 as
+         *                 LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+         *                 may occur.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder localAsn(java.lang.Number localAsn) {
@@ -248,7 +330,22 @@ public interface BgpGroupProps extends software.amazon.jsii.JsiiSerializable {
 
         /**
          * Sets the value of {@link BgpGroupProps#getLocalAsn}
-         * @param localAsn Property localAsn: The AS number on the Alibaba Cloud side.
+         * @param localAsn Property localAsn: The custom ASN on the cloud side.
+         *                 Valid values:
+         *                 <p>
+         *                 <ul>
+         *                 <li>45104</li>
+         *                 <li>64512~65534</li>
+         *                 <li>4200000000~4294967294</li>
+         *                 </ul>
+         *                 <p>
+         *                 <blockquote>
+         *                 <p>
+         *                 65025 is reserved by the cloud platform. By default, the system uses 45104 as
+         *                 LocalAsn. If you use custom LocalAsn in multi-line access scenarios, loops in BGP
+         *                 may occur.
+         *                 <p>
+         *                 </blockquote>
          * @return {@code this}
          */
         public Builder localAsn(com.aliyun.ros.cdk.core.IResolvable localAsn) {

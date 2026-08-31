@@ -52,7 +52,7 @@ export interface IConsumerGroup extends ros.IResource {
     readonly attrSubscriptionInstanceId: ros.IResolvable | string;
 }
 /**
- * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::ConsumerGroup`, which is used to create a consumer group for a change tracking instance.
+ * This class encapsulates and extends the ROS resource type `ALIYUN::DTS::ConsumerGroup`.
  * @Note This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosConsumerGroup`for a more convenient development experience.
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-dts-consumergroup
  */

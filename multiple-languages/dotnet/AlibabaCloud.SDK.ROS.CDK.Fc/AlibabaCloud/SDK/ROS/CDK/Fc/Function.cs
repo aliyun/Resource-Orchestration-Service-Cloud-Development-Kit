@@ -4,10 +4,8 @@ using Amazon.JSII.Runtime.Deputy;
 
 namespace AlibabaCloud.SDK.ROS.CDK.Fc
 {
-    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::FC::Function`, which is used to create a function.</summary>
+    /// <summary>This class encapsulates and extends the ROS resource type `ALIYUN::FC::Function`.</summary>
     /// <remarks>
-    /// A function must belong to a service. All functions of a service share the same attributes as the service, such as the service authorization and log configurations.
-    ///
     /// <strong>Note</strong>: This class may have some new functions to facilitate development, so it is recommended to use this class instead of `RosFunction`for a more convenient development experience.
     /// See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-fc-function
     /// </remarks>

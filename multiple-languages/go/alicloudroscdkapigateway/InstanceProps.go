@@ -20,12 +20,15 @@ type InstanceProps struct {
 	// For example: cn-beijing-MAZ2(f,g).
 	// Pleas call DescribeZones to get supported zone list.
 	ZoneId interface{} `field:"required" json:"zoneId" yaml:"zoneId"`
-	// Property autoPay: Indicates whether automatic payment is enabled.
+	// Property autoPay: Specifies whether to enable auto-payment for renewals.
 	//
 	// Valid values:
-	// false: Automatic payment is disabled. You need to go to Orders to make the payment once an order is generated.
-	// true: Automatic payment is enabled. The payment is automatically made.
-	// Default true.
+	// - True: Auto-payment is enabled. Make sure that your account has a sufficient
+	// balance.
+	// - False: Manual payment is required. To pay for an order, log on to the console.
+	// In the upper-right corner, choose Billing > User Center. On the Order Management
+	// page, find the order and complete the payment.
+	// Default value: False.
 	AutoPay interface{} `field:"optional" json:"autoPay" yaml:"autoPay"`
 	// Property chargeType: The billing method of the router interface.
 	//
@@ -35,13 +38,20 @@ type InstanceProps struct {
 	//
 	// Default value is false.
 	DeletionForce interface{} `field:"optional" json:"deletionForce" yaml:"deletionForce"`
-	// Property duration: Prepaid time period.
+	// Property duration: The subscription duration of the instance.
 	//
-	// It could be from 1 to 9 when PricingCycle is Month, or 1 to 3 when PricingCycle is Year. Default value is 3.
+	// Valid values:
+	// - If PricingCycle is set to Month, the valid values are 1 to 9.
+	// - If PricingCycle is set to Year, the valid values are 1 to 3.
+	// > This parameter is required and takes effect only if you set ChargeType to
+	// PrePaid.
 	Duration interface{} `field:"optional" json:"duration" yaml:"duration"`
-	// Property pricingCycle: Unit of the payment cycle.
+	// Property pricingCycle: The billing cycle of the subscription instance.
 	//
-	// It could be Month (default) or Year.
+	// Valid values:
+	// - year
+	// - month
+	// > This parameter is required if you set ChargeType to PrePaid.
 	PricingCycle interface{} `field:"optional" json:"pricingCycle" yaml:"pricingCycle"`
 	// Property tags: Tags to attach to instance.
 	//

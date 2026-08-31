@@ -15,7 +15,20 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
     {
         private object _destinationCidrBlock;
 
-        /// <summary>Property destinationCidrBlock: The RouteEntry's target network segment.</summary>
+        /// <summary>Property destinationCidrBlock: The destination CIDR block of the custom route entry.</summary>
+        /// <remarks>
+        /// IPv4 CIDR blocks, IPv6 CIDR
+        /// blocks, and prefix lists are supported. You must specify one of the following
+        /// parameters: <c>DestinationCidrBlock</c> and <c>DestinationPrefixListId</c>. The following
+        /// requirements apply:
+        ///
+        /// <list type="bullet">
+        /// <description>The destination CIDR block cannot be 100.64.0.0/10 or a subset of
+        /// 100.64.0.0/10.</description>
+        /// <description>The destination CIDR block of a route entry cannot be the same as the
+        /// destination CIDR block of another route entry in the same route table.</description>
+        /// </list>
+        /// </remarks>
         [JsiiProperty(name: "destinationCidrBlock", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}")]
         public object DestinationCidrBlock
         {
@@ -75,9 +88,12 @@ namespace AlibabaCloud.SDK.ROS.CDK.Ecs
 
         private object? _nextHopId;
 
-        /// <summary>Property nextHopId: The route entry's next hop.</summary>
+        /// <summary>Property nextHopId: The ID of the next hop.</summary>
         /// <remarks>
-        /// When the NextHopList is specified, the value will be ignored.
+        ///     <h2>If <c>NextHopType</c> is set to <c>Ecr</c>, you can obtain the <c>AssociationId</c> by</h2>
+        ///
+        /// calling the DescribeExpressConnectRouterAssociation operation and use the ID
+        /// as the next hop ID.
         /// </remarks>
         [JsiiOptional]
         [JsiiProperty(name: "nextHopId", typeJson: "{\"union\":{\"types\":[{\"primitive\":\"string\"},{\"fqn\":\"@alicloud/ros-cdk-core.IResolvable\"}]}}", isOptional: true)]

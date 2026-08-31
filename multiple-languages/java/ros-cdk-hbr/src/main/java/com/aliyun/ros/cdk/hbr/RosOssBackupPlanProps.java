@@ -5,7 +5,7 @@ package com.aliyun.ros.cdk.hbr;
  * <p>
  * See https://www.alibabacloud.com/help/ros/developer-reference/aliyun-hbr-ossbackupplan
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T12:25:51.803Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T09:31:19.196Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.hbr.$Module.class, fqn = "@alicloud/ros-cdk-hbr.RosOssBackupPlanProps")
 @software.amazon.jsii.Jsii.Proxy(RosOssBackupPlanProps.Jsii$Proxy.class)
 public interface RosOssBackupPlanProps extends software.amazon.jsii.JsiiSerializable {

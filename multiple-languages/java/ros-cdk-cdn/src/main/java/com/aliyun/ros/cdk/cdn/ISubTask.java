@@ -3,7 +3,7 @@ package com.aliyun.ros.cdk.cdn;
 /**
  * Represents a <code>SubTask</code>.
  */
-@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-06-09T10:42:42.243Z")
+@javax.annotation.Generated(value = "jsii-pacmak/1.85.0 (build 08ee592)", date = "2026-08-31T07:28:08.602Z")
 @software.amazon.jsii.Jsii(module = com.aliyun.ros.cdk.cdn.$Module.class, fqn = "@alicloud/ros-cdk-cdn.ISubTask")
 @software.amazon.jsii.Jsii.Proxy(ISubTask.Jsii$Proxy.class)
 public interface ISubTask extends software.amazon.jsii.JsiiSerializable, com.aliyun.ros.cdk.core.IResource {
